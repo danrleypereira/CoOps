@@ -1,10 +1,10 @@
-# 📊 Colaboração GitHub – Métricas
+# � CoOps – Colaboração Operacional no GitHub
 
 ![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
 ![Contributions welcome](https://img.shields.io/badge/Contributions-Welcome-success)
 ![Status](https://img.shields.io/badge/Status-Alpha-orange)
 
-Projeto desenvolvido na disciplina **Métodos de Desenvolvimento de Software (MDS)** – Engenharia de Software (UnB).
+CoOps é uma ferramenta aberta para observar, entender e explicar colaboração em organizações GitHub. O nome é um trocadilho entre Cooperation + Ops (observabilidade operacional) com um toque lúdico (👮 emojis de “patrulha” da qualidade) para indicar monitoramento saudável – nunca vigilância.
 
 Nosso objetivo é criar uma ferramenta que permita visualizar e interpretar métricas de colaboração no **GitHub**, evoluindo de repositórios individuais para **organizações**, com auxílio de **agentes de IA** para explicar o significado das métricas coletadas.
 
@@ -35,9 +35,14 @@ Assim, os usuários podem compreender melhor **produtividade, gargalos e qualida
 - Métricas de CI/CD (tempo de build, taxa de falha).  
 - Predição de tendências com ML avançado.  
 
-## 🎨 Protótipo (Figma)
-Acompanhe o design do projeto no Figma:  
-👉 [Link do FIGMA](https://www.figma.com/board/fuD1KRb6yGlJuFWPZSOWXx/Template-MDS?node-id=0-1&t=jP65B3v7rqapejoa-1)
+## 🎨 Identidade Visual
+O design (WIP) inclui:
+- Ícones de “patrulha colaborativa” (sem conotação punitiva)
+- Paleta acessível (alto contraste)
+- Dashboard modular
+
+Protótipo inicial (substituir quando houver versão estável):
+👉 (Em breve)
 
 ---
 
@@ -91,7 +96,7 @@ Trecho padrão para novos arquivos fonte:
 ---
 
 ## 🙌 Agradecimentos
-Projeto acadêmico da disciplina MDS – UnB. Inspirado por ferramentas de observabilidade de repositórios e plataformas de qualidade de código.
+Inspirado por ferramentas de observabilidade de repositórios, plataformas de qualidade de código e iniciativas open source de métricas.
 
 Contribuições são muito bem-vindas! Abra uma issue ou envie um PR. 🚀
 

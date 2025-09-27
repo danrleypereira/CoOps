@@ -1,4 +1,4 @@
-# Contribuindo para GitHub Metrics – Collaboration Dashboard
+# Contribuindo para CoOps – Collaboration & Ops Metrics
 
 Obrigado por dedicar seu tempo para contribuir! Este projeto é licenciado sob **GPL-3.0-only (ou posterior)** e buscamos construir uma comunidade acolhedora, transparente e colaborativa.
 
@@ -15,8 +15,8 @@ Obrigado por dedicar seu tempo para contribuir! Este projeto é licenciado sob *
 ## 📜 Licenciamento das Contribuições
 Ao contribuir, você concorda que sua contribuição será licenciada sob a **GNU General Public License v3.0 ou posterior**. Se incluir arquivos novos de código, adicione no topo (quando aplicável):
 ```
-# GitHub Metrics – Collaboration Dashboard
-# Copyright (C) 2025 GitHub Metrics Contributors
+# CoOps – Collaboration & Ops Metrics Dashboard
+# Copyright (C) 2025 CoOps Contributors
 # Licensed under the GNU General Public License v3.0 (or later). See LICENSE.
 ```
 Para JSON/MD utilize comentários no PR descrevendo a autoria.
@@ -36,10 +36,10 @@ Pré-requisitos sugeridos:
 - `pip install -r requirements.txt` (se existir) ou manual: `requests pandas numpy`
 - GitHub Personal Access Token com permissões de leitura (org/repo)
 
-Executando pipeline manual:
+Executando pipeline manual (ajuste --org para sua organização GitHub alvo):
 ```bash
-python3 src/bronze_extract.py --token $GITHUB_TOKEN --org unb-mds --cache
-python3 src/silver_process.py --org unb-mds
+python3 src/bronze_extract.py --token $GITHUB_TOKEN --org coops-org --cache
+python3 src/silver_process.py --org coops-org
 python3 src/registry_manager.py
 ```
 

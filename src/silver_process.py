@@ -16,7 +16,7 @@ from utils.github_api import update_data_registry
 
 def main():
     parser = argparse.ArgumentParser(description='Process Bronze data to Silver layer')
-    parser.add_argument('--org', default='unb-mds', help='GitHub organization name')
+    parser.add_argument('--org', default='coops-org', help='GitHub organization name')
     
     args = parser.parse_args()
     

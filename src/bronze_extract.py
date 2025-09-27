@@ -17,7 +17,7 @@ from utils.github_api import GitHubAPIClient, OrganizationConfig, update_data_re
 def main():
     parser = argparse.ArgumentParser(description='Extract GitHub organization data to Bronze layer')
     parser.add_argument('--token', required=True, help='GitHub Personal Access Token')
-    parser.add_argument('--org', default='unb-mds', help='GitHub organization name')
+    parser.add_argument('--org', default='coops-org', help='GitHub organization name')
     parser.add_argument('--cache', action='store_true', help='Use cached data when available')
     
     args = parser.parse_args()

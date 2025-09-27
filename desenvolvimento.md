@@ -45,7 +45,7 @@ nano .secrets
 Conteúdo do arquivo `.secrets`:
 ```
 GITHUB_TOKEN=ghp_seu_token_real_aqui
-GITHUB_REPOSITORY_OWNER=unb-mds
+GITHUB_REPOSITORY_OWNER=coops-org
 ```
 
 ## 🚀 Executando os Workflows
@@ -125,10 +125,10 @@ Se preferir executar os scripts diretamente:
 
 ```bash
 # 1. Bronze: Extração de dados
-python3 src/bronze_extract.py --token $GITHUB_TOKEN --org unb-mds --cache
+python3 src/bronze_extract.py --token $GITHUB_TOKEN --org coops-org --cache
 
 # 2. Silver: Processamento
-python3 src/silver_process.py --org unb-mds
+python3 src/silver_process.py --org coops-org
 
 # 3. Registry: Atualizar registro
 python3 src/registry_manager.py
@@ -222,18 +222,18 @@ curl -H "Authorization: Bearer $GITHUB_TOKEN" https://api.github.com/user
 ```bash
 # 1. Testar token
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
-     https://api.github.com/orgs/unb-mds
+   https://api.github.com/orgs/coops-org
 
 # 2. Testar repositórios
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
-     https://api.github.com/orgs/unb-mds/repos | jq length
+   https://api.github.com/orgs/coops-org/repos | jq length
 
 # 3. Testar membros (pode falhar se privados)
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
-     https://api.github.com/orgs/unb-mds/members | jq length
+   https://api.github.com/orgs/coops-org/members | jq length
 
 # 4. Executar script individual
-python3 src/bronze_extract.py --token $GITHUB_TOKEN --org unb-mds
+python3 src/bronze_extract.py --token $GITHUB_TOKEN --org coops-org
 ```
 
 ### Dados esperados após execução bem-sucedida:

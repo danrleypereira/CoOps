@@ -1,4 +1,4 @@
-# GitHub Metrics - Medallion Architecture Pipeline
+# CoOps Metrics - Medallion Architecture Pipeline
 
 This project implements a comprehensive GitHub organization metrics collection and analysis system using a **Medallion Architecture** (Bronze → Silver → Gold) for data processing.
 
@@ -36,12 +36,12 @@ This project implements a comprehensive GitHub organization metrics collection a
 
 1. **Extract Bronze Layer**:
    ```bash
-   python src/bronze_extract.py --token $GITHUB_TOKEN --org unb-mds
+   python src/bronze_extract.py --token $GITHUB_TOKEN --org coops-org
    ```
 
 2. **Process Silver Layer**:
    ```bash
-   python src/silver_process.py --org unb-mds
+   python src/silver_process.py --org coops-org
    ```
 
 3. **Generate Registry**:
