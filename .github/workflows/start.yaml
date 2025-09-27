@@ -1,0 +1,35 @@
+name: Coletar métricas da organização (DEPRECATED)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  redirect-to-new-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Redirect to new medallion architecture
+        run: |
+          echo "⚠️  This workflow is deprecated!"
+          echo "🔄 The new medallion architecture pipeline is now active:"
+          echo "   - Bronze Layer: .github/workflows/bronze-extract.yaml"
+          echo "   - Silver Layer: .github/workflows/silver-process.yaml" 
+          echo "   - Gold Layer: .github/workflows/gold-aggregate.yaml"
+          echo ""
+          echo "🚀 Triggering the new Bronze extraction pipeline..."
+
+  trigger-new-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Trigger new Bronze extraction pipeline
+        uses: ./.github/workflows/bronze-extract.yaml
+        with:
+          trigger-source: "legacy-workflow"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+

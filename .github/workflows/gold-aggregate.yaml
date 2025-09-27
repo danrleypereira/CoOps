@@ -1,0 +1,171 @@
+name: Gold Layer - KPI Aggregation
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  aggregate-gold-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy requests plotly matplotlib seaborn
+
+      - name: Verify Silver data exists
+        run: |
+          if [ ! -d "data/silver" ] || [ "$(find data/silver -name '*.json' | wc -l)" -eq 0 ]; then
+            echo "❌ No Silver layer data found. Run silver processing first."
+            exit 1
+          fi
+          
+          echo "✅ Silver data verified: $(find data/silver -name '*.json' | wc -l) files found"
+
+      - name: Generate Gold layer KPIs and visualizations
+        id: aggregation
+        run: |
+          echo "🔄 Starting Gold layer aggregation..."
+          
+          # Create a simple gold aggregation script
+          cat > src/gold_aggregate.py << 'EOF'
+          #!/usr/bin/env python3
+          import json
+          import os
+          from datetime import datetime
+          
+          def load_json(filepath):
+              if os.path.exists(filepath):
+                  with open(filepath, 'r') as f:
+                      return json.load(f)
+              return None
+          
+          def save_json(data, filepath):
+              os.makedirs(os.path.dirname(filepath), exist_ok=True)
+              with open(filepath, 'w') as f:
+                  json.dump(data, f, indent=2)
+          
+          # Generate executive dashboard KPIs
+          members_analytics = load_json('data/silver/members_analytics.json') or []
+          contribution_metrics = load_json('data/silver/contribution_metrics.json') or []
+          network_stats = load_json('data/silver/network_statistics.json') or {}
+          temporal_stats = load_json('data/silver/temporal_statistics.json') or {}
+          
+          # Skip metadata if present
+          if isinstance(members_analytics, list) and len(members_analytics) > 0 and '_metadata' in members_analytics[0]:
+              members_analytics = members_analytics[1:]
+          if isinstance(contribution_metrics, list) and len(contribution_metrics) > 0 and '_metadata' in contribution_metrics[0]:
+              contribution_metrics = contribution_metrics[1:]
+          
+          executive_kpis = {
+              'generated_at': datetime.now().isoformat(),
+              'organization_health': {
+                  'total_members': len(members_analytics),
+                  'active_contributors': len([c for c in contribution_metrics if c.get('has_contributed', False)]),
+                  'new_members': len([m for m in members_analytics if m.get('status') == 'new']),
+                  'established_members': len([m for m in members_analytics if m.get('status') == 'established'])
+              },
+              'collaboration_metrics': {
+                  'total_collaborations': network_stats.get('total_collaborations', 0),
+                  'cross_repo_contributors': network_stats.get('cross_repo_contributors', 0),
+                  'avg_collaborators_per_user': network_stats.get('avg_collaborators_per_user', 0)
+              },
+              'activity_metrics': {
+                  'total_events': temporal_stats.get('total_events', 0),
+                  'avg_daily_activity': temporal_stats.get('avg_daily_activity', 0),
+                  'date_range_days': temporal_stats.get('date_range', {}).get('days', 0)
+              },
+              'top_contributors': sorted(contribution_metrics, key=lambda x: x.get('total_contributions', 0), reverse=True)[:10]
+          }
+          
+          save_json(executive_kpis, 'data/gold/executive_dashboard.json')
+          
+          # Generate member performance tiers
+          if contribution_metrics:
+              contrib_values = [c['total_contributions'] for c in contribution_metrics if c.get('has_contributed')]
+              if contrib_values:
+                  contrib_values.sort(reverse=True)
+                  top_10_threshold = contrib_values[min(len(contrib_values) - 1, int(len(contrib_values) * 0.1))]
+                  top_25_threshold = contrib_values[min(len(contrib_values) - 1, int(len(contrib_values) * 0.25))]
+                  
+                  performance_tiers = {
+                      'top_performers': [c for c in contribution_metrics if c['total_contributions'] >= top_10_threshold],
+                      'regular_contributors': [c for c in contribution_metrics if top_25_threshold <= c['total_contributions'] < top_10_threshold],
+                      'occasional_contributors': [c for c in contribution_metrics if 0 < c['total_contributions'] < top_25_threshold],
+                      'non_contributors': [c for c in contribution_metrics if c['total_contributions'] == 0]
+                  }
+                  
+                  save_json(performance_tiers, 'data/gold/performance_tiers.json')
+          
+          print("✅ Gold layer aggregation completed")
+          EOF
+          
+          python src/gold_aggregate.py
+          
+          # Check if files were generated
+          if [ "$(find data/gold -name '*.json' | wc -l)" -gt 0 ]; then
+            echo "completed=true" >> $GITHUB_OUTPUT
+          else
+            echo "completed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Update data registry
+        run: |
+          echo "📋 Updating data registry with Gold layer files..."
+          python src/registry_manager.py
+
+      - name: List generated files
+        run: |
+          echo "🏆 Gold layer files generated:"
+          find data/gold -name '*.json' -type f | sort | while read file; do
+            size=$(du -h "$file" | cut -f1)
+            echo "  - $file ($size)"
+          done
+
+      - name: Commit and push Gold data
+        if: ${{ !env.ACT }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          git add data/gold/ data/master_registry.json data/data_catalog.json
+          
+          if ! git diff --cached --quiet; then
+            git commit -m "🏆 [Gold] Update executive KPIs and aggregated metrics
+            
+            - Generated executive dashboard KPIs
+            - Created performance tier analysis
+            - Generated $(find data/gold -name '*.json' | wc -l) gold layer files
+            - Pipeline completed successfully: Bronze → Silver → Gold"
+            
+            git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+            git push
+          else
+            echo "📄 No changes to commit in Gold layer"
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Pipeline completion summary
+        run: |
+          echo "🎉 Medallion Architecture Pipeline Completed Successfully!"
+          echo ""
+          echo "📊 Data Layer Summary:"
+          echo "  Bronze: $(find data/bronze -name '*.json' | wc -l) raw data files"
+          echo "  Silver: $(find data/silver -name '*.json' | wc -l) processed analytics files"
+          echo "  Gold:   $(find data/gold -name '*.json' | wc -l) executive KPI files"
+          echo ""
+          echo "🔗 Data lineage: GitHub API → Bronze → Silver → Gold"
+          echo "📅 Completed at: $(date -u)"
