@@ -1,0 +1,86 @@
+[
+  {
+    "_metadata": {
+      "extracted_at": "2025-10-18T07:40:22.714483",
+      "file_path": "data/bronze/commits_demo-repository.json",
+      "record_count": 1
+    }
+  },
+  {
+    "sha": "a371a788452e013547c9b4f55010c46dcd9a8ecd",
+    "node_id": "C_kwDOJS2wIdoAKGEzNzFhNzg4NDUyZTAxMzU0N2M5YjRmNTUwMTBjNDZkY2Q5YThlY2Q",
+    "commit": {
+      "author": {
+        "name": "Danrley Pereira",
+        "email": "danrleywillyan@outlook.com",
+        "date": "2023-04-05T02:25:23Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2023-04-05T02:25:23Z"
+      },
+      "message": "Initial commit",
+      "tree": {
+        "sha": "ef2ac2cc9bb95e894529d26b124a5f46dae1ee87",
+        "url": "https://api.github.com/repos/LabTechUDF/demo-repository/git/trees/ef2ac2cc9bb95e894529d26b124a5f46dae1ee87"
+      },
+      "url": "https://api.github.com/repos/LabTechUDF/demo-repository/git/commits/a371a788452e013547c9b4f55010c46dcd9a8ecd",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJkLNwTCRBK7hj4Ov3rIwAAXscIAGTHSkAba4XvK0JW00jsigne\nB+u7rWZYWPnU21n9MoS5XtBNHWM1wiv3jmNbVPmAUsGlBs3K6URkDO7/9/tlxE0/\nHtBXkok4jAL//49sRkDfOJsqlgQUz5ZoezMVvvTFztREQWN2WSiyJ9CVg8OCwf0t\nRm1G49H6zWUE/ZVrVO/LuRZp5ctFh+XcLwkKIUh58vVPsJzHbxF8c5VvQ5Hl5vm1\nRV37oNuzl1GBz8LZcZ/1Cogfxe2v+2GikdaQUlXaGZtQGYGnaU4zSghB564W+RxR\nOZRW0IKBOxU7njTM/lBKUBGNOuATrJOqMn05MPW7cpIQGpRtbXPwqxq2Bd4aZJw=\n=ngWs\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree ef2ac2cc9bb95e894529d26b124a5f46dae1ee87\nauthor Danrley Pereira <danrleywillyan@outlook.com> 1680661523 -0300\ncommitter GitHub <noreply@github.com> 1680661523 -0300\n\nInitial commit",
+        "verified_at": "2024-01-16T19:59:59Z"
+      }
+    },
+    "url": "https://api.github.com/repos/LabTechUDF/demo-repository/commits/a371a788452e013547c9b4f55010c46dcd9a8ecd",
+    "html_url": "https://github.com/LabTechUDF/demo-repository/commit/a371a788452e013547c9b4f55010c46dcd9a8ecd",
+    "comments_url": "https://api.github.com/repos/LabTechUDF/demo-repository/commits/a371a788452e013547c9b4f55010c46dcd9a8ecd/comments",
+    "author": {
+      "login": "danrleypereira",
+      "id": 12025215,
+      "node_id": "MDQ6VXNlcjEyMDI1MjE1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/12025215?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danrleypereira",
+      "html_url": "https://github.com/danrleypereira",
+      "followers_url": "https://api.github.com/users/danrleypereira/followers",
+      "following_url": "https://api.github.com/users/danrleypereira/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danrleypereira/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danrleypereira/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danrleypereira/subscriptions",
+      "organizations_url": "https://api.github.com/users/danrleypereira/orgs",
+      "repos_url": "https://api.github.com/users/danrleypereira/repos",
+      "events_url": "https://api.github.com/users/danrleypereira/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danrleypereira/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [],
+    "repo_name": "demo-repository"
+  }
+]
