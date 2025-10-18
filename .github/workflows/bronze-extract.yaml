@@ -3,12 +3,12 @@ name: Bronze Layer - Data Extraction
 on:
   workflow_dispatch:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
   schedule:
     # Run daily at 5 AM UTC
-    - cron: '0 5 * * *'
+    - cron: "0 5 * * *"
 
 permissions:
   contents: write
@@ -16,18 +16,21 @@ permissions:
 jobs:
   extract-bronze-data:
     runs-on: ubuntu-latest
-    
+
     outputs:
       bronze-completed: ${{ steps.extraction.outputs.completed }}
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref || github.ref }}
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Install dependencies
         run: |
@@ -39,10 +42,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           OWNER=${GITHUB_REPOSITORY_OWNER:-${{ github.repository_owner }}}
-          
+
           TYPE=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             https://api.github.com/users/$OWNER | jq -r .type)
-          
+
           if [ "$TYPE" = "Organization" ]; then
             echo "✅ Valid organization: $OWNER"
           else
@@ -63,7 +66,7 @@ jobs:
         run: |
           echo "🔄 Starting Bronze layer extraction..."
           python src/bronze_extract.py --token "$GITHUB_TOKEN" --org "${GITHUB_REPOSITORY_OWNER}" --cache
-          
+
           # Check if files were generated
           if [ "$(find data/bronze -name '*.json' | wc -l)" -gt 0 ]; then
             echo "✅ Bronze extraction completed successfully"
@@ -92,21 +95,38 @@ jobs:
       - name: Commit and push Bronze data
         if: steps.extraction.outputs.completed == 'true' && !env.ACT
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          
+          git config --global user.name "CoOps Bot"
+          git config --global user.email "coops@dwcorp.com.br"
+
+          # Ensure we're on a branch (handle detached HEAD state)
+          CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+          if [ "$CURRENT_BRANCH" = "HEAD" ]; then
+            # In detached HEAD state, checkout the appropriate branch
+            if [ "${{ github.event_name }}" = "pull_request" ]; then
+              BRANCH="${{ github.event.pull_request.head.ref }}"
+              echo "📌 Checking out PR branch: $BRANCH"
+              git checkout -B "$BRANCH"
+            else
+              BRANCH="${GITHUB_REF#refs/heads/}"
+              echo "📌 Checking out branch: $BRANCH"
+              git checkout -B "$BRANCH"
+            fi
+          else
+            echo "✅ Already on branch: $CURRENT_BRANCH"
+          fi
+
           git add data/bronze/ data/master_registry.json data/data_catalog.json
-          
+
           if ! git diff --cached --quiet; then
             git commit -m "🔄 [Bronze] Update extracted GitHub metrics data
-            
+
             - Extracted organization data from GitHub API
             - Generated $(find data/bronze -name '*.json' | wc -l) bronze layer files
             - Updated data registry and catalog
             - Triggered by: ${{ github.event_name }}"
-            
+
             git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-            git push
+            git push origin HEAD
           else
             echo "📄 No changes to commit in Bronze layer"
           fi

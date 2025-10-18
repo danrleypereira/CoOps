@@ -10,15 +10,22 @@ permissions:
 jobs:
   aggregate-gold-data:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Pull latest changes
+        run: |
+          git pull origin main
+          echo "✅ Repository updated to latest main branch"
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Install dependencies
         run: |
@@ -31,44 +38,44 @@ jobs:
             echo "❌ No Silver layer data found. Run silver processing first."
             exit 1
           fi
-          
+
           echo "✅ Silver data verified: $(find data/silver -name '*.json' | wc -l) files found"
 
       - name: Generate Gold layer KPIs and visualizations
         id: aggregation
         run: |
           echo "🔄 Starting Gold layer aggregation..."
-          
+
           # Create a simple gold aggregation script
           cat > src/gold_aggregate.py << 'EOF'
           #!/usr/bin/env python3
           import json
           import os
           from datetime import datetime
-          
+
           def load_json(filepath):
               if os.path.exists(filepath):
                   with open(filepath, 'r') as f:
                       return json.load(f)
               return None
-          
+
           def save_json(data, filepath):
               os.makedirs(os.path.dirname(filepath), exist_ok=True)
               with open(filepath, 'w') as f:
                   json.dump(data, f, indent=2)
-          
+
           # Generate executive dashboard KPIs
           members_analytics = load_json('data/silver/members_analytics.json') or []
           contribution_metrics = load_json('data/silver/contribution_metrics.json') or []
           network_stats = load_json('data/silver/network_statistics.json') or {}
           temporal_stats = load_json('data/silver/temporal_statistics.json') or {}
-          
+
           # Skip metadata if present
           if isinstance(members_analytics, list) and len(members_analytics) > 0 and '_metadata' in members_analytics[0]:
               members_analytics = members_analytics[1:]
           if isinstance(contribution_metrics, list) and len(contribution_metrics) > 0 and '_metadata' in contribution_metrics[0]:
               contribution_metrics = contribution_metrics[1:]
-          
+
           executive_kpis = {
               'generated_at': datetime.now().isoformat(),
               'organization_health': {
@@ -89,9 +96,9 @@ jobs:
               },
               'top_contributors': sorted(contribution_metrics, key=lambda x: x.get('total_contributions', 0), reverse=True)[:10]
           }
-          
+
           save_json(executive_kpis, 'data/gold/executive_dashboard.json')
-          
+
           # Generate member performance tiers
           if contribution_metrics:
               contrib_values = [c['total_contributions'] for c in contribution_metrics if c.get('has_contributed')]
@@ -108,12 +115,12 @@ jobs:
                   }
                   
                   save_json(performance_tiers, 'data/gold/performance_tiers.json')
-          
+
           print("✅ Gold layer aggregation completed")
           EOF
-          
+
           python src/gold_aggregate.py
-          
+
           # Check if files were generated
           if [ "$(find data/gold -name '*.json' | wc -l)" -gt 0 ]; then
             echo "completed=true" >> $GITHUB_OUTPUT
@@ -137,21 +144,38 @@ jobs:
       - name: Commit and push Gold data
         if: ${{ !env.ACT }}
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          
+          git config --global user.name "CoOps Bot"
+          git config --global user.email "coops@dwcorp.com.br"
+
+          # Ensure we're on a branch (handle detached HEAD state)
+          CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+          if [ "$CURRENT_BRANCH" = "HEAD" ]; then
+            # In detached HEAD state, checkout the appropriate branch
+            if [ "${{ github.event_name }}" = "pull_request" ]; then
+              BRANCH="${{ github.event.pull_request.head.ref }}"
+              echo "📌 Checking out PR branch: $BRANCH"
+              git checkout -B "$BRANCH"
+            else
+              BRANCH="${GITHUB_REF#refs/heads/}"
+              echo "📌 Checking out branch: $BRANCH"
+              git checkout -B "$BRANCH"
+            fi
+          else
+            echo "✅ Already on branch: $CURRENT_BRANCH"
+          fi
+
           git add data/gold/ data/master_registry.json data/data_catalog.json
-          
+
           if ! git diff --cached --quiet; then
             git commit -m "🏆 [Gold] Update executive KPIs and aggregated metrics
-            
+
             - Generated executive dashboard KPIs
             - Created performance tier analysis
             - Generated $(find data/gold -name '*.json' | wc -l) gold layer files
             - Pipeline completed successfully: Bronze → Silver → Gold"
-            
+
             git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-            git push
+            git push origin HEAD
           else
             echo "📄 No changes to commit in Gold layer"
           fi
