@@ -1,7 +1,7 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2025-10-18T05:10:26.394408",
+      "extracted_at": "2025-10-18T03:35:56.568805",
       "file_path": "data/bronze/repositories_raw.json",
       "record_count": 10
     }
@@ -1073,14 +1073,14 @@
     "releases_url": "https://api.github.com/repos/DW-Corp/CoOps/releases{/id}",
     "deployments_url": "https://api.github.com/repos/DW-Corp/CoOps/deployments",
     "created_at": "2025-10-18T02:00:58Z",
-    "updated_at": "2025-10-18T03:36:54Z",
-    "pushed_at": "2025-10-18T03:36:51Z",
+    "updated_at": "2025-10-18T02:44:48Z",
+    "pushed_at": "2025-10-18T03:29:17Z",
     "git_url": "git://github.com/DW-Corp/CoOps.git",
     "ssh_url": "git@github.com:DW-Corp/CoOps.git",
     "clone_url": "https://github.com/DW-Corp/CoOps.git",
     "svn_url": "https://github.com/DW-Corp/CoOps",
     "homepage": null,
-    "size": 200,
+    "size": 184,
     "stargazers_count": 0,
     "watchers_count": 0,
     "language": "Python",
