@@ -1,0 +1,723 @@
+[
+  {
+    "_metadata": {
+      "extracted_at": "2025-10-18T02:44:22.891427",
+      "file_path": "data/silver/temporal_events.json",
+      "record_count": 119
+    }
+  },
+  {
+    "date": "2017-03-19T21:52:21",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "morrme"
+  },
+  {
+    "date": "2017-03-19T21:58:01",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-03-19T22:08:04",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-03-19T22:08:11",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-03-19T22:58:39",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-03-19T23:00:48",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-03-19T23:11:15",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-03-20T11:46:31",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "jwsloan"
+  },
+  {
+    "date": "2017-03-20T14:02:51",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-03-21T12:01:51",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-03-21T17:28:15",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "epatarroyo"
+  },
+  {
+    "date": "2017-03-24T21:25:15",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "epatarroyo"
+  },
+  {
+    "date": "2017-03-24T22:02:43",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "epatarroyo"
+  },
+  {
+    "date": "2017-03-24T22:10:09",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "epatarroyo"
+  },
+  {
+    "date": "2017-03-25T01:36:50",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-03-25T01:36:57",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-03-25T01:45:03",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-04-03T12:35:46",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "rulrok"
+  },
+  {
+    "date": "2017-04-03T12:43:06",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "rulrok"
+  },
+  {
+    "date": "2017-04-23T01:02:29",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "rulrok"
+  },
+  {
+    "date": "2017-04-23T01:05:09",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "rulrok"
+  },
+  {
+    "date": "2017-05-07T15:22:05",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-05-07T15:23:37",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-05-07T15:51:50",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-05-07T15:55:39",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-05-07T15:56:29",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-06-12T19:16:51",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "Drahkir"
+  },
+  {
+    "date": "2017-06-19T13:47:24",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "Drahkir"
+  },
+  {
+    "date": "2017-06-19T13:55:46",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "Drahkir"
+  },
+  {
+    "date": "2017-06-19T13:59:56",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "Drahkir"
+  },
+  {
+    "date": "2017-06-27T16:28:39",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-06-27T16:30:16",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-09-09T10:37:20",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "madeindjs"
+  },
+  {
+    "date": "2017-09-09T10:44:54",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "madeindjs"
+  },
+  {
+    "date": "2017-09-09T11:35:52",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "madeindjs"
+  },
+  {
+    "date": "2017-09-09T14:30:05",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "madeindjs"
+  },
+  {
+    "date": "2017-09-11T17:20:06",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "madeindjs"
+  },
+  {
+    "date": "2017-09-18T08:55:10",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "madeindjs"
+  },
+  {
+    "date": "2017-09-18T08:57:46",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "madeindjs"
+  },
+  {
+    "date": "2017-09-27T17:38:41",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "madeindjs"
+  },
+  {
+    "date": "2017-09-27T17:44:42",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "madeindjs"
+  },
+  {
+    "date": "2017-09-27T17:49:56",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "madeindjs"
+  },
+  {
+    "date": "2017-10-08T20:41:15",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-10-08T20:42:40",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-10-08T20:43:55",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-10-08T20:44:23",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-10-08T20:44:48",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-10-08T20:47:31",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-10-08T20:47:52",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-10-08T20:48:14",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-10-08T20:48:58",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-10-08T20:49:23",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-10-08T20:50:18",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-10-11T02:45:07",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-10-11T02:46:48",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-10-11T03:46:15",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-12-02T13:16:19",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "hoffmanc"
+  },
+  {
+    "date": "2017-12-02T13:18:11",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "hoffmanc"
+  },
+  {
+    "date": "2017-12-02T14:54:15",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "hoffmanc"
+  },
+  {
+    "date": "2017-12-02T14:56:27",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "hoffmanc"
+  },
+  {
+    "date": "2017-12-02T15:51:36",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "hoffmanc"
+  },
+  {
+    "date": "2017-12-02T15:52:55",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "hoffmanc"
+  },
+  {
+    "date": "2017-12-03T21:04:22",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-12-03T21:10:05",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-12-03T21:13:04",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-12-03T21:59:30",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-12-03T22:04:36",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-12-03T22:14:10",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-12-03T23:07:25",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-12-03T23:14:07",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-12-03T23:16:46",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-12-03T23:27:28",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-12-04T13:37:32",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-12-04T13:42:08",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2017-12-04T13:46:08",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2018-10-24T16:21:24",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "unknown"
+  },
+  {
+    "date": "2018-10-29T09:01:38",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "unknown"
+  },
+  {
+    "date": "2018-12-04T21:43:15",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "matjack1"
+  },
+  {
+    "date": "2018-12-06T10:27:20",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "unknown"
+  },
+  {
+    "date": "2018-12-06T10:32:50",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "unknown"
+  },
+  {
+    "date": "2018-12-29T07:53:35",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "pirosm1"
+  },
+  {
+    "date": "2018-12-31T18:18:37",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2019-10-17T06:06:53",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "dependabot[bot]"
+  },
+  {
+    "date": "2019-11-20T05:34:50",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2020-02-16T04:40:31",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2020-02-16T04:45:02",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2022-04-24T01:13:48",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "etagwerker"
+  },
+  {
+    "date": "2022-04-24T01:14:06",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "etagwerker"
+  },
+  {
+    "date": "2022-04-24T01:14:30",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "etagwerker"
+  },
+  {
+    "date": "2022-04-24T01:14:59",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "etagwerker"
+  },
+  {
+    "date": "2022-04-24T01:15:12",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "etagwerker"
+  },
+  {
+    "date": "2022-07-17T07:55:24",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "potomak"
+  },
+  {
+    "date": "2023-06-05T19:09:36",
+    "type": "commit",
+    "repo": "reurb-ibict",
+    "user": "danrleypereira"
+  },
+  {
+    "date": "2023-06-05T19:12:03",
+    "type": "commit",
+    "repo": "reurb-ibict",
+    "user": "danrleypereira"
+  },
+  {
+    "date": "2023-06-08T20:21:03",
+    "type": "commit",
+    "repo": "MIT",
+    "user": "danrleypereira"
+  },
+  {
+    "date": "2023-06-10T00:42:16",
+    "type": "commit",
+    "repo": "MIT",
+    "user": "danrleypereira"
+  },
+  {
+    "date": "2023-11-14T02:05:16",
+    "type": "commit",
+    "repo": "MIT",
+    "user": "danrleypereira"
+  },
+  {
+    "date": "2023-11-14T02:46:02",
+    "type": "commit",
+    "repo": "MIT",
+    "user": "danrleypereira"
+  },
+  {
+    "date": "2024-03-02T19:37:43",
+    "type": "commit",
+    "repo": "pro-bono",
+    "user": "danrleypereira"
+  },
+  {
+    "date": "2024-03-18T15:50:06",
+    "type": "commit",
+    "repo": "Clash",
+    "user": "polyanacunha"
+  },
+  {
+    "date": "2024-03-18T16:24:52",
+    "type": "commit",
+    "repo": "Clash",
+    "user": "polyanacunha"
+  },
+  {
+    "date": "2024-03-18T16:25:35",
+    "type": "commit",
+    "repo": "Clash",
+    "user": "polyanacunha"
+  },
+  {
+    "date": "2024-03-18T16:40:40",
+    "type": "commit",
+    "repo": "Clash",
+    "user": "polyanacunha"
+  },
+  {
+    "date": "2024-03-18T16:43:13",
+    "type": "commit",
+    "repo": "Clash",
+    "user": "polyanacunha"
+  },
+  {
+    "date": "2024-03-18T16:44:53",
+    "type": "commit",
+    "repo": "Clash",
+    "user": "polyanacunha"
+  },
+  {
+    "date": "2024-03-18T16:46:09",
+    "type": "commit",
+    "repo": "Clash",
+    "user": "polyanacunha"
+  },
+  {
+    "date": "2024-03-18T16:48:34",
+    "type": "commit",
+    "repo": "Clash",
+    "user": "polyanacunha"
+  },
+  {
+    "date": "2024-03-18T16:49:46",
+    "type": "commit",
+    "repo": "Clash",
+    "user": "polyanacunha"
+  },
+  {
+    "date": "2024-03-18T16:50:10",
+    "type": "commit",
+    "repo": "Clash",
+    "user": "polyanacunha"
+  },
+  {
+    "date": "2024-04-19T02:15:23",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "danrleypereira"
+  },
+  {
+    "date": "2024-04-19T02:51:14",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "danrleypereira"
+  },
+  {
+    "date": "2024-04-19T03:11:46",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "danrleypereira"
+  },
+  {
+    "date": "2024-04-20T10:58:13",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "danrleypereira"
+  },
+  {
+    "date": "2024-04-20T14:44:06",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "danrleypereira"
+  },
+  {
+    "date": "2024-04-21T08:38:53",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "danrleypereira"
+  },
+  {
+    "date": "2024-04-21T09:04:25",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "danrleypereira"
+  },
+  {
+    "date": "2024-04-21T09:59:56",
+    "type": "commit",
+    "repo": "tomatoes",
+    "user": "danrleypereira"
+  },
+  {
+    "date": "2025-07-17T05:19:28",
+    "type": "pr_created",
+    "repo": "pro-bono",
+    "user": "danrleypereira"
+  },
+  {
+    "date": "2025-07-17T05:19:29",
+    "type": "event_assigned",
+    "repo": "pro-bono",
+    "user": "danrleypereira"
+  }
+]
