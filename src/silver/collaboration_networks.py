@@ -48,31 +48,41 @@ def process_collaboration_networks() -> List[str]:
         if event.get('actor', {}) and event['actor'].get('login'):
             repo_collaborators[repo].add(event['actor']['login'])
     
-    # Create collaboration edges
-    collaboration_edges = []
+    # Create collaboration edges with weights
+    # Track all repo collaborations per user pair
+    collaboration_repos = defaultdict(list)
     user_collaborations = defaultdict(set)
-    
+
     for repo, contributors in repo_collaborators.items():
         contributors_list = list(contributors)
-        
+
         # Create edges between all contributors in the same repo
         for i, user1 in enumerate(contributors_list):
             for user2 in contributors_list[i+1:]:
                 if user1 != user2:
-                    # Create bidirectional edge
-                    edge = tuple(sorted([user1, user2]))
-                    collaboration_edges.append({
-                        'user1': edge[0],
-                        'user2': edge[1],
-                        'repo': repo,
-                        'collaboration_type': 'same_repository'
-                    })
-                    
+                    # Create bidirectional edge key
+                    edge_key = tuple(sorted([user1, user2]))
+                    collaboration_repos[edge_key].append(repo)
+
                     user_collaborations[user1].add(user2)
                     user_collaborations[user2].add(user1)
-    
+
+    # Convert to edge format with weights
+    collaboration_edges = []
+    for (source, target), repos in collaboration_repos.items():
+        collaboration_edges.append({
+            'source': source,
+            'target': target,
+            'weight': len(repos),  # Weight = number of repos they collaborate on
+            'repos': repos,
+            'collaboration_type': 'same_repository'
+        })
+
+    # Sort by weight descending
+    collaboration_edges.sort(key=lambda x: x['weight'], reverse=True)
+
     generated_files = []
-    
+
     # Save collaboration edges
     edges_file = save_json_data(
         collaboration_edges,
@@ -102,11 +112,11 @@ def process_collaboration_networks() -> List[str]:
     repo_analysis = []
     for repo, contributors in repo_collaborators.items():
         contributors_list = list(contributors)
-        
+
         # Calculate potential and actual collaborations
         potential_collaborations = len(contributors_list) * (len(contributors_list) - 1) // 2
-        actual_collaborations = len([e for e in collaboration_edges if e['repo'] == repo])
-        
+        actual_collaborations = len([e for e in collaboration_edges if repo in e['repos']])
+
         repo_analysis.append({
             'repo': repo,
             'contributor_count': len(contributors_list),
