@@ -1,0 +1,153 @@
+[
+  {
+    "_metadata": {
+      "extracted_at": "2025-10-18T07:40:11.284785",
+      "file_path": "data/bronze/members_basic.json",
+      "record_count": 16
+    }
+  },
+  {
+    "login": "tauisilva",
+    "type": "User",
+    "contributions_total": 54,
+    "avatar_url": "https://avatars.githubusercontent.com/u/42608628?v=4",
+    "html_url": "https://github.com/tauisilva",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "java-services"
+  },
+  {
+    "login": "danrleypereira",
+    "type": "User",
+    "contributions_total": 35,
+    "avatar_url": "https://avatars.githubusercontent.com/u/12025215?v=4",
+    "html_url": "https://github.com/danrleypereira",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "python-services"
+  },
+  {
+    "login": "GuiMcs00",
+    "type": "User",
+    "contributions_total": 28,
+    "avatar_url": "https://avatars.githubusercontent.com/u/111822772?v=4",
+    "html_url": "https://github.com/GuiMcs00",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "python-services"
+  },
+  {
+    "login": "thiagodiasz",
+    "type": "User",
+    "contributions_total": 16,
+    "avatar_url": "https://avatars.githubusercontent.com/u/70723324?v=4",
+    "html_url": "https://github.com/thiagodiasz",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "interfaces-usuario"
+  },
+  {
+    "login": "Gabriel-br07",
+    "type": "User",
+    "contributions_total": 10,
+    "avatar_url": "https://avatars.githubusercontent.com/u/124085143?v=4",
+    "html_url": "https://github.com/Gabriel-br07",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "python-services"
+  },
+  {
+    "login": "Lucas-Germano",
+    "type": "User",
+    "contributions_total": 9,
+    "avatar_url": "https://avatars.githubusercontent.com/u/138831503?v=4",
+    "html_url": "https://github.com/Lucas-Germano",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "interfaces-usuario"
+  },
+  {
+    "login": "YuriNoriki",
+    "type": "User",
+    "contributions_total": 8,
+    "avatar_url": "https://avatars.githubusercontent.com/u/129331216?v=4",
+    "html_url": "https://github.com/YuriNoriki",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "python-services"
+  },
+  {
+    "login": "josue-oliveiraa",
+    "type": "User",
+    "contributions_total": 7,
+    "avatar_url": "https://avatars.githubusercontent.com/u/183226231?v=4",
+    "html_url": "https://github.com/josue-oliveiraa",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "python-services"
+  },
+  {
+    "login": "juanpbarros20",
+    "type": "User",
+    "contributions_total": 7,
+    "avatar_url": "https://avatars.githubusercontent.com/u/101754138?v=4",
+    "html_url": "https://github.com/juanpbarros20",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "entidades"
+  },
+  {
+    "login": "Bnicole98",
+    "type": "User",
+    "contributions_total": 5,
+    "avatar_url": "https://avatars.githubusercontent.com/u/91034189?v=4",
+    "html_url": "https://github.com/Bnicole98",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "interfaces-usuario"
+  },
+  {
+    "login": "pedruck",
+    "type": "User",
+    "contributions_total": 3,
+    "avatar_url": "https://avatars.githubusercontent.com/u/68859909?v=4",
+    "html_url": "https://github.com/pedruck",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "python-services"
+  },
+  {
+    "login": "whiterabbitholes",
+    "type": "User",
+    "contributions_total": 2,
+    "avatar_url": "https://avatars.githubusercontent.com/u/129126175?v=4",
+    "html_url": "https://github.com/whiterabbitholes",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "entidades"
+  },
+  {
+    "login": "araujow-g",
+    "type": "User",
+    "contributions_total": 1,
+    "avatar_url": "https://avatars.githubusercontent.com/u/107012235?v=4",
+    "html_url": "https://github.com/araujow-g",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "python-services"
+  },
+  {
+    "login": "polyanacunha",
+    "type": "User",
+    "contributions_total": 1,
+    "avatar_url": "https://avatars.githubusercontent.com/u/98856558?v=4",
+    "html_url": "https://github.com/polyanacunha",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "python-services"
+  },
+  {
+    "login": "MartinsArtur",
+    "type": "User",
+    "contributions_total": 1,
+    "avatar_url": "https://avatars.githubusercontent.com/u/54951997?v=4",
+    "html_url": "https://github.com/MartinsArtur",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "java-services"
+  },
+  {
+    "login": "Danilo019",
+    "type": "User",
+    "contributions_total": 1,
+    "avatar_url": "https://avatars.githubusercontent.com/u/105023718?v=4",
+    "html_url": "https://github.com/Danilo019",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "interfaces-usuario"
+  }
+]
