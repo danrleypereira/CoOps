@@ -1,7 +1,7 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2025-10-18T07:07:24.807344",
+      "extracted_at": "2025-10-18T07:19:07.054512",
       "file_path": "data/bronze/repositories_raw.json",
       "record_count": 10
     }
@@ -1073,8 +1073,8 @@
     "releases_url": "https://api.github.com/repos/DW-Corp/CoOps/releases{/id}",
     "deployments_url": "https://api.github.com/repos/DW-Corp/CoOps/deployments",
     "created_at": "2025-10-18T02:00:58Z",
-    "updated_at": "2025-10-18T06:37:25Z",
-    "pushed_at": "2025-10-18T07:07:04Z",
+    "updated_at": "2025-10-18T07:18:46Z",
+    "pushed_at": "2025-10-18T07:18:42Z",
     "git_url": "git://github.com/DW-Corp/CoOps.git",
     "ssh_url": "git@github.com:DW-Corp/CoOps.git",
     "clone_url": "https://github.com/DW-Corp/CoOps.git",
@@ -1083,7 +1083,7 @@
     "size": 214,
     "stargazers_count": 0,
     "watchers_count": 0,
-    "language": "Python",
+    "language": "TypeScript",
     "has_issues": false,
     "has_projects": true,
     "has_downloads": true,
@@ -1094,7 +1094,7 @@
     "mirror_url": null,
     "archived": false,
     "disabled": false,
-    "open_issues_count": 1,
+    "open_issues_count": 0,
     "license": {
       "key": "other",
       "name": "Other",
@@ -1108,7 +1108,7 @@
     "topics": [],
     "visibility": "public",
     "forks": 0,
-    "open_issues": 1,
+    "open_issues": 0,
     "watchers": 0,
     "default_branch": "main",
     "permissions": {
