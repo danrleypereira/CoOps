@@ -15,12 +15,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: main
+          fetch-depth: 0
 
       - name: Pull latest changes
         run: |
-          git pull origin main
-          echo "✅ Repository updated to latest main branch"
+          CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+          echo "📌 Current branch: $CURRENT_BRANCH"
+          git pull origin "$CURRENT_BRANCH"
+          echo "✅ Repository updated to latest"
 
       - name: Set up Python
         uses: actions/setup-python@v5
