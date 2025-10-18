@@ -1,0 +1,80 @@
+[
+  {
+    "_metadata": {
+      "extracted_at": "2025-10-18T07:40:53.989608",
+      "file_path": "data/silver/repository_collaboration_analysis.json",
+      "record_count": 5
+    }
+  },
+  {
+    "repo": "interfaces-usuario",
+    "contributor_count": 9,
+    "contributors": [
+      "Lucas-Germano",
+      "Bnicole98",
+      "Gabriel-br07",
+      "josue-oliveiraa",
+      "GuiMcs00",
+      "danrleypereira",
+      "thiagodiasz",
+      "Bappoz",
+      "Danilo019"
+    ],
+    "potential_collaborations": 36,
+    "actual_collaborations": 36,
+    "collaboration_density": 1.0
+  },
+  {
+    "repo": "python-services",
+    "contributor_count": 8,
+    "contributors": [
+      "YuriNoriki",
+      "polyanacunha",
+      "araujow-g",
+      "Gabriel-br07",
+      "josue-oliveiraa",
+      "pedruck",
+      "GuiMcs00",
+      "danrleypereira"
+    ],
+    "potential_collaborations": 28,
+    "actual_collaborations": 28,
+    "collaboration_density": 1.0
+  },
+  {
+    "repo": "java-services",
+    "contributor_count": 4,
+    "contributors": [
+      "MartinsArtur",
+      "leltonborges",
+      "danrleypereira",
+      "tauisilva"
+    ],
+    "potential_collaborations": 6,
+    "actual_collaborations": 6,
+    "collaboration_density": 1.0
+  },
+  {
+    "repo": "entidades",
+    "contributor_count": 4,
+    "contributors": [
+      "whiterabbitholes",
+      "juanpbarros20",
+      "danrleypereira",
+      "GuiMcs00"
+    ],
+    "potential_collaborations": 6,
+    "actual_collaborations": 6,
+    "collaboration_density": 1.0
+  },
+  {
+    "repo": "demo-repository",
+    "contributor_count": 1,
+    "contributors": [
+      "danrleypereira"
+    ],
+    "potential_collaborations": 0,
+    "actual_collaborations": 0,
+    "collaboration_density": 0
+  }
+]

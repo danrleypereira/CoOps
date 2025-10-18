@@ -1,5 +1,5 @@
 {
-  "created_at": "2025-10-18T07:40:22.862809",
+  "created_at": "2025-10-18T07:40:54.180982",
   "layers": {
     "bronze": {
       "repositories": [
@@ -62,10 +62,29 @@
       ]
     },
     "silver": {
-      "member_analytics": [],
-      "contribution_metrics": [],
-      "collaboration_networks": [],
-      "temporal_analysis": [],
+      "member_analytics": [
+        "data/silver/members_analytics.json",
+        "data/silver/maturity_bands.json",
+        "data/silver/member_status_distribution.json"
+      ],
+      "contribution_metrics": [
+        "data/silver/contribution_distribution.json",
+        "data/silver/repository_metrics.json",
+        "data/silver/contribution_metrics.json"
+      ],
+      "collaboration_networks": [
+        "data/silver/network_statistics.json",
+        "data/silver/repository_collaboration_analysis.json",
+        "data/silver/collaboration_edges.json",
+        "data/silver/user_collaboration_metrics.json"
+      ],
+      "temporal_analysis": [
+        "data/silver/temporal_events.json",
+        "data/silver/cycle_times.json",
+        "data/silver/temporal_statistics.json",
+        "data/silver/activity_heatmap.json",
+        "data/silver/daily_activity_summary.json"
+      ],
       "summary_statistics": []
     },
     "gold": {}
@@ -157,265 +176,367 @@
       "file_path": "data/bronze/member_juanpbarros20.json",
       "layer": "bronze",
       "size_bytes": 1508,
-      "modified_at": "2025-10-18T07:40:15.572975"
+      "modified_at": "2025-10-18T07:40:39.696981"
     },
     {
       "file_path": "data/bronze/repositories_detailed.json",
       "layer": "bronze",
       "size_bytes": 37135,
-      "modified_at": "2025-10-18T07:40:09.399332"
+      "modified_at": "2025-10-18T07:40:39.698981"
     },
     {
       "file_path": "data/bronze/prs_python-services.json",
       "layer": "bronze",
       "size_bytes": 235368,
-      "modified_at": "2025-10-18T07:40:16.306424"
+      "modified_at": "2025-10-18T07:40:39.698981"
     },
     {
       "file_path": "data/bronze/issue_events_interfaces-usuario.json",
       "layer": "bronze",
       "size_bytes": 731833,
-      "modified_at": "2025-10-18T07:40:19.344381"
+      "modified_at": "2025-10-18T07:40:39.694981"
     },
     {
       "file_path": "data/bronze/member_GuiMcs00.json",
       "layer": "bronze",
       "size_bytes": 1522,
-      "modified_at": "2025-10-18T07:40:15.572355"
+      "modified_at": "2025-10-18T07:40:39.696981"
     },
     {
       "file_path": "data/bronze/commits_java-services.json",
       "layer": "bronze",
       "size_bytes": 226544,
-      "modified_at": "2025-10-18T07:40:21.573349"
+      "modified_at": "2025-10-18T07:40:39.690981"
     },
     {
       "file_path": "data/bronze/member_polyanacunha.json",
       "layer": "bronze",
       "size_bytes": 1593,
-      "modified_at": "2025-10-18T07:40:15.573462"
+      "modified_at": "2025-10-18T07:40:39.696981"
     },
     {
       "file_path": "data/bronze/member_YuriNoriki.json",
       "layer": "bronze",
       "size_bytes": 1648,
-      "modified_at": "2025-10-18T07:40:15.572761"
+      "modified_at": "2025-10-18T07:40:39.696981"
     },
     {
       "file_path": "data/bronze/issue_events_java-services.json",
       "layer": "bronze",
       "size_bytes": 74820,
-      "modified_at": "2025-10-18T07:40:17.922401"
+      "modified_at": "2025-10-18T07:40:39.694981"
     },
     {
       "file_path": "data/bronze/commits_entidades.json",
       "layer": "bronze",
       "size_bytes": 71008,
-      "modified_at": "2025-10-18T07:40:22.419382"
+      "modified_at": "2025-10-18T07:40:39.689981"
     },
     {
       "file_path": "data/bronze/member_pedruck.json",
       "layer": "bronze",
       "size_bytes": 1512,
-      "modified_at": "2025-10-18T07:40:15.573174"
+      "modified_at": "2025-10-18T07:40:39.696981"
     },
     {
       "file_path": "data/bronze/commits_all.json",
       "layer": "bronze",
       "size_bytes": 889328,
-      "modified_at": "2025-10-18T07:40:22.729333"
+      "modified_at": "2025-10-18T07:40:39.688981"
     },
     {
       "file_path": "data/bronze/member_josue-oliveiraa.json",
       "layer": "bronze",
       "size_bytes": 1526,
-      "modified_at": "2025-10-18T07:40:15.572874"
+      "modified_at": "2025-10-18T07:40:39.696981"
     },
     {
       "file_path": "data/bronze/member_Lucas-Germano.json",
       "layer": "bronze",
       "size_bytes": 1538,
-      "modified_at": "2025-10-18T07:40:15.572653"
+      "modified_at": "2025-10-18T07:40:39.696981"
     },
     {
       "file_path": "data/bronze/member_Gabriel-br07.json",
       "layer": "bronze",
       "size_bytes": 1488,
-      "modified_at": "2025-10-18T07:40:15.572556"
+      "modified_at": "2025-10-18T07:40:39.696981"
     },
     {
       "file_path": "data/bronze/repositories_filtered.json",
       "layer": "bronze",
       "size_bytes": 90696,
-      "modified_at": "2025-10-18T07:40:07.738531"
+      "modified_at": "2025-10-18T07:40:39.698981"
     },
     {
       "file_path": "data/bronze/members_detailed.json",
       "layer": "bronze",
       "size_bytes": 24241,
-      "modified_at": "2025-10-18T07:40:15.571615"
+      "modified_at": "2025-10-18T07:40:39.697981"
     },
     {
       "file_path": "data/bronze/repo_java-services.json",
       "layer": "bronze",
       "size_bytes": 7057,
-      "modified_at": "2025-10-18T07:40:08.352180"
+      "modified_at": "2025-10-18T07:40:39.698981"
     },
     {
       "file_path": "data/bronze/repo_entidades.json",
       "layer": "bronze",
       "size_bytes": 6875,
-      "modified_at": "2025-10-18T07:40:09.040308"
+      "modified_at": "2025-10-18T07:40:39.698981"
     },
     {
       "file_path": "data/bronze/members_basic.json",
       "layer": "bronze",
       "size_bytes": 4918,
-      "modified_at": "2025-10-18T07:40:11.284485"
+      "modified_at": "2025-10-18T07:40:39.697981"
     },
     {
       "file_path": "data/bronze/member_araujow-g.json",
       "layer": "bronze",
       "size_bytes": 1654,
-      "modified_at": "2025-10-18T07:40:15.573366"
+      "modified_at": "2025-10-18T07:40:39.696981"
     },
     {
       "file_path": "data/bronze/member_thiagodiasz.json",
       "layer": "bronze",
       "size_bytes": 1527,
-      "modified_at": "2025-10-18T07:40:15.572459"
+      "modified_at": "2025-10-18T07:40:39.696981"
     },
     {
       "file_path": "data/bronze/member_whiterabbitholes.json",
       "layer": "bronze",
       "size_bytes": 1637,
-      "modified_at": "2025-10-18T07:40:15.573269"
+      "modified_at": "2025-10-18T07:40:39.696981"
     },
     {
       "file_path": "data/bronze/issues_interfaces-usuario.json",
       "layer": "bronze",
       "size_bytes": 81637,
-      "modified_at": "2025-10-18T07:40:18.552392"
+      "modified_at": "2025-10-18T07:40:39.695981"
     },
     {
       "file_path": "data/bronze/prs_interfaces-usuario.json",
       "layer": "bronze",
       "size_bytes": 102374,
-      "modified_at": "2025-10-18T07:40:18.554392"
+      "modified_at": "2025-10-18T07:40:39.697981"
     },
     {
       "file_path": "data/bronze/member_tauisilva.json",
       "layer": "bronze",
       "size_bytes": 1539,
-      "modified_at": "2025-10-18T07:40:15.572050"
+      "modified_at": "2025-10-18T07:40:39.696981"
     },
     {
       "file_path": "data/bronze/issue_events_python-services.json",
       "layer": "bronze",
       "size_bytes": 794833,
-      "modified_at": "2025-10-18T07:40:17.123412"
+      "modified_at": "2025-10-18T07:40:39.695981"
     },
     {
       "file_path": "data/bronze/commits_python-services.json",
       "layer": "bronze",
       "size_bytes": 305772,
-      "modified_at": "2025-10-18T07:40:21.123356"
+      "modified_at": "2025-10-18T07:40:39.690981"
     },
     {
       "file_path": "data/bronze/issues_python-services.json",
       "layer": "bronze",
       "size_bytes": 176059,
-      "modified_at": "2025-10-18T07:40:16.302424"
+      "modified_at": "2025-10-18T07:40:39.696981"
     },
     {
       "file_path": "data/bronze/prs_java-services.json",
       "layer": "bronze",
       "size_bytes": 17575,
-      "modified_at": "2025-10-18T07:40:17.513763"
+      "modified_at": "2025-10-18T07:40:39.697981"
     },
     {
       "file_path": "data/bronze/member_MartinsArtur.json",
       "layer": "bronze",
       "size_bytes": 1503,
-      "modified_at": "2025-10-18T07:40:15.573556"
+      "modified_at": "2025-10-18T07:40:39.696981"
     },
     {
       "file_path": "data/bronze/repositories_raw.json",
       "layer": "bronze",
       "size_bytes": 102596,
-      "modified_at": "2025-10-18T07:40:07.737531"
+      "modified_at": "2025-10-18T07:40:39.698981"
     },
     {
       "file_path": "data/bronze/commits_demo-repository.json",
       "layer": "bronze",
       "size_bytes": 4569,
-      "modified_at": "2025-10-18T07:40:22.714334"
+      "modified_at": "2025-10-18T07:40:39.688981"
     },
     {
       "file_path": "data/bronze/member_danrleypereira.json",
       "layer": "bronze",
       "size_bytes": 1671,
-      "modified_at": "2025-10-18T07:40:15.572159"
+      "modified_at": "2025-10-18T07:40:39.696981"
     },
     {
       "file_path": "data/bronze/registry.json",
       "layer": "bronze",
       "size_bytes": 2099,
-      "modified_at": "2025-10-18T07:40:22.730915"
+      "modified_at": "2025-10-18T07:40:39.698981"
     },
     {
       "file_path": "data/bronze/repo_demo-repository.json",
       "layer": "bronze",
       "size_bytes": 7208,
-      "modified_at": "2025-10-18T07:40:09.399101"
+      "modified_at": "2025-10-18T07:40:39.698981"
     },
     {
       "file_path": "data/bronze/repo_interfaces-usuario.json",
       "layer": "bronze",
       "size_bytes": 7292,
-      "modified_at": "2025-10-18T07:40:08.707148"
+      "modified_at": "2025-10-18T07:40:39.698981"
     },
     {
       "file_path": "data/bronze/issue_events_all.json",
       "layer": "bronze",
       "size_bytes": 1601110,
-      "modified_at": "2025-10-18T07:40:20.544364"
+      "modified_at": "2025-10-18T07:40:39.692981"
     },
     {
       "file_path": "data/bronze/member_Danilo019.json",
       "layer": "bronze",
       "size_bytes": 1629,
-      "modified_at": "2025-10-18T07:40:15.573658"
+      "modified_at": "2025-10-18T07:40:39.696981"
     },
     {
       "file_path": "data/bronze/member_Bnicole98.json",
       "layer": "bronze",
       "size_bytes": 1460,
-      "modified_at": "2025-10-18T07:40:15.573072"
+      "modified_at": "2025-10-18T07:40:39.696981"
     },
     {
       "file_path": "data/bronze/issues_all.json",
       "layer": "bronze",
       "size_bytes": 257506,
-      "modified_at": "2025-10-18T07:40:20.509364"
+      "modified_at": "2025-10-18T07:40:39.695981"
     },
     {
       "file_path": "data/bronze/commits_interfaces-usuario.json",
       "layer": "bronze",
       "size_bytes": 282144,
-      "modified_at": "2025-10-18T07:40:22.049343"
+      "modified_at": "2025-10-18T07:40:39.690981"
     },
     {
       "file_path": "data/bronze/prs_all.json",
       "layer": "bronze",
       "size_bytes": 354961,
-      "modified_at": "2025-10-18T07:40:20.515364"
+      "modified_at": "2025-10-18T07:40:39.697981"
     },
     {
       "file_path": "data/bronze/repo_python-services.json",
       "layer": "bronze",
       "size_bytes": 7150,
-      "modified_at": "2025-10-18T07:40:08.047527"
+      "modified_at": "2025-10-18T07:40:39.698981"
+    },
+    {
+      "file_path": "data/silver/members_analytics.json",
+      "layer": "silver",
+      "size_bytes": 7662,
+      "modified_at": "2025-10-18T07:40:53.941348"
+    },
+    {
+      "file_path": "data/silver/contribution_distribution.json",
+      "layer": "silver",
+      "size_bytes": 336,
+      "modified_at": "2025-10-18T07:40:53.968164"
+    },
+    {
+      "file_path": "data/silver/network_statistics.json",
+      "layer": "silver",
+      "size_bytes": 326,
+      "modified_at": "2025-10-18T07:40:53.989981"
+    },
+    {
+      "file_path": "data/silver/temporal_events.json",
+      "layer": "silver",
+      "size_bytes": 76096,
+      "modified_at": "2025-10-18T07:40:54.015091"
+    },
+    {
+      "file_path": "data/silver/maturity_bands.json",
+      "layer": "silver",
+      "size_bytes": 165,
+      "modified_at": "2025-10-18T07:40:53.945302"
+    },
+    {
+      "file_path": "data/silver/cycle_times.json",
+      "layer": "silver",
+      "size_bytes": 16596,
+      "modified_at": "2025-10-18T07:40:54.020256"
+    },
+    {
+      "file_path": "data/silver/repository_collaboration_analysis.json",
+      "layer": "silver",
+      "size_bytes": 1718,
+      "modified_at": "2025-10-18T07:40:53.989726"
+    },
+    {
+      "file_path": "data/silver/cross_repository_hubs.json",
+      "layer": "silver",
+      "size_bytes": 936,
+      "modified_at": "2025-10-18T07:40:53.989867"
+    },
+    {
+      "file_path": "data/silver/temporal_statistics.json",
+      "layer": "silver",
+      "size_bytes": 1091,
+      "modified_at": "2025-10-18T07:40:54.020800"
+    },
+    {
+      "file_path": "data/silver/collaboration_edges.json",
+      "layer": "silver",
+      "size_bytes": 10879,
+      "modified_at": "2025-10-18T07:40:53.988091"
+    },
+    {
+      "file_path": "data/silver/repository_metrics.json",
+      "layer": "silver",
+      "size_bytes": 962,
+      "modified_at": "2025-10-18T07:40:53.968030"
+    },
+    {
+      "file_path": "data/silver/registry.json",
+      "layer": "silver",
+      "size_bytes": 871,
+      "modified_at": "2025-10-18T07:40:54.022033"
+    },
+    {
+      "file_path": "data/silver/member_status_distribution.json",
+      "layer": "silver",
+      "size_bytes": 169,
+      "modified_at": "2025-10-18T07:40:53.941465"
+    },
+    {
+      "file_path": "data/silver/activity_heatmap.json",
+      "layer": "silver",
+      "size_bytes": 12044,
+      "modified_at": "2025-10-18T07:40:54.018559"
+    },
+    {
+      "file_path": "data/silver/user_collaboration_metrics.json",
+      "layer": "silver",
+      "size_bytes": 5376,
+      "modified_at": "2025-10-18T07:40:53.989544"
+    },
+    {
+      "file_path": "data/silver/daily_activity_summary.json",
+      "layer": "silver",
+      "size_bytes": 30350,
+      "modified_at": "2025-10-18T07:40:54.016091"
+    },
+    {
+      "file_path": "data/silver/contribution_metrics.json",
+      "layer": "silver",
+      "size_bytes": 4293,
+      "modified_at": "2025-10-18T07:40:53.967746"
     }
   ]
 }

@@ -1,0 +1,49 @@
+[
+  {
+    "_metadata": {
+      "extracted_at": "2025-10-18T07:40:53.989779",
+      "file_path": "data/silver/cross_repository_hubs.json",
+      "record_count": 4
+    }
+  },
+  {
+    "user": "danrleypereira",
+    "repositories": [
+      "python-services",
+      "interfaces-usuario",
+      "java-services",
+      "entidades",
+      "demo-repository"
+    ],
+    "repo_count": 5,
+    "total_collaborators": 17
+  },
+  {
+    "user": "GuiMcs00",
+    "repositories": [
+      "python-services",
+      "interfaces-usuario",
+      "entidades"
+    ],
+    "repo_count": 3,
+    "total_collaborators": 14
+  },
+  {
+    "user": "Gabriel-br07",
+    "repositories": [
+      "python-services",
+      "interfaces-usuario"
+    ],
+    "repo_count": 2,
+    "total_collaborators": 12
+  },
+  {
+    "user": "josue-oliveiraa",
+    "repositories": [
+      "python-services",
+      "interfaces-usuario"
+    ],
+    "repo_count": 2,
+    "total_collaborators": 12
+  }
+]

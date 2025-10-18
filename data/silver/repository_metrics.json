@@ -1,0 +1,57 @@
+[
+  {
+    "_metadata": {
+      "extracted_at": "2025-10-18T07:40:53.967892",
+      "file_path": "data/silver/repository_metrics.json",
+      "record_count": 6
+    }
+  },
+  {
+    "issues": 28,
+    "prs": 37,
+    "commits": 56,
+    "comments": 0,
+    "total_activity": 121,
+    "repo": "python-services"
+  },
+  {
+    "issues": 18,
+    "prs": 19,
+    "commits": 62,
+    "comments": 0,
+    "total_activity": 99,
+    "repo": "interfaces-usuario"
+  },
+  {
+    "issues": 0,
+    "prs": 3,
+    "commits": 56,
+    "comments": 0,
+    "total_activity": 59,
+    "repo": "java-services"
+  },
+  {
+    "issues": 0,
+    "prs": 0,
+    "commits": 15,
+    "comments": 0,
+    "total_activity": 15,
+    "repo": "entidades"
+  },
+  {
+    "issues": 1,
+    "prs": 1,
+    "commits": 1,
+    "comments": 0,
+    "total_activity": 3,
+    "repo": "unknown"
+  },
+  {
+    "issues": 0,
+    "prs": 0,
+    "commits": 1,
+    "comments": 0,
+    "total_activity": 1,
+    "repo": "demo-repository"
+  }
+]
