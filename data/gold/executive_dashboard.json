@@ -1,0 +1,131 @@
+{
+  "generated_at": "2025-10-18T02:44:44.983445",
+  "organization_health": {
+    "total_members": 24,
+    "active_contributors": 14,
+    "new_members": 3,
+    "established_members": 21
+  },
+  "collaboration_metrics": {
+    "total_collaborations": 78,
+    "cross_repo_contributors": 1,
+    "avg_collaborators_per_user": 12.0
+  },
+  "activity_metrics": {
+    "total_events": 119,
+    "avg_daily_activity": 0.03913186451825058,
+    "date_range_days": 3041
+  },
+  "top_contributors": [
+    {
+      "issues_created": 0,
+      "issues_assigned": 0,
+      "prs_authored": 0,
+      "prs_reviewed": 0,
+      "commits": 50,
+      "comments": 0,
+      "total_contributions": 50,
+      "user": "potomak",
+      "has_contributed": true
+    },
+    {
+      "issues_created": 0,
+      "issues_assigned": 0,
+      "prs_authored": 1,
+      "prs_reviewed": 0,
+      "commits": 15,
+      "comments": 0,
+      "total_contributions": 16,
+      "user": "danrleypereira",
+      "has_contributed": true
+    },
+    {
+      "issues_created": 0,
+      "issues_assigned": 0,
+      "prs_authored": 0,
+      "prs_reviewed": 0,
+      "commits": 10,
+      "comments": 0,
+      "total_contributions": 10,
+      "user": "polyanacunha",
+      "has_contributed": true
+    },
+    {
+      "issues_created": 0,
+      "issues_assigned": 0,
+      "prs_authored": 0,
+      "prs_reviewed": 0,
+      "commits": 10,
+      "comments": 0,
+      "total_contributions": 10,
+      "user": "madeindjs",
+      "has_contributed": true
+    },
+    {
+      "issues_created": 0,
+      "issues_assigned": 0,
+      "prs_authored": 0,
+      "prs_reviewed": 0,
+      "commits": 6,
+      "comments": 0,
+      "total_contributions": 6,
+      "user": "hoffmanc",
+      "has_contributed": true
+    },
+    {
+      "issues_created": 0,
+      "issues_assigned": 0,
+      "prs_authored": 0,
+      "prs_reviewed": 0,
+      "commits": 5,
+      "comments": 0,
+      "total_contributions": 5,
+      "user": "etagwerker",
+      "has_contributed": true
+    },
+    {
+      "issues_created": 0,
+      "issues_assigned": 0,
+      "prs_authored": 0,
+      "prs_reviewed": 0,
+      "commits": 4,
+      "comments": 0,
+      "total_contributions": 4,
+      "user": "Drahkir",
+      "has_contributed": true
+    },
+    {
+      "issues_created": 0,
+      "issues_assigned": 0,
+      "prs_authored": 0,
+      "prs_reviewed": 0,
+      "commits": 4,
+      "comments": 0,
+      "total_contributions": 4,
+      "user": "rulrok",
+      "has_contributed": true
+    },
+    {
+      "issues_created": 0,
+      "issues_assigned": 0,
+      "prs_authored": 0,
+      "prs_reviewed": 0,
+      "commits": 4,
+      "comments": 0,
+      "total_contributions": 4,
+      "user": "epatarroyo",
+      "has_contributed": true
+    },
+    {
+      "issues_created": 0,
+      "issues_assigned": 0,
+      "prs_authored": 0,
+      "prs_reviewed": 0,
+      "commits": 1,
+      "comments": 0,
+      "total_contributions": 1,
+      "user": "dependabot[bot]",
+      "has_contributed": true
+    }
+  ]
+}
