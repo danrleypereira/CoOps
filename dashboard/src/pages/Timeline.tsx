@@ -135,11 +135,7 @@ export default function Timeline() {
         const timeFilter = selectedTime === 'Last 7 days' ? 'last_7_days' : 'last_12_months';
         const repoFilter = selectedRepo || undefined;
         
-        console.log('Fetching timeline data...', { timeFilter, repoFilter });
-        
         const timelineData = await TimelineExtraction.extractTimelineData(timeFilter, repoFilter);
-        console.log('Timeline data received:', timelineData);
-        console.log('Number of dates:', timelineData.length);
         
         // Ensure we always have the correct number of days/months
         const expectedLength = selectedTime === 'Last 7 days' ? 7 : 12;
@@ -200,7 +196,6 @@ export default function Timeline() {
         
         // Extract the actual dates from JSON
         const dates = completeTimelineData.map(d => d.date);
-        console.log('Dates:', dates);
         
         // Format dates for display
         const formattedDates = dates.map(dateStr => {
@@ -218,13 +213,9 @@ export default function Timeline() {
             return `${monthDay} (${monthName})`;
           }
         });
-        console.log('Formatted dates:', formattedDates);
-        
         setDateLabels(formattedDates);
-        
+
         const transformedData = transformToUserActivity(completeTimelineData);
-        console.log('Transformed user data:', transformedData);
-        console.log('Number of users:', transformedData.length);
         
         setUserData(transformedData);
       } catch (error) {

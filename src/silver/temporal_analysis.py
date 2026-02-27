@@ -19,9 +19,15 @@ def process_temporal_analysis() -> List[str]:
     issue_events_data = load_json_data("data/bronze/issue_events_all.json") or []
 
     # Skip metadata entries
-    for data_list in [issues_data, prs_data, commits_data, issue_events_data]:
-        if isinstance(data_list, list) and len(data_list) > 0 and '_metadata' in data_list[0]:
-            data_list = data_list[1:]
+    def _strip_metadata(data):
+        if isinstance(data, list) and data and isinstance(data[0], dict) and '_metadata' in data[0]:
+            return data[1:]
+        return data
+
+    issues_data = _strip_metadata(issues_data)
+    prs_data = _strip_metadata(prs_data)
+    commits_data = _strip_metadata(commits_data)
+    issue_events_data = _strip_metadata(issue_events_data)
 
     generated_files = []
 

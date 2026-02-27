@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import type { FC } from 'react';
 
 interface LanguageData {
   language: string;
@@ -20,7 +21,7 @@ interface RepoStructureAnalysisProps {
   data: RepoAnalysis;
 }
 
-export const RepoStructureAnalysis: React.FC<RepoStructureAnalysisProps> = ({ data }) => {
+export const RepoStructureAnalysis: FC<RepoStructureAnalysisProps> = ({ data }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [analysis, setAnalysis] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);

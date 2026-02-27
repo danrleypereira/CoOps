@@ -1,9 +1,11 @@
+import type { FC } from 'react';
+
 interface VisualizationTabsProps {
   activeMode: 'treemap' | 'circlepack';
   onModeChange: (mode: 'treemap' | 'circlepack') => void;
 }
 
-export const VisualizationTabs: React.FC<VisualizationTabsProps> = ({
+export const VisualizationTabs: FC<VisualizationTabsProps> = ({
   activeMode,
   onModeChange
 }) => {

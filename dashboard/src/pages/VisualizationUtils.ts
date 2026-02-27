@@ -40,10 +40,7 @@ export class VisualizationUtils {
     if (this.cacheLoaded) return;
 
     try {
-      console.log(`[VisualizationUtils] Fetching from: ${this.DATA_URL}`);
-      console.log(`[VisualizationUtils] BASE_URL: ${import.meta.env.BASE_URL}`);
       const response = await fetch(this.DATA_URL);
-      console.log(`[VisualizationUtils] Response status: ${response.status}`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -60,7 +57,6 @@ export class VisualizationUtils {
       });
 
       this.cacheLoaded = true;
-      console.log(`[VisualizationUtils] Loaded ${this.cache.size} repositories into cache`);
     } catch (error) {
       console.error("Error loading language analysis data:", error);
       throw error;

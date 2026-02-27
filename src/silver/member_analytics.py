@@ -18,7 +18,7 @@ def calculate_maturity_score(member_data: dict) -> float:
         try:
             created_date = datetime.strptime(member_data['created_at'], '%Y-%m-%dT%H:%M:%SZ')
             account_age_days = (datetime.now() - created_date).days
-        except:
+        except (ValueError, TypeError):
             account_age_days = 0
     else:
         account_age_days = 0
@@ -42,7 +42,7 @@ def classify_member_status(member_data: dict) -> str:
         try:
             created_date = datetime.strptime(member_data['created_at'], '%Y-%m-%dT%H:%M:%SZ')
             account_age_days = (datetime.now() - created_date).days
-        except:
+        except (ValueError, TypeError):
             account_age_days = 0
     else:
         account_age_days = 0

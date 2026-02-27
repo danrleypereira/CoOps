@@ -660,7 +660,6 @@ export function ActivityHeatmap({
 
   useEffect(() => {
     if (!svgRef.current) {
-        console.error("[Heatmap] Error: SVG ref not found!");
         return;
     }
 

@@ -1,6 +1,6 @@
 {
-  "name": "meu-novo-app",
-  "homepage": "https://unb-mds.github.io/2025-2-Squad-01/",
+  "name": "coops-dashboard",
+  "homepage": "https://danrleypereira.github.io/CoOps/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -22,7 +22,6 @@
   "dependencies": {
     "d3": "^7.9.0",
     "d3-zoom": "^3.0.0",
-    "gh-pages": "^6.3.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.4"
@@ -57,6 +56,7 @@
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.45.0",
     "vite": "^7.1.7",
-    "vitest": "^4.0.15"
+    "vitest": "^4.0.15",
+    "gh-pages": "^6.3.0"
   }
 }

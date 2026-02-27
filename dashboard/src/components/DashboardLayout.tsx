@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import Sidebar from './Sidebar';
 import RepositoryToolbar from './RepositoryToolbar';
 import OverviewToolbar from './OverviewToolbar';
-import { SidebarProvider, useSidebar } from '../contexts/SidebarContext';
+import { useSidebar } from '../contexts/SidebarContext';
 import type { ProcessedActivityResponse } from '../pages/Utils';
 
 interface DashboardLayoutProps {
@@ -42,11 +42,11 @@ function DashboardLayoutInner({
   onNavigate,
 }: DashboardLayoutProps) {
   const { sidebarWidth } = useSidebar();
-  if (currentPage == 'repos') {
+  if (currentPage === 'repos') {
     onRepo = true;
     onOverview = false;
   }
-  else if (currentPage == 'overview') {
+  else if (currentPage === 'overview') {
     onOverview = true;
     onRepo = false;
   }
@@ -86,8 +86,6 @@ function DashboardLayoutInner({
 
 export default function DashboardLayout(props: DashboardLayoutProps) {
   return (
-    <SidebarProvider>
-      <DashboardLayoutInner {...props} />
-    </SidebarProvider>
+    <DashboardLayoutInner {...props} />
   );
 }
