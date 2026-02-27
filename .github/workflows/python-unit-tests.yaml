@@ -10,11 +10,11 @@ on:
       - "tests/**/*.py"
       - "requirements*.txt"
       - "pytest.ini"
-      - "front-end/src/**/*.{ts,tsx}"
-      - "front-end/src/**/*.test.{ts,tsx}"
-      - "front-end/package.json"
-      - "front-end/vite.config.ts"
-      - "front-end/vitest.config.ts"
+      - "dashboard/src/**/*.{ts,tsx}"
+      - "dashboard/src/**/*.test.{ts,tsx}"
+      - "dashboard/package.json"
+      - "dashboard/vite.config.ts"
+      - "dashboard/vitest.config.ts"
   workflow_dispatch:
 
 jobs:
@@ -93,7 +93,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: ./front-end
+        working-directory: ./dashboard
 
     steps:
       - name: Checkout
@@ -104,7 +104,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-          cache-dependency-path: front-end/package-lock.json
+          cache-dependency-path: dashboard/package-lock.json
 
       - name: Install dependencies
         run: npm ci
@@ -118,14 +118,14 @@ jobs:
         with:
           name: frontend-coverage-node-${{ matrix.node-version }}
           path: |
-            front-end/coverage/
+            dashboard/coverage/
           retention-days: 30
 
       - name: Comment Frontend coverage on PR
         if: github.event_name == 'pull_request' && matrix.node-version == '20'
         uses: davelosert/vitest-coverage-report-action@v2
         with:
-          working-directory: ./front-end
+          working-directory: ./dashboard
           json-summary-path: ./coverage/coverage-summary.json
           json-final-path: ./coverage/coverage-final.json
 

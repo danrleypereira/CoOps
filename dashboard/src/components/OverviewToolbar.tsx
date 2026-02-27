@@ -41,12 +41,6 @@ export default function OverviewToolbar({
   const [loading] = useState(false);
   const { sidebarWidth } = useSidebar();
 
-  // Fetch available repository names if data is not provided
-
-
-
-
-
   const handleItemClick = (itemId: string) => {
     navigate(`/overview/${itemId}`);
   };

@@ -1,8 +1,13 @@
 import { describe, test, expect, vi, beforeEach, afterEach } from 'vitest';
 import { Utils, ActivityData, ProcessedActivityResponse, ProcessedActivity, RepoActivitySummary } from './Utils';
 
-// Mock do fetch global
-global.fetch = vi.fn();
+// Mock the dataSource module
+vi.mock('../services/dataSource', () => ({
+  fetchData: vi.fn(),
+  filterMetadata: vi.fn((data: any[]) => data.filter((item: any) => !item._metadata)),
+}));
+
+import { fetchData, filterMetadata } from '../services/dataSource';
 
 describe('Utils Class', () => {
   const mockRawActivities: ActivityData[] = [
@@ -50,7 +55,7 @@ describe('Utils Class', () => {
 
   // ========== PROCESSACTIVITYDATA ==========
   describe('processActivityData', () => {
-    test('processa atividades sem filtro de tipo', () => {
+    test('processes activities without type filter', () => {
       const result = Utils.processActivityData(mockRawActivities);
 
       expect(result.totalActivities).toBe(4);
@@ -58,7 +63,7 @@ describe('Utils Class', () => {
       expect(result.repositories).toHaveLength(2);
     });
 
-    test('filtra por tipo commit', () => {
+    test('filters by commit type', () => {
       const result = Utils.processActivityData(mockRawActivities, 'commit');
 
       expect(result.totalActivities).toBe(2);
@@ -66,21 +71,21 @@ describe('Utils Class', () => {
       expect(result.repositories[0].name).toBe('repo1');
     });
 
-    test('filtra por tipo issue', () => {
+    test('filters by issue type', () => {
       const result = Utils.processActivityData(mockRawActivities, 'issue');
 
       expect(result.totalActivities).toBe(1);
       expect(result.repositories[0].activities[0].type).toBe('issue_created');
     });
 
-    test('filtra por tipo pull_request', () => {
+    test('filters by pull_request type', () => {
       const result = Utils.processActivityData(mockRawActivities, 'pull_request');
 
       expect(result.totalActivities).toBe(1);
       expect(result.repositories[0].activities[0].type).toBe('pr_created');
     });
 
-    test('agrupa atividades por repositório', () => {
+    test('groups activities by repository', () => {
       const result = Utils.processActivityData(mockRawActivities);
 
       const repo1 = result.repositories.find((r) => r.name === 'repo1');
@@ -90,14 +95,14 @@ describe('Utils Class', () => {
       expect(repo2?.activities).toHaveLength(1);
     });
 
-    test('atribui IDs incrementais aos repositórios', () => {
+    test('assigns incremental IDs to repositories', () => {
       const result = Utils.processActivityData(mockRawActivities);
 
       expect(result.repositories[0].id).toBe(1);
       expect(result.repositories[1].id).toBe(2);
     });
 
-    test('mapeia dados do usuário corretamente', () => {
+    test('maps user data correctly', () => {
       const result = Utils.processActivityData(mockRawActivities);
 
       const activity = result.repositories[0].activities[0];
@@ -105,7 +110,7 @@ describe('Utils Class', () => {
       expect(activity.user.displayName).toBe('user1');
     });
 
-    test('mapeia additions, deletions, totalLines', () => {
+    test('maps additions, deletions, totalLines', () => {
       const result = Utils.processActivityData(mockRawActivities);
 
       const activity = result.repositories[0].activities[0];
@@ -114,7 +119,7 @@ describe('Utils Class', () => {
       expect(activity.totalLines).toBe(1000);
     });
 
-    test('ignora entradas com _metadata', () => {
+    test('ignores entries with _metadata', () => {
       const dataWithMetadata = [
         { _metadata: { version: '1.0' } } as any,
         ...mockRawActivities,
@@ -125,7 +130,7 @@ describe('Utils Class', () => {
       expect(result.totalActivities).toBe(4);
     });
 
-    test('ignora atividades sem repo', () => {
+    test('ignores activities without repo', () => {
       const dataWithoutRepo = [
         {
           date: '2024-01-01T10:00:00Z',
@@ -141,7 +146,7 @@ describe('Utils Class', () => {
       expect(result.repoCount).toBe(0);
     });
 
-    test('usa displayName como Unknown quando user está vazio', () => {
+    test('uses displayName as Unknown when user is empty', () => {
       const dataWithEmptyUser = [
         {
           date: '2024-01-01T10:00:00Z',
@@ -156,14 +161,14 @@ describe('Utils Class', () => {
       expect(result.repositories[0].activities[0].user.displayName).toBe('Unknown');
     });
 
-    test('generatedAt está no formato ISO', () => {
+    test('generatedAt is in ISO format', () => {
       const result = Utils.processActivityData(mockRawActivities);
 
       expect(() => new Date(result.generatedAt)).not.toThrow();
       expect(result.generatedAt).toMatch(/^\d{4}-\d{2}-\d{2}T/);
     });
 
-    test('processa array vazio', () => {
+    test('processes empty array', () => {
       const result = Utils.processActivityData([]);
 
       expect(result.totalActivities).toBe(0);
@@ -171,7 +176,7 @@ describe('Utils Class', () => {
       expect(result.repositories).toEqual([]);
     });
 
-    test('filtra por tipo específico não mapeado', () => {
+    test('filters by unmapped specific type', () => {
       const dataWithCustomType = [
         {
           date: '2024-01-01T10:00:00Z',
@@ -189,24 +194,16 @@ describe('Utils Class', () => {
 
   // ========== FETCHANDPROCESSACTIVITYDATA ==========
   describe('fetchAndProcessActivityData', () => {
-    test('busca dados da URL correta', async () => {
-      (global.fetch as any).mockResolvedValue({
-        ok: true,
-        json: async () => mockRawActivities,
-      });
+    test('fetches data via fetchData service', async () => {
+      vi.mocked(fetchData).mockResolvedValue(mockRawActivities);
 
       await Utils.fetchAndProcessActivityData();
 
-      expect(global.fetch).toHaveBeenCalledWith(
-        'https://raw.githubusercontent.com/unb-mds/2025-2-Squad-01/extraction-overhall/data/silver/temporal_events.json'
-      );
+      expect(fetchData).toHaveBeenCalledWith('silver/temporal_events.json');
     });
 
-    test('retorna dados processados', async () => {
-      (global.fetch as any).mockResolvedValue({
-        ok: true,
-        json: async () => mockRawActivities,
-      });
+    test('returns processed data', async () => {
+      vi.mocked(fetchData).mockResolvedValue(mockRawActivities);
 
       const result = await Utils.fetchAndProcessActivityData();
 
@@ -214,52 +211,36 @@ describe('Utils Class', () => {
       expect(result.repoCount).toBe(2);
     });
 
-    test('passa filtro de tipo para processActivityData', async () => {
-      (global.fetch as any).mockResolvedValue({
-        ok: true,
-        json: async () => mockRawActivities,
-      });
+    test('passes type filter to processActivityData', async () => {
+      vi.mocked(fetchData).mockResolvedValue(mockRawActivities);
 
       const result = await Utils.fetchAndProcessActivityData('commit');
 
       expect(result.totalActivities).toBe(2);
     });
 
-    test('lança erro quando fetch falha', async () => {
-      (global.fetch as any).mockResolvedValue({
-        ok: false,
-        status: 404,
-        statusText: 'Not Found',
-      });
+    test('throws error when fetchData fails', async () => {
+      vi.mocked(fetchData).mockRejectedValue(new Error('Failed to fetch data: 404 Not Found'));
 
       await expect(Utils.fetchAndProcessActivityData()).rejects.toThrow(
         'Failed to fetch data: 404 Not Found'
       );
     });
 
-    test('lança erro com status 500', async () => {
-      (global.fetch as any).mockResolvedValue({
-        ok: false,
-        status: 500,
-        statusText: 'Internal Server Error',
-      });
+    test('throws error with status 500', async () => {
+      vi.mocked(fetchData).mockRejectedValue(new Error('Failed to fetch data: 500 Internal Server Error'));
 
       await expect(Utils.fetchAndProcessActivityData()).rejects.toThrow('500');
     });
 
-    test('lança erro quando response.json() falha', async () => {
-      (global.fetch as any).mockResolvedValue({
-        ok: true,
-        json: async () => {
-          throw new Error('JSON parse error');
-        },
-      });
+    test('throws error when JSON parsing fails', async () => {
+      vi.mocked(fetchData).mockRejectedValue(new Error('JSON parse error'));
 
       await expect(Utils.fetchAndProcessActivityData()).rejects.toThrow('JSON parse error');
     });
 
-    test('lança erro quando fetch é rejeitado', async () => {
-      (global.fetch as any).mockRejectedValue(new Error('Network error'));
+    test('throws error when fetchData is rejected', async () => {
+      vi.mocked(fetchData).mockRejectedValue(new Error('Network error'));
 
       await expect(Utils.fetchAndProcessActivityData()).rejects.toThrow('Network error');
     });
@@ -291,7 +272,7 @@ describe('Utils Class', () => {
       },
     ];
 
-    test('agrupa por dia por padrão', () => {
+    test('groups by day by default', () => {
       const result = Utils.aggregateBasicData(mockProcessedActivities);
 
       expect(result).toHaveLength(2);
@@ -299,7 +280,7 @@ describe('Utils Class', () => {
       expect(result[1].date).toBe('2024-01-02');
     });
 
-    test('agrupa por hora quando groupByHour é true', () => {
+    test('groups by hour when groupByHour is true', () => {
       const result = Utils.aggregateBasicData(mockProcessedActivities, { groupByHour: true });
 
       expect(result).toHaveLength(3);
@@ -307,35 +288,35 @@ describe('Utils Class', () => {
       expect(result[1].date).toMatch(/T11:00:00/);
     });
 
-    test('conta commits corretamente', () => {
+    test('counts commits correctly', () => {
       const result = Utils.aggregateBasicData(mockProcessedActivities);
 
-      expect(result[0].value).toBe(2); // 2 commits no dia 01
-      expect(result[1].value).toBe(1); // 1 commit no dia 02
+      expect(result[0].value).toBe(2); // 2 commits on day 01
+      expect(result[1].value).toBe(1); // 1 commit on day 02
     });
 
-    test('soma additions corretamente', () => {
+    test('sums additions correctly', () => {
       const result = Utils.aggregateBasicData(mockProcessedActivities);
 
       expect(result[0].additions).toBe(300); // 100 + 200
       expect(result[1].additions).toBe(50);
     });
 
-    test('soma deletions corretamente', () => {
+    test('sums deletions correctly', () => {
       const result = Utils.aggregateBasicData(mockProcessedActivities);
 
       expect(result[0].deletions).toBe(80); // 50 + 30
       expect(result[1].deletions).toBe(10);
     });
 
-    test('calcula totalLines cumulativo', () => {
+    test('calculates cumulative totalLines', () => {
       const result = Utils.aggregateBasicData(mockProcessedActivities);
 
       expect(result[0].totalLines).toBe(220); // 300 - 80
       expect(result[1].totalLines).toBe(260); // 220 + (50 - 10)
     });
 
-    test('totalLines nunca é negativo', () => {
+    test('totalLines is never negative', () => {
       const activitiesWithMoreDeletions: ProcessedActivity[] = [
         {
           date: '2024-01-01T10:00:00Z',
@@ -351,7 +332,7 @@ describe('Utils Class', () => {
       expect(result[0].totalLines).toBe(0);
     });
 
-    test('aplica filtro cutoffDate', () => {
+    test('applies cutoffDate filter', () => {
       const cutoff = new Date('2024-01-02T00:00:00Z');
       const result = Utils.aggregateBasicData(mockProcessedActivities, { cutoffDate: cutoff });
 
@@ -359,7 +340,7 @@ describe('Utils Class', () => {
       expect(result[0].date).toBe('2024-01-02');
     });
 
-    test('usa 0 para additions quando undefined', () => {
+    test('uses 0 for additions when undefined', () => {
       const activitiesWithoutAdditions: ProcessedActivity[] = [
         {
           date: '2024-01-01T10:00:00Z',
@@ -373,7 +354,7 @@ describe('Utils Class', () => {
       expect(result[0].additions).toBe(0);
     });
 
-    test('usa 0 para deletions quando undefined', () => {
+    test('uses 0 for deletions when undefined', () => {
       const activitiesWithoutDeletions: ProcessedActivity[] = [
         {
           date: '2024-01-01T10:00:00Z',
@@ -387,7 +368,7 @@ describe('Utils Class', () => {
       expect(result[0].deletions).toBe(0);
     });
 
-    test('ordena resultados por data', () => {
+    test('sorts results by date', () => {
       const unsortedActivities: ProcessedActivity[] = [
         {
           date: '2024-01-03T10:00:00Z',
@@ -413,13 +394,13 @@ describe('Utils Class', () => {
       expect(result[2].date).toBe('2024-01-03');
     });
 
-    test('processa array vazio', () => {
+    test('processes empty array', () => {
       const result = Utils.aggregateBasicData([]);
 
       expect(result).toEqual([]);
     });
 
-    test('agrupa múltiplos commits na mesma hora', () => {
+    test('groups multiple commits in the same hour', () => {
       const sameHourActivities: ProcessedActivity[] = [
         {
           date: '2024-01-01T10:30:00Z',
@@ -468,7 +449,7 @@ describe('Utils Class', () => {
       },
     ];
 
-    test('conta commits por contribuidor', () => {
+    test('counts commits per contributor', () => {
       const result = Utils.aggregatePieData(mockPieActivities);
 
       const alice = result.find((d) => d.label === 'Alice');
@@ -478,14 +459,14 @@ describe('Utils Class', () => {
       expect(bob?.value).toBe(1);
     });
 
-    test('ordena contribuidores por contagem', () => {
+    test('sorts contributors by count', () => {
       const result = Utils.aggregatePieData(mockPieActivities);
 
       expect(result[0].label).toBe('Alice'); // 2 commits
-      expect(result[1].label).toBe('Bob'); // 1 commit ou Charlie
+      expect(result[1].label).toBe('Bob'); // 1 commit or Charlie
     });
 
-    test('limita a topN contribuidores', () => {
+    test('limits to topN contributors', () => {
       const manyContributors: ProcessedActivity[] = Array.from({ length: 20 }, (_, i) => ({
         date: '2024-01-01T10:00:00Z',
         type: 'commit',
@@ -497,7 +478,7 @@ describe('Utils Class', () => {
       expect(result.length).toBeLessThanOrEqual(6); // 5 top + Others
     });
 
-    test('agrupa contribuidores restantes em "Others"', () => {
+    test('groups remaining contributors into "Others"', () => {
       const manyContributors: ProcessedActivity[] = [
         ...Array.from({ length: 10 }, (_, i) => ({
           date: '2024-01-01T10:00:00Z',
@@ -513,14 +494,14 @@ describe('Utils Class', () => {
       expect(others?.value).toBe(5); // 10 total - 5 top
     });
 
-    test('não inclui "Others" quando todos cabem em topN', () => {
+    test('does not include "Others" when all fit in topN', () => {
       const result = Utils.aggregatePieData(mockPieActivities, {}, 10);
 
       const others = result.find((d) => d.label === 'Others');
       expect(others).toBeUndefined();
     });
 
-    test('atribui cores usando d3-scale', () => {
+    test('assigns colors using d3-scale', () => {
       const result = Utils.aggregatePieData(mockPieActivities);
 
       result.forEach((datum) => {
@@ -530,7 +511,7 @@ describe('Utils Class', () => {
       });
     });
 
-    test('aplica cutoffDate para Last 24 hours', () => {
+    test('applies cutoffDate for Last 24 hours', () => {
       const cutoff = new Date('2024-01-02T00:00:00Z');
       const result = Utils.aggregatePieData(mockPieActivities, {
         cutoffDate: cutoff,
@@ -541,7 +522,7 @@ describe('Utils Class', () => {
       expect(result[0].label).toBe('Charlie');
     });
 
-    test('aplica cutoffDate para outros períodos', () => {
+    test('applies cutoffDate for other time periods', () => {
       const cutoff = new Date('2024-01-02T00:00:00Z');
       const result = Utils.aggregatePieData(mockPieActivities, {
         cutoffDate: cutoff,
@@ -552,13 +533,13 @@ describe('Utils Class', () => {
       expect(result[0].label).toBe('Charlie');
     });
 
-    test('usa displayName quando disponível', () => {
+    test('uses displayName when available', () => {
       const result = Utils.aggregatePieData(mockPieActivities);
 
       expect(result[0].label).toBe('Alice');
     });
 
-    test('usa login quando displayName está vazio', () => {
+    test('uses login when displayName is empty', () => {
       const activitiesWithoutDisplay: ProcessedActivity[] = [
         {
           date: '2024-01-01T10:00:00Z',
@@ -572,7 +553,7 @@ describe('Utils Class', () => {
       expect(result[0].label).toBe('user1');
     });
 
-    test('usa "Unknown" quando login e displayName estão vazios', () => {
+    test('uses "Unknown" when both login and displayName are empty', () => {
       const activitiesWithoutUser: ProcessedActivity[] = [
         {
           date: '2024-01-01T10:00:00Z',
@@ -586,7 +567,7 @@ describe('Utils Class', () => {
       expect(result[0].label).toBe('Unknown');
     });
 
-    test('processa array vazio', () => {
+    test('processes empty array', () => {
       const result = Utils.aggregatePieData([]);
 
       expect(result).toEqual([]);
@@ -613,26 +594,26 @@ describe('Utils Class', () => {
       },
     ];
 
-    test('filtra por membro único', () => {
+    test('filters by single member', () => {
       const result = Utils.applyFilters(mockFilterActivities, ['Alice'], 'All Time');
 
       expect(result).toHaveLength(1);
       expect(result[0].user.displayName).toBe('Alice');
     });
 
-    test('filtra por múltiplos membros', () => {
+    test('filters by multiple members', () => {
       const result = Utils.applyFilters(mockFilterActivities, ['Alice', 'Bob'], 'All Time');
 
       expect(result).toHaveLength(2);
     });
 
-    test('não filtra quando selectedMembers está vazio', () => {
+    test('does not filter when selectedMembers is empty', () => {
       const result = Utils.applyFilters(mockFilterActivities, [], 'All Time');
 
       expect(result).toHaveLength(3);
     });
 
-    test('filtra por Last 24 hours', () => {
+    test('filters by Last 24 hours', () => {
       vi.useFakeTimers();
       vi.setSystemTime(new Date('2024-01-03T12:00:00Z'));
 
@@ -644,7 +625,7 @@ describe('Utils Class', () => {
       vi.useRealTimers();
     });
 
-    test('filtra por Last 6 months', () => {
+    test('filters by Last 6 months', () => {
       vi.useFakeTimers();
       vi.setSystemTime(new Date('2024-07-01T10:00:00Z'));
 
@@ -655,7 +636,7 @@ describe('Utils Class', () => {
       vi.useRealTimers();
     });
 
-    test('filtra por Last Year', () => {
+    test('filters by Last Year', () => {
       vi.useFakeTimers();
       vi.setSystemTime(new Date('2025-01-01T10:00:00Z'));
 
@@ -666,13 +647,13 @@ describe('Utils Class', () => {
       vi.useRealTimers();
     });
 
-    test('não filtra quando selectedTime é All Time', () => {
+    test('does not filter when selectedTime is All Time', () => {
       const result = Utils.applyFilters(mockFilterActivities, [], 'All Time');
 
       expect(result).toHaveLength(3);
     });
 
-    test('aplica filtros de membro e tempo simultaneamente', () => {
+    test('applies member and time filters simultaneously', () => {
       vi.useFakeTimers();
       vi.setSystemTime(new Date('2024-01-03T12:00:00Z'));
 
@@ -684,7 +665,7 @@ describe('Utils Class', () => {
       vi.useRealTimers();
     });
 
-    test('usa login quando displayName está vazio', () => {
+    test('uses login when displayName is empty', () => {
       const activitiesWithLogin: ProcessedActivity[] = [
         {
           date: '2024-01-01T10:00:00Z',
@@ -698,7 +679,7 @@ describe('Utils Class', () => {
       expect(result).toHaveLength(1);
     });
 
-    test('usa "Unknown" quando login e displayName estão vazios', () => {
+    test('uses "Unknown" when both login and displayName are empty', () => {
       const activitiesWithoutUser: ProcessedActivity[] = [
         {
           date: '2024-01-01T10:00:00Z',
@@ -745,64 +726,64 @@ describe('Utils Class', () => {
       },
     ];
 
-    test('seleciona repositório por ID', () => {
+    test('selects repository by ID', () => {
       const result = Utils.selectRepoAndFilter(mockRepositories, '1');
 
       expect(result.selectedRepo?.id).toBe(1);
       expect(result.selectedRepo?.name).toBe('repo1');
     });
 
-    test('retorna "All repositories" quando repoParam é "all"', () => {
+    test('returns "All repositories" when repoParam is "all"', () => {
       const result = Utils.selectRepoAndFilter(mockRepositories, 'all');
 
       expect(result.selectedRepo?.name).toBe('All repositories');
       expect(result.selectedRepo?.id).toBe(-1);
     });
 
-    test('retorna "All repositories" quando repoParam é null', () => {
+    test('returns "All repositories" when repoParam is null', () => {
       const result = Utils.selectRepoAndFilter(mockRepositories, null);
 
       expect(result.selectedRepo?.name).toBe('All repositories');
     });
 
-    test('agrega atividades de todos os repos quando "all"', () => {
+    test('aggregates activities from all repos when "all"', () => {
       const result = Utils.selectRepoAndFilter(mockRepositories, 'all');
 
       expect(result.selectedRepo?.activities).toHaveLength(3);
     });
 
-    test('extrai lista de membros únicos', () => {
+    test('extracts unique member list', () => {
       const result = Utils.selectRepoAndFilter(mockRepositories, '1');
 
       expect(result.members).toEqual(['Alice', 'Bob']);
     });
 
-    test('ordena membros alfabeticamente', () => {
+    test('sorts members alphabetically', () => {
       const result = Utils.selectRepoAndFilter(mockRepositories, 'all');
 
       expect(result.members).toEqual(['Alice', 'Bob', 'Charlie']);
     });
 
-    test('retorna null quando repo não é encontrado', () => {
+    test('returns null when repo is not found', () => {
       const result = Utils.selectRepoAndFilter(mockRepositories, '999');
 
       expect(result.selectedRepo).toBeNull();
       expect(result.members).toEqual([]);
     });
 
-    test('trata repoParam não numérico como "all"', () => {
+    test('treats non-numeric repoParam as "all"', () => {
       const result = Utils.selectRepoAndFilter(mockRepositories, 'invalid');
 
       expect(result.selectedRepo?.name).toBe('All repositories');
     });
 
-    test('usa displayName quando disponível', () => {
+    test('uses displayName when available', () => {
       const result = Utils.selectRepoAndFilter(mockRepositories, '1');
 
       expect(result.members).toContain('Alice');
     });
 
-    test('usa login quando displayName está vazio', () => {
+    test('uses login when displayName is empty', () => {
       const reposWithLogin: RepoActivitySummary[] = [
         {
           id: 1,
@@ -822,7 +803,7 @@ describe('Utils Class', () => {
       expect(result.members).toContain('alice');
     });
 
-    test('usa "Unknown" quando login e displayName estão vazios', () => {
+    test('uses "Unknown" when both login and displayName are empty', () => {
       const reposWithoutUser: RepoActivitySummary[] = [
         {
           id: 1,
@@ -842,7 +823,7 @@ describe('Utils Class', () => {
       expect(result.members).toContain('Unknown');
     });
 
-    test('remove duplicatas de membros', () => {
+    test('removes duplicate members', () => {
       const reposWithDuplicates: RepoActivitySummary[] = [
         {
           id: 1,
@@ -879,50 +860,50 @@ describe('Utils Class', () => {
       vi.useRealTimers();
     });
 
-    test('calcula Last 24 hours', () => {
+    test('calculates Last 24 hours', () => {
       const result = Utils.calculateCutoffDate('Last 24 hours');
 
       expect(result).toBeInstanceOf(Date);
       expect(result?.toISOString()).toBe('2024-01-09T12:00:00.000Z');
     });
 
-    test('calcula Last 7 days', () => {
+    test('calculates Last 7 days', () => {
       const result = Utils.calculateCutoffDate('Last 7 days');
 
       expect(result?.toISOString()).toBe('2024-01-03T12:00:00.000Z');
     });
 
-    test('calcula Last 30 days', () => {
+    test('calculates Last 30 days', () => {
       const result = Utils.calculateCutoffDate('Last 30 days');
 
       expect(result?.toISOString()).toBe('2023-12-11T12:00:00.000Z');
     });
 
-    test('calcula Last 6 months', () => {
+    test('calculates Last 6 months', () => {
       const result = Utils.calculateCutoffDate('Last 6 months');
 
       expect(result?.toISOString()).toBe('2023-07-10T12:00:00.000Z');
     });
 
-    test('calcula Last Year', () => {
+    test('calculates Last Year', () => {
       const result = Utils.calculateCutoffDate('Last Year');
 
       expect(result?.toISOString()).toBe('2023-01-10T12:00:00.000Z');
     });
 
-    test('retorna null para All Time', () => {
+    test('returns null for All Time', () => {
       const result = Utils.calculateCutoffDate('All Time');
 
       expect(result).toBeNull();
     });
 
-    test('retorna null para string desconhecida', () => {
+    test('returns null for unknown string', () => {
       const result = Utils.calculateCutoffDate('Unknown');
 
       expect(result).toBeNull();
     });
 
-    test('retorna null para string vazia', () => {
+    test('returns null for empty string', () => {
       const result = Utils.calculateCutoffDate('');
 
       expect(result).toBeNull();
@@ -931,7 +912,7 @@ describe('Utils Class', () => {
 
   // ========== EDGE CASES ==========
   describe('Edge Cases', () => {
-    test('processActivityData com caracteres especiais no nome do repo', () => {
+    test('processActivityData with special characters in repo name', () => {
       const dataWithSpecialChars: ActivityData[] = [
         {
           date: '2024-01-01T10:00:00Z',
@@ -946,7 +927,7 @@ describe('Utils Class', () => {
       expect(result.repositories[0].name).toBe('repo-with-dash_and_underscore');
     });
 
-    test('aggregateBasicData com valores muito grandes', () => {
+    test('aggregateBasicData with very large values', () => {
       const largeActivities: ProcessedActivity[] = [
         {
           date: '2024-01-01T10:00:00Z',
@@ -963,7 +944,7 @@ describe('Utils Class', () => {
       expect(result[0].deletions).toBe(888888);
     });
 
-    test('aggregatePieData com muitos contribuidores diferentes', () => {
+    test('aggregatePieData with many different contributors', () => {
       const manyContributors: ProcessedActivity[] = Array.from({ length: 100 }, (_, i) => ({
         date: '2024-01-01T10:00:00Z',
         type: 'commit',
@@ -977,18 +958,18 @@ describe('Utils Class', () => {
       expect(others?.value).toBe(90);
     });
 
-    test('applyFilters com datas no limite do cutoff', () => {
+    test('applyFilters with dates at the cutoff boundary', () => {
       vi.useFakeTimers();
       vi.setSystemTime(new Date('2024-01-10T12:00:00Z'));
 
       const borderlineActivities: ProcessedActivity[] = [
         {
-          date: '2024-01-09T12:00:00Z', // Exatamente 24h atrás
+          date: '2024-01-09T12:00:00Z', // Exactly 24h ago
           type: 'commit',
           user: { login: 'user1', displayName: 'User One' },
         },
         {
-          date: '2024-01-09T11:59:59Z', // 1 segundo antes de 24h
+          date: '2024-01-09T11:59:59Z', // 1 second before 24h
           type: 'commit',
           user: { login: 'user2', displayName: 'User Two' },
         },
@@ -1004,11 +985,8 @@ describe('Utils Class', () => {
 
   // ========== INTEGRATION ==========
   describe('Integration Tests', () => {
-    test('fluxo completo: fetch -> process -> aggregate', async () => {
-      (global.fetch as any).mockResolvedValue({
-        ok: true,
-        json: async () => mockRawActivities,
-      });
+    test('full flow: fetch -> process -> aggregate', async () => {
+      vi.mocked(fetchData).mockResolvedValue(mockRawActivities);
 
       const processed = await Utils.fetchAndProcessActivityData('commit');
       const repo = processed.repositories[0];
@@ -1019,15 +997,12 @@ describe('Utils Class', () => {
       expect(basicData[0]).toHaveProperty('value');
     });
 
-    test('fluxo completo com filtros', async () => {
-      (global.fetch as any).mockResolvedValue({
-        ok: true,
-        json: async () => mockRawActivities,
-      });
+    test('full flow with filters', async () => {
+      vi.mocked(fetchData).mockResolvedValue(mockRawActivities);
 
       const processed = await Utils.fetchAndProcessActivityData();
       const { selectedRepo, members } = Utils.selectRepoAndFilter(processed.repositories, 'all');
-      
+
       if (selectedRepo) {
         const filtered = Utils.applyFilters(selectedRepo.activities, [members[0]], 'All Time');
         const pieData = Utils.aggregatePieData(filtered);

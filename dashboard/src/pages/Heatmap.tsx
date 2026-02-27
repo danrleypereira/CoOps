@@ -2,10 +2,11 @@ import { useState, useEffect } from 'react';
 import DashboardLayout from '../components/DashboardLayout';
 import { ActivityHeatmap } from '../components/Graphs';
 import { HeatmapDataPoint } from '../types';
-import { useMemo } from 'react'; 
-import { useSearchParams } from 'react-router-dom'; 
-import { Utils } from './Utils'; 
-import type { ProcessedActivityResponse, RepoActivitySummary } from './Utils'; 
+import { useMemo } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { Utils } from './Utils';
+import { fetchData, filterMetadata } from '../services/dataSource';
+import type { ProcessedActivityResponse, RepoActivitySummary } from './Utils';
 
 
 type HeatmapPageData = {
@@ -13,52 +14,41 @@ type HeatmapPageData = {
 };
 
 
-export default function HeatmapPage() { 
+export default function HeatmapPage() {
 
   const [heatmapData, setHeatmapData] = useState<HeatmapDataPoint[] | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [ mainData, setMainData ] = useState<ProcessedActivityResponse | null>(null); 
+  const [ mainData, setMainData ] = useState<ProcessedActivityResponse | null>(null);
   const [searchParams] = useSearchParams();
   const [showLegend, setShowLegend] = useState<boolean>(false);
 
-  
+
   useEffect(() => {
-    async function fetchData() {
+    async function loadData() {
       try {
         setLoading(true);
         setError(null);
 
-        // Busca os dois arquivos em paralelo
-        const [collabResponse, heatmapResponse, processedMainData] = await Promise.all([
-          fetch('https://raw.githubusercontent.com/unb-mds/2025-2-Squad-01/main/data/silver/collaboration_edges.json'),
-          fetch('https://raw.githubusercontent.com/unb-mds/2025-2-Squad-01/main/data/silver/activity_heatmap.json'), 
+        // Fetch the two files in parallel
+        const [heatmapRawData, processedMainData] = await Promise.all([
+          fetchData<HeatmapDataPoint[]>('silver/activity_heatmap.json'),
           Utils.fetchAndProcessActivityData('commit')
         ]);
 
-        if (!collabResponse.ok) {
-          throw new Error(`Falha ao buscar dados de colaboração (status: ${collabResponse.status})`);
-        }
-        if (!heatmapResponse.ok) {
-          throw new Error(`Falha ao buscar dados do heatmap (status: ${heatmapResponse.status})`);
-        }
-
-  
-        const heatmapData: HeatmapDataPoint[] = await heatmapResponse.json();
-
-        setHeatmapData(heatmapData.filter(d => d && !d._metadata));
+        setHeatmapData(filterMetadata(heatmapRawData));
         setMainData(processedMainData);
 
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'Ocorreu um erro desconhecido');
+        setError(err instanceof Error ? err.message : 'An unknown error occurred');
         setHeatmapData(null);
         setMainData(null);
       } finally {
         setLoading(false);
       }
     }
-    fetchData();
-  }, []); // Array vazio = rodar só na montagem
+    loadData();
+  }, []); // Empty array = run only on mount
 
   const repositories = useMemo<RepoActivitySummary[]>(() => mainData?.repositories ?? [], [mainData]);
 
@@ -101,7 +91,7 @@ export default function HeatmapPage() {
         </div>
       )}
 
-      {/* --- Estado de Sucesso (Dados Carregados) --- */}
+      {/* --- Success State (Data Loaded) --- */}
       {heatmapData && mainData && selectedRepo && !loading && !error && (
         <div className="h-fit mt-30">
           <h1 className="text-3xl font-bold text-white mb-2">Organization Activity Heatmap Analysis</h1>

@@ -106,8 +106,8 @@ python src/bronze_extract.py \
   "is_merge": false,
   "parent_count": 1,
   "tree_sha": "def456...",
-  "repo_name": "2025-2-Squad-01",
-  "full_name": "unb-mds/2025-2-Squad-01"
+  "repo_name": "my-repo",
+  "full_name": "my-org/my-repo"
 }
 ```
 

@@ -1,13 +1,17 @@
 import { describe, test, expect, vi, beforeEach, afterEach } from 'vitest';
 import { TimelineExtraction, TimelineData } from './TimelineExtraction';
+import { fetchData } from '../services/dataSource';
 
-// Mock do fetch global
-global.fetch = vi.fn();
+// Mock the dataSource service
+vi.mock('../services/dataSource', () => ({
+  fetchData: vi.fn(),
+  filterMetadata: vi.fn((data) => data.filter((item: any) => !item._metadata)),
+}));
 
 describe('TimelineExtraction Class', () => {
   const mockRawData = [
     {
-      _metadata: { version: '1.0' }, // Deve ser filtrado
+      _metadata: { version: '1.0' }, // Should be filtered out
     },
     {
       date: '2024-01-01',
@@ -51,7 +55,7 @@ describe('TimelineExtraction Class', () => {
     },
     {
       date: '2024-01-03',
-      authors: [], // Dia vazio - deve ser mantido
+      authors: [], // Empty day - should be kept
     },
   ];
 
@@ -65,64 +69,45 @@ describe('TimelineExtraction Class', () => {
 
   // ========== EXTRACTTIMELINEDATA - SUCCESS CASES ==========
   describe('extractTimelineData - Success Cases', () => {
-    test('busca dados para last_7_days', async () => {
-      (global.fetch as any).mockResolvedValue({
-        ok: true,
-        json: async () => mockRawData,
-      });
+    test('fetches data for last_7_days', async () => {
+      (fetchData as any).mockResolvedValue(mockRawData);
 
       const result = await TimelineExtraction.extractTimelineData('last_7_days');
 
-      expect(global.fetch).toHaveBeenCalledWith(
-        'https://raw.githubusercontent.com/unb-mds/2025-2-Squad-01/extraction-overhall/data/gold/timeline_last_7_days.json'
-      );
+      expect(fetchData).toHaveBeenCalledWith('gold/timeline_last_7_days.json');
       expect(result).toBeDefined();
       expect(Array.isArray(result)).toBe(true);
     });
 
-    test('busca dados para last_12_months', async () => {
-      (global.fetch as any).mockResolvedValue({
-        ok: true,
-        json: async () => mockRawData,
-      });
+    test('fetches data for last_12_months', async () => {
+      (fetchData as any).mockResolvedValue(mockRawData);
 
       const result = await TimelineExtraction.extractTimelineData('last_12_months');
 
-      expect(global.fetch).toHaveBeenCalledWith(
-        'https://raw.githubusercontent.com/unb-mds/2025-2-Squad-01/extraction-overhall/data/gold/timeline_last_12_months.json'
-      );
+      expect(fetchData).toHaveBeenCalledWith('gold/timeline_last_12_months.json');
       expect(result).toBeDefined();
     });
 
-    test('busca dados com repo_filter', async () => {
-      (global.fetch as any).mockResolvedValue({
-        ok: true,
-        json: async () => mockRawData,
-      });
+    test('fetches data with repo_filter', async () => {
+      (fetchData as any).mockResolvedValue(mockRawData);
 
       const result = await TimelineExtraction.extractTimelineData('last_7_days', '2025-2-Squad-01');
 
       expect(result).toBeDefined();
-      expect(global.fetch).toHaveBeenCalled();
+      expect(fetchData).toHaveBeenCalled();
     });
 
-    test('processa dados corretamente após fetch', async () => {
-      (global.fetch as any).mockResolvedValue({
-        ok: true,
-        json: async () => mockRawData,
-      });
+    test('processes data correctly after fetch', async () => {
+      (fetchData as any).mockResolvedValue(mockRawData);
 
       const result = await TimelineExtraction.extractTimelineData('last_7_days');
 
-      // Verifica que metadata foi removido
-      expect(result.length).toBe(3); // 3 dias sem metadata
+      // Verify metadata was removed
+      expect(result.length).toBe(3); // 3 days without metadata
     });
 
-    test('retorna array de TimelineData com estrutura correta', async () => {
-      (global.fetch as any).mockResolvedValue({
-        ok: true,
-        json: async () => mockRawData,
-      });
+    test('returns TimelineData array with correct structure', async () => {
+      (fetchData as any).mockResolvedValue(mockRawData);
 
       const result = await TimelineExtraction.extractTimelineData('last_7_days');
 
@@ -132,114 +117,79 @@ describe('TimelineExtraction Class', () => {
     });
   });
 
-  // ========== EXTRACTTIMELINEDATA - URL SELECTION ==========
-  describe('extractTimelineData - URL Selection', () => {
-    test('seleciona URL correta para last_7_days', async () => {
-      (global.fetch as any).mockResolvedValue({
-        ok: true,
-        json: async () => [],
-      });
+  // ========== EXTRACTTIMELINEDATA - PATH SELECTION ==========
+  describe('extractTimelineData - Path Selection', () => {
+    test('selects correct path for last_7_days', async () => {
+      (fetchData as any).mockResolvedValue([]);
 
       await TimelineExtraction.extractTimelineData('last_7_days');
 
-      expect(global.fetch).toHaveBeenCalledWith(
-        expect.stringContaining('timeline_last_7_days.json')
-      );
+      expect(fetchData).toHaveBeenCalledWith('gold/timeline_last_7_days.json');
     });
 
-    test('seleciona URL correta para last_12_months', async () => {
-      (global.fetch as any).mockResolvedValue({
-        ok: true,
-        json: async () => [],
-      });
+    test('selects correct path for last_12_months', async () => {
+      (fetchData as any).mockResolvedValue([]);
 
       await TimelineExtraction.extractTimelineData('last_12_months');
 
-      expect(global.fetch).toHaveBeenCalledWith(
-        expect.stringContaining('timeline_last_12_months.json')
-      );
+      expect(fetchData).toHaveBeenCalledWith('gold/timeline_last_12_months.json');
     });
 
-    test('URL inclui branch extraction-overhall', async () => {
-      (global.fetch as any).mockResolvedValue({
-        ok: true,
-        json: async () => [],
-      });
+    test('path includes gold directory', async () => {
+      (fetchData as any).mockResolvedValue([]);
 
       await TimelineExtraction.extractTimelineData('last_7_days');
 
-      expect(global.fetch).toHaveBeenCalledWith(
-        expect.stringContaining('extraction-overhall')
-      );
-    });
-
-    test('URL inclui caminho data/gold', async () => {
-      (global.fetch as any).mockResolvedValue({
-        ok: true,
-        json: async () => [],
-      });
-
-      await TimelineExtraction.extractTimelineData('last_7_days');
-
-      expect(global.fetch).toHaveBeenCalledWith(
-        expect.stringContaining('data/gold')
+      expect(fetchData).toHaveBeenCalledWith(
+        expect.stringContaining('gold/')
       );
     });
   });
 
   // ========== EXTRACTTIMELINEDATA - ERROR HANDLING ==========
   describe('extractTimelineData - Error Handling', () => {
-    test('lança erro para time_filter inválido', async () => {
+    test('throws error for invalid time_filter', async () => {
       await expect(
         TimelineExtraction.extractTimelineData('invalid_filter')
       ).rejects.toThrow('Invalid time filter: invalid_filter');
     });
 
-    test('mensagem de erro inclui filtros válidos', async () => {
+    test('error message includes valid filters', async () => {
       await expect(
         TimelineExtraction.extractTimelineData('wrong')
       ).rejects.toThrow("Use 'last_7_days' or 'last_12_months'");
     });
 
-    test('lança erro quando fetch falha', async () => {
-      (global.fetch as any).mockResolvedValue({
-        ok: false,
-        status: 404,
-        statusText: 'Not Found',
-      });
+    test('throws error when fetchData fails with not found', async () => {
+      (fetchData as any).mockRejectedValue(
+        new Error('Failed to fetch https://raw.githubusercontent.com/DW-Corp/CoOps/main/data/gold/timeline_last_7_days.json: Not Found')
+      );
 
       await expect(
         TimelineExtraction.extractTimelineData('last_7_days')
-      ).rejects.toThrow('Failed to fetch data: 404 Not Found');
+      ).rejects.toThrow('Failed to fetch');
     });
 
-    test('lança erro com status 500', async () => {
-      (global.fetch as any).mockResolvedValue({
-        ok: false,
-        status: 500,
-        statusText: 'Internal Server Error',
-      });
+    test('throws error when fetchData fails with server error', async () => {
+      (fetchData as any).mockRejectedValue(
+        new Error('Failed to fetch https://raw.githubusercontent.com/DW-Corp/CoOps/main/data/gold/timeline_last_7_days.json: Internal Server Error')
+      );
 
       await expect(
         TimelineExtraction.extractTimelineData('last_7_days')
-      ).rejects.toThrow('Failed to fetch data: 500');
+      ).rejects.toThrow('Internal Server Error');
     });
 
-    test('lança erro quando response.json() falha', async () => {
-      (global.fetch as any).mockResolvedValue({
-        ok: true,
-        json: async () => {
-          throw new Error('JSON parse error');
-        },
-      });
+    test('throws error when fetchData throws a JSON parse error', async () => {
+      (fetchData as any).mockRejectedValue(new Error('JSON parse error'));
 
       await expect(
         TimelineExtraction.extractTimelineData('last_7_days')
       ).rejects.toThrow('JSON parse error');
     });
 
-    test('lança erro quando fetch é rejeitado', async () => {
-      (global.fetch as any).mockRejectedValue(new Error('Network error'));
+    test('throws error when fetchData rejects with network error', async () => {
+      (fetchData as any).mockRejectedValue(new Error('Network error'));
 
       await expect(
         TimelineExtraction.extractTimelineData('last_7_days')
@@ -249,70 +199,70 @@ describe('TimelineExtraction Class', () => {
 
   // ========== PROCESSTIMELINEDATA - DATA MAPPING ==========
   describe('processTimelineData - Data Mapping', () => {
-    test('mapeia corretamente date', () => {
+    test('correctly maps date', () => {
       const result = TimelineExtraction.processTimelineData(mockRawData);
 
       expect(result[0].date).toBe('2024-01-01');
       expect(result[1].date).toBe('2024-01-02');
     });
 
-    test('mapeia corretamente users', () => {
+    test('correctly maps users', () => {
       const result = TimelineExtraction.processTimelineData(mockRawData);
 
       expect(result[0].users.length).toBe(2);
       expect(result[1].users.length).toBe(1);
     });
 
-    test('mapeia corretamente name dos users', () => {
+    test('correctly maps user names', () => {
       const result = TimelineExtraction.processTimelineData(mockRawData);
 
       expect(result[0].users[0].name).toBe('User One');
       expect(result[0].users[1].name).toBe('User Two');
     });
 
-    test('mapeia corretamente repositories', () => {
+    test('correctly maps repositories', () => {
       const result = TimelineExtraction.processTimelineData(mockRawData);
 
       expect(result[0].users[0].repositories).toEqual(['repo1', '2025-2-Squad-01']);
       expect(result[0].users[1].repositories).toEqual(['repo2']);
     });
 
-    test('mapeia corretamente activities.commits', () => {
+    test('correctly maps activities.commits', () => {
       const result = TimelineExtraction.processTimelineData(mockRawData);
 
       expect(result[0].users[0].activities.commits).toBe(5);
       expect(result[0].users[1].activities.commits).toBe(3);
     });
 
-    test('mapeia corretamente activities.issues_created', () => {
+    test('correctly maps activities.issues_created', () => {
       const result = TimelineExtraction.processTimelineData(mockRawData);
 
       expect(result[0].users[0].activities.issues_created).toBe(2);
       expect(result[0].users[1].activities.issues_created).toBe(1);
     });
 
-    test('mapeia corretamente activities.issues_closed', () => {
+    test('correctly maps activities.issues_closed', () => {
       const result = TimelineExtraction.processTimelineData(mockRawData);
 
       expect(result[0].users[0].activities.issues_closed).toBe(1);
       expect(result[0].users[1].activities.issues_closed).toBe(0);
     });
 
-    test('mapeia corretamente activities.prs_created', () => {
+    test('correctly maps activities.prs_created', () => {
       const result = TimelineExtraction.processTimelineData(mockRawData);
 
       expect(result[0].users[0].activities.prs_created).toBe(3);
       expect(result[0].users[1].activities.prs_created).toBe(1);
     });
 
-    test('mapeia corretamente activities.prs_closed', () => {
+    test('correctly maps activities.prs_closed', () => {
       const result = TimelineExtraction.processTimelineData(mockRawData);
 
       expect(result[0].users[0].activities.prs_closed).toBe(2);
       expect(result[0].users[1].activities.prs_closed).toBe(1);
     });
 
-    test('mapeia corretamente activities.comments', () => {
+    test('correctly maps activities.comments', () => {
       const result = TimelineExtraction.processTimelineData(mockRawData);
 
       expect(result[0].users[0].activities.comments).toBe(10);
@@ -322,20 +272,20 @@ describe('TimelineExtraction Class', () => {
 
   // ========== PROCESSTIMELINEDATA - METADATA FILTERING ==========
   describe('processTimelineData - Metadata Filtering', () => {
-    test('remove entrada com _metadata', () => {
+    test('removes entry with _metadata', () => {
       const result = TimelineExtraction.processTimelineData(mockRawData);
 
       expect(result.length).toBe(3); // 4 items - 1 metadata
     });
 
-    test('não inclui item com _metadata no resultado', () => {
+    test('does not include item with _metadata in result', () => {
       const result = TimelineExtraction.processTimelineData(mockRawData);
 
       const hasMetadata = result.some((item: any) => item._metadata !== undefined);
       expect(hasMetadata).toBe(false);
     });
 
-    test('filtra metadata mesmo quando está no meio do array', () => {
+    test('filters metadata even when it is in the middle of the array', () => {
       const dataWithMetadataInMiddle = [
         { date: '2024-01-01', authors: [] },
         { _metadata: { version: '1.0' } },
@@ -347,7 +297,7 @@ describe('TimelineExtraction Class', () => {
       expect(result.length).toBe(2);
     });
 
-    test('filtra múltiplas entradas de metadata', () => {
+    test('filters multiple metadata entries', () => {
       const dataWithMultipleMetadata = [
         { _metadata: { version: '1.0' } },
         { date: '2024-01-01', authors: [] },
@@ -360,7 +310,7 @@ describe('TimelineExtraction Class', () => {
       expect(result.length).toBe(2);
     });
 
-    test('mantém dados válidos após filtrar metadata', () => {
+    test('keeps valid data after filtering metadata', () => {
       const result = TimelineExtraction.processTimelineData(mockRawData);
 
       expect(result[0].date).toBe('2024-01-01');
@@ -370,60 +320,60 @@ describe('TimelineExtraction Class', () => {
 
   // ========== PROCESSTIMELINEDATA - REPOSITORY FILTER ==========
   describe('processTimelineData - Repository Filter', () => {
-    test('filtra users por repositório específico', () => {
+    test('filters users by specific repository', () => {
       const result = TimelineExtraction.processTimelineData(mockRawData, '2025-2-Squad-01');
 
-      // Apenas User One e User Three têm 2025-2-Squad-01
+      // Only User One and User Three have 2025-2-Squad-01
       expect(result[0].users.length).toBe(1); // User One
       expect(result[0].users[0].name).toBe('User One');
     });
 
-    test('filtro é case-insensitive', () => {
+    test('filter is case-insensitive', () => {
       const result = TimelineExtraction.processTimelineData(mockRawData, 'SQUAD-01');
 
       expect(result[0].users.length).toBe(1);
       expect(result[0].users[0].name).toBe('User One');
     });
 
-    test('filtro "all" retorna todos os users', () => {
+    test('filter "all" returns all users', () => {
       const result = TimelineExtraction.processTimelineData(mockRawData, 'all');
 
       expect(result[0].users.length).toBe(2);
     });
 
-    test('sem filtro retorna todos os users', () => {
+    test('no filter returns all users', () => {
       const result = TimelineExtraction.processTimelineData(mockRawData);
 
       expect(result[0].users.length).toBe(2);
     });
 
-    test('filtro undefined retorna todos os users', () => {
+    test('undefined filter returns all users', () => {
       const result = TimelineExtraction.processTimelineData(mockRawData, undefined);
 
       expect(result[0].users.length).toBe(2);
     });
 
-    test('filtro por substring funciona', () => {
+    test('substring filter works', () => {
       const result = TimelineExtraction.processTimelineData(mockRawData, 'Squad');
 
       expect(result[0].users.length).toBe(1);
       expect(result[0].users[0].name).toBe('User One');
     });
 
-    test('filtro por repo inexistente retorna array vazio de users', () => {
+    test('filter for nonexistent repo returns empty users array', () => {
       const result = TimelineExtraction.processTimelineData(mockRawData, 'nonexistent-repo');
 
       expect(result[0].users.length).toBe(0);
     });
 
-    test('mantém estrutura de dias mesmo sem users após filtro', () => {
+    test('keeps day structure even without users after filtering', () => {
       const result = TimelineExtraction.processTimelineData(mockRawData, 'nonexistent-repo');
 
-      expect(result.length).toBe(3); // Mantém os 3 dias
+      expect(result.length).toBe(3); // Keeps all 3 days
       expect(result[0].date).toBe('2024-01-01');
     });
 
-    test('filtro procura em todos os repositórios do user', () => {
+    test('filter searches across all user repositories', () => {
       const result = TimelineExtraction.processTimelineData(mockRawData, 'repo1');
 
       expect(result[0].users.length).toBe(1);
@@ -433,7 +383,7 @@ describe('TimelineExtraction Class', () => {
 
   // ========== PROCESSTIMELINEDATA - DEFAULT VALUES ==========
   describe('processTimelineData - Default Values', () => {
-    test('usa array vazio para repositories quando ausente', () => {
+    test('uses empty array for repositories when absent', () => {
       const dataWithoutRepos = [
         {
           date: '2024-01-01',
@@ -451,7 +401,7 @@ describe('TimelineExtraction Class', () => {
       expect(result[0].users[0].repositories).toEqual([]);
     });
 
-    test('usa 0 para commits quando ausente', () => {
+    test('uses 0 for commits when absent', () => {
       const dataWithoutCommits = [
         {
           date: '2024-01-01',
@@ -464,7 +414,7 @@ describe('TimelineExtraction Class', () => {
       expect(result[0].users[0].activities.commits).toBe(0);
     });
 
-    test('usa 0 para issues_created quando ausente', () => {
+    test('uses 0 for issues_created when absent', () => {
       const dataWithoutIssues = [
         {
           date: '2024-01-01',
@@ -477,7 +427,7 @@ describe('TimelineExtraction Class', () => {
       expect(result[0].users[0].activities.issues_created).toBe(0);
     });
 
-    test('usa 0 para issues_closed quando ausente', () => {
+    test('uses 0 for issues_closed when absent', () => {
       const dataWithoutIssues = [
         {
           date: '2024-01-01',
@@ -490,7 +440,7 @@ describe('TimelineExtraction Class', () => {
       expect(result[0].users[0].activities.issues_closed).toBe(0);
     });
 
-    test('usa 0 para prs_created quando ausente', () => {
+    test('uses 0 for prs_created when absent', () => {
       const dataWithoutPRs = [
         {
           date: '2024-01-01',
@@ -503,7 +453,7 @@ describe('TimelineExtraction Class', () => {
       expect(result[0].users[0].activities.prs_created).toBe(0);
     });
 
-    test('usa 0 para prs_closed quando ausente', () => {
+    test('uses 0 for prs_closed when absent', () => {
       const dataWithoutPRs = [
         {
           date: '2024-01-01',
@@ -516,7 +466,7 @@ describe('TimelineExtraction Class', () => {
       expect(result[0].users[0].activities.prs_closed).toBe(0);
     });
 
-    test('usa 0 para comments quando ausente', () => {
+    test('uses 0 for comments when absent', () => {
       const dataWithoutComments = [
         {
           date: '2024-01-01',
@@ -529,7 +479,7 @@ describe('TimelineExtraction Class', () => {
       expect(result[0].users[0].activities.comments).toBe(0);
     });
 
-    test('todos os defaults aplicados simultaneamente', () => {
+    test('all defaults applied simultaneously', () => {
       const minimalData = [
         {
           date: '2024-01-01',
@@ -556,20 +506,20 @@ describe('TimelineExtraction Class', () => {
 
   // ========== PROCESSTIMELINEDATA - EMPTY DAYS ==========
   describe('processTimelineData - Empty Days', () => {
-    test('mantém dias sem users', () => {
+    test('keeps days without users', () => {
       const result = TimelineExtraction.processTimelineData(mockRawData);
 
       expect(result[2].date).toBe('2024-01-03');
       expect(result[2].users.length).toBe(0);
     });
 
-    test('não remove dias vazios do array', () => {
+    test('does not remove empty days from array', () => {
       const result = TimelineExtraction.processTimelineData(mockRawData);
 
-      expect(result.length).toBe(3); // Inclui dia vazio
+      expect(result.length).toBe(3); // Includes empty day
     });
 
-    test('mantém estrutura correta para dia vazio', () => {
+    test('keeps correct structure for empty day', () => {
       const result = TimelineExtraction.processTimelineData(mockRawData);
 
       expect(result[2]).toHaveProperty('date');
@@ -577,7 +527,7 @@ describe('TimelineExtraction Class', () => {
       expect(Array.isArray(result[2].users)).toBe(true);
     });
 
-    test('dia vazio não afeta processamento dos outros dias', () => {
+    test('empty day does not affect processing of other days', () => {
       const result = TimelineExtraction.processTimelineData(mockRawData);
 
       expect(result[0].users.length).toBe(2);
@@ -585,7 +535,7 @@ describe('TimelineExtraction Class', () => {
       expect(result[2].users.length).toBe(0);
     });
 
-    test('múltiplos dias vazios são mantidos', () => {
+    test('multiple empty days are kept', () => {
       const dataWithMultipleEmptyDays = [
         { date: '2024-01-01', authors: [{ name: 'User' }] },
         { date: '2024-01-02', authors: [] },
@@ -603,13 +553,13 @@ describe('TimelineExtraction Class', () => {
 
   // ========== EDGE CASES ==========
   describe('Edge Cases', () => {
-    test('processa array vazio', () => {
+    test('processes empty array', () => {
       const result = TimelineExtraction.processTimelineData([]);
 
       expect(result).toEqual([]);
     });
 
-    test('processa dados com apenas metadata', () => {
+    test('processes data with only metadata', () => {
       const onlyMetadata = [{ _metadata: { version: '1.0' } }];
 
       const result = TimelineExtraction.processTimelineData(onlyMetadata);
@@ -617,7 +567,7 @@ describe('TimelineExtraction Class', () => {
       expect(result).toEqual([]);
     });
 
-    test('processa dia com author sem name', () => {
+    test('processes day with author without name', () => {
       const dataWithoutName = [
         {
           date: '2024-01-01',
@@ -630,7 +580,7 @@ describe('TimelineExtraction Class', () => {
       expect(result[0].users[0].name).toBeUndefined();
     });
 
-    test('processa dados com caracteres especiais no nome', () => {
+    test('processes data with special characters in name', () => {
       const dataWithSpecialChars = [
         {
           date: '2024-01-01',
@@ -649,7 +599,7 @@ describe('TimelineExtraction Class', () => {
       expect(result[0].users[0].name).toBe('User@#$%');
     });
 
-    test('processa dados com valores negativos', () => {
+    test('processes data with negative values', () => {
       const dataWithNegatives = [
         {
           date: '2024-01-01',
@@ -669,7 +619,7 @@ describe('TimelineExtraction Class', () => {
       expect(result[0].users[0].activities.issues_created).toBe(-2);
     });
 
-    test('processa dados com valores muito grandes', () => {
+    test('processes data with very large values', () => {
       const dataWithLargeNumbers = [
         {
           date: '2024-01-01',
@@ -689,7 +639,7 @@ describe('TimelineExtraction Class', () => {
       expect(result[0].users[0].activities.comments).toBe(888888);
     });
 
-    test('processa data em diferentes formatos', () => {
+    test('processes dates in different formats', () => {
       const dataWithDifferentDateFormat = [
         { date: '2024-01-01T10:00:00Z', authors: [] },
         { date: '2024/01/02', authors: [] },
@@ -706,11 +656,8 @@ describe('TimelineExtraction Class', () => {
 
   // ========== INTEGRATION ==========
   describe('Integration Tests', () => {
-    test('extractTimelineData processa dados corretamente end-to-end', async () => {
-      (global.fetch as any).mockResolvedValue({
-        ok: true,
-        json: async () => mockRawData,
-      });
+    test('extractTimelineData processes data correctly end-to-end', async () => {
+      (fetchData as any).mockResolvedValue(mockRawData);
 
       const result = await TimelineExtraction.extractTimelineData('last_7_days');
 
@@ -719,11 +666,8 @@ describe('TimelineExtraction Class', () => {
       expect(result[0].users[0].name).toBe('User One');
     });
 
-    test('extractTimelineData com filtro aplica filtro corretamente', async () => {
-      (global.fetch as any).mockResolvedValue({
-        ok: true,
-        json: async () => mockRawData,
-      });
+    test('extractTimelineData with filter applies filter correctly', async () => {
+      (fetchData as any).mockResolvedValue(mockRawData);
 
       const result = await TimelineExtraction.extractTimelineData('last_7_days', '2025-2-Squad-01');
 
@@ -731,55 +675,44 @@ describe('TimelineExtraction Class', () => {
       expect(result[0].users[0].name).toBe('User One');
     });
 
-    test('fluxo completo last_7_days sem filtro', async () => {
-      (global.fetch as any).mockResolvedValue({
-        ok: true,
-        json: async () => mockRawData,
-      });
+    test('full flow last_7_days without filter', async () => {
+      (fetchData as any).mockResolvedValue(mockRawData);
 
       const result = await TimelineExtraction.extractTimelineData('last_7_days');
 
-      expect(global.fetch).toHaveBeenCalledTimes(1);
+      expect(fetchData).toHaveBeenCalledTimes(1);
       expect(result).toHaveLength(3);
       expect(result[0]).toHaveProperty('date');
       expect(result[0]).toHaveProperty('users');
     });
 
-    test('fluxo completo last_12_months com filtro', async () => {
-      (global.fetch as any).mockResolvedValue({
-        ok: true,
-        json: async () => mockRawData,
-      });
+    test('full flow last_12_months with filter', async () => {
+      (fetchData as any).mockResolvedValue(mockRawData);
 
       const result = await TimelineExtraction.extractTimelineData('last_12_months', 'repo2');
 
-      expect(global.fetch).toHaveBeenCalledWith(
-        expect.stringContaining('last_12_months')
-      );
+      expect(fetchData).toHaveBeenCalledWith('gold/timeline_last_12_months.json');
       expect(result[0].users[0].name).toBe('User Two');
     });
   });
 
   // ========== TYPE SAFETY ==========
   describe('Type Safety', () => {
-    test('retorna tipo TimelineData[]', async () => {
-      (global.fetch as any).mockResolvedValue({
-        ok: true,
-        json: async () => mockRawData,
-      });
+    test('returns TimelineData[] type', async () => {
+      (fetchData as any).mockResolvedValue(mockRawData);
 
       const result: TimelineData[] = await TimelineExtraction.extractTimelineData('last_7_days');
 
       expect(Array.isArray(result)).toBe(true);
     });
 
-    test('cada item tem estrutura TimelineData', () => {
+    test('each item has TimelineData structure', () => {
       const result = TimelineExtraction.processTimelineData(mockRawData);
 
       result.forEach((item) => {
         expect(typeof item.date).toBe('string');
         expect(Array.isArray(item.users)).toBe(true);
-        
+
         item.users.forEach((user) => {
           expect(user).toHaveProperty('activities');
           expect(typeof user.activities.commits).toBe('number');
@@ -795,7 +728,7 @@ describe('TimelineExtraction Class', () => {
 
   // ========== PERFORMANCE ==========
   describe('Performance', () => {
-    test('processa grande volume de dados eficientemente', () => {
+    test('processes large volume of data efficiently', () => {
       const largeMockData = Array.from({ length: 1000 }, (_, i) => ({
         date: `2024-01-${(i % 31) + 1}`,
         authors: Array.from({ length: 10 }, (_, j) => ({
@@ -815,10 +748,10 @@ describe('TimelineExtraction Class', () => {
       const endTime = performance.now();
 
       expect(result.length).toBe(1000);
-      expect(endTime - startTime).toBeLessThan(1000); // Menos de 1 segundo
+      expect(endTime - startTime).toBeLessThan(1000); // Less than 1 second
     });
 
-    test('filtro de repositório não degrada performance', () => {
+    test('repository filter does not degrade performance', () => {
       const largeMockData = Array.from({ length: 500 }, (_, i) => ({
         date: `2024-01-${(i % 31) + 1}`,
         authors: Array.from({ length: 20 }, (_, j) => ({

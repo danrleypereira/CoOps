@@ -51,7 +51,7 @@ export const RepoTreemap: React.FC<RepoTreemapProps> = ({
   const svgRef = useRef<SVGSVGElement>(null);
   const tooltipRef = useRef<HTMLDivElement | null>(null);
 
-  // Mapa de cores (igual ao Circle Pack)
+  // Color map (same as Circle Pack)
   const colorMap: Record<string, string> = {
     'Python': '#3572A5',
     'JavaScript': '#f1e05a',
@@ -90,10 +90,10 @@ export const RepoTreemap: React.FC<RepoTreemapProps> = ({
       return;
     }
 
-    // Limpar SVG anterior
+    // Clear previous SVG
     d3.select(svgRef.current).selectAll('*').remove();
 
-    // Criar hierarquia de dados
+    // Create data hierarchy
     const hierarchyData: TreemapNode = {
       name: 'root',
       children: data.languages.map(lang => ({
@@ -109,7 +109,7 @@ export const RepoTreemap: React.FC<RepoTreemapProps> = ({
       .sum(d => d.value || 0)
       .sort((a, b) => (b.value || 0) - (a.value || 0));
 
-    // Criar treemap
+    // Create treemap
     const treemap = d3.treemap<TreemapNode>()
       .size([width, height])
       .paddingInner(2)
@@ -126,7 +126,7 @@ export const RepoTreemap: React.FC<RepoTreemapProps> = ({
       .style('max-width', '100%')
       .style('height', 'auto');
 
-    // Criar tooltip
+    // Create tooltip
     const createTooltip = () => {
       if (!tooltipRef.current) {
         tooltipRef.current = document.createElement('div');
@@ -150,14 +150,14 @@ export const RepoTreemap: React.FC<RepoTreemapProps> = ({
 
     const tooltip = createTooltip();
 
-    // Criar células do treemap
+    // Create treemap cells
     const cells = svg.selectAll<SVGGElement, d3.HierarchyRectangularNode<TreemapNode>>('g')
       .data(root.leaves() as d3.HierarchyRectangularNode<TreemapNode>[])
       .enter()
       .append('g')
       .attr('transform', (d: any) => `translate(${d.x0},${d.y0})`);
 
-    // Retângulos
+    // Rectangles
     cells.append('rect')
       .attr('width', (d: any) => d.x1 - d.x0)
       .attr('height', (d: any) => d.y1 - d.y0)
@@ -225,9 +225,9 @@ export const RepoTreemap: React.FC<RepoTreemapProps> = ({
         const cellWidth = d.x1 - d.x0;
         const cellHeight = d.y1 - d.y0;
 
-        // Apenas mostrar label se houver espaço suficiente
+        // Only show label if there is enough space
         if (cellWidth > 50 && cellHeight > 30) {
-          // Nome da linguagem
+          // Language name
           text.append('tspan')
             .attr('x', 4)
             .attr('y', 16)
@@ -237,7 +237,7 @@ export const RepoTreemap: React.FC<RepoTreemapProps> = ({
             .style('text-shadow', '1px 1px 3px rgba(0,0,0,0.8)')
             .text(cellWidth > 100 ? d.data.name : d.data.name.substring(0, 8));
 
-          // Percentual
+          // Percentage
           if (cellHeight > 50) {
             text.append('tspan')
               .attr('x', 4)

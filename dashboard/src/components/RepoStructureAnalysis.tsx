@@ -27,135 +27,135 @@ export const RepoStructureAnalysis: React.FC<RepoStructureAnalysisProps> = ({ da
 
   const generateAnalysis = () => {
     setLoading(true);
-    
-    // Análise baseada nas linguagens e estrutura
+
+    // Analysis based on languages and structure
     const sortedLanguages = [...data.languages].sort((a, b) => b.percentage - a.percentage);
     const primaryLanguage = sortedLanguages[0];
     const secondaryLanguages = sortedLanguages.slice(1, 4);
-    
-    let analysisText = `## 🔍 Análise da Estrutura do Repositório\n\n`;
-    
-    // 1. Linguagem Principal
-    analysisText += `### 🎯 Linguagem Dominante\n`;
-    analysisText += `**${primaryLanguage.language}** é a linguagem predominante, representando **${primaryLanguage.percentage.toFixed(1)}%** do código `;
-    analysisText += `(${primaryLanguage.file_count} arquivos, ${formatBytes(primaryLanguage.total_bytes)}). `;
-    
-    // Interpretação baseada na linguagem
+
+    let analysisText = `## 🔍 Repository Structure Analysis\n\n`;
+
+    // 1. Primary Language
+    analysisText += `### 🎯 Primary Language\n`;
+    analysisText += `**${primaryLanguage.language}** is the predominant language, representing **${primaryLanguage.percentage.toFixed(1)}%** of the code `;
+    analysisText += `(${primaryLanguage.file_count} files, ${formatBytes(primaryLanguage.total_bytes)}). `;
+
+    // Interpretation based on language
     const languageInsights: Record<string, string> = {
-      'Python': 'Isso sugere um projeto focado em backend, ciência de dados, automação ou machine learning. Python é conhecida por sua versatilidade e produtividade.',
-      'JavaScript': 'Indica um projeto web dinâmico, possivelmente com foco em funcionalidades interativas no frontend ou backend Node.js.',
-      'TypeScript': 'Demonstra um projeto moderno com tipagem estática, geralmente usado em aplicações web escaláveis e de grande porte.',
-      'Java': 'Aponta para uma aplicação empresarial robusta, com foco em performance e arquitetura orientada a objetos.',
-      'HTML': 'Sugere um projeto web com foco em estrutura e conteúdo de páginas.',
-      'CSS': 'Indica forte ênfase em estilização e design visual.',
-      'Go': 'Sugere um projeto focado em performance, concorrência e microsserviços.',
-      'Rust': 'Indica um projeto que prioriza segurança de memória e performance extrema.',
-      'C++': 'Aponta para sistemas de alto desempenho, jogos ou aplicações que exigem controle fino de recursos.',
-      'Shell': 'Demonstra automação de infraestrutura, scripts de build ou DevOps.'
+      'Python': 'This suggests a project focused on backend, data science, automation, or machine learning. Python is known for its versatility and productivity.',
+      'JavaScript': 'This indicates a dynamic web project, possibly focused on interactive frontend features or a Node.js backend.',
+      'TypeScript': 'This demonstrates a modern project with static typing, generally used in scalable, large-scale web applications.',
+      'Java': 'This points to a robust enterprise application, focused on performance and object-oriented architecture.',
+      'HTML': 'This suggests a web project focused on page structure and content.',
+      'CSS': 'This indicates a strong emphasis on styling and visual design.',
+      'Go': 'This suggests a project focused on performance, concurrency, and microservices.',
+      'Rust': 'This indicates a project that prioritizes memory safety and extreme performance.',
+      'C++': 'This points to high-performance systems, games, or applications that require fine-grained resource control.',
+      'Shell': 'This demonstrates infrastructure automation, build scripts, or DevOps.'
     };
-    
-    analysisText += languageInsights[primaryLanguage.language] || 'Esta linguagem oferece características específicas para o domínio do projeto.';
+
+    analysisText += languageInsights[primaryLanguage.language] || 'This language offers specific characteristics for the project domain.';
     analysisText += `\n\n`;
-    
-    // 2. Linguagens Secundárias
+
+    // 2. Secondary Languages
     if (secondaryLanguages.length > 0) {
-      analysisText += `### 🔧 Linguagens Complementares\n`;
+      analysisText += `### 🔧 Complementary Languages\n`;
       secondaryLanguages.forEach(lang => {
         analysisText += `- **${lang.language}** (${lang.percentage.toFixed(1)}%): `;
-        
+
         const complementaryInsights: Record<string, string> = {
-          'HTML': 'Interface de usuário e estruturação de conteúdo web.',
-          'CSS': 'Estilização e apresentação visual da aplicação.',
-          'JavaScript': 'Interatividade e lógica do frontend.',
-          'TypeScript': 'Tipagem estática para código JavaScript mais robusto.',
-          'JSON': 'Configurações e estruturas de dados.',
-          'YAML': 'Arquivos de configuração e pipelines.',
-          'Markdown': 'Documentação do projeto.',
-          'Shell': 'Scripts de automação e build.',
-          'Python': 'Scripts auxiliares ou backend.',
-          'Dockerfile': 'Configuração de containers e deployment.'
+          'HTML': 'User interface and web content structuring.',
+          'CSS': 'Styling and visual presentation of the application.',
+          'JavaScript': 'Interactivity and frontend logic.',
+          'TypeScript': 'Static typing for more robust JavaScript code.',
+          'JSON': 'Configuration and data structures.',
+          'YAML': 'Configuration files and pipelines.',
+          'Markdown': 'Project documentation.',
+          'Shell': 'Automation and build scripts.',
+          'Python': 'Auxiliary scripts or backend.',
+          'Dockerfile': 'Container configuration and deployment.'
         };
-        
-        analysisText += complementaryInsights[lang.language] || 'Suporte adicional ao projeto.';
+
+        analysisText += complementaryInsights[lang.language] || 'Additional project support.';
         analysisText += `\n`;
       });
       analysisText += `\n`;
     }
-    
-    // 3. Arquitetura Inferida
-    analysisText += `### 🏗️ Arquitetura Inferida\n`;
-    
+
+    // 3. Inferred Architecture
+    analysisText += `### 🏗️ Inferred Architecture\n`;
+
     const hasHTML = data.languages.some(l => l.language === 'HTML');
     const hasCSS = data.languages.some(l => l.language === 'CSS' || l.language === 'SCSS');
     const hasJS = data.languages.some(l => ['JavaScript', 'TypeScript'].includes(l.language));
     const hasPython = data.languages.some(l => l.language === 'Python');
     const hasJava = data.languages.some(l => l.language === 'Java');
-    
+
     if (hasHTML && hasCSS && hasJS) {
-      analysisText += `Este repositório apresenta uma **arquitetura web completa** com:\n`;
-      analysisText += `- ✅ **Frontend**: Estrutura HTML, estilização CSS/SCSS e lógica JavaScript/TypeScript\n`;
+      analysisText += `This repository features a **complete web architecture** with:\n`;
+      analysisText += `- ✅ **Frontend**: HTML structure, CSS/SCSS styling, and JavaScript/TypeScript logic\n`;
       if (hasPython || hasJava) {
-        analysisText += `- ✅ **Backend**: Provavelmente separado usando ${hasPython ? 'Python' : 'Java'}\n`;
-        analysisText += `- ✅ **Stack Full-Stack**: Aplicação web completa com separação de responsabilidades\n`;
+        analysisText += `- ✅ **Backend**: Likely separated using ${hasPython ? 'Python' : 'Java'}\n`;
+        analysisText += `- ✅ **Full-Stack**: Complete web application with separation of concerns\n`;
       }
     } else if (primaryLanguage.language === 'Python' && data.total_files > 20) {
-      analysisText += `Projeto estruturado em **Python**, possivelmente com:\n`;
+      analysisText += `Structured **Python** project, possibly with:\n`;
       analysisText += `- Backend API (Flask/Django/FastAPI)\n`;
-      analysisText += `- Scripts de processamento ou análise de dados\n`;
-      analysisText += `- Testes automatizados\n`;
+      analysisText += `- Data processing or analysis scripts\n`;
+      analysisText += `- Automated tests\n`;
     } else if (primaryLanguage.language === 'JavaScript' || primaryLanguage.language === 'TypeScript') {
-      analysisText += `Projeto **JavaScript/TypeScript**, indicando:\n`;
-      analysisText += `- Aplicação web moderna (React/Vue/Angular)\n`;
-      analysisText += `- Possivelmente servidor Node.js\n`;
-      analysisText += `- Build tools e bundling\n`;
+      analysisText += `**JavaScript/TypeScript** project, indicating:\n`;
+      analysisText += `- Modern web application (React/Vue/Angular)\n`;
+      analysisText += `- Possibly a Node.js server\n`;
+      analysisText += `- Build tools and bundling\n`;
     }
     analysisText += `\n`;
-    
-    // 4. Tamanho e Complexidade
-    analysisText += `### 📊 Métricas de Complexidade\n`;
-    analysisText += `- **Total de Arquivos**: ${data.total_files} arquivos\n`;
-    analysisText += `- **Tamanho Total**: ${formatBytes(data.total_bytes)}\n`;
-    analysisText += `- **Diversidade de Linguagens**: ${data.languages.length} linguagens diferentes\n`;
-    
+
+    // 4. Size and Complexity
+    analysisText += `### 📊 Complexity Metrics\n`;
+    analysisText += `- **Total Files**: ${data.total_files} files\n`;
+    analysisText += `- **Total Size**: ${formatBytes(data.total_bytes)}\n`;
+    analysisText += `- **Language Diversity**: ${data.languages.length} different languages\n`;
+
     const avgFilesPerLanguage = data.total_files / data.languages.length;
-    const complexityLevel = data.total_files < 50 ? 'baixa' : data.total_files < 200 ? 'média' : 'alta';
-    
-    analysisText += `\n**Avaliação**: Projeto de complexidade **${complexityLevel}** `;
-    analysisText += `(${avgFilesPerLanguage.toFixed(0)} arquivos por linguagem em média). `;
-    
-    if (complexityLevel === 'alta') {
-      analysisText += `Este é um projeto robusto que provavelmente requer boa organização e documentação.`;
-    } else if (complexityLevel === 'média') {
-      analysisText += `Tamanho adequado para uma aplicação funcional com escopo bem definido.`;
+    const complexityLevel = data.total_files < 50 ? 'low' : data.total_files < 200 ? 'medium' : 'high';
+
+    analysisText += `\n**Assessment**: Project of **${complexityLevel}** complexity `;
+    analysisText += `(${avgFilesPerLanguage.toFixed(0)} files per language on average). `;
+
+    if (complexityLevel === 'high') {
+      analysisText += `This is a robust project that likely requires good organization and documentation.`;
+    } else if (complexityLevel === 'medium') {
+      analysisText += `Adequate size for a functional application with a well-defined scope.`;
     } else {
-      analysisText += `Projeto compacto, possivelmente em estágio inicial ou com escopo focado.`;
+      analysisText += `Compact project, possibly in an early stage or with a focused scope.`;
     }
     analysisText += `\n\n`;
-    
-    // 5. Recomendações
-    analysisText += `### 💡 Recomendações\n`;
-    
+
+    // 5. Recommendations
+    analysisText += `### 💡 Recommendations\n`;
+
     if (primaryLanguage.percentage > 80) {
-      analysisText += `- ⚠️ **Diversificação**: ${primaryLanguage.percentage.toFixed(0)}% do código está em uma única linguagem. Considere se há oportunidades para modularização.\n`;
+      analysisText += `- ⚠️ **Diversification**: ${primaryLanguage.percentage.toFixed(0)}% of the code is in a single language. Consider whether there are opportunities for modularization.\n`;
     }
-    
+
     if (!data.languages.some(l => l.language === 'Markdown')) {
-      analysisText += `- 📝 **Documentação**: Adicione arquivos Markdown (README.md, CONTRIBUTING.md) para melhorar a documentação.\n`;
+      analysisText += `- 📝 **Documentation**: Add Markdown files (README.md, CONTRIBUTING.md) to improve documentation.\n`;
     }
-    
+
     if (data.languages.length > 10) {
-      analysisText += `- 🎯 **Padronização**: Com ${data.languages.length} linguagens, considere padronizar o stack para facilitar manutenção.\n`;
+      analysisText += `- 🎯 **Standardization**: With ${data.languages.length} languages, consider standardizing the stack to ease maintenance.\n`;
     }
-    
-    const hasTests = data.languages.some(l => 
-      l.language.toLowerCase().includes('test') || 
+
+    const hasTests = data.languages.some(l =>
+      l.language.toLowerCase().includes('test') ||
       data.repository.toLowerCase().includes('test')
     );
-    
+
     if (!hasTests && data.total_files > 30) {
-      analysisText += `- ✅ **Testes**: Considere adicionar testes automatizados para garantir qualidade.\n`;
+      analysisText += `- ✅ **Tests**: Consider adding automated tests to ensure quality.\n`;
     }
-    
+
     setAnalysis(analysisText);
     setLoading(false);
   };
@@ -170,15 +170,15 @@ export const RepoStructureAnalysis: React.FC<RepoStructureAnalysisProps> = ({ da
 
   const renderMarkdown = (text: string) => {
     return text.split('\n').map((line, index) => {
-      // Títulos
+      // Headings
       if (line.startsWith('### ')) {
         return <h3 key={index} className="text-lg font-bold text-white mt-4 mb-2">{line.replace('### ', '')}</h3>;
       }
       if (line.startsWith('## ')) {
         return <h2 key={index} className="text-xl font-bold text-white mt-6 mb-3">{line.replace('## ', '')}</h2>;
       }
-      
-      // Listas
+
+      // Lists
       if (line.startsWith('- ')) {
         const content = line.replace('- ', '');
         return (
@@ -187,13 +187,13 @@ export const RepoStructureAnalysis: React.FC<RepoStructureAnalysisProps> = ({ da
           </li>
         );
       }
-      
-      // Parágrafo vazio
+
+      // Empty paragraph
       if (line.trim() === '') {
         return <br key={index} />;
       }
-      
-      // Parágrafo normal
+
+      // Normal paragraph
       return (
         <p key={index} className="text-slate-300 mb-2">
           {renderInlineFormatting(line)}
@@ -228,9 +228,9 @@ export const RepoStructureAnalysis: React.FC<RepoStructureAnalysisProps> = ({ da
         <div className="flex items-center gap-3">
           <span className="text-2xl">🤖</span>
           <div className="text-left">
-            <h3 className="text-xl font-semibold">Análise Inteligente da Estrutura</h3>
+            <h3 className="text-xl font-semibold">Intelligent Structure Analysis</h3>
             <p className="text-sm text-slate-400">
-              Interpretação automática da organização e linguagens do repositório
+              Automatic interpretation of the repository's organization and languages
             </p>
           </div>
         </div>
@@ -244,7 +244,7 @@ export const RepoStructureAnalysis: React.FC<RepoStructureAnalysisProps> = ({ da
             <div className="flex items-center justify-center py-12">
               <div className="flex flex-col items-center gap-3">
                 <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div>
-                <p className="text-slate-400">Analisando estrutura do repositório...</p>
+                <p className="text-slate-400">Analyzing repository structure...</p>
               </div>
             </div>
           )}
@@ -261,7 +261,7 @@ export const RepoStructureAnalysis: React.FC<RepoStructureAnalysisProps> = ({ da
                 onClick={generateAnalysis}
                 className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-colors"
               >
-                🚀 Gerar Análise
+                🚀 Generate Analysis
               </button>
             </div>
           )}

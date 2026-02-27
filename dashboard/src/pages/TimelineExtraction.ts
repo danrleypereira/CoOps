@@ -1,3 +1,4 @@
+import { fetchData, filterMetadata } from '../services/dataSource';
 
 export interface TimelineData {
   date: string;
@@ -19,24 +20,18 @@ export class TimelineExtraction {
 
    
     static async extractTimelineData(time_filter: string, repo_filter?: string): Promise<TimelineData[]> {
-        
-        let url: string = '';
+
+        let path: string;
 
         if (time_filter === 'last_7_days') {
-            url = 'https://raw.githubusercontent.com/unb-mds/2025-2-Squad-01/extraction-overhall/data/gold/timeline_last_7_days.json';
+            path = 'gold/timeline_last_7_days.json';
         } else if (time_filter === 'last_12_months') {
-            url = 'https://raw.githubusercontent.com/unb-mds/2025-2-Squad-01/extraction-overhall/data/gold/timeline_last_12_months.json';
+            path = 'gold/timeline_last_12_months.json';
         } else {
             throw new Error(`Invalid time filter: ${time_filter}. Use 'last_7_days' or 'last_12_months'`);
         }
 
-        const response = await fetch(url);
-
-        if (!response.ok) {
-            throw new Error(`Failed to fetch data: ${response.status} ${response.statusText}`);
-        }
-
-        const rawData = await response.json();
+        const rawData = await fetchData<any[]>(path);
         const processedData = this.processTimelineData(rawData, repo_filter);
 
         return processedData;
@@ -69,7 +64,7 @@ export class TimelineExtraction {
                         );
                     })
             }));
-            // NÃO remover dias vazios - manter todos os dias mesmo sem usuários
+            // Do not remove empty days - keep all days even without users
 
         return timelineData;
     }

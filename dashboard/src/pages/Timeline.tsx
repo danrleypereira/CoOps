@@ -34,18 +34,18 @@ interface UserActivityData {
   }>;
 }
 
-// Função para transformar TimelineData[] (agrupado por data) em UserActivityData[] (agrupado por usuário)
+// Function to transform TimelineData[] (grouped by date) into UserActivityData[] (grouped by user)
 function transformToUserActivity(timelineData: TimelineData[]): UserActivityData[] {
   const userMap = new Map<string, UserActivityData>();
 
-  // Iterar sobre cada data
+  // Iterate over each date
   timelineData.forEach((dateEntry) => {
-    // Iterar sobre cada usuário na data
+    // Iterate over each user in the date entry
     dateEntry.users.forEach((user) => {
       const userName = user.name || 'Unknown';
       
       if (!userMap.has(userName)) {
-        // Criar entrada para novo usuário
+        // Create entry for new user
         userMap.set(userName, {
           name: userName,
           repositories: user.repositories ? [...user.repositories] : [],
@@ -72,7 +72,7 @@ function transformToUserActivity(timelineData: TimelineData[]): UserActivityData
       const userData = userMap.get(userName)!;
       const dateIndex = timelineData.findIndex(d => d.date === dateEntry.date);
 
-      // Somar atividades totais do usuário
+      // Sum total user activities
       userData.activities.commits += user.activities.commits;
       userData.activities.issues_created += user.activities.issues_created;
       userData.activities.issues_closed += user.activities.issues_closed;
@@ -80,7 +80,7 @@ function transformToUserActivity(timelineData: TimelineData[]): UserActivityData
       userData.activities.prs_closed += user.activities.prs_closed;
       userData.activities.comments += user.activities.comments;
 
-      // Armazenar detalhes do dia
+      // Store daily details
       userData.dailyDetails[dateIndex].commits += user.activities.commits;
       userData.dailyDetails[dateIndex].issues_created += user.activities.issues_created;
       userData.dailyDetails[dateIndex].issues_closed += user.activities.issues_closed;
@@ -88,7 +88,7 @@ function transformToUserActivity(timelineData: TimelineData[]): UserActivityData
       userData.dailyDetails[dateIndex].prs_closed += user.activities.prs_closed;
       userData.dailyDetails[dateIndex].comments += user.activities.comments;
 
-      // Calcular total de atividades para este dia
+      // Calculate total activities for this day
       const dailyTotal =
         user.activities.commits +
         user.activities.issues_created +
@@ -99,7 +99,7 @@ function transformToUserActivity(timelineData: TimelineData[]): UserActivityData
 
       userData.dailyValues[dateIndex] = dailyTotal;
 
-      // Adicionar repositórios únicos
+      // Add unique repositories
       if (user.repositories) {
         user.repositories.forEach((repo) => {
           if (!userData.repositories?.includes(repo)) {
@@ -127,7 +127,7 @@ export default function Timeline() {
     setSelectedTime(selected);
   };
 
-  // Buscar dados quando filtros mudarem
+  // Fetch data when filters change
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
@@ -141,34 +141,34 @@ export default function Timeline() {
         console.log('Timeline data received:', timelineData);
         console.log('Number of dates:', timelineData.length);
         
-        // Garantir que sempre temos o número correto de dias/meses
+        // Ensure we always have the correct number of days/months
         const expectedLength = selectedTime === 'Last 7 days' ? 7 : 12;
         
-        // Se temos dados, preencher os dias faltantes
+        // If we have data, fill in the missing days
         let completeTimelineData = [...timelineData];
         
         if (timelineData.length > 0 && timelineData.length < expectedLength) {
-          // Obter a primeira e última data
+          // Get the first and last date
           const firstDate = new Date(timelineData[0].date + 'T00:00:00');
           const lastDate = new Date(timelineData[timelineData.length - 1].date + 'T00:00:00');
           
-          // Criar array com todas as datas esperadas
+          // Create array with all expected dates
           const allDates: TimelineData[] = [];
           
           if (selectedTime === 'Last 7 days') {
-            // Para 7 dias, preencher do primeiro ao último + dias faltantes
+            // For 7 days, fill from first to last + missing days
             const startDate = new Date(firstDate);
             for (let i = 0; i < expectedLength; i++) {
               const currentDate = new Date(startDate);
               currentDate.setDate(startDate.getDate() + i);
               const dateStr = currentDate.toISOString().split('T')[0];
               
-              // Verificar se já existe no timelineData
+              // Check if it already exists in timelineData
               const existingData = timelineData.find(d => d.date === dateStr);
               if (existingData) {
                 allDates.push(existingData);
               } else {
-                // Adicionar dia vazio
+                // Add empty day
                 allDates.push({
                   date: dateStr,
                   users: []
@@ -176,7 +176,7 @@ export default function Timeline() {
               }
             }
           } else {
-            // Para 12 meses, fazer o mesmo
+            // For 12 months, do the same
             const startDate = new Date(firstDate);
             for (let i = 0; i < expectedLength; i++) {
               const currentDate = new Date(startDate);
@@ -198,21 +198,21 @@ export default function Timeline() {
           completeTimelineData = allDates;
         }
         
-        // Extrair as datas reais do JSON
+        // Extract the actual dates from JSON
         const dates = completeTimelineData.map(d => d.date);
         console.log('Dates:', dates);
         
-        // Formatar as datas para exibição
+        // Format dates for display
         const formattedDates = dates.map(dateStr => {
           const date = new Date(dateStr + 'T00:00:00');
           
           if (selectedTime === 'Last 7 days') {
-            // Formato: "Nov 11 (Mon)"
+            // Format: "Nov 11 (Mon)"
             const dayName = date.toLocaleDateString('en-US', { weekday: 'short' });
             const monthDay = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
             return `${monthDay} (${dayName})`;
           } else {
-            // Formato para 12 meses: "Nov 11 (November)" ou apenas mês se necessário
+            // Format for 12 months: "Nov 11 (November)" or just month if needed
             const monthName = date.toLocaleDateString('en-US', { month: 'long' });
             const monthDay = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
             return `${monthDay} (${monthName})`;
@@ -239,12 +239,12 @@ export default function Timeline() {
     fetchData();
   }, [selectedTime, selectedRepo]);
 
-  // Extrair lista de membros únicos
+  // Extract list of unique members
   const availableMembers = useMemo(() => {
     return userData.map(user => user.name).sort();
   }, [userData]);
 
-  // Filtrar userData baseado em membros selecionados
+  // Filter userData based on selected members
   const filteredUserData = useMemo(() => {
     if (selectedMembers.length === 0) return userData;
     return userData.filter(user => selectedMembers.includes(user.name));
