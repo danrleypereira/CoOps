@@ -19,7 +19,7 @@ export interface MemberAnalysis {
 export type AnalysisType = 'commits_analysis' | 'prs_analysis' | 'issues_analysis';
 
 /**
- * Labels for analysis types in Portuguese
+ * Labels for analysis types
  */
 const ANALYSIS_TYPE_LABELS: Record<AnalysisType, string> = {
   commits_analysis: 'Commits',
@@ -104,12 +104,11 @@ export function AISummary({
 
   // Fetch data from JSON file
   useEffect(() => {
-    const fetchData = async () => {
+    const loadData = async () => {
       setIsLoading(true);
       setError(null);
-      
+
       try {
-        {
           let data: Record<string, unknown>;
           if (jsonUrl) {
             const response = await fetch(jsonUrl);
@@ -145,10 +144,9 @@ export function AISummary({
           // Extract unique repos
           const repos = [...new Set(validMembers.flatMap(m => m.repos || []))];
           setAvailableRepos(repos);
-        }
       } catch (err) {
         console.error('Error loading AI analysis data:', err);
-        const errorMessage = err instanceof Error ? err.message : 'Erro ao carregar dados';
+        const errorMessage = err instanceof Error ? err.message : 'Failed to load data';
         setError(errorMessage);
         setMembersData([]);
         setFilteredMembers([]);
@@ -157,7 +155,7 @@ export function AISummary({
       }
     };
 
-    fetchData();
+    loadData();
   }, [jsonUrl]);
 
   // Apply filters when filter values or membersData changes
@@ -249,7 +247,7 @@ export function AISummary({
   const clearFilters = () => {
     setSearchName('');
     setSelectedRepo('all');
-    setSelectedAnalysisType('all');
+    setSelectedAnalysisType(defaultAnalysisType || 'all');
   };
   
   // Clear all selected members
@@ -570,11 +568,11 @@ export function AISummary({
               style={{ borderColor: '#444444' }}
             >
               <span className="text-slate-400">
-                {filteredMembers.length} membro{filteredMembers.length !== 1 ? 's' : ''} encontrado{filteredMembers.length !== 1 ? 's' : ''}
+                {filteredMembers.length} member{filteredMembers.length !== 1 ? 's' : ''} found
               </span>
               {selectedMembers.length > 0 && (
                 <span className="text-blue-400 font-medium">
-                  {selectedMembers.length} selecionado{selectedMembers.length !== 1 ? 's' : ''}
+                  {selectedMembers.length} selected
                 </span>
               )}
             </div>
@@ -617,7 +615,7 @@ export function AISummary({
                   <button
                     onClick={() => handleRemoveMember(member.name)}
                     className="text-slate-400 hover:text-white transition-colors flex-shrink-0"
-                    title="Remover"
+                    title="Remove"
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path

@@ -152,8 +152,10 @@ jobs:
     steps:
       - name: Check for GEMINI_API_KEY
         id: check
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          if [ -n "${{ secrets.GEMINI_API_KEY }}" ]; then
+          if [ -n "$GEMINI_API_KEY" ]; then
             echo "enabled=true" >> $GITHUB_OUTPUT
             echo "GEMINI_API_KEY found - AI Analysis will run"
           else

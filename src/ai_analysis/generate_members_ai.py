@@ -584,7 +584,7 @@ def main():
     output_data = {
         '_metadata': {
             'total_members': len(analyses),
-            'model': 'gemini-2.0-flash-lite',
+            'model': 'gemini-2.5-flash-lite',
             'description': 'Análises de IA sobre atividades dos membros',
             'test_mode': test_mode
         },
