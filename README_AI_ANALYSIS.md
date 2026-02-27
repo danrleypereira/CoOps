@@ -52,6 +52,18 @@ python -m src.ai_analysis.generate_members_ai --test
 - The AI analysis degrades gracefully: if `GEMINI_API_KEY` is not set, the gold-process workflow skips the AI step entirely.
 - To reduce cost/time, use `--test` mode to process only a sample of members.
 
+## Setup for Forks
+
+To enable AI analysis in your fork, you need to add your Gemini API key as a GitHub Actions secret:
+
+1. Get a free API key from [Google AI Studio](https://aistudio.google.com/apikey)
+2. In your forked repository, go to **Settings > Secrets and variables > Actions**
+3. Click **New repository secret**
+4. Set the name to `GEMINI_API_KEY` and paste your API key as the value
+5. Click **Add secret**
+
+Once configured, the `gold-process.yaml` workflow will automatically run AI analysis after gold layer processing. If the secret is not set, the workflow skips the AI step gracefully — no errors, no failures.
+
 ## CI/CD Integration
 
 The AI analysis is integrated into the `gold-process.yaml` workflow:
