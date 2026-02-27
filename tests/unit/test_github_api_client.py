@@ -237,8 +237,9 @@ def test_organization_config():
     config = OrganizationConfig("test-org")
     
     assert config.org_name == "test-org"
-    assert config.repo_blacklist == []
-    assert config.should_skip_repo({"name": "any-repo"}) is False
+    assert isinstance(config.repo_blacklist, list)
+    # CoOps has a default blacklist; non-blacklisted repos should not be skipped
+    assert config.should_skip_repo({"name": "some-normal-repo"}) is False
 
 def test_update_data_registry(tmp_path):
     """Testa atualização do registro de dados"""

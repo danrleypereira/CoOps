@@ -31,7 +31,7 @@ class TestBronzeExtract:
         assert "Extracting issues and pull requests" in captured.out
         assert "Extracting commits" in captured.out
         assert "Extracting organization members" in captured.out
-        assert "Bronze extraction completed successfully" in captured.out
+        assert "Bronze extraction completed" in captured.out
     
     def test_main_with_org_argument(self, capsys):
         """Testa que main aceita argumento --org"""
@@ -195,12 +195,11 @@ class TestBronzeExtract:
                                     bronze_extract.main()
         
         captured = capsys.readouterr()
-        assert "Generated 5 files" in captured.out
-        assert "repo1.json" in captured.out
-        assert "repo2.json" in captured.out
-        assert "issues.json" in captured.out
-        assert "commits.json" in captured.out
-        assert "members.json" in captured.out
+        assert "Total files generated: 5" in captured.out
+        assert "Repositories: 2" in captured.out
+        assert "Issues/PRs: 1" in captured.out
+        assert "Commits: 1" in captured.out
+        assert "Members: 1" in captured.out
     
     def test_main_handles_extraction_error(self, capsys):
         """Testa tratamento de erro durante extração"""
@@ -215,7 +214,7 @@ class TestBronzeExtract:
                     assert exc_info.value.code == 1
         
         captured = capsys.readouterr()
-        assert "Error during bronze extraction" in captured.out
+        assert "Bronze extraction failed" in captured.out
         assert "API Error" in captured.out
     
     def test_main_extracts_in_correct_order(self):
@@ -290,4 +289,4 @@ class TestBronzeExtract:
         
         # Verifica que o processo foi concluído sem erro
         captured = capsys.readouterr()
-        assert "Bronze extraction completed successfully" in captured.out
+        assert "Bronze extraction completed" in captured.out

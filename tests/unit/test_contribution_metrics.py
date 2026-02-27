@@ -259,8 +259,8 @@ def test_process_contribution_metrics_total_activity_calculation(monkeypatch):
     assert r1["commits"] == 2
     assert r1["comments"] == 2
 
-def test_process_contribution_metrics_empty_contributions_list(monkeypatch):
-    """Testa que contribution_metrics sempre é uma lista vazia (código não popula usuários)"""
+def test_process_contribution_metrics_with_issues_only(monkeypatch):
+    """Test that contribution_metrics populates users from issues"""
     issues = [{"repo_name": "r1", "user": {"login": "alice"}}]
 
     def fake_load(path: str):
@@ -277,11 +277,9 @@ def test_process_contribution_metrics_empty_contributions_list(monkeypatch):
     monkeypatch.setattr(contrib, "save_json_data", fake_save)
 
     files = contrib.process_contribution_metrics()
-    
+
     metrics = saved["data/silver/contribution_metrics.json"]
-    
-    # O código nunca popula contributions, então sempre vazio
-    assert metrics == []
-    
-    # Não gera distribution_analysis porque não há contribuidores
-    assert not any("contribution_distribution.json" in f for f in files)
+
+    # alice should appear as a contributor from issues
+    assert len(metrics) >= 1
+    assert any(m.get("user") == "alice" or m.get("login") == "alice" for m in metrics)

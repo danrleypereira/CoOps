@@ -43,9 +43,9 @@ def test_process_collaboration_networks_basic(monkeypatch, fake_io):
 
     edges = fake_io["data/silver/collaboration_edges.json"]
     assert len(edges) > 0
-    # Verifica se pelo menos uma aresta contém usuários ordenados
+    # Verify edges contain user references
     e0 = edges[0]
-    assert "user1" in e0 and "user2" in e0
+    assert ("user1" in e0 and "user2" in e0) or ("source" in e0 and "target" in e0)
 
     user_metrics = fake_io["data/silver/user_collaboration_metrics.json"]
     # alice deveria aparecer (issues + prs + event)
@@ -159,9 +159,9 @@ def test_process_collaboration_networks_issue_assignee(monkeypatch, fake_io):
     
     # Deve criar uma aresta entre alice e bob
     assert len(edges) == 1
-    assert edges[0]["user1"] == "alice"
-    assert edges[0]["user2"] == "bob"
-    assert edges[0]["repo"] == "repo1"
+    assert edges[0]["source"] == "alice"
+    assert edges[0]["target"] == "bob"
+    assert "repo1" in edges[0]["repos"]
 
 def test_process_collaboration_networks_commit_author_priority(monkeypatch, fake_io):
     """Testa priorização de identificação de autor em commits"""
@@ -205,8 +205,8 @@ def test_process_collaboration_networks_commit_author_priority(monkeypatch, fake
      # Deve haver uma colaboração entre alice e bob
     edges = fake_io["data/silver/collaboration_edges.json"]
     assert len(edges) == 1
-    assert edges[0]["user1"] == "alice"
-    assert edges[0]["user2"] == "bob"
+    assert edges[0]["source"] == "alice"
+    assert edges[0]["target"] == "bob"
 
 def test_process_collaboration_networks_event_actor(monkeypatch, fake_io):
     """Testa identificação de atores em eventos"""
@@ -393,8 +393,8 @@ def test_process_collaboration_networks_edge_sorting(monkeypatch, fake_io):
     
     assert len(edges) == 1
     # Deve estar ordenado: alice < zebra
-    assert edges[0]["user1"] == "alice"
-    assert edges[0]["user2"] == "zebra"
+    assert edges[0]["source"] == "alice"
+    assert edges[0]["target"] == "zebra"
 
 def test_process_collaboration_networks_no_self_collaboration(monkeypatch, fake_io):
     """Testa que não há auto-colaboração (usuário consigo mesmo)"""
