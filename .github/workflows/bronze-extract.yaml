@@ -47,9 +47,9 @@ jobs:
             https://api.github.com/users/$OWNER | jq -r .type)
 
           if [ "$TYPE" = "Organization" ]; then
-            echo "✅ Valid organization: $OWNER"
+            echo "[SUCCESS] Valid organization: $OWNER"
           else
-            echo "❌ ERROR: $OWNER is not an organization (type: $TYPE)"
+            echo "[ERROR]: $OWNER is not an organization (type: $TYPE)"
             exit 1
           fi
 
@@ -57,22 +57,28 @@ jobs:
         run: |
           mkdir -p data/bronze data/silver data/gold
           mkdir -p cache
-          echo "📁 Created data layer directories"
+          echo "[INFO] Created data layer directories"
 
       - name: Extract Bronze layer data
         id: extraction
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "🔄 Starting Bronze layer extraction..."
-          python src/bronze_extract.py --token "$GITHUB_TOKEN" --org "${GITHUB_REPOSITORY_OWNER}" --cache
+          echo "[INFO] Starting Bronze layer extraction..."
+          # Use GraphQL for commits to avoid per-commit REST stats calls
+          # Full history: no since/until or max limits
+          python src/bronze_extract.py \
+            --token "$GITHUB_TOKEN" \
+            --org "${GITHUB_REPOSITORY_OWNER}" \
+            --cache \
+            --commits-method graphql
 
           # Check if files were generated
           if [ "$(find data/bronze -name '*.json' | wc -l)" -gt 0 ]; then
-            echo "✅ Bronze extraction completed successfully"
+            echo "[SUCCESS] Bronze extraction completed successfully"
             echo "completed=true" >> $GITHUB_OUTPUT
           else
-            echo "❌ No files generated in bronze layer"
+            echo "[ERROR] No files generated in bronze layer"
             echo "completed=false" >> $GITHUB_OUTPUT
             exit 1
           fi
@@ -80,13 +86,13 @@ jobs:
       - name: Generate data registry
         if: steps.extraction.outputs.completed == 'true'
         run: |
-          echo "📋 Generating data registry..."
+          echo "[INFO] Generating data registry..."
           python src/registry_manager.py
 
       - name: List generated files
         if: steps.extraction.outputs.completed == 'true'
         run: |
-          echo "📊 Bronze layer files generated:"
+          echo "[INFO] Bronze layer files generated:"
           find data/bronze -name '*.json' -type f | sort | while read file; do
             size=$(du -h "$file" | cut -f1)
             echo "  - $file ($size)"
@@ -104,21 +110,21 @@ jobs:
             # In detached HEAD state, checkout the appropriate branch
             if [ "${{ github.event_name }}" = "pull_request" ]; then
               BRANCH="${{ github.event.pull_request.head.ref }}"
-              echo "📌 Checking out PR branch: $BRANCH"
+              echo "Checking out PR branch: $BRANCH"
               git checkout -B "$BRANCH"
             else
               BRANCH="${GITHUB_REF#refs/heads/}"
-              echo "📌 Checking out branch: $BRANCH"
+              echo "Checking out branch: $BRANCH"
               git checkout -B "$BRANCH"
             fi
           else
-            echo "✅ Already on branch: $CURRENT_BRANCH"
+            echo "Already on branch: $CURRENT_BRANCH"
           fi
 
           git add data/bronze/ data/master_registry.json data/data_catalog.json
 
           if ! git diff --cached --quiet; then
-            git commit -m "🔄 [Bronze] Update extracted GitHub metrics data
+            git commit -m "[Bronze] Update extracted GitHub metrics data
 
             - Extracted organization data from GitHub API
             - Generated $(find data/bronze -name '*.json' | wc -l) bronze layer files
@@ -128,7 +134,7 @@ jobs:
             git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
             git push origin HEAD
           else
-            echo "📄 No changes to commit in Bronze layer"
+            echo "No changes to commit in Bronze layer"
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

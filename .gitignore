@@ -4,3 +4,66 @@
 dashboard/dist/
 dashboard/node_modules/
 dashboard/**.tsbuildinfo
+
+# Ignorar a pasta bin
+bin/
+
+cache/
+# Ignorar arquivos de log
+
+*.log
+
+# Logs
+logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+dist/
+node_modules/
+dist-ssr
+*.local
+*.tsbuildinfo
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+front-end/.next/
+# Ambientes virtuais Python
+.venv/
+venv/
+env/
+ENV/
+.virtualenv/
+
+# Arquivos Python
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Pytest e Coverage
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+
+# Coverage reports
+coverage/
+*.cover
+.vitest/
+
+# Frontend coverage
+front-end/coverage/
+front-end/.nyc_output/

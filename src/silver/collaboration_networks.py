@@ -10,21 +10,21 @@ from utils.github_api import save_json_data, load_json_data
 
 def process_collaboration_networks() -> List[str]:
     """Process collaboration data into network metrics"""
-    
+
     # Load bronze data
     issues_data = load_json_data("data/bronze/issues_all.json") or []
     prs_data = load_json_data("data/bronze/prs_all.json") or []
     commits_data = load_json_data("data/bronze/commits_all.json") or []
     issue_events_data = load_json_data("data/bronze/issue_events_all.json") or []
-    
+
     # Skip metadata entries
     for data_list in [issues_data, prs_data, commits_data, issue_events_data]:
         if isinstance(data_list, list) and len(data_list) > 0 and '_metadata' in data_list[0]:
             data_list = data_list[1:]
-    
+
     # Track collaborations by repository
     repo_collaborators = defaultdict(set)
-    
+
     # Collect contributors per repository
     for issue in issues_data:
         repo = issue.get('repo_name', 'unknown')
@@ -32,22 +32,44 @@ def process_collaboration_networks() -> List[str]:
             repo_collaborators[repo].add(issue['user']['login'])
         if issue.get('assignee', {}) and issue['assignee'].get('login'):
             repo_collaborators[repo].add(issue['assignee']['login'])
-    
+
     for pr in prs_data:
         repo = pr.get('repo_name', 'unknown')
         if pr.get('user', {}).get('login'):
             repo_collaborators[repo].add(pr['user']['login'])
-    
+
+    # Squad improvement: more robust commit author extraction
     for commit in commits_data:
+        commits_identifier = None
+
+        # Try the 'author' field first (GitHub user)
+        commit_author = commit.get('author', {})
+        if isinstance(commit_author, dict) and commit_author.get('login'):
+            commits_identifier = commit_author.get('login')
+
+        # If not found, try 'commit.author.login'
+        if not commits_identifier:
+            commit_info = commit.get('commit', {})
+            if isinstance(commit_info, dict):
+                commit_author_info = commit_info.get('author', {})
+                if isinstance(commit_author_info, dict) and commit_author_info.get('login'):
+                    commits_identifier = commit_author_info.get('login')
+
         repo = commit.get('repo_name', 'unknown')
-        if commit.get('author', {}) and commit['author'].get('login'):
-            repo_collaborators[repo].add(commit['author']['login'])
-    
+        if commits_identifier:
+            repo_collaborators[repo].add(commits_identifier)
+
+    # Squad improvement: more robust event actor extraction
     for event in issue_events_data:
+        event_actor = event.get('actor', {})
+        if isinstance(event_actor, dict) and event_actor.get('login'):
+            events_identifier = event_actor.get('login')
+        else:
+            events_identifier = None
         repo = event.get('repo_name', 'unknown')
-        if event.get('actor', {}) and event['actor'].get('login'):
-            repo_collaborators[repo].add(event['actor']['login'])
-    
+        if events_identifier:
+            repo_collaborators[repo].add(events_identifier)
+
     # Create collaboration edges with weights
     # Track all repo collaborations per user pair
     collaboration_repos = defaultdict(list)
@@ -89,7 +111,7 @@ def process_collaboration_networks() -> List[str]:
         "data/silver/collaboration_edges.json"
     )
     generated_files.append(edges_file)
-    
+
     # Create user collaboration metrics
     user_metrics = []
     for user, collaborators in user_collaborations.items():
@@ -99,15 +121,15 @@ def process_collaboration_networks() -> List[str]:
             'collaborators': list(collaborators),
             'repositories_contributed': len([repo for repo, contributors in repo_collaborators.items() if user in contributors])
         })
-    
+
     user_metrics.sort(key=lambda x: x['collaborator_count'], reverse=True)
-    
+
     user_metrics_file = save_json_data(
         user_metrics,
         "data/silver/user_collaboration_metrics.json"
     )
     generated_files.append(user_metrics_file)
-    
+
     # Create repository collaboration analysis
     repo_analysis = []
     for repo, contributors in repo_collaborators.items():
@@ -125,15 +147,15 @@ def process_collaboration_networks() -> List[str]:
             'actual_collaborations': actual_collaborations,
             'collaboration_density': actual_collaborations / potential_collaborations if potential_collaborations > 0 else 0
         })
-    
+
     repo_analysis.sort(key=lambda x: x['contributor_count'], reverse=True)
-    
+
     repo_analysis_file = save_json_data(
         repo_analysis,
         "data/silver/repository_collaboration_analysis.json"
     )
     generated_files.append(repo_analysis_file)
-    
+
     # Identify cross-repository collaborators (hubs)
     cross_repo_contributors = {}
     for user in user_collaborations.keys():
@@ -145,17 +167,17 @@ def process_collaboration_networks() -> List[str]:
                 'repo_count': len(repos_contributed),
                 'total_collaborators': len(user_collaborations[user])
             }
-    
+
     if cross_repo_contributors:
         cross_repo_list = list(cross_repo_contributors.values())
         cross_repo_list.sort(key=lambda x: x['repo_count'], reverse=True)
-        
+
         cross_repo_file = save_json_data(
             cross_repo_list,
             "data/silver/cross_repository_hubs.json"
         )
         generated_files.append(cross_repo_file)
-    
+
     # Create network summary statistics
     network_stats = {
         'total_users': len(user_collaborations),
@@ -165,12 +187,12 @@ def process_collaboration_networks() -> List[str]:
         'avg_collaborators_per_user': sum(len(collaborators) for collaborators in user_collaborations.values()) / len(user_collaborations) if user_collaborations else 0,
         'avg_contributors_per_repo': sum(len(contributors) for contributors in repo_collaborators.values()) / len(repo_collaborators) if repo_collaborators else 0
     }
-    
+
     stats_file = save_json_data(
         network_stats,
         "data/silver/network_statistics.json"
     )
     generated_files.append(stats_file)
-    
-    print(f"🤝 Processed collaboration networks: {network_stats['total_users']} users, {network_stats['total_collaborations']} connections")
+
+    print(f"Processed collaboration networks: {network_stats['total_users']} users, {network_stats['total_collaborations']} connections")
     return generated_files
