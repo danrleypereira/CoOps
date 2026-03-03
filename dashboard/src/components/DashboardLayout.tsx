@@ -42,25 +42,14 @@ function DashboardLayoutInner({
   onNavigate,
 }: DashboardLayoutProps) {
   const { sidebarWidth } = useSidebar();
-  if (currentPage === 'repos') {
-    onRepo = true;
-    onOverview = false;
-  }
-  else if (currentPage === 'overview') {
-    onOverview = true;
-    onRepo = false;
-  }
-  else
-  {
-    onRepo = false;
-    onOverview = false;
-  }
+  const showRepo = currentPage === 'repos';
+  const showOverview = currentPage === 'overview';
 
   return (
     <div className="min-h-screen flex" style={{ marginLeft: sidebarWidth }}>
       <Sidebar currentPage={currentPage} onNavigate={onNavigate} />
       <div className="flex flex-col flex-1">
-        {onRepo && (
+        {showRepo && (
           <RepositoryToolbar
             currentRepo={currentRepo}
             currentPage={currentSubPage}
@@ -68,7 +57,7 @@ function DashboardLayoutInner({
             onNavigate={onNavigate}
           />
         )}
-        {onOverview && (
+        {showOverview && (
           <OverviewToolbar
             currentPage={currentSubPage}
             data={data}

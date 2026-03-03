@@ -16,7 +16,7 @@ interface FilterProps {
  * @param value - Currently selected value
  */
 export function Filter({ title, content, sendSelectedValue, value }: FilterProps) {
-  const selected = value ?? content[0] ?? '';
+  const selected = value ?? (content.length > 0 ? content[0] : '');
 
   const handleChange = (selectedValue: string) => {
     if (sendSelectedValue) sendSelectedValue(selectedValue);

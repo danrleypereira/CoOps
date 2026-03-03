@@ -351,8 +351,8 @@ describe('SidebarContext', () => {
         }
       });
 
-      // 10 toggles = estado volta ao original
-      expect(result.current.isSidebarOpen).toBe(false);
+      // 10 toggles (even) = estado volta ao original (true)
+      expect(result.current.isSidebarOpen).toBe(true);
     });
 
     test('toggle rápido ímpar de vezes inverte o estado', () => {

@@ -16,7 +16,7 @@ export function SidebarProvider({ children }: SidebarProviderProps) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
+    setIsSidebarOpen(open => !open);
   };
 
   const sidebarWidth = isSidebarOpen ? '184px' : '64px';

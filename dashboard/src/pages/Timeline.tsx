@@ -38,6 +38,10 @@ interface UserActivityData {
 function transformToUserActivity(timelineData: TimelineData[]): UserActivityData[] {
   const userMap = new Map<string, UserActivityData>();
 
+  // Precompute date→index map for O(1) lookups
+  const dateIndexMap = new Map<string, number>();
+  timelineData.forEach((entry, idx) => dateIndexMap.set(entry.date, idx));
+
   // Iterate over each date
   timelineData.forEach((dateEntry) => {
     // Iterate over each user in the date entry
@@ -70,7 +74,7 @@ function transformToUserActivity(timelineData: TimelineData[]): UserActivityData
       }
 
       const userData = userMap.get(userName)!;
-      const dateIndex = timelineData.findIndex(d => d.date === dateEntry.date);
+      const dateIndex = dateIndexMap.get(dateEntry.date) ?? -1;
 
       // Sum total user activities
       userData.activities.commits += user.activities.commits;
@@ -157,7 +161,7 @@ export default function Timeline() {
             for (let i = 0; i < expectedLength; i++) {
               const currentDate = new Date(startDate);
               currentDate.setDate(startDate.getDate() + i);
-              const dateStr = currentDate.toISOString().split('T')[0];
+              const dateStr = `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, '0')}-${String(currentDate.getDate()).padStart(2, '0')}`;
               
               // Check if it already exists in timelineData
               const existingData = timelineData.find(d => d.date === dateStr);
@@ -177,7 +181,7 @@ export default function Timeline() {
             for (let i = 0; i < expectedLength; i++) {
               const currentDate = new Date(startDate);
               currentDate.setMonth(startDate.getMonth() + i);
-              const dateStr = currentDate.toISOString().split('T')[0];
+              const dateStr = `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, '0')}-${String(currentDate.getDate()).padStart(2, '0')}`;
               
               const existingData = timelineData.find(d => d.date === dateStr);
               if (existingData) {

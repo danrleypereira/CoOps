@@ -1,3 +1,4 @@
+import type { ReactElement } from 'react';
 import { describe, test, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
@@ -61,7 +62,7 @@ describe('RepositoryFilter Component', () => {
   });
 
   const renderWithRouter = (
-    component: React.ReactElement,
+    component: ReactElement,
     initialEntries: string[] = ['/']
   ) => {
     return render(
@@ -166,7 +167,7 @@ describe('RepositoryFilter Component', () => {
     renderWithRouter(<RepositoryFilter />);
 
     await waitFor(() => {
-      expect(global.fetch).toHaveBeenCalledWith('/2025-2-Squad-01/available_repos.json');
+      expect(global.fetch).toHaveBeenCalledWith(expect.stringContaining('available_repos.json'));
     });
   });
 

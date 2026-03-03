@@ -3,7 +3,7 @@ import DashboardLayout from '../components/DashboardLayout';
 import { CollaborationNetworkGraph, ActivityHeatmap } from '../components/Graphs';
 import { CollaborationEdge, HeatmapDataPoint } from '../types';
 import { useMemo } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useLocation } from 'react-router-dom';
 import { Utils } from './Utils';
 import { fetchData, filterMetadata } from '../services/dataSource';
 import type { ProcessedActivityResponse, RepoActivitySummary } from './Utils';
@@ -22,7 +22,11 @@ export default function CollaborationPage() {
   const [error, setError] = useState<string | null>(null);
   const [ mainData, setMainData ] = useState<ProcessedActivityResponse | null>(null);
   const [searchParams] = useSearchParams();
+  const location = useLocation();
   const [showExplanation, setShowExplanation] = useState<boolean>(false);
+
+  // Derive currentPage from route path
+  const currentPage = location.pathname.startsWith('/repos') ? 'repos' : 'overview';
 
 
   useEffect(() => {
@@ -85,7 +89,7 @@ export default function CollaborationPage() {
 
   return (
     <DashboardLayout
-      currentPage="overview"
+      currentPage={currentPage}
       currentSubPage="collaboration"
       data={mainData}
       currentRepo={selectedRepo ? selectedRepo.name : 'No Repository Selected'}
