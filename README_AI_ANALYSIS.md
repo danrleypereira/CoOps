@@ -7,7 +7,7 @@ This module generates JSON files with AI-powered analyses (Gemini) for the organ
 - `data/silver/ai/members_ai.json`
 
 Each file contains:
-- `_metadata` with org, scope, model info
+- `_metadata` with total_members, model, description, and test_mode flag
 - `members`: object keyed by member login with commit, PR, and issue analyses
 
 ## Prerequisites

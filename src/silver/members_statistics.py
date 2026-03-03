@@ -3,14 +3,9 @@
 from collections import defaultdict
 from datetime import datetime, timedelta
 from typing import List, Dict, Any
-import sys
-from pathlib import Path
 
-# Adicionar diretório raiz ao path
-sys.path.insert(0, str(Path(__file__).parent.parent.parent))
-
-from src.utils.github_api import save_json_data, load_json_data, parse_github_date
-from src.utils.data_helpers import strip_metadata
+from utils.github_api import save_json_data, load_json_data, parse_github_date
+from utils.data_helpers import strip_metadata
 
 def process_members_statistics() -> List[str]:
     """

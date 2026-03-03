@@ -1,14 +1,18 @@
 """
-Gera members_ai.json com análises de IA sobre atividades dos membros.
-Usa Gemini 2.0 Flash Lite com mínimo de requisições (max 25).
+Generates members_ai.json with AI-powered analyses of member activities.
+Uses Gemini 2.5 Flash Lite with batched requests (default max 10).
 """
 import os
 import json
 import logging
+import sys
 import time
 from typing import List, Dict, Any
 from pathlib import Path
 import google.generativeai as genai
+
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from utils.data_helpers import strip_metadata
 
 # Configuração de logging
 logging.basicConfig(
@@ -39,7 +43,7 @@ def load_api_key() -> str:
     return api_key
 
 
-def load_bronze_data(bronze_dir: str = "data/bronze") -> Dict[str, Dict[str, List[Dict]]]:
+def load_bronze_data(bronze_dir: str = "data/bronze") -> Dict[str, Dict[str, Dict[str, List[Dict]]]]:
     """
     Carrega dados bronze e agrupa por membro.
     Retorna: {member: {repo: {'commits': [], 'prs': [], 'issues': []}}}
@@ -59,8 +63,7 @@ def load_bronze_data(bronze_dir: str = "data/bronze") -> Dict[str, Dict[str, Lis
         try:
             with open(commits_file, 'r', encoding='utf-8') as f:
                 data = json.load(f)
-                # Pular o primeiro item se for _metadata
-                commits = data[1:] if data and isinstance(data[0], dict) and '_metadata' in data[0] else data
+                commits = strip_metadata(data)
                 
                 for commit in commits:
                     # Tentar diferentes estruturas de author
@@ -94,8 +97,7 @@ def load_bronze_data(bronze_dir: str = "data/bronze") -> Dict[str, Dict[str, Lis
         try:
             with open(prs_file, 'r', encoding='utf-8') as f:
                 data = json.load(f)
-                # Pular o primeiro item se for _metadata
-                prs = data[1:] if data and isinstance(data[0], dict) and '_metadata' in data[0] else data
+                prs = strip_metadata(data)
                 
                 for pr in prs:
                     # Tentar diferentes estruturas de author
@@ -129,8 +131,7 @@ def load_bronze_data(bronze_dir: str = "data/bronze") -> Dict[str, Dict[str, Lis
         try:
             with open(issues_file, 'r', encoding='utf-8') as f:
                 data = json.load(f)
-                # Pular o primeiro item se for _metadata
-                issues = data[1:] if data and isinstance(data[0], dict) and '_metadata' in data[0] else data
+                issues = strip_metadata(data)
                 
                 for issue in issues:
                     # Tentar diferentes estruturas de author
@@ -314,7 +315,7 @@ Considere as seguintes faixas para avaliar o tamanho médio de mudanças por com
 Use a "Média total de alterações por commit" fornecida para classificar a atomicidade.
 
 REFERÊNCIAS PARA ANÁLISE DE ENGAJAMENTO EM PRs E ISSUES:
-Use a "Média semanal de PRs" e "Total de PRs" e "Média semanal de Issues" e "Total de Issues" para avaliar o engajamento do membro.
+Use o "Total de PRs" e "Total de Issues" para avaliar o engajamento do membro.
 
 INSTRUÇÕES DE FORMATAÇÃO (SIGA RIGOROSAMENTE):
 
@@ -555,8 +556,6 @@ def analyze_members_with_gemini(members_data: Dict[str, Dict], max_requests: int
 
 def main():
     """Função principal."""
-    import sys
-    
     # Verificar se é modo de teste (processa apenas 3 membros)
     test_mode = '--test' in sys.argv
     
