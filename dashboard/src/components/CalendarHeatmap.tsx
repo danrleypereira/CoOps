@@ -32,13 +32,16 @@ interface CalendarHeatmapProps {
   dateLabels?: string[]; // Labels das datas (ex: datas reais ou nomes dos meses)
 }
 
+const DEFAULT_MARGIN = { top: 20, right: 30, bottom: 20, left: 125 };
+const DEFAULT_DATE_LABELS: string[] = [];
+
 const CalendarHeatmap: React.FC<CalendarHeatmapProps> = ({
   userData,
   mode = 'weekly',
   cellSize = 160,
-  margin = { top: 20, right: 30, bottom: 20, left: 125 },
+  margin = DEFAULT_MARGIN,
   colorScheme = 'Blues',
-  dateLabels = [],
+  dateLabels = DEFAULT_DATE_LABELS,
 }) => {
   const svgRef = useRef<SVGSVGElement>(null);
 

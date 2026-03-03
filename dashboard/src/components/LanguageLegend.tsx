@@ -1,3 +1,5 @@
+import type { FC } from 'react';
+
 interface LanguageLegendProps {
   languages: Array<{
     language: string;
@@ -7,7 +9,7 @@ interface LanguageLegendProps {
   colorMap: Record<string, string>;
 }
 
-export const LanguageLegend: React.FC<LanguageLegendProps> = ({ languages, colorMap }) => {
+export const LanguageLegend: FC<LanguageLegendProps> = ({ languages, colorMap }) => {
   const formatBytes = (bytes: number): string => {
     if (bytes === 0) return '0 Bytes';
     const k = 1024;

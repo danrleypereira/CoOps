@@ -19,7 +19,7 @@ def extract_repositories(client: GitHubAPIClient, config: OrganizationConfig, us
     """Extract organization repositories to bronze layer."""
 
     repos_url = f"https://api.github.com/orgs/{config.org_name}/repos"
-    raw_repos = client.get_paginated(repos_url, use_cache=use_cache, per_page=300)
+    raw_repos = client.get_paginated(repos_url, use_cache=use_cache, per_page=100)
 
     if not raw_repos:
         print("ERROR: Failed to fetch repositories")

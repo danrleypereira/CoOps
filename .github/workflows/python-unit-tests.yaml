@@ -2,7 +2,7 @@ name: Unit Tests (Python + Frontend)
 
 on:
   push:
-    branches: [ main, testes_unitários ]
+    branches: [ main ]
   pull_request:
     branches: [ main ]
     paths:

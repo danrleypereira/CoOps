@@ -69,30 +69,4 @@ export class TimelineExtraction {
         return timelineData;
     }
 
-    // Test method
-    static async testExtraction(): Promise<void> {
-        try {
-            console.log('Testing last_7_days extraction...');
-            const data7days = await this.extractTimelineData('last_7_days');
-            console.log('✓ Last 7 days data:', data7days);
-            console.log(`  - Days: ${data7days.length}`);
-            console.log(`  - Total users: ${data7days.reduce((sum, day) => sum + day.users.length, 0)}`);
-            
-            console.log('\nTesting last_12_months extraction...');
-            const data12months = await this.extractTimelineData('last_12_months');
-            console.log('✓ Last 12 months data:', data12months);
-            console.log(`  - Months: ${data12months.length}`);
-            console.log(`  - Total users: ${data12months.reduce((sum, month) => sum + month.users.length, 0)}`);
-            
-            console.log('\nTesting repo filter (2025-2-Squad-01)...');
-            const filteredData = await this.extractTimelineData('last_7_days', '2025-2-Squad-01');
-            console.log('✓ Filtered data:', filteredData);
-            console.log(`  - Days with 2025-2-Squad-01: ${filteredData.length}`);
-            
-            console.log('\n✓ All tests passed!');
-        } catch (error) {
-            console.error('✗ Test failed:', error);
-        }
-    }
-  
 }

@@ -1,5 +1,7 @@
 import { useEffect, useRef } from 'react';
+import type { FC } from 'react';
 import * as d3 from 'd3';
+import { escapeHtml } from '../utils/sanitize';
 
 interface LanguageData {
   language: string;
@@ -43,7 +45,7 @@ interface TreemapNode {
   children?: TreemapNode[];
 }
 
-export const RepoTreemap: React.FC<RepoTreemapProps> = ({
+export const RepoTreemap: FC<RepoTreemapProps> = ({
   data,
   width = 800,
   height = 600
@@ -174,14 +176,14 @@ export const RepoTreemap: React.FC<RepoTreemapProps> = ({
           .attr('stroke-width', 3);
 
         const sampleFiles = (d.data.files || []).slice(0, 5);
-        const filesList = sampleFiles.map(f => `  • ${f.name} (${formatBytes(f.size)})`).join('<br/>');
+        const filesList = sampleFiles.map(f => `  • ${escapeHtml(f.name)} (${formatBytes(f.size)})`).join('<br/>');
         const moreFiles = (d.data.files?.length || 0) > 5
           ? `<br/>  ... and ${(d.data.files?.length || 0) - 5} more files`
           : '';
 
         tooltip.innerHTML = `
           <div style="border-bottom: 1px solid #555; padding-bottom: 8px; margin-bottom: 8px;">
-            <strong style="font-size: 14px;">${d.data.name}</strong>
+            <strong style="font-size: 14px;">${escapeHtml(d.data.name)}</strong>
           </div>
           <div>
             <strong>Files:</strong> ${d.data.fileCount}<br/>

@@ -3,29 +3,20 @@
 from collections import defaultdict
 from datetime import datetime, timedelta
 from typing import List, Dict, Any
-import sys
-from pathlib import Path
 
-# Adicionar diretório raiz ao path
-sys.path.insert(0, str(Path(__file__).parent.parent.parent))
-
-from src.utils.github_api import save_json_data, load_json_data, parse_github_date
+from utils.github_api import save_json_data, load_json_data, parse_github_date
+from utils.data_helpers import strip_metadata
 
 def process_members_statistics() -> List[str]:
     """
     Gera estatísticas individuais por membro, incluindo avg_weekly_activity.
     """
-    
+
     # Carregar dados bronze
-    issues_data = load_json_data("data/bronze/issues_all.json") or []
-    prs_data = load_json_data("data/bronze/prs_all.json") or []
-    commits_data = load_json_data("data/bronze/commits_all.json") or []
-    issue_events_data = load_json_data("data/bronze/issue_events_all.json") or []
-    
-    # Remover metadata se existir
-    for data_list in [issues_data, prs_data, commits_data, issue_events_data]:
-        if isinstance(data_list, list) and len(data_list) > 0 and '_metadata' in data_list[0]:
-            data_list = data_list[1:]
+    issues_data = strip_metadata(load_json_data("data/bronze/issues_all.json") or [])
+    prs_data = strip_metadata(load_json_data("data/bronze/prs_all.json") or [])
+    commits_data = strip_metadata(load_json_data("data/bronze/commits_all.json") or [])
+    issue_events_data = strip_metadata(load_json_data("data/bronze/issue_events_all.json") or [])
     
     generated_files = []
     

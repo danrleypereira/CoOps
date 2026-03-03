@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
+import { escapeHtml } from '../utils/sanitize';
 
 interface LanguageData {
   language: string;
@@ -46,7 +47,7 @@ interface CirclePackNode {
   isLanguage?: boolean;
 }
 
-export const RepoFingerprint: React.FC<RepoFingerprintProps> = ({ 
+export const RepoFingerprint: React.FC<RepoFingerprintProps> = ({
   data, 
   width = 800, 
   height = 600 
@@ -256,7 +257,7 @@ export const RepoFingerprint: React.FC<RepoFingerprintProps> = ({
           
           tooltip.innerHTML = `
             <div style="border-bottom: 1px solid #555; padding-bottom: 8px; margin-bottom: 8px;">
-              <strong style="font-size: 14px;">📁 ${d.data.name}</strong>
+              <strong style="font-size: 14px;">📁 ${escapeHtml(d.data.name)}</strong>
             </div>
             <div>
               <strong>Total Files:</strong> ${totalFiles}<br/>
@@ -264,21 +265,21 @@ export const RepoFingerprint: React.FC<RepoFingerprintProps> = ({
               <strong>Languages:</strong> ${d.children?.length || 0}
             </div>
             <div style="margin-top: 8px; font-size: 11px; opacity: 0.8;">
-              ${languages}
+              ${escapeHtml(languages)}
             </div>
           `;
         }
         // Tooltip para LINGUAGEM
         else if (d.data.isLanguage) {
           const sampleFiles = (d.data.files || []).slice(0, 5);
-          const filesList = sampleFiles.map(f => `  • ${f.name} (${formatBytes(f.size)})`).join('<br/>');
+          const filesList = sampleFiles.map(f => `  • ${escapeHtml(f.name)} (${formatBytes(f.size)})`).join('<br/>');
           const moreFiles = (d.data.files?.length || 0) > 5 
             ? `<br/>  ... and ${(d.data.files?.length || 0) - 5} more files` 
             : '';
 
           tooltip.innerHTML = `
             <div style="border-bottom: 1px solid #555; padding-bottom: 8px; margin-bottom: 8px;">
-              <strong style="font-size: 14px;">${d.data.name}</strong>
+              <strong style="font-size: 14px;">${escapeHtml(d.data.name)}</strong>
             </div>
             <div>
               <strong>Files:</strong> ${d.data.fileCount}<br/>

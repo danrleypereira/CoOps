@@ -113,9 +113,8 @@ export function MemberFilter({
             className="px-3 py-2 border-b transition-colors"
             style={{ borderColor: '#444444' }}
           >
-            <label 
+            <label
               className="flex items-center gap-2 cursor-pointer select-none hover:text-blue-400"
-              onClick={() => handleSelectAll()}
             >
               <input
                 type="checkbox"
@@ -140,9 +139,8 @@ export function MemberFilter({
               key={member}
               className="px-3 py-2 hover:bg-gray-700 transition-colors"
             >
-              <label 
+              <label
                 className="flex items-center gap-2 cursor-pointer select-none hover:text-blue-400"
-                onClick={() => handleToggleMember(member)}
               >
                 <input
                   type="checkbox"

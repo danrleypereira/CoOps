@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
+import { SidebarProvider } from './contexts/SidebarContext';
 import HomePage from './pages/HomePage';
 import Organization from './pages/Organization';
 import Commits from './pages/Commits';
@@ -20,24 +21,26 @@ import NotFound from './pages/NotFound';
  */
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/home" element={<HomePage />} />
-      <Route path="/organization" element={<Organization />} />
-      <Route path="/overview/timeline" element={<Timeline />} />
-      <Route path="/overview/collaboration" element={<Collaboration />} />
-      <Route path="/overview/heatmap" element={<HeatmapPage />} />
-      <Route path="/repos" element={<Navigate to="/repos/commits" replace />} />
-      <Route path="/repos/commits" element={<Commits />} />
-      <Route path="/repos/issues" element={<Issues />} />
-      <Route path="/repos/pullrequests" element={<PullRequests />} />
-      <Route path="/repos/collaboration" element={<Collaboration />} />
-      <Route path="/repos/structure" element={<Structure />} />
-      <Route path="/repos/visualization" element={<VisualizationPage />} />
+    <SidebarProvider>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/organization" element={<Organization />} />
+        <Route path="/overview/timeline" element={<Timeline />} />
+        <Route path="/overview/collaboration" element={<Collaboration />} />
+        <Route path="/overview/heatmap" element={<HeatmapPage />} />
+        <Route path="/repos" element={<Navigate to="/repos/commits" replace />} />
+        <Route path="/repos/commits" element={<Commits />} />
+        <Route path="/repos/issues" element={<Issues />} />
+        <Route path="/repos/pullrequests" element={<PullRequests />} />
+        <Route path="/repos/collaboration" element={<Collaboration />} />
+        <Route path="/repos/structure" element={<Structure />} />
+        <Route path="/repos/visualization" element={<VisualizationPage />} />
 
-      {/* Fallback route for not implemented pages */}
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+        {/* Fallback route for not implemented pages */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </SidebarProvider>
   );
 }
 

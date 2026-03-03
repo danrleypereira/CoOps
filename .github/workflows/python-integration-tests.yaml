@@ -59,7 +59,8 @@ jobs:
             --cov-report=term-missing \
             --cov-report=xml \
             --cov-report=html \
-            --cov-fail-under=30 \
+            --cov-fail-under=70 \
+            --cov-config=.coveragerc \
             -v \
             --tb=short
 
