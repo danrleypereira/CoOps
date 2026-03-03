@@ -96,6 +96,11 @@ export default function HomePage() {
                     View Dashboard
                   </Link>
                 </div>
+                <div className="hover:scale-105 transition-transform duration-200">
+                  <Link to="/overview/timeline" className="botao-secundario">
+                    Overview Metrics
+                  </Link>
+                </div>
               </div>
 
               <p className="text-white/60 text-sm">
@@ -144,75 +149,17 @@ export default function HomePage() {
 
               {/* Bars with gradients */}
               <g transform="translate(75,30)">
-                <rect
-                  className="animate-fade-in-delayed-3"
-                  style={{ animationDelay: '0ms' }}
-                  x="0"
-                  y="170"
-                  width="70"
-                  height="115"
-                  rx="6"
-                  fill="url(#barGradientUniform)"
-                  opacity="0.69"
-                />
-                <rect
-                  className="animate-fade-in-delayed-3"
-                  style={{ animationDelay: '120ms' }}
-                  x="100"
-                  y="80"
-                  width="70"
-                  height="150"
-                  rx="6"
-                  fill="url(#barGradientUniform)"
-                  opacity="0.75"
-                />
-                <rect
-                  className="animate-fade-in-delayed-3"
-                  style={{ animationDelay: '240ms' }}
-                  x="200"
-                  y="0"
-                  width="70"
-                  height="290"
-                  rx="6"
-                  fill="url(#barGradientUniform)"
-                  opacity="0.95"
-                />
-                <rect
-                  className="animate-fade-in-delayed-3"
-                  style={{ animationDelay: '360ms' }}
-                  x="300"
-                  y="150"
-                  width="70"
-                  height="80"
-                  rx="6"
-                  fill="url(#barGradientUniform)"
-                  opacity="0.7"
-                />
-                <rect
-                  className="animate-fade-in-delayed-3"
-                  style={{ animationDelay: '480ms' }}
-                  x="400"
-                  y="230"
-                  width="70"
-                  height="60"
-                  rx="6"
-                  fill="url(#barGradientUniform)"
-                  opacity="0.6"
-                />
+                <rect className="animate-fade-in-delayed-3" style={{ animationDelay: '0ms' }} x="0" y="170" width="70" height="115" rx="6" fill="url(#barGradientUniform)" opacity="0.69" />
+                <rect className="animate-fade-in-delayed-3" style={{ animationDelay: '120ms' }} x="100" y="80" width="70" height="150" rx="6" fill="url(#barGradientUniform)" opacity="0.75" />
+                <rect className="animate-fade-in-delayed-3" style={{ animationDelay: '240ms' }} x="200" y="0" width="70" height="290" rx="6" fill="url(#barGradientUniform)" opacity="0.95" />
+                <rect className="animate-fade-in-delayed-3" style={{ animationDelay: '360ms' }} x="300" y="150" width="70" height="80" rx="6" fill="url(#barGradientUniform)" opacity="0.7" />
+                <rect className="animate-fade-in-delayed-3" style={{ animationDelay: '480ms' }} x="400" y="230" width="70" height="60" rx="6" fill="url(#barGradientUniform)" opacity="0.6" />
               </g>
 
               {/* Height markers and aligned mask */}
               <g transform="translate(40,30)">
                 <mask id="barMask">
-                  <rect
-                    className="animate-fade-in-delayed-3"
-                    style={{ animationDelay: '600ms' }}
-                    x="0"
-                    y="0"
-                    width="470"
-                    height="320"
-                    fill="white"
-                  />
+                  <rect className="animate-fade-in-delayed-3" style={{ animationDelay: '600ms' }} x="0" y="0" width="470" height="320" fill="white" />
                   <g>
                     <rect x="0" y="170" width="70" height="120" rx="6" fill="black" />
                     <rect x="100" y="80" width="70" height="220" rx="6" fill="black" />
@@ -223,177 +170,28 @@ export default function HomePage() {
                 </mask>
                 {/* Horizontal lines with gradient opacity and mask */}
                 <g mask="url(#barMask)">
-                  <line
-                    x1="0"
-                    y1="50"
-                    x2="540"
-                    y2="50"
-                    stroke="#64748b"
-                    strokeWidth="1"
-                    strokeDasharray="6.8"
-                    opacity="0.25"
-                  />
-                  <line
-                    x1="0"
-                    y1="100"
-                    x2="540"
-                    y2="100"
-                    stroke="#64748b"
-                    strokeWidth="1"
-                    strokeDasharray="6.8"
-                    opacity="0.22"
-                  />
-                  <line
-                    x1="0"
-                    y1="150"
-                    x2="540"
-                    y2="150"
-                    stroke="#64748b"
-                    strokeWidth="1"
-                    strokeDasharray="6.8"
-                    opacity="0.18"
-                  />
-                  <line
-                    x1="0"
-                    y1="200"
-                    x2="540"
-                    y2="200"
-                    stroke="#64748b"
-                    strokeWidth="1"
-                    strokeDasharray="6.8"
-                    opacity="0.13"
-                  />
-                  <line
-                    x1="0"
-                    y1="250"
-                    x2="540"
-                    y2="250"
-                    stroke="#64748b"
-                    strokeWidth="1"
-                    strokeDasharray="6.8"
-                    opacity="0.08"
-                  />
-                  <line
-                    x1="0"
-                    y1="300"
-                    x2="540"
-                    y2="300"
-                    stroke="#64748b"
-                    strokeWidth="1"
-                    strokeDasharray="6.8"
-                    opacity="0.04"
-                  />
+                  <line x1="0" y1="50" x2="540" y2="50" stroke="#64748b" strokeWidth="1" strokeDasharray="6.8" opacity="0.25" />
+                  <line x1="0" y1="100" x2="540" y2="100" stroke="#64748b" strokeWidth="1" strokeDasharray="6.8" opacity="0.22" />
+                  <line x1="0" y1="150" x2="540" y2="150" stroke="#64748b" strokeWidth="1" strokeDasharray="6.8" opacity="0.18" />
+                  <line x1="0" y1="200" x2="540" y2="200" stroke="#64748b" strokeWidth="1" strokeDasharray="6.8" opacity="0.13" />
+                  <line x1="0" y1="250" x2="540" y2="250" stroke="#64748b" strokeWidth="1" strokeDasharray="6.8" opacity="0.08" />
+                  <line x1="0" y1="300" x2="540" y2="300" stroke="#64748b" strokeWidth="1" strokeDasharray="6.8" opacity="0.04" />
                 </g>
                 {/* Bars with gradients */}
-                <rect
-                  className="animate-fade-in-delayed-3"
-                  style={{ animationDelay: '0ms' }}
-                  x="0"
-                  y="170"
-                  width="70"
-                  height="120"
-                  rx="6"
-                  fill="url(#gradient1)"
-                  opacity="0.7"
-                />
-                <rect
-                  className="animate-fade-in-delayed-3"
-                  style={{ animationDelay: '120ms' }}
-                  x="100"
-                  y="80"
-                  width="70"
-                  height="220"
-                  rx="6"
-                  fill="url(#gradient4)"
-                  opacity="0.85"
-                />
-                <rect
-                  className="animate-fade-in-delayed-3"
-                  style={{ animationDelay: '240ms' }}
-                  x="200"
-                  y="0"
-                  width="70"
-                  height="290"
-                  rx="6"
-                  fill="url(#gradient1)"
-                  opacity="0.95"
-                />
-                <rect
-                  className="animate-fade-in-delayed-3"
-                  style={{ animationDelay: '360ms' }}
-                  x="300"
-                  y="150"
-                  width="70"
-                  height="140"
-                  rx="6"
-                  fill="url(#gradient1)"
-                  opacity="0.8"
-                />
-                <rect
-                  className="animate-fade-in-delayed-3"
-                  style={{ animationDelay: '480ms' }}
-                  x="400"
-                  y="230"
-                  width="70"
-                  height="60"
-                  rx="6"
-                  fill="url(#gradient3)"
-                  opacity="0.65"
-                />
+                <rect className="animate-fade-in-delayed-3" style={{ animationDelay: '0ms' }} x="0" y="170" width="70" height="120" rx="6" fill="url(#gradient1)" opacity="0.7" />
+                <rect className="animate-fade-in-delayed-3" style={{ animationDelay: '120ms' }} x="100" y="80" width="70" height="220" rx="6" fill="url(#gradient4)" opacity="0.85" />
+                <rect className="animate-fade-in-delayed-3" style={{ animationDelay: '240ms' }} x="200" y="0" width="70" height="290" rx="6" fill="url(#gradient1)" opacity="0.95" />
+                <rect className="animate-fade-in-delayed-3" style={{ animationDelay: '360ms' }} x="300" y="150" width="70" height="140" rx="6" fill="url(#gradient1)" opacity="0.8" />
+                <rect className="animate-fade-in-delayed-3" style={{ animationDelay: '480ms' }} x="400" y="230" width="70" height="60" rx="6" fill="url(#gradient3)" opacity="0.65" />
               </g>
               {/* Overlaid line chart */}
               <g transform="translate(40,30)">
-                <polyline
-                  points="35,205 135,115 235,35 335,185 435,265"
-                  fill="none"
-                  stroke="#ffffffff"
-                  strokeWidth="3"
-                  strokeLinejoin="round"
-                  opacity="0.85"
-                  className="animate-fade-in-delayed-3"
-                  style={{ animationDelay: '480ms' }}
-                />
-                {/* Line points */}
-                <circle
-                  className="animate-fade-in-delayed-3"
-                  style={{ animationDelay: '480ms' }}
-                  cx="35"
-                  cy="205"
-                  r="5"
-                  fill="#ffffffff "
-                />
-                <circle
-                  className="animate-fade-in-delayed-3"
-                  style={{ animationDelay: '480ms' }}
-                  cx="135"
-                  cy="115"
-                  r="5"
-                  fill="#ffffffff"
-                />
-                <circle
-                  className="animate-fade-in-delayed-3"
-                  style={{ animationDelay: '480ms' }}
-                  cx="235"
-                  cy="35"
-                  r="5"
-                  fill="#ffffffff"
-                />
-                <circle
-                  className="animate-fade-in-delayed-3"
-                  style={{ animationDelay: '480ms' }}
-                  cx="335"
-                  cy="185"
-                  r="5"
-                  fill="#ffffffff"
-                />
-                <circle
-                  className="animate-fade-in-delayed-3"
-                  style={{ animationDelay: '480ms' }}
-                  cx="435"
-                  cy="265"
-                  r="5"
-                  fill="#ffffffff"
-                />
+                <polyline points="35,205 135,115 235,35 335,185 435,265" fill="none" stroke="#ffffffff" strokeWidth="3" strokeLinejoin="round" opacity="0.85" className="animate-fade-in-delayed-3" style={{ animationDelay: '480ms' }} />
+                <circle className="animate-fade-in-delayed-3" style={{ animationDelay: '480ms' }} cx="35" cy="205" r="5" fill="#ffffffff " />
+                <circle className="animate-fade-in-delayed-3" style={{ animationDelay: '480ms' }} cx="135" cy="115" r="5" fill="#ffffffff" />
+                <circle className="animate-fade-in-delayed-3" style={{ animationDelay: '480ms' }} cx="235" cy="35" r="5" fill="#ffffffff" />
+                <circle className="animate-fade-in-delayed-3" style={{ animationDelay: '480ms' }} cx="335" cy="185" r="5" fill="#ffffffff" />
+                <circle className="animate-fade-in-delayed-3" style={{ animationDelay: '480ms' }} cx="435" cy="265" r="5" fill="#ffffffff" />
               </g>
             </svg>
           </div>

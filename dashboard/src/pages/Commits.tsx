@@ -1,11 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { scaleOrdinal, schemeSpectral } from 'd3';
-import type { HistogramDatum, PieDatum } from '../types';
+import type { PieDatum, BasicDatum } from '../types';
 import type { ProcessedActivityResponse, RepoActivitySummary } from './Utils';
 import DashboardLayout from '../components/DashboardLayout';
 import BaseFilters from '../components/BaseFilters';
-import { Histogram, PieChart } from '../components/Graphs';
+import { Histogram, PieChart, CommitMetricsChart } from '../components/Graphs';
 import { Utils } from './Utils';
 
 /**
@@ -16,6 +15,7 @@ import { Utils } from './Utils';
  * - Repository selection and filtering
  * - Timeline-based commit histogram
  * - Contributor distribution pie chart
+ * - Commit content analysis chart
  * - Member and time range filtering
  */
 export default function CommitsPage() {
@@ -23,8 +23,9 @@ export default function CommitsPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [searchParams] = useSearchParams();
-  const [selectedMember, setSelectedMember] = useState<string>('All');
-  const [selectedTime, setSelectedTime] = useState<string>('All Time');
+  const [selectedMembers, setSelectedMembers] = useState<string[]>([]);
+  const [selectedTime, setSelectedTime] = useState<string>('Last 24 hours');
+  const [lineToggle, setLineToggle] = useState(false);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -55,143 +56,40 @@ export default function CommitsPage() {
 
   const repositories = useMemo<RepoActivitySummary[]>(() => data?.repositories ?? [], [data]);
 
-  const selectedRepo = useMemo<RepoActivitySummary | null>(() => {
-    const selectedParam = searchParams.get('repo');
-    const selectedRepoId: number | 'all' =
-      !selectedParam || selectedParam === 'all'
-        ? 'all'
-        : Number.isNaN(Number(selectedParam))
-          ? 'all'
-          : Number(selectedParam);
+  const repoParam = searchParams.get('repo');
 
-    if (selectedRepoId === 'all') {
-      return {
-        id: -1,
-        name: 'All repositories',
-        activities: repositories.flatMap((repo) => repo.activities),
-      } as RepoActivitySummary;
-    }
-    return repositories.find((repo) => repo.id === selectedRepoId) ?? null;
-  }, [repositories, searchParams]);
+  const { selectedRepo, members } = useMemo(() => {
+    return Utils.selectRepoAndFilter(repositories, repoParam);
+  }, [repositories, repoParam]);
 
   useEffect(() => {
-    setSelectedMember('All');
+    setSelectedMembers([]);
   }, [selectedRepo?.id]);
-
-  const members = useMemo<string[]>(() => {
-    if (!selectedRepo) return [];
-    const memberSet = new Set<string>();
-
-    for (const activity of selectedRepo.activities) {
-      const name = activity.user.displayName || activity.user.login || 'Unknown';
-      memberSet.add(name);
-    }
-    const membersFound = Array.from(memberSet).sort((a, b) => a.localeCompare(b));
-    return ['All', ...membersFound];
-  }, [selectedRepo]);
 
   const filteredActivities = useMemo(() => {
     if (!selectedRepo) return [];
+    return Utils.applyFilters(selectedRepo.activities, selectedMembers, selectedTime);
+  }, [selectedRepo, selectedMembers, selectedTime]);
 
-    if (!selectedMember || selectedMember === 'All') return selectedRepo.activities;
-
-    return selectedRepo.activities.filter((activity) => {
-      const name = activity.user.displayName || activity.user.login || 'Unknown';
-      return name === selectedMember;
-    });
-  }, [selectedRepo, selectedMember]);
-
-  const cutoffDate = useMemo<Date | null>(() => {
-    const now = new Date();
-    switch (selectedTime) {
-      case 'Last 24 hours': {
-        const d = new Date(now);
-        d.setDate(d.getDate() - 1);
-        return d;
-      }
-      case 'Last 7 days': {
-        const d = new Date(now);
-        d.setDate(d.getDate() - 7);
-        return d;
-      }
-      case 'Last 30 days': {
-        const d = new Date(now);
-        d.setDate(d.getDate() - 30);
-        return d;
-      }
-      case 'Last 6 months': {
-        const d = new Date(now);
-        d.setMonth(d.getMonth() - 6);
-        return d;
-      }
-      case 'Last Year': {
-        const d = new Date(now);
-        d.setFullYear(d.getFullYear() - 1);
-        return d;
-      }
-      default:
-        return null;
-    }
-  }, [selectedTime]);
-
-  const histogramData = useMemo<HistogramDatum[]>(() => {
+  const BasicData = useMemo<BasicDatum[]>(() => {
     if (!selectedRepo) return [];
-    const counts = new Map<string, number>();
 
-    for (const activity of filteredActivities) {
-      const day = activity.date.slice(0, 10);
+    const groupByHour = selectedTime === 'Last 24 hours';
 
-      if (cutoffDate) {
-        const activityDate = new Date(day + 'T00:00:00Z');
-        if (activityDate < cutoffDate) continue;
-      }
-
-      counts.set(day, (counts.get(day) ?? 0) + 1);
-    }
-
-    return [...counts.entries()]
-      .map(([dateLabel, count]) => ({ dateLabel, count }))
-      .sort((a, b) => (a.dateLabel < b.dateLabel ? -1 : a.dateLabel > b.dateLabel ? 1 : 0));
-  }, [selectedRepo, filteredActivities, cutoffDate]);
+    return Utils.aggregateBasicData(filteredActivities, {
+      groupByHour,
+      cutoffDate: null,
+    });
+  }, [selectedRepo, filteredActivities, selectedTime]);
 
   const pieData = useMemo<PieDatum[]>(() => {
     if (!selectedRepo) return [];
-    const counts = new Map<string, number>();
 
-    for (const activity of filteredActivities) {
-      if (cutoffDate) {
-        const day = activity.date.slice(0, 10);
-        const activityDate = new Date(day + 'T00:00:00Z');
-        if (activityDate < cutoffDate) continue;
-      }
-      const label = activity.user.displayName || activity.user.login || 'Unknown';
-      counts.set(label, (counts.get(label) ?? 0) + 1);
-    }
-
-    const sorted = [...counts.entries()].sort((a, b) => b[1] - a[1]);
-    const top = sorted.slice(0, 8);
-    const restTotal = sorted.slice(8).reduce((acc, [, value]) => acc + value, 0);
-
-    const colorScale = scaleOrdinal<string, string>()
-      .domain([...top.map(([label]) => label), 'Others'])
-      .range([...schemeSpectral[3], ...schemeSpectral[11]]);
-
-    const result = top.map(([label, value]) => ({
-      label,
-      value,
-      color: colorScale(label),
-    }));
-
-    if (restTotal > 0) {
-      result.push({
-        label: 'Others',
-        value: restTotal,
-        color: colorScale('Others'),
-      });
-    }
-
-    return result;
-  }, [selectedRepo, filteredActivities, cutoffDate]);
+    return Utils.aggregatePieData(filteredActivities, {
+      cutoffDate: null,
+      selectedTime,
+    });
+  }, [selectedRepo, filteredActivities, selectedTime]);
 
   return (
     <DashboardLayout
@@ -218,24 +116,24 @@ export default function CommitsPage() {
 
       <BaseFilters
         members={members}
-        selectedMember={selectedMember}
+        selectedMembers={selectedMembers}
         selectedTime={selectedTime}
-        onMemberChange={setSelectedMember}
+        onMemberChange={setSelectedMembers}
         onTimeChange={setSelectedTime}
       />
 
       {/* Charts Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-90">
+      <div className="flex gap-6">
         {/* Commits Timeline */}
         <div
-          className="border rounded-lg h-200 w-190"
+          className="border rounded-lg flex-1"
           style={{ backgroundColor: '#222222', borderColor: '#333333' }}
         >
           <div className="px-6 py-4 border-b" style={{ borderBottomColor: '#333333' }}>
             <h3 className="text-xl font-bold text-white">Timeline</h3>
           </div>
 
-          <div className="pt-3 h-auto w-auto">
+          <div className="p-6 min-h-[550px]">
             {loading ? (
               <div className="h-[420px] flex items-center justify-center">
                 <div className="text-slate-400">Loading...</div>
@@ -245,33 +143,33 @@ export default function CommitsPage() {
                 <p className="text-red-400">{error}</p>
               </div>
             ) : (
-              <Histogram data={histogramData} />
+              <Histogram data={BasicData} type="Commit" />
             )}
           </div>
         </div>
 
         {/* Contributors */}
         <div
-          className="border rounded-lg"
+          className="border rounded-lg w-96 flex-shrink-0"
           style={{ backgroundColor: '#222222', borderColor: '#333333' }}
         >
           <div className="px-6 py-4 border-b" style={{ borderBottomColor: '#333333' }}>
             <h3 className="text-xl font-bold text-white">Contributors</h3>
           </div>
 
-          <div className="p-6">
+          <div className="p-6 h-[550px] overflow-y-auto">
             {loading ? (
-              <div className="h-[140px] flex items-center justify-center">
+              <div className="h-full flex items-center justify-center">
                 <div className="text-slate-400">Loading...</div>
               </div>
             ) : error ? (
-              <div className="h-[140px] flex items-center justify-center">
+              <div className="h-full flex items-center justify-center">
                 <p className="text-red-400">{error}</p>
               </div>
             ) : (
               <>
                 <div className="flex items-center justify-center mb-2">
-                  <PieChart data={pieData} />
+                  <PieChart data={pieData} type='Commit' />
                 </div>
                 <div className="max-h-[400px] overflow-y-auto space-y-2">
                   {pieData.map((item) => (
@@ -294,6 +192,38 @@ export default function CommitsPage() {
               </>
             )}
           </div>
+        </div>
+      </div>
+
+      {/* Commit Content Analysis */}
+      <div className="mt-5">
+        <div
+          className="border rounded-lg"
+          style={{ backgroundColor: '#222222', borderColor: '#333333' }}
+        >
+          <div className="px-6 py-4 border-b" style={{ borderBottomColor: '#333333' }}>
+            <h3 className="text-xl font-bold text-white">Commits Content Analysis</h3>
+            <p className="text-slate-400 text-sm mt-1">
+              Detailed analysis of code changes, commit frequency, and productivity metrics
+            </p>
+          </div>
+         <div className="flex items-center justify-center mb-2">
+                  <CommitMetricsChart data={BasicData} line_toggle={lineToggle} />
+           </div>
+          <div className="flex items-center justify-center mb-2">
+            <button
+              onClick={() => setLineToggle((prev) => !prev)}
+              aria-pressed={lineToggle}
+              title={lineToggle ? 'Hide Line Graph' : 'Show Line Graph'}
+              className={`px-4 py-2 text-white rounded-lg transition-colors duration-200 ${
+                lineToggle
+                  ? 'border border-gray-400 bg-gray-400 hover:bg-gray-500'
+                  : 'border border-gray-500 bg-gray-600 hover:bg-gray-700'
+              }`}
+            >
+              {lineToggle ? 'Hide Line Graph' : 'Show Line Graph'}
+            </button>
+           </div>
         </div>
       </div>
     </DashboardLayout>

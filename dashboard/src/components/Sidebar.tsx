@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSidebar } from '../contexts/SidebarContext';
 
 interface SidebarProps {
   currentPage?: string;
@@ -14,6 +14,7 @@ interface MenuItem {
 
 const menuItems: MenuItem[] = [
   { id: 'organization', label: 'Organization', icon: '📊' },
+  { id: 'overview', label: 'Overview', icon: '📈' },
   { id: 'repos', label: 'Repositories', icon: '💻' },
 ];
 
@@ -21,29 +22,33 @@ const menuItems: MenuItem[] = [
  * Sidebar Component
  *
  * Main navigation sidebar for the application.
- * Provides navigation between organization and repository views.
+ * Provides navigation between organization, overview, and repository views.
  * Can be collapsed to save screen space.
  */
 export default function Sidebar({ currentPage }: SidebarProps) {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const { isSidebarOpen, toggleSidebar } = useSidebar();
   const navigate = useNavigate();
 
   const handleItemClick = (itemId: string) => {
-    navigate(`/${itemId}`);
-  };
-
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
+    if (itemId === 'overview') {
+      navigate('/overview/timeline');
+    } else if (itemId === 'repos') {
+      navigate('/repos/commits');
+    } else if (itemId === 'home') {
+      navigate('/');
+    } else {
+      navigate(`/${itemId}`);
+    }
   };
 
   return (
     <aside
-      className={`fixed left-0 top-0 h-screen border-r-4 flex-shrink-0 transition-all duration-300 ease-in-out z-40 ${
+      className={`h-screen border-r-4 flex-shrink-0 transition-all duration-300 ease-in-out fixed left-0 top-0 z-40 ${
         isSidebarOpen ? 'w-46' : 'w-16'
       }`}
       style={{ backgroundColor: '#222222', borderRightColor: '#333333' }}
     >
-      <div className="h-full flex flex-col overflow-y-auto">
+      <div className="h-full flex flex-col">
         {/* Brand Header */}
         <div className="h-18 flex items-center gap-3 px-4">
           <span className="text-xl">📊</span>

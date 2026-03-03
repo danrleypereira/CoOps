@@ -1,211 +1,184 @@
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import type { PieDatum, BasicDatum } from '../types';
+import type { ProcessedActivityResponse, RepoActivitySummary } from './Utils';
 import DashboardLayout from '../components/DashboardLayout';
 import BaseFilters from '../components/BaseFilters';
-import Loading from '../components/Loading';
-import { StackedBarChart } from '../components/charts';
-import { fetchData, filterMetadata } from '../services/dataSource';
+import { Histogram, PieChart } from '../components/Graphs';
 import { Utils } from './Utils';
 
-interface TemporalEvent {
-  date: string;
-  type: string;
-  user: string;
-  repo: string;
-}
-
-/**
- * Pull Requests Page
- *
- * Displays PR analytics and review patterns across repositories.
- * Shows PR activity breakdown with related commits.
- */
-export default function PullRequests() {
-  const [temporalData, setTemporalData] = useState<TemporalEvent[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [filtering, setFiltering] = useState(false);
-  const [selectedTime, setSelectedTime] = useState<string>('All Time');
-  const [selectedMember, setSelectedMember] = useState<string>('All');
-  const [activityData, setActivityData] = useState<any>(null);
+export default function PullRequestsPage() {
+  const [data, setData] = useState<ProcessedActivityResponse | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [searchParams] = useSearchParams();
+  const [selectedMembers, setSelectedMembers] = useState<string[]>([]);
+  const [selectedTime, setSelectedTime] = useState<string>('Last 24 hours');
 
   useEffect(() => {
-    async function loadData() {
-      try {
-        const [temporal, activity] = await Promise.all([
-          fetchData('silver/temporal_events.json'),
-          Utils.fetchAndProcessActivityData(),
-        ]);
+    if (typeof window === 'undefined') return;
+    let cancelled = false;
 
-        setTemporalData(filterMetadata(temporal));
-        setActivityData(activity);
-        setLoading(false);
-      } catch (error) {
-        console.error('Failed to load PR data:', error);
-        setLoading(false);
+    async function fetchData() {
+      try {
+        setLoading(true);
+        const processedData = await Utils.fetchAndProcessActivityData('pull_request');
+        if (!cancelled) {
+          setData(processedData);
+          setError(null);
+        }
+      } catch (err) {
+        if (!cancelled) {
+          setError(err instanceof Error ? err.message : String(err));
+        }
+      } finally {
+        if (!cancelled) setLoading(false);
       }
     }
 
-    loadData();
+    fetchData();
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
-  // Calculate cutoff date based on selected time filter
-  const cutoffDate = useMemo<Date | null>(() => {
-    const now = new Date();
-    switch (selectedTime) {
-      case 'Last 24 hours': {
-        const d = new Date(now);
-        d.setDate(d.getDate() - 1);
-        return d;
-      }
-      case 'Last 7 days': {
-        const d = new Date(now);
-        d.setDate(d.getDate() - 7);
-        return d;
-      }
-      case 'Last 30 days': {
-        const d = new Date(now);
-        d.setDate(d.getDate() - 30);
-        return d;
-      }
-      case 'Last 6 months': {
-        const d = new Date(now);
-        d.setMonth(d.getMonth() - 6);
-        return d;
-      }
-      case 'Last Year': {
-        const d = new Date(now);
-        d.setFullYear(d.getFullYear() - 1);
-        return d;
-      }
-      default:
-        return null;
-    }
-  }, [selectedTime]);
+  const repositories = useMemo<RepoActivitySummary[]>(() => data?.repositories ?? [], [data]);
 
-  // Show filtering state when filters change
+  const repoParam = searchParams.get('repo');
+
+  const { selectedRepo, members } = useMemo(() => {
+    return Utils.selectRepoAndFilter(repositories, repoParam);
+  }, [repositories, repoParam]);
+
   useEffect(() => {
-    if (temporalData.length > 0) {
-      setFiltering(true);
-      const timer = setTimeout(() => setFiltering(false), 300);
-      return () => clearTimeout(timer);
-    }
-  }, [selectedMember, selectedTime]);
+    setSelectedMembers([]);
+  }, [selectedRepo?.id]);
 
-  // Filter temporal events by member and time
-  const filteredTemporalData = useMemo(() => {
-    let filtered = temporalData;
+  const filteredActivities = useMemo(() => {
+    if (!selectedRepo) return [];
+    return Utils.applyFilters(selectedRepo.activities, selectedMembers, selectedTime);
+  }, [selectedRepo, selectedMembers, selectedTime]);
 
-    // Filter by member
-    if (selectedMember && selectedMember !== 'All') {
-      filtered = filtered.filter((event) => event.user === selectedMember);
-    }
+  const BasicData = useMemo<BasicDatum[]>(() => {
+    if (!selectedRepo) return [];
 
-    // Filter by time
-    if (cutoffDate) {
-      filtered = filtered.filter((event) => {
-        const eventDate = new Date(event.date);
-        return eventDate >= cutoffDate;
-      });
-    }
+    const groupByHour = selectedTime === 'Last 24 hours';
 
-    return filtered;
-  }, [temporalData, selectedMember, cutoffDate]);
-
-  // Calculate repository stacked data for PRs from filtered events
-  const repoStackedData = useMemo(() => {
-    const repoMetrics = new Map<string, { prs: number; commits: number }>();
-
-    filteredTemporalData.forEach((event) => {
-      if (!repoMetrics.has(event.repo)) {
-        repoMetrics.set(event.repo, { prs: 0, commits: 0 });
-      }
-      const metrics = repoMetrics.get(event.repo)!;
-
-      if (event.type === 'pr') {
-        metrics.prs++;
-      } else if (event.type === 'commit') {
-        metrics.commits++;
-      }
+    return Utils.aggregateBasicData(filteredActivities, {
+      groupByHour,
+      cutoffDate: null,
     });
+  }, [selectedRepo, filteredActivities, selectedTime]);
 
-    return Array.from(repoMetrics.entries()).map(([repo, metrics]) => ({
-      label: repo,
-      prs: metrics.prs,
-      commits: metrics.commits,
-    }));
-  }, [filteredTemporalData]);
+  const pieData = useMemo<PieDatum[]>(() => {
+    if (!selectedRepo) return [];
 
-  // Extract unique members for filter
-  const members: string[] = activityData
-    ? Array.from(
-        new Set(
-          activityData.repositories.flatMap((repo: any) =>
-            repo.activities.map((activity: any) => activity.user.login)
-          )
-        )
-      )
-    : [];
-
-  if (loading) {
-    return (
-      <DashboardLayout
-        currentPage="repos"
-        currentSubPage="pullrequests"
-        onRepo={true}
-        currentRepo="All Repositories"
-        data={activityData}
-      >
-        <Loading message="Loading PR analytics..." size="lg" />
-      </DashboardLayout>
-    );
-  }
+    return Utils.aggregatePieData(filteredActivities, {
+      cutoffDate: null,
+      selectedTime,
+    });
+  }, [selectedRepo, filteredActivities, selectedTime]);
 
   return (
     <DashboardLayout
-      currentPage="repos"
       currentSubPage="pullrequests"
-      onRepo={true}
-      currentRepo="All Repositories"
-      data={activityData}
+      currentPage="repos"
+      data={data}
+      currentRepo={selectedRepo ? selectedRepo.name : 'No repository selected'}
     >
-      <div className="space-y-8 relative">
-        {filtering && <Loading message="Filtering data..." size="md" overlay />}
-        {/* Header */}
-        <div>
-          <h1 className="text-4xl font-bold text-white mb-2">Pull Request Analytics</h1>
-          <p className="text-slate-400">
-            PR metrics, review patterns, and merge statistics across repositories
-          </p>
+      {/* Header */}
+      <div className="mb-8">
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <h2 className="text-3xl font-bold text-white">Pull Requests analysis</h2>
+            {selectedRepo && (
+              <p className="text-slate-400 text-sm mt-2">
+                {selectedRepo.name === 'All repositories'
+                  ? `${repositories.length} repositories • ${selectedRepo.activities.length} activities`
+                  : `${selectedRepo.name} • ${selectedRepo.activities.length} pull requests`}
+              </p>
+            )}
+          </div>
         </div>
+      </div>
 
-        {/* Filters */}
-        <BaseFilters
-          members={members}
-          selectedMember={selectedMember}
-          onMemberChange={setSelectedMember}
-          selectedTime={selectedTime}
-          onTimeChange={setSelectedTime}
-        />
+      <BaseFilters
+        members={members}
+        selectedMembers={selectedMembers}
+        selectedTime={selectedTime}
+        onMemberChange={setSelectedMembers}
+        onTimeChange={setSelectedTime}
+      />
 
-        {/* PR Activity */}
+      {/* Charts Grid */}
+      <div className="flex gap-6">
         <div
-          className="border rounded-lg p-6"
+          className="border rounded-lg flex-1"
           style={{ backgroundColor: '#222222', borderColor: '#333333' }}
         >
-          <h3 className="text-xl font-bold text-white mb-4">
-            Pull Request Activity
-          </h3>
-          <p className="text-slate-400 mb-4">
-            Distribution of PRs and associated commits across repositories
-          </p>
-          <StackedBarChart
-            data={repoStackedData}
-            keys={['prs', 'commits']}
-            width={900}
-            height={400}
-            xLabel="Repository"
-            yLabel="Count"
-            colors={['var(--color-amber-accent)', 'var(--color-blue-trust)']}
-          />
+          <div className="px-6 py-4 border-b" style={{ borderBottomColor: '#333333' }}>
+            <h3 className="text-xl font-bold text-white">Timeline</h3>
+          </div>
+
+          <div className="p-6 min-h-[550px]">
+            {loading ? (
+              <div className="h-[420px] flex items-center justify-center">
+                <div className="text-slate-400">Loading...</div>
+              </div>
+            ) : error ? (
+              <div className="h-[420px] flex items-center justify-center">
+                <p className="text-red-400">{error}</p>
+              </div>
+            ) : (
+              <Histogram data={BasicData} type='Pull request'/>
+            )}
+          </div>
+        </div>
+
+        {/* Contributors */}
+        <div
+          className="border rounded-lg w-96 flex-shrink-0"
+          style={{ backgroundColor: '#222222', borderColor: '#333333' }}
+        >
+          <div className="px-6 py-4 border-b" style={{ borderBottomColor: '#333333' }}>
+            <h3 className="text-xl font-bold text-white">Contributors</h3>
+          </div>
+
+          <div className="p-6 h-[550px] overflow-y-auto">
+            {loading ? (
+              <div className="h-full flex items-center justify-center">
+                <div className="text-slate-400">Loading...</div>
+              </div>
+            ) : error ? (
+              <div className="h-full flex items-center justify-center">
+                <p className="text-red-400">{error}</p>
+              </div>
+            ) : (
+              <>
+                <div className="flex items-center justify-center mb-2">
+                  <PieChart data={pieData} type='Pull request' />
+                </div>
+                <div className="max-h-[400px] overflow-y-auto space-y-2">
+                  {pieData.map((item) => (
+                    <div
+                      key={item.label}
+                      className="flex items-center justify-between p-2 rounded"
+                      style={{ backgroundColor: 'rgba(51, 51, 51, 0.3)' }}
+                    >
+                      <div className="flex items-center gap-2">
+                        <div
+                          className="w-3 h-3 rounded-full"
+                          style={{ backgroundColor: item.color }}
+                        ></div>
+                        <span className="text-sm text-slate-300">{item.label}</span>
+                      </div>
+                      <span className="text-xs font-bold text-slate-200">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </DashboardLayout>
