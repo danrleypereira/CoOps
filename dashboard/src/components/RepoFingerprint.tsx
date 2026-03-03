@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type FC } from 'react';
 import * as d3 from 'd3';
 import { escapeHtml } from '../utils/sanitize';
 
@@ -47,7 +47,7 @@ interface CirclePackNode {
   isLanguage?: boolean;
 }
 
-export const RepoFingerprint: React.FC<RepoFingerprintProps> = ({
+export const RepoFingerprint: FC<RepoFingerprintProps> = ({
   data, 
   width = 800, 
   height = 600 
