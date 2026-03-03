@@ -491,6 +491,16 @@ def analyze_members_with_gemini(members_data: Dict[str, Dict], max_requests: int
                 if not response.candidates:
                     feedback = getattr(response, 'prompt_feedback', None)
                     log.error(f"Response blocked by safety filter: {feedback}")
+                    for member_summary in batch:
+                        member_name = member_summary['member']
+                        if member_name not in all_analyses:
+                            all_analyses[member_name] = {
+                                'name': member_name,
+                                'repos': member_summary['repos'],
+                                'commits_analysis': 'Analysis unavailable - response blocked by safety filter',
+                                'prs_analysis': 'Analysis unavailable - response blocked by safety filter',
+                                'issues_analysis': 'Analysis unavailable - response blocked by safety filter'
+                            }
                     break
                 response_text = response.text
                 
