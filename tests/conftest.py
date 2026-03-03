@@ -65,6 +65,14 @@ def fake_io(monkeypatch, tmp_path):
     # Also patch in gold modules
     monkeypatch.setattr("gold.timeline_aggregation.load_json_data", _fake_load, raising=False)
     monkeypatch.setattr("gold.timeline_aggregation.save_json_data", _fake_save, raising=False)
+
+    # Patch members_statistics module
+    monkeypatch.setattr("silver.members_statistics.load_json_data", _fake_load, raising=False)
+    monkeypatch.setattr("silver.members_statistics.save_json_data", _fake_save, raising=False)
+
+    # Patch file_language_analysis module
+    monkeypatch.setattr("silver.file_language_analysis.load_json_data", _fake_load, raising=False)
+    monkeypatch.setattr("silver.file_language_analysis.save_json_data", _fake_save, raising=False)
     
     # Patch registry_manager functions
     monkeypatch.setattr("registry_manager.scan_data_directory", _fake_scan_directory, raising=False)
