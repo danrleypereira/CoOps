@@ -126,7 +126,10 @@ export function AISummary({
           // Handle nested structure - extract members from the data object
           // The JSON structure is: { "_metadata": {...}, "members": { "member1": {...}, "member2": {...} } }
           const membersObject = data.members || data;
-          const members = Object.values(membersObject) as MemberAnalysis[];
+          const members = Object.values(membersObject)
+            .filter((m): m is MemberAnalysis =>
+              m != null && typeof m === 'object' && typeof (m as MemberAnalysis).name === 'string'
+            );
           
           // Validate and ensure repos is always an array
           const validMembers = members.map(member => ({
@@ -173,11 +176,8 @@ export function AISummary({
     if (selectedRepo !== 'all') {
       filtered = filtered.filter(member =>
         (member.repos && Array.isArray(member.repos) && member.repos.length > 0) &&
-        member.repos.some(repo => 
-          repo === selectedRepo ||
-          repo.toLowerCase() === selectedRepo.toLowerCase() ||
-          repo.toLowerCase().includes(selectedRepo.toLowerCase()) ||
-          selectedRepo.toLowerCase().includes(repo.toLowerCase())
+        member.repos.some(repo =>
+          repo.toLowerCase() === selectedRepo.toLowerCase()
         )
       );
     }

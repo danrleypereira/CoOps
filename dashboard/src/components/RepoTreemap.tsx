@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import type { FC } from 'react';
 import * as d3 from 'd3';
+import { escapeHtml } from '../utils/sanitize';
 
 interface LanguageData {
   language: string;
@@ -42,10 +43,6 @@ interface TreemapNode {
     extension: string;
   }>;
   children?: TreemapNode[];
-}
-
-function escapeHtml(str: string): string {
-  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
 export const RepoTreemap: FC<RepoTreemapProps> = ({

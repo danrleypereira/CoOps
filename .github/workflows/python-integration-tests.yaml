@@ -59,7 +59,8 @@ jobs:
             --cov-report=term-missing \
             --cov-report=xml \
             --cov-report=html \
-            --cov-fail-under=30 \
+            --cov-fail-under=70 \
+            --ignore=src/ai_analysis \
             -v \
             --tb=short
 
@@ -86,4 +87,4 @@ jobs:
           echo "## Integration Test Results" >> $GITHUB_STEP_SUMMARY
           echo "- Python version: ${{ matrix.python-version }}" >> $GITHUB_STEP_SUMMARY
           echo "- Test suite: Integration tests" >> $GITHUB_STEP_SUMMARY
-          echo "- Minimum coverage: 30%" >> $GITHUB_STEP_SUMMARY
+          echo "- Minimum coverage: 70%" >> $GITHUB_STEP_SUMMARY

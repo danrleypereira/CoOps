@@ -253,6 +253,13 @@ def prepare_member_summary(member: str, repos_data: Dict[str, Dict]) -> Dict[str
     }
 
 
+def _sanitize_for_prompt(text: str) -> str:
+    """Remove delimiter markers from user input to prevent prompt injection."""
+    for marker in ['---MEMBER_START:', '---MEMBER_END', 'COMMITS_ANALYSIS:', 'PRS_ANALYSIS:', 'ISSUES_ANALYSIS:']:
+        text = text.replace(marker, '')
+    return text
+
+
 def create_analysis_prompt(members_batch: List[Dict[str, Any]]) -> str:
     """Cria o prompt para análise de um batch de membros."""
     
@@ -264,29 +271,31 @@ DADOS DOS MEMBROS:
 """
     
     for idx, member_data in enumerate(members_batch, 1):
-        prompt += f"\n### MEMBRO {idx}: {member_data['member']}\n"
-        prompt += f"Repositórios: {', '.join(member_data['repos'][:3])}{'...' if len(member_data['repos']) > 3 else ''}\n"
+        member_name = _sanitize_for_prompt(member_data['member'])
+        repos = [_sanitize_for_prompt(r) for r in member_data['repos'][:3]]
+        prompt += f"\n### MEMBRO {idx}: {member_name}\n"
+        prompt += f"Repositórios: {', '.join(repos)}{'...' if len(member_data['repos']) > 3 else ''}\n"
         prompt += f"Total de commits: {member_data['total_commits']}\n"
         prompt += f"Total de PRs: {member_data['total_prs']}\n"
         prompt += f"Total de issues: {member_data['total_issues']}\n"
         prompt += f"Média de linhas adicionadas por commit: {member_data['avg_additions']}\n"
         prompt += f"Média de linhas removidas por commit: {member_data['avg_deletions']}\n"
         prompt += f"Média total de alterações por commit: {member_data['avg_changes']}\n"
-        
+
         if member_data['commits_sample']:
             prompt += f"\nTítulos dos commits (amostra):\n"
             for commit in member_data['commits_sample'][:5]:
-                prompt += f"  - {commit['message'][:80]}\n"
-        
+                prompt += f"  - {_sanitize_for_prompt(commit['message'][:80])}\n"
+
         if member_data['prs_sample']:
             prompt += f"\nPRs (amostra):\n"
             for pr in member_data['prs_sample'][:3]:
-                prompt += f"  - {pr['title'][:60]} ({pr['state']})\n"
-        
+                prompt += f"  - {_sanitize_for_prompt(pr['title'][:60])} ({pr['state']})\n"
+
         if member_data['issues_sample']:
             prompt += f"\nIssues (amostra):\n"
             for issue in member_data['issues_sample'][:3]:
-                prompt += f"  - {issue['title'][:60]} ({issue['state']})\n"
+                prompt += f"  - {_sanitize_for_prompt(issue['title'][:60])} ({issue['state']})\n"
     
     prompt += """
 
@@ -478,6 +487,10 @@ def analyze_members_with_gemini(members_data: Dict[str, Dict], max_requests: int
                 
                 # Chamar API
                 response = model.generate_content(prompt)
+                if not response.candidates:
+                    feedback = getattr(response, 'prompt_feedback', None)
+                    log.error(f"Response blocked by safety filter: {feedback}")
+                    break
                 response_text = response.text
                 
                 log.info(f"Resposta recebida com {len(response_text)} caracteres")
@@ -564,7 +577,7 @@ def main():
     
     if not members_data:
         log.error("Nenhum dado encontrado no diretório bronze")
-        return
+        sys.exit(1)
     
     # Em modo de teste, pegar apenas 3 membros
     if test_mode:

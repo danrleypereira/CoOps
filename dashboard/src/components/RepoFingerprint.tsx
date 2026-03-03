@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
+import { escapeHtml } from '../utils/sanitize';
 
 interface LanguageData {
   language: string;
@@ -44,10 +45,6 @@ interface CirclePackNode {
   children?: CirclePackNode[];
   isDirectory?: boolean;
   isLanguage?: boolean;
-}
-
-function escapeHtml(str: string): string {
-  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
 export const RepoFingerprint: React.FC<RepoFingerprintProps> = ({

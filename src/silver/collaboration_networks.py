@@ -7,26 +7,16 @@ Analyzes collaboration patterns and creates network metrics
 from collections import defaultdict
 from typing import List, Dict, Any, Set
 from utils.github_api import save_json_data, load_json_data
+from utils.data_helpers import strip_metadata
 
 def process_collaboration_networks() -> List[str]:
     """Process collaboration data into network metrics"""
 
     # Load bronze data
-    issues_data = load_json_data("data/bronze/issues_all.json") or []
-    prs_data = load_json_data("data/bronze/prs_all.json") or []
-    commits_data = load_json_data("data/bronze/commits_all.json") or []
-    issue_events_data = load_json_data("data/bronze/issue_events_all.json") or []
-
-    # Skip metadata entries
-    def _strip_metadata(data):
-        if isinstance(data, list) and data and isinstance(data[0], dict) and '_metadata' in data[0]:
-            return data[1:]
-        return data
-
-    issues_data = _strip_metadata(issues_data)
-    prs_data = _strip_metadata(prs_data)
-    commits_data = _strip_metadata(commits_data)
-    issue_events_data = _strip_metadata(issue_events_data)
+    issues_data = strip_metadata(load_json_data("data/bronze/issues_all.json") or [])
+    prs_data = strip_metadata(load_json_data("data/bronze/prs_all.json") or [])
+    commits_data = strip_metadata(load_json_data("data/bronze/commits_all.json") or [])
+    issue_events_data = strip_metadata(load_json_data("data/bronze/issue_events_all.json") or [])
 
     # Track collaborations by repository
     repo_collaborators = defaultdict(set)
