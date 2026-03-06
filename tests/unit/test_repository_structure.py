@@ -5,7 +5,7 @@ import bronze.repository_structure as rs
 
 
 def _setup(monkeypatch, *, filtered_repos=None):
-    """Wire up fake load/save and return (client_mock, saved_dict)."""
+    """Wire up fake load/save and return (client_mock, config_mock, saved_dict)."""
     saved = {}
 
     def fake_load(path):

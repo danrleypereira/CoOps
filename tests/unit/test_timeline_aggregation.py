@@ -117,7 +117,7 @@ def test_timeline_no_valid_dates(monkeypatch):
 
 def test_timeline_12_month_aggregation(monkeypatch):
     """Monthly aggregation groups daily data by month."""
-    # Create 60 days spanning 2 months
+    # Create 60 days spanning 3 calendar months (Jan–Mar 2024)
     daily = []
     for i in range(60):
         d = datetime(2024, 3, 1) - timedelta(days=i)
