@@ -9,9 +9,9 @@ is assigned, delete this file (or move it to an internal doc).
 
 ## Done so far (as of 2026-05-13)
 
-- [x] `prep/joss-submission` branch with CHANGELOG, English README, issue/PR
-      templates, and Maintainership governance — opened as **PR #10**
-      <https://github.com/danrleypereira/CoOps/pull/10>.
+- [x] `docs/joss-prep` branch with CHANGELOG, English README, issue/PR
+      templates, and Maintainership governance — opened as **PR #11**
+      <https://github.com/danrleypereira/CoOps/pull/11>.
 - [x] `paper` branch with `paper/paper.md` (1167 words, 7 JOSS-required
       sections), `paper/paper.bib` (17 entries), `paper/figures/` (5 figures),
       and `.github/workflows/paper-draft.yaml`.
@@ -22,15 +22,15 @@ is assigned, delete this file (or move it to an internal doc).
 
 ## Must do before opening the JOSS submission form
 
-### 1. Merge PR #10 into `main`
+### 1. Merge PR #11 into `main`
 
-Review and squash-merge <https://github.com/danrleypereira/CoOps/pull/10>.
+Review and squash-merge <https://github.com/danrleypereira/CoOps/pull/11>.
 After merge, `main` will contain the CHANGELOG, English README, and
 governance updates that the paper references.
 
 ### 2. Tag `v1.0.0` on `main`
 
-The paper points to `v1.0.0` as the submission baseline. Run **after** PR #10
+The paper points to `v1.0.0` as the submission baseline. Run **after** PR #11
 is merged:
 
 ```bash
@@ -43,7 +43,7 @@ gh release create v1.0.0 --title "CoOps v1.0.0" --notes-from-tag --verify-tag
 
 ### 3. Rebase the `paper` branch onto the merged `main`
 
-After PR #10 lands, the `paper` branch will have a different ancestry than
+After PR #11 lands, the `paper` branch will have a different ancestry than
 the new `main`. Rebase or merge to keep histories clean:
 
 ```bash
@@ -68,7 +68,7 @@ not a paper author; he is acknowledged in the Acknowledgements section.
 
 JOSS requires that all listed authors have agreed to be co-authors and to be
 accountable for the work. Send Carla and Kerlla a short note linking to
-PR #10 and the rendered `paper.pdf` artifact from the
+PR #11 and the rendered `paper.pdf` artifact from the
 `Draft JOSS paper PDF` workflow run.
 
 ### 6. Verify the GitHub Action produces a green PDF
@@ -157,7 +157,7 @@ Once items 1–7 above are green:
 
 ## Files created/modified in this session — quick reference
 
-**On `prep/joss-submission` (PR #10, awaiting merge to `main`):**
+**On `docs/joss-prep` (PR #11, awaiting merge to `main`):**
 - `CHANGELOG.md` (new)
 - `README.md` (rewritten)
 - `CONTRIBUTING.md` (Maintainership appended)
