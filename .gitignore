@@ -5,6 +5,10 @@ dashboard/dist/
 dashboard/node_modules/
 dashboard/**.tsbuildinfo
 
+# JOSS paper build artifacts (produced by openjournals/inara)
+paper/paper.pdf
+paper/jats/
+
 # Ignorar a pasta bin
 bin/
 
