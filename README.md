@@ -1,102 +1,174 @@
-# � CoOps – Colaboração Operacional no GitHub
+# CoOps — Collaboration & Ops Metrics for GitHub Organizations
 
-![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
-![Contributions welcome](https://img.shields.io/badge/Contributions-Welcome-success)
-![Status](https://img.shields.io/badge/Status-Alpha-orange)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Beta-yellow.svg)](#status)
+[![Backend tests](https://img.shields.io/badge/backend%20coverage-88%25-brightgreen.svg)](#running-tests)
+[![Frontend tests](https://img.shields.io/badge/frontend%20coverage-94%25-brightgreen.svg)](#running-tests)
+[![Contributions welcome](https://img.shields.io/badge/Contributions-Welcome-success)](CONTRIBUTING.md)
 
-CoOps é uma ferramenta aberta para observar, entender e explicar colaboração em organizações GitHub. O nome é um trocadilho entre Cooperation + Ops (observabilidade operacional) com um toque lúdico (👮 emojis de “patrulha” da qualidade) para indicar monitoramento saudável – nunca vigilância.
+CoOps is an open-source full-stack dashboard for **continuous monitoring of
+collaboration in GitHub-based academic software factories**. It combines
+technical metrics (commits, pull requests, issues, code churn, lead time) and
+collaboration metrics (review participation, contribution networks,
+contribution distribution) across 13+ interactive D3.js pages, with optional
+natural-language explanations powered by Google Gemini. Data is processed
+through a [Medallion Architecture](ARCHITECTURE.md) (Bronze → Silver → Gold)
+executed daily by GitHub Actions and published via GitHub Pages — no server
+infrastructure required.
 
-Nosso objetivo é criar uma ferramenta que permita visualizar e interpretar métricas de colaboração no **GitHub**, evoluindo de repositórios individuais para **organizações**, com auxílio de **agentes de IA** para explicar o significado das métricas coletadas.
+The dashboard was co-developed with Prof. Carla Rocha (UnB) and is in
+production at two universities:
 
----
-
-## 🚀 Propósito
-O produto busca apoiar **desenvolvedores, mantenedores e organizações** na análise da colaboração dentro de projetos GitHub, fornecendo **métricas claras, visuais e interpretadas por IA**.  
-Assim, os usuários podem compreender melhor **produtividade, gargalos e qualidade** de seus projetos.
-
----
-
-## 📌 Escopo do Produto
-
-### Funcionalidades Inclusas (Escopo Principal)
-- **Dashboard de Métricas**: painel central para visualização de dados.  
-- **Análise em Repositório e Organização**: alternar entre visão de um único projeto ou performance consolidada.  
-- **Métricas a serem coletadas**:  
-  - Issues → abertas/fechadas, tempo médio de resolução.  
-  - Commits → frequência, volume por contribuidor.  
-  - Pull Requests → quantidade, tempo de vida, taxa de aprovação, tamanho médio.  
-  - Tecnologias → linguagens e frameworks usados.  
-  - Qualidade de Código → métricas simples (ex.: tamanho médio de commits).  
-- **Agente de IA Explicativo**: assistente virtual que interpreta gráficos e explica métricas.  
-
-### Fora do Escopo (Versões Futuras)
-- Outras plataformas além do GitHub (ex.: GitLab, Bitbucket).  
-- Ações de gerenciamento direto (ex.: fechar issue, aprovar PR).  
-- Métricas de CI/CD (tempo de build, taxa de falha).  
-- Predição de tendências com ML avançado.  
-
-## 🎨 Identidade Visual
-O design (WIP) inclui:
-- Ícones de “patrulha colaborativa” (sem conotação punitiva)
-- Paleta acessível (alto contraste)
-- Dashboard modular
-
-Protótipo inicial (substituir quando houver versão estável):
-👉 (Em breve)
+- **UnB (MDS course)** — <https://unb-mds.github.io/2025-2-Squad-01/>
+- **UDF (LabTech factory)** — <https://labtechudf.github.io/CoOps/>
 
 ---
 
-## 📚 Referências
-- [GitHub Repo Visualization](https://githubnext.com/projects/repo-visualization/#explore-for-yourself)  
-- SonarQube (benchmark de qualidade de código)  
-- GitHub Insights  
+## Features
+
+- **Technical metrics** — commits per author/repo/sprint, code churn, PR lead
+  time, issue throughput and resolution time.
+- **Collaboration metrics** — review participation, author↔reviewer network,
+  contribution distribution (Gini), weekly regularity, ramp-up slope.
+- **13+ interactive D3.js pages** — Treemap, CirclePack, Collaboration
+  Network, Activity Heatmap, Timeline, Repository Fingerprint, KPI overviews,
+  language composition.
+- **Medallion ETL** — Bronze (7 extraction modules, append-only raw JSON),
+  Silver (6 analytics modules with dim/fact lineage), Gold (executive KPIs).
+- **Optional AI analysis** — natural-language summaries per member via Google
+  Gemini; degrades gracefully when the API key is absent.
+- **Serverless deployment** — daily ETL via GitHub Actions, dashboard hosted
+  on GitHub Pages.
 
 ---
 
-## 🤝 Como Contribuir
+## Installation
 
-Quer ajudar? Ótimo! Leia primeiro o arquivo `CONTRIBUTING.md` para entender:
+### Prerequisites
 
-- Fluxo de trabalho (branches, Conventional Commits)
-- Como testar scripts (`bronze_extract`, `silver_process`...)
-- Checklist de Pull Request
-- Padrões de documentação
+- Python 3.10 or newer
+- Node.js 20 or newer
+- A GitHub Personal Access Token with `repo` and `read:org` scopes
 
-Resumo rápido:
-1. Faça fork
-2. Crie branch: `feat/nome-da-feature`
-3. Commits seguindo Conventional Commits
-4. Verifique se não quebrou geração de dados
-5. Abra PR referenciando uma issue (`Closes #X`)
+### Backend (ETL pipeline)
 
-Se tiver dúvidas: abra uma issue `question`.
-
----
-
-## 🧭 Código de Conduta
-Adotamos um Código de Conduta baseado no Contributor Covenant. Ao participar, você concorda em respeitá-lo. Leia em `CODE_OF_CONDUCT.md`.
-
----
-
-## 🔐 Segurança
-Não reporte vulnerabilidades em issues públicas. Envie email para o contato de segurança listado em `SECURITY.md`.
-
----
-
-## 📜 Licença
-Distribuído sob **GNU General Public License v3.0 ou posterior**. Veja `LICENSE` para mais detalhes. Ao contribuir você concorda que seu código será licenciado sob os mesmos termos.
-
-Trecho padrão para novos arquivos fonte:
+```bash
+git clone https://github.com/danrleypereira/CoOps.git
+cd CoOps
+python -m venv .venv && source .venv/bin/activate    # Windows: .venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+pip install -r requirements-dev.txt                   # only if you intend to develop
 ```
-# GitHub Metrics – Collaboration Dashboard
-# Copyright (C) 2025 GitHub Metrics Contributors
-# Licensed under the GNU General Public License v3.0 (or later). See LICENSE.
+
+Create a `.secrets` file at the repository root (already in `.gitignore`):
+
+```env
+GITHUB_TOKEN=ghp_your_token_here
+GITHUB_ORG=your-github-organization
+GEMINI_API_KEY=optional_gemini_key      # leave unset to disable AI analysis
+```
+
+### Frontend (dashboard)
+
+```bash
+cd dashboard
+npm install
+npm run dev                  # http://localhost:5173
 ```
 
 ---
 
-## 🙌 Agradecimentos
-Inspirado por ferramentas de observabilidade de repositórios, plataformas de qualidade de código e iniciativas open source de métricas.
+## Quickstart
 
-Contribuições são muito bem-vindas! Abra uma issue ou envie um PR. 🚀
+Run the three-stage pipeline against your organization (the GitHub Actions
+workflows run the same commands daily):
 
+```bash
+python src/bronze_extract.py --token "$GITHUB_TOKEN" --org "$GITHUB_ORG" --cache
+python src/silver_process.py --org "$GITHUB_ORG"
+python src/gold_aggregate.py --org "$GITHUB_ORG"
+```
+
+Optional AI analysis step (requires `GEMINI_API_KEY`):
+
+```bash
+python src/gemini_ai/run_analysis.py --org "$GITHUB_ORG"
+```
+
+The dashboard reads the generated JSON files in `data/` and visualizes them at
+`http://localhost:5173` (development) or your GitHub Pages URL (production).
+
+---
+
+## Running Tests
+
+```bash
+pytest                                   # backend; current coverage: 88%
+cd dashboard && npm run test:coverage    # frontend; current coverage: 94%
+```
+
+CI runs both suites on every push and pull request — see
+`.github/workflows/python-unit-tests.yaml`,
+`.github/workflows/python-integration-tests.yaml`, and the frontend test
+config under `dashboard/vitest.config.ts`.
+
+---
+
+## Documentation
+
+- **Architecture deep-dive** — [ARCHITECTURE.md](ARCHITECTURE.md)
+- **AI module** — [README_AI_ANALYSIS.md](README_AI_ANALYSIS.md)
+- **Contributing & development workflow** — [CONTRIBUTING.md](CONTRIBUTING.md)
+- **Code of Conduct** — [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+- **Security policy** — [SECURITY.md](SECURITY.md)
+- **Release notes** — [CHANGELOG.md](CHANGELOG.md)
+
+---
+
+## Status
+
+CoOps is in **Beta**. The pipeline runs in production on two university
+deployments, the backend test coverage is 88% and the frontend is 94%, but the
+public API surface (CLI flags, JSON schema of `data/silver/`,
+`data/gold/`) may still evolve. See [CHANGELOG.md](CHANGELOG.md) for the
+release history and [open issues](https://github.com/danrleypereira/CoOps/issues)
+for the current roadmap.
+
+---
+
+## Citing CoOps
+
+A Journal of Open Source Software submission is in preparation. Once the DOI
+is assigned, please cite the JOSS paper. Until then, you may cite the
+repository:
+
+```bibtex
+@software{coops2026,
+  author  = {Pereira, Danrley Willyan da Silva and Rocha Aguiar, Carla Silva
+             and Luz, Kerlla de Souza},
+  title   = {CoOps: A full-stack dashboard for monitoring collaboration in
+             GitHub-based academic software factories},
+  year    = {2026},
+  url     = {https://github.com/danrleypereira/CoOps},
+  version = {v1.0.0}
+}
+```
+
+---
+
+## Acknowledgements
+
+CoOps is developed under the PIBIT 2025–2026 scholarship program at the
+**Centro Universitário do Distrito Federal (UDF)**, with co-development from
+the **Universidade de Brasília (UnB)** MDS course (Prof. Carla Rocha) and the
+LAPPIS research group at FGA/UnB. Inspired by GitHub-native insight panels,
+SonarQube-style quality benchmarks, and academic software-factory experience
+reports.
+
+---
+
+## License
+
+Distributed under the **GNU General Public License v3.0 or later** — see
+[LICENSE](LICENSE). By contributing, you agree that your contributions will be
+licensed under the same terms.

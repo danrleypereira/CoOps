@@ -452,3 +452,29 @@ Para dúvidas de arquitetura ou métricas abra uma issue `question`.
 Contribuidores serão listados no futuro em seção de agradecimentos / `AUTHORS.md`.
 
 Obrigado por ajudar a construir um ecossistema de colaboração saudável!
+
+---
+## Maintainership
+
+CoOps follows a benevolent-maintainer governance model. Decisions on roadmap,
+breaking changes, and release tagging rest with the current maintainers:
+
+| Role | Name | Affiliation | Contact |
+|---|---|---|---|
+| Lead maintainer | Danrley Willyan da Silva Pereira | UDF | <danrley.pereira@cs.udf.edu.br> |
+| Co-maintainer (advisor) | Kerlla de Souza Luz | UDF | <kerlla.luz@udf.edu.br> |
+| Co-development partner | Carla Silva Rocha Aguiar | UnB | — |
+
+**Response-time expectations.** Issues and pull requests are reviewed on a
+best-effort basis, typically within two weeks during academic terms. CoOps is
+developed as part of the PIBIT 2025–2026 scholarship at UDF; activity may slow
+during exam periods and end-of-semester deadlines, but the project remains
+maintained.
+
+**Adding maintainers.** A contributor with sustained involvement (multiple
+substantive PRs and active issue triage over at least one semester) may be
+invited by the existing maintainers. New maintainers are added by consensus of
+the current group.
+
+**Security disclosures.** Do not file security issues publicly. Follow
+[SECURITY.md](SECURITY.md) instead.
