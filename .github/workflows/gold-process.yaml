@@ -31,15 +31,17 @@ jobs:
           echo "Current branch: $CURRENT_BRANCH"
           git pull origin "$CURRENT_BRANCH" --no-edit || echo "Already up to date"
 
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: 'poetry'
 
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install pandas numpy requests
+        run: poetry install --no-interaction
 
       - name: Verify Silver data exists
         run: |
@@ -54,7 +56,7 @@ jobs:
         id: processing
         run: |
           echo "Starting Gold layer processing..."
-          python src/gold_process.py --org "${GITHUB_REPOSITORY_OWNER}"
+          poetry run coops-gold --org "${GITHUB_REPOSITORY_OWNER}"
 
           # Check if files were generated
           if [ "$(find data/gold -name '*.json' 2>/dev/null | wc -l)" -gt 0 ]; then
@@ -70,7 +72,7 @@ jobs:
         if: steps.processing.outputs.completed == 'true'
         run: |
           echo "Updating data registry with Gold layer files..."
-          python src/registry_manager.py
+          poetry run coops-registry
 
       - name: List generated files
         if: steps.processing.outputs.completed == 'true'
@@ -181,22 +183,23 @@ jobs:
           CURRENT_BRANCH="${GITHUB_REF_NAME:-$(git branch --show-current)}"
           git pull origin "$CURRENT_BRANCH" --no-edit || echo "Already up to date"
 
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip'
+          cache: 'poetry'
 
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+        run: poetry install --no-interaction
 
       - name: Generate AI analysis
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          python -m src.ai_analysis.generate_members_ai
+          poetry run python -m coops.ai_analysis.generate_members_ai
 
       - name: Upload AI analysis artifact
         uses: actions/upload-artifact@v4

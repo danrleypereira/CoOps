@@ -27,15 +27,17 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref || github.ref }}
           fetch-depth: 0
 
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          cache: 'poetry'
 
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests pandas numpy
+        run: poetry install --no-interaction
 
       - name: Verify organization is valid
         env:
@@ -67,7 +69,7 @@ jobs:
           echo "[INFO] Starting Bronze layer extraction..."
           # Use GraphQL for commits to avoid per-commit REST stats calls
           # Full history: no since/until or max limits
-          python src/bronze_extract.py \
+          poetry run coops-bronze \
             --token "$GITHUB_TOKEN" \
             --org "${GITHUB_REPOSITORY_OWNER}" \
             --cache \
@@ -87,7 +89,7 @@ jobs:
         if: steps.extraction.outputs.completed == 'true'
         run: |
           echo "[INFO] Generating data registry..."
-          python src/registry_manager.py
+          poetry run coops-registry
 
       - name: List generated files
         if: steps.extraction.outputs.completed == 'true'

@@ -14,18 +14,22 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
+          cache: 'poetry'
 
-      - name: Install requests
-        run: pip install requests
+      - name: Install package
+        run: poetry install --no-interaction
 
       - name: Buscar issues e salvar JSON
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python src/fetch_issues.py
+        run: poetry run python -m coops.etl.fetch_issues
 
       - name: Commitando mudanças para o repositório
         run: |

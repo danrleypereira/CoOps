@@ -7,8 +7,8 @@ Analyzes contribution patterns across issues, PRs, and commits
 from collections import defaultdict
 from datetime import datetime
 from typing import List, Dict, Any
-from utils.github_api import save_json_data, load_json_data
-from utils.data_helpers import strip_metadata
+from coops.utils.github_api import save_json_data, load_json_data
+from coops.utils.data_helpers import strip_metadata
 
 def process_contribution_metrics() -> List[str]:
     """Process contribution data into metrics"""

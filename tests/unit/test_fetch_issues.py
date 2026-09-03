@@ -43,8 +43,8 @@ class TestFetchIssues:
                     with patch('json.dump') as mock_dump:
                         # Import e executa o script
                         import importlib
-                        import src.fetch_issues
-                        importlib.reload(src.fetch_issues)
+                        import coops.etl.fetch_issues
+                        importlib.reload(coops.etl.fetch_issues)
                         
                         # Verifica que requests.get foi chamado
                         assert mock_get.called
@@ -64,8 +64,8 @@ class TestFetchIssues:
                 with patch('os.makedirs'):
                     with patch('json.dump'):
                         import importlib
-                        import src.fetch_issues
-                        importlib.reload(src.fetch_issues)
+                        import coops.etl.fetch_issues
+                        importlib.reload(coops.etl.fetch_issues)
                         
                         # Verifica que a URL foi chamada sem {/number}
                         call_url = mock_get.call_args[0][0]
@@ -88,8 +88,8 @@ class TestFetchIssues:
                 with patch('os.makedirs'):
                     with patch('json.dump'):
                         import importlib
-                        import src.fetch_issues
-                        importlib.reload(src.fetch_issues)
+                        import coops.etl.fetch_issues
+                        importlib.reload(coops.etl.fetch_issues)
                         
                         # Deve ter sido chamado (não importa quantas vezes)
                         assert mock_get.called
@@ -136,8 +136,8 @@ class TestFetchIssues:
                 with patch('os.makedirs'):
                     with patch('json.dump', side_effect=capture_dump):
                         import importlib
-                        import src.fetch_issues
-                        importlib.reload(src.fetch_issues)
+                        import coops.etl.fetch_issues
+                        importlib.reload(coops.etl.fetch_issues)
                         
                         # Verifica que apenas a issue real foi salva
                         assert len(captured_data["org/repo1"]) == 1
@@ -157,8 +157,8 @@ class TestFetchIssues:
                 with patch('os.makedirs'):
                     with patch('json.dump'):
                         import importlib
-                        import src.fetch_issues
-                        importlib.reload(src.fetch_issues)
+                        import coops.etl.fetch_issues
+                        importlib.reload(coops.etl.fetch_issues)
         
         captured = capsys.readouterr()
         assert "Erro ao buscar issues" in captured.out
@@ -179,8 +179,8 @@ class TestFetchIssues:
                 with patch('os.makedirs') as mock_makedirs:
                     with patch('json.dump'):
                         import importlib
-                        import src.fetch_issues
-                        importlib.reload(src.fetch_issues)
+                        import coops.etl.fetch_issues
+                        importlib.reload(coops.etl.fetch_issues)
                         
                         mock_makedirs.assert_called_once_with("src/data/extractions", exist_ok=True)
     
@@ -218,8 +218,8 @@ class TestFetchIssues:
                 with patch('os.makedirs'):
                     with patch('json.dump', side_effect=capture_dump):
                         import importlib
-                        import src.fetch_issues
-                        importlib.reload(src.fetch_issues)
+                        import coops.etl.fetch_issues
+                        importlib.reload(coops.etl.fetch_issues)
                         
                         issue = captured_data["org/repo1"][0]
                         assert issue["number"] == 42
@@ -248,8 +248,8 @@ class TestFetchIssues:
                     with patch('json.dump'):
                         with patch.dict('os.environ', {'GH_TOKEN': 'test-token'}):
                             import importlib
-                            import src.fetch_issues
-                            importlib.reload(src.fetch_issues)
+                            import coops.etl.fetch_issues
+                            importlib.reload(coops.etl.fetch_issues)
                             
                             # Verifica que o header de autorização foi usado
                             call_headers = mock_get.call_args[1]['headers']
@@ -270,8 +270,8 @@ class TestFetchIssues:
                 with patch('os.makedirs'):
                     with patch('json.dump'):
                         import importlib
-                        import src.fetch_issues
-                        importlib.reload(src.fetch_issues)
+                        import coops.etl.fetch_issues
+                        importlib.reload(coops.etl.fetch_issues)
                         
                         # Verifica que usou URL padrão
                         call_url = mock_get.call_args[0][0]

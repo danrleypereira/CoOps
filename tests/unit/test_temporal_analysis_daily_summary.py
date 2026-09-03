@@ -4,7 +4,7 @@ from typing import Any, Dict, List
 import json
 import types
 
-import silver.temporal_analysis as temporal
+import coops.silver.temporal_analysis as temporal
 
 def _iso(s: str) -> datetime:
     # parse_github_date equivalente simples para ISO-8601 com 'Z'

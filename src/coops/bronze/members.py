@@ -6,7 +6,7 @@ Extracts raw member data from GitHub API with contributor fallback.
 
 import os
 from typing import List
-from utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data
+from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data
 
 def extract_members(client: GitHubAPIClient, config: OrganizationConfig, use_cache: bool = True) -> List[str]:
     """Extract organization members to bronze layer with contributor fallback."""
@@ -21,7 +21,7 @@ def extract_members(client: GitHubAPIClient, config: OrganizationConfig, use_cac
         print("   - Organization configuration")
         print("Activating fallback: discovering active contributors...")
 
-        from utils.github_api import load_json_data
+        from coops.utils.github_api import load_json_data
         repos_data = load_json_data("data/bronze/repositories_filtered.json")
         if repos_data and isinstance(repos_data, list):
 

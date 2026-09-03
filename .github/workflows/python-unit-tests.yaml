@@ -8,8 +8,8 @@ on:
     paths:
       - "src/**/*.py"
       - "tests/**/*.py"
-      - "requirements*.txt"
-      - "pytest.ini"
+      - "pyproject.toml"
+      - "poetry.lock"
       - "dashboard/src/**/*.{ts,tsx}"
       - "dashboard/src/**/*.test.{ts,tsx}"
       - "dashboard/package.json"
@@ -30,35 +30,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-
-      - name: Cache pip dependencies
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('requirements*.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
+          cache: 'poetry'
 
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install -r requirements-dev.txt
-
-      - name: Add src to PYTHONPATH
-        run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)/src" >> $GITHUB_ENV
+        run: poetry install --no-interaction --extras dev
 
       - name: Run unit tests with coverage
         run: |
-          pytest tests/unit \
-            --cov=silver \
-            --cov=gold \
-            --cov=utils \
-            --cov=bronze \
+          poetry run pytest tests/unit \
+            --cov=coops \
             --cov-report=term-missing \
             --cov-report=xml \
             --cov-report=html \

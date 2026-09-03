@@ -1,8 +1,8 @@
-"""Tests for src/silver/file_language_analysis.py."""
+"""Tests for coops/silver/file_language_analysis.py."""
 
 import glob as glob_module
 
-import silver.file_language_analysis as fla
+import coops.silver.file_language_analysis as fla
 
 
 # ===================================================================

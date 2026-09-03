@@ -1,0 +1,75 @@
+[project]
+name = "coops"
+version = "0.1.0"
+description = "Collaboration & Ops metrics for GitHub organizations — a Medallion (Bronze → Silver → Gold) ETL pipeline."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
+authors = [
+    { name = "CoOps Contributors" },
+]
+dependencies = [
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "requests>=2.31.0",
+    "python-dateutil>=2.8.0",
+    "google-generativeai>=0.8.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=5.0.0",
+    "pytest-mock>=3.14.0",
+    "freezegun>=1.5.0",
+]
+
+[project.scripts]
+coops-bronze = "coops.etl.bronze_extract:main"
+coops-silver = "coops.etl.silver_process:main"
+coops-gold = "coops.etl.gold_process:main"
+coops-aggregate = "coops.etl.gold_aggregate:main"
+coops-registry = "coops.etl.registry_manager:main"
+
+[tool.poetry]
+packages = [{ include = "coops", from = "src" }]
+
+[build-system]
+requires = ["poetry-core>=2.1.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = [
+    "-v",
+    "--tb=short",
+    "--maxfail=1",
+    "--cov=coops",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+]
+testpaths = [
+    "tests/unit",
+    "tests/integration",
+]
+
+[tool.coverage.run]
+source = ["coops"]
+omit = [
+    "*/tests/*",
+    "*/__init__.py",
+    "*cleanup_event_data.py",
+    "src/coops/ai_analysis/*",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+    "@abstractmethod",
+]

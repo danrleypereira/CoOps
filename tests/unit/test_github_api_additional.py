@@ -7,7 +7,7 @@ import pytest
 import json
 import os
 from unittest.mock import Mock, patch, MagicMock, mock_open
-from utils.github_api import GitHubAPIClient, save_json_data, load_json_data
+from coops.utils.github_api import GitHubAPIClient, save_json_data, load_json_data
 
 
 class TestGetActiveBranches:

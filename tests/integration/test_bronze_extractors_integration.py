@@ -6,10 +6,10 @@ Tests the integration between different bronze extractors.
 
 import pytest
 from datetime import datetime
-from bronze.repositories import extract_repositories
-from bronze.commits import extract_commits
-from bronze.issues import extract_issues
-from bronze.members import extract_members
+from coops.bronze.repositories import extract_repositories
+from coops.bronze.commits import extract_commits
+from coops.bronze.issues import extract_issues
+from coops.bronze.members import extract_members
 
 
 class TestBronzeExtractorsIntegration:

@@ -7,6 +7,23 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 
 ## [Unreleased]
 
+### Added
+- Installable `coops` package (`src/coops/`) with a `pyproject.toml` declaring
+  dependencies and metadata, plus `coops-bronze`, `coops-silver`, `coops-gold`,
+  `coops-aggregate` and `coops-registry` console entry points —
+  issue [#14](https://github.com/unb-mds/CoOps/issues/14).
+
+### Changed
+- ETL modules moved under the `coops` namespace; all imports now use absolute
+  `coops.*` paths.
+- CI workflows install the project with `poetry install` and invoke the
+  console commands (`poetry run coops-*`) instead of `python src/*.py`.
+- Test/coverage configuration consolidated into `pyproject.toml`
+  (`pytest.ini` and `.coveragerc` removed).
+
+### Removed
+- `sys.path` manipulation hacks in `src/` modules and `tests/conftest.py`.
+
 ## [1.0.0] - 2026-05-12
 
 First stable release; baseline for the Journal of Open Source Software

@@ -1,4 +1,4 @@
-import silver.contribution_metrics as contrib
+import coops.silver.contribution_metrics as contrib
 
 def test_process_contribution_metrics_empty(monkeypatch):
     """Testa processamento com dados vazios"""

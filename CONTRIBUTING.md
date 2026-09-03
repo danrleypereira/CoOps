@@ -4,7 +4,7 @@ Obrigado por dedicar seu tempo para contribuir! Este projeto é licenciado sob *
 
 > TL;DR
 > 1. Faça um fork e crie uma branch a partir de `main` usando Conventional Commits no nome.
-> 2. Garanta que scripts rodam localmente (`bronze_extract`, `silver_process`, `registry_manager`).
+> 2. `poetry install --extras dev` e garanta que os comandos rodam (`poetry run coops-bronze`, `poetry run pytest`).
 > 3. Adicione/ajuste testes (quando aplicável) e execute validações.
 > 4. Atualize documentação se o comportamento público mudar.
 > 5. Abra o PR seguindo o checklist.
@@ -43,27 +43,16 @@ Detalhes: veja `ARCHITECTURE.md`.
 
 ### Backend (Python)
 
-1. **Criar ambiente virtual:**
+1. **Instalar dependências e o pacote** (cria o virtualenv automaticamente):
    ```bash
-   python -m venv .venv
+   poetry install --extras dev
    ```
+   Isso instala o pacote `coops` e os comandos `coops-bronze`, `coops-silver`,
+   `coops-gold`, `coops-aggregate` e `coops-registry`. É o mesmo comando que a CI roda.
 
-2. **Ativar ambiente:**
-   - **Windows (PowerShell):**
-     ```powershell
-     .\.venv\Scripts\Activate.ps1
-     ```
-   - **Linux/Mac:**
-     ```bash
-     source .venv/bin/activate
-     ```
+   Sem Poetry: `python -m venv .venv && source .venv/bin/activate && pip install -e ".[dev]"`.
 
-3. **Instalar dependências:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Configurar credenciais GitHub:**
+2. **Configurar credenciais GitHub:**
 
    Crie um arquivo `.secrets` na raiz do projeto:
    ```
@@ -71,11 +60,13 @@ Detalhes: veja `ARCHITECTURE.md`.
    GITHUB_ORG=unb-mds
    ```
 
-5. **Executar pipeline manual** (ajuste --org para sua organização GitHub alvo):
+3. **Executar pipeline manual** (ajuste --org para sua organização GitHub alvo):
    ```bash
-   python3 src/bronze_extract.py --token $GITHUB_TOKEN --org coops-org --cache
-   python3 src/silver_process.py --org coops-org
-   python3 src/registry_manager.py
+   poetry run coops-bronze --token $GITHUB_TOKEN --org coops-org --cache
+   poetry run coops-silver --org coops-org
+   poetry run coops-gold --org coops-org
+   poetry run coops-aggregate
+   poetry run coops-registry
    ```
 
 Para simular GitHub Actions localmente (opcional): consulte `desenvolvimento.md`.
@@ -344,18 +335,20 @@ tests/
 
 ### Python - pytest
 
+Prefixe com `poetry run` (ou ative o venv com `poetry env activate`):
+
 ```bash
 # Todos os testes
-pytest
+poetry run pytest
 
 # Com cobertura
-pytest --cov=src
+poetry run pytest --cov=coops
 
 # Teste específico
-pytest tests/unit/test_api_client.py::test_get_repository_success
+poetry run pytest tests/unit/test_api_client.py::test_get_repository_success
 
 # Verbose
-pytest -v
+poetry run pytest -v
 ```
 
 ### TypeScript/React - Vitest

@@ -5,7 +5,7 @@ import pytest
 from unittest.mock import Mock, patch, MagicMock
 import requests
 from datetime import datetime, timezone
-from utils.github_api import (
+from coops.utils.github_api import (
     GitHubAPIClient, 
     save_json_data, 
     load_json_data, 

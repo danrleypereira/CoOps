@@ -1,6 +1,6 @@
 import os
 from typing import List
-from utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data, load_json_data
+from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data, load_json_data
 
 def extract_issues(client: GitHubAPIClient, config: OrganizationConfig, use_cache: bool = True) -> List[str]:
     """

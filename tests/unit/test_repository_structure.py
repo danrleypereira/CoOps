@@ -1,7 +1,7 @@
-"""Tests for src/bronze/repository_structure.py — extract_repository_structure."""
+"""Tests for coops/bronze/repository_structure.py — extract_repository_structure."""
 
 from unittest.mock import MagicMock
-import bronze.repository_structure as rs
+import coops.bronze.repository_structure as rs
 
 
 def _setup(monkeypatch, *, filtered_repos=None):

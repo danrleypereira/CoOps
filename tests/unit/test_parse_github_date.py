@@ -1,4 +1,4 @@
-from utils.github_api import parse_github_date
+from coops.utils.github_api import parse_github_date
 
 def test_parse_github_date_utc_z():
     d = parse_github_date("2024-06-10T12:34:56Z")

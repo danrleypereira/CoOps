@@ -1,11 +1,11 @@
 """
-Unit tests for src/bronze/commits.py
+Unit tests for coops/bronze/commits.py
 Tests commit extraction with GraphQL and REST methods, 
 including fallback logic, active branches, and time chunks.
 """
 import pytest
 from unittest.mock import MagicMock, patch, call
-from bronze.commits import extract_commits
+from coops.bronze.commits import extract_commits
 
 
 class TestExtractCommits:
@@ -38,8 +38,8 @@ class TestExtractCommits:
         mock_client.get_paginated.return_value = mock_commits
         mock_client.get_with_cache.return_value = mock_details
         
-        with patch('bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('bronze.commits.save_json_data', return_value="file.json") as mock_save:
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.commits.save_json_data', return_value="file.json") as mock_save:
                 result = extract_commits(mock_client, mock_config, method="rest")
                 
                 # Verifica que chamou get_paginated para commits
@@ -80,8 +80,8 @@ class TestExtractCommits:
         
         mock_client.graphql_commit_history.return_value = (mock_graphql_nodes, {})
         
-        with patch('bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('bronze.commits.save_json_data', return_value="file.json"):
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.commits.save_json_data', return_value="file.json"):
                 result = extract_commits(mock_client, mock_config, method="graphql")
                 
                 # Verifica que chamou GraphQL
@@ -115,8 +115,8 @@ class TestExtractCommits:
         mock_client.get_paginated.return_value = mock_commits
         mock_client.get_with_cache.return_value = {"stats": {"additions": 10, "deletions": 5, "total": 15}}
         
-        with patch('bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('bronze.commits.save_json_data', return_value="file.json"):
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.commits.save_json_data', return_value="file.json"):
                 result = extract_commits(mock_client, mock_config, method="graphql")
                 
                 captured = capsys.readouterr()
@@ -128,7 +128,7 @@ class TestExtractCommits:
         mock_client = MagicMock()
         mock_config = MagicMock()
         
-        with patch('bronze.commits.load_json_data', return_value=None):
+        with patch('coops.bronze.commits.load_json_data', return_value=None):
             result = extract_commits(mock_client, mock_config)
             
             assert result == []
@@ -144,8 +144,8 @@ class TestExtractCommits:
         mock_repos = [{"name": "repo1", "full_name": "test-org/repo1"}]
         mock_client.get_paginated.return_value = []
         
-        with patch('bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('bronze.commits.save_json_data', return_value="file.json"):
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.commits.save_json_data', return_value="file.json"):
                 extract_commits(
                     mock_client, 
                     mock_config, 
@@ -173,8 +173,8 @@ class TestExtractCommits:
         mock_client.graphql_commit_history.return_value = ([], {})
         mock_client.get_paginated.return_value = []
         
-        with patch('bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('bronze.commits.save_json_data', return_value="file.json"):
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.commits.save_json_data', return_value="file.json"):
                 extract_commits(
                     mock_client,
                     mock_config,
@@ -203,8 +203,8 @@ class TestExtractCommits:
         
         mock_client.get_paginated.return_value = []
         
-        with patch('bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('bronze.commits.save_json_data', return_value="file.json"):
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.commits.save_json_data', return_value="file.json"):
                 extract_commits(mock_client, mock_config, method="rest")
                 
                 captured = capsys.readouterr()
@@ -222,8 +222,8 @@ class TestExtractCommits:
         
         mock_client.get_paginated.return_value = []
         
-        with patch('bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('bronze.commits.save_json_data', return_value="file.json"):
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.commits.save_json_data', return_value="file.json"):
                 result = extract_commits(mock_client, mock_config, method="rest")
                 
                 # Deve processar apenas 1 repo (ignorando _metadata)
@@ -246,8 +246,8 @@ class TestExtractCommits:
         mock_client.get_paginated.return_value = mock_commits
         mock_client.get_with_cache.return_value = {"stats": {"additions": 10, "deletions": 5, "total": 15}}
         
-        with patch('bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('bronze.commits.save_json_data', return_value="file.json") as mock_save:
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.commits.save_json_data', return_value="file.json") as mock_save:
                 extract_commits(mock_client, mock_config, method="rest")
                 
                 # 2 repos + 1 arquivo all = 3 saves
@@ -266,8 +266,8 @@ class TestExtractCommits:
         mock_repos = [{"name": "repo1", "full_name": "test-org/repo1"}]
         mock_client.get_paginated.return_value = []
         
-        with patch('bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('bronze.commits.save_json_data', return_value="file.json") as mock_save:
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.commits.save_json_data', return_value="file.json") as mock_save:
                 result = extract_commits(mock_client, mock_config)
                 
                 # Verifica que salvou commits_all.json
@@ -282,8 +282,8 @@ class TestExtractCommits:
         mock_repos = [{"name": "repo1", "full_name": "test-org/repo1"}]
         mock_client.get_paginated.return_value = []
         
-        with patch('bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('bronze.commits.save_json_data', return_value="file.json"):
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.commits.save_json_data', return_value="file.json"):
                 extract_commits(mock_client, mock_config, use_cache=False)
                 
                 # Verifica que use_cache foi passado
@@ -305,8 +305,8 @@ class TestExtractCommits:
         mock_client.get_paginated.return_value = mock_commits
         mock_client.get_with_cache.return_value = {"stats": {"additions": 10, "deletions": 5, "total": 15}}
         
-        with patch('bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('bronze.commits.save_json_data', return_value="file.json"):
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.commits.save_json_data', return_value="file.json"):
                 extract_commits(mock_client, mock_config, method="rest")
                 
                 # Deve buscar detalhes para cada commit (2 commits)
@@ -344,8 +344,8 @@ class TestExtractCommits:
             saved_data = data
             return "file.json"
         
-        with patch('bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('bronze.commits.save_json_data', side_effect=capture_save):
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.commits.save_json_data', side_effect=capture_save):
                 extract_commits(mock_client, mock_config, method="graphql")
                 
                 # Verifica mapeamento de campos
@@ -392,8 +392,8 @@ class TestExtractCommits:
             saved_data = data
             return "file.json"
         
-        with patch('bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('bronze.commits.save_json_data', side_effect=capture_save):
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.commits.save_json_data', side_effect=capture_save):
                 extract_commits(mock_client, mock_config, method="graphql")
                 
                 # Deve funcionar sem erros
@@ -426,8 +426,8 @@ class TestExtractCommits:
             saved_data = data
             return "file.json"
         
-        with patch('bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('bronze.commits.save_json_data', side_effect=capture_save):
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.commits.save_json_data', side_effect=capture_save):
                 extract_commits(mock_client, mock_config, method="rest")
                 
                 # Verifica que copiou login
@@ -444,8 +444,8 @@ class TestExtractCommits:
             {"name": "invalid-repo", "full_name": "single-name"}  # Sem '/' para split
         ]
         
-        with patch('bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('bronze.commits.save_json_data', return_value="file.json"):
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.commits.save_json_data', return_value="file.json"):
                 extract_commits(mock_client, mock_config, method="graphql")
                 
                 captured = capsys.readouterr()
@@ -466,8 +466,8 @@ class TestExtractCommits:
         mock_client.get_paginated.return_value = mock_commits
         mock_client.get_with_cache.return_value = {"stats": {"additions": 10, "deletions": 5, "total": 15}}
         
-        with patch('bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('bronze.commits.save_json_data', return_value="file.json"):
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.commits.save_json_data', return_value="file.json"):
                 extract_commits(mock_client, mock_config)
                 
                 captured = capsys.readouterr()
@@ -482,8 +482,8 @@ class TestExtractCommits:
         mock_client.graphql_commit_history.return_value = ([], {})
         mock_client.get_paginated.return_value = []
         
-        with patch('bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('bronze.commits.save_json_data', return_value="file.json"):
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.commits.save_json_data', return_value="file.json"):
                 extract_commits(
                     mock_client,
                     mock_config,

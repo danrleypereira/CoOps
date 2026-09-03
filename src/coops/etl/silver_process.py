@@ -6,13 +6,9 @@ Transforms bronze raw data into analytics-ready formats
 
 import argparse
 import sys
-import os
 from datetime import datetime
 
-# Add src to path so we can import our modules
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-
-from utils.github_api import update_data_registry
+from coops.utils.github_api import update_data_registry
 
 def main():
     parser = argparse.ArgumentParser(description='Process Bronze data to Silver layer')
@@ -25,12 +21,12 @@ def main():
 
     try:
         # Import and run individual processors
-        from silver.member_analytics import process_member_analytics
-        from silver.contribution_metrics import process_contribution_metrics
-        from silver.collaboration_networks import process_collaboration_networks
-        from silver.temporal_analysis import process_temporal_analysis
-        from silver.members_statistics import process_members_statistics
-        from silver.file_language_analysis import process_file_language_analysis
+        from coops.silver.member_analytics import process_member_analytics
+        from coops.silver.contribution_metrics import process_contribution_metrics
+        from coops.silver.collaboration_networks import process_collaboration_networks
+        from coops.silver.temporal_analysis import process_temporal_analysis
+        from coops.silver.members_statistics import process_members_statistics
+        from coops.silver.file_language_analysis import process_file_language_analysis
 
         # Process data in logical order
         print("\nStep 1: Processing member analytics...")

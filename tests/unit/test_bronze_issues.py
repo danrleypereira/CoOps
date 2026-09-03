@@ -1,10 +1,10 @@
 """
-Unit tests for src/bronze/issues.py
+Unit tests for coops/bronze/issues.py
 Tests extraction of issues, pull requests, and issue events.
 """
 import pytest
 from unittest.mock import MagicMock, patch
-from bronze.issues import extract_issues
+from coops.bronze.issues import extract_issues
 
 
 class TestExtractIssues:
@@ -31,8 +31,8 @@ class TestExtractIssues:
         
         mock_client.get_paginated.side_effect = [mock_issues, []]  # issues, events
         
-        with patch('bronze.issues.load_json_data', return_value=mock_repos):
-            with patch('bronze.issues.save_json_data', return_value="file.json") as mock_save:
+        with patch('coops.bronze.issues.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.issues.save_json_data', return_value="file.json") as mock_save:
                 result = extract_issues(mock_client, mock_config)
                 
                 # Deve salvar 4 arquivos: issues_repo1, issues_all, prs_all, issue_events_all
@@ -58,8 +58,8 @@ class TestExtractIssues:
             saved_data[path] = data
             return path
         
-        with patch('bronze.issues.load_json_data', return_value=mock_repos):
-            with patch('bronze.issues.save_json_data', side_effect=capture_save):
+        with patch('coops.bronze.issues.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.issues.save_json_data', side_effect=capture_save):
                 extract_issues(mock_client, mock_config)
                 
                 # Verifica que salvou arquivos separados
@@ -71,7 +71,7 @@ class TestExtractIssues:
         mock_client = MagicMock()
         mock_config = MagicMock()
         
-        with patch('bronze.issues.load_json_data', return_value=None):
+        with patch('coops.bronze.issues.load_json_data', return_value=None):
             result = extract_issues(mock_client, mock_config)
             
             assert result == []
@@ -104,8 +104,8 @@ class TestExtractIssues:
             saved_data[path] = data
             return path
         
-        with patch('bronze.issues.load_json_data', return_value=mock_repos):
-            with patch('bronze.issues.save_json_data', side_effect=capture_save):
+        with patch('coops.bronze.issues.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.issues.save_json_data', side_effect=capture_save):
                 extract_issues(mock_client, mock_config)
                 
                 # Verifica que evento foi filtrado
@@ -135,8 +135,8 @@ class TestExtractIssues:
         
         mock_client.get_paginated.side_effect = [None, None]  # Sem issues, sem events
         
-        with patch('bronze.issues.load_json_data', return_value=mock_repos):
-            with patch('bronze.issues.save_json_data', return_value="file.json") as mock_save:
+        with patch('coops.bronze.issues.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.issues.save_json_data', return_value="file.json") as mock_save:
                 result = extract_issues(mock_client, mock_config)
                 
                 # Deve salvar pelo menos arquivos agregados (all)
@@ -160,8 +160,8 @@ class TestExtractIssues:
             mock_issues, mock_events   # repo2
         ]
         
-        with patch('bronze.issues.load_json_data', return_value=mock_repos):
-            with patch('bronze.issues.save_json_data', return_value="file.json") as mock_save:
+        with patch('coops.bronze.issues.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.issues.save_json_data', return_value="file.json") as mock_save:
                 extract_issues(mock_client, mock_config)
                 
                 # Verifica que salvou arquivos por repo
@@ -179,8 +179,8 @@ class TestExtractIssues:
         mock_repos = [{"name": "repo1", "full_name": "test-org/repo1"}]
         mock_client.get_paginated.return_value = []
         
-        with patch('bronze.issues.load_json_data', return_value=mock_repos):
-            with patch('bronze.issues.save_json_data', return_value="file.json") as mock_save:
+        with patch('coops.bronze.issues.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.issues.save_json_data', return_value="file.json") as mock_save:
                 result = extract_issues(mock_client, mock_config)
                 
                 calls = [call[0][1] for call in mock_save.call_args_list]
@@ -196,8 +196,8 @@ class TestExtractIssues:
         mock_repos = [{"name": "repo1", "full_name": "test-org/repo1"}]
         mock_client.get_paginated.return_value = []
         
-        with patch('bronze.issues.load_json_data', return_value=mock_repos):
-            with patch('bronze.issues.save_json_data', return_value="file.json"):
+        with patch('coops.bronze.issues.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.issues.save_json_data', return_value="file.json"):
                 extract_issues(mock_client, mock_config, use_cache=False)
                 
                 # Verifica que use_cache foi passado
@@ -212,8 +212,8 @@ class TestExtractIssues:
         mock_repos = [{"name": "repo1", "full_name": "test-org/repo1"}]
         mock_client.get_paginated.return_value = []
         
-        with patch('bronze.issues.load_json_data', return_value=mock_repos):
-            with patch('bronze.issues.save_json_data', return_value="file.json"):
+        with patch('coops.bronze.issues.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.issues.save_json_data', return_value="file.json"):
                 extract_issues(mock_client, mock_config)
                 
                 # Verifica URLs chamadas
@@ -234,8 +234,8 @@ class TestExtractIssues:
         
         mock_client.get_paginated.return_value = []
         
-        with patch('bronze.issues.load_json_data', return_value=mock_repos):
-            with patch('bronze.issues.save_json_data', return_value="file.json"):
+        with patch('coops.bronze.issues.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.issues.save_json_data', return_value="file.json"):
                 extract_issues(mock_client, mock_config)
                 
                 captured = capsys.readouterr()
@@ -253,8 +253,8 @@ class TestExtractIssues:
         
         mock_client.get_paginated.return_value = []
         
-        with patch('bronze.issues.load_json_data', return_value=mock_repos):
-            with patch('bronze.issues.save_json_data', return_value="file.json"):
+        with patch('coops.bronze.issues.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.issues.save_json_data', return_value="file.json"):
                 extract_issues(mock_client, mock_config)
                 
                 # Deve processar apenas 1 repo (ignorando _metadata)
@@ -276,8 +276,8 @@ class TestExtractIssues:
             saved_data[path] = data
             return path
         
-        with patch('bronze.issues.load_json_data', return_value=mock_repos):
-            with patch('bronze.issues.save_json_data', side_effect=capture_save):
+        with patch('coops.bronze.issues.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.issues.save_json_data', side_effect=capture_save):
                 extract_issues(mock_client, mock_config)
                 
                 issues_key = next((k for k in saved_data.keys() if 'issues_test-repo' in k), None)
@@ -299,8 +299,8 @@ class TestExtractIssues:
             saved_data[path] = data
             return path
         
-        with patch('bronze.issues.load_json_data', return_value=mock_repos):
-            with patch('bronze.issues.save_json_data', side_effect=capture_save):
+        with patch('coops.bronze.issues.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.issues.save_json_data', side_effect=capture_save):
                 extract_issues(mock_client, mock_config)
                 
                 prs_key = next((k for k in saved_data.keys() if 'prs_test-repo' in k), None)
@@ -326,8 +326,8 @@ class TestExtractIssues:
         
         mock_client.get_paginated.side_effect = [mock_issues, mock_events]
         
-        with patch('bronze.issues.load_json_data', return_value=mock_repos):
-            with patch('bronze.issues.save_json_data', return_value="file.json"):
+        with patch('coops.bronze.issues.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.issues.save_json_data', return_value="file.json"):
                 extract_issues(mock_client, mock_config)
                 
                 captured = capsys.readouterr()
@@ -354,8 +354,8 @@ class TestExtractIssues:
             saved_data[path] = data
             return path
         
-        with patch('bronze.issues.load_json_data', return_value=mock_repos):
-            with patch('bronze.issues.save_json_data', side_effect=capture_save):
+        with patch('coops.bronze.issues.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.issues.save_json_data', side_effect=capture_save):
                 extract_issues(mock_client, mock_config)
                 
                 # Verifica que evento foi salvo com actor=None
@@ -381,8 +381,8 @@ class TestExtractIssues:
             saved_data[path] = data
             return path
         
-        with patch('bronze.issues.load_json_data', return_value=mock_repos):
-            with patch('bronze.issues.save_json_data', side_effect=capture_save):
+        with patch('coops.bronze.issues.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.issues.save_json_data', side_effect=capture_save):
                 extract_issues(mock_client, mock_config)
                 
                 # Verifica que evento foi salvo com issue=None
@@ -402,8 +402,8 @@ class TestExtractIssues:
         
         mock_client.get_paginated.side_effect = [mock_issues, []]
         
-        with patch('bronze.issues.load_json_data', return_value=mock_repos):
-            with patch('bronze.issues.save_json_data', return_value="file.json") as mock_save:
+        with patch('coops.bronze.issues.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.issues.save_json_data', return_value="file.json") as mock_save:
                 extract_issues(mock_client, mock_config)
                 
                 # Deve salvar: issues_repo1, issues_all, prs_all, issue_events_all

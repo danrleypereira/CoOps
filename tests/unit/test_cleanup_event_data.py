@@ -7,7 +7,7 @@ Testa a funcionalidade de limpeza de arquivos de eventos de issues.
 import pytest
 from pathlib import Path
 from unittest.mock import patch, MagicMock
-import src.utils.cleanup_event_data as cleanup_module
+import coops.utils.cleanup_event_data as cleanup_module
 
 
 class TestCleanupEventFiles:
@@ -15,7 +15,7 @@ class TestCleanupEventFiles:
     
     def test_cleanup_no_files_found(self, capsys):
         """Testa quando não há arquivos para limpar"""
-        with patch('src.utils.cleanup_event_data.Path') as mock_path_class:
+        with patch('coops.utils.cleanup_event_data.Path') as mock_path_class:
             mock_script_path = MagicMock()
             mock_project_root = MagicMock()
             mock_bronze_dir = MagicMock()

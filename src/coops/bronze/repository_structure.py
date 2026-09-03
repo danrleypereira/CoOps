@@ -1,14 +1,10 @@
 #!/usr/bin/env python3
 
 import os
-import sys
 import logging
 from typing import List, Dict, Any
-from pathlib import Path
 
-project_root = Path(__file__).parent.parent.parent
-sys.path.insert(0, str(project_root))
-from src.utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data, load_json_data
+from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data, load_json_data
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

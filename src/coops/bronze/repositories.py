@@ -4,16 +4,9 @@ Repository extraction for Bronze layer.
 Extracts raw repository data from GitHub API.
 """
 
-import os
-import sys
 from typing import List
-from pathlib import Path
 
-# Add project root to path
-project_root = Path(__file__).parent.parent.parent
-sys.path.insert(0, str(project_root))
-
-from src.utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data
+from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data
 
 def extract_repositories(client: GitHubAPIClient, config: OrganizationConfig, use_cache: bool = True) -> List[str]:
     """Extract organization repositories to bronze layer."""

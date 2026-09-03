@@ -3,7 +3,7 @@
 from collections import defaultdict
 from typing import List, Dict, Any
 from pathlib import Path
-from utils.github_api import save_json_data, load_json_data
+from coops.utils.github_api import save_json_data, load_json_data
 import os
 import glob
 import json

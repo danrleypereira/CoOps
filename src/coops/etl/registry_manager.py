@@ -3,11 +3,12 @@
 Data registry management for tracking all generated files and their relationships
 """
 
+import argparse
 import os
 import json
 from datetime import datetime
 from typing import Dict, List, Any
-from utils.github_api import load_json_data, save_json_data
+from coops.utils.github_api import load_json_data, save_json_data
 
 def create_master_registry() -> str:
     """Create master registry that maps all data files across layers"""
@@ -272,13 +273,22 @@ def generate_data_catalog() -> str:
     
     return catalog_file
 
-if __name__ == "__main__":
+def main():
+    """Create the master data registry and the data catalog."""
+    argparse.ArgumentParser(
+        description="Rebuild data/master_registry.json and data/data_catalog.json."
+    ).parse_args()
+
     print("📋 Creating data registry and catalog...")
-    
+
     master_registry_file = create_master_registry()
     print(f"✅ Created master registry: {master_registry_file}")
-    
+
     catalog_file = generate_data_catalog()
     print(f"✅ Created data catalog: {catalog_file}")
-    
+
     print("\n📊 Data management system initialized successfully!")
+
+
+if __name__ == "__main__":
+    main()

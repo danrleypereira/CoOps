@@ -7,10 +7,10 @@ extraction process to regenerate them with only essential fields, significantly 
 file size (from potentially 500MB+ to much smaller sizes).
 
 Usage:
-    python src/utils/cleanup_event_data.py
-    
+    python -m coops.utils.cleanup_event_data
+
     Or with confirmation prompt:
-    python src/utils/cleanup_event_data.py --confirm
+    python -m coops.utils.cleanup_event_data --confirm
 
 After running this script, re-run the bronze extraction workflow to generate
 optimized event files.

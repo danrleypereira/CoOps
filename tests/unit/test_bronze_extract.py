@@ -15,13 +15,13 @@ class TestBronzeExtract:
     def test_main_extracts_all_layers(self, capsys):
         """Testa que main extrai todas as camadas Bronze"""
         with patch('sys.argv', ['bronze_extract.py', '--token', 'test-token']):
-            with patch('bronze.repositories.extract_repositories', return_value=['repo.json']):
-                with patch('bronze.issues.extract_issues', return_value=['issues.json']):
-                    with patch('bronze.commits.extract_commits', return_value=['commits.json']):
-                        with patch('bronze.members.extract_members', return_value=['members.json']):
-                            with patch('utils.github_api.update_data_registry'):
-                                with patch('utils.github_api.GitHubAPIClient'):
-                                    from src import bronze_extract
+            with patch('coops.bronze.repositories.extract_repositories', return_value=['repo.json']):
+                with patch('coops.bronze.issues.extract_issues', return_value=['issues.json']):
+                    with patch('coops.bronze.commits.extract_commits', return_value=['commits.json']):
+                        with patch('coops.bronze.members.extract_members', return_value=['members.json']):
+                            with patch('coops.utils.github_api.update_data_registry'):
+                                with patch('coops.utils.github_api.GitHubAPIClient'):
+                                    from coops.etl import bronze_extract
                                     
                                     bronze_extract.main()
         
@@ -36,13 +36,13 @@ class TestBronzeExtract:
     def test_main_with_org_argument(self, capsys):
         """Testa que main aceita argumento --org"""
         with patch('sys.argv', ['bronze_extract.py', '--token', 'test-token', '--org', 'my-org']):
-            with patch('bronze.repositories.extract_repositories', return_value=[]):
-                with patch('bronze.issues.extract_issues', return_value=[]):
-                    with patch('bronze.commits.extract_commits', return_value=[]):
-                        with patch('bronze.members.extract_members', return_value=[]):
-                            with patch('utils.github_api.update_data_registry'):
-                                with patch('utils.github_api.GitHubAPIClient'):
-                                    from src import bronze_extract
+            with patch('coops.bronze.repositories.extract_repositories', return_value=[]):
+                with patch('coops.bronze.issues.extract_issues', return_value=[]):
+                    with patch('coops.bronze.commits.extract_commits', return_value=[]):
+                        with patch('coops.bronze.members.extract_members', return_value=[]):
+                            with patch('coops.utils.github_api.update_data_registry'):
+                                with patch('coops.utils.github_api.GitHubAPIClient'):
+                                    from coops.etl import bronze_extract
                                     
                                     bronze_extract.main()
         
@@ -53,18 +53,18 @@ class TestBronzeExtract:
     def test_main_with_cache_flag(self):
         """Testa que main passa o flag --cache para os extractors"""
         with patch('sys.argv', ['bronze_extract.py', '--token', 'test-token', '--cache']):
-            with patch('bronze.repositories.extract_repositories') as mock_repos:
-                with patch('bronze.issues.extract_issues') as mock_issues:
-                    with patch('bronze.commits.extract_commits') as mock_commits:
-                        with patch('bronze.members.extract_members') as mock_members:
-                            with patch('utils.github_api.update_data_registry'):
-                                with patch('utils.github_api.GitHubAPIClient'):
+            with patch('coops.bronze.repositories.extract_repositories') as mock_repos:
+                with patch('coops.bronze.issues.extract_issues') as mock_issues:
+                    with patch('coops.bronze.commits.extract_commits') as mock_commits:
+                        with patch('coops.bronze.members.extract_members') as mock_members:
+                            with patch('coops.utils.github_api.update_data_registry'):
+                                with patch('coops.utils.github_api.GitHubAPIClient'):
                                     mock_repos.return_value = []
                                     mock_issues.return_value = []
                                     mock_commits.return_value = []
                                     mock_members.return_value = []
                                     
-                                    from src import bronze_extract
+                                    from coops.etl import bronze_extract
                                     
                                     bronze_extract.main()
                                     
@@ -77,15 +77,15 @@ class TestBronzeExtract:
     def test_main_with_commits_method_graphql(self):
         """Testa que main aceita --commits-method graphql"""
         with patch('sys.argv', ['bronze_extract.py', '--token', 'test-token', '--commits-method', 'graphql']):
-            with patch('bronze.repositories.extract_repositories', return_value=[]):
-                with patch('bronze.issues.extract_issues', return_value=[]):
-                    with patch('bronze.commits.extract_commits') as mock_commits:
-                        with patch('bronze.members.extract_members', return_value=[]):
-                            with patch('utils.github_api.update_data_registry'):
-                                with patch('utils.github_api.GitHubAPIClient'):
+            with patch('coops.bronze.repositories.extract_repositories', return_value=[]):
+                with patch('coops.bronze.issues.extract_issues', return_value=[]):
+                    with patch('coops.bronze.commits.extract_commits') as mock_commits:
+                        with patch('coops.bronze.members.extract_members', return_value=[]):
+                            with patch('coops.utils.github_api.update_data_registry'):
+                                with patch('coops.utils.github_api.GitHubAPIClient'):
                                     mock_commits.return_value = []
                                     
-                                    from src import bronze_extract
+                                    from coops.etl import bronze_extract
                                     
                                     bronze_extract.main()
                                     
@@ -96,15 +96,15 @@ class TestBronzeExtract:
         with patch('sys.argv', ['bronze_extract.py', '--token', 'test-token', 
                                 '--since', '2024-01-01T00:00:00Z', 
                                 '--until', '2024-12-31T23:59:59Z']):
-            with patch('bronze.repositories.extract_repositories', return_value=[]):
-                with patch('bronze.issues.extract_issues', return_value=[]):
-                    with patch('bronze.commits.extract_commits') as mock_commits:
-                        with patch('bronze.members.extract_members', return_value=[]):
-                            with patch('utils.github_api.update_data_registry'):
-                                with patch('utils.github_api.GitHubAPIClient'):
+            with patch('coops.bronze.repositories.extract_repositories', return_value=[]):
+                with patch('coops.bronze.issues.extract_issues', return_value=[]):
+                    with patch('coops.bronze.commits.extract_commits') as mock_commits:
+                        with patch('coops.bronze.members.extract_members', return_value=[]):
+                            with patch('coops.utils.github_api.update_data_registry'):
+                                with patch('coops.utils.github_api.GitHubAPIClient'):
                                     mock_commits.return_value = []
                                     
-                                    from src import bronze_extract
+                                    from coops.etl import bronze_extract
                                     
                                     bronze_extract.main()
                                     
@@ -114,15 +114,15 @@ class TestBronzeExtract:
     def test_main_with_max_commits_per_repo(self):
         """Testa que main aceita --max-commits-per-repo"""
         with patch('sys.argv', ['bronze_extract.py', '--token', 'test-token', '--max-commits-per-repo', '1000']):
-            with patch('bronze.repositories.extract_repositories', return_value=[]):
-                with patch('bronze.issues.extract_issues', return_value=[]):
-                    with patch('bronze.commits.extract_commits') as mock_commits:
-                        with patch('bronze.members.extract_members', return_value=[]):
-                            with patch('utils.github_api.update_data_registry'):
-                                with patch('utils.github_api.GitHubAPIClient'):
+            with patch('coops.bronze.repositories.extract_repositories', return_value=[]):
+                with patch('coops.bronze.issues.extract_issues', return_value=[]):
+                    with patch('coops.bronze.commits.extract_commits') as mock_commits:
+                        with patch('coops.bronze.members.extract_members', return_value=[]):
+                            with patch('coops.utils.github_api.update_data_registry'):
+                                with patch('coops.utils.github_api.GitHubAPIClient'):
                                     mock_commits.return_value = []
                                     
-                                    from src import bronze_extract
+                                    from coops.etl import bronze_extract
                                     
                                     bronze_extract.main()
                                     
@@ -132,15 +132,15 @@ class TestBronzeExtract:
         """Testa que main aceita --include-active-branches e --active-days"""
         with patch('sys.argv', ['bronze_extract.py', '--token', 'test-token', 
                                 '--include-active-branches', '--active-days', '60']):
-            with patch('bronze.repositories.extract_repositories', return_value=[]):
-                with patch('bronze.issues.extract_issues', return_value=[]):
-                    with patch('bronze.commits.extract_commits') as mock_commits:
-                        with patch('bronze.members.extract_members', return_value=[]):
-                            with patch('utils.github_api.update_data_registry'):
-                                with patch('utils.github_api.GitHubAPIClient'):
+            with patch('coops.bronze.repositories.extract_repositories', return_value=[]):
+                with patch('coops.bronze.issues.extract_issues', return_value=[]):
+                    with patch('coops.bronze.commits.extract_commits') as mock_commits:
+                        with patch('coops.bronze.members.extract_members', return_value=[]):
+                            with patch('coops.utils.github_api.update_data_registry'):
+                                with patch('coops.utils.github_api.GitHubAPIClient'):
                                     mock_commits.return_value = []
                                     
-                                    from src import bronze_extract
+                                    from coops.etl import bronze_extract
                                     
                                     bronze_extract.main()
                                     
@@ -150,15 +150,15 @@ class TestBronzeExtract:
     def test_main_with_custom_page_size(self):
         """Testa que main aceita --commits-page-size"""
         with patch('sys.argv', ['bronze_extract.py', '--token', 'test-token', '--commits-page-size', '100']):
-            with patch('bronze.repositories.extract_repositories', return_value=[]):
-                with patch('bronze.issues.extract_issues', return_value=[]):
-                    with patch('bronze.commits.extract_commits') as mock_commits:
-                        with patch('bronze.members.extract_members', return_value=[]):
-                            with patch('utils.github_api.update_data_registry'):
-                                with patch('utils.github_api.GitHubAPIClient'):
+            with patch('coops.bronze.repositories.extract_repositories', return_value=[]):
+                with patch('coops.bronze.issues.extract_issues', return_value=[]):
+                    with patch('coops.bronze.commits.extract_commits') as mock_commits:
+                        with patch('coops.bronze.members.extract_members', return_value=[]):
+                            with patch('coops.utils.github_api.update_data_registry'):
+                                with patch('coops.utils.github_api.GitHubAPIClient'):
                                     mock_commits.return_value = []
                                     
-                                    from src import bronze_extract
+                                    from coops.etl import bronze_extract
                                     
                                     bronze_extract.main()
                                     
@@ -167,15 +167,15 @@ class TestBronzeExtract:
     def test_main_with_time_chunks(self):
         """Testa que main aceita --time-chunks"""
         with patch('sys.argv', ['bronze_extract.py', '--token', 'test-token', '--time-chunks', '5']):
-            with patch('bronze.repositories.extract_repositories', return_value=[]):
-                with patch('bronze.issues.extract_issues', return_value=[]):
-                    with patch('bronze.commits.extract_commits') as mock_commits:
-                        with patch('bronze.members.extract_members', return_value=[]):
-                            with patch('utils.github_api.update_data_registry'):
-                                with patch('utils.github_api.GitHubAPIClient'):
+            with patch('coops.bronze.repositories.extract_repositories', return_value=[]):
+                with patch('coops.bronze.issues.extract_issues', return_value=[]):
+                    with patch('coops.bronze.commits.extract_commits') as mock_commits:
+                        with patch('coops.bronze.members.extract_members', return_value=[]):
+                            with patch('coops.utils.github_api.update_data_registry'):
+                                with patch('coops.utils.github_api.GitHubAPIClient'):
                                     mock_commits.return_value = []
                                     
-                                    from src import bronze_extract
+                                    from coops.etl import bronze_extract
                                     
                                     bronze_extract.main()
                                     
@@ -184,13 +184,13 @@ class TestBronzeExtract:
     def test_main_displays_all_files(self, capsys):
         """Testa que main exibe todos os arquivos gerados"""
         with patch('sys.argv', ['bronze_extract.py', '--token', 'test-token']):
-            with patch('bronze.repositories.extract_repositories', return_value=['repo1.json', 'repo2.json']):
-                with patch('bronze.issues.extract_issues', return_value=['issues.json']):
-                    with patch('bronze.commits.extract_commits', return_value=['commits.json']):
-                        with patch('bronze.members.extract_members', return_value=['members.json']):
-                            with patch('utils.github_api.update_data_registry'):
-                                with patch('utils.github_api.GitHubAPIClient'):
-                                    from src import bronze_extract
+            with patch('coops.bronze.repositories.extract_repositories', return_value=['repo1.json', 'repo2.json']):
+                with patch('coops.bronze.issues.extract_issues', return_value=['issues.json']):
+                    with patch('coops.bronze.commits.extract_commits', return_value=['commits.json']):
+                        with patch('coops.bronze.members.extract_members', return_value=['members.json']):
+                            with patch('coops.utils.github_api.update_data_registry'):
+                                with patch('coops.utils.github_api.GitHubAPIClient'):
+                                    from coops.etl import bronze_extract
                                     
                                     bronze_extract.main()
         
@@ -204,9 +204,9 @@ class TestBronzeExtract:
     def test_main_handles_extraction_error(self, capsys):
         """Testa tratamento de erro durante extração"""
         with patch('sys.argv', ['bronze_extract.py', '--token', 'test-token']):
-            with patch('bronze.repositories.extract_repositories', side_effect=Exception("API Error")):
-                with patch('utils.github_api.GitHubAPIClient'):
-                    from src import bronze_extract
+            with patch('coops.bronze.repositories.extract_repositories', side_effect=Exception("API Error")):
+                with patch('coops.utils.github_api.GitHubAPIClient'):
+                    from coops.etl import bronze_extract
                     
                     with pytest.raises(SystemExit) as exc_info:
                         bronze_extract.main()
@@ -238,13 +238,13 @@ class TestBronzeExtract:
             return []
         
         with patch('sys.argv', ['bronze_extract.py', '--token', 'test-token']):
-            with patch('bronze.repositories.extract_repositories', side_effect=track_repos):
-                with patch('bronze.issues.extract_issues', side_effect=track_issues):
-                    with patch('bronze.commits.extract_commits', side_effect=track_commits):
-                        with patch('bronze.members.extract_members', side_effect=track_members):
-                            with patch('utils.github_api.update_data_registry'):
-                                with patch('utils.github_api.GitHubAPIClient'):
-                                    from src import bronze_extract
+            with patch('coops.bronze.repositories.extract_repositories', side_effect=track_repos):
+                with patch('coops.bronze.issues.extract_issues', side_effect=track_issues):
+                    with patch('coops.bronze.commits.extract_commits', side_effect=track_commits):
+                        with patch('coops.bronze.members.extract_members', side_effect=track_members):
+                            with patch('coops.utils.github_api.update_data_registry'):
+                                with patch('coops.utils.github_api.GitHubAPIClient'):
+                                    from coops.etl import bronze_extract
                                     
                                     bronze_extract.main()
         
@@ -253,13 +253,13 @@ class TestBronzeExtract:
     def test_main_displays_timestamp(self, capsys):
         """Testa que main exibe timestamp de início"""
         with patch('sys.argv', ['bronze_extract.py', '--token', 'test-token']):
-            with patch('bronze.repositories.extract_repositories', return_value=[]):
-                with patch('bronze.issues.extract_issues', return_value=[]):
-                    with patch('bronze.commits.extract_commits', return_value=[]):
-                        with patch('bronze.members.extract_members', return_value=[]):
-                            with patch('utils.github_api.update_data_registry'):
-                                with patch('utils.github_api.GitHubAPIClient'):
-                                    from src import bronze_extract
+            with patch('coops.bronze.repositories.extract_repositories', return_value=[]):
+                with patch('coops.bronze.issues.extract_issues', return_value=[]):
+                    with patch('coops.bronze.commits.extract_commits', return_value=[]):
+                        with patch('coops.bronze.members.extract_members', return_value=[]):
+                            with patch('coops.utils.github_api.update_data_registry'):
+                                with patch('coops.utils.github_api.GitHubAPIClient'):
+                                    from coops.etl import bronze_extract
                                     
                                     bronze_extract.main()
         
@@ -269,7 +269,7 @@ class TestBronzeExtract:
     def test_main_requires_token_argument(self):
         """Testa que main requer o argumento --token"""
         with patch('sys.argv', ['bronze_extract.py']):
-            from src import bronze_extract
+            from coops.etl import bronze_extract
             
             with pytest.raises(SystemExit):
                 bronze_extract.main()
@@ -277,13 +277,13 @@ class TestBronzeExtract:
     def test_main_initializes_github_client(self, capsys):
         """Testa que main inicializa o GitHubAPIClient com o token"""
         with patch('sys.argv', ['bronze_extract.py', '--token', 'my-secret-token']):
-            with patch('bronze.repositories.extract_repositories', return_value=[]):
-                with patch('bronze.issues.extract_issues', return_value=[]):
-                    with patch('bronze.commits.extract_commits', return_value=[]):
-                        with patch('bronze.members.extract_members', return_value=[]):
-                            with patch('utils.github_api.update_data_registry'):
-                                with patch('utils.github_api.GitHubAPIClient'):
-                                    from src import bronze_extract
+            with patch('coops.bronze.repositories.extract_repositories', return_value=[]):
+                with patch('coops.bronze.issues.extract_issues', return_value=[]):
+                    with patch('coops.bronze.commits.extract_commits', return_value=[]):
+                        with patch('coops.bronze.members.extract_members', return_value=[]):
+                            with patch('coops.utils.github_api.update_data_registry'):
+                                with patch('coops.utils.github_api.GitHubAPIClient'):
+                                    from coops.etl import bronze_extract
                                     
                                     bronze_extract.main()
         

@@ -1,13 +1,6 @@
-import sys
-from pathlib import Path
 import json
-import types
 import pytest
 
-ROOT = Path(__file__).resolve().parents[1]
-SRC = ROOT / "src"
-if str(SRC) not in sys.path:
-    sys.path.insert(0, str(SRC))
 
 @pytest.fixture
 def fake_io(monkeypatch, tmp_path):
@@ -45,37 +38,37 @@ def fake_io(monkeypatch, tmp_path):
         return time.time()
 
     # Patch in utils.github_api module
-    monkeypatch.setattr("utils.github_api.load_json_data", _fake_load, raising=False)
-    monkeypatch.setattr("utils.github_api.save_json_data", _fake_save, raising=False)
+    monkeypatch.setattr("coops.utils.github_api.load_json_data", _fake_load, raising=False)
+    monkeypatch.setattr("coops.utils.github_api.save_json_data", _fake_save, raising=False)
     
     # Patch in registry_manager module
-    monkeypatch.setattr("registry_manager.load_json_data", _fake_load, raising=False)
-    monkeypatch.setattr("registry_manager.save_json_data", _fake_save, raising=False)
+    monkeypatch.setattr("coops.etl.registry_manager.load_json_data", _fake_load, raising=False)
+    monkeypatch.setattr("coops.etl.registry_manager.save_json_data", _fake_save, raising=False)
     
     # Also patch in silver modules (they import directly)
-    monkeypatch.setattr("silver.member_analytics.load_json_data", _fake_load, raising=False)
-    monkeypatch.setattr("silver.member_analytics.save_json_data", _fake_save, raising=False)
-    monkeypatch.setattr("silver.contribution_metrics.load_json_data", _fake_load, raising=False)
-    monkeypatch.setattr("silver.contribution_metrics.save_json_data", _fake_save, raising=False)
-    monkeypatch.setattr("silver.collaboration_networks.load_json_data", _fake_load, raising=False)
-    monkeypatch.setattr("silver.collaboration_networks.save_json_data", _fake_save, raising=False)
-    monkeypatch.setattr("silver.temporal_analysis.load_json_data", _fake_load, raising=False)
-    monkeypatch.setattr("silver.temporal_analysis.save_json_data", _fake_save, raising=False)
+    monkeypatch.setattr("coops.silver.member_analytics.load_json_data", _fake_load, raising=False)
+    monkeypatch.setattr("coops.silver.member_analytics.save_json_data", _fake_save, raising=False)
+    monkeypatch.setattr("coops.silver.contribution_metrics.load_json_data", _fake_load, raising=False)
+    monkeypatch.setattr("coops.silver.contribution_metrics.save_json_data", _fake_save, raising=False)
+    monkeypatch.setattr("coops.silver.collaboration_networks.load_json_data", _fake_load, raising=False)
+    monkeypatch.setattr("coops.silver.collaboration_networks.save_json_data", _fake_save, raising=False)
+    monkeypatch.setattr("coops.silver.temporal_analysis.load_json_data", _fake_load, raising=False)
+    monkeypatch.setattr("coops.silver.temporal_analysis.save_json_data", _fake_save, raising=False)
     
     # Also patch in gold modules
-    monkeypatch.setattr("gold.timeline_aggregation.load_json_data", _fake_load, raising=False)
-    monkeypatch.setattr("gold.timeline_aggregation.save_json_data", _fake_save, raising=False)
+    monkeypatch.setattr("coops.gold.timeline_aggregation.load_json_data", _fake_load, raising=False)
+    monkeypatch.setattr("coops.gold.timeline_aggregation.save_json_data", _fake_save, raising=False)
 
     # Patch members_statistics module
-    monkeypatch.setattr("silver.members_statistics.load_json_data", _fake_load, raising=False)
-    monkeypatch.setattr("silver.members_statistics.save_json_data", _fake_save, raising=False)
+    monkeypatch.setattr("coops.silver.members_statistics.load_json_data", _fake_load, raising=False)
+    monkeypatch.setattr("coops.silver.members_statistics.save_json_data", _fake_save, raising=False)
 
     # Patch file_language_analysis module
-    monkeypatch.setattr("silver.file_language_analysis.load_json_data", _fake_load, raising=False)
-    monkeypatch.setattr("silver.file_language_analysis.save_json_data", _fake_save, raising=False)
+    monkeypatch.setattr("coops.silver.file_language_analysis.load_json_data", _fake_load, raising=False)
+    monkeypatch.setattr("coops.silver.file_language_analysis.save_json_data", _fake_save, raising=False)
     
     # Patch registry_manager functions
-    monkeypatch.setattr("registry_manager.scan_data_directory", _fake_scan_directory, raising=False)
+    monkeypatch.setattr("coops.etl.registry_manager.scan_data_directory", _fake_scan_directory, raising=False)
     
     # Patch os.path functions in registry_manager
     import os

@@ -52,6 +52,11 @@ ENV/
 *.so
 .Python
 
+# Build / packaging artifacts
+*.egg-info/
+.eggs/
+build/
+
 # Pytest e Coverage
 .pytest_cache/
 .coverage
