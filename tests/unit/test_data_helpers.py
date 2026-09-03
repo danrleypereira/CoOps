@@ -1,6 +1,6 @@
-"""Tests for src/utils/data_helpers.py — strip_metadata helper."""
+"""Tests for coops/utils/data_helpers.py — strip_metadata helper."""
 
-from utils.data_helpers import strip_metadata
+from coops.utils.data_helpers import strip_metadata
 
 
 class TestStripMetadata:

@@ -16,10 +16,11 @@ No terminal:
 curl https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash
 ```
 
-### 3. Instale Python e dependências
+### 3. Instale Python, Poetry e as dependências
 ```bash
 sudo apt install python3 python3-pip
-pip3 install requests pandas numpy
+pipx install poetry
+poetry install --extras dev
 ```
 
 ## 🔑 Configuração do Token
@@ -124,14 +125,16 @@ data/gold/
 Se preferir executar os scripts diretamente:
 
 ```bash
+# 0. Instalar o pacote (uma vez): poetry install
+
 # 1. Bronze: Extração de dados
-python3 src/bronze_extract.py --token $GITHUB_TOKEN --org coops-org --cache
+poetry run coops-bronze --token $GITHUB_TOKEN --org coops-org --cache
 
 # 2. Silver: Processamento
-python3 src/silver_process.py --org coops-org
+poetry run coops-silver --org coops-org
 
 # 3. Registry: Atualizar registro
-python3 src/registry_manager.py
+poetry run coops-registry
 ```
 
 ## 🔍 Parâmetros Úteis do act
@@ -202,8 +205,8 @@ jq '.silver | keys' data/master_registry.json
    - **Verificar**: Headers mostram quando rate limit reseta
 
 6. **❌ Dependências Python**
-   - **Solução**: `pip3 install requests pandas numpy`
-   - **No Ubuntu**: `sudo apt install python3-pip`
+   - **Solução**: `poetry install --extras dev`
+   - **No Ubuntu**: `sudo apt install python3-pip && pipx install poetry`
 
 ### Logs detalhados:
 ```bash
@@ -232,8 +235,8 @@ curl -H "Authorization: Bearer $GITHUB_TOKEN" \
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
    https://api.github.com/orgs/coops-org/members | jq length
 
-# 4. Executar script individual
-python3 src/bronze_extract.py --token $GITHUB_TOKEN --org coops-org
+# 4. Executar etapa individual
+poetry run coops-bronze --token $GITHUB_TOKEN --org coops-org
 ```
 
 ### Dados esperados após execução bem-sucedida:

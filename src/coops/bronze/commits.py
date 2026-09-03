@@ -1,6 +1,6 @@
 import os
 from typing import List, Dict, Any, Optional
-from utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data, load_json_data
+from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data, load_json_data
 
 def extract_commits(
     client: GitHubAPIClient,

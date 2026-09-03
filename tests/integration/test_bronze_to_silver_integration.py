@@ -6,10 +6,11 @@ Tests the complete flow from raw GitHub API data to processed analytics.
 
 import pytest
 from datetime import datetime
-from silver.member_analytics import process_member_analytics
-from silver.contribution_metrics import process_contribution_metrics
-from silver.collaboration_networks import process_collaboration_networks
-from silver.temporal_analysis import process_temporal_analysis
+from freezegun import freeze_time
+from coops.silver.member_analytics import process_member_analytics
+from coops.silver.contribution_metrics import process_contribution_metrics
+from coops.silver.collaboration_networks import process_collaboration_networks
+from coops.silver.temporal_analysis import process_temporal_analysis
 
 
 class TestBronzeToSilverIntegration:
@@ -158,8 +159,14 @@ class TestBronzeToSilverIntegration:
         fake_io["data/bronze/issues_detailed.json"] = issues_data
         return issues_data
 
+    @freeze_time("2025-06-01")
     def test_member_analytics_transformation(self, bronze_members_data, fake_io):
-        """Test that member analytics correctly transforms bronze data to silver"""
+        """Test that member analytics correctly transforms bronze data to silver
+
+        Time is frozen so the age-based ``new`` vs ``established`` assertions
+        stay valid regardless of when the suite runs (fixture ``created_at``
+        dates are hard-coded).
+        """
         # Execute transformation
         generated_files = process_member_analytics()
         

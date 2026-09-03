@@ -6,7 +6,7 @@ Tests the complete flow from processed analytics to aggregated insights.
 
 import pytest
 from datetime import datetime, timedelta
-from gold.timeline_aggregation import process_timeline_aggregation
+from coops.gold.timeline_aggregation import process_timeline_aggregation
 
 
 class TestSilverToGoldIntegration:

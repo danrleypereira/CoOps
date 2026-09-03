@@ -11,8 +11,7 @@ from typing import List, Dict, Any
 from pathlib import Path
 import google.generativeai as genai
 
-sys.path.insert(0, str(Path(__file__).parent.parent))
-from utils.data_helpers import strip_metadata
+from coops.utils.data_helpers import strip_metadata
 
 # Configuração de logging
 logging.basicConfig(

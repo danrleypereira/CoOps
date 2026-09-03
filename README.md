@@ -53,12 +53,22 @@ production at two universities:
 ### Backend (ETL pipeline)
 
 ```bash
-git clone https://github.com/danrleypereira/CoOps.git
+git clone https://github.com/unb-mds/CoOps.git
 cd CoOps
-python -m venv .venv && source .venv/bin/activate    # Windows: .venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-pip install -r requirements-dev.txt                   # only if you intend to develop
+poetry install --extras dev          # or: poetry install   (runtime only)
 ```
+
+Without Poetry, plain pip works too (deps come from `pyproject.toml`):
+
+```bash
+python -m venv .venv && source .venv/bin/activate    # Windows: .venv\Scripts\Activate.ps1
+pip install -e ".[dev]"                               # or: pip install -e .
+```
+
+Either way you get the `coops` package and the `coops-bronze`, `coops-silver`,
+`coops-gold`, `coops-aggregate` and `coops-registry` console commands (prefix
+them with `poetry run` if you did not activate a virtualenv). CI runs the same
+`poetry install`.
 
 Create a `.secrets` file at the repository root (already in `.gitignore`):
 
@@ -80,19 +90,22 @@ npm run dev                  # http://localhost:5173
 
 ## Quickstart
 
-Run the three-stage pipeline against your organization (the GitHub Actions
-workflows run the same commands daily):
+Run the pipeline against your organization (the GitHub Actions workflows run
+the same commands daily). Prefix with `poetry run` unless a virtualenv is
+active:
 
 ```bash
-python src/bronze_extract.py --token "$GITHUB_TOKEN" --org "$GITHUB_ORG" --cache
-python src/silver_process.py --org "$GITHUB_ORG"
-python src/gold_aggregate.py --org "$GITHUB_ORG"
+poetry run coops-bronze --token "$GITHUB_TOKEN" --org "$GITHUB_ORG" --cache
+poetry run coops-silver --org "$GITHUB_ORG"
+poetry run coops-gold --org "$GITHUB_ORG"
+poetry run coops-aggregate
+poetry run coops-registry
 ```
 
 Optional AI analysis step (requires `GEMINI_API_KEY`):
 
 ```bash
-python src/gemini_ai/run_analysis.py --org "$GITHUB_ORG"
+poetry run python -m coops.ai_analysis.generate_members_ai
 ```
 
 The dashboard reads the generated JSON files in `data/` and visualizes them at
@@ -103,7 +116,7 @@ The dashboard reads the generated JSON files in `data/` and visualizes them at
 ## Running Tests
 
 ```bash
-pytest                                   # backend; current coverage: 88%
+poetry run pytest                        # backend; current coverage: 88%
 cd dashboard && npm run test:coverage    # frontend; current coverage: 94%
 ```
 

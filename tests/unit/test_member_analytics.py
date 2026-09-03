@@ -1,7 +1,7 @@
 import math
 from freezegun import freeze_time
 
-from silver.member_analytics import calculate_maturity_score, classify_member_status, process_member_analytics
+from coops.silver.member_analytics import calculate_maturity_score, classify_member_status, process_member_analytics
 
 @freeze_time("2025-01-01")
 def test_calculate_maturity_score_basics():
@@ -128,7 +128,7 @@ def test_process_member_analytics_empty_data(monkeypatch):
     def fake_load(path):
         return None
     
-    monkeypatch.setattr("silver.member_analytics.load_json_data", fake_load)
+    monkeypatch.setattr("coops.silver.member_analytics.load_json_data", fake_load)
     
     result = process_member_analytics()
     assert result == []
@@ -176,8 +176,8 @@ def test_process_member_analytics_with_members(monkeypatch):
         saved_data[path] = data
         return path
     
-    monkeypatch.setattr("silver.member_analytics.load_json_data", fake_load)
-    monkeypatch.setattr("silver.member_analytics.save_json_data", fake_save)
+    monkeypatch.setattr("coops.silver.member_analytics.load_json_data", fake_load)
+    monkeypatch.setattr("coops.silver.member_analytics.save_json_data", fake_save)
     
     files = process_member_analytics()
     
@@ -232,8 +232,8 @@ def test_process_member_analytics_with_metadata(monkeypatch):
         saved_data[path] = data
         return path
     
-    monkeypatch.setattr("silver.member_analytics.load_json_data", fake_load)
-    monkeypatch.setattr("silver.member_analytics.save_json_data", fake_save)
+    monkeypatch.setattr("coops.silver.member_analytics.load_json_data", fake_load)
+    monkeypatch.setattr("coops.silver.member_analytics.save_json_data", fake_save)
     
     files = process_member_analytics()
     
@@ -265,8 +265,8 @@ def test_process_member_analytics_member_without_created_at(monkeypatch):
         saved_data[path] = data
         return path
     
-    monkeypatch.setattr("silver.member_analytics.load_json_data", fake_load)
-    monkeypatch.setattr("silver.member_analytics.save_json_data", fake_save)
+    monkeypatch.setattr("coops.silver.member_analytics.load_json_data", fake_load)
+    monkeypatch.setattr("coops.silver.member_analytics.save_json_data", fake_save)
     
     files = process_member_analytics()
     

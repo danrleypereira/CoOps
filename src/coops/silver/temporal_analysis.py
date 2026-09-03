@@ -7,8 +7,8 @@ Analyzes time-based patterns and trends
 from collections import defaultdict
 from datetime import datetime, timedelta
 from typing import List, Dict, Any
-from utils.github_api import save_json_data, load_json_data, parse_github_date
-from utils.data_helpers import strip_metadata
+from coops.utils.github_api import save_json_data, load_json_data, parse_github_date
+from coops.utils.data_helpers import strip_metadata
 
 def process_temporal_analysis() -> List[str]:
     """Process temporal data for time-based analytics"""

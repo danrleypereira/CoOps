@@ -15,9 +15,9 @@ class TestGoldProcess:
     def test_main_processes_timeline_aggregation(self, capsys):
         """Testa que main processa timeline aggregation"""
         with patch('sys.argv', ['gold_process.py']):
-            with patch('gold.timeline_aggregation.process_timeline_aggregation', return_value=['timeline.json']):
-                with patch('utils.github_api.update_data_registry'):
-                    from src import gold_process
+            with patch('coops.gold.timeline_aggregation.process_timeline_aggregation', return_value=['timeline.json']):
+                with patch('coops.utils.github_api.update_data_registry'):
+                    from coops.etl import gold_process
                     
                     gold_process.main()
         
@@ -29,9 +29,9 @@ class TestGoldProcess:
     def test_main_with_org_argument(self, capsys):
         """Testa que main aceita argumento --org"""
         with patch('sys.argv', ['gold_process.py', '--org', 'test-org']):
-            with patch('gold.timeline_aggregation.process_timeline_aggregation', return_value=[]):
-                with patch('utils.github_api.update_data_registry'):
-                    from src import gold_process
+            with patch('coops.gold.timeline_aggregation.process_timeline_aggregation', return_value=[]):
+                with patch('coops.utils.github_api.update_data_registry'):
+                    from coops.etl import gold_process
                     
                     gold_process.main()
         
@@ -44,9 +44,9 @@ class TestGoldProcess:
         test_files = ['timeline1.json', 'timeline2.json', 'timeline3.json']
         
         with patch('sys.argv', ['gold_process.py']):
-            with patch('gold.timeline_aggregation.process_timeline_aggregation', return_value=test_files):
-                with patch('utils.github_api.update_data_registry'):
-                    from src import gold_process
+            with patch('coops.gold.timeline_aggregation.process_timeline_aggregation', return_value=test_files):
+                with patch('coops.utils.github_api.update_data_registry'):
+                    from coops.etl import gold_process
                     
                     gold_process.main()
         
@@ -59,8 +59,8 @@ class TestGoldProcess:
     def test_main_handles_processing_error(self, capsys):
         """Testa tratamento de erro durante processamento"""
         with patch('sys.argv', ['gold_process.py']):
-            with patch('gold.timeline_aggregation.process_timeline_aggregation', side_effect=Exception("Processing failed")):
-                from src import gold_process
+            with patch('coops.gold.timeline_aggregation.process_timeline_aggregation', side_effect=Exception("Processing failed")):
+                from coops.etl import gold_process
                 
                 with pytest.raises(SystemExit) as exc_info:
                     gold_process.main()
@@ -74,9 +74,9 @@ class TestGoldProcess:
     def test_main_displays_timestamp(self, capsys):
         """Testa que main exibe timestamp de início"""
         with patch('sys.argv', ['gold_process.py']):
-            with patch('gold.timeline_aggregation.process_timeline_aggregation', return_value=[]):
-                with patch('utils.github_api.update_data_registry'):
-                    from src import gold_process
+            with patch('coops.gold.timeline_aggregation.process_timeline_aggregation', return_value=[]):
+                with patch('coops.utils.github_api.update_data_registry'):
+                    from coops.etl import gold_process
                     
                     gold_process.main()
         
@@ -88,9 +88,9 @@ class TestGoldProcess:
         test_files = ['file1.json', 'file2.json']
         
         with patch('sys.argv', ['gold_process.py']):
-            with patch('gold.timeline_aggregation.process_timeline_aggregation', return_value=test_files):
-                with patch('utils.github_api.update_data_registry'):
-                    from src import gold_process
+            with patch('coops.gold.timeline_aggregation.process_timeline_aggregation', return_value=test_files):
+                with patch('coops.utils.github_api.update_data_registry'):
+                    from coops.etl import gold_process
                     
                     gold_process.main()
         
@@ -102,9 +102,9 @@ class TestGoldProcess:
     def test_main_with_empty_results(self, capsys):
         """Testa que main funciona mesmo sem arquivos gerados"""
         with patch('sys.argv', ['gold_process.py']):
-            with patch('gold.timeline_aggregation.process_timeline_aggregation', return_value=[]):
-                with patch('utils.github_api.update_data_registry'):
-                    from src import gold_process
+            with patch('coops.gold.timeline_aggregation.process_timeline_aggregation', return_value=[]):
+                with patch('coops.utils.github_api.update_data_registry'):
+                    from coops.etl import gold_process
                     
                     gold_process.main()
         
@@ -115,11 +115,11 @@ class TestGoldProcess:
     def test_main_calls_timeline_processor(self):
         """Testa que main chama o processador de timeline"""
         with patch('sys.argv', ['gold_process.py']):
-            with patch('gold.timeline_aggregation.process_timeline_aggregation') as mock_timeline:
-                with patch('utils.github_api.update_data_registry'):
+            with patch('coops.gold.timeline_aggregation.process_timeline_aggregation') as mock_timeline:
+                with patch('coops.utils.github_api.update_data_registry'):
                     mock_timeline.return_value = []
                     
-                    from src import gold_process
+                    from coops.etl import gold_process
                     
                     gold_process.main()
                     
@@ -128,9 +128,9 @@ class TestGoldProcess:
     def test_main_default_org_value(self, capsys):
         """Testa que o valor padrão de --org é usado quando não especificado"""
         with patch('sys.argv', ['gold_process.py']):
-            with patch('gold.timeline_aggregation.process_timeline_aggregation', return_value=[]):
-                with patch('utils.github_api.update_data_registry'):
-                    from src import gold_process
+            with patch('coops.gold.timeline_aggregation.process_timeline_aggregation', return_value=[]):
+                with patch('coops.utils.github_api.update_data_registry'):
+                    from coops.etl import gold_process
                     
                     gold_process.main()
         

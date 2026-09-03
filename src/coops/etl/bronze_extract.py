@@ -6,13 +6,9 @@ Extracts raw data from GitHub API and saves to bronze layer.
 
 import argparse
 import sys
-import os
 from datetime import datetime
 
-# Add src to path so we can import our modules
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-
-from utils.github_api import GitHubAPIClient, OrganizationConfig, update_data_registry
+from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, update_data_registry
 
 def main():
     parser = argparse.ArgumentParser(description='Extract GitHub organization data to Bronze layer')
@@ -40,11 +36,11 @@ def main():
 
     try:
         # Import and run individual extractors
-        from bronze.repositories import extract_repositories
-        from bronze.issues import extract_issues
-        from bronze.commits import extract_commits
-        from bronze.members import extract_members
-        from bronze.repository_structure import extract_repository_structure
+        from coops.bronze.repositories import extract_repositories
+        from coops.bronze.issues import extract_issues
+        from coops.bronze.commits import extract_commits
+        from coops.bronze.members import extract_members
+        from coops.bronze.repository_structure import extract_repository_structure
 
         # ========================================
         # STEP 1: Extract Repositories (Required First)

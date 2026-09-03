@@ -16,7 +16,7 @@ Each file contains:
 2. Install dependencies:
 
 ```bash
-pip install -r requirements.txt
+poetry install
 ```
 
 3. Set the Gemini API key as an environment variable (or via `.secrets` in the project root):
@@ -37,10 +37,10 @@ GEMINI_API_KEY=<YOUR_KEY>
 
 ```bash
 # Generate AI analysis for all members
-python -m src.ai_analysis.generate_members_ai
+poetry run python -m coops.ai_analysis.generate_members_ai
 
 # Test mode (processes only 3 members)
-python -m src.ai_analysis.generate_members_ai --test
+poetry run python -m coops.ai_analysis.generate_members_ai --test
 ```
 
 - The process respects rate limits (QPS and concurrency) with retry and backoff logic.

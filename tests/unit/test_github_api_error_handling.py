@@ -4,7 +4,7 @@ Tests for error handling paths in github_api.py
 import pytest
 from unittest.mock import Mock, patch, MagicMock
 import requests
-from utils.github_api import GitHubAPIClient
+from coops.utils.github_api import GitHubAPIClient
 
 
 class TestGetWithCacheErrorPaths:

@@ -15,12 +15,12 @@ class TestSilverProcess:
     def test_main_processes_all_layers(self, capsys):
         """Testa que main processa todas as camadas Silver"""
         with patch('sys.argv', ['silver_process.py']):
-            with patch('silver.member_analytics.process_member_analytics', return_value=['member.json']):
-                with patch('silver.contribution_metrics.process_contribution_metrics', return_value=['contrib.json']):
-                    with patch('silver.collaboration_networks.process_collaboration_networks', return_value=['collab.json']):
-                        with patch('silver.temporal_analysis.process_temporal_analysis', return_value=['temporal.json']):
-                            with patch('utils.github_api.update_data_registry'):
-                                from src import silver_process
+            with patch('coops.silver.member_analytics.process_member_analytics', return_value=['member.json']):
+                with patch('coops.silver.contribution_metrics.process_contribution_metrics', return_value=['contrib.json']):
+                    with patch('coops.silver.collaboration_networks.process_collaboration_networks', return_value=['collab.json']):
+                        with patch('coops.silver.temporal_analysis.process_temporal_analysis', return_value=['temporal.json']):
+                            with patch('coops.utils.github_api.update_data_registry'):
+                                from coops.etl import silver_process
                                 
                                 silver_process.main()
         
@@ -35,25 +35,25 @@ class TestSilverProcess:
     def test_main_with_org_argument(self):
         """Testa que main aceita argumento --org"""
         with patch('sys.argv', ['silver_process.py', '--org', 'test-org']):
-            with patch('silver.member_analytics.process_member_analytics', return_value=[]):
-                with patch('silver.contribution_metrics.process_contribution_metrics', return_value=[]):
-                    with patch('silver.collaboration_networks.process_collaboration_networks', return_value=[]):
-                        with patch('silver.temporal_analysis.process_temporal_analysis', return_value=[]):
-                            with patch('utils.github_api.update_data_registry'):
-                                from src import silver_process
+            with patch('coops.silver.member_analytics.process_member_analytics', return_value=[]):
+                with patch('coops.silver.contribution_metrics.process_contribution_metrics', return_value=[]):
+                    with patch('coops.silver.collaboration_networks.process_collaboration_networks', return_value=[]):
+                        with patch('coops.silver.temporal_analysis.process_temporal_analysis', return_value=[]):
+                            with patch('coops.utils.github_api.update_data_registry'):
+                                from coops.etl import silver_process
                                 
                                 silver_process.main()
     
     def test_main_displays_all_files(self, capsys):
         """Testa que main exibe todos os arquivos gerados pelos processadores"""
         with patch('sys.argv', ['silver_process.py']):
-            with patch('silver.member_analytics.process_member_analytics', return_value=['member1.json', 'member2.json']):
-                with patch('silver.contribution_metrics.process_contribution_metrics', return_value=['contrib.json']):
-                    with patch('silver.collaboration_networks.process_collaboration_networks', return_value=['collab.json']):
-                        with patch('silver.temporal_analysis.process_temporal_analysis', return_value=['temporal.json']):
-                            with patch('silver.members_statistics.process_members_statistics', return_value=['members_stats.json']):
-                                with patch('utils.github_api.update_data_registry'):
-                                    from src import silver_process
+            with patch('coops.silver.member_analytics.process_member_analytics', return_value=['member1.json', 'member2.json']):
+                with patch('coops.silver.contribution_metrics.process_contribution_metrics', return_value=['contrib.json']):
+                    with patch('coops.silver.collaboration_networks.process_collaboration_networks', return_value=['collab.json']):
+                        with patch('coops.silver.temporal_analysis.process_temporal_analysis', return_value=['temporal.json']):
+                            with patch('coops.silver.members_statistics.process_members_statistics', return_value=['members_stats.json']):
+                                with patch('coops.utils.github_api.update_data_registry'):
+                                    from coops.etl import silver_process
                                     
                                     silver_process.main()
         
@@ -68,8 +68,8 @@ class TestSilverProcess:
     def test_main_handles_processing_error(self, capsys):
         """Testa tratamento de erro durante processamento"""
         with patch('sys.argv', ['silver_process.py']):
-            with patch('silver.member_analytics.process_member_analytics', side_effect=Exception("Processing failed")):
-                from src import silver_process
+            with patch('coops.silver.member_analytics.process_member_analytics', side_effect=Exception("Processing failed")):
+                from coops.etl import silver_process
                 
                 with pytest.raises(SystemExit) as exc_info:
                     silver_process.main()
@@ -85,13 +85,13 @@ class TestSilverProcess:
         test_files = ['member.json', 'contrib.json', 'collab.json']
         
         with patch('sys.argv', ['silver_process.py']):
-            with patch('silver.member_analytics.process_member_analytics', return_value=[test_files[0]]):
-                with patch('silver.contribution_metrics.process_contribution_metrics', return_value=[test_files[1]]):
-                    with patch('silver.collaboration_networks.process_collaboration_networks', return_value=[test_files[2]]):
-                        with patch('silver.temporal_analysis.process_temporal_analysis', return_value=[]):
-                            with patch('silver.members_statistics.process_members_statistics', return_value=[]):
-                                with patch('utils.github_api.update_data_registry'):
-                                    from src import silver_process
+            with patch('coops.silver.member_analytics.process_member_analytics', return_value=[test_files[0]]):
+                with patch('coops.silver.contribution_metrics.process_contribution_metrics', return_value=[test_files[1]]):
+                    with patch('coops.silver.collaboration_networks.process_collaboration_networks', return_value=[test_files[2]]):
+                        with patch('coops.silver.temporal_analysis.process_temporal_analysis', return_value=[]):
+                            with patch('coops.silver.members_statistics.process_members_statistics', return_value=[]):
+                                with patch('coops.utils.github_api.update_data_registry'):
+                                    from coops.etl import silver_process
                                     
                                     silver_process.main()
         
@@ -122,12 +122,12 @@ class TestSilverProcess:
             return []
         
         with patch('sys.argv', ['silver_process.py']):
-            with patch('silver.member_analytics.process_member_analytics', side_effect=track_member):
-                with patch('silver.contribution_metrics.process_contribution_metrics', side_effect=track_contrib):
-                    with patch('silver.collaboration_networks.process_collaboration_networks', side_effect=track_collab):
-                        with patch('silver.temporal_analysis.process_temporal_analysis', side_effect=track_temporal):
-                            with patch('utils.github_api.update_data_registry'):
-                                from src import silver_process
+            with patch('coops.silver.member_analytics.process_member_analytics', side_effect=track_member):
+                with patch('coops.silver.contribution_metrics.process_contribution_metrics', side_effect=track_contrib):
+                    with patch('coops.silver.collaboration_networks.process_collaboration_networks', side_effect=track_collab):
+                        with patch('coops.silver.temporal_analysis.process_temporal_analysis', side_effect=track_temporal):
+                            with patch('coops.utils.github_api.update_data_registry'):
+                                from coops.etl import silver_process
                                 
                                 silver_process.main()
         
@@ -136,12 +136,12 @@ class TestSilverProcess:
     def test_main_displays_timestamp(self, capsys):
         """Testa que main exibe timestamp de início"""
         with patch('sys.argv', ['silver_process.py']):
-            with patch('silver.member_analytics.process_member_analytics', return_value=[]):
-                with patch('silver.contribution_metrics.process_contribution_metrics', return_value=[]):
-                    with patch('silver.collaboration_networks.process_collaboration_networks', return_value=[]):
-                        with patch('silver.temporal_analysis.process_temporal_analysis', return_value=[]):
-                            with patch('utils.github_api.update_data_registry'):
-                                from src import silver_process
+            with patch('coops.silver.member_analytics.process_member_analytics', return_value=[]):
+                with patch('coops.silver.contribution_metrics.process_contribution_metrics', return_value=[]):
+                    with patch('coops.silver.collaboration_networks.process_collaboration_networks', return_value=[]):
+                        with patch('coops.silver.temporal_analysis.process_temporal_analysis', return_value=[]):
+                            with patch('coops.utils.github_api.update_data_registry'):
+                                from coops.etl import silver_process
                                 
                                 silver_process.main()
         

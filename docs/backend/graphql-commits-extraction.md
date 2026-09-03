@@ -20,15 +20,13 @@ A GraphQL API oferece:
 ## Estrutura de Arquivos
 
 ```
-src/
+src/coops/
 ├── utils/
-│   ├── github_graphql.py       # Cliente GraphQL
-│   └── github_api.py           # Cliente REST (existente)
+│   └── github_api.py           # Cliente REST + GraphQL
 ├── bronze/
-│   ├── commits.py              # Extração REST (existente)
-│   └── commits_graphql.py      # Extração GraphQL (novo)
-├── bronze_extract.py           # Script principal (atualizado)
-└── test_graphql_commits.py     # Script de teste
+│   └── commits.py              # Extração de commits (REST + GraphQL)
+└── etl/
+    └── bronze_extract.py       # Orquestrador (comando `coops-bronze`)
 ```
 
 ## Como Usar
@@ -51,7 +49,7 @@ python src/test_graphql_commits.py \
 Execute a extração bronze completa usando GraphQL para commits:
 
 ```bash
-python src/bronze_extract.py \
+poetry run coops-bronze \
   --token YOUR_GITHUB_TOKEN \
   --org unb-mds \
   --use-graphql
@@ -62,7 +60,7 @@ python src/bronze_extract.py \
 Para organizações grandes, limite o número de commits por repo:
 
 ```bash
-python src/bronze_extract.py \
+poetry run coops-bronze \
   --token YOUR_GITHUB_TOKEN \
   --org unb-mds \
   --use-graphql \
@@ -74,7 +72,7 @@ python src/bronze_extract.py \
 Continue usando a REST API se preferir (sem dados de additions/deletions):
 
 ```bash
-python src/bronze_extract.py \
+poetry run coops-bronze \
   --token YOUR_GITHUB_TOKEN \
   --org unb-mds \
   --cache

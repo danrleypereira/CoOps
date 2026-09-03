@@ -6,8 +6,8 @@ Analyzes collaboration patterns and creates network metrics
 
 from collections import defaultdict
 from typing import List, Dict, Any, Set
-from utils.github_api import save_json_data, load_json_data
-from utils.data_helpers import strip_metadata
+from coops.utils.github_api import save_json_data, load_json_data
+from coops.utils.data_helpers import strip_metadata
 
 def process_collaboration_networks() -> List[str]:
     """Process collaboration data into network metrics"""

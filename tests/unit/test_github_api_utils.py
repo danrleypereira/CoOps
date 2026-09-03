@@ -3,7 +3,7 @@ import json
 import os
 from datetime import datetime
 from unittest.mock import Mock, patch
-from utils.github_api import save_json_data, load_json_data, parse_github_date
+from coops.utils.github_api import save_json_data, load_json_data, parse_github_date
 
 def test_save_json_data_with_timestamp(tmp_path):
     """Testa save_json_data com timestamp"""

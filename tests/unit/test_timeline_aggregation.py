@@ -1,4 +1,4 @@
-import gold.timeline_aggregation as timeline
+import coops.gold.timeline_aggregation as timeline
 from datetime import datetime, timedelta
 
 def test_process_timeline_aggregation(monkeypatch):

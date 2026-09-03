@@ -1,4 +1,4 @@
-from utils.github_api import GitHubAPIClient
+from coops.utils.github_api import GitHubAPIClient
 
 def test_split_time_range_no_dates():
     client = GitHubAPIClient(token="x")

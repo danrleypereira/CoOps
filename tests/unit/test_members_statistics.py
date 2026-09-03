@@ -1,6 +1,6 @@
-"""Tests for src/silver/members_statistics.py — process_members_statistics."""
+"""Tests for coops/silver/members_statistics.py — process_members_statistics."""
 
-import silver.members_statistics as ms
+import coops.silver.members_statistics as ms
 
 
 def _make_helpers(monkeypatch, *, commits=None, issues=None, prs=None, events=None):

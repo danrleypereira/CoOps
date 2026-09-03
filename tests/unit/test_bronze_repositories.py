@@ -6,7 +6,7 @@ Testa a extração de repositórios da organização.
 
 import pytest
 from unittest.mock import patch, MagicMock
-from bronze.repositories import extract_repositories
+from coops.bronze.repositories import extract_repositories
 
 
 class TestExtractRepositories:
@@ -27,7 +27,7 @@ class TestExtractRepositories:
         mock_client.get_paginated.return_value = mock_repos
         mock_client.get_with_cache.return_value = {"name": "repo1", "full_name": "test-org/repo1", "details": "extra"}
         
-        with patch('bronze.repositories.save_json_data', return_value="file.json") as mock_save:
+        with patch('coops.bronze.repositories.save_json_data', return_value="file.json") as mock_save:
             result = extract_repositories(mock_client, mock_config, use_cache=True)
             
             assert len(result) > 0
@@ -53,7 +53,7 @@ class TestExtractRepositories:
         mock_client.get_paginated.return_value = mock_repos
         mock_client.get_with_cache.return_value = {"name": "good-repo", "full_name": "test-org/good-repo"}
         
-        with patch('bronze.repositories.save_json_data', return_value="file.json"):
+        with patch('coops.bronze.repositories.save_json_data', return_value="file.json"):
             result = extract_repositories(mock_client, mock_config)
         
         captured = capsys.readouterr()
@@ -99,7 +99,7 @@ class TestExtractRepositories:
         mock_client.get_paginated.return_value = mock_repos
         mock_client.get_with_cache.return_value = {"name": "repo1"}
         
-        with patch('bronze.repositories.save_json_data', return_value="file.json"):
+        with patch('coops.bronze.repositories.save_json_data', return_value="file.json"):
             extract_repositories(mock_client, mock_config, use_cache=False)
             
             # Verifica que use_cache foi passado
@@ -118,7 +118,7 @@ class TestExtractRepositories:
         mock_client.get_paginated.return_value = mock_repos
         mock_client.get_with_cache.return_value = {"name": "repo1"}
         
-        with patch('bronze.repositories.save_json_data', return_value="file.json") as mock_save:
+        with patch('coops.bronze.repositories.save_json_data', return_value="file.json") as mock_save:
             extract_repositories(mock_client, mock_config)
             
             # Verifica que salvou dados brutos
@@ -136,7 +136,7 @@ class TestExtractRepositories:
         mock_client.get_paginated.return_value = mock_repos
         mock_client.get_with_cache.return_value = {"name": "repo1"}
         
-        with patch('bronze.repositories.save_json_data', return_value="file.json") as mock_save:
+        with patch('coops.bronze.repositories.save_json_data', return_value="file.json") as mock_save:
             extract_repositories(mock_client, mock_config)
             
             # Verifica que salvou dados filtrados
@@ -157,7 +157,7 @@ class TestExtractRepositories:
         mock_client.get_paginated.return_value = mock_repos
         mock_client.get_with_cache.return_value = {"name": "repo1", "extra": "detail"}
         
-        with patch('bronze.repositories.save_json_data', return_value="file.json"):
+        with patch('coops.bronze.repositories.save_json_data', return_value="file.json"):
             extract_repositories(mock_client, mock_config)
             
             # Verifica que buscou detalhes para cada repo
@@ -174,7 +174,7 @@ class TestExtractRepositories:
         mock_client.get_paginated.return_value = mock_repos
         mock_client.get_with_cache.return_value = {"name": "myrepo"}
         
-        with patch('bronze.repositories.save_json_data', return_value="file.json") as mock_save:
+        with patch('coops.bronze.repositories.save_json_data', return_value="file.json") as mock_save:
             extract_repositories(mock_client, mock_config)
             
             # Verifica que salvou arquivo individual
@@ -192,7 +192,7 @@ class TestExtractRepositories:
         mock_client.get_paginated.return_value = mock_repos
         mock_client.get_with_cache.return_value = {"name": "repo1", "detailed": True}
         
-        with patch('bronze.repositories.save_json_data', return_value="file.json") as mock_save:
+        with patch('coops.bronze.repositories.save_json_data', return_value="file.json") as mock_save:
             extract_repositories(mock_client, mock_config)
             
             # Verifica que salvou arquivo detalhado
@@ -210,7 +210,7 @@ class TestExtractRepositories:
         mock_client.get_paginated.return_value = mock_repos
         mock_client.get_with_cache.return_value = None  # Detalhes não disponíveis
         
-        with patch('bronze.repositories.save_json_data', return_value="file.json") as mock_save:
+        with patch('coops.bronze.repositories.save_json_data', return_value="file.json") as mock_save:
             result = extract_repositories(mock_client, mock_config)
             
             # Deve continuar funcionando mesmo sem detalhes
@@ -227,7 +227,7 @@ class TestExtractRepositories:
         mock_client.get_paginated.return_value = mock_repos
         mock_client.get_with_cache.return_value = {"name": "repo1"}
         
-        with patch('bronze.repositories.save_json_data', return_value="file.json"):
+        with patch('coops.bronze.repositories.save_json_data', return_value="file.json"):
             extract_repositories(mock_client, mock_config)
             
             # Verifica URL da organização
@@ -258,7 +258,7 @@ class TestExtractRepositories:
             file_counter[0] += 1
             return f"file{file_counter[0]}.json"
         
-        with patch('bronze.repositories.save_json_data', side_effect=mock_save_func):
+        with patch('coops.bronze.repositories.save_json_data', side_effect=mock_save_func):
             result = extract_repositories(mock_client, mock_config)
             
             # Deve ter: raw, filtered, 2x individual, detailed = 5 arquivos
@@ -276,7 +276,7 @@ class TestExtractRepositories:
         mock_client.get_paginated.return_value = mock_repos
         mock_client.get_with_cache.return_value = {"name": "repo1"}
         
-        with patch('bronze.repositories.save_json_data', return_value="file.json"):
+        with patch('coops.bronze.repositories.save_json_data', return_value="file.json"):
             # Não passa use_cache, deve usar padrão True
             extract_repositories(mock_client, mock_config)
             

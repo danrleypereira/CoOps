@@ -4,7 +4,7 @@ Focus on untested error paths and edge cases
 """
 import pytest
 from unittest.mock import Mock, patch, MagicMock
-from utils.github_api import GitHubAPIClient
+from coops.utils.github_api import GitHubAPIClient
 import requests
 import json
 

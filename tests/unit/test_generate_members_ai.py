@@ -1,4 +1,4 @@
-"""Unit tests for src/ai_analysis/generate_members_ai.py"""
+"""Unit tests for coops.ai_analysis.generate_members_ai"""
 
 import json
 import sys
@@ -7,11 +7,6 @@ from pathlib import Path
 from unittest.mock import patch, MagicMock, mock_open
 
 import pytest
-
-ROOT = Path(__file__).resolve().parents[2]
-SRC = ROOT / "src"
-if str(SRC) not in sys.path:
-    sys.path.insert(0, str(SRC))
 
 # Provide a stub for google.generativeai before importing the module under test,
 # since the real package may not be installed in the test environment.
@@ -23,7 +18,7 @@ _google_stub.generativeai = _genai_stub
 sys.modules.setdefault("google", _google_stub)
 sys.modules.setdefault("google.generativeai", _genai_stub)
 
-import ai_analysis.generate_members_ai as gm
+import coops.ai_analysis.generate_members_ai as gm
 
 
 # ---------------------------------------------------------------------------
