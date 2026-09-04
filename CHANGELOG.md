@@ -23,6 +23,10 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 
 ### Removed
 - `sys.path` manipulation hacks in `src/` modules and `tests/conftest.py`.
+- Legacy `fetch_issues.py` GitHub code path (standalone `requests` client, own
+  headers, `GH_TOKEN`, no pagination/retry, wrote to `src/data/extractions/`)
+  along with its tests and the `save-issues.yaml` workflow — superseded by the
+  Bronze layer (`coops/bronze/issues.py`); its output had no consumers.
 
 ## [1.0.0] - 2026-05-12
 
