@@ -4,15 +4,29 @@ Repository extraction for Bronze layer.
 Extracts raw repository data from GitHub API.
 """
 
-from typing import List
+import math
+from typing import List, Optional
 
 from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data
 
-def extract_repositories(client: GitHubAPIClient, config: OrganizationConfig, use_cache: bool = True) -> List[str]:
-    """Extract organization repositories to bronze layer."""
+def extract_repositories(
+    client: GitHubAPIClient,
+    config: OrganizationConfig,
+    use_cache: bool = True,
+    max_repos: Optional[int] = None,
+) -> List[str]:
+    """Extract organization repositories to bronze layer.
+
+    max_repos caps the number of filtered repositories kept, and also bounds
+    how many pages of the raw repository list are fetched (useful for quick
+    local tests). Since blacklist/fork filtering happens after the raw fetch,
+    the result may include fewer than max_repos repos if early entries get
+    filtered out.
+    """
 
     repos_url = f"https://api.github.com/orgs/{config.org_name}/repos"
-    raw_repos = client.get_paginated(repos_url, use_cache=use_cache, per_page=100)
+    max_pages = math.ceil(max_repos / 100) if max_repos is not None else None
+    raw_repos = client.get_paginated(repos_url, use_cache=use_cache, per_page=100, max_pages=max_pages)
 
     if not raw_repos:
         print("ERROR: Failed to fetch repositories")
@@ -25,6 +39,9 @@ def extract_repositories(client: GitHubAPIClient, config: OrganizationConfig, us
             filtered_repos.append(repo)
         else:
             print(f"Skipping repository: {repo.get('name', 'unknown')} (blacklisted/fork)")
+
+    if max_repos is not None:
+        filtered_repos = filtered_repos[:max_repos]
 
     print(f"Found {len(filtered_repos)} repositories (filtered from {len(raw_repos)})")
 

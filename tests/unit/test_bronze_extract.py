@@ -151,6 +151,42 @@ class TestBronzeExtract:
 
                                         assert mock_commits.call_args[1]['max_commits_per_repo'] == 1000
 
+    def test_main_with_max_repos(self):
+        """Testa que main aceita --max-repos e repassa pra extract_repositories"""
+        with patch('sys.argv', ['bronze_extract.py', '--max-repos', '3']):
+            with patch('coops.bronze.repositories.extract_repositories') as mock_repos:
+                with patch('coops.bronze.issues.extract_issues', return_value=[]):
+                    with patch('coops.bronze.commits.extract_commits', return_value=[]):
+                        with patch('coops.bronze.members.extract_members', return_value=[]):
+                            with patch('coops.bronze.repository_structure.extract_repository_structure', return_value=[]):
+                                with patch('coops.etl.bronze_extract.update_data_registry'):
+                                    with patch('coops.etl.bronze_extract.GitHubAPIClient'):
+                                        mock_repos.return_value = []
+
+                                        from coops.etl import bronze_extract
+
+                                        bronze_extract.main()
+
+                                        assert mock_repos.call_args[1]['max_repos'] == 3
+
+    def test_main_without_max_repos_defaults_to_none(self):
+        """Testa que --max-repos é None quando não passado (sem cap)"""
+        with patch('sys.argv', ['bronze_extract.py']):
+            with patch('coops.bronze.repositories.extract_repositories') as mock_repos:
+                with patch('coops.bronze.issues.extract_issues', return_value=[]):
+                    with patch('coops.bronze.commits.extract_commits', return_value=[]):
+                        with patch('coops.bronze.members.extract_members', return_value=[]):
+                            with patch('coops.bronze.repository_structure.extract_repository_structure', return_value=[]):
+                                with patch('coops.etl.bronze_extract.update_data_registry'):
+                                    with patch('coops.etl.bronze_extract.GitHubAPIClient'):
+                                        mock_repos.return_value = []
+
+                                        from coops.etl import bronze_extract
+
+                                        bronze_extract.main()
+
+                                        assert mock_repos.call_args[1]['max_repos'] is None
+
     def test_main_with_max_issues_and_max_prs(self):
         """Testa que main aceita --max-issues e --max-prs e repassa pra extract_issues"""
         with patch('sys.argv', ['bronze_extract.py', '--max-issues', '5', '--max-prs', '3']):

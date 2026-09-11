@@ -3,6 +3,11 @@ name: Bronze Layer - Data Extraction
 on:
   workflow_dispatch:
     inputs:
+      max_repos:
+        description: 'Cap on repositories fetched (blank = no cap, full extraction). Useful for quick local tests via act.'
+        required: false
+        type: string
+        default: ''
       max_commits_per_repo:
         description: 'Cap on commits fetched per repo (blank = no cap, full extraction). Useful for quick local tests via act.'
         required: false
@@ -69,8 +74,9 @@ jobs:
       - name: Verify organization is valid
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ORG: ${{ secrets.GITHUB_ORG || github.repository_owner }}
         run: |
-          OWNER=${GITHUB_REPOSITORY_OWNER:-${{ github.repository_owner }}}
+          OWNER="$GITHUB_ORG"
 
           TYPE=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             https://api.github.com/users/$OWNER | jq -r .type)
@@ -92,7 +98,8 @@ jobs:
         id: extraction
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_ORG: ${{ github.repository_owner }}
+          GITHUB_ORG: ${{ secrets.GITHUB_ORG || github.repository_owner }}
+          MAX_REPOS: ${{ github.event.inputs.max_repos }}
           MAX_COMMITS_PER_REPO: ${{ github.event.inputs.max_commits_per_repo }}
           SKIP_STRUCTURE: ${{ github.event.inputs.skip_structure }}
           SINCE: ${{ github.event.inputs.since }}
@@ -101,10 +108,13 @@ jobs:
         run: |
           echo "[INFO] Starting Bronze layer extraction..."
           # Use GraphQL for commits to avoid per-commit REST stats calls
-          # Full history by default; max_commits_per_repo/skip_structure/since/
-          # max_issues/max_prs inputs allow a fast, limited run when dispatched
-          # manually (e.g. via act).
+          # Full history by default; max_repos/max_commits_per_repo/skip_structure/
+          # since/max_issues/max_prs inputs allow a fast, limited run when
+          # dispatched manually (e.g. via act).
           ARGS=(--cache --commits-method graphql)
+          if [ -n "$MAX_REPOS" ]; then
+            ARGS+=(--max-repos "$MAX_REPOS")
+          fi
           if [ -n "$MAX_COMMITS_PER_REPO" ]; then
             ARGS+=(--max-commits-per-repo "$MAX_COMMITS_PER_REPO")
           fi

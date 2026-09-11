@@ -49,6 +49,8 @@ GITHUB_TOKEN=ghp_seu_token_real_aqui
 GITHUB_ORG=coops-org
 ```
 
+> `GITHUB_ORG` no `.secrets` só controla a org extraída quando você roda via `poetry run coops-bronze` direto, ou via `act`/`gh act --secret-file .secrets` no workflow completo. Em produção (push/schedule reais no GitHub Actions) o workflow sempre usa a org dona do repositório (`github.repository_owner`), ignorando esse valor — não existe esse secret configurado lá.
+
 ## 🚀 Executando os Workflows
 
 ### Arquitetura Medallion (Novo Sistema)
@@ -83,26 +85,28 @@ act workflow_call -W .github/workflows/gold-aggregate.yaml --secret-file .secret
 
 #### Teste Rápido (poucos commits, ideal para debug local)
 
-O workflow de Bronze aceita `max_commits_per_repo`, `skip_structure`, `since`, `max_issues` e `max_prs` como inputs de `workflow_dispatch`, só usados quando disparado manualmente (push/schedule continuam extraindo tudo). Use isso pra testar rápido sem esperar a extração completa da organização:
+O workflow de Bronze aceita `max_repos`, `max_commits_per_repo`, `skip_structure`, `since`, `max_issues` e `max_prs` como inputs de `workflow_dispatch`, só usados quando disparado manualmente (push/schedule continuam extraindo tudo). Use isso pra testar rápido sem esperar a extração completa da organização:
 ```bash
-# Extrai só até 5 commits, 5 issues e 5 PRs por repositório, pula a extração
-# de estrutura e limita a extração a commits a partir de 2026
+# Extrai só até 3 repositórios, 5 commits/issues/PRs por repositório, pula a
+# extração de estrutura e limita a extração a commits a partir de 2026
 gh act workflow_dispatch \
   -W .github/workflows/bronze-extract.yaml \
   -j extract-bronze-data \
   --secret-file .secrets \
   --bind \
+  --container-options "--user $(id -u):$(id -g)" \
+  --input max_repos=3 \
   --input max_commits_per_repo=5 \
   --input skip_structure=true \
   --input since=2026-01-01T00:00:00Z \
   --input max_issues=5 \
   --input max_prs=5
 ```
-`max_issues`/`max_prs` também limitam a paginação da busca (issues e PRs vêm juntos da API do GitHub, então o cap usa o maior dos dois valores pra parar de paginar cedo) — não é só um corte no que é salvo, acelera a busca em si. Eventos de issues (`issue_events_*.json`) não são afetados por esses caps.
+`max_repos`/`max_issues`/`max_prs` também limitam a paginação da busca correspondente (não é só um corte no que é salvo, acelera a busca em si). Como o filtro de blacklist/forks roda depois do corte de `max_repos`, o resultado pode ter menos repositórios que o pedido se os primeiros da lista forem filtrados. `max_issues`/`max_prs` compartilham a mesma chamada paginada (issues e PRs vêm juntos da API do GitHub), então o cap usa o maior dos dois valores pra parar de paginar cedo. Eventos de issues (`issue_events_*.json`) não são afetados por esses caps.
 
 Esse é o comando padrão para testes rápidos da extração. Requer a extensão `gh-act` (`gh extension install nektos/gh-act`) como alternativa ao `act` instalado via script (passo 2 acima) — ambos funcionam, `gh act` só reusa a autenticação já configurada no `gh`.
 
-> ⚠️ **Cuidado com `--bind`**: ele monta o repositório real dentro do container, e o container roda como `root` — qualquer arquivo criado/modificado fica `root:root` no host (se acontecer, `sudo chown -R $(whoami):$(whoami) .` resolve). O step de "Checkout repository" do `bronze-extract.yaml` já tem `if: ${{ !env.ACT }}` (mesmo padrão de `silver-process.yaml`/`gold-process.yaml`), então sob `act`/`gh act` ele é pulado — `actions/checkout@v4` faria `git clean -ffdx` por padrão antes de rodar, o que apagaria até arquivos ignorados pelo `.gitignore` (como o `.secrets`) direto no seu repo real. Mesmo assim, prefira commitar ou `git stash -u` antes de rodar localmente, como rede de segurança extra.
+> ⚠️ **Cuidado com `--bind`**: ele monta o repositório real dentro do container, e o container roda como `root` — qualquer arquivo criado/modificado (em `cache/`, `data/`, etc.) fica `root:root` no host. O step de "Checkout repository" do `bronze-extract.yaml` já tem `if: ${{ !env.ACT }}` (mesmo padrão de `silver-process.yaml`/`gold-process.yaml`), então sob `act`/`gh act` ele é pulado — `actions/checkout@v4` faria `git clean -ffdx` por padrão antes de rodar, o que apagaria até arquivos ignorados pelo `.gitignore` (como o `.secrets`) direto no seu repo real. Isso já protege os arquivos rastreados/`.secrets`, mas não evita o `root:root` nos arquivos gerados durante a extração — pra isso, adicione `--container-options "--user $(id -u):$(id -g)"` no comando (roda o container com seu UID/GID; se seu `act` ignorar essa flag, use `sudo chown -R $(whoami):$(whoami) .` como fallback). Mesmo assim, prefira commitar ou `git stash -u` antes de rodar localmente, como rede de segurança extra.
 
 ### Workflow Legacy (Sistema Antigo - DEPRECATED)
 ```bash

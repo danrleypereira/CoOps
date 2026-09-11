@@ -148,7 +148,7 @@ The system maintains comprehensive data lineage and cataloging:
 ### Environment Variables
 
 - `GITHUB_TOKEN`: GitHub Personal Access Token with org read permissions
-- `GITHUB_ORG`: Target organization name (auto-detected from `github.repository_owner` in Actions)
+- `GITHUB_ORG`: Target organization name. In the `bronze-extract.yaml` workflow this defaults to `github.repository_owner` (the org that owns the repo); a `GITHUB_ORG` secret (e.g. from `.secrets` when testing locally with `act --secret-file`) overrides it to target a different org
 - `GEMINI_API_KEY`: Optional, enables AI-powered member analysis when set
 
 ### Customization

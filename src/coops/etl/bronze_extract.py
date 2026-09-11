@@ -13,6 +13,7 @@ from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, update_d
 def main():
     parser = argparse.ArgumentParser(description='Extract GitHub organization data to Bronze layer')
     parser.add_argument('--cache', action='store_true', help='Use cached data when available')
+    parser.add_argument('--max-repos', type=int, help='Optional hard cap of repositories to fetch')
     parser.add_argument('--max-issues', type=int, help='Optional hard cap of issues per repo to fetch')
     parser.add_argument('--max-prs', type=int, help='Optional hard cap of pull requests per repo to fetch')
     parser.add_argument('--commits-method', choices=['rest', 'graphql'], default='graphql', help='Extraction method for commits (REST v3 or GraphQL v4)')
@@ -49,7 +50,7 @@ def main():
         print("\n" + "="*60)
         print("STEP 1: Extracting repositories")
         print("="*60)
-        repo_files = extract_repositories(client, config, use_cache=args.cache)
+        repo_files = extract_repositories(client, config, use_cache=args.cache, max_repos=args.max_repos)
         print(f"Generated {len(repo_files)} repository files")
 
         # ========================================
