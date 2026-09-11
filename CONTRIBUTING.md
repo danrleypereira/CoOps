@@ -69,7 +69,7 @@ Detalhes: veja `ARCHITECTURE.md`.
    poetry run coops-registry
    ```
 
-Para simular GitHub Actions localmente (opcional): consulte `desenvolvimento.md`.
+Para simular GitHub Actions localmente e conectar o frontend aos dados gerados (opcional): consulte `RUNNING_LOCALLY.md`.
 
 ### Frontend (React)
 
