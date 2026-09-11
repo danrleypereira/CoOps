@@ -1,103 +1,101 @@
- # Rodando o CoOps localmente (extração + frontend)
+ # Running CoOps locally (extraction + frontend)
 
-Este guia cobre o fluxo completo local: simular os GitHub Actions com `act`/`gh act`
-para gerar os dados (Bronze → Silver → Gold), e depois apontar o frontend
-(`dashboard/`) para consumir esses dados gerados localmente em vez de buscá-los
-do GitHub.
+This guide covers the full local workflow: simulating the GitHub Actions with
+`act`/`gh act` to generate the data (Bronze → Silver → Gold), and then
+pointing the frontend (`dashboard/`) at that locally generated data instead
+of fetching it from GitHub.
 
-## 📋 Pré-requisitos
+## 📋 Prerequisites
 
-### 1. Instale o GitHub CLI (gh)
-No terminal:
+### 1. Install the GitHub CLI (gh)
 ```bash
 sudo apt update
 sudo apt install gh
 ```
 
-### 2. Instale o act
-No terminal:
+### 2. Install act
 ```bash
 curl https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash
 ```
 
-### 3. Instale Python, Poetry e as dependências
+### 3. Install Python, Poetry and the dependencies
 ```bash
 sudo apt install python3 python3-pip
 pipx install poetry
 poetry install --extras dev
 ```
 
-### 4. Instale Node.js (necessário só para a Parte 2 — o frontend)
+### 4. Install Node.js (only needed for Part 2 — the frontend)
 ```bash
-# Node >= 20 (ver "engines" em dashboard/package.json)
+# Node >= 20 (see "engines" in dashboard/package.json)
 ```
 
-## 🔑 Configuração do Token
+## 🔑 Token setup
 
-### 5. Gere um token do GitHub (PAT)
-- Vá em https://github.com/settings/tokens
-- Clique em "Generate new token (classic)"
-- Dê as seguintes permissões:
-  - `repo` (acesso completo a repositórios)
-  - `read:org` (leitura de dados da organização)
-  - `read:user` (leitura de dados de usuários)
-- Copie o token gerado
+### 5. Generate a GitHub token (PAT)
+- Go to https://github.com/settings/tokens
+- Click "Generate new token (classic)"
+- Grant the following scopes:
+  - `repo` (full repository access)
+  - `read:org` (read organization data)
+  - `read:user` (read user data)
+- Copy the generated token
 
-### 6. Crie o arquivo `.secrets` na raiz do projeto
+### 6. Create the `.secrets` file at the repository root
 ```bash
-# Copie o arquivo de exemplo
+# Copy the example file
 cp EXAMPLE.secrets .secrets
 
-# Edite com seus dados reais
+# Edit with your real data
 nano .secrets
 ```
 
-Conteúdo do arquivo `.secrets`:
+Contents of `.secrets`:
 ```
-GITHUB_TOKEN=ghp_seu_token_real_aqui
+GITHUB_TOKEN=ghp_your_real_token_here
 GITHUB_ORG=coops-org
 ```
 
-> `GITHUB_ORG` no `.secrets` só controla a org extraída quando você roda via `poetry run coops-bronze` direto, ou via `act`/`gh act --secret-file .secrets` no workflow completo. Em produção (push/schedule reais no GitHub Actions) o workflow sempre usa a org dona do repositório (`github.repository_owner`), ignorando esse valor — não existe esse secret configurado lá.
+> `GITHUB_ORG` in `.secrets` only controls which org is extracted when running via `poetry run coops-bronze` directly, or via `act`/`gh act --secret-file .secrets` for the full workflow. In production (real push/schedule runs on GitHub Actions) the workflow always uses the org that owns the repository (`github.repository_owner`), ignoring this value — that secret isn't configured there.
 
 ---
 
-## Parte 1 — Extraindo os dados (Bronze → Silver → Gold)
+## Part 1 — Extracting the data (Bronze → Silver → Gold)
 
-O sistema usa arquitetura em camadas: Bronze → Silver → Gold.
+The system uses a layered architecture: Bronze → Silver → Gold.
 
-### Opção 1: Pipeline Completo (Bronze → Silver → Gold)
+### Option 1: Full pipeline (Bronze → Silver → Gold)
 ```bash
 act workflow_dispatch -W .github/workflows/bronze-extract.yaml --secret-file .secrets --bind
 ```
 
-### Opção 2: Camadas Individuais
+### Option 2: Individual layers
 
-**Bronze Layer (Extração de Dados Brutos)**:
+**Bronze layer (raw data extraction)**:
 ```bash
 act workflow_dispatch -W .github/workflows/bronze-extract.yaml --secret-file .secrets --bind -j extract-bronze-data
 ```
 
-**Silver Layer (Processamento de Analytics)**:
+**Silver layer (analytics processing)**:
 ```bash
 act workflow_dispatch -W .github/workflows/silver-process.yaml --secret-file .secrets --bind --container-options "--user $(id -u):$(id -g)" -j process-silver-data
 ```
 
-**Gold Layer (KPIs Executivos)**:
+**Gold layer (executive KPIs)**:
 ```bash
 act workflow_dispatch -W .github/workflows/gold-process.yaml --secret-file .secrets --bind --container-options "--user $(id -u):$(id -g)" -j process-gold-data
 ```
 
-> ℹ️ `gold-process.yaml` é o workflow de Gold efetivamente encadeado pelo pipeline (é o que `silver-process.yaml` dispara no job `trigger-gold-processing`, e o único com o step de AI analysis opcional via `GEMINI_API_KEY`). O arquivo `gold-aggregate.yaml` também existe no repo mas é um workflow legado/órfão, não chamado por nenhum outro — não use ele pra testar o pipeline real.
+> ℹ️ `gold-process.yaml` is the Gold workflow actually chained by the pipeline (it's what `silver-process.yaml` triggers in the `trigger-gold-processing` job, and the only one with the optional AI analysis step via `GEMINI_API_KEY`). `gold-aggregate.yaml` also exists in the repo but is a legacy/orphan workflow, not called by anything else — don't use it to test the real pipeline.
 
-> ⚠️ **Silver e Gold exigem `--bind` (não rodam sem ele)**: diferente do `bronze-extract.yaml`, os steps "Pull latest data files" de `silver-process.yaml` e `gold-process.yaml` rodam `git branch --show-current` / `git pull` **sem** o guard `if: ${{ !env.ACT }}` que o Checkout tem. Como o Checkout é pulado sob `act`/`gh act` (mesmo motivo explicado abaixo), se você esquecer o `--bind` o container não tem repositório git nenhum montado e o comando falha com `fatal: not a git repository (or any parent up to mount point ...)`. Sempre inclua `--bind` (e o `--container-options` pra não sujar os arquivos gerados com `root:root`) nesses dois workflows.
+> ⚠️ **Silver and Gold require `--bind` (they won't run without it)**: unlike `bronze-extract.yaml`, the "Pull latest data files" steps of `silver-process.yaml` and `gold-process.yaml` run `git branch --show-current` / `git pull` **without** the `if: ${{ !env.ACT }}` guard that Checkout has. Since Checkout is skipped under `act`/`gh act` (same reason explained below), if you forget `--bind` the container has no git repository mounted at all and the command fails with `fatal: not a git repository (or any parent up to mount point ...)`. Always include `--bind` (and `--container-options` to avoid `root:root`-owned generated files) for these two workflows.
 
-### Teste Rápido (poucos commits, ideal para debug local)
+### Quick test (few commits, ideal for local debugging)
 
-O workflow de Bronze aceita `max_repos`, `max_commits_per_repo`, `skip_structure`, `since`, `max_issues` e `max_prs` como inputs de `workflow_dispatch`, só usados quando disparado manualmente (push/schedule continuam extraindo tudo). Use isso pra testar rápido sem esperar a extração completa da organização:
+The Bronze workflow accepts `max_repos`, `max_commits_per_repo`, `skip_structure`, `since`, `max_issues` and `max_prs` as `workflow_dispatch` inputs, only used when triggered manually (push/schedule runs still extract everything). Use these to test quickly without waiting for a full organization extraction:
 ```bash
-# Extrai só até 3 repositórios, 5 commits/issues/PRs por repositório, pula a
-# extração de estrutura e limita a extração a commits a partir de 2026
+# Extracts only up to 3 repositories, 5 commits/issues/PRs per repository,
+# skips structure extraction, and limits commit extraction to 2026 onward
 gh act workflow_dispatch \
   -W .github/workflows/bronze-extract.yaml \
   -j extract-bronze-data \
@@ -111,59 +109,59 @@ gh act workflow_dispatch \
   --input max_issues=5 \
   --input max_prs=5
 ```
-`max_repos`/`max_issues`/`max_prs` também limitam a paginação da busca correspondente (não é só um corte no que é salvo, acelera a busca em si). Como o filtro de blacklist/forks roda depois do corte de `max_repos`, o resultado pode ter menos repositórios que o pedido se os primeiros da lista forem filtrados. `max_issues`/`max_prs` compartilham a mesma chamada paginada (issues e PRs vêm juntos da API do GitHub), então o cap usa o maior dos dois valores pra parar de paginar cedo. Eventos de issues (`issue_events_*.json`) não são afetados por esses caps.
+`max_repos`/`max_issues`/`max_prs` also cap the corresponding paginated search (not just a cut on what's saved — it speeds up the search itself). Since the blacklist/fork filter runs after the `max_repos` cut, the result may have fewer repositories than requested if the first ones in the list get filtered out. `max_issues`/`max_prs` share the same paginated call (issues and PRs come from the same GitHub API response), so the cap uses whichever of the two values is larger to stop paginating early. Issue events (`issue_events_*.json`) aren't affected by these caps.
 
-Esse é o comando padrão para testes rápidos da extração. Requer a extensão `gh-act` (`gh extension install nektos/gh-act`) como alternativa ao `act` instalado via script (passo 2 acima) — ambos funcionam, `gh act` só reusa a autenticação já configurada no `gh`.
+This is the standard command for quick local extraction tests. It requires the `gh-act` extension (`gh extension install nektos/gh-act`) as an alternative to `act` installed via script (step 2 above) — both work, `gh act` just reuses the authentication already configured in `gh`.
 
-> ⚠️ **Cuidado com `--bind`**: ele monta o repositório real dentro do container, e o container roda como `root` — qualquer arquivo criado/modificado (em `cache/`, `data/`, etc.) fica `root:root` no host. O step de "Checkout repository" do `bronze-extract.yaml` já tem `if: ${{ !env.ACT }}` (mesmo padrão de `silver-process.yaml`/`gold-process.yaml`), então sob `act`/`gh act` ele é pulado — `actions/checkout@v4` faria `git clean -ffdx` por padrão antes de rodar, o que apagaria até arquivos ignorados pelo `.gitignore` (como o `.secrets`) direto no seu repo real. Isso já protege os arquivos rastreados/`.secrets`, mas não evita o `root:root` nos arquivos gerados durante a extração — pra isso, adicione `--container-options "--user $(id -u):$(id -g)"` no comando (roda o container com seu UID/GID; se seu `act` ignorar essa flag, use `sudo chown -R $(whoami):$(whoami) .` como fallback). Mesmo assim, prefira commitar ou `git stash -u` antes de rodar localmente, como rede de segurança extra.
+> ⚠️ **Careful with `--bind`**: it mounts the real repository inside the container, and the container runs as `root` — any file created/modified (in `cache/`, `data/`, etc.) ends up owned by `root:root` on the host. The "Checkout repository" step of `bronze-extract.yaml` already has `if: ${{ !env.ACT }}` (same pattern as `silver-process.yaml`/`gold-process.yaml`), so under `act`/`gh act` it's skipped — `actions/checkout@v4` would otherwise run `git clean -ffdx` by default before running, which would delete even files ignored by `.gitignore` (like `.secrets`) directly in your real repo. This already protects tracked files/`.secrets`, but doesn't prevent the `root:root` ownership on generated files — for that, add `--container-options "--user $(id -u):$(id -g)"` to the command (runs the container with your UID/GID; if your `act` ignores that flag, use `sudo chown -R $(whoami):$(whoami) .` as a fallback). Even so, prefer committing or `git stash -u` before running locally, as an extra safety net.
 
-### Workflow Legacy (Sistema Antigo - DEPRECATED)
+### Legacy workflow (old system — DEPRECATED)
 ```bash
 act workflow_dispatch -W .github/workflows/start.yaml --secret-file .secrets --bind
 ```
 
-### 🛠️ Execução Manual (Alternativa ao `act`)
+### 🛠️ Manual execution (alternative to `act`)
 
-Se preferir executar os scripts diretamente, sem simular o Actions:
+If you'd rather run the scripts directly, without simulating Actions:
 ```bash
-# 0. Instalar o pacote (uma vez): poetry install
+# 0. Install the package (once): poetry install
 
-# 1. Bronze: Extração de dados (GITHUB_TOKEN/GITHUB_ORG vêm do .secrets ou do ambiente)
+# 1. Bronze: data extraction (GITHUB_TOKEN/GITHUB_ORG come from .secrets or the environment)
 poetry run coops-bronze --cache
 
-# 2. Silver: Processamento
+# 2. Silver: processing
 poetry run coops-silver
 
-# 3. Gold: KPIs executivos
+# 3. Gold: executive KPIs
 poetry run coops-gold
 
-# 4. Registry: Atualizar registro
+# 4. Registry: update the registry
 poetry run coops-registry
 ```
 
-### 📁 Estrutura de Dados Gerados
+### 📁 Generated data structure
 
-Após execução bem-sucedida, você terá (tudo em `data/`, na raiz do projeto):
+After a successful run, you'll have (all under `data/`, at the project root):
 
-**Bronze Layer (Dados Brutos)** — `data/bronze/`:
+**Bronze layer (raw data)** — `data/bronze/`:
 `repositories_filtered.json`, `members_detailed.json`, `issues_all.json`, `prs_all.json`, `commits_all.json`, `issue_events_all.json`
 
-**Silver Layer (Analytics Processados)** — `data/silver/`:
+**Silver layer (processed analytics)** — `data/silver/`:
 `members_analytics.json`, `contribution_metrics.json`, `collaboration_edges.json`, `temporal_events.json`, `activity_heatmap.json`, `cycle_times.json`, `language_analysis_all.json`
 
-**Gold Layer (KPIs Executivos)** — `data/gold/`:
+**Gold layer (executive KPIs)** — `data/gold/`:
 `executive_dashboard.json`, `performance_tiers.json`, `timeline_last_7_days.json`
 
-### 🔍 Parâmetros Úteis do act
+### 🔍 Useful act parameters
 
-- `--bind`: Arquivos criados aparecem na máquina local
-- `--secret-file .secrets`: Usa arquivo de secrets local
-- `--dry-run`: Simula sem executar
-- `--verbose`: Saída detalhada para debug
-- `-j job-name`: Executa job específico
-- `--pull=false`: Não baixa imagens Docker (mais rápido)
+- `--bind`: generated files show up on the host machine
+- `--secret-file .secrets`: uses the local secrets file
+- `--dry-run`: simulates without executing
+- `--verbose`: detailed output for debugging
+- `-j job-name`: runs a specific job
+- `--pull=false`: skips pulling Docker images (faster)
 
-### 📊 Verificação dos Resultados
+### 📊 Verifying the results
 
 ```bash
 # Bronze
@@ -178,69 +176,70 @@ jq '.total_contributors' data/silver/contribution_metrics.json
 ls -la data/gold/
 jq '.organization_health' data/gold/executive_dashboard.json
 
-# Registry completo
+# Full registry
 jq '.bronze | keys' data/master_registry.json
 jq '.silver | keys' data/master_registry.json
 ```
 
 ---
 
-## Parte 2 — Conectando o frontend aos dados locais
+## Part 2 — Pointing the frontend at local data
 
-Por padrão (`dashboard/.env.example`), o frontend busca os dados de
+By default (`dashboard/.env.example`), the frontend fetches data from
 `https://raw.githubusercontent.com/{VITE_GITHUB_ORG}/{VITE_GITHUB_REPO}/main/data`
-— ou seja, do `main` do repositório no GitHub, não do `data/` que você acabou
-de gerar localmente na Parte 1. Isso é intencional (é o mesmo comportamento do
-deploy em produção, em `.github/workflows/deploy-pages.yaml`, que sempre roda
-com `VITE_USE_LOCAL_DATA: false`). Para o frontend enxergar sua extração
-local, dois passos:
+— i.e. from the repository's `main` branch on GitHub, not the `data/` you
+just generated locally in Part 1. That's intentional (it's the same
+behavior as the production deploy, in
+`.github/workflows/deploy-pages.yaml`, which always runs with
+`VITE_USE_LOCAL_DATA: false`). To make the frontend see your local
+extraction, two steps:
 
-### 1. Ative o modo de dados locais
+### 1. Enable local data mode
 
-Em `dashboard/.env` (crie a partir de `dashboard/.env.example` se ainda não existir):
+In `dashboard/.env` (create it from `dashboard/.env.example` if it doesn't exist yet):
 ```env
 VITE_USE_LOCAL_DATA=true
 ```
-Isso faz `dashboard/src/services/dataSource.ts` trocar a URL base de
-`https://raw.githubusercontent.com/...` para `/data` — que o Vite serve a
-partir de `dashboard/public/data/`.
+This makes `dashboard/src/services/dataSource.ts` swap the base URL from
+`https://raw.githubusercontent.com/...` to `/data` — which Vite serves from
+`dashboard/public/data/`.
 
-### 2. Disponibilize os dados em `dashboard/public/data/`
+### 2. Expose the data under `dashboard/public/data/`
 
-`public/data/` é propositalmente ignorado pelo git (`dashboard/.gitignore`) —
-os dados nunca devem ser commitados no frontend. Você precisa colocá-los lá
-manualmente depois de cada extração.
+`public/data/` is deliberately git-ignored (`dashboard/.gitignore`) — data
+should never be committed to the frontend. You need to put it there
+manually after each extraction.
 
-**Opção recomendada — symlink (atualiza sozinho a cada nova extração):**
+**Recommended — symlink (stays up to date after every new extraction):**
 ```bash
-# a partir da raiz do repo
+# from the repo root
 mkdir -p dashboard/public
 ln -s ../../data dashboard/public/data
 ```
-Rodando de novo a Parte 1 (bronze/silver/gold), os arquivos novos já aparecem
-pro frontend sem repetir esse passo.
+Re-running Part 1 (bronze/silver/gold) makes the new files show up for the
+frontend automatically, no need to repeat this step.
 
-**Alternativa — cópia manual (precisa repetir a cada extração nova):**
+**Alternative — manual copy (needs repeating after every new extraction):**
 ```bash
 mkdir -p dashboard/public/data
 cp -r data/. dashboard/public/data/
 ```
 
-> ⚠️ Note que `dashboard/src/pages/VisualizationUtils.ts` (usado pela página de
-> Structure/linguagens) monta a URL como `${BASE_URL}data/...` direto, sem
-> passar por `VITE_USE_LOCAL_DATA` — ou seja, essa página depende de
-> `dashboard/public/data/` existir independentemente da flag. Fazer o
-> symlink acima cobre os dois casos.
+> ⚠️ Note that `dashboard/src/pages/VisualizationUtils.ts` (used by the
+> Structure/languages page) builds the URL as `${BASE_URL}data/...` directly,
+> without going through `VITE_USE_LOCAL_DATA` — so that page depends on
+> `dashboard/public/data/` existing regardless of the flag. The symlink
+> above covers both cases.
 
-> ℹ️ `available_repos.json` (buscado na raiz, fora de `data/`, por
-> `RepositoryFilter.tsx`/`RepositoryToolbar.tsx`) não é gerado por nenhum
-> workflow do backend hoje — o fetch falha silenciosamente (só um
-> `console.warn`) se o arquivo não existir, então isso não bloqueia o resto
-> do dashboard.
+> ℹ️ `available_repos.json` (fetched at the root, outside `data/`, by
+> `RepositoryFilter.tsx`/`RepositoryToolbar.tsx`) isn't generated by any
+> backend workflow today — the fetch fails silently (just a
+> `console.warn`) if the file doesn't exist, so it doesn't block the rest
+> of the dashboard.
 
 ---
 
-## Parte 3 — Subindo o frontend
+## Part 3 — Starting the frontend
 
 ```bash
 cd dashboard
@@ -248,101 +247,101 @@ npm install
 npm run dev
 ```
 
-Acesse `http://localhost:5173`. Com `VITE_USE_LOCAL_DATA=true` e o symlink/cópia
-da Parte 2 em vigor, as páginas (Analytics, Organization, Structure, etc.)
-devem carregar os dados que você acabou de extrair localmente, em vez dos
-dados publicados no `main` do GitHub.
+Open `http://localhost:5173`. With `VITE_USE_LOCAL_DATA=true` and the
+symlink/copy from Part 2 in place, the pages (Analytics, Organization,
+Structure, etc.) should load the data you just extracted locally, instead
+of the data published on GitHub's `main`.
 
-Para voltar a testar contra os dados reais do GitHub (sem dados locais),
-basta `VITE_USE_LOCAL_DATA=false` (ou remover a linha do `.env`) e reiniciar
-o `npm run dev`.
+To go back to testing against real GitHub data (no local data), just set
+`VITE_USE_LOCAL_DATA=false` (or remove the line from `.env`) and restart
+`npm run dev`.
 
 ---
 
 ## 🐛 Troubleshooting
 
-### Problemas Comuns (extração):
+### Common issues (extraction):
 
 1. **❌ Failed to fetch members**
-   - **Causa**: Organização pode ter membros privados ou token com permissões limitadas
-   - **Solução**: Sistema tem fallback inteligente que busca contribuidores ativos
-   - **Token recomendado**: `read:org` para membros públicos
-   - **Fallback**: Descobre colaboradores via API de contributors dos repositórios
-   - **Resultado**: Funciona mesmo com organizações que têm membros privados
+   - **Cause**: the organization may have private members, or the token has limited permissions
+   - **Fix**: the system has a smart fallback that discovers active contributors
+   - **Recommended token scope**: `read:org` for public members
+   - **Fallback**: discovers collaborators via the repositories' contributors API
+   - **Result**: works even for organizations with private members
 
 2. **❌ Error: 'name' (KeyError)**
-   - **Causa**: Estrutura JSON com metadados inesperados
-   - **Solução**: Scripts agora tratam metadados automaticamente
-   - **Verificar**: Se repositories_filtered.json existe e é válido
+   - **Cause**: JSON structure with unexpected metadata
+   - **Fix**: scripts now handle metadata automatically
+   - **Check**: whether `repositories_filtered.json` exists and is valid
 
 3. **❌ API 403 Forbidden**
-   - **Causa**: Token sem permissões ou rate limit
-   - **Solução**: Verificar permissões do token:
-     - `repo` (acesso a repositórios)
-     - `read:org` (dados da organização)
-     - `read:user` (perfis de usuários)
+   - **Cause**: token without the right permissions, or rate limit
+   - **Fix**: check the token's scopes:
+     - `repo` (repository access)
+     - `read:org` (organization data)
+     - `read:user` (user profiles)
 
 4. **❌ Empty data files**
-   - **Causa**: Organização sem dados públicos
-   - **Solução**: Sistema cria arquivos vazios para manter estrutura
-   - **Normal**: Para organizações com poucos dados públicos
+   - **Cause**: organization with no public data
+   - **Fix**: the system creates empty files to keep the structure consistent
+   - **Normal**: for organizations with little public data
 
 5. **❌ Rate limit exceeded**
-   - **Solução**: Aguarde reset ou use `--cache` para evitar re-downloads
-   - **Verificar**: Headers mostram quando rate limit reseta
+   - **Fix**: wait for the reset, or use `--cache` to avoid re-downloading
+   - **Check**: response headers show when the rate limit resets
 
-6. **❌ Dependências Python**
-   - **Solução**: `poetry install --extras dev`
-   - **No Ubuntu**: `sudo apt install python3-pip && pipx install poetry`
+6. **❌ Python dependencies**
+   - **Fix**: `poetry install --extras dev`
+   - **On Ubuntu**: `sudo apt install python3-pip && pipx install poetry`
 
-7. **❌ `fatal: not a git repository (or any parent up to mount point ...)` ao rodar Silver/Gold**
-   - **Causa**: Rodou `silver-process.yaml` ou `gold-process.yaml` sem `--bind`. O Checkout é pulado sob `act` (`if: ${{ !env.ACT }}`), e sem `--bind` não sobra nenhum repositório git no container pro step seguinte ("Pull latest data files") rodar `git branch`/`git pull`
-   - **Solução**: sempre inclua `--bind` (e `--container-options "--user $(id -u):$(id -g)"`) ao rodar esses dois workflows via `act`/`gh act`, como no exemplo da seção "Camadas Individuais"
+7. **❌ `fatal: not a git repository (or any parent up to mount point ...)` when running Silver/Gold**
+   - **Cause**: ran `silver-process.yaml` or `gold-process.yaml` without `--bind`. Checkout is skipped under `act` (`if: ${{ !env.ACT }}`), and without `--bind` there's no git repository left in the container for the next step ("Pull latest data files") to run `git branch`/`git pull`
+   - **Fix**: always include `--bind` (and `--container-options "--user $(id -u):$(id -g)"`) when running these two workflows via `act`/`gh act`, as in the "Individual layers" example above
 
-### Problemas Comuns (frontend):
+### Common issues (frontend):
 
-8. **❌ Dashboard continua mostrando dados do GitHub, não os locais**
-   - **Causa**: `VITE_USE_LOCAL_DATA` não está `true`, ou o dev server foi iniciado antes de criar/editar o `.env`
-   - **Solução**: confira `dashboard/.env`, depois pare e rode `npm run dev` de novo (o Vite só lê `.env` na inicialização)
+8. **❌ Dashboard still shows GitHub data, not local data**
+   - **Cause**: `VITE_USE_LOCAL_DATA` isn't `true`, or the dev server was started before creating/editing `.env`
+   - **Fix**: check `dashboard/.env`, then stop and re-run `npm run dev` (Vite only reads `.env` on startup)
 
-9. **❌ 404 ao buscar `/data/silver/...json` no navegador**
-   - **Causa**: `dashboard/public/data/` não existe ou não tem os arquivos daquela camada
-   - **Solução**: confira se a Parte 1 rodou até a camada esperada (bronze/silver/gold) e se o symlink/cópia da Parte 2 foi feito a partir da raiz do repo (`ln -s ../../data dashboard/public/data`)
+9. **❌ 404 fetching `/data/silver/...json` in the browser**
+   - **Cause**: `dashboard/public/data/` doesn't exist, or doesn't have the files for that layer
+   - **Fix**: check whether Part 1 ran through the expected layer (bronze/silver/gold), and whether the symlink/copy from Part 2 was done from the repo root (`ln -s ../../data dashboard/public/data`)
 
-### Logs detalhados:
+### Verbose logs:
 ```bash
-# Execução com logs verbosos
+# Verbose run
 act --verbose workflow_dispatch -W .github/workflows/bronze-extract.yaml --secret-file .secrets
 
-# Verificar cache de API
+# Check the API cache
 ls -la cache/
 
-# Verificar permissões do token
+# Check token permissions
 curl -H "Authorization: Bearer $GITHUB_TOKEN" https://api.github.com/user
 ```
 
-### Verificação passo-a-passo:
+### Step-by-step verification:
 
 ```bash
-# 1. Testar token
+# 1. Test the token
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
    https://api.github.com/orgs/coops-org
 
-# 2. Testar repositórios
+# 2. Test repositories
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
    https://api.github.com/orgs/coops-org/repos | jq length
 
-# 3. Testar membros (pode falhar se privados)
+# 3. Test members (may fail if private)
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
    https://api.github.com/orgs/coops-org/members | jq length
 
-# 4. Executar etapa individual
+# 4. Run an individual step
 poetry run coops-bronze --token $GITHUB_TOKEN --org coops-org
 ```
 
-## 📈 Próximos Passos
+## 📈 Next steps
 
-1. **Execute o pipeline Bronze → Silver → Gold** (Parte 1) para coletar e processar os dados
-2. **Ative `VITE_USE_LOCAL_DATA` e linke `data/`** (Parte 2) para o frontend enxergar o resultado
-3. **Suba o dashboard** (Parte 3) e explore as páginas com seus próprios dados
-4. **Personalize métricas** editando os scripts Silver/Gold, e repita o ciclo
+1. **Run the Bronze → Silver → Gold pipeline** (Part 1) to collect and process the data
+2. **Enable `VITE_USE_LOCAL_DATA` and link `data/`** (Part 2) so the frontend can see the result
+3. **Start the dashboard** (Part 3) and explore the pages with your own data
+4. **Customize metrics** by editing the Silver/Gold scripts, and repeat the cycle
