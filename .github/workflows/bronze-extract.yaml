@@ -13,6 +13,21 @@ on:
         required: false
         type: boolean
         default: false
+      since:
+        description: 'Only extract commits since this ISO-8601 timestamp (blank = full history). E.g. 2026-01-01T00:00:00Z'
+        required: false
+        type: string
+        default: ''
+      max_issues:
+        description: 'Cap on issues fetched per repo (blank = no cap)'
+        required: false
+        type: string
+        default: ''
+      max_prs:
+        description: 'Cap on pull requests fetched per repo (blank = no cap)'
+        required: false
+        type: string
+        default: ''
   push:
     branches: [main]
   pull_request:
@@ -33,6 +48,7 @@ jobs:
 
     steps:
       - name: Checkout repository
+        if: ${{ !env.ACT }}
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.ref || github.ref }}
@@ -79,17 +95,30 @@ jobs:
           GITHUB_ORG: ${{ github.repository_owner }}
           MAX_COMMITS_PER_REPO: ${{ github.event.inputs.max_commits_per_repo }}
           SKIP_STRUCTURE: ${{ github.event.inputs.skip_structure }}
+          SINCE: ${{ github.event.inputs.since }}
+          MAX_ISSUES: ${{ github.event.inputs.max_issues }}
+          MAX_PRS: ${{ github.event.inputs.max_prs }}
         run: |
           echo "[INFO] Starting Bronze layer extraction..."
           # Use GraphQL for commits to avoid per-commit REST stats calls
-          # Full history by default; max_commits_per_repo/skip_structure inputs
-          # allow a fast, limited run when dispatched manually (e.g. via act).
+          # Full history by default; max_commits_per_repo/skip_structure/since/
+          # max_issues/max_prs inputs allow a fast, limited run when dispatched
+          # manually (e.g. via act).
           ARGS=(--cache --commits-method graphql)
           if [ -n "$MAX_COMMITS_PER_REPO" ]; then
             ARGS+=(--max-commits-per-repo "$MAX_COMMITS_PER_REPO")
           fi
           if [ "$SKIP_STRUCTURE" = "true" ]; then
             ARGS+=(--skip-structure)
+          fi
+          if [ -n "$MAX_ISSUES" ]; then
+            ARGS+=(--max-issues "$MAX_ISSUES")
+          fi
+          if [ -n "$MAX_PRS" ]; then
+            ARGS+=(--max-prs "$MAX_PRS")
+          fi
+          if [ -n "$SINCE" ]; then
+            ARGS+=(--since "$SINCE")
           fi
           poetry run coops-bronze "${ARGS[@]}"
 

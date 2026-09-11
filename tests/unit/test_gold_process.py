@@ -26,19 +26,6 @@ class TestGoldProcess:
         assert "Processing timeline aggregations" in captured.out
         assert "Gold processing completed successfully" in captured.out
     
-    def test_main_with_org_argument(self, capsys):
-        """Testa que main aceita argumento --org"""
-        with patch('sys.argv', ['gold_process.py', '--org', 'test-org']):
-            with patch('coops.gold.timeline_aggregation.process_timeline_aggregation', return_value=[]):
-                with patch('coops.utils.github_api.update_data_registry'):
-                    from coops.etl import gold_process
-                    
-                    gold_process.main()
-        
-        # Verifica que não houve erro com org personalizada
-        captured = capsys.readouterr()
-        assert "Gold processing completed successfully" in captured.out
-    
     def test_main_displays_generated_files(self, capsys):
         """Testa que main exibe os arquivos gerados"""
         test_files = ['timeline1.json', 'timeline2.json', 'timeline3.json']

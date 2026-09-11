@@ -683,50 +683,66 @@ class TestAnalyzeMembersWithGemini:
 # ===========================================================================
 
 class TestLoadApiKey:
+    """load_api_key() now delegates to coops.infrastructure.get_settings(), which
+    requires GITHUB_TOKEN/GITHUB_ORG (unrelated to the Gemini key itself) and is
+    lru_cache'd process-wide, so each test provides both and resets the cache."""
+
+    @pytest.fixture(autouse=True)
+    def _isolated_settings(self, monkeypatch):
+        from coops.infrastructure.config import get_settings
+        for var in ("GITHUB_TOKEN", "GITHUB_ORG", "GEMINI_API_KEY", "GOOGLE_API_KEY"):
+            monkeypatch.delenv(var, raising=False)
+        get_settings.cache_clear()
+        yield
+        get_settings.cache_clear()
+
     def test_loads_gemini_key_from_secrets_file(self, tmp_path, monkeypatch):
         secrets = tmp_path / ".secrets"
-        secrets.write_text("GEMINI_API_KEY=test-key-123\n")
+        secrets.write_text("GITHUB_TOKEN=t\nGITHUB_ORG=o\nGEMINI_API_KEY=test-key-123\n")
         monkeypatch.chdir(tmp_path)
         key = gm.load_api_key()
         assert key == "test-key-123"
 
     def test_loads_google_key_from_secrets_file(self, tmp_path, monkeypatch):
         secrets = tmp_path / ".secrets"
-        secrets.write_text("GOOGLE_API_KEY=google-key-456\n")
+        secrets.write_text("GITHUB_TOKEN=t\nGITHUB_ORG=o\nGOOGLE_API_KEY=google-key-456\n")
         monkeypatch.chdir(tmp_path)
         key = gm.load_api_key()
         assert key == "google-key-456"
 
     def test_gemini_key_takes_priority_in_secrets(self, tmp_path, monkeypatch):
         secrets = tmp_path / ".secrets"
-        secrets.write_text("GEMINI_API_KEY=gemini-first\nGOOGLE_API_KEY=google-second\n")
+        secrets.write_text("GITHUB_TOKEN=t\nGITHUB_ORG=o\nGEMINI_API_KEY=gemini-first\nGOOGLE_API_KEY=google-second\n")
         monkeypatch.chdir(tmp_path)
         key = gm.load_api_key()
         assert key == "gemini-first"
 
     def test_falls_back_to_env_var_gemini(self, tmp_path, monkeypatch):
         monkeypatch.chdir(tmp_path)  # No .secrets file
+        monkeypatch.setenv("GITHUB_TOKEN", "t")
+        monkeypatch.setenv("GITHUB_ORG", "o")
         monkeypatch.setenv("GEMINI_API_KEY", "env-gemini-key")
         key = gm.load_api_key()
         assert key == "env-gemini-key"
 
     def test_falls_back_to_env_var_google(self, tmp_path, monkeypatch):
         monkeypatch.chdir(tmp_path)
+        monkeypatch.setenv("GITHUB_TOKEN", "t")
+        monkeypatch.setenv("GITHUB_ORG", "o")
         monkeypatch.setenv("GOOGLE_API_KEY", "env-google-key")
-        monkeypatch.delenv("GEMINI_API_KEY", raising=False)
         key = gm.load_api_key()
         assert key == "env-google-key"
 
     def test_raises_when_no_key_found(self, tmp_path, monkeypatch):
         monkeypatch.chdir(tmp_path)
-        monkeypatch.delenv("GEMINI_API_KEY", raising=False)
-        monkeypatch.delenv("GOOGLE_API_KEY", raising=False)
+        monkeypatch.setenv("GITHUB_TOKEN", "t")
+        monkeypatch.setenv("GITHUB_ORG", "o")
         with pytest.raises(ValueError, match="API key"):
             gm.load_api_key()
 
     def test_ignores_unrelated_lines_in_secrets(self, tmp_path, monkeypatch):
         secrets = tmp_path / ".secrets"
-        secrets.write_text("# comment\nOTHER_VAR=foo\nGEMINI_API_KEY=the-key\n")
+        secrets.write_text("GITHUB_TOKEN=t\nGITHUB_ORG=o\n# comment\nOTHER_VAR=foo\nGEMINI_API_KEY=the-key\n")
         monkeypatch.chdir(tmp_path)
         key = gm.load_api_key()
         assert key == "the-key"

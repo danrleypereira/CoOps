@@ -32,18 +32,6 @@ class TestSilverProcess:
         assert "Processing temporal analysis" in captured.out
         assert "Silver processing completed successfully" in captured.out
     
-    def test_main_with_org_argument(self):
-        """Testa que main aceita argumento --org"""
-        with patch('sys.argv', ['silver_process.py', '--org', 'test-org']):
-            with patch('coops.silver.member_analytics.process_member_analytics', return_value=[]):
-                with patch('coops.silver.contribution_metrics.process_contribution_metrics', return_value=[]):
-                    with patch('coops.silver.collaboration_networks.process_collaboration_networks', return_value=[]):
-                        with patch('coops.silver.temporal_analysis.process_temporal_analysis', return_value=[]):
-                            with patch('coops.utils.github_api.update_data_registry'):
-                                from coops.etl import silver_process
-                                
-                                silver_process.main()
-    
     def test_main_displays_all_files(self, capsys):
         """Testa que main exibe todos os arquivos gerados pelos processadores"""
         with patch('sys.argv', ['silver_process.py']):

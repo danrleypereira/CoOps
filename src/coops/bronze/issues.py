@@ -1,8 +1,15 @@
+import math
 import os
-from typing import List
+from typing import List, Optional
 from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data, load_json_data
 
-def extract_issues(client: GitHubAPIClient, config: OrganizationConfig, use_cache: bool = True) -> List[str]:
+def extract_issues(
+    client: GitHubAPIClient,
+    config: OrganizationConfig,
+    use_cache: bool = True,
+    max_issues: Optional[int] = None,
+    max_prs: Optional[int] = None,
+) -> List[str]:
     """
     Extract issues, pull requests, and issue events from GitHub repositories.
 
@@ -13,6 +20,11 @@ def extract_issues(client: GitHubAPIClient, config: OrganizationConfig, use_cach
 
     The Silver layer only uses these specific fields, so filtering at Bronze layer
     prevents unnecessary data storage and processing overhead.
+
+    max_issues/max_prs cap the number of issues/PRs kept per repo. Since GitHub's
+    issues API returns issues and PRs interleaved on the same paginated endpoint,
+    both caps also bound how many pages are fetched (using the larger of the two),
+    so setting either speeds up the fetch itself, not just the saved output.
     """
     # Load filtered repositories
     filtered_repos = load_json_data("data/bronze/repositories_filtered.json")
@@ -42,7 +54,11 @@ def extract_issues(client: GitHubAPIClient, config: OrganizationConfig, use_cach
 
         # Get issues (includes PRs)
         issues_base = f"https://api.github.com/repos/{full_name}/issues?state=all"
-        issues = client.get_paginated(issues_base, use_cache=use_cache, per_page=100)
+        max_pages = None
+        if max_issues is not None or max_prs is not None:
+            cap = max(v for v in (max_issues, max_prs) if v is not None)
+            max_pages = max(1, math.ceil(cap / 100))
+        issues = client.get_paginated(issues_base, use_cache=use_cache, per_page=100, max_pages=max_pages)
 
         if issues:
             # Separate issues from PRs
@@ -54,6 +70,11 @@ def extract_issues(client: GitHubAPIClient, config: OrganizationConfig, use_cach
                     repo_prs.append({**issue, 'repo_name': repo_name})
                 else:
                     repo_issues.append({**issue, 'repo_name': repo_name})
+
+            if max_issues is not None:
+                repo_issues = repo_issues[:max_issues]
+            if max_prs is not None:
+                repo_prs = repo_prs[:max_prs]
 
             all_issues.extend(repo_issues)
             all_prs.extend(repo_prs)
