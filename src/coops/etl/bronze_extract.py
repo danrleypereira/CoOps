@@ -7,13 +7,11 @@ Extracts raw data from GitHub API and saves to bronze layer.
 import argparse
 import sys
 from datetime import datetime
-
+from coops.infrastructure import get_settings
 from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, update_data_registry
 
 def main():
     parser = argparse.ArgumentParser(description='Extract GitHub organization data to Bronze layer')
-    parser.add_argument('--token', required=True, help='GitHub Personal Access Token')
-    parser.add_argument('--org', default='coops-org', help='GitHub organization name')
     parser.add_argument('--cache', action='store_true', help='Use cached data when available')
     parser.add_argument('--commits-method', choices=['rest', 'graphql'], default='graphql', help='Extraction method for commits (REST v3 or GraphQL v4)')
     parser.add_argument('--since', help='ISO-8601 timestamp (e.g., 2024-01-01T00:00:00Z) to limit commit extraction start')
@@ -27,12 +25,13 @@ def main():
 
     args = parser.parse_args()
 
-    print(f"Starting Bronze layer extraction for organization: {args.org}")
+    cfg = get_settings()
+    print(f"Starting Bronze layer extraction for organization: {cfg.github_org}")
     print(f"Started at: {datetime.now().isoformat()}")
 
     # Initialize API client
-    client = GitHubAPIClient(args.token)
-    config = OrganizationConfig(args.org)
+    client = GitHubAPIClient(cfg.github_token)
+    config = OrganizationConfig(cfg.github_org)
 
     try:
         # Import and run individual extractors

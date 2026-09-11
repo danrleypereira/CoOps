@@ -56,7 +56,7 @@ jobs:
         id: processing
         run: |
           echo "Starting Silver layer processing..."
-          poetry run coops-silver --org "${GITHUB_REPOSITORY_OWNER}"
+          poetry run coops-silver
 
           # Check if files were generated
           if [ "$(find data/silver -name '*.json' | wc -l)" -gt 0 ]; then

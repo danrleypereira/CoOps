@@ -2,6 +2,17 @@ name: Bronze Layer - Data Extraction
 
 on:
   workflow_dispatch:
+    inputs:
+      max_commits_per_repo:
+        description: 'Cap on commits fetched per repo (blank = no cap, full extraction). Useful for quick local tests via act.'
+        required: false
+        type: string
+        default: ''
+      skip_structure:
+        description: 'Skip repository structure extraction (faster)'
+        required: false
+        type: boolean
+        default: false
   push:
     branches: [main]
   pull_request:
@@ -65,15 +76,22 @@ jobs:
         id: extraction
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ORG: ${{ github.repository_owner }}
+          MAX_COMMITS_PER_REPO: ${{ github.event.inputs.max_commits_per_repo }}
+          SKIP_STRUCTURE: ${{ github.event.inputs.skip_structure }}
         run: |
           echo "[INFO] Starting Bronze layer extraction..."
           # Use GraphQL for commits to avoid per-commit REST stats calls
-          # Full history: no since/until or max limits
-          poetry run coops-bronze \
-            --token "$GITHUB_TOKEN" \
-            --org "${GITHUB_REPOSITORY_OWNER}" \
-            --cache \
-            --commits-method graphql
+          # Full history by default; max_commits_per_repo/skip_structure inputs
+          # allow a fast, limited run when dispatched manually (e.g. via act).
+          ARGS=(--cache --commits-method graphql)
+          if [ -n "$MAX_COMMITS_PER_REPO" ]; then
+            ARGS+=(--max-commits-per-repo "$MAX_COMMITS_PER_REPO")
+          fi
+          if [ "$SKIP_STRUCTURE" = "true" ]; then
+            ARGS+=(--skip-structure)
+          fi
+          poetry run coops-bronze "${ARGS[@]}"
 
           # Check if files were generated
           if [ "$(find data/bronze -name '*.json' | wc -l)" -gt 0 ]; then

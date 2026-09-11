@@ -56,7 +56,7 @@ jobs:
         id: processing
         run: |
           echo "Starting Gold layer processing..."
-          poetry run coops-gold --org "${GITHUB_REPOSITORY_OWNER}"
+          poetry run coops-gold
 
           # Check if files were generated
           if [ "$(find data/gold -name '*.json' 2>/dev/null | wc -l)" -gt 0 ]; then

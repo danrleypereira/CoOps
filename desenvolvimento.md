@@ -46,7 +46,7 @@ nano .secrets
 Conteúdo do arquivo `.secrets`:
 ```
 GITHUB_TOKEN=ghp_seu_token_real_aqui
-GITHUB_REPOSITORY_OWNER=coops-org
+GITHUB_ORG=coops-org
 ```
 
 ## 🚀 Executando os Workflows
@@ -80,6 +80,23 @@ act workflow_call -W .github/workflows/silver-process.yaml --secret-file .secret
 # Executa apenas agregação final (requer dados Silver)
 act workflow_call -W .github/workflows/gold-aggregate.yaml --secret-file .secrets --bind
 ```
+
+#### Teste Rápido (poucos commits, ideal para debug local)
+
+O workflow de Bronze aceita `max_commits_per_repo` e `skip_structure` como inputs de `workflow_dispatch`, só usados quando disparado manualmente (push/schedule continuam extraindo tudo). Use isso pra testar rápido sem esperar a extração completa da organização:
+```bash
+# Extrai só até 5 commits por repositório e pula a extração de estrutura
+gh act workflow_dispatch \
+  -W .github/workflows/bronze-extract.yaml \
+  -j extract-bronze-data \
+  --secret-file .secrets \
+  --bind \
+  --input max_commits_per_repo=5 \
+  --input skip_structure=true
+```
+Esse é o comando padrão para testes rápidos da extração. Requer a extensão `gh-act` (`gh extension install nektos/gh-act`) como alternativa ao `act` instalado via script (passo 2 acima) — ambos funcionam, `gh act` só reusa a autenticação já configurada no `gh`.
+
+> ⚠️ **Cuidado com `--bind`**: ele monta o repositório real dentro do container. Se o step de checkout do workflow rodar `git clean`/checkout como parte da preparação do workspace, isso é executado contra o seu repo de verdade — commite ou dê `git stash -u` antes de rodar `act`/`gh act` localmente pra não perder trabalho não salvo.
 
 ### Workflow Legacy (Sistema Antigo - DEPRECATED)
 ```bash
@@ -127,11 +144,11 @@ Se preferir executar os scripts diretamente:
 ```bash
 # 0. Instalar o pacote (uma vez): poetry install
 
-# 1. Bronze: Extração de dados
-poetry run coops-bronze --token $GITHUB_TOKEN --org coops-org --cache
+# 1. Bronze: Extração de dados (GITHUB_TOKEN/GITHUB_ORG vêm do .secrets ou do ambiente)
+poetry run coops-bronze --cache
 
 # 2. Silver: Processamento
-poetry run coops-silver --org coops-org
+poetry run coops-silver
 
 # 3. Registry: Atualizar registro
 poetry run coops-registry

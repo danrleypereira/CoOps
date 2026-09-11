@@ -148,7 +148,8 @@ The system maintains comprehensive data lineage and cataloging:
 ### Environment Variables
 
 - `GITHUB_TOKEN`: GitHub Personal Access Token with org read permissions
-- `GITHUB_REPOSITORY_OWNER`: Target organization name (auto-detected in Actions)
+- `GITHUB_ORG`: Target organization name (auto-detected from `github.repository_owner` in Actions)
+- `GEMINI_API_KEY`: Optional, enables AI-powered member analysis when set
 
 ### Customization
 

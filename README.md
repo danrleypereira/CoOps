@@ -91,13 +91,14 @@ npm run dev                  # http://localhost:5173
 ## Quickstart
 
 Run the pipeline against your organization (the GitHub Actions workflows run
-the same commands daily). Prefix with `poetry run` unless a virtualenv is
+the same commands daily). Credentials and org come from `.secrets`/env (see
+above), not CLI flags. Prefix with `poetry run` unless a virtualenv is
 active:
 
 ```bash
-poetry run coops-bronze --token "$GITHUB_TOKEN" --org "$GITHUB_ORG" --cache
-poetry run coops-silver --org "$GITHUB_ORG"
-poetry run coops-gold --org "$GITHUB_ORG"
+poetry run coops-bronze --cache
+poetry run coops-silver
+poetry run coops-gold
 poetry run coops-aggregate
 poetry run coops-registry
 ```

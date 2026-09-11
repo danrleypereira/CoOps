@@ -2,7 +2,6 @@
 Generates members_ai.json with AI-powered analyses of member activities.
 Uses Gemini 2.5 Flash Lite with batched requests (default max 10).
 """
-import os
 import json
 import logging
 import sys
@@ -11,6 +10,7 @@ from typing import List, Dict, Any
 from pathlib import Path
 import google.generativeai as genai
 
+from coops.infrastructure import get_settings
 from coops.utils.data_helpers import strip_metadata
 
 # Configuração de logging
@@ -22,23 +22,10 @@ log = logging.getLogger(__name__)
 
 
 def load_api_key() -> str:
-    """Carrega a API key do Gemini de .secrets ou variável de ambiente."""
-    # Tentar .secrets primeiro
-    secrets_file = Path(".secrets")
-    if secrets_file.exists():
-        with open(secrets_file, 'r') as f:
-            for line in f:
-                line = line.strip()
-                if line.startswith('GEMINI_API_KEY='):
-                    return line.split('=', 1)[1].strip()
-                elif line.startswith('GOOGLE_API_KEY='):
-                    return line.split('=', 1)[1].strip()
-    
-    # Tentar variável de ambiente
-    api_key = os.getenv('GEMINI_API_KEY') or os.getenv('GOOGLE_API_KEY')
+    """Carrega a API key do Gemini via config centralizada."""
+    api_key = get_settings().gemini_api_key
     if not api_key:
         raise ValueError("API key não encontrada. Configure GEMINI_API_KEY no .secrets ou variável de ambiente")
-    
     return api_key
 
 

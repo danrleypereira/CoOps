@@ -7,11 +7,8 @@ from datetime import datetime
 from coops.utils.github_api import update_data_registry
 
 def main():
-    parser = argparse.ArgumentParser(description='Process Silver data to Gold layer')
-    parser.add_argument('--org', default='coops-org', help='GitHub organization name')
-    
-    args = parser.parse_args()
-    
+    argparse.ArgumentParser(description='Process Silver data to Gold layer').parse_args()
+
     print(f"Starting Gold layer processing")
     print(f"Started at: {datetime.now().isoformat()}")
     
