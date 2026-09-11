@@ -73,15 +73,19 @@ act workflow_dispatch -W .github/workflows/bronze-extract.yaml --secret-file .se
 
 **Silver Layer (Processamento de Analytics)**:
 ```bash
-# Executa apenas o processamento (requer dados Bronze)
-act workflow_call -W .github/workflows/silver-process.yaml --secret-file .secrets --bind
+# Executa apenas o processamento (requer dados Bronze já em data/bronze/)
+act workflow_dispatch -W .github/workflows/silver-process.yaml --secret-file .secrets --bind --container-options "--user $(id -u):$(id -g)" -j process-silver-data
 ```
 
 **Gold Layer (KPIs Executivos)**:
 ```bash
-# Executa apenas agregação final (requer dados Silver)
-act workflow_call -W .github/workflows/gold-aggregate.yaml --secret-file .secrets --bind
+# Executa apenas a agregação final (requer dados Silver já em data/silver/)
+act workflow_dispatch -W .github/workflows/gold-process.yaml --secret-file .secrets --bind --container-options "--user $(id -u):$(id -g)" -j process-gold-data
 ```
+
+> ℹ️ `gold-process.yaml` é o workflow de Gold efetivamente encadeado pelo pipeline (é o que `silver-process.yaml` dispara no job `trigger-gold-processing`, e o único com o step de AI analysis opcional via `GEMINI_API_KEY`). O arquivo `gold-aggregate.yaml` também existe no repo mas é um workflow legado/órfão, não chamado por nenhum outro — não use ele pra testar o pipeline real.
+
+> ⚠️ **Silver e Gold exigem `--bind` (não rodam sem ele)**: diferente do `bronze-extract.yaml`, os steps "Pull latest data files" de `silver-process.yaml` e `gold-process.yaml` rodam `git branch --show-current` / `git pull` **sem** o guard `if: ${{ !env.ACT }}` que o Checkout tem. Como o Checkout é pulado sob `act`/`gh act` (mesmo motivo explicado abaixo), se você esquecer o `--bind` o container não tem repositório git nenhum montado e o comando falha com `fatal: not a git repository (or any parent up to mount point ...)`. Sempre inclua `--bind` (e o `--container-options` pra não sujar os arquivos gerados com `root:root`) nesses dois workflows.
 
 #### Teste Rápido (poucos commits, ideal para debug local)
 
@@ -234,6 +238,10 @@ jq '.silver | keys' data/master_registry.json
 6. **❌ Dependências Python**
    - **Solução**: `poetry install --extras dev`
    - **No Ubuntu**: `sudo apt install python3-pip && pipx install poetry`
+
+7. **❌ `fatal: not a git repository (or any parent up to mount point ...)` ao rodar Silver/Gold**
+   - **Causa**: Rodou `silver-process.yaml` ou `gold-process.yaml` sem `--bind`. O Checkout é pulado sob `act` (`if: ${{ !env.ACT }}`), e sem `--bind` não sobra nenhum repositório git no container pro step seguinte ("Pull latest data files") rodar `git branch`/`git pull`
+   - **Solução**: sempre inclua `--bind` (e `--container-options "--user $(id -u):$(id -g)"`) ao rodar esses dois workflows via `act`/`gh act`, como no exemplo da seção "Camadas Individuais"
 
 ### Logs detalhados:
 ```bash
