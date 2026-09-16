@@ -45,7 +45,6 @@ minversion = "8.0"
 addopts = [
     "-v",
     "--tb=short",
-    "--maxfail=1",
     "--cov=coops",
     "--cov-report=term-missing",
     "--cov-report=html",

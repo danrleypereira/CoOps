@@ -9,9 +9,16 @@ from unittest.mock import patch, MagicMock
 import sys
 
 
+@pytest.fixture(autouse=True)
+def _isolated_cwd(tmp_path, monkeypatch):
+    """Nem todos os processadores são mockados em cada teste; os reais escrevem
+    em ./data, então cada teste roda num diretório temporário."""
+    monkeypatch.chdir(tmp_path)
+
+
 class TestSilverProcess:
     """Testes para o script silver_process"""
-    
+
     def test_main_processes_all_layers(self, capsys):
         """Testa que main processa todas as camadas Silver"""
         with patch('sys.argv', ['silver_process.py']):
