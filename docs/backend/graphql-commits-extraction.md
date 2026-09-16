@@ -31,28 +31,32 @@ src/coops/
 
 ## Como Usar
 
-### 1. Teste Básico
-
-Teste a extração GraphQL em um repositório específico:
+O token e a organização vêm de `GITHUB_TOKEN` / `GITHUB_ORG` (ambiente,
+`.env` ou `.secrets`):
 
 ```bash
-python src/test_graphql_commits.py \
-  --token YOUR_GITHUB_TOKEN \
-  --owner unb-mds \
-  --repo 2025-2-Squad-01 \
-  --branch main \
-  --max-commits 50
+export GITHUB_TOKEN=YOUR_GITHUB_TOKEN
+export GITHUB_ORG=unb-mds
+```
+
+### 1. Teste Rápido
+
+Extração GraphQL limitada a poucos repositórios e commits:
+
+```bash
+poetry run coops-bronze \
+  --commits-method graphql \
+  --max-repos 1 \
+  --max-commits-per-repo 50 \
+  --skip-structure
 ```
 
 ### 2. Extração Completa com GraphQL
 
-Execute a extração bronze completa usando GraphQL para commits:
+Execute a extração bronze completa usando GraphQL para commits (padrão):
 
 ```bash
-poetry run coops-bronze \
-  --token YOUR_GITHUB_TOKEN \
-  --org unb-mds \
-  --use-graphql
+poetry run coops-bronze --commits-method graphql
 ```
 
 ### 3. Limitar Commits por Repositório
@@ -61,10 +65,8 @@ Para organizações grandes, limite o número de commits por repo:
 
 ```bash
 poetry run coops-bronze \
-  --token YOUR_GITHUB_TOKEN \
-  --org unb-mds \
-  --use-graphql \
-  --max-commits 1000
+  --commits-method graphql \
+  --max-commits-per-repo 1000
 ```
 
 ### 4. Modo Compatível (REST API)
@@ -72,10 +74,7 @@ poetry run coops-bronze \
 Continue usando a REST API se preferir (sem dados de additions/deletions):
 
 ```bash
-poetry run coops-bronze \
-  --token YOUR_GITHUB_TOKEN \
-  --org unb-mds \
-  --cache
+poetry run coops-bronze --commits-method rest --cache
 ```
 
 ## Dados Extraídos

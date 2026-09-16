@@ -39,20 +39,22 @@ This project implements a comprehensive GitHub organization metrics collection a
 ### Manual Execution
 
 Install first: `poetry install` (or, without Poetry, `pip install -e .`).
+The token and organization come from `GITHUB_TOKEN` / `GITHUB_ORG` (environment,
+`.env` or `.secrets`), not from CLI flags.
 
 1. **Extract Bronze Layer**:
    ```bash
-   poetry run coops-bronze --token $GITHUB_TOKEN --org coops-org
+   GITHUB_TOKEN=... GITHUB_ORG=coops-org poetry run coops-bronze
    ```
 
 2. **Process Silver Layer**:
    ```bash
-   poetry run coops-silver --org coops-org
+   poetry run coops-silver
    ```
 
 3. **Process Gold Layer & aggregate KPIs**:
    ```bash
-   poetry run coops-gold --org coops-org
+   poetry run coops-gold
    poetry run coops-aggregate
    ```
 
