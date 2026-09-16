@@ -1,5 +1,6 @@
 # Arquivo de secrets para uso local
 .secrets
+.env
 **/__pycache__/
 dashboard/dist/
 dashboard/node_modules/

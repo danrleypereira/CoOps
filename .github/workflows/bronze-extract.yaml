@@ -74,7 +74,7 @@ jobs:
       - name: Verify organization is valid
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_ORG: ${{ secrets.GITHUB_ORG || github.repository_owner }}
+          GITHUB_ORG: ${{ vars.COOPS_ORG || github.repository_owner }}
         run: |
           OWNER="$GITHUB_ORG"
 
@@ -98,7 +98,7 @@ jobs:
         id: extraction
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_ORG: ${{ secrets.GITHUB_ORG || github.repository_owner }}
+          GITHUB_ORG: ${{ vars.COOPS_ORG || github.repository_owner }}
           MAX_REPOS: ${{ github.event.inputs.max_repos }}
           MAX_COMMITS_PER_REPO: ${{ github.event.inputs.max_commits_per_repo }}
           SKIP_STRUCTURE: ${{ github.event.inputs.skip_structure }}
