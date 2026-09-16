@@ -44,7 +44,7 @@ export GITHUB_ORG=unb-mds
 Extração GraphQL limitada a poucos repositórios e commits:
 
 ```bash
-poetry run coops-bronze \
+uv run coops-bronze \
   --commits-method graphql \
   --max-repos 1 \
   --max-commits-per-repo 50 \
@@ -56,7 +56,7 @@ poetry run coops-bronze \
 Execute a extração bronze completa usando GraphQL para commits (padrão):
 
 ```bash
-poetry run coops-bronze --commits-method graphql
+uv run coops-bronze --commits-method graphql
 ```
 
 ### 3. Limitar Commits por Repositório
@@ -64,7 +64,7 @@ poetry run coops-bronze --commits-method graphql
 Para organizações grandes, limite o número de commits por repo:
 
 ```bash
-poetry run coops-bronze \
+uv run coops-bronze \
   --commits-method graphql \
   --max-commits-per-repo 1000
 ```
@@ -74,7 +74,7 @@ poetry run coops-bronze \
 Continue usando a REST API se preferir (sem dados de additions/deletions):
 
 ```bash
-poetry run coops-bronze --commits-method rest --cache
+uv run coops-bronze --commits-method rest --cache
 ```
 
 ## Dados Extraídos

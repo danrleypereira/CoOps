@@ -11,13 +11,38 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 - Installable `coops` package (`src/coops/`) with a `pyproject.toml` declaring
   dependencies and metadata, plus `coops-bronze`, `coops-silver`, `coops-gold`,
   `coops-aggregate` and `coops-registry` console entry points —
-  issue [#14](https://github.com/unb-mds/CoOps/issues/14).
+  issue [#14](https://github.com/danrleypereira/CoOps/issues/14).
+- `coops.infrastructure.Settings`: typed configuration read from the
+  environment, `.env` or `.secrets` (`GITHUB_TOKEN`, `GITHUB_ORG`,
+  `GEMINI_API_KEY`, `GEMINI_MODEL`, ...) — issue
+  [#18](https://github.com/danrleypereira/CoOps/issues/18).
+- `coops.domain.tenancy`: `TenantId` and `CorrelationId` value objects —
+  issue [#19](https://github.com/danrleypereira/CoOps/issues/19).
+- `coops-bronze` flags `--max-repos`, `--max-issues` and `--max-prs`, and the
+  matching `workflow_dispatch` inputs of `bronze-extract.yaml`.
+- **Validate Pipeline (manual)** workflow and
+  `docs/TESTING_PULL_REQUESTS.md`: PRs are validated against a real
+  organization in `unb-mds/CoOps` before review.
 
 ### Changed
+- **Breaking:** `coops-bronze` reads the token and organization from
+  `GITHUB_TOKEN`/`GITHUB_ORG` (environment, `.env` or `.secrets`); the
+  `--token` and `--org` flags were removed, and `coops-silver`/`coops-gold`
+  no longer accept the unused `--org`. On GitHub Actions the organization
+  comes from the `COOPS_ORG` repository variable, falling back to the
+  repository owner.
+- Dependencies are managed with [uv](https://docs.astral.sh/uv/)
+  (`uv.lock`, `uv_build` backend); dev tools are a `dev` dependency group
+  installed by `uv sync`.
+- The default Gemini model is now `gemini-3.5-flash-lite` (configurable with
+  `GEMINI_MODEL`); `gemini-2.5-flash-lite` is no longer available to new API
+  keys.
+- The integration test workflow reports coverage without a threshold;
+  coverage is gated by the unit test workflow.
 - ETL modules moved under the `coops` namespace; all imports now use absolute
   `coops.*` paths.
-- CI workflows install the project with `poetry install` and invoke the
-  console commands (`poetry run coops-*`) instead of `python src/*.py`.
+- CI workflows install the project with `uv sync --locked` and invoke the
+  console commands (`uv run coops-*`) instead of `python src/*.py`.
 - Test/coverage configuration consolidated into `pyproject.toml`
   (`pytest.ini` and `.coveragerc` removed).
 

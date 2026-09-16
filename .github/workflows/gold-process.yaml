@@ -31,17 +31,13 @@ jobs:
           echo "Current branch: $CURRENT_BRANCH"
           git pull origin "$CURRENT_BRANCH" --no-edit || echo "Already up to date"
 
-      - name: Install Poetry
-        uses: snok/install-poetry@v1
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up uv and Python
+        uses: astral-sh/setup-uv@v10.1.0
         with:
           python-version: '3.11'
-          cache: 'poetry'
 
       - name: Install dependencies
-        run: poetry install --no-interaction
+        run: uv sync --locked
 
       - name: Verify Silver data exists
         run: |
@@ -56,7 +52,7 @@ jobs:
         id: processing
         run: |
           echo "Starting Gold layer processing..."
-          poetry run coops-gold
+          uv run coops-gold
 
           # Check if files were generated
           if [ "$(find data/gold -name '*.json' 2>/dev/null | wc -l)" -gt 0 ]; then
@@ -72,7 +68,7 @@ jobs:
         if: steps.processing.outputs.completed == 'true'
         run: |
           echo "Updating data registry with Gold layer files..."
-          poetry run coops-registry
+          uv run coops-registry
 
       - name: List generated files
         if: steps.processing.outputs.completed == 'true'
@@ -183,23 +179,19 @@ jobs:
           CURRENT_BRANCH="${GITHUB_REF_NAME:-$(git branch --show-current)}"
           git pull origin "$CURRENT_BRANCH" --no-edit || echo "Already up to date"
 
-      - name: Install Poetry
-        uses: snok/install-poetry@v1
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up uv and Python
+        uses: astral-sh/setup-uv@v10.1.0
         with:
           python-version: '3.11'
-          cache: 'poetry'
 
       - name: Install dependencies
-        run: poetry install --no-interaction
+        run: uv sync --locked
 
       - name: Generate AI analysis
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          poetry run python -m coops.ai_analysis.generate_members_ai
+          uv run python -m coops.ai_analysis.generate_members_ai
 
       - name: Upload AI analysis artifact
         uses: actions/upload-artifact@v4

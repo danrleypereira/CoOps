@@ -19,7 +19,7 @@ This project implements a comprehensive GitHub organization metrics collection a
 │   ├── gold/            # Executive KPIs and visualizations
 │   ├── master_registry.json    # Complete file registry
 │   └── data_catalog.json       # Data documentation
-├── src/coops/           # Installable Python package (`poetry install`)
+├── src/coops/           # Installable Python package (`uv sync`)
 │   ├── bronze/          # Raw data extraction modules
 │   ├── silver/          # Analytics processing modules
 │   ├── gold/            # KPI aggregation modules
@@ -38,29 +38,29 @@ This project implements a comprehensive GitHub organization metrics collection a
 
 ### Manual Execution
 
-Install first: `poetry install` (or, without Poetry, `pip install -e .`).
+Install first: `uv sync` (or, without uv, `pip install -e .`).
 The token and organization come from `GITHUB_TOKEN` / `GITHUB_ORG` (environment,
 `.env` or `.secrets`), not from CLI flags.
 
 1. **Extract Bronze Layer**:
    ```bash
-   GITHUB_TOKEN=... GITHUB_ORG=coops-org poetry run coops-bronze
+   GITHUB_TOKEN=... GITHUB_ORG=coops-org uv run coops-bronze
    ```
 
 2. **Process Silver Layer**:
    ```bash
-   poetry run coops-silver
+   uv run coops-silver
    ```
 
 3. **Process Gold Layer & aggregate KPIs**:
    ```bash
-   poetry run coops-gold
-   poetry run coops-aggregate
+   uv run coops-gold
+   uv run coops-aggregate
    ```
 
 4. **Generate Registry**:
    ```bash
-   poetry run coops-registry
+   uv run coops-registry
    ```
 
 ### GitHub Actions (Automated)

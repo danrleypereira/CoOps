@@ -9,7 +9,7 @@ on:
       - "src/**/*.py"
       - "tests/**/*.py"
       - "pyproject.toml"
-      - "poetry.lock"
+      - "uv.lock"
       - "dashboard/src/**/*.{ts,tsx}"
       - "dashboard/src/**/*.test.{ts,tsx}"
       - "dashboard/package.json"
@@ -30,21 +30,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Poetry
-        uses: snok/install-poetry@v1
-
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
+      - name: Set up uv and Python ${{ matrix.python-version }}
+        uses: astral-sh/setup-uv@v10.1.0
         with:
           python-version: ${{ matrix.python-version }}
-          cache: 'poetry'
 
       - name: Install dependencies
-        run: poetry install --no-interaction --extras dev
+        run: uv sync --locked
 
       - name: Run unit tests with coverage
         run: |
-          poetry run pytest tests/unit \
+          uv run pytest tests/unit \
             --cov=coops \
             --cov-report=term-missing \
             --cov-report=xml \

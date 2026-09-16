@@ -4,7 +4,7 @@ Obrigado por dedicar seu tempo para contribuir! Este projeto é licenciado sob *
 
 > TL;DR
 > 1. Faça um fork e crie uma branch a partir de `main` usando Conventional Commits no nome.
-> 2. `poetry install --extras dev` e garanta que os comandos rodam (`poetry run coops-bronze`, `poetry run pytest`).
+> 2. `uv sync` e garanta que os comandos rodam (`uv run coops-bronze`, `uv run pytest`).
 > 3. Adicione/ajuste testes (quando aplicável) e execute validações.
 > 4. Atualize documentação se o comportamento público mudar.
 > 5. Abra o PR seguindo o checklist.
@@ -45,12 +45,12 @@ Detalhes: veja `ARCHITECTURE.md`.
 
 1. **Instalar dependências e o pacote** (cria o virtualenv automaticamente):
    ```bash
-   poetry install --extras dev
+   uv sync
    ```
    Isso instala o pacote `coops` e os comandos `coops-bronze`, `coops-silver`,
    `coops-gold`, `coops-aggregate` e `coops-registry`. É o mesmo comando que a CI roda.
 
-   Sem Poetry: `python -m venv .venv && source .venv/bin/activate && pip install -e ".[dev]"`.
+   Sem uv: `python -m venv .venv && source .venv/bin/activate && pip install -e . --group dev` (pip >= 25.1).
 
 2. **Configurar credenciais GitHub:**
 
@@ -62,11 +62,11 @@ Detalhes: veja `ARCHITECTURE.md`.
 
 3. **Executar pipeline manual** (a organização alvo vem de `GITHUB_ORG` no `.secrets` ou no ambiente):
    ```bash
-   poetry run coops-bronze --cache
-   poetry run coops-silver
-   poetry run coops-gold
-   poetry run coops-aggregate
-   poetry run coops-registry
+   uv run coops-bronze --cache
+   uv run coops-silver
+   uv run coops-gold
+   uv run coops-aggregate
+   uv run coops-registry
    ```
 
 Para simular GitHub Actions localmente e conectar o frontend aos dados gerados (opcional): consulte `RUNNING_LOCALLY.md`.
@@ -338,20 +338,20 @@ tests/
 
 ### Python - pytest
 
-Prefixe com `poetry run` (ou ative o venv com `poetry env activate`):
+Prefixe com `uv run` (ou ative o venv com `source .venv/bin/activate`):
 
 ```bash
 # Todos os testes
-poetry run pytest
+uv run pytest
 
 # Com cobertura
-poetry run pytest --cov=coops
+uv run pytest --cov=coops
 
 # Teste específico
-poetry run pytest tests/unit/test_api_client.py::test_get_repository_success
+uv run pytest tests/unit/test_api_client.py::test_get_repository_success
 
 # Verbose
-poetry run pytest -v
+uv run pytest -v
 ```
 
 ### TypeScript/React - Vitest

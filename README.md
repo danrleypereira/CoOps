@@ -46,7 +46,7 @@ production at two universities:
 
 ### Prerequisites
 
-- Python 3.10 or newer
+- [uv](https://docs.astral.sh/uv/getting-started/installation/) (it installs Python 3.10+ if needed)
 - Node.js 20 or newer
 - A GitHub Personal Access Token with `repo` and `read:org` scopes
 
@@ -55,20 +55,20 @@ production at two universities:
 ```bash
 git clone https://github.com/unb-mds/CoOps.git
 cd CoOps
-poetry install --extras dev          # or: poetry install   (runtime only)
+uv sync                # or: uv sync --no-dev   (runtime only)
 ```
 
-Without Poetry, plain pip works too (deps come from `pyproject.toml`):
+Without uv, plain pip works too (deps come from `pyproject.toml`):
 
 ```bash
 python -m venv .venv && source .venv/bin/activate    # Windows: .venv\Scripts\Activate.ps1
-pip install -e ".[dev]"                               # or: pip install -e .
+pip install -e . --group dev                          # pip >= 25.1; or: pip install -e .
 ```
 
 Either way you get the `coops` package and the `coops-bronze`, `coops-silver`,
 `coops-gold`, `coops-aggregate` and `coops-registry` console commands (prefix
-them with `poetry run` if you did not activate a virtualenv). CI runs the same
-`poetry install`.
+them with `uv run` if you did not activate a virtualenv). CI runs
+`uv sync --locked`.
 
 Create a `.secrets` file at the repository root (already in `.gitignore`):
 
@@ -92,21 +92,21 @@ npm run dev                  # http://localhost:5173
 
 Run the pipeline against your organization (the GitHub Actions workflows run
 the same commands daily). Credentials and org come from `.secrets`/env (see
-above), not CLI flags. Prefix with `poetry run` unless a virtualenv is
+above), not CLI flags. Prefix with `uv run` unless a virtualenv is
 active:
 
 ```bash
-poetry run coops-bronze --cache
-poetry run coops-silver
-poetry run coops-gold
-poetry run coops-aggregate
-poetry run coops-registry
+uv run coops-bronze --cache
+uv run coops-silver
+uv run coops-gold
+uv run coops-aggregate
+uv run coops-registry
 ```
 
 Optional AI analysis step (requires `GEMINI_API_KEY`):
 
 ```bash
-poetry run python -m coops.ai_analysis.generate_members_ai
+uv run python -m coops.ai_analysis.generate_members_ai
 ```
 
 The dashboard reads the generated JSON files in `data/` and visualizes them at
@@ -117,7 +117,7 @@ The dashboard reads the generated JSON files in `data/` and visualizes them at
 ## Running Tests
 
 ```bash
-poetry run pytest                        # backend; current coverage: 88%
+uv run pytest                            # backend; current coverage: 88%
 cd dashboard && npm run test:coverage    # frontend; current coverage: 94%
 ```
 

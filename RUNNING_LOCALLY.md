@@ -18,11 +18,10 @@ sudo apt install gh
 curl https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash
 ```
 
-### 3. Install Python, Poetry and the dependencies
+### 3. Install uv and the dependencies
 ```bash
-sudo apt install python3 python3-pip
-pipx install poetry
-poetry install --extras dev
+curl -LsSf https://astral.sh/uv/install.sh | sh   # uv also downloads Python 3.10+ if needed
+uv sync
 ```
 
 ### 4. Install Node.js (only needed for Part 2 — the frontend)
@@ -56,7 +55,7 @@ GITHUB_TOKEN=ghp_your_real_token_here
 GITHUB_ORG=coops-org
 ```
 
-> `GITHUB_ORG` in `.secrets` controls which org is extracted when running `poetry run coops-bronze` directly, or `act`/`gh act --secret-file .secrets`. On GitHub Actions the workflows use the `COOPS_ORG` repository variable, falling back to the org that owns the repository (`github.repository_owner`). GitHub doesn't allow secret names starting with `GITHUB_`, so a `GITHUB_ORG` secret can't be configured there.
+> `GITHUB_ORG` in `.secrets` controls which org is extracted when running `uv run coops-bronze` directly, or `act`/`gh act --secret-file .secrets`. On GitHub Actions the workflows use the `COOPS_ORG` repository variable, falling back to the org that owns the repository (`github.repository_owner`). GitHub doesn't allow secret names starting with `GITHUB_`, so a `GITHUB_ORG` secret can't be configured there.
 
 > To validate a branch against a real organization on GitHub Actions without committing any data, use the **Validate Pipeline (manual)** workflow — see [docs/TESTING_PULL_REQUESTS.md](docs/TESTING_PULL_REQUESTS.md).
 
@@ -126,19 +125,19 @@ act workflow_dispatch -W .github/workflows/start.yaml --secret-file .secrets --b
 
 If you'd rather run the scripts directly, without simulating Actions:
 ```bash
-# 0. Install the package (once): poetry install
+# 0. Install the package (once): uv sync
 
 # 1. Bronze: data extraction (GITHUB_TOKEN/GITHUB_ORG come from .secrets or the environment)
-poetry run coops-bronze --cache
+uv run coops-bronze --cache
 
 # 2. Silver: processing
-poetry run coops-silver
+uv run coops-silver
 
 # 3. Gold: executive KPIs
-poetry run coops-gold
+uv run coops-gold
 
 # 4. Registry: update the registry
-poetry run coops-registry
+uv run coops-registry
 ```
 
 ### 📁 Generated data structure
@@ -293,8 +292,8 @@ To go back to testing against real GitHub data (no local data), just set
    - **Check**: response headers show when the rate limit resets
 
 6. **❌ Python dependencies**
-   - **Fix**: `poetry install --extras dev`
-   - **On Ubuntu**: `sudo apt install python3-pip && pipx install poetry`
+   - **Fix**: `uv sync`
+   - **uv not installed**: `curl -LsSf https://astral.sh/uv/install.sh | sh` (see https://docs.astral.sh/uv/getting-started/installation/)
 
 7. **❌ `fatal: not a git repository (or any parent up to mount point ...)` when running Silver/Gold**
    - **Cause**: ran `silver-process.yaml` or `gold-process.yaml` without `--bind`. Checkout is skipped under `act` (`if: ${{ !env.ACT }}`), and without `--bind` there's no git repository left in the container for the next step ("Pull latest data files") to run `git branch`/`git pull`
@@ -338,7 +337,7 @@ curl -H "Authorization: Bearer $GITHUB_TOKEN" \
    https://api.github.com/orgs/coops-org/members | jq length
 
 # 4. Run an individual step (token/org come from .secrets or the environment)
-GITHUB_ORG=coops-org poetry run coops-bronze
+GITHUB_ORG=coops-org uv run coops-bronze
 ```
 
 ## 📈 Next steps
