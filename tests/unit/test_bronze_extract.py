@@ -18,6 +18,8 @@ class TestBronzeExtract:
         (lru_cache'd process-wide), então cada teste define o env necessário e
         limpa o cache antes/depois pra não vazar entre testes."""
         from coops.infrastructure.config import get_settings
+        monkeypatch.delenv("COOPS_GITHUB_TOKEN", raising=False)
+        monkeypatch.delenv("COOPS_ORG", raising=False)
         monkeypatch.setenv("GITHUB_TOKEN", "test-token")
         monkeypatch.setenv("GITHUB_ORG", "coops-org")
         get_settings.cache_clear()

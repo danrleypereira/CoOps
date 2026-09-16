@@ -12,12 +12,23 @@ class Settings(BaseSettings):
     Commands that need a value validate it themselves (see
     `coops.etl.bronze_extract.main`).
 
-    Env vars: GITHUB_TOKEN, GITHUB_ORG, GEMINI_API_KEY (or GOOGLE_API_KEY),
-    GEMINI_MODEL, GITHUB_API_URL, COOPS_STORAGE, MONGO_URI, TENANT_MODE.
+    Env vars: GITHUB_TOKEN (or COOPS_GITHUB_TOKEN), GITHUB_ORG (or COOPS_ORG),
+    GEMINI_API_KEY (or GOOGLE_API_KEY), GEMINI_MODEL, GITHUB_API_URL,
+    COOPS_STORAGE, MONGO_URI, TENANT_MODE.
+
+    GitHub rejects Actions secrets and variables whose names start with
+    GITHUB_, so the COOPS_ names can be mapped 1:1 from `secrets`/`vars`.
+    They take precedence over the GITHUB_ names.
     """
 
-    github_token: str | None = None
-    github_org: str | None = None
+    github_token: str | None = Field(
+        default=None,
+        validation_alias=AliasChoices("COOPS_GITHUB_TOKEN", "GITHUB_TOKEN"),
+    )
+    github_org: str | None = Field(
+        default=None,
+        validation_alias=AliasChoices("COOPS_ORG", "GITHUB_ORG"),
+    )
     gemini_api_key: str | None = Field(
         default=None,
         validation_alias=AliasChoices("GEMINI_API_KEY", "GOOGLE_API_KEY"),

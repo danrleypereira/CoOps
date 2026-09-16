@@ -55,7 +55,7 @@ GITHUB_TOKEN=ghp_your_real_token_here
 GITHUB_ORG=coops-org
 ```
 
-> `GITHUB_ORG` in `.secrets` controls which org is extracted when running `uv run coops-bronze` directly, or `act`/`gh act --secret-file .secrets`. On GitHub Actions the workflows use the `COOPS_ORG` repository variable, falling back to the org that owns the repository (`github.repository_owner`). GitHub doesn't allow secret names starting with `GITHUB_`, so a `GITHUB_ORG` secret can't be configured there.
+> `GITHUB_ORG` in `.secrets` controls which org is extracted when running `uv run coops-bronze` directly, or `act`/`gh act --secret-file .secrets`. `COOPS_ORG` / `COOPS_GITHUB_TOKEN` are accepted too and take precedence. On GitHub Actions the workflows use the `COOPS_ORG` repository variable, falling back to the org that owns the repository (`github.repository_owner`): GitHub doesn't allow secret or variable names starting with `GITHUB_`.
 
 > To validate a branch against a real organization on GitHub Actions without committing any data, use the **Validate Pipeline (manual)** workflow — see [docs/TESTING_PULL_REQUESTS.md](docs/TESTING_PULL_REQUESTS.md).
 
