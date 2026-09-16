@@ -60,11 +60,11 @@ Detalhes: veja `ARCHITECTURE.md`.
    GITHUB_ORG=unb-mds
    ```
 
-3. **Executar pipeline manual** (ajuste --org para sua organização GitHub alvo):
+3. **Executar pipeline manual** (a organização alvo vem de `GITHUB_ORG` no `.secrets` ou no ambiente):
    ```bash
-   poetry run coops-bronze --token $GITHUB_TOKEN --org coops-org --cache
-   poetry run coops-silver --org coops-org
-   poetry run coops-gold --org coops-org
+   poetry run coops-bronze --cache
+   poetry run coops-silver
+   poetry run coops-gold
    poetry run coops-aggregate
    poetry run coops-registry
    ```
@@ -133,11 +133,13 @@ main (produção)
    git push origin feat/issue-42-dashboard-metricas
    ```
 
-5. **Abrir Pull Request** no GitHub
+5. **Abrir Pull Request como draft** no GitHub
 
-6. **Code Review** e aprovação
+6. **Validar na organização** (`unb-mds/CoOps`) com o workflow *Validate Pipeline (manual)* e marcar o PR como *Ready for review*. Passo a passo em [docs/TESTING_PULL_REQUESTS.md](docs/TESTING_PULL_REQUESTS.md).
 
-7. **Merge** para `main` (via Squash and Merge)
+7. **Code Review** e aprovação
+
+8. **Merge** para `main` (via Squash and Merge)
 
 ---
 ## Commits (Conventional Commits)
@@ -192,6 +194,7 @@ Antes de abrir o PR:
 - [ ] Sem arquivos temporários (cache local, credenciais, etc.)
 - [ ] Testes adicionados/atualizados
 - [ ] CI/CD passando
+- [ ] Validação na organização (`unb-mds/CoOps`) verde para o último commit ([docs/TESTING_PULL_REQUESTS.md](docs/TESTING_PULL_REQUESTS.md))
 
 ### Template sugerido no PR
 ```

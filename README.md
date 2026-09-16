@@ -133,6 +133,7 @@ config under `dashboard/vitest.config.ts`.
 - **Architecture deep-dive** — [ARCHITECTURE.md](ARCHITECTURE.md)
 - **AI module** — [README_AI_ANALYSIS.md](README_AI_ANALYSIS.md)
 - **Contributing & development workflow** — [CONTRIBUTING.md](CONTRIBUTING.md)
+- **Testing a PR against a real organization** — [docs/TESTING_PULL_REQUESTS.md](docs/TESTING_PULL_REQUESTS.md)
 - **Code of Conduct** — [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 - **Security policy** — [SECURITY.md](SECURITY.md)
 - **Release notes** — [CHANGELOG.md](CHANGELOG.md)

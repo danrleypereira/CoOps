@@ -56,7 +56,9 @@ GITHUB_TOKEN=ghp_your_real_token_here
 GITHUB_ORG=coops-org
 ```
 
-> `GITHUB_ORG` in `.secrets` only controls which org is extracted when running via `poetry run coops-bronze` directly, or via `act`/`gh act --secret-file .secrets` for the full workflow. In production (real push/schedule runs on GitHub Actions) the workflow always uses the org that owns the repository (`github.repository_owner`), ignoring this value — that secret isn't configured there.
+> `GITHUB_ORG` in `.secrets` controls which org is extracted when running `poetry run coops-bronze` directly, or `act`/`gh act --secret-file .secrets`. On GitHub Actions the workflows use the `COOPS_ORG` repository variable, falling back to the org that owns the repository (`github.repository_owner`). GitHub doesn't allow secret names starting with `GITHUB_`, so a `GITHUB_ORG` secret can't be configured there.
+
+> To validate a branch against a real organization on GitHub Actions without committing any data, use the **Validate Pipeline (manual)** workflow — see [docs/TESTING_PULL_REQUESTS.md](docs/TESTING_PULL_REQUESTS.md).
 
 ---
 
@@ -335,8 +337,8 @@ curl -H "Authorization: Bearer $GITHUB_TOKEN" \
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
    https://api.github.com/orgs/coops-org/members | jq length
 
-# 4. Run an individual step
-poetry run coops-bronze --token $GITHUB_TOKEN --org coops-org
+# 4. Run an individual step (token/org come from .secrets or the environment)
+GITHUB_ORG=coops-org poetry run coops-bronze
 ```
 
 ## 📈 Next steps

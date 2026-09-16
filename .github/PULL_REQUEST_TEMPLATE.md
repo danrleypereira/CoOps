@@ -35,6 +35,17 @@ checks you performed. -->
 - [ ] New tests added (or existing tests cover the change)
 - [ ] `CHANGELOG.md` updated under `[Unreleased]` if user-visible
 
+## Organization validation
+
+<!-- Required when the PR touches src/, workflows, or packaging. Open the PR as a
+draft, run "Validate Pipeline (manual)" in unb-mds/CoOps on this branch, and
+paste the run link below. Then mark the PR "Ready for review".
+See docs/TESTING_PULL_REQUESTS.md. -->
+
+- Run: <!-- https://github.com/unb-mds/CoOps/actions/runs/... -->
+- [ ] The run is green and was made on the PR's latest commit
+- [ ] Not applicable (docs/frontend-only change)
+
 ## Checklist
 
 - [ ] My commits follow Conventional Commits (`feat:`, `fix:`, `docs:`, ...)
