@@ -29,7 +29,7 @@ maintainer: reviews, re-runs validation if needed, approves, merges
 ```bash
 gh repo clone unb-mds/CoOps && cd CoOps
 git remote add upstream https://github.com/danrleypereira/CoOps.git
-poetry install --extras dev
+uv sync
 cp EXAMPLE.secrets .secrets        # set GITHUB_TOKEN and GITHUB_ORG=unb-mds
 ```
 
@@ -54,7 +54,7 @@ integration tests) runs on the PR in `danrleypereira/CoOps`.
 ## 2. Local checks
 
 ```bash
-poetry run pytest
+uv run pytest
 
 # Capped run against the real organization (under a minute).
 # The commands write to ./data and ./cache, so run them from a scratch
@@ -62,12 +62,12 @@ poetry run pytest
 REPO=$PWD
 mkdir -p /tmp/coops-run && cd /tmp/coops-run
 export GITHUB_TOKEN=$(gh auth token) GITHUB_ORG=unb-mds
-poetry -C "$REPO" run coops-bronze --max-repos 3 --max-issues 20 --max-prs 20 \
+uv run --project "$REPO" coops-bronze --max-repos 3 --max-issues 20 --max-prs 20 \
   --max-commits-per-repo 50 --skip-structure
-poetry -C "$REPO" run coops-silver
-poetry -C "$REPO" run coops-gold
-poetry -C "$REPO" run coops-aggregate
-poetry -C "$REPO" run coops-registry
+uv run --project "$REPO" coops-silver
+uv run --project "$REPO" coops-gold
+uv run --project "$REPO" coops-aggregate
+uv run --project "$REPO" coops-registry
 jq '.organization_health' data/gold/executive_dashboard.json
 cd "$REPO"
 ```
@@ -86,7 +86,10 @@ PR branch itself.
 ### From the GitHub UI
 
 `unb-mds/CoOps` → **Actions** → **Validate Pipeline (manual)** → **Run
-workflow** → pick your branch → adjust the inputs → **Run workflow**.
+workflow** → pick your branch (not `main`) → adjust the inputs → **Run
+workflow**. The run uses the workflow file and code of the branch you pick;
+the fork's `main` only has the file so GitHub lets you dispatch it, and a run
+on `main` fails until upstream ships the `coops` package.
 
 ### From the gh CLI
 
@@ -121,6 +124,11 @@ gh run download "$RUN_ID" --repo unb-mds/CoOps --dir /tmp/coops-artifact
 Optional repository settings in `unb-mds/CoOps`: variable `COOPS_ORG`,
 secret `COOPS_GITHUB_TOKEN` (a PAT, to see private members/repos) and secret
 `GEMINI_API_KEY`.
+
+The generated `data/` is uploaded as the artifact `pipeline-data-<run id>`
+(kept 7 days). The fork is public, so anyone signed in to GitHub can download
+it: that is fine for public organization data. When `COOPS_GITHUB_TOKEN` is
+set (it can read private data), the upload is skipped.
 
 What a green run means: the tests passed, every command exited 0, and the
 **Check outputs** step found every expected Bronze/Silver/Gold/registry file
@@ -186,4 +194,6 @@ gh repo sync unb-mds/CoOps --source danrleypereira/CoOps --branch main
 have. The only expected case is a workflow registration commit (see the note
 in step 3) whose file has now reached upstream: check with
 `gh api repos/danrleypereira/CoOps/compare/main...unb-mds:CoOps:main --jq '.ahead_by, [.files[].filename]'`
-and, if that's all it is, re-run the sync with `--force`.
+and, if that's all it is, re-run the sync with `--force`. `--force` resets
+the fork's `main` to upstream, discarding anything else merged there, so run
+the same compare command afterwards and expect `ahead_by` to be `0`.
