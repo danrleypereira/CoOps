@@ -50,6 +50,20 @@ def test_coops_names_take_precedence(monkeypatch):
     assert (settings.github_token, settings.github_org) == ("pat", "unb-mds")
 
 
+def test_empty_values_count_as_unset(tmp_path, monkeypatch):
+    """`env: COOPS_ORG: ${{ vars.COOPS_ORG }}` is '' when the variable is undefined."""
+    monkeypatch.setenv("COOPS_GITHUB_TOKEN", "")
+    monkeypatch.setenv("GITHUB_TOKEN", "tok")
+    monkeypatch.setenv("COOPS_ORG", "")
+    monkeypatch.setenv("GITHUB_ORG", "org")
+    monkeypatch.setenv("GEMINI_MODEL", "")
+    (tmp_path / ".secrets").write_text("GEMINI_API_KEY=\n")
+    settings = Settings()
+    assert (settings.github_token, settings.github_org) == ("tok", "org")
+    assert settings.gemini_model == "gemini-3.5-flash-lite"
+    assert settings.gemini_api_key is None
+
+
 def test_reads_secrets_file(tmp_path):
     (tmp_path / ".secrets").write_text("GITHUB_TOKEN=from-file\nCOOPS_ORG=file-org\n")
     settings = Settings()
@@ -60,6 +74,24 @@ def test_environment_overrides_secrets_file(tmp_path, monkeypatch):
     (tmp_path / ".secrets").write_text("GITHUB_ORG=file-org\n")
     monkeypatch.setenv("GITHUB_ORG", "env-org")
     assert Settings().github_org == "env-org"
+
+
+def test_environment_beats_files_whatever_the_name(tmp_path, monkeypatch):
+    (tmp_path / ".secrets").write_text("COOPS_ORG=file-org\n")
+    monkeypatch.setenv("GITHUB_ORG", "env-org")
+    assert Settings().github_org == "env-org"
+
+
+def test_coops_name_wins_between_files(tmp_path):
+    (tmp_path / ".env").write_text("COOPS_ORG=dotenv-org\n")
+    (tmp_path / ".secrets").write_text("GITHUB_ORG=secrets-org\n")
+    assert Settings().github_org == "dotenv-org"
+
+
+def test_secrets_file_overrides_env_file(tmp_path):
+    (tmp_path / ".env").write_text("GITHUB_ORG=dotenv-org\n")
+    (tmp_path / ".secrets").write_text("GITHUB_ORG=secrets-org\n")
+    assert Settings().github_org == "secrets-org"
 
 
 def test_rejects_unknown_tenant_mode(monkeypatch):

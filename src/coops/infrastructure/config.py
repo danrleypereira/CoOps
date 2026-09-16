@@ -18,7 +18,13 @@ class Settings(BaseSettings):
 
     GitHub rejects Actions secrets and variables whose names start with
     GITHUB_, so the COOPS_ names can be mapped 1:1 from `secrets`/`vars`.
-    They take precedence over the GITHUB_ names.
+    Precedence: the environment beats `.env`/`.secrets`, whichever name it
+    uses (GITHUB_ORG in the environment wins over COOPS_ORG in `.secrets`).
+    Within the same source, the COOPS_ name wins over the GITHUB_ name; the
+    two files are read as a single source, `.secrets` overriding `.env`.
+
+    Empty values count as unset, because an undefined Actions secret or
+    variable expands to an empty string.
     """
 
     github_token: str | None = Field(
@@ -43,6 +49,7 @@ class Settings(BaseSettings):
 
     model_config = SettingsConfigDict(
         env_file=(".env", ".secrets"),
+        env_ignore_empty=True,
         extra="ignore",
     )
 
