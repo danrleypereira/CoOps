@@ -49,17 +49,17 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 - Production workflow jobs install without the dev dependency group.
 - Package version is `1.1.0.dev0`; `coops.__version__` is read from the
   package metadata.
-
-### Fixed
-- `dashboard/package-lock.json` was missing most dev dependencies, so
-  `npm ci` failed; `@testing-library/dom` (a required peer of
-  `@testing-library/react`) is now declared.
 - ETL modules moved under the `coops` namespace; all imports now use absolute
   `coops.*` paths.
 - CI workflows install the project with `uv sync --locked` and invoke the
   console commands (`uv run coops-*`) instead of `python src/*.py`.
 - Test/coverage configuration consolidated into `pyproject.toml`
   (`pytest.ini` and `.coveragerc` removed).
+
+### Fixed
+- `dashboard/package-lock.json` was missing most dev dependencies, so
+  `npm ci` failed; `@testing-library/dom` (a required peer of
+  `@testing-library/react`) is now declared.
 
 ### Removed
 - `sys.path` manipulation hacks in `src/` modules and `tests/conftest.py`.
