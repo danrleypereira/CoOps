@@ -121,10 +121,13 @@ gh run list --repo unb-mds/CoOps --commit "$SHA" \
   --json workflowName,status,conclusion,url --jq '.[] | [.workflowName, .status, .conclusion, .url] | @tsv'
 ```
 
-> Known issue: **Frontend Tests (Node 22)** fails at `npm ci` (`Cannot read
-> properties of null (reading 'edgesOut')`) on `main` too, which also cancels
-> the Node 20 job. Until it is fixed, a PR that doesn't touch `dashboard/`
-> only needs the Python jobs of *Unit Tests* to pass.
+> Known issue: the **Frontend Tests** jobs fail at `npm ci` on `main` too,
+> because `dashboard/package-lock.json` is out of sync with `package.json`
+> (npm on Node 20 reports the missing `@testing-library/*` entries; npm on
+> Node 22 crashes with `Cannot read properties of null (reading 'edgesOut')`),
+> and the first failure cancels the other job. Until a PR regenerates the
+> lockfile, a PR that doesn't touch `dashboard/` only needs the Python jobs of
+> *Unit Tests* to pass.
 
 ### Inputs
 

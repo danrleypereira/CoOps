@@ -45,7 +45,7 @@ mark the PR "Ready for review". See docs/TESTING_PULL_REQUESTS.md. -->
 - Validate Pipeline: <!-- https://github.com/unb-mds/CoOps/actions/runs/... -->
 - Unit Tests: <!-- link -->
 - Python Integration Tests: <!-- link -->
-- [ ] All runs are green (see the known Node 22 issue in the guide) and were made on the PR's latest commit
+- [ ] All runs are green (see the known frontend lockfile issue in the guide) and were made on the PR's latest commit
 - [ ] Not applicable (docs/frontend-only change)
 
 ## Checklist
