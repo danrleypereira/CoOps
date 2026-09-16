@@ -87,7 +87,7 @@ act workflow_dispatch -W .github/workflows/silver-process.yaml --secret-file .se
 act workflow_dispatch -W .github/workflows/gold-process.yaml --secret-file .secrets --bind --container-options "--user $(id -u):$(id -g)" -j process-gold-data
 ```
 
-> ℹ️ `gold-process.yaml` is the Gold workflow actually chained by the pipeline (it's what `silver-process.yaml` triggers in the `trigger-gold-processing` job, and the only one with the optional AI analysis step via `GEMINI_API_KEY`). `gold-aggregate.yaml` also exists in the repo but is a legacy/orphan workflow, not called by anything else — don't use it to test the real pipeline.
+> ℹ️ The pipeline chain is `bronze-extract.yaml` → `silver-process.yaml` → `gold-process.yaml` (timelines, optional AI analysis via `GEMINI_API_KEY`) → `gold-aggregate.yaml` (executive KPIs and performance tiers). When the chain succeeds on `main`, `deploy-pages.yaml` publishes the dashboard.
 
 > ⚠️ **Silver and Gold require `--bind` (they won't run without it)**: unlike `bronze-extract.yaml`, the "Pull latest data files" steps of `silver-process.yaml` and `gold-process.yaml` run `git branch --show-current` / `git pull` **without** the `if: ${{ !env.ACT }}` guard that Checkout has. Since Checkout is skipped under `act`/`gh act` (same reason explained below), if you forget `--bind` the container has no git repository mounted at all and the command fails with `fatal: not a git repository (or any parent up to mount point ...)`. Always include `--bind` (and `--container-options` to avoid `root:root`-owned generated files) for these two workflows.
 
@@ -111,7 +111,7 @@ gh act workflow_dispatch \
   --input max_issues=5 \
   --input max_prs=5
 ```
-`max_repos`/`max_issues`/`max_prs` also cap the corresponding paginated search (not just a cut on what's saved — it speeds up the search itself). Since the blacklist/fork filter runs after the `max_repos` cut, the result may have fewer repositories than requested if the first ones in the list get filtered out. `max_issues`/`max_prs` share the same paginated call (issues and PRs come from the same GitHub API response), so the cap uses whichever of the two values is larger to stop paginating early. Issue events (`issue_events_*.json`) aren't affected by these caps.
+`max_repos`/`max_issues`/`max_prs` also cap the corresponding paginated search (not just a cut on what's saved — it speeds up the search itself). Since the blacklist/fork filter runs after the `max_repos` cut, the result may have fewer repositories than requested if the first ones in the list get filtered out. `max_issues`/`max_prs` share the same paginated call (issues and PRs come from the same GitHub API response), so pagination stops early only when both are set (at the larger of the two); setting just one never truncates the other. All caps must be positive integers. Issue events (`issue_events_*.json`) aren't affected by these caps.
 
 This is the standard command for quick local extraction tests. It requires the `gh-act` extension (`gh extension install nektos/gh-act`) as an alternative to `act` installed via script (step 2 above) — both work, `gh act` just reuses the authentication already configured in `gh`.
 

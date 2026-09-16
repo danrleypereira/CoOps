@@ -161,19 +161,19 @@ each file with its record count.
 
 > Which workflow to use: `validate-pipeline.yaml` is for PRs.
 > `bronze-extract.yaml` and the Silver/Gold workflows it chains are the
-> production pipeline: they **commit data to the branch they run on** and
-> `bronze-extract.yaml` also runs daily. Don't dispatch them on a PR branch,
-> and keep them disabled in the fork unless you want the fork's `main` to
-> receive data commits.
+> production pipeline: they **commit data to the branch they run on**. In
+> `unb-mds/CoOps` they run on `main` (daily schedule and every push to
+> `main`) and feed the dashboard published on GitHub Pages. Don't dispatch
+> them on a PR branch.
 
 > GitHub only dispatches workflows whose file exists on the repository's
 > default branch; the run itself uses the file from `--ref`. If your PR adds
 > a new dispatchable workflow, a maintainer first registers it in the fork
 > through a small PR to `unb-mds/CoOps` `main` containing only that file
-> (this is how `validate-pipeline.yaml` itself was bootstrapped). Until the
-> file reaches upstream, the fork's `main` is ahead of upstream by that
-> commit, which is why the sync in step 5 may need `--force`. Alternatively,
-> test with `gh act` locally (see [RUNNING_LOCALLY.md](../RUNNING_LOCALLY.md)).
+> (this is how `validate-pipeline.yaml` itself was bootstrapped). When the
+> fork is synced after your PR is merged, keep upstream's version of that
+> file (step 5). Alternatively, test with `gh act` locally (see
+> [RUNNING_LOCALLY.md](../RUNNING_LOCALLY.md)).
 
 ## 4. Mark the PR ready
 
@@ -206,23 +206,33 @@ gh pr review "$PR" --repo danrleypereira/CoOps --approve
 gh pr merge "$PR" --repo danrleypereira/CoOps --squash
 ```
 
-The branch lives in `unb-mds/CoOps`, so delete it there after the merge,
-then sync the fork so the next PRs start from the new `main`:
+The branch lives in `unb-mds/CoOps`, so delete it there after the merge:
 
 ```bash
 git push https://github.com/unb-mds/CoOps.git --delete "$HEAD_REF"
-gh repo sync unb-mds/CoOps --source danrleypereira/CoOps --branch main
 ```
 
-> **Never force-sync a fork whose `main` receives pipeline data commits**
-> (a fork where `bronze-extract.yaml` is enabled). `--force` resets `main` to
-> upstream and deletes that data. Merge upstream into it instead:
-> `git fetch upstream && git merge upstream/main && git push origin main`.
+### Sync the fork
 
-`gh repo sync` refuses when the fork's `main` has commits upstream doesn't
-have. The only expected case is a workflow registration commit (see the note
-in step 3) whose file has now reached upstream: check with
-`gh api repos/danrleypereira/CoOps/compare/main...unb-mds:CoOps:main --jq '.ahead_by, [.files[].filename]'`
-and, if that's all it is, re-run the sync with `--force`. `--force` resets
-the fork's `main` to upstream, discarding anything else merged there, so run
-the same compare command afterwards and expect `ahead_by` to be `0`.
+`unb-mds/CoOps` `main` receives the pipeline's data commits, so it is never
+identical to upstream: bring upstream in with a **merge**, from a clone of
+the fork (step 0).
+
+```bash
+git fetch origin && git fetch upstream
+git switch main && git merge --ff-only origin/main
+git merge --no-edit upstream/main
+# On conflicts:
+#   data/...  -> keep the fork's data:   git checkout --ours -- data/ && git add data/
+#   any other file (e.g. a workflow registered in step 3) -> take upstream:
+#                                        git checkout --theirs -- <file> && git add <file>
+#   then: git commit --no-edit
+git push origin main
+```
+
+The push to `main` starts the pipeline (Bronze → Silver → Gold → KPIs →
+Pages deploy) with the merged code; follow it with
+`gh run list --repo unb-mds/CoOps --branch main --limit 3`.
+
+> **Never** use `gh repo sync --force` or `git push --force` on the fork's
+> `main`: it resets `main` to upstream and deletes the committed data.

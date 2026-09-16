@@ -16,10 +16,12 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   environment, `.env` or `.secrets` (`GITHUB_TOKEN`, `GITHUB_ORG`,
   `GEMINI_API_KEY`, `GEMINI_MODEL`, ...) — issue
   [#18](https://github.com/danrleypereira/CoOps/issues/18).
-- `coops.domain.tenancy`: `TenantId` and `CorrelationId` value objects —
-  issue [#19](https://github.com/danrleypereira/CoOps/issues/19).
-- `coops-bronze` flags `--max-repos`, `--max-issues` and `--max-prs`, and the
-  matching `workflow_dispatch` inputs of `bronze-extract.yaml`.
+- `coops.domain.tenancy`: `TenantId` (organization name, trimmed and
+  lower-cased) and `CorrelationId` value objects — issue
+  [#19](https://github.com/danrleypereira/CoOps/issues/19).
+- `coops-bronze` flags `--max-repos`, `--max-issues` and `--max-prs`
+  (positive integers; capping issues never truncates PRs and vice versa),
+  and the matching `workflow_dispatch` inputs of `bronze-extract.yaml`.
 - **Validate Pipeline (manual)** workflow and
   `docs/TESTING_PULL_REQUESTS.md`: PRs are validated against a real
   organization in `unb-mds/CoOps` before review.
@@ -39,6 +41,19 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   keys.
 - The integration test workflow reports coverage without a threshold;
   coverage is gated by the unit test workflow.
+- The daily pipeline now runs the KPI aggregation (`gold-aggregate.yaml`)
+  after Gold processing, and the GitHub Pages deploy runs when the whole
+  chain succeeds on `main` (it was triggered by a workflow nothing called).
+- `bronze-extract.yaml` no longer runs on pull requests (it committed data to
+  the PR branch); PRs are validated with `validate-pipeline.yaml`.
+- Production workflow jobs install without the dev dependency group.
+- Package version is `1.1.0.dev0`; `coops.__version__` is read from the
+  package metadata.
+
+### Fixed
+- `dashboard/package-lock.json` was missing most dev dependencies, so
+  `npm ci` failed; `@testing-library/dom` (a required peer of
+  `@testing-library/react`) is now declared.
 - ETL modules moved under the `coops` namespace; all imports now use absolute
   `coops.*` paths.
 - CI workflows install the project with `uv sync --locked` and invoke the
