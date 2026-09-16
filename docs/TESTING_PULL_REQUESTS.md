@@ -48,8 +48,10 @@ gh pr create --draft --repo danrleypereira/CoOps \
   --head unb-mds:feat/<issue>-<topic> --base main
 ```
 
-Opening the PR as a draft signals that it is not validated yet. CI (unit and
-integration tests) runs on the PR in `danrleypereira/CoOps`.
+Opening the PR as a draft signals that it is not validated yet.
+
+> GitHub Actions is currently disabled in `danrleypereira/CoOps`, so no checks
+> appear on the PR there. All CI for a PR runs in the fork, in step 3.
 
 ## 2. Local checks
 
@@ -109,7 +111,20 @@ gh run view "$RUN_ID" --repo unb-mds/CoOps --json url --jq .url   # paste this i
 
 # inspect the generated data locally
 gh run download "$RUN_ID" --repo unb-mds/CoOps --dir /tmp/coops-artifact
+
+# the regular CI workflows (Python version matrix, frontend tests)
+for w in python-unit-tests.yaml python-integration-tests.yaml; do
+  gh workflow run "$w" --repo unb-mds/CoOps --ref "$BRANCH"
+done
+sleep 10
+gh run list --repo unb-mds/CoOps --commit "$SHA" \
+  --json workflowName,status,conclusion,url --jq '.[] | [.workflowName, .status, .conclusion, .url] | @tsv'
 ```
+
+> Known issue: **Frontend Tests (Node 22)** fails at `npm ci` (`Cannot read
+> properties of null (reading 'edgesOut')`) on `main` too, which also cancels
+> the Node 20 job. Until it is fixed, a PR that doesn't touch `dashboard/`
+> only needs the Python jobs of *Unit Tests* to pass.
 
 ### Inputs
 
@@ -153,8 +168,8 @@ each file with its record count.
 
 ## 4. Mark the PR ready
 
-Add the run link to the **Organization validation** section of the PR
-description, then:
+Add the run links (validation, unit tests, integration tests) to the
+**Organization validation** section of the PR description, then:
 
 ```bash
 gh pr ready <number> --repo danrleypereira/CoOps
@@ -167,15 +182,15 @@ match the PR's latest commit.
 
 ```bash
 PR=<number>
-gh pr checks "$PR" --repo danrleypereira/CoOps            # CI green
 read -r HEAD_SHA HEAD_REF < <(gh pr view "$PR" --repo danrleypereira/CoOps \
   --json headRefOid,headRefName --jq '"\(.headRefOid) \(.headRefName)"')
 
-# a successful validation run must exist for the PR's latest commit
-gh run list --repo unb-mds/CoOps --workflow validate-pipeline.yaml \
-  --commit "$HEAD_SHA" --status success --json url --jq '.[].url'
+# every run for the PR's latest commit: Validate Pipeline must be a success,
+# and so must Python Integration Tests and the Python jobs of Unit Tests
+gh run list --repo unb-mds/CoOps --commit "$HEAD_SHA" \
+  --json workflowName,conclusion,url --jq '.[] | [.workflowName, .conclusion, .url] | @tsv'
 
-# none? run it yourself
+# missing? run them yourself (step 3)
 gh workflow run validate-pipeline.yaml --repo unb-mds/CoOps --ref "$HEAD_REF" -f org=unb-mds
 
 gh pr review "$PR" --repo danrleypereira/CoOps --approve

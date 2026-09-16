@@ -38,12 +38,14 @@ checks you performed. -->
 ## Organization validation
 
 <!-- Required when the PR touches src/, workflows, or packaging. Open the PR as a
-draft, run "Validate Pipeline (manual)" in unb-mds/CoOps on this branch, and
-paste the run link below. Then mark the PR "Ready for review".
-See docs/TESTING_PULL_REQUESTS.md. -->
+draft, run "Validate Pipeline (manual)", "Unit Tests" and "Python Integration
+Tests" in unb-mds/CoOps on this branch, and paste the run links below. Then
+mark the PR "Ready for review". See docs/TESTING_PULL_REQUESTS.md. -->
 
-- Run: <!-- https://github.com/unb-mds/CoOps/actions/runs/... -->
-- [ ] The run is green and was made on the PR's latest commit
+- Validate Pipeline: <!-- https://github.com/unb-mds/CoOps/actions/runs/... -->
+- Unit Tests: <!-- link -->
+- Python Integration Tests: <!-- link -->
+- [ ] All runs are green (see the known Node 22 issue in the guide) and were made on the PR's latest commit
 - [ ] Not applicable (docs/frontend-only change)
 
 ## Checklist
