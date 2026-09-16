@@ -56,17 +56,20 @@ integration tests) runs on the PR in `danrleypereira/CoOps`.
 ```bash
 poetry run pytest
 
-# Capped run against the real organization (a few seconds to a minute).
-# Run it in a scratch directory: the commands write to ./data and ./cache.
+# Capped run against the real organization (under a minute).
+# The commands write to ./data and ./cache, so run them from a scratch
+# directory instead of your checkout.
+REPO=$PWD
 mkdir -p /tmp/coops-run && cd /tmp/coops-run
-GITHUB_TOKEN=$(gh auth token) GITHUB_ORG=unb-mds \
-  poetry -C "$OLDPWD" run coops-bronze --max-repos 3 --max-issues 20 --max-prs 20 \
-    --max-commits-per-repo 50 --skip-structure
-poetry -C "$OLDPWD" run coops-silver
-poetry -C "$OLDPWD" run coops-gold
-poetry -C "$OLDPWD" run coops-aggregate
-poetry -C "$OLDPWD" run coops-registry
+export GITHUB_TOKEN=$(gh auth token) GITHUB_ORG=unb-mds
+poetry -C "$REPO" run coops-bronze --max-repos 3 --max-issues 20 --max-prs 20 \
+  --max-commits-per-repo 50 --skip-structure
+poetry -C "$REPO" run coops-silver
+poetry -C "$REPO" run coops-gold
+poetry -C "$REPO" run coops-aggregate
+poetry -C "$REPO" run coops-registry
 jq '.organization_health' data/gold/executive_dashboard.json
+cd "$REPO"
 ```
 
 If the frontend changed, also run `cd dashboard && npm run test:coverage`.
@@ -88,15 +91,18 @@ workflow** → pick your branch → adjust the inputs → **Run workflow**.
 ### From the gh CLI
 
 ```bash
-BRANCH=feat/<issue>-<topic>
+BRANCH=$(git branch --show-current)
+SHA=$(git rev-parse HEAD)              # must already be pushed
 
 gh workflow run validate-pipeline.yaml --repo unb-mds/CoOps --ref "$BRANCH" \
   -f org=unb-mds -f max_repos=3 -f max_issues=20 -f max_prs=20
 
-# follow it
+# follow the run for this exact commit (it takes a few seconds to appear)
+sleep 10
 RUN_ID=$(gh run list --repo unb-mds/CoOps --workflow validate-pipeline.yaml \
-  --branch "$BRANCH" --limit 1 --json databaseId --jq '.[0].databaseId')
+  --commit "$SHA" --limit 1 --json databaseId --jq '.[0].databaseId')
 gh run watch "$RUN_ID" --repo unb-mds/CoOps --exit-status
+gh run view "$RUN_ID" --repo unb-mds/CoOps --json url --jq .url   # paste this in the PR
 
 # inspect the generated data locally
 gh run download "$RUN_ID" --repo unb-mds/CoOps --dir /tmp/coops-artifact
@@ -128,10 +134,14 @@ each file with its record count.
 > and keep them disabled in the fork unless you want the fork's `main` to
 > receive data commits.
 
-> A workflow can only be dispatched once its file is on the repository's
-> default branch. If your PR is the one adding or renaming a dispatchable
-> workflow, ask a maintainer to sync `unb-mds/CoOps` `main` first (or test
-> with `gh act` locally, see [RUNNING_LOCALLY.md](../RUNNING_LOCALLY.md)).
+> GitHub only dispatches workflows whose file exists on the repository's
+> default branch; the run itself uses the file from `--ref`. If your PR adds
+> a new dispatchable workflow, a maintainer first registers it in the fork
+> through a small PR to `unb-mds/CoOps` `main` containing only that file
+> (this is how `validate-pipeline.yaml` itself was bootstrapped). Until the
+> file reaches upstream, the fork's `main` is ahead of upstream by that
+> commit, which is why the sync in step 5 uses `--force`. Alternatively,
+> test with `gh act` locally (see [RUNNING_LOCALLY.md](../RUNNING_LOCALLY.md)).
 
 ## 4. Mark the PR ready
 
@@ -150,21 +160,30 @@ match the PR's latest commit.
 ```bash
 PR=<number>
 gh pr checks "$PR" --repo danrleypereira/CoOps            # CI green
-gh pr view "$PR" --repo danrleypereira/CoOps --json headRefOid,headRefName
+read -r HEAD_SHA HEAD_REF < <(gh pr view "$PR" --repo danrleypereira/CoOps \
+  --json headRefOid,headRefName --jq '"\(.headRefOid) \(.headRefName)"')
 
-# confirm a successful validation run exists for that exact commit
+# a successful validation run must exist for the PR's latest commit
 gh run list --repo unb-mds/CoOps --workflow validate-pipeline.yaml \
-  --json headSha,conclusion,url --jq '.[] | select(.conclusion=="success")'
+  --commit "$HEAD_SHA" --status success --json url --jq '.[].url'
 
-# or run it yourself
-gh workflow run validate-pipeline.yaml --repo unb-mds/CoOps --ref <headRefName> -f org=unb-mds
+# none? run it yourself
+gh workflow run validate-pipeline.yaml --repo unb-mds/CoOps --ref "$HEAD_REF" -f org=unb-mds
 
 gh pr review "$PR" --repo danrleypereira/CoOps --approve
-gh pr merge "$PR" --repo danrleypereira/CoOps --squash --delete-branch
+gh pr merge "$PR" --repo danrleypereira/CoOps --squash
 ```
 
-After merging, sync the fork so the next PRs start from the new `main`:
+The branch lives in `unb-mds/CoOps`, so delete it there after the merge,
+then sync the fork so the next PRs start from the new `main`:
 
 ```bash
+git push origin --delete "$HEAD_REF"
 gh repo sync unb-mds/CoOps --source danrleypereira/CoOps --branch main
 ```
+
+`gh repo sync` refuses when the fork's `main` has commits upstream doesn't
+have. The only expected case is a workflow registration commit (see the note
+in step 3) whose file has now reached upstream: check with
+`gh api repos/danrleypereira/CoOps/compare/main...unb-mds:CoOps:main --jq '.ahead_by, [.files[].filename]'`
+and, if that's all it is, re-run the sync with `--force`.
