@@ -60,6 +60,12 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 - `dashboard/package-lock.json` was missing most dev dependencies, so
   `npm ci` failed; `@testing-library/dom` (a required peer of
   `@testing-library/react`) is now declared.
+- Dashboard: the test suite and the production build (`tsc`) pass again;
+  the tests were updated to the current UI, orphan tests for components that
+  never existed were removed, and new tests raise frontend coverage to 91%.
+  Fixes found on the way: the Structure page's member filter, the Analytics
+  heatmap's weekday rows, HTTP status in data-fetch errors, and null entries
+  in `filterMetadata`.
 
 ### Removed
 - `sys.path` manipulation hacks in `src/` modules and `tests/conftest.py`.

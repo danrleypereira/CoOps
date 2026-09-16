@@ -2,8 +2,8 @@
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Beta-yellow.svg)](#status)
-[![Backend tests](https://img.shields.io/badge/backend%20coverage-88%25-brightgreen.svg)](#running-tests)
-[![Frontend tests](https://img.shields.io/badge/frontend%20coverage-94%25-brightgreen.svg)](#running-tests)
+[![Backend tests](https://img.shields.io/badge/backend%20coverage-87%25-brightgreen.svg)](#running-tests)
+[![Frontend tests](https://img.shields.io/badge/frontend%20coverage-91%25-brightgreen.svg)](#running-tests)
 [![Contributions welcome](https://img.shields.io/badge/Contributions-Welcome-success)](CONTRIBUTING.md)
 
 CoOps is an open-source full-stack dashboard for **continuous monitoring of
@@ -122,8 +122,8 @@ The dashboard reads the generated JSON files in `data/` and visualizes them at
 ## Running Tests
 
 ```bash
-uv run pytest                            # backend; current coverage: 88%
-cd dashboard && npm run test:coverage    # frontend; current coverage: 94%
+uv run pytest                            # backend; current coverage: 87%
+cd dashboard && npm run test:coverage    # frontend; current coverage: 91%
 ```
 
 CI runs both suites on every push and pull request — see
@@ -148,7 +148,7 @@ config under `dashboard/vitest.config.ts`.
 ## Status
 
 CoOps is in **Beta**. The pipeline runs in production on two university
-deployments, the backend test coverage is 88% and the frontend is 94%, but the
+deployments, the backend test coverage is 87% and the frontend is 91%, but the
 public API surface (CLI flags, JSON schema of `data/silver/`,
 `data/gold/`) may still evolve. See [CHANGELOG.md](CHANGELOG.md) for the
 release history and [open issues](https://github.com/danrleypereira/CoOps/issues)

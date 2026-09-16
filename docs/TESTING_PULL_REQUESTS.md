@@ -124,12 +124,6 @@ gh run list --repo unb-mds/CoOps --commit "$SHA" \
   --json workflowName,status,conclusion,url --jq '.[] | [.workflowName, .status, .conclusion, .url] | @tsv'
 ```
 
-> Known issue: the **Frontend Tests** jobs fail. The dashboard tests and type
-> check are out of date with the restructured UI (the failures are the same on
-> `main`), and the first failing Node version cancels the other. Until that is
-> fixed, a PR that doesn't touch `dashboard/` only needs the Python jobs of
-> *Unit Tests* to pass.
->
 > If you change `dashboard/package.json`, regenerate the lockfile with npm 11
 > (`npx npm@11 install --package-lock-only`): npm 10 crashes with
 > `Cannot read properties of null (reading 'edgesOut')` while resolving this
@@ -194,8 +188,8 @@ PR=<number>
 read -r HEAD_SHA HEAD_REF < <(gh pr view "$PR" --repo danrleypereira/CoOps \
   --json headRefOid,headRefName --jq '"\(.headRefOid) \(.headRefName)"')
 
-# every run for the PR's latest commit: Validate Pipeline must be a success,
-# and so must Python Integration Tests and the Python jobs of Unit Tests
+# every run for the PR's latest commit must be a success:
+# Validate Pipeline, Unit Tests and Python Integration Tests
 gh run list --repo unb-mds/CoOps --commit "$HEAD_SHA" \
   --json workflowName,conclusion,url --jq '.[] | [.workflowName, .conclusion, .url] | @tsv'
 
