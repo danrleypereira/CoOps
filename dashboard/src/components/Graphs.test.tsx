@@ -237,32 +237,33 @@ describe('Graphs Components - Cobertura Completa', () => {
       expect(container.querySelector('svg')).toBeInTheDocument();
     });
 
+    // The line view is the default, so the button offers switching to bars.
     test('renderiza botão de toggle', () => {
       render(<Histogram data={mockBasicData} type="commit" />);
       const button = screen.getByRole('button');
-      expect(button).toHaveTextContent('Line Graph');
+      expect(button).toHaveTextContent('Bar Graph');
     });
 
-    test('alterna para line graph ao clicar', async () => {
+    test('alterna para bar graph ao clicar', async () => {
       render(<Histogram data={mockBasicData} type="commit" />);
       const button = screen.getByRole('button');
-      
+
       fireEvent.click(button);
-      
+
       await waitFor(() => {
-        expect(button).toHaveTextContent('Bar Graph');
+        expect(button).toHaveTextContent('Line Graph');
       });
     });
 
-    test('alterna de volta para bar graph', async () => {
+    test('alterna de volta para line graph', async () => {
       render(<Histogram data={mockBasicData} type="commit" />);
       const button = screen.getByRole('button');
-      
-      fireEvent.click(button);
-      await waitFor(() => expect(button).toHaveTextContent('Bar Graph'));
-      
+
       fireEvent.click(button);
       await waitFor(() => expect(button).toHaveTextContent('Line Graph'));
+
+      fireEvent.click(button);
+      await waitFor(() => expect(button).toHaveTextContent('Bar Graph'));
     });
 
     test('renderiza com type="issue"', () => {
@@ -330,8 +331,8 @@ describe('Graphs Components - Cobertura Completa', () => {
 
     test('renderiza controles de filtro', () => {
       render(<CollaborationNetworkGraph data={mockCollaborationData} />);
-      expect(screen.getByText(/Conexões mínimas/i)).toBeInTheDocument();
-      expect(screen.getByText(/Ocultar bots/i)).toBeInTheDocument();
+      expect(screen.getByText(/Minimum connections/i)).toBeInTheDocument();
+      expect(screen.getByText(/Hide bots/i)).toBeInTheDocument();
     });
 
     test('slider de threshold funciona', () => {
@@ -353,7 +354,7 @@ describe('Graphs Components - Cobertura Completa', () => {
 
     test('botão de reset funciona', () => {
       render(<CollaborationNetworkGraph data={mockCollaborationData} />);
-      const resetButton = screen.getByRole('button', { name: /Resetar vista/i });
+      const resetButton = screen.getByRole('button', { name: /Reset view/i });
       
       fireEvent.click(resetButton);
       expect(resetButton).toBeInTheDocument();
@@ -365,8 +366,13 @@ describe('Graphs Components - Cobertura Completa', () => {
         { user1: 'Bob', user2: 'Charlie', repo: 'repo1', collaboration_type: 'commit' },
       ];
       
+      // Threshold 1 so every non-bot node is kept; the bot edge must be dropped.
       render(<CollaborationNetworkGraph data={dataWithBots} />);
-      expect(screen.getByText(/Ocultar bots/i)).toBeInTheDocument();
+      fireEvent.change(screen.getByRole('slider'), { target: { value: '1' } });
+      expect(screen.getByText(/Showing 2 collaborators with 1 connections/)).toBeInTheDocument();
+
+      fireEvent.click(screen.getByRole('checkbox'));
+      expect(screen.getByText(/Showing 4 collaborators with 2 connections/)).toBeInTheDocument();
     });
 
     test('renderiza com dados vazios', () => {
@@ -376,8 +382,7 @@ describe('Graphs Components - Cobertura Completa', () => {
 
     test('mostra contador de colaboradores', () => {
       render(<CollaborationNetworkGraph data={mockCollaborationData} />);
-      expect(screen.getByText(/Exibindo/i)).toBeInTheDocument();
-      expect(screen.getByText(/colaboradores/i)).toBeInTheDocument();
+      expect(screen.getByText(/Showing \d+ collaborators with \d+ connections/)).toBeInTheDocument();
     });
 
     test('renderiza com dimensões customizadas', () => {
