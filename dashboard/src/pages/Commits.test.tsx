@@ -583,12 +583,13 @@ describe('CommitsPage Component', () => {
       });
     });
 
-    test('grid de gráficos tem classes corretas', async () => {
+    test('linha de gráficos tem classes corretas', async () => {
       renderWithRouter();
 
       await waitFor(() => {
-        const grid = screen.getByText('Timeline').parentElement?.parentElement?.parentElement;
-        expect(grid).toHaveClass('grid', 'grid-cols-1', 'md:grid-cols-2');
+        const row = screen.getByText('Timeline').parentElement?.parentElement?.parentElement;
+        expect(row).toHaveClass('flex', 'gap-6');
+        expect(row).toContainElement(screen.getByText('Contributors'));
       });
     });
   });
@@ -962,22 +963,24 @@ describe('CommitsPage Component', () => {
 
   // ========== RESPONSIVIDADE ==========
   describe('Responsividade', () => {
-    test('grid usa breakpoint md para 2 colunas', async () => {
+    test('Timeline expande e Contributors tem largura fixa', async () => {
       renderWithRouter();
 
       await waitFor(() => {
         const timelineCard = screen.getByText('Timeline').parentElement?.parentElement;
-        const grid = timelineCard?.parentElement;
-        expect(grid).toHaveClass('grid', 'grid-cols-1', 'md:grid-cols-2');
+        const contributorsCard = screen.getByText('Contributors').parentElement?.parentElement;
+        expect(timelineCard).toHaveClass('flex-1');
+        expect(contributorsCard).toHaveClass('w-96', 'flex-shrink-0');
       });
     });
 
-    test('Timeline tem largura e altura fixas', async () => {
+    test('Timeline tem altura mínima', async () => {
       renderWithRouter();
 
       await waitFor(() => {
         const timelineCard = screen.getByText('Timeline').parentElement?.parentElement;
-        expect(timelineCard).toHaveClass('h-170', 'w-170');
+        const content = timelineCard?.querySelector(':scope > .p-6');
+        expect(content).toHaveClass('min-h-[550px]');
       });
     });
   });

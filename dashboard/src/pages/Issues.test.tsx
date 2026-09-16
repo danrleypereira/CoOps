@@ -170,12 +170,14 @@ describe('IssuesPage Component', () => {
       });
     });
 
-    test('renderiza grid de gráficos', async () => {
+    test('renderiza linha de gráficos', async () => {
       renderWithRouter();
 
+      // Timeline and Contributors cards sit side by side in a flex row
       await waitFor(() => {
-        const grid = document.querySelector('.grid.grid-cols-1.md\\:grid-cols-2');
-        expect(grid).toBeInTheDocument();
+        const row = screen.getByText('Timeline').closest('.border.rounded-lg')?.parentElement;
+        expect(row).toHaveClass('flex', 'gap-6');
+        expect(row).toContainElement(screen.getByText('Contributors'));
       });
     });
   });
@@ -266,10 +268,10 @@ describe('IssuesPage Component', () => {
       renderWithRouter();
 
       const containers = screen.getAllByText('Loading...');
-      const contributorsContainer = containers[1]?.parentElement;
-      if (contributorsContainer) {
-        expect(contributorsContainer).toHaveClass('h-[140px]');
-      }
+      expect(containers).toHaveLength(2);
+      const contributorsContainer = containers[1].parentElement;
+      expect(contributorsContainer).toHaveClass('h-full', 'flex', 'items-center', 'justify-center');
+      expect(contributorsContainer?.parentElement).toHaveClass('h-[550px]');
     });
   });
 
@@ -603,21 +605,23 @@ describe('IssuesPage Component', () => {
       });
     });
 
-    test('grid usa 2 colunas em md', async () => {
+    test('Timeline expande e Contributors tem largura fixa', async () => {
       renderWithRouter();
 
       await waitFor(() => {
-        const grid = document.querySelector('.grid');
-        expect(grid).toHaveClass('grid-cols-1', 'md:grid-cols-2');
+        const timelineCard = screen.getByText('Timeline').closest('.border.rounded-lg');
+        const contributorsCard = screen.getByText('Contributors').closest('.border.rounded-lg');
+        expect(timelineCard).toHaveClass('flex-1');
+        expect(contributorsCard).toHaveClass('w-96', 'flex-shrink-0');
       });
     });
 
-    test('Timeline tem dimensões fixas', async () => {
+    test('Timeline tem altura mínima', async () => {
       renderWithRouter();
 
       await waitFor(() => {
-        const timelineCard = screen.getByText('Timeline').closest('.h-170.w-170');
-        expect(timelineCard).toBeInTheDocument();
+        const content = screen.getByTestId('histogram').parentElement;
+        expect(content).toHaveClass('p-6', 'min-h-[550px]');
       });
     });
 
@@ -862,12 +866,13 @@ describe('IssuesPage Component', () => {
 
   // ========== RESPONSIVIDADE ==========
   describe('Responsividade', () => {
-    test('grid adapta para mobile', async () => {
+    test('cards ficam lado a lado em linha flex', async () => {
       renderWithRouter();
 
       await waitFor(() => {
-        const grid = document.querySelector('.grid-cols-1');
-        expect(grid).toBeInTheDocument();
+        const row = screen.getByText('Timeline').closest('.border.rounded-lg')?.parentElement;
+        expect(row).toHaveClass('flex');
+        expect(row).not.toHaveClass('flex-col');
       });
     });
 
@@ -901,12 +906,13 @@ describe('IssuesPage Component', () => {
       });
     });
 
-    test('Timeline tem pt-3', async () => {
+    test('Timeline tem padding e altura mínima', async () => {
       renderWithRouter();
 
       await waitFor(() => {
-        const content = screen.getByTestId('histogram').closest('.pt-3');
+        const content = screen.getByTestId('histogram').closest('.p-6');
         expect(content).toBeInTheDocument();
+        expect(content).toHaveClass('min-h-[550px]');
       });
     });
   });
