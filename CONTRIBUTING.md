@@ -68,6 +68,7 @@ Detalhes: veja `ARCHITECTURE.md`.
    uv run coops-aggregate
    uv run coops-registry
    ```
+   Os comandos escrevem em `./data` e `./cache`; na raiz do repositório eles sobrescrevem os arquivos rastreados `data/master_registry.json` e `data/data_catalog.json` (não commite essas mudanças). Para manter o checkout limpo, rode de outro diretório com `uv run --project <caminho-do-CoOps> ...`.
 
 Para simular GitHub Actions localmente e conectar o frontend aos dados gerados (opcional): consulte `RUNNING_LOCALLY.md`.
 

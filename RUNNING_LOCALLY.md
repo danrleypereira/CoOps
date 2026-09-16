@@ -55,7 +55,7 @@ GITHUB_TOKEN=ghp_your_real_token_here
 GITHUB_ORG=coops-org
 ```
 
-> `GITHUB_ORG` in `.secrets` controls which org is extracted when running `uv run coops-bronze` directly, or `act`/`gh act --secret-file .secrets`. `COOPS_ORG` / `COOPS_GITHUB_TOKEN` are accepted too and take precedence. On GitHub Actions the workflows use the `COOPS_ORG` repository variable, falling back to the org that owns the repository (`github.repository_owner`): GitHub doesn't allow secret or variable names starting with `GITHUB_`.
+> `GITHUB_ORG` in `.secrets` controls which org is extracted when running `uv run coops-bronze` directly. `COOPS_ORG` / `COOPS_GITHUB_TOKEN` are accepted too and take precedence. It does **not** apply to `act`/`gh act`: `--secret-file` only fills `secrets.*`, and the workflows set `GITHUB_ORG` from the `COOPS_ORG` variable, so pass `--var COOPS_ORG=<org>` (as in the examples below), otherwise the owner of your `origin` remote is extracted. On GitHub Actions the workflows use the `COOPS_ORG` repository variable, falling back to the org that owns the repository (`github.repository_owner`): GitHub doesn't allow secret or variable names starting with `GITHUB_`.
 
 > To validate a branch against a real organization on GitHub Actions without committing any data, use the **Validate Pipeline (manual)** workflow — see [docs/TESTING_PULL_REQUESTS.md](docs/TESTING_PULL_REQUESTS.md).
 
@@ -67,14 +67,14 @@ The system uses a layered architecture: Bronze → Silver → Gold.
 
 ### Option 1: Full pipeline (Bronze → Silver → Gold)
 ```bash
-act workflow_dispatch -W .github/workflows/bronze-extract.yaml --secret-file .secrets --bind
+act workflow_dispatch -W .github/workflows/bronze-extract.yaml --secret-file .secrets --var COOPS_ORG=coops-org --bind
 ```
 
 ### Option 2: Individual layers
 
 **Bronze layer (raw data extraction)**:
 ```bash
-act workflow_dispatch -W .github/workflows/bronze-extract.yaml --secret-file .secrets --bind -j extract-bronze-data
+act workflow_dispatch -W .github/workflows/bronze-extract.yaml --secret-file .secrets --var COOPS_ORG=coops-org --bind -j extract-bronze-data
 ```
 
 **Silver layer (analytics processing)**:
@@ -101,6 +101,7 @@ gh act workflow_dispatch \
   -W .github/workflows/bronze-extract.yaml \
   -j extract-bronze-data \
   --secret-file .secrets \
+  --var COOPS_ORG=coops-org \
   --bind \
   --container-options "--user $(id -u):$(id -g)" \
   --input max_repos=3 \
@@ -115,6 +116,8 @@ gh act workflow_dispatch \
 This is the standard command for quick local extraction tests. It requires the `gh-act` extension (`gh extension install nektos/gh-act`) as an alternative to `act` installed via script (step 2 above) — both work, `gh act` just reuses the authentication already configured in `gh`.
 
 > ⚠️ **Careful with `--bind`**: it mounts the real repository inside the container, and the container runs as `root` — any file created/modified (in `cache/`, `data/`, etc.) ends up owned by `root:root` on the host. The "Checkout repository" step of `bronze-extract.yaml` already has `if: ${{ !env.ACT }}` (same pattern as `silver-process.yaml`/`gold-process.yaml`), so under `act`/`gh act` it's skipped — `actions/checkout@v4` would otherwise run `git clean -ffdx` by default before running, which would delete even files ignored by `.gitignore` (like `.secrets`) directly in your real repo. This already protects tracked files/`.secrets`, but doesn't prevent the `root:root` ownership on generated files — for that, add `--container-options "--user $(id -u):$(id -g)"` to the command (runs the container with your UID/GID; if your `act` ignores that flag, use `sudo chown -R $(whoami):$(whoami) .` as a fallback). Even so, prefer committing or `git stash -u` before running locally, as an extra safety net.
+
+> ⚠️ With `--bind`, the workflows' `uv sync --locked` step also runs against your checkout and rewrites `.venv` for the container's Python. Afterwards, `uv run` on your machine rebuilds it (a few seconds). If it is owned by `root`, remove it first: `sudo rm -rf .venv`.
 
 ### Legacy workflow (old system — DEPRECATED)
 ```bash
@@ -133,12 +136,15 @@ uv run coops-bronze --cache
 # 2. Silver: processing
 uv run coops-silver
 
-# 3. Gold: executive KPIs
+# 3. Gold: timelines, then executive KPIs and performance tiers
 uv run coops-gold
+uv run coops-aggregate
 
 # 4. Registry: update the registry
 uv run coops-registry
 ```
+
+> The commands read and write `./data` and `./cache`. From the repository root they overwrite the tracked `data/master_registry.json` and `data/data_catalog.json` (and, in a production fork, the committed data); don't commit those changes from a local run. To keep your checkout clean, run them from a scratch directory with `uv run --project <repo> ...` (see [docs/TESTING_PULL_REQUESTS.md](docs/TESTING_PULL_REQUESTS.md#2-local-checks)).
 
 ### 📁 Generated data structure
 
@@ -165,13 +171,13 @@ After a successful run, you'll have (all under `data/`, at the project root):
 ### 📊 Verifying the results
 
 ```bash
-# Bronze
+# Bronze (lists; the first item may be a `_metadata` record)
 ls -la data/bronze/
-jq '.organization_health' data/bronze/repositories_filtered.json
+jq '[.[] | select(has("_metadata") | not) | .name]' data/bronze/repositories_filtered.json
 
 # Silver
 ls -la data/silver/
-jq '.total_contributors' data/silver/contribution_metrics.json
+jq '[.[] | select(has("_metadata") | not)] | length' data/silver/contribution_metrics.json
 
 # Gold
 ls -la data/gold/

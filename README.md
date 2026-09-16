@@ -103,6 +103,11 @@ uv run coops-aggregate
 uv run coops-registry
 ```
 
+The commands write to `./data` and `./cache` in the current directory. From
+the repository root they overwrite the tracked `data/*.json` registry files;
+to keep your checkout clean, run them from another directory with
+`uv run --project <path-to-CoOps> ...`.
+
 Optional AI analysis step (requires `GEMINI_API_KEY`):
 
 ```bash

@@ -27,8 +27,7 @@ maintainer: reviews, re-runs validation if needed, approves, merges
 ## 0. One-time setup
 
 ```bash
-gh repo clone unb-mds/CoOps && cd CoOps
-git remote add upstream https://github.com/danrleypereira/CoOps.git
+gh repo clone unb-mds/CoOps && cd CoOps   # also adds the `upstream` remote
 uv sync
 cp EXAMPLE.secrets .secrets        # set GITHUB_TOKEN and GITHUB_ORG=unb-mds
 ```
@@ -63,7 +62,7 @@ uv run pytest
 # The commands write to ./data and ./cache, so run them from a scratch
 # directory instead of your checkout.
 REPO=$PWD
-mkdir -p /tmp/coops-run && cd /tmp/coops-run
+cd "$(mktemp -d)"                    # fresh directory: no data from earlier runs
 export GITHUB_TOKEN=$(gh auth token) GITHUB_ORG=unb-mds
 uv run --project "$REPO" coops-bronze --max-repos 3 --max-issues 20 --max-prs 20 \
   --max-commits-per-repo 50 --skip-structure
@@ -99,14 +98,17 @@ on `main` fails until upstream ships the `coops` package.
 ```bash
 BRANCH=$(git branch --show-current)
 SHA=$(git rev-parse HEAD)              # must already be pushed
+START=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 
 gh workflow run validate-pipeline.yaml --repo unb-mds/CoOps --ref "$BRANCH" \
   -f org=unb-mds -f max_repos=3 -f max_issues=20 -f max_prs=20
 
-# follow the run for this exact commit (it takes a few seconds to appear)
+# follow the run just dispatched for this exact commit (it takes a few
+# seconds to appear; older runs on the same commit are ignored)
 sleep 10
 RUN_ID=$(gh run list --repo unb-mds/CoOps --workflow validate-pipeline.yaml \
-  --commit "$SHA" --limit 1 --json databaseId --jq '.[0].databaseId')
+  --commit "$SHA" --event workflow_dispatch --json databaseId,createdAt \
+  --jq "[.[] | select(.createdAt >= \"$START\")][0].databaseId")
 gh run watch "$RUN_ID" --repo unb-mds/CoOps --exit-status
 gh run view "$RUN_ID" --repo unb-mds/CoOps --json url --jq .url   # paste this in the PR
 
@@ -170,7 +172,7 @@ each file with its record count.
 > through a small PR to `unb-mds/CoOps` `main` containing only that file
 > (this is how `validate-pipeline.yaml` itself was bootstrapped). Until the
 > file reaches upstream, the fork's `main` is ahead of upstream by that
-> commit, which is why the sync in step 5 uses `--force`. Alternatively,
+> commit, which is why the sync in step 5 may need `--force`. Alternatively,
 > test with `gh act` locally (see [RUNNING_LOCALLY.md](../RUNNING_LOCALLY.md)).
 
 ## 4. Mark the PR ready
@@ -208,7 +210,7 @@ The branch lives in `unb-mds/CoOps`, so delete it there after the merge,
 then sync the fork so the next PRs start from the new `main`:
 
 ```bash
-git push origin --delete "$HEAD_REF"
+git push https://github.com/unb-mds/CoOps.git --delete "$HEAD_REF"
 gh repo sync unb-mds/CoOps --source danrleypereira/CoOps --branch main
 ```
 
