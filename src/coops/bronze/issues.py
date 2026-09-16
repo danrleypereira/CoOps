@@ -21,10 +21,11 @@ def extract_issues(
     The Silver layer only uses these specific fields, so filtering at Bronze layer
     prevents unnecessary data storage and processing overhead.
 
-    max_issues/max_prs cap the number of issues/PRs kept per repo. Since GitHub's
-    issues API returns issues and PRs interleaved on the same paginated endpoint,
-    both caps also bound how many pages are fetched (using the larger of the two),
-    so setting either speeds up the fetch itself, not just the saved output.
+    max_issues/max_prs cap the number of issues/PRs kept per repo; None means
+    no cap. GitHub's issues API returns issues and PRs interleaved on the same
+    paginated endpoint, so the number of pages fetched is bounded only when
+    both caps are set (by the larger one): capping just one of them must not
+    truncate the other.
     """
     # Load filtered repositories
     filtered_repos = load_json_data("data/bronze/repositories_filtered.json")
@@ -55,9 +56,8 @@ def extract_issues(
         # Get issues (includes PRs)
         issues_base = f"https://api.github.com/repos/{full_name}/issues?state=all"
         max_pages = None
-        if max_issues is not None or max_prs is not None:
-            cap = max(v for v in (max_issues, max_prs) if v is not None)
-            max_pages = max(1, math.ceil(cap / 100))
+        if max_issues is not None and max_prs is not None:
+            max_pages = max(1, math.ceil(max(max_issues, max_prs) / 100))
         issues = client.get_paginated(issues_base, use_cache=use_cache, per_page=100, max_pages=max_pages)
 
         if issues:

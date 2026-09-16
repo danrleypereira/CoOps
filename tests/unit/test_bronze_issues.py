@@ -411,3 +411,56 @@ class TestExtractIssues:
                 calls = [call[0][1] for call in mock_save.call_args_list]
                 assert any("issues_repo1" in c for c in calls)
                 assert not any("prs_repo1" in c for c in calls)
+
+
+class TestExtractIssuesCaps:
+    """max_issues/max_prs cap what is kept; pagination is bounded only when both are set."""
+
+    REPOS = [{"name": "repo1", "full_name": "test-org/repo1"}]
+    MIXED = (
+        [{"number": i, "title": f"Issue {i}"} for i in range(5)]
+        + [{"number": 100 + i, "title": f"PR {i}", "pull_request": {"url": "u"}} for i in range(5)]
+    )
+
+    def _run(self, **caps):
+        client = MagicMock()
+        client.get_paginated.side_effect = [list(self.MIXED), []]  # issues, events
+        saved = {}
+
+        def capture_save(data, path):
+            saved[path] = data
+            return path
+
+        with patch('coops.bronze.issues.load_json_data', return_value=self.REPOS):
+            with patch('coops.bronze.issues.save_json_data', side_effect=capture_save):
+                extract_issues(client, MagicMock(), **caps)
+        issues_call = client.get_paginated.call_args_list[0]
+        return issues_call.kwargs['max_pages'], saved
+
+    def test_no_caps_fetches_every_page(self):
+        max_pages, saved = self._run()
+        assert max_pages is None
+        assert len(saved['data/bronze/issues_repo1.json']) == 5
+        assert len(saved['data/bronze/prs_repo1.json']) == 5
+
+    def test_only_max_issues_does_not_truncate_prs(self):
+        max_pages, saved = self._run(max_issues=2)
+        assert max_pages is None
+        assert len(saved['data/bronze/issues_repo1.json']) == 2
+        assert len(saved['data/bronze/prs_repo1.json']) == 5
+
+    def test_only_max_prs_does_not_truncate_issues(self):
+        max_pages, saved = self._run(max_prs=1)
+        assert max_pages is None
+        assert len(saved['data/bronze/issues_repo1.json']) == 5
+        assert len(saved['data/bronze/prs_repo1.json']) == 1
+
+    @pytest.mark.parametrize("caps, expected_pages", [
+        ({"max_issues": 20, "max_prs": 5}, 1),
+        ({"max_issues": 20, "max_prs": 250}, 3),
+    ])
+    def test_both_caps_bound_pages_by_the_larger(self, caps, expected_pages):
+        max_pages, saved = self._run(**caps)
+        assert max_pages == expected_pages
+        assert len(saved['data/bronze/issues_repo1.json']) == min(5, caps["max_issues"])
+        assert len(saved['data/bronze/prs_repo1.json']) == min(5, caps["max_prs"])

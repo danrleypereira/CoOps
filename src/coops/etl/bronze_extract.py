@@ -10,16 +10,24 @@ from datetime import datetime
 from coops.infrastructure import get_settings
 from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, update_data_registry
 
+def positive_int(value: str) -> int:
+    """argparse type for caps: a cap of 0 or less would fetch nothing."""
+    number = int(value)
+    if number < 1:
+        raise argparse.ArgumentTypeError(f"must be a positive integer, got {value}")
+    return number
+
+
 def main():
     parser = argparse.ArgumentParser(description='Extract GitHub organization data to Bronze layer')
     parser.add_argument('--cache', action='store_true', help='Use cached data when available')
-    parser.add_argument('--max-repos', type=int, help='Optional hard cap of repositories to fetch')
-    parser.add_argument('--max-issues', type=int, help='Optional hard cap of issues per repo to fetch')
-    parser.add_argument('--max-prs', type=int, help='Optional hard cap of pull requests per repo to fetch')
+    parser.add_argument('--max-repos', type=positive_int, help='Optional hard cap of repositories to fetch')
+    parser.add_argument('--max-issues', type=positive_int, help='Optional hard cap of issues per repo to fetch')
+    parser.add_argument('--max-prs', type=positive_int, help='Optional hard cap of pull requests per repo to fetch')
     parser.add_argument('--commits-method', choices=['rest', 'graphql'], default='graphql', help='Extraction method for commits (REST v3 or GraphQL v4)')
     parser.add_argument('--since', help='ISO-8601 timestamp (e.g., 2024-01-01T00:00:00Z) to limit commit extraction start')
     parser.add_argument('--until', help='ISO-8601 timestamp (e.g., 2024-12-31T23:59:59Z) to limit commit extraction end')
-    parser.add_argument('--max-commits-per-repo', type=int, help='Optional hard cap of commits per repo to fetch (GraphQL only)')
+    parser.add_argument('--max-commits-per-repo', type=positive_int, help='Optional hard cap of commits per repo to fetch (GraphQL only)')
     parser.add_argument('--commits-page-size', type=int, default=50, help='Commits page size for pagination (REST & GraphQL). Default: 50')
     parser.add_argument('--include-active-branches', action='store_true', help='Include commits from recently active branches not merged to main (GraphQL only)')
     parser.add_argument('--active-days', type=int, default=30, help='Consider branches active if updated in last N days (default: 30)')

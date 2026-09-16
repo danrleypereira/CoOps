@@ -169,6 +169,21 @@ class TestBronzeExtract:
 
                                         assert mock_repos.call_args[1]['max_repos'] == 3
 
+    @pytest.mark.parametrize("flag", ["--max-repos", "--max-issues", "--max-prs", "--max-commits-per-repo"])
+    @pytest.mark.parametrize("value", ["0", "-1", "abc"])
+    def test_main_rejects_non_positive_caps(self, flag, value, capsys):
+        """Um cap 0 ou negativo não buscaria nada: argparse rejeita antes de chamar a API"""
+        with patch('sys.argv', ['bronze_extract.py', flag, value]):
+            with patch('coops.etl.bronze_extract.GitHubAPIClient') as mock_client_cls:
+                from coops.etl import bronze_extract
+
+                with pytest.raises(SystemExit) as exc_info:
+                    bronze_extract.main()
+
+        assert exc_info.value.code == 2
+        assert flag in capsys.readouterr().err
+        mock_client_cls.assert_not_called()
+
     def test_main_without_max_repos_defaults_to_none(self):
         """Testa que --max-repos é None quando não passado (sem cap)"""
         with patch('sys.argv', ['bronze_extract.py']):
