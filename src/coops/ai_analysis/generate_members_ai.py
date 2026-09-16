@@ -1,6 +1,6 @@
 """
 Generates members_ai.json with AI-powered analyses of member activities.
-Uses Gemini 2.5 Flash Lite with batched requests (default max 10).
+Uses Gemini (model from the GEMINI_MODEL setting) with batched requests (default max 10).
 """
 import json
 import logging
@@ -429,7 +429,7 @@ def analyze_members_with_gemini(members_data: Dict[str, Dict], max_requests: int
     api_key = load_api_key()
     genai.configure(api_key=api_key)
     
-    model = genai.GenerativeModel('gemini-2.5-flash-lite')
+    model = genai.GenerativeModel(get_settings().gemini_model)
     
     # Preparar sumários dos membros
     members_summaries = []
@@ -592,7 +592,7 @@ def main():
     output_data = {
         '_metadata': {
             'total_members': len(analyses),
-            'model': 'gemini-2.5-flash-lite',
+            'model': get_settings().gemini_model,
             'description': 'Análises de IA sobre atividades dos membros',
             'test_mode': test_mode
         },

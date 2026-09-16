@@ -585,6 +585,26 @@ class TestAnalyzeMembersWithGemini:
         assert "alice" in result
         assert "Commits look great" in result["alice"]["commits_analysis"]
 
+    def test_model_comes_from_settings(self, mock_genai, mock_load_api_key, simple_members_data, monkeypatch):
+        """The Gemini model is configurable through GEMINI_MODEL."""
+        from coops.infrastructure.config import get_settings
+        monkeypatch.setenv("GEMINI_MODEL", "gemini-test-model")
+        get_settings.cache_clear()
+        try:
+            model_mock = MagicMock()
+            mock_genai.GenerativeModel.return_value = model_mock
+            response_mock = MagicMock()
+            response_mock.candidates = [MagicMock()]
+            response_mock.text = _well_formed_ai_response(["alice"])
+            model_mock.generate_content.return_value = response_mock
+
+            with patch.object(gm.time, "sleep"):
+                gm.analyze_members_with_gemini(simple_members_data, max_requests=10)
+        finally:
+            get_settings.cache_clear()
+
+        mock_genai.GenerativeModel.assert_called_once_with("gemini-test-model")
+
     def test_safety_filter_blocked_produces_fallback(self, mock_genai, mock_load_api_key, simple_members_data):
         """When response has no candidates (safety filter), produce fallback entries."""
         model_mock = MagicMock()
@@ -684,8 +704,7 @@ class TestAnalyzeMembersWithGemini:
 
 class TestLoadApiKey:
     """load_api_key() now delegates to coops.infrastructure.get_settings(), which
-    requires GITHUB_TOKEN/GITHUB_ORG (unrelated to the Gemini key itself) and is
-    lru_cache'd process-wide, so each test provides both and resets the cache."""
+    is lru_cache'd process-wide, so each test isolates the env and resets the cache."""
 
     @pytest.fixture(autouse=True)
     def _isolated_settings(self, monkeypatch):
@@ -702,6 +721,13 @@ class TestLoadApiKey:
         monkeypatch.chdir(tmp_path)
         key = gm.load_api_key()
         assert key == "test-key-123"
+
+    def test_loads_key_without_github_settings(self, tmp_path, monkeypatch):
+        """The AI job in gold-process.yaml only exports GEMINI_API_KEY."""
+        monkeypatch.chdir(tmp_path)
+        monkeypatch.setenv("GEMINI_API_KEY", "only-gemini")
+        key = gm.load_api_key()
+        assert key == "only-gemini"
 
     def test_loads_google_key_from_secrets_file(self, tmp_path, monkeypatch):
         secrets = tmp_path / ".secrets"

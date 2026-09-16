@@ -29,6 +29,14 @@ def main():
     args = parser.parse_args()
 
     cfg = get_settings()
+    if not cfg.github_token or not cfg.github_org:
+        print(
+            "ERROR: GITHUB_TOKEN and GITHUB_ORG must be set "
+            "(environment, .env or .secrets). See RUNNING_LOCALLY.md.",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
     print(f"Starting Bronze layer extraction for organization: {cfg.github_org}")
     print(f"Started at: {datetime.now().isoformat()}")
 

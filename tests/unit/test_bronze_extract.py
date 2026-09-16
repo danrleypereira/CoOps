@@ -8,8 +8,6 @@ import pytest
 from unittest.mock import patch, MagicMock
 import sys
 
-from pydantic import ValidationError
-
 
 class TestBronzeExtract:
     """Testes para o script bronze_extract"""
@@ -369,21 +367,27 @@ class TestBronzeExtract:
         captured = capsys.readouterr()
         assert "Started at:" in captured.out
 
-    def test_main_requires_github_token_and_org(self, monkeypatch, tmp_path):
-        """Testa que main requer GITHUB_TOKEN/GITHUB_ORG (via Settings, não mais --token/--org).
+    @pytest.mark.parametrize("missing", ["GITHUB_TOKEN", "GITHUB_ORG"])
+    def test_main_requires_github_token_and_org(self, monkeypatch, tmp_path, capsys, missing):
+        """Testa que main requer GITHUB_TOKEN/GITHUB_ORG (via Settings, não mais --token/--org)
+        e sai com erro legível em vez de traceback.
         Precisa isolar o cwd: um .secrets real na raiz do repo (com credenciais de
         verdade ou placeholders) seria lido pelo Settings() mesmo com os env vars
         removidos, mascarando a falta de configuração."""
         from coops.infrastructure.config import get_settings
         monkeypatch.chdir(tmp_path)
-        monkeypatch.delenv("GITHUB_TOKEN", raising=False)
-        monkeypatch.delenv("GITHUB_ORG", raising=False)
+        monkeypatch.delenv(missing, raising=False)
         get_settings.cache_clear()
         with patch('sys.argv', ['bronze_extract.py']):
-            from coops.etl import bronze_extract
+            with patch('coops.etl.bronze_extract.GitHubAPIClient') as mock_client_cls:
+                from coops.etl import bronze_extract
 
-            with pytest.raises(ValidationError):
-                bronze_extract.main()
+                with pytest.raises(SystemExit) as exc_info:
+                    bronze_extract.main()
+
+        assert exc_info.value.code == 1
+        assert "GITHUB_TOKEN and GITHUB_ORG must be set" in capsys.readouterr().err
+        mock_client_cls.assert_not_called()
 
     def test_main_initializes_github_client(self, capsys, monkeypatch):
         """Testa que main inicializa o GitHubAPIClient com o token vindo de Settings"""
