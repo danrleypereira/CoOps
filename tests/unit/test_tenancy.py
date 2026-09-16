@@ -36,3 +36,22 @@ def test_tenant_id_immutability():
     tenant_id = TenantId("test_id")
     with pytest.raises(FrozenInstanceError):
         tenant_id.org_id = "test_id2"
+
+@pytest.mark.parametrize("raw", ["unb-mds", "UNB-MDS", "  Unb-Mds  ", "\tunb-mds\n"])
+def test_org_id_is_trimmed_and_lowercased(raw):
+    """GitHub org names are case-insensitive: one org must map to one tenant."""
+    tenant_id = TenantId(raw)
+    assert tenant_id.org_id == "unb-mds"
+    assert tenant_id == TenantId("unb-mds")
+    assert hash(tenant_id) == hash(TenantId("unb-mds"))
+
+
+def test_none_org_id_raises_value_error():
+    with pytest.raises(ValueError):
+        TenantId(None)
+
+
+@pytest.mark.parametrize("raw", ["", "   "])
+def test_blank_correlation_id_raises_value_error(raw):
+    with pytest.raises(ValueError):
+        CorrelationId(raw)
