@@ -50,8 +50,9 @@ gh pr create --draft --repo danrleypereira/CoOps \
 
 Opening the PR as a draft signals that it is not validated yet.
 
-> GitHub Actions is currently disabled in `danrleypereira/CoOps`, so no checks
-> appear on the PR there. All CI for a PR runs in the fork, in step 3.
+> GitHub Actions is disabled in `danrleypereira/CoOps` by design: workflows
+> only run in the organization forks. No checks appear on the PR there; all
+> CI for a PR runs in `unb-mds/CoOps`, in step 3.
 
 ## 2. Local checks
 
@@ -121,13 +122,16 @@ gh run list --repo unb-mds/CoOps --commit "$SHA" \
   --json workflowName,status,conclusion,url --jq '.[] | [.workflowName, .status, .conclusion, .url] | @tsv'
 ```
 
-> Known issue: the **Frontend Tests** jobs fail at `npm ci` on `main` too,
-> because `dashboard/package-lock.json` is out of sync with `package.json`
-> (npm on Node 20 reports the missing `@testing-library/*` entries; npm on
-> Node 22 crashes with `Cannot read properties of null (reading 'edgesOut')`),
-> and the first failure cancels the other job. Until a PR regenerates the
-> lockfile, a PR that doesn't touch `dashboard/` only needs the Python jobs of
+> Known issue: the **Frontend Tests** jobs fail. The dashboard tests and type
+> check are out of date with the restructured UI (the failures are the same on
+> `main`), and the first failing Node version cancels the other. Until that is
+> fixed, a PR that doesn't touch `dashboard/` only needs the Python jobs of
 > *Unit Tests* to pass.
+>
+> If you change `dashboard/package.json`, regenerate the lockfile with npm 11
+> (`npx npm@11 install --package-lock-only`): npm 10 crashes with
+> `Cannot read properties of null (reading 'edgesOut')` while resolving this
+> dependency tree. `npm ci` with npm 10, as CI uses, works fine.
 
 ### Inputs
 
@@ -207,6 +211,11 @@ then sync the fork so the next PRs start from the new `main`:
 git push origin --delete "$HEAD_REF"
 gh repo sync unb-mds/CoOps --source danrleypereira/CoOps --branch main
 ```
+
+> **Never force-sync a fork whose `main` receives pipeline data commits**
+> (a fork where `bronze-extract.yaml` is enabled). `--force` resets `main` to
+> upstream and deletes that data. Merge upstream into it instead:
+> `git fetch upstream && git merge upstream/main && git push origin main`.
 
 `gh repo sync` refuses when the fork's `main` has commits upstream doesn't
 have. The only expected case is a workflow registration commit (see the note
