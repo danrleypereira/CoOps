@@ -10,6 +10,9 @@ permissions:
 jobs:
   aggregate-gold-data:
     runs-on: ubuntu-latest
+    env:
+      # Production jobs don't need the dev tools; `uv run` would otherwise install them.
+      UV_NO_DEV: "1"
 
     steps:
       - name: Checkout repository
@@ -77,16 +80,10 @@ jobs:
           # Ensure we're on a branch (handle detached HEAD state)
           CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
           if [ "$CURRENT_BRANCH" = "HEAD" ]; then
-            # In detached HEAD state, checkout the appropriate branch
-            if [ "${{ github.event_name }}" = "pull_request" ]; then
-              BRANCH="${{ github.event.pull_request.head.ref }}"
-              echo "📌 Checking out PR branch: $BRANCH"
-              git checkout -B "$BRANCH"
-            else
-              BRANCH="${GITHUB_REF#refs/heads/}"
-              echo "📌 Checking out branch: $BRANCH"
-              git checkout -B "$BRANCH"
-            fi
+            # In detached HEAD state, checkout the branch the workflow runs on
+            BRANCH="${GITHUB_REF#refs/heads/}"
+            echo "📌 Checking out branch: $BRANCH"
+            git checkout -B "$BRANCH"
           else
             echo "✅ Already on branch: $CURRENT_BRANCH"
           fi

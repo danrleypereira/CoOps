@@ -10,6 +10,9 @@ permissions:
 jobs:
   process-silver-data:
     runs-on: ubuntu-latest
+    env:
+      # Production jobs don't need the dev tools; `uv run` would otherwise install them.
+      UV_NO_DEV: "1"
 
     outputs:
       silver-completed: ${{ steps.processing.outputs.completed }}

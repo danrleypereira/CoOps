@@ -1,9 +1,14 @@
 name: Deploy Dashboard to GitHub Pages
 
 on:
+  # The daily pipeline starts with Bronze and calls Silver -> Gold -> KPI
+  # aggregation as reusable workflows, which don't emit workflow_run events of
+  # their own; deploy when the whole chain finishes on main. The KPI
+  # aggregation entry covers manual runs of that workflow.
   workflow_run:
-    workflows: ["Gold Layer - KPI Aggregation"]
+    workflows: ["Bronze Layer - Data Extraction", "Gold Layer - KPI Aggregation"]
     types: [completed]
+    branches: [main]
   workflow_dispatch:
   push:
     branches:
@@ -23,6 +28,7 @@ concurrency:
 
 jobs:
   build-and-deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
 
     steps:
