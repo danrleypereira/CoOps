@@ -16,6 +16,7 @@ jobs:
   integration-tests:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         python-version: [ "3.10", "3.11", "3.12" ]
 
@@ -42,6 +43,9 @@ jobs:
           mkdir -p data/gold
           mkdir -p cache
 
+      # Coverage is reported here but gated in python-unit-tests.yaml: the
+      # integration suite alone covers ~27% of coops, so a threshold here
+      # could never pass.
       - name: Run integration tests with coverage
         run: |
           poetry run pytest tests/integration \
@@ -49,7 +53,6 @@ jobs:
             --cov-report=term-missing \
             --cov-report=xml \
             --cov-report=html \
-            --cov-fail-under=70 \
             -v \
             --tb=short
 
@@ -76,4 +79,4 @@ jobs:
           echo "## Integration Test Results" >> $GITHUB_STEP_SUMMARY
           echo "- Python version: ${{ matrix.python-version }}" >> $GITHUB_STEP_SUMMARY
           echo "- Test suite: Integration tests" >> $GITHUB_STEP_SUMMARY
-          echo "- Minimum coverage: 70%" >> $GITHUB_STEP_SUMMARY
+          echo "- Coverage: reported only (gated by the unit test workflow)" >> $GITHUB_STEP_SUMMARY
