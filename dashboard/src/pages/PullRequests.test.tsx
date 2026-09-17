@@ -4,6 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import PullRequestsPage from './PullRequests';
 import { SidebarProvider } from '../contexts/SidebarContext';
 import { Utils } from './Utils';
+import { DataNotFoundError } from '../services/dataSource';
 
 // Mock do Utils
 vi.mock('./Utils', () => ({
@@ -292,6 +293,24 @@ describe('PullRequestsPage Component', () => {
 
   // ========== TRATAMENTO DE ERROS ==========
   describe('Tratamento de Erros', () => {
+    test('mostra o estado "ainda não gerado" quando temporal_events.json não existe (404)', async () => {
+      (Utils.fetchAndProcessActivityData as any).mockRejectedValue(
+        new DataNotFoundError(
+          'silver/temporal_events.json',
+          'https://x/data/silver/temporal_events.json'
+        )
+      );
+
+      renderWithRouter();
+
+      const status = await screen.findByTestId('data-not-generated');
+      expect(status).toHaveTextContent("This data hasn't been generated yet");
+      expect(status).toHaveTextContent('data/silver/temporal_events.json');
+      expect(screen.queryByText(/status: 404/)).not.toBeInTheDocument();
+      expect(screen.queryByTestId('histogram')).not.toBeInTheDocument();
+      expect(screen.getByTestId('dashboard-layout')).toHaveAttribute('data-subpage', 'pullrequests');
+    });
+
     test('mostra erro quando fetch falha', async () => {
       (Utils.fetchAndProcessActivityData as any).mockRejectedValue(
         new Error('Network error')

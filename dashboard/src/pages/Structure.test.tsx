@@ -1,9 +1,9 @@
 import { describe, test, expect, vi, beforeEach, afterEach } from 'vitest';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import type { ReactNode } from 'react';
 import Structure from './Structure';
-import { fetchData } from '../services/dataSource';
+import { DataNotFoundError, fetchData } from '../services/dataSource';
 import { Utils, type ProcessedActivityResponse } from './Utils';
 
 vi.mock('../services/dataSource', async () => {
@@ -158,6 +158,31 @@ describe('Structure page', () => {
       { label: 'repo-d', value: 1 },
     ]);
     expect(timeSelect().value).toBe('All Time');
+  });
+
+  // #76: the effect must also react to temporalData, not only to the filters
+  test('shows "Filtering data..." overlay when the temporal data arrives, then hides it', async () => {
+    // Hold the page's 300 ms overlay timer so the assertion doesn't race a slow runner.
+    const overlayTimers: Array<() => void> = [];
+    const realSetTimeout = globalThis.setTimeout;
+    vi.spyOn(globalThis, 'setTimeout').mockImplementation(((
+      handler: (...args: unknown[]) => void,
+      ms?: number,
+      ...args: unknown[]
+    ) => {
+      if (ms === 300) {
+        overlayTimers.push(() => handler(...args));
+        return 0 as unknown as ReturnType<typeof setTimeout>;
+      }
+      return realSetTimeout(handler, ms, ...args);
+    }) as typeof setTimeout);
+
+    await renderLoaded();
+    // The overlay is set by an effect that runs after the data render.
+    expect(await screen.findByText('Filtering data...')).toBeInTheDocument();
+    expect(overlayTimers.length).toBeGreaterThan(0);
+
+    act(() => overlayTimers.forEach((fire) => fire()));
     expect(screen.queryByText('Filtering data...')).not.toBeInTheDocument();
   });
 
@@ -253,6 +278,9 @@ describe('Structure page', () => {
 
   test('shows "Filtering data..." overlay for 300ms after a filter change', async () => {
     await renderLoaded();
+    await waitFor(() => expect(screen.queryByText('Filtering data...')).not.toBeInTheDocument(), {
+      timeout: 2000,
+    });
     fireEvent.change(timeSelect(), { target: { value: 'Last 7 days' } });
     expect(screen.getByText('Filtering data...')).toBeInTheDocument();
     await waitFor(() => expect(screen.queryByText('Filtering data...')).not.toBeInTheDocument(), {
@@ -268,12 +296,32 @@ describe('Structure page', () => {
     expect(chartData()).toEqual([]);
   });
 
-  test('on load failure logs the error, renders page with no members and empty chart', async () => {
+  test('on load failure logs and shows the error instead of the chart', async () => {
     const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
     mockedActivity.mockRejectedValue(new Error('fail'));
-    await renderLoaded();
+    renderPage();
+    const alert = await screen.findByRole('alert');
+    expect(alert).toHaveTextContent('Error loading data: fail');
     expect(errorSpy).toHaveBeenCalledWith('Failed to load structure data:', expect.any(Error));
-    expect(chartData()).toEqual([]);
+    expect(screen.queryByTestId('bar-chart')).not.toBeInTheDocument();
     expect(screen.queryByPlaceholderText('Search members...')).not.toBeInTheDocument();
+    expect(screen.getByTestId('dashboard-layout')).toHaveAttribute('data-subpage', 'structure');
+  });
+
+  test('shows the not-generated-yet empty state when temporal events are missing (404)', async () => {
+    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    const missing = new DataNotFoundError(
+      'silver/temporal_events.json',
+      'https://x/data/silver/temporal_events.json'
+    );
+    mockedFetchData.mockRejectedValue(missing);
+    mockedActivity.mockRejectedValue(missing);
+    renderPage();
+    const status = await screen.findByTestId('data-not-generated');
+    expect(status).toHaveTextContent("This data hasn't been generated yet");
+    expect(status).toHaveTextContent('data/silver/temporal_events.json');
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('bar-chart')).not.toBeInTheDocument();
+    expect(errorSpy).not.toHaveBeenCalled();
   });
 });

@@ -5,6 +5,8 @@ import CalendarHeatmap from '../components/CalendarHeatmap';
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { TimelineExtraction, TimelineData } from './TimelineExtraction';
+import DataNotGenerated from '../components/DataNotGenerated';
+import { isDataNotFoundError } from '../services/dataSource';
 
 /**
  * Timeline Component
@@ -123,6 +125,8 @@ export default function Timeline() {
   const [userData, setUserData] = useState<UserActivityData[]>([]);
   const [dateLabels, setDateLabels] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [missingDataPath, setMissingDataPath] = useState<string | null>(null);
   const [selectedMembers, setSelectedMembers] = useState<string[]>([]);
 
   const selectedRepo = searchParams.get('repo');
@@ -135,6 +139,8 @@ export default function Timeline() {
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
+      setError(null);
+      setMissingDataPath(null);
       try {
         const timeFilter = selectedTime === 'Last 7 days' ? 'last_7_days' : 'last_12_months';
         const repoFilter = selectedRepo || undefined;
@@ -223,7 +229,12 @@ export default function Timeline() {
         
         setUserData(transformedData);
       } catch (error) {
-        console.error('Error fetching timeline data:', error);
+        if (isDataNotFoundError(error)) {
+          setMissingDataPath(error.path);
+        } else {
+          console.error('Error fetching timeline data:', error);
+          setError(error instanceof Error ? error.message : String(error));
+        }
         setUserData([]);
         setDateLabels([]);
       } finally {
@@ -308,6 +319,12 @@ export default function Timeline() {
               >
                 {isLoading ? (
                   <div className="text-center text-slate-400 py-8">Loading data...</div>
+                ) : missingDataPath ? (
+                  <DataNotGenerated path={missingDataPath} />
+                ) : error ? (
+                  <div className="text-center text-red-400 py-8" role="alert">
+                    Error loading data: {error}
+                  </div>
                 ) : filteredUserData.length === 0 ? (
                   <div className="text-center text-slate-400 py-8">No data available</div>
                 ) : (

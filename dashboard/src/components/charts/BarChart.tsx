@@ -71,6 +71,33 @@ export default function BarChart({
       .append('g')
       .attr('transform', `translate(${margin.left},${margin.top})`);
 
+    // A [0, 0] domain makes d3 map 0 to the middle of the range, so fall back
+    // to [0, 1] when every value is 0 (bars then get a length of 0).
+    const maxValue = d3.max(data, (d) => d.value) || 1;
+
+    const appendAxisLabels = () => {
+      if (xLabel) {
+        g.append('text')
+          .attr('x', innerWidth / 2)
+          .attr('y', innerHeight + margin.bottom - 10)
+          .attr('text-anchor', 'middle')
+          .attr('fill', '#e2e8f0')
+          .attr('font-size', '14px')
+          .text(xLabel);
+      }
+
+      if (yLabel) {
+        g.append('text')
+          .attr('transform', 'rotate(-90)')
+          .attr('x', -innerHeight / 2)
+          .attr('y', -margin.left + 15)
+          .attr('text-anchor', 'middle')
+          .attr('fill', '#e2e8f0')
+          .attr('font-size', '14px')
+          .text(yLabel);
+      }
+    };
+
     if (orientation === 'vertical') {
       // Vertical bar chart
       const x = d3
@@ -81,7 +108,7 @@ export default function BarChart({
 
       const y = d3
         .scaleLinear()
-        .domain([0, d3.max(data, (d) => d.value) || 0])
+        .domain([0, maxValue])
         .nice()
         .range([innerHeight, 0]);
 
@@ -121,32 +148,12 @@ export default function BarChart({
           d3.select(this).style('opacity', 0.9);
         });
 
-      // Add axis labels
-      if (xLabel) {
-        g.append('text')
-          .attr('x', innerWidth / 2)
-          .attr('y', innerHeight + margin.bottom - 10)
-          .attr('text-anchor', 'middle')
-          .attr('fill', '#e2e8f0')
-          .attr('font-size', '14px')
-          .text(xLabel);
-      }
-
-      if (yLabel) {
-        g.append('text')
-          .attr('transform', 'rotate(-90)')
-          .attr('x', -innerHeight / 2)
-          .attr('y', -margin.left + 15)
-          .attr('text-anchor', 'middle')
-          .attr('fill', '#e2e8f0')
-          .attr('font-size', '14px')
-          .text(yLabel);
-      }
+      appendAxisLabels();
     } else {
       // Horizontal bar chart
       const x = d3
         .scaleLinear()
-        .domain([0, d3.max(data, (d) => d.value) || 0])
+        .domain([0, maxValue])
         .nice()
         .range([0, innerWidth]);
 
@@ -189,6 +196,8 @@ export default function BarChart({
         .on('mouseout', function () {
           d3.select(this).style('opacity', 0.9);
         });
+
+      appendAxisLabels();
     }
 
     // Style axes

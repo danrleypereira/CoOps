@@ -59,15 +59,23 @@ def classify_member_status(member_data: dict) -> str:
 def process_member_analytics() -> List[str]:
     """Process member data into analytics format"""
 
-    # Load bronze member data
-    members_data = load_json_data("data/bronze/members_detailed.json")
+    # Load bronze member data. members_analytics.json is always written (an
+    # empty list when there are no members), so the dashboard can tell "no
+    # members" from "not generated yet".
+    members_data = load_json_data("data/bronze/members_detailed.json") or []
     if not members_data:
         print("No member data found in bronze layer")
-        return []
 
     # Skip metadata entry if present
     if isinstance(members_data, list) and len(members_data) > 0 and '_metadata' in members_data[0]:
         members_data = members_data[1:]
+
+    # Maturity and status need the member's profile; members whose profile
+    # couldn't be fetched (profile_fetched is False) are left out.
+    without_profile = [m for m in members_data if m.get('profile_fetched') is False]
+    if without_profile:
+        print(f"Skipping {len(without_profile)} members without a profile")
+    members_data = [m for m in members_data if m.get('profile_fetched') is not False]
 
     processed_members = []
 
@@ -80,10 +88,6 @@ def process_member_analytics() -> List[str]:
             'login': member.get('login'),
             'id': member.get('id'),
             'name': member.get('name'),
-            'company': member.get('company'),
-            'location': member.get('location'),
-            'email': member.get('email'),
-            'bio': member.get('bio'),
             'public_repos': member.get('public_repos', 0),
             'followers': member.get('followers', 0),
             'following': member.get('following', 0),

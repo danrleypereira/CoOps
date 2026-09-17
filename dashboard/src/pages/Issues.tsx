@@ -6,11 +6,14 @@ import DashboardLayout from '../components/DashboardLayout';
 import BaseFilters from '../components/BaseFilters';
 import { Histogram, PieChart } from '../components/Graphs';
 import { Utils } from './Utils';
+import DataNotGenerated from '../components/DataNotGenerated';
+import { isDataNotFoundError } from '../services/dataSource';
 
 export default function IssuesPage() {
   const [data, setData] = useState<ProcessedActivityResponse | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [missingDataPath, setMissingDataPath] = useState<string | null>(null);
   const [searchParams] = useSearchParams();
   const [selectedMembers, setSelectedMembers] = useState<string[]>([]);
   const [selectedTime, setSelectedTime] = useState<string>('Last 24 hours');
@@ -29,7 +32,11 @@ export default function IssuesPage() {
         }
       } catch (err) {
         if (!cancelled) {
-          setError(err instanceof Error ? err.message : String(err));
+          if (isDataNotFoundError(err)) {
+            setMissingDataPath(err.path);
+          } else {
+            setError(err instanceof Error ? err.message : String(err));
+          }
         }
       } finally {
         if (!cancelled) setLoading(false);
@@ -78,6 +85,14 @@ export default function IssuesPage() {
       selectedTime,
     });
   }, [selectedRepo, filteredActivities, selectedTime]);
+
+  if (missingDataPath) {
+    return (
+      <DashboardLayout currentSubPage="issues" currentPage="repos" data={data} currentRepo="No repository selected">
+        <DataNotGenerated path={missingDataPath} />
+      </DashboardLayout>
+    );
+  }
 
   return (
     <DashboardLayout

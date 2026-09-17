@@ -138,9 +138,9 @@ describe('BarChart', () => {
       expect(rect.style.opacity).toBe('0.9');
     });
 
-    // BUG conhecido: com todos os valores 0 o domínio fica [0, 0] e o d3
-    // mapeia 0 para o meio do range, desenhando barras com metade da altura.
-    test.fails('todos os valores zero geram barras com altura 0 (bug: domínio [0,0])', () => {
+    // Regressão #77: com todos os valores 0 o domínio ficava [0, 0] e o d3
+    // mapeava 0 para o meio do range, desenhando barras com metade da altura.
+    test('todos os valores zero geram barras com altura 0', () => {
       const { container } = render(
         <BarChart
           data={[
@@ -182,8 +182,8 @@ describe('BarChart', () => {
       expect(yLabels).toEqual(['Alice', 'Bob', 'Carol']);
     });
 
-    // BUG conhecido: o ramo horizontal nunca desenha xLabel/yLabel.
-    test.fails('renderiza xLabel/yLabel na orientação horizontal (bug: ignorados)', () => {
+    // Regressão #77: o ramo horizontal não desenhava xLabel/yLabel.
+    test('renderiza xLabel/yLabel na orientação horizontal', () => {
       const { container } = render(
         <BarChart data={data} orientation="horizontal" xLabel="X" yLabel="Y" />
       );
@@ -199,8 +199,8 @@ describe('BarChart', () => {
       expect(rect.style.opacity).toBe('0.9');
     });
 
-    // BUG conhecido: mesmo problema do domínio [0, 0] na orientação horizontal.
-    test.fails('todos os valores zero geram barras com largura 0 (bug: domínio [0,0])', () => {
+    // Regressão #77: mesmo problema do domínio [0, 0] na orientação horizontal.
+    test('todos os valores zero geram barras com largura 0', () => {
       const { container } = render(
         <BarChart data={[{ label: 'A', value: 0 }]} orientation="horizontal" />
       );

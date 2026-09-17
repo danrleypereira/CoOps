@@ -195,14 +195,21 @@ describe('StackedBarChart', () => {
     rects(container).forEach((r) => expect(r).toHaveAttribute('height', '0'));
   });
 
-  // BUG conhecido: d3.stack converte chaves ausentes em NaN, gerando atributos
+  // Regressão #81: d3.stack convertia chaves ausentes em NaN, gerando atributos
   // SVG inválidos (y/height = NaN) em vez de segmentos de altura 0.
-  test.fails('chaves ausentes geram segmentos com altura 0 (bug: NaN)', () => {
+  test('chaves ausentes geram segmentos com altura 0', () => {
     const { container } = render(
       <StackedBarChart data={[{ label: 'r', commits: 4 }]} keys={['commits', 'issues']} />
     );
-    const missing = rects(container)[1];
+    const rs = rects(container);
+    expect(rs).toHaveLength(2);
+    expect(Number(rs[0].getAttribute('height'))).toBeGreaterThan(0);
+    const missing = rs[1];
     expect(missing).toHaveAttribute('height', '0');
+    rs.forEach((r) => {
+      expect(r.getAttribute('y')).not.toBe('NaN');
+      expect(r.getAttribute('height')).not.toBe('NaN');
+    });
   });
 
   test('redesenha sem duplicar ao mudar props', () => {

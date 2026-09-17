@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useId, useRef } from 'react';
 import * as d3 from 'd3';
 
 interface HeatmapData {
@@ -41,6 +41,9 @@ export default function Heatmap({
   showValues = false,
 }: HeatmapProps) {
   const svgRef = useRef<SVGSVGElement>(null);
+  // Unique per instance so several heatmaps on a page don't share a gradient.
+  // useId() returns values like ":r0:", which are not valid in url(#...).
+  const gradientId = `heatmap-gradient-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`;
 
   useEffect(() => {
     if (!svgRef.current || !data || data.length === 0) return;
@@ -167,7 +170,7 @@ export default function Heatmap({
     const defs = svg.append('defs');
     const gradient = defs
       .append('linearGradient')
-      .attr('id', 'heatmap-gradient')
+      .attr('id', gradientId)
       .attr('x1', '0%')
       .attr('x2', '100%');
 
@@ -179,7 +182,7 @@ export default function Heatmap({
       .append('rect')
       .attr('width', legendWidth)
       .attr('height', legendHeight)
-      .style('fill', 'url(#heatmap-gradient)');
+      .style('fill', `url(#${gradientId})`);
 
     legend
       .append('g')
@@ -192,7 +195,7 @@ export default function Heatmap({
     legend.selectAll('.domain, .tick line').attr('stroke', '#475569');
 
     g.selectAll('.domain, .tick line').attr('stroke', '#475569');
-  }, [data, width, height, rowLabels, colLabels, colorScheme, showValues]);
+  }, [data, width, height, rowLabels, colLabels, colorScheme, showValues, gradientId]);
 
   return <svg ref={svgRef} />;
 }

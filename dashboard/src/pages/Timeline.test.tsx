@@ -4,6 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import Timeline from './Timeline';
 import { SidebarProvider } from '../contexts/SidebarContext';
 import { TimelineExtraction } from './TimelineExtraction';
+import { DataNotFoundError } from '../services/dataSource';
 
 // Mock do TimelineExtraction
 vi.mock('./TimelineExtraction', () => ({
@@ -275,16 +276,54 @@ describe('Timeline Component', () => {
 
   // ========== TRATAMENTO DE ERROS ==========
   describe('Tratamento de Erros', () => {
-    test('mostra "No data available" quando fetch falha', async () => {
+    test('mostra o erro real quando fetch falha (não "No data available")', async () => {
       (TimelineExtraction.extractTimelineData as any).mockRejectedValue(
         new Error('Network error')
       );
 
       renderWithRouter();
 
-      await waitFor(() => {
-        expect(screen.getByText('No data available')).toBeInTheDocument();
+      const alert = await screen.findByRole('alert');
+      expect(alert).toHaveTextContent('Error loading data: Network error');
+      expect(screen.queryByText('No data available')).not.toBeInTheDocument();
+      expect(screen.queryByTestId('data-not-generated')).not.toBeInTheDocument();
+    });
+
+    test('mostra o estado "ainda não gerado" quando o arquivo não existe (404)', async () => {
+      (TimelineExtraction.extractTimelineData as any).mockRejectedValue(
+        new DataNotFoundError(
+          'gold/timeline_last_7_days.json',
+          'https://x/data/gold/timeline_last_7_days.json'
+        )
+      );
+
+      renderWithRouter();
+
+      const status = await screen.findByTestId('data-not-generated');
+      expect(status).toHaveTextContent("This data hasn't been generated yet");
+      expect(status).toHaveTextContent('data/gold/timeline_last_7_days.json');
+      expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+      expect(screen.queryByTestId('calendar-heatmap')).not.toBeInTheDocument();
+    });
+
+    test('limpa o estado de erro ao trocar de período com sucesso', async () => {
+      (TimelineExtraction.extractTimelineData as any)
+        .mockRejectedValueOnce(new Error('Network error'))
+        .mockResolvedValue([
+          { date: '2024-01-01', users: [{ name: 'u1', repositories: [], activities: { commits: 1, issues_created: 0, issues_closed: 0, prs_created: 0, prs_closed: 0, comments: 0 } }] },
+        ]);
+
+      renderWithRouter();
+      await screen.findByRole('alert');
+
+      fireEvent.change(screen.getByTestId('filter-select'), {
+        target: { value: 'Last 12 months' },
       });
+
+      await waitFor(() => {
+        expect(screen.getByTestId('calendar-heatmap')).toBeInTheDocument();
+      });
+      expect(screen.queryByRole('alert')).not.toBeInTheDocument();
     });
 
     test('não renderiza CalendarHeatmap quando há erro', async () => {
@@ -306,9 +345,8 @@ describe('Timeline Component', () => {
 
       renderWithRouter();
 
-      await waitFor(() => {
-        expect(screen.getByText('No data available')).toBeInTheDocument();
-      });
+      await screen.findByRole('alert');
+      expect(screen.getByText('Available: 0')).toBeInTheDocument();
     });
 
     test('limpa dateLabels quando erro ocorre', async () => {

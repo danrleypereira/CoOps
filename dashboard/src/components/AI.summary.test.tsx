@@ -6,11 +6,14 @@ import { AISummary } from './AI.summary';
 import type { MemberAnalysis } from './AI.summary';
 
 // Mock fetchData from dataSource service
-vi.mock('../services/dataSource', () => ({
-  fetchData: vi.fn(),
-}));
+vi.mock('../services/dataSource', async () => {
+  const actual = await vi.importActual<typeof import('../services/dataSource')>(
+    '../services/dataSource'
+  );
+  return { ...actual, fetchData: vi.fn() };
+});
 
-import { fetchData } from '../services/dataSource';
+import { DataNotFoundError, fetchData } from '../services/dataSource';
 
 const mockFetchData = fetchData as ReturnType<typeof vi.fn>;
 
@@ -134,6 +137,23 @@ describe('AISummary Component', () => {
         screen.getByText('The AI analysis file has not been generated for this project yet.')
       ).toBeInTheDocument();
     });
+  });
+
+  test('shows the not-generated-yet empty state when the data file is missing (404)', async () => {
+    mockFetchData.mockRejectedValue(
+      new DataNotFoundError('silver/ai/members_ai.json', 'https://x/data/silver/ai/members_ai.json')
+    );
+
+    renderWithRouter(<AISummary />);
+
+    const button = screen.getByText('AI Analysis').closest('button')!;
+    fireEvent.click(button);
+
+    const status = await screen.findByRole('status');
+    expect(status).toHaveTextContent("This data hasn't been generated yet");
+    expect(status).toHaveTextContent('data/silver/ai/members_ai.json');
+    expect(screen.queryByText('Unable to load analyses')).not.toBeInTheDocument();
+    expect(screen.queryByText('Try again')).not.toBeInTheDocument();
   });
 
   test('shows NO_MEMBERS error message', async () => {

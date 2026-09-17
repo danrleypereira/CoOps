@@ -3,6 +3,7 @@ import { describe, test, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import RepositoryFilter from './RepositoryFilter';
+import { getDataBasePath } from '../services/dataSource';
 import type { ProcessedActivityResponse, RepoActivitySummary } from '../pages/Utils';
 
 // Mock fetch globally
@@ -167,7 +168,9 @@ describe('RepositoryFilter Component', () => {
     renderWithRouter(<RepositoryFilter />);
 
     await waitFor(() => {
-      expect(global.fetch).toHaveBeenCalledWith(expect.stringContaining('available_repos.json'));
+      expect(global.fetch).toHaveBeenCalledWith(
+        `${getDataBasePath()}/silver/available_repos.json`
+      );
     });
   });
 
@@ -210,8 +213,11 @@ describe('RepositoryFilter Component', () => {
     const consoleWarnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
     (global.fetch as any).mockResolvedValueOnce({
       ok: false,
+      status: 500,
+      statusText: '',
       json: async () => [],
     });
+    const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
 
     renderWithRouter(<RepositoryFilter />);
 
@@ -220,9 +226,13 @@ describe('RepositoryFilter Component', () => {
     });
 
     // Não deve renderizar repos
+    await waitFor(() => {
+      expect(consoleWarnSpy).toHaveBeenCalledWith('Could not fetch repo names:', expect.any(Error));
+    });
     expect(screen.queryByText('repo-alpha')).not.toBeInTheDocument();
 
     consoleWarnSpy.mockRestore();
+    consoleErrorSpy.mockRestore();
   });
 
   // ✅ CORRIGIDO: Teste 15 - Usa um repo name que existe no mock

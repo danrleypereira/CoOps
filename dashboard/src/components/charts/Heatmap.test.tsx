@@ -92,7 +92,7 @@ describe('Heatmap', () => {
     ['amber', ['#fffbeb', '#f59e0b', '#b45309'], 'rgb(180, 83, 9)'],
   ] as const)('esquema de cores %s aplica o gradiente e as células', (scheme, stops, maxFill) => {
     const { container } = render(<Heatmap data={data} colorScheme={scheme} />);
-    const gradient = container.querySelector('linearGradient#heatmap-gradient');
+    const gradient = container.querySelector('linearGradient[id^="heatmap-gradient"]');
     expect(gradient).not.toBeNull();
     const stopColors = Array.from(gradient?.querySelectorAll('stop') ?? []).map((s) =>
       s.getAttribute('stop-color')
@@ -225,9 +225,9 @@ describe('Heatmap', () => {
     expect(container.querySelectorAll('linearGradient')).toHaveLength(1);
   });
 
-  // BUG conhecido: o id do gradiente é fixo, então dois heatmaps na mesma página
-  // geram ids duplicados e ambos passam a referenciar o primeiro gradiente.
-  test.fails('ids de gradiente são únicos entre instâncias (bug: id fixo)', () => {
+  // Regressão #80: o id do gradiente era fixo, então dois heatmaps na mesma página
+  // geravam ids duplicados e ambos referenciavam o primeiro gradiente.
+  test('ids de gradiente são únicos entre instâncias', () => {
     const { container } = render(
       <div>
         <Heatmap data={data} colorScheme="blue" />
@@ -236,5 +236,14 @@ describe('Heatmap', () => {
     );
     const ids = Array.from(container.querySelectorAll('linearGradient')).map((g) => g.id);
     expect(new Set(ids).size).toBe(2);
+    // cada legenda referencia o seu próprio gradiente
+    const fills = Array.from(container.querySelectorAll<SVGRectElement>('svg > g:nth-of-type(2) > rect')).map(
+      (r) => r.style.fill
+    );
+    expect(fills).toHaveLength(2);
+    ids.forEach((id, i) => {
+      expect(id).toMatch(/^[A-Za-z0-9_-]+$/);
+      expect(fills[i]).toContain(`#${id}`);
+    });
   });
 });

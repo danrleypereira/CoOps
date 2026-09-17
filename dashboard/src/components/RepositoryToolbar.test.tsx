@@ -2,6 +2,7 @@ import { describe, test, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import RepositoryToolbar from './RepositoryToolbar';
+import { getDataBasePath } from '../services/dataSource';
 import { SidebarProvider } from '../contexts/SidebarContext';
 import type { ProcessedActivityResponse } from '../pages/Utils';
 
@@ -398,8 +399,9 @@ describe('RepositoryToolbar Component', () => {
       renderWithRouter(<RepositoryToolbar currentRepo="repo-one" currentPage="commits" />);
 
       await waitFor(() => {
+        // via dataSource (data/silver/available_repos.json), not the Pages BASE_URL
         expect(global.fetch).toHaveBeenCalledWith(
-          `${import.meta.env.BASE_URL}available_repos.json`
+          `${getDataBasePath()}/silver/available_repos.json`
         );
       });
     });
@@ -412,6 +414,34 @@ describe('RepositoryToolbar Component', () => {
         expect(screen.getByText('repo-beta')).toBeInTheDocument();
         expect(screen.getByText('repo-gamma')).toBeInTheDocument();
       });
+    });
+
+    test('ignora entrada de _metadata e valores não-string da lista', async () => {
+      (global.fetch as any).mockResolvedValue({
+        ok: true,
+        status: 200,
+        json: async () => [{ _metadata: { extracted_at: 'now' } }, 'repo-x', 42, 'repo-y'],
+      });
+      renderWithRouter(<RepositoryToolbar currentRepo="repo-one" currentPage="commits" />);
+
+      await waitFor(() => {
+        expect(screen.getByText('All repositories (2)')).toBeInTheDocument();
+      });
+      expect(screen.getByRole('option', { name: 'repo-x' })).toBeInTheDocument();
+      expect(screen.getByRole('option', { name: 'repo-y' })).toBeInTheDocument();
+    });
+
+    test('mantém a lista vazia quando available_repos.json ainda não existe (404)', async () => {
+      const consoleWarnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+      (global.fetch as any).mockResolvedValue({ ok: false, status: 404, statusText: '' });
+
+      renderWithRouter(<RepositoryToolbar currentRepo="repo-one" currentPage="commits" />);
+
+      await waitFor(() => {
+        expect(consoleWarnSpy).toHaveBeenCalledWith('Could not fetch repo names:', expect.anything());
+      });
+      expect(screen.getByText('All repositories (0)')).toBeInTheDocument();
+      consoleWarnSpy.mockRestore();
     });
 
     test('lida com erro no fetch', async () => {
