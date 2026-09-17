@@ -4,7 +4,7 @@ Organization members extraction for Bronze layer.
 Extracts raw member data from GitHub API with contributor fallback.
 """
 
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data, load_json_data
 from coops.utils.data_helpers import strip_metadata
 
@@ -50,26 +50,64 @@ def _discover_contributors(client: GitHubAPIClient, use_cache: bool) -> List[Dic
     return contributors
 
 
+# Profile fields kept from /users/{login}: what Silver's member analytics
+# uses. Personal fields (email, location, bio, company, ...) are not stored,
+# since the data is committed to a public branch.
+PROFILE_FIELDS = (
+    'login', 'id', 'name', 'type', 'avatar_url', 'html_url',
+    'created_at', 'updated_at', 'public_repos', 'followers', 'following',
+)
+
+# Stop requesting profiles when fewer REST requests than this remain in the
+# current rate-limit window, so the rest of the pipeline can still run.
+RATE_LIMIT_RESERVE = 200
+
+
+def _remaining_requests(headers: Any) -> Optional[int]:
+    try:
+        return int(headers.get('X-RateLimit-Remaining'))
+    except (AttributeError, TypeError, ValueError):
+        return None
+
+
 def _fetch_member_details(
     client: GitHubAPIClient, members: List[Dict[str, Any]], use_cache: bool
 ) -> List[Dict[str, Any]]:
-    """Fetch each member's user profile (created_at, public_repos, followers, ...).
+    """Add each member's profile (created_at, public_repos, followers, ...).
 
     Silver's member analytics needs these fields; the basic member list doesn't
-    have them. Fields only present in the basic record (e.g. contributions_total
-    from the contributor fallback) are kept.
+    have them. Every member is kept: `profile_fetched` tells whether the
+    profile could be fetched. Fields only present in the basic record (e.g.
+    contributions_total from the contributor fallback) are kept.
     """
     detailed = []
+    fetched = 0
+    stopped_for_rate_limit = False
     for member in members:
         login = member.get('login')
         if not login:
             continue
-        detail = client.get_with_cache(f"https://api.github.com/users/{login}", use_cache)
-        if isinstance(detail, dict) and detail.get('login'):
-            detailed.append({**member, **detail})
-        else:
-            print(f" Could not fetch profile for {login}; skipping")
-    print(f" Fetched {len(detailed)} of {len(members)} member profiles")
+        record = {**member, 'profile_fetched': False}
+        if not stopped_for_rate_limit:
+            result = client.get_with_cache(
+                f"https://api.github.com/users/{login}", use_cache, return_headers=True
+            )
+            profile, headers = result if isinstance(result, tuple) else (result, None)
+            if isinstance(profile, dict) and profile.get('login'):
+                record = {
+                    **member,
+                    **{k: profile[k] for k in PROFILE_FIELDS if k in profile},
+                    'profile_fetched': True,
+                }
+                fetched += 1
+            else:
+                print(f" Could not fetch profile for {login}")
+            remaining = _remaining_requests(headers)
+            if remaining is not None and remaining < RATE_LIMIT_RESERVE:
+                stopped_for_rate_limit = True
+                print(f"[WARN] Only {remaining} API requests left; skipping the remaining member profiles")
+        detailed.append(record)
+    print(f" Fetched {fetched} of {len(detailed)} member profiles")
     return detailed
 
 

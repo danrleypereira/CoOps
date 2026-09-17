@@ -68,7 +68,12 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   in `filterMetadata`.
 - Bronze fetches every organization member (the list stopped at 30) and
   their profiles, so Silver produces `members_analytics.json` and the
-  dashboard's member counts are no longer 0 — #70.
+  dashboard's member counts are no longer 0 — #70. Only the profile fields
+  Silver uses are stored (no email, location, bio or company); members whose
+  profile can't be fetched are kept with `profile_fetched: false`, and profile
+  requests stop when fewer than 200 API requests remain.
+- `members_analytics.json` is always written (an empty list when there are
+  no members), and no longer includes email, location, bio or company.
 - Silver writes `data/silver/available_repos.json` for the dashboard's
   repository selectors — #71.
 - `save_json_data` no longer adds `_metadata` to the dict it is given;
