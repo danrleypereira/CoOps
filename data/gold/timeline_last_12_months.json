@@ -1,7 +1,7 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-17T05:08:36.344714",
+      "extracted_at": "2026-09-17T06:27:15.715854",
       "file_path": "data/gold/timeline_last_12_months.json",
       "record_count": 13
     }
@@ -15,7 +15,7 @@
     "prs_closed": 112,
     "commits": 1566,
     "comments": 0,
-    "unique_users": 56,
+    "unique_users": 55,
     "unique_repos": 18,
     "authors": [
       {
@@ -118,7 +118,7 @@
       },
       {
         "name": "unknown",
-        "commits": 34,
+        "commits": 55,
         "issues_created": 0,
         "issues_closed": 0,
         "prs_created": 0,
@@ -374,18 +374,6 @@
         "repositories": [
           "2025-2-GuiaDev",
           "Avalia"
-        ]
-      },
-      {
-        "name": "actions",
-        "commits": 21,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 0,
-        "prs_closed": 0,
-        "comments": 0,
-        "repositories": [
-          "LicitaBSB-24.1"
         ]
       },
       {
@@ -1193,7 +1181,7 @@
     "prs_closed": 129,
     "commits": 1129,
     "comments": 0,
-    "unique_users": 40,
+    "unique_users": 39,
     "unique_repos": 18,
     "authors": [
       {
@@ -1496,33 +1484,8 @@
         ]
       },
       {
-        "name": "actions",
-        "commits": 22,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 0,
-        "prs_closed": 0,
-        "comments": 0,
-        "repositories": [
-          "LicitaBSB-24.1"
-        ]
-      },
-      {
-        "name": "HugoFreitass",
-        "commits": 20,
-        "issues_created": 4,
-        "issues_closed": 9,
-        "prs_created": 3,
-        "prs_closed": 0,
-        "comments": 0,
-        "repositories": [
-          "2025-2-GuiaDev",
-          "Avalia"
-        ]
-      },
-      {
         "name": "unknown",
-        "commits": 40,
+        "commits": 62,
         "issues_created": 0,
         "issues_closed": 0,
         "prs_created": 0,
@@ -1567,6 +1530,19 @@
           "Sonorus-2025.1",
           "portfolio-MDS",
           "teste"
+        ]
+      },
+      {
+        "name": "HugoFreitass",
+        "commits": 20,
+        "issues_created": 4,
+        "issues_closed": 9,
+        "prs_created": 3,
+        "prs_closed": 0,
+        "comments": 0,
+        "repositories": [
+          "2025-2-GuiaDev",
+          "Avalia"
         ]
       },
       {
@@ -2356,15 +2332,52 @@
         ]
       },
       {
-        "name": "actions",
-        "commits": 17,
+        "name": "unknown",
+        "commits": 62,
         "issues_created": 0,
         "issues_closed": 0,
         "prs_created": 0,
         "prs_closed": 0,
         "comments": 0,
         "repositories": [
-          "LicitaBSB-24.1"
+          "2023-2-JuizVirtual",
+          "2023-2-Squad04",
+          "2023-2-Squad05-TesouroMineiro",
+          "2023-2-Squad09-Gotinha",
+          "2023-2-Squad10",
+          "2024-1-MinasDeCultura",
+          "2024-1-Squad-10",
+          "2024-1-forUnB",
+          "2024-1-squad04",
+          "2024-2-AcheiUnB",
+          "2024-2-ChamaControl",
+          "2024-2-Urbanize",
+          "2025-1-NoFluxoUNB",
+          "2025-1-RelatAI",
+          "2025-2-OncoMap",
+          "2025-2-Portal-dos-Professores",
+          "2025-2-Synapse",
+          "2025.1-RelatoriosInteligentesBCB",
+          "2025_1-Jakebot",
+          "2026-1-LegisKids",
+          "2026-1-Mapa_L.I.L.A.S",
+          "2026-1-P.R.I.S.M.A",
+          "2026-1-ProtectKids",
+          "2026-1-SafeStreets",
+          "2026-1-Squad13",
+          "2026-2-MonitoraUnB",
+          "2026-2-VeritasIA",
+          "Avalia",
+          "DFemObras",
+          "DFemObras-2025.1",
+          "Fique-de-Olho",
+          "Gastos-DF-Squad12",
+          "LicitaBSB-24.1",
+          "Mds-ArenaPesadelo",
+          "Projeto-P.I.T.E.R",
+          "Sonorus-2025.1",
+          "portfolio-MDS",
+          "teste"
         ]
       },
       {
@@ -2439,55 +2452,6 @@
         "comments": 0,
         "repositories": [
           "2025-2-OncoMap"
-        ]
-      },
-      {
-        "name": "unknown",
-        "commits": 45,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 0,
-        "prs_closed": 0,
-        "comments": 0,
-        "repositories": [
-          "2023-2-JuizVirtual",
-          "2023-2-Squad04",
-          "2023-2-Squad05-TesouroMineiro",
-          "2023-2-Squad09-Gotinha",
-          "2023-2-Squad10",
-          "2024-1-MinasDeCultura",
-          "2024-1-Squad-10",
-          "2024-1-forUnB",
-          "2024-1-squad04",
-          "2024-2-AcheiUnB",
-          "2024-2-ChamaControl",
-          "2024-2-Urbanize",
-          "2025-1-NoFluxoUNB",
-          "2025-1-RelatAI",
-          "2025-2-OncoMap",
-          "2025-2-Portal-dos-Professores",
-          "2025-2-Synapse",
-          "2025.1-RelatoriosInteligentesBCB",
-          "2025_1-Jakebot",
-          "2026-1-LegisKids",
-          "2026-1-Mapa_L.I.L.A.S",
-          "2026-1-P.R.I.S.M.A",
-          "2026-1-ProtectKids",
-          "2026-1-SafeStreets",
-          "2026-1-Squad13",
-          "2026-2-MonitoraUnB",
-          "2026-2-VeritasIA",
-          "Avalia",
-          "DFemObras",
-          "DFemObras-2025.1",
-          "Fique-de-Olho",
-          "Gastos-DF-Squad12",
-          "LicitaBSB-24.1",
-          "Mds-ArenaPesadelo",
-          "Projeto-P.I.T.E.R",
-          "Sonorus-2025.1",
-          "portfolio-MDS",
-          "teste"
         ]
       },
       {
