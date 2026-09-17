@@ -152,14 +152,17 @@ describe('HeatmapPage Component', () => {
 
   // ========== FETCH DE DADOS ==========
   describe('Fetch de Dados', () => {
-    test('chama fetch para collaboration_edges.json', async () => {
+    // The page only needs the heatmap and the activity data; the unused
+    // collaboration_edges.json request was dropped when it was ported (1c4a406).
+    test('não busca collaboration_edges.json', async () => {
       renderWithRouter();
 
       await waitFor(() => {
-        expect(global.fetch).toHaveBeenCalledWith(
-          expect.stringContaining('collaboration_edges.json')
-        );
+        expect(screen.getByTestId('activity-heatmap')).toBeInTheDocument();
       });
+      expect(global.fetch).not.toHaveBeenCalledWith(
+        expect.stringContaining('collaboration_edges.json')
+      );
     });
 
     test('chama fetch para activity_heatmap.json', async () => {
@@ -184,7 +187,7 @@ describe('HeatmapPage Component', () => {
       renderWithRouter();
 
       await waitFor(() => {
-        expect(global.fetch).toHaveBeenCalledTimes(2);
+        expect(global.fetch).toHaveBeenCalledTimes(1);
         expect(Utils.fetchAndProcessActivityData).toHaveBeenCalledTimes(1);
       });
     });
@@ -219,26 +222,24 @@ describe('HeatmapPage Component', () => {
 
   // ========== TRATAMENTO DE ERROS ==========
   describe('Tratamento de Erros', () => {
-    test('mostra erro quando fetch de collaboration_edges falha', async () => {
+    test('mostra erro com status quando heatmap não é encontrado', async () => {
       (global.fetch as any).mockImplementation((url: string) => {
-        if (url.includes('collaboration_edges.json')) {
+        if (url.includes('activity_heatmap.json')) {
           return Promise.resolve({
             ok: false,
             status: 404,
           });
         }
-        return Promise.resolve({
-          ok: true,
-          json: () => Promise.resolve([]),
-        });
+        return Promise.reject(new Error('Unknown URL'));
       });
 
       renderWithRouter();
 
       await waitFor(() => {
         expect(screen.getByText(/Error loading data:/)).toBeInTheDocument();
-        expect(screen.getByText(/Falha ao buscar dados de colaboração/)).toBeInTheDocument();
+        expect(screen.getByText(/activity_heatmap\.json \(status: 404\)/)).toBeInTheDocument();
       });
+      expect(screen.queryByTestId('activity-heatmap')).not.toBeInTheDocument();
     });
 
     test('mostra erro quando fetch de heatmap falha', async () => {
@@ -259,7 +260,9 @@ describe('HeatmapPage Component', () => {
 
       await waitFor(() => {
         expect(screen.getByText(/Error loading data:/)).toBeInTheDocument();
-        expect(screen.getByText(/Falha ao buscar dados do heatmap/)).toBeInTheDocument();
+        expect(
+          screen.getByText(/Failed to fetch .*activity_heatmap\.json \(status: 500\)/)
+        ).toBeInTheDocument();
       });
     });
 
@@ -645,7 +648,7 @@ describe('HeatmapPage Component', () => {
       renderWithRouter();
 
       await waitFor(() => {
-        expect(global.fetch).toHaveBeenCalledTimes(2);
+        expect(global.fetch).toHaveBeenCalledTimes(1);
         expect(Utils.fetchAndProcessActivityData).toHaveBeenCalledTimes(1);
       });
     });

@@ -108,6 +108,9 @@ describe('RepositoryToolbar Component', () => {
       expect(screen.getByText('Commits')).toBeInTheDocument();
       expect(screen.getByText('Issues')).toBeInTheDocument();
       expect(screen.getByText('Pull Requests')).toBeInTheDocument();
+      expect(screen.getByText('Collaboration')).toBeInTheDocument();
+      expect(screen.getByText('Structure')).toBeInTheDocument();
+      expect(screen.getByText('Visualization')).toBeInTheDocument();
     });
 
     test('mostra o nome do repositório atual', () => {
@@ -174,6 +177,20 @@ describe('RepositoryToolbar Component', () => {
       fireEvent.click(prButton!);
 
       expect(mockNavigate).toHaveBeenCalledWith('/repos/pullrequests');
+    });
+
+    test.each([
+      ['Collaboration', '/repos/collaboration'],
+      ['Structure', '/repos/structure'],
+      ['Visualization', '/repos/visualization'],
+    ])('navega para %s ao clicar no botão', (label, path) => {
+      renderWithRouter(
+        <RepositoryToolbar currentRepo="repo-one" currentPage="commits" data={mockData} />
+      );
+
+      fireEvent.click(screen.getByText(label).closest('button')!);
+
+      expect(mockNavigate).toHaveBeenCalledWith(path);
     });
 
     test('navega corretamente quando clica no item já ativo', () => {
@@ -320,6 +337,9 @@ describe('RepositoryToolbar Component', () => {
       expect(commitsButton).toContainHTML('💻');
       expect(issuesButton).toContainHTML('📊');
       expect(prButton).toContainHTML('🔀');
+      expect(screen.getByText('Collaboration').closest('button')).toContainHTML('🤝');
+      expect(screen.getByText('Structure').closest('button')).toContainHTML('🏗️');
+      expect(screen.getByText('Visualization').closest('button')).toContainHTML('🎨');
     });
   });
 
@@ -378,7 +398,9 @@ describe('RepositoryToolbar Component', () => {
       renderWithRouter(<RepositoryToolbar currentRepo="repo-one" currentPage="commits" />);
 
       await waitFor(() => {
-        expect(global.fetch).toHaveBeenCalledWith('/2025-2-Squad-01/available_repos.json');
+        expect(global.fetch).toHaveBeenCalledWith(
+          `${import.meta.env.BASE_URL}available_repos.json`
+        );
       });
     });
 
@@ -417,48 +439,49 @@ describe('RepositoryToolbar Component', () => {
 
   // ========== RESPONSIVIDADE ==========
   describe('Responsividade', () => {
-    test('toolbar está oculto em mobile', () => {
+    test('toolbar é visível em todos os tamanhos de tela', () => {
       const { container } = renderWithRouter(
         <RepositoryToolbar currentRepo="repo-one" currentPage="commits" data={mockData} />
       );
 
       const aside = container.querySelector('aside');
-      expect(aside).toHaveClass('hidden');
-      expect(aside).toHaveClass('md:block');
+      expect(aside).not.toHaveClass('hidden');
+      expect(aside).toBeVisible();
     });
 
-    test('toolbar tem posição fixed', () => {
+    test('toolbar fica no fluxo do layout (não é fixed)', () => {
       const { container } = renderWithRouter(
         <RepositoryToolbar currentRepo="repo-one" currentPage="commits" data={mockData} />
       );
 
       const aside = container.querySelector('aside');
-      expect(aside).toHaveClass('fixed');
-      expect(aside).toHaveClass('top-0');
+      expect(aside).not.toHaveClass('fixed');
+      expect(aside).toHaveClass('flex-shrink-0');
     });
 
-    test('toolbar tem z-index correto', () => {
+    test('toolbar tem altura fixa', () => {
       const { container } = renderWithRouter(
         <RepositoryToolbar currentRepo="repo-one" currentPage="commits" data={mockData} />
       );
 
       const aside = container.querySelector('aside');
-      expect(aside).toHaveClass('z-10');
+      expect(aside).toHaveClass('h-34.5');
     });
   });
 
   // ========== INTEGRAÇÃO COM SIDEBAR ==========
   describe('Integração com Sidebar', () => {
-    test('toolbar ajusta largura baseado na sidebar', () => {
+    // The sidebar offset is applied by DashboardLayout (marginLeft); the toolbar
+    // just fills the remaining width of its column.
+    test('toolbar ocupa a largura da coluna sem offset próprio da sidebar', () => {
       const { container } = renderWithRouter(
         <RepositoryToolbar currentRepo="repo-one" currentPage="commits" data={mockData} />
       );
 
-      const aside = container.querySelector('aside');
-      expect(aside).toHaveStyle({
-        left: '184px',
-        width: 'calc(100vw - 184px)',
-      });
+      const aside = container.querySelector('aside') as HTMLElement;
+      expect(aside).toHaveClass('w-full');
+      expect(aside.style.left).toBe('');
+      expect(aside.style.width).toBe('');
     });
 
     test('toolbar tem transição suave', () => {
@@ -560,7 +583,7 @@ describe('RepositoryToolbar Component', () => {
       );
 
       const buttons = screen.getAllByRole('button');
-      expect(buttons).toHaveLength(3);
+      expect(buttons).toHaveLength(6);
       buttons.forEach((button) => {
         expect(button).toBeEnabled();
       });
@@ -670,8 +693,9 @@ describe('RepositoryToolbar Component', () => {
         <RepositoryToolbar currentRepo="repo-one" currentPage="commits" data={mockData} />
       );
 
-      const header = container.querySelector('.flex.items-center.justify-between');
-      expect(header).toBeInTheDocument();
+      const header = container.querySelector('.border-b-1');
+      expect(header).toHaveClass('flex', 'items-center', 'gap-3');
+      expect(header).toContainElement(screen.getByRole('combobox'));
     });
 
     test('nav tem padding correto', () => {
@@ -699,8 +723,9 @@ describe('RepositoryToolbar Component', () => {
       );
 
       const select = screen.getByRole('combobox');
-      expect(select).toHaveClass('max-w-xs');
-      expect(select).toHaveClass('flex-shrink-0');
+      // pushed to the right edge of the header
+      expect(select).toHaveClass('ml-auto');
+      expect(select).toHaveClass('mr-3');
     });
   });
 });

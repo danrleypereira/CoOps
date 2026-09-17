@@ -10,6 +10,9 @@ permissions:
 jobs:
   process-gold-data:
     runs-on: ubuntu-latest
+    env:
+      # Production jobs don't need the dev tools; `uv run` would otherwise install them.
+      UV_NO_DEV: "1"
 
     outputs:
       gold-completed: ${{ steps.processing.outputs.completed }}
@@ -31,15 +34,13 @@ jobs:
           echo "Current branch: $CURRENT_BRANCH"
           git pull origin "$CURRENT_BRANCH" --no-edit || echo "Already up to date"
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up uv and Python
+        uses: astral-sh/setup-uv@v10.1.0
         with:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install pandas numpy requests
+        run: uv sync --locked
 
       - name: Verify Silver data exists
         run: |
@@ -54,7 +55,7 @@ jobs:
         id: processing
         run: |
           echo "Starting Gold layer processing..."
-          python src/gold_process.py --org "${GITHUB_REPOSITORY_OWNER}"
+          uv run coops-gold
 
           # Check if files were generated
           if [ "$(find data/gold -name '*.json' 2>/dev/null | wc -l)" -gt 0 ]; then
@@ -70,7 +71,7 @@ jobs:
         if: steps.processing.outputs.completed == 'true'
         run: |
           echo "Updating data registry with Gold layer files..."
-          python src/registry_manager.py
+          uv run coops-registry
 
       - name: List generated files
         if: steps.processing.outputs.completed == 'true'
@@ -168,6 +169,9 @@ jobs:
     needs: [check-ai-enabled]
     if: needs.check-ai-enabled.outputs.enabled == 'true'
     runs-on: ubuntu-latest
+    env:
+      # Production jobs don't need the dev tools; `uv run` would otherwise install them.
+      UV_NO_DEV: "1"
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -181,22 +185,19 @@ jobs:
           CURRENT_BRANCH="${GITHUB_REF_NAME:-$(git branch --show-current)}"
           git pull origin "$CURRENT_BRANCH" --no-edit || echo "Already up to date"
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up uv and Python
+        uses: astral-sh/setup-uv@v10.1.0
         with:
           python-version: '3.11'
-          cache: 'pip'
 
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+        run: uv sync --locked
 
       - name: Generate AI analysis
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          python -m src.ai_analysis.generate_members_ai
+          uv run python -m coops.ai_analysis.generate_members_ai
 
       - name: Upload AI analysis artifact
         uses: actions/upload-artifact@v4
@@ -279,3 +280,11 @@ jobs:
           echo "4. Value: Your Gemini API key"
           echo ""
           echo "Workflow completed successfully (AI Analysis skipped)"
+
+  # Executive KPIs and performance tiers. Runs after the AI results are
+  # committed (or skipped) so the two jobs don't push to the branch at once.
+  trigger-gold-aggregate:
+    needs: [process-gold-data, commit-ai-results]
+    if: ${{ always() && needs.process-gold-data.outputs.gold-completed == 'true' && needs.commit-ai-results.result != 'failure' && needs.commit-ai-results.result != 'cancelled' }}
+    uses: ./.github/workflows/gold-aggregate.yaml
+    secrets: inherit

@@ -2,7 +2,7 @@ import pytest
 import json
 import os
 from unittest.mock import Mock, patch, MagicMock, call
-from utils.github_api import GitHubAPIClient, OrganizationConfig, update_data_registry
+from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, update_data_registry
 
 def test_client_initialization(tmp_path):
     """Testa inicialização do cliente"""
@@ -243,8 +243,8 @@ def test_organization_config():
 
 def test_update_data_registry(tmp_path):
     """Testa atualização do registro de dados"""
-    with patch('utils.github_api.load_json_data') as mock_load:
-        with patch('utils.github_api.save_json_data') as mock_save:
+    with patch('coops.utils.github_api.load_json_data') as mock_load:
+        with patch('coops.utils.github_api.save_json_data') as mock_save:
             mock_load.return_value = {}
             
             update_data_registry("bronze", "issues", ["file1.json", "file2.json"])
@@ -258,8 +258,8 @@ def test_update_data_registry(tmp_path):
 
 def test_update_data_registry_existing(tmp_path):
     """Testa atualização de registro existente"""
-    with patch('utils.github_api.load_json_data') as mock_load:
-        with patch('utils.github_api.save_json_data') as mock_save:
+    with patch('coops.utils.github_api.load_json_data') as mock_load:
+        with patch('coops.utils.github_api.save_json_data') as mock_save:
             # Registry já existe com dados
             mock_load.return_value = {
                 "commits": {

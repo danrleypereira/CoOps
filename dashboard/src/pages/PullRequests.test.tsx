@@ -169,12 +169,14 @@ describe('PullRequestsPage Component', () => {
       });
     });
 
-    test('renderiza grid de gráficos', async () => {
+    test('renderiza linha de gráficos', async () => {
       renderWithRouter();
 
+      // Timeline and Contributors cards sit side by side in a flex row
       await waitFor(() => {
-        const grid = document.querySelector('.grid.grid-cols-1.md\\:grid-cols-2');
-        expect(grid).toBeInTheDocument();
+        const row = screen.getByText('Timeline').closest('.border.rounded-lg')?.parentElement;
+        expect(row).toHaveClass('flex', 'gap-6');
+        expect(row).toContainElement(screen.getByText('Contributors'));
       });
     });
 
@@ -281,10 +283,10 @@ describe('PullRequestsPage Component', () => {
       renderWithRouter();
 
       const containers = screen.getAllByText('Loading...');
-      const contributorsContainer = containers[1]?.parentElement;
-      if (contributorsContainer) {
-        expect(contributorsContainer).toHaveClass('h-[140px]');
-      }
+      expect(containers).toHaveLength(2);
+      const contributorsContainer = containers[1].parentElement;
+      expect(contributorsContainer).toHaveClass('h-full', 'flex', 'items-center', 'justify-center');
+      expect(contributorsContainer?.parentElement).toHaveClass('h-[550px]');
     });
   });
 

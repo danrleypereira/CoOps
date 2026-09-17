@@ -6,7 +6,7 @@ Testa a extração de membros da organização.
 
 import pytest
 from unittest.mock import patch, MagicMock
-from bronze.members import extract_members
+from coops.bronze.members import extract_members
 
 
 class TestExtractMembers:
@@ -25,7 +25,7 @@ class TestExtractMembers:
         
         mock_client.get_with_cache.return_value = mock_members
         
-        with patch('bronze.members.save_json_data', return_value="file.json"):
+        with patch('coops.bronze.members.save_json_data', return_value="file.json"):
             result = extract_members(mock_client, mock_config)
             
             assert len(result) > 0
@@ -62,8 +62,8 @@ class TestExtractMembers:
         
         mock_client.get_with_cache.side_effect = mock_get_with_cache
         
-        with patch('utils.github_api.load_json_data', return_value=mock_repos):
-            with patch('bronze.members.save_json_data', return_value="file.json"):
+        with patch('coops.utils.github_api.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.members.save_json_data', return_value="file.json"):
                 result = extract_members(mock_client, mock_config)
                 
                 assert len(result) > 0
@@ -80,8 +80,8 @@ class TestExtractMembers:
         
         mock_client.get_with_cache.return_value = None
         
-        with patch('utils.github_api.load_json_data', return_value=None):
-            with patch('bronze.members.save_json_data', return_value="file.json"):
+        with patch('coops.utils.github_api.load_json_data', return_value=None):
+            with patch('coops.bronze.members.save_json_data', return_value="file.json"):
                 result = extract_members(mock_client, mock_config)
                 
                 # Deve criar arquivos vazios
@@ -98,8 +98,8 @@ class TestExtractMembers:
         
         mock_client.get_with_cache.return_value = []
         
-        with patch('utils.github_api.load_json_data', return_value=[]):
-            with patch('bronze.members.save_json_data', return_value="file.json") as mock_save:
+        with patch('coops.utils.github_api.load_json_data', return_value=[]):
+            with patch('coops.bronze.members.save_json_data', return_value="file.json") as mock_save:
                 result = extract_members(mock_client, mock_config)
                 
                 # Verifica que salvou arquivos vazios
@@ -119,7 +119,7 @@ class TestExtractMembers:
         mock_members = [{"login": "user1"}]
         mock_client.get_with_cache.return_value = mock_members
         
-        with patch('bronze.members.save_json_data', return_value="file.json"):
+        with patch('coops.bronze.members.save_json_data', return_value="file.json"):
             extract_members(mock_client, mock_config, use_cache=False)
             
             # Verifica que use_cache foi passado
@@ -136,7 +136,7 @@ class TestExtractMembers:
         mock_members = [{"login": "user1"}]
         mock_client.get_with_cache.return_value = mock_members
         
-        with patch('bronze.members.save_json_data', return_value="file.json") as mock_save:
+        with patch('coops.bronze.members.save_json_data', return_value="file.json") as mock_save:
             extract_members(mock_client, mock_config)
             
             # Verifica que salvou members_basic.json
@@ -152,7 +152,7 @@ class TestExtractMembers:
         mock_members = [{"login": "user1"}]
         mock_client.get_with_cache.return_value = mock_members
         
-        with patch('bronze.members.save_json_data', return_value="file.json") as mock_save:
+        with patch('coops.bronze.members.save_json_data', return_value="file.json") as mock_save:
             extract_members(mock_client, mock_config)
             
             # Verifica que salvou members_detailed.json
@@ -168,7 +168,7 @@ class TestExtractMembers:
         mock_members = [{"login": "user1"}]
         mock_client.get_with_cache.return_value = mock_members
         
-        with patch('bronze.members.save_json_data', return_value="file.json"):
+        with patch('coops.bronze.members.save_json_data', return_value="file.json"):
             extract_members(mock_client, mock_config)
             
             # Verifica URL
@@ -200,8 +200,8 @@ class TestExtractMembers:
         
         mock_client.get_with_cache.side_effect = mock_get_with_cache
         
-        with patch('utils.github_api.load_json_data', return_value=mock_repos):
-            with patch('bronze.members.save_json_data', return_value="file.json"):
+        with patch('coops.utils.github_api.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.members.save_json_data', return_value="file.json"):
                 result = extract_members(mock_client, mock_config)
                 
                 assert len(result) > 0
@@ -233,8 +233,8 @@ class TestExtractMembers:
         
         mock_client.get_with_cache.side_effect = mock_get_with_cache
         
-        with patch('utils.github_api.load_json_data', return_value=mock_repos):
-            with patch('bronze.members.save_json_data', return_value="file.json"):
+        with patch('coops.utils.github_api.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.members.save_json_data', return_value="file.json"):
                 extract_members(mock_client, mock_config)
         
         captured = capsys.readouterr()
@@ -266,8 +266,8 @@ class TestExtractMembers:
         
         mock_client.get_with_cache.side_effect = mock_get_with_cache
         
-        with patch('utils.github_api.load_json_data', return_value=mock_repos):
-            with patch('bronze.members.save_json_data', return_value="file.json"):
+        with patch('coops.utils.github_api.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.members.save_json_data', return_value="file.json"):
                 result = extract_members(mock_client, mock_config)
                 
                 # Deve funcionar normalmente, ignorando _metadata
@@ -299,8 +299,8 @@ class TestExtractMembers:
         
         mock_client.get_with_cache.side_effect = mock_get_with_cache
         
-        with patch('utils.github_api.load_json_data', return_value=mock_repos):
-            with patch('bronze.members.save_json_data', return_value="file.json"):
+        with patch('coops.utils.github_api.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.members.save_json_data', return_value="file.json"):
                 result = extract_members(mock_client, mock_config)
                 
                 # Deve processar apenas o repo válido
@@ -320,7 +320,7 @@ class TestExtractMembers:
             file_counter[0] += 1
             return f"file{file_counter[0]}.json"
         
-        with patch('bronze.members.save_json_data', side_effect=mock_save_func):
+        with patch('coops.bronze.members.save_json_data', side_effect=mock_save_func):
             result = extract_members(mock_client, mock_config)
             
             # Deve retornar: basic + detailed = 2 arquivos
@@ -336,7 +336,7 @@ class TestExtractMembers:
         mock_members = [{"login": "user1"}]
         mock_client.get_with_cache.return_value = mock_members
         
-        with patch('bronze.members.save_json_data', return_value="file.json"):
+        with patch('coops.bronze.members.save_json_data', return_value="file.json"):
             # Não passa use_cache, deve usar padrão True
             extract_members(mock_client, mock_config)
             

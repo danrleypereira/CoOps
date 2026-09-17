@@ -20,41 +20,43 @@ A GraphQL API oferece:
 ## Estrutura de Arquivos
 
 ```
-src/
+src/coops/
 ├── utils/
-│   ├── github_graphql.py       # Cliente GraphQL
-│   └── github_api.py           # Cliente REST (existente)
+│   └── github_api.py           # Cliente REST + GraphQL
 ├── bronze/
-│   ├── commits.py              # Extração REST (existente)
-│   └── commits_graphql.py      # Extração GraphQL (novo)
-├── bronze_extract.py           # Script principal (atualizado)
-└── test_graphql_commits.py     # Script de teste
+│   └── commits.py              # Extração de commits (REST + GraphQL)
+└── etl/
+    └── bronze_extract.py       # Orquestrador (comando `coops-bronze`)
 ```
 
 ## Como Usar
 
-### 1. Teste Básico
-
-Teste a extração GraphQL em um repositório específico:
+O token e a organização vêm de `GITHUB_TOKEN` / `GITHUB_ORG` (ambiente,
+`.env` ou `.secrets`):
 
 ```bash
-python src/test_graphql_commits.py \
-  --token YOUR_GITHUB_TOKEN \
-  --owner unb-mds \
-  --repo 2025-2-Squad-01 \
-  --branch main \
-  --max-commits 50
+export GITHUB_TOKEN=YOUR_GITHUB_TOKEN
+export GITHUB_ORG=unb-mds
+```
+
+### 1. Teste Rápido
+
+Extração GraphQL limitada a poucos repositórios e commits:
+
+```bash
+uv run coops-bronze \
+  --commits-method graphql \
+  --max-repos 1 \
+  --max-commits-per-repo 50 \
+  --skip-structure
 ```
 
 ### 2. Extração Completa com GraphQL
 
-Execute a extração bronze completa usando GraphQL para commits:
+Execute a extração bronze completa usando GraphQL para commits (padrão):
 
 ```bash
-python src/bronze_extract.py \
-  --token YOUR_GITHUB_TOKEN \
-  --org unb-mds \
-  --use-graphql
+uv run coops-bronze --commits-method graphql
 ```
 
 ### 3. Limitar Commits por Repositório
@@ -62,11 +64,9 @@ python src/bronze_extract.py \
 Para organizações grandes, limite o número de commits por repo:
 
 ```bash
-python src/bronze_extract.py \
-  --token YOUR_GITHUB_TOKEN \
-  --org unb-mds \
-  --use-graphql \
-  --max-commits 1000
+uv run coops-bronze \
+  --commits-method graphql \
+  --max-commits-per-repo 1000
 ```
 
 ### 4. Modo Compatível (REST API)
@@ -74,10 +74,7 @@ python src/bronze_extract.py \
 Continue usando a REST API se preferir (sem dados de additions/deletions):
 
 ```bash
-python src/bronze_extract.py \
-  --token YOUR_GITHUB_TOKEN \
-  --org unb-mds \
-  --cache
+uv run coops-bronze --commits-method rest --cache
 ```
 
 ## Dados Extraídos

@@ -1,4 +1,4 @@
-import silver.collaboration_networks as collab
+import coops.silver.collaboration_networks as collab
 
 def test_process_collaboration_networks_basic(monkeypatch, fake_io):
     """Testa processamento básico de redes de colaboração"""

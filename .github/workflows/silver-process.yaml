@@ -10,6 +10,9 @@ permissions:
 jobs:
   process-silver-data:
     runs-on: ubuntu-latest
+    env:
+      # Production jobs don't need the dev tools; `uv run` would otherwise install them.
+      UV_NO_DEV: "1"
 
     outputs:
       silver-completed: ${{ steps.processing.outputs.completed }}
@@ -31,15 +34,13 @@ jobs:
           echo "Current branch: $CURRENT_BRANCH"
           git pull origin "$CURRENT_BRANCH" --no-edit || echo "Already up to date"
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up uv and Python
+        uses: astral-sh/setup-uv@v10.1.0
         with:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install pandas numpy requests
+        run: uv sync --locked
 
       - name: Verify Bronze data exists
         run: |
@@ -54,7 +55,7 @@ jobs:
         id: processing
         run: |
           echo "Starting Silver layer processing..."
-          python src/silver_process.py --org "${GITHUB_REPOSITORY_OWNER}"
+          uv run coops-silver
 
           # Check if files were generated
           if [ "$(find data/silver -name '*.json' | wc -l)" -gt 0 ]; then
@@ -70,7 +71,7 @@ jobs:
         if: steps.processing.outputs.completed == 'true'
         run: |
           echo "Updating data registry with Silver layer files..."
-          python src/registry_manager.py
+          uv run coops-registry
 
       - name: List generated files
         if: steps.processing.outputs.completed == 'true'

@@ -4,7 +4,7 @@ Obrigado por dedicar seu tempo para contribuir! Este projeto é licenciado sob *
 
 > TL;DR
 > 1. Faça um fork e crie uma branch a partir de `main` usando Conventional Commits no nome.
-> 2. Garanta que scripts rodam localmente (`bronze_extract`, `silver_process`, `registry_manager`).
+> 2. `uv sync` e garanta que os comandos rodam (`uv run coops-bronze`, `uv run pytest`).
 > 3. Adicione/ajuste testes (quando aplicável) e execute validações.
 > 4. Atualize documentação se o comportamento público mudar.
 > 5. Abra o PR seguindo o checklist.
@@ -43,27 +43,16 @@ Detalhes: veja `ARCHITECTURE.md`.
 
 ### Backend (Python)
 
-1. **Criar ambiente virtual:**
+1. **Instalar dependências e o pacote** (cria o virtualenv automaticamente):
    ```bash
-   python -m venv .venv
+   uv sync
    ```
+   Isso instala o pacote `coops` e os comandos `coops-bronze`, `coops-silver`,
+   `coops-gold`, `coops-aggregate` e `coops-registry`. É o mesmo comando que a CI roda.
 
-2. **Ativar ambiente:**
-   - **Windows (PowerShell):**
-     ```powershell
-     .\.venv\Scripts\Activate.ps1
-     ```
-   - **Linux/Mac:**
-     ```bash
-     source .venv/bin/activate
-     ```
+   Sem uv: `python -m venv .venv && source .venv/bin/activate && pip install -e . --group dev` (pip >= 25.1).
 
-3. **Instalar dependências:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Configurar credenciais GitHub:**
+2. **Configurar credenciais GitHub:**
 
    Crie um arquivo `.secrets` na raiz do projeto:
    ```
@@ -71,14 +60,17 @@ Detalhes: veja `ARCHITECTURE.md`.
    GITHUB_ORG=unb-mds
    ```
 
-5. **Executar pipeline manual** (ajuste --org para sua organização GitHub alvo):
+3. **Executar pipeline manual** (a organização alvo vem de `GITHUB_ORG` no `.secrets` ou no ambiente):
    ```bash
-   python3 src/bronze_extract.py --token $GITHUB_TOKEN --org coops-org --cache
-   python3 src/silver_process.py --org coops-org
-   python3 src/registry_manager.py
+   uv run coops-bronze --cache
+   uv run coops-silver
+   uv run coops-gold
+   uv run coops-aggregate
+   uv run coops-registry
    ```
+   Os comandos escrevem em `./data` e `./cache`; na raiz do repositório eles sobrescrevem os arquivos rastreados `data/master_registry.json` e `data/data_catalog.json` (não commite essas mudanças). Para manter o checkout limpo, rode de outro diretório com `uv run --project <caminho-do-CoOps> ...`.
 
-Para simular GitHub Actions localmente (opcional): consulte `desenvolvimento.md`.
+Para simular GitHub Actions localmente e conectar o frontend aos dados gerados (opcional): consulte `RUNNING_LOCALLY.md`.
 
 ### Frontend (React)
 
@@ -142,11 +134,13 @@ main (produção)
    git push origin feat/issue-42-dashboard-metricas
    ```
 
-5. **Abrir Pull Request** no GitHub
+5. **Abrir Pull Request como draft** no GitHub
 
-6. **Code Review** e aprovação
+6. **Validar na organização** (`unb-mds/CoOps`) com o workflow *Validate Pipeline (manual)* e marcar o PR como *Ready for review*. Passo a passo em [docs/TESTING_PULL_REQUESTS.md](docs/TESTING_PULL_REQUESTS.md).
 
-7. **Merge** para `main` (via Squash and Merge)
+7. **Code Review** e aprovação
+
+8. **Merge** para `main` (via Squash and Merge)
 
 ---
 ## Commits (Conventional Commits)
@@ -201,6 +195,7 @@ Antes de abrir o PR:
 - [ ] Sem arquivos temporários (cache local, credenciais, etc.)
 - [ ] Testes adicionados/atualizados
 - [ ] CI/CD passando
+- [ ] Validação na organização (`unb-mds/CoOps`) verde para o último commit ([docs/TESTING_PULL_REQUESTS.md](docs/TESTING_PULL_REQUESTS.md))
 
 ### Template sugerido no PR
 ```
@@ -344,18 +339,20 @@ tests/
 
 ### Python - pytest
 
+Prefixe com `uv run` (ou ative o venv com `source .venv/bin/activate`):
+
 ```bash
 # Todos os testes
-pytest
+uv run pytest
 
 # Com cobertura
-pytest --cov=src
+uv run pytest --cov=coops
 
 # Teste específico
-pytest tests/unit/test_api_client.py::test_get_repository_success
+uv run pytest tests/unit/test_api_client.py::test_get_repository_success
 
 # Verbose
-pytest -v
+uv run pytest -v
 ```
 
 ### TypeScript/React - Vitest

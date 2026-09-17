@@ -1,4 +1,4 @@
-"""Unit tests for src/ai_analysis/generate_members_ai.py"""
+"""Unit tests for coops.ai_analysis.generate_members_ai"""
 
 import json
 import sys
@@ -7,11 +7,6 @@ from pathlib import Path
 from unittest.mock import patch, MagicMock, mock_open
 
 import pytest
-
-ROOT = Path(__file__).resolve().parents[2]
-SRC = ROOT / "src"
-if str(SRC) not in sys.path:
-    sys.path.insert(0, str(SRC))
 
 # Provide a stub for google.generativeai before importing the module under test,
 # since the real package may not be installed in the test environment.
@@ -23,7 +18,7 @@ _google_stub.generativeai = _genai_stub
 sys.modules.setdefault("google", _google_stub)
 sys.modules.setdefault("google.generativeai", _genai_stub)
 
-import ai_analysis.generate_members_ai as gm
+import coops.ai_analysis.generate_members_ai as gm
 
 
 # ---------------------------------------------------------------------------
@@ -590,6 +585,26 @@ class TestAnalyzeMembersWithGemini:
         assert "alice" in result
         assert "Commits look great" in result["alice"]["commits_analysis"]
 
+    def test_model_comes_from_settings(self, mock_genai, mock_load_api_key, simple_members_data, monkeypatch):
+        """The Gemini model is configurable through GEMINI_MODEL."""
+        from coops.infrastructure.config import get_settings
+        monkeypatch.setenv("GEMINI_MODEL", "gemini-test-model")
+        get_settings.cache_clear()
+        try:
+            model_mock = MagicMock()
+            mock_genai.GenerativeModel.return_value = model_mock
+            response_mock = MagicMock()
+            response_mock.candidates = [MagicMock()]
+            response_mock.text = _well_formed_ai_response(["alice"])
+            model_mock.generate_content.return_value = response_mock
+
+            with patch.object(gm.time, "sleep"):
+                gm.analyze_members_with_gemini(simple_members_data, max_requests=10)
+        finally:
+            get_settings.cache_clear()
+
+        mock_genai.GenerativeModel.assert_called_once_with("gemini-test-model")
+
     def test_safety_filter_blocked_produces_fallback(self, mock_genai, mock_load_api_key, simple_members_data):
         """When response has no candidates (safety filter), produce fallback entries."""
         model_mock = MagicMock()
@@ -688,50 +703,72 @@ class TestAnalyzeMembersWithGemini:
 # ===========================================================================
 
 class TestLoadApiKey:
+    """load_api_key() now delegates to coops.infrastructure.get_settings(), which
+    is lru_cache'd process-wide, so each test isolates the env and resets the cache."""
+
+    @pytest.fixture(autouse=True)
+    def _isolated_settings(self, monkeypatch):
+        from coops.infrastructure.config import get_settings
+        for var in ("GITHUB_TOKEN", "GITHUB_ORG", "GEMINI_API_KEY", "GOOGLE_API_KEY"):
+            monkeypatch.delenv(var, raising=False)
+        get_settings.cache_clear()
+        yield
+        get_settings.cache_clear()
+
     def test_loads_gemini_key_from_secrets_file(self, tmp_path, monkeypatch):
         secrets = tmp_path / ".secrets"
-        secrets.write_text("GEMINI_API_KEY=test-key-123\n")
+        secrets.write_text("GITHUB_TOKEN=t\nGITHUB_ORG=o\nGEMINI_API_KEY=test-key-123\n")
         monkeypatch.chdir(tmp_path)
         key = gm.load_api_key()
         assert key == "test-key-123"
 
+    def test_loads_key_without_github_settings(self, tmp_path, monkeypatch):
+        """The AI job in gold-process.yaml only exports GEMINI_API_KEY."""
+        monkeypatch.chdir(tmp_path)
+        monkeypatch.setenv("GEMINI_API_KEY", "only-gemini")
+        key = gm.load_api_key()
+        assert key == "only-gemini"
+
     def test_loads_google_key_from_secrets_file(self, tmp_path, monkeypatch):
         secrets = tmp_path / ".secrets"
-        secrets.write_text("GOOGLE_API_KEY=google-key-456\n")
+        secrets.write_text("GITHUB_TOKEN=t\nGITHUB_ORG=o\nGOOGLE_API_KEY=google-key-456\n")
         monkeypatch.chdir(tmp_path)
         key = gm.load_api_key()
         assert key == "google-key-456"
 
     def test_gemini_key_takes_priority_in_secrets(self, tmp_path, monkeypatch):
         secrets = tmp_path / ".secrets"
-        secrets.write_text("GEMINI_API_KEY=gemini-first\nGOOGLE_API_KEY=google-second\n")
+        secrets.write_text("GITHUB_TOKEN=t\nGITHUB_ORG=o\nGEMINI_API_KEY=gemini-first\nGOOGLE_API_KEY=google-second\n")
         monkeypatch.chdir(tmp_path)
         key = gm.load_api_key()
         assert key == "gemini-first"
 
     def test_falls_back_to_env_var_gemini(self, tmp_path, monkeypatch):
         monkeypatch.chdir(tmp_path)  # No .secrets file
+        monkeypatch.setenv("GITHUB_TOKEN", "t")
+        monkeypatch.setenv("GITHUB_ORG", "o")
         monkeypatch.setenv("GEMINI_API_KEY", "env-gemini-key")
         key = gm.load_api_key()
         assert key == "env-gemini-key"
 
     def test_falls_back_to_env_var_google(self, tmp_path, monkeypatch):
         monkeypatch.chdir(tmp_path)
+        monkeypatch.setenv("GITHUB_TOKEN", "t")
+        monkeypatch.setenv("GITHUB_ORG", "o")
         monkeypatch.setenv("GOOGLE_API_KEY", "env-google-key")
-        monkeypatch.delenv("GEMINI_API_KEY", raising=False)
         key = gm.load_api_key()
         assert key == "env-google-key"
 
     def test_raises_when_no_key_found(self, tmp_path, monkeypatch):
         monkeypatch.chdir(tmp_path)
-        monkeypatch.delenv("GEMINI_API_KEY", raising=False)
-        monkeypatch.delenv("GOOGLE_API_KEY", raising=False)
+        monkeypatch.setenv("GITHUB_TOKEN", "t")
+        monkeypatch.setenv("GITHUB_ORG", "o")
         with pytest.raises(ValueError, match="API key"):
             gm.load_api_key()
 
     def test_ignores_unrelated_lines_in_secrets(self, tmp_path, monkeypatch):
         secrets = tmp_path / ".secrets"
-        secrets.write_text("# comment\nOTHER_VAR=foo\nGEMINI_API_KEY=the-key\n")
+        secrets.write_text("GITHUB_TOKEN=t\nGITHUB_ORG=o\n# comment\nOTHER_VAR=foo\nGEMINI_API_KEY=the-key\n")
         monkeypatch.chdir(tmp_path)
         key = gm.load_api_key()
         assert key == "the-key"

@@ -188,7 +188,8 @@ export default function Analytics() {
     for (let hour = 0; hour < 24; hour++) {
       const events = temporalData.filter((e) => {
         const date = new Date(e.date);
-        return date.getDay() === day && date.getHours() === hour;
+        // Rows start on Monday, while getDay() starts on Sunday (0)
+        return date.getDay() === (day + 1) % 7 && date.getHours() === hour;
       });
       heatmapData.push({
         row: days[day],

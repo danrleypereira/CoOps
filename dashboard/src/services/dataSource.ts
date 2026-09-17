@@ -38,7 +38,10 @@ export async function fetchData<T = any>(path: string): Promise<T> {
   try {
     const response = await fetch(url);
     if (!response.ok) {
-      throw new Error(`Failed to fetch ${url}: ${response.statusText}`);
+      // statusText is empty over HTTP/2 (e.g. raw.githubusercontent.com), so
+      // always include the numeric status code.
+      const statusText = response.statusText ? ` ${response.statusText}` : '';
+      throw new Error(`Failed to fetch ${url} (status: ${response.status}${statusText})`);
     }
     return await response.json();
   } catch (error) {
@@ -48,8 +51,8 @@ export async function fetchData<T = any>(path: string): Promise<T> {
 }
 
 /**
- * Filter out metadata from data arrays
+ * Filter out metadata entries (and null/undefined entries) from data arrays
  */
 export function filterMetadata<T>(data: T[]): T[] {
-  return data.filter((item: any) => !item._metadata);
+  return data.filter((item: any) => item != null && !item._metadata);
 }
