@@ -163,10 +163,12 @@ jobs:
       - name: Check outputs
         env:
           RUN_AI: ${{ inputs.run_ai }}
+          SKIP_STRUCTURE: ${{ inputs.skip_structure }}
         run: |
           uv run python - <<'EOF'
-          import json, os, sys
+          import glob, json, os, sys
 
+          # Every file the dashboard reads (dashboard/src) must be produced.
           required = [
               "bronze/repositories_filtered.json", "bronze/issues_all.json",
               "bronze/prs_all.json", "bronze/commits_all.json",
@@ -174,16 +176,27 @@ jobs:
               "silver/contribution_metrics.json", "silver/collaboration_edges.json",
               "silver/temporal_events.json", "silver/temporal_statistics.json",
               "silver/network_statistics.json",
+              "silver/members_analytics.json", "silver/available_repos.json",
+              "bronze/members_detailed.json",
               "gold/executive_dashboard.json", "gold/timeline_last_7_days.json",
               "gold/timeline_last_12_months.json",
               "master_registry.json", "data_catalog.json",
           ]
           if os.environ.get("RUN_AI") == "true":
               required.append("silver/ai/members_ai.json")
+          if os.environ.get("SKIP_STRUCTURE") != "true":
+              required.append("silver/language_analysis_all.json")
+              required += sorted(os.path.relpath(p, "data") for p in glob.glob("data/silver/hierarchy_*.json"))
+          # These must not be empty: the dashboard pages built on them show nothing otherwise.
+          non_empty = {"bronze/repositories_filtered.json", "bronze/members_detailed.json",
+                       "silver/available_repos.json"}
 
           def size(data):
               if isinstance(data, list):
-                  return len([d for d in data if not (isinstance(d, dict) and "_metadata" in d)])
+                  # Only a leading metadata-only entry is skipped (see strip_metadata).
+                  if data and isinstance(data[0], dict) and set(data[0]) == {"_metadata"}:
+                      data = data[1:]
+                  return len(data)
               return "object"
 
           rows, failed = [], False
@@ -196,8 +209,8 @@ jobs:
                   rows.append((rel, f"FAILED: {exc.__class__.__name__}", "-"))
                   failed = True
                   continue
-              if rel == "bronze/repositories_filtered.json" and not records:
-                  rows.append((rel, "FAILED: no repositories extracted", records))
+              if rel in non_empty and not records:
+                  rows.append((rel, "FAILED: empty", records))
                   failed = True
               else:
                   rows.append((rel, "ok", records))
