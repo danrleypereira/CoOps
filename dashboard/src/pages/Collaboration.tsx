@@ -5,7 +5,8 @@ import { CollaborationEdge, HeatmapDataPoint } from '../types';
 import { useMemo } from 'react';
 import { useSearchParams, useLocation } from 'react-router-dom';
 import { Utils } from './Utils';
-import { fetchData, filterMetadata } from '../services/dataSource';
+import { fetchData, filterMetadata, isDataNotFoundError } from '../services/dataSource';
+import DataNotGenerated from '../components/DataNotGenerated';
 import type { ProcessedActivityResponse, RepoActivitySummary } from './Utils';
 
 
@@ -20,6 +21,7 @@ export default function CollaborationPage() {
   const [pageData, setPageData] = useState<CollaborationPageData | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [missingDataPath, setMissingDataPath] = useState<string | null>(null);
   const [ mainData, setMainData ] = useState<ProcessedActivityResponse | null>(null);
   const [searchParams] = useSearchParams();
   const location = useLocation();
@@ -34,6 +36,7 @@ export default function CollaborationPage() {
       try {
         setLoading(true);
         setError(null);
+        setMissingDataPath(null);
 
         const [collaborationData, heatmapData, processedMainData] = await Promise.all([
           fetchData<CollaborationEdge[]>('silver/collaboration_edges.json'),
@@ -48,7 +51,11 @@ export default function CollaborationPage() {
         setMainData(processedMainData);
 
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'An unknown error occurred');
+        if (isDataNotFoundError(err)) {
+          setMissingDataPath(err.path);
+        } else {
+          setError(err instanceof Error ? err.message : 'An unknown error occurred');
+        }
         setPageData(null);
         setMainData(null);
       } finally {
@@ -98,6 +105,7 @@ export default function CollaborationPage() {
       {loading && (
         <div className="text-center text-white/70 mt-80" >Loading data...</div>
       )}
+      {missingDataPath && !loading && <DataNotGenerated path={missingDataPath} className="mt-30" />}
       {error && (
         <div className="bg-red-900/50 border border-red-700 text-red-300 px-4 py-3 rounded relative text-center" role="alert">
           <strong className="font-bold">Error loading data: </strong>

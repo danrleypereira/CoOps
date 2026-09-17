@@ -7,6 +7,23 @@
  * run is still in progress, so it is presented as information, not an error.
  */
 
+interface DataLoadErrorProps {
+  message: string;
+}
+
+/** Alert for real load failures (network, HTTP 5xx, invalid JSON...). */
+export function DataLoadError({ message }: DataLoadErrorProps) {
+  return (
+    <div
+      className="bg-red-900/50 border border-red-700 text-red-300 px-4 py-3 rounded text-center"
+      role="alert"
+    >
+      <strong className="font-bold">Error loading data: </strong>
+      <span>{message}</span>
+    </div>
+  );
+}
+
 interface DataNotGeneratedProps {
   /** Path of the missing file relative to the data directory, e.g. 'silver/temporal_events.json'. */
   path: string;

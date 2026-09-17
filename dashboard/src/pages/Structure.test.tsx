@@ -3,7 +3,7 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import type { ReactNode } from 'react';
 import Structure from './Structure';
-import { fetchData } from '../services/dataSource';
+import { DataNotFoundError, fetchData } from '../services/dataSource';
 import { Utils, type ProcessedActivityResponse } from './Utils';
 
 vi.mock('../services/dataSource', async () => {
@@ -268,12 +268,32 @@ describe('Structure page', () => {
     expect(chartData()).toEqual([]);
   });
 
-  test('on load failure logs the error, renders page with no members and empty chart', async () => {
+  test('on load failure logs and shows the error instead of the chart', async () => {
     const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
     mockedActivity.mockRejectedValue(new Error('fail'));
-    await renderLoaded();
+    renderPage();
+    const alert = await screen.findByRole('alert');
+    expect(alert).toHaveTextContent('Error loading data: fail');
     expect(errorSpy).toHaveBeenCalledWith('Failed to load structure data:', expect.any(Error));
-    expect(chartData()).toEqual([]);
+    expect(screen.queryByTestId('bar-chart')).not.toBeInTheDocument();
     expect(screen.queryByPlaceholderText('Search members...')).not.toBeInTheDocument();
+    expect(screen.getByTestId('dashboard-layout')).toHaveAttribute('data-subpage', 'structure');
+  });
+
+  test('shows the not-generated-yet empty state when temporal events are missing (404)', async () => {
+    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    const missing = new DataNotFoundError(
+      'silver/temporal_events.json',
+      'https://x/data/silver/temporal_events.json'
+    );
+    mockedFetchData.mockRejectedValue(missing);
+    mockedActivity.mockRejectedValue(missing);
+    renderPage();
+    const status = await screen.findByTestId('data-not-generated');
+    expect(status).toHaveTextContent("This data hasn't been generated yet");
+    expect(status).toHaveTextContent('data/silver/temporal_events.json');
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('bar-chart')).not.toBeInTheDocument();
+    expect(errorSpy).not.toHaveBeenCalled();
   });
 });

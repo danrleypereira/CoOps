@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { fetchData } from '../services/dataSource';
+import { fetchData, isDataNotFoundError } from '../services/dataSource';
+import DataNotGenerated from './DataNotGenerated';
 
 /**
  * Interface for a member's AI analysis
@@ -85,6 +86,8 @@ export function AISummary({
   const [filteredMembers, setFilteredMembers] = useState<MemberAnalysis[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // Set when the pipeline data file doesn't exist yet (404 from the data source)
+  const [missingDataPath, setMissingDataPath] = useState<string | null>(null);
   
   // State for filters
   const [searchName, setSearchName] = useState('');
@@ -107,6 +110,7 @@ export function AISummary({
     const loadData = async () => {
       setIsLoading(true);
       setError(null);
+      setMissingDataPath(null);
 
       try {
           let data: Record<string, unknown>;
@@ -148,9 +152,14 @@ export function AISummary({
           const repos = [...new Set(validMembers.flatMap(m => m.repos || []))];
           setAvailableRepos(repos);
       } catch (err) {
-        console.error('Error loading AI analysis data:', err);
-        const errorMessage = err instanceof Error ? err.message : 'Failed to load data';
-        setError(errorMessage);
+        if (isDataNotFoundError(err)) {
+          setMissingDataPath(err.path);
+          setError('FILE_NOT_FOUND');
+        } else {
+          console.error('Error loading AI analysis data:', err);
+          const errorMessage = err instanceof Error ? err.message : 'Failed to load data';
+          setError(errorMessage);
+        }
         setMembersData([]);
         setFilteredMembers([]);
       } finally {
@@ -427,7 +436,13 @@ export function AISummary({
               </div>
             )}
 
-            {error && (
+            {missingDataPath && (
+              <div className="p-4">
+                <DataNotGenerated path={missingDataPath} />
+              </div>
+            )}
+
+            {error && !missingDataPath && (
               <div className="p-6 text-center">
                 <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-red-900/30 flex items-center justify-center">
                   <svg
