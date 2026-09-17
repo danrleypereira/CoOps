@@ -1128,10 +1128,11 @@ def save_json_data(data: Any, filepath: str, timestamp: bool = True) -> str:
     if timestamp:
         now = datetime.now().isoformat()
         if isinstance(data, dict):
-            data['_metadata'] = {
+            # Copy: callers may reuse the dict (e.g. in a consolidated file).
+            data = {**data, '_metadata': {
                 'extracted_at': now,
                 'file_path': filepath
-            }
+            }}
         elif isinstance(data, list) and len(data) > 0:
 
             metadata = {
