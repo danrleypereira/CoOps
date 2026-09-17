@@ -16,13 +16,14 @@ const menuItems: MenuItem[] = [
   { id: 'organization', label: 'Organization', icon: '📊' },
   { id: 'overview', label: 'Overview', icon: '📈' },
   { id: 'repos', label: 'Repositories', icon: '💻' },
+  { id: 'ai', label: 'AI Analysis', icon: '🤖' },
 ];
 
 /**
  * Sidebar Component
  *
  * Main navigation sidebar for the application.
- * Provides navigation between organization, overview, and repository views.
+ * Provides navigation between organization, overview, repository and AI analysis views.
  * Can be collapsed to save screen space.
  */
 export default function Sidebar({ currentPage }: SidebarProps) {

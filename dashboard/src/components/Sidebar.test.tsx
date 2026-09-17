@@ -116,6 +116,22 @@ describe('Sidebar Component', () => {
       expect(mockNavigate).toHaveBeenCalledWith('/organization');
     });
 
+    test('navega para /ai ao clicar em AI Analysis', () => {
+      renderWithRouter(<Sidebar />);
+
+      const aiButton = screen.getByText('AI Analysis').closest('button');
+      expect(aiButton).toHaveTextContent('🤖');
+      fireEvent.click(aiButton!);
+
+      expect(mockNavigate).toHaveBeenCalledWith('/ai');
+    });
+
+    test('destaca AI Analysis quando currentPage é ai', () => {
+      renderWithRouter(<Sidebar currentPage="ai" />);
+
+      expect(screen.getByText('AI Analysis').closest('button')).toHaveClass('text-blue-300');
+    });
+
     test('navega para home ao clicar em Home', () => {
       renderWithRouter(<Sidebar />);
 
