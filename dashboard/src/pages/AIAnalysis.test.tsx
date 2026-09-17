@@ -1,5 +1,5 @@
 import { describe, test, expect, vi, beforeEach, afterEach } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import AIAnalysis from './AIAnalysis';
 import { SidebarProvider } from '../contexts/SidebarContext';
@@ -50,7 +50,11 @@ describe('AIAnalysis page', () => {
     renderPage();
 
     expect(screen.getByRole('heading', { level: 1, name: 'AI Member Analysis' })).toBeInTheDocument();
-    expect(screen.getByText('Select members').closest('button')).toBeInTheDocument();
+    const selector = screen.getByText('Select members').closest('button');
+    expect(selector).toBeInTheDocument();
+    // The loaded member shows up in the selector: the data has arrived
+    fireEvent.click(selector!);
+    expect(await screen.findByText('member-a')).toBeInTheDocument();
     expect(screen.getByText('AI Analysis').closest('button')).toHaveClass('text-blue-300');
     expect(mockedFetchData).toHaveBeenCalledWith('silver/ai/members_ai.json');
     expect(screen.queryByRole('status')).not.toBeInTheDocument();
