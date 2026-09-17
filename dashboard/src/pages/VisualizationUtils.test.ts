@@ -2,6 +2,7 @@ import { describe, test, expect, vi, beforeEach, afterEach } from 'vitest';
 import type { LanguageAnalysis } from './VisualizationUtils';
 
 type UtilsModule = typeof import('./VisualizationUtils');
+type DataSourceModule = typeof import('../services/dataSource');
 
 const repoA: LanguageAnalysis = {
   repository: 'repo-a',
@@ -21,6 +22,11 @@ const repoB: LanguageAnalysis = {
   languages: [],
 };
 
+const dataUrl = (path: string) =>
+  `https://raw.githubusercontent.com/${import.meta.env.VITE_GITHUB_ORG || 'DW-Corp'}/${
+    import.meta.env.VITE_GITHUB_REPO || 'CoOps'
+  }/main/data/${path}`;
+
 function jsonResponse(body: unknown, ok = true, status = 200): Response {
   return {
     ok,
@@ -31,10 +37,14 @@ function jsonResponse(body: unknown, ok = true, status = 200): Response {
 
 const fetchMock = vi.fn<(input: string) => Promise<Response>>();
 
+let dataSource: DataSourceModule;
+
 // The class keeps a static cache, so load a fresh module for every test
 async function loadUtils(): Promise<UtilsModule['VisualizationUtils']> {
   vi.resetModules();
   const mod: UtilsModule = await import('./VisualizationUtils');
+  // same module instance VisualizationUtils uses (for instanceof checks)
+  dataSource = await import('../services/dataSource');
   return mod.VisualizationUtils;
 }
 
@@ -64,9 +74,37 @@ describe('VisualizationUtils', () => {
       );
       const Utils = await loadUtils();
       await expect(Utils.fetchAvailableRepos()).resolves.toEqual(['repo-a', 'repo-b']);
+      // goes through dataSource (raw.githubusercontent.com or /data), not BASE_URL
       expect(fetchMock).toHaveBeenCalledWith(
+        `${dataSource.getDataBasePath()}/silver/language_analysis_all.json`
+      );
+      expect(fetchMock).not.toHaveBeenCalledWith(
         `${import.meta.env.BASE_URL}data/silver/language_analysis_all.json`
       );
+    });
+
+    test('resolves to the configured data URL', async () => {
+      fetchMock.mockResolvedValue(jsonResponse([repoA]));
+      const Utils = await loadUtils();
+      await Utils.fetchAvailableRepos();
+      const expected = import.meta.env.VITE_USE_LOCAL_DATA === 'true'
+        ? '/data/silver/language_analysis_all.json'
+        : dataUrl('silver/language_analysis_all.json');
+      expect(fetchMock).toHaveBeenCalledWith(expected);
+    });
+
+    test('keeps analysis records that carry their own _metadata key', async () => {
+      // Real pipeline output: every record has a _metadata key, not only the header entry
+      fetchMock.mockResolvedValue(
+        jsonResponse([
+          { _metadata: { extracted_at: 'now', record_count: 2 } },
+          { _metadata: { extracted_at: 'now' }, ...repoA },
+          { _metadata: { extracted_at: 'now' }, ...repoB },
+        ])
+      );
+      const Utils = await loadUtils();
+      await expect(Utils.fetchAvailableRepos()).resolves.toEqual(['repo-a', 'repo-b']);
+      await expect(Utils.fetchLanguageData('repo-a')).resolves.toMatchObject(repoA);
     });
 
     test('uses the cache after the first successful load', async () => {
@@ -91,7 +129,7 @@ describe('VisualizationUtils', () => {
       await expect(Utils.fetchAvailableRepos()).resolves.toEqual([]);
       expect(console.error).toHaveBeenCalledWith(
         'Error loading language analysis data:',
-        expect.objectContaining({ message: 'HTTP error! status: 500' })
+        expect.objectContaining({ message: expect.stringContaining('(status: 500)') })
       );
       expect(console.error).toHaveBeenCalledWith('Error fetching repositories:', expect.any(Error));
       // Cache was not marked loaded, so a second call fetches again
@@ -126,30 +164,73 @@ describe('VisualizationUtils', () => {
   });
 
   describe('fetchTreeData', () => {
-    test('fetches and returns tree JSON for a repository', async () => {
-      const tree = { name: 'root', children: [] };
-      fetchMock.mockResolvedValue(jsonResponse(tree));
+    // Output of convert_tree_to_hierarchy wrapped by the silver pipeline
+    // (save_json_data adds a _metadata key next to the tree)
+    const hierarchyFile = {
+      repository: 'repo-a',
+      owner: 'org',
+      branch: 'main',
+      extracted_at: '2024-01-01T00:00:00',
+      hierarchy: {
+        name: 'root',
+        type: 'directory',
+        children: [
+          {
+            name: 'src',
+            type: 'directory',
+            path: 'src',
+            children: [
+              {
+                name: 'main.py',
+                type: 'file',
+                language: 'Python',
+                size: 120,
+                extension: '.py',
+                path: 'src/main.py',
+              },
+            ],
+          },
+        ],
+      },
+      _metadata: { extracted_at: 'now', file_path: 'data/silver/hierarchy_repo-a.json' },
+    };
+
+    test('fetches silver/hierarchy_<repo>.json and returns the tree root', async () => {
+      fetchMock.mockResolvedValue(jsonResponse(hierarchyFile));
       const Utils = await loadUtils();
-      await expect(Utils.fetchTreeData('repo-a')).resolves.toEqual(tree);
+      await expect(Utils.fetchTreeData('repo-a')).resolves.toEqual(hierarchyFile.hierarchy);
       expect(fetchMock).toHaveBeenCalledWith(
-        `${import.meta.env.BASE_URL}data/silver/repo_tree_pack_repo-a.json`
+        `${dataSource.getDataBasePath()}/silver/hierarchy_repo-a.json`
       );
     });
 
-    test('returns null on non-ok response', async () => {
+    test('returns null when the hierarchy file has not been generated (404)', async () => {
       fetchMock.mockResolvedValue(jsonResponse(null, false, 404));
       const Utils = await loadUtils();
       await expect(Utils.fetchTreeData('repo-x')).resolves.toBeNull();
-      expect(console.error).toHaveBeenCalledWith(
-        'Error fetching tree data for repo-x:',
-        expect.objectContaining({ message: 'Failed to load tree data for repo-x' })
-      );
+      expect(console.error).not.toHaveBeenCalled();
     });
 
-    test('returns null when fetch rejects', async () => {
+    test.each([[null], [{ repository: 'repo-a' }], [{ hierarchy: 'oops' }]])(
+      'returns null when the file has no tree (%j)',
+      async (body) => {
+        fetchMock.mockResolvedValue(jsonResponse(body));
+        const Utils = await loadUtils();
+        await expect(Utils.fetchTreeData('repo-a')).resolves.toBeNull();
+      }
+    );
+
+    test('propagates real failures', async () => {
       fetchMock.mockRejectedValue(new Error('dns'));
       const Utils = await loadUtils();
-      await expect(Utils.fetchTreeData('repo-y')).resolves.toBeNull();
+      await expect(Utils.fetchTreeData('repo-y')).rejects.toThrow('dns');
+      expect(console.error).toHaveBeenCalledWith(
+        'Error fetching tree data for repo-y:',
+        expect.objectContaining({ message: 'dns' })
+      );
+
+      fetchMock.mockResolvedValue(jsonResponse(null, false, 500));
+      await expect(Utils.fetchTreeData('repo-y')).rejects.toThrow('(status: 500)');
     });
   });
 

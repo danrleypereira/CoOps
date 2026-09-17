@@ -1,3 +1,5 @@
+import { fetchData, isDataNotFoundError } from '../services/dataSource';
+
 export interface LanguageAnalysisFile {
   path: string;
   name: string;
@@ -28,8 +30,31 @@ export interface LanguageAnalysis {
   languages: LanguageData[];
 }
 
+/**
+ * Node of the per-repository file tree written by the pipeline
+ * (`convert_tree_to_hierarchy` in src/coops/silver/file_language_analysis.py).
+ */
+export interface RepoHierarchyNode {
+  name: string;
+  type: 'file' | 'directory';
+  path?: string;
+  language?: string;
+  size?: number;
+  extension?: string;
+  children?: RepoHierarchyNode[];
+}
+
+/** Shape of `data/silver/hierarchy_<repo>.json`: metadata wrapping the tree root. */
+export interface RepoHierarchyFile {
+  repository: string;
+  owner?: string;
+  branch?: string;
+  extracted_at?: string;
+  hierarchy: RepoHierarchyNode;
+}
+
 export class VisualizationUtils {
-  private static readonly DATA_URL = `${import.meta.env.BASE_URL}data/silver/language_analysis_all.json`;
+  private static readonly DATA_PATH = 'silver/language_analysis_all.json';
   private static cache: Map<string, LanguageAnalysis> = new Map();
   private static cacheLoaded = false;
 
@@ -40,13 +65,11 @@ export class VisualizationUtils {
     if (this.cacheLoaded) return;
 
     try {
-      const response = await fetch(this.DATA_URL);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
-      
-      // Filtra apenas objetos válidos (ignora _metadata)
+      const data = await fetchData<unknown>(this.DATA_PATH);
+
+      // Filtra apenas objetos válidos (ignora a entrada de _metadata). Não usar
+      // filterMetadata aqui: cada registro de análise também carrega sua
+      // própria chave _metadata.
       const analyses: LanguageAnalysis[] = Array.isArray(data) 
         ? data.filter((item: any) => item.repository && item.languages)
         : [];
@@ -58,7 +81,9 @@ export class VisualizationUtils {
 
       this.cacheLoaded = true;
     } catch (error) {
-      console.error("Error loading language analysis data:", error);
+      if (!isDataNotFoundError(error)) {
+        console.error("Error loading language analysis data:", error);
+      }
       throw error;
     }
   }
@@ -98,22 +123,27 @@ export class VisualizationUtils {
   }
 
   /**
-   * Fetch tree pack data for a specific repository
-   * 
+   * Fetch the file tree (circle pack hierarchy) of a specific repository
+   * from `silver/hierarchy_<repo>.json`.
+   *
    * @param repoName - Name of the repository
-   * @returns Tree pack data or null if not found
+   * @returns Root node of the tree (the file's `hierarchy` field), or null if
+   *   the file hasn't been generated or has no tree
+   * @throws the original error for network/HTTP/parse failures
    */
-  static async fetchTreeData(repoName: string): Promise<any | null> {
+  static async fetchTreeData(repoName: string): Promise<RepoHierarchyNode | null> {
+    let file: RepoHierarchyFile | null;
     try {
-      const response = await fetch(`${import.meta.env.BASE_URL}data/silver/repo_tree_pack_${repoName}.json`);
-      if (!response.ok) {
-        throw new Error(`Failed to load tree data for ${repoName}`);
-      }
-      return await response.json();
+      file = await fetchData<RepoHierarchyFile | null>(
+        `silver/hierarchy_${encodeURIComponent(repoName)}.json`
+      );
     } catch (error) {
+      if (isDataNotFoundError(error)) return null;
       console.error(`Error fetching tree data for ${repoName}:`, error);
-      return null;
+      throw error;
     }
+    const hierarchy = file && typeof file === 'object' ? file.hierarchy : null;
+    return hierarchy && typeof hierarchy === 'object' ? hierarchy : null;
   }
 
   /**
