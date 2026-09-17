@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import type { ReactNode } from 'react';
 import VisualizationPage from './Visualization';
 import { VisualizationUtils, type LanguageAnalysis } from './VisualizationUtils';
+import { DataNotFoundError } from '../services/dataSource';
 
 vi.mock('./VisualizationUtils', () => ({
   VisualizationUtils: {
@@ -170,10 +171,12 @@ describe('VisualizationPage', () => {
     expect(screen.queryByTestId('fingerprint')).not.toBeInTheDocument();
   });
 
-  test('shows "no data" error when the repository is not found', async () => {
+  test('shows "no data" (not an error) when the repository is not in the data', async () => {
     mockedFetch.mockResolvedValue(null);
     renderAt('/visualization?repo=ghost');
-    expect(await screen.findByText('Error: No data available for this repository')).toBeInTheDocument();
+    expect(await screen.findByText('No data available for this repository')).toBeInTheDocument();
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+    expect(screen.queryByText(/Error:/)).not.toBeInTheDocument();
     expect(screen.queryByTestId('treemap')).not.toBeInTheDocument();
     expect(screen.queryByTestId('language-legend')).not.toBeInTheDocument();
     expect(screen.queryByRole('button', { name: /Circle Pack/ })).not.toBeInTheDocument();
@@ -183,6 +186,34 @@ describe('VisualizationPage', () => {
     mockedFetch.mockRejectedValue(new Error('Network exploded'));
     renderAt('/visualization?repo=my-repo');
     expect(await screen.findByText('Error: Network exploded')).toBeInTheDocument();
+    expect(screen.queryByText('No data available for this repository')).not.toBeInTheDocument();
+  });
+
+  // #73: an HTTP failure must not be reported as "no data"
+  test('shows HTTP errors with their status instead of "no data"', async () => {
+    mockedFetch.mockRejectedValue(
+      new Error('Failed to fetch https://x/data/silver/language_analysis_all.json (status: 500)')
+    );
+    renderAt('/visualization?repo=my-repo');
+    const alert = await screen.findByRole('alert');
+    expect(alert).toHaveTextContent('(status: 500)');
+    expect(screen.queryByText('No data available for this repository')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('data-not-generated')).not.toBeInTheDocument();
+  });
+
+  test('shows the not-generated-yet state when the analysis file is missing (404)', async () => {
+    mockedFetch.mockRejectedValue(
+      new DataNotFoundError(
+        'silver/language_analysis_all.json',
+        'https://x/data/silver/language_analysis_all.json'
+      )
+    );
+    renderAt('/visualization?repo=my-repo');
+    const status = await screen.findByTestId('data-not-generated');
+    expect(status).toHaveTextContent('data/silver/language_analysis_all.json');
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+    expect(screen.queryByText('No data available for this repository')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('treemap')).not.toBeInTheDocument();
   });
 
   test('shows "Unknown error" for non-Error rejections', async () => {

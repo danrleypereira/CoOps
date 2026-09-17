@@ -105,21 +105,18 @@ export class VisualizationUtils {
    * Fetch language analysis data for a specific repository from cache
    * 
    * @param repoName - Name of the repository
-   * @returns Language analysis data or null if not found
+   * @returns Language analysis data, or null if the repository isn't in the file
+   * @throws DataNotFoundError when the analysis file hasn't been generated yet,
+   *   or the original error for network/HTTP/parse failures
    */
   static async fetchLanguageData(repoName: string): Promise<LanguageAnalysis | null> {
-    try {
-      await this.loadAllLanguageData();
-      const data = this.cache.get(repoName);
-      if (!data) {
-        console.warn(`Repository "${repoName}" not found in cache`);
-        return null;
-      }
-      return data;
-    } catch (error) {
-      console.error(`Error fetching language data for ${repoName}:`, error);
+    await this.loadAllLanguageData();
+    const data = this.cache.get(repoName);
+    if (!data) {
+      console.warn(`Repository "${repoName}" not found in cache`);
       return null;
     }
+    return data;
   }
 
   /**

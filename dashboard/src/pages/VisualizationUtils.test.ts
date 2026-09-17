@@ -152,13 +152,30 @@ describe('VisualizationUtils', () => {
       expect(console.warn).toHaveBeenCalledWith('Repository "missing" not found in cache');
     });
 
-    test('returns null and logs when the fetch rejects', async () => {
+    // #73: errors must reach the page instead of being reported as "no data"
+    test('propagates network errors instead of returning null', async () => {
       fetchMock.mockRejectedValue(new Error('offline'));
       const Utils = await loadUtils();
-      await expect(Utils.fetchLanguageData('repo-a')).resolves.toBeNull();
-      expect(console.error).toHaveBeenCalledWith(
-        'Error fetching language data for repo-a:',
-        expect.objectContaining({ message: 'offline' })
+      await expect(Utils.fetchLanguageData('repo-a')).rejects.toThrow('offline');
+    });
+
+    test('propagates HTTP errors with the status', async () => {
+      fetchMock.mockResolvedValue(jsonResponse(null, false, 503));
+      const Utils = await loadUtils();
+      await expect(Utils.fetchLanguageData('repo-a')).rejects.toThrow('(status: 503)');
+    });
+
+    test('throws DataNotFoundError when the analysis file does not exist', async () => {
+      fetchMock.mockResolvedValue(jsonResponse(null, false, 404));
+      const Utils = await loadUtils();
+      const error = await Utils.fetchLanguageData('repo-a').catch((e: unknown) => e);
+      expect(dataSource.isDataNotFoundError(error)).toBe(true);
+      expect((error as InstanceType<DataSourceModule['DataNotFoundError']>).path).toBe(
+        'silver/language_analysis_all.json'
+      );
+      expect(console.error).not.toHaveBeenCalledWith(
+        'Error loading language analysis data:',
+        expect.anything()
       );
     });
   });

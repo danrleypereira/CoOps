@@ -6,6 +6,8 @@ import { VisualizationTabs } from '../components/VisualizationTabs';
 import { LanguageLegend } from '../components/LanguageLegend';
 import { RepoStructureAnalysis } from '../components/RepoStructureAnalysis';
 import DashboardLayout from '../components/DashboardLayout';
+import DataNotGenerated from '../components/DataNotGenerated';
+import { isDataNotFoundError } from '../services/dataSource';
 import { VisualizationUtils, type LanguageAnalysis } from './VisualizationUtils';
 
 export default function VisualizationPage() {
@@ -14,6 +16,10 @@ export default function VisualizationPage() {
   const [languageData, setLanguageData] = useState<LanguageAnalysis | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // Genuinely missing data: repository absent from the analysis file...
+  const [noData, setNoData] = useState(false);
+  // ...or the analysis file itself not generated yet (404)
+  const [missingDataPath, setMissingDataPath] = useState<string | null>(null);
   
   // Pega o repositório selecionado da URL (vem da toolbar)
   const repoParam = searchParams.get('repo');
@@ -31,6 +37,9 @@ export default function VisualizationPage() {
       try {
         setLoading(true);
         setError(null);
+        setNoData(false);
+        setMissingDataPath(null);
+        setLanguageData(null);
 
         const data = await VisualizationUtils.fetchLanguageData(repoParam);
         
@@ -38,12 +47,16 @@ export default function VisualizationPage() {
           if (data) {
             setLanguageData(data);
           } else {
-            setError('No data available for this repository');
+            setNoData(true);
           }
         }
       } catch (err) {
         if (!cancelled) {
-          setError(err instanceof Error ? err.message : 'Unknown error');
+          if (isDataNotFoundError(err)) {
+            setMissingDataPath(err.path);
+          } else {
+            setError(err instanceof Error ? err.message : 'Unknown error');
+          }
         }
       } finally {
         if (!cancelled) {
@@ -130,9 +143,17 @@ export default function VisualizationPage() {
             
             {error && (
               <div className="flex items-center justify-center h-96">
-                <div className="text-red-400">Error: {error}</div>
+                <div className="text-red-400" role="alert">Error: {error}</div>
               </div>
             )}
+
+            {!loading && noData && (
+              <div className="flex items-center justify-center h-96">
+                <div className="text-slate-400">No data available for this repository</div>
+              </div>
+            )}
+
+            {!loading && missingDataPath && <DataNotGenerated path={missingDataPath} />}
             
             {!loading && !error && languageData && (
               <div className="flex justify-center w-full">
