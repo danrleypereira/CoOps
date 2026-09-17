@@ -2,7 +2,7 @@
   "owner": "unb-mds",
   "repository": "2026-1-Mapa_L.I.L.A.S",
   "branch": "main",
-  "sha": "7c2acb7c32a962f49210abd4cafdb8cd3a8ff21c",
+  "sha": "f5dd7a3fb0701b197aa8fbe9a7b4c2f1d78bcfaf",
   "tree": [
     {
       "name": ".claude",
@@ -818,7 +818,7 @@
       "name": "docs",
       "path": "docs",
       "type": "directory",
-      "sha": "726b7e711135121820c40abbf989155f0ebe25d4",
+      "sha": "bdb4e34569dbd9af5299936bfdb3ed638ad58c87",
       "mode": "040000",
       "children": []
     },
@@ -1930,7 +1930,7 @@
       "name": "ingestion",
       "path": "docs/ingestion",
       "type": "directory",
-      "sha": "1813ebbec5e9f0556801849d86bff9536ca20612",
+      "sha": "1cb55f70ee27ae933cd7a8f678a0b0f7765718f1",
       "mode": "040000",
       "children": []
     },
@@ -1948,10 +1948,10 @@
       "name": "ingestion-history.json",
       "path": "docs/ingestion/ingestion-history.json",
       "type": "file",
-      "sha": "910247b2d443e3839d54c32f7b37fa559d23e240",
+      "sha": "31e56dccb3c0943080592bf33ae3cb6e90707dad",
       "mode": "100644",
       "extension": ".json",
-      "size": 19624,
+      "size": 19908,
       "is_binary": false
     },
     {
@@ -4152,7 +4152,7 @@
     }
   ],
   "truncated": false,
-  "extracted_at": "2026-09-17T06:25:25.494899",
+  "extracted_at": "2026-09-17T10:45:31.460509",
   "method": "rest",
   "total_items": 434,
   "repository_metadata": {
@@ -4160,9 +4160,9 @@
     "full_name": "unb-mds/2026-1-Mapa_L.I.L.A.S",
     "description": null,
     "created_at": "2026-03-18T18:24:11Z",
-    "updated_at": "2026-09-16T07:58:59Z",
+    "updated_at": "2026-09-17T08:03:19Z",
     "language": "HTML",
-    "size": 11147,
+    "size": 11149,
     "stars": 4,
     "forks": 0,
     "open_issues": 17
