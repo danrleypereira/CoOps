@@ -16,28 +16,40 @@ describe('HomePage Component', () => {
   describe('Renderização Básica', () => {
     test('renderiza título principal', () => {
       renderWithRouter();
-      
-      expect(screen.getByText(/Do overview/)).toBeInTheDocument();
-      expect(screen.getByText(/ao detalhe/)).toBeInTheDocument();
-      expect(screen.getByText(/em um clique/)).toBeInTheDocument();
+
+      const h1 = screen.getByRole('heading', { level: 1 });
+      expect(h1).toHaveTextContent(/Real-Time Insights for\s*High-Performing\s*Teams/);
+      expect(screen.getByText('High-Performing')).toBeInTheDocument();
     });
 
     test('renderiza subtítulo', () => {
       renderWithRouter();
-      
-      expect(screen.getByText(/Veja commits e colaboração por repositório ou organização/)).toBeInTheDocument();
+
+      expect(
+        screen.getByText(/CoOps transforms your GitHub activity into actionable intelligence/)
+      ).toBeInTheDocument();
     });
 
     test('renderiza texto descritivo', () => {
       renderWithRouter();
-      
-      expect(screen.getByText(/Selecione repositórios específicos ou visualize dados agregados da organização/)).toBeInTheDocument();
+
+      expect(
+        screen.getByText(/Explore metrics by repository or view organization-wide analytics/)
+      ).toBeInTheDocument();
     });
 
-    test('renderiza botão de call-to-action', () => {
+    test('renderiza botões de call-to-action', () => {
       renderWithRouter();
-      
-      expect(screen.getByText('Ver Métricas')).toBeInTheDocument();
+
+      expect(screen.getByText('View Dashboard')).toBeInTheDocument();
+      expect(screen.getByText('Overview Metrics')).toBeInTheDocument();
+    });
+
+    test('renderiza logo e mascote', () => {
+      renderWithRouter();
+
+      expect(screen.getByAltText('CoOps Logo')).toBeInTheDocument();
+      expect(screen.getByAltText('CoOps Mascot')).toBeInTheDocument();
     });
 
     test('renderiza visualização SVG', () => {
@@ -50,32 +62,40 @@ describe('HomePage Component', () => {
 
   // ========== NAVEGAÇÃO ==========
   describe('Navegação', () => {
-    test('botão Ver Métricas é um link', () => {
+    test('botões de call-to-action são links', () => {
       renderWithRouter();
-      
-      const link = screen.getByText('Ver Métricas').closest('a');
-      expect(link).toBeInTheDocument();
+
+      expect(screen.getAllByRole('link')).toHaveLength(2);
+      expect(screen.getByText('View Dashboard').closest('a')).toBeInTheDocument();
+      expect(screen.getByText('Overview Metrics').closest('a')).toBeInTheDocument();
     });
 
-    test('link aponta para /overview/timeline', () => {
+    test('View Dashboard aponta para /repos/commits', () => {
       renderWithRouter();
-      
-      const link = screen.getByText('Ver Métricas').closest('a');
+
+      const link = screen.getByText('View Dashboard').closest('a');
+      expect(link).toHaveAttribute('href', '/repos/commits');
+    });
+
+    test('Overview Metrics aponta para /overview/timeline', () => {
+      renderWithRouter();
+
+      const link = screen.getByText('Overview Metrics').closest('a');
       expect(link).toHaveAttribute('href', '/overview/timeline');
     });
 
-    test('link tem classe botao-principal', () => {
+    test('links têm classes de botão principal e secundário', () => {
       renderWithRouter();
-      
-      const link = screen.getByText('Ver Métricas');
-      expect(link).toHaveClass('botao-principal');
+
+      expect(screen.getByText('View Dashboard')).toHaveClass('botao-principal');
+      expect(screen.getByText('Overview Metrics')).toHaveClass('botao-secundario');
     });
 
-    test('container do botão tem animação de hover', () => {
+    test('containers dos botões têm animação de hover', () => {
       renderWithRouter();
-      
-      const container = screen.getByText('Ver Métricas').closest('.hover\\:scale-105');
-      expect(container).toBeInTheDocument();
+
+      expect(screen.getByText('View Dashboard').closest('.hover\\:scale-105')).toBeInTheDocument();
+      expect(screen.getByText('Overview Metrics').closest('.hover\\:scale-105')).toBeInTheDocument();
     });
   });
 
@@ -422,20 +442,20 @@ describe('HomePage Component', () => {
       renderWithRouter();
       
       const h1 = screen.getByRole('heading', { level: 1 });
-      expect(h1).toHaveClass('text-7xl', 'font-bold');
+      expect(h1).toHaveClass('text-6xl', 'font-bold');
     });
 
     test('subtítulo tem tamanho correto', () => {
       renderWithRouter();
       
       const h2 = screen.getByRole('heading', { level: 2 });
-      expect(h2).toHaveClass('text-2xl', 'font-normal');
+      expect(h2).toHaveClass('text-xl', 'font-normal');
     });
 
     test('texto descritivo tem opacidade', () => {
       renderWithRouter();
       
-      const description = screen.getByText(/Selecione repositórios específicos/);
+      const description = screen.getByText(/Explore metrics by repository/);
       expect(description).toHaveClass('text-white/60');
     });
 
@@ -466,7 +486,7 @@ describe('HomePage Component', () => {
     test('seção de botões tem animação delayed-2', () => {
       renderWithRouter();
       
-      const buttonSection = screen.getByText('Ver Métricas').closest('.animate-fade-in-delayed-2');
+      const buttonSection = screen.getByText('View Dashboard').closest('.animate-fade-in-delayed-2');
       expect(buttonSection).toBeInTheDocument();
     });
 
@@ -518,8 +538,9 @@ describe('HomePage Component', () => {
     test('link é acessível por teclado', () => {
       renderWithRouter();
       
-      const link = screen.getByText('Ver Métricas').closest('a');
-      expect(link).toHaveAttribute('href');
+      screen.getAllByRole('link').forEach((link) => {
+        expect(link).toHaveAttribute('href');
+      });
     });
 
     test('SVG tem namespace correto', () => {
@@ -533,7 +554,7 @@ describe('HomePage Component', () => {
       renderWithRouter();
       
       const h1 = screen.getByRole('heading', { level: 1 });
-      expect(h1).toHaveClass('text-gray-200');
+      expect(h1).toHaveClass('text-gray-100');
     });
   });
 
@@ -549,7 +570,7 @@ describe('HomePage Component', () => {
     test('botões podem empilhar em mobile', () => {
       renderWithRouter();
       
-      const buttonContainer = screen.getByText('Ver Métricas').closest('.flex');
+      const buttonContainer = screen.getByText('View Dashboard').closest('.flex');
       expect(buttonContainer).toHaveClass('flex-col', 'sm:flex-row');
     });
 
@@ -557,7 +578,7 @@ describe('HomePage Component', () => {
       renderWithRouter();
       
       const wrapper = document.querySelector('.px-6');
-      expect(wrapper).toHaveClass('py-16');
+      expect(wrapper).toHaveClass('py-24');
     });
 
     test('container do SVG ajusta em mobile', () => {
@@ -573,7 +594,7 @@ describe('HomePage Component', () => {
     test('container do botão tem transição de transform', () => {
       renderWithRouter();
       
-      const container = screen.getByText('Ver Métricas').closest('.transition-transform');
+      const container = screen.getByText('View Dashboard').closest('.transition-transform');
       expect(container).toHaveClass('duration-200');
     });
 
@@ -587,7 +608,7 @@ describe('HomePage Component', () => {
     test('hover aumenta escala do botão', () => {
       renderWithRouter();
       
-      const container = screen.getByText('Ver Métricas').closest('.hover\\:scale-105');
+      const container = screen.getByText('Overview Metrics').closest('.hover\\:scale-105');
       expect(container).toBeInTheDocument();
     });
 
@@ -642,38 +663,38 @@ describe('HomePage Component', () => {
 
   // ========== CONTEÚDO DE TEXTO ==========
   describe('Conteúdo de Texto', () => {
-    test('texto principal contém palavras-chave', () => {
+    test('lista de funcionalidades tem título', () => {
       renderWithRouter();
-      
-      expect(screen.getByText(/overview/i)).toBeInTheDocument();
-      expect(screen.getByText(/detalhe/i)).toBeInTheDocument();
-      expect(screen.getByText(/clique/i)).toBeInTheDocument();
+
+      const h3 = screen.getByRole('heading', { level: 3 });
+      expect(h3).toHaveTextContent("What You'll Discover:");
     });
 
-    test('descrição menciona commits', () => {
+    test('lista as três funcionalidades principais', () => {
       renderWithRouter();
-      
-      expect(screen.getByText(/commits/i)).toBeInTheDocument();
+
+      expect(
+        screen.getByText('Real-time collaboration metrics across all repositories')
+      ).toBeInTheDocument();
+      expect(screen.getByText('Team contribution patterns and growth trends')).toBeInTheDocument();
+      expect(
+        screen.getByText('Performance insights that drive continuous improvement')
+      ).toBeInTheDocument();
     });
 
-    test('descrição menciona colaboração', () => {
+    test('descrição menciona GitHub e colaboração', () => {
       renderWithRouter();
-      
-      expect(screen.getByText(/colaboração/i)).toBeInTheDocument();
+
+      const h2 = screen.getByRole('heading', { level: 2 });
+      expect(h2).toHaveTextContent(/GitHub activity/);
+      expect(h2).toHaveTextContent(/collaboration patterns/);
     });
 
-    test('texto contém múltiplas menções a repositório', () => {
+    test('texto menciona repositórios e organização', () => {
       renderWithRouter();
-      
-      const mentions = screen.getAllByText(/repositório/i);
-      expect(mentions.length).toBeGreaterThanOrEqual(2);
-    });
 
-    test('texto contém múltiplas menções a organização', () => {
-      renderWithRouter();
-      
-      const mentions = screen.getAllByText(/organização/i);
-      expect(mentions.length).toBeGreaterThanOrEqual(2);
+      expect(screen.getAllByText(/repositor(y|ies)/i).length).toBeGreaterThanOrEqual(2);
+      expect(screen.getByText(/organization-wide/i)).toBeInTheDocument();
     });
   });
 
@@ -690,7 +711,7 @@ describe('HomePage Component', () => {
       renderWithRouter();
       
       const leftColumn = document.querySelector('.grid > div:first-child');
-      expect(leftColumn?.textContent).toContain('Do overview');
+      expect(leftColumn?.textContent).toContain('Real-Time Insights for');
     });
 
     test('coluna direita contém SVG', () => {

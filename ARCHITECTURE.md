@@ -19,14 +19,18 @@ This project implements a comprehensive GitHub organization metrics collection a
 │   ├── gold/            # Executive KPIs and visualizations
 │   ├── master_registry.json    # Complete file registry
 │   └── data_catalog.json       # Data documentation
-├── src/
-│   ├── bronze/          # Raw data extraction scripts
-│   ├── silver/          # Analytics processing scripts  
-│   ├── gold/            # KPI aggregation scripts
+├── src/coops/           # Installable Python package (`uv sync`)
+│   ├── bronze/          # Raw data extraction modules
+│   ├── silver/          # Analytics processing modules
+│   ├── gold/            # KPI aggregation modules
 │   ├── utils/           # Shared utilities
-│   ├── bronze_extract.py       # Bronze orchestrator
-│   ├── silver_process.py       # Silver orchestrator
-│   └── registry_manager.py     # Data registry management
+│   └── etl/             # Orchestrators / console entry points
+│       ├── bronze_extract.py     # coops-bronze
+│       ├── silver_process.py     # coops-silver
+│       ├── gold_process.py       # coops-gold
+│       ├── gold_aggregate.py     # coops-aggregate
+│       └── registry_manager.py   # coops-registry
+├── pyproject.toml       # Package metadata, dependencies, entry points
 └── .github/workflows/   # GitHub Actions pipelines
 ```
 
@@ -34,19 +38,29 @@ This project implements a comprehensive GitHub organization metrics collection a
 
 ### Manual Execution
 
+Install first: `uv sync` (or, without uv, `pip install -e .`).
+The token and organization come from `GITHUB_TOKEN` / `GITHUB_ORG` (environment,
+`.env` or `.secrets`), not from CLI flags.
+
 1. **Extract Bronze Layer**:
    ```bash
-   python src/bronze_extract.py --token $GITHUB_TOKEN --org coops-org
+   GITHUB_TOKEN=... GITHUB_ORG=coops-org uv run coops-bronze
    ```
 
 2. **Process Silver Layer**:
    ```bash
-   python src/silver_process.py --org coops-org
+   uv run coops-silver
    ```
 
-3. **Generate Registry**:
+3. **Process Gold Layer & aggregate KPIs**:
    ```bash
-   python src/registry_manager.py
+   uv run coops-gold
+   uv run coops-aggregate
+   ```
+
+4. **Generate Registry**:
+   ```bash
+   uv run coops-registry
    ```
 
 ### GitHub Actions (Automated)
@@ -136,13 +150,14 @@ The system maintains comprehensive data lineage and cataloging:
 ### Environment Variables
 
 - `GITHUB_TOKEN`: GitHub Personal Access Token with org read permissions
-- `GITHUB_REPOSITORY_OWNER`: Target organization name (auto-detected in Actions)
+- `GITHUB_ORG`: Target organization name. In the `bronze-extract.yaml` workflow this defaults to `github.repository_owner` (the org that owns the repo); a `GITHUB_ORG` secret (e.g. from `.secrets` when testing locally with `act --secret-file`) overrides it to target a different org
+- `GEMINI_API_KEY`: Optional, enables AI-powered member analysis when set
 
 ### Customization
 
-1. **Repository Filtering**: Edit `src/utils/github_api.py` → `OrganizationConfig.repo_blacklist`
-2. **Metrics**: Modify individual processor scripts in `src/silver/`
-3. **KPIs**: Update `gold-aggregate.yaml` workflow for custom executive metrics
+1. **Repository Filtering**: Edit `src/coops/utils/github_api.py` → `OrganizationConfig.repo_blacklist`
+2. **Metrics**: Modify individual processor modules in `src/coops/silver/`
+3. **KPIs**: Edit `src/coops/etl/gold_aggregate.py` for custom executive metrics
 
 ## 📈 Analytics Capabilities
 

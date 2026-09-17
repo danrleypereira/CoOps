@@ -24,7 +24,7 @@ export default function Structure() {
   const [loading, setLoading] = useState(true);
   const [filtering, setFiltering] = useState(false);
   const [selectedTime, setSelectedTime] = useState<string>('All Time');
-  const [selectedMember, setSelectedMember] = useState<string>('All');
+  const [selectedMembers, setSelectedMembers] = useState<string[]>([]);
   const [activityData, setActivityData] = useState<any>(null);
 
   useEffect(() => {
@@ -88,15 +88,15 @@ export default function Structure() {
       const timer = setTimeout(() => setFiltering(false), 300);
       return () => clearTimeout(timer);
     }
-  }, [selectedMember, selectedTime]);
+  }, [selectedMembers, selectedTime]);
 
   // Filter temporal events by member and time
   const filteredTemporalData = useMemo(() => {
     let filtered = temporalData;
 
-    // Filter by member
-    if (selectedMember && selectedMember !== 'All') {
-      filtered = filtered.filter((event) => event.user === selectedMember);
+    // Filter by members (empty selection means all members)
+    if (selectedMembers.length > 0) {
+      filtered = filtered.filter((event) => selectedMembers.includes(event.user));
     }
 
     // Filter by time
@@ -108,7 +108,7 @@ export default function Structure() {
     }
 
     return filtered;
-  }, [temporalData, selectedMember, cutoffDate]);
+  }, [temporalData, selectedMembers, cutoffDate]);
 
   // Calculate total activity per repository from filtered events
   const activityByRepo = useMemo(() => {
@@ -170,8 +170,8 @@ export default function Structure() {
         {/* Filters */}
         <BaseFilters
           members={members}
-          selectedMember={selectedMember}
-          onMemberChange={setSelectedMember}
+          selectedMembers={selectedMembers}
+          onMemberChange={setSelectedMembers}
           selectedTime={selectedTime}
           onTimeChange={setSelectedTime}
         />

@@ -1,5 +1,6 @@
 # Arquivo de secrets para uso local
 .secrets
+.env
 **/__pycache__/
 dashboard/dist/
 dashboard/node_modules/
@@ -51,6 +52,11 @@ ENV/
 *$py.class
 *.so
 .Python
+
+# Build / packaging artifacts
+*.egg-info/
+.eggs/
+build/
 
 # Pytest e Coverage
 .pytest_cache/

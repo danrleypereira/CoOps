@@ -3,7 +3,7 @@ Additional tests for silver/contribution_metrics.py to increase coverage
 """
 import pytest
 from unittest.mock import patch, MagicMock
-import silver.contribution_metrics as contrib
+import coops.silver.contribution_metrics as contrib
 
 
 def test_contribution_distribution_with_contributors():

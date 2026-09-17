@@ -2,8 +2,8 @@
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Beta-yellow.svg)](#status)
-[![Backend tests](https://img.shields.io/badge/backend%20coverage-88%25-brightgreen.svg)](#running-tests)
-[![Frontend tests](https://img.shields.io/badge/frontend%20coverage-94%25-brightgreen.svg)](#running-tests)
+[![Backend tests](https://img.shields.io/badge/backend%20coverage-87%25-brightgreen.svg)](#running-tests)
+[![Frontend tests](https://img.shields.io/badge/frontend%20coverage-91%25-brightgreen.svg)](#running-tests)
 [![Contributions welcome](https://img.shields.io/badge/Contributions-Welcome-success)](CONTRIBUTING.md)
 
 CoOps is an open-source full-stack dashboard for **continuous monitoring of
@@ -46,19 +46,29 @@ production at two universities:
 
 ### Prerequisites
 
-- Python 3.10 or newer
+- [uv](https://docs.astral.sh/uv/getting-started/installation/) (it installs Python 3.10+ if needed)
 - Node.js 20 or newer
 - A GitHub Personal Access Token with `repo` and `read:org` scopes
 
 ### Backend (ETL pipeline)
 
 ```bash
-git clone https://github.com/danrleypereira/CoOps.git
+git clone https://github.com/unb-mds/CoOps.git
 cd CoOps
-python -m venv .venv && source .venv/bin/activate    # Windows: .venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-pip install -r requirements-dev.txt                   # only if you intend to develop
+uv sync                # or: uv sync --no-dev   (runtime only)
 ```
+
+Without uv, plain pip works too (deps come from `pyproject.toml`):
+
+```bash
+python -m venv .venv && source .venv/bin/activate    # Windows: .venv\Scripts\Activate.ps1
+pip install -e . --group dev                          # pip >= 25.1; or: pip install -e .
+```
+
+Either way you get the `coops` package and the `coops-bronze`, `coops-silver`,
+`coops-gold`, `coops-aggregate` and `coops-registry` console commands (prefix
+them with `uv run` if you did not activate a virtualenv). CI runs
+`uv sync --locked`.
 
 Create a `.secrets` file at the repository root (already in `.gitignore`):
 
@@ -80,19 +90,28 @@ npm run dev                  # http://localhost:5173
 
 ## Quickstart
 
-Run the three-stage pipeline against your organization (the GitHub Actions
-workflows run the same commands daily):
+Run the pipeline against your organization (the GitHub Actions workflows run
+the same commands daily). Credentials and org come from `.secrets`/env (see
+above), not CLI flags. Prefix with `uv run` unless a virtualenv is
+active:
 
 ```bash
-python src/bronze_extract.py --token "$GITHUB_TOKEN" --org "$GITHUB_ORG" --cache
-python src/silver_process.py --org "$GITHUB_ORG"
-python src/gold_aggregate.py --org "$GITHUB_ORG"
+uv run coops-bronze --cache
+uv run coops-silver
+uv run coops-gold
+uv run coops-aggregate
+uv run coops-registry
 ```
+
+The commands write to `./data` and `./cache` in the current directory. From
+the repository root they overwrite the tracked `data/*.json` registry files;
+to keep your checkout clean, run them from another directory with
+`uv run --project <path-to-CoOps> ...`.
 
 Optional AI analysis step (requires `GEMINI_API_KEY`):
 
 ```bash
-python src/gemini_ai/run_analysis.py --org "$GITHUB_ORG"
+uv run python -m coops.ai_analysis.generate_members_ai
 ```
 
 The dashboard reads the generated JSON files in `data/` and visualizes them at
@@ -103,8 +122,8 @@ The dashboard reads the generated JSON files in `data/` and visualizes them at
 ## Running Tests
 
 ```bash
-pytest                                   # backend; current coverage: 88%
-cd dashboard && npm run test:coverage    # frontend; current coverage: 94%
+uv run pytest                            # backend; current coverage: 87%
+cd dashboard && npm run test:coverage    # frontend; current coverage: 91%
 ```
 
 CI runs both suites on every push and pull request — see
@@ -119,6 +138,7 @@ config under `dashboard/vitest.config.ts`.
 - **Architecture deep-dive** — [ARCHITECTURE.md](ARCHITECTURE.md)
 - **AI module** — [README_AI_ANALYSIS.md](README_AI_ANALYSIS.md)
 - **Contributing & development workflow** — [CONTRIBUTING.md](CONTRIBUTING.md)
+- **Testing a PR against a real organization** — [docs/TESTING_PULL_REQUESTS.md](docs/TESTING_PULL_REQUESTS.md)
 - **Code of Conduct** — [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 - **Security policy** — [SECURITY.md](SECURITY.md)
 - **Release notes** — [CHANGELOG.md](CHANGELOG.md)
@@ -128,7 +148,7 @@ config under `dashboard/vitest.config.ts`.
 ## Status
 
 CoOps is in **Beta**. The pipeline runs in production on two university
-deployments, the backend test coverage is 88% and the frontend is 94%, but the
+deployments, the backend test coverage is 87% and the frontend is 91%, but the
 public API surface (CLI flags, JSON schema of `data/silver/`,
 `data/gold/`) may still evolve. See [CHANGELOG.md](CHANGELOG.md) for the
 release history and [open issues](https://github.com/danrleypereira/CoOps/issues)

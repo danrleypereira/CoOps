@@ -35,7 +35,7 @@ describe('Sidebar Component', () => {
 
       expect(screen.getByText('CoOps')).toBeInTheDocument();
       expect(screen.getByText('Overview')).toBeInTheDocument();
-      expect(screen.getByText('Activities')).toBeInTheDocument();
+      expect(screen.getByText('Repositories')).toBeInTheDocument();
       expect(screen.getByText('Home')).toBeInTheDocument();
     });
 
@@ -49,8 +49,9 @@ describe('Sidebar Component', () => {
     test('renderiza todos os itens de menu', () => {
       renderWithRouter(<Sidebar />);
 
+      expect(screen.getByText('Organization')).toBeInTheDocument();
       expect(screen.getByText('Overview')).toBeInTheDocument();
-      expect(screen.getByText('Activities')).toBeInTheDocument();
+      expect(screen.getByText('Repositories')).toBeInTheDocument();
     });
 
     test('renderiza botão de home', () => {
@@ -76,11 +77,13 @@ describe('Sidebar Component', () => {
     test('renderiza ícones dos itens de menu', () => {
       renderWithRouter(<Sidebar />);
 
+      const organizationButton = screen.getByText('Organization').closest('button');
       const overviewButton = screen.getByText('Overview').closest('button');
-      const activitiesButton = screen.getByText('Activities').closest('button');
+      const repositoriesButton = screen.getByText('Repositories').closest('button');
 
-      expect(overviewButton).toContainHTML('📊');
-      expect(activitiesButton).toContainHTML('💻');
+      expect(organizationButton).toContainHTML('📊');
+      expect(overviewButton).toContainHTML('📈');
+      expect(repositoriesButton).toContainHTML('💻');
     });
   });
 
@@ -95,13 +98,22 @@ describe('Sidebar Component', () => {
       expect(mockNavigate).toHaveBeenCalledWith('/overview/timeline');
     });
 
-    test('navega para repos/commits ao clicar em Activities', () => {
+    test('navega para repos/commits ao clicar em Repositories', () => {
       renderWithRouter(<Sidebar />);
 
-      const activitiesButton = screen.getByText('Activities').closest('button');
-      fireEvent.click(activitiesButton!);
+      const repositoriesButton = screen.getByText('Repositories').closest('button');
+      fireEvent.click(repositoriesButton!);
 
       expect(mockNavigate).toHaveBeenCalledWith('/repos/commits');
+    });
+
+    test('navega para organization ao clicar em Organization', () => {
+      renderWithRouter(<Sidebar />);
+
+      const organizationButton = screen.getByText('Organization').closest('button');
+      fireEvent.click(organizationButton!);
+
+      expect(mockNavigate).toHaveBeenCalledWith('/organization');
     });
 
     test('navega para home ao clicar em Home', () => {
@@ -117,10 +129,10 @@ describe('Sidebar Component', () => {
       renderWithRouter(<Sidebar />);
 
       const overviewButton = screen.getByText('Overview').closest('button');
-      const activitiesButton = screen.getByText('Activities').closest('button');
+      const repositoriesButton = screen.getByText('Repositories').closest('button');
 
       fireEvent.click(overviewButton!);
-      fireEvent.click(activitiesButton!);
+      fireEvent.click(repositoriesButton!);
       fireEvent.click(overviewButton!);
 
       expect(mockNavigate).toHaveBeenCalledTimes(3);
@@ -143,19 +155,19 @@ describe('Sidebar Component', () => {
     test('marca repos como ativo', () => {
       renderWithRouter(<Sidebar currentPage="repos" />);
 
-      const activitiesButton = screen.getByText('Activities').closest('button');
-      expect(activitiesButton).toHaveClass('text-blue-300');
-      expect(activitiesButton).toHaveClass('border-blue-500');
+      const repositoriesButton = screen.getByText('Repositories').closest('button');
+      expect(repositoriesButton).toHaveClass('text-blue-300');
+      expect(repositoriesButton).toHaveClass('border-blue-500');
     });
 
     test('nenhum item ativo quando currentPage não corresponde', () => {
       renderWithRouter(<Sidebar currentPage="unknown" />);
 
       const overviewButton = screen.getByText('Overview').closest('button');
-      const activitiesButton = screen.getByText('Activities').closest('button');
+      const repositoriesButton = screen.getByText('Repositories').closest('button');
 
       expect(overviewButton).not.toHaveClass('text-blue-300');
-      expect(activitiesButton).not.toHaveClass('text-blue-300');
+      expect(repositoriesButton).not.toHaveClass('text-blue-300');
     });
 
     test('botão ativo tem background azul', () => {
@@ -170,9 +182,9 @@ describe('Sidebar Component', () => {
     test('botões inativos não têm classes de ativo', () => {
       renderWithRouter(<Sidebar currentPage="overview" />);
 
-      const activitiesButton = screen.getByText('Activities').closest('button');
-      expect(activitiesButton).not.toHaveClass('text-blue-300');
-      expect(activitiesButton).not.toHaveClass('border-blue-500');
+      const repositoriesButton = screen.getByText('Repositories').closest('button');
+      expect(repositoriesButton).not.toHaveClass('text-blue-300');
+      expect(repositoriesButton).not.toHaveClass('border-blue-500');
     });
 
     test('botão ativo tem border azul quando sidebar aberto', () => {
@@ -219,13 +231,13 @@ describe('Sidebar Component', () => {
 
       expect(screen.getByText('CoOps')).toBeInTheDocument();
       expect(screen.getByText('Overview')).toBeInTheDocument();
-      expect(screen.getByText('Activities')).toBeInTheDocument();
+      expect(screen.getByText('Repositories')).toBeInTheDocument();
 
       fireEvent.click(toggleButton);
 
       expect(screen.queryByText('CoOps')).not.toBeInTheDocument();
       expect(screen.queryByText('Overview')).not.toBeInTheDocument();
-      expect(screen.queryByText('Activities')).not.toBeInTheDocument();
+      expect(screen.queryByText('Repositories')).not.toBeInTheDocument();
     });
 
     test('mantém ícones visíveis quando colapsado', () => {
@@ -301,15 +313,15 @@ describe('Sidebar Component', () => {
     test('botão inativo muda cor ao passar mouse', () => {
       renderWithRouter(<Sidebar currentPage="overview" />);
 
-      const activitiesButton = screen.getByText('Activities').closest('button')!;
+      const repositoriesButton = screen.getByText('Repositories').closest('button')!;
 
-      fireEvent.mouseEnter(activitiesButton);
-      expect(activitiesButton).toHaveStyle({
+      fireEvent.mouseEnter(repositoriesButton);
+      expect(repositoriesButton).toHaveStyle({
         backgroundColor: '#333333',
       });
 
-      fireEvent.mouseLeave(activitiesButton);
-      expect(activitiesButton).toBeInTheDocument();
+      fireEvent.mouseLeave(repositoriesButton);
+      expect(repositoriesButton).toBeInTheDocument();
     });
 
     test('botão ativo muda tom ao passar mouse', () => {
@@ -362,15 +374,15 @@ describe('Sidebar Component', () => {
       renderWithRouter(<Sidebar />);
 
       const overviewButton = screen.getByText('Overview').closest('button')!;
-      const activitiesButton = screen.getByText('Activities').closest('button')!;
+      const repositoriesButton = screen.getByText('Repositories').closest('button')!;
 
       fireEvent.mouseEnter(overviewButton);
       expect(overviewButton).toHaveStyle({
         backgroundColor: expect.any(String),
       });
 
-      fireEvent.mouseEnter(activitiesButton);
-      expect(activitiesButton).toHaveStyle({
+      fireEvent.mouseEnter(repositoriesButton);
+      expect(repositoriesButton).toHaveStyle({
         backgroundColor: expect.any(String),
       });
     });
@@ -455,10 +467,10 @@ describe('Sidebar Component', () => {
       renderWithRouter(<Sidebar />);
 
       const overviewLabel = screen.getByText('Overview');
-      const activitiesLabel = screen.getByText('Activities');
+      const repositoriesLabel = screen.getByText('Repositories');
 
       expect(overviewLabel).toHaveClass('text-sm');
-      expect(activitiesLabel).toHaveClass('text-sm');
+      expect(repositoriesLabel).toHaveClass('text-sm');
     });
 
     test('botão home tem cor de texto correta', () => {
@@ -547,7 +559,7 @@ describe('Sidebar Component', () => {
       renderWithRouter(<Sidebar />);
 
       expect(screen.getByText('Overview')).toBeVisible();
-      expect(screen.getByText('Activities')).toBeVisible();
+      expect(screen.getByText('Repositories')).toBeVisible();
       expect(screen.getByText('Home')).toBeVisible();
     });
 
@@ -622,11 +634,11 @@ describe('Sidebar Component', () => {
       renderWithRouter(<Sidebar />);
 
       const overviewButton = screen.getByText('Overview').closest('button');
-      const activitiesButton = screen.getByText('Activities').closest('button');
+      const repositoriesButton = screen.getByText('Repositories').closest('button');
       const homeButton = screen.getByText('Home').closest('button');
 
       fireEvent.click(overviewButton!);
-      fireEvent.click(activitiesButton!);
+      fireEvent.click(repositoriesButton!);
       fireEvent.click(homeButton!);
 
       expect(mockNavigate).toHaveBeenCalledTimes(3);
@@ -639,8 +651,10 @@ describe('Sidebar Component', () => {
       fireEvent.click(toggleButton);
 
       // Quando colapsado, não há texto "Overview", então pegamos pelo ícone
-      const buttons = container.querySelectorAll('nav button');
-      const overviewButton = buttons[0] as HTMLButtonElement;
+      expect(screen.queryByText('Overview')).not.toBeInTheDocument();
+      const overviewButton = Array.from(container.querySelectorAll('nav button')).find(
+        (button) => button.textContent === '📈'
+      ) as HTMLButtonElement;
 
       fireEvent.click(overviewButton);
 

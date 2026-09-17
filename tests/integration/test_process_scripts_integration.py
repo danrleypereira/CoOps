@@ -6,10 +6,10 @@ Tests the integration of bronze_extract, silver_process, and gold_process.
 
 import pytest
 from datetime import datetime
-from silver.member_analytics import process_member_analytics
-from silver.contribution_metrics import process_contribution_metrics
-from silver.temporal_analysis import process_temporal_analysis
-from gold.timeline_aggregation import process_timeline_aggregation
+from coops.silver.member_analytics import process_member_analytics
+from coops.silver.contribution_metrics import process_contribution_metrics
+from coops.silver.temporal_analysis import process_temporal_analysis
+from coops.gold.timeline_aggregation import process_timeline_aggregation
 
 
 class TestProcessScriptsIntegration:

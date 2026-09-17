@@ -5,7 +5,7 @@ Tests registry creation, file scanning, and categorization.
 import pytest
 import os
 from unittest.mock import MagicMock, patch, mock_open
-from registry_manager import (
+from coops.etl.registry_manager import (
     scan_data_directory,
     categorize_bronze_files,
     generate_data_catalog,
@@ -196,7 +196,7 @@ class TestGenerateDataCatalog:
     
     def test_creates_catalog_with_timestamp(self):
         """Testa que cria catálogo com timestamp"""
-        with patch('registry_manager.save_json_data', return_value='catalog.json') as mock_save:
+        with patch('coops.etl.registry_manager.save_json_data', return_value='catalog.json') as mock_save:
             result = generate_data_catalog()
             
             assert mock_save.called
@@ -205,7 +205,7 @@ class TestGenerateDataCatalog:
     
     def test_includes_bronze_layer_description(self):
         """Testa que inclui descrição da camada Bronze"""
-        with patch('registry_manager.save_json_data', return_value='catalog.json') as mock_save:
+        with patch('coops.etl.registry_manager.save_json_data', return_value='catalog.json') as mock_save:
             generate_data_catalog()
             
             catalog_data = mock_save.call_args[0][0]
@@ -214,7 +214,7 @@ class TestGenerateDataCatalog:
     
     def test_includes_entity_definitions(self):
         """Testa que inclui definições de entidades"""
-        with patch('registry_manager.save_json_data', return_value='catalog.json') as mock_save:
+        with patch('coops.etl.registry_manager.save_json_data', return_value='catalog.json') as mock_save:
             generate_data_catalog()
             
             catalog_data = mock_save.call_args[0][0]
@@ -226,7 +226,7 @@ class TestGenerateDataCatalog:
     
     def test_includes_usage_patterns(self):
         """Testa que inclui padrões de uso"""
-        with patch('registry_manager.save_json_data', return_value='catalog.json') as mock_save:
+        with patch('coops.etl.registry_manager.save_json_data', return_value='catalog.json') as mock_save:
             generate_data_catalog()
             
             catalog_data = mock_save.call_args[0][0]
@@ -238,7 +238,7 @@ class TestGenerateDataCatalog:
     
     def test_saves_to_correct_path(self):
         """Testa que salva no caminho correto"""
-        with patch('registry_manager.save_json_data', return_value='catalog.json') as mock_save:
+        with patch('coops.etl.registry_manager.save_json_data', return_value='catalog.json') as mock_save:
             generate_data_catalog()
             
             call_args = mock_save.call_args[0]
@@ -246,7 +246,7 @@ class TestGenerateDataCatalog:
     
     def test_saves_without_timestamp(self):
         """Testa que salva sem timestamp no nome do arquivo"""
-        with patch('registry_manager.save_json_data', return_value='catalog.json') as mock_save:
+        with patch('coops.etl.registry_manager.save_json_data', return_value='catalog.json') as mock_save:
             generate_data_catalog()
             
             call_kwargs = mock_save.call_args[1]
@@ -258,8 +258,8 @@ class TestCreateMasterRegistry:
     
     def test_creates_registry_with_timestamp(self):
         """Testa que cria registro com timestamp"""
-        with patch('registry_manager.scan_data_directory', return_value=[]):
-            with patch('registry_manager.save_json_data', return_value='registry.json') as mock_save:
+        with patch('coops.etl.registry_manager.scan_data_directory', return_value=[]):
+            with patch('coops.etl.registry_manager.save_json_data', return_value='registry.json') as mock_save:
                 create_master_registry()
                 
                 registry_data = mock_save.call_args[0][0]
@@ -267,8 +267,8 @@ class TestCreateMasterRegistry:
     
     def test_includes_bronze_layer(self):
         """Testa que inclui camada Bronze"""
-        with patch('registry_manager.scan_data_directory', return_value=[]):
-            with patch('registry_manager.save_json_data', return_value='registry.json') as mock_save:
+        with patch('coops.etl.registry_manager.scan_data_directory', return_value=[]):
+            with patch('coops.etl.registry_manager.save_json_data', return_value='registry.json') as mock_save:
                 create_master_registry()
                 
                 registry_data = mock_save.call_args[0][0]
@@ -277,8 +277,8 @@ class TestCreateMasterRegistry:
     
     def test_scans_bronze_directory(self):
         """Testa que escaneia diretório Bronze"""
-        with patch('registry_manager.scan_data_directory', return_value=[]) as mock_scan:
-            with patch('registry_manager.save_json_data', return_value='registry.json'):
+        with patch('coops.etl.registry_manager.scan_data_directory', return_value=[]) as mock_scan:
+            with patch('coops.etl.registry_manager.save_json_data', return_value='registry.json'):
                 create_master_registry()
                 
                 mock_scan.assert_any_call('data/bronze')
@@ -287,9 +287,9 @@ class TestCreateMasterRegistry:
         """Testa que categoriza arquivos Bronze"""
         mock_files = ['data/bronze/repos.json', 'data/bronze/issues.json']
         
-        with patch('registry_manager.scan_data_directory', return_value=mock_files):
-            with patch('registry_manager.categorize_bronze_files') as mock_cat:
-                with patch('registry_manager.save_json_data', return_value='registry.json'):
+        with patch('coops.etl.registry_manager.scan_data_directory', return_value=mock_files):
+            with patch('coops.etl.registry_manager.categorize_bronze_files') as mock_cat:
+                with patch('coops.etl.registry_manager.save_json_data', return_value='registry.json'):
                     with patch('os.path.exists', return_value=True):
                         with patch('os.path.getsize', return_value=1024):
                             with patch('os.path.getmtime', return_value=1234567890):
@@ -301,8 +301,8 @@ class TestCreateMasterRegistry:
         """Testa que cria inventário de arquivos"""
         mock_files = ['data/bronze/repos.json']
         
-        with patch('registry_manager.scan_data_directory', return_value=mock_files):
-            with patch('registry_manager.save_json_data', return_value='registry.json') as mock_save:
+        with patch('coops.etl.registry_manager.scan_data_directory', return_value=mock_files):
+            with patch('coops.etl.registry_manager.save_json_data', return_value='registry.json') as mock_save:
                 with patch('os.path.exists', return_value=True):
                     with patch('os.path.getsize', return_value=1024):
                         with patch('os.path.getmtime', return_value=1234567890):
@@ -316,8 +316,8 @@ class TestCreateMasterRegistry:
         """Testa que inventário inclui metadados dos arquivos"""
         mock_files = ['data/bronze/repos.json']
         
-        with patch('registry_manager.scan_data_directory', return_value=mock_files):
-            with patch('registry_manager.save_json_data', return_value='registry.json') as mock_save:
+        with patch('coops.etl.registry_manager.scan_data_directory', return_value=mock_files):
+            with patch('coops.etl.registry_manager.save_json_data', return_value='registry.json') as mock_save:
                 with patch('os.path.exists', return_value=True):
                     with patch('os.path.getsize', return_value=2048):
                         with patch('os.path.getmtime', return_value=1234567890.5):
@@ -334,8 +334,8 @@ class TestCreateMasterRegistry:
     
     def test_saves_to_correct_path(self):
         """Testa que salva no caminho correto"""
-        with patch('registry_manager.scan_data_directory', return_value=[]):
-            with patch('registry_manager.save_json_data', return_value='registry.json') as mock_save:
+        with patch('coops.etl.registry_manager.scan_data_directory', return_value=[]):
+            with patch('coops.etl.registry_manager.save_json_data', return_value='registry.json') as mock_save:
                 create_master_registry()
                 
                 call_args = mock_save.call_args[0]
@@ -343,8 +343,8 @@ class TestCreateMasterRegistry:
     
     def test_saves_without_timestamp(self):
         """Testa que salva sem timestamp no nome"""
-        with patch('registry_manager.scan_data_directory', return_value=[]):
-            with patch('registry_manager.save_json_data', return_value='registry.json') as mock_save:
+        with patch('coops.etl.registry_manager.scan_data_directory', return_value=[]):
+            with patch('coops.etl.registry_manager.save_json_data', return_value='registry.json') as mock_save:
                 create_master_registry()
                 
                 call_kwargs = mock_save.call_args[1]
@@ -352,8 +352,8 @@ class TestCreateMasterRegistry:
     
     def test_returns_registry_file_path(self):
         """Testa que retorna caminho do arquivo de registro"""
-        with patch('registry_manager.scan_data_directory', return_value=[]):
-            with patch('registry_manager.save_json_data', return_value='/path/to/registry.json'):
+        with patch('coops.etl.registry_manager.scan_data_directory', return_value=[]):
+            with patch('coops.etl.registry_manager.save_json_data', return_value='/path/to/registry.json'):
                 result = create_master_registry()
                 
                 assert result == '/path/to/registry.json'
@@ -362,8 +362,8 @@ class TestCreateMasterRegistry:
         """Testa que lida com arquivos que não existem ao criar inventário"""
         mock_files = ['data/bronze/missing.json']
         
-        with patch('registry_manager.scan_data_directory', return_value=mock_files):
-            with patch('registry_manager.save_json_data', return_value='registry.json') as mock_save:
+        with patch('coops.etl.registry_manager.scan_data_directory', return_value=mock_files):
+            with patch('coops.etl.registry_manager.save_json_data', return_value='registry.json') as mock_save:
                 with patch('os.path.exists', return_value=False):
                     create_master_registry()
                     

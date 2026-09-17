@@ -119,7 +119,6 @@ describe('DashboardLayout Component', () => {
 
     expect(screen.getByText('Test Content')).toBeInTheDocument();
     expect(screen.getByTestId('sidebar')).toBeInTheDocument();
-    expect(screen.getByTestId('sidebar-provider')).toBeInTheDocument();
   });
 
   // ✅ Teste 2: CurrentPage = 'repos' mostra RepositoryToolbar
@@ -286,9 +285,12 @@ describe('DashboardLayout Component', () => {
     expect(contentDiv).toHaveClass('w-full', 'p-8');
   });
 
-  test('envolve layout com SidebarProvider', () => {
-    render(<DashboardLayout><div>Content</div></DashboardLayout>);
-    expect(screen.getByTestId('sidebar-provider')).toBeInTheDocument();
+  // SidebarProvider lives in App.tsx (so sidebar state survives navigation);
+  // the layout only consumes the context.
+  test('usa sidebarWidth do contexto sem criar seu próprio SidebarProvider', () => {
+    const { container } = render(<DashboardLayout><div>Content</div></DashboardLayout>);
+    expect(screen.queryByTestId('sidebar-provider')).not.toBeInTheDocument();
+    expect(container.firstChild).toHaveStyle({ marginLeft: '240px' });
   });
 
   test('renderiza múltiplos children', () => {

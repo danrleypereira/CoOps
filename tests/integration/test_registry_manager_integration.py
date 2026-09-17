@@ -7,7 +7,7 @@ Tests the data catalog and file inventory management system.
 import pytest
 import os
 from datetime import datetime
-from registry_manager import (
+from coops.etl.registry_manager import (
     create_master_registry,
     scan_data_directory,
     categorize_bronze_files

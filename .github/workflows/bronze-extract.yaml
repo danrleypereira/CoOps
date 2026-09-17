@@ -2,10 +2,41 @@ name: Bronze Layer - Data Extraction
 
 on:
   workflow_dispatch:
+    inputs:
+      max_repos:
+        description: 'Cap on repositories fetched (blank = no cap, full extraction). Useful for quick local tests via act.'
+        required: false
+        type: string
+        default: ''
+      max_commits_per_repo:
+        description: 'Cap on commits fetched per repo (blank = no cap, full extraction). Useful for quick local tests via act.'
+        required: false
+        type: string
+        default: ''
+      skip_structure:
+        description: 'Skip repository structure extraction (faster)'
+        required: false
+        type: boolean
+        default: false
+      since:
+        description: 'Only extract commits since this ISO-8601 timestamp (blank = full history). E.g. 2026-01-01T00:00:00Z'
+        required: false
+        type: string
+        default: ''
+      max_issues:
+        description: 'Cap on issues fetched per repo (blank = no cap)'
+        required: false
+        type: string
+        default: ''
+      max_prs:
+        description: 'Cap on pull requests fetched per repo (blank = no cap)'
+        required: false
+        type: string
+        default: ''
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
+  # No pull_request trigger: this workflow commits data to the branch it runs
+  # on. PRs are validated with validate-pipeline.yaml instead.
   schedule:
     # Run daily at 5 AM UTC
     - cron: "0 5 * * *"
@@ -16,32 +47,34 @@ permissions:
 jobs:
   extract-bronze-data:
     runs-on: ubuntu-latest
+    env:
+      # Production jobs don't need the dev tools; `uv run` would otherwise install them.
+      UV_NO_DEV: "1"
 
     outputs:
       bronze-completed: ${{ steps.extraction.outputs.completed }}
 
     steps:
       - name: Checkout repository
+        if: ${{ !env.ACT }}
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.ref || github.ref }}
           fetch-depth: 0
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up uv and Python
+        uses: astral-sh/setup-uv@v10.1.0
         with:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests pandas numpy
+        run: uv sync --locked
 
       - name: Verify organization is valid
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ORG: ${{ vars.COOPS_ORG || github.repository_owner }}
         run: |
-          OWNER=${GITHUB_REPOSITORY_OWNER:-${{ github.repository_owner }}}
+          OWNER="$GITHUB_ORG"
 
           TYPE=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             https://api.github.com/users/$OWNER | jq -r .type)
@@ -63,15 +96,39 @@ jobs:
         id: extraction
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ORG: ${{ vars.COOPS_ORG || github.repository_owner }}
+          MAX_REPOS: ${{ github.event.inputs.max_repos }}
+          MAX_COMMITS_PER_REPO: ${{ github.event.inputs.max_commits_per_repo }}
+          SKIP_STRUCTURE: ${{ github.event.inputs.skip_structure }}
+          SINCE: ${{ github.event.inputs.since }}
+          MAX_ISSUES: ${{ github.event.inputs.max_issues }}
+          MAX_PRS: ${{ github.event.inputs.max_prs }}
         run: |
           echo "[INFO] Starting Bronze layer extraction..."
           # Use GraphQL for commits to avoid per-commit REST stats calls
-          # Full history: no since/until or max limits
-          python src/bronze_extract.py \
-            --token "$GITHUB_TOKEN" \
-            --org "${GITHUB_REPOSITORY_OWNER}" \
-            --cache \
-            --commits-method graphql
+          # Full history by default; max_repos/max_commits_per_repo/skip_structure/
+          # since/max_issues/max_prs inputs allow a fast, limited run when
+          # dispatched manually (e.g. via act).
+          ARGS=(--cache --commits-method graphql)
+          if [ -n "$MAX_REPOS" ]; then
+            ARGS+=(--max-repos "$MAX_REPOS")
+          fi
+          if [ -n "$MAX_COMMITS_PER_REPO" ]; then
+            ARGS+=(--max-commits-per-repo "$MAX_COMMITS_PER_REPO")
+          fi
+          if [ "$SKIP_STRUCTURE" = "true" ]; then
+            ARGS+=(--skip-structure)
+          fi
+          if [ -n "$MAX_ISSUES" ]; then
+            ARGS+=(--max-issues "$MAX_ISSUES")
+          fi
+          if [ -n "$MAX_PRS" ]; then
+            ARGS+=(--max-prs "$MAX_PRS")
+          fi
+          if [ -n "$SINCE" ]; then
+            ARGS+=(--since "$SINCE")
+          fi
+          uv run coops-bronze "${ARGS[@]}"
 
           # Check if files were generated
           if [ "$(find data/bronze -name '*.json' | wc -l)" -gt 0 ]; then
@@ -87,7 +144,7 @@ jobs:
         if: steps.extraction.outputs.completed == 'true'
         run: |
           echo "[INFO] Generating data registry..."
-          python src/registry_manager.py
+          uv run coops-registry
 
       - name: List generated files
         if: steps.extraction.outputs.completed == 'true'
@@ -107,16 +164,10 @@ jobs:
           # Ensure we're on a branch (handle detached HEAD state)
           CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
           if [ "$CURRENT_BRANCH" = "HEAD" ]; then
-            # In detached HEAD state, checkout the appropriate branch
-            if [ "${{ github.event_name }}" = "pull_request" ]; then
-              BRANCH="${{ github.event.pull_request.head.ref }}"
-              echo "Checking out PR branch: $BRANCH"
-              git checkout -B "$BRANCH"
-            else
-              BRANCH="${GITHUB_REF#refs/heads/}"
-              echo "Checking out branch: $BRANCH"
-              git checkout -B "$BRANCH"
-            fi
+            # In detached HEAD state, checkout the branch the workflow runs on
+            BRANCH="${GITHUB_REF#refs/heads/}"
+            echo "Checking out branch: $BRANCH"
+            git checkout -B "$BRANCH"
           else
             echo "Already on branch: $CURRENT_BRANCH"
           fi

@@ -91,31 +91,33 @@ Testa o gerenciamento do catálogo de dados:
 
 ## Executando os Testes
 
+> Prefixe os comandos com `uv run` (ou ative o venv com `source .venv/bin/activate`).
+
 ### Todos os testes de integração
 ```powershell
-python -m pytest tests/integration/ -v
+uv run pytest tests/integration/ -v
 ```
 
 ### Testes específicos por arquivo
 ```powershell
 # Bronze → Silver
-python -m pytest tests/integration/test_bronze_to_silver_integration.py -v
+uv run pytest tests/integration/test_bronze_to_silver_integration.py -v
 
 # Silver → Gold
-python -m pytest tests/integration/test_silver_to_gold_integration.py -v
+uv run pytest tests/integration/test_silver_to_gold_integration.py -v
 
 # Pipeline Completo
-python -m pytest tests/integration/test_complete_etl_pipeline.py -v
+uv run pytest tests/integration/test_complete_etl_pipeline.py -v
 ```
 
 ### Com cobertura de código
 ```powershell
-python -m pytest tests/integration/ --cov=src/silver --cov=src/gold --cov-report=html
+uv run pytest tests/integration/ --cov=coops --cov-report=html
 ```
 
 ### Executar teste específico
 ```powershell
-python -m pytest tests/integration/test_bronze_to_silver_integration.py::TestBronzeToSilverIntegration::test_member_analytics_transformation -v
+uv run pytest tests/integration/test_bronze_to_silver_integration.py::TestBronzeToSilverIntegration::test_member_analytics_transformation -v
 ```
 
 ## Arquitetura dos Testes
@@ -204,13 +206,12 @@ Os testes usam dados mock que simulam:
 
 ### Erro: "ModuleNotFoundError: No module named 'pandas'"
 ```powershell
-pip install -r requirements.txt
-pip install -r requirements-dev.txt
+uv sync
 ```
 
 ### Erro: "No module named pytest"
 ```powershell
-pip install -r requirements-dev.txt
+uv sync
 ```
 
 ### Testes falhando com datas
