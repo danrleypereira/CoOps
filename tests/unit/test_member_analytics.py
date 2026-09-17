@@ -142,6 +142,8 @@ def test_process_member_analytics_empty_data(monkeypatch):
     # Always written, so the dashboard shows "no members", not "not generated"
     assert "data/silver/members_analytics.json" in result
     assert saved_data["data/silver/members_analytics.json"] == []
+    # no stale bands from an earlier run
+    assert saved_data["data/silver/maturity_bands.json"] == {"low": 0, "medium": 0, "high": 0}
 
 @freeze_time("2025-01-01")
 def test_process_member_analytics_with_members(monkeypatch):

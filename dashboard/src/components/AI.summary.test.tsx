@@ -152,8 +152,64 @@ describe('AISummary Component', () => {
     const status = await screen.findByRole('status');
     expect(status).toHaveTextContent("This data hasn't been generated yet");
     expect(status).toHaveTextContent('data/silver/ai/members_ai.json');
+    expect(status).toHaveTextContent(/requires a GEMINI_API_KEY repository secret/);
+    expect(screen.getByText('No AI analysis available yet.')).toBeInTheDocument();
     expect(screen.queryByText('Unable to load analyses')).not.toBeInTheDocument();
     expect(screen.queryByText('Try again')).not.toBeInTheDocument();
+  });
+
+  test('shows the not-generated-yet empty state without opening the dropdown', async () => {
+    mockFetchData.mockRejectedValue(
+      new DataNotFoundError('silver/ai/members_ai.json', 'https://x/data/silver/ai/members_ai.json')
+    );
+
+    renderWithRouter(<AISummary />);
+
+    const status = await screen.findByRole('status');
+    expect(status).toHaveTextContent('data/silver/ai/members_ai.json');
+    expect(status).toHaveTextContent('GEMINI_API_KEY');
+    expect(screen.queryByText('No AI analysis available yet.')).not.toBeInTheDocument();
+  });
+
+  test('reads the members_ai.json shape produced by the pipeline', async () => {
+    // Trimmed, anonymized sample of the real silver/ai/members_ai.json
+    mockFetchData.mockResolvedValue({
+      _metadata: {
+        total_members: 2,
+        model: 'gemini-3.5-flash-lite',
+        description: 'Análises de IA sobre atividades dos membros',
+        test_mode: false,
+      },
+      members: {
+        'member-a': {
+          name: 'member-a',
+          repos: ['2026-2-Squad-X'],
+          commits_analysis:
+            'NÚMERO: Com um total de 2 commits, o membro apresenta uma participação pontual.\nATOMICIDADE: média de 125.0 linhas por commit.',
+          prs_analysis: 'O membro registrou um total de 2 PRs, ambos fechados.',
+          issues_analysis: 'O membro não registrou nenhuma issue (Total de issues: 0).',
+        },
+        'member-b': {
+          name: 'member-b',
+          repos: ['2026-2-Squad-X', '2025-1-Squad-Y'],
+          commits_analysis: 'Commits de member-b',
+          prs_analysis: 'PRs de member-b',
+          issues_analysis: 'Issues de member-b',
+        },
+      },
+    });
+
+    renderWithRouter(<AISummary />);
+    expect(mockFetchData).toHaveBeenCalledWith('silver/ai/members_ai.json');
+
+    fireEvent.click(screen.getByText('AI Analysis').closest('button')!);
+    expect(await screen.findByText('2 members found')).toBeInTheDocument();
+    expect(screen.getByRole('option', { name: '2025-1-Squad-Y' })).toBeInTheDocument();
+
+    fireEvent.click(screen.getByText('member-a').closest('button')!);
+    expect(screen.getByText('Selected Analyses (1)')).toBeInTheDocument();
+    expect(screen.getByText(/ATOMICIDADE: média de 125.0 linhas/)).toBeInTheDocument();
+    expect(screen.getByText('O membro registrou um total de 2 PRs, ambos fechados.')).toBeInTheDocument();
   });
 
   test('shows NO_MEMBERS error message', async () => {

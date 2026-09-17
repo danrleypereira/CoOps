@@ -140,8 +140,9 @@ gh run list --repo unb-mds/CoOps --commit "$SHA" \
 | `run_ai` | `false` | Needs the `GEMINI_API_KEY` secret in the fork |
 
 Optional repository settings in `unb-mds/CoOps`: variable `COOPS_ORG`,
-secret `COOPS_GITHUB_TOKEN` (a PAT, to see private members/repos) and secret
-`GEMINI_API_KEY`.
+secret `COOPS_GITHUB_TOKEN` (see
+[RUNNING_LOCALLY.md](../RUNNING_LOCALLY.md#organization-token-for-github-actions))
+and secret `GEMINI_API_KEY`.
 
 The generated `data/` is uploaded as the artifact `pipeline-data-<run id>`
 (kept 7 days). The fork is public, so anyone signed in to GitHub can download

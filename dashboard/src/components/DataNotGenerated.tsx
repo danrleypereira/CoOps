@@ -6,6 +6,7 @@
  * normal situation right after a fork is set up or while the first pipeline
  * run is still in progress, so it is presented as information, not an error.
  */
+import type { ReactNode } from 'react';
 
 interface DataLoadErrorProps {
   message: string;
@@ -28,9 +29,11 @@ interface DataNotGeneratedProps {
   /** Path of the missing file relative to the data directory, e.g. 'silver/temporal_events.json'. */
   path: string;
   className?: string;
+  /** Extra requirement for this particular file, shown after the generic instructions. */
+  hint?: ReactNode;
 }
 
-export default function DataNotGenerated({ path, className = '' }: DataNotGeneratedProps) {
+export default function DataNotGenerated({ path, className = '', hint }: DataNotGeneratedProps) {
   const file = `data/${path}`;
 
   return (
@@ -52,6 +55,7 @@ export default function DataNotGenerated({ path, className = '' }: DataNotGenera
         To generate it now, run the <strong>Bronze Layer - Data Extraction</strong> workflow
         (which also runs the Silver and Gold layers) from the repository&apos;s Actions tab.
       </p>
+      {hint && <p className="text-slate-400 text-sm mt-2">{hint}</p>}
     </div>
   );
 }

@@ -28,6 +28,14 @@ const ANALYSIS_TYPE_LABELS: Record<AnalysisType, string> = {
   issues_analysis: 'Issues',
 };
 
+/** Why the AI analysis file may be missing even after a successful pipeline run */
+const AI_NOT_GENERATED_HINT = (
+  <>
+    AI analysis also requires a <code className="px-1 rounded bg-slate-800 text-slate-100">GEMINI_API_KEY</code>{' '}
+    repository secret: without it the Gold layer skips the AI analysis step and this file is never created.
+  </>
+);
+
 /** Simple repository info for ID to name mapping */
 interface RepoInfo {
   id: number;
@@ -437,9 +445,9 @@ export function AISummary({
             )}
 
             {missingDataPath && (
-              <div className="p-4">
-                <DataNotGenerated path={missingDataPath} />
-              </div>
+              <p className="p-4 text-center text-sm text-slate-400">
+                No AI analysis available yet.
+              </p>
             )}
 
             {error && !missingDataPath && (
@@ -593,6 +601,11 @@ export function AISummary({
             </div>
           )}
         </div>
+      )}
+
+      {/* Missing data file: shown without opening the dropdown */}
+      {missingDataPath && (
+        <DataNotGenerated path={missingDataPath} className="mt-4" hint={AI_NOT_GENERATED_HINT} />
       )}
 
       {/* Selected Members Analysis Display - Horizontal Layout */}

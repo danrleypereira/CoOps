@@ -13,6 +13,11 @@ describe('DataNotGenerated', () => {
     expect(screen.queryByRole('alert')).toBeNull();
   });
 
+  test('mostra a dica extra quando informada', () => {
+    render(<DataNotGenerated path="silver/x.json" hint="Needs a secret." />);
+    expect(screen.getByRole('status')).toHaveTextContent('Needs a secret.');
+  });
+
   test('aceita classes adicionais', () => {
     render(<DataNotGenerated path="silver/x.json" className="mt-4" />);
     expect(screen.getByTestId('data-not-generated')).toHaveClass('mt-4');
