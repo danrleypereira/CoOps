@@ -1,0 +1,388 @@
+{
+  "repository": "2025-2-Squad12",
+  "owner": "unb-mds",
+  "branch": "main",
+  "analyzed_at": "2026-09-17T04:03:48.835104",
+  "sample_config": {
+    "max_files_per_language": 10,
+    "strategy": "largest"
+  },
+  "total_files": 71,
+  "total_bytes": 1396555,
+  "languages": [
+    {
+      "language": "PNG Image",
+      "file_count": 6,
+      "total_bytes": 1306748,
+      "percentage": 93.57,
+      "files": [
+        {
+          "path": "docs/img/arquitetura.png",
+          "name": "arquitetura.png",
+          "size": 632897,
+          "extension": ".png"
+        },
+        {
+          "path": "docs/tema claro.png",
+          "name": "tema claro.png",
+          "size": 214746,
+          "extension": ".png"
+        },
+        {
+          "path": "docs/tema escuro.png",
+          "name": "tema escuro.png",
+          "size": 208535,
+          "extension": ".png"
+        },
+        {
+          "path": "estudos/projecao de funcionamento/Diagrama de componentes.png",
+          "name": "Diagrama de componentes.png",
+          "size": 93172,
+          "extension": ".png"
+        },
+        {
+          "path": "estudos/projecao de funcionamento/Diagrama de sequencia.png",
+          "name": "Diagrama de sequencia.png",
+          "size": 89234,
+          "extension": ".png"
+        },
+        {
+          "path": "estudos/projecao de funcionamento/Diagrama de atividades.png",
+          "name": "Diagrama de atividades.png",
+          "size": 68164,
+          "extension": ".png"
+        }
+      ]
+    },
+    {
+      "language": "Markdown",
+      "file_count": 28,
+      "total_bytes": 41982,
+      "percentage": 3.01,
+      "files": [
+        {
+          "path": "estudos/arquitetura.md",
+          "name": "arquitetura.md",
+          "size": 3725,
+          "extension": ".md"
+        },
+        {
+          "path": "README.md",
+          "name": "README.md",
+          "size": 3184,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/Sprints/sprint-12.md",
+          "name": "sprint-12.md",
+          "size": 2901,
+          "extension": ".md"
+        },
+        {
+          "path": "estudos/devops.md",
+          "name": "devops.md",
+          "size": 2722,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/index.md",
+          "name": "index.md",
+          "size": 2557,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/Sprints/sprint-02.md",
+          "name": "sprint-02.md",
+          "size": 2323,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/storymap.md",
+          "name": "storymap.md",
+          "size": 1806,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/como-contribuir.md",
+          "name": "como-contribuir.md",
+          "size": 1804,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/roadmap.md",
+          "name": "roadmap.md",
+          "size": 1790,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/Sprints/sprint-07.md",
+          "name": "sprint-07.md",
+          "size": 1758,
+          "extension": ".md"
+        }
+      ]
+    },
+    {
+      "language": "Python",
+      "file_count": 14,
+      "total_bytes": 17352,
+      "percentage": 1.24,
+      "files": [
+        {
+          "path": "BACKEND/coindesk_scraper/coindesk_scraper/middlewares.py",
+          "name": "middlewares.py",
+          "size": 3553,
+          "extension": ".py"
+        },
+        {
+          "path": "BACKEND/spider0/spider0/middlewares.py",
+          "name": "middlewares.py",
+          "size": 3544,
+          "extension": ".py"
+        },
+        {
+          "path": "BACKEND/spider0/spider0/settings.py",
+          "name": "settings.py",
+          "size": 2952,
+          "extension": ".py"
+        },
+        {
+          "path": "BACKEND/coindesk_scraper/coindesk_scraper/settings.py",
+          "name": "settings.py",
+          "size": 2328,
+          "extension": ".py"
+        },
+        {
+          "path": "BACKEND/coindesk_scraper/coindesk_scraper/spiders/coindesk_spider.py",
+          "name": "coindesk_spider.py",
+          "size": 2010,
+          "extension": ".py"
+        },
+        {
+          "path": "BACKEND/spider0/spider0/spiders/coindesk.py",
+          "name": "coindesk.py",
+          "size": 766,
+          "extension": ".py"
+        },
+        {
+          "path": "BACKEND/coindesk_scraper/coindesk_scraper/pipelines.py",
+          "name": "pipelines.py",
+          "size": 715,
+          "extension": ".py"
+        },
+        {
+          "path": "BACKEND/spider0/spider0/pipelines.py",
+          "name": "pipelines.py",
+          "size": 450,
+          "extension": ".py"
+        },
+        {
+          "path": "BACKEND/coindesk_scraper/coindesk_scraper/items.py",
+          "name": "items.py",
+          "size": 438,
+          "extension": ".py"
+        },
+        {
+          "path": "BACKEND/spider0/spider0/items.py",
+          "name": "items.py",
+          "size": 274,
+          "extension": ".py"
+        }
+      ]
+    },
+    {
+      "language": "Unknown",
+      "file_count": 12,
+      "total_bytes": 10837,
+      "percentage": 0.78,
+      "files": [
+        {
+          "path": "BACKEND/coindesk_scraper/coindesk_scraper/spiders/__pycache__/coindesk_spider.cpython-313.pyc",
+          "name": "coindesk_spider.cpython-313.pyc",
+          "size": 2669,
+          "extension": ".pyc"
+        },
+        {
+          "path": "BACKEND/spider0/spider0/spiders/__pycache__/metropoles.cpython-313.pyc",
+          "name": "metropoles.cpython-313.pyc",
+          "size": 1673,
+          "extension": ".pyc"
+        },
+        {
+          "path": "BACKEND/spider0/spider0/spiders/__pycache__/coindesk.cpython-313.pyc",
+          "name": "coindesk.cpython-313.pyc",
+          "size": 1663,
+          "extension": ".pyc"
+        },
+        {
+          "path": "BACKEND/coindesk_scraper/coindesk_scraper/__pycache__/settings.cpython-313.pyc",
+          "name": "settings.cpython-313.pyc",
+          "size": 1300,
+          "extension": ".pyc"
+        },
+        {
+          "path": "BACKEND/coindesk_scraper/coindesk_scraper/__pycache__/pipelines.cpython-313.pyc",
+          "name": "pipelines.cpython-313.pyc",
+          "size": 939,
+          "extension": ".pyc"
+        },
+        {
+          "path": "BACKEND/spider0/spider0/__pycache__/pipelines.cpython-313.pyc",
+          "name": "pipelines.cpython-313.pyc",
+          "size": 724,
+          "extension": ".pyc"
+        },
+        {
+          "path": "BACKEND/spider0/spider0/__pycache__/items.cpython-313.pyc",
+          "name": "items.cpython-313.pyc",
+          "size": 649,
+          "extension": ".pyc"
+        },
+        {
+          "path": "BACKEND/spider0/spider0/__pycache__/settings.cpython-313.pyc",
+          "name": "settings.cpython-313.pyc",
+          "size": 448,
+          "extension": ".pyc"
+        },
+        {
+          "path": "BACKEND/coindesk_scraper/coindesk_scraper/spiders/__pycache__/__init__.cpython-313.pyc",
+          "name": "__init__.cpython-313.pyc",
+          "size": 201,
+          "extension": ".pyc"
+        },
+        {
+          "path": "BACKEND/coindesk_scraper/coindesk_scraper/__pycache__/__init__.cpython-313.pyc",
+          "name": "__init__.cpython-313.pyc",
+          "size": 193,
+          "extension": ".pyc"
+        }
+      ]
+    },
+    {
+      "language": "JavaScript",
+      "file_count": 1,
+      "total_bytes": 10264,
+      "percentage": 0.73,
+      "files": [
+        {
+          "path": "FRONTEND/app.js",
+          "name": "app.js",
+          "size": 10264,
+          "extension": ".js"
+        }
+      ]
+    },
+    {
+      "language": "JSON",
+      "file_count": 3,
+      "total_bytes": 2562,
+      "percentage": 0.18,
+      "files": [
+        {
+          "path": "FRONTEND/noticias.json",
+          "name": "noticias.json",
+          "size": 1934,
+          "extension": ".json"
+        },
+        {
+          "path": "BACKEND/coindesk_scraper/data/noticias.json",
+          "name": "noticias.json",
+          "size": 616,
+          "extension": ".json"
+        },
+        {
+          "path": "BACKEND/spider0/raspagem.json",
+          "name": "raspagem.json",
+          "size": 12,
+          "extension": ".json"
+        }
+      ]
+    },
+    {
+      "language": "YAML",
+      "file_count": 2,
+      "total_bytes": 2267,
+      "percentage": 0.16,
+      "files": [
+        {
+          "path": "mkdocs.yml",
+          "name": "mkdocs.yml",
+          "size": 1924,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/publish-docs.yml",
+          "name": "publish-docs.yml",
+          "size": 343,
+          "extension": ".yml"
+        }
+      ]
+    },
+    {
+      "language": "CSS",
+      "file_count": 1,
+      "total_bytes": 1988,
+      "percentage": 0.14,
+      "files": [
+        {
+          "path": "FRONTEND/styles.css",
+          "name": "styles.css",
+          "size": 1988,
+          "extension": ".css"
+        }
+      ]
+    },
+    {
+      "language": "No Extension",
+      "file_count": 1,
+      "total_bytes": 1060,
+      "percentage": 0.08,
+      "files": [
+        {
+          "path": "LICENSE",
+          "name": "LICENSE",
+          "size": 1060,
+          "extension": ""
+        }
+      ]
+    },
+    {
+      "language": "HTML",
+      "file_count": 1,
+      "total_bytes": 963,
+      "percentage": 0.07,
+      "files": [
+        {
+          "path": "FRONTEND/index.html",
+          "name": "index.html",
+          "size": 963,
+          "extension": ".html"
+        }
+      ]
+    },
+    {
+      "language": "Config",
+      "file_count": 2,
+      "total_bytes": 532,
+      "percentage": 0.04,
+      "files": [
+        {
+          "path": "BACKEND/coindesk_scraper/scrapy.cfg",
+          "name": "scrapy.cfg",
+          "size": 275,
+          "extension": ".cfg"
+        },
+        {
+          "path": "BACKEND/spider0/scrapy.cfg",
+          "name": "scrapy.cfg",
+          "size": 257,
+          "extension": ".cfg"
+        }
+      ]
+    }
+  ],
+  "_metadata": {
+    "extracted_at": "2026-09-17T04:04:44.119279",
+    "file_path": "data/silver/language_analysis_2025-2-Squad12.json"
+  }
+}

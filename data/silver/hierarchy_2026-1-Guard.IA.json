@@ -1,0 +1,1186 @@
+{
+  "repository": "2026-1-Guard.IA",
+  "owner": "unb-mds",
+  "branch": "main",
+  "extracted_at": "2026-09-17T04:03:51.942464",
+  "hierarchy": {
+    "name": "root",
+    "type": "directory",
+    "children": [
+      {
+        "name": ".github",
+        "type": "directory",
+        "path": ".github",
+        "children": []
+      },
+      {
+        "name": "workflows",
+        "type": "directory",
+        "path": ".github/workflows",
+        "children": []
+      },
+      {
+        "name": "metrics",
+        "type": "directory",
+        "path": ".github/workflows/metrics",
+        "children": []
+      },
+      {
+        "name": "collect_metrics.py",
+        "type": "file",
+        "language": "Python",
+        "size": 10365,
+        "extension": ".py",
+        "path": ".github/workflows/metrics/collect_metrics.py"
+      },
+      {
+        "name": "sonar.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 560,
+        "extension": ".yml",
+        "path": ".github/workflows/sonar.yml"
+      },
+      {
+        "name": "update-metrics.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 1661,
+        "extension": ".yml",
+        "path": ".github/workflows/update-metrics.yml"
+      },
+      {
+        "name": ".gitignore",
+        "type": "file",
+        "language": "Git Ignore",
+        "size": 275,
+        "extension": ".gitignore",
+        "path": ".gitignore"
+      },
+      {
+        "name": "GEMINI.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 7243,
+        "extension": ".md",
+        "path": "GEMINI.md"
+      },
+      {
+        "name": "LICENSE",
+        "type": "file",
+        "language": "No Extension",
+        "size": 1060,
+        "extension": "",
+        "path": "LICENSE"
+      },
+      {
+        "name": "README.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2982,
+        "extension": ".md",
+        "path": "README.md"
+      },
+      {
+        "name": "docs",
+        "type": "directory",
+        "path": "docs",
+        "children": []
+      },
+      {
+        "name": ".nojekyll",
+        "type": "file",
+        "language": "Unknown",
+        "size": 0,
+        "extension": ".nojekyll",
+        "path": "docs/.nojekyll"
+      },
+      {
+        "name": "contratos_de_dados.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 7051,
+        "extension": ".md",
+        "path": "docs/contratos_de_dados.md"
+      },
+      {
+        "name": "equipe",
+        "type": "directory",
+        "path": "docs/equipe",
+        "children": []
+      },
+      {
+        "name": "index.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1005,
+        "extension": ".md",
+        "path": "docs/equipe/index.md"
+      },
+      {
+        "name": "estudos",
+        "type": "directory",
+        "path": "docs/estudos",
+        "children": []
+      },
+      {
+        "name": "requisitos_e_ia.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 19747,
+        "extension": ".md",
+        "path": "docs/estudos/requisitos_e_ia.md"
+      },
+      {
+        "name": "frontend_spec.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3817,
+        "extension": ".md",
+        "path": "docs/frontend_spec.md"
+      },
+      {
+        "name": "index.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 3608,
+        "extension": ".html",
+        "path": "docs/index.html"
+      },
+      {
+        "name": "index.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2367,
+        "extension": ".md",
+        "path": "docs/index.md"
+      },
+      {
+        "name": "infraestrutura_docker.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6952,
+        "extension": ".md",
+        "path": "docs/infraestrutura_docker.md"
+      },
+      {
+        "name": "pipeline",
+        "type": "directory",
+        "path": "docs/pipeline",
+        "children": []
+      },
+      {
+        "name": "arquitetura.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1781,
+        "extension": ".md",
+        "path": "docs/pipeline/arquitetura.md"
+      },
+      {
+        "name": "visao_geral.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2162,
+        "extension": ".md",
+        "path": "docs/pipeline/visao_geral.md"
+      },
+      {
+        "name": "pipes_and_filters.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6091,
+        "extension": ".md",
+        "path": "docs/pipes_and_filters.md"
+      },
+      {
+        "name": "postgres_vs_sqlite.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 8046,
+        "extension": ".md",
+        "path": "docs/postgres_vs_sqlite.md"
+      },
+      {
+        "name": "productivity",
+        "type": "directory",
+        "path": "docs/productivity",
+        "children": []
+      },
+      {
+        "name": "index.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 34968,
+        "extension": ".html",
+        "path": "docs/productivity/index.html"
+      },
+      {
+        "name": "metrics.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 66593,
+        "extension": ".json",
+        "path": "docs/productivity/metrics.json"
+      },
+      {
+        "name": "produtividade.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 878,
+        "extension": ".md",
+        "path": "docs/produtividade.md"
+      },
+      {
+        "name": "release_notes.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3426,
+        "extension": ".md",
+        "path": "docs/release_notes.md"
+      },
+      {
+        "name": "requisitos_e_ia.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 9526,
+        "extension": ".md",
+        "path": "docs/requisitos_e_ia.md"
+      },
+      {
+        "name": "reunioes",
+        "type": "directory",
+        "path": "docs/reunioes",
+        "children": []
+      },
+      {
+        "name": "sprintplanning-05.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3670,
+        "extension": ".md",
+        "path": "docs/reunioes/sprintplanning-05.md"
+      },
+      {
+        "name": "sprintplanning-06.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3799,
+        "extension": ".md",
+        "path": "docs/reunioes/sprintplanning-06.md"
+      },
+      {
+        "name": "sprintplanning-07.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3390,
+        "extension": ".md",
+        "path": "docs/reunioes/sprintplanning-07.md"
+      },
+      {
+        "name": "sprintplanning-08.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3727,
+        "extension": ".md",
+        "path": "docs/reunioes/sprintplanning-08.md"
+      },
+      {
+        "name": "sprint_02",
+        "type": "directory",
+        "path": "docs/sprint_02",
+        "children": []
+      },
+      {
+        "name": "estudo-storymap.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1068,
+        "extension": ".md",
+        "path": "docs/sprint_02/estudo-storymap.md"
+      },
+      {
+        "name": "prototipo.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3742,
+        "extension": ".md",
+        "path": "docs/sprint_02/prototipo.md"
+      },
+      {
+        "name": "sprint_04",
+        "type": "directory",
+        "path": "docs/sprint_04",
+        "children": []
+      },
+      {
+        "name": "melhoria-dashboard.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 860,
+        "extension": ".md",
+        "path": "docs/sprint_04/melhoria-dashboard.md"
+      },
+      {
+        "name": "user-flow.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1356,
+        "extension": ".md",
+        "path": "docs/sprint_04/user-flow.md"
+      },
+      {
+        "name": "sprint_05",
+        "type": "directory",
+        "path": "docs/sprint_05",
+        "children": []
+      },
+      {
+        "name": "LLM.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 5985,
+        "extension": ".md",
+        "path": "docs/sprint_05/LLM.md"
+      },
+      {
+        "name": "criarCRUD.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1062,
+        "extension": ".md",
+        "path": "docs/sprint_05/criarCRUD.md"
+      },
+      {
+        "name": "criarlogin.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 781,
+        "extension": ".md",
+        "path": "docs/sprint_05/criarlogin.md"
+      },
+      {
+        "name": "homepage.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 875,
+        "extension": ".md",
+        "path": "docs/sprint_05/homepage.md"
+      },
+      {
+        "name": "hometeam.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1454,
+        "extension": ".md",
+        "path": "docs/sprint_05/hometeam.md"
+      },
+      {
+        "name": "implementacaoinit.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 499,
+        "extension": ".md",
+        "path": "docs/sprint_05/implementacaoinit.md"
+      },
+      {
+        "name": "redesignlogin.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1065,
+        "extension": ".md",
+        "path": "docs/sprint_05/redesignlogin.md"
+      },
+      {
+        "name": "sprint_06",
+        "type": "directory",
+        "path": "docs/sprint_06",
+        "children": []
+      },
+      {
+        "name": "estudocontextengeneering.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6121,
+        "extension": ".md",
+        "path": "docs/sprint_06/estudocontextengeneering.md"
+      },
+      {
+        "name": "sprint_07",
+        "type": "directory",
+        "path": "docs/sprint_07",
+        "children": []
+      },
+      {
+        "name": "correcaometrics.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 165,
+        "extension": ".md",
+        "path": "docs/sprint_07/correcaometrics.md"
+      },
+      {
+        "name": "interfaceinterativa.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2839,
+        "extension": ".md",
+        "path": "docs/sprint_07/interfaceinterativa.md"
+      },
+      {
+        "name": "recuperacaolayout.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1916,
+        "extension": ".md",
+        "path": "docs/sprint_07/recuperacaolayout.md"
+      },
+      {
+        "name": "retiradaCRUD.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1219,
+        "extension": ".md",
+        "path": "docs/sprint_07/retiradaCRUD.md"
+      },
+      {
+        "name": "sprint_08",
+        "type": "directory",
+        "path": "docs/sprint_08",
+        "children": []
+      },
+      {
+        "name": "buscardetalhes.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 417,
+        "extension": ".md",
+        "path": "docs/sprint_08/buscardetalhes.md"
+      },
+      {
+        "name": "formatarnomes.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 656,
+        "extension": ".md",
+        "path": "docs/sprint_08/formatarnomes.md"
+      },
+      {
+        "name": "implementacaoclassificacao.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 4168,
+        "extension": ".md",
+        "path": "docs/sprint_08/implementacaoclassificacao.md"
+      },
+      {
+        "name": "integracaodashapi.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1049,
+        "extension": ".md",
+        "path": "docs/sprint_08/integracaodashapi.md"
+      },
+      {
+        "name": "sonarcloud.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1447,
+        "extension": ".md",
+        "path": "docs/sprint_08/sonarcloud.md"
+      },
+      {
+        "name": "sprints",
+        "type": "directory",
+        "path": "docs/sprints",
+        "children": []
+      },
+      {
+        "name": "sprint00.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1833,
+        "extension": ".md",
+        "path": "docs/sprints/sprint00.md"
+      },
+      {
+        "name": "sprint01.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1847,
+        "extension": ".md",
+        "path": "docs/sprints/sprint01.md"
+      },
+      {
+        "name": "sprint02.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1778,
+        "extension": ".md",
+        "path": "docs/sprints/sprint02.md"
+      },
+      {
+        "name": "sprint03.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2173,
+        "extension": ".md",
+        "path": "docs/sprints/sprint03.md"
+      },
+      {
+        "name": "sprint04.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1861,
+        "extension": ".md",
+        "path": "docs/sprints/sprint04.md"
+      },
+      {
+        "name": "sprint05.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2243,
+        "extension": ".md",
+        "path": "docs/sprints/sprint05.md"
+      },
+      {
+        "name": "tecnologias",
+        "type": "directory",
+        "path": "docs/tecnologias",
+        "children": []
+      },
+      {
+        "name": "autenticacao.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1219,
+        "extension": ".md",
+        "path": "docs/tecnologias/autenticacao.md"
+      },
+      {
+        "name": "banco.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1694,
+        "extension": ".md",
+        "path": "docs/tecnologias/banco.md"
+      },
+      {
+        "name": "stack.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1586,
+        "extension": ".md",
+        "path": "docs/tecnologias/stack.md"
+      },
+      {
+        "name": "grupo5-guard.ia-backend",
+        "type": "directory",
+        "path": "grupo5-guard.ia-backend",
+        "children": []
+      },
+      {
+        "name": "app",
+        "type": "directory",
+        "path": "grupo5-guard.ia-backend/app",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "grupo5-guard.ia-backend/app/__init__.py"
+      },
+      {
+        "name": "api.py",
+        "type": "file",
+        "language": "Python",
+        "size": 5143,
+        "extension": ".py",
+        "path": "grupo5-guard.ia-backend/app/api.py"
+      },
+      {
+        "name": "app",
+        "type": "directory",
+        "path": "grupo5-guard.ia-backend/app/app",
+        "children": []
+      },
+      {
+        "name": "backfill_autoria_senado.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1553,
+        "extension": ".py",
+        "path": "grupo5-guard.ia-backend/app/app/backfill_autoria_senado.py"
+      },
+      {
+        "name": "armazenamento",
+        "type": "directory",
+        "path": "grupo5-guard.ia-backend/app/armazenamento",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "grupo5-guard.ia-backend/app/armazenamento/__init__.py"
+      },
+      {
+        "name": "armazenamento.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2484,
+        "extension": ".py",
+        "path": "grupo5-guard.ia-backend/app/armazenamento/armazenamento.py"
+      },
+      {
+        "name": "database.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2895,
+        "extension": ".py",
+        "path": "grupo5-guard.ia-backend/app/armazenamento/database.py"
+      },
+      {
+        "name": "models.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "grupo5-guard.ia-backend/app/armazenamento/models.py"
+      },
+      {
+        "name": "schema.sql",
+        "type": "file",
+        "language": "SQL",
+        "size": 1274,
+        "extension": ".sql",
+        "path": "grupo5-guard.ia-backend/app/armazenamento/schema.sql"
+      },
+      {
+        "name": "backfill_autoria_senado.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1553,
+        "extension": ".py",
+        "path": "grupo5-guard.ia-backend/app/backfill_autoria_senado.py"
+      },
+      {
+        "name": "classificacao",
+        "type": "directory",
+        "path": "grupo5-guard.ia-backend/app/classificacao",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "grupo5-guard.ia-backend/app/classificacao/__init__.py"
+      },
+      {
+        "name": "classificador.py",
+        "type": "file",
+        "language": "Python",
+        "size": 6170,
+        "extension": ".py",
+        "path": "grupo5-guard.ia-backend/app/classificacao/classificador.py"
+      },
+      {
+        "name": "coleta",
+        "type": "directory",
+        "path": "grupo5-guard.ia-backend/app/coleta",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "grupo5-guard.ia-backend/app/coleta/__init__.py"
+      },
+      {
+        "name": "coletor_camara.py",
+        "type": "file",
+        "language": "Python",
+        "size": 7501,
+        "extension": ".py",
+        "path": "grupo5-guard.ia-backend/app/coleta/coletor_camara.py"
+      },
+      {
+        "name": "coletor_senado.py",
+        "type": "file",
+        "language": "Python",
+        "size": 6789,
+        "extension": ".py",
+        "path": "grupo5-guard.ia-backend/app/coleta/coletor_senado.py"
+      },
+      {
+        "name": "filtro",
+        "type": "directory",
+        "path": "grupo5-guard.ia-backend/app/filtro",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "grupo5-guard.ia-backend/app/filtro/__init__.py"
+      },
+      {
+        "name": "filtragem.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3917,
+        "extension": ".py",
+        "path": "grupo5-guard.ia-backend/app/filtro/filtragem.py"
+      },
+      {
+        "name": "main.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2436,
+        "extension": ".py",
+        "path": "grupo5-guard.ia-backend/app/main.py"
+      },
+      {
+        "name": "docker-compose.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 872,
+        "extension": ".yml",
+        "path": "grupo5-guard.ia-backend/docker-compose.yml"
+      },
+      {
+        "name": "tests",
+        "type": "directory",
+        "path": "grupo5-guard.ia-backend/tests",
+        "children": []
+      },
+      {
+        "name": "test_coletor_camara.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1157,
+        "extension": ".py",
+        "path": "grupo5-guard.ia-backend/tests/test_coletor_camara.py"
+      },
+      {
+        "name": "grupo5-guard.ia",
+        "type": "directory",
+        "path": "grupo5-guard.ia",
+        "children": []
+      },
+      {
+        "name": ".gitignore",
+        "type": "file",
+        "language": "Git Ignore",
+        "size": 253,
+        "extension": ".gitignore",
+        "path": "grupo5-guard.ia/.gitignore"
+      },
+      {
+        "name": "README.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1027,
+        "extension": ".md",
+        "path": "grupo5-guard.ia/README.md"
+      },
+      {
+        "name": "eslint.config.js",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 568,
+        "extension": ".js",
+        "path": "grupo5-guard.ia/eslint.config.js"
+      },
+      {
+        "name": "index.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 367,
+        "extension": ".html",
+        "path": "grupo5-guard.ia/index.html"
+      },
+      {
+        "name": "next-env.d.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 251,
+        "extension": ".ts",
+        "path": "grupo5-guard.ia/next-env.d.ts"
+      },
+      {
+        "name": "package-lock.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 103220,
+        "extension": ".json",
+        "path": "grupo5-guard.ia/package-lock.json"
+      },
+      {
+        "name": "package.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 673,
+        "extension": ".json",
+        "path": "grupo5-guard.ia/package.json"
+      },
+      {
+        "name": "public",
+        "type": "directory",
+        "path": "grupo5-guard.ia/public",
+        "children": []
+      },
+      {
+        "name": "favicon.svg",
+        "type": "file",
+        "language": "SVG Image",
+        "size": 9522,
+        "extension": ".svg",
+        "path": "grupo5-guard.ia/public/favicon.svg"
+      },
+      {
+        "name": "icons.svg",
+        "type": "file",
+        "language": "SVG Image",
+        "size": 5031,
+        "extension": ".svg",
+        "path": "grupo5-guard.ia/public/icons.svg"
+      },
+      {
+        "name": "src",
+        "type": "directory",
+        "path": "grupo5-guard.ia/src",
+        "children": []
+      },
+      {
+        "name": "App.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 1583,
+        "extension": ".css",
+        "path": "grupo5-guard.ia/src/App.css"
+      },
+      {
+        "name": "App.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 1387,
+        "extension": ".jsx",
+        "path": "grupo5-guard.ia/src/App.jsx"
+      },
+      {
+        "name": "assets",
+        "type": "directory",
+        "path": "grupo5-guard.ia/src/assets",
+        "children": []
+      },
+      {
+        "name": "clara.jpeg",
+        "type": "file",
+        "language": "JPEG Image",
+        "size": 63221,
+        "extension": ".jpeg",
+        "path": "grupo5-guard.ia/src/assets/clara.jpeg"
+      },
+      {
+        "name": "edvaldo.jpeg",
+        "type": "file",
+        "language": "JPEG Image",
+        "size": 16069,
+        "extension": ".jpeg",
+        "path": "grupo5-guard.ia/src/assets/edvaldo.jpeg"
+      },
+      {
+        "name": "gabriella.JPG",
+        "type": "file",
+        "language": "JPEG Image",
+        "size": 106137,
+        "extension": ".JPG",
+        "path": "grupo5-guard.ia/src/assets/gabriella.JPG"
+      },
+      {
+        "name": "gabriella.jpeg",
+        "type": "file",
+        "language": "JPEG Image",
+        "size": 106137,
+        "extension": ".jpeg",
+        "path": "grupo5-guard.ia/src/assets/gabriella.jpeg"
+      },
+      {
+        "name": "hero.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 13057,
+        "extension": ".png",
+        "path": "grupo5-guard.ia/src/assets/hero.png"
+      },
+      {
+        "name": "joao.jpeg",
+        "type": "file",
+        "language": "JPEG Image",
+        "size": 225222,
+        "extension": ".jpeg",
+        "path": "grupo5-guard.ia/src/assets/joao.jpeg"
+      },
+      {
+        "name": "lucas.jpeg",
+        "type": "file",
+        "language": "JPEG Image",
+        "size": 15872,
+        "extension": ".jpeg",
+        "path": "grupo5-guard.ia/src/assets/lucas.jpeg"
+      },
+      {
+        "name": "mascot.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 845048,
+        "extension": ".png",
+        "path": "grupo5-guard.ia/src/assets/mascot.png"
+      },
+      {
+        "name": "mascote1.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 409233,
+        "extension": ".png",
+        "path": "grupo5-guard.ia/src/assets/mascote1.png"
+      },
+      {
+        "name": "mascote2.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 446950,
+        "extension": ".png",
+        "path": "grupo5-guard.ia/src/assets/mascote2.png"
+      },
+      {
+        "name": "otavio.jpeg",
+        "type": "file",
+        "language": "JPEG Image",
+        "size": 10120,
+        "extension": ".jpeg",
+        "path": "grupo5-guard.ia/src/assets/otavio.jpeg"
+      },
+      {
+        "name": "index.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 206,
+        "extension": ".css",
+        "path": "grupo5-guard.ia/src/index.css"
+      },
+      {
+        "name": "main.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 234,
+        "extension": ".jsx",
+        "path": "grupo5-guard.ia/src/main.jsx"
+      },
+      {
+        "name": "pages",
+        "type": "directory",
+        "path": "grupo5-guard.ia/src/pages",
+        "children": []
+      },
+      {
+        "name": "BarraPesquisa.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 804,
+        "extension": ".css",
+        "path": "grupo5-guard.ia/src/pages/BarraPesquisa.css"
+      },
+      {
+        "name": "Cadastro.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 3440,
+        "extension": ".css",
+        "path": "grupo5-guard.ia/src/pages/Cadastro.css"
+      },
+      {
+        "name": "Cadastro.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 4740,
+        "extension": ".jsx",
+        "path": "grupo5-guard.ia/src/pages/Cadastro.jsx"
+      },
+      {
+        "name": "Dashboard.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 2599,
+        "extension": ".css",
+        "path": "grupo5-guard.ia/src/pages/Dashboard.css"
+      },
+      {
+        "name": "Dashboard.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 12086,
+        "extension": ".jsx",
+        "path": "grupo5-guard.ia/src/pages/Dashboard.jsx"
+      },
+      {
+        "name": "Home.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 4271,
+        "extension": ".css",
+        "path": "grupo5-guard.ia/src/pages/Home.css"
+      },
+      {
+        "name": "Home.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 5542,
+        "extension": ".jsx",
+        "path": "grupo5-guard.ia/src/pages/Home.jsx"
+      },
+      {
+        "name": "Login.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 4692,
+        "extension": ".css",
+        "path": "grupo5-guard.ia/src/pages/Login.css"
+      },
+      {
+        "name": "Login.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 3023,
+        "extension": ".jsx",
+        "path": "grupo5-guard.ia/src/pages/Login.jsx"
+      },
+      {
+        "name": "Proposicoes.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 0,
+        "extension": ".css",
+        "path": "grupo5-guard.ia/src/pages/Proposicoes.css"
+      },
+      {
+        "name": "Proposicoes.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 15691,
+        "extension": ".jsx",
+        "path": "grupo5-guard.ia/src/pages/Proposicoes.jsx"
+      },
+      {
+        "name": "Ranking.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 1665,
+        "extension": ".css",
+        "path": "grupo5-guard.ia/src/pages/Ranking.css"
+      },
+      {
+        "name": "Ranking.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 8947,
+        "extension": ".jsx",
+        "path": "grupo5-guard.ia/src/pages/Ranking.jsx"
+      },
+      {
+        "name": "filtros.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 8148,
+        "extension": ".css",
+        "path": "grupo5-guard.ia/src/pages/filtros.css"
+      },
+      {
+        "name": "filtros.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 17932,
+        "extension": ".jsx",
+        "path": "grupo5-guard.ia/src/pages/filtros.jsx"
+      },
+      {
+        "name": "services",
+        "type": "directory",
+        "path": "grupo5-guard.ia/src/services",
+        "children": []
+      },
+      {
+        "name": "api.js",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 1092,
+        "extension": ".js",
+        "path": "grupo5-guard.ia/src/services/api.js"
+      },
+      {
+        "name": "vite.config.js",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 161,
+        "extension": ".js",
+        "path": "grupo5-guard.ia/vite.config.js"
+      },
+      {
+        "name": "mkdocs.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 2178,
+        "extension": ".yml",
+        "path": "mkdocs.yml"
+      },
+      {
+        "name": "requirements-api.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 113,
+        "extension": ".txt",
+        "path": "requirements-api.txt"
+      },
+      {
+        "name": "requirements-pipeline.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 206,
+        "extension": ".txt",
+        "path": "requirements-pipeline.txt"
+      },
+      {
+        "name": "requirements.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 362,
+        "extension": ".txt",
+        "path": "requirements.txt"
+      },
+      {
+        "name": "sonar-project.properties",
+        "type": "file",
+        "language": "Unknown",
+        "size": 401,
+        "extension": ".properties",
+        "path": "sonar-project.properties"
+      }
+    ]
+  },
+  "_metadata": {
+    "extracted_at": "2026-09-17T04:04:44.122560",
+    "file_path": "data/silver/hierarchy_2026-1-Guard.IA.json"
+  }
+}

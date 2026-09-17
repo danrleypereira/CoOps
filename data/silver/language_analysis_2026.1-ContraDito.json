@@ -1,0 +1,714 @@
+{
+  "repository": "2026.1-ContraDito",
+  "owner": "unb-mds",
+  "branch": "main",
+  "analyzed_at": "2026-09-17T04:03:54.174196",
+  "sample_config": {
+    "max_files_per_language": 10,
+    "strategy": "largest"
+  },
+  "total_files": 295,
+  "total_bytes": 26111736,
+  "languages": [
+    {
+      "language": "SVG Image",
+      "file_count": 1,
+      "total_bytes": 20940307,
+      "percentage": 80.2,
+      "files": [
+        {
+          "path": "figma.svg",
+          "name": "figma.svg",
+          "size": 20940307,
+          "extension": ".svg"
+        }
+      ]
+    },
+    {
+      "language": "JPEG Image",
+      "file_count": 14,
+      "total_bytes": 2701663,
+      "percentage": 10.35,
+      "files": [
+        {
+          "path": "frontend/public/images/foto_dia_congresso.jpeg",
+          "name": "foto_dia_congresso.jpeg",
+          "size": 673756,
+          "extension": ".jpeg"
+        },
+        {
+          "path": "frontend/public/images/foto_noite_congresso.jpeg",
+          "name": "foto_noite_congresso.jpeg",
+          "size": 606619,
+          "extension": ".jpeg"
+        },
+        {
+          "path": "docs/docs/imagens/Homepage_CD.jpeg",
+          "name": "Homepage_CD.jpeg",
+          "size": 211915,
+          "extension": ".jpeg"
+        },
+        {
+          "path": "docs/docs/imagens/Transcrições_CD.jpeg",
+          "name": "Transcrições_CD.jpeg",
+          "size": 170637,
+          "extension": ".jpeg"
+        },
+        {
+          "path": "docs/docs/imagens/prototipo_raio_x.jpg",
+          "name": "prototipo_raio_x.jpg",
+          "size": 162176,
+          "extension": ".jpg"
+        },
+        {
+          "path": "docs/docs/imagens/ProposiçõesLegislativas_CD.jpeg",
+          "name": "ProposiçõesLegislativas_CD.jpeg",
+          "size": 157738,
+          "extension": ".jpeg"
+        },
+        {
+          "path": "docs/docs/imagens/ListaParlamentares_CD.jpeg",
+          "name": "ListaParlamentares_CD.jpeg",
+          "size": 136729,
+          "extension": ".jpeg"
+        },
+        {
+          "path": "docs/docs/imagens/CoesãoPartidária_CD.jpeg",
+          "name": "CoesãoPartidária_CD.jpeg",
+          "size": 129634,
+          "extension": ".jpeg"
+        },
+        {
+          "path": "docs/docs/imagens/Dossiê_CD.jpeg",
+          "name": "Dossiê_CD.jpeg",
+          "size": 115621,
+          "extension": ".jpeg"
+        },
+        {
+          "path": "docs/docs/imagens/FacetoFace_CD.jpeg",
+          "name": "FacetoFace_CD.jpeg",
+          "size": 97590,
+          "extension": ".jpeg"
+        }
+      ]
+    },
+    {
+      "language": "PDF",
+      "file_count": 4,
+      "total_bytes": 783194,
+      "percentage": 3.0,
+      "files": [
+        {
+          "path": "LLM_validation/proposicoes/pl_002.pdf",
+          "name": "pl_002.pdf",
+          "size": 372962,
+          "extension": ".pdf"
+        },
+        {
+          "path": "LLM_validation/proposicoes/pl_004.pdf",
+          "name": "pl_004.pdf",
+          "size": 175106,
+          "extension": ".pdf"
+        },
+        {
+          "path": "LLM_validation/proposicoes/pl_003.pdf",
+          "name": "pl_003.pdf",
+          "size": 129717,
+          "extension": ".pdf"
+        },
+        {
+          "path": "LLM_validation/proposicoes/pl_001.pdf",
+          "name": "pl_001.pdf",
+          "size": 105409,
+          "extension": ".pdf"
+        }
+      ]
+    },
+    {
+      "language": "Python",
+      "file_count": 91,
+      "total_bytes": 557620,
+      "percentage": 2.14,
+      "files": [
+        {
+          "path": "app/rotas/dados.py",
+          "name": "dados.py",
+          "size": 37275,
+          "extension": ".py"
+        },
+        {
+          "path": "tests/api/test_novas_rotas.py",
+          "name": "test_novas_rotas.py",
+          "size": 24433,
+          "extension": ".py"
+        },
+        {
+          "path": "LLM_validation/auditar_estimativas.py",
+          "name": "auditar_estimativas.py",
+          "size": 16653,
+          "extension": ".py"
+        },
+        {
+          "path": "tests/etl/test_transformadores_discursos_camara.py",
+          "name": "test_transformadores_discursos_camara.py",
+          "size": 15922,
+          "extension": ".py"
+        },
+        {
+          "path": "LLM_validation/03_avaliar_postura.py",
+          "name": "03_avaliar_postura.py",
+          "size": 12968,
+          "extension": ".py"
+        },
+        {
+          "path": "tests/etl/test_chunker_senado.py",
+          "name": "test_chunker_senado.py",
+          "size": 12839,
+          "extension": ".py"
+        },
+        {
+          "path": "tests/etl/test_vinculador_discursos_votos_camara.py",
+          "name": "test_vinculador_discursos_votos_camara.py",
+          "size": 12502,
+          "extension": ".py"
+        },
+        {
+          "path": "tests/etl/test_extrator_politicos_senado.py",
+          "name": "test_extrator_politicos_senado.py",
+          "size": 12159,
+          "extension": ".py"
+        },
+        {
+          "path": "tests/etl/test_chunker_discursos_camara.py",
+          "name": "test_chunker_discursos_camara.py",
+          "size": 12014,
+          "extension": ".py"
+        },
+        {
+          "path": "tests/etl/test_vinculador_discursos_votos_senado.py",
+          "name": "test_vinculador_discursos_votos_senado.py",
+          "size": 11916,
+          "extension": ".py"
+        }
+      ]
+    },
+    {
+      "language": "TypeScript",
+      "file_count": 58,
+      "total_bytes": 342272,
+      "percentage": 1.31,
+      "files": [
+        {
+          "path": "frontend/lib/mock.ts",
+          "name": "mock.ts",
+          "size": 41474,
+          "extension": ".ts"
+        },
+        {
+          "path": "frontend/app/politico/[id]/DossieClient.tsx",
+          "name": "DossieClient.tsx",
+          "size": 39490,
+          "extension": ".tsx"
+        },
+        {
+          "path": "frontend/app/discursos/DiscursosClient.tsx",
+          "name": "DiscursosClient.tsx",
+          "size": 26372,
+          "extension": ".tsx"
+        },
+        {
+          "path": "frontend/lib/types.ts",
+          "name": "types.ts",
+          "size": 25887,
+          "extension": ".ts"
+        },
+        {
+          "path": "frontend/app/partidos/PartidosClient.tsx",
+          "name": "PartidosClient.tsx",
+          "size": 18686,
+          "extension": ".tsx"
+        },
+        {
+          "path": "frontend/app/diretorio/DiretorioClient.tsx",
+          "name": "DiretorioClient.tsx",
+          "size": 16195,
+          "extension": ".tsx"
+        },
+        {
+          "path": "frontend/components/CoherenceChart.tsx",
+          "name": "CoherenceChart.tsx",
+          "size": 15236,
+          "extension": ".tsx"
+        },
+        {
+          "path": "frontend/app/proposicoes/ProposicoesClient.tsx",
+          "name": "ProposicoesClient.tsx",
+          "size": 14148,
+          "extension": ".tsx"
+        },
+        {
+          "path": "frontend/app/comparacao/SeletorComparacao.tsx",
+          "name": "SeletorComparacao.tsx",
+          "size": 14128,
+          "extension": ".tsx"
+        },
+        {
+          "path": "frontend/components/home/DiretorioPreview.tsx",
+          "name": "DiretorioPreview.tsx",
+          "size": 11050,
+          "extension": ".tsx"
+        }
+      ]
+    },
+    {
+      "language": "JSON",
+      "file_count": 22,
+      "total_bytes": 328148,
+      "percentage": 1.26,
+      "files": [
+        {
+          "path": "frontend/package-lock.json",
+          "name": "package-lock.json",
+          "size": 230244,
+          "extension": ".json"
+        },
+        {
+          "path": "docs/docs/productivity/metrics.json",
+          "name": "metrics.json",
+          "size": 16515,
+          "extension": ".json"
+        },
+        {
+          "path": "amostras/amostra_para_luiz.json",
+          "name": "amostra_para_luiz.json",
+          "size": 9872,
+          "extension": ".json"
+        },
+        {
+          "path": "LLM_validation/resultados/resumos_groq_qwen3_32b.json",
+          "name": "resumos_groq_qwen3_32b.json",
+          "size": 9709,
+          "extension": ".json"
+        },
+        {
+          "path": "LLM_validation/resultados/resumos_groq_llama33_70b.json",
+          "name": "resumos_groq_llama33_70b.json",
+          "size": 6374,
+          "extension": ".json"
+        },
+        {
+          "path": "LLM_validation/resultados/resumos_llama31_8b.json",
+          "name": "resumos_llama31_8b.json",
+          "size": 6233,
+          "extension": ".json"
+        },
+        {
+          "path": "LLM_validation/resultados/resumos_gemma2_9b.json",
+          "name": "resumos_gemma2_9b.json",
+          "size": 5303,
+          "extension": ".json"
+        },
+        {
+          "path": "LLM_validation/resultados/posturas_ementa_groq_llama33_70b.json",
+          "name": "posturas_ementa_groq_llama33_70b.json",
+          "size": 4562,
+          "extension": ".json"
+        },
+        {
+          "path": "LLM_validation/resultados/resumos_qwen25_7b.json",
+          "name": "resumos_qwen25_7b.json",
+          "size": 4387,
+          "extension": ".json"
+        },
+        {
+          "path": "LLM_validation/resultados/posturas_groq_llama33_70b.json",
+          "name": "posturas_groq_llama33_70b.json",
+          "size": 4374,
+          "extension": ".json"
+        }
+      ]
+    },
+    {
+      "language": "Markdown",
+      "file_count": 62,
+      "total_bytes": 309052,
+      "percentage": 1.18,
+      "files": [
+        {
+          "path": "PLANEJAMENTO.md",
+          "name": "PLANEJAMENTO.md",
+          "size": 17673,
+          "extension": ".md"
+        },
+        {
+          "path": "prds_md/prd_extrator_votos_senado.md",
+          "name": "prd_extrator_votos_senado.md",
+          "size": 12546,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/docs/execucao.md",
+          "name": "execucao.md",
+          "size": 12513,
+          "extension": ".md"
+        },
+        {
+          "path": "prds_md/prd_extrator_discursos_camara.md",
+          "name": "prd_extrator_discursos_camara.md",
+          "size": 12083,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/docs/arquitetura.md",
+          "name": "arquitetura.md",
+          "size": 11229,
+          "extension": ".md"
+        },
+        {
+          "path": "prds_md/prd_extrator_discursos_senado.md",
+          "name": "prd_extrator_discursos_senado.md",
+          "size": 10567,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/docs/frontend.md",
+          "name": "frontend.md",
+          "size": 10223,
+          "extension": ".md"
+        },
+        {
+          "path": "prds_md/prd_extrator_proposicoes_camara.md",
+          "name": "prd_extrator_proposicoes_camara.md",
+          "size": 9185,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/docs/adrs/adr-003.md",
+          "name": "adr-003.md",
+          "size": 9160,
+          "extension": ".md"
+        },
+        {
+          "path": "prds_md/prd_extrator_proposicoes_senado.md",
+          "name": "prd_extrator_proposicoes_senado.md",
+          "size": 8936,
+          "extension": ".md"
+        }
+      ]
+    },
+    {
+      "language": "HTML",
+      "file_count": 2,
+      "total_bytes": 38256,
+      "percentage": 0.15,
+      "files": [
+        {
+          "path": "docs/docs/productivity/index.html",
+          "name": "index.html",
+          "size": 28046,
+          "extension": ".html"
+        },
+        {
+          "path": "docs/overrides/home.html",
+          "name": "home.html",
+          "size": 10210,
+          "extension": ".html"
+        }
+      ]
+    },
+    {
+      "language": "XML",
+      "file_count": 2,
+      "total_bytes": 35197,
+      "percentage": 0.13,
+      "files": [
+        {
+          "path": "amostras/discursos_deputado.xml",
+          "name": "discursos_deputado.xml",
+          "size": 34238,
+          "extension": ".xml"
+        },
+        {
+          "path": "amostras/ementa_proposicao.xml",
+          "name": "ementa_proposicao.xml",
+          "size": 959,
+          "extension": ".xml"
+        }
+      ]
+    },
+    {
+      "language": "Text",
+      "file_count": 16,
+      "total_bytes": 26155,
+      "percentage": 0.1,
+      "files": [
+        {
+          "path": "LLM_validation/proposicoes/textos/pl_001.txt",
+          "name": "pl_001.txt",
+          "size": 5550,
+          "extension": ".txt"
+        },
+        {
+          "path": "LLM_validation/proposicoes/textos/pl_004.txt",
+          "name": "pl_004.txt",
+          "size": 5069,
+          "extension": ".txt"
+        },
+        {
+          "path": "LLM_validation/proposicoes/textos/pl_002.txt",
+          "name": "pl_002.txt",
+          "size": 5005,
+          "extension": ".txt"
+        },
+        {
+          "path": "LLM_validation/proposicoes/textos/pl_003.txt",
+          "name": "pl_003.txt",
+          "size": 1881,
+          "extension": ".txt"
+        },
+        {
+          "path": "LLM_validation/discursos/pl_002_a_favor.txt",
+          "name": "pl_002_a_favor.txt",
+          "size": 1105,
+          "extension": ".txt"
+        },
+        {
+          "path": "LLM_validation/discursos/pl_004_contra.txt",
+          "name": "pl_004_contra.txt",
+          "size": 1099,
+          "extension": ".txt"
+        },
+        {
+          "path": "LLM_validation/discursos/pl_002_contra.txt",
+          "name": "pl_002_contra.txt",
+          "size": 1060,
+          "extension": ".txt"
+        },
+        {
+          "path": "LLM_validation/discursos/pl_004_a_favor.txt",
+          "name": "pl_004_a_favor.txt",
+          "size": 1060,
+          "extension": ".txt"
+        },
+        {
+          "path": "LLM_validation/discursos/pl_001_contra.txt",
+          "name": "pl_001_contra.txt",
+          "size": 1020,
+          "extension": ".txt"
+        },
+        {
+          "path": "LLM_validation/discursos/pl_003_contra.txt",
+          "name": "pl_003_contra.txt",
+          "size": 985,
+          "extension": ".txt"
+        }
+      ]
+    },
+    {
+      "language": "Unknown",
+      "file_count": 7,
+      "total_bytes": 19486,
+      "percentage": 0.07,
+      "files": [
+        {
+          "path": "LLM_validation/benchmark_llama31_8b_colab.ipynb",
+          "name": "benchmark_llama31_8b_colab.ipynb",
+          "size": 12471,
+          "extension": ".ipynb"
+        },
+        {
+          "path": "Dockerfile.worker",
+          "name": "Dockerfile.worker",
+          "size": 3058,
+          "extension": ".worker"
+        },
+        {
+          "path": "Dockerfile.api",
+          "name": "Dockerfile.api",
+          "size": 2509,
+          "extension": ".api"
+        },
+        {
+          "path": "sonar-project.properties",
+          "name": "sonar-project.properties",
+          "size": 845,
+          "extension": ".properties"
+        },
+        {
+          "path": "frontend/eslint.config.mjs",
+          "name": "eslint.config.mjs",
+          "size": 349,
+          "extension": ".mjs"
+        },
+        {
+          "path": ".flake8",
+          "name": ".flake8",
+          "size": 194,
+          "extension": ".flake8"
+        },
+        {
+          "path": "frontend/postcss.config.mjs",
+          "name": "postcss.config.mjs",
+          "size": 60,
+          "extension": ".mjs"
+        }
+      ]
+    },
+    {
+      "language": "CSS",
+      "file_count": 3,
+      "total_bytes": 16220,
+      "percentage": 0.06,
+      "files": [
+        {
+          "path": "docs/docs/stylesheets/landing.css",
+          "name": "landing.css",
+          "size": 7430,
+          "extension": ".css"
+        },
+        {
+          "path": "docs/docs/stylesheets/extra.css",
+          "name": "extra.css",
+          "size": 5459,
+          "extension": ".css"
+        },
+        {
+          "path": "frontend/app/globals.css",
+          "name": "globals.css",
+          "size": 3331,
+          "extension": ".css"
+        }
+      ]
+    },
+    {
+      "language": "YAML",
+      "file_count": 5,
+      "total_bytes": 10983,
+      "percentage": 0.04,
+      "files": [
+        {
+          "path": ".github/workflows/testes-backend.yml",
+          "name": "testes-backend.yml",
+          "size": 3385,
+          "extension": ".yml"
+        },
+        {
+          "path": "docker-compose.yml",
+          "name": "docker-compose.yml",
+          "size": 2895,
+          "extension": ".yml"
+        },
+        {
+          "path": "docs/mkdocs.yml",
+          "name": "mkdocs.yml",
+          "size": 2757,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/deploy-docs.yml",
+          "name": "deploy-docs.yml",
+          "size": 1275,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/linter.yml",
+          "name": "linter.yml",
+          "size": 671,
+          "extension": ".yml"
+        }
+      ]
+    },
+    {
+      "language": "No Extension",
+      "file_count": 2,
+      "total_bytes": 1438,
+      "percentage": 0.01,
+      "files": [
+        {
+          "path": "LICENSE",
+          "name": "LICENSE",
+          "size": 1060,
+          "extension": ""
+        },
+        {
+          "path": "frontend/Dockerfile",
+          "name": "Dockerfile",
+          "size": 378,
+          "extension": ""
+        }
+      ]
+    },
+    {
+      "language": "Docker Ignore",
+      "file_count": 2,
+      "total_bytes": 849,
+      "percentage": 0.0,
+      "files": [
+        {
+          "path": ".dockerignore",
+          "name": ".dockerignore",
+          "size": 802,
+          "extension": ".dockerignore"
+        },
+        {
+          "path": "frontend/.dockerignore",
+          "name": ".dockerignore",
+          "size": 47,
+          "extension": ".dockerignore"
+        }
+      ]
+    },
+    {
+      "language": "Git Ignore",
+      "file_count": 2,
+      "total_bytes": 469,
+      "percentage": 0.0,
+      "files": [
+        {
+          "path": ".gitignore",
+          "name": ".gitignore",
+          "size": 431,
+          "extension": ".gitignore"
+        },
+        {
+          "path": "frontend/.gitignore",
+          "name": ".gitignore",
+          "size": 38,
+          "extension": ".gitignore"
+        }
+      ]
+    },
+    {
+      "language": "TOML",
+      "file_count": 1,
+      "total_bytes": 403,
+      "percentage": 0.0,
+      "files": [
+        {
+          "path": "pyproject.toml",
+          "name": "pyproject.toml",
+          "size": 403,
+          "extension": ".toml"
+        }
+      ]
+    },
+    {
+      "language": "INI",
+      "file_count": 1,
+      "total_bytes": 24,
+      "percentage": 0.0,
+      "files": [
+        {
+          "path": "pytest.ini",
+          "name": "pytest.ini",
+          "size": 24,
+          "extension": ".ini"
+        }
+      ]
+    }
+  ],
+  "_metadata": {
+    "extracted_at": "2026-09-17T04:04:43.838726",
+    "file_path": "data/silver/language_analysis_2026.1-ContraDito.json"
+  }
+}

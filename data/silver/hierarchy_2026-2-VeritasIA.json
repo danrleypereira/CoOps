@@ -1,0 +1,1678 @@
+{
+  "repository": "2026-2-VeritasIA",
+  "owner": "unb-mds",
+  "branch": "main",
+  "extracted_at": "2026-09-17T04:03:51.063880",
+  "hierarchy": {
+    "name": "root",
+    "type": "directory",
+    "children": [
+      {
+        "name": ".github",
+        "type": "directory",
+        "path": ".github",
+        "children": []
+      },
+      {
+        "name": "workflows",
+        "type": "directory",
+        "path": ".github/workflows",
+        "children": []
+      },
+      {
+        "name": "execute-scrapy.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 1293,
+        "extension": ".yml",
+        "path": ".github/workflows/execute-scrapy.yml"
+      },
+      {
+        "name": "keep-alive.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 299,
+        "extension": ".yml",
+        "path": ".github/workflows/keep-alive.yml"
+      },
+      {
+        "name": "langchaim.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 1867,
+        "extension": ".yml",
+        "path": ".github/workflows/langchaim.yml"
+      },
+      {
+        "name": "static.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 2932,
+        "extension": ".yml",
+        "path": ".github/workflows/static.yml"
+      },
+      {
+        "name": ".gitignore",
+        "type": "file",
+        "language": "Git Ignore",
+        "size": 85,
+        "extension": ".gitignore",
+        "path": ".gitignore"
+      },
+      {
+        "name": "Frontend",
+        "type": "directory",
+        "path": "Frontend",
+        "children": []
+      },
+      {
+        "name": "package-lock.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 216958,
+        "extension": ".json",
+        "path": "Frontend/package-lock.json"
+      },
+      {
+        "name": "package.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 1059,
+        "extension": ".json",
+        "path": "Frontend/package.json"
+      },
+      {
+        "name": "postcss.config.js",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 79,
+        "extension": ".js",
+        "path": "Frontend/postcss.config.js"
+      },
+      {
+        "name": "public",
+        "type": "directory",
+        "path": "Frontend/public",
+        "children": []
+      },
+      {
+        "name": "images",
+        "type": "directory",
+        "path": "Frontend/public/images",
+        "children": []
+      },
+      {
+        "name": "noticia-placeholder.jpg",
+        "type": "file",
+        "language": "JPEG Image",
+        "size": 0,
+        "extension": ".jpg",
+        "path": "Frontend/public/images/noticia-placeholder.jpg"
+      },
+      {
+        "name": "src",
+        "type": "directory",
+        "path": "Frontend/src",
+        "children": []
+      },
+      {
+        "name": "App.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 14918,
+        "extension": ".css",
+        "path": "Frontend/src/App.css"
+      },
+      {
+        "name": "App.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 1361,
+        "extension": ".jsx",
+        "path": "Frontend/src/App.jsx"
+      },
+      {
+        "name": "assets",
+        "type": "directory",
+        "path": "Frontend/src/assets",
+        "children": []
+      },
+      {
+        "name": "logo.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 6216,
+        "extension": ".png",
+        "path": "Frontend/src/assets/logo.png"
+      },
+      {
+        "name": "logo2.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 1839412,
+        "extension": ".png",
+        "path": "Frontend/src/assets/logo2.png"
+      },
+      {
+        "name": "logo_white.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 5677,
+        "extension": ".png",
+        "path": "Frontend/src/assets/logo_white.png"
+      },
+      {
+        "name": "react.svg",
+        "type": "file",
+        "language": "SVG Image",
+        "size": 4126,
+        "extension": ".svg",
+        "path": "Frontend/src/assets/react.svg"
+      },
+      {
+        "name": "components",
+        "type": "directory",
+        "path": "Frontend/src/components",
+        "children": []
+      },
+      {
+        "name": "AuthPrompt.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 2090,
+        "extension": ".jsx",
+        "path": "Frontend/src/components/AuthPrompt.jsx"
+      },
+      {
+        "name": "BrazilMap.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 4027,
+        "extension": ".jsx",
+        "path": "Frontend/src/components/BrazilMap.jsx"
+      },
+      {
+        "name": "Calendario.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 1060,
+        "extension": ".jsx",
+        "path": "Frontend/src/components/Calendario.jsx"
+      },
+      {
+        "name": "HeatmapLayer.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 2685,
+        "extension": ".jsx",
+        "path": "Frontend/src/components/HeatmapLayer.jsx"
+      },
+      {
+        "name": "LatestNews.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 1751,
+        "extension": ".jsx",
+        "path": "Frontend/src/components/LatestNews.jsx"
+      },
+      {
+        "name": "LeafletMap.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 6864,
+        "extension": ".jsx",
+        "path": "Frontend/src/components/LeafletMap.jsx"
+      },
+      {
+        "name": "NewsChart.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 2383,
+        "extension": ".jsx",
+        "path": "Frontend/src/components/NewsChart.jsx"
+      },
+      {
+        "name": "PageHeader.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 955,
+        "extension": ".jsx",
+        "path": "Frontend/src/components/PageHeader.jsx"
+      },
+      {
+        "name": "RegionChart.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 2133,
+        "extension": ".jsx",
+        "path": "Frontend/src/components/RegionChart.jsx"
+      },
+      {
+        "name": "Sidebar.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 1186,
+        "extension": ".jsx",
+        "path": "Frontend/src/components/Sidebar.jsx"
+      },
+      {
+        "name": "StatCard.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 869,
+        "extension": ".jsx",
+        "path": "Frontend/src/components/StatCard.jsx"
+      },
+      {
+        "name": "TopVehicles.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 2262,
+        "extension": ".jsx",
+        "path": "Frontend/src/components/TopVehicles.jsx"
+      },
+      {
+        "name": "data",
+        "type": "directory",
+        "path": "Frontend/src/data",
+        "children": []
+      },
+      {
+        "name": "noticias.js",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 3007,
+        "extension": ".js",
+        "path": "Frontend/src/data/noticias.js"
+      },
+      {
+        "name": "index.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 1160,
+        "extension": ".css",
+        "path": "Frontend/src/index.css"
+      },
+      {
+        "name": "main.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 797,
+        "extension": ".jsx",
+        "path": "Frontend/src/main.jsx"
+      },
+      {
+        "name": "pages",
+        "type": "directory",
+        "path": "Frontend/src/pages",
+        "children": []
+      },
+      {
+        "name": "Dashboard.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 5389,
+        "extension": ".jsx",
+        "path": "Frontend/src/pages/Dashboard.jsx"
+      },
+      {
+        "name": "DetalhesNoticia.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 4066,
+        "extension": ".css",
+        "path": "Frontend/src/pages/DetalhesNoticia.css"
+      },
+      {
+        "name": "DetalhesNoticia.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 7756,
+        "extension": ".jsx",
+        "path": "Frontend/src/pages/DetalhesNoticia.jsx"
+      },
+      {
+        "name": "Home.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 66,
+        "extension": ".jsx",
+        "path": "Frontend/src/pages/Home.jsx"
+      },
+      {
+        "name": "Login.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 3436,
+        "extension": ".jsx",
+        "path": "Frontend/src/pages/Login.jsx"
+      },
+      {
+        "name": "Mapa.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 5583,
+        "extension": ".css",
+        "path": "Frontend/src/pages/Mapa.css"
+      },
+      {
+        "name": "Mapa.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 2261,
+        "extension": ".jsx",
+        "path": "Frontend/src/pages/Mapa.jsx"
+      },
+      {
+        "name": "Noticias.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 6527,
+        "extension": ".css",
+        "path": "Frontend/src/pages/Noticias.css"
+      },
+      {
+        "name": "Noticias.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 8498,
+        "extension": ".jsx",
+        "path": "Frontend/src/pages/Noticias.jsx"
+      },
+      {
+        "name": "Sobre.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 6090,
+        "extension": ".css",
+        "path": "Frontend/src/pages/Sobre.css"
+      },
+      {
+        "name": "Sobre.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 8299,
+        "extension": ".jsx",
+        "path": "Frontend/src/pages/Sobre.jsx"
+      },
+      {
+        "name": "tailwind.config.js",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 169,
+        "extension": ".js",
+        "path": "Frontend/tailwind.config.js"
+      },
+      {
+        "name": "LICENSE",
+        "type": "file",
+        "language": "No Extension",
+        "size": 1060,
+        "extension": "",
+        "path": "LICENSE"
+      },
+      {
+        "name": "README.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3123,
+        "extension": ".md",
+        "path": "README.md"
+      },
+      {
+        "name": "backend",
+        "type": "directory",
+        "path": "backend",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "backend/__init__.py"
+      },
+      {
+        "name": "app",
+        "type": "directory",
+        "path": "backend/app",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "backend/app/__init__.py"
+      },
+      {
+        "name": "adapters",
+        "type": "directory",
+        "path": "backend/app/adapters",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "backend/app/adapters/__init__.py"
+      },
+      {
+        "name": "api_adapter",
+        "type": "directory",
+        "path": "backend/app/adapters/api_adapter",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "backend/app/adapters/api_adapter/__init__.py"
+      },
+      {
+        "name": "__pycache__",
+        "type": "directory",
+        "path": "backend/app/adapters/api_adapter/__pycache__",
+        "children": []
+      },
+      {
+        "name": "mapa_routes.cpython-314.pyc",
+        "type": "file",
+        "language": "Unknown",
+        "size": 4347,
+        "extension": ".pyc",
+        "path": "backend/app/adapters/api_adapter/__pycache__/mapa_routes.cpython-314.pyc"
+      },
+      {
+        "name": "auth_routes.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3988,
+        "extension": ".py",
+        "path": "backend/app/adapters/api_adapter/auth_routes.py"
+      },
+      {
+        "name": "dashboard_routes.py",
+        "type": "file",
+        "language": "Python",
+        "size": 10405,
+        "extension": ".py",
+        "path": "backend/app/adapters/api_adapter/dashboard_routes.py"
+      },
+      {
+        "name": "mapa_routes.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4615,
+        "extension": ".py",
+        "path": "backend/app/adapters/api_adapter/mapa_routes.py"
+      },
+      {
+        "name": "noticias_routes.py",
+        "type": "file",
+        "language": "Python",
+        "size": 5389,
+        "extension": ".py",
+        "path": "backend/app/adapters/api_adapter/noticias_routes.py"
+      },
+      {
+        "name": "db_adapter.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2972,
+        "extension": ".py",
+        "path": "backend/app/adapters/db_adapter.py"
+      },
+      {
+        "name": "json_adapter.py",
+        "type": "file",
+        "language": "Python",
+        "size": 5340,
+        "extension": ".py",
+        "path": "backend/app/adapters/json_adapter.py"
+      },
+      {
+        "name": "database.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2767,
+        "extension": ".py",
+        "path": "backend/app/database.py"
+      },
+      {
+        "name": "main.py",
+        "type": "file",
+        "language": "Python",
+        "size": 6049,
+        "extension": ".py",
+        "path": "backend/app/main.py"
+      },
+      {
+        "name": "models.py",
+        "type": "file",
+        "language": "Python",
+        "size": 5376,
+        "extension": ".py",
+        "path": "backend/app/models.py"
+      },
+      {
+        "name": "schemas",
+        "type": "directory",
+        "path": "backend/app/schemas",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "backend/app/schemas/__init__.py"
+      },
+      {
+        "name": "noticia.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4100,
+        "extension": ".py",
+        "path": "backend/app/schemas/noticia.py"
+      },
+      {
+        "name": "llm",
+        "type": "directory",
+        "path": "backend/llm",
+        "children": []
+      },
+      {
+        "name": "langChain.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3961,
+        "extension": ".py",
+        "path": "backend/llm/langChain.py"
+      },
+      {
+        "name": "langChain_Controller.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2047,
+        "extension": ".py",
+        "path": "backend/llm/langChain_Controller.py"
+      },
+      {
+        "name": "news-llm.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 2,
+        "extension": ".json",
+        "path": "backend/llm/news-llm.json"
+      },
+      {
+        "name": "news_Classification.py",
+        "type": "file",
+        "language": "Python",
+        "size": 477,
+        "extension": ".py",
+        "path": "backend/llm/news_Classification.py"
+      },
+      {
+        "name": "requirements.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 86,
+        "extension": ".txt",
+        "path": "backend/llm/requirements.txt"
+      },
+      {
+        "name": "tests",
+        "type": "directory",
+        "path": "backend/tests",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "backend/tests/__init__.py"
+      },
+      {
+        "name": "__pycache__",
+        "type": "directory",
+        "path": "backend/tests/__pycache__",
+        "children": []
+      },
+      {
+        "name": "__init__.cpython-314.pyc",
+        "type": "file",
+        "language": "Unknown",
+        "size": 157,
+        "extension": ".pyc",
+        "path": "backend/tests/__pycache__/__init__.cpython-314.pyc"
+      },
+      {
+        "name": "conftest.cpython-314-pytest-9.1.1.pyc",
+        "type": "file",
+        "language": "Unknown",
+        "size": 8620,
+        "extension": ".pyc",
+        "path": "backend/tests/__pycache__/conftest.cpython-314-pytest-9.1.1.pyc"
+      },
+      {
+        "name": "factories.cpython-314.pyc",
+        "type": "file",
+        "language": "Unknown",
+        "size": 2661,
+        "extension": ".pyc",
+        "path": "backend/tests/__pycache__/factories.cpython-314.pyc"
+      },
+      {
+        "name": "test_dashboard_integration.cpython-314-pytest-9.1.1.pyc",
+        "type": "file",
+        "language": "Unknown",
+        "size": 12718,
+        "extension": ".pyc",
+        "path": "backend/tests/__pycache__/test_dashboard_integration.cpython-314-pytest-9.1.1.pyc"
+      },
+      {
+        "name": "test_dashboard_routes.cpython-314-pytest-9.1.1.pyc",
+        "type": "file",
+        "language": "Unknown",
+        "size": 15506,
+        "extension": ".pyc",
+        "path": "backend/tests/__pycache__/test_dashboard_routes.cpython-314-pytest-9.1.1.pyc"
+      },
+      {
+        "name": "test_mapa_routes.cpython-314-pytest-9.1.1.pyc",
+        "type": "file",
+        "language": "Unknown",
+        "size": 9972,
+        "extension": ".pyc",
+        "path": "backend/tests/__pycache__/test_mapa_routes.cpython-314-pytest-9.1.1.pyc"
+      },
+      {
+        "name": "test_noticias_routes.cpython-314-pytest-9.1.1.pyc",
+        "type": "file",
+        "language": "Unknown",
+        "size": 14044,
+        "extension": ".pyc",
+        "path": "backend/tests/__pycache__/test_noticias_routes.cpython-314-pytest-9.1.1.pyc"
+      },
+      {
+        "name": "conftest.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3863,
+        "extension": ".py",
+        "path": "backend/tests/conftest.py"
+      },
+      {
+        "name": "factories.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1197,
+        "extension": ".py",
+        "path": "backend/tests/factories.py"
+      },
+      {
+        "name": "integration",
+        "type": "directory",
+        "path": "backend/tests/integration",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "backend/tests/integration/__init__.py"
+      },
+      {
+        "name": "__pycache__",
+        "type": "directory",
+        "path": "backend/tests/integration/__pycache__",
+        "children": []
+      },
+      {
+        "name": "__init__.cpython-314.pyc",
+        "type": "file",
+        "language": "Unknown",
+        "size": 169,
+        "extension": ".pyc",
+        "path": "backend/tests/integration/__pycache__/__init__.cpython-314.pyc"
+      },
+      {
+        "name": "conftest.cpython-314-pytest-9.1.1.pyc",
+        "type": "file",
+        "language": "Unknown",
+        "size": 12619,
+        "extension": ".pyc",
+        "path": "backend/tests/integration/__pycache__/conftest.cpython-314-pytest-9.1.1.pyc"
+      },
+      {
+        "name": "test_dashboard_integration.cpython-314-pytest-9.1.1.pyc",
+        "type": "file",
+        "language": "Unknown",
+        "size": 12822,
+        "extension": ".pyc",
+        "path": "backend/tests/integration/__pycache__/test_dashboard_integration.cpython-314-pytest-9.1.1.pyc"
+      },
+      {
+        "name": "conftest.py",
+        "type": "file",
+        "language": "Python",
+        "size": 6759,
+        "extension": ".py",
+        "path": "backend/tests/integration/conftest.py"
+      },
+      {
+        "name": "test_dashboard_integration.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3657,
+        "extension": ".py",
+        "path": "backend/tests/integration/test_dashboard_integration.py"
+      },
+      {
+        "name": "resultados",
+        "type": "directory",
+        "path": "backend/tests/resultados",
+        "children": []
+      },
+      {
+        "name": "test-results.xml",
+        "type": "file",
+        "language": "XML",
+        "size": 838,
+        "extension": ".xml",
+        "path": "backend/tests/resultados/test-results.xml"
+      },
+      {
+        "name": "test-results_database.xml",
+        "type": "file",
+        "language": "XML",
+        "size": 838,
+        "extension": ".xml",
+        "path": "backend/tests/resultados/test-results_database.xml"
+      },
+      {
+        "name": "test-results_func.xml",
+        "type": "file",
+        "language": "XML",
+        "size": 2347,
+        "extension": ".xml",
+        "path": "backend/tests/resultados/test-results_func.xml"
+      },
+      {
+        "name": "test_dashboard_routes.py",
+        "type": "file",
+        "language": "Python",
+        "size": 6007,
+        "extension": ".py",
+        "path": "backend/tests/test_dashboard_routes.py"
+      },
+      {
+        "name": "test_mapa_routes.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2800,
+        "extension": ".py",
+        "path": "backend/tests/test_mapa_routes.py"
+      },
+      {
+        "name": "test_noticias_routes.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4175,
+        "extension": ".py",
+        "path": "backend/tests/test_noticias_routes.py"
+      },
+      {
+        "name": "tratamentoDeDados",
+        "type": "directory",
+        "path": "backend/tratamentoDeDados",
+        "children": []
+      },
+      {
+        "name": "juntar_dados.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4860,
+        "extension": ".py",
+        "path": "backend/tratamentoDeDados/juntar_dados.py"
+      },
+      {
+        "name": "tratamentoDeTexto.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1447,
+        "extension": ".py",
+        "path": "backend/tratamentoDeDados/tratamentoDeTexto.py"
+      },
+      {
+        "name": "docs",
+        "type": "directory",
+        "path": "docs",
+        "children": []
+      },
+      {
+        "name": "assets",
+        "type": "directory",
+        "path": "docs/assets",
+        "children": []
+      },
+      {
+        "name": "Logo.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 17490,
+        "extension": ".png",
+        "path": "docs/assets/Logo.png"
+      },
+      {
+        "name": "LogoBlack.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 65544,
+        "extension": ".png",
+        "path": "docs/assets/LogoBlack.png"
+      },
+      {
+        "name": "texto.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 21479,
+        "extension": ".png",
+        "path": "docs/assets/texto.png"
+      },
+      {
+        "name": "backend",
+        "type": "directory",
+        "path": "docs/backend",
+        "children": []
+      },
+      {
+        "name": "FastAPI",
+        "type": "directory",
+        "path": "docs/backend/FastAPI",
+        "children": []
+      },
+      {
+        "name": "FastAPI.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2439,
+        "extension": ".md",
+        "path": "docs/backend/FastAPI/FastAPI.md"
+      },
+      {
+        "name": "adapters",
+        "type": "directory",
+        "path": "docs/backend/FastAPI/adapters",
+        "children": []
+      },
+      {
+        "name": "adapter.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1277,
+        "extension": ".md",
+        "path": "docs/backend/FastAPI/adapters/adapter.md"
+      },
+      {
+        "name": "banco de dados",
+        "type": "directory",
+        "path": "docs/backend/FastAPI/banco de dados",
+        "children": []
+      },
+      {
+        "name": "database.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 366,
+        "extension": ".md",
+        "path": "docs/backend/FastAPI/banco de dados/database.md"
+      },
+      {
+        "name": "models.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 440,
+        "extension": ".md",
+        "path": "docs/backend/FastAPI/banco de dados/models.md"
+      },
+      {
+        "name": "base",
+        "type": "directory",
+        "path": "docs/backend/FastAPI/base",
+        "children": []
+      },
+      {
+        "name": "main.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 385,
+        "extension": ".md",
+        "path": "docs/backend/FastAPI/base/main.md"
+      },
+      {
+        "name": "rotas",
+        "type": "directory",
+        "path": "docs/backend/FastAPI/rotas",
+        "children": []
+      },
+      {
+        "name": "rotas.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1644,
+        "extension": ".md",
+        "path": "docs/backend/FastAPI/rotas/rotas.md"
+      },
+      {
+        "name": "schemas",
+        "type": "directory",
+        "path": "docs/backend/FastAPI/schemas",
+        "children": []
+      },
+      {
+        "name": "schemas.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 471,
+        "extension": ".md",
+        "path": "docs/backend/FastAPI/schemas/schemas.md"
+      },
+      {
+        "name": "LangChain.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 7867,
+        "extension": ".md",
+        "path": "docs/backend/LangChain.md"
+      },
+      {
+        "name": "Scrapy.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 4137,
+        "extension": ".md",
+        "path": "docs/backend/Scrapy.md"
+      },
+      {
+        "name": "como-rodar-backend.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2979,
+        "extension": ".md",
+        "path": "docs/backend/como-rodar-backend.md"
+      },
+      {
+        "name": "langChain",
+        "type": "directory",
+        "path": "docs/backend/langChain",
+        "children": []
+      },
+      {
+        "name": "LangChain.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3551,
+        "extension": ".md",
+        "path": "docs/backend/langChain/LangChain.md"
+      },
+      {
+        "name": "LangChainControlador.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1797,
+        "extension": ".md",
+        "path": "docs/backend/langChain/LangChainControlador.md"
+      },
+      {
+        "name": "LangChainWorkFlow.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 922,
+        "extension": ".md",
+        "path": "docs/backend/langChain/LangChainWorkFlow.md"
+      },
+      {
+        "name": "scrapy",
+        "type": "directory",
+        "path": "docs/backend/scrapy",
+        "children": []
+      },
+      {
+        "name": "Automacao.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1238,
+        "extension": ".md",
+        "path": "docs/backend/scrapy/Automacao.md"
+      },
+      {
+        "name": "scrapy.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1123,
+        "extension": ".md",
+        "path": "docs/backend/scrapy/scrapy.md"
+      },
+      {
+        "name": "tests",
+        "type": "directory",
+        "path": "docs/backend/tests",
+        "children": []
+      },
+      {
+        "name": "integration",
+        "type": "directory",
+        "path": "docs/backend/tests/integration",
+        "children": []
+      },
+      {
+        "name": "testes_db.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1708,
+        "extension": ".md",
+        "path": "docs/backend/tests/integration/testes_db.md"
+      },
+      {
+        "name": "testes_api.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2534,
+        "extension": ".md",
+        "path": "docs/backend/tests/testes_api.md"
+      },
+      {
+        "name": "dashboard",
+        "type": "directory",
+        "path": "docs/dashboard",
+        "children": []
+      },
+      {
+        "name": "dashboard.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 25017,
+        "extension": ".html",
+        "path": "docs/dashboard/dashboard.html"
+      },
+      {
+        "name": "dashboard.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 312,
+        "extension": ".md",
+        "path": "docs/dashboard/dashboard.md"
+      },
+      {
+        "name": "deploy.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 694,
+        "extension": ".md",
+        "path": "docs/deploy.md"
+      },
+      {
+        "name": "frontend",
+        "type": "directory",
+        "path": "docs/frontend",
+        "children": []
+      },
+      {
+        "name": "Fluxo.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 4654,
+        "extension": ".md",
+        "path": "docs/frontend/Fluxo.md"
+      },
+      {
+        "name": "Prototipagem.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 231,
+        "extension": ".md",
+        "path": "docs/frontend/Prototipagem.md"
+      },
+      {
+        "name": "React.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 5639,
+        "extension": ".md",
+        "path": "docs/frontend/React.md"
+      },
+      {
+        "name": "auth-frontend.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 635,
+        "extension": ".md",
+        "path": "docs/frontend/auth-frontend.md"
+      },
+      {
+        "name": "qualidade.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 790,
+        "extension": ".md",
+        "path": "docs/frontend/qualidade.md"
+      },
+      {
+        "name": "tests",
+        "type": "directory",
+        "path": "docs/frontend/tests",
+        "children": []
+      },
+      {
+        "name": "testes_frontend.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 0,
+        "extension": ".md",
+        "path": "docs/frontend/tests/testes_frontend.md"
+      },
+      {
+        "name": "testes_integracao.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 0,
+        "extension": ".md",
+        "path": "docs/frontend/tests/testes_integracao.md"
+      },
+      {
+        "name": "index.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3349,
+        "extension": ".md",
+        "path": "docs/index.md"
+      },
+      {
+        "name": "lint-report.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 19338,
+        "extension": ".json",
+        "path": "docs/lint-report.json"
+      },
+      {
+        "name": "productivity",
+        "type": "directory",
+        "path": "docs/productivity",
+        "children": []
+      },
+      {
+        "name": "collect_metrics.py",
+        "type": "file",
+        "language": "Python",
+        "size": 11956,
+        "extension": ".py",
+        "path": "docs/productivity/collect_metrics.py"
+      },
+      {
+        "name": "metrics.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 9673,
+        "extension": ".json",
+        "path": "docs/productivity/metrics.json"
+      },
+      {
+        "name": "requirements.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 17,
+        "extension": ".txt",
+        "path": "docs/productivity/requirements.txt"
+      },
+      {
+        "name": "style.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 4205,
+        "extension": ".css",
+        "path": "docs/productivity/style.css"
+      },
+      {
+        "name": "produtividade",
+        "type": "directory",
+        "path": "docs/produtividade",
+        "children": []
+      },
+      {
+        "name": "dashboard.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 25017,
+        "extension": ".html",
+        "path": "docs/produtividade/dashboard.html"
+      },
+      {
+        "name": "dashboard.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 322,
+        "extension": ".md",
+        "path": "docs/produtividade/dashboard.md"
+      },
+      {
+        "name": "projeto",
+        "type": "directory",
+        "path": "docs/projeto",
+        "children": []
+      },
+      {
+        "name": "Arquitetura.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 7514,
+        "extension": ".md",
+        "path": "docs/projeto/Arquitetura.md"
+      },
+      {
+        "name": "Requisitos.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3581,
+        "extension": ".md",
+        "path": "docs/projeto/Requisitos.md"
+      },
+      {
+        "name": "product-backlog.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1123,
+        "extension": ".md",
+        "path": "docs/projeto/product-backlog.md"
+      },
+      {
+        "name": "retrospective.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 0,
+        "extension": ".md",
+        "path": "docs/projeto/retrospective.md"
+      },
+      {
+        "name": "roadmap.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 0,
+        "extension": ".md",
+        "path": "docs/projeto/roadmap.md"
+      },
+      {
+        "name": "sprint0.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 879,
+        "extension": ".md",
+        "path": "docs/projeto/sprint0.md"
+      },
+      {
+        "name": "sprint1.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1326,
+        "extension": ".md",
+        "path": "docs/projeto/sprint1.md"
+      },
+      {
+        "name": "sprint2.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 757,
+        "extension": ".md",
+        "path": "docs/projeto/sprint2.md"
+      },
+      {
+        "name": "sprint3.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1732,
+        "extension": ".md",
+        "path": "docs/projeto/sprint3.md"
+      },
+      {
+        "name": "sprint4.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1172,
+        "extension": ".md",
+        "path": "docs/projeto/sprint4.md"
+      },
+      {
+        "name": "sprint5.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1377,
+        "extension": ".md",
+        "path": "docs/projeto/sprint5.md"
+      },
+      {
+        "name": "sprint6.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 458,
+        "extension": ".md",
+        "path": "docs/projeto/sprint6.md"
+      },
+      {
+        "name": "sprint7.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1023,
+        "extension": ".md",
+        "path": "docs/projeto/sprint7.md"
+      },
+      {
+        "name": "sprint8.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1608,
+        "extension": ".md",
+        "path": "docs/projeto/sprint8.md"
+      },
+      {
+        "name": "sprint9.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 431,
+        "extension": ".md",
+        "path": "docs/projeto/sprint9.md"
+      },
+      {
+        "name": "team.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 0,
+        "extension": ".md",
+        "path": "docs/projeto/team.md"
+      },
+      {
+        "name": "sobre-nos.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1549,
+        "extension": ".md",
+        "path": "docs/sobre-nos.md"
+      },
+      {
+        "name": "stylesheets",
+        "type": "directory",
+        "path": "docs/stylesheets",
+        "children": []
+      },
+      {
+        "name": "extra.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 2171,
+        "extension": ".css",
+        "path": "docs/stylesheets/extra.css"
+      },
+      {
+        "name": "eslint.config.js",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 1193,
+        "extension": ".js",
+        "path": "eslint.config.js"
+      },
+      {
+        "name": "index.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 366,
+        "extension": ".html",
+        "path": "index.html"
+      },
+      {
+        "name": "mkdocs.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 2216,
+        "extension": ".yml",
+        "path": "mkdocs.yml"
+      },
+      {
+        "name": "overrides",
+        "type": "directory",
+        "path": "overrides",
+        "children": []
+      },
+      {
+        "name": "index.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 478,
+        "extension": ".html",
+        "path": "overrides/index.html"
+      },
+      {
+        "name": "package-lock.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 216296,
+        "extension": ".json",
+        "path": "package-lock.json"
+      },
+      {
+        "name": "package.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 1026,
+        "extension": ".json",
+        "path": "package.json"
+      },
+      {
+        "name": "pytest.ini",
+        "type": "file",
+        "language": "INI",
+        "size": 352,
+        "extension": ".ini",
+        "path": "pytest.ini"
+      },
+      {
+        "name": "requirements.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 290,
+        "extension": ".txt",
+        "path": "requirements.txt"
+      },
+      {
+        "name": "scrapers",
+        "type": "directory",
+        "path": "scrapers",
+        "children": []
+      },
+      {
+        "name": "__pycache__",
+        "type": "directory",
+        "path": "scrapers/__pycache__",
+        "children": []
+      },
+      {
+        "name": "salvarscrapys.cpython-314.pyc",
+        "type": "file",
+        "language": "Unknown",
+        "size": 2458,
+        "extension": ".pyc",
+        "path": "scrapers/__pycache__/salvarscrapys.cpython-314.pyc"
+      },
+      {
+        "name": "executarSpiders.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1169,
+        "extension": ".py",
+        "path": "scrapers/executarSpiders.py"
+      },
+      {
+        "name": "requirements.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 30,
+        "extension": ".txt",
+        "path": "scrapers/requirements.txt"
+      },
+      {
+        "name": "resultados",
+        "type": "directory",
+        "path": "scrapers/resultados",
+        "children": []
+      },
+      {
+        "name": "cnn.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 3007,
+        "extension": ".json",
+        "path": "scrapers/resultados/cnn.json"
+      },
+      {
+        "name": "g1.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 127314,
+        "extension": ".json",
+        "path": "scrapers/resultados/g1.json"
+      },
+      {
+        "name": "metropoles.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 3448,
+        "extension": ".json",
+        "path": "scrapers/resultados/metropoles.json"
+      },
+      {
+        "name": "r7.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 1997,
+        "extension": ".json",
+        "path": "scrapers/resultados/r7.json"
+      },
+      {
+        "name": "resultados.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 137310,
+        "extension": ".json",
+        "path": "scrapers/resultados/resultados.json"
+      },
+      {
+        "name": "salvarscrapys.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1536,
+        "extension": ".py",
+        "path": "scrapers/salvarscrapys.py"
+      },
+      {
+        "name": "spiders",
+        "type": "directory",
+        "path": "scrapers/spiders",
+        "children": []
+      },
+      {
+        "name": "__pycache__",
+        "type": "directory",
+        "path": "scrapers/spiders/__pycache__",
+        "children": []
+      },
+      {
+        "name": "cnnspider.cpython-314.pyc",
+        "type": "file",
+        "language": "Unknown",
+        "size": 4231,
+        "extension": ".pyc",
+        "path": "scrapers/spiders/__pycache__/cnnspider.cpython-314.pyc"
+      },
+      {
+        "name": "g1Spider.cpython-314.pyc",
+        "type": "file",
+        "language": "Unknown",
+        "size": 5491,
+        "extension": ".pyc",
+        "path": "scrapers/spiders/__pycache__/g1Spider.cpython-314.pyc"
+      },
+      {
+        "name": "metropoles.cpython-314.pyc",
+        "type": "file",
+        "language": "Unknown",
+        "size": 5758,
+        "extension": ".pyc",
+        "path": "scrapers/spiders/__pycache__/metropoles.cpython-314.pyc"
+      },
+      {
+        "name": "r7spider.cpython-314.pyc",
+        "type": "file",
+        "language": "Unknown",
+        "size": 5567,
+        "extension": ".pyc",
+        "path": "scrapers/spiders/__pycache__/r7spider.cpython-314.pyc"
+      },
+      {
+        "name": "cnnspider.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3329,
+        "extension": ".py",
+        "path": "scrapers/spiders/cnnspider.py"
+      },
+      {
+        "name": "g1Spider.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4089,
+        "extension": ".py",
+        "path": "scrapers/spiders/g1Spider.py"
+      },
+      {
+        "name": "metropoles.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4538,
+        "extension": ".py",
+        "path": "scrapers/spiders/metropoles.py"
+      },
+      {
+        "name": "r7spider.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4240,
+        "extension": ".py",
+        "path": "scrapers/spiders/r7spider.py"
+      },
+      {
+        "name": "vite.config.js",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 475,
+        "extension": ".js",
+        "path": "vite.config.js"
+      }
+    ]
+  },
+  "_metadata": {
+    "extracted_at": "2026-09-17T04:04:44.570005",
+    "file_path": "data/silver/hierarchy_2026-2-VeritasIA.json"
+  }
+}

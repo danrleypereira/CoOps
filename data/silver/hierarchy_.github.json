@@ -1,0 +1,30 @@
+{
+  "repository": ".github",
+  "owner": "unb-mds",
+  "branch": "main",
+  "extracted_at": "2026-09-17T04:03:49.246145",
+  "hierarchy": {
+    "name": "root",
+    "type": "directory",
+    "children": [
+      {
+        "name": "profile",
+        "type": "directory",
+        "path": "profile",
+        "children": []
+      },
+      {
+        "name": "README.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2207,
+        "extension": ".md",
+        "path": "profile/README.md"
+      }
+    ]
+  },
+  "_metadata": {
+    "extracted_at": "2026-09-17T04:04:44.822266",
+    "file_path": "data/silver/hierarchy_.github.json"
+  }
+}

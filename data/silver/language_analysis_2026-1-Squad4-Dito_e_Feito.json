@@ -1,0 +1,594 @@
+{
+  "repository": "2026-1-Squad4-Dito_e_Feito",
+  "owner": "unb-mds",
+  "branch": "main",
+  "analyzed_at": "2026-09-17T04:03:51.424222",
+  "sample_config": {
+    "max_files_per_language": 10,
+    "strategy": "largest"
+  },
+  "total_files": 152,
+  "total_bytes": 2297907,
+  "languages": [
+    {
+      "language": "PNG Image",
+      "file_count": 4,
+      "total_bytes": 892482,
+      "percentage": 38.84,
+      "files": [
+        {
+          "path": "docs/dashboard_screenshot.png",
+          "name": "dashboard_screenshot.png",
+          "size": 519436,
+          "extension": ".png"
+        },
+        {
+          "path": "docs/Screenshot 2026-07-01 at 11-10-06 Dito e Feito — Análise Política com IA.png",
+          "name": "Screenshot 2026-07-01 at 11-10-06 Dito e Feito — Análise Política com IA.png",
+          "size": 291368,
+          "extension": ".png"
+        },
+        {
+          "path": "frontend/src/assets/dito_logo.png",
+          "name": "dito_logo.png",
+          "size": 81134,
+          "extension": ".png"
+        },
+        {
+          "path": "docs/qrcode_github.png",
+          "name": "qrcode_github.png",
+          "size": 544,
+          "extension": ".png"
+        }
+      ]
+    },
+    {
+      "language": "JSON",
+      "file_count": 6,
+      "total_bytes": 478264,
+      "percentage": 20.81,
+      "files": [
+        {
+          "path": "frontend/package-lock.json",
+          "name": "package-lock.json",
+          "size": 224829,
+          "extension": ".json"
+        },
+        {
+          "path": "backend/dashboard_metrics.json",
+          "name": "dashboard_metrics.json",
+          "size": 209613,
+          "extension": ".json"
+        },
+        {
+          "path": "package-lock.json",
+          "name": "package-lock.json",
+          "size": 42504,
+          "extension": ".json"
+        },
+        {
+          "path": "frontend/package.json",
+          "name": "package.json",
+          "size": 1184,
+          "extension": ".json"
+        },
+        {
+          "path": "backend/config_data.json",
+          "name": "config_data.json",
+          "size": 89,
+          "extension": ".json"
+        },
+        {
+          "path": "frontend/test-results/.last-run.json",
+          "name": ".last-run.json",
+          "size": 45,
+          "extension": ".json"
+        }
+      ]
+    },
+    {
+      "language": "JavaScript",
+      "file_count": 43,
+      "total_bytes": 282483,
+      "percentage": 12.29,
+      "files": [
+        {
+          "path": "frontend/src/components/MapaBrasil.jsx",
+          "name": "MapaBrasil.jsx",
+          "size": 70410,
+          "extension": ".jsx"
+        },
+        {
+          "path": "frontend/src/pages/Estados.jsx",
+          "name": "Estados.jsx",
+          "size": 24905,
+          "extension": ".jsx"
+        },
+        {
+          "path": "frontend/src/pages/Partidos.jsx",
+          "name": "Partidos.jsx",
+          "size": 24268,
+          "extension": ".jsx"
+        },
+        {
+          "path": "frontend/src/pages/VisaoGeral.jsx",
+          "name": "VisaoGeral.jsx",
+          "size": 22150,
+          "extension": ".jsx"
+        },
+        {
+          "path": "frontend/src/pages/PerfilPolitico.jsx",
+          "name": "PerfilPolitico.jsx",
+          "size": 19000,
+          "extension": ".jsx"
+        },
+        {
+          "path": "frontend/src/pages/Comparacao.jsx",
+          "name": "Comparacao.jsx",
+          "size": 16788,
+          "extension": ".jsx"
+        },
+        {
+          "path": "frontend/src/pages/Relatorios.jsx",
+          "name": "Relatorios.jsx",
+          "size": 13217,
+          "extension": ".jsx"
+        },
+        {
+          "path": "frontend/src/pages/Perfil.jsx",
+          "name": "Perfil.jsx",
+          "size": 11504,
+          "extension": ".jsx"
+        },
+        {
+          "path": "frontend/src/pages/Politicos.jsx",
+          "name": "Politicos.jsx",
+          "size": 10883,
+          "extension": ".jsx"
+        },
+        {
+          "path": "frontend/src/pages/Sobre.jsx",
+          "name": "Sobre.jsx",
+          "size": 9698,
+          "extension": ".jsx"
+        }
+      ]
+    },
+    {
+      "language": "Markdown",
+      "file_count": 51,
+      "total_bytes": 275079,
+      "percentage": 11.97,
+      "files": [
+        {
+          "path": "CONTEXTO.md",
+          "name": "CONTEXTO.md",
+          "size": 22195,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/estudos/pln_ia/arquitetura_ia.md",
+          "name": "arquitetura_ia.md",
+          "size": 17854,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/backend/banco_de_dados.md",
+          "name": "banco_de_dados.md",
+          "size": 14779,
+          "extension": ".md"
+        },
+        {
+          "path": "resumo_r1_dito_e_feito.md",
+          "name": "resumo_r1_dito_e_feito.md",
+          "size": 13570,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/requisitos/requisitos.md",
+          "name": "requisitos.md",
+          "size": 10472,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/backend/backend.md",
+          "name": "backend.md",
+          "size": 9809,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/frontend/index.md",
+          "name": "index.md",
+          "size": 9743,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/index.md",
+          "name": "index.md",
+          "size": 9098,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/estudos/git_cheatsheet.md",
+          "name": "git_cheatsheet.md",
+          "size": 8473,
+          "extension": ".md"
+        },
+        {
+          "path": "DOCKER_PASSO_A_PASSO.md",
+          "name": "DOCKER_PASSO_A_PASSO.md",
+          "size": 7628,
+          "extension": ".md"
+        }
+      ]
+    },
+    {
+      "language": "Python",
+      "file_count": 12,
+      "total_bytes": 157274,
+      "percentage": 6.84,
+      "files": [
+        {
+          "path": "backend/scan_senators.py",
+          "name": "scan_senators.py",
+          "size": 55249,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/api.py",
+          "name": "api.py",
+          "size": 44425,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/pipe.py",
+          "name": "pipe.py",
+          "size": 12664,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/seed_massive_database.py",
+          "name": "seed_massive_database.py",
+          "size": 11267,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/generate_massive_dashboard.py",
+          "name": "generate_massive_dashboard.py",
+          "size": 6682,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/tests/test_api.py",
+          "name": "test_api.py",
+          "size": 6294,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/utils/config.py",
+          "name": "config.py",
+          "size": 4780,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/apply_migration.py",
+          "name": "apply_migration.py",
+          "size": 4654,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/check_apis.py",
+          "name": "check_apis.py",
+          "size": 4221,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/check_db.py",
+          "name": "check_db.py",
+          "size": 3575,
+          "extension": ".py"
+        }
+      ]
+    },
+    {
+      "language": "HTML",
+      "file_count": 5,
+      "total_bytes": 121574,
+      "percentage": 5.29,
+      "files": [
+        {
+          "path": "backend/dashboard.html",
+          "name": "dashboard.html",
+          "size": 57283,
+          "extension": ".html"
+        },
+        {
+          "path": "analytics/index.html",
+          "name": "index.html",
+          "size": 22668,
+          "extension": ".html"
+        },
+        {
+          "path": "docs/apresentacao_release2.html",
+          "name": "apresentacao_release2.html",
+          "size": 21378,
+          "extension": ".html"
+        },
+        {
+          "path": "index.html",
+          "name": "index.html",
+          "size": 19388,
+          "extension": ".html"
+        },
+        {
+          "path": "frontend/index.html",
+          "name": "index.html",
+          "size": 857,
+          "extension": ".html"
+        }
+      ]
+    },
+    {
+      "language": "SQL",
+      "file_count": 9,
+      "total_bytes": 45125,
+      "percentage": 1.96,
+      "files": [
+        {
+          "path": "backend/database/007_fix_views_and_alignment.sql",
+          "name": "007_fix_views_and_alignment.sql",
+          "size": 10905,
+          "extension": ".sql"
+        },
+        {
+          "path": "backend/database/008_fix_columns_and_views.sql",
+          "name": "008_fix_columns_and_views.sql",
+          "size": 10394,
+          "extension": ".sql"
+        },
+        {
+          "path": "backend/database/Migrations.sql",
+          "name": "Migrations.sql",
+          "size": 7576,
+          "extension": ".sql"
+        },
+        {
+          "path": "backend/database/009_drop_recreate_views.sql",
+          "name": "009_drop_recreate_views.sql",
+          "size": 4242,
+          "extension": ".sql"
+        },
+        {
+          "path": "backend/database/schema.sql",
+          "name": "schema.sql",
+          "size": 4190,
+          "extension": ".sql"
+        },
+        {
+          "path": "backend/database/004_coerencia_booleana.sql",
+          "name": "004_coerencia_booleana.sql",
+          "size": 3012,
+          "extension": ".sql"
+        },
+        {
+          "path": "backend/database/006_coerencia_booleana.sql",
+          "name": "006_coerencia_booleana.sql",
+          "size": 3012,
+          "extension": ".sql"
+        },
+        {
+          "path": "backend/database/seed.sql",
+          "name": "seed.sql",
+          "size": 936,
+          "extension": ".sql"
+        },
+        {
+          "path": "backend/database/001_add_tipo_parlamentar.sql",
+          "name": "001_add_tipo_parlamentar.sql",
+          "size": 858,
+          "extension": ".sql"
+        }
+      ]
+    },
+    {
+      "language": "SVG Image",
+      "file_count": 4,
+      "total_bytes": 27388,
+      "percentage": 1.19,
+      "files": [
+        {
+          "path": "frontend/public/favicon.svg",
+          "name": "favicon.svg",
+          "size": 9522,
+          "extension": ".svg"
+        },
+        {
+          "path": "frontend/src/assets/vite.svg",
+          "name": "vite.svg",
+          "size": 8709,
+          "extension": ".svg"
+        },
+        {
+          "path": "frontend/public/icons.svg",
+          "name": "icons.svg",
+          "size": 5031,
+          "extension": ".svg"
+        },
+        {
+          "path": "frontend/src/assets/react.svg",
+          "name": "react.svg",
+          "size": 4126,
+          "extension": ".svg"
+        }
+      ]
+    },
+    {
+      "language": "YAML",
+      "file_count": 5,
+      "total_bytes": 9999,
+      "percentage": 0.44,
+      "files": [
+        {
+          "path": "mkdocs.yml",
+          "name": "mkdocs.yml",
+          "size": 3897,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/main.yml",
+          "name": "main.yml",
+          "size": 1637,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/metrics.yml",
+          "name": "metrics.yml",
+          "size": 1637,
+          "extension": ".yml"
+        },
+        {
+          "path": "docker-compose.yml",
+          "name": "docker-compose.yml",
+          "size": 1464,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/tests.yml",
+          "name": "tests.yml",
+          "size": 1364,
+          "extension": ".yml"
+        }
+      ]
+    },
+    {
+      "language": "CSS",
+      "file_count": 2,
+      "total_bytes": 3761,
+      "percentage": 0.16,
+      "files": [
+        {
+          "path": "frontend/src/App.css",
+          "name": "App.css",
+          "size": 2891,
+          "extension": ".css"
+        },
+        {
+          "path": "frontend/src/index.css",
+          "name": "index.css",
+          "size": 870,
+          "extension": ".css"
+        }
+      ]
+    },
+    {
+      "language": "No Extension",
+      "file_count": 3,
+      "total_bytes": 2571,
+      "percentage": 0.11,
+      "files": [
+        {
+          "path": "LICENSE",
+          "name": "LICENSE",
+          "size": 1060,
+          "extension": ""
+        },
+        {
+          "path": "frontend/Dockerfile",
+          "name": "Dockerfile",
+          "size": 774,
+          "extension": ""
+        },
+        {
+          "path": "backend/Dockerfile",
+          "name": "Dockerfile",
+          "size": 737,
+          "extension": ""
+        }
+      ]
+    },
+    {
+      "language": "Unknown",
+      "file_count": 2,
+      "total_bytes": 999,
+      "percentage": 0.04,
+      "files": [
+        {
+          "path": "backend/.env.example",
+          "name": ".env.example",
+          "size": 758,
+          "extension": ".example"
+        },
+        {
+          "path": "frontend/.env.example",
+          "name": ".env.example",
+          "size": 241,
+          "extension": ".example"
+        }
+      ]
+    },
+    {
+      "language": "Git Ignore",
+      "file_count": 3,
+      "total_bytes": 634,
+      "percentage": 0.03,
+      "files": [
+        {
+          "path": ".gitignore",
+          "name": ".gitignore",
+          "size": 368,
+          "extension": ".gitignore"
+        },
+        {
+          "path": "frontend/.gitignore",
+          "name": ".gitignore",
+          "size": 253,
+          "extension": ".gitignore"
+        },
+        {
+          "path": "backend/.gitignore",
+          "name": ".gitignore",
+          "size": 13,
+          "extension": ".gitignore"
+        }
+      ]
+    },
+    {
+      "language": "Docker Ignore",
+      "file_count": 2,
+      "total_bytes": 175,
+      "percentage": 0.01,
+      "files": [
+        {
+          "path": "backend/.dockerignore",
+          "name": ".dockerignore",
+          "size": 175,
+          "extension": ".dockerignore"
+        },
+        {
+          "path": "frontend/.dockerignore",
+          "name": ".dockerignore",
+          "size": 0,
+          "extension": ".dockerignore"
+        }
+      ]
+    },
+    {
+      "language": "Text",
+      "file_count": 1,
+      "total_bytes": 99,
+      "percentage": 0.0,
+      "files": [
+        {
+          "path": "backend/requirements.txt",
+          "name": "requirements.txt",
+          "size": 99,
+          "extension": ".txt"
+        }
+      ]
+    }
+  ],
+  "_metadata": {
+    "extracted_at": "2026-09-17T04:04:44.773905",
+    "file_path": "data/silver/language_analysis_2026-1-Squad4-Dito_e_Feito.json"
+  }
+}

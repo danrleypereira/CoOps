@@ -1,0 +1,2706 @@
+{
+  "repository": "2026.1-ContraDito",
+  "owner": "unb-mds",
+  "branch": "main",
+  "extracted_at": "2026-09-17T04:03:54.174196",
+  "hierarchy": {
+    "name": "root",
+    "type": "directory",
+    "children": [
+      {
+        "name": ".antigravity",
+        "type": "directory",
+        "path": ".antigravity",
+        "children": []
+      },
+      {
+        "name": "skills",
+        "type": "directory",
+        "path": ".antigravity/skills",
+        "children": []
+      },
+      {
+        "name": "grill-with-docs.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3638,
+        "extension": ".md",
+        "path": ".antigravity/skills/grill-with-docs.md"
+      },
+      {
+        "name": "tdd.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 4394,
+        "extension": ".md",
+        "path": ".antigravity/skills/tdd.md"
+      },
+      {
+        "name": "to-prd.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3112,
+        "extension": ".md",
+        "path": ".antigravity/skills/to-prd.md"
+      },
+      {
+        "name": ".claude",
+        "type": "directory",
+        "path": ".claude",
+        "children": []
+      },
+      {
+        "name": "skills",
+        "type": "directory",
+        "path": ".claude/skills",
+        "children": []
+      },
+      {
+        "name": "frontend-design",
+        "type": "directory",
+        "path": ".claude/skills/frontend-design",
+        "children": []
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 4439,
+        "extension": ".md",
+        "path": ".claude/skills/frontend-design/SKILL.md"
+      },
+      {
+        "name": "grill-with-docs",
+        "type": "directory",
+        "path": ".claude/skills/grill-with-docs",
+        "children": []
+      },
+      {
+        "name": "ADR-FORMAT.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2765,
+        "extension": ".md",
+        "path": ".claude/skills/grill-with-docs/ADR-FORMAT.md"
+      },
+      {
+        "name": "CONTEXT-FORMAT.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2298,
+        "extension": ".md",
+        "path": ".claude/skills/grill-with-docs/CONTEXT-FORMAT.md"
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3638,
+        "extension": ".md",
+        "path": ".claude/skills/grill-with-docs/SKILL.md"
+      },
+      {
+        "name": ".dockerignore",
+        "type": "file",
+        "language": "Docker Ignore",
+        "size": 802,
+        "extension": ".dockerignore",
+        "path": ".dockerignore"
+      },
+      {
+        "name": ".flake8",
+        "type": "file",
+        "language": "Unknown",
+        "size": 194,
+        "extension": ".flake8",
+        "path": ".flake8"
+      },
+      {
+        "name": ".github",
+        "type": "directory",
+        "path": ".github",
+        "children": []
+      },
+      {
+        "name": "ISSUE_TEMPLATE",
+        "type": "directory",
+        "path": ".github/ISSUE_TEMPLATE",
+        "children": []
+      },
+      {
+        "name": "template-issue.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 600,
+        "extension": ".md",
+        "path": ".github/ISSUE_TEMPLATE/template-issue.md"
+      },
+      {
+        "name": "workflows",
+        "type": "directory",
+        "path": ".github/workflows",
+        "children": []
+      },
+      {
+        "name": "deploy-docs.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 1275,
+        "extension": ".yml",
+        "path": ".github/workflows/deploy-docs.yml"
+      },
+      {
+        "name": "linter.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 671,
+        "extension": ".yml",
+        "path": ".github/workflows/linter.yml"
+      },
+      {
+        "name": "testes-backend.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 3385,
+        "extension": ".yml",
+        "path": ".github/workflows/testes-backend.yml"
+      },
+      {
+        "name": ".gitignore",
+        "type": "file",
+        "language": "Git Ignore",
+        "size": 431,
+        "extension": ".gitignore",
+        "path": ".gitignore"
+      },
+      {
+        "name": "CLAUDE.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 5501,
+        "extension": ".md",
+        "path": "CLAUDE.md"
+      },
+      {
+        "name": "CONTEXT.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6182,
+        "extension": ".md",
+        "path": "CONTEXT.md"
+      },
+      {
+        "name": "CONTEXT_MKDOCS.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 4566,
+        "extension": ".md",
+        "path": "CONTEXT_MKDOCS.md"
+      },
+      {
+        "name": "Dockerfile.api",
+        "type": "file",
+        "language": "Unknown",
+        "size": 2509,
+        "extension": ".api",
+        "path": "Dockerfile.api"
+      },
+      {
+        "name": "Dockerfile.worker",
+        "type": "file",
+        "language": "Unknown",
+        "size": 3058,
+        "extension": ".worker",
+        "path": "Dockerfile.worker"
+      },
+      {
+        "name": "LICENSE",
+        "type": "file",
+        "language": "No Extension",
+        "size": 1060,
+        "extension": "",
+        "path": "LICENSE"
+      },
+      {
+        "name": "LLM_validation",
+        "type": "directory",
+        "path": "LLM_validation",
+        "children": []
+      },
+      {
+        "name": "00_teste_conexao.py",
+        "type": "file",
+        "language": "Python",
+        "size": 7041,
+        "extension": ".py",
+        "path": "LLM_validation/00_teste_conexao.py"
+      },
+      {
+        "name": "01_extrair_texto.py",
+        "type": "file",
+        "language": "Python",
+        "size": 8976,
+        "extension": ".py",
+        "path": "LLM_validation/01_extrair_texto.py"
+      },
+      {
+        "name": "02_gerar_resumo.py",
+        "type": "file",
+        "language": "Python",
+        "size": 8831,
+        "extension": ".py",
+        "path": "LLM_validation/02_gerar_resumo.py"
+      },
+      {
+        "name": "03_avaliar_postura.py",
+        "type": "file",
+        "language": "Python",
+        "size": 12968,
+        "extension": ".py",
+        "path": "LLM_validation/03_avaliar_postura.py"
+      },
+      {
+        "name": "03b_avaliar_ementa.py",
+        "type": "file",
+        "language": "Python",
+        "size": 10846,
+        "extension": ".py",
+        "path": "LLM_validation/03b_avaliar_ementa.py"
+      },
+      {
+        "name": "04_comparar.py",
+        "type": "file",
+        "language": "Python",
+        "size": 10766,
+        "extension": ".py",
+        "path": "LLM_validation/04_comparar.py"
+      },
+      {
+        "name": "README.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2518,
+        "extension": ".md",
+        "path": "LLM_validation/README.md"
+      },
+      {
+        "name": "auditar_estimativas.py",
+        "type": "file",
+        "language": "Python",
+        "size": 16653,
+        "extension": ".py",
+        "path": "LLM_validation/auditar_estimativas.py"
+      },
+      {
+        "name": "auditoria_resultado.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 860,
+        "extension": ".json",
+        "path": "LLM_validation/auditoria_resultado.json"
+      },
+      {
+        "name": "benchmark_llama31_8b_colab.ipynb",
+        "type": "file",
+        "language": "Unknown",
+        "size": 12471,
+        "extension": ".ipynb",
+        "path": "LLM_validation/benchmark_llama31_8b_colab.ipynb"
+      },
+      {
+        "name": "comparar_justificativas.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4019,
+        "extension": ".py",
+        "path": "LLM_validation/comparar_justificativas.py"
+      },
+      {
+        "name": "diagnostico_api.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2972,
+        "extension": ".py",
+        "path": "LLM_validation/diagnostico_api.py"
+      },
+      {
+        "name": "discursos",
+        "type": "directory",
+        "path": "LLM_validation/discursos",
+        "children": []
+      },
+      {
+        "name": "pl_001_a_favor.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 948,
+        "extension": ".txt",
+        "path": "LLM_validation/discursos/pl_001_a_favor.txt"
+      },
+      {
+        "name": "pl_001_contra.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 1020,
+        "extension": ".txt",
+        "path": "LLM_validation/discursos/pl_001_contra.txt"
+      },
+      {
+        "name": "pl_002_a_favor.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 1105,
+        "extension": ".txt",
+        "path": "LLM_validation/discursos/pl_002_a_favor.txt"
+      },
+      {
+        "name": "pl_002_contra.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 1060,
+        "extension": ".txt",
+        "path": "LLM_validation/discursos/pl_002_contra.txt"
+      },
+      {
+        "name": "pl_003_a_favor.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 923,
+        "extension": ".txt",
+        "path": "LLM_validation/discursos/pl_003_a_favor.txt"
+      },
+      {
+        "name": "pl_003_contra.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 985,
+        "extension": ".txt",
+        "path": "LLM_validation/discursos/pl_003_contra.txt"
+      },
+      {
+        "name": "pl_004_a_favor.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 1060,
+        "extension": ".txt",
+        "path": "LLM_validation/discursos/pl_004_a_favor.txt"
+      },
+      {
+        "name": "pl_004_contra.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 1099,
+        "extension": ".txt",
+        "path": "LLM_validation/discursos/pl_004_contra.txt"
+      },
+      {
+        "name": "inspecionar_bulk.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1635,
+        "extension": ".py",
+        "path": "LLM_validation/inspecionar_bulk.py"
+      },
+      {
+        "name": "proposicoes",
+        "type": "directory",
+        "path": "LLM_validation/proposicoes",
+        "children": []
+      },
+      {
+        "name": "pl_001.pdf",
+        "type": "file",
+        "language": "PDF",
+        "size": 105409,
+        "extension": ".pdf",
+        "path": "LLM_validation/proposicoes/pl_001.pdf"
+      },
+      {
+        "name": "pl_002.pdf",
+        "type": "file",
+        "language": "PDF",
+        "size": 372962,
+        "extension": ".pdf",
+        "path": "LLM_validation/proposicoes/pl_002.pdf"
+      },
+      {
+        "name": "pl_003.pdf",
+        "type": "file",
+        "language": "PDF",
+        "size": 129717,
+        "extension": ".pdf",
+        "path": "LLM_validation/proposicoes/pl_003.pdf"
+      },
+      {
+        "name": "pl_004.pdf",
+        "type": "file",
+        "language": "PDF",
+        "size": 175106,
+        "extension": ".pdf",
+        "path": "LLM_validation/proposicoes/pl_004.pdf"
+      },
+      {
+        "name": "textos",
+        "type": "directory",
+        "path": "LLM_validation/proposicoes/textos",
+        "children": []
+      },
+      {
+        "name": "pl_001.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 5550,
+        "extension": ".txt",
+        "path": "LLM_validation/proposicoes/textos/pl_001.txt"
+      },
+      {
+        "name": "pl_002.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 5005,
+        "extension": ".txt",
+        "path": "LLM_validation/proposicoes/textos/pl_002.txt"
+      },
+      {
+        "name": "pl_003.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 1881,
+        "extension": ".txt",
+        "path": "LLM_validation/proposicoes/textos/pl_003.txt"
+      },
+      {
+        "name": "pl_004.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 5069,
+        "extension": ".txt",
+        "path": "LLM_validation/proposicoes/textos/pl_004.txt"
+      },
+      {
+        "name": "resultados",
+        "type": "directory",
+        "path": "LLM_validation/resultados",
+        "children": []
+      },
+      {
+        "name": "benchmark_final.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 1629,
+        "extension": ".json",
+        "path": "LLM_validation/resultados/benchmark_final.json"
+      },
+      {
+        "name": "posturas_ementa_gemma2_9b.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 3229,
+        "extension": ".json",
+        "path": "LLM_validation/resultados/posturas_ementa_gemma2_9b.json"
+      },
+      {
+        "name": "posturas_ementa_groq_llama33_70b.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 4562,
+        "extension": ".json",
+        "path": "LLM_validation/resultados/posturas_ementa_groq_llama33_70b.json"
+      },
+      {
+        "name": "posturas_ementa_groq_qwen3_32b.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 3269,
+        "extension": ".json",
+        "path": "LLM_validation/resultados/posturas_ementa_groq_qwen3_32b.json"
+      },
+      {
+        "name": "posturas_ementa_llama31_8b.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 3229,
+        "extension": ".json",
+        "path": "LLM_validation/resultados/posturas_ementa_llama31_8b.json"
+      },
+      {
+        "name": "posturas_ementa_qwen25_7b.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 3508,
+        "extension": ".json",
+        "path": "LLM_validation/resultados/posturas_ementa_qwen25_7b.json"
+      },
+      {
+        "name": "posturas_gemma2_9b.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 3164,
+        "extension": ".json",
+        "path": "LLM_validation/resultados/posturas_gemma2_9b.json"
+      },
+      {
+        "name": "posturas_groq_llama33_70b.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 4374,
+        "extension": ".json",
+        "path": "LLM_validation/resultados/posturas_groq_llama33_70b.json"
+      },
+      {
+        "name": "posturas_groq_qwen3_32b.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 3329,
+        "extension": ".json",
+        "path": "LLM_validation/resultados/posturas_groq_qwen3_32b.json"
+      },
+      {
+        "name": "posturas_llama31_8b.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 3104,
+        "extension": ".json",
+        "path": "LLM_validation/resultados/posturas_llama31_8b.json"
+      },
+      {
+        "name": "posturas_qwen25_7b.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 3885,
+        "extension": ".json",
+        "path": "LLM_validation/resultados/posturas_qwen25_7b.json"
+      },
+      {
+        "name": "resumos_gemma2_9b.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 5303,
+        "extension": ".json",
+        "path": "LLM_validation/resultados/resumos_gemma2_9b.json"
+      },
+      {
+        "name": "resumos_groq_llama33_70b.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 6374,
+        "extension": ".json",
+        "path": "LLM_validation/resultados/resumos_groq_llama33_70b.json"
+      },
+      {
+        "name": "resumos_groq_qwen3_32b.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 9709,
+        "extension": ".json",
+        "path": "LLM_validation/resultados/resumos_groq_qwen3_32b.json"
+      },
+      {
+        "name": "resumos_llama31_8b.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 6233,
+        "extension": ".json",
+        "path": "LLM_validation/resultados/resumos_llama31_8b.json"
+      },
+      {
+        "name": "resumos_qwen25_7b.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 4387,
+        "extension": ".json",
+        "path": "LLM_validation/resultados/resumos_qwen25_7b.json"
+      },
+      {
+        "name": "PLANEJAMENTO.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 17673,
+        "extension": ".md",
+        "path": "PLANEJAMENTO.md"
+      },
+      {
+        "name": "README.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 5946,
+        "extension": ".md",
+        "path": "README.md"
+      },
+      {
+        "name": "amostras",
+        "type": "directory",
+        "path": "amostras",
+        "children": []
+      },
+      {
+        "name": "amostra_para_luiz.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 9872,
+        "extension": ".json",
+        "path": "amostras/amostra_para_luiz.json"
+      },
+      {
+        "name": "discursos_deputado.xml",
+        "type": "file",
+        "language": "XML",
+        "size": 34238,
+        "extension": ".xml",
+        "path": "amostras/discursos_deputado.xml"
+      },
+      {
+        "name": "ementa_proposicao.xml",
+        "type": "file",
+        "language": "XML",
+        "size": 959,
+        "extension": ".xml",
+        "path": "amostras/ementa_proposicao.xml"
+      },
+      {
+        "name": "app",
+        "type": "directory",
+        "path": "app",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "app/__init__.py"
+      },
+      {
+        "name": "bancos",
+        "type": "directory",
+        "path": "app/bancos",
+        "children": []
+      },
+      {
+        "name": "supabase.py",
+        "type": "file",
+        "language": "Python",
+        "size": 388,
+        "extension": ".py",
+        "path": "app/bancos/supabase.py"
+      },
+      {
+        "name": "main.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1642,
+        "extension": ".py",
+        "path": "app/main.py"
+      },
+      {
+        "name": "modelos",
+        "type": "directory",
+        "path": "app/modelos",
+        "children": []
+      },
+      {
+        "name": "schemas.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3869,
+        "extension": ".py",
+        "path": "app/modelos/schemas.py"
+      },
+      {
+        "name": "rotas",
+        "type": "directory",
+        "path": "app/rotas",
+        "children": []
+      },
+      {
+        "name": "dados.py",
+        "type": "file",
+        "language": "Python",
+        "size": 37275,
+        "extension": ".py",
+        "path": "app/rotas/dados.py"
+      },
+      {
+        "name": "docker-compose.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 2895,
+        "extension": ".yml",
+        "path": "docker-compose.yml"
+      },
+      {
+        "name": "docs",
+        "type": "directory",
+        "path": "docs",
+        "children": []
+      },
+      {
+        "name": "docs",
+        "type": "directory",
+        "path": "docs/docs",
+        "children": []
+      },
+      {
+        "name": "adrs",
+        "type": "directory",
+        "path": "docs/docs/adrs",
+        "children": []
+      },
+      {
+        "name": "adr-001.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2505,
+        "extension": ".md",
+        "path": "docs/docs/adrs/adr-001.md"
+      },
+      {
+        "name": "adr-002.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 4179,
+        "extension": ".md",
+        "path": "docs/docs/adrs/adr-002.md"
+      },
+      {
+        "name": "adr-003.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 9160,
+        "extension": ".md",
+        "path": "docs/docs/adrs/adr-003.md"
+      },
+      {
+        "name": "index.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 645,
+        "extension": ".md",
+        "path": "docs/docs/adrs/index.md"
+      },
+      {
+        "name": "arquitetura.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 11229,
+        "extension": ".md",
+        "path": "docs/docs/arquitetura.md"
+      },
+      {
+        "name": "avaliacao.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2493,
+        "extension": ".md",
+        "path": "docs/docs/avaliacao.md"
+      },
+      {
+        "name": "bancos.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 5087,
+        "extension": ".md",
+        "path": "docs/docs/bancos.md"
+      },
+      {
+        "name": "calculo-score.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1951,
+        "extension": ".md",
+        "path": "docs/docs/calculo-score.md"
+      },
+      {
+        "name": "escopo.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2161,
+        "extension": ".md",
+        "path": "docs/docs/escopo.md"
+      },
+      {
+        "name": "etl-dados.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 5099,
+        "extension": ".md",
+        "path": "docs/docs/etl-dados.md"
+      },
+      {
+        "name": "execucao.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 12513,
+        "extension": ".md",
+        "path": "docs/docs/execucao.md"
+      },
+      {
+        "name": "frontend.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 10223,
+        "extension": ".md",
+        "path": "docs/docs/frontend.md"
+      },
+      {
+        "name": "imagens",
+        "type": "directory",
+        "path": "docs/docs/imagens",
+        "children": []
+      },
+      {
+        "name": "CoesãoPartidária_CD.jpeg",
+        "type": "file",
+        "language": "JPEG Image",
+        "size": 129634,
+        "extension": ".jpeg",
+        "path": "docs/docs/imagens/CoesãoPartidária_CD.jpeg"
+      },
+      {
+        "name": "Dossiê_CD.jpeg",
+        "type": "file",
+        "language": "JPEG Image",
+        "size": 115621,
+        "extension": ".jpeg",
+        "path": "docs/docs/imagens/Dossiê_CD.jpeg"
+      },
+      {
+        "name": "FacetoFace_CD.jpeg",
+        "type": "file",
+        "language": "JPEG Image",
+        "size": 97590,
+        "extension": ".jpeg",
+        "path": "docs/docs/imagens/FacetoFace_CD.jpeg"
+      },
+      {
+        "name": "Homepage_CD.jpeg",
+        "type": "file",
+        "language": "JPEG Image",
+        "size": 211915,
+        "extension": ".jpeg",
+        "path": "docs/docs/imagens/Homepage_CD.jpeg"
+      },
+      {
+        "name": "ListaParlamentares_CD.jpeg",
+        "type": "file",
+        "language": "JPEG Image",
+        "size": 136729,
+        "extension": ".jpeg",
+        "path": "docs/docs/imagens/ListaParlamentares_CD.jpeg"
+      },
+      {
+        "name": "Persona.png.jpg",
+        "type": "file",
+        "language": "JPEG Image",
+        "size": 67176,
+        "extension": ".jpg",
+        "path": "docs/docs/imagens/Persona.png.jpg"
+      },
+      {
+        "name": "ProposiçõesLegislativas_CD.jpeg",
+        "type": "file",
+        "language": "JPEG Image",
+        "size": 157738,
+        "extension": ".jpeg",
+        "path": "docs/docs/imagens/ProposiçõesLegislativas_CD.jpeg"
+      },
+      {
+        "name": "Storymap.jpg",
+        "type": "file",
+        "language": "JPEG Image",
+        "size": 55751,
+        "extension": ".jpg",
+        "path": "docs/docs/imagens/Storymap.jpg"
+      },
+      {
+        "name": "Transcrições_CD.jpeg",
+        "type": "file",
+        "language": "JPEG Image",
+        "size": 170637,
+        "extension": ".jpeg",
+        "path": "docs/docs/imagens/Transcrições_CD.jpeg"
+      },
+      {
+        "name": "prototipo_comparacao.jpg",
+        "type": "file",
+        "language": "JPEG Image",
+        "size": 39465,
+        "extension": ".jpg",
+        "path": "docs/docs/imagens/prototipo_comparacao.jpg"
+      },
+      {
+        "name": "prototipo_home.jpg",
+        "type": "file",
+        "language": "JPEG Image",
+        "size": 76856,
+        "extension": ".jpg",
+        "path": "docs/docs/imagens/prototipo_home.jpg"
+      },
+      {
+        "name": "prototipo_raio_x.jpg",
+        "type": "file",
+        "language": "JPEG Image",
+        "size": 162176,
+        "extension": ".jpg",
+        "path": "docs/docs/imagens/prototipo_raio_x.jpg"
+      },
+      {
+        "name": "index.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 76,
+        "extension": ".md",
+        "path": "docs/docs/index.md"
+      },
+      {
+        "name": "integracaoapi.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6359,
+        "extension": ".md",
+        "path": "docs/docs/integracaoapi.md"
+      },
+      {
+        "name": "lgpd.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2371,
+        "extension": ".md",
+        "path": "docs/docs/lgpd.md"
+      },
+      {
+        "name": "links.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 493,
+        "extension": ".md",
+        "path": "docs/docs/links.md"
+      },
+      {
+        "name": "manual.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6485,
+        "extension": ".md",
+        "path": "docs/docs/manual.md"
+      },
+      {
+        "name": "metodologia.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2615,
+        "extension": ".md",
+        "path": "docs/docs/metodologia.md"
+      },
+      {
+        "name": "motor-nlp.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 7899,
+        "extension": ".md",
+        "path": "docs/docs/motor-nlp.md"
+      },
+      {
+        "name": "productivity",
+        "type": "directory",
+        "path": "docs/docs/productivity",
+        "children": []
+      },
+      {
+        "name": "index.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 28046,
+        "extension": ".html",
+        "path": "docs/docs/productivity/index.html"
+      },
+      {
+        "name": "metrics.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 16515,
+        "extension": ".json",
+        "path": "docs/docs/productivity/metrics.json"
+      },
+      {
+        "name": "qualidade.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 4615,
+        "extension": ".md",
+        "path": "docs/docs/qualidade.md"
+      },
+      {
+        "name": "requisitos.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 4447,
+        "extension": ".md",
+        "path": "docs/docs/requisitos.md"
+      },
+      {
+        "name": "roadmap.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1667,
+        "extension": ".md",
+        "path": "docs/docs/roadmap.md"
+      },
+      {
+        "name": "sprints",
+        "type": "directory",
+        "path": "docs/docs/sprints",
+        "children": []
+      },
+      {
+        "name": "sprint-0.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2152,
+        "extension": ".md",
+        "path": "docs/docs/sprints/sprint-0.md"
+      },
+      {
+        "name": "sprint-1.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2452,
+        "extension": ".md",
+        "path": "docs/docs/sprints/sprint-1.md"
+      },
+      {
+        "name": "sprint-10.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1559,
+        "extension": ".md",
+        "path": "docs/docs/sprints/sprint-10.md"
+      },
+      {
+        "name": "sprint-11.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1416,
+        "extension": ".md",
+        "path": "docs/docs/sprints/sprint-11.md"
+      },
+      {
+        "name": "sprint-2.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2522,
+        "extension": ".md",
+        "path": "docs/docs/sprints/sprint-2.md"
+      },
+      {
+        "name": "sprint-3.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3286,
+        "extension": ".md",
+        "path": "docs/docs/sprints/sprint-3.md"
+      },
+      {
+        "name": "sprint-4.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3988,
+        "extension": ".md",
+        "path": "docs/docs/sprints/sprint-4.md"
+      },
+      {
+        "name": "sprint-5.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1847,
+        "extension": ".md",
+        "path": "docs/docs/sprints/sprint-5.md"
+      },
+      {
+        "name": "sprint-6.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2463,
+        "extension": ".md",
+        "path": "docs/docs/sprints/sprint-6.md"
+      },
+      {
+        "name": "sprint-7.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1420,
+        "extension": ".md",
+        "path": "docs/docs/sprints/sprint-7.md"
+      },
+      {
+        "name": "sprint-8.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1985,
+        "extension": ".md",
+        "path": "docs/docs/sprints/sprint-8.md"
+      },
+      {
+        "name": "sprint-9.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1515,
+        "extension": ".md",
+        "path": "docs/docs/sprints/sprint-9.md"
+      },
+      {
+        "name": "stylesheets",
+        "type": "directory",
+        "path": "docs/docs/stylesheets",
+        "children": []
+      },
+      {
+        "name": "extra.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 5459,
+        "extension": ".css",
+        "path": "docs/docs/stylesheets/extra.css"
+      },
+      {
+        "name": "landing.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 7430,
+        "extension": ".css",
+        "path": "docs/docs/stylesheets/landing.css"
+      },
+      {
+        "name": "ux",
+        "type": "directory",
+        "path": "docs/docs/ux",
+        "children": []
+      },
+      {
+        "name": "personas.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1473,
+        "extension": ".md",
+        "path": "docs/docs/ux/personas.md"
+      },
+      {
+        "name": "prototipos.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 931,
+        "extension": ".md",
+        "path": "docs/docs/ux/prototipos.md"
+      },
+      {
+        "name": "mkdocs.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 2757,
+        "extension": ".yml",
+        "path": "docs/mkdocs.yml"
+      },
+      {
+        "name": "overrides",
+        "type": "directory",
+        "path": "docs/overrides",
+        "children": []
+      },
+      {
+        "name": "home.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 10210,
+        "extension": ".html",
+        "path": "docs/overrides/home.html"
+      },
+      {
+        "name": "productivity",
+        "type": "directory",
+        "path": "docs/productivity",
+        "children": []
+      },
+      {
+        "name": "collect_metrics.py",
+        "type": "file",
+        "language": "Python",
+        "size": 10637,
+        "extension": ".py",
+        "path": "docs/productivity/collect_metrics.py"
+      },
+      {
+        "name": "requirements.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 39,
+        "extension": ".txt",
+        "path": "docs/productivity/requirements.txt"
+      },
+      {
+        "name": "etl",
+        "type": "directory",
+        "path": "etl",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "etl/__init__.py"
+      },
+      {
+        "name": "chunker_discursos_camara.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4903,
+        "extension": ".py",
+        "path": "etl/chunker_discursos_camara.py"
+      },
+      {
+        "name": "chunker_discursos_senado.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4916,
+        "extension": ".py",
+        "path": "etl/chunker_discursos_senado.py"
+      },
+      {
+        "name": "extrator_discursos_camara.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4171,
+        "extension": ".py",
+        "path": "etl/extrator_discursos_camara.py"
+      },
+      {
+        "name": "extrator_discursos_senado.py",
+        "type": "file",
+        "language": "Python",
+        "size": 6390,
+        "extension": ".py",
+        "path": "etl/extrator_discursos_senado.py"
+      },
+      {
+        "name": "extrator_politicos_camara.py",
+        "type": "file",
+        "language": "Python",
+        "size": 5123,
+        "extension": ".py",
+        "path": "etl/extrator_politicos_camara.py"
+      },
+      {
+        "name": "extrator_politicos_senado.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4385,
+        "extension": ".py",
+        "path": "etl/extrator_politicos_senado.py"
+      },
+      {
+        "name": "extrator_proposicoes_camara.py",
+        "type": "file",
+        "language": "Python",
+        "size": 10297,
+        "extension": ".py",
+        "path": "etl/extrator_proposicoes_camara.py"
+      },
+      {
+        "name": "extrator_proposicoes_senado.py",
+        "type": "file",
+        "language": "Python",
+        "size": 8115,
+        "extension": ".py",
+        "path": "etl/extrator_proposicoes_senado.py"
+      },
+      {
+        "name": "extrator_texto_proposicao.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1409,
+        "extension": ".py",
+        "path": "etl/extrator_texto_proposicao.py"
+      },
+      {
+        "name": "extrator_texto_senado.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1509,
+        "extension": ".py",
+        "path": "etl/extrator_texto_senado.py"
+      },
+      {
+        "name": "extrator_votos_camara.py",
+        "type": "file",
+        "language": "Python",
+        "size": 10531,
+        "extension": ".py",
+        "path": "etl/extrator_votos_camara.py"
+      },
+      {
+        "name": "extrator_votos_senado.py",
+        "type": "file",
+        "language": "Python",
+        "size": 7723,
+        "extension": ".py",
+        "path": "etl/extrator_votos_senado.py"
+      },
+      {
+        "name": "inferidor_postura.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2790,
+        "extension": ".py",
+        "path": "etl/inferidor_postura.py"
+      },
+      {
+        "name": "pipeline_inferencia.py",
+        "type": "file",
+        "language": "Python",
+        "size": 6266,
+        "extension": ".py",
+        "path": "etl/pipeline_inferencia.py"
+      },
+      {
+        "name": "pipeline_resumo_proposicoes.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3602,
+        "extension": ".py",
+        "path": "etl/pipeline_resumo_proposicoes.py"
+      },
+      {
+        "name": "pipeline_resumo_senado.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3539,
+        "extension": ".py",
+        "path": "etl/pipeline_resumo_senado.py"
+      },
+      {
+        "name": "resumidor_proposicoes.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2836,
+        "extension": ".py",
+        "path": "etl/resumidor_proposicoes.py"
+      },
+      {
+        "name": "resumidor_senado.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2288,
+        "extension": ".py",
+        "path": "etl/resumidor_senado.py"
+      },
+      {
+        "name": "transformadores_discursos_camara.py",
+        "type": "file",
+        "language": "Python",
+        "size": 7162,
+        "extension": ".py",
+        "path": "etl/transformadores_discursos_camara.py"
+      },
+      {
+        "name": "transformadores_discursos_senado.py",
+        "type": "file",
+        "language": "Python",
+        "size": 6110,
+        "extension": ".py",
+        "path": "etl/transformadores_discursos_senado.py"
+      },
+      {
+        "name": "transformadores_proposicoes_camara.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3398,
+        "extension": ".py",
+        "path": "etl/transformadores_proposicoes_camara.py"
+      },
+      {
+        "name": "transformadores_votos_camara.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2767,
+        "extension": ".py",
+        "path": "etl/transformadores_votos_camara.py"
+      },
+      {
+        "name": "transformadores_votos_senado.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3529,
+        "extension": ".py",
+        "path": "etl/transformadores_votos_senado.py"
+      },
+      {
+        "name": "utils.py",
+        "type": "file",
+        "language": "Python",
+        "size": 572,
+        "extension": ".py",
+        "path": "etl/utils.py"
+      },
+      {
+        "name": "vinculador_discursos_votos_camara.py",
+        "type": "file",
+        "language": "Python",
+        "size": 8257,
+        "extension": ".py",
+        "path": "etl/vinculador_discursos_votos_camara.py"
+      },
+      {
+        "name": "vinculador_discursos_votos_senado.py",
+        "type": "file",
+        "language": "Python",
+        "size": 8131,
+        "extension": ".py",
+        "path": "etl/vinculador_discursos_votos_senado.py"
+      },
+      {
+        "name": "figma.svg",
+        "type": "file",
+        "language": "SVG Image",
+        "size": 20940307,
+        "extension": ".svg",
+        "path": "figma.svg"
+      },
+      {
+        "name": "frontend",
+        "type": "directory",
+        "path": "frontend",
+        "children": []
+      },
+      {
+        "name": ".dockerignore",
+        "type": "file",
+        "language": "Docker Ignore",
+        "size": 47,
+        "extension": ".dockerignore",
+        "path": "frontend/.dockerignore"
+      },
+      {
+        "name": ".gitignore",
+        "type": "file",
+        "language": "Git Ignore",
+        "size": 38,
+        "extension": ".gitignore",
+        "path": "frontend/.gitignore"
+      },
+      {
+        "name": "Dockerfile",
+        "type": "file",
+        "language": "No Extension",
+        "size": 378,
+        "extension": "",
+        "path": "frontend/Dockerfile"
+      },
+      {
+        "name": "app",
+        "type": "directory",
+        "path": "frontend/app",
+        "children": []
+      },
+      {
+        "name": "comparacao",
+        "type": "directory",
+        "path": "frontend/app/comparacao",
+        "children": []
+      },
+      {
+        "name": "ComparacaoClient.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 9196,
+        "extension": ".tsx",
+        "path": "frontend/app/comparacao/ComparacaoClient.tsx"
+      },
+      {
+        "name": "SeletorComparacao.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 14128,
+        "extension": ".tsx",
+        "path": "frontend/app/comparacao/SeletorComparacao.tsx"
+      },
+      {
+        "name": "TimelineVotos.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 4147,
+        "extension": ".tsx",
+        "path": "frontend/app/comparacao/TimelineVotos.tsx"
+      },
+      {
+        "name": "loading.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 2032,
+        "extension": ".tsx",
+        "path": "frontend/app/comparacao/loading.tsx"
+      },
+      {
+        "name": "page.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 2430,
+        "extension": ".tsx",
+        "path": "frontend/app/comparacao/page.tsx"
+      },
+      {
+        "name": "votos.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1224,
+        "extension": ".ts",
+        "path": "frontend/app/comparacao/votos.ts"
+      },
+      {
+        "name": "diretorio",
+        "type": "directory",
+        "path": "frontend/app/diretorio",
+        "children": []
+      },
+      {
+        "name": "DiretorioClient.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 16195,
+        "extension": ".tsx",
+        "path": "frontend/app/diretorio/DiretorioClient.tsx"
+      },
+      {
+        "name": "loading.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 2924,
+        "extension": ".tsx",
+        "path": "frontend/app/diretorio/loading.tsx"
+      },
+      {
+        "name": "page.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 742,
+        "extension": ".tsx",
+        "path": "frontend/app/diretorio/page.tsx"
+      },
+      {
+        "name": "discursos",
+        "type": "directory",
+        "path": "frontend/app/discursos",
+        "children": []
+      },
+      {
+        "name": "DiscursosClient.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 26372,
+        "extension": ".tsx",
+        "path": "frontend/app/discursos/DiscursosClient.tsx"
+      },
+      {
+        "name": "loading.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 2432,
+        "extension": ".tsx",
+        "path": "frontend/app/discursos/loading.tsx"
+      },
+      {
+        "name": "page.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 2324,
+        "extension": ".tsx",
+        "path": "frontend/app/discursos/page.tsx"
+      },
+      {
+        "name": "globals.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 3331,
+        "extension": ".css",
+        "path": "frontend/app/globals.css"
+      },
+      {
+        "name": "layout.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1720,
+        "extension": ".tsx",
+        "path": "frontend/app/layout.tsx"
+      },
+      {
+        "name": "not-found.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 745,
+        "extension": ".tsx",
+        "path": "frontend/app/not-found.tsx"
+      },
+      {
+        "name": "page.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 3462,
+        "extension": ".tsx",
+        "path": "frontend/app/page.tsx"
+      },
+      {
+        "name": "partidos",
+        "type": "directory",
+        "path": "frontend/app/partidos",
+        "children": []
+      },
+      {
+        "name": "PartidosClient.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 18686,
+        "extension": ".tsx",
+        "path": "frontend/app/partidos/PartidosClient.tsx"
+      },
+      {
+        "name": "loading.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 2475,
+        "extension": ".tsx",
+        "path": "frontend/app/partidos/loading.tsx"
+      },
+      {
+        "name": "page.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1032,
+        "extension": ".tsx",
+        "path": "frontend/app/partidos/page.tsx"
+      },
+      {
+        "name": "politico",
+        "type": "directory",
+        "path": "frontend/app/politico",
+        "children": []
+      },
+      {
+        "name": "[id]",
+        "type": "directory",
+        "path": "frontend/app/politico/[id]",
+        "children": []
+      },
+      {
+        "name": "DossieClient.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 39490,
+        "extension": ".tsx",
+        "path": "frontend/app/politico/[id]/DossieClient.tsx"
+      },
+      {
+        "name": "TimelineIndividual.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 3457,
+        "extension": ".tsx",
+        "path": "frontend/app/politico/[id]/TimelineIndividual.tsx"
+      },
+      {
+        "name": "loading.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 2439,
+        "extension": ".tsx",
+        "path": "frontend/app/politico/[id]/loading.tsx"
+      },
+      {
+        "name": "page.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 4280,
+        "extension": ".tsx",
+        "path": "frontend/app/politico/[id]/page.tsx"
+      },
+      {
+        "name": "proposicoes",
+        "type": "directory",
+        "path": "frontend/app/proposicoes",
+        "children": []
+      },
+      {
+        "name": "ProposicoesClient.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 14148,
+        "extension": ".tsx",
+        "path": "frontend/app/proposicoes/ProposicoesClient.tsx"
+      },
+      {
+        "name": "[casa]",
+        "type": "directory",
+        "path": "frontend/app/proposicoes/[casa]",
+        "children": []
+      },
+      {
+        "name": "[id]",
+        "type": "directory",
+        "path": "frontend/app/proposicoes/[casa]/[id]",
+        "children": []
+      },
+      {
+        "name": "ProposicaoDetalheClient.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 10576,
+        "extension": ".tsx",
+        "path": "frontend/app/proposicoes/[casa]/[id]/ProposicaoDetalheClient.tsx"
+      },
+      {
+        "name": "page.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 2225,
+        "extension": ".tsx",
+        "path": "frontend/app/proposicoes/[casa]/[id]/page.tsx"
+      },
+      {
+        "name": "loading.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1840,
+        "extension": ".tsx",
+        "path": "frontend/app/proposicoes/loading.tsx"
+      },
+      {
+        "name": "page.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1620,
+        "extension": ".tsx",
+        "path": "frontend/app/proposicoes/page.tsx"
+      },
+      {
+        "name": "components",
+        "type": "directory",
+        "path": "frontend/components",
+        "children": []
+      },
+      {
+        "name": "CoherenceChart.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 15236,
+        "extension": ".tsx",
+        "path": "frontend/components/CoherenceChart.tsx"
+      },
+      {
+        "name": "CongressoFoto.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1967,
+        "extension": ".tsx",
+        "path": "frontend/components/CongressoFoto.tsx"
+      },
+      {
+        "name": "CongressoSilhueta.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 2465,
+        "extension": ".tsx",
+        "path": "frontend/components/CongressoSilhueta.tsx"
+      },
+      {
+        "name": "MembroCard.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 4390,
+        "extension": ".tsx",
+        "path": "frontend/components/MembroCard.tsx"
+      },
+      {
+        "name": "Navbar.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 4845,
+        "extension": ".tsx",
+        "path": "frontend/components/Navbar.tsx"
+      },
+      {
+        "name": "SimilaresGrid.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 2017,
+        "extension": ".tsx",
+        "path": "frontend/components/SimilaresGrid.tsx"
+      },
+      {
+        "name": "SiteFooter.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1591,
+        "extension": ".tsx",
+        "path": "frontend/components/SiteFooter.tsx"
+      },
+      {
+        "name": "SobreEquipe.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1503,
+        "extension": ".tsx",
+        "path": "frontend/components/SobreEquipe.tsx"
+      },
+      {
+        "name": "TendenciaRecente.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1605,
+        "extension": ".tsx",
+        "path": "frontend/components/TendenciaRecente.tsx"
+      },
+      {
+        "name": "ThemeToggle.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1129,
+        "extension": ".tsx",
+        "path": "frontend/components/ThemeToggle.tsx"
+      },
+      {
+        "name": "VotosTable.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 4940,
+        "extension": ".tsx",
+        "path": "frontend/components/VotosTable.tsx"
+      },
+      {
+        "name": "home",
+        "type": "directory",
+        "path": "frontend/components/home",
+        "children": []
+      },
+      {
+        "name": "DiretorioPreview.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 11050,
+        "extension": ".tsx",
+        "path": "frontend/components/home/DiretorioPreview.tsx"
+      },
+      {
+        "name": "HomeBusca.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 938,
+        "extension": ".tsx",
+        "path": "frontend/components/home/HomeBusca.tsx"
+      },
+      {
+        "name": "ui",
+        "type": "directory",
+        "path": "frontend/components/ui",
+        "children": []
+      },
+      {
+        "name": "Avatar.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 999,
+        "extension": ".tsx",
+        "path": "frontend/components/ui/Avatar.tsx"
+      },
+      {
+        "name": "ScoreBadge.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1339,
+        "extension": ".tsx",
+        "path": "frontend/components/ui/ScoreBadge.tsx"
+      },
+      {
+        "name": "Skeleton.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 673,
+        "extension": ".tsx",
+        "path": "frontend/components/ui/Skeleton.tsx"
+      },
+      {
+        "name": "eslint.config.mjs",
+        "type": "file",
+        "language": "Unknown",
+        "size": 349,
+        "extension": ".mjs",
+        "path": "frontend/eslint.config.mjs"
+      },
+      {
+        "name": "lib",
+        "type": "directory",
+        "path": "frontend/lib",
+        "children": []
+      },
+      {
+        "name": "api.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 2747,
+        "extension": ".ts",
+        "path": "frontend/lib/api.ts"
+      },
+      {
+        "name": "casa.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 554,
+        "extension": ".ts",
+        "path": "frontend/lib/casa.ts"
+      },
+      {
+        "name": "comparacao.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 3103,
+        "extension": ".ts",
+        "path": "frontend/lib/comparacao.ts"
+      },
+      {
+        "name": "diretorio.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 3058,
+        "extension": ".ts",
+        "path": "frontend/lib/diretorio.ts"
+      },
+      {
+        "name": "discursos.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1660,
+        "extension": ".ts",
+        "path": "frontend/lib/discursos.ts"
+      },
+      {
+        "name": "equipe.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 3005,
+        "extension": ".ts",
+        "path": "frontend/lib/equipe.ts"
+      },
+      {
+        "name": "mock.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 41474,
+        "extension": ".ts",
+        "path": "frontend/lib/mock.ts"
+      },
+      {
+        "name": "partidos.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1470,
+        "extension": ".ts",
+        "path": "frontend/lib/partidos.ts"
+      },
+      {
+        "name": "politicos.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 3794,
+        "extension": ".ts",
+        "path": "frontend/lib/politicos.ts"
+      },
+      {
+        "name": "proposicoes.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 2681,
+        "extension": ".ts",
+        "path": "frontend/lib/proposicoes.ts"
+      },
+      {
+        "name": "types-legacy.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1646,
+        "extension": ".ts",
+        "path": "frontend/lib/types-legacy.ts"
+      },
+      {
+        "name": "types.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 25887,
+        "extension": ".ts",
+        "path": "frontend/lib/types.ts"
+      },
+      {
+        "name": "utils.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1237,
+        "extension": ".ts",
+        "path": "frontend/lib/utils.ts"
+      },
+      {
+        "name": "next-env.d.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 262,
+        "extension": ".ts",
+        "path": "frontend/next-env.d.ts"
+      },
+      {
+        "name": "next.config.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 666,
+        "extension": ".ts",
+        "path": "frontend/next.config.ts"
+      },
+      {
+        "name": "package-lock.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 230244,
+        "extension": ".json",
+        "path": "frontend/package-lock.json"
+      },
+      {
+        "name": "package.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 672,
+        "extension": ".json",
+        "path": "frontend/package.json"
+      },
+      {
+        "name": "postcss.config.mjs",
+        "type": "file",
+        "language": "Unknown",
+        "size": 60,
+        "extension": ".mjs",
+        "path": "frontend/postcss.config.mjs"
+      },
+      {
+        "name": "public",
+        "type": "directory",
+        "path": "frontend/public",
+        "children": []
+      },
+      {
+        "name": "images",
+        "type": "directory",
+        "path": "frontend/public/images",
+        "children": []
+      },
+      {
+        "name": "foto_dia_congresso.jpeg",
+        "type": "file",
+        "language": "JPEG Image",
+        "size": 673756,
+        "extension": ".jpeg",
+        "path": "frontend/public/images/foto_dia_congresso.jpeg"
+      },
+      {
+        "name": "foto_noite_congresso.jpeg",
+        "type": "file",
+        "language": "JPEG Image",
+        "size": 606619,
+        "extension": ".jpeg",
+        "path": "frontend/public/images/foto_noite_congresso.jpeg"
+      },
+      {
+        "name": "tsconfig.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 697,
+        "extension": ".json",
+        "path": "frontend/tsconfig.json"
+      },
+      {
+        "name": "pocs",
+        "type": "directory",
+        "path": "pocs",
+        "children": []
+      },
+      {
+        "name": "lote_nlp.py",
+        "type": "file",
+        "language": "Python",
+        "size": 7784,
+        "extension": ".py",
+        "path": "pocs/lote_nlp.py"
+      },
+      {
+        "name": "motor_nlp",
+        "type": "directory",
+        "path": "pocs/motor_nlp",
+        "children": []
+      },
+      {
+        "name": "poc_npl.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1543,
+        "extension": ".py",
+        "path": "pocs/motor_nlp/poc_npl.py"
+      },
+      {
+        "name": "teste_motor_embeddings.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2455,
+        "extension": ".py",
+        "path": "pocs/teste_motor_embeddings.py"
+      },
+      {
+        "name": "prds_md",
+        "type": "directory",
+        "path": "prds_md",
+        "children": []
+      },
+      {
+        "name": "prd_chunker_senado.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 8659,
+        "extension": ".md",
+        "path": "prds_md/prd_chunker_senado.md"
+      },
+      {
+        "name": "prd_chunks_proximos_camara.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 8234,
+        "extension": ".md",
+        "path": "prds_md/prd_chunks_proximos_camara.md"
+      },
+      {
+        "name": "prd_chunks_proximos_senado.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 7999,
+        "extension": ".md",
+        "path": "prds_md/prd_chunks_proximos_senado.md"
+      },
+      {
+        "name": "prd_extrator_discursos_camara.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 12083,
+        "extension": ".md",
+        "path": "prds_md/prd_extrator_discursos_camara.md"
+      },
+      {
+        "name": "prd_extrator_discursos_senado.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 10567,
+        "extension": ".md",
+        "path": "prds_md/prd_extrator_discursos_senado.md"
+      },
+      {
+        "name": "prd_extrator_politicos_camara.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 7682,
+        "extension": ".md",
+        "path": "prds_md/prd_extrator_politicos_camara.md"
+      },
+      {
+        "name": "prd_extrator_politicos_senado.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6242,
+        "extension": ".md",
+        "path": "prds_md/prd_extrator_politicos_senado.md"
+      },
+      {
+        "name": "prd_extrator_proposicoes_camara.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 9185,
+        "extension": ".md",
+        "path": "prds_md/prd_extrator_proposicoes_camara.md"
+      },
+      {
+        "name": "prd_extrator_proposicoes_senado.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 8936,
+        "extension": ".md",
+        "path": "prds_md/prd_extrator_proposicoes_senado.md"
+      },
+      {
+        "name": "prd_extrator_votos_camara.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 8581,
+        "extension": ".md",
+        "path": "prds_md/prd_extrator_votos_camara.md"
+      },
+      {
+        "name": "prd_extrator_votos_senado.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 12546,
+        "extension": ".md",
+        "path": "prds_md/prd_extrator_votos_senado.md"
+      },
+      {
+        "name": "prd_resumo_proposicoes_senado.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 7787,
+        "extension": ".md",
+        "path": "prds_md/prd_resumo_proposicoes_senado.md"
+      },
+      {
+        "name": "pyproject.toml",
+        "type": "file",
+        "language": "TOML",
+        "size": 403,
+        "extension": ".toml",
+        "path": "pyproject.toml"
+      },
+      {
+        "name": "pytest.ini",
+        "type": "file",
+        "language": "INI",
+        "size": 24,
+        "extension": ".ini",
+        "path": "pytest.ini"
+      },
+      {
+        "name": "requirements.api.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 128,
+        "extension": ".txt",
+        "path": "requirements.api.txt"
+      },
+      {
+        "name": "requirements.test.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 67,
+        "extension": ".txt",
+        "path": "requirements.test.txt"
+      },
+      {
+        "name": "requirements.worker.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 216,
+        "extension": ".txt",
+        "path": "requirements.worker.txt"
+      },
+      {
+        "name": "scripts",
+        "type": "directory",
+        "path": "scripts",
+        "children": []
+      },
+      {
+        "name": "run_chunker_discursos.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3194,
+        "extension": ".py",
+        "path": "scripts/run_chunker_discursos.py"
+      },
+      {
+        "name": "run_extrator_discursos.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1657,
+        "extension": ".py",
+        "path": "scripts/run_extrator_discursos.py"
+      },
+      {
+        "name": "run_extrator_politicos.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1023,
+        "extension": ".py",
+        "path": "scripts/run_extrator_politicos.py"
+      },
+      {
+        "name": "run_extrator_proposicoes.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1823,
+        "extension": ".py",
+        "path": "scripts/run_extrator_proposicoes.py"
+      },
+      {
+        "name": "run_extrator_votos.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1701,
+        "extension": ".py",
+        "path": "scripts/run_extrator_votos.py"
+      },
+      {
+        "name": "run_inferencia.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1544,
+        "extension": ".py",
+        "path": "scripts/run_inferencia.py"
+      },
+      {
+        "name": "run_resumo_proposicoes.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3389,
+        "extension": ".py",
+        "path": "scripts/run_resumo_proposicoes.py"
+      },
+      {
+        "name": "run_vinculo_chunks_votos.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3206,
+        "extension": ".py",
+        "path": "scripts/run_vinculo_chunks_votos.py"
+      },
+      {
+        "name": "sonar-project.properties",
+        "type": "file",
+        "language": "Unknown",
+        "size": 845,
+        "extension": ".properties",
+        "path": "sonar-project.properties"
+      },
+      {
+        "name": "tests",
+        "type": "directory",
+        "path": "tests",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "tests/__init__.py"
+      },
+      {
+        "name": "api",
+        "type": "directory",
+        "path": "tests/api",
+        "children": []
+      },
+      {
+        "name": "test_exception_handling.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1609,
+        "extension": ".py",
+        "path": "tests/api/test_exception_handling.py"
+      },
+      {
+        "name": "test_novas_rotas.py",
+        "type": "file",
+        "language": "Python",
+        "size": 24433,
+        "extension": ".py",
+        "path": "tests/api/test_novas_rotas.py"
+      },
+      {
+        "name": "test_rotas_dados.py",
+        "type": "file",
+        "language": "Python",
+        "size": 11641,
+        "extension": ".py",
+        "path": "tests/api/test_rotas_dados.py"
+      },
+      {
+        "name": "conftest.py",
+        "type": "file",
+        "language": "Python",
+        "size": 404,
+        "extension": ".py",
+        "path": "tests/conftest.py"
+      },
+      {
+        "name": "etl",
+        "type": "directory",
+        "path": "tests/etl",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "tests/etl/__init__.py"
+      },
+      {
+        "name": "test_chunker_discursos_camara.py",
+        "type": "file",
+        "language": "Python",
+        "size": 12014,
+        "extension": ".py",
+        "path": "tests/etl/test_chunker_discursos_camara.py"
+      },
+      {
+        "name": "test_chunker_senado.py",
+        "type": "file",
+        "language": "Python",
+        "size": 12839,
+        "extension": ".py",
+        "path": "tests/etl/test_chunker_senado.py"
+      },
+      {
+        "name": "test_coverage_booster.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3647,
+        "extension": ".py",
+        "path": "tests/etl/test_coverage_booster.py"
+      },
+      {
+        "name": "test_extrator_discursos_camara.py",
+        "type": "file",
+        "language": "Python",
+        "size": 7213,
+        "extension": ".py",
+        "path": "tests/etl/test_extrator_discursos_camara.py"
+      },
+      {
+        "name": "test_extrator_discursos_senado.py",
+        "type": "file",
+        "language": "Python",
+        "size": 11542,
+        "extension": ".py",
+        "path": "tests/etl/test_extrator_discursos_senado.py"
+      },
+      {
+        "name": "test_extrator_politicos_camara.py",
+        "type": "file",
+        "language": "Python",
+        "size": 9753,
+        "extension": ".py",
+        "path": "tests/etl/test_extrator_politicos_camara.py"
+      },
+      {
+        "name": "test_extrator_politicos_senado.py",
+        "type": "file",
+        "language": "Python",
+        "size": 12159,
+        "extension": ".py",
+        "path": "tests/etl/test_extrator_politicos_senado.py"
+      },
+      {
+        "name": "test_extrator_proposicoes_camara.py",
+        "type": "file",
+        "language": "Python",
+        "size": 10553,
+        "extension": ".py",
+        "path": "tests/etl/test_extrator_proposicoes_camara.py"
+      },
+      {
+        "name": "test_extrator_proposicoes_senado.py",
+        "type": "file",
+        "language": "Python",
+        "size": 10222,
+        "extension": ".py",
+        "path": "tests/etl/test_extrator_proposicoes_senado.py"
+      },
+      {
+        "name": "test_extrator_texto_proposicao.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3227,
+        "extension": ".py",
+        "path": "tests/etl/test_extrator_texto_proposicao.py"
+      },
+      {
+        "name": "test_extrator_texto_senado.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4214,
+        "extension": ".py",
+        "path": "tests/etl/test_extrator_texto_senado.py"
+      },
+      {
+        "name": "test_extrator_votos_camara.py",
+        "type": "file",
+        "language": "Python",
+        "size": 11867,
+        "extension": ".py",
+        "path": "tests/etl/test_extrator_votos_camara.py"
+      },
+      {
+        "name": "test_extrator_votos_senado.py",
+        "type": "file",
+        "language": "Python",
+        "size": 9123,
+        "extension": ".py",
+        "path": "tests/etl/test_extrator_votos_senado.py"
+      },
+      {
+        "name": "test_inferidor_postura.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3296,
+        "extension": ".py",
+        "path": "tests/etl/test_inferidor_postura.py"
+      },
+      {
+        "name": "test_pipeline_inferencia.py",
+        "type": "file",
+        "language": "Python",
+        "size": 7606,
+        "extension": ".py",
+        "path": "tests/etl/test_pipeline_inferencia.py"
+      },
+      {
+        "name": "test_pipeline_resumo_proposicoes.py",
+        "type": "file",
+        "language": "Python",
+        "size": 7584,
+        "extension": ".py",
+        "path": "tests/etl/test_pipeline_resumo_proposicoes.py"
+      },
+      {
+        "name": "test_pipeline_resumo_senado.py",
+        "type": "file",
+        "language": "Python",
+        "size": 7306,
+        "extension": ".py",
+        "path": "tests/etl/test_pipeline_resumo_senado.py"
+      },
+      {
+        "name": "test_resumidor_proposicoes.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3013,
+        "extension": ".py",
+        "path": "tests/etl/test_resumidor_proposicoes.py"
+      },
+      {
+        "name": "test_resumidor_senado.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3495,
+        "extension": ".py",
+        "path": "tests/etl/test_resumidor_senado.py"
+      },
+      {
+        "name": "test_transformador_discursos_senado.py",
+        "type": "file",
+        "language": "Python",
+        "size": 8312,
+        "extension": ".py",
+        "path": "tests/etl/test_transformador_discursos_senado.py"
+      },
+      {
+        "name": "test_transformadores_discursos_camara.py",
+        "type": "file",
+        "language": "Python",
+        "size": 15922,
+        "extension": ".py",
+        "path": "tests/etl/test_transformadores_discursos_camara.py"
+      },
+      {
+        "name": "test_transformadores_proposicoes_camara.py",
+        "type": "file",
+        "language": "Python",
+        "size": 6664,
+        "extension": ".py",
+        "path": "tests/etl/test_transformadores_proposicoes_camara.py"
+      },
+      {
+        "name": "test_transformadores_votos_camara.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4538,
+        "extension": ".py",
+        "path": "tests/etl/test_transformadores_votos_camara.py"
+      },
+      {
+        "name": "test_transformadores_votos_senado.py",
+        "type": "file",
+        "language": "Python",
+        "size": 7080,
+        "extension": ".py",
+        "path": "tests/etl/test_transformadores_votos_senado.py"
+      },
+      {
+        "name": "test_utils.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1362,
+        "extension": ".py",
+        "path": "tests/etl/test_utils.py"
+      },
+      {
+        "name": "test_vinculador_discursos_votos_camara.py",
+        "type": "file",
+        "language": "Python",
+        "size": 12502,
+        "extension": ".py",
+        "path": "tests/etl/test_vinculador_discursos_votos_camara.py"
+      },
+      {
+        "name": "test_vinculador_discursos_votos_senado.py",
+        "type": "file",
+        "language": "Python",
+        "size": 11916,
+        "extension": ".py",
+        "path": "tests/etl/test_vinculador_discursos_votos_senado.py"
+      },
+      {
+        "name": "test_setup.py",
+        "type": "file",
+        "language": "Python",
+        "size": 190,
+        "extension": ".py",
+        "path": "tests/test_setup.py"
+      },
+      {
+        "name": "utils",
+        "type": "directory",
+        "path": "utils",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "utils/__init__.py"
+      },
+      {
+        "name": "cleaner.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1235,
+        "extension": ".py",
+        "path": "utils/cleaner.py"
+      },
+      {
+        "name": "motor_nlp.py",
+        "type": "file",
+        "language": "Python",
+        "size": 583,
+        "extension": ".py",
+        "path": "utils/motor_nlp.py"
+      }
+    ]
+  },
+  "_metadata": {
+    "extracted_at": "2026-09-17T04:04:43.840591",
+    "file_path": "data/silver/hierarchy_2026.1-ContraDito.json"
+  }
+}

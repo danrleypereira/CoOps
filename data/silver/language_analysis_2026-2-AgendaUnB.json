@@ -1,0 +1,240 @@
+{
+  "repository": "2026-2-AgendaUnB",
+  "owner": "unb-mds",
+  "branch": "main",
+  "analyzed_at": "2026-09-17T04:04:00.271858",
+  "sample_config": {
+    "max_files_per_language": 10,
+    "strategy": "largest"
+  },
+  "total_files": 27,
+  "total_bytes": 3816089,
+  "languages": [
+    {
+      "language": "WebM Video",
+      "file_count": 2,
+      "total_bytes": 3654672,
+      "percentage": 95.77,
+      "files": [
+        {
+          "path": "public/shaderopt-light.webm",
+          "name": "shaderopt-light.webm",
+          "size": 2626756,
+          "extension": ".webm"
+        },
+        {
+          "path": "public/shaderopt-dark.webm",
+          "name": "shaderopt-dark.webm",
+          "size": 1027916,
+          "extension": ".webm"
+        }
+      ]
+    },
+    {
+      "language": "Markdown",
+      "file_count": 12,
+      "total_bytes": 59899,
+      "percentage": 1.57,
+      "files": [
+        {
+          "path": "docs/padroes.md",
+          "name": "padroes.md",
+          "size": 8769,
+          "extension": ".md"
+        },
+        {
+          "path": "padrao.md",
+          "name": "padrao.md",
+          "size": 8769,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/documento-de-visao.md",
+          "name": "documento-de-visao.md",
+          "size": 7900,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/requisitos.md",
+          "name": "requisitos.md",
+          "size": 7652,
+          "extension": ".md"
+        },
+        {
+          "path": "requisitos.md",
+          "name": "requisitos.md",
+          "size": 7652,
+          "extension": ".md"
+        },
+        {
+          "path": "AI-USAGE.md",
+          "name": "AI-USAGE.md",
+          "size": 5334,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/index.md",
+          "name": "index.md",
+          "size": 4774,
+          "extension": ".md"
+        },
+        {
+          "path": "README.md",
+          "name": "README.md",
+          "size": 3107,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/CONTRIBUTING.md",
+          "name": "CONTRIBUTING.md",
+          "size": 2303,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/sprints/sprint-0.md",
+          "name": "sprint-0.md",
+          "size": 1788,
+          "extension": ".md"
+        }
+      ]
+    },
+    {
+      "language": "JSON",
+      "file_count": 3,
+      "total_bytes": 57315,
+      "percentage": 1.5,
+      "files": [
+        {
+          "path": "package-lock.json",
+          "name": "package-lock.json",
+          "size": 56865,
+          "extension": ".json"
+        },
+        {
+          "path": "package.json",
+          "name": "package.json",
+          "size": 412,
+          "extension": ".json"
+        },
+        {
+          "path": ".vscode/settings.json",
+          "name": "settings.json",
+          "size": 38,
+          "extension": ".json"
+        }
+      ]
+    },
+    {
+      "language": "JavaScript",
+      "file_count": 3,
+      "total_bytes": 36341,
+      "percentage": 0.95,
+      "files": [
+        {
+          "path": "src/App.jsx",
+          "name": "App.jsx",
+          "size": 36072,
+          "extension": ".jsx"
+        },
+        {
+          "path": "src/main.jsx",
+          "name": "main.jsx",
+          "size": 135,
+          "extension": ".jsx"
+        },
+        {
+          "path": "vite.config.js",
+          "name": "vite.config.js",
+          "size": 134,
+          "extension": ".js"
+        }
+      ]
+    },
+    {
+      "language": "PNG Image",
+      "file_count": 1,
+      "total_bytes": 3942,
+      "percentage": 0.1,
+      "files": [
+        {
+          "path": "public/Marca-UnB.png",
+          "name": "Marca-UnB.png",
+          "size": 3942,
+          "extension": ".png"
+        }
+      ]
+    },
+    {
+      "language": "YAML",
+      "file_count": 2,
+      "total_bytes": 2638,
+      "percentage": 0.07,
+      "files": [
+        {
+          "path": "mkdocs.yml",
+          "name": "mkdocs.yml",
+          "size": 1638,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/docs.yml",
+          "name": "docs.yml",
+          "size": 1000,
+          "extension": ".yml"
+        }
+      ]
+    },
+    {
+      "language": "HTML",
+      "file_count": 1,
+      "total_bytes": 739,
+      "percentage": 0.02,
+      "files": [
+        {
+          "path": "index.html",
+          "name": "index.html",
+          "size": 739,
+          "extension": ".html"
+        }
+      ]
+    },
+    {
+      "language": "Unknown",
+      "file_count": 2,
+      "total_bytes": 253,
+      "percentage": 0.01,
+      "files": [
+        {
+          "path": ".env.example",
+          "name": ".env.example",
+          "size": 164,
+          "extension": ".example"
+        },
+        {
+          "path": ".gitattributes",
+          "name": ".gitattributes",
+          "size": 89,
+          "extension": ".gitattributes"
+        }
+      ]
+    },
+    {
+      "language": "Git Ignore",
+      "file_count": 1,
+      "total_bytes": 290,
+      "percentage": 0.01,
+      "files": [
+        {
+          "path": ".gitignore",
+          "name": ".gitignore",
+          "size": 290,
+          "extension": ".gitignore"
+        }
+      ]
+    }
+  ],
+  "_metadata": {
+    "extracted_at": "2026-09-17T04:04:43.671867",
+    "file_path": "data/silver/language_analysis_2026-2-AgendaUnB.json"
+  }
+}

@@ -1,0 +1,822 @@
+{
+  "repository": "2026-1-Mapa_L.I.L.A.S",
+  "owner": "unb-mds",
+  "branch": "main",
+  "analyzed_at": "2026-09-17T04:03:50.649525",
+  "sample_config": {
+    "max_files_per_language": 10,
+    "strategy": "largest"
+  },
+  "total_files": 337,
+  "total_bytes": 19857932,
+  "languages": [
+    {
+      "language": "PDF",
+      "file_count": 25,
+      "total_bytes": 10503188,
+      "percentage": 52.89,
+      "files": [
+        {
+          "path": "docs/Arquitetura/Arquitetura C4 (1).pdf",
+          "name": "Arquitetura C4 (1).pdf",
+          "size": 3019480,
+          "extension": ".pdf"
+        },
+        {
+          "path": "site/Arquitetura/Arquitetura C4 (1).pdf",
+          "name": "Arquitetura C4 (1).pdf",
+          "size": 3019480,
+          "extension": ".pdf"
+        },
+        {
+          "path": "docs/Estudos/Sprint01/estudo.de.XP.pdf",
+          "name": "estudo.de.XP.pdf",
+          "size": 779485,
+          "extension": ".pdf"
+        },
+        {
+          "path": "site/Estudos/Sprint01/estudo.de.XP.pdf",
+          "name": "estudo.de.XP.pdf",
+          "size": 779485,
+          "extension": ".pdf"
+        },
+        {
+          "path": "docs/Estudos/Sprint00/Estudo_Requisitos_de_software.pdf",
+          "name": "Estudo_Requisitos_de_software.pdf",
+          "size": 307778,
+          "extension": ".pdf"
+        },
+        {
+          "path": "site/Estudos/Sprint00/Estudo_Requisitos_de_software.pdf",
+          "name": "Estudo_Requisitos_de_software.pdf",
+          "size": 307778,
+          "extension": ".pdf"
+        },
+        {
+          "path": "docs/Estudos/Sprint01/Estudo_MkDocs.pdf",
+          "name": "Estudo_MkDocs.pdf",
+          "size": 193873,
+          "extension": ".pdf"
+        },
+        {
+          "path": "site/Estudos/Sprint01/Estudo_MkDocs.pdf",
+          "name": "Estudo_MkDocs.pdf",
+          "size": 193873,
+          "extension": ".pdf"
+        },
+        {
+          "path": "site/Estudos/Sprint04/Implementação_Dashboard.pdf",
+          "name": "Implementação_Dashboard.pdf",
+          "size": 184128,
+          "extension": ".pdf"
+        },
+        {
+          "path": "docs/Estudos/Sprint00/_Metodologias.Ageis.pdf",
+          "name": "_Metodologias.Ageis.pdf",
+          "size": 183906,
+          "extension": ".pdf"
+        }
+      ]
+    },
+    {
+      "language": "PNG Image",
+      "file_count": 46,
+      "total_bytes": 5598260,
+      "percentage": 28.19,
+      "files": [
+        {
+          "path": "docs/Requisitos/imagens/GRÁFICOS.png",
+          "name": "GRÁFICOS.png",
+          "size": 493883,
+          "extension": ".png"
+        },
+        {
+          "path": "docs/Requisitos/imagens/INÍCIO.png",
+          "name": "INÍCIO.png",
+          "size": 430176,
+          "extension": ".png"
+        },
+        {
+          "path": "docs/Estudos/Sprint02/midia/image-2.png",
+          "name": "image-2.png",
+          "size": 233284,
+          "extension": ".png"
+        },
+        {
+          "path": "site/Estudos/Sprint02/midia/image-2.png",
+          "name": "image-2.png",
+          "size": 233284,
+          "extension": ".png"
+        },
+        {
+          "path": "docs/Requisitos/imagens/PL.png",
+          "name": "PL.png",
+          "size": 225919,
+          "extension": ".png"
+        },
+        {
+          "path": "docs/Estudos/Sprint02/midia/image-1.png",
+          "name": "image-1.png",
+          "size": 207317,
+          "extension": ".png"
+        },
+        {
+          "path": "site/Estudos/Sprint02/midia/image-1.png",
+          "name": "image-1.png",
+          "size": 207317,
+          "extension": ".png"
+        },
+        {
+          "path": "docs/Estudos/Sprint02/midia/image.png",
+          "name": "image.png",
+          "size": 186632,
+          "extension": ".png"
+        },
+        {
+          "path": "site/Estudos/Sprint02/midia/image.png",
+          "name": "image.png",
+          "size": 186632,
+          "extension": ".png"
+        },
+        {
+          "path": "docs/Requisitos/imagens/PL DETALHADO.png",
+          "name": "PL DETALHADO.png",
+          "size": 180875,
+          "extension": ".png"
+        }
+      ]
+    },
+    {
+      "language": "Unknown",
+      "file_count": 8,
+      "total_bytes": 1295522,
+      "percentage": 6.52,
+      "files": [
+        {
+          "path": "site/assets/javascripts/bundle.79ae519e.min.js.map",
+          "name": "bundle.79ae519e.min.js.map",
+          "size": 1026989,
+          "extension": ".map"
+        },
+        {
+          "path": "site/assets/javascripts/workers/search.2c215733.min.js.map",
+          "name": "search.2c215733.min.js.map",
+          "size": 216029,
+          "extension": ".map"
+        },
+        {
+          "path": "site/assets/stylesheets/main.484c7ddc.min.css.map",
+          "name": "main.484c7ddc.min.css.map",
+          "size": 47588,
+          "extension": ".map"
+        },
+        {
+          "path": "site/assets/stylesheets/palette.ab4e12ef.min.css.map",
+          "name": "palette.ab4e12ef.min.css.map",
+          "size": 3670,
+          "extension": ".map"
+        },
+        {
+          "path": "backend/app/migrations/script.py.mako",
+          "name": "script.py.mako",
+          "size": 643,
+          "extension": ".mako"
+        },
+        {
+          "path": "backend/app/__pycache__/main.cpython-311.pyc",
+          "name": "main.cpython-311.pyc",
+          "size": 518,
+          "extension": ".pyc"
+        },
+        {
+          "path": "frontend/.env.production",
+          "name": ".env.production",
+          "size": 57,
+          "extension": ".production"
+        },
+        {
+          "path": ".gitattributes",
+          "name": ".gitattributes",
+          "size": 28,
+          "extension": ".gitattributes"
+        }
+      ]
+    },
+    {
+      "language": "JavaScript",
+      "file_count": 84,
+      "total_bytes": 1164224,
+      "percentage": 5.86,
+      "files": [
+        {
+          "path": "site/assets/javascripts/lunr/wordcut.js",
+          "name": "wordcut.js",
+          "size": 677463,
+          "extension": ".js"
+        },
+        {
+          "path": "site/assets/javascripts/bundle.79ae519e.min.js",
+          "name": "bundle.79ae519e.min.js",
+          "size": 114308,
+          "extension": ".js"
+        },
+        {
+          "path": "site/assets/javascripts/workers/search.2c215733.min.js",
+          "name": "search.2c215733.min.js",
+          "size": 39481,
+          "extension": ".js"
+        },
+        {
+          "path": "site/assets/javascripts/lunr/tinyseg.js",
+          "name": "tinyseg.js",
+          "size": 22878,
+          "extension": ".js"
+        },
+        {
+          "path": "frontend/src/pages/Inicio/index.jsx",
+          "name": "index.jsx",
+          "size": 17740,
+          "extension": ".jsx"
+        },
+        {
+          "path": "site/assets/javascripts/lunr/min/lunr.ar.min.js",
+          "name": "lunr.ar.min.js",
+          "size": 17074,
+          "extension": ".js"
+        },
+        {
+          "path": "site/assets/javascripts/lunr/min/lunr.tr.min.js",
+          "name": "lunr.tr.min.js",
+          "size": 15009,
+          "extension": ".js"
+        },
+        {
+          "path": "site/assets/javascripts/lunr/min/lunr.el.min.js",
+          "name": "lunr.el.min.js",
+          "size": 14950,
+          "extension": ".js"
+        },
+        {
+          "path": "site/assets/javascripts/lunr/min/lunr.es.min.js",
+          "name": "lunr.es.min.js",
+          "size": 11499,
+          "extension": ".js"
+        },
+        {
+          "path": "site/assets/javascripts/lunr/min/lunr.it.min.js",
+          "name": "lunr.it.min.js",
+          "size": 11232,
+          "extension": ".js"
+        }
+      ]
+    },
+    {
+      "language": "HTML",
+      "file_count": 18,
+      "total_bytes": 341164,
+      "percentage": 1.72,
+      "files": [
+        {
+          "path": "overrides/main.html",
+          "name": "main.html",
+          "size": 52859,
+          "extension": ".html"
+        },
+        {
+          "path": "site/Arquitetura/Arquitetura_Tecnica/index.html",
+          "name": "index.html",
+          "size": 38015,
+          "extension": ".html"
+        },
+        {
+          "path": "site/ATAS Reunião/Ata30_03/index.html",
+          "name": "index.html",
+          "size": 20230,
+          "extension": ".html"
+        },
+        {
+          "path": "site/index.html",
+          "name": "index.html",
+          "size": 19838,
+          "extension": ".html"
+        },
+        {
+          "path": "site/ATAS Reunião/Ata29_04/index.html",
+          "name": "index.html",
+          "size": 19727,
+          "extension": ".html"
+        },
+        {
+          "path": "site/Estudos/Sprint01/Docker/index.html",
+          "name": "index.html",
+          "size": 19036,
+          "extension": ".html"
+        },
+        {
+          "path": "site/Requisitos/Visão de produto/index.html",
+          "name": "index.html",
+          "size": 18694,
+          "extension": ".html"
+        },
+        {
+          "path": "site/ATAS Reunião/Ata26_03/index.html",
+          "name": "index.html",
+          "size": 18129,
+          "extension": ".html"
+        },
+        {
+          "path": "site/Estudos/Sprint02/postgreSQL/index.html",
+          "name": "index.html",
+          "size": 17823,
+          "extension": ".html"
+        },
+        {
+          "path": "site/ATAS Reunião/Ata06_05/index.html",
+          "name": "index.html",
+          "size": 17455,
+          "extension": ".html"
+        }
+      ]
+    },
+    {
+      "language": "Markdown",
+      "file_count": 67,
+      "total_bytes": 323700,
+      "percentage": 1.63,
+      "files": [
+        {
+          "path": ".claude/CLAUDE_MapaLILAS.md",
+          "name": "CLAUDE_MapaLILAS.md",
+          "size": 21618,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/Estudos/Sprint01/estudo_de_XP.md",
+          "name": "estudo_de_XP.md",
+          "size": 16009,
+          "extension": ".md"
+        },
+        {
+          "path": ".claude/SPEC_attMetrics.md",
+          "name": "SPEC_attMetrics.md",
+          "size": 13657,
+          "extension": ".md"
+        },
+        {
+          "path": ".claude/SPEC_Backend_LILAS (4).md",
+          "name": "SPEC_Backend_LILAS (4).md",
+          "size": 12737,
+          "extension": ".md"
+        },
+        {
+          "path": ".claude/SPEC_Backend_LILAS.md",
+          "name": "SPEC_Backend_LILAS.md",
+          "size": 12737,
+          "extension": ".md"
+        },
+        {
+          "path": ".claude/SPEC_Front_Pagina_Projetos_de_Lei.md",
+          "name": "SPEC_Front_Pagina_Projetos_de_Lei.md",
+          "size": 12526,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/Arquitetura/Arquitetura_Tecnica.md",
+          "name": "Arquitetura_Tecnica.md",
+          "size": 12469,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/Estudos/Sprint11/viabilidade_ranking_parlamentares.md",
+          "name": "viabilidade_ranking_parlamentares.md",
+          "size": 10623,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/issues_report.md",
+          "name": "issues_report.md",
+          "size": 9480,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/Estudos/Sprint04/Estudo API da Câmara do Senado.md",
+          "name": "Estudo API da Câmara do Senado.md",
+          "size": 9217,
+          "extension": ".md"
+        }
+      ]
+    },
+    {
+      "language": "JSON",
+      "file_count": 13,
+      "total_bytes": 254499,
+      "percentage": 1.28,
+      "files": [
+        {
+          "path": "frontend/package-lock.json",
+          "name": "package-lock.json",
+          "size": 179633,
+          "extension": ".json"
+        },
+        {
+          "path": "site/search/search_index.json",
+          "name": "search_index.json",
+          "size": 43965,
+          "extension": ".json"
+        },
+        {
+          "path": "docs/ingestion/ingestion-history.json",
+          "name": "ingestion-history.json",
+          "size": 19624,
+          "extension": ".json"
+        },
+        {
+          "path": "docs/scrum/metrics.json",
+          "name": "metrics.json",
+          "size": 8135,
+          "extension": ".json"
+        },
+        {
+          "path": "frontend/package.json",
+          "name": "package.json",
+          "size": 814,
+          "extension": ".json"
+        },
+        {
+          "path": "backend/tests/fixtures/golden_dataset.json",
+          "name": "golden_dataset.json",
+          "size": 687,
+          "extension": ".json"
+        },
+        {
+          "path": "frontend/cypress/fixtures/projetos_lista.json",
+          "name": "projetos_lista.json",
+          "size": 437,
+          "extension": ".json"
+        },
+        {
+          "path": "backend/vercel.json",
+          "name": "vercel.json",
+          "size": 393,
+          "extension": ".json"
+        },
+        {
+          "path": "frontend/cypress/fixtures/graficos_resumo.json",
+          "name": "graficos_resumo.json",
+          "size": 318,
+          "extension": ".json"
+        },
+        {
+          "path": "backend/ingestion-report.json",
+          "name": "ingestion-report.json",
+          "size": 238,
+          "extension": ".json"
+        }
+      ]
+    },
+    {
+      "language": "Python",
+      "file_count": 43,
+      "total_bytes": 176039,
+      "percentage": 0.89,
+      "files": [
+        {
+          "path": "backend/app/routers/projeto.py",
+          "name": "projeto.py",
+          "size": 20854,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/app/services/normalizer.py",
+          "name": "normalizer.py",
+          "size": 16450,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/app/services/graficos.py",
+          "name": "graficos.py",
+          "size": 12963,
+          "extension": ".py"
+        },
+        {
+          "path": "metrics/analyzer.py",
+          "name": "analyzer.py",
+          "size": 10562,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/tests/test_cache_endpoints.py",
+          "name": "test_cache_endpoints.py",
+          "size": 9011,
+          "extension": ".py"
+        },
+        {
+          "path": "tests/test_workflow_deploy_pages.py",
+          "name": "test_workflow_deploy_pages.py",
+          "size": 8223,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/app/models.py",
+          "name": "models.py",
+          "size": 8031,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/app/schemas/senado.py",
+          "name": "senado.py",
+          "size": 7252,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/app/services/collector.py",
+          "name": "collector.py",
+          "size": 6579,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/app/migrations/versions/baf79178346c_criando_tabelas_iniciais.py",
+          "name": "baf79178346c_criando_tabelas_iniciais.py",
+          "size": 6206,
+          "extension": ".py"
+        }
+      ]
+    },
+    {
+      "language": "CSS",
+      "file_count": 5,
+      "total_bytes": 162180,
+      "percentage": 0.82,
+      "files": [
+        {
+          "path": "site/assets/stylesheets/main.484c7ddc.min.css",
+          "name": "main.484c7ddc.min.css",
+          "size": 139849,
+          "extension": ".css"
+        },
+        {
+          "path": "site/assets/stylesheets/palette.ab4e12ef.min.css",
+          "name": "palette.ab4e12ef.min.css",
+          "size": 12641,
+          "extension": ".css"
+        },
+        {
+          "path": "stylesheets/extra.css",
+          "name": "extra.css",
+          "size": 9668,
+          "extension": ".css"
+        },
+        {
+          "path": "frontend/src/index.css",
+          "name": "index.css",
+          "size": 22,
+          "extension": ".css"
+        },
+        {
+          "path": "frontend/src/App.css",
+          "name": "App.css",
+          "size": 0,
+          "extension": ".css"
+        }
+      ]
+    },
+    {
+      "language": "SVG Image",
+      "file_count": 4,
+      "total_bytes": 18147,
+      "percentage": 0.09,
+      "files": [
+        {
+          "path": "frontend/src/assets/vite.svg",
+          "name": "vite.svg",
+          "size": 8709,
+          "extension": ".svg"
+        },
+        {
+          "path": "frontend/public/icons.svg",
+          "name": "icons.svg",
+          "size": 5031,
+          "extension": ".svg"
+        },
+        {
+          "path": "frontend/src/assets/react.svg",
+          "name": "react.svg",
+          "size": 4126,
+          "extension": ".svg"
+        },
+        {
+          "path": "frontend/public/favicon.svg",
+          "name": "favicon.svg",
+          "size": 281,
+          "extension": ".svg"
+        }
+      ]
+    },
+    {
+      "language": "YAML",
+      "file_count": 11,
+      "total_bytes": 16735,
+      "percentage": 0.08,
+      "files": [
+        {
+          "path": "mkdocs.yml",
+          "name": "mkdocs.yml",
+          "size": 4485,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/data-ingestion.yml",
+          "name": "data-ingestion.yml",
+          "size": 2840,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/scrum metrics.yml",
+          "name": "scrum metrics.yml",
+          "size": 2362,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/static.yml",
+          "name": "static.yml",
+          "size": 1869,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/lint.yml",
+          "name": "lint.yml",
+          "size": 1139,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/backend-tests.yml",
+          "name": "backend-tests.yml",
+          "size": 933,
+          "extension": ".yml"
+        },
+        {
+          "path": "docker-compose.yml",
+          "name": "docker-compose.yml",
+          "size": 732,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/frontend-e2e.yml",
+          "name": "frontend-e2e.yml",
+          "size": 730,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/deploy-frontend.yml",
+          "name": "deploy-frontend.yml",
+          "size": 615,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/deploy-backend.yml",
+          "name": "deploy-backend.yml",
+          "size": 603,
+          "extension": ".yml"
+        }
+      ]
+    },
+    {
+      "language": "No Extension",
+      "file_count": 3,
+      "total_bytes": 2284,
+      "percentage": 0.01,
+      "files": [
+        {
+          "path": "LICENSE",
+          "name": "LICENSE",
+          "size": 1060,
+          "extension": ""
+        },
+        {
+          "path": "backend/Dockerfile",
+          "name": "Dockerfile",
+          "size": 798,
+          "extension": ""
+        },
+        {
+          "path": "frontend/Dockerfile",
+          "name": "Dockerfile",
+          "size": 426,
+          "extension": ""
+        }
+      ]
+    },
+    {
+      "language": "Git Ignore",
+      "file_count": 4,
+      "total_bytes": 646,
+      "percentage": 0.0,
+      "files": [
+        {
+          "path": ".gitignore",
+          "name": ".gitignore",
+          "size": 291,
+          "extension": ".gitignore"
+        },
+        {
+          "path": "frontend/.gitignore",
+          "name": ".gitignore",
+          "size": 261,
+          "extension": ".gitignore"
+        },
+        {
+          "path": "backend/.gitignore",
+          "name": ".gitignore",
+          "size": 64,
+          "extension": ".gitignore"
+        },
+        {
+          "path": "backend/app/.gitignore",
+          "name": ".gitignore",
+          "size": 30,
+          "extension": ".gitignore"
+        }
+      ]
+    },
+    {
+      "language": "INI",
+      "file_count": 1,
+      "total_bytes": 740,
+      "percentage": 0.0,
+      "files": [
+        {
+          "path": "backend/alembic.ini",
+          "name": "alembic.ini",
+          "size": 740,
+          "extension": ".ini"
+        }
+      ]
+    },
+    {
+      "language": "Shell",
+      "file_count": 1,
+      "total_bytes": 187,
+      "percentage": 0.0,
+      "files": [
+        {
+          "path": "backend/entrypoint.sh",
+          "name": "entrypoint.sh",
+          "size": 187,
+          "extension": ".sh"
+        }
+      ]
+    },
+    {
+      "language": "Text",
+      "file_count": 2,
+      "total_bytes": 181,
+      "percentage": 0.0,
+      "files": [
+        {
+          "path": "backend/requirements.txt",
+          "name": "requirements.txt",
+          "size": 162,
+          "extension": ".txt"
+        },
+        {
+          "path": "backend/requirements-dev.txt",
+          "name": "requirements-dev.txt",
+          "size": 19,
+          "extension": ".txt"
+        }
+      ]
+    },
+    {
+      "language": "XML",
+      "file_count": 1,
+      "total_bytes": 109,
+      "percentage": 0.0,
+      "files": [
+        {
+          "path": "site/sitemap.xml",
+          "name": "sitemap.xml",
+          "size": 109,
+          "extension": ".xml"
+        }
+      ]
+    },
+    {
+      "language": "GZIP Archive",
+      "file_count": 1,
+      "total_bytes": 127,
+      "percentage": 0.0,
+      "files": [
+        {
+          "path": "site/sitemap.xml.gz",
+          "name": "sitemap.xml.gz",
+          "size": 127,
+          "extension": ".gz"
+        }
+      ]
+    }
+  ],
+  "_metadata": {
+    "extracted_at": "2026-09-17T04:04:44.786726",
+    "file_path": "data/silver/language_analysis_2026-1-Mapa_L.I.L.A.S.json"
+  }
+}

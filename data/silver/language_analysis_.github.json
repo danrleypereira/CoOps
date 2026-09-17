@@ -1,0 +1,32 @@
+{
+  "repository": ".github",
+  "owner": "unb-mds",
+  "branch": "main",
+  "analyzed_at": "2026-09-17T04:03:49.246145",
+  "sample_config": {
+    "max_files_per_language": 10,
+    "strategy": "largest"
+  },
+  "total_files": 1,
+  "total_bytes": 2207,
+  "languages": [
+    {
+      "language": "Markdown",
+      "file_count": 1,
+      "total_bytes": 2207,
+      "percentage": 100.0,
+      "files": [
+        {
+          "path": "profile/README.md",
+          "name": "README.md",
+          "size": 2207,
+          "extension": ".md"
+        }
+      ]
+    }
+  ],
+  "_metadata": {
+    "extracted_at": "2026-09-17T04:04:44.822135",
+    "file_path": "data/silver/language_analysis_.github.json"
+  }
+}

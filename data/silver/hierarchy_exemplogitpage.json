@@ -1,0 +1,32 @@
+{
+  "repository": "exemplogitpage",
+  "owner": "unb-mds",
+  "branch": "main",
+  "extracted_at": "2026-09-17T04:03:48.374938",
+  "hierarchy": {
+    "name": "root",
+    "type": "directory",
+    "children": [
+      {
+        "name": "LICENSE",
+        "type": "file",
+        "language": "No Extension",
+        "size": 1060,
+        "extension": "",
+        "path": "LICENSE"
+      },
+      {
+        "name": "README.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 16,
+        "extension": ".md",
+        "path": "README.md"
+      }
+    ]
+  },
+  "_metadata": {
+    "extracted_at": "2026-09-17T04:04:43.845722",
+    "file_path": "data/silver/hierarchy_exemplogitpage.json"
+  }
+}

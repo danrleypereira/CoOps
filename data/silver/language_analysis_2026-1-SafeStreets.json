@@ -1,0 +1,712 @@
+{
+  "repository": "2026-1-SafeStreets",
+  "owner": "unb-mds",
+  "branch": "main",
+  "analyzed_at": "2026-09-17T04:03:50.169570",
+  "sample_config": {
+    "max_files_per_language": 10,
+    "strategy": "largest"
+  },
+  "total_files": 278,
+  "total_bytes": 265404147,
+  "languages": [
+    {
+      "language": "SVG Image",
+      "file_count": 13,
+      "total_bytes": 255314788,
+      "percentage": 96.2,
+      "files": [
+        {
+          "path": "docs/Figma/Figma svg/Retrospectiva/retrospectiva.svg",
+          "name": "retrospectiva.svg",
+          "size": 49524043,
+          "extension": ".svg"
+        },
+        {
+          "path": "docs/Figma/Figma svg/Planejamento e entregas semanais/planejamento-entregas-semanais.svg",
+          "name": "planejamento-entregas-semanais.svg",
+          "size": 39478559,
+          "extension": ".svg"
+        },
+        {
+          "path": "docs/Figma/Figma svg/Maior parte/requisitos.svg",
+          "name": "requisitos.svg",
+          "size": 31231733,
+          "extension": ".svg"
+        },
+        {
+          "path": "docs/Figma/Figma svg/Maior parte/storymap.svg",
+          "name": "storymap.svg",
+          "size": 30812023,
+          "extension": ".svg"
+        },
+        {
+          "path": "docs/Figma/Figma svg/Arquitetura/arquitetura.svg",
+          "name": "arquitetura.svg",
+          "size": 21404362,
+          "extension": ".svg"
+        },
+        {
+          "path": "docs/Figma/Figma svg/Wireframe/wireframe.svg",
+          "name": "wireframe.svg",
+          "size": 19468808,
+          "extension": ".svg"
+        },
+        {
+          "path": "docs/Figma/Figma svg/Maior parte/estrategico.svg",
+          "name": "estrategico.svg",
+          "size": 11548708,
+          "extension": ".svg"
+        },
+        {
+          "path": "docs/Figma/Figma svg/Maior parte/donedor.svg",
+          "name": "donedor.svg",
+          "size": 9908412,
+          "extension": ".svg"
+        },
+        {
+          "path": "docs/Figma/Figma svg/Maior parte/escopo.svg",
+          "name": "escopo.svg",
+          "size": 9863867,
+          "extension": ".svg"
+        },
+        {
+          "path": "docs/Figma/Figma svg/Maior parte/persona.svg",
+          "name": "persona.svg",
+          "size": 9678117,
+          "extension": ".svg"
+        }
+      ]
+    },
+    {
+      "language": "PDF",
+      "file_count": 1,
+      "total_bytes": 6350874,
+      "percentage": 2.39,
+      "files": [
+        {
+          "path": "docs/Figma/Figma svg/Informacoes gerais do projeto/infogeral.pdf",
+          "name": "infogeral.pdf",
+          "size": 6350874,
+          "extension": ".pdf"
+        }
+      ]
+    },
+    {
+      "language": "PNG Image",
+      "file_count": 8,
+      "total_bytes": 1556150,
+      "percentage": 0.59,
+      "files": [
+        {
+          "path": "frontend/Specs/Specs_pg_inicial/imagens/pagina_inicial_com_menu.png",
+          "name": "pagina_inicial_com_menu.png",
+          "size": 290257,
+          "extension": ".png"
+        },
+        {
+          "path": "frontend/Specs/Specs_pg_inicial/imagens/pagina_inicial_parte2.png",
+          "name": "pagina_inicial_parte2.png",
+          "size": 278223,
+          "extension": ".png"
+        },
+        {
+          "path": "frontend/Specs/Specs_pg_inicial/imagens/pagina_inicial_parte1.png",
+          "name": "pagina_inicial_parte1.png",
+          "size": 209930,
+          "extension": ".png"
+        },
+        {
+          "path": "docs/imagens/logo-nome.png",
+          "name": "logo-nome.png",
+          "size": 188130,
+          "extension": ".png"
+        },
+        {
+          "path": "frontend/Specs/Specs_pg_inicial/imagens/logo-original.png",
+          "name": "logo-original.png",
+          "size": 188130,
+          "extension": ".png"
+        },
+        {
+          "path": "frontend/public/logo-original.png",
+          "name": "logo-original.png",
+          "size": 188130,
+          "extension": ".png"
+        },
+        {
+          "path": "docs/imagens/logo-escudo.PNG",
+          "name": "logo-escudo.PNG",
+          "size": 106675,
+          "extension": ".PNG"
+        },
+        {
+          "path": "frontend/public/logo-escudo.png",
+          "name": "logo-escudo.png",
+          "size": 106675,
+          "extension": ".png"
+        }
+      ]
+    },
+    {
+      "language": "JPEG Image",
+      "file_count": 6,
+      "total_bytes": 1003918,
+      "percentage": 0.38,
+      "files": [
+        {
+          "path": "docs/imagens/foto-edson.jpeg",
+          "name": "foto-edson.jpeg",
+          "size": 397982,
+          "extension": ".jpeg"
+        },
+        {
+          "path": "docs/imagens/foto-jorge.jpeg",
+          "name": "foto-jorge.jpeg",
+          "size": 243631,
+          "extension": ".jpeg"
+        },
+        {
+          "path": "docs/imagens/foto-arthur.jpeg",
+          "name": "foto-arthur.jpeg",
+          "size": 155677,
+          "extension": ".jpeg"
+        },
+        {
+          "path": "docs/imagens/foto-israel.jpeg",
+          "name": "foto-israel.jpeg",
+          "size": 144714,
+          "extension": ".jpeg"
+        },
+        {
+          "path": "docs/imagens/foto-queiroz.jpeg",
+          "name": "foto-queiroz.jpeg",
+          "size": 55424,
+          "extension": ".jpeg"
+        },
+        {
+          "path": "docs/imagens/nicolas foto.jpg",
+          "name": "nicolas foto.jpg",
+          "size": 6490,
+          "extension": ".jpg"
+        }
+      ]
+    },
+    {
+      "language": "Markdown",
+      "file_count": 106,
+      "total_bytes": 492050,
+      "percentage": 0.19,
+      "files": [
+        {
+          "path": "docs/Estudos/analise-de-linguagens.md",
+          "name": "analise-de-linguagens.md",
+          "size": 28408,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/Requisitos/requisitos.md",
+          "name": "requisitos.md",
+          "size": 19956,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/Arquitetura/Specs_banco_de_dados/plan.md",
+          "name": "plan.md",
+          "size": 16655,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/Arquitetura/analise-compatibilidade.md",
+          "name": "analise-compatibilidade.md",
+          "size": 12676,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/Arquitetura/RSS-Integration.md",
+          "name": "RSS-Integration.md",
+          "size": 11649,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/Implementacao/IMPLEMENTATION-CHECKLIST.md",
+          "name": "IMPLEMENTATION-CHECKLIST.md",
+          "size": 10882,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/Estudos/estudo-de-API.md",
+          "name": "estudo-de-API.md",
+          "size": 10157,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/Arquitetura/definir-fluxo-de-dados.md",
+          "name": "definir-fluxo-de-dados.md",
+          "size": 10022,
+          "extension": ".md"
+        },
+        {
+          "path": "frontend/Specs/Specs_pg_inicial/plan.md",
+          "name": "plan.md",
+          "size": 9688,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/Arquitetura/CONTEXT.md",
+          "name": "CONTEXT.md",
+          "size": 9590,
+          "extension": ".md"
+        }
+      ]
+    },
+    {
+      "language": "JSON",
+      "file_count": 5,
+      "total_bytes": 384303,
+      "percentage": 0.14,
+      "files": [
+        {
+          "path": "frontend/package-lock.json",
+          "name": "package-lock.json",
+          "size": 372768,
+          "extension": ".json"
+        },
+        {
+          "path": "docs/productivity/metrics.json",
+          "name": "metrics.json",
+          "size": 9893,
+          "extension": ".json"
+        },
+        {
+          "path": "frontend/package.json",
+          "name": "package.json",
+          "size": 903,
+          "extension": ".json"
+        },
+        {
+          "path": "frontend/tsconfig.json",
+          "name": "tsconfig.json",
+          "size": 666,
+          "extension": ".json"
+        },
+        {
+          "path": "frontend/.eslintrc.json",
+          "name": ".eslintrc.json",
+          "size": 73,
+          "extension": ".json"
+        }
+      ]
+    },
+    {
+      "language": "Python",
+      "file_count": 46,
+      "total_bytes": 128875,
+      "percentage": 0.05,
+      "files": [
+        {
+          "path": "backend/app/services/ingestao.py",
+          "name": "ingestao.py",
+          "size": 15088,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/tests/test_ingestao.py",
+          "name": "test_ingestao.py",
+          "size": 11449,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/tests/test_ocorrencia_repository.py",
+          "name": "test_ocorrencia_repository.py",
+          "size": 6147,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/alembic/versions/001_initial_schema.py",
+          "name": "001_initial_schema.py",
+          "size": 6082,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/.claude/skills/run-ingestao/driver.py",
+          "name": "driver.py",
+          "size": 5812,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/tests/test_gemini.py",
+          "name": "test_gemini.py",
+          "size": 5470,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/.claude/skills/run-endpoints/driver.py",
+          "name": "driver.py",
+          "size": 4975,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/app/integrations/correio_rss.py",
+          "name": "correio_rss.py",
+          "size": 4918,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/.claude/skills/run-nominatim-gemini/driver.py",
+          "name": "driver.py",
+          "size": 4891,
+          "extension": ".py"
+        },
+        {
+          "path": "docs/productivity/collect_metrics.py",
+          "name": "collect_metrics.py",
+          "size": 4812,
+          "extension": ".py"
+        }
+      ]
+    },
+    {
+      "language": "TypeScript",
+      "file_count": 53,
+      "total_bytes": 119938,
+      "percentage": 0.05,
+      "files": [
+        {
+          "path": "frontend/__tests__/components/PainelFiltros.test.tsx",
+          "name": "PainelFiltros.test.tsx",
+          "size": 8227,
+          "extension": ".tsx"
+        },
+        {
+          "path": "frontend/__tests__/fixtures/noticias.ts",
+          "name": "noticias.ts",
+          "size": 6063,
+          "extension": ".ts"
+        },
+        {
+          "path": "frontend/__tests__/utils/filtros.test.ts",
+          "name": "filtros.test.ts",
+          "size": 5666,
+          "extension": ".ts"
+        },
+        {
+          "path": "frontend/components/PainelFiltros/PainelFiltros.tsx",
+          "name": "PainelFiltros.tsx",
+          "size": 5463,
+          "extension": ".tsx"
+        },
+        {
+          "path": "frontend/__tests__/components/Drawer.test.tsx",
+          "name": "Drawer.test.tsx",
+          "size": 5114,
+          "extension": ".tsx"
+        },
+        {
+          "path": "frontend/__tests__/components/MapaInterativo.test.tsx",
+          "name": "MapaInterativo.test.tsx",
+          "size": 5037,
+          "extension": ".tsx"
+        },
+        {
+          "path": "frontend/components/icons/index.tsx",
+          "name": "index.tsx",
+          "size": 4264,
+          "extension": ".tsx"
+        },
+        {
+          "path": "frontend/__tests__/components/Chrome.test.tsx",
+          "name": "Chrome.test.tsx",
+          "size": 4197,
+          "extension": ".tsx"
+        },
+        {
+          "path": "frontend/__tests__/components/NewsCard.test.tsx",
+          "name": "NewsCard.test.tsx",
+          "size": 4141,
+          "extension": ".tsx"
+        },
+        {
+          "path": "frontend/__tests__/utils/noticias.test.ts",
+          "name": "noticias.test.ts",
+          "size": 4070,
+          "extension": ".ts"
+        }
+      ]
+    },
+    {
+      "language": "HTML",
+      "file_count": 1,
+      "total_bytes": 16261,
+      "percentage": 0.01,
+      "files": [
+        {
+          "path": "docs/productivity/index.html",
+          "name": "index.html",
+          "size": 16261,
+          "extension": ".html"
+        }
+      ]
+    },
+    {
+      "language": "CSS",
+      "file_count": 17,
+      "total_bytes": 18165,
+      "percentage": 0.01,
+      "files": [
+        {
+          "path": "frontend/view/NoticiaDetalhe/NoticiaDetalhe.module.css",
+          "name": "NoticiaDetalhe.module.css",
+          "size": 2504,
+          "extension": ".css"
+        },
+        {
+          "path": "frontend/components/PainelFiltros/PainelFiltros.module.css",
+          "name": "PainelFiltros.module.css",
+          "size": 2397,
+          "extension": ".css"
+        },
+        {
+          "path": "frontend/components/Drawer/Drawer.module.css",
+          "name": "Drawer.module.css",
+          "size": 2126,
+          "extension": ".css"
+        },
+        {
+          "path": "frontend/components/DetalhesOcorrencia/DetalhesOcorrencia.module.css",
+          "name": "DetalhesOcorrencia.module.css",
+          "size": 2037,
+          "extension": ".css"
+        },
+        {
+          "path": "frontend/style/globals.css",
+          "name": "globals.css",
+          "size": 1797,
+          "extension": ".css"
+        },
+        {
+          "path": "frontend/components/NewsCard/NewsCard.module.css",
+          "name": "NewsCard.module.css",
+          "size": 1570,
+          "extension": ".css"
+        },
+        {
+          "path": "frontend/components/Header/Header.module.css",
+          "name": "Header.module.css",
+          "size": 1524,
+          "extension": ".css"
+        },
+        {
+          "path": "frontend/components/CardResumo/CardResumo.module.css",
+          "name": "CardResumo.module.css",
+          "size": 1333,
+          "extension": ".css"
+        },
+        {
+          "path": "frontend/components/Hero/Hero.module.css",
+          "name": "Hero.module.css",
+          "size": 737,
+          "extension": ".css"
+        },
+        {
+          "path": "frontend/components/NewsFeed/NewsFeed.module.css",
+          "name": "NewsFeed.module.css",
+          "size": 725,
+          "extension": ".css"
+        }
+      ]
+    },
+    {
+      "language": "YAML",
+      "file_count": 5,
+      "total_bytes": 6657,
+      "percentage": 0.0,
+      "files": [
+        {
+          "path": "backend/docker-compose.yml",
+          "name": "docker-compose.yml",
+          "size": 2061,
+          "extension": ".yml"
+        },
+        {
+          "path": "mkdocs.yml",
+          "name": "mkdocs.yml",
+          "size": 1622,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/metrics.yml",
+          "name": "metrics.yml",
+          "size": 1108,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/docs.yml",
+          "name": "docs.yml",
+          "size": 963,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/ingest-cron.yml",
+          "name": "ingest-cron.yml",
+          "size": 903,
+          "extension": ".yml"
+        }
+      ]
+    },
+    {
+      "language": "No Extension",
+      "file_count": 5,
+      "total_bytes": 5101,
+      "percentage": 0.0,
+      "files": [
+        {
+          "path": "docs/Estudos/estudo-de-agentes-de-IA",
+          "name": "estudo-de-agentes-de-IA",
+          "size": 3167,
+          "extension": ""
+        },
+        {
+          "path": "LICENSE",
+          "name": "LICENSE",
+          "size": 1060,
+          "extension": ""
+        },
+        {
+          "path": "backend/Dockerfile",
+          "name": "Dockerfile",
+          "size": 712,
+          "extension": ""
+        },
+        {
+          "path": "frontend/Dockerfile",
+          "name": "Dockerfile",
+          "size": 124,
+          "extension": ""
+        },
+        {
+          "path": "backend/alembic/README",
+          "name": "README",
+          "size": 38,
+          "extension": ""
+        }
+      ]
+    },
+    {
+      "language": "Git Ignore",
+      "file_count": 6,
+      "total_bytes": 408,
+      "percentage": 0.0,
+      "files": [
+        {
+          "path": "frontend/.gitignore",
+          "name": ".gitignore",
+          "size": 370,
+          "extension": ".gitignore"
+        },
+        {
+          "path": "backend/.gitignore",
+          "name": ".gitignore",
+          "size": 38,
+          "extension": ".gitignore"
+        },
+        {
+          "path": "backend/app/integrations/.gitignore",
+          "name": ".gitignore",
+          "size": 0,
+          "extension": ".gitignore"
+        },
+        {
+          "path": "backend/app/repositories/.gitignore",
+          "name": ".gitignore",
+          "size": 0,
+          "extension": ".gitignore"
+        },
+        {
+          "path": "backend/app/schemas/.gitignore",
+          "name": ".gitignore",
+          "size": 0,
+          "extension": ".gitignore"
+        },
+        {
+          "path": "backend/app/services/.gitignore",
+          "name": ".gitignore",
+          "size": 0,
+          "extension": ".gitignore"
+        }
+      ]
+    },
+    {
+      "language": "INI",
+      "file_count": 1,
+      "total_bytes": 5008,
+      "percentage": 0.0,
+      "files": [
+        {
+          "path": "backend/alembic.ini",
+          "name": "alembic.ini",
+          "size": 5008,
+          "extension": ".ini"
+        }
+      ]
+    },
+    {
+      "language": "Unknown",
+      "file_count": 3,
+      "total_bytes": 855,
+      "percentage": 0.0,
+      "files": [
+        {
+          "path": "backend/alembic/script.py.mako",
+          "name": "script.py.mako",
+          "size": 704,
+          "extension": ".mako"
+        },
+        {
+          "path": "frontend/.env.example",
+          "name": ".env.example",
+          "size": 150,
+          "extension": ".example"
+        },
+        {
+          "path": "docs/imagens/.gitkeep",
+          "name": ".gitkeep",
+          "size": 1,
+          "extension": ".gitkeep"
+        }
+      ]
+    },
+    {
+      "language": "Text",
+      "file_count": 1,
+      "total_bytes": 201,
+      "percentage": 0.0,
+      "files": [
+        {
+          "path": "backend/requirements.txt",
+          "name": "requirements.txt",
+          "size": 201,
+          "extension": ".txt"
+        }
+      ]
+    },
+    {
+      "language": "TOML",
+      "file_count": 1,
+      "total_bytes": 595,
+      "percentage": 0.0,
+      "files": [
+        {
+          "path": "backend/ruff.toml",
+          "name": "ruff.toml",
+          "size": 595,
+          "extension": ".toml"
+        }
+      ]
+    }
+  ],
+  "_metadata": {
+    "extracted_at": "2026-09-17T04:04:44.667661",
+    "file_path": "data/silver/language_analysis_2026-1-SafeStreets.json"
+  }
+}

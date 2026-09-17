@@ -1,0 +1,274 @@
+{
+  "repository": "2026-2-AgendaUnB",
+  "owner": "unb-mds",
+  "branch": "main",
+  "extracted_at": "2026-09-17T04:04:00.271858",
+  "hierarchy": {
+    "name": "root",
+    "type": "directory",
+    "children": [
+      {
+        "name": ".env.example",
+        "type": "file",
+        "language": "Unknown",
+        "size": 164,
+        "extension": ".example",
+        "path": ".env.example"
+      },
+      {
+        "name": ".gitattributes",
+        "type": "file",
+        "language": "Unknown",
+        "size": 89,
+        "extension": ".gitattributes",
+        "path": ".gitattributes"
+      },
+      {
+        "name": ".github",
+        "type": "directory",
+        "path": ".github",
+        "children": []
+      },
+      {
+        "name": "workflows",
+        "type": "directory",
+        "path": ".github/workflows",
+        "children": []
+      },
+      {
+        "name": "docs.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 1000,
+        "extension": ".yml",
+        "path": ".github/workflows/docs.yml"
+      },
+      {
+        "name": ".gitignore",
+        "type": "file",
+        "language": "Git Ignore",
+        "size": 290,
+        "extension": ".gitignore",
+        "path": ".gitignore"
+      },
+      {
+        "name": ".vscode",
+        "type": "directory",
+        "path": ".vscode",
+        "children": []
+      },
+      {
+        "name": "settings.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 38,
+        "extension": ".json",
+        "path": ".vscode/settings.json"
+      },
+      {
+        "name": "AI-USAGE.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 5334,
+        "extension": ".md",
+        "path": "AI-USAGE.md"
+      },
+      {
+        "name": "README.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3107,
+        "extension": ".md",
+        "path": "README.md"
+      },
+      {
+        "name": "docs",
+        "type": "directory",
+        "path": "docs",
+        "children": []
+      },
+      {
+        "name": "Architecture.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 263,
+        "extension": ".md",
+        "path": "docs/Architecture.md"
+      },
+      {
+        "name": "CONTRIBUTING.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2303,
+        "extension": ".md",
+        "path": "docs/CONTRIBUTING.md"
+      },
+      {
+        "name": "documento-de-visao.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 7900,
+        "extension": ".md",
+        "path": "docs/documento-de-visao.md"
+      },
+      {
+        "name": "index.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 4774,
+        "extension": ".md",
+        "path": "docs/index.md"
+      },
+      {
+        "name": "padroes.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 8769,
+        "extension": ".md",
+        "path": "docs/padroes.md"
+      },
+      {
+        "name": "requisitos.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 7652,
+        "extension": ".md",
+        "path": "docs/requisitos.md"
+      },
+      {
+        "name": "sprints",
+        "type": "directory",
+        "path": "docs/sprints",
+        "children": []
+      },
+      {
+        "name": "sprint-0.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1788,
+        "extension": ".md",
+        "path": "docs/sprints/sprint-0.md"
+      },
+      {
+        "name": "sprint-1.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1588,
+        "extension": ".md",
+        "path": "docs/sprints/sprint-1.md"
+      },
+      {
+        "name": "index.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 739,
+        "extension": ".html",
+        "path": "index.html"
+      },
+      {
+        "name": "mkdocs.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 1638,
+        "extension": ".yml",
+        "path": "mkdocs.yml"
+      },
+      {
+        "name": "package-lock.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 56865,
+        "extension": ".json",
+        "path": "package-lock.json"
+      },
+      {
+        "name": "package.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 412,
+        "extension": ".json",
+        "path": "package.json"
+      },
+      {
+        "name": "padrao.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 8769,
+        "extension": ".md",
+        "path": "padrao.md"
+      },
+      {
+        "name": "public",
+        "type": "directory",
+        "path": "public",
+        "children": []
+      },
+      {
+        "name": "Marca-UnB.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 3942,
+        "extension": ".png",
+        "path": "public/Marca-UnB.png"
+      },
+      {
+        "name": "shaderopt-dark.webm",
+        "type": "file",
+        "language": "WebM Video",
+        "size": 1027916,
+        "extension": ".webm",
+        "path": "public/shaderopt-dark.webm"
+      },
+      {
+        "name": "shaderopt-light.webm",
+        "type": "file",
+        "language": "WebM Video",
+        "size": 2626756,
+        "extension": ".webm",
+        "path": "public/shaderopt-light.webm"
+      },
+      {
+        "name": "requisitos.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 7652,
+        "extension": ".md",
+        "path": "requisitos.md"
+      },
+      {
+        "name": "src",
+        "type": "directory",
+        "path": "src",
+        "children": []
+      },
+      {
+        "name": "App.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 36072,
+        "extension": ".jsx",
+        "path": "src/App.jsx"
+      },
+      {
+        "name": "main.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 135,
+        "extension": ".jsx",
+        "path": "src/main.jsx"
+      },
+      {
+        "name": "vite.config.js",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 134,
+        "extension": ".js",
+        "path": "vite.config.js"
+      }
+    ]
+  },
+  "_metadata": {
+    "extracted_at": "2026-09-17T04:04:43.672243",
+    "file_path": "data/silver/hierarchy_2026-2-AgendaUnB.json"
+  }
+}

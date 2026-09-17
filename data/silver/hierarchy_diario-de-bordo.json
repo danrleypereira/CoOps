@@ -1,0 +1,174 @@
+{
+  "repository": "diario-de-bordo",
+  "owner": "unb-mds",
+  "branch": "main",
+  "extracted_at": "2026-09-17T04:04:03.051538",
+  "hierarchy": {
+    "name": "root",
+    "type": "directory",
+    "children": [
+      {
+        "name": ".gitignore",
+        "type": "file",
+        "language": "Git Ignore",
+        "size": 90,
+        "extension": ".gitignore",
+        "path": ".gitignore"
+      },
+      {
+        "name": ".nojekyll",
+        "type": "file",
+        "language": "Unknown",
+        "size": 0,
+        "extension": ".nojekyll",
+        "path": ".nojekyll"
+      },
+      {
+        "name": "README.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2202,
+        "extension": ".md",
+        "path": "README.md"
+      },
+      {
+        "name": "_coverpage.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 276,
+        "extension": ".md",
+        "path": "_coverpage.md"
+      },
+      {
+        "name": "_sidebar.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 600,
+        "extension": ".md",
+        "path": "_sidebar.md"
+      },
+      {
+        "name": "blog",
+        "type": "directory",
+        "path": "blog",
+        "children": []
+      },
+      {
+        "name": "2027-03-10-formacao-de-equipe-exemplo.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1456,
+        "extension": ".md",
+        "path": "blog/2027-03-10-formacao-de-equipe-exemplo.md"
+      },
+      {
+        "name": "_TEMPLATE.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1358,
+        "extension": ".md",
+        "path": "blog/_TEMPLATE.md"
+      },
+      {
+        "name": "data",
+        "type": "directory",
+        "path": "data",
+        "children": []
+      },
+      {
+        "name": "perguntas.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 5425,
+        "extension": ".json",
+        "path": "data/perguntas.json"
+      },
+      {
+        "name": "docs",
+        "type": "directory",
+        "path": "docs",
+        "children": []
+      },
+      {
+        "name": "avaliacao.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2342,
+        "extension": ".md",
+        "path": "docs/avaliacao.md"
+      },
+      {
+        "name": "como-escrever-o-meu-diario.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2845,
+        "extension": ".md",
+        "path": "docs/como-escrever-o-meu-diario.md"
+      },
+      {
+        "name": "como-usar.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2892,
+        "extension": ".md",
+        "path": "docs/como-usar.md"
+      },
+      {
+        "name": "github-pages.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3145,
+        "extension": ".md",
+        "path": "docs/github-pages.md"
+      },
+      {
+        "name": "perguntas.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2280,
+        "extension": ".md",
+        "path": "docs/perguntas.md"
+      },
+      {
+        "name": "img",
+        "type": "directory",
+        "path": "img",
+        "children": []
+      },
+      {
+        "name": "logo.svg",
+        "type": "file",
+        "language": "SVG Image",
+        "size": 1000,
+        "extension": ".svg",
+        "path": "img/logo.svg"
+      },
+      {
+        "name": "index.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 4652,
+        "extension": ".html",
+        "path": "index.html"
+      },
+      {
+        "name": "scripts",
+        "type": "directory",
+        "path": "scripts",
+        "children": []
+      },
+      {
+        "name": "export-entries.py",
+        "type": "file",
+        "language": "Python",
+        "size": 5873,
+        "extension": ".py",
+        "path": "scripts/export-entries.py"
+      }
+    ]
+  },
+  "_metadata": {
+    "extracted_at": "2026-09-17T04:04:44.797881",
+    "file_path": "data/silver/hierarchy_diario-de-bordo.json"
+  }
+}

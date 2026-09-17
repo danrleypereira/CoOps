@@ -1,0 +1,540 @@
+{
+  "repository": "2026-1-ProtectKids",
+  "owner": "unb-mds",
+  "branch": "main",
+  "analyzed_at": "2026-09-17T04:03:55.610402",
+  "sample_config": {
+    "max_files_per_language": 10,
+    "strategy": "largest"
+  },
+  "total_files": 117,
+  "total_bytes": 22611948,
+  "languages": [
+    {
+      "language": "SVG Image",
+      "file_count": 2,
+      "total_bytes": 17922635,
+      "percentage": 79.26,
+      "files": [
+        {
+          "path": "Protect Kids.svg",
+          "name": "Protect Kids.svg",
+          "size": 17922269,
+          "extension": ".svg"
+        },
+        {
+          "path": "frontend/public/favicon.svg",
+          "name": "favicon.svg",
+          "size": 366,
+          "extension": ".svg"
+        }
+      ]
+    },
+    {
+      "language": "PNG Image",
+      "file_count": 14,
+      "total_bytes": 4089903,
+      "percentage": 18.09,
+      "files": [
+        {
+          "path": "frontend/public/images/hero-protectkids.png",
+          "name": "hero-protectkids.png",
+          "size": 2766553,
+          "extension": ".png"
+        },
+        {
+          "path": "frontend/figma/frame_inicio.png",
+          "name": "frame_inicio.png",
+          "size": 224927,
+          "extension": ".png"
+        },
+        {
+          "path": "docs/assets/images/c4_container_nivel_3.drawio.png",
+          "name": "c4_container_nivel_3.drawio.png",
+          "size": 189629,
+          "extension": ".png"
+        },
+        {
+          "path": "docs/assets/images/C4_container_nivel_2.drawio.png",
+          "name": "C4_container_nivel_2.drawio.png",
+          "size": 158926,
+          "extension": ".png"
+        },
+        {
+          "path": "docs/assets/images/c4_container.png",
+          "name": "c4_container.png",
+          "size": 135445,
+          "extension": ".png"
+        },
+        {
+          "path": "docs/assets/images/c4_container_nivel_1.png",
+          "name": "c4_container_nivel_1.png",
+          "size": 118941,
+          "extension": ".png"
+        },
+        {
+          "path": "frontend/figma/frame_sobre_o_projeto.png",
+          "name": "frame_sobre_o_projeto.png",
+          "size": 98790,
+          "extension": ".png"
+        },
+        {
+          "path": "frontend/figma/frame_todas_as_leis.png",
+          "name": "frame_todas_as_leis.png",
+          "size": 76314,
+          "extension": ".png"
+        },
+        {
+          "path": "docs/assets/storymap/storyMap-3.png",
+          "name": "storyMap-3.png",
+          "size": 71287,
+          "extension": ".png"
+        },
+        {
+          "path": "frontend/figma/frame_todas_as_leis-filtrodebusca.png",
+          "name": "frame_todas_as_leis-filtrodebusca.png",
+          "size": 68446,
+          "extension": ".png"
+        }
+      ]
+    },
+    {
+      "language": "Markdown",
+      "file_count": 32,
+      "total_bytes": 191136,
+      "percentage": 0.85,
+      "files": [
+        {
+          "path": "docs/requisitos.md",
+          "name": "requisitos.md",
+          "size": 20271,
+          "extension": ".md"
+        },
+        {
+          "path": "estudos_iniciais/estudos/requisitos/requisitos.md",
+          "name": "requisitos.md",
+          "size": 13253,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/infra/docker-compose.md",
+          "name": "docker-compose.md",
+          "size": 12914,
+          "extension": ".md"
+        },
+        {
+          "path": "api_contrato.md",
+          "name": "api_contrato.md",
+          "size": 11424,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/sprints/sprint_10.md",
+          "name": "sprint_10.md",
+          "size": 10427,
+          "extension": ".md"
+        },
+        {
+          "path": "scripts/claude.md",
+          "name": "claude.md",
+          "size": 9971,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/sprints/sprint_09.md",
+          "name": "sprint_09.md",
+          "size": 9774,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/sprints/sprint_06.md",
+          "name": "sprint_06.md",
+          "size": 9291,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/sprints/sprint_08.md",
+          "name": "sprint_08.md",
+          "size": 8239,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/estudos/testes/estrategia_testes.md",
+          "name": "estrategia_testes.md",
+          "size": 7643,
+          "extension": ".md"
+        }
+      ]
+    },
+    {
+      "language": "JSON",
+      "file_count": 4,
+      "total_bytes": 153789,
+      "percentage": 0.68,
+      "files": [
+        {
+          "path": "frontend/package-lock.json",
+          "name": "package-lock.json",
+          "size": 115211,
+          "extension": ".json"
+        },
+        {
+          "path": "docs/dashboard/data.json",
+          "name": "data.json",
+          "size": 37369,
+          "extension": ".json"
+        },
+        {
+          "path": "frontend/package.json",
+          "name": "package.json",
+          "size": 1112,
+          "extension": ".json"
+        },
+        {
+          "path": "package-lock.json",
+          "name": "package-lock.json",
+          "size": 97,
+          "extension": ".json"
+        }
+      ]
+    },
+    {
+      "language": "Python",
+      "file_count": 19,
+      "total_bytes": 129408,
+      "percentage": 0.57,
+      "files": [
+        {
+          "path": "backend/crawler/camara_api.py",
+          "name": "camara_api.py",
+          "size": 34082,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/main.py",
+          "name": "main.py",
+          "size": 19018,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/crawler/tramitacoes_senado_api.py",
+          "name": "tramitacoes_senado_api.py",
+          "size": 15877,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/crawler/senado_api.py",
+          "name": "senado_api.py",
+          "size": 11295,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/crawler/tramitacoes_api.py",
+          "name": "tramitacoes_api.py",
+          "size": 7857,
+          "extension": ".py"
+        },
+        {
+          "path": "scripts/coletor_metricas.py",
+          "name": "coletor_metricas.py",
+          "size": 7793,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/tests/test_analytics.py",
+          "name": "test_analytics.py",
+          "size": 5962,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/tests/test_models_unit.py",
+          "name": "test_models_unit.py",
+          "size": 4025,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/tests/test_main.py",
+          "name": "test_main.py",
+          "size": 3701,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/tests/conftest.py",
+          "name": "conftest.py",
+          "size": 3183,
+          "extension": ".py"
+        }
+      ]
+    },
+    {
+      "language": "JavaScript",
+      "file_count": 25,
+      "total_bytes": 99082,
+      "percentage": 0.44,
+      "files": [
+        {
+          "path": "frontend/src/pages/Inicio.jsx",
+          "name": "Inicio.jsx",
+          "size": 16357,
+          "extension": ".jsx"
+        },
+        {
+          "path": "frontend/src/constants/categoriasNlp.js",
+          "name": "categoriasNlp.js",
+          "size": 13218,
+          "extension": ".js"
+        },
+        {
+          "path": "frontend/src/pages/Estatisticas.jsx",
+          "name": "Estatisticas.jsx",
+          "size": 12056,
+          "extension": ".jsx"
+        },
+        {
+          "path": "frontend/src/pages/DetalhesLei.jsx",
+          "name": "DetalhesLei.jsx",
+          "size": 11157,
+          "extension": ".jsx"
+        },
+        {
+          "path": "frontend/src/pages/TodasAsLeis.jsx",
+          "name": "TodasAsLeis.jsx",
+          "size": 9660,
+          "extension": ".jsx"
+        },
+        {
+          "path": "frontend/src/pages/DetalhesSubtema.jsx",
+          "name": "DetalhesSubtema.jsx",
+          "size": 8916,
+          "extension": ".jsx"
+        },
+        {
+          "path": "frontend/src/components/Footer.jsx",
+          "name": "Footer.jsx",
+          "size": 4514,
+          "extension": ".jsx"
+        },
+        {
+          "path": "frontend/src/pages/Sobre.jsx",
+          "name": "Sobre.jsx",
+          "size": 4357,
+          "extension": ".jsx"
+        },
+        {
+          "path": "frontend/src/constants/analytics.js",
+          "name": "analytics.js",
+          "size": 2172,
+          "extension": ".js"
+        },
+        {
+          "path": "frontend/src/api.js",
+          "name": "api.js",
+          "size": 2067,
+          "extension": ".js"
+        }
+      ]
+    },
+    {
+      "language": "YAML",
+      "file_count": 7,
+      "total_bytes": 8419,
+      "percentage": 0.04,
+      "files": [
+        {
+          "path": ".github/workflows/ci.yml",
+          "name": "ci.yml",
+          "size": 1861,
+          "extension": ".yml"
+        },
+        {
+          "path": "mkdocs.yml",
+          "name": "mkdocs.yml",
+          "size": 1505,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/docker-build.yml",
+          "name": "docker-build.yml",
+          "size": 1223,
+          "extension": ".yml"
+        },
+        {
+          "path": "docker-compose.yml",
+          "name": "docker-compose.yml",
+          "size": 1085,
+          "extension": ".yml"
+        },
+        {
+          "path": "docker-compose.prod.yml",
+          "name": "docker-compose.prod.yml",
+          "size": 999,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/etl-tramitacoes.yml",
+          "name": "etl-tramitacoes.yml",
+          "size": 881,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/metricas_e_docs.yml",
+          "name": "metricas_e_docs.yml",
+          "size": 865,
+          "extension": ".yml"
+        }
+      ]
+    },
+    {
+      "language": "HTML",
+      "file_count": 2,
+      "total_bytes": 9546,
+      "percentage": 0.04,
+      "files": [
+        {
+          "path": "docs/dashboard/index.html",
+          "name": "index.html",
+          "size": 8964,
+          "extension": ".html"
+        },
+        {
+          "path": "frontend/index.html",
+          "name": "index.html",
+          "size": 582,
+          "extension": ".html"
+        }
+      ]
+    },
+    {
+      "language": "CSS",
+      "file_count": 2,
+      "total_bytes": 3946,
+      "percentage": 0.02,
+      "files": [
+        {
+          "path": "docs/stylesheets/extra.css",
+          "name": "extra.css",
+          "size": 3819,
+          "extension": ".css"
+        },
+        {
+          "path": "frontend/src/index.css",
+          "name": "index.css",
+          "size": 127,
+          "extension": ".css"
+        }
+      ]
+    },
+    {
+      "language": "No Extension",
+      "file_count": 3,
+      "total_bytes": 1806,
+      "percentage": 0.01,
+      "files": [
+        {
+          "path": "LICENSE",
+          "name": "LICENSE",
+          "size": 1060,
+          "extension": ""
+        },
+        {
+          "path": "backend/Dockerfile",
+          "name": "Dockerfile",
+          "size": 531,
+          "extension": ""
+        },
+        {
+          "path": "frontend/Dockerfile",
+          "name": "Dockerfile",
+          "size": 215,
+          "extension": ""
+        }
+      ]
+    },
+    {
+      "language": "Unknown",
+      "file_count": 2,
+      "total_bytes": 595,
+      "percentage": 0.0,
+      "files": [
+        {
+          "path": "frontend/Dockerfile.prod",
+          "name": "Dockerfile.prod",
+          "size": 345,
+          "extension": ".prod"
+        },
+        {
+          "path": ".env.example",
+          "name": ".env.example",
+          "size": 250,
+          "extension": ".example"
+        }
+      ]
+    },
+    {
+      "language": "Git Ignore",
+      "file_count": 2,
+      "total_bytes": 927,
+      "percentage": 0.0,
+      "files": [
+        {
+          "path": ".gitignore",
+          "name": ".gitignore",
+          "size": 697,
+          "extension": ".gitignore"
+        },
+        {
+          "path": "frontend/.gitignore",
+          "name": ".gitignore",
+          "size": 230,
+          "extension": ".gitignore"
+        }
+      ]
+    },
+    {
+      "language": "Text",
+      "file_count": 1,
+      "total_bytes": 331,
+      "percentage": 0.0,
+      "files": [
+        {
+          "path": "backend/requirements.txt",
+          "name": "requirements.txt",
+          "size": 331,
+          "extension": ".txt"
+        }
+      ]
+    },
+    {
+      "language": "Docker Ignore",
+      "file_count": 1,
+      "total_bytes": 80,
+      "percentage": 0.0,
+      "files": [
+        {
+          "path": "frontend/.dockerignore",
+          "name": ".dockerignore",
+          "size": 80,
+          "extension": ".dockerignore"
+        }
+      ]
+    },
+    {
+      "language": "Config",
+      "file_count": 1,
+      "total_bytes": 345,
+      "percentage": 0.0,
+      "files": [
+        {
+          "path": "frontend/nginx.conf",
+          "name": "nginx.conf",
+          "size": 345,
+          "extension": ".conf"
+        }
+      ]
+    }
+  ],
+  "_metadata": {
+    "extracted_at": "2026-09-17T04:04:44.672603",
+    "file_path": "data/silver/language_analysis_2026-1-ProtectKids.json"
+  }
+}

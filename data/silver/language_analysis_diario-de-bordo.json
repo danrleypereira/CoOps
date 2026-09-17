@@ -1,0 +1,170 @@
+{
+  "repository": "diario-de-bordo",
+  "owner": "unb-mds",
+  "branch": "main",
+  "analyzed_at": "2026-09-17T04:04:03.051538",
+  "sample_config": {
+    "max_files_per_language": 10,
+    "strategy": "largest"
+  },
+  "total_files": 16,
+  "total_bytes": 36436,
+  "languages": [
+    {
+      "language": "Markdown",
+      "file_count": 10,
+      "total_bytes": 19396,
+      "percentage": 53.23,
+      "files": [
+        {
+          "path": "docs/github-pages.md",
+          "name": "github-pages.md",
+          "size": 3145,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/como-usar.md",
+          "name": "como-usar.md",
+          "size": 2892,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/como-escrever-o-meu-diario.md",
+          "name": "como-escrever-o-meu-diario.md",
+          "size": 2845,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/avaliacao.md",
+          "name": "avaliacao.md",
+          "size": 2342,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/perguntas.md",
+          "name": "perguntas.md",
+          "size": 2280,
+          "extension": ".md"
+        },
+        {
+          "path": "README.md",
+          "name": "README.md",
+          "size": 2202,
+          "extension": ".md"
+        },
+        {
+          "path": "blog/2027-03-10-formacao-de-equipe-exemplo.md",
+          "name": "2027-03-10-formacao-de-equipe-exemplo.md",
+          "size": 1456,
+          "extension": ".md"
+        },
+        {
+          "path": "blog/_TEMPLATE.md",
+          "name": "_TEMPLATE.md",
+          "size": 1358,
+          "extension": ".md"
+        },
+        {
+          "path": "_sidebar.md",
+          "name": "_sidebar.md",
+          "size": 600,
+          "extension": ".md"
+        },
+        {
+          "path": "_coverpage.md",
+          "name": "_coverpage.md",
+          "size": 276,
+          "extension": ".md"
+        }
+      ]
+    },
+    {
+      "language": "Python",
+      "file_count": 1,
+      "total_bytes": 5873,
+      "percentage": 16.12,
+      "files": [
+        {
+          "path": "scripts/export-entries.py",
+          "name": "export-entries.py",
+          "size": 5873,
+          "extension": ".py"
+        }
+      ]
+    },
+    {
+      "language": "JSON",
+      "file_count": 1,
+      "total_bytes": 5425,
+      "percentage": 14.89,
+      "files": [
+        {
+          "path": "data/perguntas.json",
+          "name": "perguntas.json",
+          "size": 5425,
+          "extension": ".json"
+        }
+      ]
+    },
+    {
+      "language": "HTML",
+      "file_count": 1,
+      "total_bytes": 4652,
+      "percentage": 12.77,
+      "files": [
+        {
+          "path": "index.html",
+          "name": "index.html",
+          "size": 4652,
+          "extension": ".html"
+        }
+      ]
+    },
+    {
+      "language": "SVG Image",
+      "file_count": 1,
+      "total_bytes": 1000,
+      "percentage": 2.74,
+      "files": [
+        {
+          "path": "img/logo.svg",
+          "name": "logo.svg",
+          "size": 1000,
+          "extension": ".svg"
+        }
+      ]
+    },
+    {
+      "language": "Git Ignore",
+      "file_count": 1,
+      "total_bytes": 90,
+      "percentage": 0.25,
+      "files": [
+        {
+          "path": ".gitignore",
+          "name": ".gitignore",
+          "size": 90,
+          "extension": ".gitignore"
+        }
+      ]
+    },
+    {
+      "language": "Unknown",
+      "file_count": 1,
+      "total_bytes": 0,
+      "percentage": 0.0,
+      "files": [
+        {
+          "path": ".nojekyll",
+          "name": ".nojekyll",
+          "size": 0,
+          "extension": ".nojekyll"
+        }
+      ]
+    }
+  ],
+  "_metadata": {
+    "extracted_at": "2026-09-17T04:04:44.797549",
+    "file_path": "data/silver/language_analysis_diario-de-bordo.json"
+  }
+}

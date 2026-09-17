@@ -1,0 +1,1306 @@
+{
+  "repository": "2026-1-P.R.I.S.M.A",
+  "owner": "unb-mds",
+  "branch": "main",
+  "extracted_at": "2026-09-17T04:03:56.047184",
+  "hierarchy": {
+    "name": "root",
+    "type": "directory",
+    "children": [
+      {
+        "name": ".dockerignore",
+        "type": "file",
+        "language": "Docker Ignore",
+        "size": 104,
+        "extension": ".dockerignore",
+        "path": ".dockerignore"
+      },
+      {
+        "name": ".env_docker.exemplo",
+        "type": "file",
+        "language": "Unknown",
+        "size": 485,
+        "extension": ".exemplo",
+        "path": ".env_docker.exemplo"
+      },
+      {
+        "name": ".env_local.exemplo",
+        "type": "file",
+        "language": "Unknown",
+        "size": 450,
+        "extension": ".exemplo",
+        "path": ".env_local.exemplo"
+      },
+      {
+        "name": ".flake8",
+        "type": "file",
+        "language": "Unknown",
+        "size": 103,
+        "extension": ".flake8",
+        "path": ".flake8"
+      },
+      {
+        "name": ".gitignore",
+        "type": "file",
+        "language": "Git Ignore",
+        "size": 3670,
+        "extension": ".gitignore",
+        "path": ".gitignore"
+      },
+      {
+        "name": ".pre-commit-config.yaml",
+        "type": "file",
+        "language": "YAML",
+        "size": 496,
+        "extension": ".yaml",
+        "path": ".pre-commit-config.yaml"
+      },
+      {
+        "name": ".python-version",
+        "type": "file",
+        "language": "Unknown",
+        "size": 5,
+        "extension": ".python-version",
+        "path": ".python-version"
+      },
+      {
+        "name": "LICENSE",
+        "type": "file",
+        "language": "No Extension",
+        "size": 1060,
+        "extension": "",
+        "path": "LICENSE"
+      },
+      {
+        "name": "README.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 4842,
+        "extension": ".md",
+        "path": "README.md"
+      },
+      {
+        "name": "compose.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 902,
+        "extension": ".yml",
+        "path": "compose.yml"
+      },
+      {
+        "name": "docker-entrypoint.sh",
+        "type": "file",
+        "language": "Shell",
+        "size": 184,
+        "extension": ".sh",
+        "path": "docker-entrypoint.sh"
+      },
+      {
+        "name": "dockerfile",
+        "type": "file",
+        "language": "No Extension",
+        "size": 1083,
+        "extension": "",
+        "path": "dockerfile"
+      },
+      {
+        "name": "docs",
+        "type": "directory",
+        "path": "docs",
+        "children": []
+      },
+      {
+        "name": "Arquitetura",
+        "type": "directory",
+        "path": "docs/Arquitetura",
+        "children": []
+      },
+      {
+        "name": "arquitetura-interna.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3274,
+        "extension": ".md",
+        "path": "docs/Arquitetura/arquitetura-interna.md"
+      },
+      {
+        "name": "definicoes-back-end.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2278,
+        "extension": ".md",
+        "path": "docs/Arquitetura/definicoes-back-end.md"
+      },
+      {
+        "name": "definicoes-front-end.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1897,
+        "extension": ".md",
+        "path": "docs/Arquitetura/definicoes-front-end.md"
+      },
+      {
+        "name": "definir-arquitetura.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2945,
+        "extension": ".md",
+        "path": "docs/Arquitetura/definir-arquitetura.md"
+      },
+      {
+        "name": "documento-c4.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 8053,
+        "extension": ".md",
+        "path": "docs/Arquitetura/documento-c4.md"
+      },
+      {
+        "name": "index.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1771,
+        "extension": ".md",
+        "path": "docs/Arquitetura/index.md"
+      },
+      {
+        "name": "tecnologias_projeto.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3873,
+        "extension": ".md",
+        "path": "docs/Arquitetura/tecnologias_projeto.md"
+      },
+      {
+        "name": "CODE_OF_CONDUCT.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6975,
+        "extension": ".md",
+        "path": "docs/CODE_OF_CONDUCT.md"
+      },
+      {
+        "name": "CONTRIBUTING.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 4255,
+        "extension": ".md",
+        "path": "docs/CONTRIBUTING.md"
+      },
+      {
+        "name": "Sprints",
+        "type": "directory",
+        "path": "docs/Sprints",
+        "children": []
+      },
+      {
+        "name": "sprint-0.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1070,
+        "extension": ".md",
+        "path": "docs/Sprints/sprint-0.md"
+      },
+      {
+        "name": "sprint-1.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1849,
+        "extension": ".md",
+        "path": "docs/Sprints/sprint-1.md"
+      },
+      {
+        "name": "sprint-2.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1558,
+        "extension": ".md",
+        "path": "docs/Sprints/sprint-2.md"
+      },
+      {
+        "name": "sprint-3.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1020,
+        "extension": ".md",
+        "path": "docs/Sprints/sprint-3.md"
+      },
+      {
+        "name": "sprint-4.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1282,
+        "extension": ".md",
+        "path": "docs/Sprints/sprint-4.md"
+      },
+      {
+        "name": "sprint-5.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1291,
+        "extension": ".md",
+        "path": "docs/Sprints/sprint-5.md"
+      },
+      {
+        "name": "sprint-6.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1242,
+        "extension": ".md",
+        "path": "docs/Sprints/sprint-6.md"
+      },
+      {
+        "name": "sprint-7.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1228,
+        "extension": ".md",
+        "path": "docs/Sprints/sprint-7.md"
+      },
+      {
+        "name": "template-sprint.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 707,
+        "extension": ".md",
+        "path": "docs/Sprints/template-sprint.md"
+      },
+      {
+        "name": "documentacao-padroes-commits-branches.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 8046,
+        "extension": ".md",
+        "path": "docs/documentacao-padroes-commits-branches.md"
+      },
+      {
+        "name": "releases",
+        "type": "directory",
+        "path": "docs/releases",
+        "children": []
+      },
+      {
+        "name": "release_note_v0.1.0.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2141,
+        "extension": ".md",
+        "path": "docs/releases/release_note_v0.1.0.md"
+      },
+      {
+        "name": "release_note_v0.2.0.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6723,
+        "extension": ".md",
+        "path": "docs/releases/release_note_v0.2.0.md"
+      },
+      {
+        "name": "entrypoint.sh",
+        "type": "file",
+        "language": "Shell",
+        "size": 367,
+        "extension": ".sh",
+        "path": "entrypoint.sh"
+      },
+      {
+        "name": "estudo",
+        "type": "directory",
+        "path": "estudo",
+        "children": []
+      },
+      {
+        "name": "estudo_API.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1274,
+        "extension": ".md",
+        "path": "estudo/estudo_API.md"
+      },
+      {
+        "name": "estudo_Figma.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3303,
+        "extension": ".md",
+        "path": "estudo/estudo_Figma.md"
+      },
+      {
+        "name": "estudo_Miro.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 5015,
+        "extension": ".md",
+        "path": "estudo/estudo_Miro.md"
+      },
+      {
+        "name": "estudo_Postgre_caua.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 5818,
+        "extension": ".md",
+        "path": "estudo/estudo_Postgre_caua.md"
+      },
+      {
+        "name": "estudo_backend.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3394,
+        "extension": ".md",
+        "path": "estudo/estudo_backend.md"
+      },
+      {
+        "name": "estudo_django_caua.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3831,
+        "extension": ".md",
+        "path": "estudo/estudo_django_caua.md"
+      },
+      {
+        "name": "estudo_djangofilters.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 7972,
+        "extension": ".md",
+        "path": "estudo/estudo_djangofilters.md"
+      },
+      {
+        "name": "estudo_docker_caua.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6421,
+        "extension": ".md",
+        "path": "estudo/estudo_docker_caua.md"
+      },
+      {
+        "name": "estudo_figma_caua.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3897,
+        "extension": ".md",
+        "path": "estudo/estudo_figma_caua.md"
+      },
+      {
+        "name": "estudo_frontend.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3822,
+        "extension": ".md",
+        "path": "estudo/estudo_frontend.md"
+      },
+      {
+        "name": "estudo_gitegithub.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6581,
+        "extension": ".md",
+        "path": "estudo/estudo_gitegithub.md"
+      },
+      {
+        "name": "estudo_postman_caua.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3304,
+        "extension": ".md",
+        "path": "estudo/estudo_postman_caua.md"
+      },
+      {
+        "name": "estudo_requisitos.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3481,
+        "extension": ".md",
+        "path": "estudo/estudo_requisitos.md"
+      },
+      {
+        "name": "figma",
+        "type": "directory",
+        "path": "figma",
+        "children": []
+      },
+      {
+        "name": "print1",
+        "type": "directory",
+        "path": "figma/print1",
+        "children": []
+      },
+      {
+        "name": "concepcao_inicial.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 93716,
+        "extension": ".png",
+        "path": "figma/print1/concepcao_inicial.png"
+      },
+      {
+        "name": "print2",
+        "type": "directory",
+        "path": "figma/print2",
+        "children": []
+      },
+      {
+        "name": "concepcao_modificada.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 511060,
+        "extension": ".png",
+        "path": "figma/print2/concepcao_modificada.png"
+      },
+      {
+        "name": "print3",
+        "type": "directory",
+        "path": "figma/print3",
+        "children": []
+      },
+      {
+        "name": "alertas_novo.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 499464,
+        "extension": ".png",
+        "path": "figma/print3/alertas_novo.png"
+      },
+      {
+        "name": "print4",
+        "type": "directory",
+        "path": "figma/print4",
+        "children": []
+      },
+      {
+        "name": "central_user.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 469520,
+        "extension": ".png",
+        "path": "figma/print4/central_user.png"
+      },
+      {
+        "name": "print5",
+        "type": "directory",
+        "path": "figma/print5",
+        "children": []
+      },
+      {
+        "name": "favoritos.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 373750,
+        "extension": ".png",
+        "path": "figma/print5/favoritos.png"
+      },
+      {
+        "name": "print6",
+        "type": "directory",
+        "path": "figma/print6",
+        "children": []
+      },
+      {
+        "name": "mapa.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 475205,
+        "extension": ".png",
+        "path": "figma/print6/mapa.png"
+      },
+      {
+        "name": "print7",
+        "type": "directory",
+        "path": "figma/print7",
+        "children": []
+      },
+      {
+        "name": "aprovadad.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 617214,
+        "extension": ".png",
+        "path": "figma/print7/aprovadad.png"
+      },
+      {
+        "name": "pyproject.toml",
+        "type": "file",
+        "language": "TOML",
+        "size": 741,
+        "extension": ".toml",
+        "path": "pyproject.toml"
+      },
+      {
+        "name": "pytest.ini",
+        "type": "file",
+        "language": "INI",
+        "size": 72,
+        "extension": ".ini",
+        "path": "pytest.ini"
+      },
+      {
+        "name": "requirements.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 91,
+        "extension": ".txt",
+        "path": "requirements.txt"
+      },
+      {
+        "name": "src",
+        "type": "directory",
+        "path": "src",
+        "children": []
+      },
+      {
+        "name": "Processos",
+        "type": "directory",
+        "path": "src/Processos",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "src/Processos/__init__.py"
+      },
+      {
+        "name": "admin.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3480,
+        "extension": ".py",
+        "path": "src/Processos/admin.py"
+      },
+      {
+        "name": "apps.py",
+        "type": "file",
+        "language": "Python",
+        "size": 93,
+        "extension": ".py",
+        "path": "src/Processos/apps.py"
+      },
+      {
+        "name": "cron.py",
+        "type": "file",
+        "language": "Python",
+        "size": 617,
+        "extension": ".py",
+        "path": "src/Processos/cron.py"
+      },
+      {
+        "name": "filters.py",
+        "type": "file",
+        "language": "Python",
+        "size": 877,
+        "extension": ".py",
+        "path": "src/Processos/filters.py"
+      },
+      {
+        "name": "management",
+        "type": "directory",
+        "path": "src/Processos/management",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "src/Processos/management/__init__.py"
+      },
+      {
+        "name": "commands",
+        "type": "directory",
+        "path": "src/Processos/management/commands",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "src/Processos/management/commands/__init__.py"
+      },
+      {
+        "name": "auditoria_processos.py",
+        "type": "file",
+        "language": "Python",
+        "size": 5895,
+        "extension": ".py",
+        "path": "src/Processos/management/commands/auditoria_processos.py"
+      },
+      {
+        "name": "carga_historica.py",
+        "type": "file",
+        "language": "Python",
+        "size": 7937,
+        "extension": ".py",
+        "path": "src/Processos/management/commands/carga_historica.py"
+      },
+      {
+        "name": "carga_inicial.py",
+        "type": "file",
+        "language": "Python",
+        "size": 988,
+        "extension": ".py",
+        "path": "src/Processos/management/commands/carga_inicial.py"
+      },
+      {
+        "name": "limpar_processos.py",
+        "type": "file",
+        "language": "Python",
+        "size": 712,
+        "extension": ".py",
+        "path": "src/Processos/management/commands/limpar_processos.py"
+      },
+      {
+        "name": "sync_processos.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1182,
+        "extension": ".py",
+        "path": "src/Processos/management/commands/sync_processos.py"
+      },
+      {
+        "name": "migrations",
+        "type": "directory",
+        "path": "src/Processos/migrations",
+        "children": []
+      },
+      {
+        "name": "0001_initial.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1223,
+        "extension": ".py",
+        "path": "src/Processos/migrations/0001_initial.py"
+      },
+      {
+        "name": "0002_initial.py",
+        "type": "file",
+        "language": "Python",
+        "size": 570,
+        "extension": ".py",
+        "path": "src/Processos/migrations/0002_initial.py"
+      },
+      {
+        "name": "0003_movimentacao.py",
+        "type": "file",
+        "language": "Python",
+        "size": 848,
+        "extension": ".py",
+        "path": "src/Processos/migrations/0003_movimentacao.py"
+      },
+      {
+        "name": "0003_processolegislativo_apreciacao_and_more.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4585,
+        "extension": ".py",
+        "path": "src/Processos/migrations/0003_processolegislativo_apreciacao_and_more.py"
+      },
+      {
+        "name": "0004_alter_processolegislativo_id_externo_and_more.py",
+        "type": "file",
+        "language": "Python",
+        "size": 649,
+        "extension": ".py",
+        "path": "src/Processos/migrations/0004_alter_processolegislativo_id_externo_and_more.py"
+      },
+      {
+        "name": "0004_termomonitorado_processos.py",
+        "type": "file",
+        "language": "Python",
+        "size": 466,
+        "extension": ".py",
+        "path": "src/Processos/migrations/0004_termomonitorado_processos.py"
+      },
+      {
+        "name": "0005_processolegislativo_apelido_and_more.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2161,
+        "extension": ".py",
+        "path": "src/Processos/migrations/0005_processolegislativo_apelido_and_more.py"
+      },
+      {
+        "name": "0006_merge_20260701_0349.py",
+        "type": "file",
+        "language": "Python",
+        "size": 302,
+        "extension": ".py",
+        "path": "src/Processos/migrations/0006_merge_20260701_0349.py"
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "src/Processos/migrations/__init__.py"
+      },
+      {
+        "name": "models.py",
+        "type": "file",
+        "language": "Python",
+        "size": 6016,
+        "extension": ".py",
+        "path": "src/Processos/models.py"
+      },
+      {
+        "name": "services.py",
+        "type": "file",
+        "language": "Python",
+        "size": 24799,
+        "extension": ".py",
+        "path": "src/Processos/services.py"
+      },
+      {
+        "name": "tests.py",
+        "type": "file",
+        "language": "Python",
+        "size": 14538,
+        "extension": ".py",
+        "path": "src/Processos/tests.py"
+      },
+      {
+        "name": "views.py",
+        "type": "file",
+        "language": "Python",
+        "size": 63,
+        "extension": ".py",
+        "path": "src/Processos/views.py"
+      },
+      {
+        "name": "Usuarios",
+        "type": "directory",
+        "path": "src/Usuarios",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "src/Usuarios/__init__.py"
+      },
+      {
+        "name": "admin.py",
+        "type": "file",
+        "language": "Python",
+        "size": 364,
+        "extension": ".py",
+        "path": "src/Usuarios/admin.py"
+      },
+      {
+        "name": "apps.py",
+        "type": "file",
+        "language": "Python",
+        "size": 91,
+        "extension": ".py",
+        "path": "src/Usuarios/apps.py"
+      },
+      {
+        "name": "management",
+        "type": "directory",
+        "path": "src/Usuarios/management",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "src/Usuarios/management/__init__.py"
+      },
+      {
+        "name": "commands",
+        "type": "directory",
+        "path": "src/Usuarios/management/commands",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "src/Usuarios/management/commands/__init__.py"
+      },
+      {
+        "name": "gerar_alertas.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2110,
+        "extension": ".py",
+        "path": "src/Usuarios/management/commands/gerar_alertas.py"
+      },
+      {
+        "name": "migrations",
+        "type": "directory",
+        "path": "src/Usuarios/migrations",
+        "children": []
+      },
+      {
+        "name": "0001_initial.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3050,
+        "extension": ".py",
+        "path": "src/Usuarios/migrations/0001_initial.py"
+      },
+      {
+        "name": "0002_notificacao.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1321,
+        "extension": ".py",
+        "path": "src/Usuarios/migrations/0002_notificacao.py"
+      },
+      {
+        "name": "0003_userprofile.py",
+        "type": "file",
+        "language": "Python",
+        "size": 920,
+        "extension": ".py",
+        "path": "src/Usuarios/migrations/0003_userprofile.py"
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "src/Usuarios/migrations/__init__.py"
+      },
+      {
+        "name": "models.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1384,
+        "extension": ".py",
+        "path": "src/Usuarios/models.py"
+      },
+      {
+        "name": "tests.py",
+        "type": "file",
+        "language": "Python",
+        "size": 60,
+        "extension": ".py",
+        "path": "src/Usuarios/tests.py"
+      },
+      {
+        "name": "views.py",
+        "type": "file",
+        "language": "Python",
+        "size": 63,
+        "extension": ".py",
+        "path": "src/Usuarios/views.py"
+      },
+      {
+        "name": "config",
+        "type": "directory",
+        "path": "src/config",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "src/config/__init__.py"
+      },
+      {
+        "name": "asgi.py",
+        "type": "file",
+        "language": "Python",
+        "size": 389,
+        "extension": ".py",
+        "path": "src/config/asgi.py"
+      },
+      {
+        "name": "settings.py",
+        "type": "file",
+        "language": "Python",
+        "size": 6090,
+        "extension": ".py",
+        "path": "src/config/settings.py"
+      },
+      {
+        "name": "test_settings.py",
+        "type": "file",
+        "language": "Python",
+        "size": 158,
+        "extension": ".py",
+        "path": "src/config/test_settings.py"
+      },
+      {
+        "name": "urls.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1583,
+        "extension": ".py",
+        "path": "src/config/urls.py"
+      },
+      {
+        "name": "wsgi.py",
+        "type": "file",
+        "language": "Python",
+        "size": 389,
+        "extension": ".py",
+        "path": "src/config/wsgi.py"
+      },
+      {
+        "name": "home",
+        "type": "directory",
+        "path": "src/home",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "src/home/__init__.py"
+      },
+      {
+        "name": "admin.py",
+        "type": "file",
+        "language": "Python",
+        "size": 63,
+        "extension": ".py",
+        "path": "src/home/admin.py"
+      },
+      {
+        "name": "apps.py",
+        "type": "file",
+        "language": "Python",
+        "size": 83,
+        "extension": ".py",
+        "path": "src/home/apps.py"
+      },
+      {
+        "name": "forms.py",
+        "type": "file",
+        "language": "Python",
+        "size": 297,
+        "extension": ".py",
+        "path": "src/home/forms.py"
+      },
+      {
+        "name": "migrations",
+        "type": "directory",
+        "path": "src/home/migrations",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "src/home/migrations/__init__.py"
+      },
+      {
+        "name": "models.py",
+        "type": "file",
+        "language": "Python",
+        "size": 57,
+        "extension": ".py",
+        "path": "src/home/models.py"
+      },
+      {
+        "name": "static",
+        "type": "directory",
+        "path": "src/home/static",
+        "children": []
+      },
+      {
+        "name": "home",
+        "type": "directory",
+        "path": "src/home/static/home",
+        "children": []
+      },
+      {
+        "name": "css",
+        "type": "directory",
+        "path": "src/home/static/home/css",
+        "children": []
+      },
+      {
+        "name": "global.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 319,
+        "extension": ".css",
+        "path": "src/home/static/home/css/global.css"
+      },
+      {
+        "name": "js",
+        "type": "directory",
+        "path": "src/home/static/home/js",
+        "children": []
+      },
+      {
+        "name": "app.js",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 82,
+        "extension": ".js",
+        "path": "src/home/static/home/js/app.js"
+      },
+      {
+        "name": "tailwind-config.js",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 592,
+        "extension": ".js",
+        "path": "src/home/static/home/js/tailwind-config.js"
+      },
+      {
+        "name": "templates",
+        "type": "directory",
+        "path": "src/home/templates",
+        "children": []
+      },
+      {
+        "name": "home",
+        "type": "directory",
+        "path": "src/home/templates/home",
+        "children": []
+      },
+      {
+        "name": "alertas.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 6689,
+        "extension": ".html",
+        "path": "src/home/templates/home/alertas.html"
+      },
+      {
+        "name": "base.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 1007,
+        "extension": ".html",
+        "path": "src/home/templates/home/base.html"
+      },
+      {
+        "name": "components",
+        "type": "directory",
+        "path": "src/home/templates/home/components",
+        "children": []
+      },
+      {
+        "name": "header.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 393,
+        "extension": ".html",
+        "path": "src/home/templates/home/components/header.html"
+      },
+      {
+        "name": "sidebar.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 2310,
+        "extension": ".html",
+        "path": "src/home/templates/home/components/sidebar.html"
+      },
+      {
+        "name": "favoritos.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 9291,
+        "extension": ".html",
+        "path": "src/home/templates/home/favoritos.html"
+      },
+      {
+        "name": "processos.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 16334,
+        "extension": ".html",
+        "path": "src/home/templates/home/processos.html"
+      },
+      {
+        "name": "proposicao_detalhes.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 8398,
+        "extension": ".html",
+        "path": "src/home/templates/home/proposicao_detalhes.html"
+      },
+      {
+        "name": "usuario.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 5515,
+        "extension": ".html",
+        "path": "src/home/templates/home/usuario.html"
+      },
+      {
+        "name": "registration",
+        "type": "directory",
+        "path": "src/home/templates/registration",
+        "children": []
+      },
+      {
+        "name": "base_auth.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 3684,
+        "extension": ".html",
+        "path": "src/home/templates/registration/base_auth.html"
+      },
+      {
+        "name": "login.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 1555,
+        "extension": ".html",
+        "path": "src/home/templates/registration/login.html"
+      },
+      {
+        "name": "password_reset_complete.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 899,
+        "extension": ".html",
+        "path": "src/home/templates/registration/password_reset_complete.html"
+      },
+      {
+        "name": "password_reset_confirm.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 1556,
+        "extension": ".html",
+        "path": "src/home/templates/registration/password_reset_confirm.html"
+      },
+      {
+        "name": "password_reset_done.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 1097,
+        "extension": ".html",
+        "path": "src/home/templates/registration/password_reset_done.html"
+      },
+      {
+        "name": "password_reset_form.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 1395,
+        "extension": ".html",
+        "path": "src/home/templates/registration/password_reset_form.html"
+      },
+      {
+        "name": "signup.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 1083,
+        "extension": ".html",
+        "path": "src/home/templates/registration/signup.html"
+      },
+      {
+        "name": "tests.py",
+        "type": "file",
+        "language": "Python",
+        "size": 60,
+        "extension": ".py",
+        "path": "src/home/tests.py"
+      },
+      {
+        "name": "views.py",
+        "type": "file",
+        "language": "Python",
+        "size": 11103,
+        "extension": ".py",
+        "path": "src/home/views.py"
+      },
+      {
+        "name": "manage.py",
+        "type": "file",
+        "language": "Python",
+        "size": 662,
+        "extension": ".py",
+        "path": "src/manage.py"
+      },
+      {
+        "name": "tests",
+        "type": "directory",
+        "path": "src/tests",
+        "children": []
+      },
+      {
+        "name": "e2e",
+        "type": "directory",
+        "path": "src/tests/e2e",
+        "children": []
+      },
+      {
+        "name": "conftest.py",
+        "type": "file",
+        "language": "Python",
+        "size": 496,
+        "extension": ".py",
+        "path": "src/tests/e2e/conftest.py"
+      },
+      {
+        "name": "test_alertas.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2286,
+        "extension": ".py",
+        "path": "src/tests/e2e/test_alertas.py"
+      },
+      {
+        "name": "test_configuracoes.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1438,
+        "extension": ".py",
+        "path": "src/tests/e2e/test_configuracoes.py"
+      },
+      {
+        "name": "test_favoritos.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1474,
+        "extension": ".py",
+        "path": "src/tests/e2e/test_favoritos.py"
+      },
+      {
+        "name": "test_sanity.py",
+        "type": "file",
+        "language": "Python",
+        "size": 820,
+        "extension": ".py",
+        "path": "src/tests/e2e/test_sanity.py"
+      },
+      {
+        "name": "test_timeline.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4453,
+        "extension": ".py",
+        "path": "src/tests/e2e/test_timeline.py"
+      },
+      {
+        "name": "uv.lock",
+        "type": "file",
+        "language": "Lock File",
+        "size": 76358,
+        "extension": ".lock",
+        "path": "uv.lock"
+      }
+    ]
+  },
+  "_metadata": {
+    "extracted_at": "2026-09-17T04:04:44.799891",
+    "file_path": "data/silver/hierarchy_2026-1-P.R.I.S.M.A.json"
+  }
+}

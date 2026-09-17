@@ -1,0 +1,232 @@
+{
+  "repository": "teste-ru",
+  "owner": "unb-mds",
+  "branch": "main",
+  "extracted_at": "2026-09-17T04:04:02.571444",
+  "hierarchy": {
+    "name": "root",
+    "type": "directory",
+    "children": [
+      {
+        "name": ".github",
+        "type": "directory",
+        "path": ".github",
+        "children": []
+      },
+      {
+        "name": "workflows",
+        "type": "directory",
+        "path": ".github/workflows",
+        "children": []
+      },
+      {
+        "name": "coletar.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 3264,
+        "extension": ".yml",
+        "path": ".github/workflows/coletar.yml"
+      },
+      {
+        "name": "pages.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 1194,
+        "extension": ".yml",
+        "path": ".github/workflows/pages.yml"
+      },
+      {
+        "name": ".gitignore",
+        "type": "file",
+        "language": "Git Ignore",
+        "size": 52,
+        "extension": ".gitignore",
+        "path": ".gitignore"
+      },
+      {
+        "name": "CONTEXT.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6303,
+        "extension": ".md",
+        "path": "CONTEXT.md"
+      },
+      {
+        "name": "README.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3255,
+        "extension": ".md",
+        "path": "README.md"
+      },
+      {
+        "name": "SPEC.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 15885,
+        "extension": ".md",
+        "path": "SPEC.md"
+      },
+      {
+        "name": "assets",
+        "type": "directory",
+        "path": "assets",
+        "children": []
+      },
+      {
+        "name": "app.js",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 13323,
+        "extension": ".js",
+        "path": "assets/app.js"
+      },
+      {
+        "name": "style.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 5696,
+        "extension": ".css",
+        "path": "assets/style.css"
+      },
+      {
+        "name": "data",
+        "type": "directory",
+        "path": "data",
+        "children": []
+      },
+      {
+        "name": "cardapio.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 434350,
+        "extension": ".json",
+        "path": "data/cardapio.json"
+      },
+      {
+        "name": "docs",
+        "type": "directory",
+        "path": "docs",
+        "children": []
+      },
+      {
+        "name": "adr",
+        "type": "directory",
+        "path": "docs/adr",
+        "children": []
+      },
+      {
+        "name": "0001-ingestao-por-github-action-com-json-versionado.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1544,
+        "extension": ".md",
+        "path": "docs/adr/0001-ingestao-por-github-action-com-json-versionado.md"
+      },
+      {
+        "name": "0002-alergenicos-extraidos-com-estado-indeterminado.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1271,
+        "extension": ".md",
+        "path": "docs/adr/0002-alergenicos-extraidos-com-estado-indeterminado.md"
+      },
+      {
+        "name": "index.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 1748,
+        "extension": ".html",
+        "path": "index.html"
+      },
+      {
+        "name": "package.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 225,
+        "extension": ".json",
+        "path": "package.json"
+      },
+      {
+        "name": "parser",
+        "type": "directory",
+        "path": "parser",
+        "children": []
+      },
+      {
+        "name": "alergenicos.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4215,
+        "extension": ".py",
+        "path": "parser/alergenicos.py"
+      },
+      {
+        "name": "coletar.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2951,
+        "extension": ".py",
+        "path": "parser/coletar.py"
+      },
+      {
+        "name": "extrator.py",
+        "type": "file",
+        "language": "Python",
+        "size": 13143,
+        "extension": ".py",
+        "path": "parser/extrator.py"
+      },
+      {
+        "name": "fonte.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2682,
+        "extension": ".py",
+        "path": "parser/fonte.py"
+      },
+      {
+        "name": "requirements.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 56,
+        "extension": ".txt",
+        "path": "parser/requirements.txt"
+      },
+      {
+        "name": "validacao.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3829,
+        "extension": ".py",
+        "path": "parser/validacao.py"
+      },
+      {
+        "name": "req.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1294,
+        "extension": ".md",
+        "path": "req.md"
+      },
+      {
+        "name": "testes",
+        "type": "directory",
+        "path": "testes",
+        "children": []
+      },
+      {
+        "name": "ui.mjs",
+        "type": "file",
+        "language": "Unknown",
+        "size": 8647,
+        "extension": ".mjs",
+        "path": "testes/ui.mjs"
+      }
+    ]
+  },
+  "_metadata": {
+    "extracted_at": "2026-09-17T04:04:44.801586",
+    "file_path": "data/silver/hierarchy_teste-ru.json"
+  }
+}

@@ -1,0 +1,2768 @@
+{
+  "repository": "2026-1-SafeStreets",
+  "owner": "unb-mds",
+  "branch": "main",
+  "extracted_at": "2026-09-17T04:03:50.169570",
+  "hierarchy": {
+    "name": "root",
+    "type": "directory",
+    "children": [
+      {
+        "name": ".claude",
+        "type": "directory",
+        "path": ".claude",
+        "children": []
+      },
+      {
+        "name": "commands",
+        "type": "directory",
+        "path": ".claude/commands",
+        "children": []
+      },
+      {
+        "name": "endpoint.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3668,
+        "extension": ".md",
+        "path": ".claude/commands/endpoint.md"
+      },
+      {
+        "name": "skills",
+        "type": "directory",
+        "path": ".claude/skills",
+        "children": []
+      },
+      {
+        "name": "safestreets-implement-feature",
+        "type": "directory",
+        "path": ".claude/skills/safestreets-implement-feature",
+        "children": []
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3939,
+        "extension": ".md",
+        "path": ".claude/skills/safestreets-implement-feature/SKILL.md"
+      },
+      {
+        "name": "safestreets-run-frontend-tests",
+        "type": "directory",
+        "path": ".claude/skills/safestreets-run-frontend-tests",
+        "children": []
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 5222,
+        "extension": ".md",
+        "path": ".claude/skills/safestreets-run-frontend-tests/SKILL.md"
+      },
+      {
+        "name": ".github",
+        "type": "directory",
+        "path": ".github",
+        "children": []
+      },
+      {
+        "name": "workflows",
+        "type": "directory",
+        "path": ".github/workflows",
+        "children": []
+      },
+      {
+        "name": "docs.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 963,
+        "extension": ".yml",
+        "path": ".github/workflows/docs.yml"
+      },
+      {
+        "name": "ingest-cron.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 903,
+        "extension": ".yml",
+        "path": ".github/workflows/ingest-cron.yml"
+      },
+      {
+        "name": "metrics.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 1108,
+        "extension": ".yml",
+        "path": ".github/workflows/metrics.yml"
+      },
+      {
+        "name": "CODE_OF_CONDUCT.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6112,
+        "extension": ".md",
+        "path": "CODE_OF_CONDUCT.md"
+      },
+      {
+        "name": "CONTRIBUTING.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6654,
+        "extension": ".md",
+        "path": "CONTRIBUTING.md"
+      },
+      {
+        "name": "LICENSE",
+        "type": "file",
+        "language": "No Extension",
+        "size": 1060,
+        "extension": "",
+        "path": "LICENSE"
+      },
+      {
+        "name": "README.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6302,
+        "extension": ".md",
+        "path": "README.md"
+      },
+      {
+        "name": "SECURITY.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1436,
+        "extension": ".md",
+        "path": "SECURITY.md"
+      },
+      {
+        "name": "backend",
+        "type": "directory",
+        "path": "backend",
+        "children": []
+      },
+      {
+        "name": ".claude",
+        "type": "directory",
+        "path": "backend/.claude",
+        "children": []
+      },
+      {
+        "name": "skills",
+        "type": "directory",
+        "path": "backend/.claude/skills",
+        "children": []
+      },
+      {
+        "name": "run-correio-rss",
+        "type": "directory",
+        "path": "backend/.claude/skills/run-correio-rss",
+        "children": []
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 4462,
+        "extension": ".md",
+        "path": "backend/.claude/skills/run-correio-rss/SKILL.md"
+      },
+      {
+        "name": "driver.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3983,
+        "extension": ".py",
+        "path": "backend/.claude/skills/run-correio-rss/driver.py"
+      },
+      {
+        "name": "spec.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2465,
+        "extension": ".md",
+        "path": "backend/.claude/skills/run-correio-rss/spec.md"
+      },
+      {
+        "name": "run-disparo-ingestao",
+        "type": "directory",
+        "path": "backend/.claude/skills/run-disparo-ingestao",
+        "children": []
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3815,
+        "extension": ".md",
+        "path": "backend/.claude/skills/run-disparo-ingestao/SKILL.md"
+      },
+      {
+        "name": "driver.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3697,
+        "extension": ".py",
+        "path": "backend/.claude/skills/run-disparo-ingestao/driver.py"
+      },
+      {
+        "name": "spec.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2274,
+        "extension": ".md",
+        "path": "backend/.claude/skills/run-disparo-ingestao/spec.md"
+      },
+      {
+        "name": "run-endpoints",
+        "type": "directory",
+        "path": "backend/.claude/skills/run-endpoints",
+        "children": []
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 4969,
+        "extension": ".md",
+        "path": "backend/.claude/skills/run-endpoints/SKILL.md"
+      },
+      {
+        "name": "driver.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4975,
+        "extension": ".py",
+        "path": "backend/.claude/skills/run-endpoints/driver.py"
+      },
+      {
+        "name": "spec.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2273,
+        "extension": ".md",
+        "path": "backend/.claude/skills/run-endpoints/spec.md"
+      },
+      {
+        "name": "run-ingestao",
+        "type": "directory",
+        "path": "backend/.claude/skills/run-ingestao",
+        "children": []
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 5873,
+        "extension": ".md",
+        "path": "backend/.claude/skills/run-ingestao/SKILL.md"
+      },
+      {
+        "name": "driver.py",
+        "type": "file",
+        "language": "Python",
+        "size": 5812,
+        "extension": ".py",
+        "path": "backend/.claude/skills/run-ingestao/driver.py"
+      },
+      {
+        "name": "spec.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2626,
+        "extension": ".md",
+        "path": "backend/.claude/skills/run-ingestao/spec.md"
+      },
+      {
+        "name": "run-nominatim-gemini",
+        "type": "directory",
+        "path": "backend/.claude/skills/run-nominatim-gemini",
+        "children": []
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 5056,
+        "extension": ".md",
+        "path": "backend/.claude/skills/run-nominatim-gemini/SKILL.md"
+      },
+      {
+        "name": "driver.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4891,
+        "extension": ".py",
+        "path": "backend/.claude/skills/run-nominatim-gemini/driver.py"
+      },
+      {
+        "name": "spec.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2413,
+        "extension": ".md",
+        "path": "backend/.claude/skills/run-nominatim-gemini/spec.md"
+      },
+      {
+        "name": "run-schemas",
+        "type": "directory",
+        "path": "backend/.claude/skills/run-schemas",
+        "children": []
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 4827,
+        "extension": ".md",
+        "path": "backend/.claude/skills/run-schemas/SKILL.md"
+      },
+      {
+        "name": "driver.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4066,
+        "extension": ".py",
+        "path": "backend/.claude/skills/run-schemas/driver.py"
+      },
+      {
+        "name": "spec.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2207,
+        "extension": ".md",
+        "path": "backend/.claude/skills/run-schemas/spec.md"
+      },
+      {
+        "name": ".gitignore",
+        "type": "file",
+        "language": "Git Ignore",
+        "size": 38,
+        "extension": ".gitignore",
+        "path": "backend/.gitignore"
+      },
+      {
+        "name": "Dockerfile",
+        "type": "file",
+        "language": "No Extension",
+        "size": 712,
+        "extension": "",
+        "path": "backend/Dockerfile"
+      },
+      {
+        "name": "alembic.ini",
+        "type": "file",
+        "language": "INI",
+        "size": 5008,
+        "extension": ".ini",
+        "path": "backend/alembic.ini"
+      },
+      {
+        "name": "alembic",
+        "type": "directory",
+        "path": "backend/alembic",
+        "children": []
+      },
+      {
+        "name": "README",
+        "type": "file",
+        "language": "No Extension",
+        "size": 38,
+        "extension": "",
+        "path": "backend/alembic/README"
+      },
+      {
+        "name": "env.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2601,
+        "extension": ".py",
+        "path": "backend/alembic/env.py"
+      },
+      {
+        "name": "script.py.mako",
+        "type": "file",
+        "language": "Unknown",
+        "size": 704,
+        "extension": ".mako",
+        "path": "backend/alembic/script.py.mako"
+      },
+      {
+        "name": "versions",
+        "type": "directory",
+        "path": "backend/alembic/versions",
+        "children": []
+      },
+      {
+        "name": "001_initial_schema.py",
+        "type": "file",
+        "language": "Python",
+        "size": 6082,
+        "extension": ".py",
+        "path": "backend/alembic/versions/001_initial_schema.py"
+      },
+      {
+        "name": "app",
+        "type": "directory",
+        "path": "backend/app",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "backend/app/__init__.py"
+      },
+      {
+        "name": "core",
+        "type": "directory",
+        "path": "backend/app/core",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "backend/app/core/__init__.py"
+      },
+      {
+        "name": "cache.py",
+        "type": "file",
+        "language": "Python",
+        "size": 651,
+        "extension": ".py",
+        "path": "backend/app/core/cache.py"
+      },
+      {
+        "name": "database.py",
+        "type": "file",
+        "language": "Python",
+        "size": 822,
+        "extension": ".py",
+        "path": "backend/app/core/database.py"
+      },
+      {
+        "name": "integrations",
+        "type": "directory",
+        "path": "backend/app/integrations",
+        "children": []
+      },
+      {
+        "name": ".gitignore",
+        "type": "file",
+        "language": "Git Ignore",
+        "size": 0,
+        "extension": ".gitignore",
+        "path": "backend/app/integrations/.gitignore"
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "backend/app/integrations/__init__.py"
+      },
+      {
+        "name": "correio_rss.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4918,
+        "extension": ".py",
+        "path": "backend/app/integrations/correio_rss.py"
+      },
+      {
+        "name": "gemini.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4319,
+        "extension": ".py",
+        "path": "backend/app/integrations/gemini.py"
+      },
+      {
+        "name": "nominatim.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2126,
+        "extension": ".py",
+        "path": "backend/app/integrations/nominatim.py"
+      },
+      {
+        "name": "main.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1232,
+        "extension": ".py",
+        "path": "backend/app/main.py"
+      },
+      {
+        "name": "models",
+        "type": "directory",
+        "path": "backend/app/models",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 341,
+        "extension": ".py",
+        "path": "backend/app/models/__init__.py"
+      },
+      {
+        "name": "historico_consulta.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1015,
+        "extension": ".py",
+        "path": "backend/app/models/historico_consulta.py"
+      },
+      {
+        "name": "local_pin.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1116,
+        "extension": ".py",
+        "path": "backend/app/models/local_pin.py"
+      },
+      {
+        "name": "ocorrencia.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1955,
+        "extension": ".py",
+        "path": "backend/app/models/ocorrencia.py"
+      },
+      {
+        "name": "repositories",
+        "type": "directory",
+        "path": "backend/app/repositories",
+        "children": []
+      },
+      {
+        "name": ".gitignore",
+        "type": "file",
+        "language": "Git Ignore",
+        "size": 0,
+        "extension": ".gitignore",
+        "path": "backend/app/repositories/.gitignore"
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 23,
+        "extension": ".py",
+        "path": "backend/app/repositories/__init__.py"
+      },
+      {
+        "name": "local_pin_repository.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1637,
+        "extension": ".py",
+        "path": "backend/app/repositories/local_pin_repository.py"
+      },
+      {
+        "name": "ocorrencia_repository.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2956,
+        "extension": ".py",
+        "path": "backend/app/repositories/ocorrencia_repository.py"
+      },
+      {
+        "name": "routes",
+        "type": "directory",
+        "path": "backend/app/routes",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "backend/app/routes/__init__.py"
+      },
+      {
+        "name": "admin.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1750,
+        "extension": ".py",
+        "path": "backend/app/routes/admin.py"
+      },
+      {
+        "name": "health.py",
+        "type": "file",
+        "language": "Python",
+        "size": 156,
+        "extension": ".py",
+        "path": "backend/app/routes/health.py"
+      },
+      {
+        "name": "ocorrencias.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1613,
+        "extension": ".py",
+        "path": "backend/app/routes/ocorrencias.py"
+      },
+      {
+        "name": "schemas",
+        "type": "directory",
+        "path": "backend/app/schemas",
+        "children": []
+      },
+      {
+        "name": ".gitignore",
+        "type": "file",
+        "language": "Git Ignore",
+        "size": 0,
+        "extension": ".gitignore",
+        "path": "backend/app/schemas/.gitignore"
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "backend/app/schemas/__init__.py"
+      },
+      {
+        "name": "ocorrencia.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1550,
+        "extension": ".py",
+        "path": "backend/app/schemas/ocorrencia.py"
+      },
+      {
+        "name": "services",
+        "type": "directory",
+        "path": "backend/app/services",
+        "children": []
+      },
+      {
+        "name": ".gitignore",
+        "type": "file",
+        "language": "Git Ignore",
+        "size": 0,
+        "extension": ".gitignore",
+        "path": "backend/app/services/.gitignore"
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "backend/app/services/__init__.py"
+      },
+      {
+        "name": "ingestao.py",
+        "type": "file",
+        "language": "Python",
+        "size": 15088,
+        "extension": ".py",
+        "path": "backend/app/services/ingestao.py"
+      },
+      {
+        "name": "ocorrencias.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3236,
+        "extension": ".py",
+        "path": "backend/app/services/ocorrencias.py"
+      },
+      {
+        "name": "risco_service.py",
+        "type": "file",
+        "language": "Python",
+        "size": 802,
+        "extension": ".py",
+        "path": "backend/app/services/risco_service.py"
+      },
+      {
+        "name": "docker-compose.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 2061,
+        "extension": ".yml",
+        "path": "backend/docker-compose.yml"
+      },
+      {
+        "name": "requirements.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 201,
+        "extension": ".txt",
+        "path": "backend/requirements.txt"
+      },
+      {
+        "name": "ruff.toml",
+        "type": "file",
+        "language": "TOML",
+        "size": 595,
+        "extension": ".toml",
+        "path": "backend/ruff.toml"
+      },
+      {
+        "name": "teste.py",
+        "type": "file",
+        "language": "Python",
+        "size": 727,
+        "extension": ".py",
+        "path": "backend/teste.py"
+      },
+      {
+        "name": "tests",
+        "type": "directory",
+        "path": "backend/tests",
+        "children": []
+      },
+      {
+        "name": "test_admin.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2314,
+        "extension": ".py",
+        "path": "backend/tests/test_admin.py"
+      },
+      {
+        "name": "test_correio_rss.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4031,
+        "extension": ".py",
+        "path": "backend/tests/test_correio_rss.py"
+      },
+      {
+        "name": "test_gemini.py",
+        "type": "file",
+        "language": "Python",
+        "size": 5470,
+        "extension": ".py",
+        "path": "backend/tests/test_gemini.py"
+      },
+      {
+        "name": "test_ingestao.py",
+        "type": "file",
+        "language": "Python",
+        "size": 11449,
+        "extension": ".py",
+        "path": "backend/tests/test_ingestao.py"
+      },
+      {
+        "name": "test_main.py",
+        "type": "file",
+        "language": "Python",
+        "size": 280,
+        "extension": ".py",
+        "path": "backend/tests/test_main.py"
+      },
+      {
+        "name": "test_nominatim.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1651,
+        "extension": ".py",
+        "path": "backend/tests/test_nominatim.py"
+      },
+      {
+        "name": "test_ocorrencia_repository.py",
+        "type": "file",
+        "language": "Python",
+        "size": 6147,
+        "extension": ".py",
+        "path": "backend/tests/test_ocorrencia_repository.py"
+      },
+      {
+        "name": "test_ocorrencias.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4131,
+        "extension": ".py",
+        "path": "backend/tests/test_ocorrencias.py"
+      },
+      {
+        "name": "test_risco_service.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1943,
+        "extension": ".py",
+        "path": "backend/tests/test_risco_service.py"
+      },
+      {
+        "name": "test_schemas.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2507,
+        "extension": ".py",
+        "path": "backend/tests/test_schemas.py"
+      },
+      {
+        "name": "docs",
+        "type": "directory",
+        "path": "docs",
+        "children": []
+      },
+      {
+        "name": "Arquitetura",
+        "type": "directory",
+        "path": "docs/Arquitetura",
+        "children": []
+      },
+      {
+        "name": "ADR-001-Gemini-Fallback-Strategy.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 5460,
+        "extension": ".md",
+        "path": "docs/Arquitetura/ADR-001-Gemini-Fallback-Strategy.md"
+      },
+      {
+        "name": "ADRs-PENDENTES.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3640,
+        "extension": ".md",
+        "path": "docs/Arquitetura/ADRs-PENDENTES.md"
+      },
+      {
+        "name": "API-Contract.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 7181,
+        "extension": ".md",
+        "path": "docs/Arquitetura/API-Contract.md"
+      },
+      {
+        "name": "CONTEXT.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 9590,
+        "extension": ".md",
+        "path": "docs/Arquitetura/CONTEXT.md"
+      },
+      {
+        "name": "RSS-Integration.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 11649,
+        "extension": ".md",
+        "path": "docs/Arquitetura/RSS-Integration.md"
+      },
+      {
+        "name": "Specs_banco_de_dados",
+        "type": "directory",
+        "path": "docs/Arquitetura/Specs_banco_de_dados",
+        "children": []
+      },
+      {
+        "name": "plan.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 16655,
+        "extension": ".md",
+        "path": "docs/Arquitetura/Specs_banco_de_dados/plan.md"
+      },
+      {
+        "name": "spec.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 4675,
+        "extension": ".md",
+        "path": "docs/Arquitetura/Specs_banco_de_dados/spec.md"
+      },
+      {
+        "name": "tasks.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6585,
+        "extension": ".md",
+        "path": "docs/Arquitetura/Specs_banco_de_dados/tasks.md"
+      },
+      {
+        "name": "analise-compatibilidade.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 12676,
+        "extension": ".md",
+        "path": "docs/Arquitetura/analise-compatibilidade.md"
+      },
+      {
+        "name": "arquitetura-interna.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 9531,
+        "extension": ".md",
+        "path": "docs/Arquitetura/arquitetura-interna.md"
+      },
+      {
+        "name": "definicoes-front-end.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 4197,
+        "extension": ".md",
+        "path": "docs/Arquitetura/definicoes-front-end.md"
+      },
+      {
+        "name": "definir-arquitetura.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3178,
+        "extension": ".md",
+        "path": "docs/Arquitetura/definir-arquitetura.md"
+      },
+      {
+        "name": "definir-fluxo-de-dados.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 10022,
+        "extension": ".md",
+        "path": "docs/Arquitetura/definir-fluxo-de-dados.md"
+      },
+      {
+        "name": "definições-de-back.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 5886,
+        "extension": ".md",
+        "path": "docs/Arquitetura/definições-de-back.md"
+      },
+      {
+        "name": "documento-c4-v2.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 456,
+        "extension": ".md",
+        "path": "docs/Arquitetura/documento-c4-v2.md"
+      },
+      {
+        "name": "documento-c4.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 444,
+        "extension": ".md",
+        "path": "docs/Arquitetura/documento-c4.md"
+      },
+      {
+        "name": "index.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 687,
+        "extension": ".md",
+        "path": "docs/Arquitetura/index.md"
+      },
+      {
+        "name": "tecnologias_projeto.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 9138,
+        "extension": ".md",
+        "path": "docs/Arquitetura/tecnologias_projeto.md"
+      },
+      {
+        "name": "Design",
+        "type": "directory",
+        "path": "docs/Design",
+        "children": []
+      },
+      {
+        "name": "organizar-Docs.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 802,
+        "extension": ".md",
+        "path": "docs/Design/organizar-Docs.md"
+      },
+      {
+        "name": "prototipo_alta_fidelidade.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2521,
+        "extension": ".md",
+        "path": "docs/Design/prototipo_alta_fidelidade.md"
+      },
+      {
+        "name": "protótipo-baixa-fidelidade.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 684,
+        "extension": ".md",
+        "path": "docs/Design/protótipo-baixa-fidelidade.md"
+      },
+      {
+        "name": "wireframe.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 660,
+        "extension": ".md",
+        "path": "docs/Design/wireframe.md"
+      },
+      {
+        "name": "Estudos",
+        "type": "directory",
+        "path": "docs/Estudos",
+        "children": []
+      },
+      {
+        "name": "Estudo-Front-End.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1043,
+        "extension": ".md",
+        "path": "docs/Estudos/Estudo-Front-End.md"
+      },
+      {
+        "name": "analise-de-implementacao.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3773,
+        "extension": ".md",
+        "path": "docs/Estudos/analise-de-implementacao.md"
+      },
+      {
+        "name": "analise-de-linguagens.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 28408,
+        "extension": ".md",
+        "path": "docs/Estudos/analise-de-linguagens.md"
+      },
+      {
+        "name": "ciclo-vida-software.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 4448,
+        "extension": ".md",
+        "path": "docs/Estudos/ciclo-vida-software.md"
+      },
+      {
+        "name": "docker.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2494,
+        "extension": ".md",
+        "path": "docs/Estudos/docker.md"
+      },
+      {
+        "name": "estudo-back-end.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2891,
+        "extension": ".md",
+        "path": "docs/Estudos/estudo-back-end.md"
+      },
+      {
+        "name": "estudo-banco-de-dados.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 5197,
+        "extension": ".md",
+        "path": "docs/Estudos/estudo-banco-de-dados.md"
+      },
+      {
+        "name": "estudo-de-API.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 10157,
+        "extension": ".md",
+        "path": "docs/Estudos/estudo-de-API.md"
+      },
+      {
+        "name": "estudo-de-agentes-de-IA",
+        "type": "file",
+        "language": "No Extension",
+        "size": 3167,
+        "extension": "",
+        "path": "docs/Estudos/estudo-de-agentes-de-IA"
+      },
+      {
+        "name": "estudo-de-devops.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2567,
+        "extension": ".md",
+        "path": "docs/Estudos/estudo-de-devops.md"
+      },
+      {
+        "name": "estudo-de-react.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 4776,
+        "extension": ".md",
+        "path": "docs/Estudos/estudo-de-react.md"
+      },
+      {
+        "name": "estudo-fastapi.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2574,
+        "extension": ".md",
+        "path": "docs/Estudos/estudo-fastapi.md"
+      },
+      {
+        "name": "estudo-test-driven-development.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 8206,
+        "extension": ".md",
+        "path": "docs/Estudos/estudo-test-driven-development.md"
+      },
+      {
+        "name": "estudo_leaflet.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 5088,
+        "extension": ".md",
+        "path": "docs/Estudos/estudo_leaflet.md"
+      },
+      {
+        "name": "estudo_nominatim.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3968,
+        "extension": ".md",
+        "path": "docs/Estudos/estudo_nominatim.md"
+      },
+      {
+        "name": "estudo_rss.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6753,
+        "extension": ".md",
+        "path": "docs/Estudos/estudo_rss.md"
+      },
+      {
+        "name": "git-github.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2374,
+        "extension": ".md",
+        "path": "docs/Estudos/git-github.md"
+      },
+      {
+        "name": "spec-driven-development.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6831,
+        "extension": ".md",
+        "path": "docs/Estudos/spec-driven-development.md"
+      },
+      {
+        "name": "web-scraping.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2156,
+        "extension": ".md",
+        "path": "docs/Estudos/web-scraping.md"
+      },
+      {
+        "name": "Figma",
+        "type": "directory",
+        "path": "docs/Figma",
+        "children": []
+      },
+      {
+        "name": "Figma svg",
+        "type": "directory",
+        "path": "docs/Figma/Figma svg",
+        "children": []
+      },
+      {
+        "name": "Arquitetura",
+        "type": "directory",
+        "path": "docs/Figma/Figma svg/Arquitetura",
+        "children": []
+      },
+      {
+        "name": "arquitetura.svg",
+        "type": "file",
+        "language": "SVG Image",
+        "size": 21404362,
+        "extension": ".svg",
+        "path": "docs/Figma/Figma svg/Arquitetura/arquitetura.svg"
+      },
+      {
+        "name": "Informacoes gerais do projeto",
+        "type": "directory",
+        "path": "docs/Figma/Figma svg/Informacoes gerais do projeto",
+        "children": []
+      },
+      {
+        "name": "infogeral.pdf",
+        "type": "file",
+        "language": "PDF",
+        "size": 6350874,
+        "extension": ".pdf",
+        "path": "docs/Figma/Figma svg/Informacoes gerais do projeto/infogeral.pdf"
+      },
+      {
+        "name": "infogeral.svg",
+        "type": "file",
+        "language": "SVG Image",
+        "size": 7808495,
+        "extension": ".svg",
+        "path": "docs/Figma/Figma svg/Informacoes gerais do projeto/infogeral.svg"
+      },
+      {
+        "name": "Maior parte",
+        "type": "directory",
+        "path": "docs/Figma/Figma svg/Maior parte",
+        "children": []
+      },
+      {
+        "name": "donedor.svg",
+        "type": "file",
+        "language": "SVG Image",
+        "size": 9908412,
+        "extension": ".svg",
+        "path": "docs/Figma/Figma svg/Maior parte/donedor.svg"
+      },
+      {
+        "name": "escopo.svg",
+        "type": "file",
+        "language": "SVG Image",
+        "size": 9863867,
+        "extension": ".svg",
+        "path": "docs/Figma/Figma svg/Maior parte/escopo.svg"
+      },
+      {
+        "name": "estrategico.svg",
+        "type": "file",
+        "language": "SVG Image",
+        "size": 11548708,
+        "extension": ".svg",
+        "path": "docs/Figma/Figma svg/Maior parte/estrategico.svg"
+      },
+      {
+        "name": "estrutura.svg",
+        "type": "file",
+        "language": "SVG Image",
+        "size": 5936125,
+        "extension": ".svg",
+        "path": "docs/Figma/Figma svg/Maior parte/estrutura.svg"
+      },
+      {
+        "name": "persona.svg",
+        "type": "file",
+        "language": "SVG Image",
+        "size": 9678117,
+        "extension": ".svg",
+        "path": "docs/Figma/Figma svg/Maior parte/persona.svg"
+      },
+      {
+        "name": "priorizacao.svg",
+        "type": "file",
+        "language": "SVG Image",
+        "size": 8651536,
+        "extension": ".svg",
+        "path": "docs/Figma/Figma svg/Maior parte/priorizacao.svg"
+      },
+      {
+        "name": "requisitos.svg",
+        "type": "file",
+        "language": "SVG Image",
+        "size": 31231733,
+        "extension": ".svg",
+        "path": "docs/Figma/Figma svg/Maior parte/requisitos.svg"
+      },
+      {
+        "name": "storymap.svg",
+        "type": "file",
+        "language": "SVG Image",
+        "size": 30812023,
+        "extension": ".svg",
+        "path": "docs/Figma/Figma svg/Maior parte/storymap.svg"
+      },
+      {
+        "name": "Planejamento e entregas semanais",
+        "type": "directory",
+        "path": "docs/Figma/Figma svg/Planejamento e entregas semanais",
+        "children": []
+      },
+      {
+        "name": "planejamento-entregas-semanais.svg",
+        "type": "file",
+        "language": "SVG Image",
+        "size": 39478559,
+        "extension": ".svg",
+        "path": "docs/Figma/Figma svg/Planejamento e entregas semanais/planejamento-entregas-semanais.svg"
+      },
+      {
+        "name": "Retrospectiva",
+        "type": "directory",
+        "path": "docs/Figma/Figma svg/Retrospectiva",
+        "children": []
+      },
+      {
+        "name": "retrospectiva.svg",
+        "type": "file",
+        "language": "SVG Image",
+        "size": 49524043,
+        "extension": ".svg",
+        "path": "docs/Figma/Figma svg/Retrospectiva/retrospectiva.svg"
+      },
+      {
+        "name": "Wireframe",
+        "type": "directory",
+        "path": "docs/Figma/Figma svg/Wireframe",
+        "children": []
+      },
+      {
+        "name": "wireframe.svg",
+        "type": "file",
+        "language": "SVG Image",
+        "size": 19468808,
+        "extension": ".svg",
+        "path": "docs/Figma/Figma svg/Wireframe/wireframe.svg"
+      },
+      {
+        "name": "Preenchimento-Figma.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 7968,
+        "extension": ".md",
+        "path": "docs/Figma/Preenchimento-Figma.md"
+      },
+      {
+        "name": "atualizacao-figma.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2129,
+        "extension": ".md",
+        "path": "docs/Figma/atualizacao-figma.md"
+      },
+      {
+        "name": "doc-estrutura-figma.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3597,
+        "extension": ".md",
+        "path": "docs/Figma/doc-estrutura-figma.md"
+      },
+      {
+        "name": "doc-feature-list.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 5409,
+        "extension": ".md",
+        "path": "docs/Figma/doc-feature-list.md"
+      },
+      {
+        "name": "doc_estrategia-figma.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 4451,
+        "extension": ".md",
+        "path": "docs/Figma/doc_estrategia-figma.md"
+      },
+      {
+        "name": "planejamento_figma.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1049,
+        "extension": ".md",
+        "path": "docs/Figma/planejamento_figma.md"
+      },
+      {
+        "name": "planejamento_figma_semana9.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3048,
+        "extension": ".md",
+        "path": "docs/Figma/planejamento_figma_semana9.md"
+      },
+      {
+        "name": "revisar-story-map.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1222,
+        "extension": ".md",
+        "path": "docs/Figma/revisar-story-map.md"
+      },
+      {
+        "name": "story-map.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1793,
+        "extension": ".md",
+        "path": "docs/Figma/story-map.md"
+      },
+      {
+        "name": "versionamento-story-map.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 720,
+        "extension": ".md",
+        "path": "docs/Figma/versionamento-story-map.md"
+      },
+      {
+        "name": "Implementacao",
+        "type": "directory",
+        "path": "docs/Implementacao",
+        "children": []
+      },
+      {
+        "name": "IMPLEMENTATION-CHECKLIST.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 10882,
+        "extension": ".md",
+        "path": "docs/Implementacao/IMPLEMENTATION-CHECKLIST.md"
+      },
+      {
+        "name": "implementacao-banco.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2252,
+        "extension": ".md",
+        "path": "docs/Implementacao/implementacao-banco.md"
+      },
+      {
+        "name": "Releases",
+        "type": "directory",
+        "path": "docs/Releases",
+        "children": []
+      },
+      {
+        "name": "conteudo_releasenote_v0.1.0.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3967,
+        "extension": ".md",
+        "path": "docs/Releases/conteudo_releasenote_v0.1.0.md"
+      },
+      {
+        "name": "Requisitos",
+        "type": "directory",
+        "path": "docs/Requisitos",
+        "children": []
+      },
+      {
+        "name": "requisitos.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 19956,
+        "extension": ".md",
+        "path": "docs/Requisitos/requisitos.md"
+      },
+      {
+        "name": "Specs",
+        "type": "directory",
+        "path": "docs/Specs",
+        "children": []
+      },
+      {
+        "name": "spec-dashboard.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6552,
+        "extension": ".md",
+        "path": "docs/Specs/spec-dashboard.md"
+      },
+      {
+        "name": "imagens",
+        "type": "directory",
+        "path": "docs/imagens",
+        "children": []
+      },
+      {
+        "name": ".gitkeep",
+        "type": "file",
+        "language": "Unknown",
+        "size": 1,
+        "extension": ".gitkeep",
+        "path": "docs/imagens/.gitkeep"
+      },
+      {
+        "name": "foto-arthur.jpeg",
+        "type": "file",
+        "language": "JPEG Image",
+        "size": 155677,
+        "extension": ".jpeg",
+        "path": "docs/imagens/foto-arthur.jpeg"
+      },
+      {
+        "name": "foto-edson.jpeg",
+        "type": "file",
+        "language": "JPEG Image",
+        "size": 397982,
+        "extension": ".jpeg",
+        "path": "docs/imagens/foto-edson.jpeg"
+      },
+      {
+        "name": "foto-israel.jpeg",
+        "type": "file",
+        "language": "JPEG Image",
+        "size": 144714,
+        "extension": ".jpeg",
+        "path": "docs/imagens/foto-israel.jpeg"
+      },
+      {
+        "name": "foto-jorge.jpeg",
+        "type": "file",
+        "language": "JPEG Image",
+        "size": 243631,
+        "extension": ".jpeg",
+        "path": "docs/imagens/foto-jorge.jpeg"
+      },
+      {
+        "name": "foto-queiroz.jpeg",
+        "type": "file",
+        "language": "JPEG Image",
+        "size": 55424,
+        "extension": ".jpeg",
+        "path": "docs/imagens/foto-queiroz.jpeg"
+      },
+      {
+        "name": "logo-escudo.PNG",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 106675,
+        "extension": ".PNG",
+        "path": "docs/imagens/logo-escudo.PNG"
+      },
+      {
+        "name": "logo-nome.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 188130,
+        "extension": ".png",
+        "path": "docs/imagens/logo-nome.png"
+      },
+      {
+        "name": "nicolas foto.jpg",
+        "type": "file",
+        "language": "JPEG Image",
+        "size": 6490,
+        "extension": ".jpg",
+        "path": "docs/imagens/nicolas foto.jpg"
+      },
+      {
+        "name": "index.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 7639,
+        "extension": ".md",
+        "path": "docs/index.md"
+      },
+      {
+        "name": "metodos_ageis",
+        "type": "directory",
+        "path": "docs/metodos_ageis",
+        "children": []
+      },
+      {
+        "name": "organizar_kanban.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1429,
+        "extension": ".md",
+        "path": "docs/metodos_ageis/organizar_kanban.md"
+      },
+      {
+        "name": "productivity",
+        "type": "directory",
+        "path": "docs/productivity",
+        "children": []
+      },
+      {
+        "name": "collect_metrics.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4812,
+        "extension": ".py",
+        "path": "docs/productivity/collect_metrics.py"
+      },
+      {
+        "name": "index.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 16261,
+        "extension": ".html",
+        "path": "docs/productivity/index.html"
+      },
+      {
+        "name": "metrics.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 9893,
+        "extension": ".json",
+        "path": "docs/productivity/metrics.json"
+      },
+      {
+        "name": "sprints",
+        "type": "directory",
+        "path": "docs/sprints",
+        "children": []
+      },
+      {
+        "name": "sprint0.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2721,
+        "extension": ".md",
+        "path": "docs/sprints/sprint0.md"
+      },
+      {
+        "name": "sprint1.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2274,
+        "extension": ".md",
+        "path": "docs/sprints/sprint1.md"
+      },
+      {
+        "name": "sprint10.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1357,
+        "extension": ".md",
+        "path": "docs/sprints/sprint10.md"
+      },
+      {
+        "name": "sprint11.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1388,
+        "extension": ".md",
+        "path": "docs/sprints/sprint11.md"
+      },
+      {
+        "name": "sprint12.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2047,
+        "extension": ".md",
+        "path": "docs/sprints/sprint12.md"
+      },
+      {
+        "name": "sprint2.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2327,
+        "extension": ".md",
+        "path": "docs/sprints/sprint2.md"
+      },
+      {
+        "name": "sprint3.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1981,
+        "extension": ".md",
+        "path": "docs/sprints/sprint3.md"
+      },
+      {
+        "name": "sprint4.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1976,
+        "extension": ".md",
+        "path": "docs/sprints/sprint4.md"
+      },
+      {
+        "name": "sprint5.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2055,
+        "extension": ".md",
+        "path": "docs/sprints/sprint5.md"
+      },
+      {
+        "name": "sprint6.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2121,
+        "extension": ".md",
+        "path": "docs/sprints/sprint6.md"
+      },
+      {
+        "name": "sprint7.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2031,
+        "extension": ".md",
+        "path": "docs/sprints/sprint7.md"
+      },
+      {
+        "name": "sprint8.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2376,
+        "extension": ".md",
+        "path": "docs/sprints/sprint8.md"
+      },
+      {
+        "name": "sprint9.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1003,
+        "extension": ".md",
+        "path": "docs/sprints/sprint9.md"
+      },
+      {
+        "name": "templates_issue",
+        "type": "directory",
+        "path": "docs/templates_issue",
+        "children": []
+      },
+      {
+        "name": "issue_bug.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 516,
+        "extension": ".md",
+        "path": "docs/templates_issue/issue_bug.md"
+      },
+      {
+        "name": "issue_padrao.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 583,
+        "extension": ".md",
+        "path": "docs/templates_issue/issue_padrao.md"
+      },
+      {
+        "name": "template-pull-request.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 633,
+        "extension": ".md",
+        "path": "docs/templates_issue/template-pull-request.md"
+      },
+      {
+        "name": "template_issue.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1230,
+        "extension": ".md",
+        "path": "docs/templates_issue/template_issue.md"
+      },
+      {
+        "name": "frontend",
+        "type": "directory",
+        "path": "frontend",
+        "children": []
+      },
+      {
+        "name": ".env.example",
+        "type": "file",
+        "language": "Unknown",
+        "size": 150,
+        "extension": ".example",
+        "path": "frontend/.env.example"
+      },
+      {
+        "name": ".eslintrc.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 73,
+        "extension": ".json",
+        "path": "frontend/.eslintrc.json"
+      },
+      {
+        "name": ".gitignore",
+        "type": "file",
+        "language": "Git Ignore",
+        "size": 370,
+        "extension": ".gitignore",
+        "path": "frontend/.gitignore"
+      },
+      {
+        "name": "Dockerfile",
+        "type": "file",
+        "language": "No Extension",
+        "size": 124,
+        "extension": "",
+        "path": "frontend/Dockerfile"
+      },
+      {
+        "name": "Specs",
+        "type": "directory",
+        "path": "frontend/Specs",
+        "children": []
+      },
+      {
+        "name": "Specs_dashboard_busca",
+        "type": "directory",
+        "path": "frontend/Specs/Specs_dashboard_busca",
+        "children": []
+      },
+      {
+        "name": "plan.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 5110,
+        "extension": ".md",
+        "path": "frontend/Specs/Specs_dashboard_busca/plan.md"
+      },
+      {
+        "name": "spec.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 5634,
+        "extension": ".md",
+        "path": "frontend/Specs/Specs_dashboard_busca/spec.md"
+      },
+      {
+        "name": "tasks.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2905,
+        "extension": ".md",
+        "path": "frontend/Specs/Specs_dashboard_busca/tasks.md"
+      },
+      {
+        "name": "Specs_dashboard_busca_resultados",
+        "type": "directory",
+        "path": "frontend/Specs/Specs_dashboard_busca_resultados",
+        "children": []
+      },
+      {
+        "name": "plan.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 9552,
+        "extension": ".md",
+        "path": "frontend/Specs/Specs_dashboard_busca_resultados/plan.md"
+      },
+      {
+        "name": "spec.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6865,
+        "extension": ".md",
+        "path": "frontend/Specs/Specs_dashboard_busca_resultados/spec.md"
+      },
+      {
+        "name": "tasks.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6195,
+        "extension": ".md",
+        "path": "frontend/Specs/Specs_dashboard_busca_resultados/tasks.md"
+      },
+      {
+        "name": "Specs_mapa_interativo",
+        "type": "directory",
+        "path": "frontend/Specs/Specs_mapa_interativo",
+        "children": []
+      },
+      {
+        "name": "plan.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 4180,
+        "extension": ".md",
+        "path": "frontend/Specs/Specs_mapa_interativo/plan.md"
+      },
+      {
+        "name": "spec.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3343,
+        "extension": ".md",
+        "path": "frontend/Specs/Specs_mapa_interativo/spec.md"
+      },
+      {
+        "name": "tasks.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2429,
+        "extension": ".md",
+        "path": "frontend/Specs/Specs_mapa_interativo/tasks.md"
+      },
+      {
+        "name": "Specs_pg_inicial",
+        "type": "directory",
+        "path": "frontend/Specs/Specs_pg_inicial",
+        "children": []
+      },
+      {
+        "name": "constitution.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2616,
+        "extension": ".md",
+        "path": "frontend/Specs/Specs_pg_inicial/constitution.md"
+      },
+      {
+        "name": "imagens",
+        "type": "directory",
+        "path": "frontend/Specs/Specs_pg_inicial/imagens",
+        "children": []
+      },
+      {
+        "name": "logo-original.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 188130,
+        "extension": ".png",
+        "path": "frontend/Specs/Specs_pg_inicial/imagens/logo-original.png"
+      },
+      {
+        "name": "pagina_inicial_com_menu.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 290257,
+        "extension": ".png",
+        "path": "frontend/Specs/Specs_pg_inicial/imagens/pagina_inicial_com_menu.png"
+      },
+      {
+        "name": "pagina_inicial_parte1.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 209930,
+        "extension": ".png",
+        "path": "frontend/Specs/Specs_pg_inicial/imagens/pagina_inicial_parte1.png"
+      },
+      {
+        "name": "pagina_inicial_parte2.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 278223,
+        "extension": ".png",
+        "path": "frontend/Specs/Specs_pg_inicial/imagens/pagina_inicial_parte2.png"
+      },
+      {
+        "name": "plan.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 9688,
+        "extension": ".md",
+        "path": "frontend/Specs/Specs_pg_inicial/plan.md"
+      },
+      {
+        "name": "spec.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 7706,
+        "extension": ".md",
+        "path": "frontend/Specs/Specs_pg_inicial/spec.md"
+      },
+      {
+        "name": "tasks.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6531,
+        "extension": ".md",
+        "path": "frontend/Specs/Specs_pg_inicial/tasks.md"
+      },
+      {
+        "name": "__tests__",
+        "type": "directory",
+        "path": "frontend/__tests__",
+        "children": []
+      },
+      {
+        "name": "components",
+        "type": "directory",
+        "path": "frontend/__tests__/components",
+        "children": []
+      },
+      {
+        "name": "CardResumo.test.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1527,
+        "extension": ".tsx",
+        "path": "frontend/__tests__/components/CardResumo.test.tsx"
+      },
+      {
+        "name": "Chrome.test.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 4197,
+        "extension": ".tsx",
+        "path": "frontend/__tests__/components/Chrome.test.tsx"
+      },
+      {
+        "name": "DetalhesOcorrencia.test.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 3177,
+        "extension": ".tsx",
+        "path": "frontend/__tests__/components/DetalhesOcorrencia.test.tsx"
+      },
+      {
+        "name": "Drawer.test.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 5114,
+        "extension": ".tsx",
+        "path": "frontend/__tests__/components/Drawer.test.tsx"
+      },
+      {
+        "name": "Footer.test.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1875,
+        "extension": ".tsx",
+        "path": "frontend/__tests__/components/Footer.test.tsx"
+      },
+      {
+        "name": "Header.test.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 3797,
+        "extension": ".tsx",
+        "path": "frontend/__tests__/components/Header.test.tsx"
+      },
+      {
+        "name": "Hero.test.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1815,
+        "extension": ".tsx",
+        "path": "frontend/__tests__/components/Hero.test.tsx"
+      },
+      {
+        "name": "Logo.test.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1913,
+        "extension": ".tsx",
+        "path": "frontend/__tests__/components/Logo.test.tsx"
+      },
+      {
+        "name": "MapaInterativo.test.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 5037,
+        "extension": ".tsx",
+        "path": "frontend/__tests__/components/MapaInterativo.test.tsx"
+      },
+      {
+        "name": "NewsCard.test.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 4141,
+        "extension": ".tsx",
+        "path": "frontend/__tests__/components/NewsCard.test.tsx"
+      },
+      {
+        "name": "NewsFeed.test.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 3182,
+        "extension": ".tsx",
+        "path": "frontend/__tests__/components/NewsFeed.test.tsx"
+      },
+      {
+        "name": "PainelFiltros.test.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 8227,
+        "extension": ".tsx",
+        "path": "frontend/__tests__/components/PainelFiltros.test.tsx"
+      },
+      {
+        "name": "ResultadoBusca.test.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1401,
+        "extension": ".tsx",
+        "path": "frontend/__tests__/components/ResultadoBusca.test.tsx"
+      },
+      {
+        "name": "SearchProvider.test.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1445,
+        "extension": ".tsx",
+        "path": "frontend/__tests__/components/SearchProvider.test.tsx"
+      },
+      {
+        "name": "icons.test.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 2721,
+        "extension": ".tsx",
+        "path": "frontend/__tests__/components/icons.test.tsx"
+      },
+      {
+        "name": "fixtures",
+        "type": "directory",
+        "path": "frontend/__tests__/fixtures",
+        "children": []
+      },
+      {
+        "name": "noticias.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 6063,
+        "extension": ".ts",
+        "path": "frontend/__tests__/fixtures/noticias.ts"
+      },
+      {
+        "name": "utils",
+        "type": "directory",
+        "path": "frontend/__tests__/utils",
+        "children": []
+      },
+      {
+        "name": "busca.test.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 2904,
+        "extension": ".ts",
+        "path": "frontend/__tests__/utils/busca.test.ts"
+      },
+      {
+        "name": "filtros.test.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 5666,
+        "extension": ".ts",
+        "path": "frontend/__tests__/utils/filtros.test.ts"
+      },
+      {
+        "name": "iaResumo.test.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1597,
+        "extension": ".ts",
+        "path": "frontend/__tests__/utils/iaResumo.test.ts"
+      },
+      {
+        "name": "noticias.test.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 4070,
+        "extension": ".ts",
+        "path": "frontend/__tests__/utils/noticias.test.ts"
+      },
+      {
+        "name": "view",
+        "type": "directory",
+        "path": "frontend/__tests__/view",
+        "children": []
+      },
+      {
+        "name": "Home.test.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 3920,
+        "extension": ".tsx",
+        "path": "frontend/__tests__/view/Home.test.tsx"
+      },
+      {
+        "name": "NoticiaDetalhe.test.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 4005,
+        "extension": ".tsx",
+        "path": "frontend/__tests__/view/NoticiaDetalhe.test.tsx"
+      },
+      {
+        "name": "app",
+        "type": "directory",
+        "path": "frontend/app",
+        "children": []
+      },
+      {
+        "name": "layout.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1356,
+        "extension": ".tsx",
+        "path": "frontend/app/layout.tsx"
+      },
+      {
+        "name": "mapa",
+        "type": "directory",
+        "path": "frontend/app/mapa",
+        "children": []
+      },
+      {
+        "name": "page.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 96,
+        "extension": ".tsx",
+        "path": "frontend/app/mapa/page.tsx"
+      },
+      {
+        "name": "noticia",
+        "type": "directory",
+        "path": "frontend/app/noticia",
+        "children": []
+      },
+      {
+        "name": "[id]",
+        "type": "directory",
+        "path": "frontend/app/noticia/[id]",
+        "children": []
+      },
+      {
+        "name": "page.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 960,
+        "extension": ".tsx",
+        "path": "frontend/app/noticia/[id]/page.tsx"
+      },
+      {
+        "name": "page.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 96,
+        "extension": ".tsx",
+        "path": "frontend/app/page.tsx"
+      },
+      {
+        "name": "components",
+        "type": "directory",
+        "path": "frontend/components",
+        "children": []
+      },
+      {
+        "name": "CardResumo",
+        "type": "directory",
+        "path": "frontend/components/CardResumo",
+        "children": []
+      },
+      {
+        "name": "CardResumo.module.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 1333,
+        "extension": ".css",
+        "path": "frontend/components/CardResumo/CardResumo.module.css"
+      },
+      {
+        "name": "CardResumo.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1326,
+        "extension": ".tsx",
+        "path": "frontend/components/CardResumo/CardResumo.tsx"
+      },
+      {
+        "name": "Chrome",
+        "type": "directory",
+        "path": "frontend/components/Chrome",
+        "children": []
+      },
+      {
+        "name": "Chrome.module.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 129,
+        "extension": ".css",
+        "path": "frontend/components/Chrome/Chrome.module.css"
+      },
+      {
+        "name": "Chrome.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1058,
+        "extension": ".tsx",
+        "path": "frontend/components/Chrome/Chrome.tsx"
+      },
+      {
+        "name": "DetalhesOcorrencia",
+        "type": "directory",
+        "path": "frontend/components/DetalhesOcorrencia",
+        "children": []
+      },
+      {
+        "name": "DetalhesOcorrencia.module.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 2037,
+        "extension": ".css",
+        "path": "frontend/components/DetalhesOcorrencia/DetalhesOcorrencia.module.css"
+      },
+      {
+        "name": "DetalhesOcorrencia.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 2572,
+        "extension": ".tsx",
+        "path": "frontend/components/DetalhesOcorrencia/DetalhesOcorrencia.tsx"
+      },
+      {
+        "name": "Drawer",
+        "type": "directory",
+        "path": "frontend/components/Drawer",
+        "children": []
+      },
+      {
+        "name": "Drawer.module.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 2126,
+        "extension": ".css",
+        "path": "frontend/components/Drawer/Drawer.module.css"
+      },
+      {
+        "name": "Drawer.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 3152,
+        "extension": ".tsx",
+        "path": "frontend/components/Drawer/Drawer.tsx"
+      },
+      {
+        "name": "Footer",
+        "type": "directory",
+        "path": "frontend/components/Footer",
+        "children": []
+      },
+      {
+        "name": "Footer.module.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 186,
+        "extension": ".css",
+        "path": "frontend/components/Footer/Footer.module.css"
+      },
+      {
+        "name": "Footer.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 284,
+        "extension": ".tsx",
+        "path": "frontend/components/Footer/Footer.tsx"
+      },
+      {
+        "name": "Header",
+        "type": "directory",
+        "path": "frontend/components/Header",
+        "children": []
+      },
+      {
+        "name": "Header.module.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 1524,
+        "extension": ".css",
+        "path": "frontend/components/Header/Header.module.css"
+      },
+      {
+        "name": "Header.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1462,
+        "extension": ".tsx",
+        "path": "frontend/components/Header/Header.tsx"
+      },
+      {
+        "name": "Hero",
+        "type": "directory",
+        "path": "frontend/components/Hero",
+        "children": []
+      },
+      {
+        "name": "Hero.module.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 737,
+        "extension": ".css",
+        "path": "frontend/components/Hero/Hero.module.css"
+      },
+      {
+        "name": "Hero.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 646,
+        "extension": ".tsx",
+        "path": "frontend/components/Hero/Hero.tsx"
+      },
+      {
+        "name": "Logo",
+        "type": "directory",
+        "path": "frontend/components/Logo",
+        "children": []
+      },
+      {
+        "name": "Logo.module.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 310,
+        "extension": ".css",
+        "path": "frontend/components/Logo/Logo.module.css"
+      },
+      {
+        "name": "Logo.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 539,
+        "extension": ".tsx",
+        "path": "frontend/components/Logo/Logo.tsx"
+      },
+      {
+        "name": "MapaInterativo",
+        "type": "directory",
+        "path": "frontend/components/MapaInterativo",
+        "children": []
+      },
+      {
+        "name": "MapView.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 2114,
+        "extension": ".tsx",
+        "path": "frontend/components/MapaInterativo/MapView.tsx"
+      },
+      {
+        "name": "MapaInterativo.module.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 68,
+        "extension": ".css",
+        "path": "frontend/components/MapaInterativo/MapaInterativo.module.css"
+      },
+      {
+        "name": "MapaInterativo.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 959,
+        "extension": ".tsx",
+        "path": "frontend/components/MapaInterativo/MapaInterativo.tsx"
+      },
+      {
+        "name": "NewsCard",
+        "type": "directory",
+        "path": "frontend/components/NewsCard",
+        "children": []
+      },
+      {
+        "name": "NewsCard.module.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 1570,
+        "extension": ".css",
+        "path": "frontend/components/NewsCard/NewsCard.module.css"
+      },
+      {
+        "name": "NewsCard.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1163,
+        "extension": ".tsx",
+        "path": "frontend/components/NewsCard/NewsCard.tsx"
+      },
+      {
+        "name": "NewsFeed",
+        "type": "directory",
+        "path": "frontend/components/NewsFeed",
+        "children": []
+      },
+      {
+        "name": "NewsFeed.module.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 725,
+        "extension": ".css",
+        "path": "frontend/components/NewsFeed/NewsFeed.module.css"
+      },
+      {
+        "name": "NewsFeed.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 857,
+        "extension": ".tsx",
+        "path": "frontend/components/NewsFeed/NewsFeed.tsx"
+      },
+      {
+        "name": "PainelFiltros",
+        "type": "directory",
+        "path": "frontend/components/PainelFiltros",
+        "children": []
+      },
+      {
+        "name": "PainelFiltros.module.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 2397,
+        "extension": ".css",
+        "path": "frontend/components/PainelFiltros/PainelFiltros.module.css"
+      },
+      {
+        "name": "PainelFiltros.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 5463,
+        "extension": ".tsx",
+        "path": "frontend/components/PainelFiltros/PainelFiltros.tsx"
+      },
+      {
+        "name": "ResultadoBusca",
+        "type": "directory",
+        "path": "frontend/components/ResultadoBusca",
+        "children": []
+      },
+      {
+        "name": "ResultadoBusca.module.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 591,
+        "extension": ".css",
+        "path": "frontend/components/ResultadoBusca/ResultadoBusca.module.css"
+      },
+      {
+        "name": "ResultadoBusca.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 758,
+        "extension": ".tsx",
+        "path": "frontend/components/ResultadoBusca/ResultadoBusca.tsx"
+      },
+      {
+        "name": "SearchProvider",
+        "type": "directory",
+        "path": "frontend/components/SearchProvider",
+        "children": []
+      },
+      {
+        "name": "SearchProvider.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 593,
+        "extension": ".tsx",
+        "path": "frontend/components/SearchProvider/SearchProvider.tsx"
+      },
+      {
+        "name": "icons",
+        "type": "directory",
+        "path": "frontend/components/icons",
+        "children": []
+      },
+      {
+        "name": "index.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 4264,
+        "extension": ".tsx",
+        "path": "frontend/components/icons/index.tsx"
+      },
+      {
+        "name": "custom.d.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 24,
+        "extension": ".ts",
+        "path": "frontend/custom.d.ts"
+      },
+      {
+        "name": "jest.config.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 384,
+        "extension": ".ts",
+        "path": "frontend/jest.config.ts"
+      },
+      {
+        "name": "jest.setup.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 36,
+        "extension": ".ts",
+        "path": "frontend/jest.setup.ts"
+      },
+      {
+        "name": "next.config.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 104,
+        "extension": ".ts",
+        "path": "frontend/next.config.ts"
+      },
+      {
+        "name": "package-lock.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 372768,
+        "extension": ".json",
+        "path": "frontend/package-lock.json"
+      },
+      {
+        "name": "package.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 903,
+        "extension": ".json",
+        "path": "frontend/package.json"
+      },
+      {
+        "name": "public",
+        "type": "directory",
+        "path": "frontend/public",
+        "children": []
+      },
+      {
+        "name": "logo-escudo.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 106675,
+        "extension": ".png",
+        "path": "frontend/public/logo-escudo.png"
+      },
+      {
+        "name": "logo-original.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 188130,
+        "extension": ".png",
+        "path": "frontend/public/logo-original.png"
+      },
+      {
+        "name": "style",
+        "type": "directory",
+        "path": "frontend/style",
+        "children": []
+      },
+      {
+        "name": "globals.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 1797,
+        "extension": ".css",
+        "path": "frontend/style/globals.css"
+      },
+      {
+        "name": "tsconfig.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 666,
+        "extension": ".json",
+        "path": "frontend/tsconfig.json"
+      },
+      {
+        "name": "utils",
+        "type": "directory",
+        "path": "frontend/utils",
+        "children": []
+      },
+      {
+        "name": "busca.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 901,
+        "extension": ".ts",
+        "path": "frontend/utils/busca.ts"
+      },
+      {
+        "name": "filtros.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 2056,
+        "extension": ".ts",
+        "path": "frontend/utils/filtros.ts"
+      },
+      {
+        "name": "iaResumo.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 975,
+        "extension": ".ts",
+        "path": "frontend/utils/iaResumo.ts"
+      },
+      {
+        "name": "noticias.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 2833,
+        "extension": ".ts",
+        "path": "frontend/utils/noticias.ts"
+      },
+      {
+        "name": "view",
+        "type": "directory",
+        "path": "frontend/view",
+        "children": []
+      },
+      {
+        "name": "Home",
+        "type": "directory",
+        "path": "frontend/view/Home",
+        "children": []
+      },
+      {
+        "name": "Home.module.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 68,
+        "extension": ".css",
+        "path": "frontend/view/Home/Home.module.css"
+      },
+      {
+        "name": "Home.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1089,
+        "extension": ".tsx",
+        "path": "frontend/view/Home/Home.tsx"
+      },
+      {
+        "name": "Mapa",
+        "type": "directory",
+        "path": "frontend/view/Mapa",
+        "children": []
+      },
+      {
+        "name": "Mapa.module.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 63,
+        "extension": ".css",
+        "path": "frontend/view/Mapa/Mapa.module.css"
+      },
+      {
+        "name": "Mapa.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1034,
+        "extension": ".tsx",
+        "path": "frontend/view/Mapa/Mapa.tsx"
+      },
+      {
+        "name": "NoticiaDetalhe",
+        "type": "directory",
+        "path": "frontend/view/NoticiaDetalhe",
+        "children": []
+      },
+      {
+        "name": "NoticiaDetalhe.module.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 2504,
+        "extension": ".css",
+        "path": "frontend/view/NoticiaDetalhe/NoticiaDetalhe.module.css"
+      },
+      {
+        "name": "NoticiaDetalhe.tsx",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 2990,
+        "extension": ".tsx",
+        "path": "frontend/view/NoticiaDetalhe/NoticiaDetalhe.tsx"
+      },
+      {
+        "name": "mkdocs.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 1622,
+        "extension": ".yml",
+        "path": "mkdocs.yml"
+      }
+    ]
+  },
+  "_metadata": {
+    "extracted_at": "2026-09-17T04:04:44.669516",
+    "file_path": "data/silver/hierarchy_2026-1-SafeStreets.json"
+  }
+}

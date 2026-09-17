@@ -1,0 +1,698 @@
+{
+  "repository": "2026-02-UnDb",
+  "owner": "unb-mds",
+  "branch": "main",
+  "extracted_at": "2026-09-17T04:03:59.831907",
+  "hierarchy": {
+    "name": "root",
+    "type": "directory",
+    "children": [
+      {
+        "name": ".gitattributes",
+        "type": "file",
+        "language": "Unknown",
+        "size": 13,
+        "extension": ".gitattributes",
+        "path": ".gitattributes"
+      },
+      {
+        "name": ".github",
+        "type": "directory",
+        "path": ".github",
+        "children": []
+      },
+      {
+        "name": "ISSUE_TEMPLATE",
+        "type": "directory",
+        "path": ".github/ISSUE_TEMPLATE",
+        "children": []
+      },
+      {
+        "name": "daily.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 350,
+        "extension": ".md",
+        "path": ".github/ISSUE_TEMPLATE/daily.md"
+      },
+      {
+        "name": "epic.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 816,
+        "extension": ".md",
+        "path": ".github/ISSUE_TEMPLATE/epic.md"
+      },
+      {
+        "name": "tarefa.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 710,
+        "extension": ".md",
+        "path": ".github/ISSUE_TEMPLATE/tarefa.md"
+      },
+      {
+        "name": ".gitignore",
+        "type": "file",
+        "language": "Git Ignore",
+        "size": 87,
+        "extension": ".gitignore",
+        "path": ".gitignore"
+      },
+      {
+        "name": ".idea",
+        "type": "directory",
+        "path": ".idea",
+        "children": []
+      },
+      {
+        "name": ".gitignore",
+        "type": "file",
+        "language": "Git Ignore",
+        "size": 228,
+        "extension": ".gitignore",
+        "path": ".idea/.gitignore"
+      },
+      {
+        "name": "AGENTS.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1450,
+        "extension": ".md",
+        "path": "AGENTS.md"
+      },
+      {
+        "name": "CLAUDE.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 4582,
+        "extension": ".md",
+        "path": "CLAUDE.md"
+      },
+      {
+        "name": "README.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3224,
+        "extension": ".md",
+        "path": "README.md"
+      },
+      {
+        "name": "backend",
+        "type": "directory",
+        "path": "backend",
+        "children": []
+      },
+      {
+        "name": ".dockerignore",
+        "type": "file",
+        "language": "Docker Ignore",
+        "size": 113,
+        "extension": ".dockerignore",
+        "path": "backend/.dockerignore"
+      },
+      {
+        "name": ".env.example",
+        "type": "file",
+        "language": "Unknown",
+        "size": 650,
+        "extension": ".example",
+        "path": "backend/.env.example"
+      },
+      {
+        "name": "Dockerfile",
+        "type": "file",
+        "language": "No Extension",
+        "size": 360,
+        "extension": "",
+        "path": "backend/Dockerfile"
+      },
+      {
+        "name": "alembic.ini",
+        "type": "file",
+        "language": "INI",
+        "size": 581,
+        "extension": ".ini",
+        "path": "backend/alembic.ini"
+      },
+      {
+        "name": "alembic",
+        "type": "directory",
+        "path": "backend/alembic",
+        "children": []
+      },
+      {
+        "name": "env.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1302,
+        "extension": ".py",
+        "path": "backend/alembic/env.py"
+      },
+      {
+        "name": "script.py.mako",
+        "type": "file",
+        "language": "Unknown",
+        "size": 608,
+        "extension": ".mako",
+        "path": "backend/alembic/script.py.mako"
+      },
+      {
+        "name": "versions",
+        "type": "directory",
+        "path": "backend/alembic/versions",
+        "children": []
+      },
+      {
+        "name": "20260911_01_create_initial_schema.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4559,
+        "extension": ".py",
+        "path": "backend/alembic/versions/20260911_01_create_initial_schema.py"
+      },
+      {
+        "name": "app",
+        "type": "directory",
+        "path": "backend/app",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "backend/app/__init__.py"
+      },
+      {
+        "name": "core",
+        "type": "directory",
+        "path": "backend/app/core",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "backend/app/core/__init__.py"
+      },
+      {
+        "name": "config.py",
+        "type": "file",
+        "language": "Python",
+        "size": 151,
+        "extension": ".py",
+        "path": "backend/app/core/config.py"
+      },
+      {
+        "name": "database.py",
+        "type": "file",
+        "language": "Python",
+        "size": 453,
+        "extension": ".py",
+        "path": "backend/app/core/database.py"
+      },
+      {
+        "name": "main.py",
+        "type": "file",
+        "language": "Python",
+        "size": 229,
+        "extension": ".py",
+        "path": "backend/app/main.py"
+      },
+      {
+        "name": "models",
+        "type": "directory",
+        "path": "backend/app/models",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 300,
+        "extension": ".py",
+        "path": "backend/app/models/__init__.py"
+      },
+      {
+        "name": "avaliacao.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2503,
+        "extension": ".py",
+        "path": "backend/app/models/avaliacao.py"
+      },
+      {
+        "name": "disciplina.py",
+        "type": "file",
+        "language": "Python",
+        "size": 768,
+        "extension": ".py",
+        "path": "backend/app/models/disciplina.py"
+      },
+      {
+        "name": "enums.py",
+        "type": "file",
+        "language": "Python",
+        "size": 210,
+        "extension": ".py",
+        "path": "backend/app/models/enums.py"
+      },
+      {
+        "name": "professor.py",
+        "type": "file",
+        "language": "Python",
+        "size": 592,
+        "extension": ".py",
+        "path": "backend/app/models/professor.py"
+      },
+      {
+        "name": "turma.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1005,
+        "extension": ".py",
+        "path": "backend/app/models/turma.py"
+      },
+      {
+        "name": "usuario.py",
+        "type": "file",
+        "language": "Python",
+        "size": 931,
+        "extension": ".py",
+        "path": "backend/app/models/usuario.py"
+      },
+      {
+        "name": "routers",
+        "type": "directory",
+        "path": "backend/app/routers",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "backend/app/routers/__init__.py"
+      },
+      {
+        "name": "avaliacoes.py",
+        "type": "file",
+        "language": "Python",
+        "size": 93,
+        "extension": ".py",
+        "path": "backend/app/routers/avaliacoes.py"
+      },
+      {
+        "name": "schemas",
+        "type": "directory",
+        "path": "backend/app/schemas",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "backend/app/schemas/__init__.py"
+      },
+      {
+        "name": "avaliacao.py",
+        "type": "file",
+        "language": "Python",
+        "size": 905,
+        "extension": ".py",
+        "path": "backend/app/schemas/avaliacao.py"
+      },
+      {
+        "name": "services",
+        "type": "directory",
+        "path": "backend/app/services",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 239,
+        "extension": ".py",
+        "path": "backend/app/services/__init__.py"
+      },
+      {
+        "name": "requirements.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 86,
+        "extension": ".txt",
+        "path": "backend/requirements.txt"
+      },
+      {
+        "name": "docs",
+        "type": "directory",
+        "path": "docs",
+        "children": []
+      },
+      {
+        "name": "arquitetura.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 13236,
+        "extension": ".md",
+        "path": "docs/arquitetura.md"
+      },
+      {
+        "name": "diagramas",
+        "type": "directory",
+        "path": "docs/diagramas",
+        "children": []
+      },
+      {
+        "name": "gerar_modelos.py",
+        "type": "file",
+        "language": "Python",
+        "size": 8293,
+        "extension": ".py",
+        "path": "docs/diagramas/gerar_modelos.py"
+      },
+      {
+        "name": "modelo conceitual.pdf",
+        "type": "file",
+        "language": "PDF",
+        "size": 3694,
+        "extension": ".pdf",
+        "path": "docs/diagramas/modelo conceitual.pdf"
+      },
+      {
+        "name": "modelo logico.pdf",
+        "type": "file",
+        "language": "PDF",
+        "size": 4407,
+        "extension": ".pdf",
+        "path": "docs/diagramas/modelo logico.pdf"
+      },
+      {
+        "name": "estudos",
+        "type": "directory",
+        "path": "docs/estudos",
+        "children": []
+      },
+      {
+        "name": "docker.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 10637,
+        "extension": ".md",
+        "path": "docs/estudos/docker.md"
+      },
+      {
+        "name": "requisitos.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 15186,
+        "extension": ".md",
+        "path": "docs/requisitos.md"
+      },
+      {
+        "name": "skills",
+        "type": "directory",
+        "path": "skills",
+        "children": []
+      },
+      {
+        "name": "engineering",
+        "type": "directory",
+        "path": "skills/engineering",
+        "children": []
+      },
+      {
+        "name": "architecture",
+        "type": "directory",
+        "path": "skills/engineering/architecture",
+        "children": []
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 18871,
+        "extension": ".md",
+        "path": "skills/engineering/architecture/SKILL.md"
+      },
+      {
+        "name": "code-review",
+        "type": "directory",
+        "path": "skills/engineering/code-review",
+        "children": []
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 13450,
+        "extension": ".md",
+        "path": "skills/engineering/code-review/SKILL.md"
+      },
+      {
+        "name": "implementation",
+        "type": "directory",
+        "path": "skills/engineering/implementation",
+        "children": []
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 8857,
+        "extension": ".md",
+        "path": "skills/engineering/implementation/SKILL.md"
+      },
+      {
+        "name": "testing",
+        "type": "directory",
+        "path": "skills/engineering/testing",
+        "children": []
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 12300,
+        "extension": ".md",
+        "path": "skills/engineering/testing/SKILL.md"
+      },
+      {
+        "name": "governance",
+        "type": "directory",
+        "path": "skills/governance",
+        "children": []
+      },
+      {
+        "name": "project-governance",
+        "type": "directory",
+        "path": "skills/governance/project-governance",
+        "children": []
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 11517,
+        "extension": ".md",
+        "path": "skills/governance/project-governance/SKILL.md"
+      },
+      {
+        "name": "references",
+        "type": "directory",
+        "path": "skills/governance/project-governance/references",
+        "children": []
+      },
+      {
+        "name": "HUMAN_APPROVAL_BOUNDARIES.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3559,
+        "extension": ".md",
+        "path": "skills/governance/project-governance/references/HUMAN_APPROVAL_BOUNDARIES.md"
+      },
+      {
+        "name": "skill-authoring",
+        "type": "directory",
+        "path": "skills/governance/skill-authoring",
+        "children": []
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 13338,
+        "extension": ".md",
+        "path": "skills/governance/skill-authoring/SKILL.md"
+      },
+      {
+        "name": "references",
+        "type": "directory",
+        "path": "skills/governance/skill-authoring/references",
+        "children": []
+      },
+      {
+        "name": "LIFECYCLE.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1534,
+        "extension": ".md",
+        "path": "skills/governance/skill-authoring/references/LIFECYCLE.md"
+      },
+      {
+        "name": "SKILL_TEMPLATE.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1678,
+        "extension": ".md",
+        "path": "skills/governance/skill-authoring/references/SKILL_TEMPLATE.md"
+      },
+      {
+        "name": "VALIDATION_CHECKLIST.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2332,
+        "extension": ".md",
+        "path": "skills/governance/skill-authoring/references/VALIDATION_CHECKLIST.md"
+      },
+      {
+        "name": "process",
+        "type": "directory",
+        "path": "skills/process",
+        "children": []
+      },
+      {
+        "name": "requirements",
+        "type": "directory",
+        "path": "skills/process/requirements",
+        "children": []
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 11791,
+        "extension": ".md",
+        "path": "skills/process/requirements/SKILL.md"
+      },
+      {
+        "name": "technology",
+        "type": "directory",
+        "path": "skills/technology",
+        "children": []
+      },
+      {
+        "name": "docker",
+        "type": "directory",
+        "path": "skills/technology/docker",
+        "children": []
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 7657,
+        "extension": ".md",
+        "path": "skills/technology/docker/SKILL.md"
+      },
+      {
+        "name": "fastapi",
+        "type": "directory",
+        "path": "skills/technology/fastapi",
+        "children": []
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 11060,
+        "extension": ".md",
+        "path": "skills/technology/fastapi/SKILL.md"
+      },
+      {
+        "name": "specs.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 9889,
+        "extension": ".md",
+        "path": "specs.md"
+      },
+      {
+        "name": "sprints",
+        "type": "directory",
+        "path": "sprints",
+        "children": []
+      },
+      {
+        "name": "sprint00",
+        "type": "directory",
+        "path": "sprints/sprint00",
+        "children": []
+      },
+      {
+        "name": "frontend.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3196,
+        "extension": ".md",
+        "path": "sprints/sprint00/frontend.md"
+      },
+      {
+        "name": "git.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 9458,
+        "extension": ".md",
+        "path": "sprints/sprint00/git.md"
+      },
+      {
+        "name": "retorspectiva.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 402,
+        "extension": ".md",
+        "path": "sprints/sprint00/retorspectiva.md"
+      },
+      {
+        "name": "sprint01",
+        "type": "directory",
+        "path": "sprints/sprint01",
+        "children": []
+      },
+      {
+        "name": "estudo_metodologia_agil-and-scrum.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 22616,
+        "extension": ".md",
+        "path": "sprints/sprint01/estudo_metodologia_agil-and-scrum.md"
+      },
+      {
+        "name": "sprint02",
+        "type": "directory",
+        "path": "sprints/sprint02",
+        "children": []
+      },
+      {
+        "name": "banco-de-dados.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2436,
+        "extension": ".md",
+        "path": "sprints/sprint02/banco-de-dados.md"
+      }
+    ]
+  },
+  "_metadata": {
+    "extracted_at": "2026-09-17T04:04:44.590165",
+    "file_path": "data/silver/hierarchy_2026-02-UnDb.json"
+  }
+}

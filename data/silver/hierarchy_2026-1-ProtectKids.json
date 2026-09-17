@@ -1,0 +1,1150 @@
+{
+  "repository": "2026-1-ProtectKids",
+  "owner": "unb-mds",
+  "branch": "main",
+  "extracted_at": "2026-09-17T04:03:55.610402",
+  "hierarchy": {
+    "name": "root",
+    "type": "directory",
+    "children": [
+      {
+        "name": ".env.example",
+        "type": "file",
+        "language": "Unknown",
+        "size": 250,
+        "extension": ".example",
+        "path": ".env.example"
+      },
+      {
+        "name": ".github",
+        "type": "directory",
+        "path": ".github",
+        "children": []
+      },
+      {
+        "name": "workflows",
+        "type": "directory",
+        "path": ".github/workflows",
+        "children": []
+      },
+      {
+        "name": "ci.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 1861,
+        "extension": ".yml",
+        "path": ".github/workflows/ci.yml"
+      },
+      {
+        "name": "docker-build.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 1223,
+        "extension": ".yml",
+        "path": ".github/workflows/docker-build.yml"
+      },
+      {
+        "name": "etl-tramitacoes.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 881,
+        "extension": ".yml",
+        "path": ".github/workflows/etl-tramitacoes.yml"
+      },
+      {
+        "name": "metricas_e_docs.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 865,
+        "extension": ".yml",
+        "path": ".github/workflows/metricas_e_docs.yml"
+      },
+      {
+        "name": ".gitignore",
+        "type": "file",
+        "language": "Git Ignore",
+        "size": 697,
+        "extension": ".gitignore",
+        "path": ".gitignore"
+      },
+      {
+        "name": "LICENSE",
+        "type": "file",
+        "language": "No Extension",
+        "size": 1060,
+        "extension": "",
+        "path": "LICENSE"
+      },
+      {
+        "name": "Protect Kids.svg",
+        "type": "file",
+        "language": "SVG Image",
+        "size": 17922269,
+        "extension": ".svg",
+        "path": "Protect Kids.svg"
+      },
+      {
+        "name": "README.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6758,
+        "extension": ".md",
+        "path": "README.md"
+      },
+      {
+        "name": "api_contrato.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 11424,
+        "extension": ".md",
+        "path": "api_contrato.md"
+      },
+      {
+        "name": "backend",
+        "type": "directory",
+        "path": "backend",
+        "children": []
+      },
+      {
+        "name": "Dockerfile",
+        "type": "file",
+        "language": "No Extension",
+        "size": 531,
+        "extension": "",
+        "path": "backend/Dockerfile"
+      },
+      {
+        "name": "crawler",
+        "type": "directory",
+        "path": "backend/crawler",
+        "children": []
+      },
+      {
+        "name": "camara_api.py",
+        "type": "file",
+        "language": "Python",
+        "size": 34082,
+        "extension": ".py",
+        "path": "backend/crawler/camara_api.py"
+      },
+      {
+        "name": "reprocessar_classificacao.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1960,
+        "extension": ".py",
+        "path": "backend/crawler/reprocessar_classificacao.py"
+      },
+      {
+        "name": "senado_api.py",
+        "type": "file",
+        "language": "Python",
+        "size": 11295,
+        "extension": ".py",
+        "path": "backend/crawler/senado_api.py"
+      },
+      {
+        "name": "tramitacoes_api.py",
+        "type": "file",
+        "language": "Python",
+        "size": 7857,
+        "extension": ".py",
+        "path": "backend/crawler/tramitacoes_api.py"
+      },
+      {
+        "name": "tramitacoes_senado_api.py",
+        "type": "file",
+        "language": "Python",
+        "size": 15877,
+        "extension": ".py",
+        "path": "backend/crawler/tramitacoes_senado_api.py"
+      },
+      {
+        "name": "database.py",
+        "type": "file",
+        "language": "Python",
+        "size": 469,
+        "extension": ".py",
+        "path": "backend/database.py"
+      },
+      {
+        "name": "main.py",
+        "type": "file",
+        "language": "Python",
+        "size": 19018,
+        "extension": ".py",
+        "path": "backend/main.py"
+      },
+      {
+        "name": "models.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2155,
+        "extension": ".py",
+        "path": "backend/models.py"
+      },
+      {
+        "name": "requirements.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 331,
+        "extension": ".txt",
+        "path": "backend/requirements.txt"
+      },
+      {
+        "name": "tests",
+        "type": "directory",
+        "path": "backend/tests",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "backend/tests/__init__.py"
+      },
+      {
+        "name": "conftest.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3183,
+        "extension": ".py",
+        "path": "backend/tests/conftest.py"
+      },
+      {
+        "name": "test_analytics.py",
+        "type": "file",
+        "language": "Python",
+        "size": 5962,
+        "extension": ".py",
+        "path": "backend/tests/test_analytics.py"
+      },
+      {
+        "name": "test_api_proposicoes.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2985,
+        "extension": ".py",
+        "path": "backend/tests/test_api_proposicoes.py"
+      },
+      {
+        "name": "test_busca_por_id.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3034,
+        "extension": ".py",
+        "path": "backend/tests/test_busca_por_id.py"
+      },
+      {
+        "name": "test_filtros_origem.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2060,
+        "extension": ".py",
+        "path": "backend/tests/test_filtros_origem.py"
+      },
+      {
+        "name": "test_main.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3701,
+        "extension": ".py",
+        "path": "backend/tests/test_main.py"
+      },
+      {
+        "name": "test_models_unit.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4025,
+        "extension": ".py",
+        "path": "backend/tests/test_models_unit.py"
+      },
+      {
+        "name": "test_normalizacao.py",
+        "type": "file",
+        "language": "Python",
+        "size": 892,
+        "extension": ".py",
+        "path": "backend/tests/test_normalizacao.py"
+      },
+      {
+        "name": "test_tramitacoes.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3060,
+        "extension": ".py",
+        "path": "backend/tests/test_tramitacoes.py"
+      },
+      {
+        "name": "docker-compose.prod.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 999,
+        "extension": ".yml",
+        "path": "docker-compose.prod.yml"
+      },
+      {
+        "name": "docker-compose.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 1085,
+        "extension": ".yml",
+        "path": "docker-compose.yml"
+      },
+      {
+        "name": "docs",
+        "type": "directory",
+        "path": "docs",
+        "children": []
+      },
+      {
+        "name": "arquitetura.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3261,
+        "extension": ".md",
+        "path": "docs/arquitetura.md"
+      },
+      {
+        "name": "assets",
+        "type": "directory",
+        "path": "docs/assets",
+        "children": []
+      },
+      {
+        "name": "images",
+        "type": "directory",
+        "path": "docs/assets/images",
+        "children": []
+      },
+      {
+        "name": "C4_container_nivel_2.drawio.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 158926,
+        "extension": ".png",
+        "path": "docs/assets/images/C4_container_nivel_2.drawio.png"
+      },
+      {
+        "name": "c4_container.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 135445,
+        "extension": ".png",
+        "path": "docs/assets/images/c4_container.png"
+      },
+      {
+        "name": "c4_container_nivel_1.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 118941,
+        "extension": ".png",
+        "path": "docs/assets/images/c4_container_nivel_1.png"
+      },
+      {
+        "name": "c4_container_nivel_3.drawio.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 189629,
+        "extension": ".png",
+        "path": "docs/assets/images/c4_container_nivel_3.drawio.png"
+      },
+      {
+        "name": "c4_contexto.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 67573,
+        "extension": ".png",
+        "path": "docs/assets/images/c4_contexto.png"
+      },
+      {
+        "name": "storymap",
+        "type": "directory",
+        "path": "docs/assets/storymap",
+        "children": []
+      },
+      {
+        "name": "storyMap-1.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 38660,
+        "extension": ".png",
+        "path": "docs/assets/storymap/storyMap-1.png"
+      },
+      {
+        "name": "storyMap-2.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 32255,
+        "extension": ".png",
+        "path": "docs/assets/storymap/storyMap-2.png"
+      },
+      {
+        "name": "storyMap-3.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 71287,
+        "extension": ".png",
+        "path": "docs/assets/storymap/storyMap-3.png"
+      },
+      {
+        "name": "storymap.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 624,
+        "extension": ".md",
+        "path": "docs/assets/storymap/storymap.md"
+      },
+      {
+        "name": "dashboard",
+        "type": "directory",
+        "path": "docs/dashboard",
+        "children": []
+      },
+      {
+        "name": "data.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 37369,
+        "extension": ".json",
+        "path": "docs/dashboard/data.json"
+      },
+      {
+        "name": "index.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 8964,
+        "extension": ".html",
+        "path": "docs/dashboard/index.html"
+      },
+      {
+        "name": "estudos",
+        "type": "directory",
+        "path": "docs/estudos",
+        "children": []
+      },
+      {
+        "name": "fast API",
+        "type": "directory",
+        "path": "docs/estudos/fast API",
+        "children": []
+      },
+      {
+        "name": "fastapi.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1528,
+        "extension": ".md",
+        "path": "docs/estudos/fast API/fastapi.md"
+      },
+      {
+        "name": "testes",
+        "type": "directory",
+        "path": "docs/estudos/testes",
+        "children": []
+      },
+      {
+        "name": "estrategia_testes.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 7643,
+        "extension": ".md",
+        "path": "docs/estudos/testes/estrategia_testes.md"
+      },
+      {
+        "name": "index.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2495,
+        "extension": ".md",
+        "path": "docs/index.md"
+      },
+      {
+        "name": "infra",
+        "type": "directory",
+        "path": "docs/infra",
+        "children": []
+      },
+      {
+        "name": "ci-cd.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3618,
+        "extension": ".md",
+        "path": "docs/infra/ci-cd.md"
+      },
+      {
+        "name": "docker-compose.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 12914,
+        "extension": ".md",
+        "path": "docs/infra/docker-compose.md"
+      },
+      {
+        "name": "requisitos.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 20271,
+        "extension": ".md",
+        "path": "docs/requisitos.md"
+      },
+      {
+        "name": "sprints",
+        "type": "directory",
+        "path": "docs/sprints",
+        "children": []
+      },
+      {
+        "name": "index.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3296,
+        "extension": ".md",
+        "path": "docs/sprints/index.md"
+      },
+      {
+        "name": "sprint_00.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1867,
+        "extension": ".md",
+        "path": "docs/sprints/sprint_00.md"
+      },
+      {
+        "name": "sprint_01.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3914,
+        "extension": ".md",
+        "path": "docs/sprints/sprint_01.md"
+      },
+      {
+        "name": "sprint_02.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3475,
+        "extension": ".md",
+        "path": "docs/sprints/sprint_02.md"
+      },
+      {
+        "name": "sprint_03.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 4780,
+        "extension": ".md",
+        "path": "docs/sprints/sprint_03.md"
+      },
+      {
+        "name": "sprint_04.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6537,
+        "extension": ".md",
+        "path": "docs/sprints/sprint_04.md"
+      },
+      {
+        "name": "sprint_05.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6266,
+        "extension": ".md",
+        "path": "docs/sprints/sprint_05.md"
+      },
+      {
+        "name": "sprint_06.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 9291,
+        "extension": ".md",
+        "path": "docs/sprints/sprint_06.md"
+      },
+      {
+        "name": "sprint_07.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6297,
+        "extension": ".md",
+        "path": "docs/sprints/sprint_07.md"
+      },
+      {
+        "name": "sprint_08.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 8239,
+        "extension": ".md",
+        "path": "docs/sprints/sprint_08.md"
+      },
+      {
+        "name": "sprint_09.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 9774,
+        "extension": ".md",
+        "path": "docs/sprints/sprint_09.md"
+      },
+      {
+        "name": "sprint_10.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 10427,
+        "extension": ".md",
+        "path": "docs/sprints/sprint_10.md"
+      },
+      {
+        "name": "stylesheets",
+        "type": "directory",
+        "path": "docs/stylesheets",
+        "children": []
+      },
+      {
+        "name": "extra.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 3819,
+        "extension": ".css",
+        "path": "docs/stylesheets/extra.css"
+      },
+      {
+        "name": "visao-geral.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3269,
+        "extension": ".md",
+        "path": "docs/visao-geral.md"
+      },
+      {
+        "name": "estudos_iniciais",
+        "type": "directory",
+        "path": "estudos_iniciais",
+        "children": []
+      },
+      {
+        "name": "estudos",
+        "type": "directory",
+        "path": "estudos_iniciais/estudos",
+        "children": []
+      },
+      {
+        "name": "backend",
+        "type": "directory",
+        "path": "estudos_iniciais/estudos/backend",
+        "children": []
+      },
+      {
+        "name": "fastapi.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1528,
+        "extension": ".md",
+        "path": "estudos_iniciais/estudos/backend/fastapi.md"
+      },
+      {
+        "name": "banco de dados",
+        "type": "directory",
+        "path": "estudos_iniciais/estudos/banco de dados",
+        "children": []
+      },
+      {
+        "name": "postgreSQL.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2275,
+        "extension": ".md",
+        "path": "estudos_iniciais/estudos/banco de dados/postgreSQL.md"
+      },
+      {
+        "name": "frontend",
+        "type": "directory",
+        "path": "estudos_iniciais/estudos/frontend",
+        "children": []
+      },
+      {
+        "name": "tailwind.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 5139,
+        "extension": ".md",
+        "path": "estudos_iniciais/estudos/frontend/tailwind.md"
+      },
+      {
+        "name": "typescript.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2632,
+        "extension": ".md",
+        "path": "estudos_iniciais/estudos/frontend/typescript.md"
+      },
+      {
+        "name": "metodologias",
+        "type": "directory",
+        "path": "estudos_iniciais/estudos/metodologias",
+        "children": []
+      },
+      {
+        "name": "metodologiasageis.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 4554,
+        "extension": ".md",
+        "path": "estudos_iniciais/estudos/metodologias/metodologiasageis.md"
+      },
+      {
+        "name": "requisitos",
+        "type": "directory",
+        "path": "estudos_iniciais/estudos/requisitos",
+        "children": []
+      },
+      {
+        "name": "requisitos.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 13253,
+        "extension": ".md",
+        "path": "estudos_iniciais/estudos/requisitos/requisitos.md"
+      },
+      {
+        "name": "frontend",
+        "type": "directory",
+        "path": "frontend",
+        "children": []
+      },
+      {
+        "name": ".dockerignore",
+        "type": "file",
+        "language": "Docker Ignore",
+        "size": 80,
+        "extension": ".dockerignore",
+        "path": "frontend/.dockerignore"
+      },
+      {
+        "name": ".gitignore",
+        "type": "file",
+        "language": "Git Ignore",
+        "size": 230,
+        "extension": ".gitignore",
+        "path": "frontend/.gitignore"
+      },
+      {
+        "name": "Base.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2789,
+        "extension": ".md",
+        "path": "frontend/Base.md"
+      },
+      {
+        "name": "Dockerfile",
+        "type": "file",
+        "language": "No Extension",
+        "size": 215,
+        "extension": "",
+        "path": "frontend/Dockerfile"
+      },
+      {
+        "name": "Dockerfile.prod",
+        "type": "file",
+        "language": "Unknown",
+        "size": 345,
+        "extension": ".prod",
+        "path": "frontend/Dockerfile.prod"
+      },
+      {
+        "name": "README.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1027,
+        "extension": ".md",
+        "path": "frontend/README.md"
+      },
+      {
+        "name": "eslint.config.js",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 758,
+        "extension": ".js",
+        "path": "frontend/eslint.config.js"
+      },
+      {
+        "name": "figma",
+        "type": "directory",
+        "path": "frontend/figma",
+        "children": []
+      },
+      {
+        "name": "frame_inicio.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 224927,
+        "extension": ".png",
+        "path": "frontend/figma/frame_inicio.png"
+      },
+      {
+        "name": "frame_lei.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 42157,
+        "extension": ".png",
+        "path": "frontend/figma/frame_lei.png"
+      },
+      {
+        "name": "frame_sobre_o_projeto.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 98790,
+        "extension": ".png",
+        "path": "frontend/figma/frame_sobre_o_projeto.png"
+      },
+      {
+        "name": "frame_todas_as_leis-filtrodebusca.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 68446,
+        "extension": ".png",
+        "path": "frontend/figma/frame_todas_as_leis-filtrodebusca.png"
+      },
+      {
+        "name": "frame_todas_as_leis.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 76314,
+        "extension": ".png",
+        "path": "frontend/figma/frame_todas_as_leis.png"
+      },
+      {
+        "name": "index.html",
+        "type": "file",
+        "language": "HTML",
+        "size": 582,
+        "extension": ".html",
+        "path": "frontend/index.html"
+      },
+      {
+        "name": "nginx.conf",
+        "type": "file",
+        "language": "Config",
+        "size": 345,
+        "extension": ".conf",
+        "path": "frontend/nginx.conf"
+      },
+      {
+        "name": "package-lock.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 115211,
+        "extension": ".json",
+        "path": "frontend/package-lock.json"
+      },
+      {
+        "name": "package.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 1112,
+        "extension": ".json",
+        "path": "frontend/package.json"
+      },
+      {
+        "name": "postcss.config.js",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 90,
+        "extension": ".js",
+        "path": "frontend/postcss.config.js"
+      },
+      {
+        "name": "public",
+        "type": "directory",
+        "path": "frontend/public",
+        "children": []
+      },
+      {
+        "name": "favicon.svg",
+        "type": "file",
+        "language": "SVG Image",
+        "size": 366,
+        "extension": ".svg",
+        "path": "frontend/public/favicon.svg"
+      },
+      {
+        "name": "images",
+        "type": "directory",
+        "path": "frontend/public/images",
+        "children": []
+      },
+      {
+        "name": "hero-protectkids.png",
+        "type": "file",
+        "language": "PNG Image",
+        "size": 2766553,
+        "extension": ".png",
+        "path": "frontend/public/images/hero-protectkids.png"
+      },
+      {
+        "name": "src",
+        "type": "directory",
+        "path": "frontend/src",
+        "children": []
+      },
+      {
+        "name": "App.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 1689,
+        "extension": ".jsx",
+        "path": "frontend/src/App.jsx"
+      },
+      {
+        "name": "App.test.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 934,
+        "extension": ".jsx",
+        "path": "frontend/src/App.test.jsx"
+      },
+      {
+        "name": "api.js",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 2067,
+        "extension": ".js",
+        "path": "frontend/src/api.js"
+      },
+      {
+        "name": "components",
+        "type": "directory",
+        "path": "frontend/src/components",
+        "children": []
+      },
+      {
+        "name": "DashboardBox.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 552,
+        "extension": ".jsx",
+        "path": "frontend/src/components/DashboardBox.jsx"
+      },
+      {
+        "name": "Footer.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 4514,
+        "extension": ".jsx",
+        "path": "frontend/src/components/Footer.jsx"
+      },
+      {
+        "name": "Header.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 1847,
+        "extension": ".jsx",
+        "path": "frontend/src/components/Header.jsx"
+      },
+      {
+        "name": "NuvemPalavras.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 1878,
+        "extension": ".jsx",
+        "path": "frontend/src/components/NuvemPalavras.jsx"
+      },
+      {
+        "name": "NuvemPalavras.test.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 695,
+        "extension": ".jsx",
+        "path": "frontend/src/components/NuvemPalavras.test.jsx"
+      },
+      {
+        "name": "ScrollToTop.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 304,
+        "extension": ".jsx",
+        "path": "frontend/src/components/ScrollToTop.jsx"
+      },
+      {
+        "name": "constants",
+        "type": "directory",
+        "path": "frontend/src/constants",
+        "children": []
+      },
+      {
+        "name": "analytics.js",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 2172,
+        "extension": ".js",
+        "path": "frontend/src/constants/analytics.js"
+      },
+      {
+        "name": "categoriasNlp.js",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 13218,
+        "extension": ".js",
+        "path": "frontend/src/constants/categoriasNlp.js"
+      },
+      {
+        "name": "index.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 127,
+        "extension": ".css",
+        "path": "frontend/src/index.css"
+      },
+      {
+        "name": "main.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 229,
+        "extension": ".jsx",
+        "path": "frontend/src/main.jsx"
+      },
+      {
+        "name": "pages",
+        "type": "directory",
+        "path": "frontend/src/pages",
+        "children": []
+      },
+      {
+        "name": "DetalhesLei.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 11157,
+        "extension": ".jsx",
+        "path": "frontend/src/pages/DetalhesLei.jsx"
+      },
+      {
+        "name": "DetalhesSubtema.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 8916,
+        "extension": ".jsx",
+        "path": "frontend/src/pages/DetalhesSubtema.jsx"
+      },
+      {
+        "name": "Estatisticas.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 12056,
+        "extension": ".jsx",
+        "path": "frontend/src/pages/Estatisticas.jsx"
+      },
+      {
+        "name": "Inicio.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 16357,
+        "extension": ".jsx",
+        "path": "frontend/src/pages/Inicio.jsx"
+      },
+      {
+        "name": "Sobre.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 4357,
+        "extension": ".jsx",
+        "path": "frontend/src/pages/Sobre.jsx"
+      },
+      {
+        "name": "TodasAsLeis.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 9660,
+        "extension": ".jsx",
+        "path": "frontend/src/pages/TodasAsLeis.jsx"
+      },
+      {
+        "name": "TodasAsLeis.test.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 1133,
+        "extension": ".jsx",
+        "path": "frontend/src/pages/TodasAsLeis.test.jsx"
+      },
+      {
+        "name": "utils",
+        "type": "directory",
+        "path": "frontend/src/utils",
+        "children": []
+      },
+      {
+        "name": "formatters.js",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 1461,
+        "extension": ".js",
+        "path": "frontend/src/utils/formatters.js"
+      },
+      {
+        "name": "formatters.test.js",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 1662,
+        "extension": ".js",
+        "path": "frontend/src/utils/formatters.test.js"
+      },
+      {
+        "name": "tailwind.config.js",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 851,
+        "extension": ".js",
+        "path": "frontend/tailwind.config.js"
+      },
+      {
+        "name": "vite.config.js",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 525,
+        "extension": ".js",
+        "path": "frontend/vite.config.js"
+      },
+      {
+        "name": "mkdocs.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 1505,
+        "extension": ".yml",
+        "path": "mkdocs.yml"
+      },
+      {
+        "name": "package-lock.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 97,
+        "extension": ".json",
+        "path": "package-lock.json"
+      },
+      {
+        "name": "scripts",
+        "type": "directory",
+        "path": "scripts",
+        "children": []
+      },
+      {
+        "name": "claude.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 9971,
+        "extension": ".md",
+        "path": "scripts/claude.md"
+      },
+      {
+        "name": "coletor_metricas.py",
+        "type": "file",
+        "language": "Python",
+        "size": 7793,
+        "extension": ".py",
+        "path": "scripts/coletor_metricas.py"
+      }
+    ]
+  },
+  "_metadata": {
+    "extracted_at": "2026-09-17T04:04:44.673674",
+    "file_path": "data/silver/hierarchy_2026-1-ProtectKids.json"
+  }
+}

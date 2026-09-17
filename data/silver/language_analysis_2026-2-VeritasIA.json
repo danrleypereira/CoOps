@@ -1,0 +1,656 @@
+{
+  "repository": "2026-2-VeritasIA",
+  "owner": "unb-mds",
+  "branch": "main",
+  "analyzed_at": "2026-09-17T04:03:51.063880",
+  "sample_config": {
+    "max_files_per_language": 10,
+    "strategy": "largest"
+  },
+  "total_files": 171,
+  "total_bytes": 3197976,
+  "languages": [
+    {
+      "language": "PNG Image",
+      "file_count": 6,
+      "total_bytes": 1955818,
+      "percentage": 61.16,
+      "files": [
+        {
+          "path": "Frontend/src/assets/logo2.png",
+          "name": "logo2.png",
+          "size": 1839412,
+          "extension": ".png"
+        },
+        {
+          "path": "docs/assets/LogoBlack.png",
+          "name": "LogoBlack.png",
+          "size": 65544,
+          "extension": ".png"
+        },
+        {
+          "path": "docs/assets/texto.png",
+          "name": "texto.png",
+          "size": 21479,
+          "extension": ".png"
+        },
+        {
+          "path": "docs/assets/Logo.png",
+          "name": "Logo.png",
+          "size": 17490,
+          "extension": ".png"
+        },
+        {
+          "path": "Frontend/src/assets/logo.png",
+          "name": "logo.png",
+          "size": 6216,
+          "extension": ".png"
+        },
+        {
+          "path": "Frontend/src/assets/logo_white.png",
+          "name": "logo_white.png",
+          "size": 5677,
+          "extension": ".png"
+        }
+      ]
+    },
+    {
+      "language": "JSON",
+      "file_count": 12,
+      "total_bytes": 737428,
+      "percentage": 23.06,
+      "files": [
+        {
+          "path": "Frontend/package-lock.json",
+          "name": "package-lock.json",
+          "size": 216958,
+          "extension": ".json"
+        },
+        {
+          "path": "package-lock.json",
+          "name": "package-lock.json",
+          "size": 216296,
+          "extension": ".json"
+        },
+        {
+          "path": "scrapers/resultados/resultados.json",
+          "name": "resultados.json",
+          "size": 137310,
+          "extension": ".json"
+        },
+        {
+          "path": "scrapers/resultados/g1.json",
+          "name": "g1.json",
+          "size": 127314,
+          "extension": ".json"
+        },
+        {
+          "path": "docs/lint-report.json",
+          "name": "lint-report.json",
+          "size": 19338,
+          "extension": ".json"
+        },
+        {
+          "path": "docs/productivity/metrics.json",
+          "name": "metrics.json",
+          "size": 9673,
+          "extension": ".json"
+        },
+        {
+          "path": "scrapers/resultados/metropoles.json",
+          "name": "metropoles.json",
+          "size": 3448,
+          "extension": ".json"
+        },
+        {
+          "path": "scrapers/resultados/cnn.json",
+          "name": "cnn.json",
+          "size": 3007,
+          "extension": ".json"
+        },
+        {
+          "path": "scrapers/resultados/r7.json",
+          "name": "r7.json",
+          "size": 1997,
+          "extension": ".json"
+        },
+        {
+          "path": "Frontend/package.json",
+          "name": "package.json",
+          "size": 1059,
+          "extension": ".json"
+        }
+      ]
+    },
+    {
+      "language": "Python",
+      "file_count": 36,
+      "total_bytes": 123108,
+      "percentage": 3.85,
+      "files": [
+        {
+          "path": "docs/productivity/collect_metrics.py",
+          "name": "collect_metrics.py",
+          "size": 11956,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/app/adapters/api_adapter/dashboard_routes.py",
+          "name": "dashboard_routes.py",
+          "size": 10405,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/tests/integration/conftest.py",
+          "name": "conftest.py",
+          "size": 6759,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/app/main.py",
+          "name": "main.py",
+          "size": 6049,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/tests/test_dashboard_routes.py",
+          "name": "test_dashboard_routes.py",
+          "size": 6007,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/app/adapters/api_adapter/noticias_routes.py",
+          "name": "noticias_routes.py",
+          "size": 5389,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/app/models.py",
+          "name": "models.py",
+          "size": 5376,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/app/adapters/json_adapter.py",
+          "name": "json_adapter.py",
+          "size": 5340,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/tratamentoDeDados/juntar_dados.py",
+          "name": "juntar_dados.py",
+          "size": 4860,
+          "extension": ".py"
+        },
+        {
+          "path": "backend/app/adapters/api_adapter/mapa_routes.py",
+          "name": "mapa_routes.py",
+          "size": 4615,
+          "extension": ".py"
+        }
+      ]
+    },
+    {
+      "language": "Unknown",
+      "file_count": 16,
+      "total_bytes": 117140,
+      "percentage": 3.66,
+      "files": [
+        {
+          "path": "backend/tests/__pycache__/test_dashboard_routes.cpython-314-pytest-9.1.1.pyc",
+          "name": "test_dashboard_routes.cpython-314-pytest-9.1.1.pyc",
+          "size": 15506,
+          "extension": ".pyc"
+        },
+        {
+          "path": "backend/tests/__pycache__/test_noticias_routes.cpython-314-pytest-9.1.1.pyc",
+          "name": "test_noticias_routes.cpython-314-pytest-9.1.1.pyc",
+          "size": 14044,
+          "extension": ".pyc"
+        },
+        {
+          "path": "backend/tests/integration/__pycache__/test_dashboard_integration.cpython-314-pytest-9.1.1.pyc",
+          "name": "test_dashboard_integration.cpython-314-pytest-9.1.1.pyc",
+          "size": 12822,
+          "extension": ".pyc"
+        },
+        {
+          "path": "backend/tests/__pycache__/test_dashboard_integration.cpython-314-pytest-9.1.1.pyc",
+          "name": "test_dashboard_integration.cpython-314-pytest-9.1.1.pyc",
+          "size": 12718,
+          "extension": ".pyc"
+        },
+        {
+          "path": "backend/tests/integration/__pycache__/conftest.cpython-314-pytest-9.1.1.pyc",
+          "name": "conftest.cpython-314-pytest-9.1.1.pyc",
+          "size": 12619,
+          "extension": ".pyc"
+        },
+        {
+          "path": "backend/tests/__pycache__/test_mapa_routes.cpython-314-pytest-9.1.1.pyc",
+          "name": "test_mapa_routes.cpython-314-pytest-9.1.1.pyc",
+          "size": 9972,
+          "extension": ".pyc"
+        },
+        {
+          "path": "backend/tests/__pycache__/conftest.cpython-314-pytest-9.1.1.pyc",
+          "name": "conftest.cpython-314-pytest-9.1.1.pyc",
+          "size": 8620,
+          "extension": ".pyc"
+        },
+        {
+          "path": "scrapers/spiders/__pycache__/metropoles.cpython-314.pyc",
+          "name": "metropoles.cpython-314.pyc",
+          "size": 5758,
+          "extension": ".pyc"
+        },
+        {
+          "path": "scrapers/spiders/__pycache__/r7spider.cpython-314.pyc",
+          "name": "r7spider.cpython-314.pyc",
+          "size": 5567,
+          "extension": ".pyc"
+        },
+        {
+          "path": "scrapers/spiders/__pycache__/g1Spider.cpython-314.pyc",
+          "name": "g1Spider.cpython-314.pyc",
+          "size": 5491,
+          "extension": ".pyc"
+        }
+      ]
+    },
+    {
+      "language": "Markdown",
+      "file_count": 46,
+      "total_bytes": 79157,
+      "percentage": 2.48,
+      "files": [
+        {
+          "path": "docs/backend/LangChain.md",
+          "name": "LangChain.md",
+          "size": 7867,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/projeto/Arquitetura.md",
+          "name": "Arquitetura.md",
+          "size": 7514,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/frontend/React.md",
+          "name": "React.md",
+          "size": 5639,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/frontend/Fluxo.md",
+          "name": "Fluxo.md",
+          "size": 4654,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/backend/Scrapy.md",
+          "name": "Scrapy.md",
+          "size": 4137,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/projeto/Requisitos.md",
+          "name": "Requisitos.md",
+          "size": 3581,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/backend/langChain/LangChain.md",
+          "name": "LangChain.md",
+          "size": 3551,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/index.md",
+          "name": "index.md",
+          "size": 3349,
+          "extension": ".md"
+        },
+        {
+          "path": "README.md",
+          "name": "README.md",
+          "size": 3123,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/backend/como-rodar-backend.md",
+          "name": "como-rodar-backend.md",
+          "size": 2979,
+          "extension": ".md"
+        }
+      ]
+    },
+    {
+      "language": "JavaScript",
+      "file_count": 26,
+      "total_bytes": 71051,
+      "percentage": 2.22,
+      "files": [
+        {
+          "path": "Frontend/src/pages/Noticias.jsx",
+          "name": "Noticias.jsx",
+          "size": 8498,
+          "extension": ".jsx"
+        },
+        {
+          "path": "Frontend/src/pages/Sobre.jsx",
+          "name": "Sobre.jsx",
+          "size": 8299,
+          "extension": ".jsx"
+        },
+        {
+          "path": "Frontend/src/pages/DetalhesNoticia.jsx",
+          "name": "DetalhesNoticia.jsx",
+          "size": 7756,
+          "extension": ".jsx"
+        },
+        {
+          "path": "Frontend/src/components/LeafletMap.jsx",
+          "name": "LeafletMap.jsx",
+          "size": 6864,
+          "extension": ".jsx"
+        },
+        {
+          "path": "Frontend/src/pages/Dashboard.jsx",
+          "name": "Dashboard.jsx",
+          "size": 5389,
+          "extension": ".jsx"
+        },
+        {
+          "path": "Frontend/src/components/BrazilMap.jsx",
+          "name": "BrazilMap.jsx",
+          "size": 4027,
+          "extension": ".jsx"
+        },
+        {
+          "path": "Frontend/src/pages/Login.jsx",
+          "name": "Login.jsx",
+          "size": 3436,
+          "extension": ".jsx"
+        },
+        {
+          "path": "Frontend/src/data/noticias.js",
+          "name": "noticias.js",
+          "size": 3007,
+          "extension": ".js"
+        },
+        {
+          "path": "Frontend/src/components/HeatmapLayer.jsx",
+          "name": "HeatmapLayer.jsx",
+          "size": 2685,
+          "extension": ".jsx"
+        },
+        {
+          "path": "Frontend/src/components/NewsChart.jsx",
+          "name": "NewsChart.jsx",
+          "size": 2383,
+          "extension": ".jsx"
+        }
+      ]
+    },
+    {
+      "language": "HTML",
+      "file_count": 4,
+      "total_bytes": 50878,
+      "percentage": 1.59,
+      "files": [
+        {
+          "path": "docs/dashboard/dashboard.html",
+          "name": "dashboard.html",
+          "size": 25017,
+          "extension": ".html"
+        },
+        {
+          "path": "docs/produtividade/dashboard.html",
+          "name": "dashboard.html",
+          "size": 25017,
+          "extension": ".html"
+        },
+        {
+          "path": "overrides/index.html",
+          "name": "index.html",
+          "size": 478,
+          "extension": ".html"
+        },
+        {
+          "path": "index.html",
+          "name": "index.html",
+          "size": 366,
+          "extension": ".html"
+        }
+      ]
+    },
+    {
+      "language": "CSS",
+      "file_count": 8,
+      "total_bytes": 44720,
+      "percentage": 1.4,
+      "files": [
+        {
+          "path": "Frontend/src/App.css",
+          "name": "App.css",
+          "size": 14918,
+          "extension": ".css"
+        },
+        {
+          "path": "Frontend/src/pages/Noticias.css",
+          "name": "Noticias.css",
+          "size": 6527,
+          "extension": ".css"
+        },
+        {
+          "path": "Frontend/src/pages/Sobre.css",
+          "name": "Sobre.css",
+          "size": 6090,
+          "extension": ".css"
+        },
+        {
+          "path": "Frontend/src/pages/Mapa.css",
+          "name": "Mapa.css",
+          "size": 5583,
+          "extension": ".css"
+        },
+        {
+          "path": "docs/productivity/style.css",
+          "name": "style.css",
+          "size": 4205,
+          "extension": ".css"
+        },
+        {
+          "path": "Frontend/src/pages/DetalhesNoticia.css",
+          "name": "DetalhesNoticia.css",
+          "size": 4066,
+          "extension": ".css"
+        },
+        {
+          "path": "docs/stylesheets/extra.css",
+          "name": "extra.css",
+          "size": 2171,
+          "extension": ".css"
+        },
+        {
+          "path": "Frontend/src/index.css",
+          "name": "index.css",
+          "size": 1160,
+          "extension": ".css"
+        }
+      ]
+    },
+    {
+      "language": "YAML",
+      "file_count": 5,
+      "total_bytes": 8607,
+      "percentage": 0.27,
+      "files": [
+        {
+          "path": ".github/workflows/static.yml",
+          "name": "static.yml",
+          "size": 2932,
+          "extension": ".yml"
+        },
+        {
+          "path": "mkdocs.yml",
+          "name": "mkdocs.yml",
+          "size": 2216,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/langchaim.yml",
+          "name": "langchaim.yml",
+          "size": 1867,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/execute-scrapy.yml",
+          "name": "execute-scrapy.yml",
+          "size": 1293,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/keep-alive.yml",
+          "name": "keep-alive.yml",
+          "size": 299,
+          "extension": ".yml"
+        }
+      ]
+    },
+    {
+      "language": "SVG Image",
+      "file_count": 1,
+      "total_bytes": 4126,
+      "percentage": 0.13,
+      "files": [
+        {
+          "path": "Frontend/src/assets/react.svg",
+          "name": "react.svg",
+          "size": 4126,
+          "extension": ".svg"
+        }
+      ]
+    },
+    {
+      "language": "XML",
+      "file_count": 3,
+      "total_bytes": 4023,
+      "percentage": 0.13,
+      "files": [
+        {
+          "path": "backend/tests/resultados/test-results_func.xml",
+          "name": "test-results_func.xml",
+          "size": 2347,
+          "extension": ".xml"
+        },
+        {
+          "path": "backend/tests/resultados/test-results.xml",
+          "name": "test-results.xml",
+          "size": 838,
+          "extension": ".xml"
+        },
+        {
+          "path": "backend/tests/resultados/test-results_database.xml",
+          "name": "test-results_database.xml",
+          "size": 838,
+          "extension": ".xml"
+        }
+      ]
+    },
+    {
+      "language": "No Extension",
+      "file_count": 1,
+      "total_bytes": 1060,
+      "percentage": 0.03,
+      "files": [
+        {
+          "path": "LICENSE",
+          "name": "LICENSE",
+          "size": 1060,
+          "extension": ""
+        }
+      ]
+    },
+    {
+      "language": "Text",
+      "file_count": 4,
+      "total_bytes": 423,
+      "percentage": 0.01,
+      "files": [
+        {
+          "path": "requirements.txt",
+          "name": "requirements.txt",
+          "size": 290,
+          "extension": ".txt"
+        },
+        {
+          "path": "backend/llm/requirements.txt",
+          "name": "requirements.txt",
+          "size": 86,
+          "extension": ".txt"
+        },
+        {
+          "path": "scrapers/requirements.txt",
+          "name": "requirements.txt",
+          "size": 30,
+          "extension": ".txt"
+        },
+        {
+          "path": "docs/productivity/requirements.txt",
+          "name": "requirements.txt",
+          "size": 17,
+          "extension": ".txt"
+        }
+      ]
+    },
+    {
+      "language": "INI",
+      "file_count": 1,
+      "total_bytes": 352,
+      "percentage": 0.01,
+      "files": [
+        {
+          "path": "pytest.ini",
+          "name": "pytest.ini",
+          "size": 352,
+          "extension": ".ini"
+        }
+      ]
+    },
+    {
+      "language": "Git Ignore",
+      "file_count": 1,
+      "total_bytes": 85,
+      "percentage": 0.0,
+      "files": [
+        {
+          "path": ".gitignore",
+          "name": ".gitignore",
+          "size": 85,
+          "extension": ".gitignore"
+        }
+      ]
+    },
+    {
+      "language": "JPEG Image",
+      "file_count": 1,
+      "total_bytes": 0,
+      "percentage": 0.0,
+      "files": [
+        {
+          "path": "Frontend/public/images/noticia-placeholder.jpg",
+          "name": "noticia-placeholder.jpg",
+          "size": 0,
+          "extension": ".jpg"
+        }
+      ]
+    }
+  ],
+  "_metadata": {
+    "extracted_at": "2026-09-17T04:04:44.568634",
+    "file_path": "data/silver/language_analysis_2026-2-VeritasIA.json"
+  }
+}

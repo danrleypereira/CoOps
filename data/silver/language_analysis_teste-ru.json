@@ -1,0 +1,224 @@
+{
+  "repository": "teste-ru",
+  "owner": "unb-mds",
+  "branch": "main",
+  "analyzed_at": "2026-09-17T04:04:02.571444",
+  "sample_config": {
+    "max_files_per_language": 10,
+    "strategy": "largest"
+  },
+  "total_files": 21,
+  "total_bytes": 524927,
+  "languages": [
+    {
+      "language": "JSON",
+      "file_count": 2,
+      "total_bytes": 434575,
+      "percentage": 82.79,
+      "files": [
+        {
+          "path": "data/cardapio.json",
+          "name": "cardapio.json",
+          "size": 434350,
+          "extension": ".json"
+        },
+        {
+          "path": "package.json",
+          "name": "package.json",
+          "size": 225,
+          "extension": ".json"
+        }
+      ]
+    },
+    {
+      "language": "Markdown",
+      "file_count": 6,
+      "total_bytes": 29552,
+      "percentage": 5.63,
+      "files": [
+        {
+          "path": "SPEC.md",
+          "name": "SPEC.md",
+          "size": 15885,
+          "extension": ".md"
+        },
+        {
+          "path": "CONTEXT.md",
+          "name": "CONTEXT.md",
+          "size": 6303,
+          "extension": ".md"
+        },
+        {
+          "path": "README.md",
+          "name": "README.md",
+          "size": 3255,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/adr/0001-ingestao-por-github-action-com-json-versionado.md",
+          "name": "0001-ingestao-por-github-action-com-json-versionado.md",
+          "size": 1544,
+          "extension": ".md"
+        },
+        {
+          "path": "req.md",
+          "name": "req.md",
+          "size": 1294,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/adr/0002-alergenicos-extraidos-com-estado-indeterminado.md",
+          "name": "0002-alergenicos-extraidos-com-estado-indeterminado.md",
+          "size": 1271,
+          "extension": ".md"
+        }
+      ]
+    },
+    {
+      "language": "Python",
+      "file_count": 5,
+      "total_bytes": 26820,
+      "percentage": 5.11,
+      "files": [
+        {
+          "path": "parser/extrator.py",
+          "name": "extrator.py",
+          "size": 13143,
+          "extension": ".py"
+        },
+        {
+          "path": "parser/alergenicos.py",
+          "name": "alergenicos.py",
+          "size": 4215,
+          "extension": ".py"
+        },
+        {
+          "path": "parser/validacao.py",
+          "name": "validacao.py",
+          "size": 3829,
+          "extension": ".py"
+        },
+        {
+          "path": "parser/coletar.py",
+          "name": "coletar.py",
+          "size": 2951,
+          "extension": ".py"
+        },
+        {
+          "path": "parser/fonte.py",
+          "name": "fonte.py",
+          "size": 2682,
+          "extension": ".py"
+        }
+      ]
+    },
+    {
+      "language": "JavaScript",
+      "file_count": 1,
+      "total_bytes": 13323,
+      "percentage": 2.54,
+      "files": [
+        {
+          "path": "assets/app.js",
+          "name": "app.js",
+          "size": 13323,
+          "extension": ".js"
+        }
+      ]
+    },
+    {
+      "language": "Unknown",
+      "file_count": 1,
+      "total_bytes": 8647,
+      "percentage": 1.65,
+      "files": [
+        {
+          "path": "testes/ui.mjs",
+          "name": "ui.mjs",
+          "size": 8647,
+          "extension": ".mjs"
+        }
+      ]
+    },
+    {
+      "language": "CSS",
+      "file_count": 1,
+      "total_bytes": 5696,
+      "percentage": 1.09,
+      "files": [
+        {
+          "path": "assets/style.css",
+          "name": "style.css",
+          "size": 5696,
+          "extension": ".css"
+        }
+      ]
+    },
+    {
+      "language": "YAML",
+      "file_count": 2,
+      "total_bytes": 4458,
+      "percentage": 0.85,
+      "files": [
+        {
+          "path": ".github/workflows/coletar.yml",
+          "name": "coletar.yml",
+          "size": 3264,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/pages.yml",
+          "name": "pages.yml",
+          "size": 1194,
+          "extension": ".yml"
+        }
+      ]
+    },
+    {
+      "language": "HTML",
+      "file_count": 1,
+      "total_bytes": 1748,
+      "percentage": 0.33,
+      "files": [
+        {
+          "path": "index.html",
+          "name": "index.html",
+          "size": 1748,
+          "extension": ".html"
+        }
+      ]
+    },
+    {
+      "language": "Git Ignore",
+      "file_count": 1,
+      "total_bytes": 52,
+      "percentage": 0.01,
+      "files": [
+        {
+          "path": ".gitignore",
+          "name": ".gitignore",
+          "size": 52,
+          "extension": ".gitignore"
+        }
+      ]
+    },
+    {
+      "language": "Text",
+      "file_count": 1,
+      "total_bytes": 56,
+      "percentage": 0.01,
+      "files": [
+        {
+          "path": "parser/requirements.txt",
+          "name": "requirements.txt",
+          "size": 56,
+          "extension": ".txt"
+        }
+      ]
+    }
+  ],
+  "_metadata": {
+    "extracted_at": "2026-09-17T04:04:44.801219",
+    "file_path": "data/silver/language_analysis_teste-ru.json"
+  }
+}

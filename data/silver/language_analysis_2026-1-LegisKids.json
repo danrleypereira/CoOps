@@ -1,0 +1,644 @@
+{
+  "repository": "2026-1-LegisKids",
+  "owner": "unb-mds",
+  "branch": "main",
+  "analyzed_at": "2026-09-17T04:03:53.187276",
+  "sample_config": {
+    "max_files_per_language": 10,
+    "strategy": "largest"
+  },
+  "total_files": 349,
+  "total_bytes": 7011029,
+  "languages": [
+    {
+      "language": "PNG Image",
+      "file_count": 3,
+      "total_bytes": 4488481,
+      "percentage": 64.02,
+      "files": [
+        {
+          "path": "docs/assets/images/logo-legiskids.png",
+          "name": "logo-legiskids.png",
+          "size": 2170425,
+          "extension": ".png"
+        },
+        {
+          "path": "src/frontend/src/assets/images/logo-legiskids.png",
+          "name": "logo-legiskids.png",
+          "size": 2170425,
+          "extension": ".png"
+        },
+        {
+          "path": "docs/db/erd.png",
+          "name": "erd.png",
+          "size": 147631,
+          "extension": ".png"
+        }
+      ]
+    },
+    {
+      "language": "Markdown",
+      "file_count": 236,
+      "total_bytes": 1010324,
+      "percentage": 14.41,
+      "files": [
+        {
+          "path": "openspec/changes/dashboard-projeto-detalhado/specs/SPEC-detalhe.md",
+          "name": "SPEC-detalhe.md",
+          "size": 34222,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/estudos/requisitos/requisitos_de_software.md",
+          "name": "requisitos_de_software.md",
+          "size": 23978,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/db/schema.md",
+          "name": "schema.md",
+          "size": 18344,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/estudos/frontend/frameworks_bibliotecas.md",
+          "name": "frameworks_bibliotecas.md",
+          "size": 16442,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/estudos/requisitos/estudo_requisitos_software.md",
+          "name": "estudo_requisitos_software.md",
+          "size": 14160,
+          "extension": ".md"
+        },
+        {
+          "path": "CLAUDE.md",
+          "name": "CLAUDE.md",
+          "size": 13244,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/estudos/sdd/sddEstudo.md",
+          "name": "sddEstudo.md",
+          "size": 13038,
+          "extension": ".md"
+        },
+        {
+          "path": "openspec/changes/pipeline-ci-qualidade/design.md",
+          "name": "design.md",
+          "size": 11995,
+          "extension": ".md"
+        },
+        {
+          "path": ".agents/skills/neon-postgres/SKILL.md",
+          "name": "SKILL.md",
+          "size": 11415,
+          "extension": ".md"
+        },
+        {
+          "path": ".claude/skills/neon-postgres/SKILL.md",
+          "name": "SKILL.md",
+          "size": 11415,
+          "extension": ".md"
+        }
+      ]
+    },
+    {
+      "language": "JPEG Image",
+      "file_count": 5,
+      "total_bytes": 787927,
+      "percentage": 11.24,
+      "files": [
+        {
+          "path": "docs/assets/images/team/caio-bechepeche.jpg",
+          "name": "caio-bechepeche.jpg",
+          "size": 325932,
+          "extension": ".jpg"
+        },
+        {
+          "path": "docs/assets/images/team/renan-curione.jpg",
+          "name": "renan-curione.jpg",
+          "size": 321946,
+          "extension": ".jpg"
+        },
+        {
+          "path": "docs/assets/images/team/italo-lacerda.jpg",
+          "name": "italo-lacerda.jpg",
+          "size": 88779,
+          "extension": ".jpg"
+        },
+        {
+          "path": "docs/assets/images/team/arthur-palhares.jpg",
+          "name": "arthur-palhares.jpg",
+          "size": 28587,
+          "extension": ".jpg"
+        },
+        {
+          "path": "docs/assets/images/team/luis-henrique.jpg",
+          "name": "luis-henrique.jpg",
+          "size": 22683,
+          "extension": ".jpg"
+        }
+      ]
+    },
+    {
+      "language": "JSON",
+      "file_count": 8,
+      "total_bytes": 226899,
+      "percentage": 3.24,
+      "files": [
+        {
+          "path": "docs/performance/metrics.json",
+          "name": "metrics.json",
+          "size": 171308,
+          "extension": ".json"
+        },
+        {
+          "path": "openspec/changes/dashboard-projeto-detalhado/spec.json",
+          "name": "spec.json",
+          "size": 32733,
+          "extension": ".json"
+        },
+        {
+          "path": "openspec/changes/dashboard-pesquisa/specs/spec.json",
+          "name": "spec.json",
+          "size": 13912,
+          "extension": ".json"
+        },
+        {
+          "path": "openspec/changes/dashboard-principal/specs/dashboard/spec.json",
+          "name": "spec.json",
+          "size": 6587,
+          "extension": ".json"
+        },
+        {
+          "path": ".github/performance-students.json",
+          "name": "performance-students.json",
+          "size": 867,
+          "extension": ".json"
+        },
+        {
+          "path": "vercel.json",
+          "name": "vercel.json",
+          "size": 668,
+          "extension": ".json"
+        },
+        {
+          "path": "src/frontend/package.json",
+          "name": "package.json",
+          "size": 541,
+          "extension": ".json"
+        },
+        {
+          "path": "skills-lock.json",
+          "name": "skills-lock.json",
+          "size": 283,
+          "extension": ".json"
+        }
+      ]
+    },
+    {
+      "language": "Python",
+      "file_count": 27,
+      "total_bytes": 175742,
+      "percentage": 2.51,
+      "files": [
+        {
+          "path": "scripts/generate_performance_report.py",
+          "name": "generate_performance_report.py",
+          "size": 44434,
+          "extension": ".py"
+        },
+        {
+          "path": "tests/integration/test_camara_repository.py",
+          "name": "test_camara_repository.py",
+          "size": 22123,
+          "extension": ".py"
+        },
+        {
+          "path": "src/backend/services/camara_service.py",
+          "name": "camara_service.py",
+          "size": 21321,
+          "extension": ".py"
+        },
+        {
+          "path": "tests/unit/test_camara_service.py",
+          "name": "test_camara_service.py",
+          "size": 16059,
+          "extension": ".py"
+        },
+        {
+          "path": "src/backend/repository/camara_repository.py",
+          "name": "camara_repository.py",
+          "size": 15374,
+          "extension": ".py"
+        },
+        {
+          "path": "src/backend/models.py",
+          "name": "models.py",
+          "size": 14410,
+          "extension": ".py"
+        },
+        {
+          "path": "migrations/versions/babbb73a5d52_schema_inicial_com_categorias_n_n_e_.py",
+          "name": "babbb73a5d52_schema_inicial_com_categorias_n_n_e_.py",
+          "size": 6794,
+          "extension": ".py"
+        },
+        {
+          "path": "scripts/seed.py",
+          "name": "seed.py",
+          "size": 5863,
+          "extension": ".py"
+        },
+        {
+          "path": "tests/integration/test_proposicoes_controller.py",
+          "name": "test_proposicoes_controller.py",
+          "size": 4804,
+          "extension": ".py"
+        },
+        {
+          "path": "migrations/versions/ded4438e4a2c_auditoria_backend_total_descartados_e_.py",
+          "name": "ded4438e4a2c_auditoria_backend_total_descartados_e_.py",
+          "size": 4529,
+          "extension": ".py"
+        }
+      ]
+    },
+    {
+      "language": "HTML",
+      "file_count": 2,
+      "total_bytes": 166472,
+      "percentage": 2.37,
+      "files": [
+        {
+          "path": "docs/performance/dashboard.html",
+          "name": "dashboard.html",
+          "size": 165782,
+          "extension": ".html"
+        },
+        {
+          "path": "src/frontend/index.html",
+          "name": "index.html",
+          "size": 690,
+          "extension": ".html"
+        }
+      ]
+    },
+    {
+      "language": "Vue",
+      "file_count": 18,
+      "total_bytes": 113158,
+      "percentage": 1.61,
+      "files": [
+        {
+          "path": "src/frontend/src/views/DetalheView.vue",
+          "name": "DetalheView.vue",
+          "size": 32467,
+          "extension": ".vue"
+        },
+        {
+          "path": "src/frontend/src/views/DashboardView.vue",
+          "name": "DashboardView.vue",
+          "size": 17544,
+          "extension": ".vue"
+        },
+        {
+          "path": "src/frontend/src/views/AnalisesView.vue",
+          "name": "AnalisesView.vue",
+          "size": 10992,
+          "extension": ".vue"
+        },
+        {
+          "path": "src/frontend/src/components/Navbar.vue",
+          "name": "Navbar.vue",
+          "size": 8876,
+          "extension": ".vue"
+        },
+        {
+          "path": "src/frontend/src/views/SobreView.vue",
+          "name": "SobreView.vue",
+          "size": 6811,
+          "extension": ".vue"
+        },
+        {
+          "path": "src/frontend/src/components/FilterBar.vue",
+          "name": "FilterBar.vue",
+          "size": 6608,
+          "extension": ".vue"
+        },
+        {
+          "path": "src/frontend/src/views/BuscaView.vue",
+          "name": "BuscaView.vue",
+          "size": 5852,
+          "extension": ".vue"
+        },
+        {
+          "path": "src/frontend/src/components/Pagination.vue",
+          "name": "Pagination.vue",
+          "size": 4676,
+          "extension": ".vue"
+        },
+        {
+          "path": "src/frontend/src/components/ProposicaoCard.vue",
+          "name": "ProposicaoCard.vue",
+          "size": 4098,
+          "extension": ".vue"
+        },
+        {
+          "path": "src/frontend/src/components/charts/GraficoTemasTempo.vue",
+          "name": "GraficoTemasTempo.vue",
+          "size": 2463,
+          "extension": ".vue"
+        }
+      ]
+    },
+    {
+      "language": "YAML",
+      "file_count": 25,
+      "total_bytes": 12834,
+      "percentage": 0.18,
+      "files": [
+        {
+          "path": "mkdocs.yml",
+          "name": "mkdocs.yml",
+          "size": 6251,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/backend-ci.yml",
+          "name": "backend-ci.yml",
+          "size": 1649,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/perfomance-report.yml",
+          "name": "perfomance-report.yml",
+          "size": 1292,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/performance-report.yml",
+          "name": "performance-report.yml",
+          "size": 1135,
+          "extension": ".yml"
+        },
+        {
+          "path": ".github/workflows/frontend-ci.yml",
+          "name": "frontend-ci.yml",
+          "size": 763,
+          "extension": ".yml"
+        },
+        {
+          "path": "openspec/config.yaml",
+          "name": "config.yaml",
+          "size": 573,
+          "extension": ".yaml"
+        },
+        {
+          "path": "docker-compose.yml",
+          "name": "docker-compose.yml",
+          "size": 451,
+          "extension": ".yml"
+        },
+        {
+          "path": "openspec/changes/archive/2026-06-08-configure-database-url/.openspec.yaml",
+          "name": ".openspec.yaml",
+          "size": 40,
+          "extension": ".yaml"
+        },
+        {
+          "path": "openspec/changes/archive/2026-06-08-documentar-schema-banco-de-dados/.openspec.yaml",
+          "name": ".openspec.yaml",
+          "size": 40,
+          "extension": ".yaml"
+        },
+        {
+          "path": "openspec/changes/archive/2026-06-27-migracao-frontend-vuejs/.openspec.yaml",
+          "name": ".openspec.yaml",
+          "size": 40,
+          "extension": ".yaml"
+        }
+      ]
+    },
+    {
+      "language": "Unknown",
+      "file_count": 5,
+      "total_bytes": 10318,
+      "percentage": 0.15,
+      "files": [
+        {
+          "path": "docs/db/erd.dbml",
+          "name": "erd.dbml",
+          "size": 4429,
+          "extension": ".dbml"
+        },
+        {
+          "path": "backend/src/services/__pycache__/camara_api.cpython-312.pyc",
+          "name": "camara_api.cpython-312.pyc",
+          "size": 3424,
+          "extension": ".pyc"
+        },
+        {
+          "path": ".env.example",
+          "name": ".env.example",
+          "size": 1931,
+          "extension": ".example"
+        },
+        {
+          "path": "migrations/script.py.mako",
+          "name": "script.py.mako",
+          "size": 494,
+          "extension": ".mako"
+        },
+        {
+          "path": "src/frontend/.env.example",
+          "name": ".env.example",
+          "size": 40,
+          "extension": ".example"
+        }
+      ]
+    },
+    {
+      "language": "CSS",
+      "file_count": 2,
+      "total_bytes": 8108,
+      "percentage": 0.12,
+      "files": [
+        {
+          "path": "docs/stylesheets/custom.css",
+          "name": "custom.css",
+          "size": 4679,
+          "extension": ".css"
+        },
+        {
+          "path": "src/frontend/src/assets/main.css",
+          "name": "main.css",
+          "size": 3429,
+          "extension": ".css"
+        }
+      ]
+    },
+    {
+      "language": "JavaScript",
+      "file_count": 10,
+      "total_bytes": 5508,
+      "percentage": 0.08,
+      "files": [
+        {
+          "path": "src/frontend/src/router/index.js",
+          "name": "index.js",
+          "size": 1150,
+          "extension": ".js"
+        },
+        {
+          "path": "src/frontend/src/services/proposicoes.js",
+          "name": "proposicoes.js",
+          "size": 1007,
+          "extension": ".js"
+        },
+        {
+          "path": "src/frontend/src/stores/proposicoes.js",
+          "name": "proposicoes.js",
+          "size": 924,
+          "extension": ".js"
+        },
+        {
+          "path": "src/frontend/src/stores/busca.js",
+          "name": "busca.js",
+          "size": 606,
+          "extension": ".js"
+        },
+        {
+          "path": "src/frontend/eslint.config.js",
+          "name": "eslint.config.js",
+          "size": 395,
+          "extension": ".js"
+        },
+        {
+          "path": "src/frontend/src/utils/proposicao.js",
+          "name": "proposicao.js",
+          "size": 367,
+          "extension": ".js"
+        },
+        {
+          "path": "src/frontend/vite.config.js",
+          "name": "vite.config.js",
+          "size": 301,
+          "extension": ".js"
+        },
+        {
+          "path": "src/frontend/src/services/estatisticas.js",
+          "name": "estatisticas.js",
+          "size": 267,
+          "extension": ".js"
+        },
+        {
+          "path": "src/frontend/src/services/temas.js",
+          "name": "temas.js",
+          "size": 253,
+          "extension": ".js"
+        },
+        {
+          "path": "src/frontend/src/main.js",
+          "name": "main.js",
+          "size": 238,
+          "extension": ".js"
+        }
+      ]
+    },
+    {
+      "language": "Git Ignore",
+      "file_count": 1,
+      "total_bytes": 2563,
+      "percentage": 0.04,
+      "files": [
+        {
+          "path": ".gitignore",
+          "name": ".gitignore",
+          "size": 2563,
+          "extension": ".gitignore"
+        }
+      ]
+    },
+    {
+      "language": "No Extension",
+      "file_count": 2,
+      "total_bytes": 1101,
+      "percentage": 0.02,
+      "files": [
+        {
+          "path": "LICENSE",
+          "name": "LICENSE",
+          "size": 1060,
+          "extension": ""
+        },
+        {
+          "path": "migrations/README",
+          "name": "README",
+          "size": 41,
+          "extension": ""
+        }
+      ]
+    },
+    {
+      "language": "INI",
+      "file_count": 1,
+      "total_bytes": 857,
+      "percentage": 0.01,
+      "files": [
+        {
+          "path": "migrations/alembic.ini",
+          "name": "alembic.ini",
+          "size": 857,
+          "extension": ".ini"
+        }
+      ]
+    },
+    {
+      "language": "TOML",
+      "file_count": 1,
+      "total_bytes": 388,
+      "percentage": 0.01,
+      "files": [
+        {
+          "path": "pyproject.toml",
+          "name": "pyproject.toml",
+          "size": 388,
+          "extension": ".toml"
+        }
+      ]
+    },
+    {
+      "language": "Text",
+      "file_count": 3,
+      "total_bytes": 349,
+      "percentage": 0.0,
+      "files": [
+        {
+          "path": "requirements.txt",
+          "name": "requirements.txt",
+          "size": 263,
+          "extension": ".txt"
+        },
+        {
+          "path": "requirements-dev.txt",
+          "name": "requirements-dev.txt",
+          "size": 46,
+          "extension": ".txt"
+        },
+        {
+          "path": "requirements-docs.txt",
+          "name": "requirements-docs.txt",
+          "size": 40,
+          "extension": ".txt"
+        }
+      ]
+    }
+  ],
+  "_metadata": {
+    "extracted_at": "2026-09-17T04:04:44.779206",
+    "file_path": "data/silver/language_analysis_2026-1-LegisKids.json"
+  }
+}

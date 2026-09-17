@@ -1,0 +1,130 @@
+{
+  "repository": "2026-2-MonitoraUnB",
+  "owner": "unb-mds",
+  "branch": "main",
+  "extracted_at": "2026-09-17T04:04:01.629262",
+  "hierarchy": {
+    "name": "root",
+    "type": "directory",
+    "children": [
+      {
+        "name": "README.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 72,
+        "extension": ".md",
+        "path": "README.md"
+      },
+      {
+        "name": "docs",
+        "type": "directory",
+        "path": "docs",
+        "children": []
+      },
+      {
+        "name": "estudos",
+        "type": "directory",
+        "path": "docs/estudos",
+        "children": []
+      },
+      {
+        "name": "Estudo Git.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 1569,
+        "extension": ".txt",
+        "path": "docs/estudos/Estudo Git.txt"
+      },
+      {
+        "name": "Front-end.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 197,
+        "extension": ".md",
+        "path": "docs/estudos/Front-end.md"
+      },
+      {
+        "name": "Guia GitFlow.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3641,
+        "extension": ".md",
+        "path": "docs/estudos/Guia GitFlow.md"
+      },
+      {
+        "name": "Metodologia Scrum",
+        "type": "file",
+        "language": "No Extension",
+        "size": 10015,
+        "extension": "",
+        "path": "docs/estudos/Metodologia Scrum"
+      },
+      {
+        "name": "Metodologia Scrum.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 10170,
+        "extension": ".md",
+        "path": "docs/estudos/Metodologia Scrum.md"
+      },
+      {
+        "name": "Skills.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 4045,
+        "extension": ".md",
+        "path": "docs/estudos/Skills.md"
+      },
+      {
+        "name": "estudo fast api e django.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 1881,
+        "extension": ".txt",
+        "path": "docs/estudos/estudo fast api e django.txt"
+      },
+      {
+        "name": "git_cheatsheet.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1914,
+        "extension": ".md",
+        "path": "docs/estudos/git_cheatsheet.md"
+      },
+      {
+        "name": "leitura do histórico",
+        "type": "file",
+        "language": "No Extension",
+        "size": 2827,
+        "extension": "",
+        "path": "docs/estudos/leitura do histórico"
+      },
+      {
+        "name": "sprints",
+        "type": "directory",
+        "path": "docs/sprints",
+        "children": []
+      },
+      {
+        "name": "sprint0.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 960,
+        "extension": ".md",
+        "path": "docs/sprints/sprint0.md"
+      },
+      {
+        "name": "sprint_template.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 753,
+        "extension": ".md",
+        "path": "docs/sprints/sprint_template.md"
+      }
+    ]
+  },
+  "_metadata": {
+    "extracted_at": "2026-09-17T04:04:43.831705",
+    "file_path": "data/silver/hierarchy_2026-2-MonitoraUnB.json"
+  }
+}
