@@ -132,6 +132,8 @@ export default function PieChart({
         .attr('font-size', '12px')
         .attr('font-weight', 'bold')
         .text((d) => {
+          // Avoid "NaN%" when every value is 0 (total = 0).
+          if (total <= 0) return '';
           const percentage = ((d.data.value / total) * 100).toFixed(1);
           return percentage !== '0.0' ? `${percentage}%` : '';
         });

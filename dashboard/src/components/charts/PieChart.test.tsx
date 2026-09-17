@@ -195,8 +195,8 @@ describe('PieChart', () => {
     expect(container.querySelectorAll('svg > g')).toHaveLength(2);
   });
 
-  // BUG conhecido: se todos os valores forem 0, total = 0 e o rótulo vira "NaN%".
-  test.fails('não exibe "NaN%" quando todos os valores são zero (bug)', () => {
+  // Regressão #78: se todos os valores forem 0, total = 0 e o rótulo virava "NaN%".
+  test('não exibe "NaN%" quando todos os valores são zero', () => {
     const { container } = render(
       <PieChart
         data={[
@@ -205,6 +205,9 @@ describe('PieChart', () => {
         ]}
       />
     );
-    sliceLabels(container).forEach((l) => expect(l).not.toContain('NaN'));
+    const labels = sliceLabels(container);
+    expect(labels).toHaveLength(2);
+    labels.forEach((l) => expect(l).toBe(''));
+    expect(legendRows(container)).toHaveLength(2);
   });
 });
