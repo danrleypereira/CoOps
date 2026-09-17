@@ -10,13 +10,14 @@ import Structure from './pages/Structure';
 import HeatmapPage from './pages/Heatmap';
 import Timeline from './pages/Timeline';
 import VisualizationPage from './pages/Visualization';
+import AIAnalysis from './pages/AIAnalysis';
 import NotFound from './pages/NotFound';
 
 /**
  * App Component
  *
  * Root application component defining all routes.
- * Manages navigation between home, organization, overview, and repository analysis pages.
+ * Manages navigation between home, organization, overview, repository analysis and AI analysis pages.
  * Includes fallback route for unimplemented features.
  */
 function App() {
@@ -36,6 +37,7 @@ function App() {
         <Route path="/repos/collaboration" element={<Collaboration />} />
         <Route path="/repos/structure" element={<Structure />} />
         <Route path="/repos/visualization" element={<VisualizationPage />} />
+        <Route path="/ai" element={<AIAnalysis />} />
 
         {/* Fallback route for not implemented pages */}
         <Route path="*" element={<NotFound />} />

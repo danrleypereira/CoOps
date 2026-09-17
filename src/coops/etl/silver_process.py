@@ -52,7 +52,6 @@ def main():
             save_hierarchy=True
         )
 
-
         # Update registry
         all_files = (member_files + contrib_files + collab_files + temporal_files
                      + members_stats_files + language_files + repo_list_files)

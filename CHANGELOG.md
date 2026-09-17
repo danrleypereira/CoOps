@@ -25,6 +25,12 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 - **Validate Pipeline (manual)** workflow and
   `docs/TESTING_PULL_REQUESTS.md`: PRs are validated against a real
   organization in `unb-mds/CoOps` before review.
+- Dashboard: **AI Analysis** page (`/ai`, linked from the sidebar) with the
+  AI-generated member analyses (`silver/ai/members_ai.json`). When the file
+  is missing the page says AI analysis requires the `GEMINI_API_KEY` secret.
+  The Analytics page stays unrouted (#74): it is slow on real data and
+  duplicates the routed pages.
+- Gold `organization_health.members_with_profile`: members with maturity data.
 
 ### Changed
 - **Breaking:** `coops-bronze` reads the token and organization from
@@ -55,6 +61,12 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   console commands (`uv run coops-*`) instead of `python src/*.py`.
 - Test/coverage configuration consolidated into `pyproject.toml`
   (`pytest.ini` and `.coveragerc` removed).
+- Members are the union of the organization's members and the contributors
+  of the extracted repositories (`is_org_member`, `contributions_total`);
+  before, contributors were only used when the members API returned nobody.
+- The daily Bronze workflow reads GitHub with the `COOPS_GITHUB_TOKEN` secret
+  when it is set. With it, concealed organization memberships are extracted
+  and published with the data.
 
 ### Fixed
 - `dashboard/package-lock.json` was missing most dev dependencies, so
@@ -91,6 +103,12 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   BarChart, PieChart, Histogram (`showKDE`, negative values), Heatmap and
   StackedBarChart — #77–#81.
 - `validate-pipeline.yaml` checks every dataset the dashboard reads.
+- Gold `organization_health.total_members` counts every extracted member,
+  including those whose profile couldn't be fetched; `maturity_bands.json` is
+  rewritten even when there are no members.
+- Deep links to dashboard pages (e.g. `/CoOps/ai`) work on GitHub Pages
+  (`404.html` fallback).
+
 ### Removed
 - `sys.path` manipulation hacks in `src/` modules and `tests/conftest.py`.
 - Legacy `fetch_issues.py` GitHub code path (standalone `requests` client, own
