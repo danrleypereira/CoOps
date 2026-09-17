@@ -233,7 +233,7 @@ describe('CollaborationPage Component', () => {
 
   // ========== TRATAMENTO DE ERROS ==========
   describe('Tratamento de Erros', () => {
-    test('mostra erro quando fetch de colaboração falha', async () => {
+    test('mostra o estado "ainda não gerado" quando colaboração não existe (404)', async () => {
       (global.fetch as any).mockImplementation((url: string) => {
         if (url.includes('collaboration_edges.json')) {
           return Promise.resolve({
@@ -249,11 +249,11 @@ describe('CollaborationPage Component', () => {
 
       renderWithRouter();
 
-      await waitFor(() => {
-        expect(screen.getByText(/Error loading data:/)).toBeInTheDocument();
-      });
-
-      expect(screen.getByText(/status: 404/)).toBeInTheDocument();
+      const status = await screen.findByTestId('data-not-generated');
+      expect(status).toHaveTextContent('data/silver/collaboration_edges.json');
+      expect(status).toHaveTextContent(/daily data pipeline creates it/);
+      expect(screen.queryByText(/Error loading data:/)).not.toBeInTheDocument();
+      expect(screen.queryByTestId('collaboration-graph')).not.toBeInTheDocument();
     });
 
     test('mostra erro quando fetch de heatmap falha', async () => {

@@ -5,7 +5,8 @@ import { HeatmapDataPoint } from '../types';
 import { useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Utils } from './Utils';
-import { fetchData, filterMetadata } from '../services/dataSource';
+import { fetchData, filterMetadata, isDataNotFoundError } from '../services/dataSource';
+import DataNotGenerated from '../components/DataNotGenerated';
 import type { ProcessedActivityResponse, RepoActivitySummary } from './Utils';
 
 
@@ -19,6 +20,7 @@ export default function HeatmapPage() {
   const [heatmapData, setHeatmapData] = useState<HeatmapDataPoint[] | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [missingDataPath, setMissingDataPath] = useState<string | null>(null);
   const [ mainData, setMainData ] = useState<ProcessedActivityResponse | null>(null);
   const [searchParams] = useSearchParams();
   const [showLegend, setShowLegend] = useState<boolean>(false);
@@ -29,6 +31,7 @@ export default function HeatmapPage() {
       try {
         setLoading(true);
         setError(null);
+        setMissingDataPath(null);
 
         // Fetch the two files in parallel
         const [heatmapRawData, processedMainData] = await Promise.all([
@@ -40,7 +43,11 @@ export default function HeatmapPage() {
         setMainData(processedMainData);
 
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'An unknown error occurred');
+        if (isDataNotFoundError(err)) {
+          setMissingDataPath(err.path);
+        } else {
+          setError(err instanceof Error ? err.message : 'An unknown error occurred');
+        }
         setHeatmapData(null);
         setMainData(null);
       } finally {
@@ -84,6 +91,7 @@ export default function HeatmapPage() {
       {loading && (
         <div className="text-center text-white/70 mt-80" >Loading data...</div>
       )}
+      {missingDataPath && !loading && <DataNotGenerated path={missingDataPath} className="mt-30" />}
       {error && (
         <div className="bg-red-900/50 border border-red-700 text-red-300 px-4 py-3 rounded relative text-center" role="alert">
           <strong className="font-bold">Error loading data: </strong>

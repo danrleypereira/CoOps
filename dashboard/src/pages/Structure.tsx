@@ -2,8 +2,9 @@ import { useEffect, useState, useMemo } from 'react';
 import DashboardLayout from '../components/DashboardLayout';
 import BaseFilters from '../components/BaseFilters';
 import Loading from '../components/Loading';
+import DataNotGenerated, { DataLoadError } from '../components/DataNotGenerated';
 import { BarChart } from '../components/charts';
-import { fetchData, filterMetadata } from '../services/dataSource';
+import { fetchData, filterMetadata, isDataNotFoundError } from '../services/dataSource';
 import { Utils } from './Utils';
 
 interface TemporalEvent {
@@ -26,6 +27,8 @@ export default function Structure() {
   const [selectedTime, setSelectedTime] = useState<string>('All Time');
   const [selectedMembers, setSelectedMembers] = useState<string[]>([]);
   const [activityData, setActivityData] = useState<any>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [missingDataPath, setMissingDataPath] = useState<string | null>(null);
 
   useEffect(() => {
     async function loadData() {
@@ -39,7 +42,12 @@ export default function Structure() {
         setActivityData(activity);
         setLoading(false);
       } catch (error) {
-        console.error('Failed to load structure data:', error);
+        if (isDataNotFoundError(error)) {
+          setMissingDataPath(error.path);
+        } else {
+          console.error('Failed to load structure data:', error);
+          setError(error instanceof Error ? error.message : String(error));
+        }
         setLoading(false);
       }
     }
@@ -81,14 +89,14 @@ export default function Structure() {
     }
   }, [selectedTime]);
 
-  // Show filtering state when filters change
+  // Show filtering state when the data or the filters change
   useEffect(() => {
     if (temporalData.length > 0) {
       setFiltering(true);
       const timer = setTimeout(() => setFiltering(false), 300);
       return () => clearTimeout(timer);
     }
-  }, [selectedMembers, selectedTime]);
+  }, [temporalData, selectedMembers, selectedTime]);
 
   // Filter temporal events by member and time
   const filteredTemporalData = useMemo(() => {
@@ -145,6 +153,24 @@ export default function Structure() {
         data={activityData}
       >
         <Loading message="Loading structure analytics..." size="lg" />
+      </DashboardLayout>
+    );
+  }
+
+  if (missingDataPath || error) {
+    return (
+      <DashboardLayout
+        currentPage="repos"
+        currentSubPage="structure"
+        onRepo={true}
+        currentRepo="All Repositories"
+        data={activityData}
+      >
+        {missingDataPath ? (
+          <DataNotGenerated path={missingDataPath} />
+        ) : (
+          <DataLoadError message={error ?? ''} />
+        )}
       </DashboardLayout>
     );
   }

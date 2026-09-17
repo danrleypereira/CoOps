@@ -3,13 +3,13 @@ import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import type { ReactNode } from 'react';
 import Analytics from './Analytics';
-import { fetchData } from '../services/dataSource';
+import { fetchData, filterMetadata } from '../services/dataSource';
 
 vi.mock('../services/dataSource', async () => {
   const actual = await vi.importActual<typeof import('../services/dataSource')>(
     '../services/dataSource'
   );
-  return { ...actual, fetchData: vi.fn() };
+  return { ...actual, fetchData: vi.fn(), filterMetadata: vi.fn(actual.filterMetadata) };
 });
 
 vi.mock('../components/DashboardLayout', () => ({
@@ -187,6 +187,31 @@ describe('Analytics page', () => {
       { label: 'big', issues: 4, prs: 5, commits: 60 },
       { label: 'small', issues: 1, prs: 2, commits: 3 },
     ]);
+  });
+
+  // #75: sorting must not mutate the arrays held in React state
+  test('does not sort state arrays in place during render', async () => {
+    const actual = await vi.importActual<typeof import('../services/dataSource')>(
+      '../services/dataSource'
+    );
+    // Freeze what goes into state: an in-place .sort() on it would throw
+    vi.mocked(filterMetadata).mockImplementation(<T,>(data: T[]) =>
+      Object.freeze(actual.filterMetadata(data)) as T[]
+    );
+    try {
+      setupFetch();
+      renderPage();
+      await screen.findByText('Analytics Dashboard');
+      const commitsChart = screen
+        .getAllByTestId('bar-chart')
+        .find((b) => b.getAttribute('data-label') === 'Commits') as HTMLElement;
+      expect(propsOf(commitsChart).data).toEqual([
+        { label: 'big', value: 60 },
+        { label: 'small', value: 3 },
+      ]);
+    } finally {
+      vi.mocked(filterMetadata).mockImplementation(actual.filterMetadata);
+    }
   });
 
   test('computes member status pie, scatter and followers histogram', async () => {

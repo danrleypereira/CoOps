@@ -24,8 +24,12 @@ def main():
         from coops.silver.temporal_analysis import process_temporal_analysis
         from coops.silver.members_statistics import process_members_statistics
         from coops.silver.file_language_analysis import process_file_language_analysis
+        from coops.silver.available_repos import process_available_repos
 
         # Process data in logical order
+        print("\nListing available repositories...")
+        repo_list_files = process_available_repos()
+
         print("\nStep 1: Processing member analytics...")
         member_files = process_member_analytics()
 
@@ -48,8 +52,10 @@ def main():
             save_hierarchy=True
         )
 
+
         # Update registry
-        all_files = member_files + contrib_files + collab_files + temporal_files + members_stats_files + language_files
+        all_files = (member_files + contrib_files + collab_files + temporal_files
+                     + members_stats_files + language_files + repo_list_files)
         update_data_registry('silver', 'all_processed', all_files)
 
         print(f"\nSilver processing completed successfully!")

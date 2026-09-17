@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import type { ReactNode } from 'react';
 import Organization from './Organization';
-import { fetchData } from '../services/dataSource';
+import { DataNotFoundError, fetchData } from '../services/dataSource';
 
 vi.mock('../services/dataSource', async () => {
   const actual = await vi.importActual<typeof import('../services/dataSource')>(
@@ -123,14 +123,32 @@ describe('Organization page', () => {
     expect(propsOf(screen.getByTestId('histogram')).data).toEqual([15, 1, 99]);
   });
 
-  test('handles fetch failure by logging and rendering empty charts', async () => {
+  test('handles fetch failure by logging and showing the error instead of charts', async () => {
     const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
     mockedFetchData.mockRejectedValue(new Error('network down'));
     renderPage();
-    await screen.findByText('Organization Overview');
+    const alert = await screen.findByRole('alert');
+    expect(alert).toHaveTextContent('Error loading data: network down');
     expect(errorSpy).toHaveBeenCalledWith('Failed to load organization data:', expect.any(Error));
-    expect(propsOf(screen.getByTestId('pie-chart')).data).toEqual([]);
-    expect(propsOf(screen.getByTestId('scatter-plot')).data).toEqual([]);
-    expect(propsOf(screen.getByTestId('histogram')).data).toEqual([]);
+    expect(screen.queryByTestId('pie-chart')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('data-not-generated')).not.toBeInTheDocument();
+    expect(screen.getByTestId('dashboard-layout')).toHaveAttribute('data-page', 'organization');
+  });
+
+  test('shows the not-generated-yet empty state when a data file is missing (404)', async () => {
+    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    mockedFetchData.mockImplementation(async (path: string) => {
+      if (path === 'silver/contribution_metrics.json') {
+        throw new DataNotFoundError(path, `https://x/data/${path}`);
+      }
+      return [];
+    });
+    renderPage();
+    const status = await screen.findByTestId('data-not-generated');
+    expect(status).toHaveTextContent("This data hasn't been generated yet");
+    expect(status).toHaveTextContent('data/silver/contribution_metrics.json');
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('pie-chart')).not.toBeInTheDocument();
+    expect(errorSpy).not.toHaveBeenCalled();
   });
 });

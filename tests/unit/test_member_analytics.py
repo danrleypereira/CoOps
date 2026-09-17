@@ -130,8 +130,18 @@ def test_process_member_analytics_empty_data(monkeypatch):
     
     monkeypatch.setattr("coops.silver.member_analytics.load_json_data", fake_load)
     
+    saved_data = {}
+
+    def fake_save(data, path, timestamp=True):
+        saved_data[path] = data
+        return path
+
+    monkeypatch.setattr("coops.silver.member_analytics.save_json_data", fake_save)
+
     result = process_member_analytics()
-    assert result == []
+    # Always written, so the dashboard shows "no members", not "not generated"
+    assert "data/silver/members_analytics.json" in result
+    assert saved_data["data/silver/members_analytics.json"] == []
 
 @freeze_time("2025-01-01")
 def test_process_member_analytics_with_members(monkeypatch):
@@ -274,3 +284,28 @@ def test_process_member_analytics_member_without_created_at(monkeypatch):
     assert len(members_analytics) == 1
     assert members_analytics[0]["account_age_days"] == 0
     assert members_analytics[0]["status"] == "new"  # age = 0 < 365
+
+@freeze_time("2025-01-01")
+def test_process_member_analytics_skips_members_without_profile(monkeypatch):
+    """Members whose profile couldn't be fetched have no maturity data."""
+    fake_members = [
+        {"login": "with_profile", "id": 1, "public_repos": 20, "followers": 20,
+         "created_at": "2015-01-01T00:00:00Z", "profile_fetched": True},
+        {"login": "no_profile", "profile_fetched": False},
+        {"login": "legacy", "public_repos": 1, "followers": 0, "created_at": "2024-06-01T00:00:00Z"},
+    ]
+    saved_data = {}
+
+    def fake_save(data, path, timestamp=True):
+        saved_data[path] = data
+        return path
+
+    monkeypatch.setattr("coops.silver.member_analytics.load_json_data", lambda path: fake_members)
+    monkeypatch.setattr("coops.silver.member_analytics.save_json_data", fake_save)
+
+    process_member_analytics()
+
+    analytics = saved_data["data/silver/members_analytics.json"]
+    assert [m["login"] for m in analytics] == ["with_profile", "legacy"]
+    for field in ("email", "location", "bio", "company"):
+        assert field not in analytics[0]

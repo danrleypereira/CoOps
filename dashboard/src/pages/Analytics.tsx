@@ -117,13 +117,14 @@ export default function Analytics() {
     }, [] as { date: string; value: number }[])
     .sort((a, b) => a.date.localeCompare(b.date));
 
+  // Repositories ordered by commits (sort a copy: repoData is React state)
+  const reposByCommits = [...repoData].sort((a, b) => b.commits - a.commits);
+
   // Commits per repository
-  const commitsPerRepo = repoData
-    .sort((a, b) => b.commits - a.commits)
-    .map((r) => ({ label: r.repo, value: r.commits }));
+  const commitsPerRepo = reposByCommits.map((r) => ({ label: r.repo, value: r.commits }));
 
   // Repository stacked data
-  const repoStackedData = repoData.map((r) => ({
+  const repoStackedData = reposByCommits.map((r) => ({
     label: r.repo,
     issues: r.issues,
     prs: r.prs,

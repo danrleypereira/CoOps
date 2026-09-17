@@ -1,5 +1,5 @@
-import { describe, test, expect } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { describe, test, expect, vi, beforeEach, afterEach } from 'vitest';
+import { render, screen, fireEvent, act } from '@testing-library/react';
 import type { ComponentProps } from 'react';
 import { RepoStructureAnalysis } from './RepoStructureAnalysis';
 
@@ -25,13 +25,28 @@ const makeRepo = (overrides: Partial<RepoData> = {}): RepoData => ({
 
 const HEADER = /Intelligent Structure Analysis/;
 
+const GENERATE = /Generate Analysis/;
+
+/** Expands the panel, clicks "Generate Analysis" and lets the deferred work finish. */
 const openAnalysis = (data: RepoData) => {
   const utils = render(<RepoStructureAnalysis data={data} />);
   fireEvent.click(screen.getByRole('button', { name: HEADER }));
+  fireEvent.click(screen.getByRole('button', { name: GENERATE }));
+  act(() => {
+    vi.runAllTimers();
+  });
   return utils;
 };
 
 describe('RepoStructureAnalysis', () => {
+  beforeEach(() => {
+    vi.useFakeTimers();
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
   test('inicia recolhido, sem análise', () => {
     render(<RepoStructureAnalysis data={makeRepo()} />);
 
@@ -41,14 +56,27 @@ describe('RepoStructureAnalysis', () => {
     expect(screen.queryByText(/Generate Analysis/)).not.toBeInTheDocument();
   });
 
-  test('expande, gera análise e recolhe/expande sem regenerar', () => {
+  // #72: o botão "Generate Analysis" e o spinner eram inalcançáveis
+  test('expande mostrando o botão, gera com spinner e recolhe/expande sem regenerar', () => {
     render(<RepoStructureAnalysis data={makeRepo()} />);
     const header = screen.getByRole('button', { name: HEADER });
 
     fireEvent.click(header);
     expect(header).toHaveTextContent('▼');
-    expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('Repository Structure Analysis');
+    expect(screen.queryByRole('heading', { level: 2 })).not.toBeInTheDocument();
+    const generate = screen.getByRole('button', { name: GENERATE });
+
+    fireEvent.click(generate);
+    expect(screen.getByText('Analyzing repository structure...')).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: GENERATE })).not.toBeInTheDocument();
+    expect(screen.queryByRole('heading', { level: 2 })).not.toBeInTheDocument();
+
+    act(() => {
+      vi.runAllTimers();
+    });
     expect(screen.queryByText(/Analyzing repository structure/)).not.toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('Repository Structure Analysis');
+    expect(screen.queryByRole('button', { name: GENERATE })).not.toBeInTheDocument();
 
     fireEvent.click(header);
     expect(header).toHaveTextContent('▶');
@@ -57,6 +85,49 @@ describe('RepoStructureAnalysis', () => {
     fireEvent.click(header);
     expect(header).toHaveTextContent('▼');
     expect(screen.getAllByRole('heading', { level: 2 })).toHaveLength(1);
+    expect(screen.queryByText(/Analyzing repository structure/)).not.toBeInTheDocument();
+  });
+
+  test('recolher durante a geração não a cancela', () => {
+    render(<RepoStructureAnalysis data={makeRepo()} />);
+    const header = screen.getByRole('button', { name: HEADER });
+    fireEvent.click(header);
+    fireEvent.click(screen.getByRole('button', { name: GENERATE }));
+    fireEvent.click(header);
+    act(() => {
+      vi.runAllTimers();
+    });
+    fireEvent.click(header);
+    expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('Repository Structure Analysis');
+  });
+
+  test('desmontar durante a geração cancela o trabalho pendente', () => {
+    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    const { unmount } = render(<RepoStructureAnalysis data={makeRepo()} />);
+    fireEvent.click(screen.getByRole('button', { name: HEADER }));
+    fireEvent.click(screen.getByRole('button', { name: GENERATE }));
+    unmount();
+    expect(vi.getTimerCount()).toBe(0);
+    expect(errorSpy).not.toHaveBeenCalled();
+    errorSpy.mockRestore();
+  });
+
+  // #72: repositórios sem linguagens faziam a geração lançar erro
+  test('repositório sem linguagens gera uma análise explicativa sem quebrar', () => {
+    const { container } = openAnalysis(
+      makeRepo({ repository: 'empty-repo', total_files: 0, total_bytes: 0, languages: [] })
+    );
+
+    expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('Repository Structure Analysis');
+    expect(screen.getByText(/No language data is available for/)).toBeInTheDocument();
+    expect(screen.getByText(/so its structure can't be interpreted/)).toBeInTheDocument();
+    const h3 = screen.getAllByRole('heading', { level: 3 }).map((h) => h.textContent);
+    expect(h3).toContain('📊 Complexity Metrics');
+    expect(h3).not.toContain('🎯 Primary Language');
+    expect(h3).not.toContain('💡 Recommendations');
+    expect(container.textContent).not.toMatch(/NaN|Infinity|undefined/);
+    const strongTexts = Array.from(container.querySelectorAll('strong')).map((s) => s.textContent);
+    expect(strongTexts).toContain('empty-repo');
   });
 
   test('renderiza headings, listas e negrito a partir do markdown', () => {

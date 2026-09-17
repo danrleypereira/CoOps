@@ -1,7 +1,7 @@
 import { describe, test, expect, afterEach } from 'vitest';
 import type { ComponentProps } from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import Histogram from './Histogram';
+import Histogram, { gaussianKDE, silvermanBandwidth } from './Histogram';
 import { Histogram as HistogramFromIndex } from './index';
 
 type Props = ComponentProps<typeof Histogram>;
@@ -151,14 +151,80 @@ describe('Histogram', () => {
     expect(rects[0]).toHaveAttribute('fill');
   });
 
-  // BUG conhecido: showKDE está na interface/documentação, mas nunca é desenhado.
-  test.fails('showKDE desenha a curva de densidade (bug: não implementado)', () => {
-    const { container } = render(<Histogram data={data} showKDE />);
-    expect(container.querySelector('svg > g > path')).not.toBeNull();
+  // Regressão #79: showKDE estava na interface/documentação, mas nunca era desenhado.
+  describe('showKDE', () => {
+    function kdePath(container: HTMLElement) {
+      return container.querySelector<SVGPathElement>('svg > g > path.kde-curve');
+    }
+
+    test('desenha a curva de densidade', () => {
+      const { container } = render(<Histogram data={data} showKDE />);
+      const path = kdePath(container);
+      expect(path).not.toBeNull();
+      expect(path).toHaveAttribute('fill', 'none');
+      const d = path?.getAttribute('d') ?? '';
+      expect(d).toMatch(/^M/);
+      expect(d).not.toContain('NaN');
+    });
+
+    test('não desenha a curva sem showKDE', () => {
+      const { container } = render(<Histogram data={data} />);
+      expect(container.querySelector('svg > g > path')).toBeNull();
+    });
+
+    test('não desenha a curva quando os dados não têm dispersão', () => {
+      const { container } = render(<Histogram data={[4, 4, 4]} showKDE />);
+      expect(kdePath(container)).toBeNull();
+      expect(bars(container).length).toBeGreaterThan(0);
+    });
+
+    test('a curva fica dentro da área do gráfico', () => {
+      const { container } = render(<Histogram data={data} showKDE />);
+      const d = kdePath(container)?.getAttribute('d') ?? '';
+      const nums = (d.match(/-?\d+(\.\d+)?(e-?\d+)?/g) ?? []).map(Number);
+      const xs = nums.filter((_, i) => i % 2 === 0);
+      const ys = nums.filter((_, i) => i % 2 === 1);
+      // innerWidth = 510, innerHeight = 320
+      xs.forEach((v) => expect(v).toBeGreaterThanOrEqual(-1e-6));
+      xs.forEach((v) => expect(v).toBeLessThanOrEqual(510 + 1e-6));
+      ys.forEach((v) => expect(v).toBeGreaterThanOrEqual(-1e-6));
+      ys.forEach((v) => expect(v).toBeLessThanOrEqual(320 + 1e-6));
+    });
+
+    test('silvermanBandwidth segue a regra de Silverman', () => {
+      expect(silvermanBandwidth([])).toBe(0);
+      expect(silvermanBandwidth([1])).toBe(0);
+      expect(silvermanBandwidth([2, 2, 2])).toBe(0);
+      const values = [1, 2, 3, 4, 5];
+      // sd = sqrt(2.5) ≈ 1.5811; IQR = 4 - 2 = 2 → 2 / 1.34 ≈ 1.4925
+      expect(silvermanBandwidth(values)).toBeCloseTo(0.9 * (2 / 1.34) * Math.pow(5, -0.2), 10);
+    });
+
+    test('gaussianKDE integra aproximadamente 1 e tem pico na moda', () => {
+      const values = [0, 0, 0, 5];
+      const h = 1;
+      const xs = Array.from({ length: 2001 }, (_, i) => -10 + i * 0.01);
+      const dens = gaussianKDE(values, h, xs);
+      const area = dens.reduce((a, v) => a + v * 0.01, 0);
+      expect(area).toBeCloseTo(1, 3);
+      const peak = xs[dens.indexOf(Math.max(...dens))];
+      expect(peak).toBeCloseTo(0, 1);
+      // valor em x = 0: (3 * φ(0) + φ(5)) / 4
+      const phi = (u: number) => Math.exp(-0.5 * u * u) / Math.sqrt(2 * Math.PI);
+      expect(gaussianKDE(values, h, [0])[0]).toBeCloseTo((3 * phi(0) + phi(5)) / 4, 10);
+    });
+
+    test('barras continuam dentro do gráfico com KDE ativo', () => {
+      const { container } = render(<Histogram data={data} showKDE />);
+      bars(container).forEach((r) => {
+        expect(Number(r.getAttribute('height'))).toBeLessThanOrEqual(320);
+        expect(Number(r.getAttribute('y'))).toBeGreaterThanOrEqual(0);
+      });
+    });
   });
 
-  // BUG conhecido: o domínio de X começa em 0, então valores negativos são descartados.
-  test.fails('valores negativos são contabilizados (bug: domínio começa em 0)', () => {
+  // Regressão #79: o domínio de X começava em 0, então valores negativos eram descartados.
+  test('valores negativos são contabilizados', () => {
     const values = [-5, -3, 1, 2];
     const { container } = render(<Histogram data={values} bins={2} />);
     const heights = bars(container).map((r) => Number(r.getAttribute('height')));

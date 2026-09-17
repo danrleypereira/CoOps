@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import DashboardLayout from '../components/DashboardLayout';
 import Loading from '../components/Loading';
+import DataNotGenerated, { DataLoadError } from '../components/DataNotGenerated';
 import { PieChart, ScatterPlot, Histogram } from '../components/charts';
-import { fetchData, filterMetadata } from '../services/dataSource';
+import { fetchData, filterMetadata, isDataNotFoundError } from '../services/dataSource';
 
 interface MemberAnalytics {
   login: string;
@@ -31,6 +32,8 @@ export default function Organization() {
   const [membersData, setMembersData] = useState<MemberAnalytics[]>([]);
   const [contributionsData, setContributionsData] = useState<ContributionMetrics[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [missingDataPath, setMissingDataPath] = useState<string | null>(null);
 
   useEffect(() => {
     async function loadData() {
@@ -44,7 +47,12 @@ export default function Organization() {
         setContributionsData(filterMetadata(contributions));
         setLoading(false);
       } catch (error) {
-        console.error('Failed to load organization data:', error);
+        if (isDataNotFoundError(error)) {
+          setMissingDataPath(error.path);
+        } else {
+          console.error('Failed to load organization data:', error);
+          setError(error instanceof Error ? error.message : String(error));
+        }
         setLoading(false);
       }
     }
@@ -82,6 +90,18 @@ export default function Organization() {
     return (
       <DashboardLayout currentPage="organization" currentSubPage="" onRepo={false}>
         <Loading message="Loading organization metrics..." size="lg" />
+      </DashboardLayout>
+    );
+  }
+
+  if (missingDataPath || error) {
+    return (
+      <DashboardLayout currentPage="organization" currentSubPage="" onRepo={false}>
+        {missingDataPath ? (
+          <DataNotGenerated path={missingDataPath} />
+        ) : (
+          <DataLoadError message={error ?? ''} />
+        )}
       </DashboardLayout>
     );
   }

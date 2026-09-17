@@ -222,7 +222,7 @@ describe('HeatmapPage Component', () => {
 
   // ========== TRATAMENTO DE ERROS ==========
   describe('Tratamento de Erros', () => {
-    test('mostra erro com status quando heatmap não é encontrado', async () => {
+    test('mostra o estado "ainda não gerado" quando heatmap não é encontrado (404)', async () => {
       (global.fetch as any).mockImplementation((url: string) => {
         if (url.includes('activity_heatmap.json')) {
           return Promise.resolve({
@@ -235,10 +235,10 @@ describe('HeatmapPage Component', () => {
 
       renderWithRouter();
 
-      await waitFor(() => {
-        expect(screen.getByText(/Error loading data:/)).toBeInTheDocument();
-        expect(screen.getByText(/activity_heatmap\.json \(status: 404\)/)).toBeInTheDocument();
-      });
+      const status = await screen.findByTestId('data-not-generated');
+      expect(status).toHaveTextContent("This data hasn't been generated yet");
+      expect(status).toHaveTextContent('data/silver/activity_heatmap.json');
+      expect(screen.queryByText(/Error loading data:/)).not.toBeInTheDocument();
       expect(screen.queryByTestId('activity-heatmap')).not.toBeInTheDocument();
     });
 

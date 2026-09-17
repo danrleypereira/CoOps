@@ -66,7 +66,31 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   Fixes found on the way: the Structure page's member filter, the Analytics
   heatmap's weekday rows, HTTP status in data-fetch errors, and null entries
   in `filterMetadata`.
-
+- Bronze fetches every organization member (the list stopped at 30) and
+  their profiles, so Silver produces `members_analytics.json` and the
+  dashboard's member counts are no longer 0 — #70. Only the profile fields
+  Silver uses are stored (no email, location, bio or company); members whose
+  profile can't be fetched are kept with `profile_fetched: false`, and profile
+  requests stop when fewer than 200 API requests remain.
+- `members_analytics.json` is always written (an empty list when there are
+  no members), and no longer includes email, location, bio or company.
+- Silver writes `data/silver/available_repos.json` for the dashboard's
+  repository selectors — #71.
+- `save_json_data` no longer adds `_metadata` to the dict it is given;
+  consolidated files such as `language_analysis_all.json` had it on every
+  record.
+- Dashboard: every data file is loaded through `dataSource`, so the
+  Visualization page and the repository selectors work on GitHub Pages;
+  the per-repository tree is read from `silver/hierarchy_<repo>.json` — #48.
+- Dashboard: a data file that hasn't been generated yet shows an explanatory
+  message instead of an error, and real errors are no longer hidden — #87,
+  #73.
+- Dashboard: RepoStructureAnalysis no longer crashes on repositories without
+  languages (#72); Analytics no longer mutates state while sorting (#75);
+  Structure's filtering overlay follows data changes (#76); chart fixes in
+  BarChart, PieChart, Histogram (`showKDE`, negative values), Heatmap and
+  StackedBarChart — #77–#81.
+- `validate-pipeline.yaml` checks every dataset the dashboard reads.
 ### Removed
 - `sys.path` manipulation hacks in `src/` modules and `tests/conftest.py`.
 - Legacy `fetch_issues.py` GitHub code path (standalone `requests` client, own
