@@ -89,14 +89,14 @@ export default function Structure() {
     }
   }, [selectedTime]);
 
-  // Show filtering state when filters change
+  // Show filtering state when the data or the filters change
   useEffect(() => {
     if (temporalData.length > 0) {
       setFiltering(true);
       const timer = setTimeout(() => setFiltering(false), 300);
       return () => clearTimeout(timer);
     }
-  }, [selectedMembers, selectedTime]);
+  }, [temporalData, selectedMembers, selectedTime]);
 
   // Filter temporal events by member and time
   const filteredTemporalData = useMemo(() => {

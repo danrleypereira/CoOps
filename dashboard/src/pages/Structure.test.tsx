@@ -158,7 +158,15 @@ describe('Structure page', () => {
       { label: 'repo-d', value: 1 },
     ]);
     expect(timeSelect().value).toBe('All Time');
-    expect(screen.queryByText('Filtering data...')).not.toBeInTheDocument();
+  });
+
+  // #76: the effect must also react to temporalData, not only to the filters
+  test('shows "Filtering data..." overlay when the temporal data arrives, then hides it', async () => {
+    await renderLoaded();
+    expect(screen.getByText('Filtering data...')).toBeInTheDocument();
+    await waitFor(() => expect(screen.queryByText('Filtering data...')).not.toBeInTheDocument(), {
+      timeout: 2000,
+    });
   });
 
   test('extracts unique members from activity data into the member filter', async () => {
@@ -253,6 +261,9 @@ describe('Structure page', () => {
 
   test('shows "Filtering data..." overlay for 300ms after a filter change', async () => {
     await renderLoaded();
+    await waitFor(() => expect(screen.queryByText('Filtering data...')).not.toBeInTheDocument(), {
+      timeout: 2000,
+    });
     fireEvent.change(timeSelect(), { target: { value: 'Last 7 days' } });
     expect(screen.getByText('Filtering data...')).toBeInTheDocument();
     await waitFor(() => expect(screen.queryByText('Filtering data...')).not.toBeInTheDocument(), {
