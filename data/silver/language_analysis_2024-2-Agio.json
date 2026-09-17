@@ -2,7 +2,7 @@
   "repository": "2024-2-Agio",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T06:24:54.660690",
+  "analyzed_at": "2026-09-17T10:45:06.463158",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -446,7 +446,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T06:26:38.236662",
+    "extracted_at": "2026-09-17T10:46:35.872808",
     "file_path": "data/silver/language_analysis_2024-2-Agio.json"
   }
 }

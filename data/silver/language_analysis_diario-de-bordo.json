@@ -2,7 +2,7 @@
   "repository": "diario-de-bordo",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T06:25:45.204818",
+  "analyzed_at": "2026-09-17T10:45:47.785486",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -164,7 +164,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T06:26:39.450728",
+    "extracted_at": "2026-09-17T10:46:36.906044",
     "file_path": "data/silver/language_analysis_diario-de-bordo.json"
   }
 }

@@ -2,7 +2,7 @@
   "repository": "2023.2-LicitaX",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T06:24:37.909815",
+  "analyzed_at": "2026-09-17T10:44:53.239101",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -300,7 +300,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T06:26:39.201099",
+    "extracted_at": "2026-09-17T10:46:36.689811",
     "file_path": "data/silver/language_analysis_2023.2-LicitaX.json"
   }
 }

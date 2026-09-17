@@ -1,7 +1,7 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-17T06:26:39.792133",
+      "extracted_at": "2026-09-17T10:46:37.192389",
       "file_path": "data/silver/language_analysis_all.json",
       "record_count": 97
     }
@@ -10,7 +10,7 @@
     "repository": "2023-2-Squad03-LicitAL",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:26.912107",
+    "analyzed_at": "2026-09-17T10:44:44.491286",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -1580,7 +1580,7 @@
     "repository": "2023-2-Squad02-Desmatazonia",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:20.979998",
+    "analyzed_at": "2026-09-17T10:44:38.930598",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -2150,7 +2150,7 @@
     "repository": "2024-2-Agio",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:54.660690",
+    "analyzed_at": "2026-09-17T10:45:06.463158",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -2598,7 +2598,7 @@
     "repository": "2026-2-Bandejao-UnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:39.563146",
+    "analyzed_at": "2026-09-17T10:45:42.949025",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -2708,7 +2708,7 @@
     "repository": "2026-2-AgendaUnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:40.957433",
+    "analyzed_at": "2026-09-17T10:45:44.265757",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -2944,7 +2944,7 @@
     "repository": "2026-2-Bandejao",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:43.805391",
+    "analyzed_at": "2026-09-17T10:45:46.648208",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -3360,7 +3360,7 @@
     "repository": "2023-2-JuizVirtual",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:29.846270",
+    "analyzed_at": "2026-09-17T10:44:46.688915",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -3930,7 +3930,7 @@
     "repository": "2025-2-GuiaDev",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:20.924257",
+    "analyzed_at": "2026-09-17T10:45:27.512419",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -4652,7 +4652,7 @@
     "repository": "2023-2-Squad04",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:27.988664",
+    "analyzed_at": "2026-09-17T10:44:45.274372",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -5052,7 +5052,7 @@
     "repository": "2023-2-Squad10",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:35.101731",
+    "analyzed_at": "2026-09-17T10:44:50.813936",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -5538,7 +5538,7 @@
     "repository": "2026-1-Squad07",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:28.445163",
+    "analyzed_at": "2026-09-17T10:45:33.905816",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -6198,7 +6198,7 @@
     "repository": "2024-1-Squad02-CulturaTransparente",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:41.721280",
+    "analyzed_at": "2026-09-17T10:44:56.314445",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -6830,7 +6830,7 @@
     "repository": "mapadaacessibilidade",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:02.968212",
+    "analyzed_at": "2026-09-17T10:45:13.196529",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -7680,7 +7680,7 @@
     "repository": "2023-2-SuaGradeUnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:35.889235",
+    "analyzed_at": "2026-09-17T10:44:51.431661",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -8300,7 +8300,7 @@
     "repository": "2026-2-MonitoraUnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:43.098597",
+    "analyzed_at": "2026-09-17T10:45:45.963931",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -8410,7 +8410,7 @@
     "repository": "portfolio-MDS",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:40.069674",
+    "analyzed_at": "2026-09-17T10:44:55.004640",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -8960,7 +8960,7 @@
     "repository": "2024-2-ChamaControl",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:58.553667",
+    "analyzed_at": "2026-09-17T10:45:09.954060",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -9504,7 +9504,7 @@
     "repository": "2026.1-ContraDito",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:31.039194",
+    "analyzed_at": "2026-09-17T10:45:35.878316",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -10214,7 +10214,7 @@
     "repository": "2024-2-Squad06",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:56.142994",
+    "analyzed_at": "2026-09-17T10:45:07.729942",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -10762,7 +10762,7 @@
     "repository": "exemplogitpage",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:21.681880",
+    "analyzed_at": "2026-09-17T10:45:28.136604",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -10804,7 +10804,7 @@
     "repository": "2025-2-SeLiga",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:19.366332",
+    "analyzed_at": "2026-09-17T10:45:26.334601",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -11392,7 +11392,7 @@
     "repository": "2026-1-Squad13",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:31.872336",
+    "analyzed_at": "2026-09-17T10:45:36.548503",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -12102,7 +12102,7 @@
     "repository": "2023.2_DeOlhoRS",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:32.739698",
+    "analyzed_at": "2026-09-17T10:44:49.133285",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -13272,7 +13272,7 @@
     "repository": "2025-1-Eletta",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:07.915015",
+    "analyzed_at": "2026-09-17T10:45:17.242076",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -14126,7 +14126,7 @@
     "repository": "2025-2-Synapse",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:20.146661",
+    "analyzed_at": "2026-09-17T10:45:26.946382",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -14700,7 +14700,7 @@
     "repository": "2023.2_Gotinha",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:39.368142",
+    "analyzed_at": "2026-09-17T10:44:54.405914",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -14956,7 +14956,7 @@
     "repository": "Mds-ArenaPesadelo",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:44.780597",
+    "analyzed_at": "2026-09-17T10:44:58.767235",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -15628,7 +15628,7 @@
     "repository": "2024-2-AcheiUnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:53.902244",
+    "analyzed_at": "2026-09-17T10:45:05.880411",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -16448,7 +16448,7 @@
     "repository": "2026-1-Squad14",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:32.640591",
+    "analyzed_at": "2026-09-17T10:45:37.156100",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -16490,7 +16490,7 @@
     "repository": "2026-2-GlossarioUnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:42.332926",
+    "analyzed_at": "2026-09-17T10:45:45.390561",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -16640,7 +16640,7 @@
     "repository": "2024-1-Squad08",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:46.369563",
+    "analyzed_at": "2026-09-17T10:45:00.001576",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -16978,7 +16978,7 @@
     "repository": "2025.1-RelatoriosInteligentesBCB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:06.297871",
+    "analyzed_at": "2026-09-17T10:45:15.944362",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -17196,7 +17196,7 @@
     "repository": "2025-2-OncoMap",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:15.996237",
+    "analyzed_at": "2026-09-17T10:45:23.717125",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -17960,7 +17960,7 @@
     "repository": "2025-2-InfoSchool",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:16.814352",
+    "analyzed_at": "2026-09-17T10:45:24.333330",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -18582,7 +18582,7 @@
     "repository": "2025-2-Eh_Fake",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:14.093163",
+    "analyzed_at": "2026-09-17T10:45:22.388498",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -19184,7 +19184,7 @@
     "repository": "2023-2-Squad07",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:30.636184",
+    "analyzed_at": "2026-09-17T10:44:47.330934",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -19622,7 +19622,7 @@
     "repository": "2025-2-Squad12",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:22.409382",
+    "analyzed_at": "2026-09-17T10:45:28.769079",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -20006,7 +20006,7 @@
     "repository": "2026-1-Guard.IA",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:27.627277",
+    "analyzed_at": "2026-09-17T10:45:33.272430",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -20586,7 +20586,7 @@
     "repository": "Gastos-DF-2024-02",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:01.993115",
+    "analyzed_at": "2026-09-17T10:45:12.438109",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -21244,7 +21244,7 @@
     "repository": "2025-1-NoFluxoUNB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:04.884768",
+    "analyzed_at": "2026-09-17T10:45:14.625001",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -22520,7 +22520,7 @@
     "repository": "2024-1-EducaMinas-backend",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:49.865912",
+    "analyzed_at": "2026-09-17T10:45:02.540419",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -22870,7 +22870,7 @@
     "repository": "2026-2-Followw",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:38.606811",
+    "analyzed_at": "2026-09-17T10:45:42.256931",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -23118,7 +23118,7 @@
     "repository": "2024-2-SuaFinanca",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:01.130944",
+    "analyzed_at": "2026-09-17T10:45:11.759617",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -24462,7 +24462,7 @@
     "repository": "2025-2-Lumina",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:18.570062",
+    "analyzed_at": "2026-09-17T10:45:25.746767",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -25084,7 +25084,7 @@
     "repository": "2024-1-Squad-10",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:47.983111",
+    "analyzed_at": "2026-09-17T10:45:01.225047",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -25534,7 +25534,7 @@
     "repository": "2024-1-MinasDeCultura",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:45.538719",
+    "analyzed_at": "2026-09-17T10:44:59.356898",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -26468,7 +26468,7 @@
     "repository": "codigoruim",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:34.872898",
+    "analyzed_at": "2026-09-17T10:45:38.919310",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -26592,7 +26592,7 @@
     "repository": "2025_1-Jakebot",
     "owner": "unb-mds",
     "branch": "master",
-    "analyzed_at": "2026-09-17T06:25:10.934215",
+    "analyzed_at": "2026-09-17T10:45:19.695394",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -27076,7 +27076,7 @@
     "repository": "2024-2-Lumina",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:55.382541",
+    "analyzed_at": "2026-09-17T10:45:07.128362",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -27740,7 +27740,7 @@
     "repository": "DFemObras",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:57.048888",
+    "analyzed_at": "2026-09-17T10:45:08.590407",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -28404,7 +28404,7 @@
     "repository": "2026-2-Cerradinho-API",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:37.088261",
+    "analyzed_at": "2026-09-17T10:45:41.000475",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -28582,7 +28582,7 @@
     "repository": "Squad09-UnBHUB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:47.185126",
+    "analyzed_at": "2026-09-17T10:45:00.674956",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -29072,7 +29072,7 @@
     "repository": "2025-2-Portal-dos-Professores",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:13.364108",
+    "analyzed_at": "2026-09-17T10:45:21.718658",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -29860,7 +29860,7 @@
     "repository": "Gastos-DF-Squad12",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:49.116923",
+    "analyzed_at": "2026-09-17T10:45:01.951490",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -30596,7 +30596,7 @@
     "repository": "teste",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:36.548984",
+    "analyzed_at": "2026-09-17T10:44:52.028896",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -30664,7 +30664,7 @@
     "repository": "G2-2026-2",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:36.315668",
+    "analyzed_at": "2026-09-17T10:45:40.189208",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -30792,7 +30792,7 @@
     "repository": "Fique-de-Olho",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:37.905000",
+    "analyzed_at": "2026-09-17T10:45:41.662861",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -31010,7 +31010,7 @@
     "repository": "2023.2-LicitaX",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:37.909815",
+    "analyzed_at": "2026-09-17T10:44:53.239101",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -31312,7 +31312,7 @@
     "repository": "2024-2-Squad01",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:52.145029",
+    "analyzed_at": "2026-09-17T10:45:04.420897",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -32134,7 +32134,7 @@
     "repository": "2026-2-VeritasIA",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:26.223192",
+    "analyzed_at": "2026-09-17T10:45:31.987714",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -32786,7 +32786,7 @@
     "repository": "VIDAProject",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:10.176816",
+    "analyzed_at": "2026-09-17T10:45:19.009883",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -33316,7 +33316,7 @@
     "repository": "2023.2_Licitaiba",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:38.665476",
+    "analyzed_at": "2026-09-17T10:44:53.875824",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -33592,7 +33592,7 @@
     "repository": "2024-2-Datazonia",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:59.331287",
+    "analyzed_at": "2026-09-17T10:45:10.560892",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -33924,7 +33924,7 @@
     "repository": "2023-2-Squad09-Gotinha",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:33.635401",
+    "analyzed_at": "2026-09-17T10:44:49.793767",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -34504,7 +34504,7 @@
     "repository": "2024-1-EducaMinas-frontend",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:44.048053",
+    "analyzed_at": "2026-09-17T10:44:58.153985",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -35100,7 +35100,7 @@
     "repository": "Avalia",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:23.856780",
+    "analyzed_at": "2026-09-17T10:45:30.060060",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -35208,7 +35208,7 @@
     "repository": "2026-02-TambureteiUnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:41.653103",
+    "analyzed_at": "2026-09-17T10:45:44.829907",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -35344,7 +35344,7 @@
     "repository": "Sonorus-2025.1",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:05.590664",
+    "analyzed_at": "2026-09-17T10:45:15.302435",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -35906,7 +35906,7 @@
     "repository": "2026-02-UnDb",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:40.200293",
+    "analyzed_at": "2026-09-17T10:45:43.614187",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -36178,7 +36178,7 @@
     "repository": "2023-2-Squad05-TesouroMineiro",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:29.097088",
+    "analyzed_at": "2026-09-17T10:44:46.044571",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -36858,7 +36858,7 @@
     "repository": "MDS-MonitoraBSB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:57.839286",
+    "analyzed_at": "2026-09-17T10:45:09.301824",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -37466,7 +37466,7 @@
     "repository": "2023-2-Squad01",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:20.307722",
+    "analyzed_at": "2026-09-17T10:44:38.348283",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -37562,7 +37562,7 @@
     "repository": "DFemObras-2025.1",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:09.442438",
+    "analyzed_at": "2026-09-17T10:45:18.451273",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -38192,7 +38192,7 @@
     "repository": "LicitaBSB-24.1",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:42.528393",
+    "analyzed_at": "2026-09-17T10:44:56.961831",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -39092,7 +39092,7 @@
     "repository": "2026-1-SafeStreets",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:24.715289",
+    "analyzed_at": "2026-09-17T10:45:30.710441",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -39800,7 +39800,7 @@
     "repository": "2026-1-ProtectKids",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:33.460494",
+    "analyzed_at": "2026-09-17T10:45:37.783656",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -40336,7 +40336,7 @@
     "repository": "2025-2-Integralizei_UnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:14.953644",
+    "analyzed_at": "2026-09-17T10:45:23.031258",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -41302,7 +41302,7 @@
     "repository": "Projeto-P.I.T.E.R",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:12.631322",
+    "analyzed_at": "2026-09-17T10:45:21.076965",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -41786,7 +41786,7 @@
     "repository": "2025-2-Squad-01",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:11.839066",
+    "analyzed_at": "2026-09-17T10:45:20.441735",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -42454,7 +42454,7 @@
     "repository": "2025-1-GovInsights",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:07.051122",
+    "analyzed_at": "2026-09-17T10:45:16.564019",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -42928,7 +42928,7 @@
     "repository": "2024-2-Urbanize",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:53.154175",
+    "analyzed_at": "2026-09-17T10:45:05.116953",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -43992,7 +43992,7 @@
     "repository": "2026-1-Squad4-Dito_e_Feito",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:26.929227",
+    "analyzed_at": "2026-09-17T10:45:32.554328",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -44582,7 +44582,7 @@
     "repository": "2026-1-LegisKids",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:29.342648",
+    "analyzed_at": "2026-09-17T10:45:34.654311",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -45222,13 +45222,13 @@
     "repository": "2026-1-Mapa_L.I.L.A.S",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:25.494899",
+    "analyzed_at": "2026-09-17T10:45:31.460509",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
     },
     "total_files": 337,
-    "total_bytes": 19857932,
+    "total_bytes": 19858216,
     "languages": [
       {
         "language": "PDF",
@@ -45629,7 +45629,7 @@
       {
         "language": "JSON",
         "file_count": 13,
-        "total_bytes": 254499,
+        "total_bytes": 254783,
         "percentage": 1.28,
         "files": [
           {
@@ -45647,7 +45647,7 @@
           {
             "path": "docs/ingestion/ingestion-history.json",
             "name": "ingestion-history.json",
-            "size": 19624,
+            "size": 19908,
             "extension": ".json"
           },
           {
@@ -46040,7 +46040,7 @@
     "repository": "ParticipeMais",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:03.830731",
+    "analyzed_at": "2026-09-17T10:45:13.785596",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -46624,7 +46624,7 @@
     "repository": "diario-de-bordo",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:45.204818",
+    "analyzed_at": "2026-09-17T10:45:47.785486",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -46790,7 +46790,7 @@
     "repository": "2026-1-P.R.I.S.M.A",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:34.182697",
+    "analyzed_at": "2026-09-17T10:45:38.345442",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -47268,7 +47268,7 @@
     "repository": "teste-ru",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:44.519547",
+    "analyzed_at": "2026-09-17T10:45:47.216465",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -47488,7 +47488,7 @@
     "repository": "2025-1-RelatAI",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:08.690577",
+    "analyzed_at": "2026-09-17T10:45:17.850876",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -48008,7 +48008,7 @@
     "repository": "2026.2-UnB_Core",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:35.594978",
+    "analyzed_at": "2026-09-17T10:45:39.513938",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -48246,7 +48246,7 @@
     "repository": "2025-2-Mural-UnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:17.799356",
+    "analyzed_at": "2026-09-17T10:45:25.104454",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -49128,7 +49128,7 @@
     "repository": "2026-1-squad0x",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:30.063614",
+    "analyzed_at": "2026-09-17T10:45:35.247935",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -49170,7 +49170,7 @@
     "repository": ".github",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:25:23.145224",
+    "analyzed_at": "2026-09-17T10:45:29.483959",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -49198,7 +49198,7 @@
     "repository": "squad03-r2",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:37.189266",
+    "analyzed_at": "2026-09-17T10:44:52.612685",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -49436,7 +49436,7 @@
     "repository": "2024-1-Gastos-DF-Doc-Squad12",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:51.345444",
+    "analyzed_at": "2026-09-17T10:45:03.772819",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -50432,7 +50432,7 @@
     "repository": "2024-1-forUnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T06:24:40.943715",
+    "analyzed_at": "2026-09-17T10:44:55.757296",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -51244,7 +51244,7 @@
     "repository": "2024-1-squad04",
     "owner": "unb-mds",
     "branch": "dev",
-    "analyzed_at": "2026-09-17T06:24:43.327292",
+    "analyzed_at": "2026-09-17T10:44:57.495383",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"

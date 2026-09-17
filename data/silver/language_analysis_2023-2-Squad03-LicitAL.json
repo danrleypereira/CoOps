@@ -2,7 +2,7 @@
   "repository": "2023-2-Squad03-LicitAL",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T06:24:26.912107",
+  "analyzed_at": "2026-09-17T10:44:44.491286",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -1568,7 +1568,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T06:26:37.758499",
+    "extracted_at": "2026-09-17T10:46:35.514455",
     "file_path": "data/silver/language_analysis_2023-2-Squad03-LicitAL.json"
   }
 }
