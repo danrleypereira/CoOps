@@ -84,6 +84,19 @@ export async function fetchData<T = any>(path: string): Promise<T> {
 }
 
 /**
+ * Fetch the repository names listed in `silver/available_repos.json`
+ * (a JSON array of strings written by the pipeline).
+ *
+ * Metadata entries and non-string values are ignored. Errors (including a
+ * missing file) propagate to the caller.
+ */
+export async function fetchAvailableRepoNames(): Promise<string[]> {
+  const data = await fetchData<unknown>('silver/available_repos.json');
+  if (!Array.isArray(data)) return [];
+  return filterMetadata(data).filter((name): name is string => typeof name === 'string');
+}
+
+/**
  * Filter out metadata entries (and null/undefined entries) from data arrays
  */
 export function filterMetadata<T>(data: T[]): T[] {

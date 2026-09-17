@@ -1,6 +1,7 @@
 import { describe, test, expect, vi, beforeEach, afterEach } from 'vitest';
 import {
   DataNotFoundError,
+  fetchAvailableRepoNames,
   fetchData,
   filterMetadata,
   getDataBasePath,
@@ -17,6 +18,38 @@ describe('dataSource service', () => {
     test('remove entradas null ou undefined sem lançar erro', () => {
       const data: (Record<string, unknown> | null | undefined)[] = [{ id: 1 }, null, undefined, { id: 2 }];
       expect(filterMetadata(data)).toEqual([{ id: 1 }, { id: 2 }]);
+    });
+  });
+
+  describe('fetchAvailableRepoNames', () => {
+    afterEach(() => {
+      vi.unstubAllGlobals();
+      vi.restoreAllMocks();
+    });
+
+    const respond = (body: unknown) =>
+      vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true, status: 200, json: async () => body }));
+
+    test('lê silver/available_repos.json pelo dataSource', async () => {
+      respond(['repo-a', 'repo-b']);
+      await expect(fetchAvailableRepoNames()).resolves.toEqual(['repo-a', 'repo-b']);
+      expect(fetch).toHaveBeenCalledWith(`${getDataBasePath()}/silver/available_repos.json`);
+    });
+
+    test('tolera uma entrada de _metadata e ignora valores que não são strings', async () => {
+      respond([{ _metadata: { extracted_at: 'now' } }, 'repo-a', null, 3, { name: 'x' }, 'repo-b']);
+      await expect(fetchAvailableRepoNames()).resolves.toEqual(['repo-a', 'repo-b']);
+    });
+
+    test('retorna lista vazia quando o conteúdo não é um array', async () => {
+      respond({ repos: ['repo-a'] });
+      await expect(fetchAvailableRepoNames()).resolves.toEqual([]);
+    });
+
+    test('propaga DataNotFoundError quando o arquivo não existe', async () => {
+      vi.spyOn(console, 'warn').mockImplementation(() => {});
+      vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: false, status: 404, statusText: '' }));
+      await expect(fetchAvailableRepoNames()).rejects.toBeInstanceOf(DataNotFoundError);
     });
   });
 

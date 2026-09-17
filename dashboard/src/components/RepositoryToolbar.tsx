@@ -1,6 +1,7 @@
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useMemo, useState, useEffect } from 'react';
 import type { ProcessedActivityResponse, RepoActivitySummary } from '../pages/Utils';
+import { fetchAvailableRepoNames } from '../services/dataSource';
 
 interface RepositoryToolbarProps {
   currentRepo?: string;
@@ -50,11 +51,7 @@ export default function RepositoryToolbar({
     if (!data) {
       async function fetchRepoNames() {
         try {
-          const response = await fetch(`${import.meta.env.BASE_URL}available_repos.json`);
-          if (response.ok) {
-            const repos = await response.json();
-            setAvailableRepoNames(repos);
-          }
+          setAvailableRepoNames(await fetchAvailableRepoNames());
         } catch (err) {
           console.warn('Could not fetch repo names:', err);
         }
