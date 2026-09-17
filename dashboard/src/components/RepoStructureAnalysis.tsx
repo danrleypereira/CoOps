@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { FC } from 'react';
 
 interface LanguageData {
@@ -25,9 +25,34 @@ export const RepoStructureAnalysis: FC<RepoStructureAnalysisProps> = ({ data }) 
   const [isExpanded, setIsExpanded] = useState(false);
   const [analysis, setAnalysis] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => () => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+  }, []);
 
   const generateAnalysis = () => {
+    if (loading) return;
     setLoading(true);
+    // Defer the work so the loading state is rendered before it runs
+    timerRef.current = setTimeout(() => {
+      timerRef.current = null;
+      setAnalysis(buildAnalysis());
+      setLoading(false);
+    }, 0);
+  };
+
+  const buildAnalysis = (): string => {
+    // Without language data there is nothing to interpret
+    if (data.languages.length === 0) {
+      return (
+        `## 🔍 Repository Structure Analysis\n\n` +
+        `No language data is available for **${data.repository}**, so its structure can't be interpreted.\n\n` +
+        `### 📊 Complexity Metrics\n` +
+        `- **Total Files**: ${data.total_files} files\n` +
+        `- **Total Size**: ${formatBytes(data.total_bytes)}\n`
+      );
+    }
 
     // Analysis based on languages and structure
     const sortedLanguages = [...data.languages].sort((a, b) => b.percentage - a.percentage);
@@ -157,8 +182,7 @@ export const RepoStructureAnalysis: FC<RepoStructureAnalysisProps> = ({ data }) 
       analysisText += `- ✅ **Tests**: Consider adding automated tests to ensure quality.\n`;
     }
 
-    setAnalysis(analysisText);
-    setLoading(false);
+    return analysisText;
   };
 
   const formatBytes = (bytes: number): string => {
@@ -218,12 +242,7 @@ export const RepoStructureAnalysis: FC<RepoStructureAnalysisProps> = ({ data }) 
     <div className="border rounded-lg mb-6" style={{ backgroundColor: '#222222', borderColor: '#333333' }}>
       {/* Header */}
       <button
-        onClick={() => {
-          if (!analysis && !loading) {
-            generateAnalysis();
-          }
-          setIsExpanded(!isExpanded);
-        }}
+        onClick={() => setIsExpanded(!isExpanded)}
         className="w-full px-6 py-4 flex items-center justify-between text-white hover:bg-gray-800/50 transition-colors"
       >
         <div className="flex items-center gap-3">
