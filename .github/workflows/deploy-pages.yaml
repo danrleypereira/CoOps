@@ -59,6 +59,11 @@ jobs:
       - name: Add .nojekyll file
         run: touch dashboard/dist/.nojekyll
 
+      # GitHub Pages has no SPA routing: serve the app for unknown paths so
+      # deep links such as /CoOps/ai work.
+      - name: Add SPA fallback
+        run: cp dashboard/dist/index.html dashboard/dist/404.html
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
