@@ -25,6 +25,11 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 - **Validate Pipeline (manual)** workflow and
   `docs/TESTING_PULL_REQUESTS.md`: PRs are validated against a real
   organization in `unb-mds/CoOps` before review.
+- Dashboard: **AI Analysis** page (`/ai`, linked from the sidebar) with the
+  AI-generated member analyses (`silver/ai/members_ai.json`). When the file
+  is missing the page says AI analysis requires the `GEMINI_API_KEY` secret.
+  The Analytics page stays unrouted (#74): it is slow on real data and
+  duplicates the routed pages.
 
 ### Changed
 - **Breaking:** `coops-bronze` reads the token and organization from
