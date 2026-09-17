@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-09-17T05:19:02.596949",
+  "created_at": "2026-09-17T06:25:45.375869",
   "layers": {
     "bronze": {
       "repositories": [
@@ -696,4663 +696,4663 @@
       "file_path": "data/bronze/commits_2026-2-Bandejao-UnB.json",
       "layer": "bronze",
       "size_bytes": 3152,
-      "modified_at": "2026-09-17T05:18:55.860816"
+      "modified_at": "2026-09-17T06:21:00.699088"
     },
     {
       "file_path": "data/bronze/structure_2023-2-Squad03-LicitAL.json",
       "layer": "bronze",
       "size_bytes": 12754962,
-      "modified_at": "2026-09-17T05:18:56.211822"
+      "modified_at": "2026-09-17T06:24:27.118400"
     },
     {
       "file_path": "data/bronze/repo_2025-1-NoFluxoUNB.json",
       "layer": "bronze",
       "size_bytes": 7635,
-      "modified_at": "2026-09-17T05:18:56.183822"
+      "modified_at": "2026-09-17T05:20:45.605825"
     },
     {
       "file_path": "data/bronze/commits_2024-2-Agio.json",
       "layer": "bronze",
       "size_bytes": 72120,
-      "modified_at": "2026-09-17T05:18:55.847816"
+      "modified_at": "2026-09-17T05:46:31.352638"
     },
     {
       "file_path": "data/bronze/repo_2025-1-GovInsights.json",
       "layer": "bronze",
       "size_bytes": 7647,
-      "modified_at": "2026-09-17T05:18:56.183822"
+      "modified_at": "2026-09-17T05:20:46.730674"
     },
     {
       "file_path": "data/bronze/structure_2023-2-Squad02-Desmatazonia.json",
       "layer": "bronze",
       "size_bytes": 44216,
-      "modified_at": "2026-09-17T05:18:56.189822"
+      "modified_at": "2026-09-17T06:24:20.980278"
     },
     {
       "file_path": "data/bronze/structure_2024-2-Agio.json",
       "layer": "bronze",
       "size_bytes": 33967,
-      "modified_at": "2026-09-17T05:18:56.235823"
+      "modified_at": "2026-09-17T06:24:54.661048"
     },
     {
       "file_path": "data/bronze/structure_2026-2-Bandejao-UnB.json",
       "layer": "bronze",
       "size_bytes": 5598,
-      "modified_at": "2026-09-17T05:18:56.258823"
+      "modified_at": "2026-09-17T06:25:39.563650"
     },
     {
       "file_path": "data/bronze/prs_2026-1-LegisKids.json",
       "layer": "bronze",
       "size_bytes": 767430,
-      "modified_at": "2026-09-17T05:18:56.145821"
+      "modified_at": "2026-09-17T05:30:56.742693"
     },
     {
       "file_path": "data/bronze/commits_LicitaBSB-24.1.json",
       "layer": "bronze",
-      "size_bytes": 578905,
-      "modified_at": "2026-09-17T05:18:55.864816"
+      "size_bytes": 578895,
+      "modified_at": "2026-09-17T05:43:05.257314"
     },
     {
       "file_path": "data/bronze/prs_Mds-ArenaPesadelo.json",
       "layer": "bronze",
       "size_bytes": 162395,
-      "modified_at": "2026-09-17T05:18:56.159821"
+      "modified_at": "2026-09-17T05:23:49.912507"
     },
     {
       "file_path": "data/bronze/prs_2023.2-LicitaX.json",
       "layer": "bronze",
       "size_bytes": 155795,
-      "modified_at": "2026-09-17T05:18:56.122821"
+      "modified_at": "2026-09-17T05:22:40.446385"
     },
     {
       "file_path": "data/bronze/issues_Sonorus-2025.1.json",
       "layer": "bronze",
       "size_bytes": 491601,
-      "modified_at": "2026-09-17T05:18:56.033819"
+      "modified_at": "2026-09-17T05:26:41.950094"
     },
     {
       "file_path": "data/bronze/commits_2024-1-Squad08.json",
       "layer": "bronze",
       "size_bytes": 35718,
-      "modified_at": "2026-09-17T05:18:55.845815"
+      "modified_at": "2026-09-17T05:44:07.327410"
     },
     {
       "file_path": "data/bronze/structure_2026-2-AgendaUnB.json",
       "layer": "bronze",
       "size_bytes": 8804,
-      "modified_at": "2026-09-17T05:18:56.258823"
+      "modified_at": "2026-09-17T06:25:40.957920"
     },
     {
       "file_path": "data/bronze/repo_2025.1-RelatoriosInteligentesBCB.json",
       "layer": "bronze",
       "size_bytes": 8068,
-      "modified_at": "2026-09-17T05:18:56.184822"
+      "modified_at": "2026-09-17T05:20:46.378690"
     },
     {
       "file_path": "data/bronze/commits_Gastos-DF-2024-02.json",
       "layer": "bronze",
       "size_bytes": 189147,
-      "modified_at": "2026-09-17T05:18:55.863816"
+      "modified_at": "2026-09-17T05:48:36.373011"
     },
     {
       "file_path": "data/bronze/repo_2026-1-P.R.I.S.M.A.json",
       "layer": "bronze",
       "size_bytes": 7352,
-      "modified_at": "2026-09-17T05:18:56.184822"
+      "modified_at": "2026-09-17T05:20:59.933682"
     },
     {
       "file_path": "data/bronze/commits_Avalia.json",
       "layer": "bronze",
       "size_bytes": 923,
-      "modified_at": "2026-09-17T05:18:55.861816"
+      "modified_at": "2026-09-17T06:17:18.198588"
     },
     {
       "file_path": "data/bronze/repo_2025-2-Squad12.json",
       "layer": "bronze",
       "size_bytes": 7127,
-      "modified_at": "2026-09-17T05:18:56.184822"
+      "modified_at": "2026-09-17T05:20:53.965135"
     },
     {
       "file_path": "data/bronze/structure_2026-2-Bandejao.json",
       "layer": "bronze",
       "size_bytes": 26762,
-      "modified_at": "2026-09-17T05:18:56.258823"
+      "modified_at": "2026-09-17T06:25:43.805847"
     },
     {
       "file_path": "data/bronze/structure_2023-2-JuizVirtual.json",
       "layer": "bronze",
       "size_bytes": 45566,
-      "modified_at": "2026-09-17T05:18:56.189822"
+      "modified_at": "2026-09-17T06:24:29.847037"
     },
     {
       "file_path": "data/bronze/issues_Fique-de-Olho.json",
       "layer": "bronze",
       "size_bytes": 92199,
-      "modified_at": "2026-09-17T05:18:56.026819"
+      "modified_at": "2026-09-17T05:32:22.958037"
     },
     {
       "file_path": "data/bronze/issue_events_2025_1-Jakebot.json",
       "layer": "bronze",
       "size_bytes": 49744,
-      "modified_at": "2026-09-17T05:18:55.906816"
+      "modified_at": "2026-09-17T05:27:42.581253"
     },
     {
       "file_path": "data/bronze/structure_2025-2-GuiaDev.json",
       "layer": "bronze",
       "size_bytes": 71986,
-      "modified_at": "2026-09-17T05:18:56.251823"
+      "modified_at": "2026-09-17T06:25:20.924704"
     },
     {
       "file_path": "data/bronze/structure_2023-2-Squad04.json",
       "layer": "bronze",
       "size_bytes": 37570,
-      "modified_at": "2026-09-17T05:18:56.212822"
+      "modified_at": "2026-09-17T06:24:27.993000"
     },
     {
       "file_path": "data/bronze/issue_events_2026-2-Bandejao-UnB.json",
       "layer": "bronze",
       "size_bytes": 14248,
-      "modified_at": "2026-09-17T05:18:55.910817"
+      "modified_at": "2026-09-17T05:32:26.474545"
     },
     {
       "file_path": "data/bronze/repo_2023-2-SuaGradeUnB.json",
       "layer": "bronze",
       "size_bytes": 7466,
-      "modified_at": "2026-09-17T05:18:56.180822"
+      "modified_at": "2026-09-17T05:20:32.979132"
     },
     {
       "file_path": "data/bronze/issue_events_all.json",
       "layer": "bronze",
       "size_bytes": 17261098,
-      "modified_at": "2026-09-17T05:18:55.939817"
+      "modified_at": "2026-09-17T05:32:42.499333"
     },
     {
       "file_path": "data/bronze/structure_2023-2-Squad10.json",
       "layer": "bronze",
       "size_bytes": 1309976,
-      "modified_at": "2026-09-17T05:18:56.216822"
+      "modified_at": "2026-09-17T06:24:35.125294"
     },
     {
       "file_path": "data/bronze/repo_2023-2-Squad03-LicitAL.json",
       "layer": "bronze",
       "size_bytes": 7778,
-      "modified_at": "2026-09-17T05:18:56.179822"
+      "modified_at": "2026-09-17T05:20:30.039125"
     },
     {
       "file_path": "data/bronze/commits_2024-2-Lumina.json",
       "layer": "bronze",
       "size_bytes": 107894,
-      "modified_at": "2026-09-17T05:18:55.847816"
+      "modified_at": "2026-09-17T05:46:48.409326"
     },
     {
       "file_path": "data/bronze/commits_G2-2026-2.json",
       "layer": "bronze",
       "size_bytes": 15300,
-      "modified_at": "2026-09-17T05:18:55.863816"
+      "modified_at": "2026-09-17T06:20:57.258133"
     },
     {
       "file_path": "data/bronze/issues_2025-2-Synapse.json",
       "layer": "bronze",
       "size_bytes": 1662015,
-      "modified_at": "2026-09-17T05:18:56.000818"
+      "modified_at": "2026-09-17T05:29:25.488847"
     },
     {
       "file_path": "data/bronze/issue_events_Gastos-DF-Squad12.json",
       "layer": "bronze",
       "size_bytes": 100977,
-      "modified_at": "2026-09-17T05:18:55.914817"
+      "modified_at": "2026-09-17T05:24:27.715971"
     },
     {
       "file_path": "data/bronze/prs_2023-2-Squad07.json",
       "layer": "bronze",
       "size_bytes": 35981,
-      "modified_at": "2026-09-17T05:18:56.120821"
+      "modified_at": "2026-09-17T05:21:50.550088"
     },
     {
       "file_path": "data/bronze/issue_events_2026-1-LegisKids.json",
       "layer": "bronze",
       "size_bytes": 510735,
-      "modified_at": "2026-09-17T05:18:55.907817"
+      "modified_at": "2026-09-17T05:31:13.688594"
     },
     {
       "file_path": "data/bronze/issue_events_ParticipeMais.json",
       "layer": "bronze",
       "size_bytes": 159434,
-      "modified_at": "2026-09-17T05:18:55.915817"
+      "modified_at": "2026-09-17T05:26:28.977296"
     },
     {
       "file_path": "data/bronze/issues_2026-2-MonitoraUnB.json",
       "layer": "bronze",
       "size_bytes": 62778,
-      "modified_at": "2026-09-17T05:18:56.020819"
+      "modified_at": "2026-09-17T05:32:37.274614"
     },
     {
       "file_path": "data/bronze/prs_mapadaacessibilidade.json",
       "layer": "bronze",
       "size_bytes": 606984,
-      "modified_at": "2026-09-17T05:18:56.178822"
+      "modified_at": "2026-09-17T05:26:10.261557"
     },
     {
       "file_path": "data/bronze/commits_2026-2-Bandejao.json",
       "layer": "bronze",
       "size_bytes": 22187,
-      "modified_at": "2026-09-17T05:18:55.861816"
+      "modified_at": "2026-09-17T06:21:13.335925"
     },
     {
       "file_path": "data/bronze/commits_2025.1-RelatoriosInteligentesBCB.json",
       "layer": "bronze",
       "size_bytes": 55115,
-      "modified_at": "2026-09-17T05:18:55.855816"
+      "modified_at": "2026-09-17T05:50:23.871632"
     },
     {
       "file_path": "data/bronze/repo_2026-1-Mapa_L.I.L.A.S.json",
       "layer": "bronze",
       "size_bytes": 7489,
-      "modified_at": "2026-09-17T05:18:56.184822"
+      "modified_at": "2026-09-17T05:20:55.462638"
     },
     {
       "file_path": "data/bronze/repo_2023-2-Squad09-Gotinha.json",
       "layer": "bronze",
       "size_bytes": 7744,
-      "modified_at": "2026-09-17T05:18:56.179822"
+      "modified_at": "2026-09-17T05:20:32.243554"
     },
     {
       "file_path": "data/bronze/issue_events_2024-2-ChamaControl.json",
       "layer": "bronze",
       "size_bytes": 114274,
-      "modified_at": "2026-09-17T05:18:55.898816"
+      "modified_at": "2026-09-17T05:25:42.286924"
     },
     {
       "file_path": "data/bronze/repo_2025-2-Eh_Fake.json",
       "layer": "bronze",
       "size_bytes": 7132,
-      "modified_at": "2026-09-17T05:18:56.183822"
+      "modified_at": "2026-09-17T05:20:49.956708"
     },
     {
       "file_path": "data/bronze/structure_2026-1-Squad07.json",
       "layer": "bronze",
       "size_bytes": 111916,
-      "modified_at": "2026-09-17T05:18:56.257823"
+      "modified_at": "2026-09-17T06:25:28.446613"
     },
     {
       "file_path": "data/bronze/prs_2025-2-Mural-UnB.json",
       "layer": "bronze",
       "size_bytes": 578634,
-      "modified_at": "2026-09-17T05:18:56.139821"
+      "modified_at": "2026-09-17T05:28:44.529403"
     },
     {
       "file_path": "data/bronze/prs_2025-1-NoFluxoUNB.json",
       "layer": "bronze",
       "size_bytes": 424234,
-      "modified_at": "2026-09-17T05:18:56.134821"
+      "modified_at": "2026-09-17T05:26:30.714272"
     },
     {
       "file_path": "data/bronze/issue_events_Squad09-UnBHUB.json",
       "layer": "bronze",
       "size_bytes": 311173,
-      "modified_at": "2026-09-17T05:18:55.917817"
+      "modified_at": "2026-09-17T05:24:16.415127"
     },
     {
       "file_path": "data/bronze/repo_2026-1-Squad4-Dito_e_Feito.json",
       "layer": "bronze",
       "size_bytes": 8002,
-      "modified_at": "2026-09-17T05:18:56.185822"
+      "modified_at": "2026-09-17T05:20:56.349160"
     },
     {
       "file_path": "data/bronze/issues_2024-2-Agio.json",
       "layer": "bronze",
       "size_bytes": 127831,
-      "modified_at": "2026-09-17T05:18:55.976818"
+      "modified_at": "2026-09-17T05:25:13.444294"
     },
     {
       "file_path": "data/bronze/commits_all.json",
       "layer": "bronze",
-      "size_bytes": 11776883,
-      "modified_at": "2026-09-17T05:18:55.887816"
+      "size_bytes": 11776985,
+      "modified_at": "2026-09-17T06:21:14.984904"
     },
     {
       "file_path": "data/bronze/repo_2026-2-Followw.json",
       "layer": "bronze",
       "size_bytes": 7181,
-      "modified_at": "2026-09-17T05:18:56.185822"
+      "modified_at": "2026-09-17T05:21:02.244188"
     },
     {
       "file_path": "data/bronze/issue_events_2025-2-Integralizei_UnB.json",
       "layer": "bronze",
       "size_bytes": 198160,
-      "modified_at": "2026-09-17T05:18:55.902817"
+      "modified_at": "2026-09-17T05:28:27.435639"
     },
     {
       "file_path": "data/bronze/structure_2024-1-Squad02-CulturaTransparente.json",
       "layer": "bronze",
       "size_bytes": 87550,
-      "modified_at": "2026-09-17T05:18:56.234823"
+      "modified_at": "2026-09-17T06:24:41.722208"
     },
     {
       "file_path": "data/bronze/prs_MDS-MonitoraBSB.json",
       "layer": "bronze",
       "size_bytes": 257501,
-      "modified_at": "2026-09-17T05:18:56.158821"
+      "modified_at": "2026-09-17T05:25:33.035048"
     },
     {
       "file_path": "data/bronze/issues_2025-2-Squad-01.json",
       "layer": "bronze",
       "size_bytes": 736626,
-      "modified_at": "2026-09-17T05:18:55.999818"
+      "modified_at": "2026-09-17T05:27:44.102232"
     },
     {
       "file_path": "data/bronze/prs_2025-1-RelatAI.json",
       "layer": "bronze",
       "size_bytes": 16005,
-      "modified_at": "2026-09-17T05:18:56.134821"
+      "modified_at": "2026-09-17T05:27:26.939815"
     },
     {
       "file_path": "data/bronze/issue_events_2023-2-Squad04.json",
       "layer": "bronze",
       "size_bytes": 291743,
-      "modified_at": "2026-09-17T05:18:55.890816"
+      "modified_at": "2026-09-17T05:21:27.632374"
     },
     {
       "file_path": "data/bronze/issue_events_2026-02-TambureteiUnB.json",
       "layer": "bronze",
       "size_bytes": 39546,
-      "modified_at": "2026-09-17T05:18:55.906816"
+      "modified_at": "2026-09-17T05:32:35.682424"
     },
     {
       "file_path": "data/bronze/issue_events_2026-1-Squad13.json",
       "layer": "bronze",
       "size_bytes": 542143,
-      "modified_at": "2026-09-17T05:18:55.910817"
+      "modified_at": "2026-09-17T05:31:45.000033"
     },
     {
       "file_path": "data/bronze/prs_2024-2-AcheiUnB.json",
       "layer": "bronze",
       "size_bytes": 1806874,
-      "modified_at": "2026-09-17T05:18:56.129821"
+      "modified_at": "2026-09-17T05:24:44.884658"
     },
     {
       "file_path": "data/bronze/repo_2023-2-Squad10.json",
       "layer": "bronze",
       "size_bytes": 6974,
-      "modified_at": "2026-09-17T05:18:56.180822"
+      "modified_at": "2026-09-17T05:20:32.610646"
     },
     {
       "file_path": "data/bronze/structure_mapadaacessibilidade.json",
       "layer": "bronze",
       "size_bytes": 1144797,
-      "modified_at": "2026-09-17T05:18:56.272824"
+      "modified_at": "2026-09-17T06:25:02.988933"
     },
     {
       "file_path": "data/bronze/repo_Fique-de-Olho.json",
       "layer": "bronze",
       "size_bytes": 7020,
-      "modified_at": "2026-09-17T05:18:56.185822"
+      "modified_at": "2026-09-17T05:21:01.912057"
     },
     {
       "file_path": "data/bronze/issues_2025-1-Eletta.json",
       "layer": "bronze",
       "size_bytes": 927768,
-      "modified_at": "2026-09-17T05:18:55.981818"
+      "modified_at": "2026-09-17T05:27:11.145678"
     },
     {
       "file_path": "data/bronze/prs_portfolio-MDS.json",
       "layer": "bronze",
       "size_bytes": 19523,
-      "modified_at": "2026-09-17T05:18:56.178822"
+      "modified_at": "2026-09-17T05:22:43.820084"
     },
     {
       "file_path": "data/bronze/issue_events_2025-2-InfoSchool.json",
       "layer": "bronze",
       "size_bytes": 147789,
-      "modified_at": "2026-09-17T05:18:55.902817"
+      "modified_at": "2026-09-17T05:28:42.819426"
     },
     {
       "file_path": "data/bronze/structure_2023-2-SuaGradeUnB.json",
       "layer": "bronze",
       "size_bytes": 73780,
-      "modified_at": "2026-09-17T05:18:56.217823"
+      "modified_at": "2026-09-17T06:24:35.891284"
     },
     {
       "file_path": "data/bronze/prs_2024-2-Agio.json",
       "layer": "bronze",
       "size_bytes": 129270,
-      "modified_at": "2026-09-17T05:18:56.129821"
+      "modified_at": "2026-09-17T05:25:13.446294"
     },
     {
       "file_path": "data/bronze/commits_2023-2-Squad04.json",
       "layer": "bronze",
       "size_bytes": 339988,
-      "modified_at": "2026-09-17T05:18:55.838815"
+      "modified_at": "2026-09-17T05:34:25.372040"
     },
     {
       "file_path": "data/bronze/repo_Sonorus-2025.1.json",
       "layer": "bronze",
       "size_bytes": 7260,
-      "modified_at": "2026-09-17T05:18:56.186822"
+      "modified_at": "2026-09-17T05:20:46.046945"
     },
     {
       "file_path": "data/bronze/prs_2026-1-P.R.I.S.M.A.json",
       "layer": "bronze",
       "size_bytes": 276557,
-      "modified_at": "2026-09-17T05:18:56.146821"
+      "modified_at": "2026-09-17T05:32:02.239865"
     },
     {
       "file_path": "data/bronze/prs_2023.2_Gotinha.json",
       "layer": "bronze",
       "size_bytes": 25947,
-      "modified_at": "2026-09-17T05:18:56.123821"
+      "modified_at": "2026-09-17T05:22:42.945567"
     },
     {
       "file_path": "data/bronze/prs_2023-2-SuaGradeUnB.json",
       "layer": "bronze",
       "size_bytes": 1812622,
-      "modified_at": "2026-09-17T05:18:56.121821"
+      "modified_at": "2026-09-17T05:22:17.499700"
     },
     {
       "file_path": "data/bronze/structure_2026-2-MonitoraUnB.json",
       "layer": "bronze",
       "size_bytes": 4390,
-      "modified_at": "2026-09-17T05:18:56.258823"
+      "modified_at": "2026-09-17T06:25:43.098968"
     },
     {
       "file_path": "data/bronze/prs_2026-1-Squad07.json",
       "layer": "bronze",
       "size_bytes": 621969,
-      "modified_at": "2026-09-17T05:18:56.150821"
+      "modified_at": "2026-09-17T05:30:40.457884"
     },
     {
       "file_path": "data/bronze/prs_2026-02-TambureteiUnB.json",
       "layer": "bronze",
       "size_bytes": 36595,
-      "modified_at": "2026-09-17T05:18:56.143821"
+      "modified_at": "2026-09-17T05:32:34.183705"
     },
     {
       "file_path": "data/bronze/prs_2023-2-Squad04.json",
       "layer": "bronze",
       "size_bytes": 345271,
-      "modified_at": "2026-09-17T05:18:56.119821"
+      "modified_at": "2026-09-17T05:21:18.096491"
     },
     {
       "file_path": "data/bronze/repo_2026-1-ProtectKids.json",
       "layer": "bronze",
       "size_bytes": 7351,
-      "modified_at": "2026-09-17T05:18:56.184822"
+      "modified_at": "2026-09-17T05:20:59.521518"
     },
     {
       "file_path": "data/bronze/issue_events_2024-2-Squad01.json",
       "layer": "bronze",
       "size_bytes": 10644,
-      "modified_at": "2026-09-17T05:18:55.899817"
+      "modified_at": "2026-09-17T05:24:36.273674"
     },
     {
       "file_path": "data/bronze/commits_2026-1-Mapa_L.I.L.A.S.json",
       "layer": "bronze",
       "size_bytes": 154411,
-      "modified_at": "2026-09-17T05:18:55.858816"
+      "modified_at": "2026-09-17T06:17:52.742410"
     },
     {
       "file_path": "data/bronze/commits_2026-2-AgendaUnB.json",
       "layer": "bronze",
       "size_bytes": 14623,
-      "modified_at": "2026-09-17T05:18:55.860816"
+      "modified_at": "2026-09-17T06:21:07.830716"
     },
     {
       "file_path": "data/bronze/commits_2024-1-MinasDeCultura.json",
       "layer": "bronze",
       "size_bytes": 221216,
-      "modified_at": "2026-09-17T05:18:55.842815"
+      "modified_at": "2026-09-17T05:44:03.826460"
     },
     {
       "file_path": "data/bronze/issues_2024-1-EducaMinas-backend.json",
       "layer": "bronze",
       "size_bytes": 298251,
-      "modified_at": "2026-09-17T05:18:55.961818"
+      "modified_at": "2026-09-17T05:24:28.533960"
     },
     {
       "file_path": "data/bronze/repo_2026.1-ContraDito.json",
       "layer": "bronze",
       "size_bytes": 7322,
-      "modified_at": "2026-09-17T05:18:56.185822"
+      "modified_at": "2026-09-17T05:20:58.319769"
     },
     {
       "file_path": "data/bronze/prs_2026-2-Followw.json",
       "layer": "bronze",
       "size_bytes": 12227,
-      "modified_at": "2026-09-17T05:18:56.152821"
+      "modified_at": "2026-09-17T05:32:24.241464"
     },
     {
       "file_path": "data/bronze/commits_2023-2-SuaGradeUnB.json",
       "layer": "bronze",
       "size_bytes": 218435,
-      "modified_at": "2026-09-17T05:18:55.840815"
+      "modified_at": "2026-09-17T05:36:40.282312"
     },
     {
       "file_path": "data/bronze/repo_2024-1-EducaMinas-frontend.json",
       "layer": "bronze",
       "size_bytes": 7940,
-      "modified_at": "2026-09-17T05:18:56.180822"
+      "modified_at": "2026-09-17T05:20:37.074927"
     },
     {
       "file_path": "data/bronze/commits_2024-1-forUnB.json",
       "layer": "bronze",
       "size_bytes": 370876,
-      "modified_at": "2026-09-17T05:18:55.846815"
+      "modified_at": "2026-09-17T05:37:31.783655"
     },
     {
       "file_path": "data/bronze/repo_2024-1-Squad08.json",
       "layer": "bronze",
       "size_bytes": 7104,
-      "modified_at": "2026-09-17T05:18:56.183822"
+      "modified_at": "2026-09-17T05:20:38.177623"
     },
     {
       "file_path": "data/bronze/issue_events_2026-2-VeritasIA.json",
       "layer": "bronze",
       "size_bytes": 126246,
-      "modified_at": "2026-09-17T05:18:55.911817"
+      "modified_at": "2026-09-17T05:30:28.207010"
     },
     {
       "file_path": "data/bronze/repositories_detailed.json",
       "layer": "bronze",
       "size_bytes": 727392,
-      "modified_at": "2026-09-17T05:18:56.188822"
+      "modified_at": "2026-09-17T05:21:05.489627"
     },
     {
       "file_path": "data/bronze/issues_2026-2-Bandejao.json",
       "layer": "bronze",
       "size_bytes": 104636,
-      "modified_at": "2026-09-17T05:18:56.018819"
+      "modified_at": "2026-09-17T05:32:38.303389"
     },
     {
       "file_path": "data/bronze/issues_2025-1-GovInsights.json",
       "layer": "bronze",
       "size_bytes": 771204,
-      "modified_at": "2026-09-17T05:18:55.983818"
+      "modified_at": "2026-09-17T05:26:55.178898"
     },
     {
       "file_path": "data/bronze/commits_2023-2-Squad05-TesouroMineiro.json",
       "layer": "bronze",
       "size_bytes": 93940,
-      "modified_at": "2026-09-17T05:18:55.838815"
+      "modified_at": "2026-09-17T05:34:38.760867"
     },
     {
       "file_path": "data/bronze/repo_2023-2-JuizVirtual.json",
       "layer": "bronze",
       "size_bytes": 7475,
-      "modified_at": "2026-09-17T05:18:56.179822"
+      "modified_at": "2026-09-17T05:20:31.143493"
     },
     {
       "file_path": "data/bronze/repo_squad03-r2.json",
       "layer": "bronze",
       "size_bytes": 6862,
-      "modified_at": "2026-09-17T05:18:56.186822"
+      "modified_at": "2026-09-17T05:20:33.726968"
     },
     {
       "file_path": "data/bronze/repo_2026-2-MonitoraUnB.json",
       "layer": "bronze",
       "size_bytes": 7205,
-      "modified_at": "2026-09-17T05:18:56.185822"
+      "modified_at": "2026-09-17T05:21:04.347995"
     },
     {
       "file_path": "data/bronze/issue_events_2025-1-GovInsights.json",
       "layer": "bronze",
       "size_bytes": 420202,
-      "modified_at": "2026-09-17T05:18:55.900816"
+      "modified_at": "2026-09-17T05:27:09.672698"
     },
     {
       "file_path": "data/bronze/prs_2026-1-Squad4-Dito_e_Feito.json",
       "layer": "bronze",
       "size_bytes": 399441,
-      "modified_at": "2026-09-17T05:18:56.151821"
+      "modified_at": "2026-09-17T05:30:29.705992"
     },
     {
       "file_path": "data/bronze/structure_portfolio-MDS.json",
       "layer": "bronze",
       "size_bytes": 29251,
-      "modified_at": "2026-09-17T05:18:56.272824"
+      "modified_at": "2026-09-17T06:24:40.070229"
     },
     {
       "file_path": "data/bronze/issues_2025-2-Lumina.json",
       "layer": "bronze",
       "size_bytes": 1303391,
-      "modified_at": "2026-09-17T05:18:55.995818"
+      "modified_at": "2026-09-17T05:28:56.778236"
     },
     {
       "file_path": "data/bronze/commits_Squad09-UnBHUB.json",
       "layer": "bronze",
       "size_bytes": 242278,
-      "modified_at": "2026-09-17T05:18:55.865816"
+      "modified_at": "2026-09-17T05:44:30.638086"
     },
     {
       "file_path": "data/bronze/repo_2025-2-Squad-01.json",
       "layer": "bronze",
       "size_bytes": 7331,
-      "modified_at": "2026-09-17T05:18:56.184822"
+      "modified_at": "2026-09-17T05:20:48.943885"
     },
     {
       "file_path": "data/bronze/repo_2023.2_Gotinha.json",
       "layer": "bronze",
       "size_bytes": 7017,
-      "modified_at": "2026-09-17T05:18:56.180822"
+      "modified_at": "2026-09-17T05:20:34.857867"
     },
     {
       "file_path": "data/bronze/commits_2024-2-Squad06.json",
       "layer": "bronze",
       "size_bytes": 105589,
-      "modified_at": "2026-09-17T05:18:55.847816"
+      "modified_at": "2026-09-17T05:46:58.913172"
     },
     {
       "file_path": "data/bronze/commits_Fique-de-Olho.json",
       "layer": "bronze",
       "size_bytes": 7625,
-      "modified_at": "2026-09-17T05:18:55.863816"
+      "modified_at": "2026-09-17T06:20:59.460740"
     },
     {
       "file_path": "data/bronze/repo_mapadaacessibilidade.json",
       "layer": "bronze",
       "size_bytes": 7888,
-      "modified_at": "2026-09-17T05:18:56.186822"
+      "modified_at": "2026-09-17T05:20:44.869045"
     },
     {
       "file_path": "data/bronze/commits_2026.2-UnB_Core.json",
       "layer": "bronze",
       "size_bytes": 27522,
-      "modified_at": "2026-09-17T05:18:55.861816"
+      "modified_at": "2026-09-17T06:20:56.074294"
     },
     {
       "file_path": "data/bronze/commits_mapadaacessibilidade.json",
       "layer": "bronze",
       "size_bytes": 61177,
-      "modified_at": "2026-09-17T05:18:55.888816"
+      "modified_at": "2026-09-17T05:48:40.969950"
     },
     {
       "file_path": "data/bronze/structure_2024-2-ChamaControl.json",
       "layer": "bronze",
       "size_bytes": 45505,
-      "modified_at": "2026-09-17T05:18:56.235823"
+      "modified_at": "2026-09-17T06:24:58.554005"
     },
     {
       "file_path": "data/bronze/issue_events_VIDAProject.json",
       "layer": "bronze",
       "size_bytes": 152960,
-      "modified_at": "2026-09-17T05:18:55.917817"
+      "modified_at": "2026-09-17T05:27:39.955289"
     },
     {
       "file_path": "data/bronze/prs_2024-2-Squad01.json",
       "layer": "bronze",
       "size_bytes": 12469,
-      "modified_at": "2026-09-17T05:18:56.130821"
+      "modified_at": "2026-09-17T05:24:35.643161"
     },
     {
       "file_path": "data/bronze/issue_events_2026-2-AgendaUnB.json",
       "layer": "bronze",
       "size_bytes": 3132,
-      "modified_at": "2026-09-17T05:18:55.910817"
+      "modified_at": "2026-09-17T05:32:33.561452"
     },
     {
       "file_path": "data/bronze/issues_2024-2-ChamaControl.json",
       "layer": "bronze",
       "size_bytes": 366188,
-      "modified_at": "2026-09-17T05:18:55.976818"
+      "modified_at": "2026-09-17T05:25:38.331977"
     },
     {
       "file_path": "data/bronze/issues_2026-1-SafeStreets.json",
       "layer": "bronze",
       "size_bytes": 1162744,
-      "modified_at": "2026-09-17T05:18:56.010818"
+      "modified_at": "2026-09-17T05:30:00.875372"
     },
     {
       "file_path": "data/bronze/issue_events_2025-2-GuiaDev.json",
       "layer": "bronze",
       "size_bytes": 236207,
-      "modified_at": "2026-09-17T05:18:55.902817"
+      "modified_at": "2026-09-17T05:29:55.451445"
     },
     {
       "file_path": "data/bronze/issues_2024-1-Squad08.json",
       "layer": "bronze",
       "size_bytes": 83378,
-      "modified_at": "2026-09-17T05:18:55.969818"
+      "modified_at": "2026-09-17T05:24:03.720293"
     },
     {
       "file_path": "data/bronze/structure_2026.1-ContraDito.json",
       "layer": "bronze",
       "size_bytes": 92716,
-      "modified_at": "2026-09-17T05:18:56.259823"
+      "modified_at": "2026-09-17T06:25:31.039579"
     },
     {
       "file_path": "data/bronze/prs_2024-1-EducaMinas-backend.json",
       "layer": "bronze",
       "size_bytes": 370229,
-      "modified_at": "2026-09-17T05:18:56.123821"
+      "modified_at": "2026-09-17T05:24:28.538960"
     },
     {
       "file_path": "data/bronze/prs_2026-2-GlossarioUnB.json",
       "layer": "bronze",
       "size_bytes": 15925,
-      "modified_at": "2026-09-17T05:18:56.152821"
+      "modified_at": "2026-09-17T05:32:36.187656"
     },
     {
       "file_path": "data/bronze/repo_ParticipeMais.json",
       "layer": "bronze",
       "size_bytes": 7396,
-      "modified_at": "2026-09-17T05:18:56.186822"
+      "modified_at": "2026-09-17T05:20:45.215003"
     },
     {
       "file_path": "data/bronze/issue_events_2023.2_Gotinha.json",
       "layer": "bronze",
       "size_bytes": 4818,
-      "modified_at": "2026-09-17T05:18:55.893816"
+      "modified_at": "2026-09-17T05:22:43.435726"
     },
     {
       "file_path": "data/bronze/prs_2025-1-Eletta.json",
       "layer": "bronze",
       "size_bytes": 326474,
-      "modified_at": "2026-09-17T05:18:56.133821"
+      "modified_at": "2026-09-17T05:27:11.149678"
     },
     {
       "file_path": "data/bronze/issues_LicitaBSB-24.1.json",
       "layer": "bronze",
       "size_bytes": 985349,
-      "modified_at": "2026-09-17T05:18:56.030819"
+      "modified_at": "2026-09-17T05:23:15.219955"
     },
     {
       "file_path": "data/bronze/repo_DFemObras-2025.1.json",
       "layer": "bronze",
       "size_bytes": 7613,
-      "modified_at": "2026-09-17T05:18:56.185822"
+      "modified_at": "2026-09-17T05:20:47.865233"
     },
     {
       "file_path": "data/bronze/commits_2023-2-Squad01.json",
       "layer": "bronze",
       "size_bytes": 6098,
-      "modified_at": "2026-09-17T05:18:55.836815"
+      "modified_at": "2026-09-17T05:32:43.189812"
     },
     {
       "file_path": "data/bronze/prs_2024-2-ChamaControl.json",
       "layer": "bronze",
       "size_bytes": 458927,
-      "modified_at": "2026-09-17T05:18:56.129821"
+      "modified_at": "2026-09-17T05:25:38.336977"
     },
     {
       "file_path": "data/bronze/issue_events_2026-1-ProtectKids.json",
       "layer": "bronze",
       "size_bytes": 431856,
-      "modified_at": "2026-09-17T05:18:55.907817"
+      "modified_at": "2026-09-17T05:32:00.881881"
     },
     {
       "file_path": "data/bronze/commits_2025-1-NoFluxoUNB.json",
       "layer": "bronze",
       "size_bytes": 510202,
-      "modified_at": "2026-09-17T05:18:55.850816"
+      "modified_at": "2026-09-17T05:50:10.027785"
     },
     {
       "file_path": "data/bronze/prs_2024-2-Datazonia.json",
       "layer": "bronze",
       "size_bytes": 20925,
-      "modified_at": "2026-09-17T05:18:56.130821"
+      "modified_at": "2026-09-17T05:25:42.877035"
     },
     {
       "file_path": "data/bronze/issue_events_DFemObras.json",
       "layer": "bronze",
       "size_bytes": 93286,
-      "modified_at": "2026-09-17T05:18:55.913817"
+      "modified_at": "2026-09-17T05:25:31.474069"
     },
     {
       "file_path": "data/bronze/repo_2024-2-AcheiUnB.json",
       "layer": "bronze",
       "size_bytes": 7355,
-      "modified_at": "2026-09-17T05:18:56.183822"
+      "modified_at": "2026-09-17T05:20:41.131079"
     },
     {
       "file_path": "data/bronze/issues_VIDAProject.json",
       "layer": "bronze",
       "size_bytes": 449748,
-      "modified_at": "2026-09-17T05:18:56.033819"
+      "modified_at": "2026-09-17T05:27:34.809356"
     },
     {
       "file_path": "data/bronze/issues_2026-1-Mapa_L.I.L.A.S.json",
       "layer": "bronze",
       "size_bytes": 747827,
-      "modified_at": "2026-09-17T05:18:56.006819"
+      "modified_at": "2026-09-17T05:30:19.817120"
     },
     {
       "file_path": "data/bronze/commits_diario-de-bordo.json",
       "layer": "bronze",
       "size_bytes": 2559,
-      "modified_at": "2026-09-17T05:18:55.887816"
+      "modified_at": "2026-09-17T06:21:14.708908"
     },
     {
       "file_path": "data/bronze/repo_2026-1-squad0x.json",
       "layer": "bronze",
       "size_bytes": 7121,
-      "modified_at": "2026-09-17T05:18:56.185822"
+      "modified_at": "2026-09-17T05:20:57.956973"
     },
     {
       "file_path": "data/bronze/prs_2024-2-Lumina.json",
       "layer": "bronze",
       "size_bytes": 57818,
-      "modified_at": "2026-09-17T05:18:56.130821"
+      "modified_at": "2026-09-17T05:25:15.387272"
     },
     {
       "file_path": "data/bronze/structure_2024-2-Squad06.json",
       "layer": "bronze",
       "size_bytes": 34046,
-      "modified_at": "2026-09-17T05:18:56.236823"
+      "modified_at": "2026-09-17T06:24:56.143021"
     },
     {
       "file_path": "data/bronze/commits_2025-1-GovInsights.json",
       "layer": "bronze",
       "size_bytes": 118275,
-      "modified_at": "2026-09-17T05:18:55.848815"
+      "modified_at": "2026-09-17T05:50:35.842546"
     },
     {
       "file_path": "data/bronze/commits_MDS-MonitoraBSB.json",
       "layer": "bronze",
       "size_bytes": 102068,
-      "modified_at": "2026-09-17T05:18:55.864816"
+      "modified_at": "2026-09-17T05:47:44.538706"
     },
     {
       "file_path": "data/bronze/issue_events_2024-1-EducaMinas-backend.json",
       "layer": "bronze",
       "size_bytes": 184851,
-      "modified_at": "2026-09-17T05:18:55.894816"
+      "modified_at": "2026-09-17T05:24:34.171882"
     },
     {
       "file_path": "data/bronze/issue_events_2026-1-SafeStreets.json",
       "layer": "bronze",
       "size_bytes": 524991,
-      "modified_at": "2026-09-17T05:18:55.909817"
+      "modified_at": "2026-09-17T05:30:18.292140"
     },
     {
       "file_path": "data/bronze/commits_2025-2-InfoSchool.json",
       "layer": "bronze",
       "size_bytes": 173825,
-      "modified_at": "2026-09-17T05:18:55.851815"
+      "modified_at": "2026-09-17T06:15:38.283193"
     },
     {
       "file_path": "data/bronze/prs_VIDAProject.json",
       "layer": "bronze",
       "size_bytes": 349642,
-      "modified_at": "2026-09-17T05:18:56.160821"
+      "modified_at": "2026-09-17T05:27:34.814356"
     },
     {
       "file_path": "data/bronze/commits_2026-2-Cerradinho-API.json",
       "layer": "bronze",
       "size_bytes": 21741,
-      "modified_at": "2026-09-17T05:18:55.861816"
+      "modified_at": "2026-09-17T06:20:58.680796"
     },
     {
       "file_path": "data/bronze/issue_events_2023-2-SuaGradeUnB.json",
       "layer": "bronze",
       "size_bytes": 640542,
-      "modified_at": "2026-09-17T05:18:55.893816"
+      "modified_at": "2026-09-17T05:22:38.278414"
     },
     {
       "file_path": "data/bronze/repositories_raw.json",
       "layer": "bronze",
-      "size_bytes": 644283,
-      "modified_at": "2026-09-17T05:18:56.189822"
+      "size_bytes": 644284,
+      "modified_at": "2026-09-17T05:20:28.895158"
     },
     {
       "file_path": "data/bronze/repo_MDS-MonitoraBSB.json",
       "layer": "bronze",
       "size_bytes": 7578,
-      "modified_at": "2026-09-17T05:18:56.186822"
+      "modified_at": "2026-09-17T05:20:42.970538"
     },
     {
       "file_path": "data/bronze/commits_2025-2-Squad12.json",
       "layer": "bronze",
       "size_bytes": 90114,
-      "modified_at": "2026-09-17T05:18:55.855816"
+      "modified_at": "2026-09-17T06:17:17.410867"
     },
     {
       "file_path": "data/bronze/commits_2026-02-TambureteiUnB.json",
       "layer": "bronze",
       "size_bytes": 17288,
-      "modified_at": "2026-09-17T05:18:55.856816"
+      "modified_at": "2026-09-17T06:21:08.936783"
     },
     {
       "file_path": "data/bronze/structure_exemplogitpage.json",
       "layer": "bronze",
       "size_bytes": 1026,
-      "modified_at": "2026-09-17T05:18:56.270823"
+      "modified_at": "2026-09-17T06:25:21.682233"
     },
     {
       "file_path": "data/bronze/prs_2026-1-Mapa_L.I.L.A.S.json",
       "layer": "bronze",
       "size_bytes": 186806,
-      "modified_at": "2026-09-17T05:18:56.145821"
+      "modified_at": "2026-09-17T05:30:19.819120"
     },
     {
       "file_path": "data/bronze/repo_2025-2-Lumina.json",
       "layer": "bronze",
       "size_bytes": 7305,
-      "modified_at": "2026-09-17T05:18:56.184822"
+      "modified_at": "2026-09-17T05:20:51.806548"
     },
     {
       "file_path": "data/bronze/repo_2025-2-GuiaDev.json",
       "layer": "bronze",
       "size_bytes": 7464,
-      "modified_at": "2026-09-17T05:18:56.183822"
+      "modified_at": "2026-09-17T05:20:53.023993"
     },
     {
       "file_path": "data/bronze/issues_2024-1-MinasDeCultura.json",
       "layer": "bronze",
       "size_bytes": 1026390,
-      "modified_at": "2026-09-17T05:18:55.967818"
+      "modified_at": "2026-09-17T05:23:55.656425"
     },
     {
       "file_path": "data/bronze/issue_events_2026.2-UnB_Core.json",
       "layer": "bronze",
       "size_bytes": 133682,
-      "modified_at": "2026-09-17T05:18:55.912817"
+      "modified_at": "2026-09-17T05:32:14.078710"
     },
     {
       "file_path": "data/bronze/issues_Gastos-DF-Squad12.json",
       "layer": "bronze",
       "size_bytes": 408993,
-      "modified_at": "2026-09-17T05:18:56.029819"
+      "modified_at": "2026-09-17T05:24:24.260019"
     },
     {
       "file_path": "data/bronze/repo_2024-1-Squad02-CulturaTransparente.json",
       "layer": "bronze",
       "size_bytes": 8170,
-      "modified_at": "2026-09-17T05:18:56.182822"
+      "modified_at": "2026-09-17T05:20:35.948537"
     },
     {
       "file_path": "data/bronze/issue_events_2023-2-JuizVirtual.json",
       "layer": "bronze",
       "size_bytes": 341903,
-      "modified_at": "2026-09-17T05:18:55.888816"
+      "modified_at": "2026-09-17T05:21:49.634099"
     },
     {
       "file_path": "data/bronze/issue_events_2024-1-MinasDeCultura.json",
       "layer": "bronze",
       "size_bytes": 231134,
-      "modified_at": "2026-09-17T05:18:55.895816"
+      "modified_at": "2026-09-17T05:24:03.255299"
     },
     {
       "file_path": "data/bronze/issues_2026-2-Bandejao-UnB.json",
       "layer": "bronze",
       "size_bytes": 160129,
-      "modified_at": "2026-09-17T05:18:56.017819"
+      "modified_at": "2026-09-17T05:32:25.825553"
     },
     {
       "file_path": "data/bronze/structure_2025-2-SeLiga.json",
       "layer": "bronze",
       "size_bytes": 36851,
-      "modified_at": "2026-09-17T05:18:56.252823"
+      "modified_at": "2026-09-17T06:25:19.366722"
     },
     {
       "file_path": "data/bronze/issues_2026-1-Squad13.json",
       "layer": "bronze",
       "size_bytes": 993178,
-      "modified_at": "2026-09-17T05:18:56.014819"
+      "modified_at": "2026-09-17T05:31:27.038432"
     },
     {
       "file_path": "data/bronze/issues_2025-2-Squad12.json",
       "layer": "bronze",
       "size_bytes": 157958,
-      "modified_at": "2026-09-17T05:18:55.999818"
+      "modified_at": "2026-09-17T05:29:56.665428"
     },
     {
       "file_path": "data/bronze/prs_2024-1-Gastos-DF-Doc-Squad12.json",
       "layer": "bronze",
       "size_bytes": 25881,
-      "modified_at": "2026-09-17T05:18:56.124821"
+      "modified_at": "2026-09-17T05:24:34.588990"
     },
     {
       "file_path": "data/bronze/issue_events_2023.2-LicitaX.json",
       "layer": "bronze",
       "size_bytes": 27698,
-      "modified_at": "2026-09-17T05:18:55.893816"
+      "modified_at": "2026-09-17T05:22:41.534794"
     },
     {
       "file_path": "data/bronze/structure_2026-1-Squad13.json",
       "layer": "bronze",
       "size_bytes": 159115,
-      "modified_at": "2026-09-17T05:18:56.258823"
+      "modified_at": "2026-09-17T06:25:31.874569"
     },
     {
       "file_path": "data/bronze/commits_squad03-r2.json",
       "layer": "bronze",
       "size_bytes": 35009,
-      "modified_at": "2026-09-17T05:18:55.888816"
+      "modified_at": "2026-09-17T05:36:50.349187"
     },
     {
       "file_path": "data/bronze/issue_events_2025-2-Eh_Fake.json",
       "layer": "bronze",
       "size_bytes": 215533,
-      "modified_at": "2026-09-17T05:18:55.901816"
+      "modified_at": "2026-09-17T05:28:19.030754"
     },
     {
       "file_path": "data/bronze/commits_exemplogitpage.json",
       "layer": "bronze",
       "size_bytes": 559,
-      "modified_at": "2026-09-17T05:18:55.887816"
+      "modified_at": "2026-09-17T06:17:09.771081"
     },
     {
       "file_path": "data/bronze/structure_2023.2_DeOlhoRS.json",
       "layer": "bronze",
       "size_bytes": 4203550,
-      "modified_at": "2026-09-17T05:18:56.224823"
+      "modified_at": "2026-09-17T06:24:32.811324"
     },
     {
       "file_path": "data/bronze/issue_events_2024-1-EducaMinas-frontend.json",
       "layer": "bronze",
       "size_bytes": 423831,
-      "modified_at": "2026-09-17T05:18:55.894816"
+      "modified_at": "2026-09-17T05:23:48.555526"
     },
     {
       "file_path": "data/bronze/issue_events_2025-2-Synapse.json",
       "layer": "bronze",
       "size_bytes": 617589,
-      "modified_at": "2026-09-17T05:18:55.905817"
+      "modified_at": "2026-09-17T05:29:46.779562"
     },
     {
       "file_path": "data/bronze/repo_2024-1-EducaMinas-backend.json",
       "layer": "bronze",
       "size_bytes": 7903,
-      "modified_at": "2026-09-17T05:18:56.180822"
+      "modified_at": "2026-09-17T05:20:39.664155"
     },
     {
       "file_path": "data/bronze/issues_mapadaacessibilidade.json",
       "layer": "bronze",
       "size_bytes": 721156,
-      "modified_at": "2026-09-17T05:18:56.117821"
+      "modified_at": "2026-09-17T05:26:10.253557"
     },
     {
       "file_path": "data/bronze/commits_2023-2-JuizVirtual.json",
       "layer": "bronze",
       "size_bytes": 202009,
-      "modified_at": "2026-09-17T05:18:55.836815"
+      "modified_at": "2026-09-17T05:34:58.623610"
     },
     {
       "file_path": "data/bronze/commits_Projeto-P.I.T.E.R.json",
       "layer": "bronze",
       "size_bytes": 54858,
-      "modified_at": "2026-09-17T05:18:55.865816"
+      "modified_at": "2026-09-17T06:14:13.274951"
     },
     {
       "file_path": "data/bronze/structure_2025-1-Eletta.json",
       "layer": "bronze",
       "size_bytes": 100207,
-      "modified_at": "2026-09-17T05:18:56.249823"
+      "modified_at": "2026-09-17T06:25:07.915869"
     },
     {
       "file_path": "data/bronze/issues_2025-2-Eh_Fake.json",
       "layer": "bronze",
       "size_bytes": 955087,
-      "modified_at": "2026-09-17T05:18:55.990818"
+      "modified_at": "2026-09-17T05:28:11.483856"
     },
     {
       "file_path": "data/bronze/commits_2025-2-Synapse.json",
       "layer": "bronze",
       "size_bytes": 143753,
-      "modified_at": "2026-09-17T05:18:55.855816"
+      "modified_at": "2026-09-17T06:16:52.194402"
     },
     {
       "file_path": "data/bronze/repo_2023-2-Squad04.json",
       "layer": "bronze",
       "size_bytes": 7346,
-      "modified_at": "2026-09-17T05:18:56.179822"
+      "modified_at": "2026-09-17T05:20:30.406116"
     },
     {
       "file_path": "data/bronze/issue_events_2024-1-squad04.json",
       "layer": "bronze",
       "size_bytes": 220332,
-      "modified_at": "2026-09-17T05:18:55.897816"
+      "modified_at": "2026-09-17T05:23:33.623718"
     },
     {
       "file_path": "data/bronze/prs_2026-1-Guard.IA.json",
       "layer": "bronze",
       "size_bytes": 176068,
-      "modified_at": "2026-09-17T05:18:56.144821"
+      "modified_at": "2026-09-17T05:30:35.794922"
     },
     {
       "file_path": "data/bronze/issue_events_teste-ru.json",
       "layer": "bronze",
       "size_bytes": 398,
-      "modified_at": "2026-09-17T05:18:55.941817"
+      "modified_at": "2026-09-17T05:32:39.713868"
     },
     {
       "file_path": "data/bronze/commits_VIDAProject.json",
       "layer": "bronze",
       "size_bytes": 44452,
-      "modified_at": "2026-09-17T05:18:55.866816"
+      "modified_at": "2026-09-17T05:51:24.642972"
     },
     {
       "file_path": "data/bronze/issue_events_2026-2-Followw.json",
       "layer": "bronze",
       "size_bytes": 23339,
-      "modified_at": "2026-09-17T05:18:55.911817"
+      "modified_at": "2026-09-17T05:32:25.337560"
     },
     {
       "file_path": "data/bronze/commits_Sonorus-2025.1.json",
       "layer": "bronze",
       "size_bytes": 105729,
-      "modified_at": "2026-09-17T05:18:55.865816"
+      "modified_at": "2026-09-17T05:50:19.694657"
     },
     {
       "file_path": "data/bronze/prs_2024-1-Squad08.json",
       "layer": "bronze",
       "size_bytes": 37713,
-      "modified_at": "2026-09-17T05:18:56.126821"
+      "modified_at": "2026-09-17T05:24:03.721293"
     },
     {
       "file_path": "data/bronze/repo_diario-de-bordo.json",
       "layer": "bronze",
       "size_bytes": 7059,
-      "modified_at": "2026-09-17T05:18:56.186822"
+      "modified_at": "2026-09-17T05:21:05.482175"
     },
     {
       "file_path": "data/bronze/prs_2024-1-EducaMinas-frontend.json",
       "layer": "bronze",
       "size_bytes": 787574,
-      "modified_at": "2026-09-17T05:18:56.123821"
+      "modified_at": "2026-09-17T05:23:35.276697"
     },
     {
       "file_path": "data/bronze/commits_2024-2-SuaFinanca.json",
       "layer": "bronze",
       "size_bytes": 48615,
-      "modified_at": "2026-09-17T05:18:55.848815"
+      "modified_at": "2026-09-17T05:48:12.810959"
     },
     {
       "file_path": "data/bronze/repo_DFemObras.json",
       "layer": "bronze",
       "size_bytes": 7157,
-      "modified_at": "2026-09-17T05:18:56.185822"
+      "modified_at": "2026-09-17T05:20:42.626710"
     },
     {
       "file_path": "data/bronze/commits_2026-1-Squad13.json",
       "layer": "bronze",
       "size_bytes": 337245,
-      "modified_at": "2026-09-17T05:18:55.860816"
+      "modified_at": "2026-09-17T06:20:25.457539"
     },
     {
       "file_path": "data/bronze/prs_2026-2-VeritasIA.json",
       "layer": "bronze",
       "size_bytes": 99120,
-      "modified_at": "2026-09-17T05:18:56.152821"
+      "modified_at": "2026-09-17T05:30:23.601070"
     },
     {
       "file_path": "data/bronze/structure_2025-2-Synapse.json",
       "layer": "bronze",
       "size_bytes": 56769,
-      "modified_at": "2026-09-17T05:18:56.255823"
+      "modified_at": "2026-09-17T06:25:20.146953"
     },
     {
       "file_path": "data/bronze/issue_events_MDS-MonitoraBSB.json",
       "layer": "bronze",
       "size_bytes": 122558,
-      "modified_at": "2026-09-17T05:18:55.915817"
+      "modified_at": "2026-09-17T05:25:37.401989"
     },
     {
       "file_path": "data/bronze/issues_2025.1-RelatoriosInteligentesBCB.json",
       "layer": "bronze",
       "size_bytes": 410262,
-      "modified_at": "2026-09-17T05:18:56.004818"
+      "modified_at": "2026-09-17T05:26:49.153984"
     },
     {
       "file_path": "data/bronze/issue_events_2024-1-Squad-10.json",
       "layer": "bronze",
       "size_bytes": 175489,
-      "modified_at": "2026-09-17T05:18:55.896816"
+      "modified_at": "2026-09-17T05:24:23.531029"
     },
     {
       "file_path": "data/bronze/issue_events_2024-1-Gastos-DF-Doc-Squad12.json",
       "layer": "bronze",
       "size_bytes": 4878,
-      "modified_at": "2026-09-17T05:18:55.894816"
+      "modified_at": "2026-09-17T05:24:35.055212"
     },
     {
       "file_path": "data/bronze/repo_2023-2-Squad07.json",
       "layer": "bronze",
       "size_bytes": 7273,
-      "modified_at": "2026-09-17T05:18:56.179822"
+      "modified_at": "2026-09-17T05:20:31.517611"
     },
     {
       "file_path": "data/bronze/structure_2023.2_Gotinha.json",
       "layer": "bronze",
       "size_bytes": 8753,
-      "modified_at": "2026-09-17T05:18:56.224823"
+      "modified_at": "2026-09-17T06:24:39.368238"
     },
     {
       "file_path": "data/bronze/repo_Gastos-DF-2024-02.json",
       "layer": "bronze",
       "size_bytes": 7503,
-      "modified_at": "2026-09-17T05:18:56.185822"
+      "modified_at": "2026-09-17T05:20:44.450243"
     },
     {
       "file_path": "data/bronze/issue_events_2026.1-ContraDito.json",
       "layer": "bronze",
       "size_bytes": 238458,
-      "modified_at": "2026-09-17T05:18:55.911817"
+      "modified_at": "2026-09-17T05:31:23.887470"
     },
     {
       "file_path": "data/bronze/issues_2023-2-Squad04.json",
       "layer": "bronze",
       "size_bytes": 878086,
-      "modified_at": "2026-09-17T05:18:55.948817"
+      "modified_at": "2026-09-17T05:21:18.091491"
     },
     {
       "file_path": "data/bronze/structure_Mds-ArenaPesadelo.json",
       "layer": "bronze",
       "size_bytes": 126446,
-      "modified_at": "2026-09-17T05:18:56.269824"
+      "modified_at": "2026-09-17T06:24:44.782167"
     },
     {
       "file_path": "data/bronze/commits_2026-1-LegisKids.json",
       "layer": "bronze",
       "size_bytes": 128982,
-      "modified_at": "2026-09-17T05:18:55.858816"
+      "modified_at": "2026-09-17T06:19:25.688283"
     },
     {
       "file_path": "data/bronze/prs_2023.2_Licitaiba.json",
       "layer": "bronze",
       "size_bytes": 74971,
-      "modified_at": "2026-09-17T05:18:56.123821"
+      "modified_at": "2026-09-17T05:22:41.951530"
     },
     {
       "file_path": "data/bronze/repo_2026-1-SafeStreets.json",
       "layer": "bronze",
       "size_bytes": 7673,
-      "modified_at": "2026-09-17T05:18:56.184822"
+      "modified_at": "2026-09-17T05:20:55.091579"
     },
     {
       "file_path": "data/bronze/commits_2024-1-Gastos-DF-Doc-Squad12.json",
       "layer": "bronze",
       "size_bytes": 13294,
-      "modified_at": "2026-09-17T05:18:55.842815"
+      "modified_at": "2026-09-17T05:45:12.374983"
     },
     {
       "file_path": "data/bronze/prs_2026-2-MonitoraUnB.json",
       "layer": "bronze",
       "size_bytes": 25842,
-      "modified_at": "2026-09-17T05:18:56.152821"
+      "modified_at": "2026-09-17T05:32:37.275695"
     },
     {
       "file_path": "data/bronze/issue_events_2023-2-Squad10.json",
       "layer": "bronze",
       "size_bytes": 94735,
-      "modified_at": "2026-09-17T05:18:55.892816"
+      "modified_at": "2026-09-17T05:22:14.826739"
     },
     {
       "file_path": "data/bronze/commits_2026-1-Squad07.json",
       "layer": "bronze",
       "size_bytes": 209019,
-      "modified_at": "2026-09-17T05:18:55.859816"
+      "modified_at": "2026-09-17T06:19:13.056456"
     },
     {
       "file_path": "data/bronze/repo_2026-1-Squad14.json",
       "layer": "bronze",
       "size_bytes": 7121,
-      "modified_at": "2026-09-17T05:18:56.185822"
+      "modified_at": "2026-09-17T05:20:59.084604"
     },
     {
       "file_path": "data/bronze/commits_2025-2-Eh_Fake.json",
       "layer": "bronze",
       "size_bytes": 101083,
-      "modified_at": "2026-09-17T05:18:55.850816"
+      "modified_at": "2026-09-17T06:14:41.174085"
     },
     {
       "file_path": "data/bronze/structure_2024-2-AcheiUnB.json",
       "layer": "bronze",
       "size_bytes": 80166,
-      "modified_at": "2026-09-17T05:18:56.235823"
+      "modified_at": "2026-09-17T06:24:53.903049"
     },
     {
       "file_path": "data/bronze/structure_2026-1-Squad14.json",
       "layer": "bronze",
       "size_bytes": 1026,
-      "modified_at": "2026-09-17T05:18:56.258823"
+      "modified_at": "2026-09-17T06:25:32.641027"
     },
     {
       "file_path": "data/bronze/repo_2026-1-Squad07.json",
       "layer": "bronze",
       "size_bytes": 7170,
-      "modified_at": "2026-09-17T05:18:56.184822"
+      "modified_at": "2026-09-17T05:20:57.186092"
     },
     {
       "file_path": "data/bronze/issues_2023.2_DeOlhoRS.json",
       "layer": "bronze",
       "size_bytes": 777728,
-      "modified_at": "2026-09-17T05:18:55.960818"
+      "modified_at": "2026-09-17T05:21:55.559023"
     },
     {
       "file_path": "data/bronze/issue_events_LicitaBSB-24.1.json",
       "layer": "bronze",
       "size_bytes": 279163,
-      "modified_at": "2026-09-17T05:18:55.914817"
+      "modified_at": "2026-09-17T05:23:24.630834"
     },
     {
       "file_path": "data/bronze/commits_2024-1-EducaMinas-frontend.json",
       "layer": "bronze",
       "size_bytes": 160689,
-      "modified_at": "2026-09-17T05:18:55.842815"
+      "modified_at": "2026-09-17T05:43:35.415908"
     },
     {
       "file_path": "data/bronze/prs_2024-2-Urbanize.json",
       "layer": "bronze",
       "size_bytes": 218517,
-      "modified_at": "2026-09-17T05:18:56.132821"
+      "modified_at": "2026-09-17T05:24:37.134784"
     },
     {
       "file_path": "data/bronze/commits_2023-2-Squad07.json",
       "layer": "bronze",
       "size_bytes": 103336,
-      "modified_at": "2026-09-17T05:18:55.839815"
+      "modified_at": "2026-09-17T05:35:08.170485"
     },
     {
       "file_path": "data/bronze/issue_events_2025-2-Mural-UnB.json",
       "layer": "bronze",
       "size_bytes": 276712,
-      "modified_at": "2026-09-17T05:18:55.903816"
+      "modified_at": "2026-09-17T05:28:54.037273"
     },
     {
       "file_path": "data/bronze/structure_2026-2-GlossarioUnB.json",
       "layer": "bronze",
       "size_bytes": 8284,
-      "modified_at": "2026-09-17T05:18:56.258823"
+      "modified_at": "2026-09-17T06:25:42.332435"
     },
     {
       "file_path": "data/bronze/issue_events_2025-2-OncoMap.json",
       "layer": "bronze",
       "size_bytes": 213200,
-      "modified_at": "2026-09-17T05:18:55.903816"
+      "modified_at": "2026-09-17T05:28:36.301516"
     },
     {
       "file_path": "data/bronze/prs_2025-2-InfoSchool.json",
       "layer": "bronze",
       "size_bytes": 389866,
-      "modified_at": "2026-09-17T05:18:56.136821"
+      "modified_at": "2026-09-17T05:28:37.773496"
     },
     {
       "file_path": "data/bronze/issues_2026-02-TambureteiUnB.json",
       "layer": "bronze",
       "size_bytes": 173365,
-      "modified_at": "2026-09-17T05:18:56.004818"
+      "modified_at": "2026-09-17T05:32:34.182444"
     },
     {
       "file_path": "data/bronze/issues_2025-1-NoFluxoUNB.json",
       "layer": "bronze",
       "size_bytes": 1040287,
-      "modified_at": "2026-09-17T05:18:55.986818"
+      "modified_at": "2026-09-17T05:26:30.709272"
     },
     {
       "file_path": "data/bronze/repo_2023-2-Squad02-Desmatazonia.json",
       "layer": "bronze",
       "size_bytes": 7799,
-      "modified_at": "2026-09-17T05:18:56.179822"
+      "modified_at": "2026-09-17T05:20:29.665435"
     },
     {
       "file_path": "data/bronze/issues_2026.1-ContraDito.json",
       "layer": "bronze",
       "size_bytes": 825230,
-      "modified_at": "2026-09-17T05:18:56.022819"
+      "modified_at": "2026-09-17T05:31:16.205563"
     },
     {
       "file_path": "data/bronze/issues_2024-2-Lumina.json",
       "layer": "bronze",
       "size_bytes": 367873,
-      "modified_at": "2026-09-17T05:18:55.976818"
+      "modified_at": "2026-09-17T05:25:15.386272"
     },
     {
       "file_path": "data/bronze/repo_2026-02-TambureteiUnB.json",
       "layer": "bronze",
       "size_bytes": 7339,
-      "modified_at": "2026-09-17T05:18:56.184822"
+      "modified_at": "2026-09-17T05:21:03.635960"
     },
     {
       "file_path": "data/bronze/commits_teste-ru.json",
       "layer": "bronze",
       "size_bytes": 3798,
-      "modified_at": "2026-09-17T05:18:55.888816"
+      "modified_at": "2026-09-17T06:21:13.898782"
     },
     {
       "file_path": "data/bronze/structure_2024-1-Squad08.json",
       "layer": "bronze",
       "size_bytes": 14241,
-      "modified_at": "2026-09-17T05:18:56.235823"
+      "modified_at": "2026-09-17T06:24:46.370157"
     },
     {
       "file_path": "data/bronze/prs_2024-2-Squad06.json",
       "layer": "bronze",
       "size_bytes": 418895,
-      "modified_at": "2026-09-17T05:18:56.131821"
+      "modified_at": "2026-09-17T05:25:19.718218"
     },
     {
       "file_path": "data/bronze/structure_2025.1-RelatoriosInteligentesBCB.json",
       "layer": "bronze",
       "size_bytes": 13106,
-      "modified_at": "2026-09-17T05:18:56.256823"
+      "modified_at": "2026-09-17T06:25:06.297890"
     },
     {
       "file_path": "data/bronze/issues_ParticipeMais.json",
       "layer": "bronze",
       "size_bytes": 790153,
-      "modified_at": "2026-09-17T05:18:56.032819"
+      "modified_at": "2026-09-17T05:26:23.771366"
     },
     {
       "file_path": "data/bronze/issue_events_2023-2-Squad05-TesouroMineiro.json",
       "layer": "bronze",
       "size_bytes": 258944,
-      "modified_at": "2026-09-17T05:18:55.891816"
+      "modified_at": "2026-09-17T05:21:36.794260"
     },
     {
       "file_path": "data/bronze/commits_2025_1-Jakebot.json",
       "layer": "bronze",
       "size_bytes": 75037,
-      "modified_at": "2026-09-17T05:18:55.856816"
+      "modified_at": "2026-09-17T05:51:37.088705"
     },
     {
       "file_path": "data/bronze/issue_events_2024-2-Datazonia.json",
       "layer": "bronze",
       "size_bytes": 30319,
-      "modified_at": "2026-09-17T05:18:55.899817"
+      "modified_at": "2026-09-17T05:25:44.260292"
     },
     {
       "file_path": "data/bronze/prs_2025_1-Jakebot.json",
       "layer": "bronze",
       "size_bytes": 65982,
-      "modified_at": "2026-09-17T05:18:56.143821"
+      "modified_at": "2026-09-17T05:27:40.552280"
     },
     {
       "file_path": "data/bronze/structure_2025-2-OncoMap.json",
       "layer": "bronze",
       "size_bytes": 248337,
-      "modified_at": "2026-09-17T05:18:56.252823"
+      "modified_at": "2026-09-17T06:25:15.999765"
     },
     {
       "file_path": "data/bronze/prs_2026.1-ContraDito.json",
       "layer": "bronze",
       "size_bytes": 516405,
-      "modified_at": "2026-09-17T05:18:56.154821"
+      "modified_at": "2026-09-17T05:31:16.211563"
     },
     {
       "file_path": "data/bronze/structure_2025-2-InfoSchool.json",
       "layer": "bronze",
       "size_bytes": 66406,
-      "modified_at": "2026-09-17T05:18:56.251823"
+      "modified_at": "2026-09-17T06:25:16.814755"
     },
     {
       "file_path": "data/bronze/issue_events_DFemObras-2025.1.json",
       "layer": "bronze",
       "size_bytes": 156101,
-      "modified_at": "2026-09-17T05:18:55.913817"
+      "modified_at": "2026-09-17T05:27:33.919368"
     },
     {
       "file_path": "data/bronze/structure_2025-2-Eh_Fake.json",
       "layer": "bronze",
       "size_bytes": 66761,
-      "modified_at": "2026-09-17T05:18:56.250823"
+      "modified_at": "2026-09-17T06:25:14.093790"
     },
     {
       "file_path": "data/bronze/commits_2024-2-Urbanize.json",
       "layer": "bronze",
       "size_bytes": 98757,
-      "modified_at": "2026-09-17T05:18:55.848815"
+      "modified_at": "2026-09-17T05:45:35.607378"
     },
     {
       "file_path": "data/bronze/repo_2023.2_DeOlhoRS.json",
       "layer": "bronze",
       "size_bytes": 7283,
-      "modified_at": "2026-09-17T05:18:56.180822"
+      "modified_at": "2026-09-17T05:20:31.866849"
     },
     {
       "file_path": "data/bronze/issues_2026-1-Squad07.json",
       "layer": "bronze",
       "size_bytes": 1083563,
-      "modified_at": "2026-09-17T05:18:56.010818"
+      "modified_at": "2026-09-17T05:30:40.450884"
     },
     {
       "file_path": "data/bronze/prs_2025-1-GovInsights.json",
       "layer": "bronze",
       "size_bytes": 1206057,
-      "modified_at": "2026-09-17T05:18:56.133821"
+      "modified_at": "2026-09-17T05:26:55.193898"
     },
     {
       "file_path": "data/bronze/commits_teste.json",
       "layer": "bronze",
       "size_bytes": 1646,
-      "modified_at": "2026-09-17T05:18:55.888816"
+      "modified_at": "2026-09-17T05:36:40.771624"
     },
     {
       "file_path": "data/bronze/issue_events_2026-02-UnDb.json",
       "layer": "bronze",
       "size_bytes": 147619,
-      "modified_at": "2026-09-17T05:18:55.906816"
+      "modified_at": "2026-09-17T05:32:32.743463"
     },
     {
       "file_path": "data/bronze/structure_2023-2-Squad07.json",
       "layer": "bronze",
       "size_bytes": 56893,
-      "modified_at": "2026-09-17T05:18:56.214822"
+      "modified_at": "2026-09-17T06:24:30.636515"
     },
     {
       "file_path": "data/bronze/structure_2025-2-Squad12.json",
       "layer": "bronze",
       "size_bytes": 24307,
-      "modified_at": "2026-09-17T05:18:56.255823"
+      "modified_at": "2026-09-17T06:25:22.409872"
     },
     {
       "file_path": "data/bronze/structure_2026-1-Guard.IA.json",
       "layer": "bronze",
       "size_bytes": 40158,
-      "modified_at": "2026-09-17T05:18:56.256823"
+      "modified_at": "2026-09-17T06:25:27.627595"
     },
     {
       "file_path": "data/bronze/issue_events_Mds-ArenaPesadelo.json",
       "layer": "bronze",
       "size_bytes": 122949,
-      "modified_at": "2026-09-17T05:18:55.915817"
+      "modified_at": "2026-09-17T05:23:53.835454"
     },
     {
       "file_path": "data/bronze/repo_2024-1-squad04.json",
       "layer": "bronze",
       "size_bytes": 7214,
-      "modified_at": "2026-09-17T05:18:56.183822"
+      "modified_at": "2026-09-17T05:20:36.676801"
     },
     {
       "file_path": "data/bronze/issues_2023-2-SuaGradeUnB.json",
       "layer": "bronze",
       "size_bytes": 908888,
-      "modified_at": "2026-09-17T05:18:55.959818"
+      "modified_at": "2026-09-17T05:22:17.480700"
     },
     {
       "file_path": "data/bronze/structure_Gastos-DF-2024-02.json",
       "layer": "bronze",
       "size_bytes": 62199,
-      "modified_at": "2026-09-17T05:18:56.260823"
+      "modified_at": "2026-09-17T06:25:01.995945"
     },
     {
       "file_path": "data/bronze/issues_2026-2-GlossarioUnB.json",
       "layer": "bronze",
       "size_bytes": 66115,
-      "modified_at": "2026-09-17T05:18:56.019819"
+      "modified_at": "2026-09-17T05:32:36.186801"
     },
     {
       "file_path": "data/bronze/prs_2023-2-Squad02-Desmatazonia.json",
       "layer": "bronze",
       "size_bytes": 135065,
-      "modified_at": "2026-09-17T05:18:56.119821"
+      "modified_at": "2026-09-17T05:21:07.231607"
     },
     {
       "file_path": "data/bronze/commits_2024-1-Squad-10.json",
       "layer": "bronze",
       "size_bytes": 139953,
-      "modified_at": "2026-09-17T05:18:55.844815"
+      "modified_at": "2026-09-17T05:44:46.106920"
     },
     {
       "file_path": "data/bronze/structure_2025-1-NoFluxoUNB.json",
       "layer": "bronze",
       "size_bytes": 344740,
-      "modified_at": "2026-09-17T05:18:56.250823"
+      "modified_at": "2026-09-17T06:25:04.889908"
     },
     {
       "file_path": "data/bronze/issues_2026-1-P.R.I.S.M.A.json",
       "layer": "bronze",
       "size_bytes": 446567,
-      "modified_at": "2026-09-17T05:18:56.007818"
+      "modified_at": "2026-09-17T05:32:02.235865"
     },
     {
       "file_path": "data/bronze/repo_2026-2-AgendaUnB.json",
       "layer": "bronze",
       "size_bytes": 7165,
-      "modified_at": "2026-09-17T05:18:56.185822"
+      "modified_at": "2026-09-17T05:21:03.261459"
     },
     {
       "file_path": "data/bronze/repo_2026-2-VeritasIA.json",
       "layer": "bronze",
       "size_bytes": 7314,
-      "modified_at": "2026-09-17T05:18:56.185822"
+      "modified_at": "2026-09-17T05:20:56.002607"
     },
     {
       "file_path": "data/bronze/repo_2025-2-Integralizei_UnB.json",
       "layer": "bronze",
       "size_bytes": 7736,
-      "modified_at": "2026-09-17T05:18:56.184822"
+      "modified_at": "2026-09-17T05:20:50.316200"
     },
     {
       "file_path": "data/bronze/issue_events_2025-2-Squad12.json",
       "layer": "bronze",
       "size_bytes": 19384,
-      "modified_at": "2026-09-17T05:18:55.904816"
+      "modified_at": "2026-09-17T05:29:57.376419"
     },
     {
       "file_path": "data/bronze/structure_2024-1-EducaMinas-backend.json",
       "layer": "bronze",
       "size_bytes": 25184,
-      "modified_at": "2026-09-17T05:18:56.224823"
+      "modified_at": "2026-09-17T06:24:49.866679"
     },
     {
       "file_path": "data/bronze/issues_2026-2-Followw.json",
       "layer": "bronze",
       "size_bytes": 124919,
-      "modified_at": "2026-09-17T05:18:56.018819"
+      "modified_at": "2026-09-17T05:32:24.239709"
     },
     {
       "file_path": "data/bronze/commits_2026-2-VeritasIA.json",
       "layer": "bronze",
       "size_bytes": 215422,
-      "modified_at": "2026-09-17T05:18:55.861816"
+      "modified_at": "2026-09-17T06:18:13.663204"
     },
     {
       "file_path": "data/bronze/repo_teste-ru.json",
       "layer": "bronze",
       "size_bytes": 6703,
-      "modified_at": "2026-09-17T05:18:56.186822"
+      "modified_at": "2026-09-17T05:21:05.141287"
     },
     {
       "file_path": "data/bronze/prs_2023-2-Squad10.json",
       "layer": "bronze",
       "size_bytes": 80951,
-      "modified_at": "2026-09-17T05:18:56.120821"
+      "modified_at": "2026-09-17T05:22:11.542787"
     },
     {
       "file_path": "data/bronze/issues_2025-2-Portal-dos-Professores.json",
       "layer": "bronze",
       "size_bytes": 977691,
-      "modified_at": "2026-09-17T05:18:55.998818"
+      "modified_at": "2026-09-17T05:28:01.200998"
     },
     {
       "file_path": "data/bronze/repo_2024-2-SuaFinanca.json",
       "layer": "bronze",
       "size_bytes": 7568,
-      "modified_at": "2026-09-17T05:18:56.183822"
+      "modified_at": "2026-09-17T05:20:44.064556"
     },
     {
       "file_path": "data/bronze/prs_2025.1-RelatoriosInteligentesBCB.json",
       "layer": "bronze",
       "size_bytes": 134496,
-      "modified_at": "2026-09-17T05:18:56.143821"
+      "modified_at": "2026-09-17T05:26:49.155984"
     },
     {
       "file_path": "data/bronze/structure_2026-2-Followw.json",
       "layer": "bronze",
       "size_bytes": 10820,
-      "modified_at": "2026-09-17T05:18:56.258823"
+      "modified_at": "2026-09-17T06:25:38.606483"
     },
     {
       "file_path": "data/bronze/prs_Sonorus-2025.1.json",
       "layer": "bronze",
       "size_bytes": 360659,
-      "modified_at": "2026-09-17T05:18:56.160821"
+      "modified_at": "2026-09-17T05:26:41.954093"
     },
     {
       "file_path": "data/bronze/issue_events_2023.2_Licitaiba.json",
       "layer": "bronze",
       "size_bytes": 11251,
-      "modified_at": "2026-09-17T05:18:55.893816"
+      "modified_at": "2026-09-17T05:22:42.475011"
     },
     {
       "file_path": "data/bronze/issue_events_2026-1-P.R.I.S.M.A.json",
       "layer": "bronze",
       "size_bytes": 183468,
-      "modified_at": "2026-09-17T05:18:55.907817"
+      "modified_at": "2026-09-17T05:32:08.286786"
     },
     {
       "file_path": "data/bronze/structure_2024-2-SuaFinanca.json",
       "layer": "bronze",
       "size_bytes": 6616126,
-      "modified_at": "2026-09-17T05:18:56.247823"
+      "modified_at": "2026-09-17T06:25:01.238955"
     },
     {
       "file_path": "data/bronze/structure_2025-2-Lumina.json",
       "layer": "bronze",
       "size_bytes": 72613,
-      "modified_at": "2026-09-17T05:18:56.251823"
+      "modified_at": "2026-09-17T06:25:18.570732"
     },
     {
       "file_path": "data/bronze/repo_2024-2-Lumina.json",
       "layer": "bronze",
       "size_bytes": 7403,
-      "modified_at": "2026-09-17T05:18:56.183822"
+      "modified_at": "2026-09-17T05:20:41.892139"
     },
     {
       "file_path": "data/bronze/prs_2024-1-forUnB.json",
       "layer": "bronze",
       "size_bytes": 1156574,
-      "modified_at": "2026-09-17T05:18:56.128821"
+      "modified_at": "2026-09-17T05:22:47.041299"
     },
     {
       "file_path": "data/bronze/commits_2023-2-Squad02-Desmatazonia.json",
       "layer": "bronze",
       "size_bytes": 93452,
-      "modified_at": "2026-09-17T05:18:55.837815"
+      "modified_at": "2026-09-17T05:32:53.707187"
     },
     {
       "file_path": "data/bronze/issue_events_portfolio-MDS.json",
       "layer": "bronze",
       "size_bytes": 616,
-      "modified_at": "2026-09-17T05:18:55.940817"
+      "modified_at": "2026-09-17T05:22:44.265155"
     },
     {
       "file_path": "data/bronze/commits_DFemObras.json",
       "layer": "bronze",
       "size_bytes": 277543,
-      "modified_at": "2026-09-17T05:18:55.862816"
+      "modified_at": "2026-09-17T05:47:35.811903"
     },
     {
       "file_path": "data/bronze/issues_2023-2-Squad03-LicitAL.json",
       "layer": "bronze",
       "size_bytes": 635194,
-      "modified_at": "2026-09-17T05:18:55.947817"
+      "modified_at": "2026-09-17T05:21:12.101559"
     },
     {
       "file_path": "data/bronze/issue_events_mapadaacessibilidade.json",
       "layer": "bronze",
       "size_bytes": 392750,
-      "modified_at": "2026-09-17T05:18:55.940817"
+      "modified_at": "2026-09-17T05:26:22.886378"
     },
     {
       "file_path": "data/bronze/members_detailed.json",
       "layer": "bronze",
-      "size_bytes": 254694,
-      "modified_at": "2026-09-17T05:18:56.118821"
+      "size_bytes": 268218,
+      "modified_at": "2026-09-17T06:24:19.631503"
     },
     {
       "file_path": "data/bronze/prs_2025-2-OncoMap.json",
       "layer": "bronze",
       "size_bytes": 450006,
-      "modified_at": "2026-09-17T05:18:56.140821"
+      "modified_at": "2026-09-17T05:28:29.080616"
     },
     {
       "file_path": "data/bronze/repositories_filtered.json",
       "layer": "bronze",
       "size_bytes": 612735,
-      "modified_at": "2026-09-17T05:18:56.188822"
+      "modified_at": "2026-09-17T05:20:28.903158"
     },
     {
       "file_path": "data/bronze/repo_exemplogitpage.json",
       "layer": "bronze",
       "size_bytes": 7121,
-      "modified_at": "2026-09-17T05:18:56.186822"
+      "modified_at": "2026-09-17T05:20:53.518257"
     },
     {
       "file_path": "data/bronze/prs_2026-1-SafeStreets.json",
       "layer": "bronze",
       "size_bytes": 721479,
-      "modified_at": "2026-09-17T05:18:56.149821"
+      "modified_at": "2026-09-17T05:30:00.885372"
     },
     {
       "file_path": "data/bronze/prs_2025-2-Squad12.json",
       "layer": "bronze",
       "size_bytes": 21234,
-      "modified_at": "2026-09-17T05:18:56.142821"
+      "modified_at": "2026-09-17T05:29:56.666683"
     },
     {
       "file_path": "data/bronze/repo_2026.2-UnB_Core.json",
       "layer": "bronze",
       "size_bytes": 7080,
-      "modified_at": "2026-09-17T05:18:56.185822"
+      "modified_at": "2026-09-17T05:21:00.680720"
     },
     {
       "file_path": "data/bronze/issues_2025-1-RelatAI.json",
       "layer": "bronze",
       "size_bytes": 153883,
-      "modified_at": "2026-09-17T05:18:55.988818"
+      "modified_at": "2026-09-17T05:27:26.938461"
     },
     {
       "file_path": "data/bronze/structure_2024-1-Squad-10.json",
       "layer": "bronze",
       "size_bytes": 24193,
-      "modified_at": "2026-09-17T05:18:56.234823"
+      "modified_at": "2026-09-17T06:24:47.983126"
     },
     {
       "file_path": "data/bronze/repo_2024-1-Gastos-DF-Doc-Squad12.json",
       "layer": "bronze",
       "size_bytes": 7856,
-      "modified_at": "2026-09-17T05:18:56.180822"
+      "modified_at": "2026-09-17T05:20:40.048075"
     },
     {
       "file_path": "data/bronze/prs_2023-2-Squad05-TesouroMineiro.json",
       "layer": "bronze",
       "size_bytes": 252266,
-      "modified_at": "2026-09-17T05:18:56.120821"
+      "modified_at": "2026-09-17T05:21:28.966357"
     },
     {
       "file_path": "data/bronze/issues_squad03-r2.json",
       "layer": "bronze",
       "size_bytes": 14063,
-      "modified_at": "2026-09-17T05:18:56.117821"
+      "modified_at": "2026-09-17T05:22:39.434750"
     },
     {
       "file_path": "data/bronze/commits_2023.2_Licitaiba.json",
       "layer": "bronze",
       "size_bytes": 37256,
-      "modified_at": "2026-09-17T05:18:55.841815"
+      "modified_at": "2026-09-17T05:36:54.734132"
     },
     {
       "file_path": "data/bronze/issues_2024-2-Datazonia.json",
       "layer": "bronze",
       "size_bytes": 218989,
-      "modified_at": "2026-09-17T05:18:55.976818"
+      "modified_at": "2026-09-17T05:25:42.875916"
     },
     {
       "file_path": "data/bronze/issues_teste-ru.json",
       "layer": "bronze",
       "size_bytes": 3822,
-      "modified_at": "2026-09-17T05:18:56.117821"
+      "modified_at": "2026-09-17T05:32:39.268893"
     },
     {
       "file_path": "data/bronze/prs_2025-2-SeLiga.json",
       "layer": "bronze",
       "size_bytes": 186440,
-      "modified_at": "2026-09-17T05:18:56.141821"
+      "modified_at": "2026-09-17T05:29:18.091947"
     },
     {
       "file_path": "data/bronze/prs_DFemObras.json",
       "layer": "bronze",
       "size_bytes": 236024,
-      "modified_at": "2026-09-17T05:18:56.155821"
+      "modified_at": "2026-09-17T05:25:28.045113"
     },
     {
       "file_path": "data/bronze/structure_2024-1-MinasDeCultura.json",
       "layer": "bronze",
       "size_bytes": 81985,
-      "modified_at": "2026-09-17T05:18:56.234823"
+      "modified_at": "2026-09-17T06:24:45.540158"
     },
     {
       "file_path": "data/bronze/commits_Gastos-DF-Squad12.json",
       "layer": "bronze",
       "size_bytes": 99477,
-      "modified_at": "2026-09-17T05:18:55.863816"
+      "modified_at": "2026-09-17T05:45:02.983729"
     },
     {
       "file_path": "data/bronze/issue_events_2025-1-NoFluxoUNB.json",
       "layer": "bronze",
       "size_bytes": 306207,
-      "modified_at": "2026-09-17T05:18:55.901816"
+      "modified_at": "2026-09-17T05:26:41.046106"
     },
     {
       "file_path": "data/bronze/commits_2024-2-Datazonia.json",
       "layer": "bronze",
       "size_bytes": 59717,
-      "modified_at": "2026-09-17T05:18:55.847816"
+      "modified_at": "2026-09-17T05:48:07.543427"
     },
     {
       "file_path": "data/bronze/structure_codigoruim.json",
       "layer": "bronze",
       "size_bytes": 3548,
-      "modified_at": "2026-09-17T05:18:56.270823"
+      "modified_at": "2026-09-17T06:25:34.872530"
     },
     {
       "file_path": "data/bronze/prs_2025-2-GuiaDev.json",
       "layer": "bronze",
       "size_bytes": 300717,
-      "modified_at": "2026-09-17T05:18:56.136821"
+      "modified_at": "2026-09-17T05:29:47.775548"
     },
     {
       "file_path": "data/bronze/structure_2025_1-Jakebot.json",
       "layer": "bronze",
       "size_bytes": 26417,
-      "modified_at": "2026-09-17T05:18:56.256823"
+      "modified_at": "2026-09-17T06:25:10.934739"
     },
     {
       "file_path": "data/bronze/repo_codigoruim.json",
       "layer": "bronze",
       "size_bytes": 6797,
-      "modified_at": "2026-09-17T05:18:56.186822"
+      "modified_at": "2026-09-17T05:21:00.295774"
     },
     {
       "file_path": "data/bronze/issue_events_2024-2-Lumina.json",
       "layer": "bronze",
       "size_bytes": 83832,
-      "modified_at": "2026-09-17T05:18:55.899817"
+      "modified_at": "2026-09-17T05:25:18.367234"
     },
     {
       "file_path": "data/bronze/commits_2026.1-ContraDito.json",
       "layer": "bronze",
       "size_bytes": 183063,
-      "modified_at": "2026-09-17T05:18:55.861816"
+      "modified_at": "2026-09-17T06:19:44.545055"
     },
     {
       "file_path": "data/bronze/issues_DFemObras-2025.1.json",
       "layer": "bronze",
       "size_bytes": 658117,
-      "modified_at": "2026-09-17T05:18:56.024819"
+      "modified_at": "2026-09-17T05:27:28.591439"
     },
     {
       "file_path": "data/bronze/structure_2024-2-Lumina.json",
       "layer": "bronze",
       "size_bytes": 57596,
-      "modified_at": "2026-09-17T05:18:56.236823"
+      "modified_at": "2026-09-17T06:24:55.383030"
     },
     {
       "file_path": "data/bronze/registry.json",
       "layer": "bronze",
       "size_bytes": 28811,
-      "modified_at": "2026-09-17T05:18:56.179822"
+      "modified_at": "2026-09-17T06:25:45.206075"
     },
     {
       "file_path": "data/bronze/issues_2023-2-Squad02-Desmatazonia.json",
       "layer": "bronze",
       "size_bytes": 558102,
-      "modified_at": "2026-09-17T05:18:55.946817"
+      "modified_at": "2026-09-17T05:21:07.229607"
     },
     {
       "file_path": "data/bronze/prs_squad03-r2.json",
       "layer": "bronze",
       "size_bytes": 8249,
-      "modified_at": "2026-09-17T05:18:56.178822"
+      "modified_at": "2026-09-17T05:22:39.435043"
     },
     {
       "file_path": "data/bronze/issues_2023-2-Squad09-Gotinha.json",
       "layer": "bronze",
       "size_bytes": 783083,
-      "modified_at": "2026-09-17T05:18:55.955817"
+      "modified_at": "2026-09-17T05:22:04.372894"
     },
     {
       "file_path": "data/bronze/prs_2026-2-Cerradinho-API.json",
       "layer": "bronze",
       "size_bytes": 305518,
-      "modified_at": "2026-09-17T05:18:56.152821"
+      "modified_at": "2026-09-17T05:32:16.888673"
     },
     {
       "file_path": "data/bronze/issues_2024-1-Squad02-CulturaTransparente.json",
       "layer": "bronze",
       "size_bytes": 777409,
-      "modified_at": "2026-09-17T05:18:55.968818"
+      "modified_at": "2026-09-17T05:23:05.060067"
     },
     {
       "file_path": "data/bronze/repo_VIDAProject.json",
       "layer": "bronze",
       "size_bytes": 7097,
-      "modified_at": "2026-09-17T05:18:56.186822"
+      "modified_at": "2026-09-17T05:20:48.216857"
     },
     {
       "file_path": "data/bronze/structure_DFemObras.json",
       "layer": "bronze",
       "size_bytes": 88966,
-      "modified_at": "2026-09-17T05:18:56.259823"
+      "modified_at": "2026-09-17T06:24:57.050009"
     },
     {
       "file_path": "data/bronze/issue_events_2025.1-RelatoriosInteligentesBCB.json",
       "layer": "bronze",
       "size_bytes": 124682,
-      "modified_at": "2026-09-17T05:18:55.905817"
+      "modified_at": "2026-09-17T05:26:52.946929"
     },
     {
       "file_path": "data/bronze/repo_2023.2_Licitaiba.json",
       "layer": "bronze",
       "size_bytes": 7464,
-      "modified_at": "2026-09-17T05:18:56.180822"
+      "modified_at": "2026-09-17T05:20:34.494517"
     },
     {
       "file_path": "data/bronze/repo_2024-2-Agio.json",
       "layer": "bronze",
       "size_bytes": 7233,
-      "modified_at": "2026-09-17T05:18:56.183822"
+      "modified_at": "2026-09-17T05:20:41.511789"
     },
     {
       "file_path": "data/bronze/issue_events_2025-1-Eletta.json",
       "layer": "bronze",
       "size_bytes": 458539,
-      "modified_at": "2026-09-17T05:18:55.900816"
+      "modified_at": "2026-09-17T05:27:26.382468"
     },
     {
       "file_path": "data/bronze/issues_2026-1-Squad4-Dito_e_Feito.json",
       "layer": "bronze",
       "size_bytes": 621551,
-      "modified_at": "2026-09-17T05:18:56.016819"
+      "modified_at": "2026-09-17T05:30:29.700992"
     },
     {
       "file_path": "data/bronze/prs_2024-1-squad04.json",
       "layer": "bronze",
       "size_bytes": 426324,
-      "modified_at": "2026-09-17T05:18:56.128821"
+      "modified_at": "2026-09-17T05:23:26.189814"
     },
     {
       "file_path": "data/bronze/repo_2024-1-MinasDeCultura.json",
       "layer": "bronze",
       "size_bytes": 7755,
-      "modified_at": "2026-09-17T05:18:56.180822"
+      "modified_at": "2026-09-17T05:20:37.797179"
     },
     {
       "file_path": "data/bronze/repo_2025_1-Jakebot.json",
       "layer": "bronze",
       "size_bytes": 7242,
-      "modified_at": "2026-09-17T05:18:56.184822"
+      "modified_at": "2026-09-17T05:20:48.590116"
     },
     {
       "file_path": "data/bronze/structure_2026-2-Cerradinho-API.json",
       "layer": "bronze",
       "size_bytes": 14732,
-      "modified_at": "2026-09-17T05:18:56.258823"
+      "modified_at": "2026-09-17T06:25:37.088796"
     },
     {
       "file_path": "data/bronze/repo_2025-1-Eletta.json",
       "layer": "bronze",
       "size_bytes": 7199,
-      "modified_at": "2026-09-17T05:18:56.183822"
+      "modified_at": "2026-09-17T05:20:47.073934"
     },
     {
       "file_path": "data/bronze/commits_2023.2_Gotinha.json",
       "layer": "bronze",
       "size_bytes": 20712,
-      "modified_at": "2026-09-17T05:18:55.841815"
+      "modified_at": "2026-09-17T05:36:56.936103"
     },
     {
       "file_path": "data/bronze/structure_Squad09-UnBHUB.json",
       "layer": "bronze",
       "size_bytes": 71155,
-      "modified_at": "2026-09-17T05:18:56.270823"
+      "modified_at": "2026-09-17T06:24:47.186136"
     },
     {
       "file_path": "data/bronze/prs_2025-2-Integralizei_UnB.json",
       "layer": "bronze",
       "size_bytes": 878907,
-      "modified_at": "2026-09-17T05:18:56.137821"
+      "modified_at": "2026-09-17T05:28:20.663732"
     },
     {
       "file_path": "data/bronze/issues_2026-2-Cerradinho-API.json",
       "layer": "bronze",
       "size_bytes": 492094,
-      "modified_at": "2026-09-17T05:18:56.018819"
+      "modified_at": "2026-09-17T05:32:16.884673"
     },
     {
       "file_path": "data/bronze/issue_events_2023-2-Squad02-Desmatazonia.json",
       "layer": "bronze",
       "size_bytes": 142499,
-      "modified_at": "2026-09-17T05:18:55.889816"
+      "modified_at": "2026-09-17T05:21:11.402566"
     },
     {
       "file_path": "data/bronze/repo_2026-2-GlossarioUnB.json",
       "layer": "bronze",
       "size_bytes": 7250,
-      "modified_at": "2026-09-17T05:18:56.185822"
+      "modified_at": "2026-09-17T05:21:04.027258"
     },
     {
       "file_path": "data/bronze/members_basic.json",
       "layer": "bronze",
-      "size_bytes": 144918,
-      "modified_at": "2026-09-17T05:18:56.117821"
+      "size_bytes": 158442,
+      "modified_at": "2026-09-17T06:21:55.476369"
     },
     {
       "file_path": "data/bronze/repo_2024-2-Datazonia.json",
       "layer": "bronze",
       "size_bytes": 7438,
-      "modified_at": "2026-09-17T05:18:56.183822"
+      "modified_at": "2026-09-17T05:20:43.707100"
     },
     {
       "file_path": "data/bronze/issues_2024-1-Squad-10.json",
       "layer": "bronze",
       "size_bytes": 606342,
-      "modified_at": "2026-09-17T05:18:55.967818"
+      "modified_at": "2026-09-17T05:24:17.791109"
     },
     {
       "file_path": "data/bronze/repo_2023-2-Squad01.json",
       "layer": "bronze",
       "size_bytes": 7243,
-      "modified_at": "2026-09-17T05:18:56.179822"
+      "modified_at": "2026-09-17T05:20:29.277655"
     },
     {
       "file_path": "data/bronze/commits_2024-1-EducaMinas-backend.json",
       "layer": "bronze",
       "size_bytes": 81105,
-      "modified_at": "2026-09-17T05:18:55.841815"
+      "modified_at": "2026-09-17T05:45:10.585662"
     },
     {
       "file_path": "data/bronze/issues_Projeto-P.I.T.E.R.json",
       "layer": "bronze",
       "size_bytes": 958538,
-      "modified_at": "2026-09-17T05:18:56.032819"
+      "modified_at": "2026-09-17T05:27:53.034110"
     },
     {
       "file_path": "data/bronze/structure_2025-2-Portal-dos-Professores.json",
       "layer": "bronze",
       "size_bytes": 79984,
-      "modified_at": "2026-09-17T05:18:56.252823"
+      "modified_at": "2026-09-17T06:25:13.364799"
     },
     {
       "file_path": "data/bronze/structure_Gastos-DF-Squad12.json",
       "layer": "bronze",
       "size_bytes": 1143516,
-      "modified_at": "2026-09-17T05:18:56.268823"
+      "modified_at": "2026-09-17T06:24:49.137111"
     },
     {
       "file_path": "data/bronze/commits_2023-2-Squad03-LicitAL.json",
       "layer": "bronze",
       "size_bytes": 32999,
-      "modified_at": "2026-09-17T05:18:55.837815"
+      "modified_at": "2026-09-17T05:33:29.209763"
     },
     {
       "file_path": "data/bronze/prs_2026.2-UnB_Core.json",
       "layer": "bronze",
       "size_bytes": 26086,
-      "modified_at": "2026-09-17T05:18:56.154821"
+      "modified_at": "2026-09-17T05:32:10.145468"
     },
     {
       "file_path": "data/bronze/commits_2026-1-ProtectKids.json",
       "layer": "bronze",
       "size_bytes": 139990,
-      "modified_at": "2026-09-17T05:18:55.859816"
+      "modified_at": "2026-09-17T06:20:42.558322"
     },
     {
       "file_path": "data/bronze/issue_events_2026-2-Cerradinho-API.json",
       "layer": "bronze",
       "size_bytes": 167254,
-      "modified_at": "2026-09-17T05:18:55.911817"
+      "modified_at": "2026-09-17T05:32:22.414599"
     },
     {
       "file_path": "data/bronze/structure_teste.json",
       "layer": "bronze",
       "size_bytes": 1942,
-      "modified_at": "2026-09-17T05:18:56.273823"
+      "modified_at": "2026-09-17T06:24:36.549275"
     },
     {
       "file_path": "data/bronze/structure_G2-2026-2.json",
       "layer": "bronze",
       "size_bytes": 8976,
-      "modified_at": "2026-09-17T05:18:56.260823"
+      "modified_at": "2026-09-17T06:25:36.316097"
     },
     {
       "file_path": "data/bronze/commits_2025-2-Lumina.json",
       "layer": "bronze",
       "size_bytes": 218571,
-      "modified_at": "2026-09-17T05:18:55.852815"
+      "modified_at": "2026-09-17T06:16:30.528652"
     },
     {
       "file_path": "data/bronze/repo_2023.2-LicitaX.json",
       "layer": "bronze",
       "size_bytes": 7258,
-      "modified_at": "2026-09-17T05:18:56.180822"
+      "modified_at": "2026-09-17T05:20:34.078066"
     },
     {
       "file_path": "data/bronze/repo_2026-2-Cerradinho-API.json",
       "layer": "bronze",
       "size_bytes": 7342,
-      "modified_at": "2026-09-17T05:18:56.185822"
+      "modified_at": "2026-09-17T05:21:01.527154"
     },
     {
       "file_path": "data/bronze/issue_events_2024-2-SuaFinanca.json",
       "layer": "bronze",
       "size_bytes": 291724,
-      "modified_at": "2026-09-17T05:18:55.899817"
+      "modified_at": "2026-09-17T05:25:55.475751"
     },
     {
       "file_path": "data/bronze/repo_2026-2-Bandejao-UnB.json",
       "layer": "bronze",
       "size_bytes": 7251,
-      "modified_at": "2026-09-17T05:18:56.185822"
+      "modified_at": "2026-09-17T05:21:02.590493"
     },
     {
       "file_path": "data/bronze/issue_events_2025-2-Portal-dos-Professores.json",
       "layer": "bronze",
       "size_bytes": 275964,
-      "modified_at": "2026-09-17T05:18:55.904816"
+      "modified_at": "2026-09-17T05:28:09.812879"
     },
     {
       "file_path": "data/bronze/structure_Fique-de-Olho.json",
       "layer": "bronze",
       "size_bytes": 25875,
-      "modified_at": "2026-09-17T05:18:56.260823"
+      "modified_at": "2026-09-17T06:25:37.904492"
     },
     {
       "file_path": "data/bronze/issues_2025-2-InfoSchool.json",
       "layer": "bronze",
       "size_bytes": 699930,
-      "modified_at": "2026-09-17T05:18:55.993818"
+      "modified_at": "2026-09-17T05:28:37.768496"
     },
     {
       "file_path": "data/bronze/repo_2025-2-OncoMap.json",
       "layer": "bronze",
       "size_bytes": 7490,
-      "modified_at": "2026-09-17T05:18:56.184822"
+      "modified_at": "2026-09-17T05:20:50.657919"
     },
     {
       "file_path": "data/bronze/structure_2023.2-LicitaX.json",
       "layer": "bronze",
       "size_bytes": 13905,
-      "modified_at": "2026-09-17T05:18:56.217823"
+      "modified_at": "2026-09-17T06:24:37.910270"
     },
     {
       "file_path": "data/bronze/repo_Mds-ArenaPesadelo.json",
       "layer": "bronze",
       "size_bytes": 7417,
-      "modified_at": "2026-09-17T05:18:56.186822"
+      "modified_at": "2026-09-17T05:20:37.424439"
     },
     {
       "file_path": "data/bronze/issues_2025-2-SeLiga.json",
       "layer": "bronze",
       "size_bytes": 650701,
-      "modified_at": "2026-09-17T05:18:55.998818"
+      "modified_at": "2026-09-17T05:29:18.089947"
     },
     {
       "file_path": "data/bronze/issue_events_2026-1-Squad07.json",
       "layer": "bronze",
       "size_bytes": 388919,
-      "modified_at": "2026-09-17T05:18:55.909817"
+      "modified_at": "2026-09-17T05:30:54.098724"
     },
     {
       "file_path": "data/bronze/commits_2025-2-OncoMap.json",
       "layer": "bronze",
       "size_bytes": 196743,
-      "modified_at": "2026-09-17T05:18:55.853816"
+      "modified_at": "2026-09-17T06:15:17.162614"
     },
     {
       "file_path": "data/bronze/issues_2024-2-AcheiUnB.json",
       "layer": "bronze",
       "size_bytes": 1741933,
-      "modified_at": "2026-09-17T05:18:55.975818"
+      "modified_at": "2026-09-17T05:24:44.862658"
     },
     {
       "file_path": "data/bronze/issues_2023-2-JuizVirtual.json",
       "layer": "bronze",
       "size_bytes": 528071,
-      "modified_at": "2026-09-17T05:18:55.942817"
+      "modified_at": "2026-09-17T05:21:38.383240"
     },
     {
       "file_path": "data/bronze/issues_2024-1-forUnB.json",
       "layer": "bronze",
       "size_bytes": 1363442,
-      "modified_at": "2026-09-17T05:18:55.970818"
+      "modified_at": "2026-09-17T05:22:47.024299"
     },
     {
       "file_path": "data/bronze/structure_2024-2-Squad01.json",
       "layer": "bronze",
       "size_bytes": 74282,
-      "modified_at": "2026-09-17T05:18:56.236823"
+      "modified_at": "2026-09-17T06:24:52.148072"
     },
     {
       "file_path": "data/bronze/repo_2026-1-LegisKids.json",
       "layer": "bronze",
       "size_bytes": 7260,
-      "modified_at": "2026-09-17T05:18:56.184822"
+      "modified_at": "2026-09-17T05:20:57.564577"
     },
     {
       "file_path": "data/bronze/issue_events_Avalia.json",
       "layer": "bronze",
       "size_bytes": 6221,
-      "modified_at": "2026-09-17T05:18:55.912817"
+      "modified_at": "2026-09-17T05:29:58.851399"
     },
     {
       "file_path": "data/bronze/issues_2024-2-SuaFinanca.json",
       "layer": "bronze",
       "size_bytes": 738742,
-      "modified_at": "2026-09-17T05:18:55.979818"
+      "modified_at": "2026-09-17T05:25:45.873876"
     },
     {
       "file_path": "data/bronze/issue_events_2026-1-Mapa_L.I.L.A.S.json",
       "layer": "bronze",
       "size_bytes": 88951,
-      "modified_at": "2026-09-17T05:18:55.907817"
+      "modified_at": "2026-09-17T05:30:22.736081"
     },
     {
       "file_path": "data/bronze/structure_2026-2-VeritasIA.json",
       "layer": "bronze",
       "size_bytes": 57028,
-      "modified_at": "2026-09-17T05:18:56.259823"
+      "modified_at": "2026-09-17T06:25:26.223640"
     },
     {
       "file_path": "data/bronze/commits_2025-2-Squad-01.json",
       "layer": "bronze",
-      "size_bytes": 798735,
-      "modified_at": "2026-09-17T05:18:55.855816"
+      "size_bytes": 798718,
+      "modified_at": "2026-09-17T06:14:07.234493"
     },
     {
       "file_path": "data/bronze/commits_2026-1-SafeStreets.json",
       "layer": "bronze",
       "size_bytes": 230037,
-      "modified_at": "2026-09-17T05:18:55.859816"
+      "modified_at": "2026-09-17T06:17:38.813573"
     },
     {
       "file_path": "data/bronze/structure_VIDAProject.json",
       "layer": "bronze",
       "size_bytes": 33817,
-      "modified_at": "2026-09-17T05:18:56.270823"
+      "modified_at": "2026-09-17T06:25:10.177120"
     },
     {
       "file_path": "data/bronze/commits_2026-1-P.R.I.S.M.A.json",
       "layer": "bronze",
       "size_bytes": 88532,
-      "modified_at": "2026-09-17T05:18:55.858816"
+      "modified_at": "2026-09-17T06:20:53.086187"
     },
     {
       "file_path": "data/bronze/commits_2023-2-Squad09-Gotinha.json",
       "layer": "bronze",
       "size_bytes": 111057,
-      "modified_at": "2026-09-17T05:18:55.839815"
+      "modified_at": "2026-09-17T05:35:59.921833"
     },
     {
       "file_path": "data/bronze/prs_Gastos-DF-2024-02.json",
       "layer": "bronze",
       "size_bytes": 885201,
-      "modified_at": "2026-09-17T05:18:56.156821"
+      "modified_at": "2026-09-17T05:25:57.257728"
     },
     {
       "file_path": "data/bronze/commits_2023.2_DeOlhoRS.json",
       "layer": "bronze",
-      "size_bytes": 120485,
-      "modified_at": "2026-09-17T05:18:55.841815"
+      "size_bytes": 120446,
+      "modified_at": "2026-09-17T05:35:47.168999"
     },
     {
       "file_path": "data/bronze/commits_2025-2-Portal-dos-Professores.json",
       "layer": "bronze",
       "size_bytes": 227660,
-      "modified_at": "2026-09-17T05:18:55.854815"
+      "modified_at": "2026-09-17T06:14:32.353194"
     },
     {
       "file_path": "data/bronze/structure_2023.2_Licitaiba.json",
       "layer": "bronze",
       "size_bytes": 12259,
-      "modified_at": "2026-09-17T05:18:56.224823"
+      "modified_at": "2026-09-17T06:24:38.665938"
     },
     {
       "file_path": "data/bronze/prs_2026-2-Bandejao-UnB.json",
       "layer": "bronze",
       "size_bytes": 16879,
-      "modified_at": "2026-09-17T05:18:56.151821"
+      "modified_at": "2026-09-17T05:32:25.826924"
     },
     {
       "file_path": "data/bronze/structure_2024-2-Datazonia.json",
       "layer": "bronze",
       "size_bytes": 15809,
-      "modified_at": "2026-09-17T05:18:56.235823"
+      "modified_at": "2026-09-17T06:24:59.331852"
     },
     {
       "file_path": "data/bronze/structure_2023-2-Squad09-Gotinha.json",
       "layer": "bronze",
       "size_bytes": 62577,
-      "modified_at": "2026-09-17T05:18:56.214822"
+      "modified_at": "2026-09-17T06:24:33.637029"
     },
     {
       "file_path": "data/bronze/structure_2024-1-EducaMinas-frontend.json",
       "layer": "bronze",
       "size_bytes": 52137,
-      "modified_at": "2026-09-17T05:18:56.225823"
+      "modified_at": "2026-09-17T06:24:44.049177"
     },
     {
       "file_path": "data/bronze/prs_2024-2-SuaFinanca.json",
       "layer": "bronze",
       "size_bytes": 655705,
-      "modified_at": "2026-09-17T05:18:56.132821"
+      "modified_at": "2026-09-17T05:25:45.883876"
     },
     {
       "file_path": "data/bronze/issue_events_Gastos-DF-2024-02.json",
       "layer": "bronze",
       "size_bytes": 336736,
-      "modified_at": "2026-09-17T05:18:55.914817"
+      "modified_at": "2026-09-17T05:26:08.498580"
     },
     {
       "file_path": "data/bronze/structure_Avalia.json",
       "layer": "bronze",
       "size_bytes": 2803,
-      "modified_at": "2026-09-17T05:18:56.259823"
+      "modified_at": "2026-09-17T06:25:23.857112"
     },
     {
       "file_path": "data/bronze/structure_2026-02-TambureteiUnB.json",
       "layer": "bronze",
       "size_bytes": 7343,
-      "modified_at": "2026-09-17T05:18:56.256823"
+      "modified_at": "2026-09-17T06:25:41.653588"
     },
     {
       "file_path": "data/bronze/repo_2023-2-Squad05-TesouroMineiro.json",
       "layer": "bronze",
       "size_bytes": 7941,
-      "modified_at": "2026-09-17T05:18:56.179822"
+      "modified_at": "2026-09-17T05:20:30.757907"
     },
     {
       "file_path": "data/bronze/prs_Gastos-DF-Squad12.json",
       "layer": "bronze",
       "size_bytes": 219494,
-      "modified_at": "2026-09-17T05:18:56.156821"
+      "modified_at": "2026-09-17T05:24:24.263019"
     },
     {
       "file_path": "data/bronze/prs_2025-2-Eh_Fake.json",
       "layer": "bronze",
       "size_bytes": 223829,
-      "modified_at": "2026-09-17T05:18:56.135821"
+      "modified_at": "2026-09-17T05:28:11.486856"
     },
     {
       "file_path": "data/bronze/commits_2023-2-Squad10.json",
       "layer": "bronze",
       "size_bytes": 72731,
-      "modified_at": "2026-09-17T05:18:55.839815"
+      "modified_at": "2026-09-17T05:36:16.840614"
     },
     {
       "file_path": "data/bronze/issue_events_2025-2-SeLiga.json",
       "layer": "bronze",
       "size_bytes": 137621,
-      "modified_at": "2026-09-17T05:18:55.904816"
+      "modified_at": "2026-09-17T05:29:23.068879"
     },
     {
       "file_path": "data/bronze/prs_Projeto-P.I.T.E.R.json",
       "layer": "bronze",
       "size_bytes": 120946,
-      "modified_at": "2026-09-17T05:18:56.159821"
+      "modified_at": "2026-09-17T05:27:53.036110"
     },
     {
       "file_path": "data/bronze/repo_2025-2-Mural-UnB.json",
       "layer": "bronze",
       "size_bytes": 7495,
-      "modified_at": "2026-09-17T05:18:56.184822"
+      "modified_at": "2026-09-17T05:20:51.416220"
     },
     {
       "file_path": "data/bronze/issues_2025-2-OncoMap.json",
       "layer": "bronze",
       "size_bytes": 969772,
-      "modified_at": "2026-09-17T05:18:55.997818"
+      "modified_at": "2026-09-17T05:28:29.075616"
     },
     {
       "file_path": "data/bronze/structure_Sonorus-2025.1.json",
       "layer": "bronze",
       "size_bytes": 57035,
-      "modified_at": "2026-09-17T05:18:56.270823"
+      "modified_at": "2026-09-17T06:25:05.591120"
     },
     {
       "file_path": "data/bronze/structure_2026-02-UnDb.json",
       "layer": "bronze",
       "size_bytes": 23540,
-      "modified_at": "2026-09-17T05:18:56.256823"
+      "modified_at": "2026-09-17T06:25:40.200842"
     },
     {
       "file_path": "data/bronze/commits_2024-1-Squad02-CulturaTransparente.json",
       "layer": "bronze",
-      "size_bytes": 110016,
-      "modified_at": "2026-09-17T05:18:55.845815"
+      "size_bytes": 110268,
+      "modified_at": "2026-09-17T05:39:54.313849"
     },
     {
       "file_path": "data/bronze/prs_2026-2-AgendaUnB.json",
       "layer": "bronze",
       "size_bytes": 27230,
-      "modified_at": "2026-09-17T05:18:56.151821"
+      "modified_at": "2026-09-17T05:32:33.168457"
     },
     {
       "file_path": "data/bronze/issue_events_2025-2-Squad-01.json",
       "layer": "bronze",
       "size_bytes": 212381,
-      "modified_at": "2026-09-17T05:18:55.904816"
+      "modified_at": "2026-09-17T05:27:51.529130"
     },
     {
       "file_path": "data/bronze/issue_events_2024-2-Squad06.json",
       "layer": "bronze",
       "size_bytes": 205989,
-      "modified_at": "2026-09-17T05:18:55.899817"
+      "modified_at": "2026-09-17T05:25:27.189124"
     },
     {
       "file_path": "data/bronze/issues_all.json",
       "layer": "bronze",
       "size_bytes": 52367897,
-      "modified_at": "2026-09-17T05:18:56.116821"
+      "modified_at": "2026-09-17T05:32:41.085352"
     },
     {
       "file_path": "data/bronze/prs_2024-1-MinasDeCultura.json",
       "layer": "bronze",
       "size_bytes": 504122,
-      "modified_at": "2026-09-17T05:18:56.125821"
+      "modified_at": "2026-09-17T05:23:55.662425"
     },
     {
       "file_path": "data/bronze/prs_2026-1-Squad13.json",
       "layer": "bronze",
       "size_bytes": 1049285,
-      "modified_at": "2026-09-17T05:18:56.150821"
+      "modified_at": "2026-09-17T05:31:27.050432"
     },
     {
       "file_path": "data/bronze/repo_2024-2-Squad01.json",
       "layer": "bronze",
       "size_bytes": 7125,
-      "modified_at": "2026-09-17T05:18:56.183822"
+      "modified_at": "2026-09-17T05:20:40.420074"
     },
     {
       "file_path": "data/bronze/prs_2023-2-Squad09-Gotinha.json",
       "layer": "bronze",
       "size_bytes": 11009,
-      "modified_at": "2026-09-17T05:18:56.120821"
+      "modified_at": "2026-09-17T05:22:04.373667"
     },
     {
       "file_path": "data/bronze/structure_2023-2-Squad05-TesouroMineiro.json",
       "layer": "bronze",
       "size_bytes": 1181363,
-      "modified_at": "2026-09-17T05:18:56.214822"
+      "modified_at": "2026-09-17T06:24:29.115373"
     },
     {
       "file_path": "data/bronze/prs_2023-2-Squad03-LicitAL.json",
       "layer": "bronze",
       "size_bytes": 13318,
-      "modified_at": "2026-09-17T05:18:56.119821"
+      "modified_at": "2026-09-17T05:21:12.103458"
     },
     {
       "file_path": "data/bronze/repo_teste.json",
       "layer": "bronze",
       "size_bytes": 6562,
-      "modified_at": "2026-09-17T05:18:56.186822"
+      "modified_at": "2026-09-17T05:20:33.358220"
     },
     {
       "file_path": "data/bronze/issues_2025-2-GuiaDev.json",
       "layer": "bronze",
       "size_bytes": 636473,
-      "modified_at": "2026-09-17T05:18:55.992818"
+      "modified_at": "2026-09-17T05:29:47.772548"
     },
     {
       "file_path": "data/bronze/issues_Mds-ArenaPesadelo.json",
       "layer": "bronze",
       "size_bytes": 560282,
-      "modified_at": "2026-09-17T05:18:56.031819"
+      "modified_at": "2026-09-17T05:23:49.909507"
     },
     {
       "file_path": "data/bronze/commits_2026-02-UnDb.json",
       "layer": "bronze",
       "size_bytes": 33790,
-      "modified_at": "2026-09-17T05:18:55.856816"
+      "modified_at": "2026-09-17T06:21:03.990045"
     },
     {
       "file_path": "data/bronze/structure_MDS-MonitoraBSB.json",
       "layer": "bronze",
       "size_bytes": 38797,
-      "modified_at": "2026-09-17T05:18:56.269824"
+      "modified_at": "2026-09-17T06:24:57.839614"
     },
     {
       "file_path": "data/bronze/issues_MDS-MonitoraBSB.json",
       "layer": "bronze",
       "size_bytes": 888161,
-      "modified_at": "2026-09-17T05:18:56.031819"
+      "modified_at": "2026-09-17T05:25:33.032048"
     },
     {
       "file_path": "data/bronze/issue_events_2023.2_DeOlhoRS.json",
       "layer": "bronze",
       "size_bytes": 244542,
-      "modified_at": "2026-09-17T05:18:55.893816"
+      "modified_at": "2026-09-17T05:22:03.511907"
     },
     {
       "file_path": "data/bronze/commits_Mds-ArenaPesadelo.json",
       "layer": "bronze",
       "size_bytes": 59370,
-      "modified_at": "2026-09-17T05:18:55.864816"
+      "modified_at": "2026-09-17T05:43:40.798828"
     },
     {
       "file_path": "data/bronze/repo_2026-2-Bandejao.json",
       "layer": "bronze",
       "size_bytes": 7075,
-      "modified_at": "2026-09-17T05:18:56.185822"
+      "modified_at": "2026-09-17T05:21:04.719540"
     },
     {
       "file_path": "data/bronze/issue_events_2026-2-MonitoraUnB.json",
       "layer": "bronze",
       "size_bytes": 13848,
-      "modified_at": "2026-09-17T05:18:55.911817"
+      "modified_at": "2026-09-17T05:32:37.868096"
     },
     {
       "file_path": "data/bronze/issue_events_2025-2-Lumina.json",
       "layer": "bronze",
       "size_bytes": 564962,
-      "modified_at": "2026-09-17T05:18:55.903816"
+      "modified_at": "2026-09-17T05:29:17.136960"
     },
     {
       "file_path": "data/bronze/structure_2023-2-Squad01.json",
       "layer": "bronze",
       "size_bytes": 5049,
-      "modified_at": "2026-09-17T05:18:56.189822"
+      "modified_at": "2026-09-17T06:24:20.308150"
     },
     {
       "file_path": "data/bronze/commits_2023.2-LicitaX.json",
       "layer": "bronze",
       "size_bytes": 15051,
-      "modified_at": "2026-09-17T05:18:55.841815"
+      "modified_at": "2026-09-17T05:36:51.351175"
     },
     {
       "file_path": "data/bronze/issue_events_2024-2-AcheiUnB.json",
       "layer": "bronze",
       "size_bytes": 857803,
-      "modified_at": "2026-09-17T05:18:55.898816"
+      "modified_at": "2026-09-17T05:25:12.809301"
     },
     {
       "file_path": "data/bronze/repo_2026-02-UnDb.json",
       "layer": "bronze",
       "size_bytes": 6941,
-      "modified_at": "2026-09-17T05:18:56.184822"
+      "modified_at": "2026-09-17T05:21:02.941995"
     },
     {
       "file_path": "data/bronze/repo_2025-1-RelatAI.json",
       "layer": "bronze",
       "size_bytes": 7387,
-      "modified_at": "2026-09-17T05:18:56.183822"
+      "modified_at": "2026-09-17T05:20:47.466230"
     },
     {
       "file_path": "data/bronze/issues_2024-2-Urbanize.json",
       "layer": "bronze",
       "size_bytes": 385824,
-      "modified_at": "2026-09-17T05:18:55.980818"
+      "modified_at": "2026-09-17T05:24:37.131785"
     },
     {
       "file_path": "data/bronze/repo_2024-2-Urbanize.json",
       "layer": "bronze",
       "size_bytes": 7452,
-      "modified_at": "2026-09-17T05:18:56.183822"
+      "modified_at": "2026-09-17T05:20:40.788593"
     },
     {
       "file_path": "data/bronze/structure_DFemObras-2025.1.json",
       "layer": "bronze",
       "size_bytes": 53700,
-      "modified_at": "2026-09-17T05:18:56.259823"
+      "modified_at": "2026-09-17T06:25:09.442850"
     },
     {
       "file_path": "data/bronze/issues_2024-2-Squad01.json",
       "layer": "bronze",
       "size_bytes": 136633,
-      "modified_at": "2026-09-17T05:18:55.977818"
+      "modified_at": "2026-09-17T05:24:35.641838"
     },
     {
       "file_path": "data/bronze/structure_LicitaBSB-24.1.json",
       "layer": "bronze",
       "size_bytes": 131361,
-      "modified_at": "2026-09-17T05:18:56.269824"
+      "modified_at": "2026-09-17T06:24:42.531197"
     },
     {
       "file_path": "data/bronze/issues_2023-2-Squad07.json",
       "layer": "bronze",
       "size_bytes": 938091,
-      "modified_at": "2026-09-17T05:18:55.955817"
+      "modified_at": "2026-09-17T05:21:50.549088"
     },
     {
       "file_path": "data/bronze/prs_DFemObras-2025.1.json",
       "layer": "bronze",
       "size_bytes": 63132,
-      "modified_at": "2026-09-17T05:18:56.154821"
+      "modified_at": "2026-09-17T05:27:28.592438"
     },
     {
       "file_path": "data/bronze/prs_ParticipeMais.json",
       "layer": "bronze",
       "size_bytes": 170208,
-      "modified_at": "2026-09-17T05:18:56.159821"
+      "modified_at": "2026-09-17T05:26:23.773366"
     },
     {
       "file_path": "data/bronze/prs_2025-2-Lumina.json",
       "layer": "bronze",
       "size_bytes": 1160072,
-      "modified_at": "2026-09-17T05:18:56.138821"
+      "modified_at": "2026-09-17T05:28:56.793236"
     },
     {
       "file_path": "data/bronze/prs_LicitaBSB-24.1.json",
       "layer": "bronze",
       "size_bytes": 509441,
-      "modified_at": "2026-09-17T05:18:56.158821"
+      "modified_at": "2026-09-17T05:23:15.226955"
     },
     {
       "file_path": "data/bronze/repo_Gastos-DF-Squad12.json",
       "layer": "bronze",
       "size_bytes": 7448,
-      "modified_at": "2026-09-17T05:18:56.185822"
+      "modified_at": "2026-09-17T05:20:39.295921"
     },
     {
       "file_path": "data/bronze/repo_Avalia.json",
       "layer": "bronze",
       "size_bytes": 6771,
-      "modified_at": "2026-09-17T05:18:56.185822"
+      "modified_at": "2026-09-17T05:20:54.731078"
     },
     {
       "file_path": "data/bronze/commits_2024-2-ChamaControl.json",
       "layer": "bronze",
       "size_bytes": 155973,
-      "modified_at": "2026-09-17T05:18:55.847816"
+      "modified_at": "2026-09-17T05:48:02.016495"
     },
     {
       "file_path": "data/bronze/commits_2024-2-Squad01.json",
       "layer": "bronze",
       "size_bytes": 86538,
-      "modified_at": "2026-09-17T05:18:55.847816"
+      "modified_at": "2026-09-17T05:45:21.448539"
     },
     {
       "file_path": "data/bronze/issues_2026-02-UnDb.json",
       "layer": "bronze",
       "size_bytes": 447813,
-      "modified_at": "2026-09-17T05:18:56.005818"
+      "modified_at": "2026-09-17T05:32:27.352533"
     },
     {
       "file_path": "data/bronze/prs_2025-2-Synapse.json",
       "layer": "bronze",
       "size_bytes": 620350,
-      "modified_at": "2026-09-17T05:18:56.142821"
+      "modified_at": "2026-09-17T05:29:25.496847"
     },
     {
       "file_path": "data/bronze/structure_2026-1-SafeStreets.json",
       "layer": "bronze",
       "size_bytes": 95890,
-      "modified_at": "2026-09-17T05:18:56.257823"
+      "modified_at": "2026-09-17T06:25:24.715658"
     },
     {
       "file_path": "data/bronze/structure_2026-1-ProtectKids.json",
       "layer": "bronze",
       "size_bytes": 38535,
-      "modified_at": "2026-09-17T05:18:56.257823"
+      "modified_at": "2026-09-17T06:25:33.460796"
     },
     {
       "file_path": "data/bronze/issue_events_2023-2-Squad07.json",
       "layer": "bronze",
       "size_bytes": 110799,
-      "modified_at": "2026-09-17T05:18:55.891816"
+      "modified_at": "2026-09-17T05:21:54.272041"
     },
     {
       "file_path": "data/bronze/prs_2024-1-Squad-10.json",
       "layer": "bronze",
       "size_bytes": 270245,
-      "modified_at": "2026-09-17T05:18:56.125821"
+      "modified_at": "2026-09-17T05:24:17.795109"
     },
     {
       "file_path": "data/bronze/commits_2026-1-Guard.IA.json",
       "layer": "bronze",
-      "size_bytes": 160734,
-      "modified_at": "2026-09-17T05:18:55.857816"
+      "size_bytes": 160650,
+      "modified_at": "2026-09-17T06:18:54.713671"
     },
     {
       "file_path": "data/bronze/repo_G2-2026-2.json",
       "layer": "bronze",
       "size_bytes": 6801,
-      "modified_at": "2026-09-17T05:18:56.185822"
+      "modified_at": "2026-09-17T05:21:01.167982"
     },
     {
       "file_path": "data/bronze/structure_2025-2-Integralizei_UnB.json",
       "layer": "bronze",
       "size_bytes": 120345,
-      "modified_at": "2026-09-17T05:18:56.251823"
+      "modified_at": "2026-09-17T06:25:14.954779"
     },
     {
       "file_path": "data/bronze/prs_2025-2-Portal-dos-Professores.json",
       "layer": "bronze",
       "size_bytes": 617952,
-      "modified_at": "2026-09-17T05:18:56.141821"
+      "modified_at": "2026-09-17T05:28:01.208997"
     },
     {
       "file_path": "data/bronze/issue_events_2023-2-Squad03-LicitAL.json",
       "layer": "bronze",
       "size_bytes": 147418,
-      "modified_at": "2026-09-17T05:18:55.889816"
+      "modified_at": "2026-09-17T05:21:16.564510"
     },
     {
       "file_path": "data/bronze/commits_2024-2-AcheiUnB.json",
       "layer": "bronze",
       "size_bytes": 404775,
-      "modified_at": "2026-09-17T05:18:55.846815"
+      "modified_at": "2026-09-17T05:46:19.028807"
     },
     {
       "file_path": "data/bronze/structure_Projeto-P.I.T.E.R.json",
       "layer": "bronze",
       "size_bytes": 81485,
-      "modified_at": "2026-09-17T05:18:56.270823"
+      "modified_at": "2026-09-17T06:25:12.631809"
     },
     {
       "file_path": "data/bronze/issues_DFemObras.json",
       "layer": "bronze",
       "size_bytes": 494193,
-      "modified_at": "2026-09-17T05:18:56.025819"
+      "modified_at": "2026-09-17T05:25:28.041113"
     },
     {
       "file_path": "data/bronze/issues_2024-1-EducaMinas-frontend.json",
       "layer": "bronze",
       "size_bytes": 662958,
-      "modified_at": "2026-09-17T05:18:55.964818"
+      "modified_at": "2026-09-17T05:23:35.265697"
     },
     {
       "file_path": "data/bronze/issues_2023-2-Squad10.json",
       "layer": "bronze",
       "size_bytes": 410441,
-      "modified_at": "2026-09-17T05:18:55.956817"
+      "modified_at": "2026-09-17T05:22:11.540787"
     },
     {
       "file_path": "data/bronze/repo_LicitaBSB-24.1.json",
       "layer": "bronze",
       "size_bytes": 7265,
-      "modified_at": "2026-09-17T05:18:56.185822"
+      "modified_at": "2026-09-17T05:20:36.306928"
     },
     {
       "file_path": "data/bronze/commits_2026-1-Squad14.json",
       "layer": "bronze",
       "size_bytes": 559,
-      "modified_at": "2026-09-17T05:18:55.860816"
+      "modified_at": "2026-09-17T06:20:25.906537"
     },
     {
       "file_path": "data/bronze/issues_Gastos-DF-2024-02.json",
       "layer": "bronze",
       "size_bytes": 850650,
-      "modified_at": "2026-09-17T05:18:56.028819"
+      "modified_at": "2026-09-17T05:25:57.246728"
     },
     {
       "file_path": "data/bronze/repo_2026-1-Squad13.json",
       "layer": "bronze",
       "size_bytes": 7130,
-      "modified_at": "2026-09-17T05:18:56.185822"
+      "modified_at": "2026-09-17T05:20:58.692691"
     },
     {
       "file_path": "data/bronze/prs_2026-02-UnDb.json",
       "layer": "bronze",
       "size_bytes": 204883,
-      "modified_at": "2026-09-17T05:18:56.143821"
+      "modified_at": "2026-09-17T05:32:27.355533"
     },
     {
       "file_path": "data/bronze/issue_events_2025-1-RelatAI.json",
       "layer": "bronze",
       "size_bytes": 15632,
-      "modified_at": "2026-09-17T05:18:55.901816"
+      "modified_at": "2026-09-17T05:27:27.700450"
     },
     {
       "file_path": "data/bronze/issues_2025_1-Jakebot.json",
       "layer": "bronze",
       "size_bytes": 146372,
-      "modified_at": "2026-09-17T05:18:56.004818"
+      "modified_at": "2026-09-17T05:27:40.551280"
     },
     {
       "file_path": "data/bronze/issues_2026-1-Guard.IA.json",
       "layer": "bronze",
       "size_bytes": 404634,
-      "modified_at": "2026-09-17T05:18:56.005818"
+      "modified_at": "2026-09-17T05:30:35.792922"
     },
     {
       "file_path": "data/bronze/repo_Squad09-UnBHUB.json",
       "layer": "bronze",
       "size_bytes": 7233,
-      "modified_at": "2026-09-17T05:18:56.186822"
+      "modified_at": "2026-09-17T05:20:38.564239"
     },
     {
       "file_path": "data/bronze/issue_events_squad03-r2.json",
       "layer": "bronze",
       "size_bytes": 3437,
-      "modified_at": "2026-09-17T05:18:55.940817"
+      "modified_at": "2026-09-17T05:22:39.904588"
     },
     {
       "file_path": "data/bronze/prs_2023.2_DeOlhoRS.json",
       "layer": "bronze",
       "size_bytes": 274812,
-      "modified_at": "2026-09-17T05:18:56.123821"
+      "modified_at": "2026-09-17T05:21:55.563023"
     },
     {
       "file_path": "data/bronze/structure_2025-2-Squad-01.json",
       "layer": "bronze",
       "size_bytes": 435499,
-      "modified_at": "2026-09-17T05:18:56.255823"
+      "modified_at": "2026-09-17T06:25:11.846819"
     },
     {
       "file_path": "data/bronze/structure_2025-1-GovInsights.json",
       "layer": "bronze",
       "size_bytes": 54390,
-      "modified_at": "2026-09-17T05:18:56.249823"
+      "modified_at": "2026-09-17T06:25:07.051880"
     },
     {
       "file_path": "data/bronze/issue_events_Projeto-P.I.T.E.R.json",
       "layer": "bronze",
       "size_bytes": 197828,
-      "modified_at": "2026-09-17T05:18:55.915817"
+      "modified_at": "2026-09-17T05:27:59.496021"
     },
     {
       "file_path": "data/bronze/issue_events_2026-2-Bandejao.json",
       "layer": "bronze",
       "size_bytes": 12285,
-      "modified_at": "2026-09-17T05:18:55.910817"
+      "modified_at": "2026-09-17T05:32:38.859382"
     },
     {
       "file_path": "data/bronze/commits_2025-2-SeLiga.json",
       "layer": "bronze",
       "size_bytes": 65705,
-      "modified_at": "2026-09-17T05:18:55.854815"
+      "modified_at": "2026-09-17T06:16:38.011872"
     },
     {
       "file_path": "data/bronze/structure_2024-2-Urbanize.json",
       "layer": "bronze",
       "size_bytes": 1083522,
-      "modified_at": "2026-09-17T05:18:56.249823"
+      "modified_at": "2026-09-17T06:24:53.173059"
     },
     {
       "file_path": "data/bronze/commits_DFemObras-2025.1.json",
       "layer": "bronze",
       "size_bytes": 222639,
-      "modified_at": "2026-09-17T05:18:55.862816"
+      "modified_at": "2026-09-17T05:51:18.356994"
     },
     {
       "file_path": "data/bronze/issue_events_2024-1-Squad02-CulturaTransparente.json",
       "layer": "bronze",
       "size_bytes": 274199,
-      "modified_at": "2026-09-17T05:18:55.896816"
+      "modified_at": "2026-09-17T05:23:13.518975"
     },
     {
       "file_path": "data/bronze/prs_G2-2026-2.json",
       "layer": "bronze",
       "size_bytes": 59109,
-      "modified_at": "2026-09-17T05:18:56.155821"
+      "modified_at": "2026-09-17T05:32:14.614584"
     },
     {
       "file_path": "data/bronze/issue_events_2026-1-Squad4-Dito_e_Feito.json",
       "layer": "bronze",
       "size_bytes": 146800,
-      "modified_at": "2026-09-17T05:18:55.910817"
+      "modified_at": "2026-09-17T05:30:34.956929"
     },
     {
       "file_path": "data/bronze/prs_2026-2-Bandejao.json",
       "layer": "bronze",
       "size_bytes": 9845,
-      "modified_at": "2026-09-17T05:18:56.151821"
+      "modified_at": "2026-09-17T05:32:38.304952"
     },
     {
       "file_path": "data/bronze/issue_events_2023-2-Squad01.json",
       "layer": "bronze",
       "size_bytes": 11688,
-      "modified_at": "2026-09-17T05:18:55.888816"
+      "modified_at": "2026-09-17T05:21:06.436901"
     },
     {
       "file_path": "data/bronze/commits_2026-2-MonitoraUnB.json",
       "layer": "bronze",
       "size_bytes": 12441,
-      "modified_at": "2026-09-17T05:18:55.861816"
+      "modified_at": "2026-09-17T06:21:10.654960"
     },
     {
       "file_path": "data/bronze/prs_all.json",
       "layer": "bronze",
       "size_bytes": 30748930,
-      "modified_at": "2026-09-17T05:18:56.177822"
+      "modified_at": "2026-09-17T05:32:41.849342"
     },
     {
       "file_path": "data/bronze/commits_codigoruim.json",
       "layer": "bronze",
       "size_bytes": 979,
-      "modified_at": "2026-09-17T05:18:55.887816"
+      "modified_at": "2026-09-17T06:20:53.508182"
     },
     {
       "file_path": "data/bronze/repo_2025-2-InfoSchool.json",
       "layer": "bronze",
       "size_bytes": 7407,
-      "modified_at": "2026-09-17T05:18:56.184822"
+      "modified_at": "2026-09-17T05:20:51.035943"
     },
     {
       "file_path": "data/bronze/prs_2024-1-Squad02-CulturaTransparente.json",
       "layer": "bronze",
       "size_bytes": 640899,
-      "modified_at": "2026-09-17T05:18:56.126821"
+      "modified_at": "2026-09-17T05:23:05.068067"
     },
     {
       "file_path": "data/bronze/issues_2023-2-Squad05-TesouroMineiro.json",
       "layer": "bronze",
       "size_bytes": 735943,
-      "modified_at": "2026-09-17T05:18:55.952817"
+      "modified_at": "2026-09-17T05:21:28.962357"
     },
     {
       "file_path": "data/bronze/repo_.github.json",
       "layer": "bronze",
       "size_bytes": 6654,
-      "modified_at": "2026-09-17T05:18:56.179822"
+      "modified_at": "2026-09-17T05:20:54.314584"
     },
     {
       "file_path": "data/bronze/commits_2025-1-Eletta.json",
       "layer": "bronze",
       "size_bytes": 102428,
-      "modified_at": "2026-09-17T05:18:55.848815"
+      "modified_at": "2026-09-17T05:50:48.521382"
     },
     {
       "file_path": "data/bronze/repo_2024-2-Squad06.json",
       "layer": "bronze",
       "size_bytes": 7444,
-      "modified_at": "2026-09-17T05:18:56.183822"
+      "modified_at": "2026-09-17T05:20:42.268000"
     },
     {
       "file_path": "data/bronze/structure_2026-1-Squad4-Dito_e_Feito.json",
       "layer": "bronze",
       "size_bytes": 48331,
-      "modified_at": "2026-09-17T05:18:56.258823"
+      "modified_at": "2026-09-17T06:25:26.929631"
     },
     {
       "file_path": "data/bronze/commits_2025-2-Integralizei_UnB.json",
       "layer": "bronze",
       "size_bytes": 197815,
-      "modified_at": "2026-09-17T05:18:55.852815"
+      "modified_at": "2026-09-17T06:14:58.540870"
     },
     {
       "file_path": "data/bronze/prs_2023-2-JuizVirtual.json",
       "layer": "bronze",
       "size_bytes": 539428,
-      "modified_at": "2026-09-17T05:18:56.118821"
+      "modified_at": "2026-09-17T05:21:38.390240"
     },
     {
       "file_path": "data/bronze/repo_Projeto-P.I.T.E.R.json",
       "layer": "bronze",
       "size_bytes": 7308,
-      "modified_at": "2026-09-17T05:18:56.186822"
+      "modified_at": "2026-09-17T05:20:49.265616"
     },
     {
       "file_path": "data/bronze/issues_2026-1-ProtectKids.json",
       "layer": "bronze",
       "size_bytes": 1244573,
-      "modified_at": "2026-09-17T05:18:56.007818"
+      "modified_at": "2026-09-17T05:31:47.591001"
     },
     {
       "file_path": "data/bronze/structure_2026-1-LegisKids.json",
       "layer": "bronze",
       "size_bytes": 144840,
-      "modified_at": "2026-09-17T05:18:56.257823"
+      "modified_at": "2026-09-17T06:25:29.344601"
     },
     {
       "file_path": "data/bronze/commits_.github.json",
       "layer": "bronze",
       "size_bytes": 1682,
-      "modified_at": "2026-09-17T05:18:55.834815"
+      "modified_at": "2026-09-17T06:17:17.790221"
     },
     {
       "file_path": "data/bronze/structure_2026-1-Mapa_L.I.L.A.S.json",
       "layer": "bronze",
       "size_bytes": 114202,
-      "modified_at": "2026-09-17T05:18:56.257823"
+      "modified_at": "2026-09-17T06:25:25.495649"
     },
     {
       "file_path": "data/bronze/issue_events_2024-2-Agio.json",
       "layer": "bronze",
       "size_bytes": 40444,
-      "modified_at": "2026-09-17T05:18:55.898816"
+      "modified_at": "2026-09-17T05:25:14.743280"
     },
     {
       "file_path": "data/bronze/issues_2023-2-Squad01.json",
       "layer": "bronze",
       "size_bytes": 82539,
-      "modified_at": "2026-09-17T05:18:55.942817"
+      "modified_at": "2026-09-17T05:21:05.922211"
     },
     {
       "file_path": "data/bronze/structure_ParticipeMais.json",
       "layer": "bronze",
       "size_bytes": 91387,
-      "modified_at": "2026-09-17T05:18:56.269824"
+      "modified_at": "2026-09-17T06:25:03.831922"
     },
     {
       "file_path": "data/bronze/structure_diario-de-bordo.json",
       "layer": "bronze",
       "size_bytes": 5592,
-      "modified_at": "2026-09-17T05:18:56.270823"
+      "modified_at": "2026-09-17T06:25:45.205246"
     },
     {
       "file_path": "data/bronze/issue_events_2024-1-forUnB.json",
       "layer": "bronze",
       "size_bytes": 481800,
-      "modified_at": "2026-09-17T05:18:55.897816"
+      "modified_at": "2026-09-17T05:23:03.332089"
     },
     {
       "file_path": "data/bronze/prs_Fique-de-Olho.json",
       "layer": "bronze",
       "size_bytes": 8497,
-      "modified_at": "2026-09-17T05:18:56.155821"
+      "modified_at": "2026-09-17T05:32:22.959524"
     },
     {
       "file_path": "data/bronze/prs_Squad09-UnBHUB.json",
       "layer": "bronze",
       "size_bytes": 608398,
-      "modified_at": "2026-09-17T05:18:56.160821"
+      "modified_at": "2026-09-17T05:24:06.085262"
     },
     {
       "file_path": "data/bronze/commits_2026-1-squad0x.json",
       "layer": "bronze",
       "size_bytes": 559,
-      "modified_at": "2026-09-17T05:18:55.860816"
+      "modified_at": "2026-09-17T06:19:26.167194"
     },
     {
       "file_path": "data/bronze/prs_2026-1-ProtectKids.json",
       "layer": "bronze",
       "size_bytes": 853960,
-      "modified_at": "2026-09-17T05:18:56.146821"
+      "modified_at": "2026-09-17T05:31:47.601001"
     },
     {
       "file_path": "data/bronze/issues_2024-2-Squad06.json",
       "layer": "bronze",
       "size_bytes": 633655,
-      "modified_at": "2026-09-17T05:18:55.978818"
+      "modified_at": "2026-09-17T05:25:19.714218"
     },
     {
       "file_path": "data/bronze/structure_2026-1-P.R.I.S.M.A.json",
       "layer": "bronze",
       "size_bytes": 43898,
-      "modified_at": "2026-09-17T05:18:56.257823"
+      "modified_at": "2026-09-17T06:25:34.182991"
     },
     {
       "file_path": "data/bronze/issue_events_Sonorus-2025.1.json",
       "layer": "bronze",
       "size_bytes": 177796,
-      "modified_at": "2026-09-17T05:18:55.916817"
+      "modified_at": "2026-09-17T05:26:48.257998"
     },
     {
       "file_path": "data/bronze/issues_Squad09-UnBHUB.json",
       "layer": "bronze",
       "size_bytes": 896341,
-      "modified_at": "2026-09-17T05:18:56.033819"
+      "modified_at": "2026-09-17T05:24:06.077262"
     },
     {
       "file_path": "data/bronze/issues_G2-2026-2.json",
       "layer": "bronze",
       "size_bytes": 88581,
-      "modified_at": "2026-09-17T05:18:56.028819"
+      "modified_at": "2026-09-17T05:32:14.613703"
     },
     {
       "file_path": "data/bronze/structure_teste-ru.json",
       "layer": "bronze",
       "size_bytes": 7491,
-      "modified_at": "2026-09-17T05:18:56.273823"
+      "modified_at": "2026-09-17T06:25:44.519938"
     },
     {
       "file_path": "data/bronze/issue_events_G2-2026-2.json",
       "layer": "bronze",
       "size_bytes": 41269,
-      "modified_at": "2026-09-17T05:18:55.913817"
+      "modified_at": "2026-09-17T05:32:15.949685"
     },
     {
       "file_path": "data/bronze/issue_events_2023-2-Squad09-Gotinha.json",
       "layer": "bronze",
       "size_bytes": 191741,
-      "modified_at": "2026-09-17T05:18:55.892816"
+      "modified_at": "2026-09-17T05:22:10.776798"
     },
     {
       "file_path": "data/bronze/structure_2025-1-RelatAI.json",
       "layer": "bronze",
       "size_bytes": 37210,
-      "modified_at": "2026-09-17T05:18:56.250823"
+      "modified_at": "2026-09-17T06:25:08.690912"
     },
     {
       "file_path": "data/bronze/repo_2024-1-Squad-10.json",
       "layer": "bronze",
       "size_bytes": 7422,
-      "modified_at": "2026-09-17T05:18:56.182822"
+      "modified_at": "2026-09-17T05:20:38.935850"
     },
     {
       "file_path": "data/bronze/issues_2024-1-squad04.json",
       "layer": "bronze",
       "size_bytes": 837475,
-      "modified_at": "2026-09-17T05:18:55.971818"
+      "modified_at": "2026-09-17T05:23:26.183814"
     },
     {
       "file_path": "data/bronze/issues_2026-1-LegisKids.json",
       "layer": "bronze",
       "size_bytes": 1166447,
-      "modified_at": "2026-09-17T05:18:56.006819"
+      "modified_at": "2026-09-17T05:30:56.733693"
     },
     {
       "file_path": "data/bronze/commits_2024-1-squad04.json",
       "layer": "bronze",
       "size_bytes": 133313,
-      "modified_at": "2026-09-17T05:18:55.846815"
+      "modified_at": "2026-09-17T05:43:22.640089"
     },
     {
       "file_path": "data/bronze/commits_2025-1-RelatAI.json",
       "layer": "bronze",
       "size_bytes": 80952,
-      "modified_at": "2026-09-17T05:18:55.850816"
+      "modified_at": "2026-09-17T05:50:56.878277"
     },
     {
       "file_path": "data/bronze/structure_2026.2-UnB_Core.json",
       "layer": "bronze",
       "size_bytes": 23582,
-      "modified_at": "2026-09-17T05:18:56.259823"
+      "modified_at": "2026-09-17T06:25:35.594521"
     },
     {
       "file_path": "data/bronze/repo_2024-1-forUnB.json",
       "layer": "bronze",
       "size_bytes": 7236,
-      "modified_at": "2026-09-17T05:18:56.183822"
+      "modified_at": "2026-09-17T05:20:35.574198"
     },
     {
       "file_path": "data/bronze/issues_2025-2-Integralizei_UnB.json",
       "layer": "bronze",
       "size_bytes": 573437,
-      "modified_at": "2026-09-17T05:18:55.995818"
+      "modified_at": "2026-09-17T05:28:20.654732"
     },
     {
       "file_path": "data/bronze/repo_2025-2-Synapse.json",
       "layer": "bronze",
       "size_bytes": 7169,
-      "modified_at": "2026-09-17T05:18:56.184822"
+      "modified_at": "2026-09-17T05:20:52.574049"
     },
     {
       "file_path": "data/bronze/commits_portfolio-MDS.json",
       "layer": "bronze",
       "size_bytes": 916,
-      "modified_at": "2026-09-17T05:18:55.888816"
+      "modified_at": "2026-09-17T05:36:57.370098"
     },
     {
       "file_path": "data/bronze/structure_2025-2-Mural-UnB.json",
       "layer": "bronze",
       "size_bytes": 190336,
-      "modified_at": "2026-09-17T05:18:56.252823"
+      "modified_at": "2026-09-17T06:25:17.802742"
     },
     {
       "file_path": "data/bronze/repo_2025-2-SeLiga.json",
       "layer": "bronze",
       "size_bytes": 7430,
-      "modified_at": "2026-09-17T05:18:56.184822"
+      "modified_at": "2026-09-17T05:20:52.219847"
     },
     {
       "file_path": "data/bronze/commits_2026-1-Squad4-Dito_e_Feito.json",
       "layer": "bronze",
       "size_bytes": 138837,
-      "modified_at": "2026-09-17T05:18:55.860816"
+      "modified_at": "2026-09-17T06:18:26.276042"
     },
     {
       "file_path": "data/bronze/issue_events_2026-2-GlossarioUnB.json",
       "layer": "bronze",
       "size_bytes": 7574,
-      "modified_at": "2026-09-17T05:18:55.911817"
+      "modified_at": "2026-09-17T05:32:36.771194"
     },
     {
       "file_path": "data/bronze/repo_2024-2-ChamaControl.json",
       "layer": "bronze",
       "size_bytes": 7651,
-      "modified_at": "2026-09-17T05:18:56.183822"
+      "modified_at": "2026-09-17T05:20:43.338839"
     },
     {
       "file_path": "data/bronze/issues_2026-2-VeritasIA.json",
       "layer": "bronze",
       "size_bytes": 709233,
-      "modified_at": "2026-09-17T05:18:56.021819"
+      "modified_at": "2026-09-17T05:30:23.600070"
     },
     {
       "file_path": "data/bronze/commits_2025-2-Mural-UnB.json",
       "layer": "bronze",
       "size_bytes": 208658,
-      "modified_at": "2026-09-17T05:18:55.853816"
+      "modified_at": "2026-09-17T06:15:58.161034"
     },
     {
       "file_path": "data/bronze/structure_2026-1-squad0x.json",
       "layer": "bronze",
       "size_bytes": 1026,
-      "modified_at": "2026-09-17T05:18:56.258823"
+      "modified_at": "2026-09-17T06:25:30.064100"
     },
     {
       "file_path": "data/bronze/commits_2026-2-Followw.json",
       "layer": "bronze",
       "size_bytes": 5058,
-      "modified_at": "2026-09-17T05:18:55.861816"
+      "modified_at": "2026-09-17T06:21:00.151186"
     },
     {
       "file_path": "data/bronze/repo_portfolio-MDS.json",
       "layer": "bronze",
       "size_bytes": 7079,
-      "modified_at": "2026-09-17T05:18:56.186822"
+      "modified_at": "2026-09-17T05:20:35.194985"
     },
     {
       "file_path": "data/bronze/structure_.github.json",
       "layer": "bronze",
       "size_bytes": 980,
-      "modified_at": "2026-09-17T05:18:56.189822"
+      "modified_at": "2026-09-17T06:25:23.145443"
     },
     {
       "file_path": "data/bronze/repo_2026-1-Guard.IA.json",
       "layer": "bronze",
       "size_bytes": 7218,
-      "modified_at": "2026-09-17T05:18:56.184822"
+      "modified_at": "2026-09-17T05:20:56.851200"
     },
     {
       "file_path": "data/bronze/issue_events_2024-2-Urbanize.json",
       "layer": "bronze",
       "size_bytes": 127067,
-      "modified_at": "2026-09-17T05:18:55.900816"
+      "modified_at": "2026-09-17T05:24:41.330703"
     },
     {
       "file_path": "data/bronze/prs_Avalia.json",
       "layer": "bronze",
       "size_bytes": 51841,
-      "modified_at": "2026-09-17T05:18:56.154821"
+      "modified_at": "2026-09-17T05:29:58.396775"
     },
     {
       "file_path": "data/bronze/structure_squad03-r2.json",
       "layer": "bronze",
       "size_bytes": 11887,
-      "modified_at": "2026-09-17T05:18:56.272824"
+      "modified_at": "2026-09-17T06:24:37.189770"
     },
     {
       "file_path": "data/bronze/structure_2024-1-Gastos-DF-Doc-Squad12.json",
       "layer": "bronze",
       "size_bytes": 5698682,
-      "modified_at": "2026-09-17T05:18:56.234823"
+      "modified_at": "2026-09-17T06:24:51.439081"
     },
     {
       "file_path": "data/bronze/issues_2026.2-UnB_Core.json",
       "layer": "bronze",
       "size_bytes": 689321,
-      "modified_at": "2026-09-17T05:18:56.022819"
+      "modified_at": "2026-09-17T05:32:10.143762"
     },
     {
       "file_path": "data/bronze/commits_2025-2-GuiaDev.json",
       "layer": "bronze",
       "size_bytes": 180731,
-      "modified_at": "2026-09-17T05:18:55.851815"
+      "modified_at": "2026-09-17T06:17:09.369088"
     },
     {
       "file_path": "data/bronze/issues_2025-2-Mural-UnB.json",
       "layer": "bronze",
       "size_bytes": 921405,
-      "modified_at": "2026-09-17T05:18:55.996818"
+      "modified_at": "2026-09-17T05:28:44.522403"
     },
     {
       "file_path": "data/bronze/structure_2024-1-forUnB.json",
       "layer": "bronze",
       "size_bytes": 224042,
-      "modified_at": "2026-09-17T05:18:56.235823"
+      "modified_at": "2026-09-17T06:24:40.947218"
     },
     {
       "file_path": "data/bronze/issue_events_2024-1-Squad08.json",
       "layer": "bronze",
       "size_bytes": 16648,
-      "modified_at": "2026-09-17T05:18:55.896816"
+      "modified_at": "2026-09-17T05:24:04.319285"
     },
     {
       "file_path": "data/bronze/commits_2026-2-GlossarioUnB.json",
       "layer": "bronze",
       "size_bytes": 6121,
-      "modified_at": "2026-09-17T05:18:55.861816"
+      "modified_at": "2026-09-17T06:21:09.649973"
     },
     {
       "file_path": "data/bronze/structure_2024-1-squad04.json",
       "layer": "bronze",
       "size_bytes": 68136,
-      "modified_at": "2026-09-17T05:18:56.235823"
+      "modified_at": "2026-09-17T06:24:43.328187"
     },
     {
       "file_path": "data/bronze/issue_events_2026-1-Guard.IA.json",
       "layer": "bronze",
       "size_bytes": 72955,
-      "modified_at": "2026-09-17T05:18:55.906816"
+      "modified_at": "2026-09-17T05:30:38.581899"
     },
     {
       "file_path": "data/bronze/prs_2025-2-Squad-01.json",
       "layer": "bronze",
       "size_bytes": 359596,
-      "modified_at": "2026-09-17T05:18:56.141821"
+      "modified_at": "2026-09-17T05:27:44.106232"
     },
     {
       "file_path": "data/bronze/issue_events_Fique-de-Olho.json",
       "layer": "bronze",
       "size_bytes": 17671,
-      "modified_at": "2026-09-17T05:18:55.913817"
+      "modified_at": "2026-09-17T05:32:23.620086"
     },
     {
       "file_path": "data/bronze/commits_ParticipeMais.json",
       "layer": "bronze",
       "size_bytes": 114905,
-      "modified_at": "2026-09-17T05:18:55.865816"
+      "modified_at": "2026-09-17T05:48:56.118737"
     },
     {
       "file_path": "data/bronze/repo_2025-2-Portal-dos-Professores.json",
       "layer": "bronze",
       "size_bytes": 7860,
-      "modified_at": "2026-09-17T05:18:56.184822"
+      "modified_at": "2026-09-17T05:20:49.615185"
     },
     {
       "file_path": "data/silver/user_collaboration_metrics.json",
       "layer": "silver",
       "size_bytes": 218847,
-      "modified_at": "2026-09-17T05:18:56.407826"
+      "modified_at": "2026-09-17T05:20:21.144216"
     },
     {
       "file_path": "data/silver/hierarchy_2026-2-Cerradinho-API.json",
       "layer": "silver",
       "size_bytes": 10679,
-      "modified_at": "2026-09-17T05:18:56.360825"
+      "modified_at": "2026-09-17T05:20:21.090215"
     },
     {
       "file_path": "data/silver/hierarchy_2023.2-LicitaX.json",
       "layer": "silver",
       "size_bytes": 10155,
-      "modified_at": "2026-09-17T05:18:56.318824"
+      "modified_at": "2026-09-17T05:20:21.035215"
     },
     {
       "file_path": "data/silver/hierarchy_2026-1-Squad14.json",
       "layer": "silver",
       "size_bytes": 704,
-      "modified_at": "2026-09-17T05:18:56.360825"
+      "modified_at": "2026-09-17T05:20:21.090215"
     },
     {
       "file_path": "data/silver/language_analysis_2025.1-RelatoriosInteligentesBCB.json",
       "layer": "silver",
       "size_bytes": 5418,
-      "modified_at": "2026-09-17T05:18:56.375825"
+      "modified_at": "2026-09-17T05:20:21.109216"
     },
     {
       "file_path": "data/silver/members_statistics.json",
       "layer": "silver",
       "size_bytes": 349486,
-      "modified_at": "2026-09-17T05:18:56.382826"
+      "modified_at": "2026-09-17T05:20:21.116216"
     },
     {
       "file_path": "data/silver/hierarchy_2023.2_Gotinha.json",
       "layer": "silver",
       "size_bytes": 6399,
-      "modified_at": "2026-09-17T05:18:56.328825"
+      "modified_at": "2026-09-17T05:20:21.048215"
     },
     {
       "file_path": "data/silver/hierarchy_2026.2-UnB_Core.json",
       "layer": "silver",
       "size_bytes": 17416,
-      "modified_at": "2026-09-17T05:18:56.361825"
+      "modified_at": "2026-09-17T05:20:21.090215"
     },
     {
       "file_path": "data/silver/hierarchy_2026-2-Followw.json",
       "layer": "silver",
       "size_bytes": 7785,
-      "modified_at": "2026-09-17T05:18:56.360825"
+      "modified_at": "2026-09-17T05:20:21.090215"
     },
     {
       "file_path": "data/silver/hierarchy_2026-1-LegisKids.json",
       "layer": "silver",
       "size_bytes": 110156,
-      "modified_at": "2026-09-17T05:18:56.359825"
+      "modified_at": "2026-09-17T05:20:21.089216"
     },
     {
       "file_path": "data/silver/language_analysis_Sonorus-2025.1.json",
       "layer": "silver",
       "size_bytes": 14421,
-      "modified_at": "2026-09-17T05:18:56.377825"
+      "modified_at": "2026-09-17T05:20:21.111216"
     },
     {
       "file_path": "data/silver/hierarchy_2025-2-GuiaDev.json",
       "layer": "silver",
       "size_bytes": 54311,
-      "modified_at": "2026-09-17T05:18:56.356825"
+      "modified_at": "2026-09-17T05:20:21.086215"
     },
     {
       "file_path": "data/silver/hierarchy_codigoruim.json",
       "layer": "silver",
       "size_bytes": 2503,
-      "modified_at": "2026-09-17T05:18:56.367825"
+      "modified_at": "2026-09-17T05:20:21.100216"
     },
     {
       "file_path": "data/silver/language_analysis_2023-2-Squad01.json",
       "layer": "silver",
       "size_bytes": 2418,
-      "modified_at": "2026-09-17T05:18:56.370825"
+      "modified_at": "2026-09-17T05:20:21.104216"
     },
     {
       "file_path": "data/silver/hierarchy_2025_1-Jakebot.json",
       "layer": "silver",
       "size_bytes": 19597,
-      "modified_at": "2026-09-17T05:18:56.358825"
+      "modified_at": "2026-09-17T05:20:21.088216"
     },
     {
       "file_path": "data/silver/available_repos.json",
       "layer": "silver",
       "size_bytes": 2158,
-      "modified_at": "2026-09-17T05:18:56.275824"
+      "modified_at": "2026-09-17T05:20:20.981215"
     },
     {
       "file_path": "data/silver/language_analysis_2026-1-Mapa_L.I.L.A.S.json",
       "layer": "silver",
       "size_bytes": 21674,
-      "modified_at": "2026-09-17T05:18:56.375825"
+      "modified_at": "2026-09-17T05:20:21.110216"
     },
     {
       "file_path": "data/silver/hierarchy_2026-1-ProtectKids.json",
       "layer": "silver",
       "size_bytes": 28886,
-      "modified_at": "2026-09-17T05:18:56.359825"
+      "modified_at": "2026-09-17T05:20:21.089216"
     },
     {
       "file_path": "data/silver/language_analysis_2025-2-Squad12.json",
       "layer": "silver",
       "size_bytes": 10160,
-      "modified_at": "2026-09-17T05:18:56.375825"
+      "modified_at": "2026-09-17T05:20:21.109216"
     },
     {
       "file_path": "data/silver/language_analysis_2024-2-SuaFinanca.json",
       "layer": "silver",
       "size_bytes": 40439,
-      "modified_at": "2026-09-17T05:18:56.374825"
+      "modified_at": "2026-09-17T05:20:21.108216"
     },
     {
       "file_path": "data/silver/language_analysis_2024-1-Gastos-DF-Doc-Squad12.json",
       "layer": "silver",
       "size_bytes": 30889,
-      "modified_at": "2026-09-17T05:18:56.373826"
+      "modified_at": "2026-09-17T05:20:21.107216"
     },
     {
       "file_path": "data/silver/language_analysis_2024-2-Agio.json",
       "layer": "silver",
       "size_bytes": 11652,
-      "modified_at": "2026-09-17T05:18:56.373826"
+      "modified_at": "2026-09-17T05:20:21.108216"
     },
     {
       "file_path": "data/silver/hierarchy_2024-1-Squad02-CulturaTransparente.json",
       "layer": "silver",
       "size_bytes": 68067,
-      "modified_at": "2026-09-17T05:18:56.336825"
+      "modified_at": "2026-09-17T05:20:21.059215"
     },
     {
       "file_path": "data/silver/language_analysis_2026-2-Bandejao.json",
       "layer": "silver",
       "size_bytes": 9939,
-      "modified_at": "2026-09-17T05:18:56.376826"
+      "modified_at": "2026-09-17T05:20:21.110216"
     },
     {
       "file_path": "data/silver/language_analysis_2025-2-InfoSchool.json",
       "layer": "silver",
       "size_bytes": 16621,
-      "modified_at": "2026-09-17T05:18:56.374825"
+      "modified_at": "2026-09-17T05:20:21.109216"
     },
     {
       "file_path": "data/silver/hierarchy_2023.2_DeOlhoRS.json",
       "layer": "silver",
       "size_bytes": 3319388,
-      "modified_at": "2026-09-17T05:18:56.328825"
+      "modified_at": "2026-09-17T05:20:21.048215"
     },
     {
       "file_path": "data/silver/hierarchy_Fique-de-Olho.json",
       "layer": "silver",
       "size_bytes": 19096,
-      "modified_at": "2026-09-17T05:18:56.361825"
+      "modified_at": "2026-09-17T05:20:21.090215"
     },
     {
       "file_path": "data/silver/hierarchy_2024-2-ChamaControl.json",
       "layer": "silver",
       "size_bytes": 33607,
-      "modified_at": "2026-09-17T05:18:56.337825"
+      "modified_at": "2026-09-17T05:20:21.061215"
     },
     {
       "file_path": "data/silver/language_analysis_2024-2-Urbanize.json",
       "layer": "silver",
       "size_bytes": 29685,
-      "modified_at": "2026-09-17T05:18:56.374825"
+      "modified_at": "2026-09-17T05:20:21.108216"
     },
     {
       "file_path": "data/silver/network_statistics.json",
       "layer": "silver",
       "size_bytes": 345,
-      "modified_at": "2026-09-17T05:18:56.382826"
+      "modified_at": "2026-09-17T05:20:21.116216"
     },
     {
       "file_path": "data/silver/language_analysis_2024-2-Datazonia.json",
       "layer": "silver",
       "size_bytes": 7920,
-      "modified_at": "2026-09-17T05:18:56.373826"
+      "modified_at": "2026-09-17T05:20:21.108216"
     },
     {
       "file_path": "data/silver/hierarchy_2025-2-Squad12.json",
       "layer": "silver",
       "size_bytes": 18323,
-      "modified_at": "2026-09-17T05:18:56.358825"
+      "modified_at": "2026-09-17T05:20:21.088216"
     },
     {
       "file_path": "data/silver/language_analysis_Projeto-P.I.T.E.R.json",
       "layer": "silver",
       "size_bytes": 12903,
-      "modified_at": "2026-09-17T05:18:56.377825"
+      "modified_at": "2026-09-17T05:20:21.111216"
     },
     {
       "file_path": "data/silver/hierarchy_2024-2-Agio.json",
       "layer": "silver",
       "size_bytes": 25245,
-      "modified_at": "2026-09-17T05:18:56.337825"
+      "modified_at": "2026-09-17T05:20:21.061215"
     },
     {
       "file_path": "data/silver/language_analysis_2026-1-squad0x.json",
       "layer": "silver",
       "size_bytes": 968,
-      "modified_at": "2026-09-17T05:18:56.376826"
+      "modified_at": "2026-09-17T05:20:21.110216"
     },
     {
       "file_path": "data/silver/hierarchy_2024-2-Lumina.json",
       "layer": "silver",
       "size_bytes": 43128,
-      "modified_at": "2026-09-17T05:18:56.337825"
+      "modified_at": "2026-09-17T05:20:21.061215"
     },
     {
       "file_path": "data/silver/language_analysis_2024-1-MinasDeCultura.json",
       "layer": "silver",
       "size_bytes": 26663,
-      "modified_at": "2026-09-17T05:18:56.373826"
+      "modified_at": "2026-09-17T05:20:21.107216"
     },
     {
       "file_path": "data/silver/hierarchy_2025-2-Integralizei_UnB.json",
       "layer": "silver",
       "size_bytes": 90258,
-      "modified_at": "2026-09-17T05:18:56.357825"
+      "modified_at": "2026-09-17T05:20:21.087215"
     },
     {
       "file_path": "data/silver/language_analysis_2024-1-forUnB.json",
       "layer": "silver",
       "size_bytes": 22681,
-      "modified_at": "2026-09-17T05:18:56.373826"
+      "modified_at": "2026-09-17T05:20:21.107216"
     },
     {
       "file_path": "data/silver/temporal_events.json",
       "layer": "silver",
       "size_bytes": 17874190,
-      "modified_at": "2026-09-17T05:18:56.406826"
+      "modified_at": "2026-09-17T05:20:21.144216"
     },
     {
       "file_path": "data/silver/hierarchy_2023-2-Squad03-LicitAL.json",
       "layer": "silver",
       "size_bytes": 10257470,
-      "modified_at": "2026-09-17T05:18:56.313824"
+      "modified_at": "2026-09-17T05:20:21.028215"
     },
     {
       "file_path": "data/silver/language_analysis_2023-2-Squad04.json",
       "layer": "silver",
       "size_bytes": 10242,
-      "modified_at": "2026-09-17T05:18:56.371825"
+      "modified_at": "2026-09-17T05:20:21.105216"
     },
     {
       "file_path": "data/silver/hierarchy_.github.json",
       "layer": "silver",
       "size_bytes": 646,
-      "modified_at": "2026-09-17T05:18:56.282824"
+      "modified_at": "2026-09-17T05:20:20.989215"
     },
     {
       "file_path": "data/silver/hierarchy_2023-2-Squad02-Desmatazonia.json",
       "layer": "silver",
       "size_bytes": 33667,
-      "modified_at": "2026-09-17T05:18:56.283824"
+      "modified_at": "2026-09-17T05:20:20.989215"
     },
     {
       "file_path": "data/silver/contribution_metrics.json",
       "layer": "silver",
       "size_bytes": 115897,
-      "modified_at": "2026-09-17T05:18:56.276824"
+      "modified_at": "2026-09-17T05:20:20.982215"
     },
     {
       "file_path": "data/silver/hierarchy_2024-1-EducaMinas-backend.json",
       "layer": "silver",
       "size_bytes": 18858,
-      "modified_at": "2026-09-17T05:18:56.328825"
+      "modified_at": "2026-09-17T05:20:21.049215"
     },
     {
       "file_path": "data/silver/hierarchy_2025-2-Synapse.json",
       "layer": "silver",
       "size_bytes": 43244,
-      "modified_at": "2026-09-17T05:18:56.358825"
+      "modified_at": "2026-09-17T05:20:21.088216"
     },
     {
       "file_path": "data/silver/hierarchy_2026-2-Bandejao.json",
       "layer": "silver",
       "size_bytes": 19733,
-      "modified_at": "2026-09-17T05:18:56.360825"
+      "modified_at": "2026-09-17T05:20:21.090215"
     },
     {
       "file_path": "data/silver/hierarchy_MDS-MonitoraBSB.json",
       "layer": "silver",
       "size_bytes": 28916,
-      "modified_at": "2026-09-17T05:18:56.366825"
+      "modified_at": "2026-09-17T05:20:21.099216"
     },
     {
       "file_path": "data/silver/hierarchy_2023-2-Squad01.json",
       "layer": "silver",
       "size_bytes": 3586,
-      "modified_at": "2026-09-17T05:18:56.282824"
+      "modified_at": "2026-09-17T05:20:20.989215"
     },
     {
       "file_path": "data/silver/language_analysis_2024-2-Lumina.json",
       "layer": "silver",
       "size_bytes": 17379,
-      "modified_at": "2026-09-17T05:18:56.373826"
+      "modified_at": "2026-09-17T05:20:21.108216"
     },
     {
       "file_path": "data/silver/hierarchy_DFemObras.json",
       "layer": "silver",
       "size_bytes": 68466,
-      "modified_at": "2026-09-17T05:18:56.361825"
+      "modified_at": "2026-09-17T05:20:21.090215"
     },
     {
       "file_path": "data/silver/hierarchy_2026-1-Squad07.json",
       "layer": "silver",
       "size_bytes": 84707,
-      "modified_at": "2026-09-17T05:18:56.359825"
+      "modified_at": "2026-09-17T05:20:21.089216"
     },
     {
       "file_path": "data/silver/language_analysis_2026-1-Squad4-Dito_e_Feito.json",
       "layer": "silver",
       "size_bytes": 14864,
-      "modified_at": "2026-09-17T05:18:56.376826"
+      "modified_at": "2026-09-17T05:20:21.110216"
     },
     {
       "file_path": "data/silver/hierarchy_2025-1-RelatAI.json",
       "layer": "silver",
       "size_bytes": 27963,
-      "modified_at": "2026-09-17T05:18:56.356825"
+      "modified_at": "2026-09-17T05:20:21.086215"
     },
     {
       "file_path": "data/silver/language_analysis_2024-1-squad04.json",
       "layer": "silver",
       "size_bytes": 15088,
-      "modified_at": "2026-09-17T05:18:56.373826"
+      "modified_at": "2026-09-17T05:20:21.107216"
     },
     {
       "file_path": "data/silver/language_analysis_LicitaBSB-24.1.json",
       "layer": "silver",
       "size_bytes": 24255,
-      "modified_at": "2026-09-17T05:18:56.377825"
+      "modified_at": "2026-09-17T05:20:21.111216"
     },
     {
       "file_path": "data/silver/language_analysis_Squad09-UnBHUB.json",
       "layer": "silver",
       "size_bytes": 12181,
-      "modified_at": "2026-09-17T05:18:56.377825"
+      "modified_at": "2026-09-17T05:20:21.111216"
     },
     {
       "file_path": "data/silver/hierarchy_2026.1-ContraDito.json",
       "layer": "silver",
       "size_bytes": 70424,
-      "modified_at": "2026-09-17T05:18:56.360825"
+      "modified_at": "2026-09-17T05:20:21.090215"
     },
     {
       "file_path": "data/silver/language_analysis_Gastos-DF-Squad12.json",
       "layer": "silver",
       "size_bytes": 20222,
-      "modified_at": "2026-09-17T05:18:56.377825"
+      "modified_at": "2026-09-17T05:20:21.111216"
     },
     {
       "file_path": "data/silver/hierarchy_Avalia.json",
       "layer": "silver",
       "size_bytes": 2036,
-      "modified_at": "2026-09-17T05:18:56.361825"
+      "modified_at": "2026-09-17T05:20:21.090215"
     },
     {
       "file_path": "data/silver/language_analysis_2025-2-SeLiga.json",
       "layer": "silver",
       "size_bytes": 14508,
-      "modified_at": "2026-09-17T05:18:56.375825"
+      "modified_at": "2026-09-17T05:20:21.109216"
     },
     {
       "file_path": "data/silver/daily_activity_summary.json",
       "layer": "silver",
       "size_bytes": 2660884,
-      "modified_at": "2026-09-17T05:18:56.282824"
+      "modified_at": "2026-09-17T05:20:20.989215"
     },
     {
       "file_path": "data/silver/hierarchy_squad03-r2.json",
       "layer": "silver",
       "size_bytes": 8690,
-      "modified_at": "2026-09-17T05:18:56.370825"
+      "modified_at": "2026-09-17T05:20:21.104216"
     },
     {
       "file_path": "data/silver/language_analysis_G2-2026-2.json",
       "layer": "silver",
       "size_bytes": 3606,
-      "modified_at": "2026-09-17T05:18:56.377825"
+      "modified_at": "2026-09-17T05:20:21.111216"
     },
     {
       "file_path": "data/silver/language_analysis_DFemObras.json",
       "layer": "silver",
       "size_bytes": 17063,
-      "modified_at": "2026-09-17T05:18:56.377825"
+      "modified_at": "2026-09-17T05:20:21.111216"
     },
     {
       "file_path": "data/silver/language_analysis_teste.json",
       "layer": "silver",
       "size_bytes": 1519,
-      "modified_at": "2026-09-17T05:18:56.381826"
+      "modified_at": "2026-09-17T05:20:21.115216"
     },
     {
       "file_path": "data/silver/repository_collaboration_analysis.json",
       "layer": "silver",
       "size_bytes": 37091,
-      "modified_at": "2026-09-17T05:18:56.382826"
+      "modified_at": "2026-09-17T05:20:21.116216"
     },
     {
       "file_path": "data/silver/hierarchy_2026-1-Guard.IA.json",
       "layer": "silver",
       "size_bytes": 30206,
-      "modified_at": "2026-09-17T05:18:56.359825"
+      "modified_at": "2026-09-17T05:20:21.088216"
     },
     {
       "file_path": "data/silver/hierarchy_exemplogitpage.json",
       "layer": "silver",
       "size_bytes": 704,
-      "modified_at": "2026-09-17T05:18:56.367825"
+      "modified_at": "2026-09-17T05:20:21.100216"
     },
     {
       "file_path": "data/silver/hierarchy_2025-1-GovInsights.json",
       "layer": "silver",
       "size_bytes": 41053,
-      "modified_at": "2026-09-17T05:18:56.356825"
+      "modified_at": "2026-09-17T05:20:21.085216"
     },
     {
       "file_path": "data/silver/language_analysis_all.json",
       "layer": "silver",
       "size_bytes": 1472211,
-      "modified_at": "2026-09-17T05:18:56.380826"
+      "modified_at": "2026-09-17T05:20:21.115216"
     },
     {
       "file_path": "data/silver/language_analysis_mapadaacessibilidade.json",
       "layer": "silver",
       "size_bytes": 22179,
-      "modified_at": "2026-09-17T05:18:56.381826"
+      "modified_at": "2026-09-17T05:20:21.115216"
     },
     {
       "file_path": "data/silver/hierarchy_2025-1-Eletta.json",
       "layer": "silver",
       "size_bytes": 78268,
-      "modified_at": "2026-09-17T05:18:56.355825"
+      "modified_at": "2026-09-17T05:20:21.085216"
     },
     {
       "file_path": "data/silver/language_analysis_Avalia.json",
       "layer": "silver",
       "size_bytes": 2430,
-      "modified_at": "2026-09-17T05:18:56.377825"
+      "modified_at": "2026-09-17T05:20:21.111216"
     },
     {
       "file_path": "data/silver/hierarchy_DFemObras-2025.1.json",
       "layer": "silver",
       "size_bytes": 40605,
-      "modified_at": "2026-09-17T05:18:56.361825"
+      "modified_at": "2026-09-17T05:20:21.090215"
     },
     {
       "file_path": "data/silver/members_analytics.json",
       "layer": "silver",
       "size_bytes": 159348,
-      "modified_at": "2026-09-17T05:18:56.381826"
+      "modified_at": "2026-09-17T05:20:21.116216"
     },
     {
       "file_path": "data/silver/language_analysis_2026-1-Squad13.json",
       "layer": "silver",
       "size_bytes": 18723,
-      "modified_at": "2026-09-17T05:18:56.376826"
+      "modified_at": "2026-09-17T05:20:21.110216"
     },
     {
       "file_path": "data/silver/language_analysis_2026-2-Bandejao-UnB.json",
       "layer": "silver",
       "size_bytes": 2745,
-      "modified_at": "2026-09-17T05:18:56.376826"
+      "modified_at": "2026-09-17T05:20:21.110216"
     },
     {
       "file_path": "data/silver/language_analysis_2023.2_DeOlhoRS.json",
       "layer": "silver",
       "size_bytes": 33964,
-      "modified_at": "2026-09-17T05:18:56.371825"
+      "modified_at": "2026-09-17T05:20:21.105216"
     },
     {
       "file_path": "data/silver/hierarchy_2023-2-JuizVirtual.json",
       "layer": "silver",
       "size_bytes": 34163,
-      "modified_at": "2026-09-17T05:18:56.282824"
+      "modified_at": "2026-09-17T05:20:20.989215"
     },
     {
       "file_path": "data/silver/language_analysis_2026-1-P.R.I.S.M.A.json",
       "layer": "silver",
       "size_bytes": 11853,
-      "modified_at": "2026-09-17T05:18:56.375825"
+      "modified_at": "2026-09-17T05:20:21.110216"
     },
     {
       "file_path": "data/silver/language_analysis_2026-2-Followw.json",
       "layer": "silver",
       "size_bytes": 5801,
-      "modified_at": "2026-09-17T05:18:56.376826"
+      "modified_at": "2026-09-17T05:20:21.110216"
     },
     {
       "file_path": "data/silver/hierarchy_2026-2-GlossarioUnB.json",
       "layer": "silver",
       "size_bytes": 6052,
-      "modified_at": "2026-09-17T05:18:56.360825"
+      "modified_at": "2026-09-17T05:20:21.090215"
     },
     {
       "file_path": "data/silver/hierarchy_2023-2-SuaGradeUnB.json",
       "layer": "silver",
       "size_bytes": 55416,
-      "modified_at": "2026-09-17T05:18:56.318824"
+      "modified_at": "2026-09-17T05:20:21.035215"
     },
     {
       "file_path": "data/silver/hierarchy_teste.json",
       "layer": "silver",
       "size_bytes": 1359,
-      "modified_at": "2026-09-17T05:18:56.370825"
+      "modified_at": "2026-09-17T05:20:21.104216"
     },
     {
       "file_path": "data/silver/language_analysis_2026-1-LegisKids.json",
       "layer": "silver",
       "size_bytes": 16826,
-      "modified_at": "2026-09-17T05:18:56.375825"
+      "modified_at": "2026-09-17T05:20:21.110216"
     },
     {
       "file_path": "data/silver/language_analysis_2026-1-Squad14.json",
       "layer": "silver",
       "size_bytes": 968,
-      "modified_at": "2026-09-17T05:18:56.376826"
+      "modified_at": "2026-09-17T05:20:21.110216"
     },
     {
       "file_path": "data/silver/hierarchy_2023-2-Squad10.json",
       "layer": "silver",
       "size_bytes": 1030976,
-      "modified_at": "2026-09-17T05:18:56.317824"
+      "modified_at": "2026-09-17T05:20:21.034215"
     },
     {
       "file_path": "data/silver/language_analysis_MDS-MonitoraBSB.json",
       "layer": "silver",
       "size_bytes": 14974,
-      "modified_at": "2026-09-17T05:18:56.377825"
+      "modified_at": "2026-09-17T05:20:21.111216"
     },
     {
       "file_path": "data/silver/repository_metrics.json",
       "layer": "silver",
       "size_bytes": 13579,
-      "modified_at": "2026-09-17T05:18:56.382826"
+      "modified_at": "2026-09-17T05:20:21.117216"
     },
     {
       "file_path": "data/silver/hierarchy_2025-2-OncoMap.json",
       "layer": "silver",
       "size_bytes": 187506,
-      "modified_at": "2026-09-17T05:18:56.358825"
+      "modified_at": "2026-09-17T05:20:21.088216"
     },
     {
       "file_path": "data/silver/language_analysis_2025-2-GuiaDev.json",
       "layer": "silver",
       "size_bytes": 19006,
-      "modified_at": "2026-09-17T05:18:56.374825"
+      "modified_at": "2026-09-17T05:20:21.109216"
     },
     {
       "file_path": "data/silver/language_analysis_exemplogitpage.json",
       "layer": "silver",
       "size_bytes": 968,
-      "modified_at": "2026-09-17T05:18:56.380826"
+      "modified_at": "2026-09-17T05:20:21.115216"
     },
     {
       "file_path": "data/silver/maturity_bands.json",
       "layer": "silver",
       "size_bytes": 171,
-      "modified_at": "2026-09-17T05:18:56.381826"
+      "modified_at": "2026-09-17T05:20:21.115216"
     },
     {
       "file_path": "data/silver/hierarchy_2024-2-Urbanize.json",
       "layer": "silver",
       "size_bytes": 848974,
-      "modified_at": "2026-09-17T05:18:56.355825"
+      "modified_at": "2026-09-17T05:20:21.085216"
     },
     {
       "file_path": "data/silver/hierarchy_2026-1-squad0x.json",
       "layer": "silver",
       "size_bytes": 704,
-      "modified_at": "2026-09-17T05:18:56.360825"
+      "modified_at": "2026-09-17T05:20:21.090215"
     },
     {
       "file_path": "data/silver/language_analysis_2024-2-ChamaControl.json",
       "layer": "silver",
       "size_bytes": 13471,
-      "modified_at": "2026-09-17T05:18:56.373826"
+      "modified_at": "2026-09-17T05:20:21.108216"
     },
     {
       "file_path": "data/silver/language_analysis_VIDAProject.json",
       "layer": "silver",
       "size_bytes": 14160,
-      "modified_at": "2026-09-17T05:18:56.378825"
+      "modified_at": "2026-09-17T05:20:21.112216"
     },
     {
       "file_path": "data/silver/hierarchy_2026-1-Squad4-Dito_e_Feito.json",
       "layer": "silver",
       "size_bytes": 36189,
-      "modified_at": "2026-09-17T05:18:56.360825"
+      "modified_at": "2026-09-17T05:20:21.090215"
     },
     {
       "file_path": "data/silver/hierarchy_2023-2-Squad04.json",
       "layer": "silver",
       "size_bytes": 28429,
-      "modified_at": "2026-09-17T05:18:56.313824"
+      "modified_at": "2026-09-17T05:20:21.028215"
     },
     {
       "file_path": "data/silver/hierarchy_2026-1-Mapa_L.I.L.A.S.json",
       "layer": "silver",
       "size_bytes": 86548,
-      "modified_at": "2026-09-17T05:18:56.359825"
+      "modified_at": "2026-09-17T05:20:21.089216"
     },
     {
       "file_path": "data/silver/hierarchy_2025-2-Squad-01.json",
       "layer": "silver",
       "size_bytes": 339460,
-      "modified_at": "2026-09-17T05:18:56.358825"
+      "modified_at": "2026-09-17T05:20:21.088216"
     },
     {
       "file_path": "data/silver/hierarchy_2026-1-Squad13.json",
       "layer": "silver",
       "size_bytes": 122375,
-      "modified_at": "2026-09-17T05:18:56.360825"
+      "modified_at": "2026-09-17T05:20:21.090215"
     },
     {
       "file_path": "data/silver/hierarchy_mapadaacessibilidade.json",
       "layer": "silver",
       "size_bytes": 899995,
-      "modified_at": "2026-09-17T05:18:56.370825"
+      "modified_at": "2026-09-17T05:20:21.104216"
     },
     {
       "file_path": "data/silver/language_analysis_2025-2-Squad-01.json",
       "layer": "silver",
       "size_bytes": 18426,
-      "modified_at": "2026-09-17T05:18:56.375825"
+      "modified_at": "2026-09-17T05:20:21.109216"
     },
     {
       "file_path": "data/silver/hierarchy_2026-2-Bandejao-UnB.json",
       "layer": "silver",
       "size_bytes": 3966,
-      "modified_at": "2026-09-17T05:18:56.360825"
+      "modified_at": "2026-09-17T05:20:21.090215"
     },
     {
       "file_path": "data/silver/language_analysis_2026.2-UnB_Core.json",
       "layer": "silver",
       "size_bytes": 6089,
-      "modified_at": "2026-09-17T05:18:56.376826"
+      "modified_at": "2026-09-17T05:20:21.111216"
     },
     {
       "file_path": "data/silver/language_analysis_Fique-de-Olho.json",
       "layer": "silver",
       "size_bytes": 5653,
-      "modified_at": "2026-09-17T05:18:56.377825"
+      "modified_at": "2026-09-17T05:20:21.111216"
     },
     {
       "file_path": "data/silver/language_analysis_2024-1-Squad08.json",
       "layer": "silver",
       "size_bytes": 8138,
-      "modified_at": "2026-09-17T05:18:56.373826"
+      "modified_at": "2026-09-17T05:20:21.107216"
     },
     {
       "file_path": "data/silver/language_analysis_2023-2-Squad10.json",
       "layer": "silver",
       "size_bytes": 14644,
-      "modified_at": "2026-09-17T05:18:56.371825"
+      "modified_at": "2026-09-17T05:20:21.105216"
     },
     {
       "file_path": "data/silver/activity_heatmap.json",
       "layer": "silver",
       "size_bytes": 12378,
-      "modified_at": "2026-09-17T05:18:56.274824"
+      "modified_at": "2026-09-17T05:20:20.980215"
     },
     {
       "file_path": "data/silver/hierarchy_2024-1-Squad08.json",
       "layer": "silver",
       "size_bytes": 10382,
-      "modified_at": "2026-09-17T05:18:56.336825"
+      "modified_at": "2026-09-17T05:20:21.059215"
     },
     {
       "file_path": "data/silver/language_analysis_2026-2-VeritasIA.json",
       "layer": "silver",
       "size_bytes": 17040,
-      "modified_at": "2026-09-17T05:18:56.376826"
+      "modified_at": "2026-09-17T05:20:21.110216"
     },
     {
       "file_path": "data/silver/language_analysis_2024-2-AcheiUnB.json",
       "layer": "silver",
       "size_bytes": 21448,
-      "modified_at": "2026-09-17T05:18:56.373826"
+      "modified_at": "2026-09-17T05:20:21.108216"
     },
     {
       "file_path": "data/silver/language_analysis_2023-2-SuaGradeUnB.json",
       "layer": "silver",
       "size_bytes": 15110,
-      "modified_at": "2026-09-17T05:18:56.371825"
+      "modified_at": "2026-09-17T05:20:21.105216"
     },
     {
       "file_path": "data/silver/language_analysis_2025-1-NoFluxoUNB.json",
       "layer": "silver",
       "size_bytes": 35134,
-      "modified_at": "2026-09-17T05:18:56.374825"
+      "modified_at": "2026-09-17T05:20:21.108216"
     },
     {
       "file_path": "data/silver/language_analysis_2026-2-MonitoraUnB.json",
       "layer": "silver",
       "size_bytes": 2791,
-      "modified_at": "2026-09-17T05:18:56.376826"
+      "modified_at": "2026-09-17T05:20:21.110216"
     },
     {
       "file_path": "data/silver/language_analysis_2025-1-RelatAI.json",
       "layer": "silver",
       "size_bytes": 13422,
-      "modified_at": "2026-09-17T05:18:56.374825"
+      "modified_at": "2026-09-17T05:20:21.109216"
     },
     {
       "file_path": "data/silver/contribution_distribution.json",
       "layer": "silver",
       "size_bytes": 340,
-      "modified_at": "2026-09-17T05:18:56.276824"
+      "modified_at": "2026-09-17T05:20:20.982215"
     },
     {
       "file_path": "data/silver/hierarchy_2024-2-SuaFinanca.json",
       "layer": "silver",
       "size_bytes": 5354085,
-      "modified_at": "2026-09-17T05:18:56.352825"
+      "modified_at": "2026-09-17T05:20:21.082216"
     },
     {
       "file_path": "data/silver/hierarchy_2025-2-Portal-dos-Professores.json",
       "layer": "silver",
       "size_bytes": 60869,
-      "modified_at": "2026-09-17T05:18:56.358825"
+      "modified_at": "2026-09-17T05:20:21.088216"
     },
     {
       "file_path": "data/silver/language_analysis_DFemObras-2025.1.json",
       "layer": "silver",
       "size_bytes": 16671,
-      "modified_at": "2026-09-17T05:18:56.377825"
+      "modified_at": "2026-09-17T05:20:21.111216"
     },
     {
       "file_path": "data/silver/hierarchy_Gastos-DF-Squad12.json",
       "layer": "silver",
       "size_bytes": 905587,
-      "modified_at": "2026-09-17T05:18:56.366825"
+      "modified_at": "2026-09-17T05:20:21.098216"
     },
     {
       "file_path": "data/silver/language_analysis_2026-1-SafeStreets.json",
       "layer": "silver",
       "size_bytes": 18888,
-      "modified_at": "2026-09-17T05:18:56.376826"
+      "modified_at": "2026-09-17T05:20:21.110216"
     },
     {
       "file_path": "data/silver/hierarchy_Mds-ArenaPesadelo.json",
       "layer": "silver",
       "size_bytes": 96359,
-      "modified_at": "2026-09-17T05:18:56.366825"
+      "modified_at": "2026-09-17T05:20:21.099216"
     },
     {
       "file_path": "data/silver/hierarchy_ParticipeMais.json",
       "layer": "silver",
       "size_bytes": 69840,
-      "modified_at": "2026-09-17T05:18:56.366825"
+      "modified_at": "2026-09-17T05:20:21.099216"
     },
     {
       "file_path": "data/silver/registry.json",
       "layer": "silver",
       "size_bytes": 12108,
-      "modified_at": "2026-09-17T05:18:56.382826"
+      "modified_at": "2026-09-17T05:20:21.116216"
     },
     {
       "file_path": "data/silver/language_analysis_2026-2-AgendaUnB.json",
       "layer": "silver",
       "size_bytes": 5403,
-      "modified_at": "2026-09-17T05:18:56.376826"
+      "modified_at": "2026-09-17T05:20:21.110216"
     },
     {
       "file_path": "data/silver/language_analysis_2026.1-ContraDito.json",
       "layer": "silver",
       "size_bytes": 18885,
-      "modified_at": "2026-09-17T05:18:56.376826"
+      "modified_at": "2026-09-17T05:20:21.110216"
     },
     {
       "file_path": "data/silver/hierarchy_2026-1-SafeStreets.json",
       "layer": "silver",
       "size_bytes": 72249,
-      "modified_at": "2026-09-17T05:18:56.359825"
+      "modified_at": "2026-09-17T05:20:21.089216"
     },
     {
       "file_path": "data/silver/hierarchy_2026-2-MonitoraUnB.json",
       "layer": "silver",
       "size_bytes": 3190,
-      "modified_at": "2026-09-17T05:18:56.360825"
+      "modified_at": "2026-09-17T05:20:21.090215"
     },
     {
       "file_path": "data/silver/language_analysis_2025-2-Synapse.json",
       "layer": "silver",
       "size_bytes": 14648,
-      "modified_at": "2026-09-17T05:18:56.375825"
+      "modified_at": "2026-09-17T05:20:21.109216"
     },
     {
       "file_path": "data/silver/language_analysis_ParticipeMais.json",
       "layer": "silver",
       "size_bytes": 15903,
-      "modified_at": "2026-09-17T05:18:56.377825"
+      "modified_at": "2026-09-17T05:20:21.111216"
     },
     {
       "file_path": "data/silver/hierarchy_2024-1-forUnB.json",
       "layer": "silver",
       "size_bytes": 176591,
-      "modified_at": "2026-09-17T05:18:56.336825"
+      "modified_at": "2026-09-17T05:20:21.059215"
     },
     {
       "file_path": "data/silver/hierarchy_Projeto-P.I.T.E.R.json",
       "layer": "silver",
       "size_bytes": 62915,
-      "modified_at": "2026-09-17T05:18:56.367825"
+      "modified_at": "2026-09-17T05:20:21.100216"
     },
     {
       "file_path": "data/silver/language_analysis_2023-2-Squad09-Gotinha.json",
       "layer": "silver",
       "size_bytes": 16631,
-      "modified_at": "2026-09-17T05:18:56.371825"
+      "modified_at": "2026-09-17T05:20:21.105216"
     },
     {
       "file_path": "data/silver/hierarchy_2024-1-Squad-10.json",
       "layer": "silver",
       "size_bytes": 17965,
-      "modified_at": "2026-09-17T05:18:56.336825"
+      "modified_at": "2026-09-17T05:20:21.059215"
     },
     {
       "file_path": "data/silver/hierarchy_2024-1-squad04.json",
       "layer": "silver",
       "size_bytes": 52011,
-      "modified_at": "2026-09-17T05:18:56.336825"
+      "modified_at": "2026-09-17T05:20:21.059215"
     },
     {
       "file_path": "data/silver/language_analysis_2023-2-Squad07.json",
       "layer": "silver",
       "size_bytes": 11704,
-      "modified_at": "2026-09-17T05:18:56.371825"
+      "modified_at": "2026-09-17T05:20:21.105216"
     },
     {
       "file_path": "data/silver/language_analysis_2024-1-Squad-10.json",
       "layer": "silver",
       "size_bytes": 11269,
-      "modified_at": "2026-09-17T05:18:56.373826"
+      "modified_at": "2026-09-17T05:20:21.107216"
     },
     {
       "file_path": "data/silver/hierarchy_2025-2-Lumina.json",
       "layer": "silver",
       "size_bytes": 54765,
-      "modified_at": "2026-09-17T05:18:56.357825"
+      "modified_at": "2026-09-17T05:20:21.087215"
     },
     {
       "file_path": "data/silver/hierarchy_Gastos-DF-2024-02.json",
       "layer": "silver",
       "size_bytes": 47242,
-      "modified_at": "2026-09-17T05:18:56.361825"
+      "modified_at": "2026-09-17T05:20:21.090215"
     },
     {
       "file_path": "data/silver/language_analysis_2024-1-EducaMinas-backend.json",
       "layer": "silver",
       "size_bytes": 9118,
-      "modified_at": "2026-09-17T05:18:56.372825"
+      "modified_at": "2026-09-17T05:20:21.107216"
     },
     {
       "file_path": "data/silver/language_analysis_2026-2-Cerradinho-API.json",
       "layer": "silver",
       "size_bytes": 4517,
-      "modified_at": "2026-09-17T05:18:56.376826"
+      "modified_at": "2026-09-17T05:20:21.110216"
     },
     {
       "file_path": "data/silver/hierarchy_2025-2-InfoSchool.json",
       "layer": "silver",
       "size_bytes": 50117,
-      "modified_at": "2026-09-17T05:18:56.357825"
+      "modified_at": "2026-09-17T05:20:21.086215"
     },
     {
       "file_path": "data/silver/hierarchy_2024-1-EducaMinas-frontend.json",
       "layer": "silver",
       "size_bytes": 39197,
-      "modified_at": "2026-09-17T05:18:56.328825"
+      "modified_at": "2026-09-17T05:20:21.049215"
     },
     {
       "file_path": "data/silver/hierarchy_2025-2-Eh_Fake.json",
       "layer": "silver",
       "size_bytes": 51198,
-      "modified_at": "2026-09-17T05:18:56.356825"
+      "modified_at": "2026-09-17T05:20:21.086215"
     },
     {
       "file_path": "data/silver/language_analysis_Mds-ArenaPesadelo.json",
       "layer": "silver",
       "size_bytes": 17705,
-      "modified_at": "2026-09-17T05:18:56.377825"
+      "modified_at": "2026-09-17T05:20:21.111216"
     },
     {
       "file_path": "data/silver/language_analysis_Gastos-DF-2024-02.json",
       "layer": "silver",
       "size_bytes": 17726,
-      "modified_at": "2026-09-17T05:18:56.377825"
+      "modified_at": "2026-09-17T05:20:21.111216"
     },
     {
       "file_path": "data/silver/cycle_times.json",
       "layer": "silver",
       "size_bytes": 1750961,
-      "modified_at": "2026-09-17T05:18:56.279824"
+      "modified_at": "2026-09-17T05:20:20.986215"
     },
     {
       "file_path": "data/silver/language_analysis_2024-2-Squad01.json",
       "layer": "silver",
       "size_bytes": 22828,
-      "modified_at": "2026-09-17T05:18:56.373826"
+      "modified_at": "2026-09-17T05:20:21.108216"
     },
     {
       "file_path": "data/silver/hierarchy_Squad09-UnBHUB.json",
       "layer": "silver",
       "size_bytes": 54272,
-      "modified_at": "2026-09-17T05:18:56.367825"
+      "modified_at": "2026-09-17T05:20:21.100216"
     },
     {
       "file_path": "data/silver/language_analysis_2024-1-EducaMinas-frontend.json",
       "layer": "silver",
       "size_bytes": 15237,
-      "modified_at": "2026-09-17T05:18:56.372825"
+      "modified_at": "2026-09-17T05:20:21.107216"
     },
     {
       "file_path": "data/silver/language_analysis_diario-de-bordo.json",
       "layer": "silver",
       "size_bytes": 3830,
-      "modified_at": "2026-09-17T05:18:56.380826"
+      "modified_at": "2026-09-17T05:20:21.115216"
     },
     {
       "file_path": "data/silver/language_analysis_2026-1-ProtectKids.json",
       "layer": "silver",
       "size_bytes": 13440,
-      "modified_at": "2026-09-17T05:18:56.376826"
+      "modified_at": "2026-09-17T05:20:21.110216"
     },
     {
       "file_path": "data/silver/hierarchy_Sonorus-2025.1.json",
       "layer": "silver",
       "size_bytes": 42949,
-      "modified_at": "2026-09-17T05:18:56.367825"
+      "modified_at": "2026-09-17T05:20:21.100216"
     },
     {
       "file_path": "data/silver/collaboration_edges.json",
       "layer": "silver",
       "size_bytes": 606626,
-      "modified_at": "2026-09-17T05:18:56.276824"
+      "modified_at": "2026-09-17T05:20:20.982215"
     },
     {
       "file_path": "data/silver/language_analysis_2025-2-Lumina.json",
       "layer": "silver",
       "size_bytes": 16338,
-      "modified_at": "2026-09-17T05:18:56.375825"
+      "modified_at": "2026-09-17T05:20:21.109216"
     },
     {
       "file_path": "data/silver/language_analysis_2025-2-OncoMap.json",
       "layer": "silver",
       "size_bytes": 21199,
-      "modified_at": "2026-09-17T05:18:56.375825"
+      "modified_at": "2026-09-17T05:20:21.109216"
     },
     {
       "file_path": "data/silver/cross_repository_hubs.json",
       "layer": "silver",
       "size_bytes": 17306,
-      "modified_at": "2026-09-17T05:18:56.276824"
+      "modified_at": "2026-09-17T05:20:20.982215"
     },
     {
       "file_path": "data/silver/language_analysis_portfolio-MDS.json",
       "layer": "silver",
       "size_bytes": 14720,
-      "modified_at": "2026-09-17T05:18:56.381826"
+      "modified_at": "2026-09-17T05:20:21.115216"
     },
     {
       "file_path": "data/silver/language_analysis_2025-1-Eletta.json",
       "layer": "silver",
       "size_bytes": 26309,
-      "modified_at": "2026-09-17T05:18:56.374825"
+      "modified_at": "2026-09-17T05:20:21.108216"
     },
     {
       "file_path": "data/silver/language_analysis_2025-2-Mural-UnB.json",
       "layer": "silver",
       "size_bytes": 23795,
-      "modified_at": "2026-09-17T05:18:56.375825"
+      "modified_at": "2026-09-17T05:20:21.109216"
     },
     {
       "file_path": "data/silver/language_analysis_2025-2-Integralizei_UnB.json",
       "layer": "silver",
       "size_bytes": 26422,
-      "modified_at": "2026-09-17T05:18:56.374825"
+      "modified_at": "2026-09-17T05:20:21.109216"
     },
     {
       "file_path": "data/silver/temporal_statistics.json",
       "layer": "silver",
       "size_bytes": 2385,
-      "modified_at": "2026-09-17T05:18:56.406826"
+      "modified_at": "2026-09-17T05:20:21.144216"
     },
     {
       "file_path": "data/silver/language_analysis_2026-1-Guard.IA.json",
       "layer": "silver",
       "size_bytes": 14846,
-      "modified_at": "2026-09-17T05:18:56.375825"
+      "modified_at": "2026-09-17T05:20:21.110216"
     },
     {
       "file_path": "data/silver/hierarchy_2025-1-NoFluxoUNB.json",
       "layer": "silver",
       "size_bytes": 267805,
-      "modified_at": "2026-09-17T05:18:56.356825"
+      "modified_at": "2026-09-17T05:20:21.086215"
     },
     {
       "file_path": "data/silver/member_status_distribution.json",
       "layer": "silver",
       "size_bytes": 173,
-      "modified_at": "2026-09-17T05:18:56.381826"
+      "modified_at": "2026-09-17T05:20:21.115216"
     },
     {
       "file_path": "data/silver/hierarchy_diario-de-bordo.json",
       "layer": "silver",
       "size_bytes": 4053,
-      "modified_at": "2026-09-17T05:18:56.367825"
+      "modified_at": "2026-09-17T05:20:21.100216"
     },
     {
       "file_path": "data/silver/language_analysis_teste-ru.json",
       "layer": "silver",
       "size_bytes": 5031,
-      "modified_at": "2026-09-17T05:18:56.381826"
+      "modified_at": "2026-09-17T05:20:21.115216"
     },
     {
       "file_path": "data/silver/hierarchy_2023-2-Squad09-Gotinha.json",
       "layer": "silver",
       "size_bytes": 48081,
-      "modified_at": "2026-09-17T05:18:56.316824"
+      "modified_at": "2026-09-17T05:20:21.032215"
     },
     {
       "file_path": "data/silver/hierarchy_2025-2-Mural-UnB.json",
       "layer": "silver",
       "size_bytes": 146219,
-      "modified_at": "2026-09-17T05:18:56.357825"
+      "modified_at": "2026-09-17T05:20:21.087215"
     },
     {
       "file_path": "data/silver/hierarchy_2026-2-AgendaUnB.json",
       "layer": "silver",
       "size_bytes": 6390,
-      "modified_at": "2026-09-17T05:18:56.360825"
+      "modified_at": "2026-09-17T05:20:21.090215"
     },
     {
       "file_path": "data/silver/language_analysis_2025-2-Eh_Fake.json",
       "layer": "silver",
       "size_bytes": 15714,
-      "modified_at": "2026-09-17T05:18:56.374825"
+      "modified_at": "2026-09-17T05:20:21.109216"
     },
     {
       "file_path": "data/silver/language_analysis_2023-2-JuizVirtual.json",
       "layer": "silver",
       "size_bytes": 13810,
-      "modified_at": "2026-09-17T05:18:56.370825"
+      "modified_at": "2026-09-17T05:20:21.104216"
     },
     {
       "file_path": "data/silver/hierarchy_LicitaBSB-24.1.json",
       "layer": "silver",
       "size_bytes": 99924,
-      "modified_at": "2026-09-17T05:18:56.366825"
+      "modified_at": "2026-09-17T05:20:21.099216"
     },
     {
       "file_path": "data/silver/hierarchy_2023.2_Licitaiba.json",
       "layer": "silver",
       "size_bytes": 9066,
-      "modified_at": "2026-09-17T05:18:56.328825"
+      "modified_at": "2026-09-17T05:20:21.049215"
     },
     {
       "file_path": "data/silver/hierarchy_2026-1-P.R.I.S.M.A.json",
       "layer": "silver",
       "size_bytes": 32847,
-      "modified_at": "2026-09-17T05:18:56.359825"
+      "modified_at": "2026-09-17T05:20:21.089216"
     },
     {
       "file_path": "data/silver/hierarchy_teste-ru.json",
       "layer": "silver",
       "size_bytes": 5412,
-      "modified_at": "2026-09-17T05:18:56.370825"
+      "modified_at": "2026-09-17T05:20:21.104216"
     },
     {
       "file_path": "data/silver/language_analysis_2023.2-LicitaX.json",
       "layer": "silver",
       "size_bytes": 7012,
-      "modified_at": "2026-09-17T05:18:56.371825"
+      "modified_at": "2026-09-17T05:20:21.105216"
     },
     {
       "file_path": "data/silver/language_analysis_codigoruim.json",
       "layer": "silver",
       "size_bytes": 2683,
-      "modified_at": "2026-09-17T05:18:56.380826"
+      "modified_at": "2026-09-17T05:20:21.115216"
     },
     {
       "file_path": "data/silver/language_analysis_2026-02-UnDb.json",
       "layer": "silver",
       "size_bytes": 6718,
-      "modified_at": "2026-09-17T05:18:56.375825"
+      "modified_at": "2026-09-17T05:20:21.110216"
     },
     {
       "file_path": "data/silver/hierarchy_2025.1-RelatoriosInteligentesBCB.json",
       "layer": "silver",
       "size_bytes": 9561,
-      "modified_at": "2026-09-17T05:18:56.358825"
+      "modified_at": "2026-09-17T05:20:21.088216"
     },
     {
       "file_path": "data/silver/language_analysis_2023-2-Squad05-TesouroMineiro.json",
       "layer": "silver",
       "size_bytes": 18596,
-      "modified_at": "2026-09-17T05:18:56.371825"
+      "modified_at": "2026-09-17T05:20:21.105216"
     },
     {
       "file_path": "data/silver/language_analysis_2025-1-GovInsights.json",
       "layer": "silver",
       "size_bytes": 12396,
-      "modified_at": "2026-09-17T05:18:56.374825"
+      "modified_at": "2026-09-17T05:20:21.108216"
     },
     {
       "file_path": "data/silver/hierarchy_2023-2-Squad05-TesouroMineiro.json",
       "layer": "silver",
       "size_bytes": 960822,
-      "modified_at": "2026-09-17T05:18:56.316824"
+      "modified_at": "2026-09-17T05:20:21.032215"
     },
     {
       "file_path": "data/silver/language_analysis_2023-2-Squad02-Desmatazonia.json",
       "layer": "silver",
       "size_bytes": 14949,
-      "modified_at": "2026-09-17T05:18:56.371825"
+      "modified_at": "2026-09-17T05:20:21.105216"
     },
     {
       "file_path": "data/silver/hierarchy_G2-2026-2.json",
       "layer": "silver",
       "size_bytes": 6966,
-      "modified_at": "2026-09-17T05:18:56.361825"
+      "modified_at": "2026-09-17T05:20:21.090215"
     },
     {
       "file_path": "data/silver/language_analysis_2023.2_Licitaiba.json",
       "layer": "silver",
       "size_bytes": 6697,
-      "modified_at": "2026-09-17T05:18:56.372825"
+      "modified_at": "2026-09-17T05:20:21.106216"
     },
     {
       "file_path": "data/silver/hierarchy_2026-2-VeritasIA.json",
       "layer": "silver",
       "size_bytes": 42766,
-      "modified_at": "2026-09-17T05:18:56.360825"
+      "modified_at": "2026-09-17T05:20:21.090215"
     },
     {
       "file_path": "data/silver/language_analysis_2024-1-Squad02-CulturaTransparente.json",
       "layer": "silver",
       "size_bytes": 17100,
-      "modified_at": "2026-09-17T05:18:56.373826"
+      "modified_at": "2026-09-17T05:20:21.107216"
     },
     {
       "file_path": "data/silver/hierarchy_2024-2-AcheiUnB.json",
       "layer": "silver",
       "size_bytes": 60288,
-      "modified_at": "2026-09-17T05:18:56.336825"
+      "modified_at": "2026-09-17T05:20:21.059215"
     },
     {
       "file_path": "data/silver/language_analysis_2025-2-Portal-dos-Professores.json",
       "layer": "silver",
       "size_bytes": 21242,
-      "modified_at": "2026-09-17T05:18:56.375825"
+      "modified_at": "2026-09-17T05:20:21.109216"
     },
     {
       "file_path": "data/silver/language_analysis_.github.json",
       "layer": "silver",
       "size_bytes": 690,
-      "modified_at": "2026-09-17T05:18:56.370825"
+      "modified_at": "2026-09-17T05:20:21.104216"
     },
     {
       "file_path": "data/silver/language_analysis_2025_1-Jakebot.json",
       "layer": "silver",
       "size_bytes": 11946,
-      "modified_at": "2026-09-17T05:18:56.375825"
+      "modified_at": "2026-09-17T05:20:21.109216"
     },
     {
       "file_path": "data/silver/hierarchy_2026-02-TambureteiUnB.json",
       "layer": "silver",
       "size_bytes": 5283,
-      "modified_at": "2026-09-17T05:18:56.358825"
+      "modified_at": "2026-09-17T05:20:21.088216"
     },
     {
       "file_path": "data/silver/language_analysis_2023.2_Gotinha.json",
       "layer": "silver",
       "size_bytes": 5844,
-      "modified_at": "2026-09-17T05:18:56.371825"
+      "modified_at": "2026-09-17T05:20:21.105216"
     },
     {
       "file_path": "data/silver/hierarchy_2025-2-SeLiga.json",
       "layer": "silver",
       "size_bytes": 27505,
-      "modified_at": "2026-09-17T05:18:56.358825"
+      "modified_at": "2026-09-17T05:20:21.088216"
     },
     {
       "file_path": "data/silver/hierarchy_portfolio-MDS.json",
       "layer": "silver",
       "size_bytes": 21963,
-      "modified_at": "2026-09-17T05:18:56.370825"
+      "modified_at": "2026-09-17T05:20:21.104216"
     },
     {
       "file_path": "data/silver/language_analysis_2026-2-GlossarioUnB.json",
       "layer": "silver",
       "size_bytes": 3693,
-      "modified_at": "2026-09-17T05:18:56.376826"
+      "modified_at": "2026-09-17T05:20:21.110216"
     },
     {
       "file_path": "data/silver/hierarchy_2026-02-UnDb.json",
       "layer": "silver",
       "size_bytes": 17210,
-      "modified_at": "2026-09-17T05:18:56.358825"
+      "modified_at": "2026-09-17T05:20:21.088216"
     },
     {
       "file_path": "data/silver/language_analysis_squad03-r2.json",
       "layer": "silver",
       "size_bytes": 5536,
-      "modified_at": "2026-09-17T05:18:56.381826"
+      "modified_at": "2026-09-17T05:20:21.115216"
     },
     {
       "file_path": "data/silver/hierarchy_2024-2-Squad06.json",
       "layer": "silver",
       "size_bytes": 25199,
-      "modified_at": "2026-09-17T05:18:56.338825"
+      "modified_at": "2026-09-17T05:20:21.062215"
     },
     {
       "file_path": "data/silver/hierarchy_2024-2-Datazonia.json",
       "layer": "silver",
       "size_bytes": 11549,
-      "modified_at": "2026-09-17T05:18:56.337825"
+      "modified_at": "2026-09-17T05:20:21.061215"
     },
     {
       "file_path": "data/silver/language_analysis_2026-02-TambureteiUnB.json",
       "layer": "silver",
       "size_bytes": 3368,
-      "modified_at": "2026-09-17T05:18:56.375825"
+      "modified_at": "2026-09-17T05:20:21.109216"
     },
     {
       "file_path": "data/silver/hierarchy_2024-1-Gastos-DF-Doc-Squad12.json",
       "layer": "silver",
       "size_bytes": 4619646,
-      "modified_at": "2026-09-17T05:18:56.334825"
+      "modified_at": "2026-09-17T05:20:21.057215"
     },
     {
       "file_path": "data/silver/language_analysis_2026-1-Squad07.json",
       "layer": "silver",
       "size_bytes": 16780,
-      "modified_at": "2026-09-17T05:18:56.376826"
+      "modified_at": "2026-09-17T05:20:21.110216"
     },
     {
       "file_path": "data/silver/hierarchy_VIDAProject.json",
       "layer": "silver",
       "size_bytes": 25539,
-      "modified_at": "2026-09-17T05:18:56.367825"
+      "modified_at": "2026-09-17T05:20:21.100216"
     },
     {
       "file_path": "data/silver/hierarchy_2023-2-Squad07.json",
       "layer": "silver",
       "size_bytes": 43025,
-      "modified_at": "2026-09-17T05:18:56.316824"
+      "modified_at": "2026-09-17T05:20:21.032215"
     },
     {
       "file_path": "data/silver/language_analysis_2024-2-Squad06.json",
       "layer": "silver",
       "size_bytes": 13450,
-      "modified_at": "2026-09-17T05:18:56.374825"
+      "modified_at": "2026-09-17T05:20:21.108216"
     },
     {
       "file_path": "data/silver/hierarchy_2024-2-Squad01.json",
       "layer": "silver",
       "size_bytes": 56728,
-      "modified_at": "2026-09-17T05:18:56.337825"
+      "modified_at": "2026-09-17T05:20:21.061215"
     },
     {
       "file_path": "data/silver/hierarchy_2024-1-MinasDeCultura.json",
       "layer": "silver",
       "size_bytes": 62738,
-      "modified_at": "2026-09-17T05:18:56.335825"
+      "modified_at": "2026-09-17T05:20:21.057215"
     },
     {
       "file_path": "data/silver/language_analysis_2023-2-Squad03-LicitAL.json",
       "layer": "silver",
       "size_bytes": 49560,
-      "modified_at": "2026-09-17T05:18:56.371825"
+      "modified_at": "2026-09-17T05:20:21.105216"
     },
     {
       "file_path": "data/silver/ai/members_ai.json",
       "layer": "silver",
       "size_bytes": 604131,
-      "modified_at": "2026-09-17T05:18:56.275824"
+      "modified_at": "2026-09-17T05:20:20.981215"
     }
   ]
 }
