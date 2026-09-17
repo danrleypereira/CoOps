@@ -28,7 +28,33 @@ export function getDataBasePath(): string {
 }
 
 /**
+ * Thrown by {@link fetchData} when a data file does not exist (HTTP 404).
+ *
+ * A missing file means the pipeline hasn't generated it yet (e.g. a fresh fork
+ * or a first pipeline run still in progress), not a failure, so pages render an
+ * explanatory empty state for it instead of an error. Network errors, other
+ * HTTP statuses and invalid JSON keep throwing regular errors.
+ */
+export class DataNotFoundError extends Error {
+  /** Path relative to the data directory, e.g. 'silver/temporal_events.json'. */
+  readonly path: string;
+  readonly url: string;
+
+  constructor(path: string, url: string) {
+    super(`Data file not found: ${url} (status: 404)`);
+    this.name = 'DataNotFoundError';
+    this.path = path;
+    this.url = url;
+  }
+}
+
+export function isDataNotFoundError(error: unknown): error is DataNotFoundError {
+  return error instanceof DataNotFoundError;
+}
+
+/**
  * Fetch JSON data from the configured source
+ * @throws {DataNotFoundError} when the file does not exist (HTTP 404)
  * @param path - Relative path to the JSON file (e.g., 'silver/members_analytics.json')
  */
 export async function fetchData<T = any>(path: string): Promise<T> {
@@ -37,6 +63,9 @@ export async function fetchData<T = any>(path: string): Promise<T> {
 
   try {
     const response = await fetch(url);
+    if (response.status === 404) {
+      throw new DataNotFoundError(path, url);
+    }
     if (!response.ok) {
       // statusText is empty over HTTP/2 (e.g. raw.githubusercontent.com), so
       // always include the numeric status code.
@@ -45,7 +74,11 @@ export async function fetchData<T = any>(path: string): Promise<T> {
     }
     return await response.json();
   } catch (error) {
-    console.error(`Error fetching data from ${url}:`, error);
+    if (isDataNotFoundError(error)) {
+      console.warn(`Data file not generated yet: ${url}`);
+    } else {
+      console.error(`Error fetching data from ${url}:`, error);
+    }
     throw error;
   }
 }
