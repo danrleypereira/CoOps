@@ -104,10 +104,14 @@ jobs:
           INPUT_ORG: ${{ inputs.org }}
           COOPS_ORG: ${{ vars.COOPS_ORG }}
           OWNER: ${{ github.repository_owner }}
-          GH_TOKEN: ${{ github.token }}
+          # Same token as the Bronze step, so an expired COOPS_GITHUB_TOKEN fails here.
+          GH_TOKEN: ${{ secrets.COOPS_GITHUB_TOKEN || github.token }}
         run: |
           ORG="${INPUT_ORG:-${COOPS_ORG:-$OWNER}}"
-          TYPE=$(gh api "users/$ORG" --jq .type)
+          if ! TYPE=$(gh api "users/$ORG" --jq .type); then
+            echo "::error::Could not look up $ORG. If COOPS_GITHUB_TOKEN is set, it may have expired: renew it or delete the secret."
+            exit 1
+          fi
           if [ "$TYPE" != "Organization" ]; then
             echo "::error::$ORG is not an organization (type: $TYPE). Pass -f org=<organization>."
             exit 1
@@ -117,8 +121,9 @@ jobs:
 
       - name: Bronze - extract
         env:
-          # Only this step talks to GitHub. A PAT in COOPS_GITHUB_TOKEN sees
-          # private members/repos; the default token reads public org data.
+          # Only this step talks to GitHub. COOPS_GITHUB_TOKEN (public
+          # repositories, Members: Read-only) also lists concealed organization
+          # members; the default token reads public org data only.
           GITHUB_TOKEN: ${{ secrets.COOPS_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           MAX_REPOS: ${{ inputs.max_repos }}
           MAX_ISSUES: ${{ inputs.max_issues }}

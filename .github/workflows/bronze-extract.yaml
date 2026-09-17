@@ -76,8 +76,9 @@ jobs:
         run: |
           OWNER="$GITHUB_ORG"
 
+          # `|| true`: on a network failure curl exits non-zero and prints 000
           STATUS=$(curl -s -o user.json -w '%{http_code}' -H "Authorization: Bearer $GITHUB_TOKEN" \
-            "https://api.github.com/users/$OWNER")
+            "https://api.github.com/users/$OWNER" || true)
           if [ "$STATUS" != "200" ]; then
             echo "[ERROR]: GitHub returned HTTP $STATUS for $OWNER"
             if [ "$STATUS" = "401" ]; then
