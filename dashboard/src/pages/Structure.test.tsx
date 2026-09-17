@@ -1,5 +1,5 @@
 import { describe, test, expect, vi, beforeEach, afterEach } from 'vitest';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import type { ReactNode } from 'react';
 import Structure from './Structure';
@@ -162,11 +162,28 @@ describe('Structure page', () => {
 
   // #76: the effect must also react to temporalData, not only to the filters
   test('shows "Filtering data..." overlay when the temporal data arrives, then hides it', async () => {
+    // Hold the page's 300 ms overlay timer so the assertion doesn't race a slow runner.
+    const overlayTimers: Array<() => void> = [];
+    const realSetTimeout = globalThis.setTimeout;
+    vi.spyOn(globalThis, 'setTimeout').mockImplementation(((
+      handler: (...args: unknown[]) => void,
+      ms?: number,
+      ...args: unknown[]
+    ) => {
+      if (ms === 300) {
+        overlayTimers.push(() => handler(...args));
+        return 0 as unknown as ReturnType<typeof setTimeout>;
+      }
+      return realSetTimeout(handler, ms, ...args);
+    }) as typeof setTimeout);
+
     await renderLoaded();
-    expect(screen.getByText('Filtering data...')).toBeInTheDocument();
-    await waitFor(() => expect(screen.queryByText('Filtering data...')).not.toBeInTheDocument(), {
-      timeout: 2000,
-    });
+    // The overlay is set by an effect that runs after the data render.
+    expect(await screen.findByText('Filtering data...')).toBeInTheDocument();
+    expect(overlayTimers.length).toBeGreaterThan(0);
+
+    act(() => overlayTimers.forEach((fire) => fire()));
+    expect(screen.queryByText('Filtering data...')).not.toBeInTheDocument();
   });
 
   test('extracts unique members from activity data into the member filter', async () => {
