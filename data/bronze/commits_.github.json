@@ -1,0 +1,77 @@
+[
+  {
+    "_metadata": {
+      "extracted_at": "2026-09-17T03:58:20.395027",
+      "file_path": "data/bronze/commits_.github.json",
+      "record_count": 4
+    }
+  },
+  {
+    "sha": "9e6992a2b808bdeb0c621c553deade715a7ed1e1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T19:20:15Z",
+        "login": "RochaCarla"
+      },
+      "message": "Update README.md"
+    },
+    "additions": 9,
+    "deletions": 0,
+    "total_changes": 9,
+    "repo_name": ".github"
+  },
+  {
+    "sha": "c87b01c23549557b9d78210478b00730d1531d4b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T19:18:34Z",
+        "login": "RochaCarla"
+      },
+      "message": "Update README.md"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": ".github"
+  },
+  {
+    "sha": "7b61ec7360914c41c0289dd089d25041d12deb1e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T19:17:55Z",
+        "login": "RochaCarla"
+      },
+      "message": "Update README.md"
+    },
+    "additions": 9,
+    "deletions": 9,
+    "total_changes": 18,
+    "repo_name": ".github"
+  },
+  {
+    "sha": "e7ca9ce0008a14a8b048043d8623d2fe9acd49fd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T19:16:32Z",
+        "login": "RochaCarla"
+      },
+      "message": "Create README.md"
+    },
+    "additions": 12,
+    "deletions": 0,
+    "total_changes": 12,
+    "repo_name": ".github"
+  }
+]

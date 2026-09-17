@@ -1,0 +1,26 @@
+[
+  {
+    "_metadata": {
+      "extracted_at": "2026-09-17T03:58:09.815690",
+      "file_path": "data/bronze/commits_exemplogitpage.json",
+      "record_count": 1
+    }
+  },
+  {
+    "sha": "80e36660e12d84115ec64938c7b12f4cf147733e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-05T13:07:22Z",
+        "login": "RochaCarla"
+      },
+      "message": "Initial commit"
+    },
+    "additions": 22,
+    "deletions": 0,
+    "total_changes": 22,
+    "repo_name": "exemplogitpage"
+  }
+]

@@ -1,0 +1,1502 @@
+{
+  "owner": "unb-mds",
+  "repository": "2026-1-Guard.IA",
+  "branch": "main",
+  "sha": "fd5b00f5770b7de42fa7cd89c0802f85723c9dc2",
+  "tree": [
+    {
+      "name": ".github",
+      "path": ".github",
+      "type": "directory",
+      "sha": "b8c657aca98afb1dabc52e4e2c1bab3fcaa3329a",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "workflows",
+      "path": ".github/workflows",
+      "type": "directory",
+      "sha": "07a7c126f8e85ad22fa2706f3a73beb98a780a33",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "metrics",
+      "path": ".github/workflows/metrics",
+      "type": "directory",
+      "sha": "d1df83ea8e6f1e133f415fccca5e7ce42b680b2c",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "collect_metrics.py",
+      "path": ".github/workflows/metrics/collect_metrics.py",
+      "type": "file",
+      "sha": "f9b760379f820d02a9724b4997cb402f0736bc5f",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 10365,
+      "is_binary": false
+    },
+    {
+      "name": "sonar.yml",
+      "path": ".github/workflows/sonar.yml",
+      "type": "file",
+      "sha": "ffc9eb14b224cf9ad5c62879fbb5424840cd5a4c",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 560,
+      "is_binary": false
+    },
+    {
+      "name": "update-metrics.yml",
+      "path": ".github/workflows/update-metrics.yml",
+      "type": "file",
+      "sha": "076bb2aa0f77acdfd91257cd28a5b6d4f98e7762",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 1661,
+      "is_binary": false
+    },
+    {
+      "name": ".gitignore",
+      "path": ".gitignore",
+      "type": "file",
+      "sha": "31d07b656a7621641e57a789be80b2e43a2e970a",
+      "mode": "100644",
+      "extension": ".gitignore",
+      "size": 275,
+      "is_binary": false
+    },
+    {
+      "name": "GEMINI.md",
+      "path": "GEMINI.md",
+      "type": "file",
+      "sha": "f3d6f78d4e3286c2e3e75f294a3c3483482f4d6e",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 7243,
+      "is_binary": false
+    },
+    {
+      "name": "LICENSE",
+      "path": "LICENSE",
+      "type": "file",
+      "sha": "675c19ec0ecdd2613794ad67040a9a3c51d2b67a",
+      "mode": "100644",
+      "extension": "",
+      "size": 1060,
+      "is_binary": false
+    },
+    {
+      "name": "README.md",
+      "path": "README.md",
+      "type": "file",
+      "sha": "a07bad85d16fbb52fbd99454c06d18bb0dfa0168",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2982,
+      "is_binary": false
+    },
+    {
+      "name": "docs",
+      "path": "docs",
+      "type": "directory",
+      "sha": "09e2295f7e84184cda00a40bf85cd33435119457",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".nojekyll",
+      "path": "docs/.nojekyll",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".nojekyll",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "contratos_de_dados.md",
+      "path": "docs/contratos_de_dados.md",
+      "type": "file",
+      "sha": "405af6abee1d968674beb52fce0ee1e5fc65523b",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 7051,
+      "is_binary": false
+    },
+    {
+      "name": "equipe",
+      "path": "docs/equipe",
+      "type": "directory",
+      "sha": "e402c2b2170941c36fe7a2ad231628f503a81102",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "index.md",
+      "path": "docs/equipe/index.md",
+      "type": "file",
+      "sha": "490b52a0357dcecb756b3c6153dcedb3f9b8e4d7",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1005,
+      "is_binary": false
+    },
+    {
+      "name": "estudos",
+      "path": "docs/estudos",
+      "type": "directory",
+      "sha": "e42ffc2a974ee53b77683eebdb3542b3af46c2af",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "requisitos_e_ia.md",
+      "path": "docs/estudos/requisitos_e_ia.md",
+      "type": "file",
+      "sha": "c9938b87559e721100d9320d5dc60e7b7fc33459",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 19747,
+      "is_binary": false
+    },
+    {
+      "name": "frontend_spec.md",
+      "path": "docs/frontend_spec.md",
+      "type": "file",
+      "sha": "4af1eab53ed22f28746d884405b469bc71c3c564",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3817,
+      "is_binary": false
+    },
+    {
+      "name": "index.html",
+      "path": "docs/index.html",
+      "type": "file",
+      "sha": "acdce95b73e2b1acbf6ce8f57a42f49adf56c3b1",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 3608,
+      "is_binary": false
+    },
+    {
+      "name": "index.md",
+      "path": "docs/index.md",
+      "type": "file",
+      "sha": "cca023fa537d48c7c1aed64257c9f2d2d391b833",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2367,
+      "is_binary": false
+    },
+    {
+      "name": "infraestrutura_docker.md",
+      "path": "docs/infraestrutura_docker.md",
+      "type": "file",
+      "sha": "f0fc631e4407732bd6671c68e0ca436833207eed",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6952,
+      "is_binary": false
+    },
+    {
+      "name": "pipeline",
+      "path": "docs/pipeline",
+      "type": "directory",
+      "sha": "3c462aa02f9ec4c71eb3e420aadb4675cd773374",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "arquitetura.md",
+      "path": "docs/pipeline/arquitetura.md",
+      "type": "file",
+      "sha": "5531c794509bedcea02d2c0b950fa3cb946555e0",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1781,
+      "is_binary": false
+    },
+    {
+      "name": "visao_geral.md",
+      "path": "docs/pipeline/visao_geral.md",
+      "type": "file",
+      "sha": "f9aff9bb0d78835a531fcbd450e0a6d24aa0a016",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2162,
+      "is_binary": false
+    },
+    {
+      "name": "pipes_and_filters.md",
+      "path": "docs/pipes_and_filters.md",
+      "type": "file",
+      "sha": "3551cc5682d810b81c58c8a842bb8ef487fc0961",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6091,
+      "is_binary": false
+    },
+    {
+      "name": "postgres_vs_sqlite.md",
+      "path": "docs/postgres_vs_sqlite.md",
+      "type": "file",
+      "sha": "76c4c5143ac8e10cef9a2fa3fba31c94b5d00354",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 8046,
+      "is_binary": false
+    },
+    {
+      "name": "productivity",
+      "path": "docs/productivity",
+      "type": "directory",
+      "sha": "2a0b36cb3ee36e84f19e6652938a74f0599cc4cd",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "index.html",
+      "path": "docs/productivity/index.html",
+      "type": "file",
+      "sha": "38134d5aeb2bda6fb1321d67b5541152ffae9f32",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 34968,
+      "is_binary": false
+    },
+    {
+      "name": "metrics.json",
+      "path": "docs/productivity/metrics.json",
+      "type": "file",
+      "sha": "dfff3300ea43a6433bf1338da22e64eadb1e6b7a",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 66593,
+      "is_binary": false
+    },
+    {
+      "name": "produtividade.md",
+      "path": "docs/produtividade.md",
+      "type": "file",
+      "sha": "c6f29b4b835a5fc0372a4a1cb133ff6bcc77715d",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 878,
+      "is_binary": false
+    },
+    {
+      "name": "release_notes.md",
+      "path": "docs/release_notes.md",
+      "type": "file",
+      "sha": "ff8f4f893ebb9913ad191d2ef9c0b87cd67f6084",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3426,
+      "is_binary": false
+    },
+    {
+      "name": "requisitos_e_ia.md",
+      "path": "docs/requisitos_e_ia.md",
+      "type": "file",
+      "sha": "f70dfdd34d58543f001aea42967cabed58935ad7",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 9526,
+      "is_binary": false
+    },
+    {
+      "name": "reunioes",
+      "path": "docs/reunioes",
+      "type": "directory",
+      "sha": "d332b1877bcd2d9e3e2699eca25081dc7cbe6017",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "sprintplanning-05.md",
+      "path": "docs/reunioes/sprintplanning-05.md",
+      "type": "file",
+      "sha": "4d7413ae46362629bb44a5a0c4fffc59d19ae717",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3670,
+      "is_binary": false
+    },
+    {
+      "name": "sprintplanning-06.md",
+      "path": "docs/reunioes/sprintplanning-06.md",
+      "type": "file",
+      "sha": "5426cffa1d7624e2c1723dc72206b38f51a099e7",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3799,
+      "is_binary": false
+    },
+    {
+      "name": "sprintplanning-07.md",
+      "path": "docs/reunioes/sprintplanning-07.md",
+      "type": "file",
+      "sha": "b167f5bc217693e7248e72260af11a199c8109b9",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3390,
+      "is_binary": false
+    },
+    {
+      "name": "sprintplanning-08.md",
+      "path": "docs/reunioes/sprintplanning-08.md",
+      "type": "file",
+      "sha": "789cb990d2141b18300e622e7976c23c5b7ce6cc",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3727,
+      "is_binary": false
+    },
+    {
+      "name": "sprint_02",
+      "path": "docs/sprint_02",
+      "type": "directory",
+      "sha": "e606bafbebc2e57bc39c57cabfc7cb7b9a2083ab",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "estudo-storymap.md",
+      "path": "docs/sprint_02/estudo-storymap.md",
+      "type": "file",
+      "sha": "01d91cd057f9e36c5a5d8745f497930b16d0ef6a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1068,
+      "is_binary": false
+    },
+    {
+      "name": "prototipo.md",
+      "path": "docs/sprint_02/prototipo.md",
+      "type": "file",
+      "sha": "b5ee06925d369b78b22aaf50395036651569759b",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3742,
+      "is_binary": false
+    },
+    {
+      "name": "sprint_04",
+      "path": "docs/sprint_04",
+      "type": "directory",
+      "sha": "532d207250c3a4a668bc0c8da6e4a86008222677",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "melhoria-dashboard.md",
+      "path": "docs/sprint_04/melhoria-dashboard.md",
+      "type": "file",
+      "sha": "94bb344f71d1a5ba7cf14b3eee95eb027515609a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 860,
+      "is_binary": false
+    },
+    {
+      "name": "user-flow.md",
+      "path": "docs/sprint_04/user-flow.md",
+      "type": "file",
+      "sha": "ad7987d240946a6d6fa6e73e99fb443a99d2ebd3",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1356,
+      "is_binary": false
+    },
+    {
+      "name": "sprint_05",
+      "path": "docs/sprint_05",
+      "type": "directory",
+      "sha": "de512a605031ed28bb9549a91a255a6f0cb4c602",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "LLM.md",
+      "path": "docs/sprint_05/LLM.md",
+      "type": "file",
+      "sha": "d741824fe7e236473200024397bda10db4126d26",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5985,
+      "is_binary": false
+    },
+    {
+      "name": "criarCRUD.md",
+      "path": "docs/sprint_05/criarCRUD.md",
+      "type": "file",
+      "sha": "56f7c4cb37f2e8cec07c417c5147aeec42c0e98f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1062,
+      "is_binary": false
+    },
+    {
+      "name": "criarlogin.md",
+      "path": "docs/sprint_05/criarlogin.md",
+      "type": "file",
+      "sha": "a2e727eaa0ad90b9086e66b76f449165f3a48fb6",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 781,
+      "is_binary": false
+    },
+    {
+      "name": "homepage.md",
+      "path": "docs/sprint_05/homepage.md",
+      "type": "file",
+      "sha": "bd9c2246b412d42de9a7fd7d63b849893d58755d",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 875,
+      "is_binary": false
+    },
+    {
+      "name": "hometeam.md",
+      "path": "docs/sprint_05/hometeam.md",
+      "type": "file",
+      "sha": "b86891c3dff1d5a5ae261bab4ad3838b2b473e17",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1454,
+      "is_binary": false
+    },
+    {
+      "name": "implementacaoinit.md",
+      "path": "docs/sprint_05/implementacaoinit.md",
+      "type": "file",
+      "sha": "29189fdc1a8f31fddd2587a4360819f1fabd08b3",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 499,
+      "is_binary": false
+    },
+    {
+      "name": "redesignlogin.md",
+      "path": "docs/sprint_05/redesignlogin.md",
+      "type": "file",
+      "sha": "5a6a5f5040d0919bfedc0b3221ecd676c85cdc8e",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1065,
+      "is_binary": false
+    },
+    {
+      "name": "sprint_06",
+      "path": "docs/sprint_06",
+      "type": "directory",
+      "sha": "b99d5626ca6be0e1ea0ccec786e02084395aacfe",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "estudocontextengeneering.md",
+      "path": "docs/sprint_06/estudocontextengeneering.md",
+      "type": "file",
+      "sha": "88094bba64805a63ec72322445bfb9c92469deba",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6121,
+      "is_binary": false
+    },
+    {
+      "name": "sprint_07",
+      "path": "docs/sprint_07",
+      "type": "directory",
+      "sha": "da1d62545ef3f2b4d959f6cb3f398fab28b94f9c",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "correcaometrics.md",
+      "path": "docs/sprint_07/correcaometrics.md",
+      "type": "file",
+      "sha": "af5373ef1b3d639e9c3708c04e1d38b42ce0a73a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 165,
+      "is_binary": false
+    },
+    {
+      "name": "interfaceinterativa.md",
+      "path": "docs/sprint_07/interfaceinterativa.md",
+      "type": "file",
+      "sha": "bdcedc5cd4aa729d8aa2e50a81b48257190e96d2",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2839,
+      "is_binary": false
+    },
+    {
+      "name": "recuperacaolayout.md",
+      "path": "docs/sprint_07/recuperacaolayout.md",
+      "type": "file",
+      "sha": "f0b9bcb5094f46f9d313793159055aa6aed5c00b",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1916,
+      "is_binary": false
+    },
+    {
+      "name": "retiradaCRUD.md",
+      "path": "docs/sprint_07/retiradaCRUD.md",
+      "type": "file",
+      "sha": "995a92bff1cf7d7025fcf2edd114c3aefb1b7f56",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1219,
+      "is_binary": false
+    },
+    {
+      "name": "sprint_08",
+      "path": "docs/sprint_08",
+      "type": "directory",
+      "sha": "3f1f540bac1d2d331fb95723137d9b4ae917c1f1",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "buscardetalhes.md",
+      "path": "docs/sprint_08/buscardetalhes.md",
+      "type": "file",
+      "sha": "a9f373205c7487209b44ae55966c9ee333e3a989",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 417,
+      "is_binary": false
+    },
+    {
+      "name": "formatarnomes.md",
+      "path": "docs/sprint_08/formatarnomes.md",
+      "type": "file",
+      "sha": "68ee0ab0c508e23785f46a19a5e3e0f64a7afab9",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 656,
+      "is_binary": false
+    },
+    {
+      "name": "implementacaoclassificacao.md",
+      "path": "docs/sprint_08/implementacaoclassificacao.md",
+      "type": "file",
+      "sha": "66fece0eac2b72319daf2327bd504a3e5fb4986b",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4168,
+      "is_binary": false
+    },
+    {
+      "name": "integracaodashapi.md",
+      "path": "docs/sprint_08/integracaodashapi.md",
+      "type": "file",
+      "sha": "c6ac56669a0d2db6894d572f2c598aa5ca8a20a2",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1049,
+      "is_binary": false
+    },
+    {
+      "name": "sonarcloud.md",
+      "path": "docs/sprint_08/sonarcloud.md",
+      "type": "file",
+      "sha": "2f53f4dff9b56318fe9b60c0f9e901ebb343b2fe",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1447,
+      "is_binary": false
+    },
+    {
+      "name": "sprints",
+      "path": "docs/sprints",
+      "type": "directory",
+      "sha": "ee2a684166aefeec467b02a761dc01e6dbb8fc4a",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "sprint00.md",
+      "path": "docs/sprints/sprint00.md",
+      "type": "file",
+      "sha": "09a11df4c95cc85121e418d466d151377ef1802a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1833,
+      "is_binary": false
+    },
+    {
+      "name": "sprint01.md",
+      "path": "docs/sprints/sprint01.md",
+      "type": "file",
+      "sha": "ca224737b374b67a45c57a6565135f475bcbcf73",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1847,
+      "is_binary": false
+    },
+    {
+      "name": "sprint02.md",
+      "path": "docs/sprints/sprint02.md",
+      "type": "file",
+      "sha": "dc3f368c04d11b9bfd90c8f5baa7a4b463149368",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1778,
+      "is_binary": false
+    },
+    {
+      "name": "sprint03.md",
+      "path": "docs/sprints/sprint03.md",
+      "type": "file",
+      "sha": "a778085eca4cc0de735bd8cc90eb201acfd5effb",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2173,
+      "is_binary": false
+    },
+    {
+      "name": "sprint04.md",
+      "path": "docs/sprints/sprint04.md",
+      "type": "file",
+      "sha": "7079a6b8eac4c0b63c4af1af82da6606a219d8b8",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1861,
+      "is_binary": false
+    },
+    {
+      "name": "sprint05.md",
+      "path": "docs/sprints/sprint05.md",
+      "type": "file",
+      "sha": "64fa2cae84d99c1fe0edde924cda24931b2165fd",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2243,
+      "is_binary": false
+    },
+    {
+      "name": "tecnologias",
+      "path": "docs/tecnologias",
+      "type": "directory",
+      "sha": "25b3292069260ebf8247366a9245ec23d18dbdf6",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "autenticacao.md",
+      "path": "docs/tecnologias/autenticacao.md",
+      "type": "file",
+      "sha": "21837df5e512c5ecf0a188afd1c9fa2a55d1c63d",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1219,
+      "is_binary": false
+    },
+    {
+      "name": "banco.md",
+      "path": "docs/tecnologias/banco.md",
+      "type": "file",
+      "sha": "ad10155e9937fdfc2f2d1707b1de762e244215cd",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1694,
+      "is_binary": false
+    },
+    {
+      "name": "stack.md",
+      "path": "docs/tecnologias/stack.md",
+      "type": "file",
+      "sha": "f6e4199815bc24dd2b87caeac5b29aa9f9203b34",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1586,
+      "is_binary": false
+    },
+    {
+      "name": "grupo5-guard.ia-backend",
+      "path": "grupo5-guard.ia-backend",
+      "type": "directory",
+      "sha": "06fefe53001f07d92580ef84b6eca597b2d17357",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "app",
+      "path": "grupo5-guard.ia-backend/app",
+      "type": "directory",
+      "sha": "e22306437646bab54c3c90605feb80ae98699705",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "grupo5-guard.ia-backend/app/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "api.py",
+      "path": "grupo5-guard.ia-backend/app/api.py",
+      "type": "file",
+      "sha": "31556c6d0b68651653ba9092f43eda970dab9b9c",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 5143,
+      "is_binary": false
+    },
+    {
+      "name": "app",
+      "path": "grupo5-guard.ia-backend/app/app",
+      "type": "directory",
+      "sha": "6ce34f495c49075a1fae11d2051e12b5e51b8966",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "backfill_autoria_senado.py",
+      "path": "grupo5-guard.ia-backend/app/app/backfill_autoria_senado.py",
+      "type": "file",
+      "sha": "d074e644d581555e9a91c06a6ae818e3439b1fea",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1553,
+      "is_binary": false
+    },
+    {
+      "name": "armazenamento",
+      "path": "grupo5-guard.ia-backend/app/armazenamento",
+      "type": "directory",
+      "sha": "d7db2db1af2bc356bfcc3c9e0a5302a95cbf22e5",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "grupo5-guard.ia-backend/app/armazenamento/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "armazenamento.py",
+      "path": "grupo5-guard.ia-backend/app/armazenamento/armazenamento.py",
+      "type": "file",
+      "sha": "c56401ebba4bdd7d63e824237e7309738cb067ab",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2484,
+      "is_binary": false
+    },
+    {
+      "name": "database.py",
+      "path": "grupo5-guard.ia-backend/app/armazenamento/database.py",
+      "type": "file",
+      "sha": "c5f9b0fe17f75619d4c2ddb91e3d0828ccdfe36e",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2895,
+      "is_binary": false
+    },
+    {
+      "name": "models.py",
+      "path": "grupo5-guard.ia-backend/app/armazenamento/models.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "schema.sql",
+      "path": "grupo5-guard.ia-backend/app/armazenamento/schema.sql",
+      "type": "file",
+      "sha": "c00c036768ff43da459765e19b914bb44cb80e23",
+      "mode": "100644",
+      "extension": ".sql",
+      "size": 1274,
+      "is_binary": false
+    },
+    {
+      "name": "backfill_autoria_senado.py",
+      "path": "grupo5-guard.ia-backend/app/backfill_autoria_senado.py",
+      "type": "file",
+      "sha": "d074e644d581555e9a91c06a6ae818e3439b1fea",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1553,
+      "is_binary": false
+    },
+    {
+      "name": "classificacao",
+      "path": "grupo5-guard.ia-backend/app/classificacao",
+      "type": "directory",
+      "sha": "26053b3d1e787e06052f92bc5db2d5751b8d29f7",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "grupo5-guard.ia-backend/app/classificacao/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "classificador.py",
+      "path": "grupo5-guard.ia-backend/app/classificacao/classificador.py",
+      "type": "file",
+      "sha": "d96f6f93582fbba5710575f2cc59fd63f50f0002",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 6170,
+      "is_binary": false
+    },
+    {
+      "name": "coleta",
+      "path": "grupo5-guard.ia-backend/app/coleta",
+      "type": "directory",
+      "sha": "2be0ae6f7b31afaf5491d20add6f0cd7942cc2af",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "grupo5-guard.ia-backend/app/coleta/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "coletor_camara.py",
+      "path": "grupo5-guard.ia-backend/app/coleta/coletor_camara.py",
+      "type": "file",
+      "sha": "5d9a318016e6487bf4251434d4657386d7862c9c",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 7501,
+      "is_binary": false
+    },
+    {
+      "name": "coletor_senado.py",
+      "path": "grupo5-guard.ia-backend/app/coleta/coletor_senado.py",
+      "type": "file",
+      "sha": "113cf8bcc6d08e0ec6003e916011ead740b9fdc8",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 6789,
+      "is_binary": false
+    },
+    {
+      "name": "filtro",
+      "path": "grupo5-guard.ia-backend/app/filtro",
+      "type": "directory",
+      "sha": "7cccaf78ab4303b490034d875b9806e1949d6b24",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "grupo5-guard.ia-backend/app/filtro/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "filtragem.py",
+      "path": "grupo5-guard.ia-backend/app/filtro/filtragem.py",
+      "type": "file",
+      "sha": "8f99bb51cc69ba7bb902272e235ca06ccebb40c6",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3917,
+      "is_binary": false
+    },
+    {
+      "name": "main.py",
+      "path": "grupo5-guard.ia-backend/app/main.py",
+      "type": "file",
+      "sha": "2f92d2a7670764fb87e02a7cdcee1d2d8c20b2d8",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2436,
+      "is_binary": false
+    },
+    {
+      "name": "docker-compose.yml",
+      "path": "grupo5-guard.ia-backend/docker-compose.yml",
+      "type": "file",
+      "sha": "dc6697b5d83a94fe902fb032a51b5aa7740744d6",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 872,
+      "is_binary": false
+    },
+    {
+      "name": "tests",
+      "path": "grupo5-guard.ia-backend/tests",
+      "type": "directory",
+      "sha": "6b855ea60420d5fef46b1b574b9810dfc9550b88",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "test_coletor_camara.py",
+      "path": "grupo5-guard.ia-backend/tests/test_coletor_camara.py",
+      "type": "file",
+      "sha": "3ebe979d554043a81f63fa958053cb68d8885582",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1157,
+      "is_binary": false
+    },
+    {
+      "name": "grupo5-guard.ia",
+      "path": "grupo5-guard.ia",
+      "type": "directory",
+      "sha": "107d135400329bda93d2bbd284460aa7dc6966e4",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".gitignore",
+      "path": "grupo5-guard.ia/.gitignore",
+      "type": "file",
+      "sha": "a547bf36d8d11a4f89c59c144f24795749086dd1",
+      "mode": "100644",
+      "extension": ".gitignore",
+      "size": 253,
+      "is_binary": false
+    },
+    {
+      "name": "README.md",
+      "path": "grupo5-guard.ia/README.md",
+      "type": "file",
+      "sha": "a36934d874c7fbc51aecd1c66dffc106f60693a9",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1027,
+      "is_binary": false
+    },
+    {
+      "name": "eslint.config.js",
+      "path": "grupo5-guard.ia/eslint.config.js",
+      "type": "file",
+      "sha": "ea36dd3dc45ddadb9d25dd5e1c74a706dd61a6a9",
+      "mode": "100644",
+      "extension": ".js",
+      "size": 568,
+      "is_binary": false
+    },
+    {
+      "name": "index.html",
+      "path": "grupo5-guard.ia/index.html",
+      "type": "file",
+      "sha": "1738c7fa1bcf07bc3a706e3dc1fff5a59ded2a52",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 367,
+      "is_binary": false
+    },
+    {
+      "name": "next-env.d.ts",
+      "path": "grupo5-guard.ia/next-env.d.ts",
+      "type": "file",
+      "sha": "c4b7818fbb2c2c34c24feb1b627ee824507c5600",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 251,
+      "is_binary": false
+    },
+    {
+      "name": "package-lock.json",
+      "path": "grupo5-guard.ia/package-lock.json",
+      "type": "file",
+      "sha": "51d28df7b978014eef59e07332f629ab4c449192",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 103220,
+      "is_binary": false
+    },
+    {
+      "name": "package.json",
+      "path": "grupo5-guard.ia/package.json",
+      "type": "file",
+      "sha": "ae2dd55544a181cae0108e9a24e14d944c0a02a1",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 673,
+      "is_binary": false
+    },
+    {
+      "name": "public",
+      "path": "grupo5-guard.ia/public",
+      "type": "directory",
+      "sha": "8bbb5ee6c07004e372ddd3fd49ee75964c2c9e75",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "favicon.svg",
+      "path": "grupo5-guard.ia/public/favicon.svg",
+      "type": "file",
+      "sha": "6893eb13237060adc0c968a690149a49faa2d7d3",
+      "mode": "100644",
+      "extension": ".svg",
+      "size": 9522,
+      "is_binary": false
+    },
+    {
+      "name": "icons.svg",
+      "path": "grupo5-guard.ia/public/icons.svg",
+      "type": "file",
+      "sha": "e9522193d9f796a9748e9ad8c952a5df73c87db9",
+      "mode": "100644",
+      "extension": ".svg",
+      "size": 5031,
+      "is_binary": false
+    },
+    {
+      "name": "src",
+      "path": "grupo5-guard.ia/src",
+      "type": "directory",
+      "sha": "b500075bae1636cff01334eabdb3ba370b08e938",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "App.css",
+      "path": "grupo5-guard.ia/src/App.css",
+      "type": "file",
+      "sha": "c64c01f11d03ecbbb8c7c72b13151fad744cd956",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 1583,
+      "is_binary": false
+    },
+    {
+      "name": "App.jsx",
+      "path": "grupo5-guard.ia/src/App.jsx",
+      "type": "file",
+      "sha": "87820c1b023705e62dda78ba6f8a59684fa1e668",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 1387,
+      "is_binary": false
+    },
+    {
+      "name": "assets",
+      "path": "grupo5-guard.ia/src/assets",
+      "type": "directory",
+      "sha": "f827d7293fc0e8384aa1dd92bdaecb97ffee12e6",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "clara.jpeg",
+      "path": "grupo5-guard.ia/src/assets/clara.jpeg",
+      "type": "file",
+      "sha": "c01ebd82e41caeb0acb4e4f679da034dcd628b2f",
+      "mode": "100644",
+      "extension": ".jpeg",
+      "size": 63221,
+      "is_binary": false
+    },
+    {
+      "name": "edvaldo.jpeg",
+      "path": "grupo5-guard.ia/src/assets/edvaldo.jpeg",
+      "type": "file",
+      "sha": "18ef2710960983aa6701a1dc99c31f246b3b4f20",
+      "mode": "100644",
+      "extension": ".jpeg",
+      "size": 16069,
+      "is_binary": false
+    },
+    {
+      "name": "gabriella.JPG",
+      "path": "grupo5-guard.ia/src/assets/gabriella.JPG",
+      "type": "file",
+      "sha": "65ba8abbc00d54cebd2667ac7043f91e1b61d216",
+      "mode": "100644",
+      "extension": ".JPG",
+      "size": 106137,
+      "is_binary": false
+    },
+    {
+      "name": "gabriella.jpeg",
+      "path": "grupo5-guard.ia/src/assets/gabriella.jpeg",
+      "type": "file",
+      "sha": "65ba8abbc00d54cebd2667ac7043f91e1b61d216",
+      "mode": "100644",
+      "extension": ".jpeg",
+      "size": 106137,
+      "is_binary": false
+    },
+    {
+      "name": "hero.png",
+      "path": "grupo5-guard.ia/src/assets/hero.png",
+      "type": "file",
+      "sha": "02251f4b956c55af2d76fd0788124d7eee2b45eb",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 13057,
+      "is_binary": false
+    },
+    {
+      "name": "joao.jpeg",
+      "path": "grupo5-guard.ia/src/assets/joao.jpeg",
+      "type": "file",
+      "sha": "5118f3052785328e880b018d34bfb85c47ebbfab",
+      "mode": "100644",
+      "extension": ".jpeg",
+      "size": 225222,
+      "is_binary": false
+    },
+    {
+      "name": "lucas.jpeg",
+      "path": "grupo5-guard.ia/src/assets/lucas.jpeg",
+      "type": "file",
+      "sha": "214d00ea83a25997b8fded862e17816a2018edf3",
+      "mode": "100644",
+      "extension": ".jpeg",
+      "size": 15872,
+      "is_binary": false
+    },
+    {
+      "name": "mascot.png",
+      "path": "grupo5-guard.ia/src/assets/mascot.png",
+      "type": "file",
+      "sha": "07ef69809fd6553640719ef76c693fea413f3704",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 845048,
+      "is_binary": false
+    },
+    {
+      "name": "mascote1.png",
+      "path": "grupo5-guard.ia/src/assets/mascote1.png",
+      "type": "file",
+      "sha": "c7fa354a9dfd57834dfd08224f6a2ce783b39761",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 409233,
+      "is_binary": false
+    },
+    {
+      "name": "mascote2.png",
+      "path": "grupo5-guard.ia/src/assets/mascote2.png",
+      "type": "file",
+      "sha": "5808cb5835b635b5edc1808baf05c79f530c616f",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 446950,
+      "is_binary": false
+    },
+    {
+      "name": "otavio.jpeg",
+      "path": "grupo5-guard.ia/src/assets/otavio.jpeg",
+      "type": "file",
+      "sha": "a872e8d678570c2f2d81b48b24ff6d4847ce7839",
+      "mode": "100644",
+      "extension": ".jpeg",
+      "size": 10120,
+      "is_binary": false
+    },
+    {
+      "name": "index.css",
+      "path": "grupo5-guard.ia/src/index.css",
+      "type": "file",
+      "sha": "6927df23b92ea3c7fde3765ec3f635a402d8f9e6",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 206,
+      "is_binary": false
+    },
+    {
+      "name": "main.jsx",
+      "path": "grupo5-guard.ia/src/main.jsx",
+      "type": "file",
+      "sha": "14443bf3dc3c68d27b620b4ba777f9dd9482aae2",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 234,
+      "is_binary": false
+    },
+    {
+      "name": "pages",
+      "path": "grupo5-guard.ia/src/pages",
+      "type": "directory",
+      "sha": "39d0b049999f4b60c5339f45d61894fa3027b5e8",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "BarraPesquisa.css",
+      "path": "grupo5-guard.ia/src/pages/BarraPesquisa.css",
+      "type": "file",
+      "sha": "d93601cc509a34c6d0273db0a91154d019cac82d",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 804,
+      "is_binary": false
+    },
+    {
+      "name": "Cadastro.css",
+      "path": "grupo5-guard.ia/src/pages/Cadastro.css",
+      "type": "file",
+      "sha": "53816fceabb35810436266ebbad9c7ef25e17cfc",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 3440,
+      "is_binary": false
+    },
+    {
+      "name": "Cadastro.jsx",
+      "path": "grupo5-guard.ia/src/pages/Cadastro.jsx",
+      "type": "file",
+      "sha": "c2cd5d5be11aaba37f69053282a4c7e490036fa6",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 4740,
+      "is_binary": false
+    },
+    {
+      "name": "Dashboard.css",
+      "path": "grupo5-guard.ia/src/pages/Dashboard.css",
+      "type": "file",
+      "sha": "029f6c8b4e7a14f5551fff2bbfd915789bef77b8",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 2599,
+      "is_binary": false
+    },
+    {
+      "name": "Dashboard.jsx",
+      "path": "grupo5-guard.ia/src/pages/Dashboard.jsx",
+      "type": "file",
+      "sha": "783f739b24bd11f02b4d780b14e94ea34daefbb9",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 12086,
+      "is_binary": false
+    },
+    {
+      "name": "Home.css",
+      "path": "grupo5-guard.ia/src/pages/Home.css",
+      "type": "file",
+      "sha": "cffa6e52dc91862506d5aaa5115fd91a0dd7fd41",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 4271,
+      "is_binary": false
+    },
+    {
+      "name": "Home.jsx",
+      "path": "grupo5-guard.ia/src/pages/Home.jsx",
+      "type": "file",
+      "sha": "15584d36216141e0a2b2992c4461ea7cc4aa4bd9",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 5542,
+      "is_binary": false
+    },
+    {
+      "name": "Login.css",
+      "path": "grupo5-guard.ia/src/pages/Login.css",
+      "type": "file",
+      "sha": "1dbb02e7ccda47d7d972c42e2380a58f8b9e4c82",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 4692,
+      "is_binary": false
+    },
+    {
+      "name": "Login.jsx",
+      "path": "grupo5-guard.ia/src/pages/Login.jsx",
+      "type": "file",
+      "sha": "4a4ff25d1a3d40b9c68ba201db6eaa029b86ec8b",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 3023,
+      "is_binary": false
+    },
+    {
+      "name": "Proposicoes.css",
+      "path": "grupo5-guard.ia/src/pages/Proposicoes.css",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "Proposicoes.jsx",
+      "path": "grupo5-guard.ia/src/pages/Proposicoes.jsx",
+      "type": "file",
+      "sha": "7ee467a2b169f75da8366fb9946329c22922e0bf",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 15691,
+      "is_binary": false
+    },
+    {
+      "name": "Ranking.css",
+      "path": "grupo5-guard.ia/src/pages/Ranking.css",
+      "type": "file",
+      "sha": "ebb57a5b7137fc89b94c8e3365d9b79f0558ede9",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 1665,
+      "is_binary": false
+    },
+    {
+      "name": "Ranking.jsx",
+      "path": "grupo5-guard.ia/src/pages/Ranking.jsx",
+      "type": "file",
+      "sha": "027ffaaac3b34a75cf8b852ee724e43b26baac98",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 8947,
+      "is_binary": false
+    },
+    {
+      "name": "filtros.css",
+      "path": "grupo5-guard.ia/src/pages/filtros.css",
+      "type": "file",
+      "sha": "19654dec0f7c847f237a1ed53e850781d834cd2e",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 8148,
+      "is_binary": false
+    },
+    {
+      "name": "filtros.jsx",
+      "path": "grupo5-guard.ia/src/pages/filtros.jsx",
+      "type": "file",
+      "sha": "b52404e9383dde2c0bffc8c0fbf017f67f0d6101",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 17932,
+      "is_binary": false
+    },
+    {
+      "name": "services",
+      "path": "grupo5-guard.ia/src/services",
+      "type": "directory",
+      "sha": "d2357003fa3e321ea7180eee0225dbcb7f0a4198",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "api.js",
+      "path": "grupo5-guard.ia/src/services/api.js",
+      "type": "file",
+      "sha": "d98702184b2bb4d3976c5b5791e4b2c707708e83",
+      "mode": "100644",
+      "extension": ".js",
+      "size": 1092,
+      "is_binary": false
+    },
+    {
+      "name": "vite.config.js",
+      "path": "grupo5-guard.ia/vite.config.js",
+      "type": "file",
+      "sha": "8b0f57b91aeb45c54467e29f983a0893dc83c4d9",
+      "mode": "100644",
+      "extension": ".js",
+      "size": 161,
+      "is_binary": false
+    },
+    {
+      "name": "mkdocs.yml",
+      "path": "mkdocs.yml",
+      "type": "file",
+      "sha": "923434a25cf6dba744df9fc2027d0d55bef328dd",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 2178,
+      "is_binary": false
+    },
+    {
+      "name": "requirements-api.txt",
+      "path": "requirements-api.txt",
+      "type": "file",
+      "sha": "a3cc17e9ee17c59a6044f614b54f107175916934",
+      "mode": "100644",
+      "extension": ".txt",
+      "size": 113,
+      "is_binary": false
+    },
+    {
+      "name": "requirements-pipeline.txt",
+      "path": "requirements-pipeline.txt",
+      "type": "file",
+      "sha": "e720dedf44fd628b49cf4934d5592defc263ec12",
+      "mode": "100644",
+      "extension": ".txt",
+      "size": 206,
+      "is_binary": false
+    },
+    {
+      "name": "requirements.txt",
+      "path": "requirements.txt",
+      "type": "file",
+      "sha": "a7c4945bcfbdf920fb420ea06ec7fc168be5e639",
+      "mode": "100644",
+      "extension": ".txt",
+      "size": 362,
+      "is_binary": false
+    },
+    {
+      "name": "sonar-project.properties",
+      "path": "sonar-project.properties",
+      "type": "file",
+      "sha": "f564f64d0c36086243a0e0d932b088ef145be716",
+      "mode": "100644",
+      "extension": ".properties",
+      "size": 401,
+      "is_binary": false
+    }
+  ],
+  "truncated": false,
+  "extracted_at": "2026-09-17T04:03:51.942464",
+  "method": "rest",
+  "total_items": 154,
+  "repository_metadata": {
+    "id": 1185582470,
+    "full_name": "unb-mds/2026-1-Guard.IA",
+    "description": null,
+    "created_at": "2026-03-18T18:26:59Z",
+    "updated_at": "2026-07-18T06:41:15Z",
+    "language": "JavaScript",
+    "size": 101990,
+    "stars": 4,
+    "forks": 0,
+    "open_issues": 6
+  }
+}

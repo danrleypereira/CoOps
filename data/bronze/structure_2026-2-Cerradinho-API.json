@@ -1,0 +1,570 @@
+{
+  "owner": "unb-mds",
+  "repository": "2026-2-Cerradinho-API",
+  "branch": "main",
+  "sha": "e20bfb13d817c17f9a79b2c70a68894d86bd47fa",
+  "tree": [
+    {
+      "name": ".github",
+      "path": ".github",
+      "type": "directory",
+      "sha": "17b34ebe13decf991afe75052dac462f7fd84671",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "ISSUE_TEMPLATE",
+      "path": ".github/ISSUE_TEMPLATE",
+      "type": "directory",
+      "sha": "656393c1a809e27ae02b5237b06b6ac4758d7e4b",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "bug_report.md",
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "type": "file",
+      "sha": "d7fa73eb9bfd1e4ed112328a89850d6529f698c9",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 266,
+      "is_binary": false
+    },
+    {
+      "name": "config.yml",
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "type": "file",
+      "sha": "52735d67b9879e734fa4cc62c8f2c45540235fe4",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 227,
+      "is_binary": false
+    },
+    {
+      "name": "feature_request.md",
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md",
+      "type": "file",
+      "sha": "a752cef6980150ada01c7b7c1a2de9c9d567e468",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 381,
+      "is_binary": false
+    },
+    {
+      "name": "tarefa_tecnica.md",
+      "path": ".github/ISSUE_TEMPLATE/tarefa_tecnica.md",
+      "type": "file",
+      "sha": "2d3b4b54e7f5e43025e5c60d161d9f93f291f5ad",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 413,
+      "is_binary": false
+    },
+    {
+      "name": "PULL_REQUEST_TEMPLATE.md",
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "type": "file",
+      "sha": "adcaa837802eb7d1df5ddc138ada6429bb1f68dc",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1234,
+      "is_binary": false
+    },
+    {
+      "name": "workflows",
+      "path": ".github/workflows",
+      "type": "directory",
+      "sha": "d564d0bc3dd917926892c55e3706cc116d5b165e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".gitkeep",
+      "path": ".github/workflows/.gitkeep",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".gitkeep",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": ".gitignore",
+      "path": ".gitignore",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".gitignore",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "AI-USAGE.md",
+      "path": "AI-USAGE.md",
+      "type": "file",
+      "sha": "652f7ea4f890648f35fdc11c87ed5b4213d5f194",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1545,
+      "is_binary": false
+    },
+    {
+      "name": "README.md",
+      "path": "README.md",
+      "type": "file",
+      "sha": "7f5219c121dd00c89324df213fa94370a1a447f0",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 149,
+      "is_binary": false
+    },
+    {
+      "name": "backend",
+      "path": "backend",
+      "type": "directory",
+      "sha": "80a41afe5faa4edf3b3ec2d8ecf11af44cebf58d",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "alembic",
+      "path": "backend/alembic",
+      "type": "directory",
+      "sha": "d564d0bc3dd917926892c55e3706cc116d5b165e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".gitkeep",
+      "path": "backend/alembic/.gitkeep",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".gitkeep",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "app",
+      "path": "backend/app",
+      "type": "directory",
+      "sha": "329a46bf0d98ea56df7961476dbafe83deba4e1a",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "core",
+      "path": "backend/app/core",
+      "type": "directory",
+      "sha": "d564d0bc3dd917926892c55e3706cc116d5b165e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".gitkeep",
+      "path": "backend/app/core/.gitkeep",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".gitkeep",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "domain",
+      "path": "backend/app/domain",
+      "type": "directory",
+      "sha": "d564d0bc3dd917926892c55e3706cc116d5b165e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".gitkeep",
+      "path": "backend/app/domain/.gitkeep",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".gitkeep",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "models",
+      "path": "backend/app/models",
+      "type": "directory",
+      "sha": "d564d0bc3dd917926892c55e3706cc116d5b165e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".gitkeep",
+      "path": "backend/app/models/.gitkeep",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".gitkeep",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "routers",
+      "path": "backend/app/routers",
+      "type": "directory",
+      "sha": "d564d0bc3dd917926892c55e3706cc116d5b165e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".gitkeep",
+      "path": "backend/app/routers/.gitkeep",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".gitkeep",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "schemas",
+      "path": "backend/app/schemas",
+      "type": "directory",
+      "sha": "d564d0bc3dd917926892c55e3706cc116d5b165e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".gitkeep",
+      "path": "backend/app/schemas/.gitkeep",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".gitkeep",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "scrapers",
+      "path": "backend/app/scrapers",
+      "type": "directory",
+      "sha": "d564d0bc3dd917926892c55e3706cc116d5b165e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".gitkeep",
+      "path": "backend/app/scrapers/.gitkeep",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".gitkeep",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "tasks",
+      "path": "backend/app/tasks",
+      "type": "directory",
+      "sha": "d564d0bc3dd917926892c55e3706cc116d5b165e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".gitkeep",
+      "path": "backend/app/tasks/.gitkeep",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".gitkeep",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "tests",
+      "path": "backend/tests",
+      "type": "directory",
+      "sha": "d564d0bc3dd917926892c55e3706cc116d5b165e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".gitkeep",
+      "path": "backend/tests/.gitkeep",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".gitkeep",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "docs",
+      "path": "docs",
+      "type": "directory",
+      "sha": "0bd57598af38632756dd5628487507ad22a3cb7c",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "ARQUITETURA.md",
+      "path": "docs/ARQUITETURA.md",
+      "type": "file",
+      "sha": "8dfef1c27605244b15740077c26d991a758f0639",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6695,
+      "is_binary": false
+    },
+    {
+      "name": "PROCESSO.md",
+      "path": "docs/PROCESSO.md",
+      "type": "file",
+      "sha": "157269a4ac0980d6fcbeefc8d1d322a74f73f7cd",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3553,
+      "is_binary": false
+    },
+    {
+      "name": "REQUISITOS.md",
+      "path": "docs/REQUISITOS.md",
+      "type": "file",
+      "sha": "2ee0465d9f09b4efa276402093926e56a626b627",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 7152,
+      "is_binary": false
+    },
+    {
+      "name": "estudos",
+      "path": "docs/estudos",
+      "type": "directory",
+      "sha": "20940676731b7afcaf2b2a7b721a344993bd5020",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "estudo-celery-e-redis.md",
+      "path": "docs/estudos/estudo-celery-e-redis.md",
+      "type": "file",
+      "sha": "437558e5ee6045e70d3eaa765060bc40814beea9",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5238,
+      "is_binary": false
+    },
+    {
+      "name": "estudo-fastapi.md",
+      "path": "docs/estudos/estudo-fastapi.md",
+      "type": "file",
+      "sha": "49e9e202aab8888104255410c64ff1deeeab7ae8",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5616,
+      "is_binary": false
+    },
+    {
+      "name": "estudo-git-github.md",
+      "path": "docs/estudos/estudo-git-github.md",
+      "type": "file",
+      "sha": "9cf523f878952f7f6f34ebc855d9adecbbe6716a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 12820,
+      "is_binary": false
+    },
+    {
+      "name": "estudo-html.md",
+      "path": "docs/estudos/estudo-html.md",
+      "type": "file",
+      "sha": "3f32fb95ff8abb8de0daf2192d18646e31a692c6",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2692,
+      "is_binary": false
+    },
+    {
+      "name": "estudo-playwright.md",
+      "path": "docs/estudos/estudo-playwright.md",
+      "type": "file",
+      "sha": "2eab1f30bcde0c48b4c9687b45f349cfaceb3c73",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5942,
+      "is_binary": false
+    },
+    {
+      "name": "estudo-postman-api.md",
+      "path": "docs/estudos/estudo-postman-api.md",
+      "type": "file",
+      "sha": "e6ade1b8cd006c4cae1b997982a12678cee09978",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 7889,
+      "is_binary": false
+    },
+    {
+      "name": "estudo-pytest-mocking.md",
+      "path": "docs/estudos/estudo-pytest-mocking.md",
+      "type": "file",
+      "sha": "7156c2f23441f5ad46322bae200b0f7bd0a52c84",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6102,
+      "is_binary": false
+    },
+    {
+      "name": "estudo-schemathesis.md",
+      "path": "docs/estudos/estudo-schemathesis.md",
+      "type": "file",
+      "sha": "733b3ccd5f9d16c17dd6de7a213f3e879e377455",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5840,
+      "is_binary": false
+    },
+    {
+      "name": "estudo-web-scraping.md",
+      "path": "docs/estudos/estudo-web-scraping.md",
+      "type": "file",
+      "sha": "34ccd5b424bbc557124e9d0f6932930de26fa3d7",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6244,
+      "is_binary": false
+    },
+    {
+      "name": "scrum",
+      "path": "docs/scrum",
+      "type": "directory",
+      "sha": "fcf36582f8f31b1a770234a844a38a9df08df204",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "dailies.md",
+      "path": "docs/scrum/dailies.md",
+      "type": "file",
+      "sha": "9af3ba7f5ad01bccdf73b591a10171eba1a6a46d",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1153,
+      "is_binary": false
+    },
+    {
+      "name": "horarios.md",
+      "path": "docs/scrum/horarios.md",
+      "type": "file",
+      "sha": "9a0cd48fd36087a4ef8cca1c601d95ef8f6d359f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1641,
+      "is_binary": false
+    },
+    {
+      "name": "sprint-planning.md",
+      "path": "docs/scrum/sprint-planning.md",
+      "type": "file",
+      "sha": "7fe3d5d6e2059ba0fae281985557a16e2570dbae",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 12091,
+      "is_binary": false
+    },
+    {
+      "name": "frontend",
+      "path": "frontend",
+      "type": "directory",
+      "sha": "f283ad2b6ca5e0b1d9361db72835fb0e81e53d3b",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "app",
+      "path": "frontend/app",
+      "type": "directory",
+      "sha": "d564d0bc3dd917926892c55e3706cc116d5b165e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".gitkeep",
+      "path": "frontend/app/.gitkeep",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".gitkeep",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "components",
+      "path": "frontend/components",
+      "type": "directory",
+      "sha": "d564d0bc3dd917926892c55e3706cc116d5b165e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".gitkeep",
+      "path": "frontend/components/.gitkeep",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".gitkeep",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "hooks",
+      "path": "frontend/hooks",
+      "type": "directory",
+      "sha": "d564d0bc3dd917926892c55e3706cc116d5b165e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".gitkeep",
+      "path": "frontend/hooks/.gitkeep",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".gitkeep",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "sdk",
+      "path": "sdk",
+      "type": "directory",
+      "sha": "d564d0bc3dd917926892c55e3706cc116d5b165e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".gitkeep",
+      "path": "sdk/.gitkeep",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".gitkeep",
+      "size": 0,
+      "is_binary": false
+    }
+  ],
+  "truncated": false,
+  "extracted_at": "2026-09-17T04:03:58.093914",
+  "method": "rest",
+  "total_items": 59,
+  "repository_metadata": {
+    "id": 1338350364,
+    "full_name": "unb-mds/2026-2-Cerradinho-API",
+    "description": "Grupo G3 - Metodos de Desenvolvimento de Software 2026/2",
+    "created_at": "2026-08-18T11:56:21Z",
+    "updated_at": "2026-09-16T15:11:29Z",
+    "language": null,
+    "size": 776,
+    "stars": 5,
+    "forks": 0,
+    "open_issues": 27
+  }
+}

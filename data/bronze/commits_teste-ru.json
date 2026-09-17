@@ -1,0 +1,162 @@
+[
+  {
+    "_metadata": {
+      "extracted_at": "2026-09-17T04:02:41.012383",
+      "file_path": "data/bronze/commits_teste-ru.json",
+      "record_count": 9
+    }
+  },
+  {
+    "sha": "d51242e51cc2cdd06e9980bca6b57a5693f5c81d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-06T12:32:14Z",
+        "login": "github-actions[bot]"
+      },
+      "message": "Atualiza cardápio da semana"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "teste-ru"
+  },
+  {
+    "sha": "c78eae122571a8e715a395dad99e9b432aa62fd3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-05T12:16:57Z",
+        "login": "github-actions[bot]"
+      },
+      "message": "Atualiza cardápio da semana"
+    },
+    "additions": 13,
+    "deletions": 7,
+    "total_changes": 20,
+    "repo_name": "teste-ru"
+  },
+  {
+    "sha": "2ad47c881d6d8d55715539551172133d53f5fdfe",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-04T13:04:41Z",
+        "login": "github-actions[bot]"
+      },
+      "message": "Atualiza cardápio da semana"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "teste-ru"
+  },
+  {
+    "sha": "c2c76d7d2e8bbc7e71e12de127eb1135f9ba9f21",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-03T13:11:24Z",
+        "login": "github-actions[bot]"
+      },
+      "message": "Atualiza cardápio da semana"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "teste-ru"
+  },
+  {
+    "sha": "124bab38df69f72b82ea55e40b6886fc6264564e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-02T18:21:32Z",
+        "login": "RochaCarla"
+      },
+      "message": "Não confunde âncora de acessibilidade com rota"
+    },
+    "additions": 29,
+    "deletions": 1,
+    "total_changes": 30,
+    "repo_name": "teste-ru"
+  },
+  {
+    "sha": "b3504123ffe213f5ecfc7efb013567a22e93c5d5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-02T18:20:23Z",
+        "login": "RochaCarla"
+      },
+      "message": "Publica o site no Pages pelo Actions, encadeado à coleta"
+    },
+    "additions": 71,
+    "deletions": 3,
+    "total_changes": 74,
+    "repo_name": "teste-ru"
+  },
+  {
+    "sha": "1797adb94a12b9aa4e66f6eec61f99cd0940cf42",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-02T18:06:22Z",
+        "login": "github-actions[bot]"
+      },
+      "message": "Atualiza cardápio da semana"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "teste-ru"
+  },
+  {
+    "sha": "67d16536f7bc8eaa26078f6a367073b2a78a3cb3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-02T17:02:32Z",
+        "login": "RochaCarla"
+      },
+      "message": "Implementa consulta ao cardápio do RU da UnB"
+    },
+    "additions": 14933,
+    "deletions": 1,
+    "total_changes": 14934,
+    "repo_name": "teste-ru"
+  },
+  {
+    "sha": "a24cfeb372e313b521dfb9425556004422640acb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-02T17:00:52Z",
+        "login": "RochaCarla"
+      },
+      "message": "Initial commit"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "teste-ru"
+  }
+]

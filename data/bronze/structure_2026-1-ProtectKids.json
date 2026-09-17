@@ -1,0 +1,1458 @@
+{
+  "owner": "unb-mds",
+  "repository": "2026-1-ProtectKids",
+  "branch": "main",
+  "sha": "bc9b9a788641e8016f686ad318dbaaaa15f87cfd",
+  "tree": [
+    {
+      "name": ".env.example",
+      "path": ".env.example",
+      "type": "file",
+      "sha": "ed81f4c09c233ab8e22da4c7061a5fab9786f38e",
+      "mode": "100644",
+      "extension": ".example",
+      "size": 250,
+      "is_binary": false
+    },
+    {
+      "name": ".github",
+      "path": ".github",
+      "type": "directory",
+      "sha": "486a71d416a651c5248f756196c6ce0643b9e68e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "workflows",
+      "path": ".github/workflows",
+      "type": "directory",
+      "sha": "dca1ab90d24122d9f9416c8da68c112b3d0b2f48",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "ci.yml",
+      "path": ".github/workflows/ci.yml",
+      "type": "file",
+      "sha": "140e94d29c6de4671f1838d6447940bfdf442c15",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 1861,
+      "is_binary": false
+    },
+    {
+      "name": "docker-build.yml",
+      "path": ".github/workflows/docker-build.yml",
+      "type": "file",
+      "sha": "82cd5e26805e370079f326cfa5e7a30987655312",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 1223,
+      "is_binary": false
+    },
+    {
+      "name": "etl-tramitacoes.yml",
+      "path": ".github/workflows/etl-tramitacoes.yml",
+      "type": "file",
+      "sha": "c7651e53a40d29a2cf20d4c91dfcdc5e27af9d47",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 881,
+      "is_binary": false
+    },
+    {
+      "name": "metricas_e_docs.yml",
+      "path": ".github/workflows/metricas_e_docs.yml",
+      "type": "file",
+      "sha": "8a44d40ff222247eae82319fd76ab374d96a8a6c",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 865,
+      "is_binary": false
+    },
+    {
+      "name": ".gitignore",
+      "path": ".gitignore",
+      "type": "file",
+      "sha": "942aba3f853f96fe091203014287e64738731fdf",
+      "mode": "100644",
+      "extension": ".gitignore",
+      "size": 697,
+      "is_binary": false
+    },
+    {
+      "name": "LICENSE",
+      "path": "LICENSE",
+      "type": "file",
+      "sha": "675c19ec0ecdd2613794ad67040a9a3c51d2b67a",
+      "mode": "100644",
+      "extension": "",
+      "size": 1060,
+      "is_binary": false
+    },
+    {
+      "name": "Protect Kids.svg",
+      "path": "Protect Kids.svg",
+      "type": "file",
+      "sha": "3246dab9d6a5fc6592903b933680694faf20f992",
+      "mode": "100644",
+      "extension": ".svg",
+      "size": 17922269,
+      "is_binary": false
+    },
+    {
+      "name": "README.md",
+      "path": "README.md",
+      "type": "file",
+      "sha": "acaff23005cf09f40664e8d648e1acbb96f7729f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6758,
+      "is_binary": false
+    },
+    {
+      "name": "api_contrato.md",
+      "path": "api_contrato.md",
+      "type": "file",
+      "sha": "c4554e13e16d63de55cea547704437b69af0cff4",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 11424,
+      "is_binary": false
+    },
+    {
+      "name": "backend",
+      "path": "backend",
+      "type": "directory",
+      "sha": "1c259ddf18d876db9b8779fc211362f4ce006c79",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "Dockerfile",
+      "path": "backend/Dockerfile",
+      "type": "file",
+      "sha": "11fc22d371102c29c49f82e16a1d4f1a5a3f6aab",
+      "mode": "100644",
+      "extension": "",
+      "size": 531,
+      "is_binary": false
+    },
+    {
+      "name": "crawler",
+      "path": "backend/crawler",
+      "type": "directory",
+      "sha": "ff7bd0fd2410f36432804edda2effff5a505bc26",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "camara_api.py",
+      "path": "backend/crawler/camara_api.py",
+      "type": "file",
+      "sha": "5cbd90b4c6c7b09b28b2e87fcfe3e3d358c627d5",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 34082,
+      "is_binary": false
+    },
+    {
+      "name": "reprocessar_classificacao.py",
+      "path": "backend/crawler/reprocessar_classificacao.py",
+      "type": "file",
+      "sha": "44786c488bf317e1fecd2257ca2fd03ddfd68008",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1960,
+      "is_binary": false
+    },
+    {
+      "name": "senado_api.py",
+      "path": "backend/crawler/senado_api.py",
+      "type": "file",
+      "sha": "fd98f1263b22d33fd8ece584504c3e5ab1800bb9",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 11295,
+      "is_binary": false
+    },
+    {
+      "name": "tramitacoes_api.py",
+      "path": "backend/crawler/tramitacoes_api.py",
+      "type": "file",
+      "sha": "86e9ea89e279146696a9a71e1be32063abcecd37",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 7857,
+      "is_binary": false
+    },
+    {
+      "name": "tramitacoes_senado_api.py",
+      "path": "backend/crawler/tramitacoes_senado_api.py",
+      "type": "file",
+      "sha": "7af38a7f5da515cd8631be896a1ca7cb2b9ac408",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 15877,
+      "is_binary": false
+    },
+    {
+      "name": "database.py",
+      "path": "backend/database.py",
+      "type": "file",
+      "sha": "02a152072dece2e14bbf1eace5e7d5b3bf5d4704",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 469,
+      "is_binary": false
+    },
+    {
+      "name": "main.py",
+      "path": "backend/main.py",
+      "type": "file",
+      "sha": "3930865d72d5a5d32fc263929440dd1bf17ecadf",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 19018,
+      "is_binary": false
+    },
+    {
+      "name": "models.py",
+      "path": "backend/models.py",
+      "type": "file",
+      "sha": "ab1259a1e38fb56fbb60943a76182399617d6fe7",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2155,
+      "is_binary": false
+    },
+    {
+      "name": "requirements.txt",
+      "path": "backend/requirements.txt",
+      "type": "file",
+      "sha": "5d22b8e2674dcf495bfaae632480ffb5d0c25e13",
+      "mode": "100644",
+      "extension": ".txt",
+      "size": 331,
+      "is_binary": false
+    },
+    {
+      "name": "tests",
+      "path": "backend/tests",
+      "type": "directory",
+      "sha": "ac11af4caddc0fa5fa703c9eb2bc3ae206e1ad77",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/tests/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "conftest.py",
+      "path": "backend/tests/conftest.py",
+      "type": "file",
+      "sha": "4f23ce77b5d716d050f5288ca5980fc05ab04014",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3183,
+      "is_binary": false
+    },
+    {
+      "name": "test_analytics.py",
+      "path": "backend/tests/test_analytics.py",
+      "type": "file",
+      "sha": "8e874543b711bc44a1f3f2a0b51c639383bec04c",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 5962,
+      "is_binary": false
+    },
+    {
+      "name": "test_api_proposicoes.py",
+      "path": "backend/tests/test_api_proposicoes.py",
+      "type": "file",
+      "sha": "245706a22d114853ffe19e293162ab03b706ada9",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2985,
+      "is_binary": false
+    },
+    {
+      "name": "test_busca_por_id.py",
+      "path": "backend/tests/test_busca_por_id.py",
+      "type": "file",
+      "sha": "af63d45c20d8ec322d8f9e6dfb38120a2775d709",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3034,
+      "is_binary": false
+    },
+    {
+      "name": "test_filtros_origem.py",
+      "path": "backend/tests/test_filtros_origem.py",
+      "type": "file",
+      "sha": "d04708fe70c95f5dc3f47aea6fee9654c2f90789",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2060,
+      "is_binary": false
+    },
+    {
+      "name": "test_main.py",
+      "path": "backend/tests/test_main.py",
+      "type": "file",
+      "sha": "a7e7c16fed55e3f391b440154d297cad22b89860",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3701,
+      "is_binary": false
+    },
+    {
+      "name": "test_models_unit.py",
+      "path": "backend/tests/test_models_unit.py",
+      "type": "file",
+      "sha": "9f3ade7392fb2637bb48211ce7224104b3438ccf",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4025,
+      "is_binary": false
+    },
+    {
+      "name": "test_normalizacao.py",
+      "path": "backend/tests/test_normalizacao.py",
+      "type": "file",
+      "sha": "9b389d2f29963d94b352a504ef04df2b20aef586",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 892,
+      "is_binary": false
+    },
+    {
+      "name": "test_tramitacoes.py",
+      "path": "backend/tests/test_tramitacoes.py",
+      "type": "file",
+      "sha": "07402a069479c1024b9571b8a89aa88a9edf71ad",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3060,
+      "is_binary": false
+    },
+    {
+      "name": "docker-compose.prod.yml",
+      "path": "docker-compose.prod.yml",
+      "type": "file",
+      "sha": "028bb4e831691cfeaf4182ab977e5e35933052e3",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 999,
+      "is_binary": false
+    },
+    {
+      "name": "docker-compose.yml",
+      "path": "docker-compose.yml",
+      "type": "file",
+      "sha": "99cf0373d37122eab6165b12cdf373dfc153dd94",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 1085,
+      "is_binary": false
+    },
+    {
+      "name": "docs",
+      "path": "docs",
+      "type": "directory",
+      "sha": "930e5e143e2057e830324c0b77cdb34c6beccdd3",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "arquitetura.md",
+      "path": "docs/arquitetura.md",
+      "type": "file",
+      "sha": "4cf8d669f3bdb7d1875f268b49964736472eca85",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3261,
+      "is_binary": false
+    },
+    {
+      "name": "assets",
+      "path": "docs/assets",
+      "type": "directory",
+      "sha": "cc9c2e3ec1f0f6a757b527b14eaa31c08aae290f",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "images",
+      "path": "docs/assets/images",
+      "type": "directory",
+      "sha": "d29d5ab50881ccd63254cfce91e5d266fc09fbe4",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "C4_container_nivel_2.drawio.png",
+      "path": "docs/assets/images/C4_container_nivel_2.drawio.png",
+      "type": "file",
+      "sha": "a12c426c39254448fd4e617771dfb208b119ad33",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 158926,
+      "is_binary": false
+    },
+    {
+      "name": "c4_container.png",
+      "path": "docs/assets/images/c4_container.png",
+      "type": "file",
+      "sha": "f95be8c8fa8422e96778b70db54ea021f3384551",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 135445,
+      "is_binary": false
+    },
+    {
+      "name": "c4_container_nivel_1.png",
+      "path": "docs/assets/images/c4_container_nivel_1.png",
+      "type": "file",
+      "sha": "4926ad3eb2e7fed12235bf87a220b106b881d471",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 118941,
+      "is_binary": false
+    },
+    {
+      "name": "c4_container_nivel_3.drawio.png",
+      "path": "docs/assets/images/c4_container_nivel_3.drawio.png",
+      "type": "file",
+      "sha": "b80ca25f7c0da421a42eca8133d778938d277c1b",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 189629,
+      "is_binary": false
+    },
+    {
+      "name": "c4_contexto.png",
+      "path": "docs/assets/images/c4_contexto.png",
+      "type": "file",
+      "sha": "0660e89af39ff265753a2968000de8e907610add",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 67573,
+      "is_binary": false
+    },
+    {
+      "name": "storymap",
+      "path": "docs/assets/storymap",
+      "type": "directory",
+      "sha": "ea305a11f651d9df033e1e9e26a6643f0057fb77",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "storyMap-1.png",
+      "path": "docs/assets/storymap/storyMap-1.png",
+      "type": "file",
+      "sha": "7697c209a247f2a50b52156d73e1a0ee4af87aca",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 38660,
+      "is_binary": false
+    },
+    {
+      "name": "storyMap-2.png",
+      "path": "docs/assets/storymap/storyMap-2.png",
+      "type": "file",
+      "sha": "a8d070ef52023d35719330a80e78cb280d76505a",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 32255,
+      "is_binary": false
+    },
+    {
+      "name": "storyMap-3.png",
+      "path": "docs/assets/storymap/storyMap-3.png",
+      "type": "file",
+      "sha": "06082a1e841cbcdd85448295f07e4849d536c32f",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 71287,
+      "is_binary": false
+    },
+    {
+      "name": "storymap.md",
+      "path": "docs/assets/storymap/storymap.md",
+      "type": "file",
+      "sha": "003bb98e4a350d479629c221f9995eb87aea9bb8",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 624,
+      "is_binary": false
+    },
+    {
+      "name": "dashboard",
+      "path": "docs/dashboard",
+      "type": "directory",
+      "sha": "39e055cc7cd4e12a61647a4a7d6a1d2da67b22fe",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "data.json",
+      "path": "docs/dashboard/data.json",
+      "type": "file",
+      "sha": "567fc90b899be4a1adde26e3b41275b259f3adb2",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 37369,
+      "is_binary": false
+    },
+    {
+      "name": "index.html",
+      "path": "docs/dashboard/index.html",
+      "type": "file",
+      "sha": "2de4e5a85147f9538cb382a7f0525ec22a78132b",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 8964,
+      "is_binary": false
+    },
+    {
+      "name": "estudos",
+      "path": "docs/estudos",
+      "type": "directory",
+      "sha": "520a66b12d814305755222eadbe5883649806f64",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "fast API",
+      "path": "docs/estudos/fast API",
+      "type": "directory",
+      "sha": "21cca7d253d9cb483bb5d4367bfcc4221aa4d896",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "fastapi.md",
+      "path": "docs/estudos/fast API/fastapi.md",
+      "type": "file",
+      "sha": "8a81e510c99e67d4bc07edcd55334ef3fccbbc8f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1528,
+      "is_binary": false
+    },
+    {
+      "name": "testes",
+      "path": "docs/estudos/testes",
+      "type": "directory",
+      "sha": "46708afa6eb6a9cbb289b2c9c0154a7467ca3f1e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "estrategia_testes.md",
+      "path": "docs/estudos/testes/estrategia_testes.md",
+      "type": "file",
+      "sha": "d666c598adf651460b718bd98e7ca1e488ca4f1b",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 7643,
+      "is_binary": false
+    },
+    {
+      "name": "index.md",
+      "path": "docs/index.md",
+      "type": "file",
+      "sha": "0f60f65b27eed4157b89abc6dda8dd499ceb74a4",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2495,
+      "is_binary": false
+    },
+    {
+      "name": "infra",
+      "path": "docs/infra",
+      "type": "directory",
+      "sha": "bba1208c51e90f8a7e70c3f0e65c4f9938b24555",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "ci-cd.md",
+      "path": "docs/infra/ci-cd.md",
+      "type": "file",
+      "sha": "330fe17a232f9df6bc8503b3a22f5dac8a9807f9",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3618,
+      "is_binary": false
+    },
+    {
+      "name": "docker-compose.md",
+      "path": "docs/infra/docker-compose.md",
+      "type": "file",
+      "sha": "59e824a65b7f5ee81129fa9f40ee810c6837b666",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 12914,
+      "is_binary": false
+    },
+    {
+      "name": "requisitos.md",
+      "path": "docs/requisitos.md",
+      "type": "file",
+      "sha": "6f1d1efa661f6b06404438be4491ba4655d0d22e",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 20271,
+      "is_binary": false
+    },
+    {
+      "name": "sprints",
+      "path": "docs/sprints",
+      "type": "directory",
+      "sha": "df9ea20bce30ed6fe1da14856cf9c49835e6b412",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "index.md",
+      "path": "docs/sprints/index.md",
+      "type": "file",
+      "sha": "a5d34db22fd961b24e39d23a0eff7c59effa62d4",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3296,
+      "is_binary": false
+    },
+    {
+      "name": "sprint_00.md",
+      "path": "docs/sprints/sprint_00.md",
+      "type": "file",
+      "sha": "a01202a769dfe43f6ed9288e1a84047575ca9c09",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1867,
+      "is_binary": false
+    },
+    {
+      "name": "sprint_01.md",
+      "path": "docs/sprints/sprint_01.md",
+      "type": "file",
+      "sha": "d9cd83b35ecee1fe2a7748d52154ea8683186a96",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3914,
+      "is_binary": false
+    },
+    {
+      "name": "sprint_02.md",
+      "path": "docs/sprints/sprint_02.md",
+      "type": "file",
+      "sha": "5c140eaf1d7873b6425ad8d236ddbaff6c822385",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3475,
+      "is_binary": false
+    },
+    {
+      "name": "sprint_03.md",
+      "path": "docs/sprints/sprint_03.md",
+      "type": "file",
+      "sha": "773f4e2fd0d779589c4433f8ef4d3c8fe5605a51",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4780,
+      "is_binary": false
+    },
+    {
+      "name": "sprint_04.md",
+      "path": "docs/sprints/sprint_04.md",
+      "type": "file",
+      "sha": "c6414db0ae4c72ea02a658ce504a4e2675d67caf",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6537,
+      "is_binary": false
+    },
+    {
+      "name": "sprint_05.md",
+      "path": "docs/sprints/sprint_05.md",
+      "type": "file",
+      "sha": "1b06627a62f870c408738fc699854e7688dceef6",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6266,
+      "is_binary": false
+    },
+    {
+      "name": "sprint_06.md",
+      "path": "docs/sprints/sprint_06.md",
+      "type": "file",
+      "sha": "f25f2d96959c88a25d16f83efddb176278fe533a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 9291,
+      "is_binary": false
+    },
+    {
+      "name": "sprint_07.md",
+      "path": "docs/sprints/sprint_07.md",
+      "type": "file",
+      "sha": "1cdc05cc723565f30dc4cbfcb97733d6a15fa88f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6297,
+      "is_binary": false
+    },
+    {
+      "name": "sprint_08.md",
+      "path": "docs/sprints/sprint_08.md",
+      "type": "file",
+      "sha": "4f3215aa23e1d35948ff2b3cf0a910cf1eec4933",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 8239,
+      "is_binary": false
+    },
+    {
+      "name": "sprint_09.md",
+      "path": "docs/sprints/sprint_09.md",
+      "type": "file",
+      "sha": "964b9989169dd35e7f1cd74492ce8fe5822b4954",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 9774,
+      "is_binary": false
+    },
+    {
+      "name": "sprint_10.md",
+      "path": "docs/sprints/sprint_10.md",
+      "type": "file",
+      "sha": "4d953b7ab9bdeda6ac4111e1671875034ef9261e",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 10427,
+      "is_binary": false
+    },
+    {
+      "name": "stylesheets",
+      "path": "docs/stylesheets",
+      "type": "directory",
+      "sha": "71175c75ab0840fc47468652914d08f515808e10",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "extra.css",
+      "path": "docs/stylesheets/extra.css",
+      "type": "file",
+      "sha": "682a2ac28eb391f07a9ef7ebe12ec5c6ef70c558",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 3819,
+      "is_binary": false
+    },
+    {
+      "name": "visao-geral.md",
+      "path": "docs/visao-geral.md",
+      "type": "file",
+      "sha": "2318fae6c81648e9c60700f99a231c6d9df35916",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3269,
+      "is_binary": false
+    },
+    {
+      "name": "estudos_iniciais",
+      "path": "estudos_iniciais",
+      "type": "directory",
+      "sha": "c09ef4fe20b2b8f0f5cbd51c252b484622cad9fd",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "estudos",
+      "path": "estudos_iniciais/estudos",
+      "type": "directory",
+      "sha": "848ffd5bc78e3779c66b4abce0cf76271e0ca025",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "backend",
+      "path": "estudos_iniciais/estudos/backend",
+      "type": "directory",
+      "sha": "21cca7d253d9cb483bb5d4367bfcc4221aa4d896",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "fastapi.md",
+      "path": "estudos_iniciais/estudos/backend/fastapi.md",
+      "type": "file",
+      "sha": "8a81e510c99e67d4bc07edcd55334ef3fccbbc8f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1528,
+      "is_binary": false
+    },
+    {
+      "name": "banco de dados",
+      "path": "estudos_iniciais/estudos/banco de dados",
+      "type": "directory",
+      "sha": "4f4629b3ac68b73986f8b039c26bab3535257d80",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "postgreSQL.md",
+      "path": "estudos_iniciais/estudos/banco de dados/postgreSQL.md",
+      "type": "file",
+      "sha": "d269b39192fe5522799c3234eec2b591becf3996",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2275,
+      "is_binary": false
+    },
+    {
+      "name": "frontend",
+      "path": "estudos_iniciais/estudos/frontend",
+      "type": "directory",
+      "sha": "087f6bcaa2e241c020a67d2e40e07db976718005",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "tailwind.md",
+      "path": "estudos_iniciais/estudos/frontend/tailwind.md",
+      "type": "file",
+      "sha": "de561b6c941397a4ef3c348401f4212593efa5e5",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5139,
+      "is_binary": false
+    },
+    {
+      "name": "typescript.md",
+      "path": "estudos_iniciais/estudos/frontend/typescript.md",
+      "type": "file",
+      "sha": "8bccec09e298863efd8e20518bc753238e18280d",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2632,
+      "is_binary": false
+    },
+    {
+      "name": "metodologias",
+      "path": "estudos_iniciais/estudos/metodologias",
+      "type": "directory",
+      "sha": "aaf8dc3262ca49ee2d6322bf61a0147aac9eabef",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "metodologiasageis.md",
+      "path": "estudos_iniciais/estudos/metodologias/metodologiasageis.md",
+      "type": "file",
+      "sha": "aea3245b9af32048aa42ce76be16781bc0c7e5d7",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4554,
+      "is_binary": false
+    },
+    {
+      "name": "requisitos",
+      "path": "estudos_iniciais/estudos/requisitos",
+      "type": "directory",
+      "sha": "5becdd0f3841daa8fda82e1c620c594d04d2111b",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "requisitos.md",
+      "path": "estudos_iniciais/estudos/requisitos/requisitos.md",
+      "type": "file",
+      "sha": "4e522452dc17280443c110c3a892749c51a0e19b",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 13253,
+      "is_binary": false
+    },
+    {
+      "name": "frontend",
+      "path": "frontend",
+      "type": "directory",
+      "sha": "ff44787bcf5bc41f8bc70165efde267d1271cc54",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".dockerignore",
+      "path": "frontend/.dockerignore",
+      "type": "file",
+      "sha": "29bc1e3317ecab4f84f6ac8515f740d0c05db6df",
+      "mode": "100644",
+      "extension": ".dockerignore",
+      "size": 80,
+      "is_binary": false
+    },
+    {
+      "name": ".gitignore",
+      "path": "frontend/.gitignore",
+      "type": "file",
+      "sha": "4a82bff89317a72786e466974ea857075b526eea",
+      "mode": "100644",
+      "extension": ".gitignore",
+      "size": 230,
+      "is_binary": false
+    },
+    {
+      "name": "Base.md",
+      "path": "frontend/Base.md",
+      "type": "file",
+      "sha": "1887c901de73aa008117e5eaad334d041009e2c1",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2789,
+      "is_binary": false
+    },
+    {
+      "name": "Dockerfile",
+      "path": "frontend/Dockerfile",
+      "type": "file",
+      "sha": "60b7f95af6e22e9c819ae6a180212c62441203bf",
+      "mode": "100644",
+      "extension": "",
+      "size": 215,
+      "is_binary": false
+    },
+    {
+      "name": "Dockerfile.prod",
+      "path": "frontend/Dockerfile.prod",
+      "type": "file",
+      "sha": "47c063ef1a0b2ad7baa99aea6f8a0a9b9c953631",
+      "mode": "100644",
+      "extension": ".prod",
+      "size": 345,
+      "is_binary": false
+    },
+    {
+      "name": "README.md",
+      "path": "frontend/README.md",
+      "type": "file",
+      "sha": "a36934d874c7fbc51aecd1c66dffc106f60693a9",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1027,
+      "is_binary": false
+    },
+    {
+      "name": "eslint.config.js",
+      "path": "frontend/eslint.config.js",
+      "type": "file",
+      "sha": "4fa125da29e01fa85529cfa06a83a7c0ce240d55",
+      "mode": "100644",
+      "extension": ".js",
+      "size": 758,
+      "is_binary": false
+    },
+    {
+      "name": "figma",
+      "path": "frontend/figma",
+      "type": "directory",
+      "sha": "0ee4a9389de023f1b8022e66f1a3a0964060cfc5",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "frame_inicio.png",
+      "path": "frontend/figma/frame_inicio.png",
+      "type": "file",
+      "sha": "b076548a66cbba6c37d8b75ad256375ec5305cb7",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 224927,
+      "is_binary": false
+    },
+    {
+      "name": "frame_lei.png",
+      "path": "frontend/figma/frame_lei.png",
+      "type": "file",
+      "sha": "8fae0d30bf945e8536d94cc8805d59e053750df4",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 42157,
+      "is_binary": false
+    },
+    {
+      "name": "frame_sobre_o_projeto.png",
+      "path": "frontend/figma/frame_sobre_o_projeto.png",
+      "type": "file",
+      "sha": "bd73a92ccb8a588fe482758286ae10686a5a981c",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 98790,
+      "is_binary": false
+    },
+    {
+      "name": "frame_todas_as_leis-filtrodebusca.png",
+      "path": "frontend/figma/frame_todas_as_leis-filtrodebusca.png",
+      "type": "file",
+      "sha": "daa409d0052f4d4067a61ebc389f7b3054b618d5",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 68446,
+      "is_binary": false
+    },
+    {
+      "name": "frame_todas_as_leis.png",
+      "path": "frontend/figma/frame_todas_as_leis.png",
+      "type": "file",
+      "sha": "e5783e30de8430e68808fb6cfe1cf701f5c080ef",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 76314,
+      "is_binary": false
+    },
+    {
+      "name": "index.html",
+      "path": "frontend/index.html",
+      "type": "file",
+      "sha": "e82af9a2b0d372582742307293931ad49bc440fc",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 582,
+      "is_binary": false
+    },
+    {
+      "name": "nginx.conf",
+      "path": "frontend/nginx.conf",
+      "type": "file",
+      "sha": "daeec2699e0fd03acdf46f94b7ca60112f50be6f",
+      "mode": "100644",
+      "extension": ".conf",
+      "size": 345,
+      "is_binary": false
+    },
+    {
+      "name": "package-lock.json",
+      "path": "frontend/package-lock.json",
+      "type": "file",
+      "sha": "8c7dba86ed00cb35f3c293d2478256ab4d40afd0",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 115211,
+      "is_binary": false
+    },
+    {
+      "name": "package.json",
+      "path": "frontend/package.json",
+      "type": "file",
+      "sha": "9b9d7262a008b1f7ca32dfb9bdd2d3c56e3b4f0c",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 1112,
+      "is_binary": false
+    },
+    {
+      "name": "postcss.config.js",
+      "path": "frontend/postcss.config.js",
+      "type": "file",
+      "sha": "af9d8dc352da0b7268b1c8ead7ee8e9bd67f2b71",
+      "mode": "100644",
+      "extension": ".js",
+      "size": 90,
+      "is_binary": false
+    },
+    {
+      "name": "public",
+      "path": "frontend/public",
+      "type": "directory",
+      "sha": "a536f4dc54c4e5861dee904a228dfeb40eb9d376",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "favicon.svg",
+      "path": "frontend/public/favicon.svg",
+      "type": "file",
+      "sha": "a28d2f3f46bf602884d399390bcb5a28741f8460",
+      "mode": "100644",
+      "extension": ".svg",
+      "size": 366,
+      "is_binary": false
+    },
+    {
+      "name": "images",
+      "path": "frontend/public/images",
+      "type": "directory",
+      "sha": "009ab4a3b464caabf0f14d4f76cfb88eb57c429b",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "hero-protectkids.png",
+      "path": "frontend/public/images/hero-protectkids.png",
+      "type": "file",
+      "sha": "623eabc317d535c655e521a007bfdf33b4feca91",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 2766553,
+      "is_binary": false
+    },
+    {
+      "name": "src",
+      "path": "frontend/src",
+      "type": "directory",
+      "sha": "be88add39d705adcc084bdeb08fe759986fb6a3d",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "App.jsx",
+      "path": "frontend/src/App.jsx",
+      "type": "file",
+      "sha": "718e8c9396349c4156d441e79be20dc1762b6035",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 1689,
+      "is_binary": false
+    },
+    {
+      "name": "App.test.jsx",
+      "path": "frontend/src/App.test.jsx",
+      "type": "file",
+      "sha": "2455c0ee5721779a907c6ea061b5dad5ad3bfa08",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 934,
+      "is_binary": false
+    },
+    {
+      "name": "api.js",
+      "path": "frontend/src/api.js",
+      "type": "file",
+      "sha": "f5c04ab07fdc4f0083ac79ec52a933931c442cea",
+      "mode": "100644",
+      "extension": ".js",
+      "size": 2067,
+      "is_binary": false
+    },
+    {
+      "name": "components",
+      "path": "frontend/src/components",
+      "type": "directory",
+      "sha": "fedd7ae55e79e116a303f058ade3904f2080b88b",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "DashboardBox.jsx",
+      "path": "frontend/src/components/DashboardBox.jsx",
+      "type": "file",
+      "sha": "5dc1f62fb4a67ed75624546b9e88ff44a46732d1",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 552,
+      "is_binary": false
+    },
+    {
+      "name": "Footer.jsx",
+      "path": "frontend/src/components/Footer.jsx",
+      "type": "file",
+      "sha": "96977e8552db58383bce30984e4aada5d1ffea22",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 4514,
+      "is_binary": false
+    },
+    {
+      "name": "Header.jsx",
+      "path": "frontend/src/components/Header.jsx",
+      "type": "file",
+      "sha": "bb52c3a2a6ed4b98fedbfee5c7b760e551cd594c",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 1847,
+      "is_binary": false
+    },
+    {
+      "name": "NuvemPalavras.jsx",
+      "path": "frontend/src/components/NuvemPalavras.jsx",
+      "type": "file",
+      "sha": "1e5964234e84c544ee78c6913a04cef67a0f4692",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 1878,
+      "is_binary": false
+    },
+    {
+      "name": "NuvemPalavras.test.jsx",
+      "path": "frontend/src/components/NuvemPalavras.test.jsx",
+      "type": "file",
+      "sha": "9f336128e4141b6279e5f47633a2fe25b8bbcf76",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 695,
+      "is_binary": false
+    },
+    {
+      "name": "ScrollToTop.jsx",
+      "path": "frontend/src/components/ScrollToTop.jsx",
+      "type": "file",
+      "sha": "f3a7c9544b5dc655465abac481bbad13601f2124",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 304,
+      "is_binary": false
+    },
+    {
+      "name": "constants",
+      "path": "frontend/src/constants",
+      "type": "directory",
+      "sha": "25ed96a9adab263706573718ecb9952e176d7447",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "analytics.js",
+      "path": "frontend/src/constants/analytics.js",
+      "type": "file",
+      "sha": "915283eaa76ba66aa6f830d514dbf0c9d9dc031b",
+      "mode": "100644",
+      "extension": ".js",
+      "size": 2172,
+      "is_binary": false
+    },
+    {
+      "name": "categoriasNlp.js",
+      "path": "frontend/src/constants/categoriasNlp.js",
+      "type": "file",
+      "sha": "c860425f289707ff71c3c84038359103bcf78986",
+      "mode": "100644",
+      "extension": ".js",
+      "size": 13218,
+      "is_binary": false
+    },
+    {
+      "name": "index.css",
+      "path": "frontend/src/index.css",
+      "type": "file",
+      "sha": "8cc8126ab56e04f4677548d74b63b6666de7ebeb",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 127,
+      "is_binary": false
+    },
+    {
+      "name": "main.jsx",
+      "path": "frontend/src/main.jsx",
+      "type": "file",
+      "sha": "b9a1a6deac8775b5598874b2bc3c7971d82cf211",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 229,
+      "is_binary": false
+    },
+    {
+      "name": "pages",
+      "path": "frontend/src/pages",
+      "type": "directory",
+      "sha": "1098de8014d297cf52e86a849d2db34bbb5222a0",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "DetalhesLei.jsx",
+      "path": "frontend/src/pages/DetalhesLei.jsx",
+      "type": "file",
+      "sha": "bc04601491f0a98271716f9dc44a1db7e0cac8e2",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 11157,
+      "is_binary": false
+    },
+    {
+      "name": "DetalhesSubtema.jsx",
+      "path": "frontend/src/pages/DetalhesSubtema.jsx",
+      "type": "file",
+      "sha": "0da84f1895bf920bf7ddd2523f6226d463faafed",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 8916,
+      "is_binary": false
+    },
+    {
+      "name": "Estatisticas.jsx",
+      "path": "frontend/src/pages/Estatisticas.jsx",
+      "type": "file",
+      "sha": "60e1f2db8727ead7882680f902769e6b03f919ef",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 12056,
+      "is_binary": false
+    },
+    {
+      "name": "Inicio.jsx",
+      "path": "frontend/src/pages/Inicio.jsx",
+      "type": "file",
+      "sha": "dc4ea3047aac9609e9d9929ec795219586c40939",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 16357,
+      "is_binary": false
+    },
+    {
+      "name": "Sobre.jsx",
+      "path": "frontend/src/pages/Sobre.jsx",
+      "type": "file",
+      "sha": "2e0e052efae3e5b5aa041c0689895b6b155c775a",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 4357,
+      "is_binary": false
+    },
+    {
+      "name": "TodasAsLeis.jsx",
+      "path": "frontend/src/pages/TodasAsLeis.jsx",
+      "type": "file",
+      "sha": "f4db5d245c373b6d4ca386dfda2a7b3b851d4141",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 9660,
+      "is_binary": false
+    },
+    {
+      "name": "TodasAsLeis.test.jsx",
+      "path": "frontend/src/pages/TodasAsLeis.test.jsx",
+      "type": "file",
+      "sha": "0ba858e01f90150f0614e9d508b56e22d97d2080",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 1133,
+      "is_binary": false
+    },
+    {
+      "name": "utils",
+      "path": "frontend/src/utils",
+      "type": "directory",
+      "sha": "1d4eb9ca8c993ab8c403d12c48545b5c02b0abba",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "formatters.js",
+      "path": "frontend/src/utils/formatters.js",
+      "type": "file",
+      "sha": "62f7d8c5cded9ae2cdac50e1d28dd5f03d82cd17",
+      "mode": "100644",
+      "extension": ".js",
+      "size": 1461,
+      "is_binary": false
+    },
+    {
+      "name": "formatters.test.js",
+      "path": "frontend/src/utils/formatters.test.js",
+      "type": "file",
+      "sha": "ecbb9e9378080e921accca9b97165973e4239b7d",
+      "mode": "100644",
+      "extension": ".js",
+      "size": 1662,
+      "is_binary": false
+    },
+    {
+      "name": "tailwind.config.js",
+      "path": "frontend/tailwind.config.js",
+      "type": "file",
+      "sha": "d36ed0b16ed13da00c6c09bcc94c2118d7493faa",
+      "mode": "100644",
+      "extension": ".js",
+      "size": 851,
+      "is_binary": false
+    },
+    {
+      "name": "vite.config.js",
+      "path": "frontend/vite.config.js",
+      "type": "file",
+      "sha": "df8582f18ef884c68f18ed71ab6441954df92eef",
+      "mode": "100644",
+      "extension": ".js",
+      "size": 525,
+      "is_binary": false
+    },
+    {
+      "name": "mkdocs.yml",
+      "path": "mkdocs.yml",
+      "type": "file",
+      "sha": "069be0b15e1d689d0ebbe951ea6fa6311004b1f0",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 1505,
+      "is_binary": false
+    },
+    {
+      "name": "package-lock.json",
+      "path": "package-lock.json",
+      "type": "file",
+      "sha": "272ab468622ce4821a9b26e146743bd9a5a86832",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 97,
+      "is_binary": false
+    },
+    {
+      "name": "scripts",
+      "path": "scripts",
+      "type": "directory",
+      "sha": "39502482a94fecfd2daac799c4555d1e01fe3a5f",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "claude.md",
+      "path": "scripts/claude.md",
+      "type": "file",
+      "sha": "14e9474d1f4309b3d2ab6c21591f01906422fdc2",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 9971,
+      "is_binary": false
+    },
+    {
+      "name": "coletor_metricas.py",
+      "path": "scripts/coletor_metricas.py",
+      "type": "file",
+      "sha": "7fa64e211f2e289a673c83806ea2c2b30121ae69",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 7793,
+      "is_binary": false
+    }
+  ],
+  "truncated": false,
+  "extracted_at": "2026-09-17T04:03:55.610402",
+  "method": "rest",
+  "total_items": 150,
+  "repository_metadata": {
+    "id": 1196216020,
+    "full_name": "unb-mds/2026-1-ProtectKids",
+    "description": null,
+    "created_at": "2026-03-30T13:37:41Z",
+    "updated_at": "2026-07-01T15:48:52Z",
+    "language": "Python",
+    "size": 51587,
+    "stars": 2,
+    "forks": 1,
+    "open_issues": 3
+  }
+}

@@ -1,0 +1,298 @@
+{
+  "owner": "unb-mds",
+  "repository": "teste-ru",
+  "branch": "main",
+  "sha": "d51242e51cc2cdd06e9980bca6b57a5693f5c81d",
+  "tree": [
+    {
+      "name": ".github",
+      "path": ".github",
+      "type": "directory",
+      "sha": "7d1322af6e30f4469093fb04ab61033a30dff649",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "workflows",
+      "path": ".github/workflows",
+      "type": "directory",
+      "sha": "54405938f9ced3d6749e3a8041ba5d539ca3fa0c",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "coletar.yml",
+      "path": ".github/workflows/coletar.yml",
+      "type": "file",
+      "sha": "1277dff332505bd865c98ce0a9147a8c1b13cb20",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 3264,
+      "is_binary": false
+    },
+    {
+      "name": "pages.yml",
+      "path": ".github/workflows/pages.yml",
+      "type": "file",
+      "sha": "742412352b5d829f54f1385ec589fcc10b10c7be",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 1194,
+      "is_binary": false
+    },
+    {
+      "name": ".gitignore",
+      "path": ".gitignore",
+      "type": "file",
+      "sha": "b1a2733b968123f1a0b5f7253384a3e4db4efd85",
+      "mode": "100644",
+      "extension": ".gitignore",
+      "size": 52,
+      "is_binary": false
+    },
+    {
+      "name": "CONTEXT.md",
+      "path": "CONTEXT.md",
+      "type": "file",
+      "sha": "f496448a83cb2c82559c64eeda52af871ef01a53",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6303,
+      "is_binary": false
+    },
+    {
+      "name": "README.md",
+      "path": "README.md",
+      "type": "file",
+      "sha": "71902c3d504beceb90b9207163a9dc493faec2ea",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3255,
+      "is_binary": false
+    },
+    {
+      "name": "SPEC.md",
+      "path": "SPEC.md",
+      "type": "file",
+      "sha": "f9bb536d588abd8451ae6b24f88b742f6ec45e19",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 15885,
+      "is_binary": false
+    },
+    {
+      "name": "assets",
+      "path": "assets",
+      "type": "directory",
+      "sha": "f17ea507e3aa837c6e2b924c4ca3730c4540b824",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "app.js",
+      "path": "assets/app.js",
+      "type": "file",
+      "sha": "a3e45f029749607700d0fcecec0847d7bb8cb433",
+      "mode": "100644",
+      "extension": ".js",
+      "size": 13323,
+      "is_binary": false
+    },
+    {
+      "name": "style.css",
+      "path": "assets/style.css",
+      "type": "file",
+      "sha": "83a314bb0444f5328f235ee3daa64ae9c165e2ac",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 5696,
+      "is_binary": false
+    },
+    {
+      "name": "data",
+      "path": "data",
+      "type": "directory",
+      "sha": "8d43faa1dee2dba4c09a403c8b2bbddb42ea882a",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "cardapio.json",
+      "path": "data/cardapio.json",
+      "type": "file",
+      "sha": "42d39e6b1cc2b79c0b09f20dd647a7dd5559312d",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 434350,
+      "is_binary": false
+    },
+    {
+      "name": "docs",
+      "path": "docs",
+      "type": "directory",
+      "sha": "40b262df0f9c7e93b50df15ca408058bddd41f0b",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "adr",
+      "path": "docs/adr",
+      "type": "directory",
+      "sha": "a64e68247a21f3a47366a97441190de3ee5e466a",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "0001-ingestao-por-github-action-com-json-versionado.md",
+      "path": "docs/adr/0001-ingestao-por-github-action-com-json-versionado.md",
+      "type": "file",
+      "sha": "77144af312abf8b4ad112995265d37a7bd43e3fa",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1544,
+      "is_binary": false
+    },
+    {
+      "name": "0002-alergenicos-extraidos-com-estado-indeterminado.md",
+      "path": "docs/adr/0002-alergenicos-extraidos-com-estado-indeterminado.md",
+      "type": "file",
+      "sha": "f730b4c69e85a47940b6662b4cf36a8d411101ca",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1271,
+      "is_binary": false
+    },
+    {
+      "name": "index.html",
+      "path": "index.html",
+      "type": "file",
+      "sha": "08b226a7d03975434c072fcf47f6c98cf9be4a81",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 1748,
+      "is_binary": false
+    },
+    {
+      "name": "package.json",
+      "path": "package.json",
+      "type": "file",
+      "sha": "5b20fa9f403c124d070b12f18a109a20c82a3cf7",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 225,
+      "is_binary": false
+    },
+    {
+      "name": "parser",
+      "path": "parser",
+      "type": "directory",
+      "sha": "69aa3c95dff6c5c4b7a789b43a74d4cf30174afc",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "alergenicos.py",
+      "path": "parser/alergenicos.py",
+      "type": "file",
+      "sha": "dcfc62dc5e5a4e214f834c7688287b6a71d418ba",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4215,
+      "is_binary": false
+    },
+    {
+      "name": "coletar.py",
+      "path": "parser/coletar.py",
+      "type": "file",
+      "sha": "df821ab03cbc6c72d05b389c1bfcb9a6b89ce83b",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2951,
+      "is_binary": false
+    },
+    {
+      "name": "extrator.py",
+      "path": "parser/extrator.py",
+      "type": "file",
+      "sha": "0e4722baadf45c1e44b51ca499ef416665237571",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 13143,
+      "is_binary": false
+    },
+    {
+      "name": "fonte.py",
+      "path": "parser/fonte.py",
+      "type": "file",
+      "sha": "9d0327e3e7dc9fc1abf796f07cfde63a67008786",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2682,
+      "is_binary": false
+    },
+    {
+      "name": "requirements.txt",
+      "path": "parser/requirements.txt",
+      "type": "file",
+      "sha": "5978106e0810e958a1ff57f3611f1f4d78860de8",
+      "mode": "100644",
+      "extension": ".txt",
+      "size": 56,
+      "is_binary": false
+    },
+    {
+      "name": "validacao.py",
+      "path": "parser/validacao.py",
+      "type": "file",
+      "sha": "ca980a9f33f533366ab218fd90f6a14b4e13f3c4",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3829,
+      "is_binary": false
+    },
+    {
+      "name": "req.md",
+      "path": "req.md",
+      "type": "file",
+      "sha": "f1beac88bee0b9c27c3f56f7c922a6b99c3a562c",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1294,
+      "is_binary": false
+    },
+    {
+      "name": "testes",
+      "path": "testes",
+      "type": "directory",
+      "sha": "a11d39f6631b50e8f912a6ca697e73f403ff4ed4",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "ui.mjs",
+      "path": "testes/ui.mjs",
+      "type": "file",
+      "sha": "c5ba79e4eddfdbfd08c8fb7d3b68d7a07b3da3e9",
+      "mode": "100644",
+      "extension": ".mjs",
+      "size": 8647,
+      "is_binary": false
+    }
+  ],
+  "truncated": false,
+  "extracted_at": "2026-09-17T04:04:02.571444",
+  "method": "rest",
+  "total_items": 29,
+  "repository_metadata": {
+    "id": 1355018496,
+    "full_name": "unb-mds/teste-ru",
+    "description": null,
+    "created_at": "2026-09-02T17:00:51Z",
+    "updated_at": "2026-09-06T12:32:23Z",
+    "language": "Python",
+    "size": 56,
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 1
+  }
+}

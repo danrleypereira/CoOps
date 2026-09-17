@@ -1,0 +1,3508 @@
+{
+  "owner": "unb-mds",
+  "repository": "2026-1-SafeStreets",
+  "branch": "main",
+  "sha": "9bedd92699fb37ec22ce81c1cdabf9c8f97e2a46",
+  "tree": [
+    {
+      "name": ".claude",
+      "path": ".claude",
+      "type": "directory",
+      "sha": "033194fd0b5bec6eabef184f3b66761dfcced6e8",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "commands",
+      "path": ".claude/commands",
+      "type": "directory",
+      "sha": "d6ee8fbb4dfab314488aad1e272f201c50a5fe4b",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "endpoint.md",
+      "path": ".claude/commands/endpoint.md",
+      "type": "file",
+      "sha": "b59fb12fe46308cf8c2d809f05c01a56e6e5324f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3668,
+      "is_binary": false
+    },
+    {
+      "name": "skills",
+      "path": ".claude/skills",
+      "type": "directory",
+      "sha": "7e4f650f9d8134af31e29e34818d28dbf97dd30b",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "safestreets-implement-feature",
+      "path": ".claude/skills/safestreets-implement-feature",
+      "type": "directory",
+      "sha": "264d9eac63261ffeac180fb177c8a5e61e9a9560",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "SKILL.md",
+      "path": ".claude/skills/safestreets-implement-feature/SKILL.md",
+      "type": "file",
+      "sha": "eaafbe021ae12d723ebb0fc3da6bc6bc5a8917ca",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3939,
+      "is_binary": false
+    },
+    {
+      "name": "safestreets-run-frontend-tests",
+      "path": ".claude/skills/safestreets-run-frontend-tests",
+      "type": "directory",
+      "sha": "b38514e7032cfabfda51ec723a999e7886e1f29a",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "SKILL.md",
+      "path": ".claude/skills/safestreets-run-frontend-tests/SKILL.md",
+      "type": "file",
+      "sha": "982ea2b9c6666909a6030260a09d45b7ac4d172e",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5222,
+      "is_binary": false
+    },
+    {
+      "name": ".github",
+      "path": ".github",
+      "type": "directory",
+      "sha": "4a9203aa2f28d88f1ca3b49542557c1fdcc7f602",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "workflows",
+      "path": ".github/workflows",
+      "type": "directory",
+      "sha": "4bae9a76fc2d4007ab56e78d63227fedf4e7659d",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "docs.yml",
+      "path": ".github/workflows/docs.yml",
+      "type": "file",
+      "sha": "59c7ffaa8e884f88c2823cbf2f56b1f5c6f64b4d",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 963,
+      "is_binary": false
+    },
+    {
+      "name": "ingest-cron.yml",
+      "path": ".github/workflows/ingest-cron.yml",
+      "type": "file",
+      "sha": "c5885a5ec8dc9168dc80574eaa29d6a051cd9c1d",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 903,
+      "is_binary": false
+    },
+    {
+      "name": "metrics.yml",
+      "path": ".github/workflows/metrics.yml",
+      "type": "file",
+      "sha": "f7d3a8a878814747866a802a7236b05283a7adee",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 1108,
+      "is_binary": false
+    },
+    {
+      "name": "CODE_OF_CONDUCT.md",
+      "path": "CODE_OF_CONDUCT.md",
+      "type": "file",
+      "sha": "96d7b6bd39ed77ec57fd8065d55eb582f7077fa0",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6112,
+      "is_binary": false
+    },
+    {
+      "name": "CONTRIBUTING.md",
+      "path": "CONTRIBUTING.md",
+      "type": "file",
+      "sha": "22798d3be0ab9b8db6f536acc70e8fcacddccea7",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6654,
+      "is_binary": false
+    },
+    {
+      "name": "LICENSE",
+      "path": "LICENSE",
+      "type": "file",
+      "sha": "675c19ec0ecdd2613794ad67040a9a3c51d2b67a",
+      "mode": "100644",
+      "extension": "",
+      "size": 1060,
+      "is_binary": false
+    },
+    {
+      "name": "README.md",
+      "path": "README.md",
+      "type": "file",
+      "sha": "0a69f6a59786cc61fb62cf0f28724133cecf4cdf",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6302,
+      "is_binary": false
+    },
+    {
+      "name": "SECURITY.md",
+      "path": "SECURITY.md",
+      "type": "file",
+      "sha": "1851a05c42dbe42ee8500b06dbca40848325fd36",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1436,
+      "is_binary": false
+    },
+    {
+      "name": "backend",
+      "path": "backend",
+      "type": "directory",
+      "sha": "2d6b2f3665782d8a37378bc490b862ccc6a8992b",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".claude",
+      "path": "backend/.claude",
+      "type": "directory",
+      "sha": "54748b75e16b17717f4f6be416df8f11bf706e40",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "skills",
+      "path": "backend/.claude/skills",
+      "type": "directory",
+      "sha": "d9a2b64e60a99c7b5fb29ce8d1d18f2a04ff1fcb",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "run-correio-rss",
+      "path": "backend/.claude/skills/run-correio-rss",
+      "type": "directory",
+      "sha": "b3d39d71deb9f5542cae1ff03c6d397f6c0659d0",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "SKILL.md",
+      "path": "backend/.claude/skills/run-correio-rss/SKILL.md",
+      "type": "file",
+      "sha": "ae4ff11ab8e542db383b22817387eceec61fef32",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4462,
+      "is_binary": false
+    },
+    {
+      "name": "driver.py",
+      "path": "backend/.claude/skills/run-correio-rss/driver.py",
+      "type": "file",
+      "sha": "1b085139b78d89e0a5e6ce0cf0cf5dafd92657d7",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3983,
+      "is_binary": false
+    },
+    {
+      "name": "spec.md",
+      "path": "backend/.claude/skills/run-correio-rss/spec.md",
+      "type": "file",
+      "sha": "de90d6e3a7ba67f677c6e3d74f4cbaffdd2d934f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2465,
+      "is_binary": false
+    },
+    {
+      "name": "run-disparo-ingestao",
+      "path": "backend/.claude/skills/run-disparo-ingestao",
+      "type": "directory",
+      "sha": "3a05aeea3c90babc573354d23999451ecce3ea30",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "SKILL.md",
+      "path": "backend/.claude/skills/run-disparo-ingestao/SKILL.md",
+      "type": "file",
+      "sha": "c5f190a28172e785caf5f78cad4bbe5c0e8ad06c",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3815,
+      "is_binary": false
+    },
+    {
+      "name": "driver.py",
+      "path": "backend/.claude/skills/run-disparo-ingestao/driver.py",
+      "type": "file",
+      "sha": "ae00a50a7fc5b0016f9214e9807b1daae1fc45ff",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3697,
+      "is_binary": false
+    },
+    {
+      "name": "spec.md",
+      "path": "backend/.claude/skills/run-disparo-ingestao/spec.md",
+      "type": "file",
+      "sha": "71e539442c6edadd217bc0f9bc843d491c28fd93",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2274,
+      "is_binary": false
+    },
+    {
+      "name": "run-endpoints",
+      "path": "backend/.claude/skills/run-endpoints",
+      "type": "directory",
+      "sha": "f0620545142cdfdc6f11c8a185404a6c9e0aa084",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "SKILL.md",
+      "path": "backend/.claude/skills/run-endpoints/SKILL.md",
+      "type": "file",
+      "sha": "59878f3388211e7c25215ec2fe165c6b78536d2e",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4969,
+      "is_binary": false
+    },
+    {
+      "name": "driver.py",
+      "path": "backend/.claude/skills/run-endpoints/driver.py",
+      "type": "file",
+      "sha": "cb329e9c9c2e7758e500bed2ec409287114f8853",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4975,
+      "is_binary": false
+    },
+    {
+      "name": "spec.md",
+      "path": "backend/.claude/skills/run-endpoints/spec.md",
+      "type": "file",
+      "sha": "2485ce6551563ab9f8118a6f7c7ffbd4a74d3551",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2273,
+      "is_binary": false
+    },
+    {
+      "name": "run-ingestao",
+      "path": "backend/.claude/skills/run-ingestao",
+      "type": "directory",
+      "sha": "75bf94d208e79ceeb20226d7d4384c289fc83a2c",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "SKILL.md",
+      "path": "backend/.claude/skills/run-ingestao/SKILL.md",
+      "type": "file",
+      "sha": "a93ab12bc9214f15c827f41da5c45cd2303dc306",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5873,
+      "is_binary": false
+    },
+    {
+      "name": "driver.py",
+      "path": "backend/.claude/skills/run-ingestao/driver.py",
+      "type": "file",
+      "sha": "ca86facf808fddf76d1da39ecc44155c4bd6c288",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 5812,
+      "is_binary": false
+    },
+    {
+      "name": "spec.md",
+      "path": "backend/.claude/skills/run-ingestao/spec.md",
+      "type": "file",
+      "sha": "05429dfe1405092acbd5c45f72df0260a13df9c1",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2626,
+      "is_binary": false
+    },
+    {
+      "name": "run-nominatim-gemini",
+      "path": "backend/.claude/skills/run-nominatim-gemini",
+      "type": "directory",
+      "sha": "f998c9a0829ee4d701eae7e9e8c3568a5d878eb6",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "SKILL.md",
+      "path": "backend/.claude/skills/run-nominatim-gemini/SKILL.md",
+      "type": "file",
+      "sha": "09539c4fd553a2e9a3d8e3fd049d5a8b7f798432",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5056,
+      "is_binary": false
+    },
+    {
+      "name": "driver.py",
+      "path": "backend/.claude/skills/run-nominatim-gemini/driver.py",
+      "type": "file",
+      "sha": "ca1af9b5ea437c4966c6852b15a4f1c6e95e8d81",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4891,
+      "is_binary": false
+    },
+    {
+      "name": "spec.md",
+      "path": "backend/.claude/skills/run-nominatim-gemini/spec.md",
+      "type": "file",
+      "sha": "2b713b3a930f22d6818fdd9e143ebb4dd7647124",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2413,
+      "is_binary": false
+    },
+    {
+      "name": "run-schemas",
+      "path": "backend/.claude/skills/run-schemas",
+      "type": "directory",
+      "sha": "f3c54a406fcda1aa4bd609aa1fc86b55dd699349",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "SKILL.md",
+      "path": "backend/.claude/skills/run-schemas/SKILL.md",
+      "type": "file",
+      "sha": "37f015fe0e80cb3d44e6ef2af4dab592cbbc2a13",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4827,
+      "is_binary": false
+    },
+    {
+      "name": "driver.py",
+      "path": "backend/.claude/skills/run-schemas/driver.py",
+      "type": "file",
+      "sha": "4d16cc95f916a12c0c0151cbf5d818d7588efdfd",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4066,
+      "is_binary": false
+    },
+    {
+      "name": "spec.md",
+      "path": "backend/.claude/skills/run-schemas/spec.md",
+      "type": "file",
+      "sha": "ed4d9ee417356d3da06325f4efda5dbee513e5cf",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2207,
+      "is_binary": false
+    },
+    {
+      "name": ".gitignore",
+      "path": "backend/.gitignore",
+      "type": "file",
+      "sha": "ebb8c14c78bc08ecb21280310b3ffb15e6be12b0",
+      "mode": "100644",
+      "extension": ".gitignore",
+      "size": 38,
+      "is_binary": false
+    },
+    {
+      "name": "Dockerfile",
+      "path": "backend/Dockerfile",
+      "type": "file",
+      "sha": "b548b4691983d52e6c668a8bd04b49f08564aca0",
+      "mode": "100644",
+      "extension": "",
+      "size": 712,
+      "is_binary": false
+    },
+    {
+      "name": "alembic.ini",
+      "path": "backend/alembic.ini",
+      "type": "file",
+      "sha": "807ded2d51659e78e03f0078187d54724b7658d8",
+      "mode": "100644",
+      "extension": ".ini",
+      "size": 5008,
+      "is_binary": false
+    },
+    {
+      "name": "alembic",
+      "path": "backend/alembic",
+      "type": "directory",
+      "sha": "ef18769e6d9ccf6cef5a4a35b07ef68df4f0fe54",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "README",
+      "path": "backend/alembic/README",
+      "type": "file",
+      "sha": "98e4f9c44effe479ed38c66ba922e7bcc672916f",
+      "mode": "100644",
+      "extension": "",
+      "size": 38,
+      "is_binary": false
+    },
+    {
+      "name": "env.py",
+      "path": "backend/alembic/env.py",
+      "type": "file",
+      "sha": "fe9b48fbae16685983b0358ad59f7617ef4aa731",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2601,
+      "is_binary": false
+    },
+    {
+      "name": "script.py.mako",
+      "path": "backend/alembic/script.py.mako",
+      "type": "file",
+      "sha": "11016301e749297acb67822efc7974ee53c905c6",
+      "mode": "100644",
+      "extension": ".mako",
+      "size": 704,
+      "is_binary": false
+    },
+    {
+      "name": "versions",
+      "path": "backend/alembic/versions",
+      "type": "directory",
+      "sha": "a9a69697cb2ce8eb0712f45a4f74fe17fcedddec",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "001_initial_schema.py",
+      "path": "backend/alembic/versions/001_initial_schema.py",
+      "type": "file",
+      "sha": "031806e31e0d4fb9f765df4249aae7055b17c920",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 6082,
+      "is_binary": false
+    },
+    {
+      "name": "app",
+      "path": "backend/app",
+      "type": "directory",
+      "sha": "9c2c72bf94beb35f12f3fb802cf7943ada0a33e3",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/app/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "core",
+      "path": "backend/app/core",
+      "type": "directory",
+      "sha": "5e9f55c5a1acf06696f2d43a791856ec2bb653cb",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/app/core/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "cache.py",
+      "path": "backend/app/core/cache.py",
+      "type": "file",
+      "sha": "a277c0384f9524f04b3baa72200c48f89b214beb",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 651,
+      "is_binary": false
+    },
+    {
+      "name": "database.py",
+      "path": "backend/app/core/database.py",
+      "type": "file",
+      "sha": "aad9cc926b4177fdc44dd0242922eac3a06e6359",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 822,
+      "is_binary": false
+    },
+    {
+      "name": "integrations",
+      "path": "backend/app/integrations",
+      "type": "directory",
+      "sha": "5ab5c528e86813c10cd65154321aa603ff1e3fcd",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".gitignore",
+      "path": "backend/app/integrations/.gitignore",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".gitignore",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/app/integrations/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "correio_rss.py",
+      "path": "backend/app/integrations/correio_rss.py",
+      "type": "file",
+      "sha": "daaf337f16de9f1301e6d2b5ee3a17d4f1e355d3",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4918,
+      "is_binary": false
+    },
+    {
+      "name": "gemini.py",
+      "path": "backend/app/integrations/gemini.py",
+      "type": "file",
+      "sha": "e72b975f9ede1ec60704c5444fd8c8d21c2665bc",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4319,
+      "is_binary": false
+    },
+    {
+      "name": "nominatim.py",
+      "path": "backend/app/integrations/nominatim.py",
+      "type": "file",
+      "sha": "40c87e1b8383e29e8a66819916c2f59d2844ce42",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2126,
+      "is_binary": false
+    },
+    {
+      "name": "main.py",
+      "path": "backend/app/main.py",
+      "type": "file",
+      "sha": "d8482182ac2896ed47c5e4e3da9117124d3989c5",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1232,
+      "is_binary": false
+    },
+    {
+      "name": "models",
+      "path": "backend/app/models",
+      "type": "directory",
+      "sha": "a8f539da0d74dbf7c433f97ca01082994e8258c2",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/app/models/__init__.py",
+      "type": "file",
+      "sha": "b0ee4612ced790445b4fb896db5b6f443cb71ed5",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 341,
+      "is_binary": false
+    },
+    {
+      "name": "historico_consulta.py",
+      "path": "backend/app/models/historico_consulta.py",
+      "type": "file",
+      "sha": "5de330e38894e77a51f4830eb73d61a52a0a444d",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1015,
+      "is_binary": false
+    },
+    {
+      "name": "local_pin.py",
+      "path": "backend/app/models/local_pin.py",
+      "type": "file",
+      "sha": "4b3651dfbb45b33dcebfd41d948cf28316131be7",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1116,
+      "is_binary": false
+    },
+    {
+      "name": "ocorrencia.py",
+      "path": "backend/app/models/ocorrencia.py",
+      "type": "file",
+      "sha": "a31521538e93da8f362e721a37a9e4b434a5082e",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1955,
+      "is_binary": false
+    },
+    {
+      "name": "repositories",
+      "path": "backend/app/repositories",
+      "type": "directory",
+      "sha": "387c9804946a288b8b293aee3e54a580916bc4a6",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".gitignore",
+      "path": "backend/app/repositories/.gitignore",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".gitignore",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/app/repositories/__init__.py",
+      "type": "file",
+      "sha": "223f3399dabcd7461b8deac4363df6262a60100c",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 23,
+      "is_binary": false
+    },
+    {
+      "name": "local_pin_repository.py",
+      "path": "backend/app/repositories/local_pin_repository.py",
+      "type": "file",
+      "sha": "99e2077df7acc25a265b28376857fdd773a8b0d2",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1637,
+      "is_binary": false
+    },
+    {
+      "name": "ocorrencia_repository.py",
+      "path": "backend/app/repositories/ocorrencia_repository.py",
+      "type": "file",
+      "sha": "03b9d8e01d6fedbd195457cefae749eed72e3192",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2956,
+      "is_binary": false
+    },
+    {
+      "name": "routes",
+      "path": "backend/app/routes",
+      "type": "directory",
+      "sha": "047544d073817dcabd222c66ecd1c7df0515db0b",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/app/routes/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "admin.py",
+      "path": "backend/app/routes/admin.py",
+      "type": "file",
+      "sha": "61262c0833bf9efba2f8dd202f818c2613616f85",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1750,
+      "is_binary": false
+    },
+    {
+      "name": "health.py",
+      "path": "backend/app/routes/health.py",
+      "type": "file",
+      "sha": "cee2957c304bf3cebc79dbdcc87ec79e52670256",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 156,
+      "is_binary": false
+    },
+    {
+      "name": "ocorrencias.py",
+      "path": "backend/app/routes/ocorrencias.py",
+      "type": "file",
+      "sha": "85bbf2cd9a1c53d42c39b57c62fd6a22ac484f36",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1613,
+      "is_binary": false
+    },
+    {
+      "name": "schemas",
+      "path": "backend/app/schemas",
+      "type": "directory",
+      "sha": "a83faa76969b778210c38ec9c937466c2efd0bd8",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".gitignore",
+      "path": "backend/app/schemas/.gitignore",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".gitignore",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/app/schemas/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "ocorrencia.py",
+      "path": "backend/app/schemas/ocorrencia.py",
+      "type": "file",
+      "sha": "2064f7d50301322930be04c7b03192400ab07c53",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1550,
+      "is_binary": false
+    },
+    {
+      "name": "services",
+      "path": "backend/app/services",
+      "type": "directory",
+      "sha": "754fb80eb7755097d67c1df4d3b366d4c62c1f19",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".gitignore",
+      "path": "backend/app/services/.gitignore",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".gitignore",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/app/services/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "ingestao.py",
+      "path": "backend/app/services/ingestao.py",
+      "type": "file",
+      "sha": "2ec3d2f964e03fe27cebd361d14629ba96168547",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 15088,
+      "is_binary": false
+    },
+    {
+      "name": "ocorrencias.py",
+      "path": "backend/app/services/ocorrencias.py",
+      "type": "file",
+      "sha": "b17387a58949083e5d3bdf9ed7303ae355a57010",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3236,
+      "is_binary": false
+    },
+    {
+      "name": "risco_service.py",
+      "path": "backend/app/services/risco_service.py",
+      "type": "file",
+      "sha": "4808da15bca3cbf501ea3aefbe48527a809708c8",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 802,
+      "is_binary": false
+    },
+    {
+      "name": "docker-compose.yml",
+      "path": "backend/docker-compose.yml",
+      "type": "file",
+      "sha": "35c0ef9fc9c7f4997e9ec5b0dad54b2243b76554",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 2061,
+      "is_binary": false
+    },
+    {
+      "name": "requirements.txt",
+      "path": "backend/requirements.txt",
+      "type": "file",
+      "sha": "e6ef47cb98f6564473efa3d3ec8425c11717831d",
+      "mode": "100644",
+      "extension": ".txt",
+      "size": 201,
+      "is_binary": false
+    },
+    {
+      "name": "ruff.toml",
+      "path": "backend/ruff.toml",
+      "type": "file",
+      "sha": "899aeb0b2ff9f45e4d535c8442ccf2752353014c",
+      "mode": "100644",
+      "extension": ".toml",
+      "size": 595,
+      "is_binary": false
+    },
+    {
+      "name": "teste.py",
+      "path": "backend/teste.py",
+      "type": "file",
+      "sha": "fe85fbb58ceea2ed643e62bc08ac348698632874",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 727,
+      "is_binary": false
+    },
+    {
+      "name": "tests",
+      "path": "backend/tests",
+      "type": "directory",
+      "sha": "68ce4454a3d809a2d33e2b00610c50418c4c04c6",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "test_admin.py",
+      "path": "backend/tests/test_admin.py",
+      "type": "file",
+      "sha": "8e69b84ec423cc738476871cdac482859cdb1791",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2314,
+      "is_binary": false
+    },
+    {
+      "name": "test_correio_rss.py",
+      "path": "backend/tests/test_correio_rss.py",
+      "type": "file",
+      "sha": "cead6fd92dea142720dca9229e35266b535377ed",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4031,
+      "is_binary": false
+    },
+    {
+      "name": "test_gemini.py",
+      "path": "backend/tests/test_gemini.py",
+      "type": "file",
+      "sha": "ef66b44e6e1e5069b8791bf44bfe3dd900d54eec",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 5470,
+      "is_binary": false
+    },
+    {
+      "name": "test_ingestao.py",
+      "path": "backend/tests/test_ingestao.py",
+      "type": "file",
+      "sha": "2ef996c81ee6a9afe8a62ba9416f7c70c69b7f60",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 11449,
+      "is_binary": false
+    },
+    {
+      "name": "test_main.py",
+      "path": "backend/tests/test_main.py",
+      "type": "file",
+      "sha": "6e1cad8d24f2329aeba2c89c6727014614b50079",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 280,
+      "is_binary": false
+    },
+    {
+      "name": "test_nominatim.py",
+      "path": "backend/tests/test_nominatim.py",
+      "type": "file",
+      "sha": "15eb063d147e221c282b5fe4d13f959df36424e7",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1651,
+      "is_binary": false
+    },
+    {
+      "name": "test_ocorrencia_repository.py",
+      "path": "backend/tests/test_ocorrencia_repository.py",
+      "type": "file",
+      "sha": "d6ff0d9dbfff89f54d4e5e79560a93566b8f5402",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 6147,
+      "is_binary": false
+    },
+    {
+      "name": "test_ocorrencias.py",
+      "path": "backend/tests/test_ocorrencias.py",
+      "type": "file",
+      "sha": "2b70fe2be98bf94901f9e628da42d47f6ec45eaa",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4131,
+      "is_binary": false
+    },
+    {
+      "name": "test_risco_service.py",
+      "path": "backend/tests/test_risco_service.py",
+      "type": "file",
+      "sha": "5d2b2857ebb86b1f612b01a55a6d76f5aa8dbb01",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1943,
+      "is_binary": false
+    },
+    {
+      "name": "test_schemas.py",
+      "path": "backend/tests/test_schemas.py",
+      "type": "file",
+      "sha": "441f03e8e35a895d589ba11c6c06bcf8a545d7c2",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2507,
+      "is_binary": false
+    },
+    {
+      "name": "docs",
+      "path": "docs",
+      "type": "directory",
+      "sha": "ce5d94b64d3916b870ba841e24c48bff65078181",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "Arquitetura",
+      "path": "docs/Arquitetura",
+      "type": "directory",
+      "sha": "93ef3b900834547f115f279236f8af70979689b8",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "ADR-001-Gemini-Fallback-Strategy.md",
+      "path": "docs/Arquitetura/ADR-001-Gemini-Fallback-Strategy.md",
+      "type": "file",
+      "sha": "c36544e994989582d191e844d381aecb4fd10e9f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5460,
+      "is_binary": false
+    },
+    {
+      "name": "ADRs-PENDENTES.md",
+      "path": "docs/Arquitetura/ADRs-PENDENTES.md",
+      "type": "file",
+      "sha": "884e43b9fcb0f3b1fd357c3c4dde91225c2df05b",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3640,
+      "is_binary": false
+    },
+    {
+      "name": "API-Contract.md",
+      "path": "docs/Arquitetura/API-Contract.md",
+      "type": "file",
+      "sha": "d84af247ff675084602618efab7da82101029e27",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 7181,
+      "is_binary": false
+    },
+    {
+      "name": "CONTEXT.md",
+      "path": "docs/Arquitetura/CONTEXT.md",
+      "type": "file",
+      "sha": "fbb08566a53668e6a78d749a96c56dbb9d45b70b",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 9590,
+      "is_binary": false
+    },
+    {
+      "name": "RSS-Integration.md",
+      "path": "docs/Arquitetura/RSS-Integration.md",
+      "type": "file",
+      "sha": "7fff40c21f9c47326f199d95e1322eb11b962a6e",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 11649,
+      "is_binary": false
+    },
+    {
+      "name": "Specs_banco_de_dados",
+      "path": "docs/Arquitetura/Specs_banco_de_dados",
+      "type": "directory",
+      "sha": "c02fca5cfde19c0481dc28e628b3f25ce8e133db",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "plan.md",
+      "path": "docs/Arquitetura/Specs_banco_de_dados/plan.md",
+      "type": "file",
+      "sha": "f9a4eae22b411bd410069193c83bab42d49d325f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 16655,
+      "is_binary": false
+    },
+    {
+      "name": "spec.md",
+      "path": "docs/Arquitetura/Specs_banco_de_dados/spec.md",
+      "type": "file",
+      "sha": "702f38e8ef88bae6452649f86abca1bf406275ae",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4675,
+      "is_binary": false
+    },
+    {
+      "name": "tasks.md",
+      "path": "docs/Arquitetura/Specs_banco_de_dados/tasks.md",
+      "type": "file",
+      "sha": "92f8da02945598fd7dcbe4f64de6de234afe1bf2",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6585,
+      "is_binary": false
+    },
+    {
+      "name": "analise-compatibilidade.md",
+      "path": "docs/Arquitetura/analise-compatibilidade.md",
+      "type": "file",
+      "sha": "098e72b13c8da7a5dc5d1b56ef17f2c419deef0f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 12676,
+      "is_binary": false
+    },
+    {
+      "name": "arquitetura-interna.md",
+      "path": "docs/Arquitetura/arquitetura-interna.md",
+      "type": "file",
+      "sha": "825a85d373a06b24576b3175d7e0e7d822d2c95f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 9531,
+      "is_binary": false
+    },
+    {
+      "name": "definicoes-front-end.md",
+      "path": "docs/Arquitetura/definicoes-front-end.md",
+      "type": "file",
+      "sha": "0b1dbeea41c77debed57447d13bee686a65c5b73",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4197,
+      "is_binary": false
+    },
+    {
+      "name": "definir-arquitetura.md",
+      "path": "docs/Arquitetura/definir-arquitetura.md",
+      "type": "file",
+      "sha": "612ebfb1034beaf78818bc92dcf81cb1ff321096",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3178,
+      "is_binary": false
+    },
+    {
+      "name": "definir-fluxo-de-dados.md",
+      "path": "docs/Arquitetura/definir-fluxo-de-dados.md",
+      "type": "file",
+      "sha": "7ccb628dbaa0738645065d4720192e64749fec3c",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 10022,
+      "is_binary": false
+    },
+    {
+      "name": "definições-de-back.md",
+      "path": "docs/Arquitetura/definições-de-back.md",
+      "type": "file",
+      "sha": "f4408767b49c046b94bbdcc49c7a2153fed42e67",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5886,
+      "is_binary": false
+    },
+    {
+      "name": "documento-c4-v2.md",
+      "path": "docs/Arquitetura/documento-c4-v2.md",
+      "type": "file",
+      "sha": "8ce00711b1113a046911de0a9c6612afd12c6dbc",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 456,
+      "is_binary": false
+    },
+    {
+      "name": "documento-c4.md",
+      "path": "docs/Arquitetura/documento-c4.md",
+      "type": "file",
+      "sha": "a9984d95d699a41c58f58f4bad9950479efad610",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 444,
+      "is_binary": false
+    },
+    {
+      "name": "index.md",
+      "path": "docs/Arquitetura/index.md",
+      "type": "file",
+      "sha": "099e97354c5bcb197ae273e20a11fde00636c78e",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 687,
+      "is_binary": false
+    },
+    {
+      "name": "tecnologias_projeto.md",
+      "path": "docs/Arquitetura/tecnologias_projeto.md",
+      "type": "file",
+      "sha": "35e782c98e98d339ee6c1686953dc10db85b3d84",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 9138,
+      "is_binary": false
+    },
+    {
+      "name": "Design",
+      "path": "docs/Design",
+      "type": "directory",
+      "sha": "5f51bc28f16f38c853061fc431b4256d4612b25f",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "organizar-Docs.md",
+      "path": "docs/Design/organizar-Docs.md",
+      "type": "file",
+      "sha": "39eebaa83cc412aa6c0ca584c04d16e3151b6071",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 802,
+      "is_binary": false
+    },
+    {
+      "name": "prototipo_alta_fidelidade.md",
+      "path": "docs/Design/prototipo_alta_fidelidade.md",
+      "type": "file",
+      "sha": "1ef07e9393d34942eedd91136c769f6237bbc442",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2521,
+      "is_binary": false
+    },
+    {
+      "name": "protótipo-baixa-fidelidade.md",
+      "path": "docs/Design/protótipo-baixa-fidelidade.md",
+      "type": "file",
+      "sha": "ce0ed605bfb1ce4f176e1dcc3931cef557788f6d",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 684,
+      "is_binary": false
+    },
+    {
+      "name": "wireframe.md",
+      "path": "docs/Design/wireframe.md",
+      "type": "file",
+      "sha": "143f8f0f0652dfe6ca2a23ab20a3647ae789981e",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 660,
+      "is_binary": false
+    },
+    {
+      "name": "Estudos",
+      "path": "docs/Estudos",
+      "type": "directory",
+      "sha": "bee6e0546bc062072ccbcc469423643101ec368d",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "Estudo-Front-End.md",
+      "path": "docs/Estudos/Estudo-Front-End.md",
+      "type": "file",
+      "sha": "fe0c8a65b7b1a872a13bc3509478faf5f6a32272",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1043,
+      "is_binary": false
+    },
+    {
+      "name": "analise-de-implementacao.md",
+      "path": "docs/Estudos/analise-de-implementacao.md",
+      "type": "file",
+      "sha": "b175f2df9747c3b57259e3fac91f63231f95a4fc",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3773,
+      "is_binary": false
+    },
+    {
+      "name": "analise-de-linguagens.md",
+      "path": "docs/Estudos/analise-de-linguagens.md",
+      "type": "file",
+      "sha": "19cf4cc979541e9c83f7bc79b5fb863474fff6a1",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 28408,
+      "is_binary": false
+    },
+    {
+      "name": "ciclo-vida-software.md",
+      "path": "docs/Estudos/ciclo-vida-software.md",
+      "type": "file",
+      "sha": "a2f784ce243ead216b4240fb3b602a0cc3e94ef7",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4448,
+      "is_binary": false
+    },
+    {
+      "name": "docker.md",
+      "path": "docs/Estudos/docker.md",
+      "type": "file",
+      "sha": "e6efc18cc9d6bd26c80f871870d6d6429a09a657",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2494,
+      "is_binary": false
+    },
+    {
+      "name": "estudo-back-end.md",
+      "path": "docs/Estudos/estudo-back-end.md",
+      "type": "file",
+      "sha": "8ded09cebb8b7c49a4e5a7dca5eb1f9133f2a5f5",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2891,
+      "is_binary": false
+    },
+    {
+      "name": "estudo-banco-de-dados.md",
+      "path": "docs/Estudos/estudo-banco-de-dados.md",
+      "type": "file",
+      "sha": "bddbbc3f07b6c03808d9ad30e9b75f850627b301",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5197,
+      "is_binary": false
+    },
+    {
+      "name": "estudo-de-API.md",
+      "path": "docs/Estudos/estudo-de-API.md",
+      "type": "file",
+      "sha": "7ec13a59fedb18d9ef96b0dc371c467a3a8005bd",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 10157,
+      "is_binary": false
+    },
+    {
+      "name": "estudo-de-agentes-de-IA",
+      "path": "docs/Estudos/estudo-de-agentes-de-IA",
+      "type": "file",
+      "sha": "c574423ee79c8e18a9aa236d4d56613a0ca29f8b",
+      "mode": "100644",
+      "extension": "",
+      "size": 3167,
+      "is_binary": false
+    },
+    {
+      "name": "estudo-de-devops.md",
+      "path": "docs/Estudos/estudo-de-devops.md",
+      "type": "file",
+      "sha": "ab24252732f30d52870e851e79a58f503b697959",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2567,
+      "is_binary": false
+    },
+    {
+      "name": "estudo-de-react.md",
+      "path": "docs/Estudos/estudo-de-react.md",
+      "type": "file",
+      "sha": "44685a2dfbb9c43f8268109ce334c8e6ceb72d18",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4776,
+      "is_binary": false
+    },
+    {
+      "name": "estudo-fastapi.md",
+      "path": "docs/Estudos/estudo-fastapi.md",
+      "type": "file",
+      "sha": "4f68d6dbe99ef823aa66dbf446c47c26edbc970f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2574,
+      "is_binary": false
+    },
+    {
+      "name": "estudo-test-driven-development.md",
+      "path": "docs/Estudos/estudo-test-driven-development.md",
+      "type": "file",
+      "sha": "62c8c6f2babf70a411bc2935fdc3becb38f375cf",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 8206,
+      "is_binary": false
+    },
+    {
+      "name": "estudo_leaflet.md",
+      "path": "docs/Estudos/estudo_leaflet.md",
+      "type": "file",
+      "sha": "9174063740d6ee3fe91e293d9ef58a12e8fbdbad",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5088,
+      "is_binary": false
+    },
+    {
+      "name": "estudo_nominatim.md",
+      "path": "docs/Estudos/estudo_nominatim.md",
+      "type": "file",
+      "sha": "4a438cdfbfd00efe73309bce00b8ad6b47a710c7",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3968,
+      "is_binary": false
+    },
+    {
+      "name": "estudo_rss.md",
+      "path": "docs/Estudos/estudo_rss.md",
+      "type": "file",
+      "sha": "75febb05aee6d85dbfaa652339b5e97e0ae3843e",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6753,
+      "is_binary": false
+    },
+    {
+      "name": "git-github.md",
+      "path": "docs/Estudos/git-github.md",
+      "type": "file",
+      "sha": "431c14072754be5d3c9d2e092204445928802a52",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2374,
+      "is_binary": false
+    },
+    {
+      "name": "spec-driven-development.md",
+      "path": "docs/Estudos/spec-driven-development.md",
+      "type": "file",
+      "sha": "eb0afd1d0ad2a2483e703a6e6442da9292ee8fc9",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6831,
+      "is_binary": false
+    },
+    {
+      "name": "web-scraping.md",
+      "path": "docs/Estudos/web-scraping.md",
+      "type": "file",
+      "sha": "d541854ec4c65ba5ebf70c18412a4608a5421426",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2156,
+      "is_binary": false
+    },
+    {
+      "name": "Figma",
+      "path": "docs/Figma",
+      "type": "directory",
+      "sha": "2d4688e0d3ec43d60a61f018e1fead386efdf3cb",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "Figma svg",
+      "path": "docs/Figma/Figma svg",
+      "type": "directory",
+      "sha": "569692a23347eff079012bd39bcaa7e53cc49a0a",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "Arquitetura",
+      "path": "docs/Figma/Figma svg/Arquitetura",
+      "type": "directory",
+      "sha": "4ab27c7818d93a72c6aa10077ad9ad3c3c53441e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "arquitetura.svg",
+      "path": "docs/Figma/Figma svg/Arquitetura/arquitetura.svg",
+      "type": "file",
+      "sha": "c2185878de302b484ac0374ef441f33d88702b58",
+      "mode": "100644",
+      "extension": ".svg",
+      "size": 21404362,
+      "is_binary": false
+    },
+    {
+      "name": "Informacoes gerais do projeto",
+      "path": "docs/Figma/Figma svg/Informacoes gerais do projeto",
+      "type": "directory",
+      "sha": "67c9aaa4c96dc6503ad46f35b0cd44662dd9633e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "infogeral.pdf",
+      "path": "docs/Figma/Figma svg/Informacoes gerais do projeto/infogeral.pdf",
+      "type": "file",
+      "sha": "836735f421eef489a3bdb0d9c4df71f682ad9438",
+      "mode": "100644",
+      "extension": ".pdf",
+      "size": 6350874,
+      "is_binary": false
+    },
+    {
+      "name": "infogeral.svg",
+      "path": "docs/Figma/Figma svg/Informacoes gerais do projeto/infogeral.svg",
+      "type": "file",
+      "sha": "5259ff69ab19173ff1f2490a698ebf86ce0057a0",
+      "mode": "100644",
+      "extension": ".svg",
+      "size": 7808495,
+      "is_binary": false
+    },
+    {
+      "name": "Maior parte",
+      "path": "docs/Figma/Figma svg/Maior parte",
+      "type": "directory",
+      "sha": "dcfccba7c571cedb21121c208ec43a8a86cc4afd",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "donedor.svg",
+      "path": "docs/Figma/Figma svg/Maior parte/donedor.svg",
+      "type": "file",
+      "sha": "f0130890ea813dcf1111849089d164efd4dd63a6",
+      "mode": "100644",
+      "extension": ".svg",
+      "size": 9908412,
+      "is_binary": false
+    },
+    {
+      "name": "escopo.svg",
+      "path": "docs/Figma/Figma svg/Maior parte/escopo.svg",
+      "type": "file",
+      "sha": "8e3ef19db9c18365cf94a1e635b16eaedd8a1f36",
+      "mode": "100644",
+      "extension": ".svg",
+      "size": 9863867,
+      "is_binary": false
+    },
+    {
+      "name": "estrategico.svg",
+      "path": "docs/Figma/Figma svg/Maior parte/estrategico.svg",
+      "type": "file",
+      "sha": "3d6831f6964d6ac99b59a5e0bfbefe5c40f21d65",
+      "mode": "100644",
+      "extension": ".svg",
+      "size": 11548708,
+      "is_binary": false
+    },
+    {
+      "name": "estrutura.svg",
+      "path": "docs/Figma/Figma svg/Maior parte/estrutura.svg",
+      "type": "file",
+      "sha": "dbd92e310ad8db2ccabfbf90b2641f04c98391d6",
+      "mode": "100644",
+      "extension": ".svg",
+      "size": 5936125,
+      "is_binary": false
+    },
+    {
+      "name": "persona.svg",
+      "path": "docs/Figma/Figma svg/Maior parte/persona.svg",
+      "type": "file",
+      "sha": "60424c3eef37260519b2ea54c5ec1ccea39b619e",
+      "mode": "100644",
+      "extension": ".svg",
+      "size": 9678117,
+      "is_binary": false
+    },
+    {
+      "name": "priorizacao.svg",
+      "path": "docs/Figma/Figma svg/Maior parte/priorizacao.svg",
+      "type": "file",
+      "sha": "1ddfdd189552718bda4bc070e7c9a89bd1834ab9",
+      "mode": "100644",
+      "extension": ".svg",
+      "size": 8651536,
+      "is_binary": false
+    },
+    {
+      "name": "requisitos.svg",
+      "path": "docs/Figma/Figma svg/Maior parte/requisitos.svg",
+      "type": "file",
+      "sha": "2fddcf5478394c1de7388dc0b1d040ba2d21527c",
+      "mode": "100644",
+      "extension": ".svg",
+      "size": 31231733,
+      "is_binary": false
+    },
+    {
+      "name": "storymap.svg",
+      "path": "docs/Figma/Figma svg/Maior parte/storymap.svg",
+      "type": "file",
+      "sha": "0a8fb854c754d3c2ae174e964783e5355fcf564e",
+      "mode": "100644",
+      "extension": ".svg",
+      "size": 30812023,
+      "is_binary": false
+    },
+    {
+      "name": "Planejamento e entregas semanais",
+      "path": "docs/Figma/Figma svg/Planejamento e entregas semanais",
+      "type": "directory",
+      "sha": "73f3355241c3a1bafd83d46fb41f47c48e987722",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "planejamento-entregas-semanais.svg",
+      "path": "docs/Figma/Figma svg/Planejamento e entregas semanais/planejamento-entregas-semanais.svg",
+      "type": "file",
+      "sha": "22b8ec59fa9afc7f5babc424868b489c7572d88a",
+      "mode": "100644",
+      "extension": ".svg",
+      "size": 39478559,
+      "is_binary": false
+    },
+    {
+      "name": "Retrospectiva",
+      "path": "docs/Figma/Figma svg/Retrospectiva",
+      "type": "directory",
+      "sha": "d9c0d250c43f88a7662fd64b526b096b76d35731",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "retrospectiva.svg",
+      "path": "docs/Figma/Figma svg/Retrospectiva/retrospectiva.svg",
+      "type": "file",
+      "sha": "9f0d358caf7a9d9722cd06580ff3def8908b1a5e",
+      "mode": "100644",
+      "extension": ".svg",
+      "size": 49524043,
+      "is_binary": false
+    },
+    {
+      "name": "Wireframe",
+      "path": "docs/Figma/Figma svg/Wireframe",
+      "type": "directory",
+      "sha": "874dde0b488d0e7ddf8fa991b5d80f6078045182",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "wireframe.svg",
+      "path": "docs/Figma/Figma svg/Wireframe/wireframe.svg",
+      "type": "file",
+      "sha": "bfce7a29eca58ac8a62ef19d01fc360e1f755e2b",
+      "mode": "100644",
+      "extension": ".svg",
+      "size": 19468808,
+      "is_binary": false
+    },
+    {
+      "name": "Preenchimento-Figma.md",
+      "path": "docs/Figma/Preenchimento-Figma.md",
+      "type": "file",
+      "sha": "014d278f942b66d3ba9ec229feee2ad3d66ac677",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 7968,
+      "is_binary": false
+    },
+    {
+      "name": "atualizacao-figma.md",
+      "path": "docs/Figma/atualizacao-figma.md",
+      "type": "file",
+      "sha": "c6c138ec77b18226c509c3744f168b6d3e40c4b4",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2129,
+      "is_binary": false
+    },
+    {
+      "name": "doc-estrutura-figma.md",
+      "path": "docs/Figma/doc-estrutura-figma.md",
+      "type": "file",
+      "sha": "b9b71d62cdb57a6f2169543c873310b79bca207e",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3597,
+      "is_binary": false
+    },
+    {
+      "name": "doc-feature-list.md",
+      "path": "docs/Figma/doc-feature-list.md",
+      "type": "file",
+      "sha": "1d5a1a3e778576353034d128cc4fd1b77b256a6b",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5409,
+      "is_binary": false
+    },
+    {
+      "name": "doc_estrategia-figma.md",
+      "path": "docs/Figma/doc_estrategia-figma.md",
+      "type": "file",
+      "sha": "a7758f18a66aa81aff0003e4970a52eaa6268892",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4451,
+      "is_binary": false
+    },
+    {
+      "name": "planejamento_figma.md",
+      "path": "docs/Figma/planejamento_figma.md",
+      "type": "file",
+      "sha": "61f40a4375df3836aff7b2cf5346042dd81def09",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1049,
+      "is_binary": false
+    },
+    {
+      "name": "planejamento_figma_semana9.md",
+      "path": "docs/Figma/planejamento_figma_semana9.md",
+      "type": "file",
+      "sha": "d808561a7cf217d6f65e73fab4c2df9fb600988d",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3048,
+      "is_binary": false
+    },
+    {
+      "name": "revisar-story-map.md",
+      "path": "docs/Figma/revisar-story-map.md",
+      "type": "file",
+      "sha": "6755d6a5d4f4bf00600e2b67d83c17b6f48bbeda",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1222,
+      "is_binary": false
+    },
+    {
+      "name": "story-map.md",
+      "path": "docs/Figma/story-map.md",
+      "type": "file",
+      "sha": "78c309ed7629459ffae7bb2461be27e13feacb50",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1793,
+      "is_binary": false
+    },
+    {
+      "name": "versionamento-story-map.md",
+      "path": "docs/Figma/versionamento-story-map.md",
+      "type": "file",
+      "sha": "37686d09dab74ba21ed8abdf5dee27fafcb03c9b",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 720,
+      "is_binary": false
+    },
+    {
+      "name": "Implementacao",
+      "path": "docs/Implementacao",
+      "type": "directory",
+      "sha": "75ce9a77c59a4810ad4c9d4997839aad49f3b53c",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "IMPLEMENTATION-CHECKLIST.md",
+      "path": "docs/Implementacao/IMPLEMENTATION-CHECKLIST.md",
+      "type": "file",
+      "sha": "bd8754cbf8074ee4b11a622a94bee7f41a2dc824",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 10882,
+      "is_binary": false
+    },
+    {
+      "name": "implementacao-banco.md",
+      "path": "docs/Implementacao/implementacao-banco.md",
+      "type": "file",
+      "sha": "168b9a1b6ecf276c7ec548cc319ea3f50009e181",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2252,
+      "is_binary": false
+    },
+    {
+      "name": "Releases",
+      "path": "docs/Releases",
+      "type": "directory",
+      "sha": "cfd05957f72c0e4cf8e968c6ea43fa625c2d7d25",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "conteudo_releasenote_v0.1.0.md",
+      "path": "docs/Releases/conteudo_releasenote_v0.1.0.md",
+      "type": "file",
+      "sha": "eb7b23d054622f12d661b68d2cf991fb9b13ec95",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3967,
+      "is_binary": false
+    },
+    {
+      "name": "Requisitos",
+      "path": "docs/Requisitos",
+      "type": "directory",
+      "sha": "d98ca6b681651f83793c0ee2585445fb19fce560",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "requisitos.md",
+      "path": "docs/Requisitos/requisitos.md",
+      "type": "file",
+      "sha": "01d5f49b36c2cfae3685e0656859db2284bf8f74",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 19956,
+      "is_binary": false
+    },
+    {
+      "name": "Specs",
+      "path": "docs/Specs",
+      "type": "directory",
+      "sha": "ff026f912a1af5d878e855909442e8366bdda1e9",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "spec-dashboard.md",
+      "path": "docs/Specs/spec-dashboard.md",
+      "type": "file",
+      "sha": "581a907dce7d1a5ec838d1a9aa4e305e70e4f853",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6552,
+      "is_binary": false
+    },
+    {
+      "name": "imagens",
+      "path": "docs/imagens",
+      "type": "directory",
+      "sha": "52d272e9add965ef3758a10aa6346a8e1bb4a98e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".gitkeep",
+      "path": "docs/imagens/.gitkeep",
+      "type": "file",
+      "sha": "8b137891791fe96927ad78e64b0aad7bded08bdc",
+      "mode": "100644",
+      "extension": ".gitkeep",
+      "size": 1,
+      "is_binary": false
+    },
+    {
+      "name": "foto-arthur.jpeg",
+      "path": "docs/imagens/foto-arthur.jpeg",
+      "type": "file",
+      "sha": "c85a50c4a246c19a0b0f6f1d650cbbeddf83d715",
+      "mode": "100644",
+      "extension": ".jpeg",
+      "size": 155677,
+      "is_binary": false
+    },
+    {
+      "name": "foto-edson.jpeg",
+      "path": "docs/imagens/foto-edson.jpeg",
+      "type": "file",
+      "sha": "30f709ee07dc3b31fa488dc902f2e061ec738507",
+      "mode": "100644",
+      "extension": ".jpeg",
+      "size": 397982,
+      "is_binary": false
+    },
+    {
+      "name": "foto-israel.jpeg",
+      "path": "docs/imagens/foto-israel.jpeg",
+      "type": "file",
+      "sha": "b187503c62d639def456a1c6af6e39abc04f57ff",
+      "mode": "100644",
+      "extension": ".jpeg",
+      "size": 144714,
+      "is_binary": false
+    },
+    {
+      "name": "foto-jorge.jpeg",
+      "path": "docs/imagens/foto-jorge.jpeg",
+      "type": "file",
+      "sha": "54de32dbdc07c7c53fe32ec5317ee9b3ea1b4cd9",
+      "mode": "100644",
+      "extension": ".jpeg",
+      "size": 243631,
+      "is_binary": false
+    },
+    {
+      "name": "foto-queiroz.jpeg",
+      "path": "docs/imagens/foto-queiroz.jpeg",
+      "type": "file",
+      "sha": "000b345103dda802548ae2640e3cf56561e8d07e",
+      "mode": "100644",
+      "extension": ".jpeg",
+      "size": 55424,
+      "is_binary": false
+    },
+    {
+      "name": "logo-escudo.PNG",
+      "path": "docs/imagens/logo-escudo.PNG",
+      "type": "file",
+      "sha": "058fa71edcdf72b055730510208091fc60952d9f",
+      "mode": "100644",
+      "extension": ".PNG",
+      "size": 106675,
+      "is_binary": false
+    },
+    {
+      "name": "logo-nome.png",
+      "path": "docs/imagens/logo-nome.png",
+      "type": "file",
+      "sha": "d06e9cff323b6549cc8fae4c3ecb64e2eb79afe1",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 188130,
+      "is_binary": false
+    },
+    {
+      "name": "nicolas foto.jpg",
+      "path": "docs/imagens/nicolas foto.jpg",
+      "type": "file",
+      "sha": "d76fbd71022c98568e89770aaf1c215fb98f6ec5",
+      "mode": "100644",
+      "extension": ".jpg",
+      "size": 6490,
+      "is_binary": false
+    },
+    {
+      "name": "index.md",
+      "path": "docs/index.md",
+      "type": "file",
+      "sha": "6f783ae87d0805e20a41baeb77ebeb000e3d7caa",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 7639,
+      "is_binary": false
+    },
+    {
+      "name": "metodos_ageis",
+      "path": "docs/metodos_ageis",
+      "type": "directory",
+      "sha": "c3e05f47e042bdb6dc3a6b25ce143a3dbb0a1af0",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "organizar_kanban.md",
+      "path": "docs/metodos_ageis/organizar_kanban.md",
+      "type": "file",
+      "sha": "ab93546270844ac7f8aa060a746dc3cc14ce6b2f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1429,
+      "is_binary": false
+    },
+    {
+      "name": "productivity",
+      "path": "docs/productivity",
+      "type": "directory",
+      "sha": "5648991434df0ee26b2d7bf492ce0be76619e270",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "collect_metrics.py",
+      "path": "docs/productivity/collect_metrics.py",
+      "type": "file",
+      "sha": "279628628e004a9121cc12d386ae2d945f113f3a",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4812,
+      "is_binary": false
+    },
+    {
+      "name": "index.html",
+      "path": "docs/productivity/index.html",
+      "type": "file",
+      "sha": "b38baca5bdc79c55543d58b1de52dcd93f3526fe",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 16261,
+      "is_binary": false
+    },
+    {
+      "name": "metrics.json",
+      "path": "docs/productivity/metrics.json",
+      "type": "file",
+      "sha": "511863da836a9722a716da8c1843b34db4876a7a",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 9893,
+      "is_binary": false
+    },
+    {
+      "name": "sprints",
+      "path": "docs/sprints",
+      "type": "directory",
+      "sha": "1555e1773ba430c16c4bbd9b5d4dd6e4de9cdf43",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "sprint0.md",
+      "path": "docs/sprints/sprint0.md",
+      "type": "file",
+      "sha": "f4677a3ee1ee2c676c6c18c6583d41120fb84dff",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2721,
+      "is_binary": false
+    },
+    {
+      "name": "sprint1.md",
+      "path": "docs/sprints/sprint1.md",
+      "type": "file",
+      "sha": "13b4fbaf65f9cf2b89664d9390e019e043ee7d00",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2274,
+      "is_binary": false
+    },
+    {
+      "name": "sprint10.md",
+      "path": "docs/sprints/sprint10.md",
+      "type": "file",
+      "sha": "ff76325246d9a6ef89a5e21e9ee83f1b3435a401",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1357,
+      "is_binary": false
+    },
+    {
+      "name": "sprint11.md",
+      "path": "docs/sprints/sprint11.md",
+      "type": "file",
+      "sha": "946ba2923936067cbbe2af41e9e72416d3e9a948",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1388,
+      "is_binary": false
+    },
+    {
+      "name": "sprint12.md",
+      "path": "docs/sprints/sprint12.md",
+      "type": "file",
+      "sha": "ab95a1f8e1369ea2a30c0aafa524fe5799f677ee",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2047,
+      "is_binary": false
+    },
+    {
+      "name": "sprint2.md",
+      "path": "docs/sprints/sprint2.md",
+      "type": "file",
+      "sha": "7d4c10368eb7d0033ebae413bb364af4eb3cc42d",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2327,
+      "is_binary": false
+    },
+    {
+      "name": "sprint3.md",
+      "path": "docs/sprints/sprint3.md",
+      "type": "file",
+      "sha": "6259b37ca598f0e24981f21e7c8e2d5326197a17",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1981,
+      "is_binary": false
+    },
+    {
+      "name": "sprint4.md",
+      "path": "docs/sprints/sprint4.md",
+      "type": "file",
+      "sha": "f6a41ba241793ab2c8b420e18354c3fec52a1c0e",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1976,
+      "is_binary": false
+    },
+    {
+      "name": "sprint5.md",
+      "path": "docs/sprints/sprint5.md",
+      "type": "file",
+      "sha": "28b25de91983495f5d8c42c58c5492294eb09ca6",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2055,
+      "is_binary": false
+    },
+    {
+      "name": "sprint6.md",
+      "path": "docs/sprints/sprint6.md",
+      "type": "file",
+      "sha": "1a1dc4f2d4ef4a7a541c50cf3b7fe321bd7fe07c",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2121,
+      "is_binary": false
+    },
+    {
+      "name": "sprint7.md",
+      "path": "docs/sprints/sprint7.md",
+      "type": "file",
+      "sha": "9255744685eac1074bdc5240978f4b590e1b31ff",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2031,
+      "is_binary": false
+    },
+    {
+      "name": "sprint8.md",
+      "path": "docs/sprints/sprint8.md",
+      "type": "file",
+      "sha": "7dba8100f5f7d7ed4d901ac23a153af628ac01bd",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2376,
+      "is_binary": false
+    },
+    {
+      "name": "sprint9.md",
+      "path": "docs/sprints/sprint9.md",
+      "type": "file",
+      "sha": "7826081c6c6c67fb8d1c8c2fa6f89d69952b1301",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1003,
+      "is_binary": false
+    },
+    {
+      "name": "templates_issue",
+      "path": "docs/templates_issue",
+      "type": "directory",
+      "sha": "5d1c018898e881e82c9d66a40b76d3e3b3249d34",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "issue_bug.md",
+      "path": "docs/templates_issue/issue_bug.md",
+      "type": "file",
+      "sha": "36a4b3460fbe8434e4d3b2aa43a5a1df14da3794",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 516,
+      "is_binary": false
+    },
+    {
+      "name": "issue_padrao.md",
+      "path": "docs/templates_issue/issue_padrao.md",
+      "type": "file",
+      "sha": "971534093a4abd1ffc2e0adc8c329948a4226bfd",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 583,
+      "is_binary": false
+    },
+    {
+      "name": "template-pull-request.md",
+      "path": "docs/templates_issue/template-pull-request.md",
+      "type": "file",
+      "sha": "0b215f3673b029dc870ebb21c1a84af84172e9c4",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 633,
+      "is_binary": false
+    },
+    {
+      "name": "template_issue.md",
+      "path": "docs/templates_issue/template_issue.md",
+      "type": "file",
+      "sha": "25a16420a80e4c8e73930c74a5bb67a5ba4d285a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1230,
+      "is_binary": false
+    },
+    {
+      "name": "frontend",
+      "path": "frontend",
+      "type": "directory",
+      "sha": "30c81626875443496fb3e5eaa691034c14e857c7",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".env.example",
+      "path": "frontend/.env.example",
+      "type": "file",
+      "sha": "f27b4a7587fda629d218489d78ec02c4f6baf9c5",
+      "mode": "100644",
+      "extension": ".example",
+      "size": 150,
+      "is_binary": false
+    },
+    {
+      "name": ".eslintrc.json",
+      "path": "frontend/.eslintrc.json",
+      "type": "file",
+      "sha": "6b10a5b739246fb1605689e8f190bbb2cf5683b9",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 73,
+      "is_binary": false
+    },
+    {
+      "name": ".gitignore",
+      "path": "frontend/.gitignore",
+      "type": "file",
+      "sha": "d3d12199139c63a3538b285ee8fbaf702fa1d68d",
+      "mode": "100644",
+      "extension": ".gitignore",
+      "size": 370,
+      "is_binary": false
+    },
+    {
+      "name": "Dockerfile",
+      "path": "frontend/Dockerfile",
+      "type": "file",
+      "sha": "cf8ea7e41afa9090560400dfa04c07c796bcac8a",
+      "mode": "100644",
+      "extension": "",
+      "size": 124,
+      "is_binary": false
+    },
+    {
+      "name": "Specs",
+      "path": "frontend/Specs",
+      "type": "directory",
+      "sha": "9b87a3bcd511e67e745d6f3fb044ed5eb04d8e16",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "Specs_dashboard_busca",
+      "path": "frontend/Specs/Specs_dashboard_busca",
+      "type": "directory",
+      "sha": "fda8d13200608b9daca91fd71a3bcf24e0490677",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "plan.md",
+      "path": "frontend/Specs/Specs_dashboard_busca/plan.md",
+      "type": "file",
+      "sha": "a7bdaf5ea2a8ffea6d50e9761ffd69996f1b052b",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5110,
+      "is_binary": false
+    },
+    {
+      "name": "spec.md",
+      "path": "frontend/Specs/Specs_dashboard_busca/spec.md",
+      "type": "file",
+      "sha": "69ae5a6a1c0ad5888bc5d93c98172f44944e067e",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5634,
+      "is_binary": false
+    },
+    {
+      "name": "tasks.md",
+      "path": "frontend/Specs/Specs_dashboard_busca/tasks.md",
+      "type": "file",
+      "sha": "01f72d967cac67f138cd3e237f6b3b2b55c01636",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2905,
+      "is_binary": false
+    },
+    {
+      "name": "Specs_dashboard_busca_resultados",
+      "path": "frontend/Specs/Specs_dashboard_busca_resultados",
+      "type": "directory",
+      "sha": "b445b86d5ff3aa0359d2967b92d56bf76544521f",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "plan.md",
+      "path": "frontend/Specs/Specs_dashboard_busca_resultados/plan.md",
+      "type": "file",
+      "sha": "dea99c9f76d8008f1cc361a9f771176527f6d495",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 9552,
+      "is_binary": false
+    },
+    {
+      "name": "spec.md",
+      "path": "frontend/Specs/Specs_dashboard_busca_resultados/spec.md",
+      "type": "file",
+      "sha": "39189746e400201c0539b20230d1afa9792c6c20",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6865,
+      "is_binary": false
+    },
+    {
+      "name": "tasks.md",
+      "path": "frontend/Specs/Specs_dashboard_busca_resultados/tasks.md",
+      "type": "file",
+      "sha": "50ace0408d3f98821ea7cac669a060b0ccce5441",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6195,
+      "is_binary": false
+    },
+    {
+      "name": "Specs_mapa_interativo",
+      "path": "frontend/Specs/Specs_mapa_interativo",
+      "type": "directory",
+      "sha": "530265ecd77e3644f67cfd13b359ae16e3141bb6",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "plan.md",
+      "path": "frontend/Specs/Specs_mapa_interativo/plan.md",
+      "type": "file",
+      "sha": "a323a2ddb70d028231320076a3421b2731587115",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4180,
+      "is_binary": false
+    },
+    {
+      "name": "spec.md",
+      "path": "frontend/Specs/Specs_mapa_interativo/spec.md",
+      "type": "file",
+      "sha": "5e3328c744942d8c57853a490b5ca57e3e38105e",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3343,
+      "is_binary": false
+    },
+    {
+      "name": "tasks.md",
+      "path": "frontend/Specs/Specs_mapa_interativo/tasks.md",
+      "type": "file",
+      "sha": "e53d4c3790839338c0d8731673a466f6e0fe4312",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2429,
+      "is_binary": false
+    },
+    {
+      "name": "Specs_pg_inicial",
+      "path": "frontend/Specs/Specs_pg_inicial",
+      "type": "directory",
+      "sha": "a70eb43da77934f8439153f88a2453f1aeaca29e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "constitution.md",
+      "path": "frontend/Specs/Specs_pg_inicial/constitution.md",
+      "type": "file",
+      "sha": "1563ae5f91c2bc22a05e3842192ac40cf6a79e7f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2616,
+      "is_binary": false
+    },
+    {
+      "name": "imagens",
+      "path": "frontend/Specs/Specs_pg_inicial/imagens",
+      "type": "directory",
+      "sha": "4687932b6007e88825e32dca70938945ded327c9",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "logo-original.png",
+      "path": "frontend/Specs/Specs_pg_inicial/imagens/logo-original.png",
+      "type": "file",
+      "sha": "d06e9cff323b6549cc8fae4c3ecb64e2eb79afe1",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 188130,
+      "is_binary": false
+    },
+    {
+      "name": "pagina_inicial_com_menu.png",
+      "path": "frontend/Specs/Specs_pg_inicial/imagens/pagina_inicial_com_menu.png",
+      "type": "file",
+      "sha": "81449103f5223a85d59aca7f89585ccdbf2b54ee",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 290257,
+      "is_binary": false
+    },
+    {
+      "name": "pagina_inicial_parte1.png",
+      "path": "frontend/Specs/Specs_pg_inicial/imagens/pagina_inicial_parte1.png",
+      "type": "file",
+      "sha": "604c4813038718c7236737e066c8dbccc5411848",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 209930,
+      "is_binary": false
+    },
+    {
+      "name": "pagina_inicial_parte2.png",
+      "path": "frontend/Specs/Specs_pg_inicial/imagens/pagina_inicial_parte2.png",
+      "type": "file",
+      "sha": "73ce241ae25a9d76a0d744f0a1fc2c3eb5a6474a",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 278223,
+      "is_binary": false
+    },
+    {
+      "name": "plan.md",
+      "path": "frontend/Specs/Specs_pg_inicial/plan.md",
+      "type": "file",
+      "sha": "46ce3441b591bbfb4e7db36ce24773e23185e13a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 9688,
+      "is_binary": false
+    },
+    {
+      "name": "spec.md",
+      "path": "frontend/Specs/Specs_pg_inicial/spec.md",
+      "type": "file",
+      "sha": "f57a41cc78720629f8c6f8b7a5a23b5d07424e86",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 7706,
+      "is_binary": false
+    },
+    {
+      "name": "tasks.md",
+      "path": "frontend/Specs/Specs_pg_inicial/tasks.md",
+      "type": "file",
+      "sha": "d67b02e98423367a3352fd9ce5f4aa9a212c581f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6531,
+      "is_binary": false
+    },
+    {
+      "name": "__tests__",
+      "path": "frontend/__tests__",
+      "type": "directory",
+      "sha": "6b6521cbea2aef86c0760ace489ba51d9bc3b7b8",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "components",
+      "path": "frontend/__tests__/components",
+      "type": "directory",
+      "sha": "05e41c2d26c01cae00c6faa14adc26881e27a8db",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "CardResumo.test.tsx",
+      "path": "frontend/__tests__/components/CardResumo.test.tsx",
+      "type": "file",
+      "sha": "f8ede76b6913d9f9a977f49d6dbabc5b969f5dde",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1527,
+      "is_binary": false
+    },
+    {
+      "name": "Chrome.test.tsx",
+      "path": "frontend/__tests__/components/Chrome.test.tsx",
+      "type": "file",
+      "sha": "f6109330d4f277b697e2cdf07f21a6af0af045bb",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 4197,
+      "is_binary": false
+    },
+    {
+      "name": "DetalhesOcorrencia.test.tsx",
+      "path": "frontend/__tests__/components/DetalhesOcorrencia.test.tsx",
+      "type": "file",
+      "sha": "cc164bbb17b947b3a4de83d6711a5779092251a5",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 3177,
+      "is_binary": false
+    },
+    {
+      "name": "Drawer.test.tsx",
+      "path": "frontend/__tests__/components/Drawer.test.tsx",
+      "type": "file",
+      "sha": "ac889bea71abbd046bac2b96199b318aba436e1d",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 5114,
+      "is_binary": false
+    },
+    {
+      "name": "Footer.test.tsx",
+      "path": "frontend/__tests__/components/Footer.test.tsx",
+      "type": "file",
+      "sha": "cc7d1213b04e758e1e7c21b9265dd574b1abadb8",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1875,
+      "is_binary": false
+    },
+    {
+      "name": "Header.test.tsx",
+      "path": "frontend/__tests__/components/Header.test.tsx",
+      "type": "file",
+      "sha": "342849cb3d45f5c58235082ac362b26f7bf8f606",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 3797,
+      "is_binary": false
+    },
+    {
+      "name": "Hero.test.tsx",
+      "path": "frontend/__tests__/components/Hero.test.tsx",
+      "type": "file",
+      "sha": "2d3a946c5f9009b68ce9e3bc02a39a39ec1500f3",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1815,
+      "is_binary": false
+    },
+    {
+      "name": "Logo.test.tsx",
+      "path": "frontend/__tests__/components/Logo.test.tsx",
+      "type": "file",
+      "sha": "b14361402e52455685d9327af248b3639e11a75f",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1913,
+      "is_binary": false
+    },
+    {
+      "name": "MapaInterativo.test.tsx",
+      "path": "frontend/__tests__/components/MapaInterativo.test.tsx",
+      "type": "file",
+      "sha": "c7ad04cd8672e01165dc2b5f2a4b2986a9ecdc92",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 5037,
+      "is_binary": false
+    },
+    {
+      "name": "NewsCard.test.tsx",
+      "path": "frontend/__tests__/components/NewsCard.test.tsx",
+      "type": "file",
+      "sha": "341ef689ac2db2b1ea3be369f6ba6c081d34d490",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 4141,
+      "is_binary": false
+    },
+    {
+      "name": "NewsFeed.test.tsx",
+      "path": "frontend/__tests__/components/NewsFeed.test.tsx",
+      "type": "file",
+      "sha": "ffa8d6a41dedaf1776881998a88aa97814efff03",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 3182,
+      "is_binary": false
+    },
+    {
+      "name": "PainelFiltros.test.tsx",
+      "path": "frontend/__tests__/components/PainelFiltros.test.tsx",
+      "type": "file",
+      "sha": "30dfcb792d0f381b2916872d3b714aefe087e846",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 8227,
+      "is_binary": false
+    },
+    {
+      "name": "ResultadoBusca.test.tsx",
+      "path": "frontend/__tests__/components/ResultadoBusca.test.tsx",
+      "type": "file",
+      "sha": "bb8e7ee2c66ee76366961ffee627fde50e951119",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1401,
+      "is_binary": false
+    },
+    {
+      "name": "SearchProvider.test.tsx",
+      "path": "frontend/__tests__/components/SearchProvider.test.tsx",
+      "type": "file",
+      "sha": "b2f32e3e88949623c8e041e3e68e66b6ba990acd",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1445,
+      "is_binary": false
+    },
+    {
+      "name": "icons.test.tsx",
+      "path": "frontend/__tests__/components/icons.test.tsx",
+      "type": "file",
+      "sha": "ce8eb7b035d7ca58feac90f4a36756d4502292ad",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 2721,
+      "is_binary": false
+    },
+    {
+      "name": "fixtures",
+      "path": "frontend/__tests__/fixtures",
+      "type": "directory",
+      "sha": "d8d2e09b988fd508caca83864b23732b79bcf247",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "noticias.ts",
+      "path": "frontend/__tests__/fixtures/noticias.ts",
+      "type": "file",
+      "sha": "4bf7c05224a4727e46f91ac50652541033bb7239",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 6063,
+      "is_binary": false
+    },
+    {
+      "name": "utils",
+      "path": "frontend/__tests__/utils",
+      "type": "directory",
+      "sha": "64c64a7ea1a547de69eb0a5810da7c7061362c8f",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "busca.test.ts",
+      "path": "frontend/__tests__/utils/busca.test.ts",
+      "type": "file",
+      "sha": "3f4ee3bc759a8ac9026fc9203e16471a467c899f",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 2904,
+      "is_binary": false
+    },
+    {
+      "name": "filtros.test.ts",
+      "path": "frontend/__tests__/utils/filtros.test.ts",
+      "type": "file",
+      "sha": "70fdeb935ed6b24c0d672b85b2e3edd1be84b6ce",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 5666,
+      "is_binary": false
+    },
+    {
+      "name": "iaResumo.test.ts",
+      "path": "frontend/__tests__/utils/iaResumo.test.ts",
+      "type": "file",
+      "sha": "c25925db6451a2a732a260107fe4c1c2205ceedf",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 1597,
+      "is_binary": false
+    },
+    {
+      "name": "noticias.test.ts",
+      "path": "frontend/__tests__/utils/noticias.test.ts",
+      "type": "file",
+      "sha": "9db7136c697d98684f9c29a21edb1939f89f392f",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 4070,
+      "is_binary": false
+    },
+    {
+      "name": "view",
+      "path": "frontend/__tests__/view",
+      "type": "directory",
+      "sha": "9ed08fa4aa58d3f3e8e80eeac129440cb92a597c",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "Home.test.tsx",
+      "path": "frontend/__tests__/view/Home.test.tsx",
+      "type": "file",
+      "sha": "4cdad600f7d5c5ccf5e3d0f501e886034b835180",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 3920,
+      "is_binary": false
+    },
+    {
+      "name": "NoticiaDetalhe.test.tsx",
+      "path": "frontend/__tests__/view/NoticiaDetalhe.test.tsx",
+      "type": "file",
+      "sha": "1c6bb29eeb3f7b346c4ac09bde101628ea02c8d7",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 4005,
+      "is_binary": false
+    },
+    {
+      "name": "app",
+      "path": "frontend/app",
+      "type": "directory",
+      "sha": "40d417fe607a10bf422cae7cfe3ac1668fe42d65",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "layout.tsx",
+      "path": "frontend/app/layout.tsx",
+      "type": "file",
+      "sha": "e910218948b599cbf128792ea362c2a6597311c3",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1356,
+      "is_binary": false
+    },
+    {
+      "name": "mapa",
+      "path": "frontend/app/mapa",
+      "type": "directory",
+      "sha": "86f42b230b004d366aed749cbd73cc9ff1a001ee",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "page.tsx",
+      "path": "frontend/app/mapa/page.tsx",
+      "type": "file",
+      "sha": "27b47cb2c874ead989f07370e994f8cb0ae4d38f",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 96,
+      "is_binary": false
+    },
+    {
+      "name": "noticia",
+      "path": "frontend/app/noticia",
+      "type": "directory",
+      "sha": "cfd6ed9f6d1c45f225b08511275b5ef9860d4745",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "[id]",
+      "path": "frontend/app/noticia/[id]",
+      "type": "directory",
+      "sha": "082f1487cadf88414664c758ee364a3117c973fb",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "page.tsx",
+      "path": "frontend/app/noticia/[id]/page.tsx",
+      "type": "file",
+      "sha": "8736fee02d0673f90eb716b2a7b9d562ab0e31dd",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 960,
+      "is_binary": false
+    },
+    {
+      "name": "page.tsx",
+      "path": "frontend/app/page.tsx",
+      "type": "file",
+      "sha": "be8b0a0c091c9c6b7b707575286316371d9b8244",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 96,
+      "is_binary": false
+    },
+    {
+      "name": "components",
+      "path": "frontend/components",
+      "type": "directory",
+      "sha": "14f577656996d86190eed16b7888879e488efb65",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "CardResumo",
+      "path": "frontend/components/CardResumo",
+      "type": "directory",
+      "sha": "3aa63d6ebf626231c10ddd268b5a7bf861a1110c",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "CardResumo.module.css",
+      "path": "frontend/components/CardResumo/CardResumo.module.css",
+      "type": "file",
+      "sha": "9764a95b1cdf7fe3a0657a316e62ef9a0d9e38cc",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 1333,
+      "is_binary": false
+    },
+    {
+      "name": "CardResumo.tsx",
+      "path": "frontend/components/CardResumo/CardResumo.tsx",
+      "type": "file",
+      "sha": "573518a12b78d5ebbf5b8f8b03842365ccc507ff",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1326,
+      "is_binary": false
+    },
+    {
+      "name": "Chrome",
+      "path": "frontend/components/Chrome",
+      "type": "directory",
+      "sha": "45f0e802dadf227266ee17cac015bf79eaf93cf4",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "Chrome.module.css",
+      "path": "frontend/components/Chrome/Chrome.module.css",
+      "type": "file",
+      "sha": "f72ab16a7aa9b490d5f6ed81dbbff43b67651a37",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 129,
+      "is_binary": false
+    },
+    {
+      "name": "Chrome.tsx",
+      "path": "frontend/components/Chrome/Chrome.tsx",
+      "type": "file",
+      "sha": "2efaa18e314a524c660389103b9b776976db9d1f",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1058,
+      "is_binary": false
+    },
+    {
+      "name": "DetalhesOcorrencia",
+      "path": "frontend/components/DetalhesOcorrencia",
+      "type": "directory",
+      "sha": "a8f00f1ecc0f0af0d5c046d03e0524bba1095264",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "DetalhesOcorrencia.module.css",
+      "path": "frontend/components/DetalhesOcorrencia/DetalhesOcorrencia.module.css",
+      "type": "file",
+      "sha": "d6450b50e59c8e78758d004c735995487dd0f2a1",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 2037,
+      "is_binary": false
+    },
+    {
+      "name": "DetalhesOcorrencia.tsx",
+      "path": "frontend/components/DetalhesOcorrencia/DetalhesOcorrencia.tsx",
+      "type": "file",
+      "sha": "2b9b2a12be7d9af1331d4b6a4a63c36fca56d07e",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 2572,
+      "is_binary": false
+    },
+    {
+      "name": "Drawer",
+      "path": "frontend/components/Drawer",
+      "type": "directory",
+      "sha": "120453cbfcc9ce887da71abd8c5d9eee6bc511c0",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "Drawer.module.css",
+      "path": "frontend/components/Drawer/Drawer.module.css",
+      "type": "file",
+      "sha": "4261deb837b53fbdb700bc42623e0832133a35ba",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 2126,
+      "is_binary": false
+    },
+    {
+      "name": "Drawer.tsx",
+      "path": "frontend/components/Drawer/Drawer.tsx",
+      "type": "file",
+      "sha": "464dc40349479104ab549f8e45e5b98ab01959c3",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 3152,
+      "is_binary": false
+    },
+    {
+      "name": "Footer",
+      "path": "frontend/components/Footer",
+      "type": "directory",
+      "sha": "ecf4ee21ddf5e5302eaa9288970bd777c06eb966",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "Footer.module.css",
+      "path": "frontend/components/Footer/Footer.module.css",
+      "type": "file",
+      "sha": "cbd64b29ee219bb9106fdb1a9ceed0572809dd01",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 186,
+      "is_binary": false
+    },
+    {
+      "name": "Footer.tsx",
+      "path": "frontend/components/Footer/Footer.tsx",
+      "type": "file",
+      "sha": "3f34bfc571e706ed64ec982f24d945314dedfa4f",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 284,
+      "is_binary": false
+    },
+    {
+      "name": "Header",
+      "path": "frontend/components/Header",
+      "type": "directory",
+      "sha": "441adf1faa947fc62850c45a086a18a62f6528df",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "Header.module.css",
+      "path": "frontend/components/Header/Header.module.css",
+      "type": "file",
+      "sha": "1c6f8a0ad91cf86130645c1cfb95e1c3850bf4bb",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 1524,
+      "is_binary": false
+    },
+    {
+      "name": "Header.tsx",
+      "path": "frontend/components/Header/Header.tsx",
+      "type": "file",
+      "sha": "576628f4af11fc9168bae18dc8703cbe5caffa48",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1462,
+      "is_binary": false
+    },
+    {
+      "name": "Hero",
+      "path": "frontend/components/Hero",
+      "type": "directory",
+      "sha": "84a44e74cd48addf9782671bc7492fd4fbb58a27",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "Hero.module.css",
+      "path": "frontend/components/Hero/Hero.module.css",
+      "type": "file",
+      "sha": "f03f6105314ff2f22bac8083bfc11ef7d6b9b7e5",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 737,
+      "is_binary": false
+    },
+    {
+      "name": "Hero.tsx",
+      "path": "frontend/components/Hero/Hero.tsx",
+      "type": "file",
+      "sha": "baaa6eb8380e40f48cf2fe3ff48a76c40f6679e4",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 646,
+      "is_binary": false
+    },
+    {
+      "name": "Logo",
+      "path": "frontend/components/Logo",
+      "type": "directory",
+      "sha": "9f300ec5cf8e2d984ee958c85d801df6dbcdb876",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "Logo.module.css",
+      "path": "frontend/components/Logo/Logo.module.css",
+      "type": "file",
+      "sha": "5d6c9ae8f9376572c41930617a3f5a304f3157ca",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 310,
+      "is_binary": false
+    },
+    {
+      "name": "Logo.tsx",
+      "path": "frontend/components/Logo/Logo.tsx",
+      "type": "file",
+      "sha": "3c9c12807c30ab1e9cace7d7d740fe6ceaef9fbe",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 539,
+      "is_binary": false
+    },
+    {
+      "name": "MapaInterativo",
+      "path": "frontend/components/MapaInterativo",
+      "type": "directory",
+      "sha": "70dab52e537018da5159d0c964a838f47289ad8f",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "MapView.tsx",
+      "path": "frontend/components/MapaInterativo/MapView.tsx",
+      "type": "file",
+      "sha": "4c1b6f8a5a440bb646612e0253c4ded7d285b853",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 2114,
+      "is_binary": false
+    },
+    {
+      "name": "MapaInterativo.module.css",
+      "path": "frontend/components/MapaInterativo/MapaInterativo.module.css",
+      "type": "file",
+      "sha": "7ce5c294c1547f89283658f2fe1736fc22bf4069",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 68,
+      "is_binary": false
+    },
+    {
+      "name": "MapaInterativo.tsx",
+      "path": "frontend/components/MapaInterativo/MapaInterativo.tsx",
+      "type": "file",
+      "sha": "853a53391bdc85a5c47362357a4dfe6b82e7c17d",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 959,
+      "is_binary": false
+    },
+    {
+      "name": "NewsCard",
+      "path": "frontend/components/NewsCard",
+      "type": "directory",
+      "sha": "0215d993f124ecc6adf86d76940adc997c5ce257",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "NewsCard.module.css",
+      "path": "frontend/components/NewsCard/NewsCard.module.css",
+      "type": "file",
+      "sha": "a7fea919bb865396a818a083918c3964fd6b8f34",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 1570,
+      "is_binary": false
+    },
+    {
+      "name": "NewsCard.tsx",
+      "path": "frontend/components/NewsCard/NewsCard.tsx",
+      "type": "file",
+      "sha": "c9f4cf3cfd0d7768dc9f87dad0ab01c42cb63380",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1163,
+      "is_binary": false
+    },
+    {
+      "name": "NewsFeed",
+      "path": "frontend/components/NewsFeed",
+      "type": "directory",
+      "sha": "28e6adb84a9a69c15dea9e73de49371b6f366724",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "NewsFeed.module.css",
+      "path": "frontend/components/NewsFeed/NewsFeed.module.css",
+      "type": "file",
+      "sha": "77ff44c58305de23d0d437d7350e5c5253800e4c",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 725,
+      "is_binary": false
+    },
+    {
+      "name": "NewsFeed.tsx",
+      "path": "frontend/components/NewsFeed/NewsFeed.tsx",
+      "type": "file",
+      "sha": "eb00129c370dc20304d616e24dd3cd42617a18c9",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 857,
+      "is_binary": false
+    },
+    {
+      "name": "PainelFiltros",
+      "path": "frontend/components/PainelFiltros",
+      "type": "directory",
+      "sha": "ce3c19513794270548fd347663a48e7435048bc1",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "PainelFiltros.module.css",
+      "path": "frontend/components/PainelFiltros/PainelFiltros.module.css",
+      "type": "file",
+      "sha": "dc52aabfcd59b5ba79d3a9e8b5592dcd6bc07b4f",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 2397,
+      "is_binary": false
+    },
+    {
+      "name": "PainelFiltros.tsx",
+      "path": "frontend/components/PainelFiltros/PainelFiltros.tsx",
+      "type": "file",
+      "sha": "453166b4b052aec5436451a753a13e23bcdcc2c4",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 5463,
+      "is_binary": false
+    },
+    {
+      "name": "ResultadoBusca",
+      "path": "frontend/components/ResultadoBusca",
+      "type": "directory",
+      "sha": "524c0ce5222126ea7b5f6730f3888ca456316d0e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "ResultadoBusca.module.css",
+      "path": "frontend/components/ResultadoBusca/ResultadoBusca.module.css",
+      "type": "file",
+      "sha": "4404dfbcbf716c89affc9b12373c166025ec9fbb",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 591,
+      "is_binary": false
+    },
+    {
+      "name": "ResultadoBusca.tsx",
+      "path": "frontend/components/ResultadoBusca/ResultadoBusca.tsx",
+      "type": "file",
+      "sha": "a81e09bf598ea0ba2cd4ab00900f113a496d6b7f",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 758,
+      "is_binary": false
+    },
+    {
+      "name": "SearchProvider",
+      "path": "frontend/components/SearchProvider",
+      "type": "directory",
+      "sha": "c10cb317c1a089ce1254fa585681fb1c5998e8eb",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "SearchProvider.tsx",
+      "path": "frontend/components/SearchProvider/SearchProvider.tsx",
+      "type": "file",
+      "sha": "f202634d1a5feaf712672130e3725d1e26ebb457",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 593,
+      "is_binary": false
+    },
+    {
+      "name": "icons",
+      "path": "frontend/components/icons",
+      "type": "directory",
+      "sha": "191610eaa283f2759180a65bbd19655711b221dc",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "index.tsx",
+      "path": "frontend/components/icons/index.tsx",
+      "type": "file",
+      "sha": "c5bd37b516d73ec872c4c36635a65fefb49ba788",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 4264,
+      "is_binary": false
+    },
+    {
+      "name": "custom.d.ts",
+      "path": "frontend/custom.d.ts",
+      "type": "file",
+      "sha": "35306c6fc9aed088a742e2337d44bbf877c6ae8e",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 24,
+      "is_binary": false
+    },
+    {
+      "name": "jest.config.ts",
+      "path": "frontend/jest.config.ts",
+      "type": "file",
+      "sha": "deebc2152c1f32a0b68245d6e64be7a7747ac33c",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 384,
+      "is_binary": false
+    },
+    {
+      "name": "jest.setup.ts",
+      "path": "frontend/jest.setup.ts",
+      "type": "file",
+      "sha": "d0de870dc5584ebd2c255281b45dec58788ab59e",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 36,
+      "is_binary": false
+    },
+    {
+      "name": "next.config.ts",
+      "path": "frontend/next.config.ts",
+      "type": "file",
+      "sha": "cb651cdc007c4c5087ea7b4e61981bb2733f7d92",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 104,
+      "is_binary": false
+    },
+    {
+      "name": "package-lock.json",
+      "path": "frontend/package-lock.json",
+      "type": "file",
+      "sha": "4824c91db5012c5348d0a0bfab4b48b93d3f84d0",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 372768,
+      "is_binary": false
+    },
+    {
+      "name": "package.json",
+      "path": "frontend/package.json",
+      "type": "file",
+      "sha": "74c0670e0f97fdd8a33a41cf2e9e72a211d7c0c7",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 903,
+      "is_binary": false
+    },
+    {
+      "name": "public",
+      "path": "frontend/public",
+      "type": "directory",
+      "sha": "7f0cd5bcb009cad8e4d664d865dd8218d0dcf174",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "logo-escudo.png",
+      "path": "frontend/public/logo-escudo.png",
+      "type": "file",
+      "sha": "058fa71edcdf72b055730510208091fc60952d9f",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 106675,
+      "is_binary": false
+    },
+    {
+      "name": "logo-original.png",
+      "path": "frontend/public/logo-original.png",
+      "type": "file",
+      "sha": "d06e9cff323b6549cc8fae4c3ecb64e2eb79afe1",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 188130,
+      "is_binary": false
+    },
+    {
+      "name": "style",
+      "path": "frontend/style",
+      "type": "directory",
+      "sha": "30d9f16161d41632d5de327545ad47934d01543d",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "globals.css",
+      "path": "frontend/style/globals.css",
+      "type": "file",
+      "sha": "98c682bc8aaa5ece38a2d8e015339d8519846157",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 1797,
+      "is_binary": false
+    },
+    {
+      "name": "tsconfig.json",
+      "path": "frontend/tsconfig.json",
+      "type": "file",
+      "sha": "d81d4ee14e763162826cdf39186441f32ea60c51",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 666,
+      "is_binary": false
+    },
+    {
+      "name": "utils",
+      "path": "frontend/utils",
+      "type": "directory",
+      "sha": "fca0736288feaabd2855606e34f475d8fa116781",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "busca.ts",
+      "path": "frontend/utils/busca.ts",
+      "type": "file",
+      "sha": "d4b05f0a211988245800f4051be186cf38a1af96",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 901,
+      "is_binary": false
+    },
+    {
+      "name": "filtros.ts",
+      "path": "frontend/utils/filtros.ts",
+      "type": "file",
+      "sha": "61fc0b39ff126f0953e14f95e3c681d8c5f788c2",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 2056,
+      "is_binary": false
+    },
+    {
+      "name": "iaResumo.ts",
+      "path": "frontend/utils/iaResumo.ts",
+      "type": "file",
+      "sha": "38d1e01193fccbb9ce4846ccf84de40e8183abbf",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 975,
+      "is_binary": false
+    },
+    {
+      "name": "noticias.ts",
+      "path": "frontend/utils/noticias.ts",
+      "type": "file",
+      "sha": "b191146a886e57399f354d2b382bd37258bf47da",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 2833,
+      "is_binary": false
+    },
+    {
+      "name": "view",
+      "path": "frontend/view",
+      "type": "directory",
+      "sha": "7d05570facf83c311e4e99adf693c6653823a193",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "Home",
+      "path": "frontend/view/Home",
+      "type": "directory",
+      "sha": "734b07e71d744175a25ba6a8df729046437b1356",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "Home.module.css",
+      "path": "frontend/view/Home/Home.module.css",
+      "type": "file",
+      "sha": "a116e6be84e377e4821f283d784e6ab45d3bb2b6",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 68,
+      "is_binary": false
+    },
+    {
+      "name": "Home.tsx",
+      "path": "frontend/view/Home/Home.tsx",
+      "type": "file",
+      "sha": "0d9df7760f50842202c440b87d7ea262ff53228d",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1089,
+      "is_binary": false
+    },
+    {
+      "name": "Mapa",
+      "path": "frontend/view/Mapa",
+      "type": "directory",
+      "sha": "b1bbdd4d072332250b1a2822e984e7eafb9b7f0f",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "Mapa.module.css",
+      "path": "frontend/view/Mapa/Mapa.module.css",
+      "type": "file",
+      "sha": "4ec27ef9bcdef197eebd60727b70d8d21e3397ca",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 63,
+      "is_binary": false
+    },
+    {
+      "name": "Mapa.tsx",
+      "path": "frontend/view/Mapa/Mapa.tsx",
+      "type": "file",
+      "sha": "6d2abfa66dc98214a7a84a4470de805758d9e39e",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1034,
+      "is_binary": false
+    },
+    {
+      "name": "NoticiaDetalhe",
+      "path": "frontend/view/NoticiaDetalhe",
+      "type": "directory",
+      "sha": "ebcac2324c15e484db0ccda56be22a7e5b764841",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "NoticiaDetalhe.module.css",
+      "path": "frontend/view/NoticiaDetalhe/NoticiaDetalhe.module.css",
+      "type": "file",
+      "sha": "631bcce618181f41ebd8ab713472da60dc4b5264",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 2504,
+      "is_binary": false
+    },
+    {
+      "name": "NoticiaDetalhe.tsx",
+      "path": "frontend/view/NoticiaDetalhe/NoticiaDetalhe.tsx",
+      "type": "file",
+      "sha": "68a0c406cd045dee1e1e7ad0308c38fe38af69d9",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 2990,
+      "is_binary": false
+    },
+    {
+      "name": "mkdocs.yml",
+      "path": "mkdocs.yml",
+      "type": "file",
+      "sha": "23fc4e56f8380d67cf7583d02cdc900f8590f57c",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 1622,
+      "is_binary": false
+    }
+  ],
+  "truncated": false,
+  "extracted_at": "2026-09-17T04:03:50.169570",
+  "method": "rest",
+  "total_items": 366,
+  "repository_metadata": {
+    "id": 1185579631,
+    "full_name": "unb-mds/2026-1-SafeStreets",
+    "description": "O SafeStreets é uma aplicação voltada ao monitoramento inteligente de riscos urbanos a partir da análise de notícias e dados públicos de segurança. O projeto tem como objetivo fornecer uma visão clara e atualizada sobre ocorrências criminais em diferentes regiões, contribuindo para a conscientização e prevenção.",
+    "created_at": "2026-03-18T18:23:07Z",
+    "updated_at": "2026-09-16T04:31:38Z",
+    "language": "Python",
+    "size": 102995,
+    "stars": 5,
+    "forks": 0,
+    "open_issues": 9
+  }
+}

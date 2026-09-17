@@ -1,0 +1,7064 @@
+[
+  {
+    "_metadata": {
+      "extracted_at": "2026-09-17T03:56:26.886464",
+      "file_path": "data/bronze/commits_2025-2-InfoSchool.json",
+      "record_count": 415
+    }
+  },
+  {
+    "sha": "5d5bc1451fc7fbd91a6fb340941b431cbe2917ba",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T02:54:56Z",
+        "login": "joaoleless"
+      },
+      "message": "Merge pull request #121 from unb-mds/features"
+    },
+    "additions": 3166,
+    "deletions": 2939,
+    "total_changes": 6105,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "0a48e36784571527ea62fc41c55d47b989a076ea",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T02:47:49Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "Merge branch 'RAG' into features"
+    },
+    "additions": 3014,
+    "deletions": 2939,
+    "total_changes": 5953,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "24f61bcf630f34fe4cb86d432aad7949de844dae",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T02:47:24Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "feat(rag): melhorias na paginação, UI e tratamento de erros"
+    },
+    "additions": 19,
+    "deletions": 13,
+    "total_changes": 32,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "7ec2c562eb235ebe5709f5eba791399ca35a9658",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T02:22:52Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "feat(rag): melhorias na UX do chat e correção de links"
+    },
+    "additions": 198,
+    "deletions": 457,
+    "total_changes": 655,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "25d5e3044e64ac49739a1f7dc2c5825551278cc6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T01:45:38Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "fix(test): arrumando error nos testes do backend"
+    },
+    "additions": 2495,
+    "deletions": 2154,
+    "total_changes": 4649,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "056c6950cc8d5e866852aebf7887677748850105",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T01:05:26Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "feat(rag): integra interface de chat com api de inteligencia artificial"
+    },
+    "additions": 408,
+    "deletions": 421,
+    "total_changes": 829,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "211bd7be10dff336cb08cb34769752baa90fd4a8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T22:14:03Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Merge branch 'features' of https://github.com/unb-mds/2025-2-InfoScho…"
+    },
+    "additions": 23539,
+    "deletions": 383425,
+    "total_changes": 406964,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "b5e8f2cd528b3d1c635ce733b52471d2cebe701c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T22:13:42Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Merge remote-tracking branch 'origin/DocDEV' into features"
+    },
+    "additions": 152,
+    "deletions": 0,
+    "total_changes": 152,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "84520f8af3e31eb50424f032187fbd3d6e99db1a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T22:05:25Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "DELETED CONTRIBUTING"
+    },
+    "additions": 0,
+    "deletions": 88,
+    "total_changes": 88,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "4179003874380feb3aa4af60439b398fcdaf2a2a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T21:57:02Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Add contribution guide to docs"
+    },
+    "additions": 88,
+    "deletions": 0,
+    "total_changes": 88,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "8ac1b33bb964eab671029daf6e52a8d57b833248",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T20:47:25Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "Merge pull request #118 from unb-mds/features"
+    },
+    "additions": 17018,
+    "deletions": 2063,
+    "total_changes": 19081,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "629586b38a97539fb6f85931329ed2fa92fba80d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T19:47:00Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "feat(qualidade): implementa testes automatizados e pipeline de CI"
+    },
+    "additions": 17005,
+    "deletions": 2063,
+    "total_changes": 19068,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "701e9fb6354d5b395b6a0880411a979a13ac6635",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T19:39:22Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "ci: ignorando arquivos markdown no pipeline"
+    },
+    "additions": 4,
+    "deletions": 0,
+    "total_changes": 4,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "52a1f4ec8a75ad19eafe9d9d3f774498b5cdda88",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T19:36:09Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "docs: adiciona badge de status do pipeline de CI no README"
+    },
+    "additions": 13,
+    "deletions": 0,
+    "total_changes": 13,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "c3993fccc0f99a0a49f6afa9dd787aaec0e39482",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T19:34:39Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "docs: adiciona badge de status do pipeline de CI no README"
+    },
+    "additions": 13,
+    "deletions": 0,
+    "total_changes": 13,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "1d91be30e830b887e809f457212ec615f1199d54",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T19:09:13Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "ci(fix): corrige variaveis de ambiente e scripts do pipeline"
+    },
+    "additions": 3,
+    "deletions": 6,
+    "total_changes": 9,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "381532682bf126a4281633da22f3791816011d82",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T18:55:51Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "ci: adiciona pipeline de validação automatizada (GitHub Actions)"
+    },
+    "additions": 71,
+    "deletions": 31,
+    "total_changes": 102,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "91591487ed76def61ba416badecb880caf4f49cb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T18:40:52Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "test(backend): adicionar testes de integração para endpoints da API"
+    },
+    "additions": 2193,
+    "deletions": 2166,
+    "total_changes": 4359,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "585aab6060a4fe1ca53a3f11cca15e21a94847f2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T18:15:15Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Merge pull request #115 from unb-mds/features"
+    },
+    "additions": 11551,
+    "deletions": 381481,
+    "total_changes": 393032,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "183e4bba10e1da2e44f447f15cdf72d936858c9c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T18:13:36Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "test(front-end):Adicionando testes unitarios para os componentes do f…"
+    },
+    "additions": 7668,
+    "deletions": 1973,
+    "total_changes": 9641,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "fb854f4946ba51951627b6d0a53a763b5f76e5c0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T17:53:52Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "feat: adicionando mais testes unitarios"
+    },
+    "additions": 3691,
+    "deletions": 205,
+    "total_changes": 3896,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "5e575cd7efd65fdb0fe5dac66815c4cd553a0d22",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T17:34:22Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "feat: Adicionando testes unitarios no backend"
+    },
+    "additions": 5752,
+    "deletions": 59,
+    "total_changes": 5811,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "1eb5aae73671dd0b87421554dd9dbc04b79c710a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T17:12:48Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "fix: arrumando erros de sintaxe"
+    },
+    "additions": 75,
+    "deletions": 87,
+    "total_changes": 162,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "374dcd5a1bbdc51a743fbe2a9036ffdfffbb6576",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T16:30:08Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "Reapply \"Merge branch 'integrarDashboard' into features\""
+    },
+    "additions": 1820,
+    "deletions": 379802,
+    "total_changes": 381622,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "4151a7fc0f3c436f08ef5ace572a9dc7ede4c0b5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T16:15:22Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "fix: arrumando erros no package.json"
+    },
+    "additions": 3773,
+    "deletions": 698,
+    "total_changes": 4471,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "02f05c3ff89a4ecfac054b534ee52186a1670a44",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T15:12:03Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "Revert \"Merge branch 'integrarDashboard' into features\""
+    },
+    "additions": 379813,
+    "deletions": 1840,
+    "total_changes": 381653,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "b70ea3cc8f3d86ddde2d9d9ac7c7a65046c51ca3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T14:56:43Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "Merge branch 'integrarDashboard' into features"
+    },
+    "additions": 1831,
+    "deletions": 379804,
+    "total_changes": 381635,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "d24d85a438364ecb09d620eea5793b623faff9a0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T14:46:18Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "feat: Dashboard integralizado com sucesso, 100% funcionando"
+    },
+    "additions": 142,
+    "deletions": 547,
+    "total_changes": 689,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "431899b806281a70f62003fddebe411e9c1c3636",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T03:42:31Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "fix: Arumando PDF para download do dashboard"
+    },
+    "additions": 1103,
+    "deletions": 95,
+    "total_changes": 1198,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "f48fd836263b2e6e73ba461c02ff86c17af5998c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T03:40:18Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "feat: adicionando arquivo .env.example para os usuarios"
+    },
+    "additions": 5,
+    "deletions": 10,
+    "total_changes": 15,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "5dfc8587149c26ef85c373bbdd7321a79166d393",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T03:40:18Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "docs: atualizando README.md para condizer com onosso projeto"
+    },
+    "additions": 147,
+    "deletions": 83,
+    "total_changes": 230,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "f49ebb9ef72bbdae4a85a147a8e534e897f1eefd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T03:15:42Z",
+        "login": "joaoleless"
+      },
+      "message": "bug: Atualizando RAG"
+    },
+    "additions": 294,
+    "deletions": 216,
+    "total_changes": 510,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "9c415dacd15969d3aff7a87828f4ccd1ea7b4f84",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T03:12:00Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "fix(dashboard): corrige salto de ano no gráfico e substitui IDEB por …"
+    },
+    "additions": 134,
+    "deletions": 101,
+    "total_changes": 235,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "c08155846b71f88fe0d5bc5fcd52b4c88bab3b0d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-01T16:27:52Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Revise development guide for better clarity and structure"
+    },
+    "additions": 98,
+    "deletions": 173,
+    "total_changes": 271,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "40234f2fd0d38a7b94504fe5f8b2a86f00114eab",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-01T16:15:16Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "docs: adiciona guia técnico de desenvolvimento"
+    },
+    "additions": 227,
+    "deletions": 0,
+    "total_changes": 227,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "7a9694d0e107718e9ca5cd4b65cc0ec86b7aba7f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-01T06:12:16Z",
+        "login": "joaoleless"
+      },
+      "message": "bug: Arrumando conflitos de merge"
+    },
+    "additions": 2,
+    "deletions": 9,
+    "total_changes": 11,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "02b7275b32950970e2ff67230f5a5259a28491c3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-01T05:21:40Z",
+        "login": "joaoleless"
+      },
+      "message": "Merge branch 'features' of https://github.com/unb-mds/2025-2-InfoScho…"
+    },
+    "additions": 1671,
+    "deletions": 1860,
+    "total_changes": 3531,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "2925bfb04a774947e1ee3f229c9f556fd79f21fa",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-01T04:43:33Z",
+        "login": "joaoleless"
+      },
+      "message": "feat: Colocando todos os dados no RAG"
+    },
+    "additions": 7049,
+    "deletions": 1329,
+    "total_changes": 8378,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "29cc37e0c176d1411d7a22505b3de1a39a08c2c3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-01T01:31:10Z",
+        "login": "macedoPedro20"
+      },
+      "message": "docs: adicionado as atas 8 ate a 11"
+    },
+    "additions": 94,
+    "deletions": 0,
+    "total_changes": 94,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "43c6df1718bb91fc37c8d78c8e4bba99477f0f5b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-01T01:28:52Z",
+        "login": "macedoPedro20"
+      },
+      "message": "docs: adicionado as atas 8 ate a 11"
+    },
+    "additions": 578,
+    "deletions": 1651,
+    "total_changes": 2229,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "1731c9d310dd7409fdeb71f284afbf7a2a308f44",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-29T20:12:49Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "style(dashboard): refatora identificacao, ajusta hovers e restaura dados"
+    },
+    "additions": 94,
+    "deletions": 32,
+    "total_changes": 126,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "792e5c396f6847db09567fd3f0a09338136552e9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-28T22:56:51Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "refactor(dashboard): ajusta metricas, infra e modal de exportacao"
+    },
+    "additions": 51,
+    "deletions": 98,
+    "total_changes": 149,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "45e5b1ae0a3ee35eae841ccd1735e350db0a1c53",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-28T22:19:08Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "feat: adicionando arquivo .env.example para os usuarios"
+    },
+    "additions": 5,
+    "deletions": 10,
+    "total_changes": 15,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "010bc1f2ad49fbb4a1157a9dc668d1cd096b8924",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-28T22:13:36Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "docs: atualizando README.md para condizer com onosso projeto"
+    },
+    "additions": 147,
+    "deletions": 83,
+    "total_changes": 230,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "628d02063d94954e385f2daa13ddf679309dcb67",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-28T18:46:47Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Merge pull request #111 from unb-mds/features"
+    },
+    "additions": 476,
+    "deletions": 231,
+    "total_changes": 707,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "6bbb430a98662ff664574a0beebf4e8e923fd014",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-28T00:53:33Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "feat: adicionando dependencia no package.json"
+    },
+    "additions": 8,
+    "deletions": 0,
+    "total_changes": 8,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "d411fad1646976c86dcb69f5c5200f5eb786c765",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-28T00:44:08Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "fix: json roda o backend e o frontend juntos"
+    },
+    "additions": 524,
+    "deletions": 383041,
+    "total_changes": 383565,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "19d71819a0e61f16f09b6877bda84a674dd9daa6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-28T00:09:26Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "feat: integrando o dashboard"
+    },
+    "additions": 748,
+    "deletions": 997,
+    "total_changes": 1745,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "8d8c00932bd7d925306556dafd05673200f0289b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-27T20:45:52Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "fix: ao clicar nas escolas do explorar escolas, agora, esta indo para…"
+    },
+    "additions": 31,
+    "deletions": 9,
+    "total_changes": 40,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "d1b093c75a089294f5e14fbacc2ba1014412af10",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-27T20:32:07Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "fix: ao pesquisar escolas e clicar nela, agora está indo para o dashb…"
+    },
+    "additions": 44,
+    "deletions": 195,
+    "total_changes": 239,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "fb1ef7a04551b79b9df74bc17a4a05bf42f9aa12",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-26T15:30:03Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "feat: Integrando caminho normal com o backend"
+    },
+    "additions": 476,
+    "deletions": 231,
+    "total_changes": 707,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "022c916d667f389e61f2c37a9ce1955611c2d16f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-24T22:46:16Z",
+        "login": "joaoleless"
+      },
+      "message": "Merge pull request #110 from unb-mds/features"
+    },
+    "additions": 13631,
+    "deletions": 6122,
+    "total_changes": 19753,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "91f07935708150c65e9a04c9ccbb45e51194c8e4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-24T22:41:07Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Revert \"Merge branch 'GitPages' into features\""
+    },
+    "additions": 1,
+    "deletions": 590,
+    "total_changes": 591,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "d11d5fdd16552709571de234ed92cab90b947e3e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-24T21:58:24Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Merge branch 'features' of https://github.com/unb-mds/2025-2-InfoScho…"
+    },
+    "additions": 1006,
+    "deletions": 61,
+    "total_changes": 1067,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "99358daf14cf27476b69f8cb7d6714c52080f4c4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-24T21:58:20Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Merge remote-tracking branch 'origin/readme' into features"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "747a876b100da171a52aaada4126f27c1800b5b0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-23T18:56:36Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Merge branch 'GitPages' into features"
+    },
+    "additions": 590,
+    "deletions": 1,
+    "total_changes": 591,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "019e9ca52256d8b3099d6efcf688036974e6a97c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-22T19:48:49Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "bug: arrumando pequenos erros de sintaxe"
+    },
+    "additions": 11,
+    "deletions": 3,
+    "total_changes": 14,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "387a4958d1f0842e195653d57c63f5470bb584f7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-22T19:43:59Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "feat: barra de pesquisa da pagina principal"
+    },
+    "additions": 47,
+    "deletions": 101,
+    "total_changes": 148,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "565fbf17b1bba3560fbfab9651327c07c46e5913",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-22T19:42:06Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "feat: busca pagina principal quase finalizado"
+    },
+    "additions": 462,
+    "deletions": 60,
+    "total_changes": 522,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "cb4829f3fb8220e7e6857a713ea76cd3ee560798",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-21T12:24:13Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"fix: corrige responsividade, alturas de cards e animações"
+    },
+    "additions": 79,
+    "deletions": 78,
+    "total_changes": 157,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "d6c13fd06064b06539a2535598a4591ed4b74fa6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T18:21:33Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"feat: implementa v0 da página de produto (Release 2)"
+    },
+    "additions": 589,
+    "deletions": 1,
+    "total_changes": 590,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "f728da8779e72044c273ce77fb0621e647bba7a3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T16:24:11Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Merge branch 'BarradePesquisa' into features"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "b3071b0efb242254a4ee713da824d4532f865244",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-17T23:34:40Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Merge branch 'features' of https://github.com/unb-mds/2025-2-InfoScho…"
+    },
+    "additions": 12032,
+    "deletions": 6089,
+    "total_changes": 18121,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "9b66da88da55e56af6a27b3339c9e323892749e8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-17T23:34:34Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "feat: adiciona navegação para dashboard nas escolas"
+    },
+    "additions": 12,
+    "deletions": 0,
+    "total_changes": 12,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "0d7106ab530da8025187d0082a3afa4497703ec8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-17T23:02:30Z",
+        "login": "joaoleless"
+      },
+      "message": "Merge branch 'features' of https://github.com/unb-mds/2025-2-InfoScho…"
+    },
+    "additions": 1444,
+    "deletions": 159,
+    "total_changes": 1603,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "a13ee6908254acd29e6d88002fa9237a66e2f0b0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-17T23:01:43Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"style: ajusta layout da barra de pesquisa"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "11625341cdc3b44715f74b2191bea0fa0b513e2b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-17T22:52:29Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Merge branch 'Página-Dashboard' into features"
+    },
+    "additions": 1198,
+    "deletions": 0,
+    "total_changes": 1198,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "b353da04edf621823e29d96b2d6384ef21bbac17",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-17T22:50:08Z",
+        "login": "joaoleless"
+      },
+      "message": "Resolvendo conflitos"
+    },
+    "additions": 12032,
+    "deletions": 6089,
+    "total_changes": 18121,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "5a63f6698aec5116b498d49048494f29012a3d35",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-17T22:50:08Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "feat: mudando uma data so para mergear"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "e870876437dc72779cc8ff5b17bc44d4e6ce4d22",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-17T22:44:01Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Merge branch 'Página-Dashboard' into features"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "71a59f1480a327254ac0d89e25be710e33d15170",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-17T22:43:36Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "feat: igualando a pag dos municipios"
+    },
+    "additions": 79,
+    "deletions": 35,
+    "total_changes": 114,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "7a11788173d6524ab9a1cca14829884cab8f2e38",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-17T22:32:27Z",
+        "login": "joaoleless"
+      },
+      "message": "atualizando json"
+    },
+    "additions": 8178,
+    "deletions": 5975,
+    "total_changes": 14153,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "a7477239776e76c02bb6305f8a36608817149c0d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-17T22:22:26Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Merge pull request #105 from unb-mds/features"
+    },
+    "additions": 1526,
+    "deletions": 342,
+    "total_changes": 1868,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "4dfc226ce3f4646625f40b06125eed818019ebba",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-17T21:09:04Z",
+        "login": "joaoleless"
+      },
+      "message": "feat: arrumando o query do RAG"
+    },
+    "additions": 994,
+    "deletions": 126,
+    "total_changes": 1120,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "2fbf646de457fe6650f07c94b7782df1cec885e0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-16T18:45:43Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Revert \"Merge branch 'Página-Dashboard' into features\""
+    },
+    "additions": 7,
+    "deletions": 1283,
+    "total_changes": 1290,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "fbb43d253417474c574fdd411d300120d1210910",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-16T18:29:37Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Merge branch 'Página-Dashboard' into features"
+    },
+    "additions": 1283,
+    "deletions": 7,
+    "total_changes": 1290,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "6cb113024098734e36772ce5aebd780f13ca4ed9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-16T18:24:16Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "feat: implementa navegação para explorar-escolas"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "4030d9893884a42a6d6e3dae23d60347adc33595",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-16T18:20:41Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "feat: implementa geração de relatório PDF no dashboard"
+    },
+    "additions": 313,
+    "deletions": 33,
+    "total_changes": 346,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "8b1a3b6f00ad51f57f7e8f0a0f8354d508e8cfff",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-16T17:58:33Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "feat: grafico introduzido no componente de analise temporal"
+    },
+    "additions": 90,
+    "deletions": 65,
+    "total_changes": 155,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "5843c8e6186eaf98e893c5967b18f6648661a72b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-16T17:40:52Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "feat: ajuste de coloraçao no comp de açoes rapidas"
+    },
+    "additions": 69,
+    "deletions": 20,
+    "total_changes": 89,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "01923c24b1cb9e47653585d4cbf59a786568e63f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-16T17:20:00Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "feat: ajuste do componente Destaques da Escola"
+    },
+    "additions": 211,
+    "deletions": 70,
+    "total_changes": 281,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "4cae838ba647a0bd0f791f6dc6c8b296e9da32fa",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-16T16:25:49Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "feat: atualiza design da identificação escolar"
+    },
+    "additions": 270,
+    "deletions": 159,
+    "total_changes": 429,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "0241ac22a1f94b54d6dd4350f84809ec9f87515f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-16T14:58:02Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"fix: padroniza layout das páginas e corrige bug do useEffect"
+    },
+    "additions": 37,
+    "deletions": 49,
+    "total_changes": 86,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "bd08cbc6077a19ac529a871cc245fa3bd5b99031",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-16T14:43:20Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"refactor: remove JS de layout e usa CSS puro para responsividade"
+    },
+    "additions": 39,
+    "deletions": 42,
+    "total_changes": 81,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "df512f1b1dc7a8c6d31bfc37a7ae1eab247b7f3a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-16T13:35:00Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"style: padroniza layout das barras de pesquisa"
+    },
+    "additions": 6,
+    "deletions": 11,
+    "total_changes": 17,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "34387f5f4e0c4dc6609e0d61df9a306d657fbb54",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-16T13:17:58Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"fix: reestrutura layout responsivo ."
+    },
+    "additions": 89,
+    "deletions": 33,
+    "total_changes": 122,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "45032cded0badb6d4b89e411f94122ed3d4d6b8f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-16T12:33:04Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"refactor: otimiza responsividade com breakpoints granulares"
+    },
+    "additions": 52,
+    "deletions": 17,
+    "total_changes": 69,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "a7b6e47ef64ead6c0e559eecb5d3c888fa6c6568",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-15T19:13:28Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "feat: add análise temporal com evolução de indicadores"
+    },
+    "additions": 84,
+    "deletions": 22,
+    "total_changes": 106,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "cdc2b39689b4935eda6425a9550ce58dbaacc26f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-15T19:04:34Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "feat: implementa ações rápidas com navegação prática"
+    },
+    "additions": 99,
+    "deletions": 44,
+    "total_changes": 143,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "928c8daefbf18352745e872ef411acbb329bfe48",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-15T13:38:31Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"fix: corrige centro/escala de estados e otimiza responsividade"
+    },
+    "additions": 125,
+    "deletions": 109,
+    "total_changes": 234,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "5cfa55b2591fddf44c25414a4cdf4fe4b3b96459",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-15T13:37:39Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"fix): atualiza o arquivo brasil.svg"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "86fe80e4dd8556d0b5fbf5638fa6dd8bf2de8618",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-14T02:05:15Z",
+        "login": "macedoPedro20"
+      },
+      "message": "feat: adiocionando dados mockados para testar rag"
+    },
+    "additions": 332,
+    "deletions": 196,
+    "total_changes": 528,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "3c99f4a0a571e99032aa85f5686dd1bca13338f4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-14T00:45:48Z",
+        "login": "macedoPedro20"
+      },
+      "message": "fix: retirando service account"
+    },
+    "additions": 0,
+    "deletions": 13,
+    "total_changes": 13,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "53de0c9c868a4e78bf8b9d0d906ce704defc5a70",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-14T00:36:15Z",
+        "login": "macedoPedro20"
+      },
+      "message": "fix: arrumando git ignore"
+    },
+    "additions": 1,
+    "deletions": 2,
+    "total_changes": 3,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "15f4a92b572660b4fc16dcadf8993115faac5f9b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-14T00:34:33Z",
+        "login": "macedoPedro20"
+      },
+      "message": "fix: adicionando no lugar correto .gitignore"
+    },
+    "additions": 3,
+    "deletions": 1,
+    "total_changes": 4,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "93130b3ed4108d4b59c0089b5248a6fba5ade731",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-14T00:26:18Z",
+        "login": "macedoPedro20"
+      },
+      "message": "feat: adiciona alguns arquivos ao node_modules"
+    },
+    "additions": 63,
+    "deletions": 20,
+    "total_changes": 83,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "bbb18c365a5c40e304b670e88dab8e2694641284",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-14T00:20:51Z",
+        "login": "macedoPedro20"
+      },
+      "message": "feat: atualizando o rag retirando arquivos desnescessarios e atualiza…"
+    },
+    "additions": 462,
+    "deletions": 426,
+    "total_changes": 888,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "fb16f3f64c1490c324eb5d6552086f1bfe038435",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-12T19:35:43Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "feat: atualizando readme"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "176045e2e8fa7f8c5c3dfa33d49a7c90397efe58",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-10T23:25:53Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "Merge branch 'ExplorarEscolas' into features"
+    },
+    "additions": 1,
+    "deletions": 2,
+    "total_changes": 3,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "613fd110433a35a4072ba66249209f8e769a0eb8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-10T23:25:15Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "feat: atualizando filtros"
+    },
+    "additions": 1,
+    "deletions": 2,
+    "total_changes": 3,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "9e6545b753a493408a8075f9d0ab31c1ab08db4a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-10T12:37:50Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Merge branch 'Pagina-Rag' into features"
+    },
+    "additions": 844,
+    "deletions": 4,
+    "total_changes": 848,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "c1989d5a943c152b518ef18ca035c833134ddb7f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-08T15:01:30Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"feat: atualiza fluxo de consulta com nova estrutura de dados"
+    },
+    "additions": 521,
+    "deletions": 94,
+    "total_changes": 615,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "9e301ca3587e6770329549c43ff223a40708dd6f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-07T23:06:58Z",
+        "login": "macedoPedro20"
+      },
+      "message": "feat: adicionando mais funcionalidades do rag"
+    },
+    "additions": 2112,
+    "deletions": 79,
+    "total_changes": 2191,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "8e2f3bb0722d60ca4a2d3cabeec95d3de8b74e98",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-07T12:47:08Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"feat: habilita links para a página RAG"
+    },
+    "additions": 4,
+    "deletions": 4,
+    "total_changes": 8,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "66dd3ed82297e9e2ebff52411ac433949c5869e9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-06T18:46:50Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "feat: concluindo pagina explorar escolas (backend)"
+    },
+    "additions": 76,
+    "deletions": 168,
+    "total_changes": 244,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "a7b9de60b2ce9823d2e0b4543b8965a2c3a7e29b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-06T17:02:57Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "feat: Adicionando dados ao frontend"
+    },
+    "additions": 521,
+    "deletions": 171,
+    "total_changes": 692,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "3124fe3ca302af1b8735d34deaeb8fdbd893d035",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-05T17:06:43Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Merge pull request #97 from unb-mds/features"
+    },
+    "additions": 986,
+    "deletions": 434,
+    "total_changes": 1420,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "ddcf0f91e42ba5d4874a0d257fab3ae20bdf1d03",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-05T16:45:17Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"feat: implementa v0 da interface de chat RAG com dados mockados"
+    },
+    "additions": 413,
+    "deletions": 0,
+    "total_changes": 413,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "fddf729b5323c4f2903414bab5b6c6061821b340",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-05T01:06:58Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "feat: Implementa protótipo funcional do dashboard com dados mockados"
+    },
+    "additions": 619,
+    "deletions": 10,
+    "total_changes": 629,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "e152f6b3aa9760ca6fafef385e40a24cfb51e83f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-04T19:09:29Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"chore: cria estrutura inicial da página RAG\""
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "4715e01ddeee630e168685bb8fe5ab5f0c1abddb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-04T18:43:36Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"feat: adiciona informações de contato e ajusta layout"
+    },
+    "additions": 15,
+    "deletions": 3,
+    "total_changes": 18,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "84cfd3805a4ec1548ecf40d358c5ed1edd4dd143",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-04T14:39:51Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "fix: corrige responsividade dos cards de desenvolvedor"
+    },
+    "additions": 8,
+    "deletions": 9,
+    "total_changes": 17,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "1164c569d67b2cbeb1ed533113e239a81d285455",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-03T20:50:21Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"refactor: remove transição de hover dos municípios"
+    },
+    "additions": 1,
+    "deletions": 2,
+    "total_changes": 3,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "85ff10e2b18a3ef654b923001a2dee5dc702774a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-03T20:38:40Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Merge branch 'Estados-Local' into features"
+    },
+    "additions": 412,
+    "deletions": 303,
+    "total_changes": 715,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "712ba674486bc697067a009c03626d1f93fccaf7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-03T20:33:16Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"fix: corrige mapa do Amazonas e refatora layout responsivo"
+    },
+    "additions": 133,
+    "deletions": 41,
+    "total_changes": 174,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "bb8a21da6834c08c181959e0d55de9e97cf609f7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-02T13:44:00Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"feat: cria v1 da página 'Explorar Escolas' e adiciona link na home"
+    },
+    "additions": 370,
+    "deletions": 5,
+    "total_changes": 375,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "e31dbe47f1564a07ada4e09fa0ca827628ee6066",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-31T14:28:01Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"style( padroniza largura máxima dos containers"
+    },
+    "additions": 7,
+    "deletions": 6,
+    "total_changes": 13,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "7a35257fbc439936cf0cc325fa7055ec49790f11",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-31T13:55:20Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"fix: corrige responsividade da página inicial e header"
+    },
+    "additions": 53,
+    "deletions": 10,
+    "total_changes": 63,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "a3a784aef93bf79097911708fe7e0fcda7e0e51f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-31T02:16:11Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"feat: adiciona busca de escolas no header da página inicial"
+    },
+    "additions": 134,
+    "deletions": 110,
+    "total_changes": 244,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "e2d7931cee388f730cd7056ea988d4f1bc57187a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-27T18:34:56Z",
+        "login": "macedoPedro20"
+      },
+      "message": "feat: implemenado a base do rag, integrado com Bigquery"
+    },
+    "additions": 709,
+    "deletions": 2,
+    "total_changes": 711,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "6040a159cd9e2746b58f113521dd22e5dea644e1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-27T14:13:50Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"feat: otimiza performance e robustez da página"
+    },
+    "additions": 51,
+    "deletions": 7,
+    "total_changes": 58,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "4725c30612ffbf26b4efbe705a07497b444791c3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-27T13:44:43Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"fix: internaliza GeoJSON para evitar erro 429"
+    },
+    "additions": 232,
+    "deletions": 259,
+    "total_changes": 491,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "16463889c2a9155fa99609ac662ffb996307e084",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-25T18:23:08Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Merge pull request #91 from unb-mds/features"
+    },
+    "additions": 272,
+    "deletions": 234,
+    "total_changes": 506,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "55304b756af6c00699c1dcb99869fed3c81f448b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-25T00:07:38Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "Merge branch 'CI' into features"
+    },
+    "additions": 10,
+    "deletions": 32,
+    "total_changes": 42,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "763169f708798f055a68a71184ac8463a3c70f98",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-25T00:06:20Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "fix: Arrumando error do github workflow"
+    },
+    "additions": 10,
+    "deletions": 32,
+    "total_changes": 42,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "6e6ef444064890940845529b1750b4aef32767c9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-23T02:44:59Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Merge branch 'resp-municipios' into features"
+    },
+    "additions": 82,
+    "deletions": 94,
+    "total_changes": 176,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "d2b2c323153e33de385ed0b08d2fcdca87a10d8c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-23T01:35:22Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "fix: Correção de responsividade e posicionamento do svg municipio"
+    },
+    "additions": 82,
+    "deletions": 94,
+    "total_changes": 176,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "8a2204d8f9ef36f0f9206943a84203ce560293d0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-23T00:29:26Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"chore: define outputFileTracingRoot no next.config.js"
+    },
+    "additions": 1,
+    "deletions": 4,
+    "total_changes": 5,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "6384e9882f71a9a0eee81289fb2d59955ec7a318",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-23T00:27:05Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"fix: corrige overflow horizontal e refatora layout"
+    },
+    "additions": 81,
+    "deletions": 83,
+    "total_changes": 164,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "575fdd513e2f204dd4e56c1cb9a3382ee00e7424",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-22T21:00:35Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"fix: padroniza estilo da barra de rolagem"
+    },
+    "additions": 30,
+    "deletions": 0,
+    "total_changes": 30,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "c83c652fa7e9f8ff0c904330a0f66c0bb495b065",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-22T20:51:23Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"fix: corrige barra de rolagem horizontal na página de estado"
+    },
+    "additions": 1,
+    "deletions": 16,
+    "total_changes": 17,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "3cb70a64cec8160d84e15fd666ff1edb7d9144b2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-22T19:38:08Z",
+        "login": "macedoPedro20"
+      },
+      "message": "refactor: melhora as rotas, adicionando o nome do estado e o municipio"
+    },
+    "additions": 67,
+    "deletions": 5,
+    "total_changes": 72,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "6782aa686980f68eae5e2c6a665d78269dc21b2f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-22T18:58:41Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "Merge pull request #85 from unb-mds/features"
+    },
+    "additions": 381198,
+    "deletions": 3,
+    "total_changes": 381201,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "cf331351bcb45cf73408275989d379ccd614483f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-22T05:45:58Z",
+        "login": "joaoleless"
+      },
+      "message": "resolvendo problema"
+    },
+    "additions": 381178,
+    "deletions": 0,
+    "total_changes": 381178,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "df63d150ce7b26930fb4c3dfc9c142175fc4cb39",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-22T00:40:45Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"feat: implementa navegação de âncora para seção 'Sobre nós'"
+    },
+    "additions": 20,
+    "deletions": 3,
+    "total_changes": 23,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "a384ece920f0391b7a3badf2a667019039b67594",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-21T01:31:57Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Merge pull request #84 from unb-mds/features"
+    },
+    "additions": 32,
+    "deletions": 157,
+    "total_changes": 189,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "f43b9a826cde730b3878b67e362f3ce1716398b4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-21T00:20:51Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "fix: corrige estrutura de rotas municipios - página índice sem slug"
+    },
+    "additions": 19,
+    "deletions": 198,
+    "total_changes": 217,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "364d58b447a7c1e973f74204819cfa1413c9547b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-20T23:51:05Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Merge branch 'Página-municipios' into features"
+    },
+    "additions": 59,
+    "deletions": 5,
+    "total_changes": 64,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "d6f07e18423de14548de4fcb64d5b606fb96ebf1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-20T23:46:16Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "fix: corrige erro de params e estrutura de rotas municipios"
+    },
+    "additions": 60,
+    "deletions": 6,
+    "total_changes": 66,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "60dd388248ffefd65a8be873f5faa8e81ca05a74",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-20T22:57:59Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Merge pull request #82 from unb-mds/features"
+    },
+    "additions": 809,
+    "deletions": 64,
+    "total_changes": 873,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "48bdb7c67b9446db21789fa3a3d66d7bc9708aa6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-20T04:09:29Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Merge branch 'features' of https://github.com/unb-mds/2025-2-InfoScho…"
+    },
+    "additions": 1049,
+    "deletions": 5,
+    "total_changes": 1054,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "ccd390fb6039ce38f5abd33b17c074909fedb3b5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-20T04:07:57Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Merge branch 'Página-municipios' into features"
+    },
+    "additions": 917,
+    "deletions": 220,
+    "total_changes": 1137,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "d41be7cf56b26d83f93f2d07d4a1b28067784507",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-20T03:56:05Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "fix: Corrige sobreposição do mapa no footer e remove sugestões"
+    },
+    "additions": 42,
+    "deletions": 54,
+    "total_changes": 96,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "494987f7c944ed982ecb18351961b2dda9d01c3a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-19T00:29:06Z",
+        "login": "joaoleless"
+      },
+      "message": "Merge pull request #77 from unb-mds/features"
+    },
+    "additions": 2126,
+    "deletions": 16,
+    "total_changes": 2142,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "6df19c0ebbf298658bc7db45d39f3d1f9ac5a88d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-17T22:14:39Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "style: Reposiciona a barra de pesquisa na página do município"
+    },
+    "additions": 91,
+    "deletions": 69,
+    "total_changes": 160,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "fa940488559b4c60dfae81796e4e939f21508126",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-17T21:24:12Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "feat : Implementa interatividade no mapa SVG do município"
+    },
+    "additions": 221,
+    "deletions": 105,
+    "total_changes": 326,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "49034b1cd2f151a0ef0efcf4b8180916449c5ee7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-17T00:42:24Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "refactor: Refatora a página de município com service layer e renderiz…"
+    },
+    "additions": 521,
+    "deletions": 704,
+    "total_changes": 1225,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "4c1db44ecdd77da432eaadd8280a49327b50f19a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-16T19:51:26Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Merge branch 'features' of github.com:unb-mds/2025-2-InfoSchool into …"
+    },
+    "additions": 1049,
+    "deletions": 4,
+    "total_changes": 1053,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "93a1a6ddd1bee646a913a5557bbcd7dec2caf2f1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-16T19:48:11Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Merge branch 'Página-Estado' into features"
+    },
+    "additions": 107,
+    "deletions": 156,
+    "total_changes": 263,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "022f1851414dceded48cc55090fa5dc285adde1f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-16T19:05:46Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"refactor: otimiza e torna a página de estado responsiva"
+    },
+    "additions": 97,
+    "deletions": 119,
+    "total_changes": 216,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "da83018e6f317261b375debc6a89b030a8a50a77",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-16T18:23:26Z",
+        "login": "macedoPedro20"
+      },
+      "message": "adicionando rotas"
+    },
+    "additions": 1126,
+    "deletions": 12,
+    "total_changes": 1138,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "93c7b6ba10d27647d0e4f8e0342aefa795ed1184",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-16T04:18:50Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "feat: Adiciona tags de filtro interativas para estado e município"
+    },
+    "additions": 36,
+    "deletions": 19,
+    "total_changes": 55,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "fb786b95bce16df28b6787b75e861acec4056b36",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-16T03:57:45Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "feat: Implementa página dinâmica de município"
+    },
+    "additions": 596,
+    "deletions": 0,
+    "total_changes": 596,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "e036011dc66e82bda22d4e833ae3621649da3364",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-15T19:17:54Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "separa Página-Municipios da Ajuste-Href"
+    },
+    "additions": 201,
+    "deletions": 25,
+    "total_changes": 226,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "e3915603869d0238fb647c5c99aff37a9aaad3b2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-15T12:31:55Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "feat: adiciona botão para limpar seleção de estado"
+    },
+    "additions": 17,
+    "deletions": 27,
+    "total_changes": 44,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "8c0e4368b2701bc87aec2994a4dac1be00deef09",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-15T12:01:21Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"feat: adiciona responsividade e ajusta tamanho do mapa"
+    },
+    "additions": 31,
+    "deletions": 31,
+    "total_changes": 62,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "1130d3c5f4bf09475035fe7e1b36cbe263614b10",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-15T01:49:32Z",
+        "login": "macedoPedro20"
+      },
+      "message": "features(server.js): recriada as rotas"
+    },
+    "additions": 57,
+    "deletions": 29,
+    "total_changes": 86,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "1173286bb1ee506f1c03c3eb035abea6efc7f228",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-14T22:59:25Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "feat: implementa navegação para páginas de estados e corrige rotas"
+    },
+    "additions": 24,
+    "deletions": 6,
+    "total_changes": 30,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "4e6a6caa5bf2c6af2d887ffef606c3529f1abd94",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-14T18:23:02Z",
+        "login": "macedoPedro20"
+      },
+      "message": "features(server.js): adicionado as rotas"
+    },
+    "additions": 2,
+    "deletions": 3,
+    "total_changes": 5,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "9305c87d1902a862af99e954b0e8046a75205815",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-14T18:18:49Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Merge branch 'CriandoRotas' of https://github.com/unb-mds/2025-2-Info…"
+    },
+    "additions": 28,
+    "deletions": 0,
+    "total_changes": 28,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "b3f3f54bea15fbc0b129deea243e40679b4c98ce",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-14T18:17:57Z",
+        "login": "macedoPedro20"
+      },
+      "message": "features(server.js): adicionado as rotas"
+    },
+    "additions": 38,
+    "deletions": 2,
+    "total_changes": 40,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "ea507c228c1e5540cf68ebb40427b1e817e77b10",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-14T18:10:23Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"refactor: otimiza interface e limpa código"
+    },
+    "additions": 137,
+    "deletions": 183,
+    "total_changes": 320,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "22fe39a4f4e850920ff42916d9b8316c0210dcff",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-14T17:43:32Z",
+        "login": "macedoPedro20"
+      },
+      "message": "docs(readme): adicionado ata reunião 7"
+    },
+    "additions": 28,
+    "deletions": 0,
+    "total_changes": 28,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "89b650512cc48e0037f10182916448a8d0b44140",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-14T12:41:23Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "\"feat: implementa página de estado com mapas municipais"
+    },
+    "additions": 1131,
+    "deletions": 6,
+    "total_changes": 1137,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "3bc0be1dfc896ca03e7d09e731ede2d83c815588",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-14T01:26:12Z",
+        "login": "macedoPedro20"
+      },
+      "message": "chore: adicionado dependencias nodemon e fastify"
+    },
+    "additions": 955,
+    "deletions": 1,
+    "total_changes": 956,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "6c6492af3aabc5073b7b2a9d09a39ee15ffc7ff0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-13T22:40:10Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "Merge pull request #71 from unb-mds/features"
+    },
+    "additions": 666,
+    "deletions": 79458,
+    "total_changes": 80124,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "fd63d1e0da9a3ed6eae952cdafafe487cb58bad5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-13T22:34:55Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Merge pull request #70 from unb-mds/main"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "9e2ff8ea1fc33d54c768a3d9fad244b94bddcca4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-13T22:28:22Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "feat: retirando arquivos desnecessarios"
+    },
+    "additions": 0,
+    "deletions": 39689,
+    "total_changes": 39689,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "3e1bc0d35bb64b3d8dd247ba05a4b91b0e4503af",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-13T22:23:05Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Merge branch 'features' of https://github.com/unb-mds/2025-2-InfoScho…"
+    },
+    "additions": 95,
+    "deletions": 39622,
+    "total_changes": 39717,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "ede475d93039920c2d1433a780f080f6c6e9e325",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-13T16:27:34Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "style: ajuste de responsividade da página inicial"
+    },
+    "additions": 73,
+    "deletions": 57,
+    "total_changes": 130,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "34b2ce3c119ae87a62b63ef3117726229f81f250",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-13T15:49:18Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "bug: Sugestões de estado na barra de pesquisa"
+    },
+    "additions": 16,
+    "deletions": 16,
+    "total_changes": 32,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "742cdfaf32fea6fe9fe553d04961279a0802ab9d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-13T02:49:11Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Update Requisitos.md"
+    },
+    "additions": 252,
+    "deletions": 53,
+    "total_changes": 305,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "2d3e3e36c66776d48eb78030a93cf517b4277b1b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-12T20:39:56Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "fix: arrumando organização de pastas do github pages"
+    },
+    "additions": 0,
+    "deletions": 39605,
+    "total_changes": 39605,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "8af7f0f9e23928bc31835c359c19362abf64160f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-12T20:27:47Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "Merge pull request #65 from unb-mds/documentação"
+    },
+    "additions": 95,
+    "deletions": 17,
+    "total_changes": 112,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "8d20121ae093fb526f64a8fa08f453cab0a332cd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-12T20:21:26Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "Merge pull request #67 from unb-mds/features"
+    },
+    "additions": 619,
+    "deletions": 499,
+    "total_changes": 1118,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "031e8ff5250cf792753d2c46ced9fada478ef400",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-12T11:45:15Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "bug: Fonte pre carregada do infoschool"
+    },
+    "additions": 11,
+    "deletions": 6,
+    "total_changes": 17,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "7127e490383f8840710e2977537240124b79811e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-12T11:24:58Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "bug: tema claro/escuro"
+    },
+    "additions": 22,
+    "deletions": 32,
+    "total_changes": 54,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "2e01423b580a0a1b173ca8fc5dc56bcbaa67ef9a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-11T23:03:13Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "style: ajuste do tema claro/escuro e o ajuste de marge, na página do …"
+    },
+    "additions": 110,
+    "deletions": 125,
+    "total_changes": 235,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "81eb914746db81fe466e019725da6dfd129b50e9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-11T19:26:23Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "fix: corrige bug na renderizaçao da página inicial"
+    },
+    "additions": 13,
+    "deletions": 2,
+    "total_changes": 15,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "2ec6e5821da6c13552ee8420069acdaccab81508",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-10T22:19:22Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "style: dependencias"
+    },
+    "additions": 11,
+    "deletions": 0,
+    "total_changes": 11,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "88bca950f83de56da96b4894762e0bb58c52fa87",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-10T06:20:23Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "style: Página do Mapa1 com animaçao tema claro/escuro, pesquisa de es…"
+    },
+    "additions": 200,
+    "deletions": 12,
+    "total_changes": 212,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "112ea7a1fed155a8a47b0fa4afaa4d4153fc5c62",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-08T23:07:21Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "style: página do mapa com o header e o footer e o modo claro/escuro f…"
+    },
+    "additions": 39,
+    "deletions": 20,
+    "total_changes": 59,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "5dd08a33483c4e3f05c749948c58cd72870ebdcf",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-08T22:17:36Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "style: Criação da pasta mapa  e page.tsx"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "1c72c096b2af721501f488f9c3f9de2a5c08a146",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-08T17:49:41Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "style: Animação pronta e alguns ajustes no modo claro/escuro"
+    },
+    "additions": 355,
+    "deletions": 159,
+    "total_changes": 514,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "d7e9f3803a8eaca313c56cef95727ded2052a37c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-07T19:14:43Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "style: Criação das pastas da ScrollAnimation"
+    },
+    "additions": 5,
+    "deletions": 3,
+    "total_changes": 8,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "c896cf5943ec2f27a62ad57e900a542156e9ceca",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-07T18:47:22Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "style: Modo claro/escuro funcinando"
+    },
+    "additions": 221,
+    "deletions": 82,
+    "total_changes": 303,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "2a423315aa3b58d62ffee5ad11e6f557dffdedee",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-07T14:48:06Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "style: Criação das pastas para o tema Claro"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "be4c268c44810c8ded7996a02d0b92e608f0882f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-07T12:50:37Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "refactor: Atualização da foto do desenvolvedor 3"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "e223883a2a5bbc51639a9c03c5406c96973f468f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-07T12:43:21Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "refactor: Remoção do cursor-pointer das fotos dos desenvolvedores"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "97986a0361482099e312640bcdaeceb8eab63e59",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-07T12:36:51Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "style: Remoção do GoogleMaps e melhor organização das pastas das páginas"
+    },
+    "additions": 222,
+    "deletions": 439,
+    "total_changes": 661,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "6e72466319bc02041cbbdcc4531efbb61fe1e757",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-06T23:48:13Z",
+        "login": "macedoPedro20"
+      },
+      "message": "docs(readme): adicionado ata reunião 6"
+    },
+    "additions": 26,
+    "deletions": 0,
+    "total_changes": 26,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "7003d712287dab6835ea64e147d164196404d296",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-06T23:44:30Z",
+        "login": "macedoPedro20"
+      },
+      "message": "docs(readme): adicionado ata reunião 5"
+    },
+    "additions": 27,
+    "deletions": 0,
+    "total_changes": 27,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "e40f777f117a8e5a9157b70472fa5cc641c89bd0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-06T23:39:03Z",
+        "login": "macedoPedro20"
+      },
+      "message": "docs(readme): renomeado e atualizado ata da reunião 4"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "7f8d01dc7b132d45f26f02582979045b9de16f11",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-06T23:37:42Z",
+        "login": "macedoPedro20"
+      },
+      "message": "docs(readme): atualizado ata da reunião 3"
+    },
+    "additions": 2,
+    "deletions": 0,
+    "total_changes": 2,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "8e0ac997b1e282a9e6618b322f6784ba81210532",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-06T23:34:38Z",
+        "login": "macedoPedro20"
+      },
+      "message": "docs(readme): atualizado ata da reunião 3"
+    },
+    "additions": 2,
+    "deletions": 4,
+    "total_changes": 6,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "52e7243799517198bcd9959be0d0fcb972a7677b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-06T23:32:49Z",
+        "login": "macedoPedro20"
+      },
+      "message": "docs(readme): atualizado e renomeado ata da reunião 3"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "8e4066144fdf857c28db8941f77b9febd66e8c3d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-06T23:31:34Z",
+        "login": "macedoPedro20"
+      },
+      "message": "docs(readme): renomeado e atualizado ata da reunião 2"
+    },
+    "additions": 3,
+    "deletions": 3,
+    "total_changes": 6,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "8111c311bf3377bc37c894108f4ef0b0f6fb4169",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-06T23:30:06Z",
+        "login": "macedoPedro20"
+      },
+      "message": "docs(readme): deletada a ata da reunião 2"
+    },
+    "additions": 0,
+    "deletions": 28,
+    "total_changes": 28,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "7260d0ae522d0fa0e2002dcbceeb7968370df5aa",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-06T23:27:23Z",
+        "login": "macedoPedro20"
+      },
+      "message": "docs(readme): renomeado a ata de reunião 4"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "771d06caa435eeddd35223eceaa7347426a3bf75",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-06T23:26:36Z",
+        "login": "macedoPedro20"
+      },
+      "message": "docs(readme): adicionado ata reunião 5"
+    },
+    "additions": 25,
+    "deletions": 0,
+    "total_changes": 25,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "2630303e059b70d11ad21edbd2dab4145972686a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-06T23:20:51Z",
+        "login": "macedoPedro20"
+      },
+      "message": "docs(readme): ata da reuniçao 4 renomeada"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "eaf94b219cc1f994bd697e8759655801847263de",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-06T23:19:56Z",
+        "login": "macedoPedro20"
+      },
+      "message": "docs(readme): adicionado ata reuniçao 4"
+    },
+    "additions": 28,
+    "deletions": 0,
+    "total_changes": 28,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "c2aa98c5d1f91d4d58c243da47821477a3f64b03",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-06T23:15:00Z",
+        "login": "macedoPedro20"
+      },
+      "message": "docs(readme): atualizado ata da reunião 3"
+    },
+    "additions": 7,
+    "deletions": 7,
+    "total_changes": 14,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "7167bec378735c64ba4aa0ccee5001ecc57ba1d4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-06T23:12:53Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Merge pull request #60 from unb-mds/main"
+    },
+    "additions": 79294,
+    "deletions": 0,
+    "total_changes": 79294,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "a343e972d4a21bff4559d22b8fbb15081fa2e8e1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-01T11:32:51Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Merge pull request #59 from unb-mds/features"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "bd86a54d9b9d62c1893d1c9ea57da780c6b8b877",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-01T11:29:38Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "Update README.md"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "32d9e5cd0811e05781d7f681651097ee28b7b4b1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-01T01:09:14Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Merge pull request #56 from unb-mds/docs/mkdocs-update"
+    },
+    "additions": 79263,
+    "deletions": 0,
+    "total_changes": 79263,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "85762c7c2eb9330cc92c96eaef4f91b1c5d52a4d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-01T01:08:27Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Merge pull request #55 from unb-mds/Documentação"
+    },
+    "additions": 31,
+    "deletions": 0,
+    "total_changes": 31,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "2691585eb687d7d709323957c5ee508df7ed06e9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T22:53:38Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Merge pull request #58 from unb-mds/features"
+    },
+    "additions": 263,
+    "deletions": 152,
+    "total_changes": 415,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "540666a17d1e67a36f7e10c43909dbe7a3899b07",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T20:52:36Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Update README.md"
+    },
+    "additions": 50,
+    "deletions": 10,
+    "total_changes": 60,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "a87c3749572d809798ea8ebb8ca57d3e0f2c1da5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T19:17:09Z",
+        "login": "LeonardoLopesJr"
+      },
+      "message": "docs: substitui página antiga pelo MkDocs"
+    },
+    "additions": 79263,
+    "deletions": 0,
+    "total_changes": 79263,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "a4db562c96825de78e718268244b915483261181",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T19:08:08Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Update README.md"
+    },
+    "additions": 1,
+    "deletions": 2,
+    "total_changes": 3,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "704b5e3805315495b381dde8b4a6821618ce59a6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T19:07:22Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Update README.md"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "929e35dde2ed24916043d6d4cb1670e6bddb6cb3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T19:05:51Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Update README.md"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "46b18712dbc39141cd3a3cbf602c40d4bdeeef3f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T19:04:58Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Update README.md"
+    },
+    "additions": 3,
+    "deletions": 5,
+    "total_changes": 8,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "a4ca0684e386ce5f2719fc3fb7a7819a870f6dfa",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T19:04:47Z",
+        "login": "LeonardoLopesJr"
+      },
+      "message": "index"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "4e0accc8f8e2daa303fa383bbadc857b0ba73d30",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T19:03:35Z",
+        "login": "LeonardoLopesJr"
+      },
+      "message": "index da documentação"
+    },
+    "additions": 31,
+    "deletions": 0,
+    "total_changes": 31,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "1389f6a2fba7d5089bea5461c95c2870677962e7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T18:58:34Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Update README.md"
+    },
+    "additions": 48,
+    "deletions": 20,
+    "total_changes": 68,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "cf7201d9dc48144540027a786b5f0d50bd951609",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-29T23:01:50Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Merge pull request #52 from unb-mds/main"
+    },
+    "additions": 21,
+    "deletions": 4,
+    "total_changes": 25,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "c335fc787b3af5a069bb1275ba688bc0a95aa60b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-29T13:41:52Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "Merge pull request #51 from unb-mds/macedoPedro20-readme"
+    },
+    "additions": 21,
+    "deletions": 4,
+    "total_changes": 25,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "af0e621094f1d5a2f98340db5ce0752c155ae48c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-29T01:29:10Z",
+        "login": "macedoPedro20"
+      },
+      "message": "docs(readme): adicionado shields e foto fabio"
+    },
+    "additions": 8,
+    "deletions": 4,
+    "total_changes": 12,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "13e98e4bccd2f400317f4a52d6cdc493bf0a55ab",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-29T01:02:11Z",
+        "login": "macedoPedro20"
+      },
+      "message": "docs(readme): parte de como rodar completa"
+    },
+    "additions": 14,
+    "deletions": 1,
+    "total_changes": 15,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "d9c2bb6c9f687051465b32879ae488bcf356eed0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-29T00:34:30Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Merge branch 'features' of https://github.com/unb-mds/2025-2-Squad-11…"
+    },
+    "additions": 28,
+    "deletions": 0,
+    "total_changes": 28,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "8c9c2671e74be1f40d3be0de585b63c54cb55220",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-29T00:34:12Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Merge branch 'PAGINA-INICIAL-2' into features"
+    },
+    "additions": 84,
+    "deletions": 102,
+    "total_changes": 186,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "c954ce31f7efdd016e70d50bc6b349f639eb4242",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-28T21:26:44Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "build(package.json): Dependencias"
+    },
+    "additions": 28,
+    "deletions": 0,
+    "total_changes": 28,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "beae6f422a06439b206698aa15e51be53a044200",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-28T20:13:18Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "style: espaçamento cards dev"
+    },
+    "additions": 17,
+    "deletions": 30,
+    "total_changes": 47,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "d52c91857225cbdd93180fcfce1b28c0c5d69ddb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-28T19:38:47Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "feat: colocando API google maps"
+    },
+    "additions": 63,
+    "deletions": 27,
+    "total_changes": 90,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "9a156e0e4bcea605bcaf6713f7ad4b8d47b81c3f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-28T19:07:18Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "style: ajuste de responsividade e dos cards"
+    },
+    "additions": 84,
+    "deletions": 89,
+    "total_changes": 173,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "ab7a1c661bc3390196e1ef701c5bb95ea61f7dda",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T23:49:20Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "Merge pull request #50 from unb-mds/features"
+    },
+    "additions": 80,
+    "deletions": 51,
+    "total_changes": 131,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "240cd81456467e6a7292a6355b9075efa47578d7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T23:47:34Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "Merge pull request #49 from unb-mds/main"
+    },
+    "additions": 21,
+    "deletions": 1,
+    "total_changes": 22,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "318e0dbd0e8c39860d82b6ab88d92e5a68510a36",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T23:37:28Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "Merge branch 'Back-end' into features"
+    },
+    "additions": 80,
+    "deletions": 51,
+    "total_changes": 131,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "03a548a3544e776fc33fbaa4262eda35b71c711d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T22:39:39Z",
+        "login": "joaoleless"
+      },
+      "message": "Merge pull request #47 from unb-mds/features"
+    },
+    "additions": 5,
+    "deletions": 2,
+    "total_changes": 7,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "59e6bd7505353137f2146cdf4d6418a8271ff63f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T22:36:02Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "Merge pull request #43 from unb-mds/macedoPedro20-patch-1"
+    },
+    "additions": 21,
+    "deletions": 1,
+    "total_changes": 22,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "50b1609bbae50de537b5c39347b7cfd4954665bc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T22:33:03Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "sla"
+    },
+    "additions": 5,
+    "deletions": 2,
+    "total_changes": 7,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "a08cec6f47784a67ebaf838040d7b7c2cf3dddd7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T22:24:52Z",
+        "login": "joaoleless"
+      },
+      "message": "Merge pull request #46 from unb-mds/features"
+    },
+    "additions": 1002,
+    "deletions": 4877,
+    "total_changes": 5879,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "5ec571380f01e86d3b5c16a9b521fe8e8aecd429",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T22:10:52Z",
+        "login": "joaoleless"
+      },
+      "message": "Create server.js"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "7bbf499b16b3f986d31a61a37e14054765721ec3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T22:10:29Z",
+        "login": "joaoleless"
+      },
+      "message": "Create app.js"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "d2a34f76754f9ed4ebf408a57e3d79c801486791",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T22:09:47Z",
+        "login": "joaoleless"
+      },
+      "message": "Delete backend/src/config/logger.ts"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "ba1e6067906510eab67cb6ee9860b8f5e50acd11",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T22:09:37Z",
+        "login": "joaoleless"
+      },
+      "message": "Delete backend/src/config/env.ts"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "bea74475b8834b387c7da39e443854ab198402eb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T22:09:24Z",
+        "login": "joaoleless"
+      },
+      "message": "Create serverConfig.js"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "884b0840c70b42251dda10b85cedaadf3f0e2a4e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T22:08:47Z",
+        "login": "joaoleless"
+      },
+      "message": "Create ragConfig.js"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "5e94a42b7ae5860ef8a416ee4cbd338b15284094",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T22:08:30Z",
+        "login": "joaoleless"
+      },
+      "message": "Create dbConfig.js"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "ce5053781d6288f84fdd7a2d16e0f440848eff75",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T22:07:11Z",
+        "login": "joaoleless"
+      },
+      "message": "Delete backend/src/utils/helpers.ts"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "6a09c14577df69e97700d1563e75f08adcd6b097",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T22:07:00Z",
+        "login": "joaoleless"
+      },
+      "message": "Create serverConfig.js"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "7b14fec3847f85b69e91a7546d24dc31212034e8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T22:06:43Z",
+        "login": "joaoleless"
+      },
+      "message": "Create ragConfig.js"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "8926d9162cb6ad6636f40b224e979f230ad361c8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T22:06:27Z",
+        "login": "joaoleless"
+      },
+      "message": "Create dbConfig.js"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "8526bc9648c0c84a917609cc1cc0fa366a0a3734",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T22:05:45Z",
+        "login": "joaoleless"
+      },
+      "message": "Rename logger.ts to loggerMiddleware.js"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "a4c58dac3ed0d4150a1b15580afe0c916a59d9e8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T22:05:21Z",
+        "login": "joaoleless"
+      },
+      "message": "Rename errorHandler.ts to errorMiddleware.js"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "176490e8923b8a7ea32c5caac2e8c4cf92e0352f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T22:04:58Z",
+        "login": "joaoleless"
+      },
+      "message": "Rename auth.ts to authMiddleware.js"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "c8ecdf9cb14f0ac0bc152a242cc2a9a51015ebab",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T22:04:01Z",
+        "login": "joaoleless"
+      },
+      "message": "Rename vectorDBClient.ts to vectorDBClient.js"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "e63d0bb013b6ebdb0a2f8aee276908d09e4062a8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T22:03:42Z",
+        "login": "joaoleless"
+      },
+      "message": "Rename llmClient.ts to llmClient.js"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "c897bb1419667cc5dd60d6f94dfbb8b6354d4717",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T22:03:30Z",
+        "login": "joaoleless"
+      },
+      "message": "Rename bigqueryClient.ts to bigqueryClient.js"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "7b2bfed1474be3fdd5fa0d021568e7eee1fcfdd3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T22:02:17Z",
+        "login": "joaoleless"
+      },
+      "message": "Delete backend/src/app.js"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "8a1534158ff86070ce9b5a8dd5524922053c122b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T22:00:09Z",
+        "login": "joaoleless"
+      },
+      "message": "Delete backend/tsconfig.json"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "b7d9c36f3a76cda2e7c62eb0d9dc6be918386911",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:59:50Z",
+        "login": "joaoleless"
+      },
+      "message": "Delete backend/.env"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "447b14175b87c6b0c6441d6284c23f63c5e8868d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:59:02Z",
+        "login": "joaoleless"
+      },
+      "message": "Rename app.ts to app.js"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "6917b634db273c2b7b503068506e14ea2d267da4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:58:15Z",
+        "login": "joaoleless"
+      },
+      "message": "Delete backend/src/services/ragService.ts"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "3de7af817cb71b9e5cb0436864c4c48b6d2305d0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:58:02Z",
+        "login": "joaoleless"
+      },
+      "message": "Delete backend/src/services/cacheService.ts"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "7c2b64c6615ecab1388be44a61287c9e710d35c8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:57:37Z",
+        "login": "joaoleless"
+      },
+      "message": "Create ragService.js"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "aa1fb80a774575f6b9b10e0b9e58e64ecbdf5535",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:57:18Z",
+        "login": "joaoleless"
+      },
+      "message": "Create reportService.js"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "295f0698ba62f95abbe0142c0a3eeefb21076304",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:57:00Z",
+        "login": "joaoleless"
+      },
+      "message": "Create userService.js"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "1e042352cc15d6f47c4762ffffde6f98c83d0a66",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:56:40Z",
+        "login": "joaoleless"
+      },
+      "message": "Delete backend/src/services/bigqueryServices.ts"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "ac909410fb634e7cea56ed52461ff793aa3d95e6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:55:59Z",
+        "login": "joaoleless"
+      },
+      "message": "Create ragRoutes.js"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "f51ea2954d4561aa7ba2431ae5c689c7f0a2cd95",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:55:41Z",
+        "login": "joaoleless"
+      },
+      "message": "Create reportRoutes.js"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "e9d808946a4d12459bccc1e9e2809ec155e11886",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:55:13Z",
+        "login": "joaoleless"
+      },
+      "message": "Create userRoutes.js"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "dd57e937f731a13de38e8042c075576e3a566b4c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:54:23Z",
+        "login": "joaoleless"
+      },
+      "message": "Create ragController.js"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "aca4ab2ee312c9f3b951af9747fdbdb61f89b538",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:54:05Z",
+        "login": "joaoleless"
+      },
+      "message": "Create reportController.js"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "618db99f43c1e8172e08f4f1ef00dfea5156c7f6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:53:44Z",
+        "login": "joaoleless"
+      },
+      "message": "Create userController.js"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "1083e7e43bc70444ff26330df72780884da7be7c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:52:40Z",
+        "login": "joaoleless"
+      },
+      "message": "Delete backend/src/api directory"
+    },
+    "additions": 0,
+    "deletions": 3,
+    "total_changes": 3,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "edca9e1f27f3ce2b7ddd415ea3f88f3f71c20ca7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:37:11Z",
+        "login": "joaoleless"
+      },
+      "message": "Delete backend/tests/api"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "2db478daa99bb880152aa4dc434e036958dfa843",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:36:18Z",
+        "login": "joaoleless"
+      },
+      "message": "Create api"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "f1f01e4f2ff7d8a9480525f133d462bdbb05749d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:31:02Z",
+        "login": "joaoleless"
+      },
+      "message": "Create .env"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "36491bba7dadcba9aba445b1468705544240dab2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:30:38Z",
+        "login": "joaoleless"
+      },
+      "message": "Create tsconfig.json"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "3cba21a9107042766b26c4f5f7a7c9885f0bc495",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:30:07Z",
+        "login": "joaoleless"
+      },
+      "message": "Create package.json"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "d066e37fb0c6a3ae248889176bcb54b522fa09ca",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:29:43Z",
+        "login": "joaoleless"
+      },
+      "message": "Create README.md"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "67b506cf068013bf242b25ec33e458dcfbb2acc6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:28:15Z",
+        "login": "joaoleless"
+      },
+      "message": "Create app.ts"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "e28ca1ed0de781daa2f674fffda7d15514c5cb35",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:27:50Z",
+        "login": "joaoleless"
+      },
+      "message": "Create logger.ts"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "0bae91837eae9f624230308b6fab2580c4289a41",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:27:36Z",
+        "login": "joaoleless"
+      },
+      "message": "Create env.ts"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "8aab4d8cf537fcb63a89b805d4a328de2fec6153",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:26:41Z",
+        "login": "joaoleless"
+      },
+      "message": "Create helpers.ts"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "846a104be42ae4b7edd3d920f78264af11a0ac78",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:26:00Z",
+        "login": "joaoleless"
+      },
+      "message": "Create logger.ts"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "1a0e36b47a396136231072fbab2d04a9cad48cbe",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:25:49Z",
+        "login": "joaoleless"
+      },
+      "message": "Create errorHandler.ts"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "781a0a2825b259a9c3c3c618947f1b03c58372cc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:24:57Z",
+        "login": "joaoleless"
+      },
+      "message": "Create auth.ts"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "b7c7f35af078d1e2adaa082d5713272873014895",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:24:10Z",
+        "login": "joaoleless"
+      },
+      "message": "Create llmClient.ts"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "a97ed17089adf7b003ae7d33d4dac7037a97b5c6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:23:48Z",
+        "login": "joaoleless"
+      },
+      "message": "Create vectorDBClient.ts"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "d7691be083b1ad1936fa03ff3bd03c0c5363468e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:23:28Z",
+        "login": "joaoleless"
+      },
+      "message": "Create bigqueryClient.ts"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "0902fba2fe355be5dd2e94bee25ba8af5c35bc62",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:22:03Z",
+        "login": "joaoleless"
+      },
+      "message": "Create cacheService.ts"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "f7ae0c6df39c71384133bbbe9fd003e9251871af",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:21:34Z",
+        "login": "joaoleless"
+      },
+      "message": "Create ragService.ts"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "699eb3d56bdf6dad4e176e3d1df03d4480bd4e97",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:19:32Z",
+        "login": "joaoleless"
+      },
+      "message": "Create bigqueryServices.ts"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "4700ff00dbdebcbf95e19b9a1a9bce5d9d14ed70",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:18:24Z",
+        "login": "joaoleless"
+      },
+      "message": "Create rag.ts"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "2dd2a6227db97123cf93843b1715743c95c660a5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:18:02Z",
+        "login": "joaoleless"
+      },
+      "message": "Create index.ts"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "37c483fff757c26edb9437d0d2b0adfdb42f723d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:15:50Z",
+        "login": "joaoleless"
+      },
+      "message": "Create bigquery.ts"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "2bd2450224271ffe84fe34e74d5581d75edaba13",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T20:42:14Z",
+        "login": "joaoleless"
+      },
+      "message": "Update Arquitetura Geral.md"
+    },
+    "additions": 1,
+    "deletions": 2,
+    "total_changes": 3,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "61455d9ba09d295808752646fe9656e5b3f17187",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T19:55:06Z",
+        "login": "joaoleless"
+      },
+      "message": "Update Arquitetura Geral.md"
+    },
+    "additions": 56,
+    "deletions": 51,
+    "total_changes": 107,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "02b09663ea723dc54dbc1ba9e3c0c48e3effdeed",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T15:48:38Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "refactor: Uptade package.json"
+    },
+    "additions": 2,
+    "deletions": 1,
+    "total_changes": 3,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "5931fac86c3ec6902947cfe8fc08f49e32e0a68d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T15:42:35Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "docs: Update Next.js"
+    },
+    "additions": 36,
+    "deletions": 110,
+    "total_changes": 146,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "b97b306e1f235be9ea42ef89c3296b387779b299",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T02:36:23Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Merge branch 'features' of https://github.com/unb-mds/2025-2-Squad-11…"
+    },
+    "additions": 1042,
+    "deletions": 12,
+    "total_changes": 1054,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "bfc64e4cd286522c3c5f6da02e8c4b40b6ef22a3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T02:36:18Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Merge branch 'PAGINA-INICIAL-2' into features"
+    },
+    "additions": 222,
+    "deletions": 128,
+    "total_changes": 350,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "152865ceb65b36d258939bbb95a63d4d461f0bbc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T02:33:15Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "style: implementação da aba dos integrantes na página inicial"
+    },
+    "additions": 222,
+    "deletions": 128,
+    "total_changes": 350,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "5e6f0a483e89b38f02b879e53c76df23bd086368",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T00:38:06Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "chore: aplicando font-awesome"
+    },
+    "additions": 51,
+    "deletions": 0,
+    "total_changes": 51,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "71255acc3e42306018620610d5f50ac4ff9413d3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T00:36:46Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Merge pull request #42 from unb-mds/main"
+    },
+    "additions": 101,
+    "deletions": 0,
+    "total_changes": 101,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "6cc6a7e892c7795f51bf651527eaa89b6ca07580",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T00:33:01Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "fix: arrumando bug gitflow"
+    },
+    "additions": 900,
+    "deletions": 22,
+    "total_changes": 922,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "104440e2479dfcbbaef069af826265700b69c991",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T00:31:10Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Merge branch 'PAGINA-INICIAL-2' into features"
+    },
+    "additions": 271,
+    "deletions": 0,
+    "total_changes": 271,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "f7f94090f3705adeb5ffa76cb404f1c85d345a53",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T00:28:06Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "style: foi implementado o Como funciona, Caminhos e Sobre nós na pagi…"
+    },
+    "additions": 271,
+    "deletions": 0,
+    "total_changes": 271,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "cb294e4cea412e6b8d755c129aa60545ad99b33c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T00:23:46Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "fix: arrumando bug no gitflow"
+    },
+    "additions": 288,
+    "deletions": 5384,
+    "total_changes": 5672,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "11241f42b3c9854c4becce15e011c93720892d1c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T00:09:12Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Merge pull request #41 from unb-mds/features"
+    },
+    "additions": 332,
+    "deletions": 205,
+    "total_changes": 537,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "e1c7e74bc57202e01dd649c4c3a6506a2b7cd4d3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T23:46:27Z",
+        "login": "macedoPedro20"
+      },
+      "message": "docs(readme): adicionado shields"
+    },
+    "additions": 2,
+    "deletions": 0,
+    "total_changes": 2,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "a00c94393e8cc7dc188f25aa86622e7c18cd600b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T23:41:46Z",
+        "login": "macedoPedro20"
+      },
+      "message": "docs(readme): adicionado shields"
+    },
+    "additions": 3,
+    "deletions": 0,
+    "total_changes": 3,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "030b3d7931ad002c71d768d3e2623ab1ebf1b07a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T23:29:31Z",
+        "login": "macedoPedro20"
+      },
+      "message": "docs(readme):adicionado a parte como rodar e equipe"
+    },
+    "additions": 16,
+    "deletions": 1,
+    "total_changes": 17,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "14f6e7d461e35fe3091fda4472a0c3099b9991dc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T18:49:54Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Merge branch 'Página-Inicial' into features"
+    },
+    "additions": 20,
+    "deletions": 4,
+    "total_changes": 24,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "bc8e30bbedbe0541134e7b9189776a5f509a8368",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T18:43:40Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Merge remote-tracking branch 'refs/remotes/origin/features' into feat…"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "aad985001067912eaea8f26d74c616bb8e87ba0e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T18:42:26Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "style: Implementação da parte superior da página inicial, e o favicon…"
+    },
+    "additions": 37,
+    "deletions": 21,
+    "total_changes": 58,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "21ab29d28984cd249c77b922bb5c021cfcfddbdd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T18:25:58Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Minha parte da página inicial está pronta"
+    },
+    "additions": 10,
+    "deletions": 23,
+    "total_changes": 33,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "5a3d1687f413a6fe6962b83b6fa9f344138185bd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T18:21:11Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "deu ruim arrumar"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "1916567ae66884a5357b5de9f786bda5a68649a8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T18:17:29Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "testando commit"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "b7ae2367b91a7345439d6538d5c66cddd75203f6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T18:16:40Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "feat: adicionar funcionalidade xyz"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "8dd70333d159f8ade70a9dacbadc90bc80a36ddc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T18:01:59Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Merge branch 'Página-Inicial' into features"
+    },
+    "additions": 92,
+    "deletions": 31,
+    "total_changes": 123,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "cc2aba68abc18067a118e22bc39e6786b874151c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T18:00:48Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Update Página inicial"
+    },
+    "additions": 92,
+    "deletions": 31,
+    "total_changes": 123,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "ba9abacd3bdfa43b4c1a53864e03f95adca213c1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T17:36:27Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "Padrão commits"
+    },
+    "additions": 39,
+    "deletions": 0,
+    "total_changes": 39,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "987dd98b5df54cfa358ca6510fd49f83ea8b2cb8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T17:32:45Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "padrao de commits"
+    },
+    "additions": 39,
+    "deletions": 0,
+    "total_changes": 39,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "82e7f49702f6743f9bd24cded926f6125cd4f361",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T16:52:30Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Merge pull request #40 from unb-mds/front-layout"
+    },
+    "additions": 268,
+    "deletions": 205,
+    "total_changes": 473,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "805b950c7686aa00a63117064ef6c38ede699b85",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T16:42:17Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "layout completo"
+    },
+    "additions": 61,
+    "deletions": 73,
+    "total_changes": 134,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "d3a70d9801849d594731554c230cfe1d552d6672",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T22:57:21Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Merge pull request #38 from unb-mds/macedoPedro20-patch-2"
+    },
+    "additions": 65,
+    "deletions": 0,
+    "total_changes": 65,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "0e340fe484acfdb3ed2580974dbf5d42e9699d66",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T22:48:09Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Criado o arquivo CONTRIBUTING.md"
+    },
+    "additions": 65,
+    "deletions": 0,
+    "total_changes": 65,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "a9b1d6c523acbbafbe750e5d0762a0f6d9003193",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T22:34:35Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "Merge pull request #37 from unb-mds/macedoPedro20-patch-1"
+    },
+    "additions": 36,
+    "deletions": 0,
+    "total_changes": 36,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "77fda9d5d1e9392f062e44169bdf505896bd7c3b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T22:26:16Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Criado pull_request_template.md"
+    },
+    "additions": 36,
+    "deletions": 0,
+    "total_changes": 36,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "e5ae0a32673c408189a8a223f84ffc24f2860b49",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T21:22:45Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Incial Layout"
+    },
+    "additions": 279,
+    "deletions": 204,
+    "total_changes": 483,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "3017fba0b92f9a3b0e0db53b853d6e9034a0c242",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T20:09:48Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Update README.md"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "c16302e823c040b3d05b2715451e08474c6e97bf",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T20:08:48Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "Update README.md"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "665dcd29fd98c511bf80ba4ca1a6aac784adfe97",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T20:07:17Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "Merge pull request #35 from unb-mds/DaviUrsulino-patch-1"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "98293bf1d5c1c2f568a81d31a7eb026dc2f9b6e8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T20:05:52Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Update README.md"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "3aefa5d21e6d90daf7ee84669583aa25c8b14084",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T19:58:45Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "sla"
+    },
+    "additions": 7,
+    "deletions": 7,
+    "total_changes": 14,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "4d9c9b54bf4150ffe32c509138da9571a4de7288",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T19:08:46Z",
+        "login": "LeonardoLopesJr"
+      },
+      "message": "Fix: Adiciona basePath"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "92f94d15cdf1cc11ab548e938aa9649fcc827c33",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T18:57:35Z",
+        "login": "LeonardoLopesJr"
+      },
+      "message": "Remove funcionalidade da pagina inicial"
+    },
+    "additions": 3,
+    "deletions": 5,
+    "total_changes": 8,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "8635952f7e2c739e863a49591224dc708d999586",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T18:37:26Z",
+        "login": "LeonardoLopesJr"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2025-2-InfoSchool"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "1e65edb90361b9c2c45d9121fdb18569d0e28dd5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T18:33:56Z",
+        "login": "LeonardoLopesJr"
+      },
+      "message": "Configura Next.js para exportacao estatica"
+    },
+    "additions": 12,
+    "deletions": 3,
+    "total_changes": 15,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "9f1ea344419936bad67f56707dfba34f727d1cd9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T18:07:06Z",
+        "login": "LeonardoLopesJr"
+      },
+      "message": "Feat: Configura Next.js para exportacao estatica"
+    },
+    "additions": 6,
+    "deletions": 3,
+    "total_changes": 9,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "6526ab1cfb339869a58ab5346ee6fd53b301dc79",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T17:21:37Z",
+        "login": "LeonardoLopesJr"
+      },
+      "message": "Fix: Remove exports de componentes inexistentes na pasta /ui"
+    },
+    "additions": 0,
+    "deletions": 3,
+    "total_changes": 3,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "0c8c84ffed41ab35c3c027c6dc26faf47f46c972",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T17:15:56Z",
+        "login": "LeonardoLopesJr"
+      },
+      "message": "Fix: Remove exports de componentes inexistentes para corrigir o build"
+    },
+    "additions": 0,
+    "deletions": 4,
+    "total_changes": 4,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "a4c6a6f1985063b0cce9d20d4467a4ebc03be48e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T17:05:33Z",
+        "login": "LeonardoLopesJr"
+      },
+      "message": "Adiciona workflow de deploy para Next.js"
+    },
+    "additions": 53,
+    "deletions": 0,
+    "total_changes": 53,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "0d20f163914fec045f3c52706c1d37134ec8ba12",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T16:15:54Z",
+        "login": "LeonardoLopesJr"
+      },
+      "message": "Forçando nova publicação"
+    },
+    "additions": 2,
+    "deletions": 11,
+    "total_changes": 13,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "3db5d98a22e4d898b0da2a695cb83924e7e24564",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T16:00:29Z",
+        "login": "LeonardoLopesJr"
+      },
+      "message": "Adiciona estilo ao site"
+    },
+    "additions": 83,
+    "deletions": 18,
+    "total_changes": 101,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "44587151447972e19ce5bf7008a161e90377702f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T15:54:29Z",
+        "login": "LeonardoLopesJr"
+      },
+      "message": "Estrutura a página inicial com novo conteúdo"
+    },
+    "additions": 61,
+    "deletions": 96,
+    "total_changes": 157,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "86d1a7671b291d215c5ee83774c147507d3dd651",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-24T01:23:56Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Criado o arquivo SECURITY.md"
+    },
+    "additions": 26,
+    "deletions": 0,
+    "total_changes": 26,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "daaf66b15d889c9deaa7d172a26cb2e6da619c69",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-24T01:19:36Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Criado o arquivo CODE_OF_CONDUCT.md"
+    },
+    "additions": 85,
+    "deletions": 0,
+    "total_changes": 85,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "d8077a4f812fa83f335a017a5c94a2f3bb89e8d0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-23T23:49:27Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Atualizado Bug e Feature templates"
+    },
+    "additions": 69,
+    "deletions": 0,
+    "total_changes": 69,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "6d03e91990c9818294710bdacf27cb9e394b4ab9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-23T17:54:50Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Estrutura do front-end criada pronto pra codar, ja coloquei o next.js"
+    },
+    "additions": 6433,
+    "deletions": 0,
+    "total_changes": 6433,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "e6a3b202758df78daae61ef575db2320b171bbe8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-23T00:06:23Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Update Next.js"
+    },
+    "additions": 51,
+    "deletions": 12,
+    "total_changes": 63,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "68c9796e565c440593f272e809d95b757a0c9771",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-22T01:46:16Z",
+        "login": "joaoleless"
+      },
+      "message": "Update Arquitetura Geral.md"
+    },
+    "additions": 31,
+    "deletions": 4,
+    "total_changes": 35,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "23343ee99b471eb23f3c2ce1e30f4c07f2f6a900",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-22T01:08:22Z",
+        "login": "joaoleless"
+      },
+      "message": "Create Arquitetura Geral.md"
+    },
+    "additions": 74,
+    "deletions": 0,
+    "total_changes": 74,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "072802834aaa17822fb29e703f29874ffbe459d4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-21T23:33:49Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Alta fidelidade figma"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "476411c68f0297b8721c125bf9fce467c537663f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-21T21:58:06Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Delete CNAME"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "5952919d592abf40c27fba06a23ce3e3159ae18f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-21T21:45:00Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Update CNAME"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "1054570e61f83f21fca9ed807f670da586152c38",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-21T21:40:26Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Create CNAME"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "110ef8f5c2064ff1513762396ef5741e2b9d7f7d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-21T18:54:51Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Adicionado a ata da 3 reunião"
+    },
+    "additions": 27,
+    "deletions": 0,
+    "total_changes": 27,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "bfa58003381ae26813cc0c2c8228d0d06dfb348f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-18T21:34:11Z",
+        "login": "macedoPedro20"
+      },
+      "message": "retirado templates erradas"
+    },
+    "additions": 0,
+    "deletions": 40,
+    "total_changes": 40,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "d168114817e96e1a515a1dfb84e3cea1d3e6bc25",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-18T21:32:52Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Update issue templates"
+    },
+    "additions": 22,
+    "deletions": 0,
+    "total_changes": 22,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "052cd1e61deedda2c8124be7c57f7eec22cfe176",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-18T21:28:16Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Create task_template"
+    },
+    "additions": 13,
+    "deletions": 0,
+    "total_changes": 13,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "6423ea4741776a3d78ec398f7fa169773a536400",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-17T23:37:21Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Criação do markdown da alta fidelidade do figma"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "cf23bafa452a64e087800658a1e49d62ddddedf0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-17T23:35:09Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Update Next.js: adaptação da arquitetura modular com o Next.js"
+    },
+    "additions": 57,
+    "deletions": 1,
+    "total_changes": 58,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "622610beb0f3951e9e35e0b6f49f79168c340ff4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-17T10:51:58Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Update link do figma"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "c355ec84c05923a89a6c51d10a720435655c2a4f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-17T13:14:15Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Update custom.md"
+    },
+    "additions": 24,
+    "deletions": 7,
+    "total_changes": 31,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "11768ae61c19eb8ece273b66674f680d432380e4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-17T13:11:42Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Report templates"
+    },
+    "additions": 8,
+    "deletions": 48,
+    "total_changes": 56,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "803ee36e8a3dc84cdf72160ee4c3caa8b49ca774",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-15T23:53:35Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Adiciona pasta figma com arquivos do projeto"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "54e2907a1ea306428dd300f2a0c2c300c08dfb43",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-15T02:53:58Z",
+        "login": "joaoleless"
+      },
+      "message": "Update RAG (Retrieval-augmented generation) e API's.md"
+    },
+    "additions": 0,
+    "deletions": 2,
+    "total_changes": 2,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "2f98e1f81234c85a6fd9c7b7f2230dff06ea31fe",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-15T02:52:40Z",
+        "login": "joaoleless"
+      },
+      "message": "Update RAG (Retrieval-augmented generation) e API's.md"
+    },
+    "additions": 66,
+    "deletions": 0,
+    "total_changes": 66,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "d3630dd0f9c092d747ee0da5b4ddf0d774dc3b15",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-15T02:48:12Z",
+        "login": "joaoleless"
+      },
+      "message": "Update RAG (Retrieval-augmented generation) e API's.md"
+    },
+    "additions": 96,
+    "deletions": 20,
+    "total_changes": 116,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "bbac2f5918f779f841c87a0bfd301bf29269c704",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-15T02:37:35Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Update Requisitos.md"
+    },
+    "additions": 54,
+    "deletions": 0,
+    "total_changes": 54,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "f5e8a6e42824f64049c3113ecb107cc8741fbde4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-15T01:54:25Z",
+        "login": "joaoleless"
+      },
+      "message": "Update RAG (Retrieval-augmented generation) e API's.md"
+    },
+    "additions": 11,
+    "deletions": 11,
+    "total_changes": 22,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "32402611db493dc95982253d03ac3b36b8118fa1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-15T01:52:34Z",
+        "login": "joaoleless"
+      },
+      "message": "Rename RAG (Retrieval-augmented generation) e API's to RAG (Retrieval…"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "3869da75315d3accb3be1b2b642b43be8b4792ab",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-15T01:51:52Z",
+        "login": "joaoleless"
+      },
+      "message": "Update RAG (Retrieval-augmented generation) e API's"
+    },
+    "additions": 115,
+    "deletions": 0,
+    "total_changes": 115,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "397a55134ab19c6356028f6947c8680302d20699",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-15T01:47:13Z",
+        "login": "joaoleless"
+      },
+      "message": "Create RAG (Retrieval-augmented generation) e API's"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "b5f9ccce3f3dbbec5268217d1001faa70ba44645",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-15T01:46:35Z",
+        "login": "joaoleless"
+      },
+      "message": "Delete docs/RAG (Retrieval-augmented generation) e API's"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "6d21a047cd5b4b0f71e13bd159b6c86364337f76",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-15T01:46:08Z",
+        "login": "joaoleless"
+      },
+      "message": "Create RAG (Retrieval-augmented generation) e API's"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "5abcc29f9f27552356d6af4ecdbbdc3e27761eb9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-15T01:45:41Z",
+        "login": "joaoleless"
+      },
+      "message": "Delete RAG (Retrieval-augmented generation) e API's"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "fe93f447cfe9db4b3d2a20b3909119fd644f9319",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-15T01:44:21Z",
+        "login": "joaoleless"
+      },
+      "message": "Create RAG (Retrieval-augmented generation) e API's"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "2e6d3e2bd48e20496b86233f80a49e633e7f3e40",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-15T01:43:46Z",
+        "login": "joaoleless"
+      },
+      "message": "Delete RAG (Retrieval-augmented generation) e API's"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "2ba3859075d7fe70a5dd7a7ec99cfa255c00ef6b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-15T01:42:16Z",
+        "login": "joaoleless"
+      },
+      "message": "Create RAG (Retrieval-augmented generation) e API's"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "5328063ba1fde048e4cf6bbc39c69b9a097cff90",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-15T01:40:33Z",
+        "login": "joaoleless"
+      },
+      "message": "Delete docs/Arquitetura back-end"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "508d7362070e2bb6eaa0fac81123384db5ff5789",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-15T01:37:29Z",
+        "login": "joaoleless"
+      },
+      "message": "Create Arquitetura back-end"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "26602bd96e0b830ce5d0b5da7e426dd195f85677",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-14T21:38:33Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Guia de instalação Next"
+    },
+    "additions": 78,
+    "deletions": 1,
+    "total_changes": 79,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "9c4c29e62fa09ff388877ad1f299ad22346b7023",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-14T20:40:07Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "Create Docker.md"
+    },
+    "additions": 56,
+    "deletions": 0,
+    "total_changes": 56,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "124cfc50b1265283a99532b0e8004848e003ffbb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-12T21:11:58Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Adicionado o figma do scrum do projeto"
+    },
+    "additions": 2,
+    "deletions": 0,
+    "total_changes": 2,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "3e33bcd7c6af0ea32d1bf8099e1cf9666a80b24e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-12T20:59:08Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Adicionado o README"
+    },
+    "additions": 34,
+    "deletions": 1,
+    "total_changes": 35,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "faeb6138188bc94de84ced396c338a1027792738",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-12T20:02:32Z",
+        "login": "macedoPedro20"
+      },
+      "message": "adicionado a ata da reunião 2"
+    },
+    "additions": 29,
+    "deletions": 1,
+    "total_changes": 30,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "7b918b6d81347255806e63e2922a81dd27ff3dda",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-11T21:44:17Z",
+        "login": "macedoPedro20"
+      },
+      "message": "adicionado o estudo sobre html e css"
+    },
+    "additions": 166,
+    "deletions": 0,
+    "total_changes": 166,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "22d488fff837ef144fe23c2c7f918817a2b54f74",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-10T13:34:36Z",
+        "login": "LeonardoLopesJr"
+      },
+      "message": "Melhoria na referência"
+    },
+    "additions": 11,
+    "deletions": 7,
+    "total_changes": 18,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "339446ef01dc52199a7461765acf92da5c17ec5d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-10T11:00:17Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Update Next.js"
+    },
+    "additions": 24,
+    "deletions": 0,
+    "total_changes": 24,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "f97e538cea56fb5978e5c2b4b47b21e0b4da8f05",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-09T22:20:39Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Update Técnicas de Backlog.md"
+    },
+    "additions": 135,
+    "deletions": 0,
+    "total_changes": 135,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "c147436f8b93bddc242626c921a4a32333ac3a85",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-08T23:56:02Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Create Requisitos.md"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "f8c9bf2f1f335e1e95c59858debce1e54a8a0c35",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-08T23:52:06Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Create Backlog.md"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "589ab90813c8a59284c445607d798990dfe5f44d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-08T23:41:59Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "Create next.md"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "1083ce9667ea5d3906b1e7af5d146f4a0c842dcc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-08T03:06:22Z",
+        "login": "joaoleless"
+      },
+      "message": "Update Nodejs.md"
+    },
+    "additions": 2,
+    "deletions": 3,
+    "total_changes": 5,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "f1b70b90c427d7ced043cdca8a3e42bbf9d56369",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-08T03:05:39Z",
+        "login": "joaoleless"
+      },
+      "message": "Update Nodejs.md"
+    },
+    "additions": 2,
+    "deletions": 1,
+    "total_changes": 3,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "6990f7917155af7a1142a1ae221b3d79b674c253",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-08T03:03:14Z",
+        "login": "joaoleless"
+      },
+      "message": "Create Nodejs.md"
+    },
+    "additions": 93,
+    "deletions": 0,
+    "total_changes": 93,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "6c2442a0d6f417aac37a9c8a02cef5485f2473a6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-07T16:18:04Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "finalizando comunicação web"
+    },
+    "additions": 51,
+    "deletions": 0,
+    "total_changes": 51,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "195210f5f1e427e92a505d2f61f4f27a55b10d69",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-07T17:29:17Z",
+        "login": "macedoPedro20"
+      },
+      "message": "adcionado os estudos sobre Scrum Master e JavaScript"
+    },
+    "additions": 236,
+    "deletions": 25,
+    "total_changes": 261,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "99f3471bb80df4929d4ca16247949b7be4c6fee3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-07T03:05:18Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Update Metodologias agéis.md"
+    },
+    "additions": 110,
+    "deletions": 0,
+    "total_changes": 110,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "7e21f378a2033ec4dbb7d489497c3f878688c0e0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-07T03:02:53Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Documentação das issues do Product Owner"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "f1628afcb048510dec85414378064fa2305e8a49",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-07T02:22:07Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Delete docs/Product Owner"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "765d349585670e852b51c73da53f375da9a0ff95",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-07T02:21:52Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Create Product Owner"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "f15c49c4e0b32a6159f11b822fb58faf79977012",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-07T02:01:26Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "docs: atualiza documentação front-end"
+    },
+    "additions": 790,
+    "deletions": 0,
+    "total_changes": 790,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "240c74ebb7086ce8a3c13d604d0d36f851b225b3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-07T01:35:52Z",
+        "login": "DaviUrsulino"
+      },
+      "message": "docs:documentação da arquitetura front-end"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "0c66c5eadcf364e2e68ee46f84d62c2296738516",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-06T20:51:29Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2025-2-Squad-11"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "b18465536cd5dc700f47ada86e41cad65345ef65",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-06T20:48:51Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "Primeira versão docs comunicação"
+    },
+    "additions": 47,
+    "deletions": 0,
+    "total_changes": 47,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "bf2d58520a26138755a636de143f6791e967de68",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-06T19:21:07Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Delete docs/Metodologias Ágeis"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "938a901f720ece56328246c98a0e8a4befb03b72",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-06T19:20:53Z",
+        "login": "PedroGomes-phgr"
+      },
+      "message": "Create Metodologias Ágeis"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "591b724ccf70c7a9da974c0cb1e528ba6c35ed04",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-06T16:23:57Z",
+        "login": "Fabiovieira05"
+      },
+      "message": "colocando documentações na docs"
+    },
+    "additions": 261,
+    "deletions": 0,
+    "total_changes": 261,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "b92af4aee1f61d3fd4a97fd768229c9793ea5d36",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-05T20:23:04Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Retirado o template da issue doo lugar errado"
+    },
+    "additions": 0,
+    "deletions": 23,
+    "total_changes": 23,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "6de2488f785e4ae1898aa429225d22370772b407",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-05T20:20:50Z",
+        "login": "macedoPedro20"
+      },
+      "message": "foi criado a pasta docs e também a ata da primeira reunião"
+    },
+    "additions": 53,
+    "deletions": 0,
+    "total_changes": 53,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "b44893e4efec39340616f7c267c339f8636311e7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-08-28T21:15:32Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Atualizada a template da issue"
+    },
+    "additions": 28,
+    "deletions": 0,
+    "total_changes": 28,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "ab2189978f34bbae178c047d0bb4f4695620c4c5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-08-28T00:21:22Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Atualizado o template da issue"
+    },
+    "additions": 20,
+    "deletions": 8,
+    "total_changes": 28,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "d77e2a305243b65bff8e04f5cc3c679e6c082a04",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-08-28T00:02:50Z",
+        "login": "macedoPedro20"
+      },
+      "message": "Update issue templates"
+    },
+    "additions": 10,
+    "deletions": 0,
+    "total_changes": 10,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "279dbf1712f451a35b038c5df6a171e5596c2373",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-08-23T15:04:12Z",
+        "login": "macedoPedro20"
+      },
+      "message": "adicionado a template de ata de reunião ao repositório"
+    },
+    "additions": 25,
+    "deletions": 0,
+    "total_changes": 25,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "0ec8bf08dca2931f53c600c4238c7371c11e2fa7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-08-23T14:43:06Z",
+        "login": "macedoPedro20"
+      },
+      "message": "adicionado o template da issue ao repositorio"
+    },
+    "additions": 23,
+    "deletions": 0,
+    "total_changes": 23,
+    "repo_name": "2025-2-InfoSchool"
+  },
+  {
+    "sha": "7b890a85a185a8425ac65ae8cde854ba292c6643",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-08-22T12:51:40Z",
+        "login": "RochaCarla"
+      },
+      "message": "Initial commit"
+    },
+    "additions": 22,
+    "deletions": 0,
+    "total_changes": 22,
+    "repo_name": "2025-2-InfoSchool"
+  }
+]

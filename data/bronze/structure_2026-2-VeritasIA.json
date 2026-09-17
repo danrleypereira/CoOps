@@ -1,0 +1,2126 @@
+{
+  "owner": "unb-mds",
+  "repository": "2026-2-VeritasIA",
+  "branch": "main",
+  "sha": "4f68310072f6a71c9757e5dc9f680542a9545984",
+  "tree": [
+    {
+      "name": ".github",
+      "path": ".github",
+      "type": "directory",
+      "sha": "b8ea24a4216f5f6209f5ba81711a88ba56232004",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "workflows",
+      "path": ".github/workflows",
+      "type": "directory",
+      "sha": "0ba212e17c355be488b63ebc0f2601aeadcc774b",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "execute-scrapy.yml",
+      "path": ".github/workflows/execute-scrapy.yml",
+      "type": "file",
+      "sha": "cf8728c2e55d84451a22d42a642cfcdd32c73066",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 1293,
+      "is_binary": false
+    },
+    {
+      "name": "keep-alive.yml",
+      "path": ".github/workflows/keep-alive.yml",
+      "type": "file",
+      "sha": "6749de63ebec768d8ad80f1b7a1e7f9dd45615cc",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 299,
+      "is_binary": false
+    },
+    {
+      "name": "langchaim.yml",
+      "path": ".github/workflows/langchaim.yml",
+      "type": "file",
+      "sha": "9979197b1894d8bbc0c71f6a02c647fc59111c77",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 1867,
+      "is_binary": false
+    },
+    {
+      "name": "static.yml",
+      "path": ".github/workflows/static.yml",
+      "type": "file",
+      "sha": "dc74fe55509db0da6d8b95ff8649b587d1baab4e",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 2932,
+      "is_binary": false
+    },
+    {
+      "name": ".gitignore",
+      "path": ".gitignore",
+      "type": "file",
+      "sha": "6c9bafd9864e73239816391d33495ca6920ee258",
+      "mode": "100644",
+      "extension": ".gitignore",
+      "size": 85,
+      "is_binary": false
+    },
+    {
+      "name": "Frontend",
+      "path": "Frontend",
+      "type": "directory",
+      "sha": "6e81e142605af8a4c16ef879ee1f005c9a5e1d2d",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "package-lock.json",
+      "path": "Frontend/package-lock.json",
+      "type": "file",
+      "sha": "7a6a016b63ce23941c8302150f05c34548fc85bc",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 216958,
+      "is_binary": false
+    },
+    {
+      "name": "package.json",
+      "path": "Frontend/package.json",
+      "type": "file",
+      "sha": "2177b1c6063414ff8e8b303e08ddacc281552abd",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 1059,
+      "is_binary": false
+    },
+    {
+      "name": "postcss.config.js",
+      "path": "Frontend/postcss.config.js",
+      "type": "file",
+      "sha": "e99ebc2c0e00cc37de4cefee2bf2a332abb73d8d",
+      "mode": "100644",
+      "extension": ".js",
+      "size": 79,
+      "is_binary": false
+    },
+    {
+      "name": "public",
+      "path": "Frontend/public",
+      "type": "directory",
+      "sha": "f7874bfb9062b0b8f9410422a4829696b453ef5f",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "images",
+      "path": "Frontend/public/images",
+      "type": "directory",
+      "sha": "dfa64a62b2d2e8e7120a22858947509dd5400ed8",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "noticia-placeholder.jpg",
+      "path": "Frontend/public/images/noticia-placeholder.jpg",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".jpg",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "src",
+      "path": "Frontend/src",
+      "type": "directory",
+      "sha": "76e9ad6459fa79d7ba7d30f05e971b91edc23e88",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "App.css",
+      "path": "Frontend/src/App.css",
+      "type": "file",
+      "sha": "2a55dac04a3ea1825caa7a05bba53572a033f6f2",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 14918,
+      "is_binary": false
+    },
+    {
+      "name": "App.jsx",
+      "path": "Frontend/src/App.jsx",
+      "type": "file",
+      "sha": "8d7eeb2917555408330e1b06e27a5517bbda8acb",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 1361,
+      "is_binary": false
+    },
+    {
+      "name": "assets",
+      "path": "Frontend/src/assets",
+      "type": "directory",
+      "sha": "9bc5c39154b9261ab0795fc321b93e12d56dcbf0",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "logo.png",
+      "path": "Frontend/src/assets/logo.png",
+      "type": "file",
+      "sha": "124cd3ab867ee1783f65829aa0f7ad2054157f54",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 6216,
+      "is_binary": false
+    },
+    {
+      "name": "logo2.png",
+      "path": "Frontend/src/assets/logo2.png",
+      "type": "file",
+      "sha": "06def8a59402ba65619093618fbcc1299093bcd3",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 1839412,
+      "is_binary": false
+    },
+    {
+      "name": "logo_white.png",
+      "path": "Frontend/src/assets/logo_white.png",
+      "type": "file",
+      "sha": "deffd3b9d34a2b3c1e7e337a1ec0b036300ee004",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 5677,
+      "is_binary": false
+    },
+    {
+      "name": "react.svg",
+      "path": "Frontend/src/assets/react.svg",
+      "type": "file",
+      "sha": "6c87de9bb3358469122cc991d5cf578927246184",
+      "mode": "100644",
+      "extension": ".svg",
+      "size": 4126,
+      "is_binary": false
+    },
+    {
+      "name": "components",
+      "path": "Frontend/src/components",
+      "type": "directory",
+      "sha": "3f958dc108ae60832fee6283f85bc0a1d45644c2",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "AuthPrompt.jsx",
+      "path": "Frontend/src/components/AuthPrompt.jsx",
+      "type": "file",
+      "sha": "bff8aab6cb26d9e52ad8b34b1dbc8632d1b86259",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 2090,
+      "is_binary": false
+    },
+    {
+      "name": "BrazilMap.jsx",
+      "path": "Frontend/src/components/BrazilMap.jsx",
+      "type": "file",
+      "sha": "decfbbc82a13242e89022097d0b348baf2b9423b",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 4027,
+      "is_binary": false
+    },
+    {
+      "name": "Calendario.jsx",
+      "path": "Frontend/src/components/Calendario.jsx",
+      "type": "file",
+      "sha": "294624bf4b3c1abab7a2726eeb445fdde59e0e28",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 1060,
+      "is_binary": false
+    },
+    {
+      "name": "HeatmapLayer.jsx",
+      "path": "Frontend/src/components/HeatmapLayer.jsx",
+      "type": "file",
+      "sha": "8bb8aab0a6e3dc53dfb46777043053d23a4fd112",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 2685,
+      "is_binary": false
+    },
+    {
+      "name": "LatestNews.jsx",
+      "path": "Frontend/src/components/LatestNews.jsx",
+      "type": "file",
+      "sha": "3394b9a7a7a716aff5e045b7a02f4965df128dc9",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 1751,
+      "is_binary": false
+    },
+    {
+      "name": "LeafletMap.jsx",
+      "path": "Frontend/src/components/LeafletMap.jsx",
+      "type": "file",
+      "sha": "9d72af6b199020fab16610b9a9597dd85e31339c",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 6864,
+      "is_binary": false
+    },
+    {
+      "name": "NewsChart.jsx",
+      "path": "Frontend/src/components/NewsChart.jsx",
+      "type": "file",
+      "sha": "4dd2f42e621948dfaf5ee9cc950b579c53f45921",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 2383,
+      "is_binary": false
+    },
+    {
+      "name": "PageHeader.jsx",
+      "path": "Frontend/src/components/PageHeader.jsx",
+      "type": "file",
+      "sha": "a4abc1a0d85813e3bf8cca515e52073214b55063",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 955,
+      "is_binary": false
+    },
+    {
+      "name": "RegionChart.jsx",
+      "path": "Frontend/src/components/RegionChart.jsx",
+      "type": "file",
+      "sha": "1d41f5c3dbc2bdd27d5126140062bacbf6705c87",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 2133,
+      "is_binary": false
+    },
+    {
+      "name": "Sidebar.jsx",
+      "path": "Frontend/src/components/Sidebar.jsx",
+      "type": "file",
+      "sha": "a26c1691436a54e4211d5f173dcbf709ecc096c3",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 1186,
+      "is_binary": false
+    },
+    {
+      "name": "StatCard.jsx",
+      "path": "Frontend/src/components/StatCard.jsx",
+      "type": "file",
+      "sha": "3a81c06631308a865133c82aec66c3c5bfc41faa",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 869,
+      "is_binary": false
+    },
+    {
+      "name": "TopVehicles.jsx",
+      "path": "Frontend/src/components/TopVehicles.jsx",
+      "type": "file",
+      "sha": "97e77d513be3d75c21cc9167ab542cb97f1d7556",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 2262,
+      "is_binary": false
+    },
+    {
+      "name": "data",
+      "path": "Frontend/src/data",
+      "type": "directory",
+      "sha": "00b6aa634691e389fd19324a0aeebf00e1d104a9",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "noticias.js",
+      "path": "Frontend/src/data/noticias.js",
+      "type": "file",
+      "sha": "aa63215574dbd31ab49df630371d9c12d8e0276a",
+      "mode": "100644",
+      "extension": ".js",
+      "size": 3007,
+      "is_binary": false
+    },
+    {
+      "name": "index.css",
+      "path": "Frontend/src/index.css",
+      "type": "file",
+      "sha": "c7de518160f416c92bdc7a0ac62cc4ac43b2699d",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 1160,
+      "is_binary": false
+    },
+    {
+      "name": "main.jsx",
+      "path": "Frontend/src/main.jsx",
+      "type": "file",
+      "sha": "b4854aaf4380c5cf5c0ba26b81e104b749c07020",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 797,
+      "is_binary": false
+    },
+    {
+      "name": "pages",
+      "path": "Frontend/src/pages",
+      "type": "directory",
+      "sha": "0c27f4b54fc7db4d5e3681ff12a1c2c305f9a704",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "Dashboard.jsx",
+      "path": "Frontend/src/pages/Dashboard.jsx",
+      "type": "file",
+      "sha": "b2ce09fa0f092b6588e45f94e592abc8a9bbafa1",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 5389,
+      "is_binary": false
+    },
+    {
+      "name": "DetalhesNoticia.css",
+      "path": "Frontend/src/pages/DetalhesNoticia.css",
+      "type": "file",
+      "sha": "7c4982fd4fb0cf1ef87d7e6ed79295cc3af8975e",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 4066,
+      "is_binary": false
+    },
+    {
+      "name": "DetalhesNoticia.jsx",
+      "path": "Frontend/src/pages/DetalhesNoticia.jsx",
+      "type": "file",
+      "sha": "bf2c1f89b4444aa835fdcc7ff01480fb5dc4c89f",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 7756,
+      "is_binary": false
+    },
+    {
+      "name": "Home.jsx",
+      "path": "Frontend/src/pages/Home.jsx",
+      "type": "file",
+      "sha": "a98e8d42c81fe17b8b7a11c5ca63ae93a59019cb",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 66,
+      "is_binary": false
+    },
+    {
+      "name": "Login.jsx",
+      "path": "Frontend/src/pages/Login.jsx",
+      "type": "file",
+      "sha": "bb089e42ac0bbc8803c25dca4cf2fbff58db746a",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 3436,
+      "is_binary": false
+    },
+    {
+      "name": "Mapa.css",
+      "path": "Frontend/src/pages/Mapa.css",
+      "type": "file",
+      "sha": "17d6d7377110f953c5204ec4671f78de6817be16",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 5583,
+      "is_binary": false
+    },
+    {
+      "name": "Mapa.jsx",
+      "path": "Frontend/src/pages/Mapa.jsx",
+      "type": "file",
+      "sha": "046569ff2c411c144c880d137b16b2bb40e61712",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 2261,
+      "is_binary": false
+    },
+    {
+      "name": "Noticias.css",
+      "path": "Frontend/src/pages/Noticias.css",
+      "type": "file",
+      "sha": "8891b4f529686dee53ce81b73af793d8fefaaec5",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 6527,
+      "is_binary": false
+    },
+    {
+      "name": "Noticias.jsx",
+      "path": "Frontend/src/pages/Noticias.jsx",
+      "type": "file",
+      "sha": "791d95e5c70dfd31ef8719779e09adc671c97663",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 8498,
+      "is_binary": false
+    },
+    {
+      "name": "Sobre.css",
+      "path": "Frontend/src/pages/Sobre.css",
+      "type": "file",
+      "sha": "506aea7eb1bd2c626eac03126ca5b44ce551a4f6",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 6090,
+      "is_binary": false
+    },
+    {
+      "name": "Sobre.jsx",
+      "path": "Frontend/src/pages/Sobre.jsx",
+      "type": "file",
+      "sha": "8b5587fd16495a787e21200a703256551d7ee4f7",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 8299,
+      "is_binary": false
+    },
+    {
+      "name": "tailwind.config.js",
+      "path": "Frontend/tailwind.config.js",
+      "type": "file",
+      "sha": "0793633a59f88bf95fb49eb00668d3ae71d92efe",
+      "mode": "100644",
+      "extension": ".js",
+      "size": 169,
+      "is_binary": false
+    },
+    {
+      "name": "LICENSE",
+      "path": "LICENSE",
+      "type": "file",
+      "sha": "675c19ec0ecdd2613794ad67040a9a3c51d2b67a",
+      "mode": "100644",
+      "extension": "",
+      "size": 1060,
+      "is_binary": false
+    },
+    {
+      "name": "README.md",
+      "path": "README.md",
+      "type": "file",
+      "sha": "6f174e0648be788aacd3f74df39a995343b42672",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3123,
+      "is_binary": false
+    },
+    {
+      "name": "backend",
+      "path": "backend",
+      "type": "directory",
+      "sha": "846bb6dc4c802798d1a63cf27ee51fc9ad7d2f08",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "app",
+      "path": "backend/app",
+      "type": "directory",
+      "sha": "2444a1320eb053475ee34744586b76ddf329b3ce",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/app/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "adapters",
+      "path": "backend/app/adapters",
+      "type": "directory",
+      "sha": "f2a905f84c30899fbb3dc214ba42dd65f08e8b9d",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/app/adapters/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "api_adapter",
+      "path": "backend/app/adapters/api_adapter",
+      "type": "directory",
+      "sha": "fdf8bfcc7d6eabbf0f6de64042f7c28dedb4eb3d",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/app/adapters/api_adapter/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "__pycache__",
+      "path": "backend/app/adapters/api_adapter/__pycache__",
+      "type": "directory",
+      "sha": "cc3488b91118c86f49a7292103d57d583db262bd",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "mapa_routes.cpython-314.pyc",
+      "path": "backend/app/adapters/api_adapter/__pycache__/mapa_routes.cpython-314.pyc",
+      "type": "file",
+      "sha": "76e7e976da692f576782f04a2ff60de1196a3f25",
+      "mode": "100644",
+      "extension": ".pyc",
+      "size": 4347,
+      "is_binary": false
+    },
+    {
+      "name": "auth_routes.py",
+      "path": "backend/app/adapters/api_adapter/auth_routes.py",
+      "type": "file",
+      "sha": "1713c7f5e2ecec98bc0e5673f56abb7e593b4f7a",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3988,
+      "is_binary": false
+    },
+    {
+      "name": "dashboard_routes.py",
+      "path": "backend/app/adapters/api_adapter/dashboard_routes.py",
+      "type": "file",
+      "sha": "1ec94c6ba4279b09ed87745f95c5fd91c944521e",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 10405,
+      "is_binary": false
+    },
+    {
+      "name": "mapa_routes.py",
+      "path": "backend/app/adapters/api_adapter/mapa_routes.py",
+      "type": "file",
+      "sha": "ac02db0f2e5739ee28e61e8fd86bf7cf6cec10ff",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4615,
+      "is_binary": false
+    },
+    {
+      "name": "noticias_routes.py",
+      "path": "backend/app/adapters/api_adapter/noticias_routes.py",
+      "type": "file",
+      "sha": "4f405d04b51fd7846b907d7275754b2ff37e8aff",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 5389,
+      "is_binary": false
+    },
+    {
+      "name": "db_adapter.py",
+      "path": "backend/app/adapters/db_adapter.py",
+      "type": "file",
+      "sha": "8b6c2e4a3f1c9c3cd59958305b0f11f24cfebf28",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2972,
+      "is_binary": false
+    },
+    {
+      "name": "json_adapter.py",
+      "path": "backend/app/adapters/json_adapter.py",
+      "type": "file",
+      "sha": "a1ac420f4dd79be3a1ab6482b11ae79ce0c7fd18",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 5340,
+      "is_binary": false
+    },
+    {
+      "name": "database.py",
+      "path": "backend/app/database.py",
+      "type": "file",
+      "sha": "c28a89bb01ea02a010338fe5a15a90ac1478b9f3",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2767,
+      "is_binary": false
+    },
+    {
+      "name": "main.py",
+      "path": "backend/app/main.py",
+      "type": "file",
+      "sha": "32f214e94981fd1d1322ee2814f60454292360d6",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 6049,
+      "is_binary": false
+    },
+    {
+      "name": "models.py",
+      "path": "backend/app/models.py",
+      "type": "file",
+      "sha": "4ff3c5b69c2782f8fb499c4b56a30b52f5a9a012",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 5376,
+      "is_binary": false
+    },
+    {
+      "name": "schemas",
+      "path": "backend/app/schemas",
+      "type": "directory",
+      "sha": "4fe65673f28bce2da74ff34e33c0b52d9226b811",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/app/schemas/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "noticia.py",
+      "path": "backend/app/schemas/noticia.py",
+      "type": "file",
+      "sha": "9d073a859dd82a3a4d4d6996abf4bb5d540d56f9",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4100,
+      "is_binary": false
+    },
+    {
+      "name": "llm",
+      "path": "backend/llm",
+      "type": "directory",
+      "sha": "12dd6874117d93b7804fc5f49023d05c323b7178",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "langChain.py",
+      "path": "backend/llm/langChain.py",
+      "type": "file",
+      "sha": "c2aa5b274b00691b5c1ed79941c67a0451a367df",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3961,
+      "is_binary": false
+    },
+    {
+      "name": "langChain_Controller.py",
+      "path": "backend/llm/langChain_Controller.py",
+      "type": "file",
+      "sha": "b66b0c46baaac190aa84d16bd7a5433a84ae5039",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2047,
+      "is_binary": false
+    },
+    {
+      "name": "news-llm.json",
+      "path": "backend/llm/news-llm.json",
+      "type": "file",
+      "sha": "0637a088a01e8ddab3bf3fa98dbe804cbde1a0dc",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 2,
+      "is_binary": false
+    },
+    {
+      "name": "news_Classification.py",
+      "path": "backend/llm/news_Classification.py",
+      "type": "file",
+      "sha": "bb046aab67f5387127738b226b3164452814a330",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 477,
+      "is_binary": false
+    },
+    {
+      "name": "requirements.txt",
+      "path": "backend/llm/requirements.txt",
+      "type": "file",
+      "sha": "b69d43b73d635b5ce7fbfe0472a74c72bd80ed5d",
+      "mode": "100644",
+      "extension": ".txt",
+      "size": 86,
+      "is_binary": false
+    },
+    {
+      "name": "tests",
+      "path": "backend/tests",
+      "type": "directory",
+      "sha": "bea31cf39e489d50d969b261c9806ce211340dd4",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/tests/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "__pycache__",
+      "path": "backend/tests/__pycache__",
+      "type": "directory",
+      "sha": "6b650ee6279b8988df59464baa2c9e36a5adfd36",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.cpython-314.pyc",
+      "path": "backend/tests/__pycache__/__init__.cpython-314.pyc",
+      "type": "file",
+      "sha": "871466fdb7c62230b74a7bda901cbd9fbf69d87a",
+      "mode": "100644",
+      "extension": ".pyc",
+      "size": 157,
+      "is_binary": false
+    },
+    {
+      "name": "conftest.cpython-314-pytest-9.1.1.pyc",
+      "path": "backend/tests/__pycache__/conftest.cpython-314-pytest-9.1.1.pyc",
+      "type": "file",
+      "sha": "7452de17b52e84cc86ac75d66779385d13e0914f",
+      "mode": "100644",
+      "extension": ".pyc",
+      "size": 8620,
+      "is_binary": false
+    },
+    {
+      "name": "factories.cpython-314.pyc",
+      "path": "backend/tests/__pycache__/factories.cpython-314.pyc",
+      "type": "file",
+      "sha": "5e726cf8941524bb0707a3877de2581dce265739",
+      "mode": "100644",
+      "extension": ".pyc",
+      "size": 2661,
+      "is_binary": false
+    },
+    {
+      "name": "test_dashboard_integration.cpython-314-pytest-9.1.1.pyc",
+      "path": "backend/tests/__pycache__/test_dashboard_integration.cpython-314-pytest-9.1.1.pyc",
+      "type": "file",
+      "sha": "4b5ab036579cb636a370980b21e88642923b394f",
+      "mode": "100644",
+      "extension": ".pyc",
+      "size": 12718,
+      "is_binary": false
+    },
+    {
+      "name": "test_dashboard_routes.cpython-314-pytest-9.1.1.pyc",
+      "path": "backend/tests/__pycache__/test_dashboard_routes.cpython-314-pytest-9.1.1.pyc",
+      "type": "file",
+      "sha": "142a7b1fb5cf143a21a51c0627d3342466b0d8e0",
+      "mode": "100644",
+      "extension": ".pyc",
+      "size": 15506,
+      "is_binary": false
+    },
+    {
+      "name": "test_mapa_routes.cpython-314-pytest-9.1.1.pyc",
+      "path": "backend/tests/__pycache__/test_mapa_routes.cpython-314-pytest-9.1.1.pyc",
+      "type": "file",
+      "sha": "014652e088cedb4ee7dc7cf0c400d8cf8ef9e543",
+      "mode": "100644",
+      "extension": ".pyc",
+      "size": 9972,
+      "is_binary": false
+    },
+    {
+      "name": "test_noticias_routes.cpython-314-pytest-9.1.1.pyc",
+      "path": "backend/tests/__pycache__/test_noticias_routes.cpython-314-pytest-9.1.1.pyc",
+      "type": "file",
+      "sha": "7404661ab3ba593f189ac6c359ddc31d809953cb",
+      "mode": "100644",
+      "extension": ".pyc",
+      "size": 14044,
+      "is_binary": false
+    },
+    {
+      "name": "conftest.py",
+      "path": "backend/tests/conftest.py",
+      "type": "file",
+      "sha": "5f82188a0131ddbc9b34c88f4b20788855bb1a2c",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3863,
+      "is_binary": false
+    },
+    {
+      "name": "factories.py",
+      "path": "backend/tests/factories.py",
+      "type": "file",
+      "sha": "f8159aaf1da7b950d4f69d65dc6381651d36ca27",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1197,
+      "is_binary": false
+    },
+    {
+      "name": "integration",
+      "path": "backend/tests/integration",
+      "type": "directory",
+      "sha": "49cfe38761dba629b02288fe47fe61df7eb50b1e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/tests/integration/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "__pycache__",
+      "path": "backend/tests/integration/__pycache__",
+      "type": "directory",
+      "sha": "d0e714c132e91c7a0e873515f8d3d096468a4a40",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.cpython-314.pyc",
+      "path": "backend/tests/integration/__pycache__/__init__.cpython-314.pyc",
+      "type": "file",
+      "sha": "c78cc7f538346de00129c6990de0326d0466224a",
+      "mode": "100644",
+      "extension": ".pyc",
+      "size": 169,
+      "is_binary": false
+    },
+    {
+      "name": "conftest.cpython-314-pytest-9.1.1.pyc",
+      "path": "backend/tests/integration/__pycache__/conftest.cpython-314-pytest-9.1.1.pyc",
+      "type": "file",
+      "sha": "e3e5eaa5393290adac98356a2fea11afaa43eb5f",
+      "mode": "100644",
+      "extension": ".pyc",
+      "size": 12619,
+      "is_binary": false
+    },
+    {
+      "name": "test_dashboard_integration.cpython-314-pytest-9.1.1.pyc",
+      "path": "backend/tests/integration/__pycache__/test_dashboard_integration.cpython-314-pytest-9.1.1.pyc",
+      "type": "file",
+      "sha": "c4995a2c3ed90f3449a60dc31c5f70dc721a0335",
+      "mode": "100644",
+      "extension": ".pyc",
+      "size": 12822,
+      "is_binary": false
+    },
+    {
+      "name": "conftest.py",
+      "path": "backend/tests/integration/conftest.py",
+      "type": "file",
+      "sha": "d5aeadddd936eeecf82434333af4149e326a2ffb",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 6759,
+      "is_binary": false
+    },
+    {
+      "name": "test_dashboard_integration.py",
+      "path": "backend/tests/integration/test_dashboard_integration.py",
+      "type": "file",
+      "sha": "bf7b8f1e298bc3d1f15022556aef54f31052b367",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3657,
+      "is_binary": false
+    },
+    {
+      "name": "resultados",
+      "path": "backend/tests/resultados",
+      "type": "directory",
+      "sha": "191c99cc1827c525ab5f4477b6c50ce42f0d29a6",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "test-results.xml",
+      "path": "backend/tests/resultados/test-results.xml",
+      "type": "file",
+      "sha": "2e77b5058d623f9745ca991f751ca5aa1771985a",
+      "mode": "100644",
+      "extension": ".xml",
+      "size": 838,
+      "is_binary": false
+    },
+    {
+      "name": "test-results_database.xml",
+      "path": "backend/tests/resultados/test-results_database.xml",
+      "type": "file",
+      "sha": "00d2ab510095c839a657a952b5d4f0616fd587b9",
+      "mode": "100644",
+      "extension": ".xml",
+      "size": 838,
+      "is_binary": false
+    },
+    {
+      "name": "test-results_func.xml",
+      "path": "backend/tests/resultados/test-results_func.xml",
+      "type": "file",
+      "sha": "e1b4938f156b21549256e10b18509156cac7b5e9",
+      "mode": "100644",
+      "extension": ".xml",
+      "size": 2347,
+      "is_binary": false
+    },
+    {
+      "name": "test_dashboard_routes.py",
+      "path": "backend/tests/test_dashboard_routes.py",
+      "type": "file",
+      "sha": "8b327e6251b513e70f0b59ba039a2e20cc7ae117",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 6007,
+      "is_binary": false
+    },
+    {
+      "name": "test_mapa_routes.py",
+      "path": "backend/tests/test_mapa_routes.py",
+      "type": "file",
+      "sha": "e743d034140a377404d11d2381dbe60814721c8b",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2800,
+      "is_binary": false
+    },
+    {
+      "name": "test_noticias_routes.py",
+      "path": "backend/tests/test_noticias_routes.py",
+      "type": "file",
+      "sha": "2f4a01690bfe5827300f28c8bbf4a213d62c3608",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4175,
+      "is_binary": false
+    },
+    {
+      "name": "tratamentoDeDados",
+      "path": "backend/tratamentoDeDados",
+      "type": "directory",
+      "sha": "dfc28c580c2267736704565c096c7e6f74d8657d",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "juntar_dados.py",
+      "path": "backend/tratamentoDeDados/juntar_dados.py",
+      "type": "file",
+      "sha": "fddd5966d9e76722090815dbca4e2b81abc04710",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4860,
+      "is_binary": false
+    },
+    {
+      "name": "tratamentoDeTexto.py",
+      "path": "backend/tratamentoDeDados/tratamentoDeTexto.py",
+      "type": "file",
+      "sha": "77312e4ce0e21d3ce090720a2923b2019df26665",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1447,
+      "is_binary": false
+    },
+    {
+      "name": "docs",
+      "path": "docs",
+      "type": "directory",
+      "sha": "9d3531421bc673737c1331636da9f6ccafc9594f",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "assets",
+      "path": "docs/assets",
+      "type": "directory",
+      "sha": "e7263f1f6991e49ecc7db9394effb3517944d693",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "Logo.png",
+      "path": "docs/assets/Logo.png",
+      "type": "file",
+      "sha": "cbaa5cdf7734477ed0859a9e6b4600c71fdc58ed",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 17490,
+      "is_binary": false
+    },
+    {
+      "name": "LogoBlack.png",
+      "path": "docs/assets/LogoBlack.png",
+      "type": "file",
+      "sha": "35bdce93bf6d89643ba174ad5155ba39764fb0bb",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 65544,
+      "is_binary": false
+    },
+    {
+      "name": "texto.png",
+      "path": "docs/assets/texto.png",
+      "type": "file",
+      "sha": "c4f560c422c70aad424a73f00c7642bbf923593b",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 21479,
+      "is_binary": false
+    },
+    {
+      "name": "backend",
+      "path": "docs/backend",
+      "type": "directory",
+      "sha": "5462372120fd1a8fe0bba6ede39c5ee4e76978bc",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "FastAPI",
+      "path": "docs/backend/FastAPI",
+      "type": "directory",
+      "sha": "11e9240fef0a98119f53493b46936bc5f769a701",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "FastAPI.md",
+      "path": "docs/backend/FastAPI/FastAPI.md",
+      "type": "file",
+      "sha": "6ba129776ce88ce7aa03aad77dc07388ca398906",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2439,
+      "is_binary": false
+    },
+    {
+      "name": "adapters",
+      "path": "docs/backend/FastAPI/adapters",
+      "type": "directory",
+      "sha": "04851aad5fbfb5e84e9a2df5397efc0cffc84324",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "adapter.md",
+      "path": "docs/backend/FastAPI/adapters/adapter.md",
+      "type": "file",
+      "sha": "c9c856f67e5a5617bbb80263c214b8f3e26d3f0f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1277,
+      "is_binary": false
+    },
+    {
+      "name": "banco de dados",
+      "path": "docs/backend/FastAPI/banco de dados",
+      "type": "directory",
+      "sha": "49b3e451c45682b09fbbc3afc8455bd5e23a20b0",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "database.md",
+      "path": "docs/backend/FastAPI/banco de dados/database.md",
+      "type": "file",
+      "sha": "f7aac3c358f973d1b9945d6c063db4148db081b4",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 366,
+      "is_binary": false
+    },
+    {
+      "name": "models.md",
+      "path": "docs/backend/FastAPI/banco de dados/models.md",
+      "type": "file",
+      "sha": "23094948c4a41e4475e759f23eaa157f79d2568a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 440,
+      "is_binary": false
+    },
+    {
+      "name": "base",
+      "path": "docs/backend/FastAPI/base",
+      "type": "directory",
+      "sha": "f0846c6f60596bc9d4b29a3c0861f2ac6b8a26fe",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "main.md",
+      "path": "docs/backend/FastAPI/base/main.md",
+      "type": "file",
+      "sha": "dbfa3b22d46b6c8dd562bfd6719cda433838f208",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 385,
+      "is_binary": false
+    },
+    {
+      "name": "rotas",
+      "path": "docs/backend/FastAPI/rotas",
+      "type": "directory",
+      "sha": "e0dba0e028ae230cde168f8f70c626d1b11f3d3d",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "rotas.md",
+      "path": "docs/backend/FastAPI/rotas/rotas.md",
+      "type": "file",
+      "sha": "2dec7dd4586312cf3758b41fa765abfe5273890e",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1644,
+      "is_binary": false
+    },
+    {
+      "name": "schemas",
+      "path": "docs/backend/FastAPI/schemas",
+      "type": "directory",
+      "sha": "667aa97c5050fe7c87fa09a6bcc85b0cb5722e99",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "schemas.md",
+      "path": "docs/backend/FastAPI/schemas/schemas.md",
+      "type": "file",
+      "sha": "d5c0c928eeb0b30cc03b9579ba842192d5267c13",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 471,
+      "is_binary": false
+    },
+    {
+      "name": "LangChain.md",
+      "path": "docs/backend/LangChain.md",
+      "type": "file",
+      "sha": "e1e62498cfd006eb1e563b44dbdc65fad4704d1a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 7867,
+      "is_binary": false
+    },
+    {
+      "name": "Scrapy.md",
+      "path": "docs/backend/Scrapy.md",
+      "type": "file",
+      "sha": "d464f9ccffaca01915d8838ba3af6b02b80fa826",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4137,
+      "is_binary": false
+    },
+    {
+      "name": "como-rodar-backend.md",
+      "path": "docs/backend/como-rodar-backend.md",
+      "type": "file",
+      "sha": "912994033002636d9167443d9d406dcc87a436f5",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2979,
+      "is_binary": false
+    },
+    {
+      "name": "langChain",
+      "path": "docs/backend/langChain",
+      "type": "directory",
+      "sha": "e7e0f8f50bb691716613f6e5531fb16b4fcdea33",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "LangChain.md",
+      "path": "docs/backend/langChain/LangChain.md",
+      "type": "file",
+      "sha": "e3a6d53b97e44d4fbf0d3215c10ff2ae451a69d0",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3551,
+      "is_binary": false
+    },
+    {
+      "name": "LangChainControlador.md",
+      "path": "docs/backend/langChain/LangChainControlador.md",
+      "type": "file",
+      "sha": "92c35c913aafbda87045984ec3aabc4078cb5ac2",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1797,
+      "is_binary": false
+    },
+    {
+      "name": "LangChainWorkFlow.md",
+      "path": "docs/backend/langChain/LangChainWorkFlow.md",
+      "type": "file",
+      "sha": "c8726b3926a0d783950ccdcebfc5aa30a64e6315",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 922,
+      "is_binary": false
+    },
+    {
+      "name": "scrapy",
+      "path": "docs/backend/scrapy",
+      "type": "directory",
+      "sha": "3d248708f9d5db0aa4df6e854e8957bc7239fd82",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "Automacao.md",
+      "path": "docs/backend/scrapy/Automacao.md",
+      "type": "file",
+      "sha": "c46711c0e46a96d47d845aedfe752adaf0a60388",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1238,
+      "is_binary": false
+    },
+    {
+      "name": "scrapy.md",
+      "path": "docs/backend/scrapy/scrapy.md",
+      "type": "file",
+      "sha": "3d1bc7572ec23de6695bddb967b7b2603ca7b501",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1123,
+      "is_binary": false
+    },
+    {
+      "name": "tests",
+      "path": "docs/backend/tests",
+      "type": "directory",
+      "sha": "c0e67f7e3213be3910df25f2fbe14c73199efa8f",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "integration",
+      "path": "docs/backend/tests/integration",
+      "type": "directory",
+      "sha": "317885bc5cf1078eff2b279b0b899acebbb38ec7",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "testes_db.md",
+      "path": "docs/backend/tests/integration/testes_db.md",
+      "type": "file",
+      "sha": "90d75e90ffbbcc5cabc7d201614c450c88202d87",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1708,
+      "is_binary": false
+    },
+    {
+      "name": "testes_api.md",
+      "path": "docs/backend/tests/testes_api.md",
+      "type": "file",
+      "sha": "e1e9181eb5d29c3ffa645948bee8faf869780b3e",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2534,
+      "is_binary": false
+    },
+    {
+      "name": "dashboard",
+      "path": "docs/dashboard",
+      "type": "directory",
+      "sha": "f5052d27c3ea1b56ebcfc880f49f9d8dc8d168a7",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "dashboard.html",
+      "path": "docs/dashboard/dashboard.html",
+      "type": "file",
+      "sha": "4ce638ea3184bc42c15c5188685fc31ddf5ffccc",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 25017,
+      "is_binary": false
+    },
+    {
+      "name": "dashboard.md",
+      "path": "docs/dashboard/dashboard.md",
+      "type": "file",
+      "sha": "267d0284bfd7c12557d6c93628d64c2528d15c24",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 312,
+      "is_binary": false
+    },
+    {
+      "name": "deploy.md",
+      "path": "docs/deploy.md",
+      "type": "file",
+      "sha": "2dba58b2c3d32fa2c590f37e05a45f2547c69f18",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 694,
+      "is_binary": false
+    },
+    {
+      "name": "frontend",
+      "path": "docs/frontend",
+      "type": "directory",
+      "sha": "f783f63d53e4ad907d12ac706c21c4da2d2744b9",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "Fluxo.md",
+      "path": "docs/frontend/Fluxo.md",
+      "type": "file",
+      "sha": "070f32064adc92b98561d84a6fa0754df5a1dc7c",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4654,
+      "is_binary": false
+    },
+    {
+      "name": "Prototipagem.md",
+      "path": "docs/frontend/Prototipagem.md",
+      "type": "file",
+      "sha": "e8b00ffce1a460679f6e474bf1350890a76f2316",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 231,
+      "is_binary": false
+    },
+    {
+      "name": "React.md",
+      "path": "docs/frontend/React.md",
+      "type": "file",
+      "sha": "f34b714c654c9067c51b6a8a4e3608cb6561bb68",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5639,
+      "is_binary": false
+    },
+    {
+      "name": "auth-frontend.md",
+      "path": "docs/frontend/auth-frontend.md",
+      "type": "file",
+      "sha": "d58acf39c99240a313b2a0de23a981d1e172dc97",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 635,
+      "is_binary": false
+    },
+    {
+      "name": "qualidade.md",
+      "path": "docs/frontend/qualidade.md",
+      "type": "file",
+      "sha": "a37e1d70ea7d67d6181ec2ee086a530dfe15044d",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 790,
+      "is_binary": false
+    },
+    {
+      "name": "tests",
+      "path": "docs/frontend/tests",
+      "type": "directory",
+      "sha": "823023dd529b3b211a14d5303d6e6293d405d6f0",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "testes_frontend.md",
+      "path": "docs/frontend/tests/testes_frontend.md",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "testes_integracao.md",
+      "path": "docs/frontend/tests/testes_integracao.md",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "index.md",
+      "path": "docs/index.md",
+      "type": "file",
+      "sha": "52a9aed8345f74b2351110716aa6224d70cf3ac6",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3349,
+      "is_binary": false
+    },
+    {
+      "name": "lint-report.json",
+      "path": "docs/lint-report.json",
+      "type": "file",
+      "sha": "b9b56a31febcde5c5a53bd7399a496ad6c0845a4",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 19338,
+      "is_binary": false
+    },
+    {
+      "name": "productivity",
+      "path": "docs/productivity",
+      "type": "directory",
+      "sha": "0eeb495cd2acb226c908a6f571ac247c4f2fe619",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "collect_metrics.py",
+      "path": "docs/productivity/collect_metrics.py",
+      "type": "file",
+      "sha": "b71c05862d8365b4de427a317d5aecb5b4e1dd72",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 11956,
+      "is_binary": false
+    },
+    {
+      "name": "metrics.json",
+      "path": "docs/productivity/metrics.json",
+      "type": "file",
+      "sha": "60ab18881ac3a3cc4c558afd0d48154b87fb3177",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 9673,
+      "is_binary": false
+    },
+    {
+      "name": "requirements.txt",
+      "path": "docs/productivity/requirements.txt",
+      "type": "file",
+      "sha": "f5df19e8110b887ba454830dc7cc6c46957f2b28",
+      "mode": "100644",
+      "extension": ".txt",
+      "size": 17,
+      "is_binary": false
+    },
+    {
+      "name": "style.css",
+      "path": "docs/productivity/style.css",
+      "type": "file",
+      "sha": "e3b2ec5895b886a3105d2dfe62381e9c8a97f947",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 4205,
+      "is_binary": false
+    },
+    {
+      "name": "produtividade",
+      "path": "docs/produtividade",
+      "type": "directory",
+      "sha": "1c3c779372488bf210313508f56ac75a723185c1",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "dashboard.html",
+      "path": "docs/produtividade/dashboard.html",
+      "type": "file",
+      "sha": "249e17788227a89d69df490c7906c8b4fa2ded62",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 25017,
+      "is_binary": false
+    },
+    {
+      "name": "dashboard.md",
+      "path": "docs/produtividade/dashboard.md",
+      "type": "file",
+      "sha": "ad3ac0c29df11f8a5cadaf52cc3b22140dc113c7",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 322,
+      "is_binary": false
+    },
+    {
+      "name": "projeto",
+      "path": "docs/projeto",
+      "type": "directory",
+      "sha": "41d35395ffb7c47b3ceaec884e6160832d893450",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "Arquitetura.md",
+      "path": "docs/projeto/Arquitetura.md",
+      "type": "file",
+      "sha": "d8fcb64b9600d7782f7812588bc6c1f60183a542",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 7514,
+      "is_binary": false
+    },
+    {
+      "name": "Requisitos.md",
+      "path": "docs/projeto/Requisitos.md",
+      "type": "file",
+      "sha": "728e018c1aa0abc20c24299717518f6ddfb6eee9",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3581,
+      "is_binary": false
+    },
+    {
+      "name": "product-backlog.md",
+      "path": "docs/projeto/product-backlog.md",
+      "type": "file",
+      "sha": "7c85b05073f74cf50f42d4a54e169a33459e3b58",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1123,
+      "is_binary": false
+    },
+    {
+      "name": "retrospective.md",
+      "path": "docs/projeto/retrospective.md",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "roadmap.md",
+      "path": "docs/projeto/roadmap.md",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "sprint0.md",
+      "path": "docs/projeto/sprint0.md",
+      "type": "file",
+      "sha": "f064c3a9802f33fcabd67a7df4bb9b0b66010c7b",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 879,
+      "is_binary": false
+    },
+    {
+      "name": "sprint1.md",
+      "path": "docs/projeto/sprint1.md",
+      "type": "file",
+      "sha": "06e741841d3f1b4ff4e89ff610e433461128565a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1326,
+      "is_binary": false
+    },
+    {
+      "name": "sprint2.md",
+      "path": "docs/projeto/sprint2.md",
+      "type": "file",
+      "sha": "99cf6389506d6c0a495b6019ae2267c2db73ac51",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 757,
+      "is_binary": false
+    },
+    {
+      "name": "sprint3.md",
+      "path": "docs/projeto/sprint3.md",
+      "type": "file",
+      "sha": "48031bf279350098ace17cc63c7f57b2afae5cbf",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1732,
+      "is_binary": false
+    },
+    {
+      "name": "sprint4.md",
+      "path": "docs/projeto/sprint4.md",
+      "type": "file",
+      "sha": "ac152cb0005136adb606c6517f8ab7d17f64f3f7",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1172,
+      "is_binary": false
+    },
+    {
+      "name": "sprint5.md",
+      "path": "docs/projeto/sprint5.md",
+      "type": "file",
+      "sha": "d78fbcb1810aecf86774e4d2938d7a47ff9647f8",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1377,
+      "is_binary": false
+    },
+    {
+      "name": "sprint6.md",
+      "path": "docs/projeto/sprint6.md",
+      "type": "file",
+      "sha": "5792451e64e0a25b049e16e99bab0de68162aa3a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 458,
+      "is_binary": false
+    },
+    {
+      "name": "sprint7.md",
+      "path": "docs/projeto/sprint7.md",
+      "type": "file",
+      "sha": "fd2b54b2e4fb0e35bf3255d8611c0efd25b9d340",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1023,
+      "is_binary": false
+    },
+    {
+      "name": "sprint8.md",
+      "path": "docs/projeto/sprint8.md",
+      "type": "file",
+      "sha": "365666e0672f1e7a484e539be52a96f5788e90cf",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1608,
+      "is_binary": false
+    },
+    {
+      "name": "sprint9.md",
+      "path": "docs/projeto/sprint9.md",
+      "type": "file",
+      "sha": "9a2cacde2bd920535016676b6ba5d29582437891",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 431,
+      "is_binary": false
+    },
+    {
+      "name": "team.md",
+      "path": "docs/projeto/team.md",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "sobre-nos.md",
+      "path": "docs/sobre-nos.md",
+      "type": "file",
+      "sha": "e9cd87541393953130e56f055c3b890ce6be25c0",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1549,
+      "is_binary": false
+    },
+    {
+      "name": "stylesheets",
+      "path": "docs/stylesheets",
+      "type": "directory",
+      "sha": "a854a457bce30340520c3ffcade3ed81fbebd926",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "extra.css",
+      "path": "docs/stylesheets/extra.css",
+      "type": "file",
+      "sha": "7a73ac157d07e06b98c79a6a5d276b967f276e77",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 2171,
+      "is_binary": false
+    },
+    {
+      "name": "eslint.config.js",
+      "path": "eslint.config.js",
+      "type": "file",
+      "sha": "572935e6585c29de0fa72f9f2921cafc45f67148",
+      "mode": "100644",
+      "extension": ".js",
+      "size": 1193,
+      "is_binary": false
+    },
+    {
+      "name": "index.html",
+      "path": "index.html",
+      "type": "file",
+      "sha": "af2906b91cf84fb9f1a7145d5c01c754df051758",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 366,
+      "is_binary": false
+    },
+    {
+      "name": "mkdocs.yml",
+      "path": "mkdocs.yml",
+      "type": "file",
+      "sha": "2564df57e13944e022fb485f562ada9e05b0c788",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 2216,
+      "is_binary": false
+    },
+    {
+      "name": "overrides",
+      "path": "overrides",
+      "type": "directory",
+      "sha": "c4a6562d6728cde685ee0976b8e8cc1efa282267",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "index.html",
+      "path": "overrides/index.html",
+      "type": "file",
+      "sha": "be7bc92ea05de9268d73cb440a9391507e534b3a",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 478,
+      "is_binary": false
+    },
+    {
+      "name": "package-lock.json",
+      "path": "package-lock.json",
+      "type": "file",
+      "sha": "6e6245ebbb08dcbd663fa92cc5718b0dae9aca5f",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 216296,
+      "is_binary": false
+    },
+    {
+      "name": "package.json",
+      "path": "package.json",
+      "type": "file",
+      "sha": "a9d335996145b0d0ad308e6c3dab1c7a498e66ed",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 1026,
+      "is_binary": false
+    },
+    {
+      "name": "pytest.ini",
+      "path": "pytest.ini",
+      "type": "file",
+      "sha": "9e5a3f6905b30fa367a4323bdf41da303f624f9b",
+      "mode": "100644",
+      "extension": ".ini",
+      "size": 352,
+      "is_binary": false
+    },
+    {
+      "name": "requirements.txt",
+      "path": "requirements.txt",
+      "type": "file",
+      "sha": "b4e1d9366e1412ba7f903290a7dab5cd47cf6fef",
+      "mode": "100644",
+      "extension": ".txt",
+      "size": 290,
+      "is_binary": false
+    },
+    {
+      "name": "scrapers",
+      "path": "scrapers",
+      "type": "directory",
+      "sha": "1d77b2ebf29337e5bc1b97551f30e9f50dc19951",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__pycache__",
+      "path": "scrapers/__pycache__",
+      "type": "directory",
+      "sha": "288b1dabfbc4618e99814f5cd4910f33a00280f7",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "salvarscrapys.cpython-314.pyc",
+      "path": "scrapers/__pycache__/salvarscrapys.cpython-314.pyc",
+      "type": "file",
+      "sha": "a0df608c4f3a379f58a09e598341dc7175e53b33",
+      "mode": "100644",
+      "extension": ".pyc",
+      "size": 2458,
+      "is_binary": false
+    },
+    {
+      "name": "executarSpiders.py",
+      "path": "scrapers/executarSpiders.py",
+      "type": "file",
+      "sha": "aee81ab7c570cf879127f2097612dc8ca9835895",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1169,
+      "is_binary": false
+    },
+    {
+      "name": "requirements.txt",
+      "path": "scrapers/requirements.txt",
+      "type": "file",
+      "sha": "987f03f735be387ad2fe703b65e2acba1eebcd94",
+      "mode": "100644",
+      "extension": ".txt",
+      "size": 30,
+      "is_binary": false
+    },
+    {
+      "name": "resultados",
+      "path": "scrapers/resultados",
+      "type": "directory",
+      "sha": "9a658ea0e1bc7c7b13abbdbe6dfba04033fb17cb",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "cnn.json",
+      "path": "scrapers/resultados/cnn.json",
+      "type": "file",
+      "sha": "e23bf9a71877bde723dbb531678eb10fd90fe769",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 3007,
+      "is_binary": false
+    },
+    {
+      "name": "g1.json",
+      "path": "scrapers/resultados/g1.json",
+      "type": "file",
+      "sha": "8677fda9d1720967320fade345741f566373fef4",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 127314,
+      "is_binary": false
+    },
+    {
+      "name": "metropoles.json",
+      "path": "scrapers/resultados/metropoles.json",
+      "type": "file",
+      "sha": "39d27711518189b34ee23b39e06559c1ba1223bc",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 3448,
+      "is_binary": false
+    },
+    {
+      "name": "r7.json",
+      "path": "scrapers/resultados/r7.json",
+      "type": "file",
+      "sha": "05483c7722f6e62a09e5fef26617583c24e5c805",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 1997,
+      "is_binary": false
+    },
+    {
+      "name": "resultados.json",
+      "path": "scrapers/resultados/resultados.json",
+      "type": "file",
+      "sha": "2139db89a37380a14a0e5f6ebcd8703c9bc37239",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 137310,
+      "is_binary": false
+    },
+    {
+      "name": "salvarscrapys.py",
+      "path": "scrapers/salvarscrapys.py",
+      "type": "file",
+      "sha": "ee7c4f5fb530d132364b6483c07c536bf27d0c24",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1536,
+      "is_binary": false
+    },
+    {
+      "name": "spiders",
+      "path": "scrapers/spiders",
+      "type": "directory",
+      "sha": "4246fac395d8804a12b63b59de56fe2fe50bddcf",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__pycache__",
+      "path": "scrapers/spiders/__pycache__",
+      "type": "directory",
+      "sha": "a860081d8299c9b3ad41774fabb8b075122a5795",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "cnnspider.cpython-314.pyc",
+      "path": "scrapers/spiders/__pycache__/cnnspider.cpython-314.pyc",
+      "type": "file",
+      "sha": "2624e6abed35788ff75cbdb676a079d88ccbb6ef",
+      "mode": "100644",
+      "extension": ".pyc",
+      "size": 4231,
+      "is_binary": false
+    },
+    {
+      "name": "g1Spider.cpython-314.pyc",
+      "path": "scrapers/spiders/__pycache__/g1Spider.cpython-314.pyc",
+      "type": "file",
+      "sha": "e8129a77f9512b282a01553e881613bf102991aa",
+      "mode": "100644",
+      "extension": ".pyc",
+      "size": 5491,
+      "is_binary": false
+    },
+    {
+      "name": "metropoles.cpython-314.pyc",
+      "path": "scrapers/spiders/__pycache__/metropoles.cpython-314.pyc",
+      "type": "file",
+      "sha": "db6d91cec480fbb33893882fece1eab700a5050d",
+      "mode": "100644",
+      "extension": ".pyc",
+      "size": 5758,
+      "is_binary": false
+    },
+    {
+      "name": "r7spider.cpython-314.pyc",
+      "path": "scrapers/spiders/__pycache__/r7spider.cpython-314.pyc",
+      "type": "file",
+      "sha": "8bef2b1205970dd45870d4ce548c2ba1509bbddb",
+      "mode": "100644",
+      "extension": ".pyc",
+      "size": 5567,
+      "is_binary": false
+    },
+    {
+      "name": "cnnspider.py",
+      "path": "scrapers/spiders/cnnspider.py",
+      "type": "file",
+      "sha": "78d96df886f8a255090a1cb7cb500fe1ecc1e8f4",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3329,
+      "is_binary": false
+    },
+    {
+      "name": "g1Spider.py",
+      "path": "scrapers/spiders/g1Spider.py",
+      "type": "file",
+      "sha": "9f6c85080ff3ee81ef4a9c322a5231fa211eb924",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4089,
+      "is_binary": false
+    },
+    {
+      "name": "metropoles.py",
+      "path": "scrapers/spiders/metropoles.py",
+      "type": "file",
+      "sha": "7a884891e060dfc92e020c6e8c0045aba82213f1",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4538,
+      "is_binary": false
+    },
+    {
+      "name": "r7spider.py",
+      "path": "scrapers/spiders/r7spider.py",
+      "type": "file",
+      "sha": "258c2ae6eb445a541065bda5b602fae90223cac3",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4240,
+      "is_binary": false
+    },
+    {
+      "name": "vite.config.js",
+      "path": "vite.config.js",
+      "type": "file",
+      "sha": "d9043d23cfd70f81ffba1b80ee96ed319b1d974a",
+      "mode": "100644",
+      "extension": ".js",
+      "size": 475,
+      "is_binary": false
+    }
+  ],
+  "truncated": false,
+  "extracted_at": "2026-09-17T04:03:51.063880",
+  "method": "rest",
+  "total_items": 220,
+  "repository_metadata": {
+    "id": 1185581019,
+    "full_name": "unb-mds/2026-2-VeritasIA",
+    "description": "Monitoramento de noticias sobre feminicídio utilizando IA",
+    "created_at": "2026-03-18T18:25:01Z",
+    "updated_at": "2026-09-17T02:03:59Z",
+    "language": "Python",
+    "size": 5913,
+    "stars": 4,
+    "forks": 0,
+    "open_issues": 0
+  }
+}

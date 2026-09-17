@@ -1,0 +1,3414 @@
+{
+  "owner": "unb-mds",
+  "repository": "2026.1-ContraDito",
+  "branch": "main",
+  "sha": "3c83b69e35ce8665b74429184f8754c11f021b33",
+  "tree": [
+    {
+      "name": ".antigravity",
+      "path": ".antigravity",
+      "type": "directory",
+      "sha": "0fda8ca8251d396d553e83fd01580edbfe2380f0",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "skills",
+      "path": ".antigravity/skills",
+      "type": "directory",
+      "sha": "df8752763998ae41d2f102e8268e1131dfdb1bbc",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "grill-with-docs.md",
+      "path": ".antigravity/skills/grill-with-docs.md",
+      "type": "file",
+      "sha": "9cb37c9e94329dea8b0da75cf90c3c8c34e39d45",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3638,
+      "is_binary": false
+    },
+    {
+      "name": "tdd.md",
+      "path": ".antigravity/skills/tdd.md",
+      "type": "file",
+      "sha": "6c2ac1276f9e388996c0f42096419ec3719f025b",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4394,
+      "is_binary": false
+    },
+    {
+      "name": "to-prd.md",
+      "path": ".antigravity/skills/to-prd.md",
+      "type": "file",
+      "sha": "359c2c694202df568079645ff6a52301405cc362",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3112,
+      "is_binary": false
+    },
+    {
+      "name": ".claude",
+      "path": ".claude",
+      "type": "directory",
+      "sha": "ed102c4fb5f5a1f5d8e2da0c42def72878b1eed0",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "skills",
+      "path": ".claude/skills",
+      "type": "directory",
+      "sha": "9628a38959247e6f37ec1823c85fbd5970ab8d84",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "frontend-design",
+      "path": ".claude/skills/frontend-design",
+      "type": "directory",
+      "sha": "84d758e8b0c3c5a021fcf01003928ebc94f9adc7",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "SKILL.md",
+      "path": ".claude/skills/frontend-design/SKILL.md",
+      "type": "file",
+      "sha": "1dff30b1d360c9110dfbbbb2f95a08213b64f179",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4439,
+      "is_binary": false
+    },
+    {
+      "name": "grill-with-docs",
+      "path": ".claude/skills/grill-with-docs",
+      "type": "directory",
+      "sha": "fa1dce378771ddd9e8b5b3dd597263f8eff77085",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "ADR-FORMAT.md",
+      "path": ".claude/skills/grill-with-docs/ADR-FORMAT.md",
+      "type": "file",
+      "sha": "3b506c0d3896cb3d625072f564991ea4a8caf7b2",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2765,
+      "is_binary": false
+    },
+    {
+      "name": "CONTEXT-FORMAT.md",
+      "path": ".claude/skills/grill-with-docs/CONTEXT-FORMAT.md",
+      "type": "file",
+      "sha": "0a04c5498fcb2faf15e06858971a90c341849a8f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2298,
+      "is_binary": false
+    },
+    {
+      "name": "SKILL.md",
+      "path": ".claude/skills/grill-with-docs/SKILL.md",
+      "type": "file",
+      "sha": "9cb37c9e94329dea8b0da75cf90c3c8c34e39d45",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3638,
+      "is_binary": false
+    },
+    {
+      "name": ".dockerignore",
+      "path": ".dockerignore",
+      "type": "file",
+      "sha": "5f9542bed29a98757e1cb302609acb7f5f84904b",
+      "mode": "100644",
+      "extension": ".dockerignore",
+      "size": 802,
+      "is_binary": false
+    },
+    {
+      "name": ".flake8",
+      "path": ".flake8",
+      "type": "file",
+      "sha": "f55600f154085836f53fdddc006e4207d8e187f2",
+      "mode": "100644",
+      "extension": ".flake8",
+      "size": 194,
+      "is_binary": false
+    },
+    {
+      "name": ".github",
+      "path": ".github",
+      "type": "directory",
+      "sha": "ec7304e0e4094fcb07602487e01f32660f61aec5",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "ISSUE_TEMPLATE",
+      "path": ".github/ISSUE_TEMPLATE",
+      "type": "directory",
+      "sha": "c931e327c65b39c176f86b121fe769df7de9c730",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "template-issue.md",
+      "path": ".github/ISSUE_TEMPLATE/template-issue.md",
+      "type": "file",
+      "sha": "316a5655c81ebeeb247c4e8c9d92e49168ca7494",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 600,
+      "is_binary": false
+    },
+    {
+      "name": "workflows",
+      "path": ".github/workflows",
+      "type": "directory",
+      "sha": "e83fde6f7e247be53c8a031ebf131ec3efbd8538",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "deploy-docs.yml",
+      "path": ".github/workflows/deploy-docs.yml",
+      "type": "file",
+      "sha": "3c13704d9c52509eeb71538a410dd45095f93f6c",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 1275,
+      "is_binary": false
+    },
+    {
+      "name": "linter.yml",
+      "path": ".github/workflows/linter.yml",
+      "type": "file",
+      "sha": "0fb5904c0939b3f3536b49a198bd5c6e68e43b4b",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 671,
+      "is_binary": false
+    },
+    {
+      "name": "testes-backend.yml",
+      "path": ".github/workflows/testes-backend.yml",
+      "type": "file",
+      "sha": "6cb9a12aa1bc1ecb885e533ce472d2dc5f303ab1",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 3385,
+      "is_binary": false
+    },
+    {
+      "name": ".gitignore",
+      "path": ".gitignore",
+      "type": "file",
+      "sha": "4e3298d48f2f42ef3379bf1acf32f9860cc5a0eb",
+      "mode": "100644",
+      "extension": ".gitignore",
+      "size": 431,
+      "is_binary": false
+    },
+    {
+      "name": "CLAUDE.md",
+      "path": "CLAUDE.md",
+      "type": "file",
+      "sha": "a79340ab68981b758a59493b7bca6248919878e3",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5501,
+      "is_binary": false
+    },
+    {
+      "name": "CONTEXT.md",
+      "path": "CONTEXT.md",
+      "type": "file",
+      "sha": "909907b0b468d50411c34065ba28bd83484ec810",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6182,
+      "is_binary": false
+    },
+    {
+      "name": "CONTEXT_MKDOCS.md",
+      "path": "CONTEXT_MKDOCS.md",
+      "type": "file",
+      "sha": "f472825f57307609d23a1ab272a00ce80d9fd905",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4566,
+      "is_binary": false
+    },
+    {
+      "name": "Dockerfile.api",
+      "path": "Dockerfile.api",
+      "type": "file",
+      "sha": "104e6b7e6bf0099c61ff9e02284abc2dc94ab401",
+      "mode": "100644",
+      "extension": ".api",
+      "size": 2509,
+      "is_binary": false
+    },
+    {
+      "name": "Dockerfile.worker",
+      "path": "Dockerfile.worker",
+      "type": "file",
+      "sha": "9a51290a7e6aa04aa39e1dffe6716a51e06e786b",
+      "mode": "100644",
+      "extension": ".worker",
+      "size": 3058,
+      "is_binary": false
+    },
+    {
+      "name": "LICENSE",
+      "path": "LICENSE",
+      "type": "file",
+      "sha": "675c19ec0ecdd2613794ad67040a9a3c51d2b67a",
+      "mode": "100644",
+      "extension": "",
+      "size": 1060,
+      "is_binary": false
+    },
+    {
+      "name": "LLM_validation",
+      "path": "LLM_validation",
+      "type": "directory",
+      "sha": "8f048052fb080d0a9fa2cd2784013e8b98bbe0c6",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "00_teste_conexao.py",
+      "path": "LLM_validation/00_teste_conexao.py",
+      "type": "file",
+      "sha": "fd975e10f2698bb1825a31c0b6f672ae3fa99f54",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 7041,
+      "is_binary": false
+    },
+    {
+      "name": "01_extrair_texto.py",
+      "path": "LLM_validation/01_extrair_texto.py",
+      "type": "file",
+      "sha": "cee9a41d0b276ac3c7c8e3d02d73552534b25332",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 8976,
+      "is_binary": false
+    },
+    {
+      "name": "02_gerar_resumo.py",
+      "path": "LLM_validation/02_gerar_resumo.py",
+      "type": "file",
+      "sha": "fc0e82b43e7cc9f01ccff8ac4b4d4ad16af3e271",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 8831,
+      "is_binary": false
+    },
+    {
+      "name": "03_avaliar_postura.py",
+      "path": "LLM_validation/03_avaliar_postura.py",
+      "type": "file",
+      "sha": "1be269cf96ffcd2523d675ecab598a2f39803af6",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 12968,
+      "is_binary": false
+    },
+    {
+      "name": "03b_avaliar_ementa.py",
+      "path": "LLM_validation/03b_avaliar_ementa.py",
+      "type": "file",
+      "sha": "0f61bf3e922e639db80a3e0620120349c4ee0248",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 10846,
+      "is_binary": false
+    },
+    {
+      "name": "04_comparar.py",
+      "path": "LLM_validation/04_comparar.py",
+      "type": "file",
+      "sha": "f7f843f529c8ded7907e1d8a67a3ea374af5dac8",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 10766,
+      "is_binary": false
+    },
+    {
+      "name": "README.md",
+      "path": "LLM_validation/README.md",
+      "type": "file",
+      "sha": "70f3538933e8f703450e0acc5943a62101436f57",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2518,
+      "is_binary": false
+    },
+    {
+      "name": "auditar_estimativas.py",
+      "path": "LLM_validation/auditar_estimativas.py",
+      "type": "file",
+      "sha": "c1b73c8a2c25245be7cb01a6825ef6a2c98c48d4",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 16653,
+      "is_binary": false
+    },
+    {
+      "name": "auditoria_resultado.json",
+      "path": "LLM_validation/auditoria_resultado.json",
+      "type": "file",
+      "sha": "3b5dc4c66bddfd5e2b5851140b93b1e18b4dff12",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 860,
+      "is_binary": false
+    },
+    {
+      "name": "benchmark_llama31_8b_colab.ipynb",
+      "path": "LLM_validation/benchmark_llama31_8b_colab.ipynb",
+      "type": "file",
+      "sha": "35e26fe70b47dfef113849d918375c034986fe6d",
+      "mode": "100644",
+      "extension": ".ipynb",
+      "size": 12471,
+      "is_binary": false
+    },
+    {
+      "name": "comparar_justificativas.py",
+      "path": "LLM_validation/comparar_justificativas.py",
+      "type": "file",
+      "sha": "47997e68225d5f165d6442a255c8456589c692bc",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4019,
+      "is_binary": false
+    },
+    {
+      "name": "diagnostico_api.py",
+      "path": "LLM_validation/diagnostico_api.py",
+      "type": "file",
+      "sha": "e37f1b29d6888cd3e5779f5b4a28dc4315b02d98",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2972,
+      "is_binary": false
+    },
+    {
+      "name": "discursos",
+      "path": "LLM_validation/discursos",
+      "type": "directory",
+      "sha": "6869dd4e062c502fd210d339493e460d6ce06d59",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "pl_001_a_favor.txt",
+      "path": "LLM_validation/discursos/pl_001_a_favor.txt",
+      "type": "file",
+      "sha": "66ee7fc46d7af33d232aa456619a6b9c319a44fe",
+      "mode": "100644",
+      "extension": ".txt",
+      "size": 948,
+      "is_binary": false
+    },
+    {
+      "name": "pl_001_contra.txt",
+      "path": "LLM_validation/discursos/pl_001_contra.txt",
+      "type": "file",
+      "sha": "c29cf8092b25e8f0f63e7bc3974fc41c581b3312",
+      "mode": "100644",
+      "extension": ".txt",
+      "size": 1020,
+      "is_binary": false
+    },
+    {
+      "name": "pl_002_a_favor.txt",
+      "path": "LLM_validation/discursos/pl_002_a_favor.txt",
+      "type": "file",
+      "sha": "564e102164c117813f7b678af37470a9de21e2ea",
+      "mode": "100644",
+      "extension": ".txt",
+      "size": 1105,
+      "is_binary": false
+    },
+    {
+      "name": "pl_002_contra.txt",
+      "path": "LLM_validation/discursos/pl_002_contra.txt",
+      "type": "file",
+      "sha": "9ac370f4768dfc4fac701cae3bbb5b0ba5221848",
+      "mode": "100644",
+      "extension": ".txt",
+      "size": 1060,
+      "is_binary": false
+    },
+    {
+      "name": "pl_003_a_favor.txt",
+      "path": "LLM_validation/discursos/pl_003_a_favor.txt",
+      "type": "file",
+      "sha": "3d2090275875fe3af9626fc91729877d4c0a7b15",
+      "mode": "100644",
+      "extension": ".txt",
+      "size": 923,
+      "is_binary": false
+    },
+    {
+      "name": "pl_003_contra.txt",
+      "path": "LLM_validation/discursos/pl_003_contra.txt",
+      "type": "file",
+      "sha": "6a0fa5b9c26e3e72cf7531c90c244e390c13743f",
+      "mode": "100644",
+      "extension": ".txt",
+      "size": 985,
+      "is_binary": false
+    },
+    {
+      "name": "pl_004_a_favor.txt",
+      "path": "LLM_validation/discursos/pl_004_a_favor.txt",
+      "type": "file",
+      "sha": "671a5101b40fa81bb23fad35a2b16301663b2cc6",
+      "mode": "100644",
+      "extension": ".txt",
+      "size": 1060,
+      "is_binary": false
+    },
+    {
+      "name": "pl_004_contra.txt",
+      "path": "LLM_validation/discursos/pl_004_contra.txt",
+      "type": "file",
+      "sha": "2d783ce321adade6e8696057a456fa8bf61c4c0c",
+      "mode": "100644",
+      "extension": ".txt",
+      "size": 1099,
+      "is_binary": false
+    },
+    {
+      "name": "inspecionar_bulk.py",
+      "path": "LLM_validation/inspecionar_bulk.py",
+      "type": "file",
+      "sha": "8a331f921e17b271181ca822de40177715e8e27b",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1635,
+      "is_binary": false
+    },
+    {
+      "name": "proposicoes",
+      "path": "LLM_validation/proposicoes",
+      "type": "directory",
+      "sha": "cfea19fc58d8885b7d23259b82396c99ebfc9d27",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "pl_001.pdf",
+      "path": "LLM_validation/proposicoes/pl_001.pdf",
+      "type": "file",
+      "sha": "eca1af8596dcae5dc96cb97bc4607ad7e2efb3b9",
+      "mode": "100644",
+      "extension": ".pdf",
+      "size": 105409,
+      "is_binary": false
+    },
+    {
+      "name": "pl_002.pdf",
+      "path": "LLM_validation/proposicoes/pl_002.pdf",
+      "type": "file",
+      "sha": "ba862b04f8f60374571fdfe6c154da181790263e",
+      "mode": "100644",
+      "extension": ".pdf",
+      "size": 372962,
+      "is_binary": false
+    },
+    {
+      "name": "pl_003.pdf",
+      "path": "LLM_validation/proposicoes/pl_003.pdf",
+      "type": "file",
+      "sha": "01467407dab7eacd1127ac72ed7cd70d3c93ea5c",
+      "mode": "100644",
+      "extension": ".pdf",
+      "size": 129717,
+      "is_binary": false
+    },
+    {
+      "name": "pl_004.pdf",
+      "path": "LLM_validation/proposicoes/pl_004.pdf",
+      "type": "file",
+      "sha": "08af9b1ac91e109c75ef35853c9c4de32699ef3c",
+      "mode": "100644",
+      "extension": ".pdf",
+      "size": 175106,
+      "is_binary": false
+    },
+    {
+      "name": "textos",
+      "path": "LLM_validation/proposicoes/textos",
+      "type": "directory",
+      "sha": "83f3ab37087865c241a22dfe1cf73c1a99e8fd7b",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "pl_001.txt",
+      "path": "LLM_validation/proposicoes/textos/pl_001.txt",
+      "type": "file",
+      "sha": "002d0eba667923595d746c7e1667904ed3645b03",
+      "mode": "100644",
+      "extension": ".txt",
+      "size": 5550,
+      "is_binary": false
+    },
+    {
+      "name": "pl_002.txt",
+      "path": "LLM_validation/proposicoes/textos/pl_002.txt",
+      "type": "file",
+      "sha": "f89bf48364ef0a817850ecf2b9533d62cd21aae3",
+      "mode": "100644",
+      "extension": ".txt",
+      "size": 5005,
+      "is_binary": false
+    },
+    {
+      "name": "pl_003.txt",
+      "path": "LLM_validation/proposicoes/textos/pl_003.txt",
+      "type": "file",
+      "sha": "85f76c507c56006a3ad0ee87dbd1fc61821b6027",
+      "mode": "100644",
+      "extension": ".txt",
+      "size": 1881,
+      "is_binary": false
+    },
+    {
+      "name": "pl_004.txt",
+      "path": "LLM_validation/proposicoes/textos/pl_004.txt",
+      "type": "file",
+      "sha": "e9ce04c5dc8c8981e9420f886aa61816530e776e",
+      "mode": "100644",
+      "extension": ".txt",
+      "size": 5069,
+      "is_binary": false
+    },
+    {
+      "name": "resultados",
+      "path": "LLM_validation/resultados",
+      "type": "directory",
+      "sha": "ff3feea9c117fae0a75e6a2ff1a4d777e16f04c3",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "benchmark_final.json",
+      "path": "LLM_validation/resultados/benchmark_final.json",
+      "type": "file",
+      "sha": "aa211fac48de7ad96fd70757c0ec385ab5b54f98",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 1629,
+      "is_binary": false
+    },
+    {
+      "name": "posturas_ementa_gemma2_9b.json",
+      "path": "LLM_validation/resultados/posturas_ementa_gemma2_9b.json",
+      "type": "file",
+      "sha": "a7e8cf94b29ac58b8dd1accd5439bde0488011da",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 3229,
+      "is_binary": false
+    },
+    {
+      "name": "posturas_ementa_groq_llama33_70b.json",
+      "path": "LLM_validation/resultados/posturas_ementa_groq_llama33_70b.json",
+      "type": "file",
+      "sha": "1e410f744da83bd67048a0d1859005e5aa930311",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 4562,
+      "is_binary": false
+    },
+    {
+      "name": "posturas_ementa_groq_qwen3_32b.json",
+      "path": "LLM_validation/resultados/posturas_ementa_groq_qwen3_32b.json",
+      "type": "file",
+      "sha": "606252a3e7fa5af8b9b19c9748cdb31c1db01e3a",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 3269,
+      "is_binary": false
+    },
+    {
+      "name": "posturas_ementa_llama31_8b.json",
+      "path": "LLM_validation/resultados/posturas_ementa_llama31_8b.json",
+      "type": "file",
+      "sha": "ab2646aa31fd120654373b902b279c32c5d686b1",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 3229,
+      "is_binary": false
+    },
+    {
+      "name": "posturas_ementa_qwen25_7b.json",
+      "path": "LLM_validation/resultados/posturas_ementa_qwen25_7b.json",
+      "type": "file",
+      "sha": "1a7035b310ed94acd90a696f0299773bd484fff2",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 3508,
+      "is_binary": false
+    },
+    {
+      "name": "posturas_gemma2_9b.json",
+      "path": "LLM_validation/resultados/posturas_gemma2_9b.json",
+      "type": "file",
+      "sha": "8f6ecd7808a2d88620b62fccefb46f1c3b425946",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 3164,
+      "is_binary": false
+    },
+    {
+      "name": "posturas_groq_llama33_70b.json",
+      "path": "LLM_validation/resultados/posturas_groq_llama33_70b.json",
+      "type": "file",
+      "sha": "b193a18de96d58dfb98ca9c236ce490bb35a2efb",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 4374,
+      "is_binary": false
+    },
+    {
+      "name": "posturas_groq_qwen3_32b.json",
+      "path": "LLM_validation/resultados/posturas_groq_qwen3_32b.json",
+      "type": "file",
+      "sha": "dbf7c7c423513e3b4b4be12b361875df44d3f226",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 3329,
+      "is_binary": false
+    },
+    {
+      "name": "posturas_llama31_8b.json",
+      "path": "LLM_validation/resultados/posturas_llama31_8b.json",
+      "type": "file",
+      "sha": "0c18d7e7af748542ac84a56f457bf291ad39a9c1",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 3104,
+      "is_binary": false
+    },
+    {
+      "name": "posturas_qwen25_7b.json",
+      "path": "LLM_validation/resultados/posturas_qwen25_7b.json",
+      "type": "file",
+      "sha": "9ecc93cc9dff36c5788e90e2b4c5ebe6d4163e0e",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 3885,
+      "is_binary": false
+    },
+    {
+      "name": "resumos_gemma2_9b.json",
+      "path": "LLM_validation/resultados/resumos_gemma2_9b.json",
+      "type": "file",
+      "sha": "bfd42abbb2bf17efe8531bab473fd4f5f89e659c",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 5303,
+      "is_binary": false
+    },
+    {
+      "name": "resumos_groq_llama33_70b.json",
+      "path": "LLM_validation/resultados/resumos_groq_llama33_70b.json",
+      "type": "file",
+      "sha": "aeb6cad80f069f0d3e3bb165c032bd247fa7b220",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 6374,
+      "is_binary": false
+    },
+    {
+      "name": "resumos_groq_qwen3_32b.json",
+      "path": "LLM_validation/resultados/resumos_groq_qwen3_32b.json",
+      "type": "file",
+      "sha": "0e535d4f9a4b402fc220e35d26d8d6c7d3dc4674",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 9709,
+      "is_binary": false
+    },
+    {
+      "name": "resumos_llama31_8b.json",
+      "path": "LLM_validation/resultados/resumos_llama31_8b.json",
+      "type": "file",
+      "sha": "fa309a51b05da6137760aaf9cd1ea92d3c7b4ae8",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 6233,
+      "is_binary": false
+    },
+    {
+      "name": "resumos_qwen25_7b.json",
+      "path": "LLM_validation/resultados/resumos_qwen25_7b.json",
+      "type": "file",
+      "sha": "1cfbca634ce1fe3a1285d3aa56e58c814f4e896d",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 4387,
+      "is_binary": false
+    },
+    {
+      "name": "PLANEJAMENTO.md",
+      "path": "PLANEJAMENTO.md",
+      "type": "file",
+      "sha": "ca5d511ba399213253bade884541db79fc2d4168",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 17673,
+      "is_binary": false
+    },
+    {
+      "name": "README.md",
+      "path": "README.md",
+      "type": "file",
+      "sha": "778eb5e9492faffbc4a2dfb980000c842239076e",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5946,
+      "is_binary": false
+    },
+    {
+      "name": "amostras",
+      "path": "amostras",
+      "type": "directory",
+      "sha": "153f2aeb8601e2b0c83f43a85801848250e0a1a1",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "amostra_para_luiz.json",
+      "path": "amostras/amostra_para_luiz.json",
+      "type": "file",
+      "sha": "bef1c9140d7c032bccc0068a37a5b45a5b7d6b7f",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 9872,
+      "is_binary": false
+    },
+    {
+      "name": "discursos_deputado.xml",
+      "path": "amostras/discursos_deputado.xml",
+      "type": "file",
+      "sha": "53a1eaca3cba171815d326d0cd5d5c8263773490",
+      "mode": "100644",
+      "extension": ".xml",
+      "size": 34238,
+      "is_binary": false
+    },
+    {
+      "name": "ementa_proposicao.xml",
+      "path": "amostras/ementa_proposicao.xml",
+      "type": "file",
+      "sha": "180570825588dc331a5df897e1266680de8d3616",
+      "mode": "100644",
+      "extension": ".xml",
+      "size": 959,
+      "is_binary": false
+    },
+    {
+      "name": "app",
+      "path": "app",
+      "type": "directory",
+      "sha": "e4fe3f1d164b54f8f16d90fd6053da5ac3dfc725",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "app/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "bancos",
+      "path": "app/bancos",
+      "type": "directory",
+      "sha": "cd2679f388ca1a37427df00b6de753cd7c470092",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "supabase.py",
+      "path": "app/bancos/supabase.py",
+      "type": "file",
+      "sha": "648ba8acff979476022e455436657642ef62b40f",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 388,
+      "is_binary": false
+    },
+    {
+      "name": "main.py",
+      "path": "app/main.py",
+      "type": "file",
+      "sha": "96ef756c851926f4b21866a49240e68bb8e7eca9",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1642,
+      "is_binary": false
+    },
+    {
+      "name": "modelos",
+      "path": "app/modelos",
+      "type": "directory",
+      "sha": "2fc03833d5f1cf2e0b1ff64eebd3637b0f3f3b2e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "schemas.py",
+      "path": "app/modelos/schemas.py",
+      "type": "file",
+      "sha": "07125fdc3bf48082b625877f8ce97b9ac5def193",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3869,
+      "is_binary": false
+    },
+    {
+      "name": "rotas",
+      "path": "app/rotas",
+      "type": "directory",
+      "sha": "ebe82db914d6c1758162a98f2647e89dd5976703",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "dados.py",
+      "path": "app/rotas/dados.py",
+      "type": "file",
+      "sha": "8684d30d098dfd5c6967c8e6345bb6180613548b",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 37275,
+      "is_binary": false
+    },
+    {
+      "name": "docker-compose.yml",
+      "path": "docker-compose.yml",
+      "type": "file",
+      "sha": "213b335b918241e8f6fe8bc9b2235b777678304c",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 2895,
+      "is_binary": false
+    },
+    {
+      "name": "docs",
+      "path": "docs",
+      "type": "directory",
+      "sha": "053a4c1ca0b24eab98565874d6bf748bf817152b",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "docs",
+      "path": "docs/docs",
+      "type": "directory",
+      "sha": "eb5606680b680da0ff4282ccd66c014143c7527b",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "adrs",
+      "path": "docs/docs/adrs",
+      "type": "directory",
+      "sha": "7c9d513c36a6b26243a6f25bb9bd02daca625731",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "adr-001.md",
+      "path": "docs/docs/adrs/adr-001.md",
+      "type": "file",
+      "sha": "a404ccc46f1286e977591b45ee91db66f8d82b56",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2505,
+      "is_binary": false
+    },
+    {
+      "name": "adr-002.md",
+      "path": "docs/docs/adrs/adr-002.md",
+      "type": "file",
+      "sha": "95c195f5662148bdc807f01e6147a4d470e6a00e",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4179,
+      "is_binary": false
+    },
+    {
+      "name": "adr-003.md",
+      "path": "docs/docs/adrs/adr-003.md",
+      "type": "file",
+      "sha": "b627b6477d6a76f9a25ea56fb533b6de5d09be2b",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 9160,
+      "is_binary": false
+    },
+    {
+      "name": "index.md",
+      "path": "docs/docs/adrs/index.md",
+      "type": "file",
+      "sha": "3021fa3cf8db66fac4bef63c3f1e7fe2a93eee92",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 645,
+      "is_binary": false
+    },
+    {
+      "name": "arquitetura.md",
+      "path": "docs/docs/arquitetura.md",
+      "type": "file",
+      "sha": "e8b80a1b10f0b131e1254f084b76aafff21b5943",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 11229,
+      "is_binary": false
+    },
+    {
+      "name": "avaliacao.md",
+      "path": "docs/docs/avaliacao.md",
+      "type": "file",
+      "sha": "1ea3e2d9c3d5c32bf4c6d39ae77df775dd35e6ef",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2493,
+      "is_binary": false
+    },
+    {
+      "name": "bancos.md",
+      "path": "docs/docs/bancos.md",
+      "type": "file",
+      "sha": "05b75866d7095640d4f5b4546ab9e72db9f7af15",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5087,
+      "is_binary": false
+    },
+    {
+      "name": "calculo-score.md",
+      "path": "docs/docs/calculo-score.md",
+      "type": "file",
+      "sha": "613a9d5173c5288fd7e1a2668fb1a298567a44f3",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1951,
+      "is_binary": false
+    },
+    {
+      "name": "escopo.md",
+      "path": "docs/docs/escopo.md",
+      "type": "file",
+      "sha": "a818d3e6d61731b0515599506f55b04ea81ff136",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2161,
+      "is_binary": false
+    },
+    {
+      "name": "etl-dados.md",
+      "path": "docs/docs/etl-dados.md",
+      "type": "file",
+      "sha": "e47e50b45a29aadff038cea1521d59f9c4a79eb7",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5099,
+      "is_binary": false
+    },
+    {
+      "name": "execucao.md",
+      "path": "docs/docs/execucao.md",
+      "type": "file",
+      "sha": "db2436a6f6f48f5e4e6f4a6470b11cb55d3a7bd5",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 12513,
+      "is_binary": false
+    },
+    {
+      "name": "frontend.md",
+      "path": "docs/docs/frontend.md",
+      "type": "file",
+      "sha": "a193ae9fc10cb1c435448a6b1670fa872c329b50",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 10223,
+      "is_binary": false
+    },
+    {
+      "name": "imagens",
+      "path": "docs/docs/imagens",
+      "type": "directory",
+      "sha": "02316ce1cda61f8e9a5a43d393b96656619d92b4",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "CoesãoPartidária_CD.jpeg",
+      "path": "docs/docs/imagens/CoesãoPartidária_CD.jpeg",
+      "type": "file",
+      "sha": "062cd3c43aba0ea15aad98d866653263db45d5db",
+      "mode": "100644",
+      "extension": ".jpeg",
+      "size": 129634,
+      "is_binary": false
+    },
+    {
+      "name": "Dossiê_CD.jpeg",
+      "path": "docs/docs/imagens/Dossiê_CD.jpeg",
+      "type": "file",
+      "sha": "decbe56ccb904b874591943e7f0666fb72c1ec90",
+      "mode": "100644",
+      "extension": ".jpeg",
+      "size": 115621,
+      "is_binary": false
+    },
+    {
+      "name": "FacetoFace_CD.jpeg",
+      "path": "docs/docs/imagens/FacetoFace_CD.jpeg",
+      "type": "file",
+      "sha": "ae161d898c3dc5868cc372ebde0449cec72a88a0",
+      "mode": "100644",
+      "extension": ".jpeg",
+      "size": 97590,
+      "is_binary": false
+    },
+    {
+      "name": "Homepage_CD.jpeg",
+      "path": "docs/docs/imagens/Homepage_CD.jpeg",
+      "type": "file",
+      "sha": "bf5e61708ed2b39543770efe59edabfb0d6705e0",
+      "mode": "100644",
+      "extension": ".jpeg",
+      "size": 211915,
+      "is_binary": false
+    },
+    {
+      "name": "ListaParlamentares_CD.jpeg",
+      "path": "docs/docs/imagens/ListaParlamentares_CD.jpeg",
+      "type": "file",
+      "sha": "76d12adc8c53d4ad53dff81c7870179eecb43beb",
+      "mode": "100644",
+      "extension": ".jpeg",
+      "size": 136729,
+      "is_binary": false
+    },
+    {
+      "name": "Persona.png.jpg",
+      "path": "docs/docs/imagens/Persona.png.jpg",
+      "type": "file",
+      "sha": "3d25cbe913297c22e5e2a90ce941df5380cbc229",
+      "mode": "100644",
+      "extension": ".jpg",
+      "size": 67176,
+      "is_binary": false
+    },
+    {
+      "name": "ProposiçõesLegislativas_CD.jpeg",
+      "path": "docs/docs/imagens/ProposiçõesLegislativas_CD.jpeg",
+      "type": "file",
+      "sha": "f8bface8b854a39d9b0e4cca5794d7a8440d9ef1",
+      "mode": "100644",
+      "extension": ".jpeg",
+      "size": 157738,
+      "is_binary": false
+    },
+    {
+      "name": "Storymap.jpg",
+      "path": "docs/docs/imagens/Storymap.jpg",
+      "type": "file",
+      "sha": "598dfe08c59996af44b4c6b6d2815097e03f582b",
+      "mode": "100644",
+      "extension": ".jpg",
+      "size": 55751,
+      "is_binary": false
+    },
+    {
+      "name": "Transcrições_CD.jpeg",
+      "path": "docs/docs/imagens/Transcrições_CD.jpeg",
+      "type": "file",
+      "sha": "db4c91294a289aaa74344a428f4913a654f21d03",
+      "mode": "100644",
+      "extension": ".jpeg",
+      "size": 170637,
+      "is_binary": false
+    },
+    {
+      "name": "prototipo_comparacao.jpg",
+      "path": "docs/docs/imagens/prototipo_comparacao.jpg",
+      "type": "file",
+      "sha": "245f5000f9e536838884092a32294b20f3961b72",
+      "mode": "100644",
+      "extension": ".jpg",
+      "size": 39465,
+      "is_binary": false
+    },
+    {
+      "name": "prototipo_home.jpg",
+      "path": "docs/docs/imagens/prototipo_home.jpg",
+      "type": "file",
+      "sha": "8c9b1d13178688873436d904a2aec8d5558a7317",
+      "mode": "100644",
+      "extension": ".jpg",
+      "size": 76856,
+      "is_binary": false
+    },
+    {
+      "name": "prototipo_raio_x.jpg",
+      "path": "docs/docs/imagens/prototipo_raio_x.jpg",
+      "type": "file",
+      "sha": "09568c131685b9c56b02a3f8db77dccbced7603d",
+      "mode": "100644",
+      "extension": ".jpg",
+      "size": 162176,
+      "is_binary": false
+    },
+    {
+      "name": "index.md",
+      "path": "docs/docs/index.md",
+      "type": "file",
+      "sha": "53cd4856034ad44d196c7bc0c8b34296328ebb5c",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 76,
+      "is_binary": false
+    },
+    {
+      "name": "integracaoapi.md",
+      "path": "docs/docs/integracaoapi.md",
+      "type": "file",
+      "sha": "06b2c9108bdb595e288ebed09bbfd44200875dba",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6359,
+      "is_binary": false
+    },
+    {
+      "name": "lgpd.md",
+      "path": "docs/docs/lgpd.md",
+      "type": "file",
+      "sha": "8b8c3ee375cf2f8f88ed287d5048a4e2204e7426",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2371,
+      "is_binary": false
+    },
+    {
+      "name": "links.md",
+      "path": "docs/docs/links.md",
+      "type": "file",
+      "sha": "5ccf477eb9d2549ab040c5d75a98ec96391aa9f2",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 493,
+      "is_binary": false
+    },
+    {
+      "name": "manual.md",
+      "path": "docs/docs/manual.md",
+      "type": "file",
+      "sha": "71cee3211757a27ce48ef28c52469a34ad29735b",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6485,
+      "is_binary": false
+    },
+    {
+      "name": "metodologia.md",
+      "path": "docs/docs/metodologia.md",
+      "type": "file",
+      "sha": "9ae89f477a56f5f17beb9b55b5b10af94654c776",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2615,
+      "is_binary": false
+    },
+    {
+      "name": "motor-nlp.md",
+      "path": "docs/docs/motor-nlp.md",
+      "type": "file",
+      "sha": "419861e62a99e00f986d08d03c342e52a417460d",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 7899,
+      "is_binary": false
+    },
+    {
+      "name": "productivity",
+      "path": "docs/docs/productivity",
+      "type": "directory",
+      "sha": "970690c66e94d0706e4ddd8183d6a72195ec0473",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "index.html",
+      "path": "docs/docs/productivity/index.html",
+      "type": "file",
+      "sha": "79729e35c522a60d18c28ff2e9e0d0a3c72bf11f",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 28046,
+      "is_binary": false
+    },
+    {
+      "name": "metrics.json",
+      "path": "docs/docs/productivity/metrics.json",
+      "type": "file",
+      "sha": "72fb6340a6ce5d749ab9abab5cc14b7719f01daa",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 16515,
+      "is_binary": false
+    },
+    {
+      "name": "qualidade.md",
+      "path": "docs/docs/qualidade.md",
+      "type": "file",
+      "sha": "524bf9469806b26b42dc68866e2dba10d743dc70",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4615,
+      "is_binary": false
+    },
+    {
+      "name": "requisitos.md",
+      "path": "docs/docs/requisitos.md",
+      "type": "file",
+      "sha": "b6048ffe2f1d77745a10e27cc611b75091327e7a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4447,
+      "is_binary": false
+    },
+    {
+      "name": "roadmap.md",
+      "path": "docs/docs/roadmap.md",
+      "type": "file",
+      "sha": "e921cb445bf1147665c7b5015eabceebaf633f05",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1667,
+      "is_binary": false
+    },
+    {
+      "name": "sprints",
+      "path": "docs/docs/sprints",
+      "type": "directory",
+      "sha": "82dced638f4f9d0e523db948b7ce452607df64d1",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "sprint-0.md",
+      "path": "docs/docs/sprints/sprint-0.md",
+      "type": "file",
+      "sha": "d3efb3f4f27b3ac22c3f39f5a5b24c82540659c6",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2152,
+      "is_binary": false
+    },
+    {
+      "name": "sprint-1.md",
+      "path": "docs/docs/sprints/sprint-1.md",
+      "type": "file",
+      "sha": "7c8111e882be5e9e06c21eabacb1bb770f926ffb",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2452,
+      "is_binary": false
+    },
+    {
+      "name": "sprint-10.md",
+      "path": "docs/docs/sprints/sprint-10.md",
+      "type": "file",
+      "sha": "7a16083dcdb5b5b317944dbc9f78180819271f3e",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1559,
+      "is_binary": false
+    },
+    {
+      "name": "sprint-11.md",
+      "path": "docs/docs/sprints/sprint-11.md",
+      "type": "file",
+      "sha": "f8d05420c4730d62f6f44acbff5c64dff38b7d6f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1416,
+      "is_binary": false
+    },
+    {
+      "name": "sprint-2.md",
+      "path": "docs/docs/sprints/sprint-2.md",
+      "type": "file",
+      "sha": "75e7f5536a38f717c342f27eb3ddf29f2e8d7728",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2522,
+      "is_binary": false
+    },
+    {
+      "name": "sprint-3.md",
+      "path": "docs/docs/sprints/sprint-3.md",
+      "type": "file",
+      "sha": "0e7bbf0ba5fa8e328b204bb18ab65bab630b7b0a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3286,
+      "is_binary": false
+    },
+    {
+      "name": "sprint-4.md",
+      "path": "docs/docs/sprints/sprint-4.md",
+      "type": "file",
+      "sha": "df38b50bde3816f5d762fe633978a3c096f07986",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3988,
+      "is_binary": false
+    },
+    {
+      "name": "sprint-5.md",
+      "path": "docs/docs/sprints/sprint-5.md",
+      "type": "file",
+      "sha": "d40ad5e22453f2609dd36ee787878d6e42a2e1c0",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1847,
+      "is_binary": false
+    },
+    {
+      "name": "sprint-6.md",
+      "path": "docs/docs/sprints/sprint-6.md",
+      "type": "file",
+      "sha": "9df24634e9c2ba85ac0e7648c4f1b93c794f0e6f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2463,
+      "is_binary": false
+    },
+    {
+      "name": "sprint-7.md",
+      "path": "docs/docs/sprints/sprint-7.md",
+      "type": "file",
+      "sha": "3ee6ed6ec6b4735e23d23b6eae37aef58c85a102",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1420,
+      "is_binary": false
+    },
+    {
+      "name": "sprint-8.md",
+      "path": "docs/docs/sprints/sprint-8.md",
+      "type": "file",
+      "sha": "b669927d1ccf88048cf2dcda149406f3205760fd",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1985,
+      "is_binary": false
+    },
+    {
+      "name": "sprint-9.md",
+      "path": "docs/docs/sprints/sprint-9.md",
+      "type": "file",
+      "sha": "433a21f38cf543a54d2fab5cb336faf1894ff541",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1515,
+      "is_binary": false
+    },
+    {
+      "name": "stylesheets",
+      "path": "docs/docs/stylesheets",
+      "type": "directory",
+      "sha": "72178ad7b7c9e16ae6e20288fda9481e65a4fe46",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "extra.css",
+      "path": "docs/docs/stylesheets/extra.css",
+      "type": "file",
+      "sha": "4a56fece61728d7870fc867453313ae616478210",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 5459,
+      "is_binary": false
+    },
+    {
+      "name": "landing.css",
+      "path": "docs/docs/stylesheets/landing.css",
+      "type": "file",
+      "sha": "f293cb20ab854c83531950262195b2dd0b100825",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 7430,
+      "is_binary": false
+    },
+    {
+      "name": "ux",
+      "path": "docs/docs/ux",
+      "type": "directory",
+      "sha": "7c861f8f96b3f4ddfa3976dfac4cd654f5f58956",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "personas.md",
+      "path": "docs/docs/ux/personas.md",
+      "type": "file",
+      "sha": "abd27fdf3e64995ea468ec83c3b0826cc51bdc4a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1473,
+      "is_binary": false
+    },
+    {
+      "name": "prototipos.md",
+      "path": "docs/docs/ux/prototipos.md",
+      "type": "file",
+      "sha": "0d3519e3bd7072e6a9c8fd756980c7ea4bb15e03",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 931,
+      "is_binary": false
+    },
+    {
+      "name": "mkdocs.yml",
+      "path": "docs/mkdocs.yml",
+      "type": "file",
+      "sha": "9f23c3314487fbabfc9cb6b1ba114453279c4359",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 2757,
+      "is_binary": false
+    },
+    {
+      "name": "overrides",
+      "path": "docs/overrides",
+      "type": "directory",
+      "sha": "0588007e2da54834a4d0fe31fab745a75613140e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "home.html",
+      "path": "docs/overrides/home.html",
+      "type": "file",
+      "sha": "3af5267a35cc802c0b0d7749eb8c546282a2bb51",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 10210,
+      "is_binary": false
+    },
+    {
+      "name": "productivity",
+      "path": "docs/productivity",
+      "type": "directory",
+      "sha": "d189a8b69205146d23e177949c23323364b722f0",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "collect_metrics.py",
+      "path": "docs/productivity/collect_metrics.py",
+      "type": "file",
+      "sha": "65cec4fcf87b8eaa317a87fd4587d08975680e68",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 10637,
+      "is_binary": false
+    },
+    {
+      "name": "requirements.txt",
+      "path": "docs/productivity/requirements.txt",
+      "type": "file",
+      "sha": "24915bc34598d13e7e9a31c6ef7935e5d4121708",
+      "mode": "100644",
+      "extension": ".txt",
+      "size": 39,
+      "is_binary": false
+    },
+    {
+      "name": "etl",
+      "path": "etl",
+      "type": "directory",
+      "sha": "fc8763f380d322ee5959902d9c4b2d53ef768b6f",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "etl/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "chunker_discursos_camara.py",
+      "path": "etl/chunker_discursos_camara.py",
+      "type": "file",
+      "sha": "da60e8eef3259ba6f318997d660f5c80078b8bb5",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4903,
+      "is_binary": false
+    },
+    {
+      "name": "chunker_discursos_senado.py",
+      "path": "etl/chunker_discursos_senado.py",
+      "type": "file",
+      "sha": "81bced388356926936f1fe1ec34a6d49aa653cb4",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4916,
+      "is_binary": false
+    },
+    {
+      "name": "extrator_discursos_camara.py",
+      "path": "etl/extrator_discursos_camara.py",
+      "type": "file",
+      "sha": "82f6b37fe9f6b1501f665a10a1712e5a713eaf09",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4171,
+      "is_binary": false
+    },
+    {
+      "name": "extrator_discursos_senado.py",
+      "path": "etl/extrator_discursos_senado.py",
+      "type": "file",
+      "sha": "8f33fe20b0fee1ff2faab9c2b6cb06b04f0d746c",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 6390,
+      "is_binary": false
+    },
+    {
+      "name": "extrator_politicos_camara.py",
+      "path": "etl/extrator_politicos_camara.py",
+      "type": "file",
+      "sha": "12cff89739a79a7b604f4babeafa669b9da2ab6e",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 5123,
+      "is_binary": false
+    },
+    {
+      "name": "extrator_politicos_senado.py",
+      "path": "etl/extrator_politicos_senado.py",
+      "type": "file",
+      "sha": "71bb0a616a773a458a5f6ad588bc431ad56ab7a0",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4385,
+      "is_binary": false
+    },
+    {
+      "name": "extrator_proposicoes_camara.py",
+      "path": "etl/extrator_proposicoes_camara.py",
+      "type": "file",
+      "sha": "15e7bcc5496c8a5022ac64e6453fb815bc44dcc9",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 10297,
+      "is_binary": false
+    },
+    {
+      "name": "extrator_proposicoes_senado.py",
+      "path": "etl/extrator_proposicoes_senado.py",
+      "type": "file",
+      "sha": "2f3f20e4072045564e45187ceded66d2fa1438a5",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 8115,
+      "is_binary": false
+    },
+    {
+      "name": "extrator_texto_proposicao.py",
+      "path": "etl/extrator_texto_proposicao.py",
+      "type": "file",
+      "sha": "0b4e53ed64526b34cd095cd7cc2608427cd3528f",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1409,
+      "is_binary": false
+    },
+    {
+      "name": "extrator_texto_senado.py",
+      "path": "etl/extrator_texto_senado.py",
+      "type": "file",
+      "sha": "3e4d452adc93bee003c98a618c4cdb2abc197272",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1509,
+      "is_binary": false
+    },
+    {
+      "name": "extrator_votos_camara.py",
+      "path": "etl/extrator_votos_camara.py",
+      "type": "file",
+      "sha": "cead5750f70ed8a7d6072c1662954866f95d39eb",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 10531,
+      "is_binary": false
+    },
+    {
+      "name": "extrator_votos_senado.py",
+      "path": "etl/extrator_votos_senado.py",
+      "type": "file",
+      "sha": "30e2baaa284dc3b74d5aeabe3eb7791236fbfb12",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 7723,
+      "is_binary": false
+    },
+    {
+      "name": "inferidor_postura.py",
+      "path": "etl/inferidor_postura.py",
+      "type": "file",
+      "sha": "9e00f249cdac61275e2a9499438958796013c156",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2790,
+      "is_binary": false
+    },
+    {
+      "name": "pipeline_inferencia.py",
+      "path": "etl/pipeline_inferencia.py",
+      "type": "file",
+      "sha": "ba86f3b2a76c84ba4de223911f448e187002a5c5",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 6266,
+      "is_binary": false
+    },
+    {
+      "name": "pipeline_resumo_proposicoes.py",
+      "path": "etl/pipeline_resumo_proposicoes.py",
+      "type": "file",
+      "sha": "505f443b4724fb7cfa5c2698b31da90d02a45ea6",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3602,
+      "is_binary": false
+    },
+    {
+      "name": "pipeline_resumo_senado.py",
+      "path": "etl/pipeline_resumo_senado.py",
+      "type": "file",
+      "sha": "5efe47e78ea81b1231305a802c4093f646fa1330",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3539,
+      "is_binary": false
+    },
+    {
+      "name": "resumidor_proposicoes.py",
+      "path": "etl/resumidor_proposicoes.py",
+      "type": "file",
+      "sha": "830a13d0327ee0c2e0a0da3ce7a6fd34d4989773",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2836,
+      "is_binary": false
+    },
+    {
+      "name": "resumidor_senado.py",
+      "path": "etl/resumidor_senado.py",
+      "type": "file",
+      "sha": "f889d5abb8291f587cb78bbcb399e3cb0b786fed",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2288,
+      "is_binary": false
+    },
+    {
+      "name": "transformadores_discursos_camara.py",
+      "path": "etl/transformadores_discursos_camara.py",
+      "type": "file",
+      "sha": "8d13192af66d1ec67aca4eb56b5071c0b7c03b71",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 7162,
+      "is_binary": false
+    },
+    {
+      "name": "transformadores_discursos_senado.py",
+      "path": "etl/transformadores_discursos_senado.py",
+      "type": "file",
+      "sha": "b01443a8ca9ff4d28775f50c973ccedb3164df25",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 6110,
+      "is_binary": false
+    },
+    {
+      "name": "transformadores_proposicoes_camara.py",
+      "path": "etl/transformadores_proposicoes_camara.py",
+      "type": "file",
+      "sha": "cc48c09d8b0f9d7ab95307d8bd593e6c943cba74",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3398,
+      "is_binary": false
+    },
+    {
+      "name": "transformadores_votos_camara.py",
+      "path": "etl/transformadores_votos_camara.py",
+      "type": "file",
+      "sha": "d186c9c541dc7f75df4203fca77f46e8f582f122",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2767,
+      "is_binary": false
+    },
+    {
+      "name": "transformadores_votos_senado.py",
+      "path": "etl/transformadores_votos_senado.py",
+      "type": "file",
+      "sha": "80a309e8053e19d04f1fe0cd900403ec6152a51e",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3529,
+      "is_binary": false
+    },
+    {
+      "name": "utils.py",
+      "path": "etl/utils.py",
+      "type": "file",
+      "sha": "e2ac7f74f59c0d14dbdc08c26c076a4ea41d7331",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 572,
+      "is_binary": false
+    },
+    {
+      "name": "vinculador_discursos_votos_camara.py",
+      "path": "etl/vinculador_discursos_votos_camara.py",
+      "type": "file",
+      "sha": "b004f6b86aab79d8d3dac3e7d8537f2409f7f1d7",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 8257,
+      "is_binary": false
+    },
+    {
+      "name": "vinculador_discursos_votos_senado.py",
+      "path": "etl/vinculador_discursos_votos_senado.py",
+      "type": "file",
+      "sha": "b6b0fab40d9233956b4dff9ec87408b050b6bcfe",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 8131,
+      "is_binary": false
+    },
+    {
+      "name": "figma.svg",
+      "path": "figma.svg",
+      "type": "file",
+      "sha": "f75731eef9f38ad6716e7b3e23287ec6e4a06c60",
+      "mode": "100644",
+      "extension": ".svg",
+      "size": 20940307,
+      "is_binary": false
+    },
+    {
+      "name": "frontend",
+      "path": "frontend",
+      "type": "directory",
+      "sha": "a239e170efe38239ea5fd4cf7c53f4a7bacb0f5a",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".dockerignore",
+      "path": "frontend/.dockerignore",
+      "type": "file",
+      "sha": "ce8b70be60b57e16f9ab1140ca6ad2b6a1b27593",
+      "mode": "100644",
+      "extension": ".dockerignore",
+      "size": 47,
+      "is_binary": false
+    },
+    {
+      "name": ".gitignore",
+      "path": "frontend/.gitignore",
+      "type": "file",
+      "sha": "12beda9ab85a5e496a754409c461f28f7cf53183",
+      "mode": "100644",
+      "extension": ".gitignore",
+      "size": 38,
+      "is_binary": false
+    },
+    {
+      "name": "Dockerfile",
+      "path": "frontend/Dockerfile",
+      "type": "file",
+      "sha": "eacf447f005849036913b20daf25e289dc216f2f",
+      "mode": "100644",
+      "extension": "",
+      "size": 378,
+      "is_binary": false
+    },
+    {
+      "name": "app",
+      "path": "frontend/app",
+      "type": "directory",
+      "sha": "f5984a2b909480db58a12879a60925371e1b55cf",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "comparacao",
+      "path": "frontend/app/comparacao",
+      "type": "directory",
+      "sha": "04d922ae8451ef2abc89a0d0637f1b614231426a",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "ComparacaoClient.tsx",
+      "path": "frontend/app/comparacao/ComparacaoClient.tsx",
+      "type": "file",
+      "sha": "d362fbdd1f3fbb659da8ff5e0f6d7365c556d405",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 9196,
+      "is_binary": false
+    },
+    {
+      "name": "SeletorComparacao.tsx",
+      "path": "frontend/app/comparacao/SeletorComparacao.tsx",
+      "type": "file",
+      "sha": "36d462a46b3830e723bd995d22bcfec4cf03635d",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 14128,
+      "is_binary": false
+    },
+    {
+      "name": "TimelineVotos.tsx",
+      "path": "frontend/app/comparacao/TimelineVotos.tsx",
+      "type": "file",
+      "sha": "103cbe55fda6fbc8ca784b7eebd3e4e37e40d878",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 4147,
+      "is_binary": false
+    },
+    {
+      "name": "loading.tsx",
+      "path": "frontend/app/comparacao/loading.tsx",
+      "type": "file",
+      "sha": "d607495c98073c6e2270571c103d6eaa5c7f3429",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 2032,
+      "is_binary": false
+    },
+    {
+      "name": "page.tsx",
+      "path": "frontend/app/comparacao/page.tsx",
+      "type": "file",
+      "sha": "33be9ec00b9048085be90609a9f802913753b080",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 2430,
+      "is_binary": false
+    },
+    {
+      "name": "votos.ts",
+      "path": "frontend/app/comparacao/votos.ts",
+      "type": "file",
+      "sha": "50fb757816528cfda77c88f2ce46aa9110dac3e2",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 1224,
+      "is_binary": false
+    },
+    {
+      "name": "diretorio",
+      "path": "frontend/app/diretorio",
+      "type": "directory",
+      "sha": "89aa3f8189877de5927844ec665372e81b39a403",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "DiretorioClient.tsx",
+      "path": "frontend/app/diretorio/DiretorioClient.tsx",
+      "type": "file",
+      "sha": "94fd107101647838bbb9938c48581b71202a93a1",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 16195,
+      "is_binary": false
+    },
+    {
+      "name": "loading.tsx",
+      "path": "frontend/app/diretorio/loading.tsx",
+      "type": "file",
+      "sha": "9924d7277eca9e6f2b45ecc3c7350d1e4339685a",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 2924,
+      "is_binary": false
+    },
+    {
+      "name": "page.tsx",
+      "path": "frontend/app/diretorio/page.tsx",
+      "type": "file",
+      "sha": "833cfb990775bc707915db0cc32cc3b11c3cf484",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 742,
+      "is_binary": false
+    },
+    {
+      "name": "discursos",
+      "path": "frontend/app/discursos",
+      "type": "directory",
+      "sha": "46e1131fa6fbc03f85162c0829c13d5248d90e27",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "DiscursosClient.tsx",
+      "path": "frontend/app/discursos/DiscursosClient.tsx",
+      "type": "file",
+      "sha": "a4f0674c397efb87c853ec56dc400af46597b7cb",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 26372,
+      "is_binary": false
+    },
+    {
+      "name": "loading.tsx",
+      "path": "frontend/app/discursos/loading.tsx",
+      "type": "file",
+      "sha": "2a8be8bef3d6078dd4589b147df8b22eb3b23cf4",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 2432,
+      "is_binary": false
+    },
+    {
+      "name": "page.tsx",
+      "path": "frontend/app/discursos/page.tsx",
+      "type": "file",
+      "sha": "0ee72420725cd4fbbc21d149af2157b4bddc4798",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 2324,
+      "is_binary": false
+    },
+    {
+      "name": "globals.css",
+      "path": "frontend/app/globals.css",
+      "type": "file",
+      "sha": "daa45b8693bef6e1a6c52a475a35c56283023320",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 3331,
+      "is_binary": false
+    },
+    {
+      "name": "layout.tsx",
+      "path": "frontend/app/layout.tsx",
+      "type": "file",
+      "sha": "9b7c1d2a5bf0a06c33e7ee89bbb29a4bab0007eb",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1720,
+      "is_binary": false
+    },
+    {
+      "name": "not-found.tsx",
+      "path": "frontend/app/not-found.tsx",
+      "type": "file",
+      "sha": "89e518e7f948f4251b02d31947f3b3ee23334b40",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 745,
+      "is_binary": false
+    },
+    {
+      "name": "page.tsx",
+      "path": "frontend/app/page.tsx",
+      "type": "file",
+      "sha": "c85ae4827b6e3a605b80dbea4af60522f40f527c",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 3462,
+      "is_binary": false
+    },
+    {
+      "name": "partidos",
+      "path": "frontend/app/partidos",
+      "type": "directory",
+      "sha": "6f887397dc711504f5d1059bbf58be4afc16ff0e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "PartidosClient.tsx",
+      "path": "frontend/app/partidos/PartidosClient.tsx",
+      "type": "file",
+      "sha": "ea83adc28b2ea2ef7dadb719e23573aa2f92b0c8",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 18686,
+      "is_binary": false
+    },
+    {
+      "name": "loading.tsx",
+      "path": "frontend/app/partidos/loading.tsx",
+      "type": "file",
+      "sha": "d7be5291d041c426d36c5249b3d010e64dce9ad1",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 2475,
+      "is_binary": false
+    },
+    {
+      "name": "page.tsx",
+      "path": "frontend/app/partidos/page.tsx",
+      "type": "file",
+      "sha": "475398504be628ba26f8c7007914284ead1a57bc",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1032,
+      "is_binary": false
+    },
+    {
+      "name": "politico",
+      "path": "frontend/app/politico",
+      "type": "directory",
+      "sha": "907c346fded13a250b9e15e730ccab2666759ae2",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "[id]",
+      "path": "frontend/app/politico/[id]",
+      "type": "directory",
+      "sha": "f5341332624684ea246100bba7a90b5c7cad5960",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "DossieClient.tsx",
+      "path": "frontend/app/politico/[id]/DossieClient.tsx",
+      "type": "file",
+      "sha": "7f253d658d60c584437a20ba29ac894f96238300",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 39490,
+      "is_binary": false
+    },
+    {
+      "name": "TimelineIndividual.tsx",
+      "path": "frontend/app/politico/[id]/TimelineIndividual.tsx",
+      "type": "file",
+      "sha": "56c78abd4b1120b5cda396d32f5ebc22a3cc0900",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 3457,
+      "is_binary": false
+    },
+    {
+      "name": "loading.tsx",
+      "path": "frontend/app/politico/[id]/loading.tsx",
+      "type": "file",
+      "sha": "265cd69d5f97c56b07cb960fc5fc1b3975d54ff3",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 2439,
+      "is_binary": false
+    },
+    {
+      "name": "page.tsx",
+      "path": "frontend/app/politico/[id]/page.tsx",
+      "type": "file",
+      "sha": "17114984955a9347200ec94cc5440ebf3da5a94e",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 4280,
+      "is_binary": false
+    },
+    {
+      "name": "proposicoes",
+      "path": "frontend/app/proposicoes",
+      "type": "directory",
+      "sha": "a6f0cc7174329cd529c53821de536dff3ea2255a",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "ProposicoesClient.tsx",
+      "path": "frontend/app/proposicoes/ProposicoesClient.tsx",
+      "type": "file",
+      "sha": "b59fb1f9d256d96fb98933c3876eaad22c7b305d",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 14148,
+      "is_binary": false
+    },
+    {
+      "name": "[casa]",
+      "path": "frontend/app/proposicoes/[casa]",
+      "type": "directory",
+      "sha": "30036761773c8ebb2c71391c5476a2ab00571d35",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "[id]",
+      "path": "frontend/app/proposicoes/[casa]/[id]",
+      "type": "directory",
+      "sha": "72908d9a7665c08eb116b1cc8bf5bc63a8177a08",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "ProposicaoDetalheClient.tsx",
+      "path": "frontend/app/proposicoes/[casa]/[id]/ProposicaoDetalheClient.tsx",
+      "type": "file",
+      "sha": "d5bce32f49b835ff26ad2c7cdcdcfad1d7296682",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 10576,
+      "is_binary": false
+    },
+    {
+      "name": "page.tsx",
+      "path": "frontend/app/proposicoes/[casa]/[id]/page.tsx",
+      "type": "file",
+      "sha": "0510bb18a9ba93686352d0df331db1efa634ef63",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 2225,
+      "is_binary": false
+    },
+    {
+      "name": "loading.tsx",
+      "path": "frontend/app/proposicoes/loading.tsx",
+      "type": "file",
+      "sha": "e79a3fdea5d9ff69566488d43676e2410c965927",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1840,
+      "is_binary": false
+    },
+    {
+      "name": "page.tsx",
+      "path": "frontend/app/proposicoes/page.tsx",
+      "type": "file",
+      "sha": "3ee85694f3f3bdd59cfcea517a225c39e92e1c7d",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1620,
+      "is_binary": false
+    },
+    {
+      "name": "components",
+      "path": "frontend/components",
+      "type": "directory",
+      "sha": "652f3a90054c4763f180379493bea90b06cbd29e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "CoherenceChart.tsx",
+      "path": "frontend/components/CoherenceChart.tsx",
+      "type": "file",
+      "sha": "5931a46b5b31e3937bf568aea9c69afb24c56c47",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 15236,
+      "is_binary": false
+    },
+    {
+      "name": "CongressoFoto.tsx",
+      "path": "frontend/components/CongressoFoto.tsx",
+      "type": "file",
+      "sha": "6af32694339d87626ccf39fc47af6d1b467547cd",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1967,
+      "is_binary": false
+    },
+    {
+      "name": "CongressoSilhueta.tsx",
+      "path": "frontend/components/CongressoSilhueta.tsx",
+      "type": "file",
+      "sha": "3041e766a7a71a53c749e094c6ac3658333e38ed",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 2465,
+      "is_binary": false
+    },
+    {
+      "name": "MembroCard.tsx",
+      "path": "frontend/components/MembroCard.tsx",
+      "type": "file",
+      "sha": "4b0bdd000b8cd2ba4e97c22f61157eee42ad0089",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 4390,
+      "is_binary": false
+    },
+    {
+      "name": "Navbar.tsx",
+      "path": "frontend/components/Navbar.tsx",
+      "type": "file",
+      "sha": "a2958da4d7b2075182512c914c09f05cf558ba68",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 4845,
+      "is_binary": false
+    },
+    {
+      "name": "SimilaresGrid.tsx",
+      "path": "frontend/components/SimilaresGrid.tsx",
+      "type": "file",
+      "sha": "96a7f842d8f7d8aebf95c6e33c49d16956ccd000",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 2017,
+      "is_binary": false
+    },
+    {
+      "name": "SiteFooter.tsx",
+      "path": "frontend/components/SiteFooter.tsx",
+      "type": "file",
+      "sha": "f5cfbfa5a1da02f2656c813d90b449eb2fe04477",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1591,
+      "is_binary": false
+    },
+    {
+      "name": "SobreEquipe.tsx",
+      "path": "frontend/components/SobreEquipe.tsx",
+      "type": "file",
+      "sha": "763e3d499a224a5ef2eda0e1151753baa978094e",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1503,
+      "is_binary": false
+    },
+    {
+      "name": "TendenciaRecente.tsx",
+      "path": "frontend/components/TendenciaRecente.tsx",
+      "type": "file",
+      "sha": "5a410ed2b4f9195c2aba6ed1937c502a02c0a273",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1605,
+      "is_binary": false
+    },
+    {
+      "name": "ThemeToggle.tsx",
+      "path": "frontend/components/ThemeToggle.tsx",
+      "type": "file",
+      "sha": "7cbc19e7f171273da12781243d6dadd8c5c0ee93",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1129,
+      "is_binary": false
+    },
+    {
+      "name": "VotosTable.tsx",
+      "path": "frontend/components/VotosTable.tsx",
+      "type": "file",
+      "sha": "94fc16fd295dc564ef3c5245125c7dcb9fe071dc",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 4940,
+      "is_binary": false
+    },
+    {
+      "name": "home",
+      "path": "frontend/components/home",
+      "type": "directory",
+      "sha": "e72d3dfe6fd742a5572606c0dcf0ea8f1836208b",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "DiretorioPreview.tsx",
+      "path": "frontend/components/home/DiretorioPreview.tsx",
+      "type": "file",
+      "sha": "934520b69137ea11e3f3d1b671e8d965247f5b57",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 11050,
+      "is_binary": false
+    },
+    {
+      "name": "HomeBusca.tsx",
+      "path": "frontend/components/home/HomeBusca.tsx",
+      "type": "file",
+      "sha": "1741b5200eb6483f39a3bed0b4abf0653661410e",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 938,
+      "is_binary": false
+    },
+    {
+      "name": "ui",
+      "path": "frontend/components/ui",
+      "type": "directory",
+      "sha": "47287e061d2dcb7d534e84a3a7dee13b12193bcc",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "Avatar.tsx",
+      "path": "frontend/components/ui/Avatar.tsx",
+      "type": "file",
+      "sha": "26c48fb7f3728c9d147355d4619279bf1a7da555",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 999,
+      "is_binary": false
+    },
+    {
+      "name": "ScoreBadge.tsx",
+      "path": "frontend/components/ui/ScoreBadge.tsx",
+      "type": "file",
+      "sha": "7aff7a6e44e0414eb5290b9229d9d310cab2f33a",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1339,
+      "is_binary": false
+    },
+    {
+      "name": "Skeleton.tsx",
+      "path": "frontend/components/ui/Skeleton.tsx",
+      "type": "file",
+      "sha": "d3b46ae892746a7d48f775fe602361fc0df41568",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 673,
+      "is_binary": false
+    },
+    {
+      "name": "eslint.config.mjs",
+      "path": "frontend/eslint.config.mjs",
+      "type": "file",
+      "sha": "21bde5f5d232a252be745114e468d8008d0d2473",
+      "mode": "100644",
+      "extension": ".mjs",
+      "size": 349,
+      "is_binary": false
+    },
+    {
+      "name": "lib",
+      "path": "frontend/lib",
+      "type": "directory",
+      "sha": "de9ed6dd2d2e8a3c6d03a225420244856b8f7852",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "api.ts",
+      "path": "frontend/lib/api.ts",
+      "type": "file",
+      "sha": "56feb1fd4ad82a8231da9a598ce593778521ef00",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 2747,
+      "is_binary": false
+    },
+    {
+      "name": "casa.ts",
+      "path": "frontend/lib/casa.ts",
+      "type": "file",
+      "sha": "502e533a5c39685de249e8e8b100e5c0de3c4561",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 554,
+      "is_binary": false
+    },
+    {
+      "name": "comparacao.ts",
+      "path": "frontend/lib/comparacao.ts",
+      "type": "file",
+      "sha": "9747b4b8645447a5b0104ba1ac5028e4811799db",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 3103,
+      "is_binary": false
+    },
+    {
+      "name": "diretorio.ts",
+      "path": "frontend/lib/diretorio.ts",
+      "type": "file",
+      "sha": "f530d1baf5fbbdcac305211f65cf0fca289e4559",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 3058,
+      "is_binary": false
+    },
+    {
+      "name": "discursos.ts",
+      "path": "frontend/lib/discursos.ts",
+      "type": "file",
+      "sha": "63b812456c702e35f2d8a541bc9166fe819b77ca",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 1660,
+      "is_binary": false
+    },
+    {
+      "name": "equipe.ts",
+      "path": "frontend/lib/equipe.ts",
+      "type": "file",
+      "sha": "aabcfc188036217f849e2b0d6b5850f4aead9717",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 3005,
+      "is_binary": false
+    },
+    {
+      "name": "mock.ts",
+      "path": "frontend/lib/mock.ts",
+      "type": "file",
+      "sha": "061c3d72dd8da72622bd18a4bb5ac89ab1f3a56d",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 41474,
+      "is_binary": false
+    },
+    {
+      "name": "partidos.ts",
+      "path": "frontend/lib/partidos.ts",
+      "type": "file",
+      "sha": "4f998c7f44956fa9e93abcfce94e8151e4ab75ee",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 1470,
+      "is_binary": false
+    },
+    {
+      "name": "politicos.ts",
+      "path": "frontend/lib/politicos.ts",
+      "type": "file",
+      "sha": "bb9a7f7175e99610a522a0b84a5400c875d8b52e",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 3794,
+      "is_binary": false
+    },
+    {
+      "name": "proposicoes.ts",
+      "path": "frontend/lib/proposicoes.ts",
+      "type": "file",
+      "sha": "63e2db2af861d6474d9146795df6e3a7be830ddf",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 2681,
+      "is_binary": false
+    },
+    {
+      "name": "types-legacy.ts",
+      "path": "frontend/lib/types-legacy.ts",
+      "type": "file",
+      "sha": "cba3e33e4a14a32c07152ba3c014f1c39072a6bc",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 1646,
+      "is_binary": false
+    },
+    {
+      "name": "types.ts",
+      "path": "frontend/lib/types.ts",
+      "type": "file",
+      "sha": "f34d449e096e47cda45c3c27eb479ea09c0dd9fa",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 25887,
+      "is_binary": false
+    },
+    {
+      "name": "utils.ts",
+      "path": "frontend/lib/utils.ts",
+      "type": "file",
+      "sha": "0f86aa0afb7dd52fb5475d417a29331b55e0763a",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 1237,
+      "is_binary": false
+    },
+    {
+      "name": "next-env.d.ts",
+      "path": "frontend/next-env.d.ts",
+      "type": "file",
+      "sha": "830fb594ca2970a827555c28a253b097367e08d8",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 262,
+      "is_binary": false
+    },
+    {
+      "name": "next.config.ts",
+      "path": "frontend/next.config.ts",
+      "type": "file",
+      "sha": "19f56e79b922bf244eedc1b410775eaf1b1722b3",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 666,
+      "is_binary": false
+    },
+    {
+      "name": "package-lock.json",
+      "path": "frontend/package-lock.json",
+      "type": "file",
+      "sha": "cb3b13a20d15c40c83c2b68437d1647463554a02",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 230244,
+      "is_binary": false
+    },
+    {
+      "name": "package.json",
+      "path": "frontend/package.json",
+      "type": "file",
+      "sha": "a1f5b99ea7c86d8f14161acbefba5d7b78887a8c",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 672,
+      "is_binary": false
+    },
+    {
+      "name": "postcss.config.mjs",
+      "path": "frontend/postcss.config.mjs",
+      "type": "file",
+      "sha": "a9b5c43d12ca5dd106ede4e9cec451f4ede60fef",
+      "mode": "100644",
+      "extension": ".mjs",
+      "size": 60,
+      "is_binary": false
+    },
+    {
+      "name": "public",
+      "path": "frontend/public",
+      "type": "directory",
+      "sha": "b4974891a72b202885208734173c4cf452c7b6e2",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "images",
+      "path": "frontend/public/images",
+      "type": "directory",
+      "sha": "2b6980a42532aca5c402ef82880bfce2f83e0165",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "foto_dia_congresso.jpeg",
+      "path": "frontend/public/images/foto_dia_congresso.jpeg",
+      "type": "file",
+      "sha": "1a7b558411fdad10e939adb993260a5cf96e94f9",
+      "mode": "100644",
+      "extension": ".jpeg",
+      "size": 673756,
+      "is_binary": false
+    },
+    {
+      "name": "foto_noite_congresso.jpeg",
+      "path": "frontend/public/images/foto_noite_congresso.jpeg",
+      "type": "file",
+      "sha": "cb8cf9869d6192482b46152cefdefe741b3b9982",
+      "mode": "100644",
+      "extension": ".jpeg",
+      "size": 606619,
+      "is_binary": false
+    },
+    {
+      "name": "tsconfig.json",
+      "path": "frontend/tsconfig.json",
+      "type": "file",
+      "sha": "f15eefe22cf1e6535c59482619bbb9006935f37c",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 697,
+      "is_binary": false
+    },
+    {
+      "name": "pocs",
+      "path": "pocs",
+      "type": "directory",
+      "sha": "6133a5bd9e3b5fa4b8f3650c60856f886c7c3692",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "lote_nlp.py",
+      "path": "pocs/lote_nlp.py",
+      "type": "file",
+      "sha": "a5a4b1a944d495f1037e1259096687ca6f9f87ed",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 7784,
+      "is_binary": false
+    },
+    {
+      "name": "motor_nlp",
+      "path": "pocs/motor_nlp",
+      "type": "directory",
+      "sha": "450d9f7ee4a7ec114e49a5158afdf3f8edfd991b",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "poc_npl.py",
+      "path": "pocs/motor_nlp/poc_npl.py",
+      "type": "file",
+      "sha": "e4821ca05e21c5d2640b7495ab093cbd795a5aad",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1543,
+      "is_binary": false
+    },
+    {
+      "name": "teste_motor_embeddings.py",
+      "path": "pocs/teste_motor_embeddings.py",
+      "type": "file",
+      "sha": "c65f36ecc97f3698a26b31ed8ae4ee9490ab7699",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2455,
+      "is_binary": false
+    },
+    {
+      "name": "prds_md",
+      "path": "prds_md",
+      "type": "directory",
+      "sha": "5eb241ca03272541dbd8f61d75faa9f89531402d",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "prd_chunker_senado.md",
+      "path": "prds_md/prd_chunker_senado.md",
+      "type": "file",
+      "sha": "93e94f71b2d750acbe0bcb8e5c151a5d3047404e",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 8659,
+      "is_binary": false
+    },
+    {
+      "name": "prd_chunks_proximos_camara.md",
+      "path": "prds_md/prd_chunks_proximos_camara.md",
+      "type": "file",
+      "sha": "8543506acc947fcbc34c59d4b883da0e52a27df3",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 8234,
+      "is_binary": false
+    },
+    {
+      "name": "prd_chunks_proximos_senado.md",
+      "path": "prds_md/prd_chunks_proximos_senado.md",
+      "type": "file",
+      "sha": "ef401f17fc2d7e78c2be2053b39c72bc698ebc1b",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 7999,
+      "is_binary": false
+    },
+    {
+      "name": "prd_extrator_discursos_camara.md",
+      "path": "prds_md/prd_extrator_discursos_camara.md",
+      "type": "file",
+      "sha": "47f9e569a8237d3defd4b2530d31249dbd80d58f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 12083,
+      "is_binary": false
+    },
+    {
+      "name": "prd_extrator_discursos_senado.md",
+      "path": "prds_md/prd_extrator_discursos_senado.md",
+      "type": "file",
+      "sha": "d99b3b3d3e2e1a19296ab3ba350c7ecc66a1d4b9",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 10567,
+      "is_binary": false
+    },
+    {
+      "name": "prd_extrator_politicos_camara.md",
+      "path": "prds_md/prd_extrator_politicos_camara.md",
+      "type": "file",
+      "sha": "5e672ee00e5e263ef84e983e141f55a97e085d17",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 7682,
+      "is_binary": false
+    },
+    {
+      "name": "prd_extrator_politicos_senado.md",
+      "path": "prds_md/prd_extrator_politicos_senado.md",
+      "type": "file",
+      "sha": "1405e31773a21d86a7bf8b16a3ea7e47385c854c",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6242,
+      "is_binary": false
+    },
+    {
+      "name": "prd_extrator_proposicoes_camara.md",
+      "path": "prds_md/prd_extrator_proposicoes_camara.md",
+      "type": "file",
+      "sha": "06733c7c320868f5d7b1556c1fd030d1edbc8961",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 9185,
+      "is_binary": false
+    },
+    {
+      "name": "prd_extrator_proposicoes_senado.md",
+      "path": "prds_md/prd_extrator_proposicoes_senado.md",
+      "type": "file",
+      "sha": "266c18554d23055419ee46e74a9fafca79dcaf4b",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 8936,
+      "is_binary": false
+    },
+    {
+      "name": "prd_extrator_votos_camara.md",
+      "path": "prds_md/prd_extrator_votos_camara.md",
+      "type": "file",
+      "sha": "c9502aedbf6ac63739a7d30563cfcdf0a6a61132",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 8581,
+      "is_binary": false
+    },
+    {
+      "name": "prd_extrator_votos_senado.md",
+      "path": "prds_md/prd_extrator_votos_senado.md",
+      "type": "file",
+      "sha": "a6ed3233fa0e1867724796c21253e7ac16298e0c",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 12546,
+      "is_binary": false
+    },
+    {
+      "name": "prd_resumo_proposicoes_senado.md",
+      "path": "prds_md/prd_resumo_proposicoes_senado.md",
+      "type": "file",
+      "sha": "4f8384de5859d744ff2e1b896390e1c9cc164ea1",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 7787,
+      "is_binary": false
+    },
+    {
+      "name": "pyproject.toml",
+      "path": "pyproject.toml",
+      "type": "file",
+      "sha": "1007e3a1d90522514f8b26e08c28aa7d14c6b50b",
+      "mode": "100644",
+      "extension": ".toml",
+      "size": 403,
+      "is_binary": false
+    },
+    {
+      "name": "pytest.ini",
+      "path": "pytest.ini",
+      "type": "file",
+      "sha": "a635c5c031823148db0da62e63edb0c1f6e4a5f6",
+      "mode": "100644",
+      "extension": ".ini",
+      "size": 24,
+      "is_binary": false
+    },
+    {
+      "name": "requirements.api.txt",
+      "path": "requirements.api.txt",
+      "type": "file",
+      "sha": "38a40930bbce45c99a8ad8ea622de87cd2194e92",
+      "mode": "100644",
+      "extension": ".txt",
+      "size": 128,
+      "is_binary": false
+    },
+    {
+      "name": "requirements.test.txt",
+      "path": "requirements.test.txt",
+      "type": "file",
+      "sha": "37f25571e90f7fc79bd9617b8cf2b479caf81ac3",
+      "mode": "100644",
+      "extension": ".txt",
+      "size": 67,
+      "is_binary": false
+    },
+    {
+      "name": "requirements.worker.txt",
+      "path": "requirements.worker.txt",
+      "type": "file",
+      "sha": "3a075d48047167fab22c5bb9ed125a01e5a63923",
+      "mode": "100644",
+      "extension": ".txt",
+      "size": 216,
+      "is_binary": false
+    },
+    {
+      "name": "scripts",
+      "path": "scripts",
+      "type": "directory",
+      "sha": "ad55647b8efd76aea8f6097c44806b9e4f515978",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "run_chunker_discursos.py",
+      "path": "scripts/run_chunker_discursos.py",
+      "type": "file",
+      "sha": "bf82216fed3e5e23d8d2e9942fbc1611067cfcc8",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3194,
+      "is_binary": false
+    },
+    {
+      "name": "run_extrator_discursos.py",
+      "path": "scripts/run_extrator_discursos.py",
+      "type": "file",
+      "sha": "2b4b5ee2d372e93131bfb7aa8587f853932703ec",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1657,
+      "is_binary": false
+    },
+    {
+      "name": "run_extrator_politicos.py",
+      "path": "scripts/run_extrator_politicos.py",
+      "type": "file",
+      "sha": "dfd48e4b519adc6a15e0799aade7fcf71f432f30",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1023,
+      "is_binary": false
+    },
+    {
+      "name": "run_extrator_proposicoes.py",
+      "path": "scripts/run_extrator_proposicoes.py",
+      "type": "file",
+      "sha": "6f0788de51adac113b3bddf5ffe39b7e28aba11f",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1823,
+      "is_binary": false
+    },
+    {
+      "name": "run_extrator_votos.py",
+      "path": "scripts/run_extrator_votos.py",
+      "type": "file",
+      "sha": "43427e870332e66484a5d757dcdf2969dc011c95",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1701,
+      "is_binary": false
+    },
+    {
+      "name": "run_inferencia.py",
+      "path": "scripts/run_inferencia.py",
+      "type": "file",
+      "sha": "245da45a967667de1a8b7e7882f6df3b0a60362b",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1544,
+      "is_binary": false
+    },
+    {
+      "name": "run_resumo_proposicoes.py",
+      "path": "scripts/run_resumo_proposicoes.py",
+      "type": "file",
+      "sha": "34f063e163066f15c8c10b7e354f6cc23d117767",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3389,
+      "is_binary": false
+    },
+    {
+      "name": "run_vinculo_chunks_votos.py",
+      "path": "scripts/run_vinculo_chunks_votos.py",
+      "type": "file",
+      "sha": "8d9b76336b2c40a46060d321e78f22fdd9aa84e4",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3206,
+      "is_binary": false
+    },
+    {
+      "name": "sonar-project.properties",
+      "path": "sonar-project.properties",
+      "type": "file",
+      "sha": "65b2ffaddf3514ea86628d8b068bf2436dfb209c",
+      "mode": "100644",
+      "extension": ".properties",
+      "size": 845,
+      "is_binary": false
+    },
+    {
+      "name": "tests",
+      "path": "tests",
+      "type": "directory",
+      "sha": "e441e871d2aefc9438ecab2717300a8e7e299c27",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "tests/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "api",
+      "path": "tests/api",
+      "type": "directory",
+      "sha": "540920afe17496f8179448b43c15e496e4f6a55e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "test_exception_handling.py",
+      "path": "tests/api/test_exception_handling.py",
+      "type": "file",
+      "sha": "9b7b0663d86f1fb9e6989c8617c8c055fd9d24e6",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1609,
+      "is_binary": false
+    },
+    {
+      "name": "test_novas_rotas.py",
+      "path": "tests/api/test_novas_rotas.py",
+      "type": "file",
+      "sha": "9ec64dc8130dbdf08b29691b752a2b7038c07673",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 24433,
+      "is_binary": false
+    },
+    {
+      "name": "test_rotas_dados.py",
+      "path": "tests/api/test_rotas_dados.py",
+      "type": "file",
+      "sha": "47158d1f9b407e3827a327efda4b70616bca8c04",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 11641,
+      "is_binary": false
+    },
+    {
+      "name": "conftest.py",
+      "path": "tests/conftest.py",
+      "type": "file",
+      "sha": "913eea16b88c45dcd3dabf791bf45f58ab51e2b4",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 404,
+      "is_binary": false
+    },
+    {
+      "name": "etl",
+      "path": "tests/etl",
+      "type": "directory",
+      "sha": "a2a23260f05d2a12f5b18d2d5335e26c47df5120",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "tests/etl/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "test_chunker_discursos_camara.py",
+      "path": "tests/etl/test_chunker_discursos_camara.py",
+      "type": "file",
+      "sha": "7d2612ae8d0c2c203e00c754b83d6ede0c9f530d",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 12014,
+      "is_binary": false
+    },
+    {
+      "name": "test_chunker_senado.py",
+      "path": "tests/etl/test_chunker_senado.py",
+      "type": "file",
+      "sha": "d9bf757367678879f9e9225b707be10d88bb16a1",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 12839,
+      "is_binary": false
+    },
+    {
+      "name": "test_coverage_booster.py",
+      "path": "tests/etl/test_coverage_booster.py",
+      "type": "file",
+      "sha": "d528f2ef33d4cbb1e3a359a725d70194fbf0c6cc",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3647,
+      "is_binary": false
+    },
+    {
+      "name": "test_extrator_discursos_camara.py",
+      "path": "tests/etl/test_extrator_discursos_camara.py",
+      "type": "file",
+      "sha": "b09305eaa6849de9e246f0aed5350accba2d7537",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 7213,
+      "is_binary": false
+    },
+    {
+      "name": "test_extrator_discursos_senado.py",
+      "path": "tests/etl/test_extrator_discursos_senado.py",
+      "type": "file",
+      "sha": "829266527c1d22203a5bf68806e350580c7c2cba",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 11542,
+      "is_binary": false
+    },
+    {
+      "name": "test_extrator_politicos_camara.py",
+      "path": "tests/etl/test_extrator_politicos_camara.py",
+      "type": "file",
+      "sha": "6f87c8b737b7025c758f91109491b56d827e7d38",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 9753,
+      "is_binary": false
+    },
+    {
+      "name": "test_extrator_politicos_senado.py",
+      "path": "tests/etl/test_extrator_politicos_senado.py",
+      "type": "file",
+      "sha": "4719089fc3ad033746ec29fc7303f66ecd3d39ca",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 12159,
+      "is_binary": false
+    },
+    {
+      "name": "test_extrator_proposicoes_camara.py",
+      "path": "tests/etl/test_extrator_proposicoes_camara.py",
+      "type": "file",
+      "sha": "cf0d1aa5fc7084f5e72dc175b38edf8a0ec93b71",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 10553,
+      "is_binary": false
+    },
+    {
+      "name": "test_extrator_proposicoes_senado.py",
+      "path": "tests/etl/test_extrator_proposicoes_senado.py",
+      "type": "file",
+      "sha": "8b281eb9ccfffd2917ecad011f5d51b92a65a90c",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 10222,
+      "is_binary": false
+    },
+    {
+      "name": "test_extrator_texto_proposicao.py",
+      "path": "tests/etl/test_extrator_texto_proposicao.py",
+      "type": "file",
+      "sha": "5f3b2b94cab6c1b1ceccff6102b43795c3c4f9ad",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3227,
+      "is_binary": false
+    },
+    {
+      "name": "test_extrator_texto_senado.py",
+      "path": "tests/etl/test_extrator_texto_senado.py",
+      "type": "file",
+      "sha": "0a5bbe84def86dbab0ebb4719db4064759493848",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4214,
+      "is_binary": false
+    },
+    {
+      "name": "test_extrator_votos_camara.py",
+      "path": "tests/etl/test_extrator_votos_camara.py",
+      "type": "file",
+      "sha": "648231c45623fc8df5657b5d88e08e0802b18658",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 11867,
+      "is_binary": false
+    },
+    {
+      "name": "test_extrator_votos_senado.py",
+      "path": "tests/etl/test_extrator_votos_senado.py",
+      "type": "file",
+      "sha": "a75b3555c2afff88946c90adb22259561e9a1e20",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 9123,
+      "is_binary": false
+    },
+    {
+      "name": "test_inferidor_postura.py",
+      "path": "tests/etl/test_inferidor_postura.py",
+      "type": "file",
+      "sha": "de37170c21c568816d6fad95630425493a605c54",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3296,
+      "is_binary": false
+    },
+    {
+      "name": "test_pipeline_inferencia.py",
+      "path": "tests/etl/test_pipeline_inferencia.py",
+      "type": "file",
+      "sha": "7c7a6de4fccd35d3ec30f37658bd3ecc81e67f89",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 7606,
+      "is_binary": false
+    },
+    {
+      "name": "test_pipeline_resumo_proposicoes.py",
+      "path": "tests/etl/test_pipeline_resumo_proposicoes.py",
+      "type": "file",
+      "sha": "259babebc78a99059b836ab8d558addcc710bfef",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 7584,
+      "is_binary": false
+    },
+    {
+      "name": "test_pipeline_resumo_senado.py",
+      "path": "tests/etl/test_pipeline_resumo_senado.py",
+      "type": "file",
+      "sha": "9ee6667038b6376eee0e2375669cf82fa9f2f2b6",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 7306,
+      "is_binary": false
+    },
+    {
+      "name": "test_resumidor_proposicoes.py",
+      "path": "tests/etl/test_resumidor_proposicoes.py",
+      "type": "file",
+      "sha": "c5fbd70ef281d84b8f230403848e07352d9ff6ef",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3013,
+      "is_binary": false
+    },
+    {
+      "name": "test_resumidor_senado.py",
+      "path": "tests/etl/test_resumidor_senado.py",
+      "type": "file",
+      "sha": "8da3f6fa4bbd9a44e04a23b7dcf307239dedc6b4",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3495,
+      "is_binary": false
+    },
+    {
+      "name": "test_transformador_discursos_senado.py",
+      "path": "tests/etl/test_transformador_discursos_senado.py",
+      "type": "file",
+      "sha": "86021fea35286d119311522c758e3cb0f3439a13",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 8312,
+      "is_binary": false
+    },
+    {
+      "name": "test_transformadores_discursos_camara.py",
+      "path": "tests/etl/test_transformadores_discursos_camara.py",
+      "type": "file",
+      "sha": "7c2a2364b5db80b11e71d5fe814296b715bc2a60",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 15922,
+      "is_binary": false
+    },
+    {
+      "name": "test_transformadores_proposicoes_camara.py",
+      "path": "tests/etl/test_transformadores_proposicoes_camara.py",
+      "type": "file",
+      "sha": "2e14d3d14490cfb77d727bba2dca8595490d2da8",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 6664,
+      "is_binary": false
+    },
+    {
+      "name": "test_transformadores_votos_camara.py",
+      "path": "tests/etl/test_transformadores_votos_camara.py",
+      "type": "file",
+      "sha": "e29f59b97fd6e21fe69f2e25ef7c54261aa9bd40",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4538,
+      "is_binary": false
+    },
+    {
+      "name": "test_transformadores_votos_senado.py",
+      "path": "tests/etl/test_transformadores_votos_senado.py",
+      "type": "file",
+      "sha": "47de75886db7f7555dd2439554c63a01608746e7",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 7080,
+      "is_binary": false
+    },
+    {
+      "name": "test_utils.py",
+      "path": "tests/etl/test_utils.py",
+      "type": "file",
+      "sha": "62a732be91458b219e0805383c89546150f08a99",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1362,
+      "is_binary": false
+    },
+    {
+      "name": "test_vinculador_discursos_votos_camara.py",
+      "path": "tests/etl/test_vinculador_discursos_votos_camara.py",
+      "type": "file",
+      "sha": "f026acb0941b1b281b56555d88029b474a59e0bc",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 12502,
+      "is_binary": false
+    },
+    {
+      "name": "test_vinculador_discursos_votos_senado.py",
+      "path": "tests/etl/test_vinculador_discursos_votos_senado.py",
+      "type": "file",
+      "sha": "71eb07006587e937ce8845cb45a748c0aa5e2519",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 11916,
+      "is_binary": false
+    },
+    {
+      "name": "test_setup.py",
+      "path": "tests/test_setup.py",
+      "type": "file",
+      "sha": "7ad480376677d3e7830640f53af748f1162d7708",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 190,
+      "is_binary": false
+    },
+    {
+      "name": "utils",
+      "path": "utils",
+      "type": "directory",
+      "sha": "a40ea0e4520c7102de5458b9a55b629f3442aa78",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "utils/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "cleaner.py",
+      "path": "utils/cleaner.py",
+      "type": "file",
+      "sha": "48a342610f61cb24e5ec42521a6cf7e0444a198c",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1235,
+      "is_binary": false
+    },
+    {
+      "name": "motor_nlp.py",
+      "path": "utils/motor_nlp.py",
+      "type": "file",
+      "sha": "9f223c12c30df8f6f02373aedf656e3e010231ae",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 583,
+      "is_binary": false
+    }
+  ],
+  "truncated": false,
+  "extracted_at": "2026-09-17T04:03:54.174196",
+  "method": "rest",
+  "total_items": 350,
+  "repository_metadata": {
+    "id": 1193952158,
+    "full_name": "unb-mds/2026.1-ContraDito",
+    "description": "Repositório do Projeto ContraDito",
+    "created_at": "2026-03-27T18:55:34Z",
+    "updated_at": "2026-09-07T22:10:16Z",
+    "language": "Python",
+    "size": 15319,
+    "stars": 9,
+    "forks": 3,
+    "open_issues": 1
+  }
+}

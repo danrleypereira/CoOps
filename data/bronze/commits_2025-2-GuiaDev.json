@@ -1,0 +1,7421 @@
+[
+  {
+    "_metadata": {
+      "extracted_at": "2026-09-17T03:58:09.567887",
+      "file_path": "data/bronze/commits_2025-2-GuiaDev.json",
+      "record_count": 436
+    }
+  },
+  {
+    "sha": "a04d0effb0a45bcfcb7d50bba20de30d7d7d2bf7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T20:27:00Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Atualizar o README.md"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "01acf70f07ae1c2eb4d6377c5f4e15dfdcb66f27",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T15:11:55Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Update readme coloca link deploy"
+    },
+    "additions": 10,
+    "deletions": 2,
+    "total_changes": 12,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "bac0ad7beb9993298cb2edda5026f4c1ae63f1c7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T15:07:29Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Refactor architecture diagram in README"
+    },
+    "additions": 2,
+    "deletions": 3,
+    "total_changes": 5,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "5fd001959d59342bddbde5b2741b80b60f892168",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T13:39:15Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Update README: atualiza detalhes do deploy"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "c451fcbd1c53c951bfd1192e77013ffb670de707",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T08:07:54Z",
+        "login": "Phill-Chill"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2025-2-GuiaDev"
+    },
+    "additions": 3279,
+    "deletions": 1938,
+    "total_changes": 5217,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "3f9d5fe000e98f8102cf5fafb4f7a6db86baa6f5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T08:07:45Z",
+        "login": "Phill-Chill"
+      },
+      "message": "fix: adiciona print"
+    },
+    "additions": 3,
+    "deletions": 3,
+    "total_changes": 6,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "5e71faa3ee18082e6be5a086fe42c84e109d72ae",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T07:52:34Z",
+        "login": "Phill-Chill"
+      },
+      "message": "Merge pull request #92 from unb-mds/integracaoRelease2"
+    },
+    "additions": 3279,
+    "deletions": 1938,
+    "total_changes": 5217,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "1aa9d5d13f22f7b4b6764b70fbdb1e7d2c0ab863",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T07:47:22Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: arruma alguns testes que quebraram na integração"
+    },
+    "additions": 28,
+    "deletions": 4,
+    "total_changes": 32,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "3ee950f8fc03e1b2298950cf509b84be2c6b37dc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T07:16:35Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Merge branch 'main' into integracaoRelease2"
+    },
+    "additions": 3692,
+    "deletions": 2475,
+    "total_changes": 6167,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "9ebe1d9fa5051789e7060c5c6feb28c4851cab0b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T07:03:19Z",
+        "login": "Phill-Chill"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2025-2-GuiaDev"
+    },
+    "additions": 42,
+    "deletions": 0,
+    "total_changes": 42,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "0f0900b288de735cad793d0971d00af5d2ce78cc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T07:01:58Z",
+        "login": "Phill-Chill"
+      },
+      "message": "refactor: Gitpage"
+    },
+    "additions": 2300,
+    "deletions": 928,
+    "total_changes": 3228,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "5403c1919bbda1bbf9f80f2cd5f03efc5367382b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T06:02:24Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: faz o pipeline de CI mostrar a cobertura de testes"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "19e347888f5dbc1959bd8536653081a16fe4e5ad",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T04:41:44Z",
+        "login": "filipeBG-07"
+      },
+      "message": "docs: adição de documento SECURITY"
+    },
+    "additions": 42,
+    "deletions": 0,
+    "total_changes": 42,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "8db34f4c7398154a2091858e5cbf58b36ebece37",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T04:33:08Z",
+        "login": "Phill-Chill"
+      },
+      "message": "update:docs"
+    },
+    "additions": 111,
+    "deletions": 1,
+    "total_changes": 112,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "6d4a47b03711a843c2f85f4729f8b0bcfb703a45",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T03:24:53Z",
+        "login": "Phill-Chill"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2025-2-GuiaDev"
+    },
+    "additions": 23,
+    "deletions": 24,
+    "total_changes": 47,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "a0ece95c39dbef0e58353fe49e9ac32f9ac1994f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T03:24:44Z",
+        "login": "Phill-Chill"
+      },
+      "message": "fix: token verificação"
+    },
+    "additions": 42,
+    "deletions": 16,
+    "total_changes": 58,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "c30922127e6c408c61033a81beb24190edcd2390",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T02:43:05Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2025-2-GuiaDev"
+    },
+    "additions": 994,
+    "deletions": 684,
+    "total_changes": 1678,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "88b93abb10beed67d95000ec26afa33009fcba42",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T02:41:55Z",
+        "login": "HugoFreitass"
+      },
+      "message": "docs: modifica detalhes de design do github pages"
+    },
+    "additions": 10,
+    "deletions": 8,
+    "total_changes": 18,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "b32dcba0d06c38c670cd992b76ae0d17e659f040",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T02:36:06Z",
+        "login": "filipeBG-07"
+      },
+      "message": "Docs: Atualização do nome do sistema/projeto"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "9abfa4999674bfd08b4d7ad2dfe791f9bc749161",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T02:33:56Z",
+        "login": "filipeBG-07"
+      },
+      "message": "Docs: nova versão do documento de requisitos"
+    },
+    "additions": 11,
+    "deletions": 14,
+    "total_changes": 25,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "42754f1f731173e2ee2b07e548c4ac6d3b8364e1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T02:18:08Z",
+        "login": "PedroGTG"
+      },
+      "message": "docs: revisa e atualiza diagrama C4 garantindo alinhamento com a arqu…"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "22b77ed2b9c8d806e9f42554af6648dd089c74cd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T02:11:47Z",
+        "login": "PedroGTG"
+      },
+      "message": "docs: revisa e atualiza diagrama C4 garantindo alinhamento com a arqu…"
+    },
+    "additions": 7,
+    "deletions": 7,
+    "total_changes": 14,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "6e7cbb1da84a219706bc220aabc6c439c927670e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T01:53:22Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Chore: atualiza link da api no front para o deploy"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "92263e0fca756e0f7d8d93ba6852437d89737d1f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T01:47:16Z",
+        "login": "PedroGTG"
+      },
+      "message": "chore: resolve comflito merge"
+    },
+    "additions": 12505,
+    "deletions": 3131,
+    "total_changes": 15636,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "dc761d3166795197be2bb525919b96e98a7dbfa1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T01:38:42Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Merge pull request #90 from unb-mds/home-BoxRepoInfo"
+    },
+    "additions": 465,
+    "deletions": 390,
+    "total_changes": 855,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e6f38187c77081811fb06bb0c016bb2dfef5424f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T00:56:40Z",
+        "login": "BGrangeiro"
+      },
+      "message": "Atualiza CONTRIBUTING.md"
+    },
+    "additions": 79,
+    "deletions": 48,
+    "total_changes": 127,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "dc5b99db6d01df407f65adacd032673f5a435fd2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T00:33:31Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Revise Sprint 06 report with detailed updates"
+    },
+    "additions": 56,
+    "deletions": 24,
+    "total_changes": 80,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "bb8bb0f1f70a7f3314ffab242d40856703114b84",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T00:31:53Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Atualizar relatório da Sprint 05"
+    },
+    "additions": 60,
+    "deletions": 34,
+    "total_changes": 94,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "beb929f9edac628b66f45dc98e5a90c61ed94990",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T00:26:41Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Revise Sprint 05 documentation and meeting notes"
+    },
+    "additions": 17,
+    "deletions": 15,
+    "total_changes": 32,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "7f0be8982e6012f78dcb8abfae343ddc0f2b9773",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T00:25:04Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Atualiza relatório da Sprint 04 com detalhes completos"
+    },
+    "additions": 60,
+    "deletions": 51,
+    "total_changes": 111,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "8542a3ea4b84acaeef9abc45859c652b560b7d07",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T00:23:36Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Add Bruno to the Sprint 02 team members list"
+    },
+    "additions": 2,
+    "deletions": 1,
+    "total_changes": 3,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "7a650f068d1fc2d5d9a0a6b228c67dfb4c5f4770",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T00:23:10Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Add Bruno to the sprint team list"
+    },
+    "additions": 2,
+    "deletions": 1,
+    "total_changes": 3,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "d44ae48b6bd34d35367473bff625d5cfad0f8b1d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T00:22:41Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Add Bruno to the Sprint-00 team list"
+    },
+    "additions": 2,
+    "deletions": 1,
+    "total_changes": 3,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "9f936f191ed5d06724b7219cdeee7a1dc4a71a9c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T00:22:10Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Atualiza relatório da Sprint 03 com detalhes e métricas"
+    },
+    "additions": 67,
+    "deletions": 22,
+    "total_changes": 89,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e85b5b7370e4d878cef97179c0f642283d081950",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T00:20:22Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update sprint report with team roles"
+    },
+    "additions": 3,
+    "deletions": 3,
+    "total_changes": 6,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "4feb9a4f3796ee828d4051b21f5f9c5f51f80b26",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T00:19:31Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update sprint report title for software project"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "cfe5c5e4c06b11e227f2ad10114c71bbb8f9029c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T00:19:19Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Atualiza relatório da Sprint 02 com detalhes completos"
+    },
+    "additions": 59,
+    "deletions": 28,
+    "total_changes": 87,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "cfc869ef2ff23e11dd94576841784e2b9f4413aa",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T00:17:43Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Atualiza relatório da Sprint 01"
+    },
+    "additions": 60,
+    "deletions": 39,
+    "total_changes": 99,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "6c27af2344e7083ae89e300c831577e27667dd7e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T00:16:14Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Colocando no modelo que a professora pediu"
+    },
+    "additions": 66,
+    "deletions": 28,
+    "total_changes": 94,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "f38fc7d3fc19ad8349a5b9609f6b53018427716f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T23:54:55Z",
+        "login": "Phill-Chill"
+      },
+      "message": "fix: repoObjt, metrics (dados do repoObjt), home (score)"
+    },
+    "additions": 137,
+    "deletions": 74,
+    "total_changes": 211,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "d41a0b8615a332dea53ca91049ac20ee7f824155",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T23:53:06Z",
+        "login": "Phill-Chill"
+      },
+      "message": "feat: cache Analisys, score"
+    },
+    "additions": 143,
+    "deletions": 79,
+    "total_changes": 222,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "87eb153e02234e487d9a3bd3a35708729ceed2cc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T16:08:37Z",
+        "login": "BGrangeiro"
+      },
+      "message": "Clean up Home.css by removing commented"
+    },
+    "additions": 1,
+    "deletions": 5,
+    "total_changes": 6,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "7e53ff172f1605fb56dbf49241e68a919433963a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T14:33:13Z",
+        "login": "HugoFreitass"
+      },
+      "message": "chore(CI): atualiza nome do container para rodar linter"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "969bd49b985637c9c67c9f0626f280ed7137e028",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T14:29:56Z",
+        "login": "HugoFreitass"
+      },
+      "message": "chore(lint): configura logica do linter e atualiza CI"
+    },
+    "additions": 3257,
+    "deletions": 2053,
+    "total_changes": 5310,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "b22b052cdefc27269063ebff5b3076c000a1767d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T14:04:17Z",
+        "login": "HugoFreitass"
+      },
+      "message": "ci(tests): use nest-app service for test step in Docker Compose workflow"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "8d845e8694149ace90b3c2689518d362df29acdd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T12:42:47Z",
+        "login": "HugoFreitass"
+      },
+      "message": "ci(tests): ativar execução de testes unitários no pipeline (Docker Co…"
+    },
+    "additions": 3,
+    "deletions": 3,
+    "total_changes": 6,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "051cb82c8668a4c9bf2c47103ce64378feaa35f7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T12:39:09Z",
+        "login": "HugoFreitass"
+      },
+      "message": "test(github): adicionar specs para GithubController e fluxos complexo…"
+    },
+    "additions": 254,
+    "deletions": 21,
+    "total_changes": 275,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "9e2596510287b9e37b85a245b43e9733689e683f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T12:39:09Z",
+        "login": "HugoFreitass"
+      },
+      "message": "chore(tests): reverter exclusão de modules/github da cobertura de testes"
+    },
+    "additions": 1,
+    "deletions": 2,
+    "total_changes": 3,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "5816a4db1d603b16ee77a5d7d5d4543837bdd6e8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T12:22:31Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: ajusta detalhes para melhorar cobertura de testes"
+    },
+    "additions": 156,
+    "deletions": 1,
+    "total_changes": 157,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "ee76a6c76779bdab48e0a60ed0565530a053ca3c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T12:12:44Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: corrige testes do github"
+    },
+    "additions": 101,
+    "deletions": 0,
+    "total_changes": 101,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "fea6b6e31acd6dbffb5680f3f4911d1be2d09549",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T12:05:44Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: adiciona testes para alguns controllers"
+    },
+    "additions": 257,
+    "deletions": 2,
+    "total_changes": 259,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "f0011bbf87c395d0da99d703ff8c1fd7b2a28900",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T11:34:49Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: arrumando conflitos do rebase"
+    },
+    "additions": 3,
+    "deletions": 3,
+    "total_changes": 6,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "83e29726fa3d96d95b3791b059499848e047b8a6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T11:32:12Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: modificando pipeline de CI"
+    },
+    "additions": 4,
+    "deletions": 4,
+    "total_changes": 8,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "b7ca3a1f653b466633f141b84405c0c5a1760989",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T11:32:12Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: corrige url da documentação"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "83de9f626c251579d14a0af6b29369f5ab64dfe9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T11:32:12Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: arruma responsividade da tela de login"
+    },
+    "additions": 19,
+    "deletions": 9,
+    "total_changes": 28,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "a9a91a738b67c9873183dd09210d46a291b0fe1a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T11:32:05Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: arruma detalhes de design da página de análise"
+    },
+    "additions": 10,
+    "deletions": 9,
+    "total_changes": 19,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "937c19306b4b51e8d4994b5e55c96f129fc75477",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T05:20:48Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: modificando pipeline de CI"
+    },
+    "additions": 4,
+    "deletions": 4,
+    "total_changes": 8,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "fc0e66790ee59e6d023d8e9daf5c928c71a5e877",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T04:08:10Z",
+        "login": "Phill-Chill"
+      },
+      "message": "Merge branch 'github_api' into home-BoxRepoInfo"
+    },
+    "additions": 196,
+    "deletions": 248,
+    "total_changes": 444,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "066e93b9b85b705ca4516471a71714250e7a5dc0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T03:48:01Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Merge pull request #88 from unb-mds/home-BoxRepoInfo"
+    },
+    "additions": 603,
+    "deletions": 177,
+    "total_changes": 780,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "32cb70c31b36207ec64ec4a03e94edc4b5d2c255",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T03:40:23Z",
+        "login": "Phill-Chill"
+      },
+      "message": "Merge branch 'main' into home-BoxRepoInfo"
+    },
+    "additions": 8,
+    "deletions": 3,
+    "total_changes": 11,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "1c95966246d987709c7c0c3c05ca792fc8ea1209",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T03:13:16Z",
+        "login": "Phill-Chill"
+      },
+      "message": "fix: load-design, config-reload, ErrorComponentOwner"
+    },
+    "additions": 278,
+    "deletions": 92,
+    "total_changes": 370,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "f4ff8db389b31a74dbcea7ef298815aac05c7832",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T03:09:26Z",
+        "login": "Phill-Chill"
+      },
+      "message": "fix: loop Details-bug, multipla requisição FileTree, desing-fix"
+    },
+    "additions": 49,
+    "deletions": 48,
+    "total_changes": 97,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "53e6d21cea99c07de832f0e8ce691753e2b2cb80",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T01:57:56Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: url backend deploy"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "98a58332f8a48602f9409bc455532c268cddef33",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T00:49:56Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: corrige caminhos para deploy"
+    },
+    "additions": 8,
+    "deletions": 8,
+    "total_changes": 16,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "720206ff90bdbd58cb0ad9c175955469874b4fb3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T00:05:58Z",
+        "login": "PedroGTG"
+      },
+      "message": "refactor(token-system): melhorar mecanismo de coleta baseada em token"
+    },
+    "additions": 141,
+    "deletions": 304,
+    "total_changes": 445,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e892dddd9a4c1af66843ce28372f17de5a23610d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-01T17:14:08Z",
+        "login": "Phill-Chill"
+      },
+      "message": "feat: erroOwnerComponent - incompleto"
+    },
+    "additions": 59,
+    "deletions": 5,
+    "total_changes": 64,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "0e0201311015b0f2c7124a9065ba0d085be15099",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-01T16:37:25Z",
+        "login": "Phill-Chill"
+      },
+      "message": "refactor: separa os componete de load do boxrepo"
+    },
+    "additions": 160,
+    "deletions": 153,
+    "total_changes": 313,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "1ee15a1939a4a3a023098d5ba1fee6603bd0604d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-01T16:28:28Z",
+        "login": "Phill-Chill"
+      },
+      "message": "feat: Loading-component"
+    },
+    "additions": 280,
+    "deletions": 102,
+    "total_changes": 382,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "70eaa7dc1c8fa5e91b2e8bbd3c63ef2f3799e517",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-01T16:09:34Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: corrige erro de importação de componente"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "4e73e9df4e449e1d4103f97dcb9ca22ebb031d15",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-01T16:04:10Z",
+        "login": "HugoFreitass"
+      },
+      "message": "chore: adiciona arquivo de configuração do roteador do vercel"
+    },
+    "additions": 5,
+    "deletions": 0,
+    "total_changes": 5,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "c75997a2f0e47d0e486356db3ca05b47fb1cebfd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-01T14:18:15Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: corrige url da documentação"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "601a4e51945fbe05c6467c62ebf88b6fd1378b9a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-01T14:14:33Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: arruma responsividade da tela de login"
+    },
+    "additions": 19,
+    "deletions": 9,
+    "total_changes": 28,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "ee897fbc07e931e64c53bc909ceac39833661dcf",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-01T13:05:17Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: arruma detalhes de design da página de análise"
+    },
+    "additions": 9,
+    "deletions": 8,
+    "total_changes": 17,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "54bd074ec7ad32c64fc378bc70e7c2b6715c8a97",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-01T12:23:09Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2025-2-GuiaDev"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "1f5019bf75e223c94aa9671a83c80baf6058841d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-01T12:22:53Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: muda urls para local"
+    },
+    "additions": 8,
+    "deletions": 8,
+    "total_changes": 16,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e933589db4c7c25ac60ed2213651c6e786fddfb3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-29T05:43:35Z",
+        "login": "PedroGTG"
+      },
+      "message": "feat(score): adicionar endpoint para atualização de score"
+    },
+    "additions": 70,
+    "deletions": 13,
+    "total_changes": 83,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "f8c05a3d254991ec6ff5ecd9b1980effe63231c9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-29T04:06:29Z",
+        "login": "PedroGTG"
+      },
+      "message": "chore: atualiza reporitorio local"
+    },
+    "additions": 1293,
+    "deletions": 523,
+    "total_changes": 1816,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "c7d9a9e119d43999353bd504d814b10c193da9e4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-29T03:39:43Z",
+        "login": "PedroGTG"
+      },
+      "message": "feat(repo-analysis): persistir análise de repositórios no banco"
+    },
+    "additions": 55,
+    "deletions": 0,
+    "total_changes": 55,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "81891d47040c16157a82ebdc85bb3e962b0c8993",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-28T22:40:35Z",
+        "login": "BGrangeiro"
+      },
+      "message": "fix: Atualiza link da arquitetura"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "48ebfb13c7fc0737447d8a31aeabc372394a7bc6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-28T22:17:24Z",
+        "login": "HugoFreitass"
+      },
+      "message": "merge integracao03"
+    },
+    "additions": 1952,
+    "deletions": 396,
+    "total_changes": 2348,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "6ea9ddcec9888e4281af10e67bff01384bcb1c31",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-28T22:08:03Z",
+        "login": "Phill-Chill"
+      },
+      "message": "Merge pull request #85 from unb-mds/documentacaoBackend"
+    },
+    "additions": 190,
+    "deletions": 66,
+    "total_changes": 256,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "6230fbcb8d325959a4799c43adeb3eff579e12ee",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-28T21:46:59Z",
+        "login": "PedroGTG"
+      },
+      "message": "chore: atualiza repositorio local"
+    },
+    "additions": 118,
+    "deletions": 29,
+    "total_changes": 147,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "d9e93ed20a70c600b21cf9731af18e0214f24236",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-28T21:38:15Z",
+        "login": "Phill-Chill"
+      },
+      "message": "feat: Home-barra de progressão por repositório"
+    },
+    "additions": 161,
+    "deletions": 61,
+    "total_changes": 222,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e4105509ebc439ab7b5619c5c0e2690f45a809de",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-28T20:53:02Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Merge branch 'main' into documentacaoBackend"
+    },
+    "additions": 17132,
+    "deletions": 3052,
+    "total_changes": 20184,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "a7116795c70741788f1641565722607fc81ebdaf",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-28T20:16:30Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: corrige nome do template"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "f031eea4a5f29b1910b18ebf7e02045b3be648d8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-28T20:09:21Z",
+        "login": "HugoFreitass"
+      },
+      "message": "docs: adiciona documentação das rotas /auth e /chat"
+    },
+    "additions": 124,
+    "deletions": 15,
+    "total_changes": 139,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "d99a3119f94b455667efde69e3b41ef40dcad183",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-28T19:58:34Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: muda rota e titulo da pagina de documentacao"
+    },
+    "additions": 33,
+    "deletions": 3,
+    "total_changes": 36,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "7e99884d377212470de30ac94b2fcf4410d730a1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-26T12:57:33Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Merge pull request #83 from unb-mds/github_api"
+    },
+    "additions": 708,
+    "deletions": 103,
+    "total_changes": 811,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "418775e6c5b949830805f6b2f510d1f67a7b46e5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-25T00:46:25Z",
+        "login": "PedroGTG"
+      },
+      "message": "Merge branch 'main' into github_api"
+    },
+    "additions": 8463,
+    "deletions": 1869,
+    "total_changes": 10332,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "aa6a826b3f115a372eb98245e26360ce851ad65e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-25T00:00:35Z",
+        "login": "filipeBG-07"
+      },
+      "message": "Update contributor name in README.md"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "77ac900b121634c3db5ba3a1cf80d91b99eb1f08",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-24T23:46:06Z",
+        "login": "filipeBG-07"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2025-2-Squad-03"
+    },
+    "additions": 16720,
+    "deletions": 3143,
+    "total_changes": 19863,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e042439aa37bcb4edbffd021cbab70aaae81f4f5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-24T22:06:31Z",
+        "login": "BGrangeiro"
+      },
+      "message": "Atualiza informações do frontend"
+    },
+    "additions": 103,
+    "deletions": 21,
+    "total_changes": 124,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "0304e6d3dcae2299582f5726e69c1249b2bc296c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-24T22:05:26Z",
+        "login": "BGrangeiro"
+      },
+      "message": "feat: Atualização do README do frontend"
+    },
+    "additions": 68,
+    "deletions": 7,
+    "total_changes": 75,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "c96a536b142e30634face004260a1beab59589aa",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-24T22:00:24Z",
+        "login": "BGrangeiro"
+      },
+      "message": " update configuration for improved rules and project consistency"
+    },
+    "additions": 35,
+    "deletions": 14,
+    "total_changes": 49,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "15a77135a0771cd79f6991c216b13b73c2c06259",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-22T22:02:10Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: remove módulos desnecessários"
+    },
+    "additions": 1,
+    "deletions": 40,
+    "total_changes": 41,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "c4cb54b3d76b7f9f44904e6ac6d7b9dab08f498c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-22T21:54:18Z",
+        "login": "HugoFreitass"
+      },
+      "message": "docs: adiciona documentacao swagger aos dtos"
+    },
+    "additions": 33,
+    "deletions": 11,
+    "total_changes": 44,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "facf6214c3b133910f7d1db807a041cafb03b5ff",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-22T21:38:45Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: muda mais urls para o deploy"
+    },
+    "additions": 3,
+    "deletions": 3,
+    "total_changes": 6,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e6d2b4599cc60ec9a9b4a894509d6c04029baec2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-22T21:29:26Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: muda as urls do front e back para o deploy"
+    },
+    "additions": 6,
+    "deletions": 3,
+    "total_changes": 9,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "7c1330b80047fc8d41e4f26f44ac0b45ae90383f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-22T21:12:14Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: adiciona host permitido para o deploy"
+    },
+    "additions": 5,
+    "deletions": 1,
+    "total_changes": 6,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "f33e4739fde805fc256aaef04036e11c6eadd943",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-22T21:07:07Z",
+        "login": "PedroGTG"
+      },
+      "message": "chore: fazendo merge"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "1aedaf60841ec2dd1d5b71fec27f303d4888282d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-22T21:04:59Z",
+        "login": "PedroGTG"
+      },
+      "message": "chore: atualiza repositorio local e prepara para merge"
+    },
+    "additions": 9340,
+    "deletions": 1926,
+    "total_changes": 11266,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "54753ae31de23b0abca457fa3f6c134205021dd8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-22T17:37:46Z",
+        "login": "PedroGTG"
+      },
+      "message": "test: adiciona testes unitários para os módulos chat e github_api, el…"
+    },
+    "additions": 579,
+    "deletions": 47,
+    "total_changes": 626,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e6c71de0030b7da6606cd8a77494c8a55ce6f1b7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-22T06:59:05Z",
+        "login": "PedroGTG"
+      },
+      "message": "test: adiciona testes unitários ao serviço de análise no GithubService"
+    },
+    "additions": 33,
+    "deletions": 4,
+    "total_changes": 37,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "f641b7edd63147282ba40f4b32a00232aee1bae5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-22T06:07:30Z",
+        "login": "PedroGTG"
+      },
+      "message": "perf(cache): otimiza estratégia de cache e reduz tempo de resposta em…"
+    },
+    "additions": 96,
+    "deletions": 52,
+    "total_changes": 148,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "d1b0482a7ebbe204a016ab3cd5ed264dd5ed1eaf",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-21T13:47:23Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: arruma dependencias adicionadas para testes do frontend"
+    },
+    "additions": 8345,
+    "deletions": 1840,
+    "total_changes": 10185,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "95ced9add29e7d621a2beb34d5451977411a996a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-21T01:43:12Z",
+        "login": "PedroGTG"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2025-2-GuiaDev into…"
+    },
+    "additions": 8255,
+    "deletions": 1275,
+    "total_changes": 9530,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "aa12a9a8a5b260b60dabcbb0a10fe488d465e3c6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-21T01:40:20Z",
+        "login": "PedroGTG"
+      },
+      "message": "chore: atualiza repositorio local"
+    },
+    "additions": 7,
+    "deletions": 4,
+    "total_changes": 11,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "8869605b0f5582cc3638e8857e0c33cdeb1ba45b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-20T22:12:00Z",
+        "login": "PedroGTG"
+      },
+      "message": "chore: sincronizar repositório local com as atualizações da branch re…"
+    },
+    "additions": 486,
+    "deletions": 5,
+    "total_changes": 491,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "26f7b9762dc8a13d3a4a544db914e2757b0a16e2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-19T22:26:49Z",
+        "login": "Phill-Chill"
+      },
+      "message": "feature: integração da análise dos Docs front e back"
+    },
+    "additions": 1179,
+    "deletions": 188,
+    "total_changes": 1367,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "53225426d1582df3089fbe882b12d35d7b34a3c5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-19T22:24:51Z",
+        "login": "Phill-Chill"
+      },
+      "message": "feature: intergação da requisição dos repositórios front e back"
+    },
+    "additions": 132,
+    "deletions": 144,
+    "total_changes": 276,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "aaf84c4fedeb423b9be382e0bd1e68bc8fc1d33d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-19T22:18:52Z",
+        "login": "Phill-Chill"
+      },
+      "message": "fix: inicialização do contêiner do front"
+    },
+    "additions": 1,
+    "deletions": 2,
+    "total_changes": 3,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "b7b1655b606fbe8de665c2a1898f2a41a6575040",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-19T22:15:46Z",
+        "login": "Phill-Chill"
+      },
+      "message": "feature: busca de repositórios na home"
+    },
+    "additions": 484,
+    "deletions": 22,
+    "total_changes": 506,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "d295f3203f7aea03a3a29dd5ae72738ce3cccb15",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-19T15:34:13Z",
+        "login": "Phill-Chill"
+      },
+      "message": "Merge pull request #78 from unb-mds/documentacaoBackend"
+    },
+    "additions": 714,
+    "deletions": 18,
+    "total_changes": 732,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e88580c9ee70bdc093878904f53af8c7b4fec0b5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-19T14:03:40Z",
+        "login": "Phill-Chill"
+      },
+      "message": "fix:ajusta caminho de fetch do docsCheck-list e documento-de-requisitos"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "b363c31e3785b1e90e838570b652dbd1c986e204",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-19T13:48:12Z",
+        "login": "Phill-Chill"
+      },
+      "message": "Rename tmp_docs -> docs (final case)"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e26ce6423b09232f92cd0935f33b2fa35f6ffcf9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-19T13:48:11Z",
+        "login": "Phill-Chill"
+      },
+      "message": "Rename Docs -> tmp_docs (intermediate for case change)"
+    },
+    "additions": 129,
+    "deletions": 129,
+    "total_changes": 258,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "698d7483fedaca133542721ec4f43bb118040b77",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-19T13:29:00Z",
+        "login": "Phill-Chill"
+      },
+      "message": "fix: ajuste dos caminhos dos html para o deploy"
+    },
+    "additions": 583,
+    "deletions": 436,
+    "total_changes": 1019,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "058a3f50b94fb5b56e31f182d47cc004a8164c44",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-19T04:21:55Z",
+        "login": "Phill-Chill"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2025-2-GuiaDev"
+    },
+    "additions": 6471,
+    "deletions": 797,
+    "total_changes": 7268,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "c1904cfc6da026ad9a8decf54051e9986cf6abf7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-19T04:21:09Z",
+        "login": "Phill-Chill"
+      },
+      "message": "refactor:GitPage adiciona a redenrização de novos Docs"
+    },
+    "additions": 567,
+    "deletions": 101,
+    "total_changes": 668,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "0a502d422f8a9b9bf3410573e2050aaeb83fd2ed",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-19T00:58:28Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Merge pull request #79 from unb-mds/testes/front-end"
+    },
+    "additions": 6471,
+    "deletions": 797,
+    "total_changes": 7268,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "46d522c9e3dcbee9ac1885002d20e5f01201fca9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-19T00:56:21Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create BoxRepo.test.jsx"
+    },
+    "additions": 114,
+    "deletions": 0,
+    "total_changes": 114,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "783a3eb31016a29f07f258832089009c14a4ebe3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-19T00:52:43Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create LearningPage.test.jsx"
+    },
+    "additions": 85,
+    "deletions": 0,
+    "total_changes": 85,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "ebb59e3b1c04d1a8a8fce833a2f8bd62c87d974e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-19T00:42:43Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create AnalysisPage.test.jsx"
+    },
+    "additions": 94,
+    "deletions": 0,
+    "total_changes": 94,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "6db1f9e1ff292b22a3bab076d075d667cf40a302",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-19T00:36:26Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create Home.test.jsx"
+    },
+    "additions": 148,
+    "deletions": 0,
+    "total_changes": 148,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "84dc095a221007667ae45a2894a2dd4b9e5230af",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-19T00:36:11Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update Home.jsx"
+    },
+    "additions": 10,
+    "deletions": 10,
+    "total_changes": 20,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "287f46c654a77e3c94255ca46e2dd6b74f763f86",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-19T00:27:14Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update Login.test.jsx"
+    },
+    "additions": 11,
+    "deletions": 21,
+    "total_changes": 32,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "21dde0d2a806419d1893eb9c24d8879c7d413794",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-19T00:26:29Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create Login.test.jsx"
+    },
+    "additions": 63,
+    "deletions": 0,
+    "total_changes": 63,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "3d7d89d52f626a5373edca3b74a6961c56c6cf20",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-19T00:24:17Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update Login.jsx"
+    },
+    "additions": 5,
+    "deletions": 5,
+    "total_changes": 10,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "44badb6241563c5473f5f8543f809398fb4621cc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-19T00:23:10Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create App.test.jsx"
+    },
+    "additions": 75,
+    "deletions": 0,
+    "total_changes": 75,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "b68ed60431bb44ff02511b149b4b4a51fa75907b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-19T00:23:02Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update App.jsx"
+    },
+    "additions": 9,
+    "deletions": 8,
+    "total_changes": 17,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "a71a1ae66de5f70dd5fbe825cb6213085b258db3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-19T00:07:10Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create Card.test.jsx"
+    },
+    "additions": 105,
+    "deletions": 0,
+    "total_changes": 105,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "a41795cfdf7152d06cbdb83c8c1fa7dd471d6b93",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T23:50:11Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create Sidebar.test.jsx"
+    },
+    "additions": 125,
+    "deletions": 0,
+    "total_changes": 125,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "226efe47cd1586496df23c3bd84b9547ea5cf386",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T23:05:14Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create Header.test.jsx"
+    },
+    "additions": 42,
+    "deletions": 0,
+    "total_changes": 42,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "bf5026d6261ec044466b50f5e0123c6bc4a0597c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T23:05:05Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update jest.config.cjs"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "02e082d2188db5355a6a14fef5e9f227f6141def",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T23:04:46Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create file-mock.js"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "912d2eed6d16feb7d0dd2f51f83f1daf63d82da5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T22:58:22Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create Footer.test.jsx"
+    },
+    "additions": 42,
+    "deletions": 0,
+    "total_changes": 42,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e0e6ebe78f3b6148d2ac4b065e394df3c277132c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T22:53:29Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update Register.test.jsx"
+    },
+    "additions": 14,
+    "deletions": 14,
+    "total_changes": 28,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "1bb34a720bb8c3919b8a7b5edc78c5fd647a4af7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T22:17:10Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update Register.jsx"
+    },
+    "additions": 11,
+    "deletions": 7,
+    "total_changes": 18,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e656092f25a93815e8ef33f5e2ea664a76f04f2f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T22:17:06Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create Register.test.jsx"
+    },
+    "additions": 129,
+    "deletions": 0,
+    "total_changes": 129,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "9b6270a14e1c89ac3b2e6ebb4f13aa5a440e9be9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T21:59:44Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update Sign-in.test.jsx"
+    },
+    "additions": 3,
+    "deletions": 3,
+    "total_changes": 6,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "7ba9f48b38c0909ec84e02419ac8ec9623db9611",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T21:59:18Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update Sign-in.jsx"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "b2a2030233dd877d8a6aecee93e95808e59d232a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T20:53:25Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update Sign-in.test.jsx"
+    },
+    "additions": 11,
+    "deletions": 10,
+    "total_changes": 21,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "b75a82c8020cb86d4e16024386e875e3d124c48e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T20:36:24Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update Sign-in.jsx"
+    },
+    "additions": 4,
+    "deletions": 3,
+    "total_changes": 7,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "c0e34e083708067bc28563407fc15ce8f995b361",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T20:30:05Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create Sign-in.test.jsx"
+    },
+    "additions": 179,
+    "deletions": 0,
+    "total_changes": 179,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "f881a81ab141a97be0ed296e1fa3b24da2a1fb47",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T20:29:55Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update Sign-in.jsx"
+    },
+    "additions": 9,
+    "deletions": 8,
+    "total_changes": 17,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "f709d1f343cb95dbb0f205d85a34e648d567f35b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T20:29:45Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update pnpm-lock.yaml"
+    },
+    "additions": 520,
+    "deletions": 0,
+    "total_changes": 520,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "6c55cd03b629d1a1a223a963dbdcb58b75a85181",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T20:29:36Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update package.json"
+    },
+    "additions": 6,
+    "deletions": 2,
+    "total_changes": 8,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "db43e558b4a546e991a5d006f89d1fd851868a62",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T20:29:33Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create jest.setup.cjs"
+    },
+    "additions": 7,
+    "deletions": 0,
+    "total_changes": 7,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "1d6a65a3afa37f17967b26f572f6a3a546b423a0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T20:29:29Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update jest.config.cjs"
+    },
+    "additions": 7,
+    "deletions": 9,
+    "total_changes": 16,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "a24007a62844b60ef865c0f408f41e7063596570",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T20:27:38Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create jest.config.cjs"
+    },
+    "additions": 24,
+    "deletions": 0,
+    "total_changes": 24,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "8ea4858893daa936c9f86bcad13897e9fb44604e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T20:27:32Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create style-mock.js"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "49b9adc7c4b46fae9c70391dcbd97c2df36cc82d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T20:27:27Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create .babelrc"
+    },
+    "additions": 6,
+    "deletions": 0,
+    "total_changes": 6,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "83d195faa70fa9cd769a75872a7fc5fa79cf7537",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T19:43:18Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "atualizações"
+    },
+    "additions": 4679,
+    "deletions": 766,
+    "total_changes": 5445,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "b4bb2d345a3b2b7481d2581fcec278d9b8565d2b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T17:33:00Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: adiciona dependências"
+    },
+    "additions": 610,
+    "deletions": 12,
+    "total_changes": 622,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "8896ab84016c9f03b716cd8e7d678cedfde08854",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T00:35:26Z",
+        "login": "BGrangeiro"
+      },
+      "message": "Atualiza o readme"
+    },
+    "additions": 309,
+    "deletions": 56,
+    "total_changes": 365,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "b0945cd21356e558d265128901443c90f4f810ba",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T00:35:01Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: erro de importação do módulo de aálise de repos"
+    },
+    "additions": 90,
+    "deletions": 6,
+    "total_changes": 96,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e982f9d257b762470647e1ef69a53f33468c828c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T00:20:13Z",
+        "login": "BGrangeiro"
+      },
+      "message": "feat: atualiza readme"
+    },
+    "additions": 58,
+    "deletions": 75,
+    "total_changes": 133,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "f96912219901ce27bd4d2b4e2aabaf35bd4abd2b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-17T02:24:03Z",
+        "login": "Phill-Chill"
+      },
+      "message": "refactor: páginas de guia e rederização dos .md"
+    },
+    "additions": 358,
+    "deletions": 2,
+    "total_changes": 360,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "cdf2f4cc18ffbad5d7d8c5628c2e6db9a5c3913e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-17T00:54:41Z",
+        "login": "HugoFreitass"
+      },
+      "message": "feat: adiciona swagger"
+    },
+    "additions": 13,
+    "deletions": 2,
+    "total_changes": 15,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "958748717e46b670cca236036f5c5fafd87f8224",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-17T00:52:07Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: ajusta parte problemática no backend"
+    },
+    "additions": 5,
+    "deletions": 2,
+    "total_changes": 7,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "7aa6adf74c56cd317665d8dbbfcacc49b677129d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-16T04:41:43Z",
+        "login": "Phill-Chill"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2025-2-GuiaDev"
+    },
+    "additions": 68,
+    "deletions": 0,
+    "total_changes": 68,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "4d9d51f7015f509794e9e75a32db7bb2a04a4ba8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-16T04:41:23Z",
+        "login": "Phill-Chill"
+      },
+      "message": "refactor: atualização da home do githubePage"
+    },
+    "additions": 208,
+    "deletions": 558,
+    "total_changes": 766,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "b905c5747fc3b21c01a1ff18af789c6dcefb7836",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-15T20:24:58Z",
+        "login": "PedroGTG"
+      },
+      "message": "docs: adiciona documentação da Sprint 11"
+    },
+    "additions": 68,
+    "deletions": 0,
+    "total_changes": 68,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "397de4d5f9ddf5fe7512e5d5ac14a5236019be28",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-14T02:02:46Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update package-lock.json"
+    },
+    "additions": 9,
+    "deletions": 0,
+    "total_changes": 9,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "aee2afb1acfeeb70a18be04131b15ee700117294",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-13T03:56:51Z",
+        "login": "Phill-Chill"
+      },
+      "message": "Merge pull request #73 from unb-mds/fluxoUsuario"
+    },
+    "additions": 368,
+    "deletions": 0,
+    "total_changes": 368,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "99a55a1518b248d385de7ec2b545c99e8e4b24c0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-12T22:38:55Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Merge branch 'main' of github.com:unb-mds/2025-2-GuiaDev"
+    },
+    "additions": 45,
+    "deletions": 8,
+    "total_changes": 53,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "86a84ad5c3cf24394e218947fd0639f66979777a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-12T22:38:03Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update Card.css"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "7a0020b09bbdb89bf94bc58a92b1ce3b63eaeff6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-12T00:37:22Z",
+        "login": "BGrangeiro"
+      },
+      "message": "Adjust font sizes in LearningPage.css"
+    },
+    "additions": 3,
+    "deletions": 3,
+    "total_changes": 6,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "278519abd57b947f726233230b40926ce92d8cd7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-12T00:34:48Z",
+        "login": "BGrangeiro"
+      },
+      "message": "Merge pull request #72 from unb-mds/estrutura-boas-praticas"
+    },
+    "additions": 42,
+    "deletions": 5,
+    "total_changes": 47,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "272c18e7e5ed29b99ae1dc1f422f25da9aadc353",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-11T00:39:19Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Merge branch 'main' into fluxoUsuario"
+    },
+    "additions": 1352,
+    "deletions": 738,
+    "total_changes": 2090,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "67d30ff25f797a926c5f05bf50c246fccd438c5c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-11T00:24:52Z",
+        "login": "Phill-Chill"
+      },
+      "message": "Merge pull request #68 from unb-mds/analise-docs-back"
+    },
+    "additions": 373,
+    "deletions": 2,
+    "total_changes": 375,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "95d26ab56bf38f81880f90fe1e1f03aa1ad47d56",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-11T00:17:42Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: muda título da guia"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "0218b80417fad8600510a331afd241e6cb03242f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-11T00:16:59Z",
+        "login": "BGrangeiro"
+      },
+      "message": "feat: adicionar boas práticas específicas para arquivos de documentaç…"
+    },
+    "additions": 42,
+    "deletions": 5,
+    "total_changes": 47,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e79f21e5fb6a38a4a1ee4c904699230022b19f57",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-10T22:15:06Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Merge branch 'main' of github.com:unb-mds/2025-2-GuiaDev"
+    },
+    "additions": 85,
+    "deletions": 0,
+    "total_changes": 85,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "081d84c09b0350c4abe8a48247897f8c00a2cd21",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-10T19:38:33Z",
+        "login": "filipeBG-07"
+      },
+      "message": "docs: adição do documento de contribuição para o GuiaDev"
+    },
+    "additions": 85,
+    "deletions": 0,
+    "total_changes": 85,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "b2ddbfff396c4b8378f059ea60084693dcf7db82",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-10T17:27:48Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update Login.css"
+    },
+    "additions": 17,
+    "deletions": 8,
+    "total_changes": 25,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "f1f29c952fc1d64ad01739feac6dd4a5715a0659",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-09T16:47:43Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "update README"
+    },
+    "additions": 0,
+    "deletions": 2,
+    "total_changes": 2,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "b7feba1b2270aa1543647940230be751561f28dd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-09T16:46:36Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update README"
+    },
+    "additions": 3,
+    "deletions": 1,
+    "total_changes": 4,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "531ac6bf36898e538e6f1c05cda8ff624772dce8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-09T16:45:54Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update README.md"
+    },
+    "additions": 1,
+    "deletions": 4,
+    "total_changes": 5,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "0e388c9f4227fd5ae24d7ab262ca324acb8eceeb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-09T16:45:30Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update README.md"
+    },
+    "additions": 3,
+    "deletions": 0,
+    "total_changes": 3,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e92ee92cf0a9e0c2ee717cf6942170ed612cd948",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-09T16:34:29Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update package-lock.json"
+    },
+    "additions": 396,
+    "deletions": 385,
+    "total_changes": 781,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "63d7089c1dc9052ac91f33ddfd5fc0913bb95487",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-09T16:14:48Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2025-2-GuiaDev"
+    },
+    "additions": 926,
+    "deletions": 291,
+    "total_changes": 1217,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "d2b6ecd924356db362b8879f061123543397393d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-09T15:48:17Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update package.json"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "39f8104483d2c21a9aefb1669bd1956a6b5bf531",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-09T02:31:40Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Merge pull request #71 from unb-mds/github_api"
+    },
+    "additions": 926,
+    "deletions": 291,
+    "total_changes": 1217,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "59e9aa04656ed9749fc757d8dde71ab9dcde36ff",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-09T01:20:11Z",
+        "login": "PedroGTG"
+      },
+      "message": "Create .env file for backend in CI workflow"
+    },
+    "additions": 11,
+    "deletions": 0,
+    "total_changes": 11,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "93ea04424dfb0d42f424f3fdf0f8138fd597fb5c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-08T19:54:46Z",
+        "login": "PedroGTG"
+      },
+      "message": "feat: implementa coleta de dados por token"
+    },
+    "additions": 82,
+    "deletions": 22,
+    "total_changes": 104,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "c54b5d73438cbb98a8be65a869d15d81c319e641",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-08T17:15:56Z",
+        "login": "PedroGTG"
+      },
+      "message": "chore: Resolve problemas com merge"
+    },
+    "additions": 939,
+    "deletions": 279,
+    "total_changes": 1218,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e2717e8dd31cc2dfaea004b5a45c4906f8c856d0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-08T17:02:44Z",
+        "login": "PedroGTG"
+      },
+      "message": "chore: atualiza repositorio local"
+    },
+    "additions": 585,
+    "deletions": 0,
+    "total_changes": 585,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "d49321d51d6e4aa95624bb573ab6c384dd7d288d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-08T17:01:14Z",
+        "login": "PedroGTG"
+      },
+      "message": "chore: atualiza repositório local"
+    },
+    "additions": 14,
+    "deletions": 1,
+    "total_changes": 15,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "de9a168be8fc7c1545c47ae0b3a59aaf1ba396fc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-07T21:49:17Z",
+        "login": "BGrangeiro"
+      },
+      "message": "docs: adiciona informações completas e boas práticas na LearningPage"
+    },
+    "additions": 23,
+    "deletions": 23,
+    "total_changes": 46,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "270410c3bdcc3335dd895c0d9d0976bc79a0415c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-07T21:38:36Z",
+        "login": "BGrangeiro"
+      },
+      "message": "docs: adiciona informações completas e boas práticas na LearningPage"
+    },
+    "additions": 23,
+    "deletions": 23,
+    "total_changes": 46,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "bec49e75fea09ec7ce5a5a252e3a763483081d86",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-07T19:41:39Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: salva os usuários do login social no banco"
+    },
+    "additions": 107,
+    "deletions": 42,
+    "total_changes": 149,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "98781ae44b2e0c8d3aaa5388728bcfdb54068b2e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-07T03:59:41Z",
+        "login": "filipeBG-07"
+      },
+      "message": "criação de código de conduta e atualização de documentação"
+    },
+    "additions": 267,
+    "deletions": 198,
+    "total_changes": 465,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "2425fff5a725b75c79abb12e70fe82b71747a9d9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-07T00:29:18Z",
+        "login": "PedroGTG"
+      },
+      "message": "chore: atualiza bando de dados"
+    },
+    "additions": 55,
+    "deletions": 96,
+    "total_changes": 151,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "d5a56b02578800d0fc4f300b70c5f7ec0df336ee",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-06T23:53:58Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: modifica botoes da sidebar"
+    },
+    "additions": 46,
+    "deletions": 31,
+    "total_changes": 77,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "123bc09198a70ef19e569951bdec87d89b6497d0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-06T01:33:17Z",
+        "login": "Phill-Chill"
+      },
+      "message": "Merge branch 'fluxoUsuario' into analise-docs-back"
+    },
+    "additions": 4257,
+    "deletions": 832,
+    "total_changes": 5089,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "1bc820940a6de075cd2556c7d47fad1c9ca74b67",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-06T01:00:37Z",
+        "login": "Phill-Chill"
+      },
+      "message": "feat:integração chatIA - front com back"
+    },
+    "additions": 122,
+    "deletions": 6,
+    "total_changes": 128,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "d35726a8c97f6166a36b3e656cfc416524d1fc2e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-05T23:18:14Z",
+        "login": "Phill-Chill"
+      },
+      "message": "fix: icone do bot Chat.css"
+    },
+    "additions": 3,
+    "deletions": 2,
+    "total_changes": 5,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "ff85efd5aa2feeb6d67244f9fc8c85a37ae071f3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-05T23:05:57Z",
+        "login": "filipeBG-07"
+      },
+      "message": "fix: pequena correção no retorno da requisição"
+    },
+    "additions": 11,
+    "deletions": 11,
+    "total_changes": 22,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "1589093727801c0b5e50301b95a2aabb8fa5f21f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-04T22:55:18Z",
+        "login": "PedroGTG"
+      },
+      "message": "perf(api): cachear resultados comuns para reduzir tempo de resposta"
+    },
+    "additions": 164,
+    "deletions": 98,
+    "total_changes": 262,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "4c425436dd39dca2969286b5716d80ba1c1f130d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-04T21:29:35Z",
+        "login": "Phill-Chill"
+      },
+      "message": "feat:integração componente Config com o back"
+    },
+    "additions": 68,
+    "deletions": 13,
+    "total_changes": 81,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "05a4716e0a2dbbe9e0075a63741ec9959dfac8bf",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-04T20:49:59Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: corrige header, icones e titulo da aba"
+    },
+    "additions": 15,
+    "deletions": 9,
+    "total_changes": 24,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "0438c5fe08e49475de2fa81e11217a59fa9bd453",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-04T19:41:35Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: arruma estilos e responsividade da página de login/cadastro"
+    },
+    "additions": 80,
+    "deletions": 91,
+    "total_changes": 171,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "357dd0919ac6ba0a9bb4dfda0d14a13023593bad",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-04T18:37:43Z",
+        "login": "Phill-Chill"
+      },
+      "message": "feat:modal do componente Config"
+    },
+    "additions": 420,
+    "deletions": 13,
+    "total_changes": 433,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "37051d172cbbf694ebcf459479dfc606801e351d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-04T17:43:36Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: remove branch auxiliar do pipiline ci"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "8861393bd52c43b19caf3289f5da4165c83bb9fc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-04T04:10:51Z",
+        "login": "filipeBG-07"
+      },
+      "message": "fix: código final da análise de documentos"
+    },
+    "additions": 206,
+    "deletions": 224,
+    "total_changes": 430,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "5b6b700cb8cd3d8df18eeb2391257c540ba465f3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-03T21:05:24Z",
+        "login": "PedroGTG"
+      },
+      "message": "feat: optimiza o fluxo de dados"
+    },
+    "additions": 220,
+    "deletions": 38,
+    "total_changes": 258,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "944f8b4bebef51ea65e68833b582e3d6c05f9d15",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-03T17:18:11Z",
+        "login": "Phill-Chill"
+      },
+      "message": "Merge pull request #62 from unb-mds/pipelineCI02"
+    },
+    "additions": 54,
+    "deletions": 61,
+    "total_changes": 115,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "55357aca7d6be51c4389fd280175ac5697aae2d6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-03T02:45:43Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Fix: atualiza variaveis de ambiente no docker compose"
+    },
+    "additions": 5,
+    "deletions": 2,
+    "total_changes": 7,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e3dd407f30eb47d42e0218a8684cecc8951f369e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-03T02:40:28Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: adiciona variaveis de ambiente ao pipeline CI"
+    },
+    "additions": 5,
+    "deletions": 0,
+    "total_changes": 5,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "8060506b73ac2e0e9b78a180dff9e9064159ccd0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-03T02:31:00Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: atualiza pipeline para usar o nosso docker"
+    },
+    "additions": 44,
+    "deletions": 59,
+    "total_changes": 103,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "d8c76d8b652287cc37360a67b46a009877185f05",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-02T23:59:26Z",
+        "login": "filipeBG-07"
+      },
+      "message": "fix: ataulização da análise de documentos"
+    },
+    "additions": 154,
+    "deletions": 97,
+    "total_changes": 251,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "94c897a87f79bd2681d9b08e4a0f5376ee941ac2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-02T20:51:56Z",
+        "login": "PedroGTG"
+      },
+      "message": "feat: adiciona mudancas no prisma"
+    },
+    "additions": 63,
+    "deletions": 51,
+    "total_changes": 114,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "390d118ba8c9d4aa0efeb85ab44634f05a273208",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-02T19:10:04Z",
+        "login": "PedroGTG"
+      },
+      "message": "feat(WIP): adiciona cache no githuh_API"
+    },
+    "additions": 199,
+    "deletions": 40,
+    "total_changes": 239,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "5f36169f916e03fc3dd5353c5a853992829de6e0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-02T15:59:58Z",
+        "login": "Phill-Chill"
+      },
+      "message": "feat:Chat.jsx/.css (icone da logo como bot no chatBot) Card.css e Lea…"
+    },
+    "additions": 91,
+    "deletions": 24,
+    "total_changes": 115,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "d2dbe65cd240e2d4e0ffa91d6aeaa02fd998a3e9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-02T04:54:26Z",
+        "login": "Phill-Chill"
+      },
+      "message": "fix:LearnigPage.css (preenchimento do conteúdo na tela) e Chat.jsx (r…"
+    },
+    "additions": 115,
+    "deletions": 25,
+    "total_changes": 140,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "2f677b837ee9ad0aec036071fcd3020ee6f0e5cd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-31T13:43:48Z",
+        "login": "Phill-Chill"
+      },
+      "message": "Merge pull request #61 from unb-mds/Integração-02"
+    },
+    "additions": 2860,
+    "deletions": 326,
+    "total_changes": 3186,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "96726a82f9b501d56eb6713714df7f16e3fedf34",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-30T15:57:34Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Fix bullet points formatting in Sprint-09.md"
+    },
+    "additions": 4,
+    "deletions": 4,
+    "total_changes": 8,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "ae86810d9f86810a2730416fde248b443898999c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-30T15:56:33Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Clean up finalization section in Sprint-07.md"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "648cf9f72703032cb6a6298c229503d3aab430bc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-30T15:55:04Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update and rename README.md to Sprint-06.md"
+    },
+    "additions": 40,
+    "deletions": 2,
+    "total_changes": 42,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "1fea451a654efc34fc072a0151bd0f7f18c5bbc7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-30T15:23:46Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Atualizar documento para Sprint 07"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "92203ec578eef5601ab1dfb9bc7bf4e538dce876",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-30T15:22:36Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Atualiza descrição e objetivos da Sprint 07"
+    },
+    "additions": 15,
+    "deletions": 11,
+    "total_changes": 26,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "d572077165d3523e44aa1c1b5e8e4aece66d5d02",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-30T13:53:26Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Add Sprint 07.md"
+    },
+    "additions": 39,
+    "deletions": 0,
+    "total_changes": 39,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "4b4784817e68045285fe389c67fda9bd5b66a9b5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-30T13:51:28Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Revise Sprint 09 document with updated details"
+    },
+    "additions": 10,
+    "deletions": 10,
+    "total_changes": 20,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "cbb6fe5b7708aeabb4a507b3f673967956bb3dff",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-29T23:19:39Z",
+        "login": "BGrangeiro"
+      },
+      "message": "Create Sprint 09"
+    },
+    "additions": 39,
+    "deletions": 0,
+    "total_changes": 39,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "645bb2f188dff49db26dd828591ff23a1ab0d94d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-29T22:40:16Z",
+        "login": "Phill-Chill"
+      },
+      "message": "Merge branch 'main' into Integração-02"
+    },
+    "additions": 146,
+    "deletions": 0,
+    "total_changes": 146,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "1563d4b01bebb1ef00221342d712408f03c82098",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-28T01:57:52Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: pipeline integracao"
+    },
+    "additions": 11,
+    "deletions": 7,
+    "total_changes": 18,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "95dc69cbe7aace0946f484f9a3037f6554478e30",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-28T01:08:51Z",
+        "login": "Phill-Chill"
+      },
+      "message": "fix: analysisDocsPage.css (scroll) Home (messagem de load)"
+    },
+    "additions": 78,
+    "deletions": 57,
+    "total_changes": 135,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "013b5c8ae2bd5ab14b36313c9faeec145689c97e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-28T01:04:15Z",
+        "login": "HugoFreitass"
+      },
+      "message": "ci/fix: muda o diretório de instalação"
+    },
+    "additions": 13,
+    "deletions": 16,
+    "total_changes": 29,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "752e9400bc258b9cae360f9ce7565f180108d371",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-28T00:24:44Z",
+        "login": "HugoFreitass"
+      },
+      "message": "ci/fix: instala pnpm no inicio"
+    },
+    "additions": 4,
+    "deletions": 2,
+    "total_changes": 6,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "c658cbd1331e1dbc20286f9c87efab5d5b3f0d25",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-28T00:19:29Z",
+        "login": "HugoFreitass"
+      },
+      "message": "ci: adiciona pipeline de integração contínua"
+    },
+    "additions": 69,
+    "deletions": 0,
+    "total_changes": 69,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "fc50cc7ffc669f47bf14b0eac55af5b511ec47e6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-27T15:05:51Z",
+        "login": "Phill-Chill"
+      },
+      "message": "Merge pull request #60 from unb-mds/integracao02-subetapa"
+    },
+    "additions": 718,
+    "deletions": 83,
+    "total_changes": 801,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "d9491ffd1e06d9ba12fc13b536fc14eafbb6af56",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-27T14:58:46Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Merge branch 'Integração-02' into integracao02-subetapa"
+    },
+    "additions": 2339,
+    "deletions": 676,
+    "total_changes": 3015,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "7a6a653b71af22508fcc3b0c8d070771f96ceeaa",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-27T14:36:25Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Merge pull request #54 from unb-mds/github_api"
+    },
+    "additions": 220,
+    "deletions": 413,
+    "total_changes": 633,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "87ea41ddfe9adbf46987f3ca860d6eefcd58bb6f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-24T09:06:26Z",
+        "login": "Phill-Chill"
+      },
+      "message": "fix:Login css"
+    },
+    "additions": 31,
+    "deletions": 254,
+    "total_changes": 285,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "207cccb84ab8e09e5f97ddefdb19cb53839837ef",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-23T17:28:35Z",
+        "login": "Phill-Chill"
+      },
+      "message": "feat:Integração (análiseDocsPage e Github_API)"
+    },
+    "additions": 2286,
+    "deletions": 559,
+    "total_changes": 2845,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "18b72bbe34e32e789e207d0b4f91850f81fa4db8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-23T01:37:40Z",
+        "login": "Phill-Chill"
+      },
+      "message": "feat:implementação GitHubAPi com análiseDocsPage"
+    },
+    "additions": 1991,
+    "deletions": 630,
+    "total_changes": 2621,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "2b4ce204231e3c5d6a28f217ea7f476406381340",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-23T01:32:10Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: arruma callback github"
+    },
+    "additions": 135,
+    "deletions": 64,
+    "total_changes": 199,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "5af2aa3a441ee1e7f5fc5c87ca39a45e9f9b515f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-21T02:19:51Z",
+        "login": "Phill-Chill"
+      },
+      "message": "fix:css"
+    },
+    "additions": 53,
+    "deletions": 10,
+    "total_changes": 63,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "86b6ad995dc7f5fe5bd2a680f3d26bf6e8b8bf04",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-21T02:03:14Z",
+        "login": "filipeBG-07"
+      },
+      "message": "fix: melhoria da parte de análise pela IA"
+    },
+    "additions": 109,
+    "deletions": 88,
+    "total_changes": 197,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "fe732553760e71ff87100e5c281763e0c9660ab0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-21T01:41:49Z",
+        "login": "PedroGTG"
+      },
+      "message": "Docs: Adiciona Sprint-08"
+    },
+    "additions": 62,
+    "deletions": 0,
+    "total_changes": 62,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "7f5a50f5ff72277b893f5b326277f804405547f5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-21T01:15:45Z",
+        "login": "Phill-Chill"
+      },
+      "message": "feat: adiciona box do doc para entendimento"
+    },
+    "additions": 208,
+    "deletions": 135,
+    "total_changes": 343,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "161e4e0b26e75af4426698dac5fa863cb36df401",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-21T00:49:40Z",
+        "login": "filipeBG-07"
+      },
+      "message": "feature: análise de documentos parcialmente completa"
+    },
+    "additions": 306,
+    "deletions": 147,
+    "total_changes": 453,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "ae78eeb2eae7668e5a011baf51deb1c3fb525c38",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-20T23:54:05Z",
+        "login": "BGrangeiro"
+      },
+      "message": "Delete Docs/Milestones/Sprint-07/Atualização Figma"
+    },
+    "additions": 0,
+    "deletions": 12,
+    "total_changes": 12,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "d785b0c52248cd8759c13a55801ceed145cc7748",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-20T23:52:55Z",
+        "login": "BGrangeiro"
+      },
+      "message": "Add Figma update documentation for Sprint 07"
+    },
+    "additions": 12,
+    "deletions": 0,
+    "total_changes": 12,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "102b4ee65051c11d120d574313d8e009898dd146",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-20T23:51:25Z",
+        "login": "BGrangeiro"
+      },
+      "message": "chore: atualizar Figma para melhor organização e compreensão do projeto"
+    },
+    "additions": 11,
+    "deletions": 0,
+    "total_changes": 11,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "eac2b23b4eb664ee3b4915ab45195e8c9593eae1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-20T23:47:19Z",
+        "login": "BGrangeiro"
+      },
+      "message": "Create Atualização Figma"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "632dd52d3affb3fea631504103a920d2a15c5202",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-20T02:40:45Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: redirecionamento front -> autenticador github"
+    },
+    "additions": 603,
+    "deletions": 17,
+    "total_changes": 620,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "41b42c22b4d3e4ed78f747fe10569fa827a406d6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-20T02:13:50Z",
+        "login": "Phill-Chill"
+      },
+      "message": "fix:Learning Page (components: Chat.css LearningPage.css)"
+    },
+    "additions": 141,
+    "deletions": 33,
+    "total_changes": 174,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "fa898d2329f422350ca9c04eed031dbffe8a8707",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-20T00:04:02Z",
+        "login": "Phill-Chill"
+      },
+      "message": "fix:LearningPage.css"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "ae5454e115138efd44cee58e9e274b1579199ef0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-19T23:58:47Z",
+        "login": "Phill-Chill"
+      },
+      "message": "fix/Home"
+    },
+    "additions": 68,
+    "deletions": 374,
+    "total_changes": 442,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "ded382dc2ed01d76a8b7f09c6c16d213d4e80328",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-19T22:49:29Z",
+        "login": "Phill-Chill"
+      },
+      "message": "fix/css"
+    },
+    "additions": 9,
+    "deletions": 2,
+    "total_changes": 11,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "3bb1863cf0eaf01a35e93361c025ed1c13c165fe",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-19T21:49:20Z",
+        "login": "PedroGTG"
+      },
+      "message": "feat: atualiza o codigo"
+    },
+    "additions": 210,
+    "deletions": 549,
+    "total_changes": 759,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "ccb2d49797f7afbd4987451c2be26a9657f49e68",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-18T18:59:32Z",
+        "login": "PedroGTG"
+      },
+      "message": "feat: atualiza checkFolders"
+    },
+    "additions": 125,
+    "deletions": 108,
+    "total_changes": 233,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "824363cedcd270166a6252fd0767bb7720bff5a6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-18T18:21:29Z",
+        "login": "PedroGTG"
+      },
+      "message": "feat: nova funcionalidade do checkFolder"
+    },
+    "additions": 105,
+    "deletions": 26,
+    "total_changes": 131,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "757f365a197e74d949791e089fa503cdebc87ccb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-17T22:14:57Z",
+        "login": "PedroGTG"
+      },
+      "message": "feat: adiciona checkFolders"
+    },
+    "additions": 51,
+    "deletions": 1,
+    "total_changes": 52,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "85eed822fae0cc49cfeb3fc46f59087c1e0841d9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-17T18:24:53Z",
+        "login": "BGrangeiro"
+      },
+      "message": "style: modernizar tipografia e hierarquia visual dos títulos e textos…"
+    },
+    "additions": 130,
+    "deletions": 70,
+    "total_changes": 200,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "dc82bcec9c5e82d4b932be628e5b0f9284793a43",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-17T18:23:33Z",
+        "login": "BGrangeiro"
+      },
+      "message": "style: modernizar tipografia e hierarquia visual dos títulos e textos…"
+    },
+    "additions": 130,
+    "deletions": 70,
+    "total_changes": 200,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "246efda71ab159fabc4b6484f1e201c18b03a55e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-17T18:01:44Z",
+        "login": "BGrangeiro"
+      },
+      "message": "Fix: Corrige responsividade e atualiza interface"
+    },
+    "additions": 146,
+    "deletions": 273,
+    "total_changes": 419,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "27cb6a78f0ef8f6eaf8a0db85bfa3fa6f7f96a79",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-17T17:56:29Z",
+        "login": "BGrangeiro"
+      },
+      "message": "Modernização dos ícones na página Home com lucide-react"
+    },
+    "additions": 122,
+    "deletions": 216,
+    "total_changes": 338,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "93d327446d88c5a4054f3683426c92d753401d74",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-17T17:55:46Z",
+        "login": "BGrangeiro"
+      },
+      "message": "feat: substituir emojis por ícones vetoriais modernos com lucide-react"
+    },
+    "additions": 24,
+    "deletions": 57,
+    "total_changes": 81,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "9779ea6594045c5b96fca6377e2aa836875ab175",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-17T13:12:01Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Merge pull request #50 from unb-mds/ChatIA"
+    },
+    "additions": 191,
+    "deletions": 0,
+    "total_changes": 191,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "77ae5492b27121c816b35ccbaf01b7adfacfa064",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-16T00:07:31Z",
+        "login": "PedroGTG"
+      },
+      "message": "chore: atualiza repositorio local"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "0ba50656888c6951b0e530c014c902a11b56e0a3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-16T00:03:46Z",
+        "login": "PedroGTG"
+      },
+      "message": "Note: atualiza repositorio local"
+    },
+    "additions": 694,
+    "deletions": 104,
+    "total_changes": 798,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "95e6959803d2e2c44adf103d12dbada47dbff447",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-15T23:59:10Z",
+        "login": "BGrangeiro"
+      },
+      "message": "Create ignore"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "f76734543b002d5e67b8c9f871d3bcc035396c10",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-15T23:53:39Z",
+        "login": "PedroGTG"
+      },
+      "message": "feat: adiciona testes em specs"
+    },
+    "additions": 80,
+    "deletions": 14,
+    "total_changes": 94,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "7aa5651f82ad01c960dc41fec69630164f2c9898",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-15T22:44:04Z",
+        "login": "BGrangeiro"
+      },
+      "message": "Melhoria na configuração do ESLint e ajustes de regras"
+    },
+    "additions": 461,
+    "deletions": 57,
+    "total_changes": 518,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "4f5a89c260ed17ec470d74a75e5a12b69096b680",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-15T22:41:07Z",
+        "login": "BGrangeiro"
+      },
+      "message": "chore(eslint): aprimorar configuração com novas regras e diretórios i…"
+    },
+    "additions": 39,
+    "deletions": 16,
+    "total_changes": 55,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "aa3bb1ed3c625fa3f6d7c8c9167072ade14d7dbc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-15T22:36:20Z",
+        "login": "BGrangeiro"
+      },
+      "message": "Update Home"
+    },
+    "additions": 422,
+    "deletions": 41,
+    "total_changes": 463,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e6e47c6be4ad3b614b84c2de40f75588e5157cff",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-15T21:37:39Z",
+        "login": "Phill-Chill"
+      },
+      "message": "Merge pull request #48 from unb-mds/loginSocial"
+    },
+    "additions": 231,
+    "deletions": 45,
+    "total_changes": 276,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "5170c9034aca92b1719003c75ba69173e2e0c742",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-15T05:26:00Z",
+        "login": "filipeBG-07"
+      },
+      "message": "feature: criação de lógica de analise de documentação por ia"
+    },
+    "additions": 233,
+    "deletions": 0,
+    "total_changes": 233,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "ca83b1c2747b97f8e39d41835191d4fa38984921",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-15T02:50:23Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "reformulando"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "cca66da1c182fbaac76c43c2b40c641524a2d757",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-15T02:50:07Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "update Card.jsx"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "64a23e7beadd547d8fe30166cb1215eab19a93d9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-15T02:27:05Z",
+        "login": "PedroGTG"
+      },
+      "message": "erge branch 'main' of https://github.com/unb-mds/2025-2-GuiaDev into …"
+    },
+    "additions": 2589,
+    "deletions": 554,
+    "total_changes": 3143,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "0cf823bfb9f51d2280346abbce82b4137be8f16c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-15T01:12:15Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Merge pull request #47 from unb-mds/Learning-Page"
+    },
+    "additions": 288,
+    "deletions": 59,
+    "total_changes": 347,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "15a90b5559d7efd3b9d3b9cf318f7ce95ec6f54f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-15T01:11:22Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update Header.css"
+    },
+    "additions": 2,
+    "deletions": 1,
+    "total_changes": 3,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "8f7741cc5db7cfb40a3d818ccb7663ea4c0446c7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-15T01:11:18Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update Footer.css"
+    },
+    "additions": 2,
+    "deletions": 1,
+    "total_changes": 3,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "ef242381b7d68befa6231e0f8408289186424c30",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-15T01:00:26Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create Chat.css"
+    },
+    "additions": 39,
+    "deletions": 0,
+    "total_changes": 39,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "607f61c0b018926c61fd237d992f2bcf99e64b96",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-15T01:00:22Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create Chat.jsx"
+    },
+    "additions": 22,
+    "deletions": 0,
+    "total_changes": 22,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "6d43bba0945ed365df86b9f375e4134fdbe526ed",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-15T01:00:12Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update Footer.css"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "b4399343351fe8d9c23f680f9aa3e673ab90cf93",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-15T00:59:46Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update Header.css"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "8dc082e63992714b89532a07ed10e790f5d53f6c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-15T00:59:21Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create card.css"
+    },
+    "additions": 89,
+    "deletions": 0,
+    "total_changes": 89,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e0effb68f0b82920e3fa1ba63c861838626db161",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-15T00:59:10Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create card.jsx"
+    },
+    "additions": 40,
+    "deletions": 0,
+    "total_changes": 40,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "7c42c444c62ee4d49fc0c451a73a7ed684f1a726",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-15T00:58:47Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update Sidebar.css"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "59b84a8ab0a3ef3088ff576c44abfe6df2840189",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-15T00:58:36Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update LearningPage.css"
+    },
+    "additions": 23,
+    "deletions": 39,
+    "total_changes": 62,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "741ed9a7b05abd46770af7e62cf1bfd9ede5a838",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-15T00:58:32Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update LearningPage.jsx"
+    },
+    "additions": 69,
+    "deletions": 16,
+    "total_changes": 85,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "5c9d37c3c76e1487cfaaaf4252014f665d2afb83",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-15T00:58:10Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update Login.css"
+    },
+    "additions": 2,
+    "deletions": 1,
+    "total_changes": 3,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "9e95ac6c1b067173a70b9665ca01d8617bccd7b8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-12T19:22:03Z",
+        "login": "filipeBG-07"
+      },
+      "message": "docs: review sprint 5"
+    },
+    "additions": 52,
+    "deletions": 1,
+    "total_changes": 53,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "9fbbfd4fdf62aca7dbc11b293c5fc8e28476703c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-11T20:35:22Z",
+        "login": "PedroGTG"
+      },
+      "message": "feat: implementa chat de AI com Gemini (propenso a mudanca pro OpenAI…"
+    },
+    "additions": 76,
+    "deletions": 4,
+    "total_changes": 80,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "2c1d56cbb08ccabef7b36df6953b2fd232b9fb18",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-11T00:20:51Z",
+        "login": "Phill-Chill"
+      },
+      "message": "feat/analysisDocsPage"
+    },
+    "additions": 1718,
+    "deletions": 77,
+    "total_changes": 1795,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "452c235a15097f73f0cd26fb8e28f66ef999a96b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-10T12:51:33Z",
+        "login": "BGrangeiro"
+      },
+      "message": "fix: adiciona box-sizing global para corrigir pequenos problemas de l…"
+    },
+    "additions": 2,
+    "deletions": 1,
+    "total_changes": 3,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "c822160305d57358b9e6bb82b04f04f2d1a2d841",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-10T12:42:27Z",
+        "login": "BGrangeiro"
+      },
+      "message": "fix: adiciona box-sizing global para corrigir pequenos problemas de l…"
+    },
+    "additions": 2,
+    "deletions": 1,
+    "total_changes": 3,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "8cb3b2341c79a4a99372954aaa973d4e2d6c00fa",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-10T10:00:12Z",
+        "login": "BGrangeiro"
+      },
+      "message": "feat: cria esqueleto da página de aprendizado (LearningPage)"
+    },
+    "additions": 76,
+    "deletions": 1,
+    "total_changes": 77,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "b7e89935aa1b5796db8d3d0d4e3073b166fa575d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-10T09:55:35Z",
+        "login": "BGrangeiro"
+      },
+      "message": "feat: estrutura inicial da página de aprendizado"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "7a2233dd3e80b718ba0b7cb089ac3af260734b6c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-10T05:52:55Z",
+        "login": "BGrangeiro"
+      },
+      "message": "Merge branch 'main' into frontend"
+    },
+    "additions": 2306,
+    "deletions": 552,
+    "total_changes": 2858,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "a7f97d4ca8bda956a695e3dec069958d5cbaea88",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-10T05:46:07Z",
+        "login": "BGrangeiro"
+      },
+      "message": "Merge pull request #43 from unb-mds/frontend"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "fff7e354b2764ef237cdc4a16caa322420f48e9a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-10T05:44:38Z",
+        "login": "BGrangeiro"
+      },
+      "message": "feat: adiciona esqueleto da página de aprendizado (LearningPage)"
+    },
+    "additions": 76,
+    "deletions": 1,
+    "total_changes": 77,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "14659aeee7cbad92e228302fc9c31495193df1ee",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-10T00:09:33Z",
+        "login": "HugoFreitass"
+      },
+      "message": "feat: adiciona login social front"
+    },
+    "additions": 20,
+    "deletions": 1,
+    "total_changes": 21,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "605d725dd01a24b4aa749371aa7f65966de0c6ac",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-10T00:08:31Z",
+        "login": "HugoFreitass"
+      },
+      "message": "feat: adiciona login social"
+    },
+    "additions": 211,
+    "deletions": 44,
+    "total_changes": 255,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e932e10143db5085a16de48108a321008c771501",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-09T18:02:03Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: adiciona dependências"
+    },
+    "additions": 564,
+    "deletions": 3,
+    "total_changes": 567,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "3e2d9efab1edb23e6cc7d04fbc0015978b505b2c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-09T00:51:18Z",
+        "login": "BGrangeiro"
+      },
+      "message": "Merge pull request #41 from unb-mds/Integração-01"
+    },
+    "additions": 1670,
+    "deletions": 552,
+    "total_changes": 2222,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "2e22fc2f7fd125951b625add0a03b32fe49957ae",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-09T00:05:36Z",
+        "login": "PedroGTG"
+      },
+      "message": "feat: adiciona estrutura de pastas"
+    },
+    "additions": 53,
+    "deletions": 0,
+    "total_changes": 53,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "2e68e70db74fef7c8f8fa4ef7d6c7cda0531ce42",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-08T21:18:28Z",
+        "login": "Phill-Chill"
+      },
+      "message": "resolve: conflitos de merge - mantém nova estrutura de componentes"
+    },
+    "additions": 999,
+    "deletions": 399,
+    "total_changes": 1398,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "3037e9a491a250ecbe33ba2ef51403552bbcbf5c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-08T21:05:10Z",
+        "login": "Phill-Chill"
+      },
+      "message": "feat/implementa componente de cadastro e melhora organização do layout"
+    },
+    "additions": 506,
+    "deletions": 0,
+    "total_changes": 506,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "68b3acc5b315fa077487b0ae7a1fb82124367d0d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-08T21:02:06Z",
+        "login": "Phill-Chill"
+      },
+      "message": "feat/.gitignore"
+    },
+    "additions": 191,
+    "deletions": 279,
+    "total_changes": 470,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "3e0bedca6947a68af0fa6a47ffc4c2b215517e9c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-06T23:59:12Z",
+        "login": "BGrangeiro"
+      },
+      "message": "feat: Protótipo de Alta fidelidade - Visualização"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "cb7113d0adbaf0a53254b29859e51e4325d03e18",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-06T23:56:46Z",
+        "login": "BGrangeiro"
+      },
+      "message": "Protótipo de alta fidelidade: Visualização"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "6537b045c259e2de94e4904f5215bbbdf53782d9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-06T23:32:12Z",
+        "login": "BGrangeiro"
+      },
+      "message": "feat: adicionar arquivo de estilos CSS separado (styles.css)"
+    },
+    "additions": 324,
+    "deletions": 0,
+    "total_changes": 324,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "c0d6db5399c75990f5dcc363f514d3652dbacfc4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-06T23:29:25Z",
+        "login": "BGrangeiro"
+      },
+      "message": "feat: adicionar arquivo de estilos CSS separado (styles.css)"
+    },
+    "additions": 324,
+    "deletions": 0,
+    "total_changes": 324,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "8a9fb5a5c79877d97b8785ab02128418ad4fdfd9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-06T23:27:36Z",
+        "login": "BGrangeiro"
+      },
+      "message": "Merge pull request #36 from unb-mds/feature/external-stylesheet"
+    },
+    "additions": 4,
+    "deletions": 355,
+    "total_changes": 359,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "f23c1aa1645da963b62541841b3ba33aa6d7c09f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-06T23:27:13Z",
+        "login": "BGrangeiro"
+      },
+      "message": "refactor: separar estilos CSS do HTML em arquivo externo"
+    },
+    "additions": 4,
+    "deletions": 355,
+    "total_changes": 359,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "d1321da7cd27060d962dbaac67dde87d9297d8cc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-06T23:12:36Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create Sprint 06"
+    },
+    "additions": 2,
+    "deletions": 0,
+    "total_changes": 2,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "077c1bbbd5df7f398e83181a914ee315b102d4be",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-06T23:05:16Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Delete Docs/Milestones/Sprint 06"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "d44ed9008cf4df79a596d0d377b665be6dc464c3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-06T23:04:58Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create Sprint 06"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "3410c508f13028cfd87e7c62260bf7394d059078",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-06T21:03:31Z",
+        "login": "PedroGTG"
+      },
+      "message": "Merge #35: Implementa Módulo Github para busca de dados de usuário"
+    },
+    "additions": 558,
+    "deletions": 1,
+    "total_changes": 559,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "b3441a3bf4feca6d36ada9e959c1577b9dc694e0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-06T14:53:18Z",
+        "login": "PedroGTG"
+      },
+      "message": "feat(QoL) Adiciona FormatRepoData"
+    },
+    "additions": 23,
+    "deletions": 2,
+    "total_changes": 25,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "f800c73ad038f0c98522f199babce01ab6fdd0e8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-06T02:42:34Z",
+        "login": "PedroGTG"
+      },
+      "message": "feat: atualizando repositorio local"
+    },
+    "additions": 1,
+    "deletions": 309,
+    "total_changes": 310,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "da55b9f97c5d769beedbc98c12244dd217d1b824",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-06T02:06:05Z",
+        "login": "PedroGTG"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2025-2-GuiaDev into…"
+    },
+    "additions": 73,
+    "deletions": 0,
+    "total_changes": 73,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "f6c81eff26c35d2b404b6756c13553b5bcb6fb97",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-05T22:47:50Z",
+        "login": "PedroGTG"
+      },
+      "message": "feat(backend) adiciona metodo para leitura de docs/"
+    },
+    "additions": 71,
+    "deletions": 2,
+    "total_changes": 73,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "53aa579b92fdab7aace03ee540542127bffbe6b4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-05T22:02:55Z",
+        "login": "PedroGTG"
+      },
+      "message": "feat(bgackend) atualiza analyzeUser"
+    },
+    "additions": 10,
+    "deletions": 1,
+    "total_changes": 11,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e0bd679dc0f89519ea34ed579a74ebbea5aa528b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-05T00:31:51Z",
+        "login": "PedroGTG"
+      },
+      "message": "feat(backend) adiciona novos métodos de coleta de dados"
+    },
+    "additions": 444,
+    "deletions": 0,
+    "total_changes": 444,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "25c8b3155be6067d9eda3861d7c3796a62fbcf28",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-04T22:45:34Z",
+        "login": "PedroGTG"
+      },
+      "message": "fix(backend) Arruma AnalyzeUser"
+    },
+    "additions": 118,
+    "deletions": 48,
+    "total_changes": 166,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "05773bb5296f16a7123b22a8ef5cab28941805f1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-04T20:42:04Z",
+        "login": "PedroGTG"
+      },
+      "message": "feat(backend) adiciona metodo get readme"
+    },
+    "additions": 44,
+    "deletions": 4,
+    "total_changes": 48,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "de57e1112f7742ad49f729b23268509c66d2235b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-04T03:13:06Z",
+        "login": "Phill-Chill"
+      },
+      "message": "Difinição dos critérios de avaliação e classificação."
+    },
+    "additions": 73,
+    "deletions": 0,
+    "total_changes": 73,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "3196bef23fea454d38a3148c73a702fe696e8638",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-03T23:42:30Z",
+        "login": "PedroGTG"
+      },
+      "message": "Merge branch 'github_api' of https://github.com/unb-mds/2025-2-Squad-…"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "6723dd06fb70075bd3bb627fd1faad9aaddd7a3f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-03T23:41:13Z",
+        "login": "PedroGTG"
+      },
+      "message": "feat: nova adicao"
+    },
+    "additions": 45,
+    "deletions": 2,
+    "total_changes": 47,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "2f450feef61038ad68512b1aa430d334f2f5f1aa",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-03T22:34:00Z",
+        "login": "PedroGTG"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2025-2-Squad-03 int…"
+    },
+    "additions": 3178,
+    "deletions": 10256,
+    "total_changes": 13434,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "aef40d62774a9eb6773c223acd473fa31c47439a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-03T22:16:36Z",
+        "login": "PedroGTG"
+      },
+      "message": "WIP: alterações locais"
+    },
+    "additions": 451,
+    "deletions": 15,
+    "total_changes": 466,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "071c30014d53c1e581fcc03ab7abad376ee58273",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-03T22:13:22Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Revise README structure and add new sections"
+    },
+    "additions": 39,
+    "deletions": 33,
+    "total_changes": 72,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "457af751d3687c242e2507a05bcca9340f441c62",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-03T11:39:42Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Remove table of contents from README"
+    },
+    "additions": 0,
+    "deletions": 11,
+    "total_changes": 11,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "8ac690f0eaabde7400c2c972a1af2dcdf7346c03",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-03T03:35:15Z",
+        "login": "filipeBG-07"
+      },
+      "message": "Update README.md"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "9066946d32589be1df90aa2e3cba736bdd093338",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-03T03:05:21Z",
+        "login": "Phill-Chill"
+      },
+      "message": "fix/Integração Back-Front"
+    },
+    "additions": 494,
+    "deletions": 152,
+    "total_changes": 646,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "27500f01bf7a5f1966574a9e10be0c9bfed60aa7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-03T01:02:24Z",
+        "login": "Phill-Chill"
+      },
+      "message": "feat/dependênciaAxios"
+    },
+    "additions": 281,
+    "deletions": 0,
+    "total_changes": 281,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "ffcb9d3626446ed4588048f9e895f44872597911",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-03T00:23:16Z",
+        "login": "Phill-Chill"
+      },
+      "message": "fix/organizaçãoFront em componentes"
+    },
+    "additions": 139,
+    "deletions": 115,
+    "total_changes": 254,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "4d6c4fdc4398421cf77abb7cadd93dfd5893e0ba",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-02T21:23:44Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create Revisão-de-Documento-R1.md"
+    },
+    "additions": 140,
+    "deletions": 0,
+    "total_changes": 140,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "bdbc3b92a10a34af4c8ca23e3a75520831aa7bf3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-02T21:22:47Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Delete revisão_de_documento_da_R1.md"
+    },
+    "additions": 0,
+    "deletions": 140,
+    "total_changes": 140,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "74cb6ea6a01ce1b832eec7d6c9d4db41ddb20e49",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-02T21:15:47Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update Login.jsx"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "c366527c3b0bf2be10e22bfc051051092e09eb42",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-02T21:14:48Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update Login.css"
+    },
+    "additions": 3,
+    "deletions": 1,
+    "total_changes": 4,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "09d4a09979b76c59c725c9bfa2e7c548d0a60cec",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-02T17:53:15Z",
+        "login": "Phill-Chill"
+      },
+      "message": "feat: Adiciona react-router-dom ao Docker"
+    },
+    "additions": 57,
+    "deletions": 2,
+    "total_changes": 59,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "89a42e82b648d65f37555538348b909825452ab4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-02T17:03:15Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Merge branch 'github_api' of https://github.com/unb-mds/2025-2-Portal…"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "18287bc249c3642090fce76cf0744ace36180b5a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-02T17:01:12Z",
+        "login": "PedroGTG"
+      },
+      "message": "feat(backend/nestjs) adiciona o modificador async analyzeRepo"
+    },
+    "additions": 6,
+    "deletions": 1,
+    "total_changes": 7,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "df86c82fa7b0fe1879e535def90a54cd02ccb1d3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-02T17:01:12Z",
+        "login": "PedroGTG"
+      },
+      "message": "feat(backend/github) Adiciona metodo para coletar todos os dados pelo…"
+    },
+    "additions": 22,
+    "deletions": 0,
+    "total_changes": 22,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "cb8a3c9d2707d0e1e26e91c25915ad1862f36f92",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-02T17:01:12Z",
+        "login": "PedroGTG"
+      },
+      "message": "feat (scr/github) adiciona codigo que coleta os dados do API Github"
+    },
+    "additions": 46,
+    "deletions": 0,
+    "total_changes": 46,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "4d6a78f8a40dc4505bef146c45cd327e98003a97",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-02T17:01:12Z",
+        "login": "PedroGTG"
+      },
+      "message": "feat (scr/github) adiciona pastas para integração do API Github"
+    },
+    "additions": 82,
+    "deletions": 0,
+    "total_changes": 82,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "a6288905b8b0c31ca591216e06075c71503aa3cd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-02T16:58:32Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: arruma dependências"
+    },
+    "additions": 209,
+    "deletions": 0,
+    "total_changes": 209,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "3a7ab7c5e3f4da5052b87cc9a2fe2a23dc510fa4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-02T16:55:58Z",
+        "login": "Phill-Chill"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2025-2-Portal-para-…"
+    },
+    "additions": 1878,
+    "deletions": 9561,
+    "total_changes": 11439,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "4b697bae6ed390f2775713d37ed4dee4a4a1a50a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-02T16:55:38Z",
+        "login": "Phill-Chill"
+      },
+      "message": "fix/compose (env)"
+    },
+    "additions": 7,
+    "deletions": 0,
+    "total_changes": 7,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e979124c12afa9f89beefdd47d9b4dd30524de25",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-02T15:25:42Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Merge pull request #34 from unb-mds/feature/backend-login"
+    },
+    "additions": 89,
+    "deletions": 9559,
+    "total_changes": 9648,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "3d837496d9db1a461811aeb944e524ee857b3513",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-02T15:13:01Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2025-2-Portal-para-…"
+    },
+    "additions": 40,
+    "deletions": 4,
+    "total_changes": 44,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "459b663ef9543903a780e1ef6737c30674e4f297",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-02T15:12:54Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: edita dockerfile"
+    },
+    "additions": 1755,
+    "deletions": 1,
+    "total_changes": 1756,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "c01974feace4b802b6fc27ecde58f027807e6097",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-02T02:25:27Z",
+        "login": "filipeBG-07"
+      },
+      "message": "feature: verificação de login e rota protegida"
+    },
+    "additions": 50,
+    "deletions": 3,
+    "total_changes": 53,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "00570a7ade73b640d17ecedba9de2591d336e1ee",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-02T01:50:08Z",
+        "login": "Phill-Chill"
+      },
+      "message": "Enhance README with Docker initialization instructions"
+    },
+    "additions": 36,
+    "deletions": 1,
+    "total_changes": 37,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "6950d188fce07efad9c5320b502b84fd9652eda0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-02T01:36:38Z",
+        "login": "Phill-Chill"
+      },
+      "message": "fix/dockerFileNest (prisma)"
+    },
+    "additions": 4,
+    "deletions": 2,
+    "total_changes": 6,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "9e5d8fe02767347afc44ea100a303b3c47955c04",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-02T00:19:20Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create Sprint-05"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "00bc037bc031ae5554c806fd97ed19ab4210d143",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-02T00:16:53Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Delete Docs/Milestones/Sprint-05"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "9fe779225df1aba86f4306b6d3552d6709ad5aa9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-02T00:16:27Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create Sprint-05"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "d00007499fedaac36e5952903e19a4747e730faa",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-01T21:11:58Z",
+        "login": "filipeBG-07"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2025-2-Squad-03 int…"
+    },
+    "additions": 728,
+    "deletions": 131,
+    "total_changes": 859,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "86d4736d286655fbb604d752c7baeff2b74a86af",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-01T20:31:50Z",
+        "login": "filipeBG-07"
+      },
+      "message": "Rename Revisão Geral Sprint 04.md to Sprint-04.md"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "a99ebacf86f0951798d2654093532567b422dd76",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-01T14:16:17Z",
+        "login": "filipeBG-07"
+      },
+      "message": "feature: autenticação de login e token JWT"
+    },
+    "additions": 39,
+    "deletions": 9556,
+    "total_changes": 9595,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "eac55ae62f9622e9931ae5db095caf277e3f7edb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-01T14:00:31Z",
+        "login": "filipeBG-07"
+      },
+      "message": "docs: inserção de link do protótipo e arquitetura"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "623404c58e98deb0ea39f424060ea649b8c94a55",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-01T12:10:36Z",
+        "login": "Phill-Chill"
+      },
+      "message": "merge: login e main-page na main"
+    },
+    "additions": 495,
+    "deletions": 47,
+    "total_changes": 542,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "738b53d7ac5fade5054015d7671830832c12e7b1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-01T10:09:48Z",
+        "login": "HugoFreitass"
+      },
+      "message": "docs: atualiza github pages"
+    },
+    "additions": 22,
+    "deletions": 20,
+    "total_changes": 42,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e85f8e68896fb0b3209910c908a443775c2c4fb7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-01T00:40:42Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Revisão"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "a4db63f111fb83bc6089c6af14b071dcb8c2cb67",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-01T00:33:09Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create revisão_de_documento_da_R1.md"
+    },
+    "additions": 140,
+    "deletions": 0,
+    "total_changes": 140,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "95e0a576b69cd3149e5a56276c2302f5da651c9b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-01T00:32:42Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update requisitos-nao-funcionais"
+    },
+    "additions": 36,
+    "deletions": 31,
+    "total_changes": 67,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "d5bdaf168810521193896562a37d2a7168d8881e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-01T00:32:05Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update Tecnologias Back-end e Front-end"
+    },
+    "additions": 14,
+    "deletions": 12,
+    "total_changes": 26,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "ad1445b11a56ef34f9154bd688a824678445aef4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T23:17:02Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Delete Docs/Milestones/Sprint-00/estudos.md"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "7fa44ec3969ea9bb49e7d348346126f2e2aa09de",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T23:10:50Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Merge pull request #30 from unb-mds/cadastroBackend"
+    },
+    "additions": 248,
+    "deletions": 109,
+    "total_changes": 357,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e4ed0a51800d3ce5bc2fa4357621e64b7d500180",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T23:10:12Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: soluciona conflitos"
+    },
+    "additions": 586,
+    "deletions": 24,
+    "total_changes": 610,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "8c68970f5c99ae4a6e5106fbf0338f168f3dd2e0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T23:06:21Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Merge branch 'cadastroBackend' of https://github.com/unb-mds/2025-2-P…"
+    },
+    "additions": 3,
+    "deletions": 1,
+    "total_changes": 4,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e6c3d0a49e2f2232849f3ba9adc28d3be8a1731f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T23:05:46Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: deleta arquivo desnecessário no momento"
+    },
+    "additions": 0,
+    "deletions": 2,
+    "total_changes": 2,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "b23831d56a18cf0b01084253186334c428508757",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T23:02:52Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Update backend/backend-nest/src/modules/auth/auth.service.ts"
+    },
+    "additions": 3,
+    "deletions": 1,
+    "total_changes": 4,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "f30cea2cad22be8764ca699e3f5dfeff10e59e57",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T22:59:23Z",
+        "login": "PedroGTG"
+      },
+      "message": "Docs(diagramas): atualiza diagrama modelo c4"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e852f355dba97fd1cba310b2e45c433d9042c773",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T22:49:33Z",
+        "login": "PedroGTG"
+      },
+      "message": "Docs(diagramas): atualiza diagrama modelo c4"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "3e066cbf104fb847086beda4de50921b90fae28a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T22:44:28Z",
+        "login": "PedroGTG"
+      },
+      "message": "Docs(diagramas): atualiza diagrama modelo c4"
+    },
+    "additions": 76,
+    "deletions": 0,
+    "total_changes": 76,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "14e4f9f2a2848044487a650c0e44d221472e8d75",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T22:39:41Z",
+        "login": "PedroGTG"
+      },
+      "message": "docs(diagramas): atualiza diagrama modelo c4 do projeto"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "2f243e2712dbd4c92a1465ae12b1184bdedb962c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T22:03:28Z",
+        "login": "PedroGTG"
+      },
+      "message": "feat(backend/nestjs) adiciona o modificador async analyzeRepo"
+    },
+    "additions": 6,
+    "deletions": 1,
+    "total_changes": 7,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "9566f44646ff7dfdd5aff794ce44c0de42d3a45f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T00:33:14Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create Revisão Geral Sprint 04"
+    },
+    "additions": 76,
+    "deletions": 0,
+    "total_changes": 76,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "4a52e08b0ebb0332d23faf920f50d321352f3f63",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-29T23:31:38Z",
+        "login": "PedroGTG"
+      },
+      "message": "feat(backend/github) Adiciona metodo para coletar todos os dados pelo…"
+    },
+    "additions": 22,
+    "deletions": 0,
+    "total_changes": 22,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "4a6b624e4c7fae3214e03b15e1b4b4e9c7d9c5eb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-28T21:32:08Z",
+        "login": "Phill-Chill"
+      },
+      "message": "páginaPrincipal-frontend"
+    },
+    "additions": 476,
+    "deletions": 69,
+    "total_changes": 545,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "9347f02d43989659614fc65393b6c4c6a7cfd2b2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-28T21:10:19Z",
+        "login": "PedroGTG"
+      },
+      "message": "feat (scr/github) adiciona codigo que coleta os dados do API Github"
+    },
+    "additions": 46,
+    "deletions": 0,
+    "total_changes": 46,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "65664ea8ff5d83d4c8593a84a86c09589310075a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-28T17:58:26Z",
+        "login": "PedroGTG"
+      },
+      "message": "feat (scr/github) adiciona pastas para integração do API Github"
+    },
+    "additions": 82,
+    "deletions": 0,
+    "total_changes": 82,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "046c32bff6fc6f827a87c66b2a3d56c183f903f5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T23:05:05Z",
+        "login": "HugoFreitass"
+      },
+      "message": "feat: adiciona módulo de autenticação ao app"
+    },
+    "additions": 16,
+    "deletions": 4,
+    "total_changes": 20,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e67686a0a9a03e4e22f7c01fc6468b0ec6007d93",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T01:15:46Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Adicionando as caixas transparentes."
+    },
+    "additions": 24,
+    "deletions": 11,
+    "total_changes": 35,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "0e77a829c77a54f20502f4f3923e5ea12b92591e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T22:46:04Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Delete teste"
+    },
+    "additions": 0,
+    "deletions": 81,
+    "total_changes": 81,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "fa4aaf180ce7cb0a2fbad444458a934f8bca5109",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T22:41:49Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Merge pull request #27 from unb-mds/feature/login-page"
+    },
+    "additions": 489,
+    "deletions": 25,
+    "total_changes": 514,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "9f70fcf7b47cab1065812fc20a6874a04bb73dc5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T22:40:16Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Página-login"
+    },
+    "additions": 489,
+    "deletions": 25,
+    "total_changes": 514,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "9059f5ede85018afb6a0973089d8dbc5023ac681",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T18:24:56Z",
+        "login": "filipeBG-07"
+      },
+      "message": "Update README.md"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "cd35684b69632124d88ca84f90dd0b005c645ebd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T03:20:54Z",
+        "login": "PedroGTG"
+      },
+      "message": "docs: adiciona guia de Conventional Commits"
+    },
+    "additions": 90,
+    "deletions": 0,
+    "total_changes": 90,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "272dbc73fac1fc7508e65b65124c5ce333251ec1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T00:42:54Z",
+        "login": "HugoFreitass"
+      },
+      "message": "feat: adiciona tabela de usuários e módulos/serviços relacionados"
+    },
+    "additions": 236,
+    "deletions": 109,
+    "total_changes": 345,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "744dcec3846de5412d65f27ffdad0d8631c295a8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T00:15:37Z",
+        "login": "filipeBG-07"
+      },
+      "message": "docs: criação do template de pull request"
+    },
+    "additions": 70,
+    "deletions": 0,
+    "total_changes": 70,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "bae39cbc1df253e4aa7568658c0f56d9561ae1b6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-23T02:07:40Z",
+        "login": "filipeBG-07"
+      },
+      "message": "docs: review da sprint03"
+    },
+    "additions": 37,
+    "deletions": 0,
+    "total_changes": 37,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "04481d66117893fa5a1c6ffc2c7e8621d652368a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-22T19:07:50Z",
+        "login": "HugoFreitass"
+      },
+      "message": "chore: adiciona Prisma ORM e integra com supabase"
+    },
+    "additions": 333,
+    "deletions": 31,
+    "total_changes": 364,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "f9f89dea10f4cc9f3fb61a662cbf4042fb438305",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T21:39:07Z",
+        "login": "filipeBG-07"
+      },
+      "message": "fix: concerto da tabela de equipe do README"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "07a7704bd2182ae21180f9f57d2df80d36b0b4af",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T21:32:23Z",
+        "login": "filipeBG-07"
+      },
+      "message": "docs: atualização do README do repositório"
+    },
+    "additions": 38,
+    "deletions": 6,
+    "total_changes": 44,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "59618098bd5bed12c3b9439ce1a44cb64c6bc5f9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T20:15:08Z",
+        "login": "Phill-Chill"
+      },
+      "message": "docs: documentação de estudo"
+    },
+    "additions": 310,
+    "deletions": 0,
+    "total_changes": 310,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "0493239064f6d7407fa2e35519307ec617cd8080",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T20:02:01Z",
+        "login": "HugoFreitass"
+      },
+      "message": "docs: adiciona documentos de estudo/tutorial"
+    },
+    "additions": 246,
+    "deletions": 0,
+    "total_changes": 246,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "f4f57b529b7f291015a612503f1b5767a3c52f54",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T19:54:35Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create requisitos-nao-funcionais"
+    },
+    "additions": 50,
+    "deletions": 0,
+    "total_changes": 50,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "d9e6d9ff10215ff07ece1d396d11f700c89efd9e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T19:26:37Z",
+        "login": "PedroGTG"
+      },
+      "message": "Diagrama modelo C4 provisório"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "6c9d25189c2b08ae7cb06fce84e9bc5cf4a4a6e1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-17T14:26:52Z",
+        "login": "filipeBG-07"
+      },
+      "message": "docs: documentação da review das sprints"
+    },
+    "additions": 155,
+    "deletions": 0,
+    "total_changes": 155,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "53d6a5c86653cce328eb4b7f871340e0d4a7d8ff",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-15T19:17:46Z",
+        "login": "filipeBG-07"
+      },
+      "message": "docs: inserção do template de sprints"
+    },
+    "additions": 39,
+    "deletions": 0,
+    "total_changes": 39,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "997f520ad625e460301384d165b32979f80c1769",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-15T19:10:41Z",
+        "login": "filipeBG-07"
+      },
+      "message": " fix: erro de sintaxe"
+    },
+    "additions": 5,
+    "deletions": 0,
+    "total_changes": 5,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "b69443c46bb9caaed680c7bfbea340911e174c0c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-15T19:03:05Z",
+        "login": "filipeBG-07"
+      },
+      "message": "fix: concerto das checkbox do documento"
+    },
+    "additions": 342,
+    "deletions": 232,
+    "total_changes": 574,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "3354d828e7adf5786e2fd6b73df1e56294d9815b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-15T03:26:26Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Edita readme geral"
+    },
+    "additions": 44,
+    "deletions": 1,
+    "total_changes": 45,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "816153e20d725f9d96c57df8ffffa3580cda98de",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-15T03:21:29Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Edita documento de arquitetura"
+    },
+    "additions": 2,
+    "deletions": 0,
+    "total_changes": 2,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "3b9b52e5cd6b89202f1ca5a8e101a9e6ce466c43",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-15T03:16:51Z",
+        "login": "HugoFreitass"
+      },
+      "message": "docs: adicionando documetos existentes ao github pages"
+    },
+    "additions": 193,
+    "deletions": 324,
+    "total_changes": 517,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "f3e831a0983480095ed2f2e2f2808abdb0836d03",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-15T02:58:17Z",
+        "login": "HugoFreitass"
+      },
+      "message": "docs: adicionando git pages de documentação"
+    },
+    "additions": 788,
+    "deletions": 0,
+    "total_changes": 788,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "46a0e84d7ae76ece218d5e3cf084fe68a1656eeb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-15T02:26:50Z",
+        "login": "filipeBG-07"
+      },
+      "message": "Docs: versão 1.0 do documento de requisitos.                         …"
+    },
+    "additions": 558,
+    "deletions": 0,
+    "total_changes": 558,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "953a34adfdf12acd134c29bb6ace897f454e0103",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-09T00:16:44Z",
+        "login": "BGrangeiro"
+      },
+      "message": "Update github.md"
+    },
+    "additions": 96,
+    "deletions": 205,
+    "total_changes": 301,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "fcd9f34134fc77098a9bc55b6a8fdafadd0addff",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-08T23:40:41Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create Tecnologias Back-end e Front-end"
+    },
+    "additions": 86,
+    "deletions": 0,
+    "total_changes": 86,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "bd124ada8b83ecee89ef0f2f07e8867335758435",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-08T23:34:59Z",
+        "login": "HugoFreitass"
+      },
+      "message": "docs: adiciona documento de estudo"
+    },
+    "additions": 107,
+    "deletions": 0,
+    "total_changes": 107,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "efab0e941ad487877392357e0e1f3cbf5b7ae2b6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-08T23:31:40Z",
+        "login": "HugoFreitass"
+      },
+      "message": "fix: comenta dto de objeto inexistente"
+    },
+    "additions": 3,
+    "deletions": 1,
+    "total_changes": 4,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "9c1a40dc7e673ca3c11f8244e19cfe944975f642",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-07T21:45:19Z",
+        "login": "PedroGTG"
+      },
+      "message": "adicionando estudo Github"
+    },
+    "additions": 205,
+    "deletions": 0,
+    "total_changes": 205,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "6a05bdcf456ef7b60aa121fab526713b24286470",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-07T20:01:47Z",
+        "login": "filipeBG-07"
+      },
+      "message": "adição dos estudos na documentação de sprints"
+    },
+    "additions": 267,
+    "deletions": 0,
+    "total_changes": 267,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "d05d81636717dfa39759270c7c6103198764ad9b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-06T00:20:44Z",
+        "login": "Phill-Chill"
+      },
+      "message": "Rename DOCKERFILE to Dockerfile"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "b32acff922900c398e26c14a781fb68c33cd1571",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-06T00:08:12Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Update and rename estudos.md to React.md"
+    },
+    "additions": 501,
+    "deletions": 1,
+    "total_changes": 502,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "bae0602c1db47964a727b735dbdaabf1d2aab0e4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-06T00:05:02Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create estudos.md"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "d90546b97b5bc9f5516c1029da4150e31a3a4686",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-06T00:00:00Z",
+        "login": "JoaoGSantana10"
+      },
+      "message": "Create estudos.md"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "509e9f343c3feadaf32120f742669e659588bb98",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-05T19:41:29Z",
+        "login": "PedroGTG"
+      },
+      "message": "adicionando a parte básica da estrutura users"
+    },
+    "additions": 9609,
+    "deletions": 1,
+    "total_changes": 9610,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "ffc854bc512602f47bb163e0ef76a3899d511dc4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-04T01:11:31Z",
+        "login": "Phill-Chill"
+      },
+      "message": "fix(backend): Correção de diretórios no Docker"
+    },
+    "additions": 28,
+    "deletions": 4,
+    "total_changes": 32,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "80553848bf2e6332283f76c90d28cf451c906402",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-04T01:09:12Z",
+        "login": "Phill-Chill"
+      },
+      "message": "feat(frontend): Configura ambiente Docker"
+    },
+    "additions": 28,
+    "deletions": 17,
+    "total_changes": 45,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "13fdc5cb59b5f9a2d842845c37743b3eff9b1661",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-04T00:41:07Z",
+        "login": "HugoFreitass"
+      },
+      "message": "build: cria estrutura Nest para o backend"
+    },
+    "additions": 6728,
+    "deletions": 12,
+    "total_changes": 6740,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "3bc6369dc08bf25d9bbe1c5d059dcbd3fba48cea",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-03T20:36:39Z",
+        "login": "Phill-Chill"
+      },
+      "message": "Docker: Dockerfile (front) e docker-composer (*possível mudança)"
+    },
+    "additions": 69,
+    "deletions": 0,
+    "total_changes": 69,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e2c4d94e6b3582020405221545ddcf6abc6141a6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-03T18:38:57Z",
+        "login": "Phill-Chill"
+      },
+      "message": "Revert \"issue estudo de requisitos\""
+    },
+    "additions": 0,
+    "deletions": 86,
+    "total_changes": 86,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "199599bbda93edd80be715591acd4ca909e8de84",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-02T03:02:58Z",
+        "login": "filipeBG-07"
+      },
+      "message": "issue estudo de requisitos"
+    },
+    "additions": 86,
+    "deletions": 0,
+    "total_changes": 86,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "a083f2872d37f36ec161316dc0592fcf994b5d25",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-02T02:34:01Z",
+        "login": "filipeBG-07"
+      },
+      "message": "documentação de sprints para organização"
+    },
+    "additions": 0,
+    "deletions": 86,
+    "total_changes": 86,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "e1b10436f3f1446d2aee7bd40660e46df7f04592",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-02T02:19:38Z",
+        "login": "filipeBG-07"
+      },
+      "message": "feat: adição de documentação das sprints para organização"
+    },
+    "additions": 86,
+    "deletions": 0,
+    "total_changes": 86,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "7eb6a1e8623f34d02e767cfb2586718ed7345222",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-02T00:36:06Z",
+        "login": "PedroGTG"
+      },
+      "message": "adicionando estrutura backend"
+    },
+    "additions": 12,
+    "deletions": 0,
+    "total_changes": 12,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "3887dd0731dd9f55af55e61fbf229bccd0f72843",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-02T00:29:23Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Update issue templates"
+    },
+    "additions": 55,
+    "deletions": 0,
+    "total_changes": 55,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "a1f2ad95d33d3d39566ff571f492dbd6553d4725",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-02T00:27:42Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Revert \"docs: adiciona template de issues\""
+    },
+    "additions": 0,
+    "deletions": 46,
+    "total_changes": 46,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "f903d40ce8acf997b7d4fdcbb196bb5a4dc08356",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-02T00:12:14Z",
+        "login": "BGrangeiro"
+      },
+      "message": "Mudando para pt-Br"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "bf148e90555c9305a3d93dd3b824786dd657961d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-02T00:00:44Z",
+        "login": "HugoFreitass"
+      },
+      "message": "docs: atualiza nome do template das issues"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "cf8bd4ef04976c54003271553922b3b916ded90e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-01T23:56:50Z",
+        "login": "HugoFreitass"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2025-2-Squad-03"
+    },
+    "additions": 3083,
+    "deletions": 0,
+    "total_changes": 3083,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "d789b5b46d514badaf4a4a4fef3f2d2c371a99d4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-01T23:56:43Z",
+        "login": "HugoFreitass"
+      },
+      "message": "docs: adiciona template de issues"
+    },
+    "additions": 46,
+    "deletions": 0,
+    "total_changes": 46,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "7932057b7b3bc1a63bd4841d9409de4128f0422f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-01T23:50:47Z",
+        "login": "BGrangeiro"
+      },
+      "message": "feat: adiciona projeto React em /frontend"
+    },
+    "additions": 3083,
+    "deletions": 0,
+    "total_changes": 3083,
+    "repo_name": "2025-2-GuiaDev"
+  },
+  {
+    "sha": "0bfe9a94b7b0609d93adffbeeb454403bb615458",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-08-27T14:57:19Z",
+        "login": "RochaCarla"
+      },
+      "message": "Initial commit"
+    },
+    "additions": 22,
+    "deletions": 0,
+    "total_changes": 22,
+    "repo_name": "2025-2-GuiaDev"
+  }
+]

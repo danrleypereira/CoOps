@@ -1,0 +1,77 @@
+[
+  {
+    "_metadata": {
+      "extracted_at": "2026-09-17T03:15:16.328253",
+      "file_path": "data/bronze/commits_teste.json",
+      "record_count": 4
+    }
+  },
+  {
+    "sha": "8d57769898abefa34cb7f38719ee132369f73162",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2023-09-22T14:22:21Z",
+        "login": null
+      },
+      "message": "correcao de pastas"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "teste"
+  },
+  {
+    "sha": "f72ab016e24f680c809c59eec11277369d284c38",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2023-09-22T14:21:41Z",
+        "login": null
+      },
+      "message": "correcao de pastas"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "teste"
+  },
+  {
+    "sha": "56db29e33b1eb39792b9e4b2d28982c6e91b087a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2023-09-22T14:19:29Z",
+        "login": null
+      },
+      "message": "gipage exmplo"
+    },
+    "additions": 18,
+    "deletions": 0,
+    "total_changes": 18,
+    "repo_name": "teste"
+  },
+  {
+    "sha": "9b65234ead62cfac7f1fa4cc8fc5dbe84db875bd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2023-09-22T14:17:43Z",
+        "login": "RochaCarla"
+      },
+      "message": "Initial commit"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "teste"
+  }
+]

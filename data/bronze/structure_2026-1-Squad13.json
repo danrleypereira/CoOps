@@ -1,0 +1,5586 @@
+{
+  "owner": "unb-mds",
+  "repository": "2026-1-Squad13",
+  "branch": "main",
+  "sha": "e080c5265d77ab581c6cadf27bc706472bdab4c3",
+  "tree": [
+    {
+      "name": ".agents",
+      "path": ".agents",
+      "type": "directory",
+      "sha": "a13e4096c7c574f4cd1821a9ad2ba8863aef1614",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "skills",
+      "path": ".agents/skills",
+      "type": "directory",
+      "sha": "905da880e26a27f7519b6ed585ea7abeae65ab8a",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "architecture-compliance-checker",
+      "path": ".agents/skills/architecture-compliance-checker",
+      "type": "directory",
+      "sha": "6bc1abda3a41f870e2a1700d71683ce5b2d57e3e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "SKILL.md",
+      "path": ".agents/skills/architecture-compliance-checker/SKILL.md",
+      "type": "file",
+      "sha": "96e047c8c13b3164b902d1cc992da958ecbadd8f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2445,
+      "is_binary": false
+    },
+    {
+      "name": "scripts",
+      "path": ".agents/skills/architecture-compliance-checker/scripts",
+      "type": "directory",
+      "sha": "f8aabb65a5daf5b917e3e9329b199ffdf5ad9cfb",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "check-imports.py",
+      "path": ".agents/skills/architecture-compliance-checker/scripts/check-imports.py",
+      "type": "file",
+      "sha": "0e5ec2941f0a6a9074d1c09c2337b0540d203c4b",
+      "mode": "100755",
+      "extension": ".py",
+      "size": 4175,
+      "is_binary": false
+    },
+    {
+      "name": "verify-layers.sh",
+      "path": ".agents/skills/architecture-compliance-checker/scripts/verify-layers.sh",
+      "type": "file",
+      "sha": "c66b9e3934f2ac50fed00bd8ed583df2bd26f3e0",
+      "mode": "100755",
+      "extension": ".sh",
+      "size": 1307,
+      "is_binary": false
+    },
+    {
+      "name": "db-migration-governor",
+      "path": ".agents/skills/db-migration-governor",
+      "type": "directory",
+      "sha": "d35bc87b4efd608b8f4cb0803ff8e013f1668f64",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "SKILL.md",
+      "path": ".agents/skills/db-migration-governor/SKILL.md",
+      "type": "file",
+      "sha": "8052f2c1c0eb1c18b4792681db32edd5c51ca46a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2593,
+      "is_binary": false
+    },
+    {
+      "name": "scripts",
+      "path": ".agents/skills/db-migration-governor/scripts",
+      "type": "directory",
+      "sha": "fee3513ce6591cf25b9360a40e94fde247446b52",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "run-db-init.sh",
+      "path": ".agents/skills/db-migration-governor/scripts/run-db-init.sh",
+      "type": "file",
+      "sha": "beb23ddaeed71ce7afc0702891b4b0d2865893f3",
+      "mode": "100755",
+      "extension": ".sh",
+      "size": 842,
+      "is_binary": false
+    },
+    {
+      "name": "validate-seed.sh",
+      "path": ".agents/skills/db-migration-governor/scripts/validate-seed.sh",
+      "type": "file",
+      "sha": "9e45826ac08947ae6f836b4dda1f000fa3ac5e53",
+      "mode": "100755",
+      "extension": ".sh",
+      "size": 779,
+      "is_binary": false
+    },
+    {
+      "name": "frontend-audit-orchestrator",
+      "path": ".agents/skills/frontend-audit-orchestrator",
+      "type": "directory",
+      "sha": "ed3b4f92be6aa720f4fd7a61ce83a82e916d36d1",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "SKILL.md",
+      "path": ".agents/skills/frontend-audit-orchestrator/SKILL.md",
+      "type": "file",
+      "sha": "7efc152ae8abdb7e00c813cf9ada6c99583d8b5d",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2525,
+      "is_binary": false
+    },
+    {
+      "name": "references",
+      "path": ".agents/skills/frontend-audit-orchestrator/references",
+      "type": "directory",
+      "sha": "5ee5d5b8682fc09a406fcded6118454c343bd47b",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "audit-scope.md",
+      "path": ".agents/skills/frontend-audit-orchestrator/references/audit-scope.md",
+      "type": "file",
+      "sha": "cbd94279b1459f901846f01507ce352d7f7e5f16",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 975,
+      "is_binary": false
+    },
+    {
+      "name": "backlog-rules.md",
+      "path": ".agents/skills/frontend-audit-orchestrator/references/backlog-rules.md",
+      "type": "file",
+      "sha": "b92262d5b0e6ecf658b0f158bb1f2eedaa7c4949",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 787,
+      "is_binary": false
+    },
+    {
+      "name": "docs-index.md",
+      "path": ".agents/skills/frontend-audit-orchestrator/references/docs-index.md",
+      "type": "file",
+      "sha": "35b9b7be86a311c4be646cf8efe72c1af6af272a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 871,
+      "is_binary": false
+    },
+    {
+      "name": "drift-categories.md",
+      "path": ".agents/skills/frontend-audit-orchestrator/references/drift-categories.md",
+      "type": "file",
+      "sha": "65aad7608da1df45f34564273686c86c6ba8cf02",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 817,
+      "is_binary": false
+    },
+    {
+      "name": "issue-template.md",
+      "path": ".agents/skills/frontend-audit-orchestrator/references/issue-template.md",
+      "type": "file",
+      "sha": "b0a83eb0863e8dec26642931a12d859dc890a29d",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 543,
+      "is_binary": false
+    },
+    {
+      "name": "scripts",
+      "path": ".agents/skills/frontend-audit-orchestrator/scripts",
+      "type": "directory",
+      "sha": "e493fb8a96ce79628171dcd5eb10a4398fb21ba9",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "collect-audit-inputs.sh",
+      "path": ".agents/skills/frontend-audit-orchestrator/scripts/collect-audit-inputs.sh",
+      "type": "file",
+      "sha": "f296f6b269925a461e31b643502e40ca07bbb515",
+      "mode": "100644",
+      "extension": ".sh",
+      "size": 474,
+      "is_binary": false
+    },
+    {
+      "name": "generate-audit-summary.sh",
+      "path": ".agents/skills/frontend-audit-orchestrator/scripts/generate-audit-summary.sh",
+      "type": "file",
+      "sha": "7fd4ffa77b0098756686ddad50ece2a70ac07d47",
+      "mode": "100644",
+      "extension": ".sh",
+      "size": 408,
+      "is_binary": false
+    },
+    {
+      "name": "templates",
+      "path": ".agents/skills/frontend-audit-orchestrator/templates",
+      "type": "directory",
+      "sha": "d3dab9f5ef57b0a3208cb5c9a020067f4417270d",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "audit-report-template.md",
+      "path": ".agents/skills/frontend-audit-orchestrator/templates/audit-report-template.md",
+      "type": "file",
+      "sha": "9a65dd86e30564ff2566691bc42c832f1e73cfb5",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 647,
+      "is_binary": false
+    },
+    {
+      "name": "gap-analysis-template.md",
+      "path": ".agents/skills/frontend-audit-orchestrator/templates/gap-analysis-template.md",
+      "type": "file",
+      "sha": "e5a699a93555f1ca558e590bdca9a0dba60f9219",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 351,
+      "is_binary": false
+    },
+    {
+      "name": "issue-template.md",
+      "path": ".agents/skills/frontend-audit-orchestrator/templates/issue-template.md",
+      "type": "file",
+      "sha": "385bc7001ec140d1789533fc84f7db6b96f90340",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 91,
+      "is_binary": false
+    },
+    {
+      "name": "frontend-governance",
+      "path": ".agents/skills/frontend-governance",
+      "type": "directory",
+      "sha": "a87f1eb93f86985867c5227635f8c372a812565d",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "SKILL.md",
+      "path": ".agents/skills/frontend-governance/SKILL.md",
+      "type": "file",
+      "sha": "c8909622475985b607999e98758e43ade86bdebf",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2901,
+      "is_binary": false
+    },
+    {
+      "name": "references",
+      "path": ".agents/skills/frontend-governance/references",
+      "type": "directory",
+      "sha": "8d8f7e506ac566e3da4baf3bc67f49829d3f63b5",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "decision-template.md",
+      "path": ".agents/skills/frontend-governance/references/decision-template.md",
+      "type": "file",
+      "sha": "119e1c2cf54c5cb47f5b2889e1d6bb1ac86801a1",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 377,
+      "is_binary": false
+    },
+    {
+      "name": "docs-index.md",
+      "path": ".agents/skills/frontend-governance/references/docs-index.md",
+      "type": "file",
+      "sha": "74826d7d111a8f4645565f0d7aaf3245b7886da1",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 917,
+      "is_binary": false
+    },
+    {
+      "name": "frontend-context.md",
+      "path": ".agents/skills/frontend-governance/references/frontend-context.md",
+      "type": "file",
+      "sha": "d8cb8978bc0c45666b2520a81538247f95c1f054",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1130,
+      "is_binary": false
+    },
+    {
+      "name": "review-checklist.md",
+      "path": ".agents/skills/frontend-governance/references/review-checklist.md",
+      "type": "file",
+      "sha": "bd200413b58e416f56bec47dfe0650daacd4708c",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 749,
+      "is_binary": false
+    },
+    {
+      "name": "update-rules.md",
+      "path": ".agents/skills/frontend-governance/references/update-rules.md",
+      "type": "file",
+      "sha": "ae15861090dfe602e5bc698a37d7613ab73a36c9",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 927,
+      "is_binary": false
+    },
+    {
+      "name": "scripts",
+      "path": ".agents/skills/frontend-governance/scripts",
+      "type": "directory",
+      "sha": "ebedecd371fa10b33e5c892a357313676b19202a",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "scan-frontend-context.sh",
+      "path": ".agents/skills/frontend-governance/scripts/scan-frontend-context.sh",
+      "type": "file",
+      "sha": "8c8e3448b263ca75a24ea8c9bd3920bf80832a29",
+      "mode": "100644",
+      "extension": ".sh",
+      "size": 306,
+      "is_binary": false
+    },
+    {
+      "name": "summarize-doc-status.sh",
+      "path": ".agents/skills/frontend-governance/scripts/summarize-doc-status.sh",
+      "type": "file",
+      "sha": "543d53ef7ee767e0329cb638a1c26c9d9c06ee01",
+      "mode": "100644",
+      "extension": ".sh",
+      "size": 391,
+      "is_binary": false
+    },
+    {
+      "name": "templates",
+      "path": ".agents/skills/frontend-governance/templates",
+      "type": "directory",
+      "sha": "cbe22234d9769533bebddb2516de6fc70231da9b",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "adr-template.md",
+      "path": ".agents/skills/frontend-governance/templates/adr-template.md",
+      "type": "file",
+      "sha": "d86752f52d285e89b2b599ded3a91bf77720bb20",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 444,
+      "is_binary": false
+    },
+    {
+      "name": "change-log-template.md",
+      "path": ".agents/skills/frontend-governance/templates/change-log-template.md",
+      "type": "file",
+      "sha": "2f1886069e6c09bb7d59ff245d22c8287598a15a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 262,
+      "is_binary": false
+    },
+    {
+      "name": "doc-update-template.md",
+      "path": ".agents/skills/frontend-governance/templates/doc-update-template.md",
+      "type": "file",
+      "sha": "acb8676fa325166825a5e426ceadf5cf2f4b35f7",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 354,
+      "is_binary": false
+    },
+    {
+      "name": "ui-decision-template.md",
+      "path": ".agents/skills/frontend-governance/templates/ui-decision-template.md",
+      "type": "file",
+      "sha": "4768cc6cd8f91d4ea954d37aed98b5f945ffaf17",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 192,
+      "is_binary": false
+    },
+    {
+      "name": "github-issue-governor",
+      "path": ".agents/skills/github-issue-governor",
+      "type": "directory",
+      "sha": "4093351150fef7f57230f29eb3026f1da634e75d",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "SKILL.md",
+      "path": ".agents/skills/github-issue-governor/SKILL.md",
+      "type": "file",
+      "sha": "7cc8782add80ea438077d0869130ee014ebef76e",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4173,
+      "is_binary": false
+    },
+    {
+      "name": "references",
+      "path": ".agents/skills/github-issue-governor/references",
+      "type": "directory",
+      "sha": "6173851955c47381760c1feb66faa7c5811a3cc3",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "issue-guide.md",
+      "path": ".agents/skills/github-issue-governor/references/issue-guide.md",
+      "type": "file",
+      "sha": "44f227e1bff0f61454924051ad84b5be6c03f1e8",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2682,
+      "is_binary": false
+    },
+    {
+      "name": "label-mapping.md",
+      "path": ".agents/skills/github-issue-governor/references/label-mapping.md",
+      "type": "file",
+      "sha": "3a708ae3df5215d682558759094c8d0a6e4a53d1",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1392,
+      "is_binary": false
+    },
+    {
+      "name": "scripts",
+      "path": ".agents/skills/github-issue-governor/scripts",
+      "type": "directory",
+      "sha": "68c4889d87808d123b7193e5ca77c4817865cce4",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "check-duplicate-issues.py",
+      "path": ".agents/skills/github-issue-governor/scripts/check-duplicate-issues.py",
+      "type": "file",
+      "sha": "6ae7d4187fecb2277f3ce31cf895a8cce931e512",
+      "mode": "100755",
+      "extension": ".py",
+      "size": 2876,
+      "is_binary": false
+    },
+    {
+      "name": "create-issue.sh",
+      "path": ".agents/skills/github-issue-governor/scripts/create-issue.sh",
+      "type": "file",
+      "sha": "56aea6bde8485c1ace1024e8acdeb8087760430c",
+      "mode": "100755",
+      "extension": ".sh",
+      "size": 3267,
+      "is_binary": false
+    },
+    {
+      "name": "list-open-issues.sh",
+      "path": ".agents/skills/github-issue-governor/scripts/list-open-issues.sh",
+      "type": "file",
+      "sha": "e9f62568a3e4fa0615776ed4c5e62737c9f69016",
+      "mode": "100755",
+      "extension": ".sh",
+      "size": 108,
+      "is_binary": false
+    },
+    {
+      "name": "validate-labels.sh",
+      "path": ".agents/skills/github-issue-governor/scripts/validate-labels.sh",
+      "type": "file",
+      "sha": "a25bb15007a301e0ad8e6706225510ee72a59109",
+      "mode": "100755",
+      "extension": ".sh",
+      "size": 278,
+      "is_binary": false
+    },
+    {
+      "name": "templates",
+      "path": ".agents/skills/github-issue-governor/templates",
+      "type": "directory",
+      "sha": "a2905c98e33bd6f5131bbe3f5b0f92d20a4cd8ce",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "bug.md",
+      "path": ".agents/skills/github-issue-governor/templates/bug.md",
+      "type": "file",
+      "sha": "d2749de9b036e47183f942701aac6aecf43a0480",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 819,
+      "is_binary": false
+    },
+    {
+      "name": "feature.md",
+      "path": ".agents/skills/github-issue-governor/templates/feature.md",
+      "type": "file",
+      "sha": "7218732110334d707521a964aa243ba302e78d8c",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 873,
+      "is_binary": false
+    },
+    {
+      "name": "issue_async_migration.md",
+      "path": ".agents/skills/github-issue-governor/templates/issue_async_migration.md",
+      "type": "file",
+      "sha": "f2b55b977694207fe8132d5945eb5f141c4bc0b4",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1188,
+      "is_binary": false
+    },
+    {
+      "name": "issue_contract_testing.md",
+      "path": ".agents/skills/github-issue-governor/templates/issue_contract_testing.md",
+      "type": "file",
+      "sha": "d099736314f55580589319e4f4511e4b2cb224be",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 959,
+      "is_binary": false
+    },
+    {
+      "name": "issue_presentation_di.md",
+      "path": ".agents/skills/github-issue-governor/templates/issue_presentation_di.md",
+      "type": "file",
+      "sha": "0336162df099ffecf362937b065bc2412640ffcd",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1206,
+      "is_binary": false
+    },
+    {
+      "name": "issue_robust_healthcheck.md",
+      "path": ".agents/skills/github-issue-governor/templates/issue_robust_healthcheck.md",
+      "type": "file",
+      "sha": "e55d91a8b538b3d16a649323fa4ee9fddb456436",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1012,
+      "is_binary": false
+    },
+    {
+      "name": "refactor.md",
+      "path": ".agents/skills/github-issue-governor/templates/refactor.md",
+      "type": "file",
+      "sha": "6c1512a19d44092ca8c7a17e5bfa8dc1f213f42a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 797,
+      "is_binary": false
+    },
+    {
+      "name": "technical-debt.md",
+      "path": ".agents/skills/github-issue-governor/templates/technical-debt.md",
+      "type": "file",
+      "sha": "b9156efc21220e33598ae22214c87555104f89d6",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 778,
+      "is_binary": false
+    },
+    {
+      "name": "pr-manager",
+      "path": ".agents/skills/pr-manager",
+      "type": "directory",
+      "sha": "d1d8fac8e4888e997588758ac19edd07375c8728",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "SKILL.md",
+      "path": ".agents/skills/pr-manager/SKILL.md",
+      "type": "file",
+      "sha": "8656a04e0245713062e012431317b1c529c43cce",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 12983,
+      "is_binary": false
+    },
+    {
+      "name": "references",
+      "path": ".agents/skills/pr-manager/references",
+      "type": "directory",
+      "sha": "86fe8a6f9d2f8389503290c53658c4acc9cc9078",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "project-context.md",
+      "path": ".agents/skills/pr-manager/references/project-context.md",
+      "type": "file",
+      "sha": "3588630fcc59373be0f16bb3620e779ede25b5c1",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3368,
+      "is_binary": false
+    },
+    {
+      "name": "project-memory.md",
+      "path": ".agents/skills/pr-manager/references/project-memory.md",
+      "type": "file",
+      "sha": "e1797d48694102ea363e8e802bb3c4e5133abc52",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5840,
+      "is_binary": false
+    },
+    {
+      "name": "review-criteria.md",
+      "path": ".agents/skills/pr-manager/references/review-criteria.md",
+      "type": "file",
+      "sha": "3238b9c8a00332615a0666fd81692c3088641e60",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1042,
+      "is_binary": false
+    },
+    {
+      "name": "scripts",
+      "path": ".agents/skills/pr-manager/scripts",
+      "type": "directory",
+      "sha": "8390ee867a08308e7847692c071fc9b15ff350e2",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "review-pr.sh",
+      "path": ".agents/skills/pr-manager/scripts/review-pr.sh",
+      "type": "file",
+      "sha": "dd650de3a9aa7412771ed7c121133fe20f431bb7",
+      "mode": "100755",
+      "extension": ".sh",
+      "size": 4120,
+      "is_binary": false
+    },
+    {
+      "name": "test-coverage-enforcer",
+      "path": ".agents/skills/test-coverage-enforcer",
+      "type": "directory",
+      "sha": "b6232dade1ccf381bbc0bf9b1b95a23073aa70e4",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "SKILL.md",
+      "path": ".agents/skills/test-coverage-enforcer/SKILL.md",
+      "type": "file",
+      "sha": "7ce416f63e2652bbcba497c352de04dd3f35cfe1",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2126,
+      "is_binary": false
+    },
+    {
+      "name": "scripts",
+      "path": ".agents/skills/test-coverage-enforcer/scripts",
+      "type": "directory",
+      "sha": "5d2ddb516dce67311bcf94239589919196affd38",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "check-test-coverage.sh",
+      "path": ".agents/skills/test-coverage-enforcer/scripts/check-test-coverage.sh",
+      "type": "file",
+      "sha": "777a098c47bf4bdae105a2cd1fe494f5b3990106",
+      "mode": "100755",
+      "extension": ".sh",
+      "size": 2547,
+      "is_binary": false
+    },
+    {
+      "name": ".env.example",
+      "path": ".env.example",
+      "type": "file",
+      "sha": "be220e89509c52f1f28dda3b65c12aff1e9687b2",
+      "mode": "100644",
+      "extension": ".example",
+      "size": 1503,
+      "is_binary": false
+    },
+    {
+      "name": ".github",
+      "path": ".github",
+      "type": "directory",
+      "sha": "1a4765fa49c6a4eb96673daac0621ab38b549c0d",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "ISSUE_TEMPLATE",
+      "path": ".github/ISSUE_TEMPLATE",
+      "type": "directory",
+      "sha": "857a28dee1a83f88206ef0c1ecb250f241d16d34",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "bug_report.md",
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "type": "file",
+      "sha": "10ca7c5c02cbfe60709f7473a158ed7d614cdd00",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 920,
+      "is_binary": false
+    },
+    {
+      "name": "feature.md",
+      "path": ".github/ISSUE_TEMPLATE/feature.md",
+      "type": "file",
+      "sha": "1cfc1a1e9d614519bfb7eb1cabc6df857b96f4ef",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1465,
+      "is_binary": false
+    },
+    {
+      "name": "task.md",
+      "path": ".github/ISSUE_TEMPLATE/task.md",
+      "type": "file",
+      "sha": "9e4be43278fddc4e86e6d107efed3e4e38165539",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1086,
+      "is_binary": false
+    },
+    {
+      "name": "workflows",
+      "path": ".github/workflows",
+      "type": "directory",
+      "sha": "cac472322941ba11eb09b393c10a2a3565de3fad",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "backend.yml",
+      "path": ".github/workflows/backend.yml",
+      "type": "file",
+      "sha": "468dbdde3a6a9ba1facda6d79ebbee56d915d5cc",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 974,
+      "is_binary": false
+    },
+    {
+      "name": "cron-baselines.yml",
+      "path": ".github/workflows/cron-baselines.yml",
+      "type": "file",
+      "sha": "fe3d3b605c7aea193a1942c16ba1c547148dad42",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 754,
+      "is_binary": false
+    },
+    {
+      "name": "cron-coleta.yml",
+      "path": ".github/workflows/cron-coleta.yml",
+      "type": "file",
+      "sha": "da8c58d9ecb55d25f89e18bad0912458941bcb56",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 726,
+      "is_binary": false
+    },
+    {
+      "name": "cron-metricas.yml",
+      "path": ".github/workflows/cron-metricas.yml",
+      "type": "file",
+      "sha": "9b9800617bddbca470505c3a72c89ca63c70dd9b",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 758,
+      "is_binary": false
+    },
+    {
+      "name": "deploy-squad-dashboard.yml",
+      "path": ".github/workflows/deploy-squad-dashboard.yml",
+      "type": "file",
+      "sha": "3e1aaa5b47aef358404779868fd4baf4e04365e9",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 1268,
+      "is_binary": false
+    },
+    {
+      "name": "deploy-vercel-frontend.yml",
+      "path": ".github/workflows/deploy-vercel-frontend.yml",
+      "type": "file",
+      "sha": "8944582bef05712b95033bc9c4010c93a47e38e2",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 2112,
+      "is_binary": false
+    },
+    {
+      "name": "frontend.yml",
+      "path": ".github/workflows/frontend.yml",
+      "type": "file",
+      "sha": "e14693935d8330a3e99a01743d2ba8426adb9063",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 567,
+      "is_binary": false
+    },
+    {
+      "name": "squad-dashboard-ci.yml",
+      "path": ".github/workflows/squad-dashboard-ci.yml",
+      "type": "file",
+      "sha": "38439eb2c2fcad232a2515837f57f04dcef8b4fb",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 865,
+      "is_binary": false
+    },
+    {
+      "name": "update-squad-dashboard-data.yml",
+      "path": ".github/workflows/update-squad-dashboard-data.yml",
+      "type": "file",
+      "sha": "8fc02928bc80a850461cb979c0e27ce444224ffa",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 400,
+      "is_binary": false
+    },
+    {
+      "name": ".gitignore",
+      "path": ".gitignore",
+      "type": "file",
+      "sha": "ba3fafec218003df7cb4ab53ed07b97906880fd2",
+      "mode": "100644",
+      "extension": ".gitignore",
+      "size": 703,
+      "is_binary": false
+    },
+    {
+      "name": ".mailmap",
+      "path": ".mailmap",
+      "type": "file",
+      "sha": "4f5af490e908dca66975f09f9892de95b9bce9f2",
+      "mode": "100644",
+      "extension": ".mailmap",
+      "size": 772,
+      "is_binary": false
+    },
+    {
+      "name": "AGENTS.md",
+      "path": "AGENTS.md",
+      "type": "file",
+      "sha": "2106836cd9bc897ca175368973cbb2c528432c4a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 8098,
+      "is_binary": false
+    },
+    {
+      "name": "ARCHITECTURE.md",
+      "path": "ARCHITECTURE.md",
+      "type": "file",
+      "sha": "5b7e7bf181827506470cb00c6fc4238027a3665a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 9850,
+      "is_binary": false
+    },
+    {
+      "name": "CLAUDE.md",
+      "path": "CLAUDE.md",
+      "type": "file",
+      "sha": "a445490f7e18da7515e5202b021b597c42a61d65",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 155,
+      "is_binary": false
+    },
+    {
+      "name": "CONTRIBUTING.md",
+      "path": "CONTRIBUTING.md",
+      "type": "file",
+      "sha": "78382b1220d54cb16dedff73e90813f305a11b85",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3922,
+      "is_binary": false
+    },
+    {
+      "name": "LICENSE",
+      "path": "LICENSE",
+      "type": "file",
+      "sha": "675c19ec0ecdd2613794ad67040a9a3c51d2b67a",
+      "mode": "100644",
+      "extension": "",
+      "size": 1060,
+      "is_binary": false
+    },
+    {
+      "name": "README.md",
+      "path": "README.md",
+      "type": "file",
+      "sha": "cc07e678d6b0b5185c89c8a5241d683d58c6f3ed",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 7646,
+      "is_binary": false
+    },
+    {
+      "name": "backend",
+      "path": "backend",
+      "type": "directory",
+      "sha": "d36569f3b03c06dabfedf6ab83b344fbaaf99012",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".coveragerc",
+      "path": "backend/.coveragerc",
+      "type": "file",
+      "sha": "5f6622cf3329ff743b69afcbcc89901579a4a847",
+      "mode": "100644",
+      "extension": ".coveragerc",
+      "size": 1071,
+      "is_binary": false
+    },
+    {
+      "name": ".dockerignore",
+      "path": "backend/.dockerignore",
+      "type": "file",
+      "sha": "98a5b58f5a8c9016e2dc3dfb2df0b3fd18268e04",
+      "mode": "100644",
+      "extension": ".dockerignore",
+      "size": 102,
+      "is_binary": false
+    },
+    {
+      "name": ".env.example",
+      "path": "backend/.env.example",
+      "type": "file",
+      "sha": "edec366ccea0933041c90e4a00b0eb16e5f9aeba",
+      "mode": "100644",
+      "extension": ".example",
+      "size": 844,
+      "is_binary": false
+    },
+    {
+      "name": "AGENTS.md",
+      "path": "backend/AGENTS.md",
+      "type": "file",
+      "sha": "19db90f6872c586a7e00da905b0ac56eb4f676be",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3639,
+      "is_binary": false
+    },
+    {
+      "name": "Dockerfile",
+      "path": "backend/Dockerfile",
+      "type": "file",
+      "sha": "13ae5089e4718e63b97a2a0c0b2c29b6e5c53da7",
+      "mode": "100644",
+      "extension": "",
+      "size": 979,
+      "is_binary": false
+    },
+    {
+      "name": "alembic.ini",
+      "path": "backend/alembic.ini",
+      "type": "file",
+      "sha": "fab745821b29d02a356c72a5b70f6e5970f8577e",
+      "mode": "100644",
+      "extension": ".ini",
+      "size": 5036,
+      "is_binary": false
+    },
+    {
+      "name": "export_pl.py",
+      "path": "backend/export_pl.py",
+      "type": "file",
+      "sha": "b4df329900bfb7ccc0a27563c9dc356a942df172",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1555,
+      "is_binary": false
+    },
+    {
+      "name": "pyproject.toml",
+      "path": "backend/pyproject.toml",
+      "type": "file",
+      "sha": "fc9f878e15a4fb1eb2c2dcc247b499ed2a3f7368",
+      "mode": "100644",
+      "extension": ".toml",
+      "size": 1515,
+      "is_binary": false
+    },
+    {
+      "name": "src",
+      "path": "backend/src",
+      "type": "directory",
+      "sha": "0d031484325264e525d77d378dd30d15eaaf18e2",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/src/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "application",
+      "path": "backend/src/application",
+      "type": "directory",
+      "sha": "7f5932ad309a13c19c5b9e0bf6fda9ffcb928f4f",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/src/application/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "ports",
+      "path": "backend/src/application/ports",
+      "type": "directory",
+      "sha": "f2930f984cd6e8d865cd81be54e020405a1fd7f5",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/src/application/ports/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "apensamento_repository.py",
+      "path": "backend/src/application/ports/apensamento_repository.py",
+      "type": "file",
+      "sha": "915e55cec8009d722c27e7af50ff665fdd084668",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 631,
+      "is_binary": false
+    },
+    {
+      "name": "auditoria_coleta_repository.py",
+      "path": "backend/src/application/ports/auditoria_coleta_repository.py",
+      "type": "file",
+      "sha": "dcf9af44655409bb0d70d3b860457bffcef9a2cb",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1147,
+      "is_binary": false
+    },
+    {
+      "name": "baseline_tramitacao_repository.py",
+      "path": "backend/src/application/ports/baseline_tramitacao_repository.py",
+      "type": "file",
+      "sha": "9f6c418d3b25f713cba56bc6f672bd5e23b5d4a7",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1047,
+      "is_binary": false
+    },
+    {
+      "name": "cache_provider.py",
+      "path": "backend/src/application/ports/cache_provider.py",
+      "type": "file",
+      "sha": "b4a0e595d886dc0ca8ebe30e62881df4813f9e6f",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1350,
+      "is_binary": false
+    },
+    {
+      "name": "camara_adapter.py",
+      "path": "backend/src/application/ports/camara_adapter.py",
+      "type": "file",
+      "sha": "5a85346b05d4b4e1370b3a1a3f87443690cb5e3e",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1531,
+      "is_binary": false
+    },
+    {
+      "name": "cobertura_snapshot_repository.py",
+      "path": "backend/src/application/ports/cobertura_snapshot_repository.py",
+      "type": "file",
+      "sha": "6d2edee7813cb803744234fa3446d109241f8dd2",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1237,
+      "is_binary": false
+    },
+    {
+      "name": "dashboard_repository.py",
+      "path": "backend/src/application/ports/dashboard_repository.py",
+      "type": "file",
+      "sha": "a1c6458e39c83a1eca743a7cab80587283ea547a",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2094,
+      "is_binary": false
+    },
+    {
+      "name": "email_sender_provider.py",
+      "path": "backend/src/application/ports/email_sender_provider.py",
+      "type": "file",
+      "sha": "408d41dc86f720e33884762264163be33d2b2668",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 359,
+      "is_binary": false
+    },
+    {
+      "name": "evento_tramitacao_repository.py",
+      "path": "backend/src/application/ports/evento_tramitacao_repository.py",
+      "type": "file",
+      "sha": "61935713ba1e05b003f5140573971c5c08a7c180",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1570,
+      "is_binary": false
+    },
+    {
+      "name": "fase_analitica_repository.py",
+      "path": "backend/src/application/ports/fase_analitica_repository.py",
+      "type": "file",
+      "sha": "69be9ddd84a66a2c53b48267a8dbb5692327eba1",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 575,
+      "is_binary": false
+    },
+    {
+      "name": "log_coleta_repository.py",
+      "path": "backend/src/application/ports/log_coleta_repository.py",
+      "type": "file",
+      "sha": "5c92d16f3e8e3363013754654dc5556d23c2a773",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 488,
+      "is_binary": false
+    },
+    {
+      "name": "orgao_legislativo_repository.py",
+      "path": "backend/src/application/ports/orgao_legislativo_repository.py",
+      "type": "file",
+      "sha": "ee5bdd5ba3a0775bade869af54194e8351f1ee51",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 755,
+      "is_binary": false
+    },
+    {
+      "name": "periodo_fase_repository.py",
+      "path": "backend/src/application/ports/periodo_fase_repository.py",
+      "type": "file",
+      "sha": "fc6792df2d42c8f7bfb518ee22c50609b7d7fbd0",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 671,
+      "is_binary": false
+    },
+    {
+      "name": "proposicao_repository.py",
+      "path": "backend/src/application/ports/proposicao_repository.py",
+      "type": "file",
+      "sha": "9fb33d6dc387c6c2cafbbba67c1a529162952670",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2446,
+      "is_binary": false
+    },
+    {
+      "name": "senado_adapter.py",
+      "path": "backend/src/application/ports/senado_adapter.py",
+      "type": "file",
+      "sha": "e9e4f3cf2cc53fcfcf450d4c98bf57b538719700",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1572,
+      "is_binary": false
+    },
+    {
+      "name": "services",
+      "path": "backend/src/application/services",
+      "type": "directory",
+      "sha": "e61ae664dd7a1c2ecb0e32614e513a30e8b87596",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/src/application/services/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "agregar_por_fase_service.py",
+      "path": "backend/src/application/services/agregar_por_fase_service.py",
+      "type": "file",
+      "sha": "b7dc2da5aba1c7b34dcf876bdf422091ddedd6ee",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 6261,
+      "is_binary": false
+    },
+    {
+      "name": "atualizar_cobertura_service.py",
+      "path": "backend/src/application/services/atualizar_cobertura_service.py",
+      "type": "file",
+      "sha": "3aa3edf746e0f19d93e3d8a345836684836a5c20",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 8472,
+      "is_binary": false
+    },
+    {
+      "name": "atualizar_transit_steps_service.py",
+      "path": "backend/src/application/services/atualizar_transit_steps_service.py",
+      "type": "file",
+      "sha": "654525919fe2e745bb7a990cc78a12424e309631",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3298,
+      "is_binary": false
+    },
+    {
+      "name": "backfill_emendas_service.py",
+      "path": "backend/src/application/services/backfill_emendas_service.py",
+      "type": "file",
+      "sha": "c461d0bb1e8a8622dfd15fcb5649e13317268bcc",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3017,
+      "is_binary": false
+    },
+    {
+      "name": "buscar_proposicoes_service.py",
+      "path": "backend/src/application/services/buscar_proposicoes_service.py",
+      "type": "file",
+      "sha": "d89f9a5f8d63ba578b04df7e07c61a75d7098cd7",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1689,
+      "is_binary": false
+    },
+    {
+      "name": "coletar_em_lote_service.py",
+      "path": "backend/src/application/services/coletar_em_lote_service.py",
+      "type": "file",
+      "sha": "56d544c914d8193df73e81ad24ea6127a412d48e",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 17003,
+      "is_binary": false
+    },
+    {
+      "name": "dashboard_service.py",
+      "path": "backend/src/application/services/dashboard_service.py",
+      "type": "file",
+      "sha": "0b9a015473d2220d8a1f1223fe2f00bab2c0ac6a",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 18678,
+      "is_binary": false
+    },
+    {
+      "name": "detalhe_proposicao_service.py",
+      "path": "backend/src/application/services/detalhe_proposicao_service.py",
+      "type": "file",
+      "sha": "eb9052b5a4a68f69193968ec58ff436818e93a9c",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3513,
+      "is_binary": false
+    },
+    {
+      "name": "gerar_estimativa_service.py",
+      "path": "backend/src/application/services/gerar_estimativa_service.py",
+      "type": "file",
+      "sha": "2cc25e76ed686d26a532c8a701b3475a24f188fd",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1359,
+      "is_binary": false
+    },
+    {
+      "name": "listar_movimentacoes_service.py",
+      "path": "backend/src/application/services/listar_movimentacoes_service.py",
+      "type": "file",
+      "sha": "73824eeeb69c522a47c926a59c88c858423dd307",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 26858,
+      "is_binary": false
+    },
+    {
+      "name": "normalizar_tramitacao_service.py",
+      "path": "backend/src/application/services/normalizar_tramitacao_service.py",
+      "type": "file",
+      "sha": "40fcbde3404914f0706ead15b66621ccceb96e25",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 7294,
+      "is_binary": false
+    },
+    {
+      "name": "obter_confiabilidade_service.py",
+      "path": "backend/src/application/services/obter_confiabilidade_service.py",
+      "type": "file",
+      "sha": "d96af68f6333635d28c859e3dcc8f5ed3c093c0a",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4353,
+      "is_binary": false
+    },
+    {
+      "name": "preencher_lacunas_service.py",
+      "path": "backend/src/application/services/preencher_lacunas_service.py",
+      "type": "file",
+      "sha": "a4ca9e7ca2f01f19da44e178747c90ea09c419b1",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 35888,
+      "is_binary": false
+    },
+    {
+      "name": "processar_metricas_service.py",
+      "path": "backend/src/application/services/processar_metricas_service.py",
+      "type": "file",
+      "sha": "b03653b40a277de379eebbaca74821e5fff2b14c",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 6052,
+      "is_binary": false
+    },
+    {
+      "name": "recalcular_baselines_service.py",
+      "path": "backend/src/application/services/recalcular_baselines_service.py",
+      "type": "file",
+      "sha": "321055e87182d32c3a0a424e0feca84741c39492",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 7815,
+      "is_binary": false
+    },
+    {
+      "name": "reconstruir_periodos_service.py",
+      "path": "backend/src/application/services/reconstruir_periodos_service.py",
+      "type": "file",
+      "sha": "213e9889303445a42c31c85f3edea8de705e80d0",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 11695,
+      "is_binary": false
+    },
+    {
+      "name": "audit_db.py",
+      "path": "backend/src/audit_db.py",
+      "type": "file",
+      "sha": "bf01c9e8fbf82ec0fe7f12958a7b4f2c47cbfb17",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2986,
+      "is_binary": false
+    },
+    {
+      "name": "debug_transit.py",
+      "path": "backend/src/debug_transit.py",
+      "type": "file",
+      "sha": "91c03736a1011cbc816816ed22baa4d63798e875",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4675,
+      "is_binary": false
+    },
+    {
+      "name": "domain",
+      "path": "backend/src/domain",
+      "type": "directory",
+      "sha": "9c6842073c624afcf5ce3344ceb0235c39e880b5",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/src/domain/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "classificacao_preditiva.py",
+      "path": "backend/src/domain/classificacao_preditiva.py",
+      "type": "file",
+      "sha": "75ca7ced2701930b89d0d7687a2f49f73b026f60",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2007,
+      "is_binary": false
+    },
+    {
+      "name": "classificar_evento.py",
+      "path": "backend/src/domain/classificar_evento.py",
+      "type": "file",
+      "sha": "19dcfb80cb2eb317ffee0417e166ed8d63ef1a94",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 9232,
+      "is_binary": false
+    },
+    {
+      "name": "constants.py",
+      "path": "backend/src/domain/constants.py",
+      "type": "file",
+      "sha": "fdb04f630f62911fb585c2fda88ab56de6b95ddf",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 269,
+      "is_binary": false
+    },
+    {
+      "name": "entities",
+      "path": "backend/src/domain/entities",
+      "type": "directory",
+      "sha": "8fab72ceb7cc0bde2957ab1779914f7ae6d2d30d",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/src/domain/entities/__init__.py",
+      "type": "file",
+      "sha": "2bbf7c29862ab56747d194608a6ce3ea206c078e",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 983,
+      "is_binary": false
+    },
+    {
+      "name": "apensamento.py",
+      "path": "backend/src/domain/entities/apensamento.py",
+      "type": "file",
+      "sha": "a0c39c653bc875b984e8e685d72644cf2e65cb60",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 364,
+      "is_binary": false
+    },
+    {
+      "name": "baseline_tramitacao.py",
+      "path": "backend/src/domain/entities/baseline_tramitacao.py",
+      "type": "file",
+      "sha": "3a9c8650264bb2354be1a7b1e9901a93750294f7",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 386,
+      "is_binary": false
+    },
+    {
+      "name": "cobertura_snapshot.py",
+      "path": "backend/src/domain/entities/cobertura_snapshot.py",
+      "type": "file",
+      "sha": "7d8321e24fcbbb6c9e53bd689961b9f97bf1ffdb",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 644,
+      "is_binary": false
+    },
+    {
+      "name": "evento_tramitacao.py",
+      "path": "backend/src/domain/entities/evento_tramitacao.py",
+      "type": "file",
+      "sha": "7fd33f7e4cb29e9a4d865d498b72dc66285118ac",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 5545,
+      "is_binary": false
+    },
+    {
+      "name": "fase_analitica.py",
+      "path": "backend/src/domain/entities/fase_analitica.py",
+      "type": "file",
+      "sha": "6aa45894cae5d9d1e2dd7030b450f82db4096ffc",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3556,
+      "is_binary": false
+    },
+    {
+      "name": "fase_codigo.py",
+      "path": "backend/src/domain/entities/fase_codigo.py",
+      "type": "file",
+      "sha": "0a5e18f2547ce3bddbc34d89c6894588b4e8b907",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1249,
+      "is_binary": false
+    },
+    {
+      "name": "motivo_travamento.py",
+      "path": "backend/src/domain/entities/motivo_travamento.py",
+      "type": "file",
+      "sha": "21dff001597b1e460d968e4779294fce10b57cad",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 336,
+      "is_binary": false
+    },
+    {
+      "name": "natureza_fase.py",
+      "path": "backend/src/domain/entities/natureza_fase.py",
+      "type": "file",
+      "sha": "d7fe04c5680dadd69a3cfb8966594cddec3fb783",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 202,
+      "is_binary": false
+    },
+    {
+      "name": "orgao_legislativo.py",
+      "path": "backend/src/domain/entities/orgao_legislativo.py",
+      "type": "file",
+      "sha": "98dc642b356a74894b38d4b93e09a683b7984959",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 855,
+      "is_binary": false
+    },
+    {
+      "name": "papel_fluxo.py",
+      "path": "backend/src/domain/entities/papel_fluxo.py",
+      "type": "file",
+      "sha": "da2e93aa5a2ffb4673db2af3fe55b3c5efaa2f25",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 255,
+      "is_binary": false
+    },
+    {
+      "name": "periodo_fase.py",
+      "path": "backend/src/domain/entities/periodo_fase.py",
+      "type": "file",
+      "sha": "9ae64e2ad1618b595aadb0367e06f1f844bf2eab",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 616,
+      "is_binary": false
+    },
+    {
+      "name": "proposicao.py",
+      "path": "backend/src/domain/entities/proposicao.py",
+      "type": "file",
+      "sha": "78852c811454f69401a1561e54e15ebaa9edb6e0",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 6024,
+      "is_binary": false
+    },
+    {
+      "name": "tipo_evento.py",
+      "path": "backend/src/domain/entities/tipo_evento.py",
+      "type": "file",
+      "sha": "b94434c94b4a498d10ec48adef69867e3339ff5d",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1649,
+      "is_binary": false
+    },
+    {
+      "name": "tramitacao.py",
+      "path": "backend/src/domain/entities/tramitacao.py",
+      "type": "file",
+      "sha": "11316f65b98fe30a7ba0d3d3dc4f42cf4281c277",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1254,
+      "is_binary": false
+    },
+    {
+      "name": "exceptions.py",
+      "path": "backend/src/domain/exceptions.py",
+      "type": "file",
+      "sha": "242ae4914954ac788d63eef9d8aa2e780f8a45ba",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2122,
+      "is_binary": false
+    },
+    {
+      "name": "fsm",
+      "path": "backend/src/domain/fsm",
+      "type": "directory",
+      "sha": "2c1a7c3633d2b37cbc39b98685edfedab7f69d8e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/src/domain/fsm/__init__.py",
+      "type": "file",
+      "sha": "f92f2f3d13969ad2e75d834a807e97da9c4e6b59",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 259,
+      "is_binary": false
+    },
+    {
+      "name": "build.py",
+      "path": "backend/src/domain/fsm/build.py",
+      "type": "file",
+      "sha": "e28e63fde125fb1f7c828093fcf653a52b2e131e",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2587,
+      "is_binary": false
+    },
+    {
+      "name": "classify.py",
+      "path": "backend/src/domain/fsm/classify.py",
+      "type": "file",
+      "sha": "ab399d6894664a3cb0eb1c33ee3d4f5435cd8875",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2595,
+      "is_binary": false
+    },
+    {
+      "name": "transition.py",
+      "path": "backend/src/domain/fsm/transition.py",
+      "type": "file",
+      "sha": "34f7d3326f20084fd97a922f40425e710e58a640",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2520,
+      "is_binary": false
+    },
+    {
+      "name": "types.py",
+      "path": "backend/src/domain/fsm/types.py",
+      "type": "file",
+      "sha": "768fdf341274e851949c84b4ec301ca5e217b2b4",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1061,
+      "is_binary": false
+    },
+    {
+      "name": "services",
+      "path": "backend/src/domain/services",
+      "type": "directory",
+      "sha": "ef5828d532aee1488f0f2a92335cc36f9396c1a9",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/src/domain/services/__init__.py",
+      "type": "file",
+      "sha": "b61fce2c6c898df6defb53ea4f49d6e925b2b737",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 363,
+      "is_binary": false
+    },
+    {
+      "name": "calcular_metricas_service.py",
+      "path": "backend/src/domain/services/calcular_metricas_service.py",
+      "type": "file",
+      "sha": "e3eb6777c641c14bef6e19b68b480bf5dd316626",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 5013,
+      "is_binary": false
+    },
+    {
+      "name": "estimativa_aprovacao_service.py",
+      "path": "backend/src/domain/services/estimativa_aprovacao_service.py",
+      "type": "file",
+      "sha": "0c55bef497fe2bb0943b6b9cad85713541d4ffe5",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1565,
+      "is_binary": false
+    },
+    {
+      "name": "heuristica_travamento_service.py",
+      "path": "backend/src/domain/services/heuristica_travamento_service.py",
+      "type": "file",
+      "sha": "e3bf2ef92590f4cab89cd8a070577640d3cbe74a",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2163,
+      "is_binary": false
+    },
+    {
+      "name": "value_objects",
+      "path": "backend/src/domain/value_objects",
+      "type": "directory",
+      "sha": "861b82626e2a7c324249217cc12795edfec74826",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "modo_movimentacao.py",
+      "path": "backend/src/domain/value_objects/modo_movimentacao.py",
+      "type": "file",
+      "sha": "e33b8e0e4df4878793571ca4a4244781eab3be28",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 140,
+      "is_binary": false
+    },
+    {
+      "name": "periodo_fase.py",
+      "path": "backend/src/domain/value_objects/periodo_fase.py",
+      "type": "file",
+      "sha": "242224d3b6fe402321040f6ed91fc628effded0c",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 618,
+      "is_binary": false
+    },
+    {
+      "name": "drop_legacy_tables.py",
+      "path": "backend/src/drop_legacy_tables.py",
+      "type": "file",
+      "sha": "dd577975eea28875e78ab8fc94eb8a1c4d1e3dd8",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 719,
+      "is_binary": false
+    },
+    {
+      "name": "infrastructure",
+      "path": "backend/src/infrastructure",
+      "type": "directory",
+      "sha": "ee16df695e5b4b1d8d1a5fdaeb787164a78f6b80",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/src/infrastructure/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "adapters",
+      "path": "backend/src/infrastructure/adapters",
+      "type": "directory",
+      "sha": "cecfe8485d4048f25217ef042dfab025163592ca",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".gitkeep",
+      "path": "backend/src/infrastructure/adapters/.gitkeep",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".gitkeep",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/src/infrastructure/adapters/__init__.py",
+      "type": "file",
+      "sha": "4793e66f90e9cedc97da196048a32d3701f2bb2e",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 130,
+      "is_binary": false
+    },
+    {
+      "name": "base_adapter.py",
+      "path": "backend/src/infrastructure/adapters/base_adapter.py",
+      "type": "file",
+      "sha": "09144ce535cef5a1a9458c0e162102c26cde395e",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 194,
+      "is_binary": false
+    },
+    {
+      "name": "camara_adapter.py",
+      "path": "backend/src/infrastructure/adapters/camara_adapter.py",
+      "type": "file",
+      "sha": "2bcdd0f0f1242aa9a0bf73cf2803f3ef96ad69fd",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 20437,
+      "is_binary": false
+    },
+    {
+      "name": "camara_mock_adapter.py",
+      "path": "backend/src/infrastructure/adapters/camara_mock_adapter.py",
+      "type": "file",
+      "sha": "fc0dc09e5db100b97f5e20c41f5eb85a9c6fb93a",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4884,
+      "is_binary": false
+    },
+    {
+      "name": "dummy_email_sender.py",
+      "path": "backend/src/infrastructure/adapters/dummy_email_sender.py",
+      "type": "file",
+      "sha": "5305da1e3d4963e30f519b836c7c50e7d566f609",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 655,
+      "is_binary": false
+    },
+    {
+      "name": "senado_adapter.py",
+      "path": "backend/src/infrastructure/adapters/senado_adapter.py",
+      "type": "file",
+      "sha": "add8eace66f86ad9bb98a8bdb33e6cad134fc3b0",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 39174,
+      "is_binary": false
+    },
+    {
+      "name": "senado_mock_adapter.py",
+      "path": "backend/src/infrastructure/adapters/senado_mock_adapter.py",
+      "type": "file",
+      "sha": "5f6ce88599ddce800a699b5fdf8ade4bf467480e",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4368,
+      "is_binary": false
+    },
+    {
+      "name": "cache",
+      "path": "backend/src/infrastructure/cache",
+      "type": "directory",
+      "sha": "fc879f20d6bfad900d25f36a9a0fb1125ad05d6b",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".gitkeep",
+      "path": "backend/src/infrastructure/cache/.gitkeep",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".gitkeep",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/src/infrastructure/cache/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "redis_client.py",
+      "path": "backend/src/infrastructure/cache/redis_client.py",
+      "type": "file",
+      "sha": "fd2f71066754920bd1bfc461db28b796ffbb8436",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4637,
+      "is_binary": false
+    },
+    {
+      "name": "config.py",
+      "path": "backend/src/infrastructure/config.py",
+      "type": "file",
+      "sha": "7853f682f8ff414e5aef497d56ac3fff3ba35cc8",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2505,
+      "is_binary": false
+    },
+    {
+      "name": "database",
+      "path": "backend/src/infrastructure/database",
+      "type": "directory",
+      "sha": "256d61d5ac561c7e07ada3dd6987f644be55a6ba",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/src/infrastructure/database/__init__.py",
+      "type": "file",
+      "sha": "a1e24d64aa489c0f6e7979248dab1ff814617c63",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2746,
+      "is_binary": false
+    },
+    {
+      "name": "alembic",
+      "path": "backend/src/infrastructure/database/alembic",
+      "type": "directory",
+      "sha": "197564731ed58ec44bd1ce51145786693d83a938",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "README",
+      "path": "backend/src/infrastructure/database/alembic/README",
+      "type": "file",
+      "sha": "98e4f9c44effe479ed38c66ba922e7bcc672916f",
+      "mode": "100644",
+      "extension": "",
+      "size": 38,
+      "is_binary": false
+    },
+    {
+      "name": "env.py",
+      "path": "backend/src/infrastructure/database/alembic/env.py",
+      "type": "file",
+      "sha": "12451688f00af6cd64ff39648e36db71de9ecfc3",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1973,
+      "is_binary": false
+    },
+    {
+      "name": "script.py.mako",
+      "path": "backend/src/infrastructure/database/alembic/script.py.mako",
+      "type": "file",
+      "sha": "11016301e749297acb67822efc7974ee53c905c6",
+      "mode": "100644",
+      "extension": ".mako",
+      "size": 704,
+      "is_binary": false
+    },
+    {
+      "name": "versions",
+      "path": "backend/src/infrastructure/database/alembic/versions",
+      "type": "directory",
+      "sha": "de3cfba62b7394f85992a8ceacfe918e9b4bd7a6",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "0d164b88bc9d_add_status_original_to_proposicao.py",
+      "path": "backend/src/infrastructure/database/alembic/versions/0d164b88bc9d_add_status_original_to_proposicao.py",
+      "type": "file",
+      "sha": "9fa8fe02c3aa4fe45a58b995fbc30c46f11942e6",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3034,
+      "is_binary": false
+    },
+    {
+      "name": "102767e9a1c3_create_transit_steps_table.py",
+      "path": "backend/src/infrastructure/database/alembic/versions/102767e9a1c3_create_transit_steps_table.py",
+      "type": "file",
+      "sha": "c4c33c4b539246945e46c119eeb6f8eb70e3b234",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2531,
+      "is_binary": false
+    },
+    {
+      "name": "613a85bc4cae_evolve_fase_analitica_and_add_periodo_.py",
+      "path": "backend/src/infrastructure/database/alembic/versions/613a85bc4cae_evolve_fase_analitica_and_add_periodo_.py",
+      "type": "file",
+      "sha": "472d0cb4d343c59ffa82a73ad59e64eb03011994",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 7185,
+      "is_binary": false
+    },
+    {
+      "name": "71f8ba3e30f7_baseline_and_delay_metrics.py",
+      "path": "backend/src/infrastructure/database/alembic/versions/71f8ba3e30f7_baseline_and_delay_metrics.py",
+      "type": "file",
+      "sha": "731dcf2f5ec8537c6d155a632f279c570a1d2af2",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 17258,
+      "is_binary": false
+    },
+    {
+      "name": "86d18f3dcdb0_create_auditoria_coleta_table.py",
+      "path": "backend/src/infrastructure/database/alembic/versions/86d18f3dcdb0_create_auditoria_coleta_table.py",
+      "type": "file",
+      "sha": "dbf89ce1687d00c69f428c02ae6cc95e2854edc3",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1679,
+      "is_binary": false
+    },
+    {
+      "name": "a1e102f30d5f_add_ml_fields_to_proposicao.py",
+      "path": "backend/src/infrastructure/database/alembic/versions/a1e102f30d5f_add_ml_fields_to_proposicao.py",
+      "type": "file",
+      "sha": "90276006a84fdc8188513579a823fecbc52b1c4c",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1392,
+      "is_binary": false
+    },
+    {
+      "name": "b3f102f30e6g_reset_numero_emendas_to_null.py",
+      "path": "backend/src/infrastructure/database/alembic/versions/b3f102f30e6g_reset_numero_emendas_to_null.py",
+      "type": "file",
+      "sha": "99d30ecfa40c55294a929298e19c4604309265d5",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 978,
+      "is_binary": false
+    },
+    {
+      "name": "c85c284bb3a7_add_bloco_legislativo_and_parecer_ccj_.py",
+      "path": "backend/src/infrastructure/database/alembic/versions/c85c284bb3a7_add_bloco_legislativo_and_parecer_ccj_.py",
+      "type": "file",
+      "sha": "38bd4ecbd5177c761d68ec8e817dd4b877d2a3ef",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 897,
+      "is_binary": false
+    },
+    {
+      "name": "e1dbfbfbec74_merge_heads_c85c284bb3a7_f09c304ef8f1.py",
+      "path": "backend/src/infrastructure/database/alembic/versions/e1dbfbfbec74_merge_heads_c85c284bb3a7_f09c304ef8f1.py",
+      "type": "file",
+      "sha": "036220e29b53b4f03daead9657c676d7e716c8a5",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 556,
+      "is_binary": false
+    },
+    {
+      "name": "f09c304ef8f1_add_fonte_column_cobertura_snapshot.py",
+      "path": "backend/src/infrastructure/database/alembic/versions/f09c304ef8f1_add_fonte_column_cobertura_snapshot.py",
+      "type": "file",
+      "sha": "cc36350a70bc93c2f70e1b9d319070d9b7393a2f",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1062,
+      "is_binary": false
+    },
+    {
+      "name": "models",
+      "path": "backend/src/infrastructure/database/models",
+      "type": "directory",
+      "sha": "c701d2cd7f359c1fec1cdc838c1339fbd469f5fc",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/src/infrastructure/database/models/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "apensamento_model.py",
+      "path": "backend/src/infrastructure/database/models/apensamento_model.py",
+      "type": "file",
+      "sha": "b3f04a7298d28af1a78719b1e3f1d97636f8ecad",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 775,
+      "is_binary": false
+    },
+    {
+      "name": "auditoria_coleta_model.py",
+      "path": "backend/src/infrastructure/database/models/auditoria_coleta_model.py",
+      "type": "file",
+      "sha": "8bbf4f47dce23e4bf53fd34662d88b4492d406c7",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1227,
+      "is_binary": false
+    },
+    {
+      "name": "baseline_tramitacao_model.py",
+      "path": "backend/src/infrastructure/database/models/baseline_tramitacao_model.py",
+      "type": "file",
+      "sha": "87730262579faa7fe0d2a6987412f89f0bad1bc4",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1309,
+      "is_binary": false
+    },
+    {
+      "name": "cobertura_snapshot_model.py",
+      "path": "backend/src/infrastructure/database/models/cobertura_snapshot_model.py",
+      "type": "file",
+      "sha": "01ba9d3122103e010cd4833f67548855543173d9",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 724,
+      "is_binary": false
+    },
+    {
+      "name": "evento_tramitacao_model.py",
+      "path": "backend/src/infrastructure/database/models/evento_tramitacao_model.py",
+      "type": "file",
+      "sha": "7ae7c0d23cd3efa590230a3a694fdb17531d06a3",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2390,
+      "is_binary": false
+    },
+    {
+      "name": "fase_analitica_model.py",
+      "path": "backend/src/infrastructure/database/models/fase_analitica_model.py",
+      "type": "file",
+      "sha": "c0e7cf76f674085af548d58a99b3338b22921b7a",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 674,
+      "is_binary": false
+    },
+    {
+      "name": "log_coleta_model.py",
+      "path": "backend/src/infrastructure/database/models/log_coleta_model.py",
+      "type": "file",
+      "sha": "931338746583f7fff1214066eebd888d1f7ab59a",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 606,
+      "is_binary": false
+    },
+    {
+      "name": "orgao_legislativo_model.py",
+      "path": "backend/src/infrastructure/database/models/orgao_legislativo_model.py",
+      "type": "file",
+      "sha": "6a037eda7f156f39b24c672b547bbcc7e5287f79",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 686,
+      "is_binary": false
+    },
+    {
+      "name": "periodo_fase_model.py",
+      "path": "backend/src/infrastructure/database/models/periodo_fase_model.py",
+      "type": "file",
+      "sha": "5c2ac15f0f7485f799dbd98083880604c94f81f2",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1492,
+      "is_binary": false
+    },
+    {
+      "name": "proposicao_model.py",
+      "path": "backend/src/infrastructure/database/models/proposicao_model.py",
+      "type": "file",
+      "sha": "f3152e5277736d0f5978681257d32289d7e789c4",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2798,
+      "is_binary": false
+    },
+    {
+      "name": "transit_step_model.py",
+      "path": "backend/src/infrastructure/database/models/transit_step_model.py",
+      "type": "file",
+      "sha": "8b871dd6912653ddc996aee7cb25cc44252ca07f",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 792,
+      "is_binary": false
+    },
+    {
+      "name": "seeds",
+      "path": "backend/src/infrastructure/database/seeds",
+      "type": "directory",
+      "sha": "88d971b165c2f59b2115b25c2582fed881a225e5",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "bootstrap_seeds.sql",
+      "path": "backend/src/infrastructure/database/seeds/bootstrap_seeds.sql",
+      "type": "file",
+      "sha": "23af95c83d9c3d5603e1696410a74d455e191ffc",
+      "mode": "100644",
+      "extension": ".sql",
+      "size": 1661,
+      "is_binary": false
+    },
+    {
+      "name": "logging",
+      "path": "backend/src/infrastructure/logging",
+      "type": "directory",
+      "sha": "3a22941a80ce499a49a6753c664b52d4939551bf",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "json_logger.py",
+      "path": "backend/src/infrastructure/logging/json_logger.py",
+      "type": "file",
+      "sha": "84a7ef46f3a846ca2ce451db073c5e7a8bb25885",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1671,
+      "is_binary": false
+    },
+    {
+      "name": "repositories",
+      "path": "backend/src/infrastructure/repositories",
+      "type": "directory",
+      "sha": "466f9eb7b9a0189c0c2d9b27f85fc0e961364051",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/src/infrastructure/repositories/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "sql_apensamento_repository.py",
+      "path": "backend/src/infrastructure/repositories/sql_apensamento_repository.py",
+      "type": "file",
+      "sha": "650ba344f202c496aa9d1031f0701dd13076d557",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1414,
+      "is_binary": false
+    },
+    {
+      "name": "sql_auditoria_coleta_repository.py",
+      "path": "backend/src/infrastructure/repositories/sql_auditoria_coleta_repository.py",
+      "type": "file",
+      "sha": "daf89845977b160c4abf31adcb7e33020c37bb19",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3649,
+      "is_binary": false
+    },
+    {
+      "name": "sql_baseline_tramitacao_repository.py",
+      "path": "backend/src/infrastructure/repositories/sql_baseline_tramitacao_repository.py",
+      "type": "file",
+      "sha": "6e0002dfc5cacec6ca7f4a847c805c2cf1e214f8",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4346,
+      "is_binary": false
+    },
+    {
+      "name": "sql_cobertura_snapshot_repository.py",
+      "path": "backend/src/infrastructure/repositories/sql_cobertura_snapshot_repository.py",
+      "type": "file",
+      "sha": "df3daae039cb36a0d196379b902f7d29f2e39d06",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3736,
+      "is_binary": false
+    },
+    {
+      "name": "sql_dashboard_repository.py",
+      "path": "backend/src/infrastructure/repositories/sql_dashboard_repository.py",
+      "type": "file",
+      "sha": "18a92f52073d74b7aa85172f5591d81c6ed0e530",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 38196,
+      "is_binary": false
+    },
+    {
+      "name": "sql_evento_tramitacao_repository.py",
+      "path": "backend/src/infrastructure/repositories/sql_evento_tramitacao_repository.py",
+      "type": "file",
+      "sha": "f8df6e43918a1937051df98ed3afba424840128c",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 5296,
+      "is_binary": false
+    },
+    {
+      "name": "sql_fase_analitica_repository.py",
+      "path": "backend/src/infrastructure/repositories/sql_fase_analitica_repository.py",
+      "type": "file",
+      "sha": "1e28fb430800c17f91c852a45eee51010f1abe3e",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2154,
+      "is_binary": false
+    },
+    {
+      "name": "sql_log_coleta_repository.py",
+      "path": "backend/src/infrastructure/repositories/sql_log_coleta_repository.py",
+      "type": "file",
+      "sha": "a91c040e77207b9615b875b5009207091589855d",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 913,
+      "is_binary": false
+    },
+    {
+      "name": "sql_orgao_legislativo_repository.py",
+      "path": "backend/src/infrastructure/repositories/sql_orgao_legislativo_repository.py",
+      "type": "file",
+      "sha": "13c9a86d313a5274108c7ff01e4f7064720e1d15",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2496,
+      "is_binary": false
+    },
+    {
+      "name": "sql_periodo_fase_repository.py",
+      "path": "backend/src/infrastructure/repositories/sql_periodo_fase_repository.py",
+      "type": "file",
+      "sha": "03561f8e2af464bf5573c6c43ebb23fd8fa3a507",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1900,
+      "is_binary": false
+    },
+    {
+      "name": "sql_proposicao_repository.py",
+      "path": "backend/src/infrastructure/repositories/sql_proposicao_repository.py",
+      "type": "file",
+      "sha": "828ffd851cdcd3c1b7a1fee79c847c6b42b7b03c",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 14671,
+      "is_binary": false
+    },
+    {
+      "name": "workers",
+      "path": "backend/src/infrastructure/workers",
+      "type": "directory",
+      "sha": "deaa060c74b266d7d4aa68bdaa6153c15acac674",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".gitkeep",
+      "path": "backend/src/infrastructure/workers/.gitkeep",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".gitkeep",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/src/infrastructure/workers/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "celery_app.py",
+      "path": "backend/src/infrastructure/workers/celery_app.py",
+      "type": "file",
+      "sha": "56e819ed415856ee1452da101b1e66f29e5855a6",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1410,
+      "is_binary": false
+    },
+    {
+      "name": "coleta_worker.py",
+      "path": "backend/src/infrastructure/workers/coleta_worker.py",
+      "type": "file",
+      "sha": "5d11eb1b956abb0ffb6dd1f26feb320f30c119b7",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 12398,
+      "is_binary": false
+    },
+    {
+      "name": "metricas_worker.py",
+      "path": "backend/src/infrastructure/workers/metricas_worker.py",
+      "type": "file",
+      "sha": "fe4a2310ac2dd7e1c3ebc8343193ddd1576e5f05",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4336,
+      "is_binary": false
+    },
+    {
+      "name": "init_db.py",
+      "path": "backend/src/init_db.py",
+      "type": "file",
+      "sha": "8345558e4a34e587aca59b15a69ed1cfce5f0834",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 7479,
+      "is_binary": false
+    },
+    {
+      "name": "main.py",
+      "path": "backend/src/main.py",
+      "type": "file",
+      "sha": "fa372801adf716bd63e9fb5ce3efcb594a681454",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1920,
+      "is_binary": false
+    },
+    {
+      "name": "presentation",
+      "path": "backend/src/presentation",
+      "type": "directory",
+      "sha": "d245212df4a42b3973f0a2158cae08bcbc46a1c1",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/src/presentation/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "controllers",
+      "path": "backend/src/presentation/controllers",
+      "type": "directory",
+      "sha": "9319c7e3f16fd757dd23772d1ba02f40b1439735",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/src/presentation/controllers/__init__.py",
+      "type": "file",
+      "sha": "6c8585234de4bb45fa6837e6318a926fdb4fd55f",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 242,
+      "is_binary": false
+    },
+    {
+      "name": "dashboard_controller.py",
+      "path": "backend/src/presentation/controllers/dashboard_controller.py",
+      "type": "file",
+      "sha": "afe9cf20699cd7d9b9e36975d1a87bb3b6b6768b",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 9405,
+      "is_binary": false
+    },
+    {
+      "name": "health_controller.py",
+      "path": "backend/src/presentation/controllers/health_controller.py",
+      "type": "file",
+      "sha": "2cc073b774e4b3c7ae9450507505dc1828c0b66b",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 5603,
+      "is_binary": false
+    },
+    {
+      "name": "internal_tasks_controller.py",
+      "path": "backend/src/presentation/controllers/internal_tasks_controller.py",
+      "type": "file",
+      "sha": "a954cfa89b470237b1c6d41751b4280c4d3de16c",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 12996,
+      "is_binary": false
+    },
+    {
+      "name": "proposicao_controller.py",
+      "path": "backend/src/presentation/controllers/proposicao_controller.py",
+      "type": "file",
+      "sha": "973726f6c7d86af18ffa088f83d1120fd6806300",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 15360,
+      "is_binary": false
+    },
+    {
+      "name": "dashboard_dependencies.py",
+      "path": "backend/src/presentation/dashboard_dependencies.py",
+      "type": "file",
+      "sha": "f774afa96b581eaadf4c0cea74f7acc01c2894b5",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2346,
+      "is_binary": false
+    },
+    {
+      "name": "internal_auth.py",
+      "path": "backend/src/presentation/internal_auth.py",
+      "type": "file",
+      "sha": "abc8aa38f2b016086d282f527edcf1734dda073f",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 597,
+      "is_binary": false
+    },
+    {
+      "name": "proposicao_dependencies.py",
+      "path": "backend/src/presentation/proposicao_dependencies.py",
+      "type": "file",
+      "sha": "861788b930cc80a590c4f595d839a967f721fe28",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4616,
+      "is_binary": false
+    },
+    {
+      "name": "trigger_backfill.py",
+      "path": "backend/src/trigger_backfill.py",
+      "type": "file",
+      "sha": "0e9e381a86b261875463efed05c12364b92fe924",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 989,
+      "is_binary": false
+    },
+    {
+      "name": "trigger_seed.py",
+      "path": "backend/src/trigger_seed.py",
+      "type": "file",
+      "sha": "af4bc232a41140bfc755e78bad967c43242121ef",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 830,
+      "is_binary": false
+    },
+    {
+      "name": "update_ids_migration.py",
+      "path": "backend/src/update_ids_migration.py",
+      "type": "file",
+      "sha": "ef43aa04a5f162bfcd16b696f2087c74cf332ff8",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4099,
+      "is_binary": false
+    },
+    {
+      "name": "tests",
+      "path": "backend/tests",
+      "type": "directory",
+      "sha": "19a068cfc9cdef8615c9ff351d8d6eff8eeea2ff",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/tests/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "conftest.py",
+      "path": "backend/tests/conftest.py",
+      "type": "file",
+      "sha": "d99e38b95b441100db2b29b4501091ccdcc3761a",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3929,
+      "is_binary": false
+    },
+    {
+      "name": "integration",
+      "path": "backend/tests/integration",
+      "type": "directory",
+      "sha": "1db4be7efec6f6fd3ada1e0ac76ce92723153db1",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/tests/integration/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "conftest.py",
+      "path": "backend/tests/integration/conftest.py",
+      "type": "file",
+      "sha": "5341f9b87a1fac1d28cb0394ea0ee25b60c191b5",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3246,
+      "is_binary": false
+    },
+    {
+      "name": "test_app.py",
+      "path": "backend/tests/integration/test_app.py",
+      "type": "file",
+      "sha": "fcf975f5b2d9a9680290532c7be6f3692a3a569a",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2375,
+      "is_binary": false
+    },
+    {
+      "name": "test_backfill_performance.py",
+      "path": "backend/tests/integration/test_backfill_performance.py",
+      "type": "file",
+      "sha": "7eb501f8889ad0e2258282814862a1170a864032",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1882,
+      "is_binary": false
+    },
+    {
+      "name": "test_camara_adapter.py",
+      "path": "backend/tests/integration/test_camara_adapter.py",
+      "type": "file",
+      "sha": "f7fc704f1f42f784fabdae9ba2b3a54013fe321e",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1783,
+      "is_binary": false
+    },
+    {
+      "name": "test_coleta_worker.py",
+      "path": "backend/tests/integration/test_coleta_worker.py",
+      "type": "file",
+      "sha": "9433113f8a152419843a7c682e25195902cb51fb",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1292,
+      "is_binary": false
+    },
+    {
+      "name": "test_coletar_em_lote_service.py",
+      "path": "backend/tests/integration/test_coletar_em_lote_service.py",
+      "type": "file",
+      "sha": "eccfc0a3f5bb70b62ada52f24e1ef6c511315521",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 5134,
+      "is_binary": false
+    },
+    {
+      "name": "test_cors.py",
+      "path": "backend/tests/integration/test_cors.py",
+      "type": "file",
+      "sha": "92b546bc09aba6caac0f9c7665c7fe16fda436af",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1570,
+      "is_binary": false
+    },
+    {
+      "name": "test_dashboard_api.py",
+      "path": "backend/tests/integration/test_dashboard_api.py",
+      "type": "file",
+      "sha": "5f0f2885a0eb6a22efe0bed3c5263c247b0e3764",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3133,
+      "is_binary": false
+    },
+    {
+      "name": "test_health_api.py",
+      "path": "backend/tests/integration/test_health_api.py",
+      "type": "file",
+      "sha": "d7d286773ec3179be2c1e4c2baef80f2e66d9f6b",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 6577,
+      "is_binary": false
+    },
+    {
+      "name": "test_metricas_worker.py",
+      "path": "backend/tests/integration/test_metricas_worker.py",
+      "type": "file",
+      "sha": "e0ecd487be795eb8c1874f1caa1f278e266a5a88",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2541,
+      "is_binary": false
+    },
+    {
+      "name": "test_movimentacoes_api.py",
+      "path": "backend/tests/integration/test_movimentacoes_api.py",
+      "type": "file",
+      "sha": "0930b2bee757faeaef79baa0957e27015c2a0a11",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 10385,
+      "is_binary": false
+    },
+    {
+      "name": "test_proposicao_api.py",
+      "path": "backend/tests/integration/test_proposicao_api.py",
+      "type": "file",
+      "sha": "0c01f3338ceac8d1ff7fbbcd2e64b8abe9e44cbd",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1860,
+      "is_binary": false
+    },
+    {
+      "name": "test_proposicao_detalhe.py",
+      "path": "backend/tests/integration/test_proposicao_detalhe.py",
+      "type": "file",
+      "sha": "51cd6423df678296f97c314c9ac9e523ea4fe204",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3721,
+      "is_binary": false
+    },
+    {
+      "name": "test_senado_adapter.py",
+      "path": "backend/tests/integration/test_senado_adapter.py",
+      "type": "file",
+      "sha": "7b27694daa9c5f44d6226f293e7f2914040e1463",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1078,
+      "is_binary": false
+    },
+    {
+      "name": "unit",
+      "path": "backend/tests/unit",
+      "type": "directory",
+      "sha": "2ef09cb5d2f881bb9e51093f956b626cea20bf61",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/tests/unit/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "conftest.py",
+      "path": "backend/tests/unit/conftest.py",
+      "type": "file",
+      "sha": "c78afa77d424271386f8ec783250688e5e57d916",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 651,
+      "is_binary": false
+    },
+    {
+      "name": "test_agregar_por_fase_service.py",
+      "path": "backend/tests/unit/test_agregar_por_fase_service.py",
+      "type": "file",
+      "sha": "94ea8c8f8e401c8239ee9e641df2c602c0f0d3b7",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4184,
+      "is_binary": false
+    },
+    {
+      "name": "test_atualizar_cobertura_service.py",
+      "path": "backend/tests/unit/test_atualizar_cobertura_service.py",
+      "type": "file",
+      "sha": "bf3272cb6d190c0deba16ca1e7c0682884a0f162",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 11798,
+      "is_binary": false
+    },
+    {
+      "name": "test_backfill_emendas_service.py",
+      "path": "backend/tests/unit/test_backfill_emendas_service.py",
+      "type": "file",
+      "sha": "2fedbb4bb7e1fdede2fb6b92bd85872646b1f159",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 5407,
+      "is_binary": false
+    },
+    {
+      "name": "test_buscar_proposicoes_service.py",
+      "path": "backend/tests/unit/test_buscar_proposicoes_service.py",
+      "type": "file",
+      "sha": "c71995930736b0c47c2768c843fb8eeb34129a42",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3405,
+      "is_binary": false
+    },
+    {
+      "name": "test_calcular_metricas_domain_service.py",
+      "path": "backend/tests/unit/test_calcular_metricas_domain_service.py",
+      "type": "file",
+      "sha": "262a413a5a3e338f46ecb7a5431d348c84061026",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 5389,
+      "is_binary": false
+    },
+    {
+      "name": "test_calcular_tempo_por_fase.py",
+      "path": "backend/tests/unit/test_calcular_tempo_por_fase.py",
+      "type": "file",
+      "sha": "7dd5cf820d2da92a1ee4d6f6398faa7d8887e15d",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2695,
+      "is_binary": false
+    },
+    {
+      "name": "test_camara_adapter.py",
+      "path": "backend/tests/unit/test_camara_adapter.py",
+      "type": "file",
+      "sha": "98b952f61aa0752bccc96bd52ad3c7349fd40311",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 6549,
+      "is_binary": false
+    },
+    {
+      "name": "test_classificacao_preditiva.py",
+      "path": "backend/tests/unit/test_classificacao_preditiva.py",
+      "type": "file",
+      "sha": "0e74cf3e4efedd0ba5856029a22ec7b9c26c41cd",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4456,
+      "is_binary": false
+    },
+    {
+      "name": "test_classificar_evento.py",
+      "path": "backend/tests/unit/test_classificar_evento.py",
+      "type": "file",
+      "sha": "f63966d49a0cc7d3035ab8864969b8d23aeb69f9",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 9741,
+      "is_binary": false
+    },
+    {
+      "name": "test_coletar_em_lote_service_bugs.py",
+      "path": "backend/tests/unit/test_coletar_em_lote_service_bugs.py",
+      "type": "file",
+      "sha": "610631cb3df1690f07be9a63b590f3bf3b8f9697",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 5348,
+      "is_binary": false
+    },
+    {
+      "name": "test_dashboard_on_the_fly.py",
+      "path": "backend/tests/unit/test_dashboard_on_the_fly.py",
+      "type": "file",
+      "sha": "778e0d76d5f3060f001d3ead819826ea1e37474f",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2234,
+      "is_binary": false
+    },
+    {
+      "name": "test_dashboard_service.py",
+      "path": "backend/tests/unit/test_dashboard_service.py",
+      "type": "file",
+      "sha": "2b393140f95b8f27889943a0e731ad8d5b75d89b",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 5886,
+      "is_binary": false
+    },
+    {
+      "name": "test_dashboard_service_analitico.py",
+      "path": "backend/tests/unit/test_dashboard_service_analitico.py",
+      "type": "file",
+      "sha": "685d355b6d8fd0135f4ffa3e47cb0c0c33e35f60",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4404,
+      "is_binary": false
+    },
+    {
+      "name": "test_dashboard_service_extended.py",
+      "path": "backend/tests/unit/test_dashboard_service_extended.py",
+      "type": "file",
+      "sha": "b44b21fedd1ad11b80ddcb8f8e348a811775159b",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 16592,
+      "is_binary": false
+    },
+    {
+      "name": "test_determinar_fase.py",
+      "path": "backend/tests/unit/test_determinar_fase.py",
+      "type": "file",
+      "sha": "417ceb0961b63fb4e2f02c7898e66127d2e32da7",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 6321,
+      "is_binary": false
+    },
+    {
+      "name": "test_estimativa_aprovacao_service.py",
+      "path": "backend/tests/unit/test_estimativa_aprovacao_service.py",
+      "type": "file",
+      "sha": "edc193471e8668a79eec4467f2bb4a810b57e87f",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1113,
+      "is_binary": false
+    },
+    {
+      "name": "test_evento_dto.py",
+      "path": "backend/tests/unit/test_evento_dto.py",
+      "type": "file",
+      "sha": "91b44d3e6b37e4d6de6505e045eb38cfd191156c",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2339,
+      "is_binary": false
+    },
+    {
+      "name": "test_evento_tramitacao_entity.py",
+      "path": "backend/tests/unit/test_evento_tramitacao_entity.py",
+      "type": "file",
+      "sha": "f145c5e9ca85030a9e02a5d940c861045ea87d5f",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 6401,
+      "is_binary": false
+    },
+    {
+      "name": "test_evento_tramitacao_relevante.py",
+      "path": "backend/tests/unit/test_evento_tramitacao_relevante.py",
+      "type": "file",
+      "sha": "2502b31347f1e99d1bd7e313a85b9e3ebafef52c",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2432,
+      "is_binary": false
+    },
+    {
+      "name": "test_fsm.py",
+      "path": "backend/tests/unit/test_fsm.py",
+      "type": "file",
+      "sha": "6e3b655d167a909c7f6e6e0814ff8c7bfd899505",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 11981,
+      "is_binary": false
+    },
+    {
+      "name": "test_heuristica_travamento_service.py",
+      "path": "backend/tests/unit/test_heuristica_travamento_service.py",
+      "type": "file",
+      "sha": "7d6a6e28ea2340bf61e133c0b52188a6e4aa5df6",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1813,
+      "is_binary": false
+    },
+    {
+      "name": "test_internal_auth.py",
+      "path": "backend/tests/unit/test_internal_auth.py",
+      "type": "file",
+      "sha": "80ec74d8f2aa0ec788ce3693fe781ca9c72daa11",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1116,
+      "is_binary": false
+    },
+    {
+      "name": "test_internal_tasks_coleta.py",
+      "path": "backend/tests/unit/test_internal_tasks_coleta.py",
+      "type": "file",
+      "sha": "208008fc9879dbad28c3bec2eb9510379eed8e32",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 9776,
+      "is_binary": false
+    },
+    {
+      "name": "test_json_logger.py",
+      "path": "backend/tests/unit/test_json_logger.py",
+      "type": "file",
+      "sha": "95c566ee8d7ca001d23d8cbe54a13204d3a4f924",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1627,
+      "is_binary": false
+    },
+    {
+      "name": "test_listar_movimentacoes_service.py",
+      "path": "backend/tests/unit/test_listar_movimentacoes_service.py",
+      "type": "file",
+      "sha": "7da7a2d54debdadbb6ea5c1598250c5a9c4879b3",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 21722,
+      "is_binary": false
+    },
+    {
+      "name": "test_normalizar_tramitacao_service.py",
+      "path": "backend/tests/unit/test_normalizar_tramitacao_service.py",
+      "type": "file",
+      "sha": "92ebb8bb239911a21135d62a90e85bda9f8b74ab",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 5853,
+      "is_binary": false
+    },
+    {
+      "name": "test_obter_confiabilidade_service.py",
+      "path": "backend/tests/unit/test_obter_confiabilidade_service.py",
+      "type": "file",
+      "sha": "9e9e39020909b3752aa00f8c0aa5685b74f77456",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 7057,
+      "is_binary": false
+    },
+    {
+      "name": "test_preencher_lacunas_com_eventos.py",
+      "path": "backend/tests/unit/test_preencher_lacunas_com_eventos.py",
+      "type": "file",
+      "sha": "bb05c966ce51d9595b5507edc267cfe7e229fd78",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 10298,
+      "is_binary": false
+    },
+    {
+      "name": "test_preencher_lacunas_service.py",
+      "path": "backend/tests/unit/test_preencher_lacunas_service.py",
+      "type": "file",
+      "sha": "f1b92b33848e719584e0d92c83ffa4a1aa7b8b04",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 24865,
+      "is_binary": false
+    },
+    {
+      "name": "test_processar_metricas_service.py",
+      "path": "backend/tests/unit/test_processar_metricas_service.py",
+      "type": "file",
+      "sha": "4a73f518a4031e4f45156747c35305e2c4230d65",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4572,
+      "is_binary": false
+    },
+    {
+      "name": "test_proposicao_entity.py",
+      "path": "backend/tests/unit/test_proposicao_entity.py",
+      "type": "file",
+      "sha": "1cbb458e417b80580e3a4bdba43d01efd0aa7a31",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 5565,
+      "is_binary": false
+    },
+    {
+      "name": "test_recalcular_baselines_service.py",
+      "path": "backend/tests/unit/test_recalcular_baselines_service.py",
+      "type": "file",
+      "sha": "c15ef5b1b524768d86f507536ce1de3b26b4afa6",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 6410,
+      "is_binary": false
+    },
+    {
+      "name": "test_reconstruir_periodos_service.py",
+      "path": "backend/tests/unit/test_reconstruir_periodos_service.py",
+      "type": "file",
+      "sha": "c176edf478099bf980721ed297499180e8f89203",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 5960,
+      "is_binary": false
+    },
+    {
+      "name": "test_repository_filtering.py",
+      "path": "backend/tests/unit/test_repository_filtering.py",
+      "type": "file",
+      "sha": "b179b07ebcbfbaa65a2980a781d759774ebde9d1",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 5673,
+      "is_binary": false
+    },
+    {
+      "name": "test_senado_adapter.py",
+      "path": "backend/tests/unit/test_senado_adapter.py",
+      "type": "file",
+      "sha": "e6c9525c69535cf8a55a5396ed5d5c9efc4ce52d",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 15082,
+      "is_binary": false
+    },
+    {
+      "name": "test_sql_apensamento_repository.py",
+      "path": "backend/tests/unit/test_sql_apensamento_repository.py",
+      "type": "file",
+      "sha": "d89be8018ca4ab5d6d83c5d80874ee2f436a2c05",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1231,
+      "is_binary": false
+    },
+    {
+      "name": "test_sql_auditoria_coleta_repository.py",
+      "path": "backend/tests/unit/test_sql_auditoria_coleta_repository.py",
+      "type": "file",
+      "sha": "3423d3ec2724235c73c9ffa0aa37e8c2c37cafcb",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1921,
+      "is_binary": false
+    },
+    {
+      "name": "test_sql_baseline_tramitacao_repository.py",
+      "path": "backend/tests/unit/test_sql_baseline_tramitacao_repository.py",
+      "type": "file",
+      "sha": "853cf76e118604430931a8ae893c8255951d6d79",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4199,
+      "is_binary": false
+    },
+    {
+      "name": "test_sql_cobertura_snapshot_repository.py",
+      "path": "backend/tests/unit/test_sql_cobertura_snapshot_repository.py",
+      "type": "file",
+      "sha": "617462e9f5387f374b97e6959bf9668cf54830ca",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2449,
+      "is_binary": false
+    },
+    {
+      "name": "test_sql_dashboard_repository.py",
+      "path": "backend/tests/unit/test_sql_dashboard_repository.py",
+      "type": "file",
+      "sha": "2b18310566bee8af3d272d794369b716003af2aa",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 8318,
+      "is_binary": false
+    },
+    {
+      "name": "test_sql_evento_tramitacao_repository.py",
+      "path": "backend/tests/unit/test_sql_evento_tramitacao_repository.py",
+      "type": "file",
+      "sha": "bc7312b31a2f3e7a853d152cfefcf8b010d0518e",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 9607,
+      "is_binary": false
+    },
+    {
+      "name": "test_sql_fase_analitica_repository.py",
+      "path": "backend/tests/unit/test_sql_fase_analitica_repository.py",
+      "type": "file",
+      "sha": "696bdebb74d175d3f44ab0566be1ab785ad402df",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2667,
+      "is_binary": false
+    },
+    {
+      "name": "test_sql_orgao_legislativo_repository.py",
+      "path": "backend/tests/unit/test_sql_orgao_legislativo_repository.py",
+      "type": "file",
+      "sha": "f459cbeb2584f1831308e6649c739799758ec385",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3584,
+      "is_binary": false
+    },
+    {
+      "name": "test_sql_periodo_fase_repository.py",
+      "path": "backend/tests/unit/test_sql_periodo_fase_repository.py",
+      "type": "file",
+      "sha": "b046b54261167dab0dd7fcffd614e9ff33b3b360",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3358,
+      "is_binary": false
+    },
+    {
+      "name": "test_sql_proposicao_repository_upsert.py",
+      "path": "backend/tests/unit/test_sql_proposicao_repository_upsert.py",
+      "type": "file",
+      "sha": "7af343a6d75e4f3bd62c7426f58dc96c7f6a15e6",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 8579,
+      "is_binary": false
+    },
+    {
+      "name": "test_sql_repository.py",
+      "path": "backend/tests/unit/test_sql_repository.py",
+      "type": "file",
+      "sha": "3c065fe3c962a4a9a4c676e8da77952bc1a67b01",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2069,
+      "is_binary": false
+    },
+    {
+      "name": "uv.lock",
+      "path": "backend/uv.lock",
+      "type": "file",
+      "sha": "4f2994882dacc162dec79693b457cbb39a4cded7",
+      "mode": "100644",
+      "extension": ".lock",
+      "size": 391520,
+      "is_binary": false
+    },
+    {
+      "name": "docker-compose.gcp.yml",
+      "path": "docker-compose.gcp.yml",
+      "type": "file",
+      "sha": "144df532d89dca2d98ec0596e92c6fa7691843ff",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 932,
+      "is_binary": false
+    },
+    {
+      "name": "docker-compose.yml",
+      "path": "docker-compose.yml",
+      "type": "file",
+      "sha": "b542954de91f105b827efa210e46a3d480f7a813",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 3375,
+      "is_binary": false
+    },
+    {
+      "name": "docs",
+      "path": "docs",
+      "type": "directory",
+      "sha": "228b19709a2e734783bec9575ee8d1e7661ed869",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "BACKLOG.md",
+      "path": "docs/BACKLOG.md",
+      "type": "file",
+      "sha": "2842e8092e3fa1b4b457541307411d8bffcf2d55",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3163,
+      "is_binary": false
+    },
+    {
+      "name": "RELEASE_1_REPORT.md",
+      "path": "docs/RELEASE_1_REPORT.md",
+      "type": "file",
+      "sha": "d3fab6a81523f7dbb6d07c573c1f5731469fd5b4",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 8293,
+      "is_binary": false
+    },
+    {
+      "name": "SRS.md",
+      "path": "docs/SRS.md",
+      "type": "file",
+      "sha": "a70b2087cd6e09021b0197a3aa1d813e2c856229",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 9738,
+      "is_binary": false
+    },
+    {
+      "name": "adr",
+      "path": "docs/adr",
+      "type": "directory",
+      "sha": "e904564e02e4e5480fdb9bc2f8b3d41ad48284d5",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "ADR-000-template.md",
+      "path": "docs/adr/ADR-000-template.md",
+      "type": "file",
+      "sha": "04ac885a91e8ef5cb23ccba8d32378cffca5a2c2",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 610,
+      "is_binary": false
+    },
+    {
+      "name": "ADR-001-layered-architecture.md",
+      "path": "docs/adr/ADR-001-layered-architecture.md",
+      "type": "file",
+      "sha": "5449d1128de207978496a38074d4181dd3e33745",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2165,
+      "is_binary": false
+    },
+    {
+      "name": "ADR-002-postgresql.md",
+      "path": "docs/adr/ADR-002-postgresql.md",
+      "type": "file",
+      "sha": "b9100e1e78257cb5da37c9730e9841dc2e97726e",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2093,
+      "is_binary": false
+    },
+    {
+      "name": "ADR-003-fastapi.md",
+      "path": "docs/adr/ADR-003-fastapi.md",
+      "type": "file",
+      "sha": "619d401181e98d36884d9191b26e3c3a542ddea6",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2198,
+      "is_binary": false
+    },
+    {
+      "name": "ADR-004-batch-coleta.md",
+      "path": "docs/adr/ADR-004-batch-coleta.md",
+      "type": "file",
+      "sha": "7d76831feca3b33cad95dbd78ac16aa75abafa90",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3178,
+      "is_binary": false
+    },
+    {
+      "name": "ADR-005-adapter-pattern.md",
+      "path": "docs/adr/ADR-005-adapter-pattern.md",
+      "type": "file",
+      "sha": "69dc555e5c1bf4c1f8ba4124b4dae6e6c6d4c1c1",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 14617,
+      "is_binary": false
+    },
+    {
+      "name": "ADR-006-redis-cache.md",
+      "path": "docs/adr/ADR-006-redis-cache.md",
+      "type": "file",
+      "sha": "c1f2d3aa021982fffa3b61c6133551a9df4c2298",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2667,
+      "is_binary": false
+    },
+    {
+      "name": "ADR-007-testing-strategy.md",
+      "path": "docs/adr/ADR-007-testing-strategy.md",
+      "type": "file",
+      "sha": "1d651ab8956f5178f128b1b74425a577fe51eb0b",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2252,
+      "is_binary": false
+    },
+    {
+      "name": "ADR-008-github-actions-data-pipeline.md",
+      "path": "docs/adr/ADR-008-github-actions-data-pipeline.md",
+      "type": "file",
+      "sha": "9c17ec5cf3111216fb0f450f3d9ac310d35a3dcf",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 7100,
+      "is_binary": false
+    },
+    {
+      "name": "ADR-009-squad-dashboard-ghpages.md",
+      "path": "docs/adr/ADR-009-squad-dashboard-ghpages.md",
+      "type": "file",
+      "sha": "f3e9acf870abb02b40545b0a220f4b3c52d9fe51",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5654,
+      "is_binary": false
+    },
+    {
+      "name": "ADR-010-status-normalization.md",
+      "path": "docs/adr/ADR-010-status-normalization.md",
+      "type": "file",
+      "sha": "e5ecb822367484eb9abe6b5bbec9dff6f648b70c",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4610,
+      "is_binary": false
+    },
+    {
+      "name": "ADR-012-frontend-governance.md",
+      "path": "docs/adr/ADR-012-frontend-governance.md",
+      "type": "file",
+      "sha": "f32c690efc74f5114487364cd81221c494f8a233",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4421,
+      "is_binary": false
+    },
+    {
+      "name": "ADR-013-llm-time-estimation.md",
+      "path": "docs/adr/ADR-013-llm-time-estimation.md",
+      "type": "file",
+      "sha": "958fbbca2d90b3848cdec036116be7be120a67f1",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 8876,
+      "is_binary": false
+    },
+    {
+      "name": "domain",
+      "path": "docs/domain",
+      "type": "directory",
+      "sha": "a66cc84e68eaee2d34052c0a0169cbaee4e9d82a",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "delay-metrics.md",
+      "path": "docs/domain/delay-metrics.md",
+      "type": "file",
+      "sha": "3afa6cb2c794f761c7a3e78b9369be1b30f5d0cb",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6415,
+      "is_binary": false
+    },
+    {
+      "name": "juridical-validation.md",
+      "path": "docs/domain/juridical-validation.md",
+      "type": "file",
+      "sha": "6631bdbb1912069bb812ec7536e80e4979439203",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 7155,
+      "is_binary": false
+    },
+    {
+      "name": "status-normalization.md",
+      "path": "docs/domain/status-normalization.md",
+      "type": "file",
+      "sha": "1df6decdc0c2cfda3b33aa8f169f3bd31f74c158",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 25535,
+      "is_binary": false
+    },
+    {
+      "name": "timeline-walkthrough.md",
+      "path": "docs/domain/timeline-walkthrough.md",
+      "type": "file",
+      "sha": "6e95a007ac85f2c7a9d97cbfe0110c723c917444",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 10995,
+      "is_binary": false
+    },
+    {
+      "name": "frontend",
+      "path": "docs/frontend",
+      "type": "directory",
+      "sha": "9b7cfd7b6b931506ebae733c02d462c231d9a54d",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "00-visao-geral-frontend.md",
+      "path": "docs/frontend/00-visao-geral-frontend.md",
+      "type": "file",
+      "sha": "8594b98de2edf629c89b4b2b3f1d0e631a4a7179",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4155,
+      "is_binary": false
+    },
+    {
+      "name": "01-arquitetura-de-telas.md",
+      "path": "docs/frontend/01-arquitetura-de-telas.md",
+      "type": "file",
+      "sha": "428ba03f7bcc8e99d7aa662cdb1d1f526ccaf121",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4357,
+      "is_binary": false
+    },
+    {
+      "name": "01b-layout-shell.md",
+      "path": "docs/frontend/01b-layout-shell.md",
+      "type": "file",
+      "sha": "bf8a309272fb49aba4c32f42b9825e8333b9fa0d",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3364,
+      "is_binary": false
+    },
+    {
+      "name": "02-design-principles.md",
+      "path": "docs/frontend/02-design-principles.md",
+      "type": "file",
+      "sha": "f6fe23ff37349cb2ea80ad440a199a7f5b237c52",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3749,
+      "is_binary": false
+    },
+    {
+      "name": "03-design-tokens.md",
+      "path": "docs/frontend/03-design-tokens.md",
+      "type": "file",
+      "sha": "bba8d04001cf18df2e94b11576a6129476ee1779",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3993,
+      "is_binary": false
+    },
+    {
+      "name": "04-componentes",
+      "path": "docs/frontend/04-componentes",
+      "type": "directory",
+      "sha": "365b66e6ab65478e4082399ac4770ecb00fd17d2",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "charts-and-visualizations.md",
+      "path": "docs/frontend/04-componentes/charts-and-visualizations.md",
+      "type": "file",
+      "sha": "b1eea730a46e2d0de76221c4cc4d9568bb966ee2",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3973,
+      "is_binary": false
+    },
+    {
+      "name": "forms-and-inputs.md",
+      "path": "docs/frontend/04-componentes/forms-and-inputs.md",
+      "type": "file",
+      "sha": "65ff7852946d54a5eb916b6bb5fd461756ad286b",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5133,
+      "is_binary": false
+    },
+    {
+      "name": "kpi-card.md",
+      "path": "docs/frontend/04-componentes/kpi-card.md",
+      "type": "file",
+      "sha": "11f59ecc6f2b364808ea76cbc7cc7e5863f98dd8",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3318,
+      "is_binary": false
+    },
+    {
+      "name": "tables-and-lists.md",
+      "path": "docs/frontend/04-componentes/tables-and-lists.md",
+      "type": "file",
+      "sha": "fa4be568ce6a611af48c2108494ab2f555a9e51b",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4054,
+      "is_binary": false
+    },
+    {
+      "name": "05-padroes",
+      "path": "docs/frontend/05-padroes",
+      "type": "directory",
+      "sha": "d7b9ae64907d23a28ff10b8a1c5886378f03a34c",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "collapsible-timeline.md",
+      "path": "docs/frontend/05-padroes/collapsible-timeline.md",
+      "type": "file",
+      "sha": "5df7aebe0c345a5fe09c62dd6b6fae40b7aa8cec",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4483,
+      "is_binary": false
+    },
+    {
+      "name": "parallel-loading-pattern.md",
+      "path": "docs/frontend/05-padroes/parallel-loading-pattern.md",
+      "type": "file",
+      "sha": "59f562fd84b0bc709a92378feeb5d3d3694dfa93",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4673,
+      "is_binary": false
+    },
+    {
+      "name": "states-and-contingency.md",
+      "path": "docs/frontend/05-padroes/states-and-contingency.md",
+      "type": "file",
+      "sha": "c90203e9543ecd4c9a12b97e6d8ee510c03a7336",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4392,
+      "is_binary": false
+    },
+    {
+      "name": "06-auditoria",
+      "path": "docs/frontend/06-auditoria",
+      "type": "directory",
+      "sha": "309a654ece2d0a84d3e0f2f00bf8f120b133f1b4",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "decisoes-aceitas.md",
+      "path": "docs/frontend/06-auditoria/decisoes-aceitas.md",
+      "type": "file",
+      "sha": "cb55c58542cdbc2cd384e74ecfa6cab35aac746f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2213,
+      "is_binary": false
+    },
+    {
+      "name": "inconsistencias.md",
+      "path": "docs/frontend/06-auditoria/inconsistencias.md",
+      "type": "file",
+      "sha": "c3a4f25f379a5343902d0e496d6c9928cd13fde7",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3419,
+      "is_binary": false
+    },
+    {
+      "name": "inventario-ui.md",
+      "path": "docs/frontend/06-auditoria/inventario-ui.md",
+      "type": "file",
+      "sha": "7704414058c5484deee61861a6bcf930103ad366",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4773,
+      "is_binary": false
+    },
+    {
+      "name": "oportunidades.md",
+      "path": "docs/frontend/06-auditoria/oportunidades.md",
+      "type": "file",
+      "sha": "32a58e4f16833676871e4e799f1f9f12700bb935",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2980,
+      "is_binary": false
+    },
+    {
+      "name": "07-governanca",
+      "path": "docs/frontend/07-governanca",
+      "type": "directory",
+      "sha": "aa25ef6e65d2080407f2c1807833ac09ab7b646c",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "checklist-review-ui.md",
+      "path": "docs/frontend/07-governanca/checklist-review-ui.md",
+      "type": "file",
+      "sha": "6e0d1b5a29b8604c4250ff2e970b32bddf0fb3fc",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2737,
+      "is_binary": false
+    },
+    {
+      "name": "regras-de-evolucao-ui.md",
+      "path": "docs/frontend/07-governanca/regras-de-evolucao-ui.md",
+      "type": "file",
+      "sha": "3480f98479088af8659ed0a4be1b240b517c8bd7",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3661,
+      "is_binary": false
+    },
+    {
+      "name": "08-legacy-monolithic-spec.md",
+      "path": "docs/frontend/08-legacy-monolithic-spec.md",
+      "type": "file",
+      "sha": "1601521f0ed80e12fbeff4b44341d3f0aa641475",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 25814,
+      "is_binary": false
+    },
+    {
+      "name": "09-prototype-spec.md",
+      "path": "docs/frontend/09-prototype-spec.md",
+      "type": "file",
+      "sha": "e33e70c17db22dad9f325d5815481d88c5adcb0d",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5392,
+      "is_binary": false
+    },
+    {
+      "name": "infrastructure",
+      "path": "docs/infrastructure",
+      "type": "directory",
+      "sha": "294d34a0ea808b4703ae154f84b0027bc40379c1",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "deploy-gcp.md",
+      "path": "docs/infrastructure/deploy-gcp.md",
+      "type": "file",
+      "sha": "baab3839469732c8dd11381e526a161b4befb9b6",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 8077,
+      "is_binary": false
+    },
+    {
+      "name": "ingestion-architecture.md",
+      "path": "docs/infrastructure/ingestion-architecture.md",
+      "type": "file",
+      "sha": "01b866b9cf754a0ae00dc6ad3c525ab215976210",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 21169,
+      "is_binary": false
+    },
+    {
+      "name": "operational",
+      "path": "docs/operational",
+      "type": "directory",
+      "sha": "0be78596afa10ca72dca7145f703ca03a79199ac",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "gapfiller-event-ingestion.md",
+      "path": "docs/operational/gapfiller-event-ingestion.md",
+      "type": "file",
+      "sha": "584c1960d0e4913a7ec2afb2661ebebe9e23928a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4342,
+      "is_binary": false
+    },
+    {
+      "name": "personas.md",
+      "path": "docs/personas.md",
+      "type": "file",
+      "sha": "50a6c9fc69997c5e1e315aa037062f085d22b3ee",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2168,
+      "is_binary": false
+    },
+    {
+      "name": "risks.md",
+      "path": "docs/risks.md",
+      "type": "file",
+      "sha": "c75d9b1d9bab632a65c746aa528aab673a496060",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2678,
+      "is_binary": false
+    },
+    {
+      "name": "story-map.md",
+      "path": "docs/story-map.md",
+      "type": "file",
+      "sha": "c4f1a4bd022a4f627fded287a8cc524e17998c47",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 23013,
+      "is_binary": false
+    },
+    {
+      "name": "tech-stack.md",
+      "path": "docs/tech-stack.md",
+      "type": "file",
+      "sha": "ff5aadfd40fb5a223bc85c33a97b9b5e3d23eaae",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4355,
+      "is_binary": false
+    },
+    {
+      "name": "frontend",
+      "path": "frontend",
+      "type": "directory",
+      "sha": "743f732ec2cab8fb2cf337d83626e94c86b52a08",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".dockerignore",
+      "path": "frontend/.dockerignore",
+      "type": "file",
+      "sha": "616e7dce6c5036fc2d2cfbf02442ad083bd6796d",
+      "mode": "100644",
+      "extension": ".dockerignore",
+      "size": 71,
+      "is_binary": false
+    },
+    {
+      "name": ".env.example",
+      "path": "frontend/.env.example",
+      "type": "file",
+      "sha": "5934e2e7d2d17fde2f262dd89007afdc2e7fb9c1",
+      "mode": "100644",
+      "extension": ".example",
+      "size": 35,
+      "is_binary": false
+    },
+    {
+      "name": "AGENTS.md",
+      "path": "frontend/AGENTS.md",
+      "type": "file",
+      "sha": "f09851802408b724fd5f530dd0fec9241112b56a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1554,
+      "is_binary": false
+    },
+    {
+      "name": "Dockerfile",
+      "path": "frontend/Dockerfile",
+      "type": "file",
+      "sha": "5ca9624cca2de6d7f24f3c22e3caedf8fc336703",
+      "mode": "100644",
+      "extension": "",
+      "size": 427,
+      "is_binary": false
+    },
+    {
+      "name": "eslint.config.js",
+      "path": "frontend/eslint.config.js",
+      "type": "file",
+      "sha": "986644380935e4db4d418232744030eef2ab9c90",
+      "mode": "100644",
+      "extension": ".js",
+      "size": 854,
+      "is_binary": false
+    },
+    {
+      "name": "index.html",
+      "path": "frontend/index.html",
+      "type": "file",
+      "sha": "857891b8c9dd80ce06be2b6242b6b15a2d77286c",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 780,
+      "is_binary": false
+    },
+    {
+      "name": "package-lock.json",
+      "path": "frontend/package-lock.json",
+      "type": "file",
+      "sha": "029546ad749a02b71c2118455c074ca67e96a4e4",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 222372,
+      "is_binary": false
+    },
+    {
+      "name": "package.json",
+      "path": "frontend/package.json",
+      "type": "file",
+      "sha": "54375657f9f18e9f5f40f21f37e7d674ba526992",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 1166,
+      "is_binary": false
+    },
+    {
+      "name": "postcss.config.js",
+      "path": "frontend/postcss.config.js",
+      "type": "file",
+      "sha": "2e7af2b7f1a6f391da1631d93968a9d487ba977d",
+      "mode": "100644",
+      "extension": ".js",
+      "size": 80,
+      "is_binary": false
+    },
+    {
+      "name": "src",
+      "path": "frontend/src",
+      "type": "directory",
+      "sha": "49917dd7caaa799fc004d665c7d6d7bed44bbff6",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "app",
+      "path": "frontend/src/app",
+      "type": "directory",
+      "sha": "5aa50661a6b4ed6f7fac7ff62e325664696d6d03",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "layouts",
+      "path": "frontend/src/app/layouts",
+      "type": "directory",
+      "sha": "c034773609099b16d707ec3b553f7e6e6b1ba13d",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "AppLayout.tsx",
+      "path": "frontend/src/app/layouts/AppLayout.tsx",
+      "type": "file",
+      "sha": "6cc3dbec2b418ca2a63df289083633a7f4c485fe",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 657,
+      "is_binary": false
+    },
+    {
+      "name": "router",
+      "path": "frontend/src/app/router",
+      "type": "directory",
+      "sha": "3398729c366471fe27be7a49a812b27746a99269",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "index.tsx",
+      "path": "frontend/src/app/router/index.tsx",
+      "type": "file",
+      "sha": "6aee913764392f931973709c013650f871fcc26a",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 965,
+      "is_binary": false
+    },
+    {
+      "name": "features",
+      "path": "frontend/src/features",
+      "type": "directory",
+      "sha": "a40c208fcdf0aebfcbf98d0135fb5e39ebc3d671",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "filtros",
+      "path": "frontend/src/features/filtros",
+      "type": "directory",
+      "sha": "02bd88fb6b4f7434a572156f6c5dac6ce3de92a2",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "FilterChips.tsx",
+      "path": "frontend/src/features/filtros/FilterChips.tsx",
+      "type": "file",
+      "sha": "4bc5335a854cffee52ced19e7ced11b0954c98e2",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1168,
+      "is_binary": false
+    },
+    {
+      "name": "proposicoes",
+      "path": "frontend/src/features/proposicoes",
+      "type": "directory",
+      "sha": "add64c3a273bfc201d82196bb488805c2e27ab97",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "ProposicaoCard.tsx",
+      "path": "frontend/src/features/proposicoes/ProposicaoCard.tsx",
+      "type": "file",
+      "sha": "c64eb74ba34fe60914d6297467ad6040abacc656",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 4085,
+      "is_binary": false
+    },
+    {
+      "name": "components",
+      "path": "frontend/src/features/proposicoes/components",
+      "type": "directory",
+      "sha": "1c8be9fe7c669cd0332ca1118f8c0a5131a77355",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "AIInsightsCard.tsx",
+      "path": "frontend/src/features/proposicoes/components/AIInsightsCard.tsx",
+      "type": "file",
+      "sha": "13508cdc23e58e6aa269bfac61eb938cccadab0b",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 13641,
+      "is_binary": false
+    },
+    {
+      "name": "BottleneckAnalytics.tsx",
+      "path": "frontend/src/features/proposicoes/components/BottleneckAnalytics.tsx",
+      "type": "file",
+      "sha": "e09974874bac9081fdb1c02695a0bdd8753641a6",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 5671,
+      "is_binary": false
+    },
+    {
+      "name": "BreakdownFaseCard.tsx",
+      "path": "frontend/src/features/proposicoes/components/BreakdownFaseCard.tsx",
+      "type": "file",
+      "sha": "6045180ef2204eebfdbb224d6949ea71ec133a4b",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1822,
+      "is_binary": false
+    },
+    {
+      "name": "DataReliability.tsx",
+      "path": "frontend/src/features/proposicoes/components/DataReliability.tsx",
+      "type": "file",
+      "sha": "574b030c0a2e7d11ec75410f0bf13e61e4e09734",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 4889,
+      "is_binary": false
+    },
+    {
+      "name": "EventTimeline.tsx",
+      "path": "frontend/src/features/proposicoes/components/EventTimeline.tsx",
+      "type": "file",
+      "sha": "df1876512d3de46cb4120def65d91510affd29bb",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 19712,
+      "is_binary": false
+    },
+    {
+      "name": "HouseTransitDiagram.tsx",
+      "path": "frontend/src/features/proposicoes/components/HouseTransitDiagram.tsx",
+      "type": "file",
+      "sha": "9ee217bc2581efe0a3bc57a1e5ea273e5dd8d698",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 4698,
+      "is_binary": false
+    },
+    {
+      "name": "HouseTransitions.tsx",
+      "path": "frontend/src/features/proposicoes/components/HouseTransitions.tsx",
+      "type": "file",
+      "sha": "47b7c560ad452c03a3667d2619f788d91a150f49",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 5792,
+      "is_binary": false
+    },
+    {
+      "name": "PhaseTimeline.tsx",
+      "path": "frontend/src/features/proposicoes/components/PhaseTimeline.tsx",
+      "type": "file",
+      "sha": "bf7f09ab5453e6b851e6fc5c1b111610ff495819",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 10986,
+      "is_binary": false
+    },
+    {
+      "name": "PipelineStage.tsx",
+      "path": "frontend/src/features/proposicoes/components/PipelineStage.tsx",
+      "type": "file",
+      "sha": "299193a4dd942d0053d18872ddd52dca7d72a668",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 2019,
+      "is_binary": false
+    },
+    {
+      "name": "PropositionsTable.tsx",
+      "path": "frontend/src/features/proposicoes/components/PropositionsTable.tsx",
+      "type": "file",
+      "sha": "7078a338fbe8356b7f884223d8927d0cb5adcc9f",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 8748,
+      "is_binary": false
+    },
+    {
+      "name": "index.css",
+      "path": "frontend/src/index.css",
+      "type": "file",
+      "sha": "f881f56b46a5756037254a664243b21c8984c43a",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 3042,
+      "is_binary": false
+    },
+    {
+      "name": "main.tsx",
+      "path": "frontend/src/main.tsx",
+      "type": "file",
+      "sha": "cff3d43f512faf9eb1691a85529a6d41f7ebdb81",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 360,
+      "is_binary": false
+    },
+    {
+      "name": "pages",
+      "path": "frontend/src/pages",
+      "type": "directory",
+      "sha": "284f4d8dc060857199585dea4d87c03252bd91ba",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "dashboard-page.tsx",
+      "path": "frontend/src/pages/dashboard-page.tsx",
+      "type": "file",
+      "sha": "9b25e9160dcb91ba7fc0b853f5bc0c0e7ad58908",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 30803,
+      "is_binary": false
+    },
+    {
+      "name": "detalhe-proposicao-page.tsx",
+      "path": "frontend/src/pages/detalhe-proposicao-page.tsx",
+      "type": "file",
+      "sha": "2268fee8be0aa130b05ed5cedeebd44e556647f0",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 16340,
+      "is_binary": false
+    },
+    {
+      "name": "shared",
+      "path": "frontend/src/shared",
+      "type": "directory",
+      "sha": "d70673c9723be737a2145599b7cb955dd0da71fe",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "components",
+      "path": "frontend/src/shared/components",
+      "type": "directory",
+      "sha": "e7a242b4d10b11b3e398e09ec745f5c26ceb9f51",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "InfoTooltip.tsx",
+      "path": "frontend/src/shared/components/InfoTooltip.tsx",
+      "type": "file",
+      "sha": "59fdae8445a136e7be64eaed2a0ab5ca40b33f0a",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1056,
+      "is_binary": false
+    },
+    {
+      "name": "KPICard.tsx",
+      "path": "frontend/src/shared/components/KPICard.tsx",
+      "type": "file",
+      "sha": "c802cab529c9e37636016c96a2dab29c4abc4d8c",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 3558,
+      "is_binary": false
+    },
+    {
+      "name": "MetricCard.tsx",
+      "path": "frontend/src/shared/components/MetricCard.tsx",
+      "type": "file",
+      "sha": "6803436db0e4352fdd2967d64199a91a64147af9",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1032,
+      "is_binary": false
+    },
+    {
+      "name": "ThemeToggle.tsx",
+      "path": "frontend/src/shared/components/ThemeToggle.tsx",
+      "type": "file",
+      "sha": "d369bfda02721072a9d3f1dcd5e131abbff4d624",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1254,
+      "is_binary": false
+    },
+    {
+      "name": "constants",
+      "path": "frontend/src/shared/constants",
+      "type": "directory",
+      "sha": "3f7741615f862b6772019130f8a062293b0c4456",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "index.ts",
+      "path": "frontend/src/shared/constants/index.ts",
+      "type": "file",
+      "sha": "a083123f294f8870194eaddfe276f30405e87a0a",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 556,
+      "is_binary": false
+    },
+    {
+      "name": "kpi-config.ts",
+      "path": "frontend/src/shared/constants/kpi-config.ts",
+      "type": "file",
+      "sha": "f6697992ea72a29cdf8729fde10190ed023e0756",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 2686,
+      "is_binary": false
+    },
+    {
+      "name": "contexts",
+      "path": "frontend/src/shared/contexts",
+      "type": "directory",
+      "sha": "7eec1944c411d9940a627436f7e9cb16c3068a45",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "ThemeContext.tsx",
+      "path": "frontend/src/shared/contexts/ThemeContext.tsx",
+      "type": "file",
+      "sha": "7e906ff9efc540dad68ba648304978d86253526f",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1880,
+      "is_binary": false
+    },
+    {
+      "name": "lib",
+      "path": "frontend/src/shared/lib",
+      "type": "directory",
+      "sha": "ea26e6c3a82db72ce12d3429232aa703a82c95e4",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "api.ts",
+      "path": "frontend/src/shared/lib/api.ts",
+      "type": "file",
+      "sha": "c8175a1c78bda8ca62ffcc8d0a64757fa9c6a39c",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 8886,
+      "is_binary": false
+    },
+    {
+      "name": "hooks",
+      "path": "frontend/src/shared/lib/hooks",
+      "type": "directory",
+      "sha": "1366459b4bf2ad6103b3cf971b51ad987cbfab9e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "use-debounce.ts",
+      "path": "frontend/src/shared/lib/hooks/use-debounce.ts",
+      "type": "file",
+      "sha": "c72e7cfa3459c4de1cebea452d8205d10493bbf0",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 378,
+      "is_binary": false
+    },
+    {
+      "name": "useDashboard.ts",
+      "path": "frontend/src/shared/lib/hooks/useDashboard.ts",
+      "type": "file",
+      "sha": "ef5220ae76778727ad4f775b2881fe5913e9457e",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 11492,
+      "is_binary": false
+    },
+    {
+      "name": "useProposicao.ts",
+      "path": "frontend/src/shared/lib/hooks/useProposicao.ts",
+      "type": "file",
+      "sha": "2de61ef8a01bb143d849f7d65f7f998453f138d0",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 14629,
+      "is_binary": false
+    },
+    {
+      "name": "mappers.ts",
+      "path": "frontend/src/shared/lib/mappers.ts",
+      "type": "file",
+      "sha": "042cd03c0ddedd64ba29e20469016b6824b9bc81",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 9657,
+      "is_binary": false
+    },
+    {
+      "name": "mock-data.ts",
+      "path": "frontend/src/shared/lib/mock-data.ts",
+      "type": "file",
+      "sha": "f5acf25bf929ee36c3efcf86ecb54de83526205c",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 15647,
+      "is_binary": false
+    },
+    {
+      "name": "utils.ts",
+      "path": "frontend/src/shared/lib/utils.ts",
+      "type": "file",
+      "sha": "956cdeb09f01bbf8df397f8a471e7bd5aa36b365",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 2600,
+      "is_binary": false
+    },
+    {
+      "name": "types",
+      "path": "frontend/src/shared/types",
+      "type": "directory",
+      "sha": "0996dc1747f7604537815770bb66d51e16da7877",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "index.ts",
+      "path": "frontend/src/shared/types/index.ts",
+      "type": "file",
+      "sha": "f8f60c3f87837bda96b22d9c93b73cbc4a84fa1e",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 3425,
+      "is_binary": false
+    },
+    {
+      "name": "ui",
+      "path": "frontend/src/shared/ui",
+      "type": "directory",
+      "sha": "ca6f60a55c4df65ee23daae420463d95c01d00c0",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "index.tsx",
+      "path": "frontend/src/shared/ui/index.tsx",
+      "type": "file",
+      "sha": "576e2d782158fc792c1b0681ebcaccc19442f712",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 7229,
+      "is_binary": false
+    },
+    {
+      "name": "test",
+      "path": "frontend/src/test",
+      "type": "directory",
+      "sha": "3a0d9191a09bd4ef32070c14dc32f70ed327e97d",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "ProposicaoCard.test.tsx",
+      "path": "frontend/src/test/ProposicaoCard.test.tsx",
+      "type": "file",
+      "sha": "cfba805575b9a76eb92bddc57f3bf50a56f04c0f",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 2219,
+      "is_binary": false
+    },
+    {
+      "name": "ThemeToggle.test.tsx",
+      "path": "frontend/src/test/ThemeToggle.test.tsx",
+      "type": "file",
+      "sha": "7da6ff6b150995196ef9f8dcd62bafd018e8e2f7",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1738,
+      "is_binary": false
+    },
+    {
+      "name": "badge.test.tsx",
+      "path": "frontend/src/test/badge.test.tsx",
+      "type": "file",
+      "sha": "b74e931d6f950d81ba058d1a5f7aa4ac12d39105",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 847,
+      "is_binary": false
+    },
+    {
+      "name": "button.test.tsx",
+      "path": "frontend/src/test/button.test.tsx",
+      "type": "file",
+      "sha": "cfb2b240f218156da9693581e7dbb853f4ffb05f",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 816,
+      "is_binary": false
+    },
+    {
+      "name": "empty-state.test.tsx",
+      "path": "frontend/src/test/empty-state.test.tsx",
+      "type": "file",
+      "sha": "a21508fff3bc7cc3ab9c6f55e6a8a21bd359396b",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 956,
+      "is_binary": false
+    },
+    {
+      "name": "mappers.test.ts",
+      "path": "frontend/src/test/mappers.test.ts",
+      "type": "file",
+      "sha": "e0cde720c515498b64d33bf0a346b16dcae29022",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 10030,
+      "is_binary": false
+    },
+    {
+      "name": "setup.test.ts",
+      "path": "frontend/src/test/setup.test.ts",
+      "type": "file",
+      "sha": "404fd66021bcc979068fb650431301ecc8a6b2ee",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 155,
+      "is_binary": false
+    },
+    {
+      "name": "setup.ts",
+      "path": "frontend/src/test/setup.ts",
+      "type": "file",
+      "sha": "450c58d02596fc1735cf7ca4844d6a9a413c578e",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 146,
+      "is_binary": false
+    },
+    {
+      "name": "spinner.test.tsx",
+      "path": "frontend/src/test/spinner.test.tsx",
+      "type": "file",
+      "sha": "808186774216e481ef1a49078fa8eb0813c77eca",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 631,
+      "is_binary": false
+    },
+    {
+      "name": "use-debounce.test.ts",
+      "path": "frontend/src/test/use-debounce.test.ts",
+      "type": "file",
+      "sha": "4fb9ebbe601b054fd8785b28b752a97e42b3929e",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 1907,
+      "is_binary": false
+    },
+    {
+      "name": "utils.test.ts",
+      "path": "frontend/src/test/utils.test.ts",
+      "type": "file",
+      "sha": "fb6829d78b4393112acc573f9c1e28d0929b5f47",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 2057,
+      "is_binary": false
+    },
+    {
+      "name": "vite-env.d.ts",
+      "path": "frontend/src/vite-env.d.ts",
+      "type": "file",
+      "sha": "11f02fe2a0061d6e6e1f271b21da95423b448b32",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 38,
+      "is_binary": false
+    },
+    {
+      "name": "tailwind.config.js",
+      "path": "frontend/tailwind.config.js",
+      "type": "file",
+      "sha": "54089c78c8a5c74ba4148beb1558475ee3ef727a",
+      "mode": "100644",
+      "extension": ".js",
+      "size": 3178,
+      "is_binary": false
+    },
+    {
+      "name": "tsconfig.json",
+      "path": "frontend/tsconfig.json",
+      "type": "file",
+      "sha": "f1943a1b211a322e7cfaeb7b7798bcf1f387e617",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 611,
+      "is_binary": false
+    },
+    {
+      "name": "tsconfig.node.json",
+      "path": "frontend/tsconfig.node.json",
+      "type": "file",
+      "sha": "42872c59f5b01c9155864572bc2fbd5833a7406c",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 213,
+      "is_binary": false
+    },
+    {
+      "name": "vercel.json",
+      "path": "frontend/vercel.json",
+      "type": "file",
+      "sha": "0d199b2df67dcc25a1e798f499cf2340b034eda4",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 80,
+      "is_binary": false
+    },
+    {
+      "name": "vite.config.ts",
+      "path": "frontend/vite.config.ts",
+      "type": "file",
+      "sha": "5eff2dbb586caf3fc8d45a8585e14fb6d058b80d",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 1295,
+      "is_binary": false
+    },
+    {
+      "name": "infra",
+      "path": "infra",
+      "type": "directory",
+      "sha": "ff18ed7ff78f1dd62a7832c8414538d9957ad9e2",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "homelab",
+      "path": "infra/homelab",
+      "type": "directory",
+      "sha": "b91453f49f6c95d52c12b56aabfa3e7968e60902",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "docker-compose.yml",
+      "path": "infra/homelab/docker-compose.yml",
+      "type": "file",
+      "sha": "10df2872d29450c98d1ae2a444a993e2c065ac97",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 2114,
+      "is_binary": false
+    },
+    {
+      "name": "frontend.Dockerfile",
+      "path": "infra/homelab/frontend.Dockerfile",
+      "type": "file",
+      "sha": "6147e1ce009f970fde3174422aa203579e50973d",
+      "mode": "100644",
+      "extension": ".Dockerfile",
+      "size": 648,
+      "is_binary": false
+    },
+    {
+      "name": "nginx.conf",
+      "path": "infra/homelab/nginx.conf",
+      "type": "file",
+      "sha": "eeb1cf8379b3de339743f6c78302bf42453854f7",
+      "mode": "100644",
+      "extension": ".conf",
+      "size": 1024,
+      "is_binary": false
+    },
+    {
+      "name": "scripts",
+      "path": "scripts",
+      "type": "directory",
+      "sha": "e6bf92062337a96a63d8e3b2b6062cb7d0c0d736",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "ci",
+      "path": "scripts/ci",
+      "type": "directory",
+      "sha": "2c7ad4b49f914038a7ec3184ab5aa21e2d34b929",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "backend.sh",
+      "path": "scripts/ci/backend.sh",
+      "type": "file",
+      "sha": "85261e0e8321aa03ffdafc6b00c5f3ba4f6fb0f3",
+      "mode": "100755",
+      "extension": ".sh",
+      "size": 1949,
+      "is_binary": false
+    },
+    {
+      "name": "frontend.sh",
+      "path": "scripts/ci/frontend.sh",
+      "type": "file",
+      "sha": "f8e416e96051d1a3a588c57e72a07aca770f15af",
+      "mode": "100755",
+      "extension": ".sh",
+      "size": 631,
+      "is_binary": false
+    },
+    {
+      "name": "test.sh",
+      "path": "scripts/ci/test.sh",
+      "type": "file",
+      "sha": "7a6b57db2e2c532d7860123a06933720ac0aae9d",
+      "mode": "100755",
+      "extension": ".sh",
+      "size": 275,
+      "is_binary": false
+    },
+    {
+      "name": "common.sh",
+      "path": "scripts/common.sh",
+      "type": "file",
+      "sha": "51f95ac69232d719ff192146e69ad687ca4e1ed0",
+      "mode": "100755",
+      "extension": ".sh",
+      "size": 1422,
+      "is_binary": false
+    },
+    {
+      "name": "db",
+      "path": "scripts/db",
+      "type": "directory",
+      "sha": "769f57586e6314dc68b7242d60f3113d4d4bb688",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "init.sh",
+      "path": "scripts/db/init.sh",
+      "type": "file",
+      "sha": "dea0ce291b6f56134cd1958fbc5b66ad77f1c2bf",
+      "mode": "100755",
+      "extension": ".sh",
+      "size": 293,
+      "is_binary": false
+    },
+    {
+      "name": "migrate.sh",
+      "path": "scripts/db/migrate.sh",
+      "type": "file",
+      "sha": "817d20ce8e61c1ddcd4863739325e8d3f764c923",
+      "mode": "100755",
+      "extension": ".sh",
+      "size": 477,
+      "is_binary": false
+    },
+    {
+      "name": "dev",
+      "path": "scripts/dev",
+      "type": "directory",
+      "sha": "f028629a71dfbfd0646e1aac6029da514995c234",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "down.sh",
+      "path": "scripts/dev/down.sh",
+      "type": "file",
+      "sha": "eb1ffe88177ed0e8d4a4934a970d7c5098471086",
+      "mode": "100755",
+      "extension": ".sh",
+      "size": 338,
+      "is_binary": false
+    },
+    {
+      "name": "seed.sh",
+      "path": "scripts/dev/seed.sh",
+      "type": "file",
+      "sha": "3120e00a44fed89eb32b332fa362390bbc918ef9",
+      "mode": "100755",
+      "extension": ".sh",
+      "size": 254,
+      "is_binary": false
+    },
+    {
+      "name": "setup-hooks.sh",
+      "path": "scripts/dev/setup-hooks.sh",
+      "type": "file",
+      "sha": "a6e45692d209f83bd73a975c55877804bd994eaa",
+      "mode": "100755",
+      "extension": ".sh",
+      "size": 4750,
+      "is_binary": false
+    },
+    {
+      "name": "up.sh",
+      "path": "scripts/dev/up.sh",
+      "type": "file",
+      "sha": "8b0fa87e218c69a30dfe6f108ca58a258cd6cea0",
+      "mode": "100755",
+      "extension": ".sh",
+      "size": 1060,
+      "is_binary": false
+    },
+    {
+      "name": "workers.sh",
+      "path": "scripts/dev/workers.sh",
+      "type": "file",
+      "sha": "3f389afdab5053be00b7c8c97c3f759f18e41218",
+      "mode": "100755",
+      "extension": ".sh",
+      "size": 275,
+      "is_binary": false
+    },
+    {
+      "name": "gcp",
+      "path": "scripts/gcp",
+      "type": "directory",
+      "sha": "a99bb152a3a3b5d4d370d4a5e7a33ad0e7507764",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "up.sh",
+      "path": "scripts/gcp/up.sh",
+      "type": "file",
+      "sha": "611c6091a08da8f14b0a46dca238d89b4e9fc431",
+      "mode": "100755",
+      "extension": ".sh",
+      "size": 1642,
+      "is_binary": false
+    },
+    {
+      "name": "squad-dashboard",
+      "path": "squad-dashboard",
+      "type": "directory",
+      "sha": "9ef86dc25c5ca7c89a4ac6ac083c53609be36f62",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".gitignore",
+      "path": "squad-dashboard/.gitignore",
+      "type": "file",
+      "sha": "ea3984c25416790e6011a0aad461fc1486e7c58f",
+      "mode": "100644",
+      "extension": ".gitignore",
+      "size": 172,
+      "is_binary": false
+    },
+    {
+      "name": "AGENTS.md",
+      "path": "squad-dashboard/AGENTS.md",
+      "type": "file",
+      "sha": "26393774b87527ab8e6b69e9e6419bbfd401ae46",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 926,
+      "is_binary": false
+    },
+    {
+      "name": "METRICS.md",
+      "path": "squad-dashboard/METRICS.md",
+      "type": "file",
+      "sha": "a329bf57e79125f59233d7e9604c359fd99802c9",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1055,
+      "is_binary": false
+    },
+    {
+      "name": "README.md",
+      "path": "squad-dashboard/README.md",
+      "type": "file",
+      "sha": "0cc7558ed5c366d7d1468ec31702d1991ec85e0c",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 10547,
+      "is_binary": false
+    },
+    {
+      "name": "index.html",
+      "path": "squad-dashboard/index.html",
+      "type": "file",
+      "sha": "4b5dab0ec99d736c733e4c15fe50088af76fff70",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 383,
+      "is_binary": false
+    },
+    {
+      "name": "package-lock.json",
+      "path": "squad-dashboard/package-lock.json",
+      "type": "file",
+      "sha": "81a0ea4ea0d84b2d0bb3714697f13903b9eb5209",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 193819,
+      "is_binary": false
+    },
+    {
+      "name": "package.json",
+      "path": "squad-dashboard/package.json",
+      "type": "file",
+      "sha": "70a4810b30c8216ab61cfc7d2605a4785b5d0aad",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 954,
+      "is_binary": false
+    },
+    {
+      "name": "postcss.config.js",
+      "path": "squad-dashboard/postcss.config.js",
+      "type": "file",
+      "sha": "2e7af2b7f1a6f391da1631d93968a9d487ba977d",
+      "mode": "100644",
+      "extension": ".js",
+      "size": 80,
+      "is_binary": false
+    },
+    {
+      "name": "public",
+      "path": "squad-dashboard/public",
+      "type": "directory",
+      "sha": "abb62dc01843eefd6d8262e3dfa6cc96ae042751",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "data",
+      "path": "squad-dashboard/public/data",
+      "type": "directory",
+      "sha": "107ca3a01e06afc0801001dce8a18d96e4634f64",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "github-stats.json",
+      "path": "squad-dashboard/public/data/github-stats.json",
+      "type": "file",
+      "sha": "542b4999b793c481b22482f911805523bc1ab6a3",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 67923,
+      "is_binary": false
+    },
+    {
+      "name": "scripts",
+      "path": "squad-dashboard/scripts",
+      "type": "directory",
+      "sha": "420daee34d81a5a30669eac6bca0003400141d62",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "generate-github-data.mjs",
+      "path": "squad-dashboard/scripts/generate-github-data.mjs",
+      "type": "file",
+      "sha": "a1b63493f93a6425061bbcb04f61da81c9ebdced",
+      "mode": "100644",
+      "extension": ".mjs",
+      "size": 14784,
+      "is_binary": false
+    },
+    {
+      "name": "sync-github-metadata.sh",
+      "path": "squad-dashboard/scripts/sync-github-metadata.sh",
+      "type": "file",
+      "sha": "fb41c346e2dbca9b810910e624db090e5781e279",
+      "mode": "100755",
+      "extension": ".sh",
+      "size": 1517,
+      "is_binary": false
+    },
+    {
+      "name": "src",
+      "path": "squad-dashboard/src",
+      "type": "directory",
+      "sha": "3d25f55cc3d51bc522cfb9c188494e7c6d5ca6fa",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "app",
+      "path": "squad-dashboard/src/app",
+      "type": "directory",
+      "sha": "8489a922e51d16bae3ae4aa8e0bfc8ded4a7c7cc",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "app.tsx",
+      "path": "squad-dashboard/src/app/app.tsx",
+      "type": "file",
+      "sha": "8979d7f56cbd8cc0936a2862c2038abddee6e958",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1000,
+      "is_binary": false
+    },
+    {
+      "name": "entities",
+      "path": "squad-dashboard/src/entities",
+      "type": "directory",
+      "sha": "204343dfb8b41dc0f065d7f5e01a00e56596715e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "feature.ts",
+      "path": "squad-dashboard/src/entities/feature.ts",
+      "type": "file",
+      "sha": "ea4c14ecba1eb03c0e7cfc6bd56f64f4a3e4729c",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 330,
+      "is_binary": false
+    },
+    {
+      "name": "github-data.ts",
+      "path": "squad-dashboard/src/entities/github-data.ts",
+      "type": "file",
+      "sha": "596107c8ae89b122b4769cb1bf166b867b2cdb68",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 2033,
+      "is_binary": false
+    },
+    {
+      "name": "member.ts",
+      "path": "squad-dashboard/src/entities/member.ts",
+      "type": "file",
+      "sha": "02f2e555c59445d7421be836cf58133a3e7ab53f",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 433,
+      "is_binary": false
+    },
+    {
+      "name": "sprint.ts",
+      "path": "squad-dashboard/src/entities/sprint.ts",
+      "type": "file",
+      "sha": "4f17091a23e3d56a25d3ea155f7dda7c0495cdc9",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 438,
+      "is_binary": false
+    },
+    {
+      "name": "task.ts",
+      "path": "squad-dashboard/src/entities/task.ts",
+      "type": "file",
+      "sha": "5e8b6fb520c2c272fe0706469e4f6b31064b11c8",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 475,
+      "is_binary": false
+    },
+    {
+      "name": "features",
+      "path": "squad-dashboard/src/features",
+      "type": "directory",
+      "sha": "416b786a24c4997b7833451331f2b02fa5066504",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "board",
+      "path": "squad-dashboard/src/features/board",
+      "type": "directory",
+      "sha": "90a254370667222895a3e6b0f2be0924607e6d63",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__tests__",
+      "path": "squad-dashboard/src/features/board/__tests__",
+      "type": "directory",
+      "sha": "61eb06ad8a3c59a0673c6fcddae5e7dfb26265d4",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "task-card.test.tsx",
+      "path": "squad-dashboard/src/features/board/__tests__/task-card.test.tsx",
+      "type": "file",
+      "sha": "ae1dfe3feb494243d7dacc678eb4865d72967a00",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1823,
+      "is_binary": false
+    },
+    {
+      "name": "kanban-column.tsx",
+      "path": "squad-dashboard/src/features/board/kanban-column.tsx",
+      "type": "file",
+      "sha": "d81538d2ffc6f91d677bb57dea232c6599f6c869",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1770,
+      "is_binary": false
+    },
+    {
+      "name": "task-card.tsx",
+      "path": "squad-dashboard/src/features/board/task-card.tsx",
+      "type": "file",
+      "sha": "03ad7c4521f6a085574a47d51463dc051911891f",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 3688,
+      "is_binary": false
+    },
+    {
+      "name": "features-tracker",
+      "path": "squad-dashboard/src/features/features-tracker",
+      "type": "directory",
+      "sha": "da26511d5547b07aa71d7274782da64d61ab209f",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "feature-card.tsx",
+      "path": "squad-dashboard/src/features/features-tracker/feature-card.tsx",
+      "type": "file",
+      "sha": "1fcd6ab0359c08010f23e07ff077a5e50899345b",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 2968,
+      "is_binary": false
+    },
+    {
+      "name": "team",
+      "path": "squad-dashboard/src/features/team",
+      "type": "directory",
+      "sha": "7133a4fe44c09a4702c9a5bef0b61d3cc070d443",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "member-card.tsx",
+      "path": "squad-dashboard/src/features/team/member-card.tsx",
+      "type": "file",
+      "sha": "464dc076a9812e75975e983499fdd1c10ccfb379",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 2529,
+      "is_binary": false
+    },
+    {
+      "name": "index.css",
+      "path": "squad-dashboard/src/index.css",
+      "type": "file",
+      "sha": "9667c43b5d5dc10da2a36fdb2def02fdf44f758c",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 1017,
+      "is_binary": false
+    },
+    {
+      "name": "main.tsx",
+      "path": "squad-dashboard/src/main.tsx",
+      "type": "file",
+      "sha": "3f6aa7df4d6935f0815c25fcf134af7cb6802aee",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 322,
+      "is_binary": false
+    },
+    {
+      "name": "mocks",
+      "path": "squad-dashboard/src/mocks",
+      "type": "directory",
+      "sha": "1303ceb41f29cbc93e1077f990d614c134c733c9",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "features.ts",
+      "path": "squad-dashboard/src/mocks/features.ts",
+      "type": "file",
+      "sha": "59f5c4fc572f50014ddef57257745365a66d57ed",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 3010,
+      "is_binary": false
+    },
+    {
+      "name": "metrics.ts",
+      "path": "squad-dashboard/src/mocks/metrics.ts",
+      "type": "file",
+      "sha": "7b036ba3db8922ce34c92c48255650c49f9d4fbb",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 1589,
+      "is_binary": false
+    },
+    {
+      "name": "sprints.ts",
+      "path": "squad-dashboard/src/mocks/sprints.ts",
+      "type": "file",
+      "sha": "a25b64a3176605c17091a9f4ab56c66aeb9eed8f",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 2036,
+      "is_binary": false
+    },
+    {
+      "name": "tasks.ts",
+      "path": "squad-dashboard/src/mocks/tasks.ts",
+      "type": "file",
+      "sha": "63cfe1735b54d61adab99ecc6282b54ac8a19ba1",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 10332,
+      "is_binary": false
+    },
+    {
+      "name": "team.ts",
+      "path": "squad-dashboard/src/mocks/team.ts",
+      "type": "file",
+      "sha": "ad9d4b47d28eeb4955544f3da961006ff99e7f3d",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 1370,
+      "is_binary": false
+    },
+    {
+      "name": "pages",
+      "path": "squad-dashboard/src/pages",
+      "type": "directory",
+      "sha": "554b69174e3a30240c7a1270893ae6ac94242c65",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__tests__",
+      "path": "squad-dashboard/src/pages/__tests__",
+      "type": "directory",
+      "sha": "c7d1cf374145569c15db28ea1ec57e101a119cb0",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "dashboard-page.test.tsx",
+      "path": "squad-dashboard/src/pages/__tests__/dashboard-page.test.tsx",
+      "type": "file",
+      "sha": "b41b406bce8b90bc81b0cdbb24cb6f22f808f1ec",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 2990,
+      "is_binary": false
+    },
+    {
+      "name": "roadmap-page.test.tsx",
+      "path": "squad-dashboard/src/pages/__tests__/roadmap-page.test.tsx",
+      "type": "file",
+      "sha": "f28542881d740334a94195bb0c3fac486f64bc9b",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1533,
+      "is_binary": false
+    },
+    {
+      "name": "team-page.test.tsx",
+      "path": "squad-dashboard/src/pages/__tests__/team-page.test.tsx",
+      "type": "file",
+      "sha": "52303485e18958d01005f0f05c857ef0bf0aa8b9",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1563,
+      "is_binary": false
+    },
+    {
+      "name": "board-page.tsx",
+      "path": "squad-dashboard/src/pages/board-page.tsx",
+      "type": "file",
+      "sha": "ba79b4225e20ec6320705b0d8f2800d927754ed7",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 12399,
+      "is_binary": false
+    },
+    {
+      "name": "dashboard-page.tsx",
+      "path": "squad-dashboard/src/pages/dashboard-page.tsx",
+      "type": "file",
+      "sha": "1846c762cff9b1da546dc5e5da343b45d134788a",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 6437,
+      "is_binary": false
+    },
+    {
+      "name": "features-page.tsx",
+      "path": "squad-dashboard/src/pages/features-page.tsx",
+      "type": "file",
+      "sha": "5fae00c86af7a731098599b12c4f680e3b030268",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1943,
+      "is_binary": false
+    },
+    {
+      "name": "roadmap-page.tsx",
+      "path": "squad-dashboard/src/pages/roadmap-page.tsx",
+      "type": "file",
+      "sha": "17c9d762e714a1279adee16ea866d24f2ab3fb3a",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 3882,
+      "is_binary": false
+    },
+    {
+      "name": "team-page.tsx",
+      "path": "squad-dashboard/src/pages/team-page.tsx",
+      "type": "file",
+      "sha": "e02957a2ca51742a8e9371a666ac654fd9b2f23f",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 4471,
+      "is_binary": false
+    },
+    {
+      "name": "shared",
+      "path": "squad-dashboard/src/shared",
+      "type": "directory",
+      "sha": "cb171da86aea4b0fe63e6885637d23906dd7b85f",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "api",
+      "path": "squad-dashboard/src/shared/api",
+      "type": "directory",
+      "sha": "0477818ff51b9b5b1af5134cd36c27779b391a20",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "github-data-service.ts",
+      "path": "squad-dashboard/src/shared/api/github-data-service.ts",
+      "type": "file",
+      "sha": "3eb673c509a29433436af90d239b86718524ccf4",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 919,
+      "is_binary": false
+    },
+    {
+      "name": "lib",
+      "path": "squad-dashboard/src/shared/lib",
+      "type": "directory",
+      "sha": "d7f4be410e4ba5f3003aaaafe569055bbefc48e9",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "metrics-utils.ts",
+      "path": "squad-dashboard/src/shared/lib/metrics-utils.ts",
+      "type": "file",
+      "sha": "314076fb3540109a3ec26a860651d1988ae40e88",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 376,
+      "is_binary": false
+    },
+    {
+      "name": "utils.ts",
+      "path": "squad-dashboard/src/shared/lib/utils.ts",
+      "type": "file",
+      "sha": "5a302e894100e7a92baed8bf4a9892ddd928e733",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 2205,
+      "is_binary": false
+    },
+    {
+      "name": "test",
+      "path": "squad-dashboard/src/shared/test",
+      "type": "directory",
+      "sha": "6ee245cc31ddfb556e0b16c053cff9d063e3a4bd",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "setup.ts",
+      "path": "squad-dashboard/src/shared/test/setup.ts",
+      "type": "file",
+      "sha": "efb8ac7f81f0fe50f22e45c871d1bc507af216ce",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 371,
+      "is_binary": false
+    },
+    {
+      "name": "ui",
+      "path": "squad-dashboard/src/shared/ui",
+      "type": "directory",
+      "sha": "b554d95573029786a3e5bc5b646fe4120d3bd26d",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "avatar.tsx",
+      "path": "squad-dashboard/src/shared/ui/avatar.tsx",
+      "type": "file",
+      "sha": "4bc74a9c9b440a5849e72f4064a499877d53c7d5",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 519,
+      "is_binary": false
+    },
+    {
+      "name": "badge.tsx",
+      "path": "squad-dashboard/src/shared/ui/badge.tsx",
+      "type": "file",
+      "sha": "1744b1438aad89800b47941de5405e0ea9182c42",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 328,
+      "is_binary": false
+    },
+    {
+      "name": "empty-state.tsx",
+      "path": "squad-dashboard/src/shared/ui/empty-state.tsx",
+      "type": "file",
+      "sha": "9c691253d60ca227f70411e69f290a5b6a80d199",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 689,
+      "is_binary": false
+    },
+    {
+      "name": "progress-bar.tsx",
+      "path": "squad-dashboard/src/shared/ui/progress-bar.tsx",
+      "type": "file",
+      "sha": "85fe0c644f9f59e8ee5364bc178ce24bf20dbd69",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 784,
+      "is_binary": false
+    },
+    {
+      "name": "skeleton.tsx",
+      "path": "squad-dashboard/src/shared/ui/skeleton.tsx",
+      "type": "file",
+      "sha": "4e50de8faa3b66b6503531a698c44d625bc47342",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 470,
+      "is_binary": false
+    },
+    {
+      "name": "vite-env.d.ts",
+      "path": "squad-dashboard/src/vite-env.d.ts",
+      "type": "file",
+      "sha": "11f02fe2a0061d6e6e1f271b21da95423b448b32",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 38,
+      "is_binary": false
+    },
+    {
+      "name": "widgets",
+      "path": "squad-dashboard/src/widgets",
+      "type": "directory",
+      "sha": "fc7c76e7bfd7f6bda45e99b97415bb292299e4bb",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "commits-chart.tsx",
+      "path": "squad-dashboard/src/widgets/commits-chart.tsx",
+      "type": "file",
+      "sha": "b7b840a62d8a7e8d08f5db191dbd15a51b2f9d04",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 2054,
+      "is_binary": false
+    },
+    {
+      "name": "kpi-card.tsx",
+      "path": "squad-dashboard/src/widgets/kpi-card.tsx",
+      "type": "file",
+      "sha": "53de224c76f3a43eadf421df23a9a1772d6f2bef",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 2075,
+      "is_binary": false
+    },
+    {
+      "name": "productivity-chart.tsx",
+      "path": "squad-dashboard/src/widgets/productivity-chart.tsx",
+      "type": "file",
+      "sha": "709c9d858c73c969e65e93de1438e408289dbc1d",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 1929,
+      "is_binary": false
+    },
+    {
+      "name": "project-burnup-chart.tsx",
+      "path": "squad-dashboard/src/widgets/project-burnup-chart.tsx",
+      "type": "file",
+      "sha": "55e530748f5d374b60f05e768c5e08446cc69f63",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 10987,
+      "is_binary": false
+    },
+    {
+      "name": "sidebar.tsx",
+      "path": "squad-dashboard/src/widgets/sidebar.tsx",
+      "type": "file",
+      "sha": "be23460a076f70f5c17420e156ad5ed587a91169",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 3524,
+      "is_binary": false
+    },
+    {
+      "name": "weekly-chart.tsx",
+      "path": "squad-dashboard/src/widgets/weekly-chart.tsx",
+      "type": "file",
+      "sha": "782fb15c7bd9a8bb4e00eae35aaaba6f1044aa11",
+      "mode": "100644",
+      "extension": ".tsx",
+      "size": 2843,
+      "is_binary": false
+    },
+    {
+      "name": "tailwind.config.js",
+      "path": "squad-dashboard/tailwind.config.js",
+      "type": "file",
+      "sha": "c3600f3392b3b5a108b3a1a7dbe667c6a71c4fc3",
+      "mode": "100644",
+      "extension": ".js",
+      "size": 1362,
+      "is_binary": false
+    },
+    {
+      "name": "tsconfig.json",
+      "path": "squad-dashboard/tsconfig.json",
+      "type": "file",
+      "sha": "2a27e96736e1a5081459c9e95a01fdd28a631fe6",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 609,
+      "is_binary": false
+    },
+    {
+      "name": "tsconfig.node.json",
+      "path": "squad-dashboard/tsconfig.node.json",
+      "type": "file",
+      "sha": "42872c59f5b01c9155864572bc2fbd5833a7406c",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 213,
+      "is_binary": false
+    },
+    {
+      "name": "vite.config.ts",
+      "path": "squad-dashboard/vite.config.ts",
+      "type": "file",
+      "sha": "4db22652de448e9824ad9048188e93abbb87e043",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 268,
+      "is_binary": false
+    },
+    {
+      "name": "vitest.config.ts",
+      "path": "squad-dashboard/vitest.config.ts",
+      "type": "file",
+      "sha": "0b4544cd0d5df7fb306d5dea9f054d21170b60c1",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 456,
+      "is_binary": false
+    }
+  ],
+  "truncated": false,
+  "extracted_at": "2026-09-17T04:03:54.626307",
+  "method": "rest",
+  "total_items": 578,
+  "repository_metadata": {
+    "id": 1193952661,
+    "full_name": "unb-mds/2026-1-Squad13",
+    "description": null,
+    "created_at": "2026-03-27T18:56:27Z",
+    "updated_at": "2026-07-01T16:21:55Z",
+    "language": "Python",
+    "size": 31216,
+    "stars": 3,
+    "forks": 0,
+    "open_issues": 61
+  }
+}

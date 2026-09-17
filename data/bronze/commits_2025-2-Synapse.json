@@ -1,0 +1,5806 @@
+[
+  {
+    "_metadata": {
+      "extracted_at": "2026-09-17T03:57:49.410108",
+      "file_path": "data/bronze/commits_2025-2-Synapse.json",
+      "record_count": 341
+    }
+  },
+  {
+    "sha": "d8a4a7b5b5447a5236daabfaeb85810c95b48d91",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T01:22:17Z",
+        "login": "gccintra"
+      },
+      "message": "release: v0.2.0 - MVP (#226)"
+    },
+    "additions": 13996,
+    "deletions": 1989,
+    "total_changes": 15985,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "aaa6ecd50f557186687a488713224d93003f1f83",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T01:19:05Z",
+        "login": "gccintra"
+      },
+      "message": "Merge branch 'main' into release/v0.2.0"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "b1e6dcd6cc727d3f9ddd1c2bc373937bd19a7f27",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T01:17:22Z",
+        "login": "gccintra"
+      },
+      "message": ":test_tube: tests: image url validator fail tests"
+    },
+    "additions": 5,
+    "deletions": 5,
+    "total_changes": 10,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "b2d3ec395c1da7efcd71be5740e0a40b01e4e4ee",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T00:08:05Z",
+        "login": "gccintra"
+      },
+      "message": ":books: docs: changelog release v0.2.0"
+    },
+    "additions": 228,
+    "deletions": 43,
+    "total_changes": 271,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "ea5972ed1bbebd3d4068ac61859b866720125dad",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-03T00:06:04Z",
+        "login": "gccintra"
+      },
+      "message": ":bug: fix: corrupted main news images"
+    },
+    "additions": 432,
+    "deletions": 3,
+    "total_changes": 435,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "ce339af48f5757987bce608bbd4239c7c951995e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T22:28:41Z",
+        "login": "Dgprogramas"
+      },
+      "message": "💄feat: fixes of the login and register pages"
+    },
+    "additions": 41,
+    "deletions": 34,
+    "total_changes": 75,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "66c206ee3e11fb69f4660f92a74fe6e3fb1422c6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T21:54:56Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":lipstick:feat: fixes of the list card on the feed page"
+    },
+    "additions": 8,
+    "deletions": 6,
+    "total_changes": 14,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "d19ac277dd61c12dc2625dfd68c7458d62791815",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T19:41:05Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: news summaries in newsletter with AI (#225)"
+    },
+    "additions": 907,
+    "deletions": 433,
+    "total_changes": 1340,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "88e5309759369f09afa2e359a1055d369ffa738e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T19:36:07Z",
+        "login": "gccintra"
+      },
+      "message": ":test_tube: tests: newsletter_service"
+    },
+    "additions": 316,
+    "deletions": 198,
+    "total_changes": 514,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "0412682dcdc01b3d0cb4207540fc5e9019653fcb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T18:04:07Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: news summaries in newsletter (with AI)"
+    },
+    "additions": 623,
+    "deletions": 267,
+    "total_changes": 890,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "9110fe9962fda775717a2431cad1238b11806cd1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T16:16:40Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: scrape service (#224)"
+    },
+    "additions": 1301,
+    "deletions": 658,
+    "total_changes": 1959,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "404202831df7e379f1fad0729456395e6f74fa7a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-02T03:16:34Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":test_tube: test: fixing tests & implementing more tests"
+    },
+    "additions": 191,
+    "deletions": 12,
+    "total_changes": 203,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "8373f30a86aa88dfd1275fabaef1b1b9b3b95226",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-01T23:53:34Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: news collect service adjustments"
+    },
+    "additions": 76,
+    "deletions": 41,
+    "total_changes": 117,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "dbf3d2f9e44ad14deca822271994f49e59cf12f3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-01T23:53:34Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: scrape service evolution"
+    },
+    "additions": 313,
+    "deletions": 68,
+    "total_changes": 381,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "6a5b50501a2591275e4d18170fdc3bfa4b971264",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-01T23:53:34Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: scrape service"
+    },
+    "additions": 808,
+    "deletions": 624,
+    "total_changes": 1432,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "ca8bda910498ab705a00f4b8223d58e29bb809af",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-01T23:52:32Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: newsletter frontend (#221)"
+    },
+    "additions": 923,
+    "deletions": 478,
+    "total_changes": 1401,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "0ecda0e115193f651ba1711f156f03bf8874df4c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-12-01T20:27:32Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":wrench: chore: fixing issues to merge"
+    },
+    "additions": 29,
+    "deletions": 74,
+    "total_changes": 103,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "bebf1a3dd5fe1ef114e9f1d4ddc56b2919a29bfc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-29T16:15:37Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": "Merge branch 'dev' into feature/newsletter-front"
+    },
+    "additions": 910,
+    "deletions": 423,
+    "total_changes": 1333,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "cfb51661af9422ce816b65c36995020af571cfc3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-29T15:44:23Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":sparkles: feat:"
+    },
+    "additions": 150,
+    "deletions": 51,
+    "total_changes": 201,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "a41427d2857afea9f0c1beeeec8baf4c35061a59",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-29T02:01:16Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": "Merge pull request #220 from unb-mds/fix/docker-workflow"
+    },
+    "additions": 30,
+    "deletions": 11,
+    "total_changes": 41,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "8d94c1af1201b5e186383ac3aa0e1573e3ed4d87",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-29T01:58:10Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":wrench: chore: adding cronjob to GHCR"
+    },
+    "additions": 8,
+    "deletions": 4,
+    "total_changes": 12,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "c1a7b837960565b1468079d5ca92e79836fc4c3e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-29T01:53:32Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":wrench: chore: fixing workflow to add cronjob"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "dd991b0c174727b9f40659d68c1bd6bfedb9de9e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-29T01:51:30Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":wrench: chore: fixing workflow to add cronjob"
+    },
+    "additions": 16,
+    "deletions": 12,
+    "total_changes": 28,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "72ca5d2dad2c05ae48b65dbb91506ce701c8a49e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-29T01:46:57Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":wrench: chore: fixing workflow"
+    },
+    "additions": 4,
+    "deletions": 0,
+    "total_changes": 4,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "78623c012c725d6d9a479d086d74ad193dc8d505",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-29T01:39:16Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":wrench: chore: fixing docker workflow"
+    },
+    "additions": 9,
+    "deletions": 2,
+    "total_changes": 11,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "ffec0f8613c2678431f5bea99d7059bee424621d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-29T01:00:13Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": "Merge pull request #218 from unb-mds/feature/login-google"
+    },
+    "additions": 636,
+    "deletions": 73,
+    "total_changes": 709,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "aba9369b3bd8bdd4143a6b29af468a75b0e83d33",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-27T16:23:49Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":wrench: chore: fixing CI's issues"
+    },
+    "additions": 1,
+    "deletions": 10,
+    "total_changes": 11,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "bd5d46161be5e083e76e5048b6d8a7e10b6dc77d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-27T16:20:08Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":broom: cleanup: cleaning codes"
+    },
+    "additions": 0,
+    "deletions": 10,
+    "total_changes": 10,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "ab3faeb365f83aaf6bf1f17a40039a2c85425039",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-27T16:17:57Z",
+        "login": "ItaloSamP"
+      },
+      "message": "Merge branch 'feature/login-google' of https://github.com/unb-mds/202…"
+    },
+    "additions": 20,
+    "deletions": 0,
+    "total_changes": 20,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "177a42f4200d5a03dc4c223966750a176e036740",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-27T16:17:40Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":broom: cleanup: cleaning codes"
+    },
+    "additions": 0,
+    "deletions": 2,
+    "total_changes": 2,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "d9b272e266b79d88f7c0bd40b1055103c88f20fc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-27T16:12:17Z",
+        "login": "ItaloSamP"
+      },
+      "message": "Merge branch 'dev' into feature/login-google"
+    },
+    "additions": 20,
+    "deletions": 0,
+    "total_changes": 20,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "16af7893eaa0ce3b6bb465f0ee8ec4aaa24e65a9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-27T16:03:44Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":wrench: chore: fixing CI's issues & tests implementaions"
+    },
+    "additions": 367,
+    "deletions": 23,
+    "total_changes": 390,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "fd5e002d6062dae86724bbfbcec37133030f7ca1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-26T10:35:30Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":sparkles: feat: add login with google"
+    },
+    "additions": 6,
+    "deletions": 23,
+    "total_changes": 29,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "83443769e0f77e449cae628215df06365ff03063",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-25T14:02:22Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":construction: login with google."
+    },
+    "additions": 13,
+    "deletions": 4,
+    "total_changes": 17,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "9fd257ca4d21e263018ff10e7574ff51e27e9b04",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-25T14:01:34Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":wrench: chore: fixing merge conflicts"
+    },
+    "additions": 124,
+    "deletions": 0,
+    "total_changes": 124,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "48f5691ea054acf7e4bcf11bbeb5551153358deb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-25T14:00:37Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":broom: cleanup: cleaning codes"
+    },
+    "additions": 8,
+    "deletions": 0,
+    "total_changes": 8,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "324c2d2bf486ec9bf66367a070c08b2fc854733d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-25T13:59:41Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":broom: cleanup: cleaning codes"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "3107885ef2efba78cd546e949eb0fb1af603f918",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-25T13:59:40Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":wrench: chore: fixing workflows"
+    },
+    "additions": 8,
+    "deletions": 6,
+    "total_changes": 14,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "d93a27ccd13c17dc3487dcabbe2ad9127e48415e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-25T13:59:39Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":wrench: chore: final workflows CI's improvments"
+    },
+    "additions": 6,
+    "deletions": 0,
+    "total_changes": 6,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "786ac693ab9365ca5d0ddf3a187f03edaef19399",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-25T13:59:38Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":broom: cleanup: cleaning tests codes"
+    },
+    "additions": 108,
+    "deletions": 397,
+    "total_changes": 505,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "ac5f83591e083040e1217b79e1958fb28be25dea",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-25T13:58:15Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":wrench: chore: improving CI workflows"
+    },
+    "additions": 30,
+    "deletions": 6,
+    "total_changes": 36,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "780288467199edb1663340d04c4c672adc22a93a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-25T13:58:14Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":sparkles: feat: worflow to push/publish docker images on GHCR"
+    },
+    "additions": 71,
+    "deletions": 0,
+    "total_changes": 71,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "0b09f2b5e390992fd060b6bdf62635e1b174d47c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-23T23:49:57Z",
+        "login": "g-srodrigues"
+      },
+      "message": ":iphone: Correct button display on mobile screens"
+    },
+    "additions": 6,
+    "deletions": 1,
+    "total_changes": 7,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "1e7d30e3bf4c226f9b9185a21119296b6b18ecf9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-22T14:11:42Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":ok_hand: style: correcao para apresentar pop up com contas para login."
+    },
+    "additions": 42,
+    "deletions": 5,
+    "total_changes": 47,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "4eb06a0aad1b23fb5752fa5a1cf650ba6c705956",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-22T11:15:41Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":pencil: text: alter text about login google button"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "a2dfd510dbf04cb643c84796734eae87fa44ff63",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-20T20:25:37Z",
+        "login": "ItaloSamP"
+      },
+      "message": "Merge pull request #214 from unb-mds/feature/docker-CD"
+    },
+    "additions": 217,
+    "deletions": 404,
+    "total_changes": 621,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "98916cda162cf22afc7dd1a530d33ed1ec5c9c1e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-20T20:04:38Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":wrench: chore: fixing merge conflicts"
+    },
+    "additions": 0,
+    "deletions": 2,
+    "total_changes": 2,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "ba6604b14a725eda38283c1af37791188844cb33",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-20T04:06:19Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":construction:"
+    },
+    "additions": 113,
+    "deletions": 55,
+    "total_changes": 168,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "91412e6dc91c377eac57e65bb5dfa3b232259ebf",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T19:54:01Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":sparkles:feat: newsletter page"
+    },
+    "additions": 577,
+    "deletions": 207,
+    "total_changes": 784,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "55d9266ca9e8307b07259e39fea74378969489f9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-18T19:08:46Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":ok_hand:style: responsive changes and code simplification"
+    },
+    "additions": 220,
+    "deletions": 296,
+    "total_changes": 516,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "ab0f01a5e78ecbf763afbe0c2fd1b7d732fe46d4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-14T05:07:57Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":broom: cleanup: cleaning codes"
+    },
+    "additions": 1,
+    "deletions": 2,
+    "total_changes": 3,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "887e6ffaad3005329a00734d235ba67504b39432",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-14T05:04:08Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":broom: cleanup: cleaning codes"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "805ffd18313dfad60a32ba2b1676e994c015dd10",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-14T04:56:32Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":wrench: chore: fixing workflows"
+    },
+    "additions": 8,
+    "deletions": 6,
+    "total_changes": 14,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "8dc8da730d96df552c630f52effe1a129e50bd94",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-14T04:49:51Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":wrench: chore: final workflows CI's improvments"
+    },
+    "additions": 6,
+    "deletions": 0,
+    "total_changes": 6,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "811b01f12f7788746766e21b1b75b637fc8b7032",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-14T04:35:10Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":broom: cleanup: cleaning tests codes"
+    },
+    "additions": 108,
+    "deletions": 398,
+    "total_changes": 506,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "c9ef9566e9e30c7fbaade832bafdec4c65000638",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-14T03:56:30Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":wrench: chore: improving CI workflows"
+    },
+    "additions": 30,
+    "deletions": 6,
+    "total_changes": 36,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "cf079506af5ce80e924d58a3ee6b0d7fcc7c4129",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-13T05:15:21Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":sparkles: feat: worflow to push/publish docker images on GHCR"
+    },
+    "additions": 71,
+    "deletions": 0,
+    "total_changes": 71,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "dc914c3ab833174daa9f3054299c6c38e440c019",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-13T01:47:17Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":sparkles: feat: update template of email from newsletter"
+    },
+    "additions": 141,
+    "deletions": 27,
+    "total_changes": 168,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "b6d7bac338b28149dc3a96436eec4b076bfb7b8b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-10T00:58:10Z",
+        "login": "gccintra"
+      },
+      "message": ":lipstick: feat: frontend animations and responsiveness (#205)"
+    },
+    "additions": 1372,
+    "deletions": 855,
+    "total_changes": 2227,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "0daa69c8fb4ad8d80ca72a08e8803beee9cca79c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-08T18:58:57Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":ok_hand: style: adicionado valor padrao no recebimneto de newsletter"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "894a7eab27b14b686708365ae9bda0554a302149",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-08T18:58:57Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":test_tube: test: 90% coverage tests"
+    },
+    "additions": 363,
+    "deletions": 9,
+    "total_changes": 372,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "720b7a0588391fc12d09bb737e3c62fad102b614",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-08T18:58:31Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":broom: cleanup remove print into file"
+    },
+    "additions": 0,
+    "deletions": 2,
+    "total_changes": 2,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "93a5b8ace687ac141aa69ebfed13a37499d66796",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-08T18:58:30Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":sparkles: feat: add cron job to send emails"
+    },
+    "additions": 19,
+    "deletions": 5,
+    "total_changes": 24,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "245e02633e2e24b21ad4fb55a304664d095d84d8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-08T18:58:29Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":sparkles: feat: add cron job to send emails"
+    },
+    "additions": 228,
+    "deletions": 149,
+    "total_changes": 377,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "4eed778c9cafad7ad8b7e54dd36fb47caf26218b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-08T18:58:28Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":sparkles: feat: add field newsletter and function to get users to wa…"
+    },
+    "additions": 17,
+    "deletions": 4,
+    "total_changes": 21,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "244c6e4232cea232743f986bf567cf781f03bfe9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-08T18:58:27Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":sparkles: feat: send email using smtplib of python"
+    },
+    "additions": 88,
+    "deletions": 64,
+    "total_changes": 152,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "9fb7ef349fbb7dcaf5f305550521eb3be52fd6bc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-08T18:58:26Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":construction: add integration with mailerSend"
+    },
+    "additions": 180,
+    "deletions": 1,
+    "total_changes": 181,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "36c3d891f3ad727503bf933c1c027fbb9f53958f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-08T18:17:12Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":broom: cleanup: cleaning comments"
+    },
+    "additions": 0,
+    "deletions": 3,
+    "total_changes": 3,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "e80639adda9a0b1bd2e16869feadddaaa6a5f13f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-08T13:45:22Z",
+        "login": "gccintra"
+      },
+      "message": "Merge branch 'dev' into animations"
+    },
+    "additions": 707,
+    "deletions": 10,
+    "total_changes": 717,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "9bfa1af14af7256f0c8a5849b0dac8c74fc40a38",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-06T14:12:10Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":lipstick:feat: add scroll-to-top and fix back button state for guests"
+    },
+    "additions": 121,
+    "deletions": 58,
+    "total_changes": 179,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "f644ddb57a2df8cb0c4a926eac73516a6c17036c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-05T23:00:09Z",
+        "login": "Dgprogramas"
+      },
+      "message": "📱 correction in feedpage responsive"
+    },
+    "additions": 3,
+    "deletions": 3,
+    "total_changes": 6,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "2905bfe0ec0d20c738450869626d96658100e79e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-05T20:45:58Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":iphone: all pages responsive"
+    },
+    "additions": 95,
+    "deletions": 63,
+    "total_changes": 158,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "7b50de26a21ba5d59ea93ce55da96fc7e66fb1ce",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-05T16:29:06Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":iphone: feed page for non-logged in and logged users responsiveness"
+    },
+    "additions": 79,
+    "deletions": 77,
+    "total_changes": 156,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "5ad7726b6d8442dcf1b2a3983fdae4d922eb5224",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-05T05:16:51Z",
+        "login": "Sismene7"
+      },
+      "message": "💄 feat: Implement new Favicon"
+    },
+    "additions": 30,
+    "deletions": 0,
+    "total_changes": 30,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "3ab816743b0c1f65aaf56f5ecafcbc1d1ce835cc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-05T01:25:02Z",
+        "login": "Dgprogramas"
+      },
+      "message": "👌 style: adjustments to code structure of feedpage"
+    },
+    "additions": 13,
+    "deletions": 19,
+    "total_changes": 32,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "eea56d197f2d0bb1d209d4e18a0ba46cf9f92f5f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-05T01:09:08Z",
+        "login": "Dgprogramas"
+      },
+      "message": "👌 style: adjustments to code structure of some pages, responsive topi…"
+    },
+    "additions": 219,
+    "deletions": 146,
+    "total_changes": 365,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "57332ffb886d4c085eead9264d726aa5305f12a1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-04T20:48:27Z",
+        "login": "g-srodrigues"
+      },
+      "message": ":iphone: News History page responsiveness"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "b6729cc0db526dcc5c92d8f1f2d596abedd38ce3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-04T20:47:57Z",
+        "login": "g-srodrigues"
+      },
+      "message": ":iphone: Edit Account page responsiveness"
+    },
+    "additions": 4,
+    "deletions": 4,
+    "total_changes": 8,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "b5f17300bf5cdc5a32b2373229d2b0469e280850",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-04T20:47:21Z",
+        "login": "g-srodrigues"
+      },
+      "message": ":iphone: change password page responsiveness"
+    },
+    "additions": 3,
+    "deletions": 3,
+    "total_changes": 6,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "625a3b657cfd3c0b44faea0dc1181764dd6d533b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-04T20:46:54Z",
+        "login": "g-srodrigues"
+      },
+      "message": ":iphone: account page responsiveness"
+    },
+    "additions": 4,
+    "deletions": 7,
+    "total_changes": 11,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "8ac0c69274d43f5364c63d58c2ce859f349640a4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-04T20:45:33Z",
+        "login": "g-srodrigues"
+      },
+      "message": ":lipstick: Change in the color of the scroll to top button."
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "8a7d91c2f79ca07587ffd71c6570d7e775183b59",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-04T20:44:41Z",
+        "login": "g-srodrigues"
+      },
+      "message": ":iphone: dynamic header responsiveness"
+    },
+    "additions": 17,
+    "deletions": 7,
+    "total_changes": 24,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "7ad4ee7d4097b2a5b87fbced61271830327d4e62",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-04T20:40:01Z",
+        "login": "g-srodrigues"
+      },
+      "message": ":iphone: feat: make topics bar responsive and scrollable in feed page"
+    },
+    "additions": 64,
+    "deletions": 4,
+    "total_changes": 68,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "227d8e5edf331e714170cb679da5cac07bcd279b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-04T15:48:55Z",
+        "login": "gccintra"
+      },
+      "message": ":bricks: ci: CI/CD implementation (#203)"
+    },
+    "additions": 82,
+    "deletions": 0,
+    "total_changes": 82,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "e376e94eedf714d66d1d5394d440289cc7d24e5c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-04T02:13:22Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":sparkles: feat: CI/CD implementation"
+    },
+    "additions": 82,
+    "deletions": 0,
+    "total_changes": 82,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "f3154afe21bf81c4f72b61c51662068c5cf0c711",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-03T20:28:03Z",
+        "login": "gccintra"
+      },
+      "message": ":test_tube: tests: sprint 7 (#202)"
+    },
+    "additions": 625,
+    "deletions": 10,
+    "total_changes": 635,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "16b5dd562f52fa83645326c6871d3d21265ab8df",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-03T19:49:24Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":lipstick:feat: adjust positioning when scrolling the account page in…"
+    },
+    "additions": 32,
+    "deletions": 25,
+    "total_changes": 57,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "34da3b99a90cd3343588efa3fffc222ec050b296",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-03T16:49:07Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":ok_hand:style: adjustments to code structure of some pages and heade…"
+    },
+    "additions": 162,
+    "deletions": 146,
+    "total_changes": 308,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "aad5c66d8ff762e817b5bd33c64bdeec4d6a4de6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-02T22:26:24Z",
+        "login": "g-srodrigues"
+      },
+      "message": ":sparkles: feat: Implement animated scroll-to-top button on main pages"
+    },
+    "additions": 11,
+    "deletions": 1,
+    "total_changes": 12,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "00dcc71ba0c2eded4f43fc2e0dccb0268712bac4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-02T22:23:17Z",
+        "login": "g-srodrigues"
+      },
+      "message": ":sparkles: feat: Create animated ScrollToTopButton component"
+    },
+    "additions": 68,
+    "deletions": 0,
+    "total_changes": 68,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "d463afaf5f2debf1a8c85c7aeb156d888eab37cd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-02T14:12:33Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":dizzy: history page animation"
+    },
+    "additions": 75,
+    "deletions": 58,
+    "total_changes": 133,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "471dbd68f9382b4517b0af5eef14fc7393538ae0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-02T13:55:06Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":dizzy: layout and modal animations on saved-news-page"
+    },
+    "additions": 100,
+    "deletions": 61,
+    "total_changes": 161,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "933325edd9343d9bced3a6124bf83090c45ff1ec",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-01T22:55:20Z",
+        "login": "ItaloSamP"
+      },
+      "message": "test_tube: test: news_routes integration test"
+    },
+    "additions": 203,
+    "deletions": 0,
+    "total_changes": 203,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "87a4ca624558038fcb4ca0445d2921baebe0a229",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-01T17:07:17Z",
+        "login": "g-srodrigues"
+      },
+      "message": ":lipstick: feat: Implement new dropdown menu design"
+    },
+    "additions": 54,
+    "deletions": 38,
+    "total_changes": 92,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "100e32394e75173bb0b05d77086177a9c1056be1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-01T15:19:20Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":test_tube: test: 90% coverage tests"
+    },
+    "additions": 422,
+    "deletions": 10,
+    "total_changes": 432,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "fd2186494b5172b6ba6399e983e14380924f9740",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-31T19:37:19Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":dizzy: animations and transitions"
+    },
+    "additions": 194,
+    "deletions": 138,
+    "total_changes": 332,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "678ae35186cce9c4eb83c1012621790e32a3cb52",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-31T18:54:20Z",
+        "login": "Dgprogramas"
+      },
+      "message": "💫  hover animate for links \"Edit\" & \"Change\""
+    },
+    "additions": 22,
+    "deletions": 9,
+    "total_changes": 31,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "4a60b252e16d1c76b4db03c16598cdb8bf20e66d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-31T18:29:15Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":dizzy: hover animate for topics"
+    },
+    "additions": 7,
+    "deletions": 3,
+    "total_changes": 10,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "9aa1f335a949aff49c85eca76daacf356348dfbc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-31T18:17:57Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":dizzy: animations and transitions"
+    },
+    "additions": 278,
+    "deletions": 265,
+    "total_changes": 543,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "02032c5eba89109f07cee46ec5d7b7507815cf57",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-31T12:39:01Z",
+        "login": "gccintra"
+      },
+      "message": ":bug: fix: news history not showing the same news in different days"
+    },
+    "additions": 4,
+    "deletions": 11,
+    "total_changes": 15,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "7bd0d30905327f4ed9666f8973adb43ed71d6095",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-31T12:16:58Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: news history frontend (#188)"
+    },
+    "additions": 566,
+    "deletions": 484,
+    "total_changes": 1050,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "90c56e0f9bcf866060d7c98169676db64efe960f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-31T12:13:47Z",
+        "login": "gccintra"
+      },
+      "message": ":test_tube: tests: 96% coverage (#180)"
+    },
+    "additions": 1848,
+    "deletions": 398,
+    "total_changes": 2246,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "64d75a6959fbfd23b3108cb63511f4870b2e1145",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-31T12:12:07Z",
+        "login": "gccintra"
+      },
+      "message": ":test_tube: feat: capitalize custom topic"
+    },
+    "additions": 14,
+    "deletions": 15,
+    "total_changes": 29,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "ce06e61071a8923526c911f0cbb39705e3db43ca",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-31T02:21:16Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":bug: fix: fix bug of save two records on news click"
+    },
+    "additions": 17,
+    "deletions": 10,
+    "total_changes": 27,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "f3078c3f83b69a574fe80bf030e78b6192807832",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-30T20:56:41Z",
+        "login": "g-srodrigues"
+      },
+      "message": ":lipstick: feat: Correct 'Synapse' logo on login page"
+    },
+    "additions": 57,
+    "deletions": 46,
+    "total_changes": 103,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "a0a759839305a24b81ce98b0039a95eb1da14067",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-30T20:46:29Z",
+        "login": "g-srodrigues"
+      },
+      "message": ":bug:bugfix:Fixes the display of duplicates and the grouping of dates…"
+    },
+    "additions": 19,
+    "deletions": 11,
+    "total_changes": 30,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "516f5a95ef79e75dcd1160e4d15e57f8914e99e9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-30T20:39:54Z",
+        "login": "g-srodrigues"
+      },
+      "message": ":bugfix:bug:enable real API call for user history"
+    },
+    "additions": 1,
+    "deletions": 34,
+    "total_changes": 35,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "4c8c0f8ee4370b78505ce9e49c759aeaa0a995a1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-30T00:01:36Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":package:build: animation library install"
+    },
+    "additions": 50,
+    "deletions": 0,
+    "total_changes": 50,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "3336f503f0827e77507c722d728f7cf31d1af7ce",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-29T14:19:25Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":sparkles:feat: implement dynamic header for all pages"
+    },
+    "additions": 255,
+    "deletions": 438,
+    "total_changes": 693,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "41aef64ef765b62f624448afb57224459fa557c0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-29T14:19:25Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":sparkles:feat: news history page"
+    },
+    "additions": 207,
+    "deletions": 156,
+    "total_changes": 363,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "fdead507577020b409642c63b1a95de65e95e779",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-29T14:19:25Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":construction: news history page"
+    },
+    "additions": 353,
+    "deletions": 132,
+    "total_changes": 485,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "2d0ae3426e535baf9b1494b10ea16d36dca74614",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-29T13:43:38Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":sparkles: feat: Create endponts to see read news. (#183)"
+    },
+    "additions": 278,
+    "deletions": 15,
+    "total_changes": 293,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "8327169c199d91d9fb3bb98ec08255ad431be5e6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-26T05:04:36Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":test_tube: test: 90% unit tests coverage"
+    },
+    "additions": 908,
+    "deletions": 2,
+    "total_changes": 910,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "1b0561c43d65537b383a3e7d5d6e496b06373dfe",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-25T22:17:12Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":construction: 83% coverage unit tests"
+    },
+    "additions": 630,
+    "deletions": 0,
+    "total_changes": 630,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "eb71f357abcf811598cd621818a7ae06a75080eb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-25T18:12:36Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":construction: 72% covegare tests"
+    },
+    "additions": 309,
+    "deletions": 394,
+    "total_changes": 703,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "0fba9f3c981c98ac6c05dc645d1c31ea9765128e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-25T15:43:25Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":sparkles: feat: add endpoint to get news that been read of user"
+    },
+    "additions": 139,
+    "deletions": 3,
+    "total_changes": 142,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "0346511a28209a69d2d1d8b1ac814c8d136c40e9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-25T15:03:10Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":ok_hand: feat: feature to update read_at if already exists register …"
+    },
+    "additions": 51,
+    "deletions": 4,
+    "total_changes": 55,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "2274693c84de2cfc457cbcd3dd2d9e0b35b5bca2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-25T15:00:29Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":lipstick:feat: adjust saved news header"
+    },
+    "additions": 29,
+    "deletions": 9,
+    "total_changes": 38,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "450f73909b5c43565f0547dbc6195c85b9e57929",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-25T14:44:18Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":sparkles: feat: endpoint to save news that has been read"
+    },
+    "additions": 95,
+    "deletions": 15,
+    "total_changes": 110,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "6dab9e89ad24e88701678114a18aaad24fd6c2d5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-25T12:37:56Z",
+        "login": "gccintra"
+      },
+      "message": ":bug: fix: header news page"
+    },
+    "additions": 7,
+    "deletions": 14,
+    "total_changes": 21,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "63fec5168d7aa629a74342a28394ecd1ea91c2fa",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-25T12:19:55Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: saved news page (#178)"
+    },
+    "additions": 451,
+    "deletions": 15,
+    "total_changes": 466,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "89e4f1d4b05c86b1b2572ab9e8974160daaf04fd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-25T12:19:18Z",
+        "login": "gccintra"
+      },
+      "message": "Merge branch 'dev' into feature/saved-news-frontend"
+    },
+    "additions": 337,
+    "deletions": 118,
+    "total_changes": 455,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "6bfa72aa77a152b74437c51e6a9a364ed814e8c0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-25T12:15:52Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: access feedpage without login (#179)"
+    },
+    "additions": 306,
+    "deletions": 124,
+    "total_changes": 430,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "da0b5206f90198e4537afa6cff18f25c895630ab",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-24T17:13:30Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":bug:fix: toast alert message in Newspage"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "086729027f916506dba4392a704f2aabe78f654c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-24T13:37:30Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":sparkles:feat: toasty alert to save news without being logged in"
+    },
+    "additions": 41,
+    "deletions": 9,
+    "total_changes": 50,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "86f3e48c2f90ccd4ec5838e188d26580c03837aa",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-24T12:46:43Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":sparkles:feat: header update for unlogged users"
+    },
+    "additions": 48,
+    "deletions": 28,
+    "total_changes": 76,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "84d49eb1a98d24405cea1855f22b803952551466",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-23T01:33:49Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": "Merge pull request #177 from unb-mds/feature/UserReadHistory-db-entity"
+    },
+    "additions": 31,
+    "deletions": 1,
+    "total_changes": 32,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "3537e9afc40c4ce8a5af478337c5e5cf7db0be6e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-22T17:11:04Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":sparkles:feat: permission for you"
+    },
+    "additions": 128,
+    "deletions": 68,
+    "total_changes": 196,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "24d1a3c5bf45797ec183abc8b935f90335efd156",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-22T06:46:58Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":sparkles: feat: UserReadHistory entity created"
+    },
+    "additions": 31,
+    "deletions": 1,
+    "total_changes": 32,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "707836c745cf24094c6e58e23c544ffb8c140996",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-22T02:50:53Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":sparkles: feat: add connection of saved news by user endpoint to pag…"
+    },
+    "additions": 37,
+    "deletions": 96,
+    "total_changes": 133,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "29f1c6c6cb732e728194525a2705f944fdd563ab",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-21T19:44:44Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: fix: making backend feed page routes public"
+    },
+    "additions": 33,
+    "deletions": 12,
+    "total_changes": 45,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "32176f6c0b2973f6a3d100bc1f3b0028cb114bd5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-21T19:18:03Z",
+        "login": "Sismene7"
+      },
+      "message": ":bug: fix: route for .login here. ajusts"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "6b13214053370e50f4387585b4a313f050a8f77b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-21T19:18:03Z",
+        "login": "Sismene7"
+      },
+      "message": ":lipstick: feat: color buttom ajusts"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "c6107109991607ea6c229a512dac56dc81811cd6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-21T19:18:03Z",
+        "login": "Sismene7"
+      },
+      "message": ":lipstick: feat: add register buttom on header feedpage"
+    },
+    "additions": 14,
+    "deletions": 6,
+    "total_changes": 20,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "fdc1f5dc74ff2ff908c55a1fcbf4710ea7019656",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-21T19:18:03Z",
+        "login": "Sismene7"
+      },
+      "message": ":bug: fix: after registration, be redirected to login"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "7caaec4173a3059d5a627865a5f32c60af9021df",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-21T19:18:03Z",
+        "login": "Sismene7"
+      },
+      "message": "\":sparkles: feat: Feed page is now the home page + login button for l…"
+    },
+    "additions": 47,
+    "deletions": 6,
+    "total_changes": 53,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "0fb68ba8bf06d789c2e29562194e03c11faa98f1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-21T11:40:28Z",
+        "login": "gccintra"
+      },
+      "message": "🔧 docs: document rebase conflict resolution collaboration"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "ad5322a8cc3a63135c03422111c52daf742243a0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-21T11:32:00Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":construction: add endpoint to get saved news by user"
+    },
+    "additions": 78,
+    "deletions": 2,
+    "total_changes": 80,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "f1590b89e57ea121c54659133134d8836f0befe7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-21T11:23:20Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":sparkles:feat: implemented saved news page"
+    },
+    "additions": 115,
+    "deletions": 54,
+    "total_changes": 169,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "b73ca7efbc867a406681eaf9fc40e38f9489ab3a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-21T11:23:20Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":construction: saved news page"
+    },
+    "additions": 353,
+    "deletions": 2,
+    "total_changes": 355,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "cfdb7a24eabaa7a0aa9a113362fffd92ec35e05a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-21T04:14:33Z",
+        "login": "gccintra"
+      },
+      "message": ":recycle: refactor: simplify news collection system and implement per…"
+    },
+    "additions": 2220,
+    "deletions": 4353,
+    "total_changes": 6573,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "5f05e97062536b20bc3b1ef50659a86e79801ffb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-21T03:58:14Z",
+        "login": "gccintra"
+      },
+      "message": ":recycle: refactor: simplify news collection system and implement per…"
+    },
+    "additions": 2220,
+    "deletions": 4353,
+    "total_changes": 6573,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "08077e14ed53a8bf97b06834210e490c8264b4df",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-16T20:19:14Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": "Merge pull request #158 from unb-mds/feature/feed-page-frontend"
+    },
+    "additions": 1490,
+    "deletions": 237,
+    "total_changes": 1727,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "b0952b82cb609c62401352918d0a94514c81a577",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-16T19:12:59Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":lipstick:feat: new animation on save news"
+    },
+    "additions": 17,
+    "deletions": 2,
+    "total_changes": 19,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "31e75c5d49bd877c24a6d7f43a69e4de15bc30a6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-15T02:26:05Z",
+        "login": "gccintra"
+      },
+      "message": ":bug: fix: get news by topic"
+    },
+    "additions": 3,
+    "deletions": 7,
+    "total_changes": 10,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "c36638ad413bc856c5ecc9504ffb6081f716b966",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-14T19:36:53Z",
+        "login": "g-srodrigues"
+      },
+      "message": ":sparkles:feat: Implement favorite/unfavorite news functionality"
+    },
+    "additions": 87,
+    "deletions": 26,
+    "total_changes": 113,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "c21d61a61f7874373fec424c82541f45d99e503d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-14T19:25:52Z",
+        "login": "g-srodrigues"
+      },
+      "message": ":sparkles:feat: Expose user-specific favorite status on news endpoints"
+    },
+    "additions": 12,
+    "deletions": 8,
+    "total_changes": 20,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "4241c3cc16decbbe3ea8cd8acb2342949464f6d7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-14T19:19:56Z",
+        "login": "g-srodrigues"
+      },
+      "message": ":sparkles:feat: Add favorite status to news logic and queries"
+    },
+    "additions": 46,
+    "deletions": 15,
+    "total_changes": 61,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "3d73aa6dabc1ca01456d712f5e1beb7371f028e7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-14T02:41:30Z",
+        "login": "g-srodrigues"
+      },
+      "message": ":sparkles:feat: Implementation of the save news button in the UI in N…"
+    },
+    "additions": 206,
+    "deletions": 100,
+    "total_changes": 306,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "db4764dccecb408cc1fe7f53a5242e09f12b662b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-12T17:04:05Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: connect front-end to back-end for news feed"
+    },
+    "additions": 792,
+    "deletions": 161,
+    "total_changes": 953,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "b30ad1a46c451eaa5d6a6a2e7c019f06b420848c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-12T15:55:41Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":sparkles:feat: Added Skeleton on newspage and feed page"
+    },
+    "additions": 126,
+    "deletions": 95,
+    "total_changes": 221,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "3b842db020f0e53b676196b6af333a9425a9d379",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-12T15:55:41Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":lipstick:feat: Hover animation of Newscard ajust"
+    },
+    "additions": 4,
+    "deletions": 2,
+    "total_changes": 6,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "f60366a412d55f142ea283db66ada1aa10e7d0e0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-12T15:55:41Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":sparkles:feat: implementation of news reading page"
+    },
+    "additions": 187,
+    "deletions": 140,
+    "total_changes": 327,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "626e147a35a2d518d2bd001560c30263a7f932c5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-12T15:55:41Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":lipstick:feat: UI fixes"
+    },
+    "additions": 5,
+    "deletions": 7,
+    "total_changes": 12,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "9f1f896e1e493518e67323bdb612e8df1537cac0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-12T15:55:41Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":lipstick:feat: feed-page style"
+    },
+    "additions": 247,
+    "deletions": 7,
+    "total_changes": 254,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "0f39f397c25041a32a7bc7efef3be217cfb9db3c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-12T15:55:41Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":lipstick:feat: hover animation for ''your topics'' in Edit-Account"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "d7313d2f29e04cd697dec07d0beb1e98ea976741",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-12T15:55:41Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":sparkles:feat: new header for feed-page"
+    },
+    "additions": 145,
+    "deletions": 54,
+    "total_changes": 199,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "e178dec99f059b25ddac6b012968c2500f93c69e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-12T15:45:06Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: get-news endpoint (#144)"
+    },
+    "additions": 362,
+    "deletions": 151,
+    "total_changes": 513,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "8997d7e5ecb0911fec6be3ac4da1111d6fcf76bd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-11T18:28:48Z",
+        "login": "gccintra"
+      },
+      "message": ":ok_hand: fix: get news by id"
+    },
+    "additions": 35,
+    "deletions": 14,
+    "total_changes": 49,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "a3cf64acc5eec7ed55cb3370c7ee7c9bcb920355",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-11T18:03:27Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":sparkles: feat: add endpoint to get news by topic_id"
+    },
+    "additions": 88,
+    "deletions": 4,
+    "total_changes": 92,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "19c5e1a4f270a4857d484668972b68513fd302aa",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-11T15:58:16Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":sparkles: feat: get-news endpoint"
+    },
+    "additions": 255,
+    "deletions": 149,
+    "total_changes": 404,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "c69f4d2af07add5af8a5c47ce3dbe59d20298004",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-11T15:44:59Z",
+        "login": "gccintra"
+      },
+      "message": ":ok_hand: fix: fixes duplicate paths to data files"
+    },
+    "additions": 5,
+    "deletions": 125,
+    "total_changes": 130,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "d152ff6aaa84398022589eb3b460d7d1a83ba0f2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-11T15:24:11Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: smart algorithm for news gathering (#150)"
+    },
+    "additions": 5469,
+    "deletions": 487,
+    "total_changes": 5956,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "cf9c3a2e27388d492f3f847c826d82e46fe49dcb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-11T15:23:32Z",
+        "login": "gccintra"
+      },
+      "message": "Merge branch 'dev' into feat/smart-algorithm-news-gathering"
+    },
+    "additions": 168,
+    "deletions": 4,
+    "total_changes": 172,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "f5c3a888f0b7fb9add64ce50b1fbffd40bb5587d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-11T15:17:56Z",
+        "login": "gccintra"
+      },
+      "message": "✨ favorite news (#145)"
+    },
+    "additions": 174,
+    "deletions": 2,
+    "total_changes": 176,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "1cce565e5de212fc624007d1d8421c145cb9094b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-11T15:16:23Z",
+        "login": "gccintra"
+      },
+      "message": "Merge branch 'dev' into feature/favorite_news"
+    },
+    "additions": 601,
+    "deletions": 27,
+    "total_changes": 628,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "a428626cbc4a63e747e565fbf5814ac74e6e8b6c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-11T14:59:12Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: manual news collect script"
+    },
+    "additions": 688,
+    "deletions": 0,
+    "total_changes": 688,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "0af79936f58e8add198c4571bfb9f53d338c2da5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-11T14:54:58Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":sparkles: feat: updated service file to call of favorite/unfavorite …"
+    },
+    "additions": 21,
+    "deletions": 7,
+    "total_changes": 28,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "621903188c1ea1ed24ac75c2e75a991d90f9f7c6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-11T14:38:21Z",
+        "login": "gccintra"
+      },
+      "message": ":recycle: refactor: separation of services for news gathering"
+    },
+    "additions": 929,
+    "deletions": 916,
+    "total_changes": 1845,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "2407d4cfcb80605aed87919386e762ffab897e3c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-10T21:24:46Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: implement website blacklist"
+    },
+    "additions": 2177,
+    "deletions": 81,
+    "total_changes": 2258,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "973c2defb1ae3d59c65c600efce00d68c4cc1053",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-10T13:10:08Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: smat news gathering with user metrics"
+    },
+    "additions": 2217,
+    "deletions": 24,
+    "total_changes": 2241,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "e06d37fa5be2ae36eb1ab532d149f1ed5bf361ef",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-10T11:57:34Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: news categorization in the news gathering job (#148)"
+    },
+    "additions": 600,
+    "deletions": 26,
+    "total_changes": 626,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "863a67bb3a557c5d94f3c7b555791c3501c82a33",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-09T17:43:20Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: news categorization in the news gathering job"
+    },
+    "additions": 600,
+    "deletions": 26,
+    "total_changes": 626,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "d8929746d8de4a56e78ececb01a041f6933411b3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-09T02:53:46Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":ok_hand: feat: update endpoint to unfavorite news"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "200a2f72ab4737df465be161511083076caa06b5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-09T02:32:38Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":sparkles: feat: add function to remove favorite news of user"
+    },
+    "additions": 22,
+    "deletions": 2,
+    "total_changes": 24,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "4b3a12c6bdb86ef757f02126240c8cddc5c31382",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-09T02:12:26Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":sparkles: feat: endpoints que permitem ao usuario favoritar e desfav…"
+    },
+    "additions": 140,
+    "deletions": 2,
+    "total_changes": 142,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "5ad89cab5b89ce5914f62097210f5115e1caea3d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-01T02:52:34Z",
+        "login": "gccintra"
+      },
+      "message": "release: versão v0.1.0-alpha (#130)"
+    },
+    "additions": 29637,
+    "deletions": 314,
+    "total_changes": 29951,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "b9aa79041a6275d159fc2d2fc87696a2c4bf937c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-01T02:50:14Z",
+        "login": "gccintra"
+      },
+      "message": "Merge branch 'main' into dev"
+    },
+    "additions": 8,
+    "deletions": 0,
+    "total_changes": 8,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "fc529b4b6b080f45feaebb72f2d1423e51f8cb47",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-01T02:45:42Z",
+        "login": "gccintra"
+      },
+      "message": ":books: docs: prepare changelog.md for release v0.1.0-alpha"
+    },
+    "additions": 23,
+    "deletions": 0,
+    "total_changes": 23,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "e32a7220f94631dbdcf3417ae5019ac8177e7e73",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-01T01:15:12Z",
+        "login": "gccintra"
+      },
+      "message": "Revert \"Alteração na forma que é feito deploy do gitpages.\" (#129)"
+    },
+    "additions": 4,
+    "deletions": 34432,
+    "total_changes": 34436,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "6634b5ade4acbfbf2f530ced700dd363eee3895e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-01T01:14:52Z",
+        "login": "gccintra"
+      },
+      "message": "Revert \"Alteração na forma que é feito deploy do gitpages.\""
+    },
+    "additions": 4,
+    "deletions": 34432,
+    "total_changes": 34436,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "abb0be957c05b21db9c2e3df522caf89980cff19",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-01T00:32:20Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": "Merge pull request #128 from unb-mds/feature/hugo-documentation"
+    },
+    "additions": 34432,
+    "deletions": 4,
+    "total_changes": 34436,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "a181d815e5f6550ebbf8df8c34b9ec4f7f7936b1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-01T00:32:04Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": "Merge branch 'dev' into feature/hugo-documentation"
+    },
+    "additions": 29607,
+    "deletions": 214,
+    "total_changes": 29821,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "5a2b8e6232bf094591c5f69949ac9c02202ad684",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T23:17:53Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":wrench: chore: update branch of do deploy in gitpages."
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "c1971601faf6c2bb285c0097ca57ae0c8fe3dc17",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T23:08:38Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": "Merge pull request #127 from unb-mds/hotfix/add_info_db"
+    },
+    "additions": 232,
+    "deletions": 28,
+    "total_changes": 260,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "6b983e0100cdca8ea0843de9c0033a13eead844e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T23:05:31Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":sparkles: feat: add pages of sprints, db in architecture and realeses."
+    },
+    "additions": 232,
+    "deletions": 28,
+    "total_changes": 260,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "91c77facf79a17c363b86ea267c7733c2f9e64c2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T22:28:55Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": "Merge pull request #126 from unb-mds/hotfix/alter_name_project"
+    },
+    "additions": 27,
+    "deletions": 27,
+    "total_changes": 54,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "df47ee6e889c81922087b66120619e975b41e55d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T22:24:53Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":ok_hand: feat: update name of project in the all pages"
+    },
+    "additions": 27,
+    "deletions": 27,
+    "total_changes": 54,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "e743e70c142c66fb47a2eb2cb6cf48e26f000b4e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T04:50:23Z",
+        "login": "gccintra"
+      },
+      "message": ":wastebasket: remove: unit tests duplicates in root (#125)"
+    },
+    "additions": 0,
+    "deletions": 233,
+    "total_changes": 233,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "19d57ceb6be1d09d77328a9f5c7352de1a6f2b85",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T04:46:45Z",
+        "login": "gccintra"
+      },
+      "message": ":wastebasket: remove: unit tests duplicates in root"
+    },
+    "additions": 0,
+    "deletions": 233,
+    "total_changes": 233,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "50703bba2a67110c2f928bce1ebb3864e3706b91",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T04:41:07Z",
+        "login": "gccintra"
+      },
+      "message": ":books: docs: add open source documents (#123)"
+    },
+    "additions": 228,
+    "deletions": 21,
+    "total_changes": 249,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "21cea2e8a20e6c34749a6ac6e46819ad335b6db0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T04:39:13Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: frontend polishing and enhanced user experience in r…"
+    },
+    "additions": 312,
+    "deletions": 309,
+    "total_changes": 621,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "c2eba59cbf796e6197e2ba9a65ac92ee77c9aa61",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T04:34:41Z",
+        "login": "gccintra"
+      },
+      "message": ":books: docs: Synapse!"
+    },
+    "additions": 11,
+    "deletions": 11,
+    "total_changes": 22,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "24092d539f9ec26dd51a4f42bc56be793ac49401",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T04:24:59Z",
+        "login": "gccintra"
+      },
+      "message": ":wrench: chore: update container names in docker-compose for consistency"
+    },
+    "additions": 4,
+    "deletions": 4,
+    "total_changes": 8,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "f060091f8a3d7525b0f6733811775861feade35f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T04:05:13Z",
+        "login": "gccintra"
+      },
+      "message": ":books: docs: adjust /topics/create swagger documentation"
+    },
+    "additions": 3,
+    "deletions": 4,
+    "total_changes": 7,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "2f2c5666184e536b55486901d6cd4ddc931ecff4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T03:55:45Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: Implements protected route system"
+    },
+    "additions": 84,
+    "deletions": 18,
+    "total_changes": 102,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "a565921fa4f1a9a0f8135ea00419a6b0b313274b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T03:29:51Z",
+        "login": "gccintra"
+      },
+      "message": ":broom: cleanup: removing unit tests duplicates in root"
+    },
+    "additions": 0,
+    "deletions": 233,
+    "total_changes": 233,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "18796eff3fb0e35043e277fccc7e8eac55fd3b39",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T03:29:51Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":test_tube: test: final tests implementations"
+    },
+    "additions": 937,
+    "deletions": 123,
+    "total_changes": 1060,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "06c174fd9701ceaf21520b09435713faa8f263f9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T03:29:37Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: polishing frontend, integrate react-toastify for not…"
+    },
+    "additions": 221,
+    "deletions": 283,
+    "total_changes": 504,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "1ea373b21c4b3904528cfb384039477367aeaece",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T01:42:55Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": "Merge pull request #122 from unb-mds/hotfix/documentation_update"
+    },
+    "additions": 419,
+    "deletions": 154,
+    "total_changes": 573,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "d5da0401403edbb9aaeed8db3b8131fd59aac648",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T01:42:04Z",
+        "login": "gccintra"
+      },
+      "message": ":books: docs: add link to pull request template on CONTRIBUTING.md"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "1428f7d09d6c0d825cdfc286b6d5bb2a3195f386",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T01:35:19Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":lipstick:\tfeat:"
+    },
+    "additions": 108,
+    "deletions": 41,
+    "total_changes": 149,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "b9b931f9d48785b34a0ebc38a34a0deb01e07b7c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T01:32:56Z",
+        "login": "gccintra"
+      },
+      "message": ":books: docs: add badges in README"
+    },
+    "additions": 10,
+    "deletions": 2,
+    "total_changes": 12,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "b496b85a6a79dd8889c517daeab5ed50bfedff96",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T01:22:00Z",
+        "login": "gccintra"
+      },
+      "message": ":test_tube: test: implement news source unit test (#121)"
+    },
+    "additions": 937,
+    "deletions": 123,
+    "total_changes": 1060,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "c109accb5a5dc4a56ae5bf360dfb8598b3aeccfc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-29T23:05:47Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":lipstick: feat update interface of pages addint transition"
+    },
+    "additions": 49,
+    "deletions": 33,
+    "total_changes": 82,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "68d2191e3e0d215649492d47a2af30b4e38f80a2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-29T22:58:57Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":test_tube: test: final tests implementations"
+    },
+    "additions": 937,
+    "deletions": 123,
+    "total_changes": 1060,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "81f0eea7a7697a205b0e7b1f2b64036a9be742e8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-29T22:52:52Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":lipstick:\tfeat:"
+    },
+    "additions": 308,
+    "deletions": 122,
+    "total_changes": 430,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "432c8a626b2d86520cb6c0f5e9787c6ad0f49e67",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-29T21:57:20Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":ok_hand: style: fix to show table with team developers."
+    },
+    "additions": 16,
+    "deletions": 20,
+    "total_changes": 36,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "c4f095cce8d1283d13d182d2dfa5308c764b66bb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-29T19:20:29Z",
+        "login": "gccintra"
+      },
+      "message": ":bug: fix: topics controller tests failing (#119)"
+    },
+    "additions": 234,
+    "deletions": 127,
+    "total_changes": 361,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "32a9f43af95fb6fb6b1f0ea39f30fbec21677f6e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-29T19:16:49Z",
+        "login": "gccintra"
+      },
+      "message": ":bug: fix: backend container failing to start (#118)"
+    },
+    "additions": 2,
+    "deletions": 1,
+    "total_changes": 3,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "912b0cb90d95692a1b0062a6dcea0019be72976c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-29T19:13:47Z",
+        "login": "gccintra"
+      },
+      "message": ":bug: fix: topics controller tests failing"
+    },
+    "additions": 234,
+    "deletions": 127,
+    "total_changes": 361,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "d131ad0490890a155a38f9a6c888954608d4fd2b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-29T19:09:59Z",
+        "login": "gccintra"
+      },
+      "message": ":bug: fix: backend container failing to start"
+    },
+    "additions": 2,
+    "deletions": 1,
+    "total_changes": 3,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "53c8e7d7668af924780cab7abc94a3630a96cc5e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-29T14:21:20Z",
+        "login": "gccintra"
+      },
+      "message": ":books: docs: include DoD and DoR in CONTRIBUTING.md"
+    },
+    "additions": 31,
+    "deletions": 6,
+    "total_changes": 37,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "6f265583d90b6f06d1b4d8766c471dc44775fe5e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-29T13:54:41Z",
+        "login": "gccintra"
+      },
+      "message": ":books: docs: create open source documents (.md)"
+    },
+    "additions": 195,
+    "deletions": 21,
+    "total_changes": 216,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "df2e8d5cf9136e04acbfd301d539ef68150a80f7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-29T12:22:09Z",
+        "login": "gccintra"
+      },
+      "message": ":test_tube: test: add unit test for topics and users feature (#116)"
+    },
+    "additions": 1392,
+    "deletions": 13,
+    "total_changes": 1405,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "21d47180326fdc832741f176924a30cf5471504e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-29T12:08:56Z",
+        "login": "gccintra"
+      },
+      "message": "Merge branch 'dev' into feat/unit_tests_sprint2"
+    },
+    "additions": 1798,
+    "deletions": 20,
+    "total_changes": 1818,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "cb77204586a3e14bcc0b070df0be4096ec16f6d7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-29T12:01:13Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":ok_hand: feat: correct url to redirect to getting started page on in…"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "310281c1dac52d261cf83b6390b1f52d63046358",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-29T11:58:41Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":ok_hand: feat: correct url to redirect to getting started page on in…"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "b8fb8f356a348a8a8b57ffcfab909df9227d5487",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-29T11:52:42Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: implement account page (account information, topics,…"
+    },
+    "additions": 1798,
+    "deletions": 13,
+    "total_changes": 1811,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "6a03f0cd71044b76060a4d57a4d0bafc7d17d2b7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-29T11:51:45Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":ok_hand: feat: correct url to redirect to getting started page on in…"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "685a0ff4da3f04bf62efb58405affd076e80b354",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-28T02:53:09Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":test_tube: test: last tests implementations"
+    },
+    "additions": 553,
+    "deletions": 32,
+    "total_changes": 585,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "d2301ac5a4966bbf853c48f2617d7e8cdbe9af90",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T21:09:12Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":test_tube: test: topic_service/topic_routes tests"
+    },
+    "additions": 217,
+    "deletions": 4,
+    "total_changes": 221,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "2cb453beb318454ed674e4419e1892349a80ecb2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T20:16:18Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: connect topic and news source management to backend API"
+    },
+    "additions": 233,
+    "deletions": 77,
+    "total_changes": 310,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "36810be7607fe10ee61dcd251b0685ece6a2bae0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T19:43:51Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":test_tube: test: topic_service and user_repository tests"
+    },
+    "additions": 153,
+    "deletions": 0,
+    "total_changes": 153,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "b6c67a049ce777e82d5e96e96901410008194b5f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T19:23:41Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":sparkles:feat: add source feature frontend"
+    },
+    "additions": 243,
+    "deletions": 39,
+    "total_changes": 282,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "1946946f5014ce60c319eea7bf895391efa8e0f7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T18:54:04Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: add Swagger API documentation for news_source, topic…"
+    },
+    "additions": 675,
+    "deletions": 0,
+    "total_changes": 675,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "373a889558fdb1f72eab0d613fd45dbbb1704c90",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T18:14:07Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":test_tube: test: user_service tests"
+    },
+    "additions": 505,
+    "deletions": 6,
+    "total_changes": 511,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "d241a07c64ab57252cbb03b80ddca7b72e6ef6ff",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T18:05:03Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: implement all news source endpoints"
+    },
+    "additions": 382,
+    "deletions": 12,
+    "total_changes": 394,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "8bd9c03b4d00a9739cfd3757bb364389becfe779",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T14:44:54Z",
+        "login": "gccintra"
+      },
+      "message": "✨ feat: Add user_news_sources association table"
+    },
+    "additions": 16,
+    "deletions": 1,
+    "total_changes": 17,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "fe24148553fdda618d707440ea6deb822effee63",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T14:43:59Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":lipstick: feat: adding development team."
+    },
+    "additions": 7,
+    "deletions": 0,
+    "total_changes": 7,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "f4542cd274d8ef0d33259a23b95f554b86ca8510",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T13:36:02Z",
+        "login": "Sismene7"
+      },
+      "message": ":recycle: refactor: chamadas para GETs e exibir os dados do usuário"
+    },
+    "additions": 31,
+    "deletions": 30,
+    "total_changes": 61,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "38c3a4017196622e7fe55776843c89df8953e883",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T02:36:25Z",
+        "login": "g-srodrigues"
+      },
+      "message": ":sparkles:feat: set and validate maximum topic limit"
+    },
+    "additions": 23,
+    "deletions": 1,
+    "total_changes": 24,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "8977ce3378621389a06bcbbd8d223ea094d49c6e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-27T02:11:28Z",
+        "login": "g-srodrigues"
+      },
+      "message": ":sparkles:feat: implement topic management with PreferredTopics compo…"
+    },
+    "additions": 125,
+    "deletions": 78,
+    "total_changes": 203,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "0ebab4b15492dd33b788bd5ca769b11561f7ed55",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T18:32:08Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":bug: fix: correct urls of a tag to redirect pages."
+    },
+    "additions": 3,
+    "deletions": 3,
+    "total_changes": 6,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "47af58f7fde2a1833d91dfa090d807002d8658f0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T17:35:05Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: logout"
+    },
+    "additions": 87,
+    "deletions": 23,
+    "total_changes": 110,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "462e32bb462e9b7674195ebd91c8da9e8b7d0e56",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T12:23:09Z",
+        "login": "gccintra"
+      },
+      "message": "feat: integrate front to back for logout"
+    },
+    "additions": 20,
+    "deletions": 3,
+    "total_changes": 23,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "a3e64f2303d538a612bbacaeaa88b2dc6de674a2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T12:14:13Z",
+        "login": "gccintra"
+      },
+      "message": "Revert \":sparkles:feat: logout button\""
+    },
+    "additions": 20,
+    "deletions": 36,
+    "total_changes": 56,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "ac4d86a9acdd2fe5094fdaa76bde9aa15490f099",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T12:12:47Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":sparkles:feat: logout button"
+    },
+    "additions": 36,
+    "deletions": 20,
+    "total_changes": 56,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "6fc7a89ac1b43a274544f6bc38bf9473b0539534",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T12:03:59Z",
+        "login": "gccintra"
+      },
+      "message": "refactor: removing unnecessary code in logout func"
+    },
+    "additions": 2,
+    "deletions": 9,
+    "total_changes": 11,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "fa08e5073283052242b82e021fb645477ec2e721",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T12:03:59Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":sparkles: feat: logout endpoint implemented"
+    },
+    "additions": 41,
+    "deletions": 3,
+    "total_changes": 44,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "1ae7ab395c7ce0128e750a4ff47aace7f94d0136",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-26T02:40:26Z",
+        "login": "gccintra"
+      },
+      "message": "Merge pull request #104 from unb-mds/chore/fixing-unit-tests"
+    },
+    "additions": 67,
+    "deletions": 77,
+    "total_changes": 144,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "071031b41f0a2d36a10298393d7f3fab299bbd6b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T19:53:27Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": " :recycle:\trefactor: correct structure to files."
+    },
+    "additions": 16,
+    "deletions": 1,
+    "total_changes": 17,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "b3b83ca94c114f2591b37c888760021185d71ec1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T18:51:30Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":boom: fix: revert changes to show style in page."
+    },
+    "additions": 3,
+    "deletions": 8,
+    "total_changes": 11,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "f18afbf2683c21489e678ae03d280ee87ae35a18",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T18:10:31Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":ok_hand: feat: fix url redirects"
+    },
+    "additions": 31,
+    "deletions": 23,
+    "total_changes": 54,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "197dfad70304d9a9e35693a5a22906c27a8f2b9d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T18:01:42Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":wrench: chore: fix hugo version."
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "f493eaf773abc61d8ba465e09ba5feefe926b916",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T17:58:49Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":rocket: new attempt to deploy gitpages."
+    },
+    "additions": 3,
+    "deletions": 3,
+    "total_changes": 6,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "cdd53721fdf7cec79c1f2c3c5e729df5af3cac5f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T17:53:56Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":rocket: new attempt to deploy gitpages."
+    },
+    "additions": 21,
+    "deletions": 21,
+    "total_changes": 42,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "de75e67c20addd29c692f9ab8915e67fa9ec46f2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-25T13:20:43Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":sparkles:feat: logout button"
+    },
+    "additions": 36,
+    "deletions": 20,
+    "total_changes": 56,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "fad67be23f16d3032d65427f039f0277e5e2ae56",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-24T23:42:26Z",
+        "login": "Dgprogramas"
+      },
+      "message": "lipstick:feat: add icon in loading screen"
+    },
+    "additions": 21,
+    "deletions": 1,
+    "total_changes": 22,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "17639343b0bf1520a0c2a1fdb0c7e44577a8d926",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-24T23:15:33Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":lipstick:feat: UI style update"
+    },
+    "additions": 222,
+    "deletions": 208,
+    "total_changes": 430,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "046a6f1efac3e47a3721f59d3dab54ad7d166fa7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-24T18:07:50Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":rocket: Correct GitHub Actions workflow to deploy Hugo site"
+    },
+    "additions": 7,
+    "deletions": 4,
+    "total_changes": 11,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "4a328f39680b1f6609319faa1570c39bbaac7126",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-24T18:04:34Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":rocket: GitHub Actions workflow to deploy Hugo site"
+    },
+    "additions": 29,
+    "deletions": 0,
+    "total_changes": 29,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "5811ec892f287a7e30d97c8ada74642fc482cc8c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-24T17:50:28Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":books: docs: Build Hugo documentation for GitHub Pages"
+    },
+    "additions": 29138,
+    "deletions": 131,
+    "total_changes": 29269,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "a9524493c6e1fa6bbb9ee957f7db76f1c2b79f23",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-24T13:58:14Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":sparkles: feat: fix to show index table."
+    },
+    "additions": 25,
+    "deletions": 25,
+    "total_changes": 50,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "1b07e2a4cea884df7004381582289ca21cb4e71d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-24T13:32:22Z",
+        "login": "Sismene7"
+      },
+      "message": "Merge branch 'dev' of https://github.com/unb-mds/2025-2-NewsHub into …"
+    },
+    "additions": 1504,
+    "deletions": 170,
+    "total_changes": 1674,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "d6ab1b2e9e537011b895c1194d1db9e08b941c33",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-24T03:08:16Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: edit account information and change password"
+    },
+    "additions": 638,
+    "deletions": 2,
+    "total_changes": 640,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "eab498d9b755f1af804b15a6767bff303db9f0be",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-24T02:51:21Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: create function to create only the topic without att…"
+    },
+    "additions": 12,
+    "deletions": 0,
+    "total_changes": 12,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "95d9fc44229ddbbaa65d4c8b5497545b639f0c4b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-24T01:23:54Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":sparkles: feat: add pages about project and get started."
+    },
+    "additions": 313,
+    "deletions": 74,
+    "total_changes": 387,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "d0c63f3f65233142dc3421ad35935733ada07e65",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-24T00:51:41Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":wrench: chore: update files of template"
+    },
+    "additions": 2958,
+    "deletions": 221,
+    "total_changes": 3179,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "ac19f6fdc6b839b3fec352f23b45c79b0da6c42c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-22T21:05:33Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":wrench: chore: install and config documentation files (hugo)"
+    },
+    "additions": 1832,
+    "deletions": 0,
+    "total_changes": 1832,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "fdbaff5cca0f50d20d8ba6177392d182b722c23b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-22T12:52:52Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":wrench: chore: unit tests fixed"
+    },
+    "additions": 67,
+    "deletions": 77,
+    "total_changes": 144,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "5c227a02d7572062c8e035ba9a14132a1ccb2fa3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-21T23:48:08Z",
+        "login": "Sismene7"
+      },
+      "message": "feat: UI Page Account v1"
+    },
+    "additions": 249,
+    "deletions": 44,
+    "total_changes": 293,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "fa994fb804647733bff6dbcc7120b48e5bf6338a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-21T18:11:44Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles: feat: Implement full automated news collection pipeline"
+    },
+    "additions": 590,
+    "deletions": 170,
+    "total_changes": 760,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "06bcb1002037f2d63efe5d5f180b3afa24b0566e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-21T18:01:52Z",
+        "login": "gccintra"
+      },
+      "message": "🔧 chore: run cron jobs as root user"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "7d1b4b04a2c8a454f696d5b74f67d664acfe53ff",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-21T17:38:18Z",
+        "login": "gccintra"
+      },
+      "message": ":wrench:chore: improve logs outputs"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "929013d76427b14dae585b42eebab01d9e22b980",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-21T17:09:59Z",
+        "login": "gccintra"
+      },
+      "message": "🔧 chore: Configure sys.path for absolute imports in scripts"
+    },
+    "additions": 5,
+    "deletions": 1,
+    "total_changes": 6,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "0d643044e2151e2334679b0831702f6ea5a30412",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-20T22:07:15Z",
+        "login": "gccintra"
+      },
+      "message": "🔧 chore: setup cron job for news collection"
+    },
+    "additions": 56,
+    "deletions": 48,
+    "total_changes": 104,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "b4823327e12d756548019b4f5aef79cd5725be5f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-20T22:06:30Z",
+        "login": "gccintra"
+      },
+      "message": "chore: automatically initialize db when the container is active"
+    },
+    "additions": 24,
+    "deletions": 139,
+    "total_changes": 163,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "e9e93e6321e3a15f2065a08a7a91e150cff82288",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-20T19:49:57Z",
+        "login": "g-srodrigues"
+      },
+      "message": ":sparkles:feat: connecting frontend and backend to change password"
+    },
+    "additions": 27,
+    "deletions": 22,
+    "total_changes": 49,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "a55ef0cc3f5a771703b17dc509b8cd1252c52f4f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-20T03:52:11Z",
+        "login": "g-srodrigues"
+      },
+      "message": ":sparkles:feat: implement password visibility toggle on change-passwo…"
+    },
+    "additions": 43,
+    "deletions": 12,
+    "total_changes": 55,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "1b51b92a260cbd0b4a91d7211e0bc78f14a128f3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-20T03:39:01Z",
+        "login": "g-srodrigues"
+      },
+      "message": ":lipstick:feat: increment change password interface"
+    },
+    "additions": 240,
+    "deletions": 0,
+    "total_changes": 240,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "d922c002420c7ac62b27809fced489816167dac7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T23:22:35Z",
+        "login": "Dgprogramas"
+      },
+      "message": "🔧chore: added update user data when confirmed and redirect"
+    },
+    "additions": 24,
+    "deletions": 7,
+    "total_changes": 31,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "c73f870dc4b39d6c92eb4bf300857802182e9ac3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T22:56:17Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles:feat: news collection core"
+    },
+    "additions": 295,
+    "deletions": 7,
+    "total_changes": 302,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "2b938462db530589e8e7edf9844130ad363cb5bc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T22:54:30Z",
+        "login": "gccintra"
+      },
+      "message": "chore: add entities context in __init__.py"
+    },
+    "additions": 3,
+    "deletions": 0,
+    "total_changes": 3,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "2c3d6d6ab271ee42a0ce01302c6e032f07d31a57",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T22:49:49Z",
+        "login": "gccintra"
+      },
+      "message": "✨ feat: Add news, sources, and topics data models"
+    },
+    "additions": 233,
+    "deletions": 1,
+    "total_changes": 234,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "8fc9d6843a7836b10ffd25ee5228c117b1f7c1e3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T20:35:04Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":wrench:chore: pre-fill of fields with user data"
+    },
+    "additions": 113,
+    "deletions": 8,
+    "total_changes": 121,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "553a1f5e8c53136c262c8372b501db02964edec6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T13:21:13Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":sparkles: feat: create function to only create topic in service with…"
+    },
+    "additions": 12,
+    "deletions": 0,
+    "total_changes": 12,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "2c63ad5fadc45cb2b6128f2521d9f8ce7bd3b5d9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T12:20:06Z",
+        "login": "gccintra"
+      },
+      "message": "Merge pull request #89 from unb-mds/feat/manage-topics-backend"
+    },
+    "additions": 265,
+    "deletions": 0,
+    "total_changes": 265,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "4209f56201b01a47acd5e72b7e7272f8d33be21a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T04:21:11Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": "sparkles: feat: crud of topics and vincule to user"
+    },
+    "additions": 265,
+    "deletions": 0,
+    "total_changes": 265,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "d554d876ed2ede71f14b22eb2e2d4e0892c638cb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T04:19:32Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":lipstick:feat: increment edit account interface"
+    },
+    "additions": 240,
+    "deletions": 2,
+    "total_changes": 242,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "2c491a843b0fc7d78867e0bc6773a83de577e1f7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T04:18:49Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":sparkles: feat:editing user data"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "2e44221ea3b37b764c665f63c01cea6c454eb3c9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T04:15:49Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":bulb:docs: Synapse!"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "0a9d97fc085096fa88ea46329bc454ae020b6542",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T04:08:38Z",
+        "login": "Sismene7"
+      },
+      "message": "feat: Add AccountPage"
+    },
+    "additions": 56,
+    "deletions": 1,
+    "total_changes": 57,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "2ac0e0886f8ce3bda977e827d5a0f4c4f0f19033",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T03:43:52Z",
+        "login": "gccintra"
+      },
+      "message": "Merge pull request #88 from unb-mds/fix/cors"
+    },
+    "additions": 16,
+    "deletions": 4,
+    "total_changes": 20,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "8f613815545e076b3963cdf2156647c63b907a01",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T03:43:14Z",
+        "login": "gccintra"
+      },
+      "message": "fix: cor errors in login"
+    },
+    "additions": 16,
+    "deletions": 4,
+    "total_changes": 20,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "58307fa59bcc19b865a8ad07becc1309a4d748c0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T03:42:33Z",
+        "login": "gccintra"
+      },
+      "message": "Merge pull request #87 from unb-mds/refactor/backend-domain-models"
+    },
+    "additions": 509,
+    "deletions": 85,
+    "total_changes": 594,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "b7dbb8dd7ad6f5e405df8e6a55f469452c695259",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T03:41:38Z",
+        "login": "gccintra"
+      },
+      "message": "refactor: update user_repository to use SQLAlchemy2.0 correctly"
+    },
+    "additions": 3,
+    "deletions": 3,
+    "total_changes": 6,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "72cfb4a100cc0248dcff166804ab22437da61d49",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T03:41:12Z",
+        "login": "gccintra"
+      },
+      "message": "refactor(user): strengthen domain logic and standardize API layer"
+    },
+    "additions": 507,
+    "deletions": 83,
+    "total_changes": 590,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "dfbb20dad50ed3d91def819bcd488f564d0c1b12",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T03:38:41Z",
+        "login": "gccintra"
+      },
+      "message": "Merge pull request #86 from unb-mds/feat/user-auth"
+    },
+    "additions": 616,
+    "deletions": 141,
+    "total_changes": 757,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "ccecab98765c34df22bdc0238820174522e553c1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T03:35:01Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":bug:fix: bug icons fixes login part.2"
+    },
+    "additions": 41,
+    "deletions": 39,
+    "total_changes": 80,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "041f455e716f0a255bece91d6e21560fed890199",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T03:34:54Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":bug:fix: bug icons fixes"
+    },
+    "additions": 103,
+    "deletions": 93,
+    "total_changes": 196,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "878deb6a7a89ed7e1990d84954095033795592a0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T03:29:49Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":lipstick:feat: update part.2  responsive style"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "dff977ff967f1aaf9f44c5ba263979695035070b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T03:29:44Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":lipstick:feat: update responsive style"
+    },
+    "additions": 13,
+    "deletions": 13,
+    "total_changes": 26,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "0888eb1ffe3aa1da11f251e282c9084e127cc7ee",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T03:22:03Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":wrench: chore: Login authentication with JWT"
+    },
+    "additions": 41,
+    "deletions": 6,
+    "total_changes": 47,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "6af55923229143ed013a8512847d93239a696a32",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T03:21:07Z",
+        "login": "g-srodrigues"
+      },
+      "message": ":lipstick:feat :implement responsive design and full styling for auth…"
+    },
+    "additions": 123,
+    "deletions": 44,
+    "total_changes": 167,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "f732ff3a473a65d85b2e0cb6bdd664d0deb6c696",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T03:20:26Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":lipstick:feat: login style update and error alert bug fixes"
+    },
+    "additions": 216,
+    "deletions": 102,
+    "total_changes": 318,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "e70b5013a9d9a94d0013cd214114d549f22b2f11",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T03:16:42Z",
+        "login": null
+      },
+      "message": ":lipstick:feat: Add login screen"
+    },
+    "additions": 116,
+    "deletions": 20,
+    "total_changes": 136,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "26335bf89c97824d980eeb984f555cab43934998",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T03:16:32Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":lipstick:feat: user register interface styling"
+    },
+    "additions": 252,
+    "deletions": 113,
+    "total_changes": 365,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "17f184c7185053bff400cec09ff7052219ec9dd9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T03:00:33Z",
+        "login": "gccintra"
+      },
+      "message": "Merge pull request #85 from unb-mds/chore/auth-configs-setup"
+    },
+    "additions": 22683,
+    "deletions": 65,
+    "total_changes": 22748,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "a6c7a977f90d5df6d83409061d2333efc115bb35",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T02:57:01Z",
+        "login": "gccintra"
+      },
+      "message": ":wrench:chore: add JWT_SECRET to docker-compose and hot-reload improv…"
+    },
+    "additions": 21,
+    "deletions": 8,
+    "total_changes": 29,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "1b242a0fa771e8db66d604b21b20e49d91819162",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T02:54:34Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":sparkles: feat: libraries for future test coverage"
+    },
+    "additions": 2,
+    "deletions": 0,
+    "total_changes": 2,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "7fe7f85d6e20c7313b9a2baa904f0f5f6bc5909e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T02:54:26Z",
+        "login": "gccintra"
+      },
+      "message": ":sparkles:feat: initial frontend structure"
+    },
+    "additions": 322,
+    "deletions": 675,
+    "total_changes": 997,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "d6506c74aad7ef957bc71293c192abae1c622523",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-19T02:54:17Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":wrench: chore: config install tailwind"
+    },
+    "additions": 23006,
+    "deletions": 50,
+    "total_changes": 23056,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "3d263bbfcdfb60ff9d31f4ce9fa9bd7331652b30",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-17T19:56:53Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":tada:init: synapse!"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "1748d3044d41b66b7c316daeff0b1db3bd1e1916",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-13T17:17:37Z",
+        "login": "gccintra"
+      },
+      "message": "Merge pull request #55 from unb-mds/refactor/register_route"
+    },
+    "additions": 13,
+    "deletions": 4,
+    "total_changes": 17,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "2a34e13068922cfcf045f3866d17c209440c7f12",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-13T17:16:05Z",
+        "login": "gccintra"
+      },
+      "message": ":recycle:refactor: prevent cors issues"
+    },
+    "additions": 13,
+    "deletions": 4,
+    "total_changes": 17,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "f5586b353f091f51f64e04de00b33732614d1615",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-12T22:46:37Z",
+        "login": "Dgprogramas"
+      },
+      "message": ":tada:init: first commit"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "64bfd1372a09ac734b4e360746385db204a9b73a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-12T17:47:16Z",
+        "login": "gccintra"
+      },
+      "message": "Merge pull request #54 from unb-mds/refactor/flask_init"
+    },
+    "additions": 10,
+    "deletions": 17,
+    "total_changes": 27,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "5d54c4fbaf6fb5e650315523eedf74c1de31f161",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-12T17:37:15Z",
+        "login": "gccintra"
+      },
+      "message": ":recycle: refactor: remove unused config file and JWT extensions"
+    },
+    "additions": 10,
+    "deletions": 17,
+    "total_changes": 27,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "02387cfcf0393d3574b28c517b1e0fde29bc0d58",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-12T16:54:06Z",
+        "login": "gccintra"
+      },
+      "message": "✨ feat: Implement user registration feature (backend)"
+    },
+    "additions": 331,
+    "deletions": 114,
+    "total_changes": 445,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "feef0880105ba804fc206c5e43c171bbe41f6e05",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-12T16:38:07Z",
+        "login": "gccintra"
+      },
+      "message": "Merge pull request #52 from unb-mds/revert-51-feature/user_register"
+    },
+    "additions": 114,
+    "deletions": 331,
+    "total_changes": 445,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "29b198c75a25ab7ca2e079799d13803e7f55ab85",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-12T16:37:19Z",
+        "login": "gccintra"
+      },
+      "message": "Revert \"Feature/user register\""
+    },
+    "additions": 114,
+    "deletions": 331,
+    "total_changes": 445,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "68b9262a7cce2df8e1f251df5faf4f4162546540",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-12T16:37:13Z",
+        "login": "gccintra"
+      },
+      "message": "✨ feat: Implement user registration feature (backend)"
+    },
+    "additions": 331,
+    "deletions": 114,
+    "total_changes": 445,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "0513f4048ff5995da2c99bb8097119f962917ada",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-12T13:50:28Z",
+        "login": "gccintra"
+      },
+      "message": "Merge pull request #50 from unb-mds/spikes/poc_news_api_gnews"
+    },
+    "additions": 101,
+    "deletions": 0,
+    "total_changes": 101,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "8ded471561e3d9e7e49a6ae8cf33967be453961a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-12T13:31:41Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":recycle: refactor: update struct of project"
+    },
+    "additions": 12,
+    "deletions": 43,
+    "total_changes": 55,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "91424963e291ac51489bb5605011f68853a9216a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-12T02:38:05Z",
+        "login": "ItaloSamP"
+      },
+      "message": "test_tube:test:Last test implementations"
+    },
+    "additions": 100,
+    "deletions": 5,
+    "total_changes": 105,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "805350d10623a5154155ad176acb6c9a27296009",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-12T02:02:12Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":ok_hand: feat: alter columns of name to full_name"
+    },
+    "additions": 8,
+    "deletions": 12,
+    "total_changes": 20,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "f154c53ba17186e90e8ce89b53422e8fb61ae12c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-11T03:44:01Z",
+        "login": "ItaloSamP"
+      },
+      "message": ":test_tube:test: Tests implementations"
+    },
+    "additions": 81,
+    "deletions": 3,
+    "total_changes": 84,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "4b4411a19761eafec2f75cc881220e21f59ae4a8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-11T03:22:35Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":sparkles:feat: create user register"
+    },
+    "additions": 6,
+    "deletions": 5,
+    "total_changes": 11,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "923ea2616027a9a761ece0b7f00b309bc79e966c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-11T02:49:59Z",
+        "login": "ItaloSamP"
+      },
+      "message": "feat:Backend container issue resolved"
+    },
+    "additions": 7,
+    "deletions": 8,
+    "total_changes": 15,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "418c5d195e57958808354da5be24ae87695586bb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-11T02:22:35Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": "construction: function to register user"
+    },
+    "additions": 184,
+    "deletions": 145,
+    "total_changes": 329,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "9a3df6b23bb13bcf065815b0a5cafccfefa57bd7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-10T16:32:37Z",
+        "login": "gccintra"
+      },
+      "message": ":books: docs: add README"
+    },
+    "additions": 30,
+    "deletions": 0,
+    "total_changes": 30,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "a5197af0bf8a1c46cf69153f2a1a185d1898cec6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-10T14:47:48Z",
+        "login": "gccintra"
+      },
+      "message": "spike: news API consumption (gnews api) and scraping"
+    },
+    "additions": 71,
+    "deletions": 0,
+    "total_changes": 71,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "8c43382d0344a887a2ab00b584788daec6f67b2f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-10T14:32:32Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":bug: fix: refactor to build backend server"
+    },
+    "additions": 4,
+    "deletions": 4,
+    "total_changes": 8,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "2a345925b98a2304be147b739cb42a0f6d451b1f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-10T02:29:53Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":construction: update files to register user"
+    },
+    "additions": 32,
+    "deletions": 48,
+    "total_changes": 80,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "37146319decd15ca3c36cd7d684fa8e43136e842",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-09T18:50:02Z",
+        "login": "ItaloSamP"
+      },
+      "message": "feat: Adiciona dependências de autenticação"
+    },
+    "additions": 2,
+    "deletions": 0,
+    "total_changes": 2,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "37de469b27e9027a35ba7febaf02d7d1a5904eb3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-09T02:40:41Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": "Merge branch 'feature/user_register' of https://github.com/unb-mds/20…"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "fdfe4d3f34bbc9c351d8c7e38e6d93f655affbc7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-09T02:40:23Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": "user registration structure Co-authored-by: Italo Sam <italosampaio46…"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "a681ad73d6e2cc778c6f3dd0b7d82d09826fd66c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-09T02:37:42Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": "Merge branch 'feature/user_register' of https://github.com/unb-mds/20…"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "19cc031244da43cbe63fe4a79cb78476d010c3ec",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-09T02:37:27Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": "user registration structure Co-authored-by: Italo Sam <italosampaio46…"
+    },
+    "additions": 151,
+    "deletions": 97,
+    "total_changes": 248,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "8c46e640866879d344c95c8b411e257187b27518",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-09T02:28:44Z",
+        "login": "ArthurDevWorks"
+      },
+      "message": ":construction: user registration structure."
+    },
+    "additions": 151,
+    "deletions": 97,
+    "total_changes": 248,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "5742a39d9a3606a40f0bc6e2909e829367d80443",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-06T16:37:40Z",
+        "login": "g-srodrigues"
+      },
+      "message": "Update README.md"
+    },
+    "additions": 2,
+    "deletions": 5,
+    "total_changes": 7,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "366e6423d7ed3f5d65ccf9e07a020d17c06bfe45",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-06T16:35:51Z",
+        "login": "g-srodrigues"
+      },
+      "message": "Update README.md"
+    },
+    "additions": 6,
+    "deletions": 0,
+    "total_changes": 6,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "605bfedcb15e3149f223e46d52e8f9ab63b77a40",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-05T18:01:04Z",
+        "login": "ItaloSamP"
+      },
+      "message": "🔧 chore: final docker config and readme"
+    },
+    "additions": 136,
+    "deletions": 8,
+    "total_changes": 144,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "a56b0aa16180e0622f03098608ae93004cfb8a06",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-05T15:01:11Z",
+        "login": null
+      },
+      "message": "Revert ':wrench: chore: docker config with devcontainer'"
+    },
+    "additions": 7,
+    "deletions": 100,
+    "total_changes": 107,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "db144aacec00f13e6e2f806163a97aa2c14a9c1b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-05T14:22:36Z",
+        "login": null
+      },
+      "message": ":wrench: chore: docker config with devcontainer"
+    },
+    "additions": 100,
+    "deletions": 7,
+    "total_changes": 107,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "8149898875eb973077e315fdddc02d30920daa08",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-05T13:26:48Z",
+        "login": "ItaloSamP"
+      },
+      "message": "🔧 chore: (dockerfile maintenance)"
+    },
+    "additions": 13,
+    "deletions": 10,
+    "total_changes": 23,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "6527edcfc441714b04a444099b3ae8fcced1163d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-05T03:30:10Z",
+        "login": "ItaloSamP"
+      },
+      "message": "🔧 chore: (docker confing-connecting data-base to backend port)"
+    },
+    "additions": 32,
+    "deletions": 37,
+    "total_changes": 69,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "f7a42855ddc0b27fe0789fe4d1c6eee368a0d66a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-05T02:47:07Z",
+        "login": "ItaloSamP"
+      },
+      "message": "🔧 chore: (correção container frontend)"
+    },
+    "additions": 20,
+    "deletions": 9,
+    "total_changes": 29,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "e0a80096fe73bc9cc166d721ff42c86e8ebc03dc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-05T01:39:09Z",
+        "login": "ItaloSamP"
+      },
+      "message": "🔧 chore: docker config"
+    },
+    "additions": 1583,
+    "deletions": 0,
+    "total_changes": 1583,
+    "repo_name": "2025-2-Synapse"
+  },
+  {
+    "sha": "0dde6580840b18020907522479fa6c621913dda7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-08-25T17:09:48Z",
+        "login": "RochaCarla"
+      },
+      "message": "Initial commit"
+    },
+    "additions": 22,
+    "deletions": 0,
+    "total_changes": 22,
+    "repo_name": "2025-2-Synapse"
+  }
+]

@@ -1,0 +1,3494 @@
+[
+  {
+    "_metadata": {
+      "extracted_at": "2026-09-17T04:02:21.014168",
+      "file_path": "data/bronze/commits_2026-1-P.R.I.S.M.A.json",
+      "record_count": 205
+    }
+  },
+  {
+    "sha": "c2338b2432ba0a9a2ace1491b018e4cbeaceec17",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T05:43:23Z",
+        "login": "kaikysousa"
+      },
+      "message": "UI/UX: Refatora fluxo completo de Autenticação (Login, Cadastro e Res…"
+    },
+    "additions": 288,
+    "deletions": 127,
+    "total_changes": 415,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "5f656933a5d9521cad758df3f62ac592e1531957",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T05:34:34Z",
+        "login": "kaikysousa"
+      },
+      "message": "Refatoração: Remoção do Dashboard e Fix de Testes Locais (#111)"
+    },
+    "additions": 36,
+    "deletions": 159,
+    "total_changes": 195,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "efc109f0a0eea789aab31cffb42c36227629c1d6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T05:24:33Z",
+        "login": "delvale412"
+      },
+      "message": "Merge pull request #100 from unb-mds/docs/atualiza-readme-release-notes"
+    },
+    "additions": 217,
+    "deletions": 42,
+    "total_changes": 259,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "a99b5bd4c0c94eb55eb0a93a5630ca578d1d23a6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T05:24:05Z",
+        "login": "delvale412"
+      },
+      "message": "Merge branch 'main' into docs/atualiza-readme-release-notes"
+    },
+    "additions": 58,
+    "deletions": 15,
+    "total_changes": 73,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "4326161d8fe25f18b5e5078205998cf4210bab82",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T03:52:50Z",
+        "login": "kaikysousa"
+      },
+      "message": "feat: Adiciona compatibilidade da migração pós conflito que ocorreu n…"
+    },
+    "additions": 19,
+    "deletions": 0,
+    "total_changes": 19,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "f97c02166bacb87a0df66373294229f668bfacb2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T03:34:46Z",
+        "login": "kaikysousa"
+      },
+      "message": "chore(docker): adiciona .dockerignore e docker-entrypoint.sh; atualiz…"
+    },
+    "additions": 41,
+    "deletions": 15,
+    "total_changes": 56,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "83db1daeec7d8ab8c9360a6a701e557d6c73bdfe",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T01:51:51Z",
+        "login": "CauaoClemente"
+      },
+      "message": "docs: atualiza README e Release Notes para v0.2.0"
+    },
+    "additions": 217,
+    "deletions": 40,
+    "total_changes": 257,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "97cf43ddc3338c4ac739027667354743cc1b13c4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T23:10:29Z",
+        "login": "kaikysousa"
+      },
+      "message": "Merge pull request #67 from unb-mds/Melhorar-Django-Admin-para-visual…"
+    },
+    "additions": 1815,
+    "deletions": 73,
+    "total_changes": 1888,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "e09de2240cb29308018cc2145c07202962311c43",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T23:08:14Z",
+        "login": "kaikysousa"
+      },
+      "message": "chore: resolve conflitos de merge entre PR e main"
+    },
+    "additions": 2099,
+    "deletions": 2139,
+    "total_changes": 4238,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "ce2914d4c1cb92c95a2ea557c6bd6ca3930f97cf",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T22:47:51Z",
+        "login": "kaikysousa"
+      },
+      "message": "Merge pull request #85 from unb-mds/feature/issue-83-refatorar-propos…"
+    },
+    "additions": 488,
+    "deletions": 275,
+    "total_changes": 763,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "6e86b44f2eea4d689bbd3289cf0192c9ea2d99e7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T22:47:36Z",
+        "login": "kaikysousa"
+      },
+      "message": "Merge pull request #82 from unb-mds/feature/issue-10-detalhes-proposicao"
+    },
+    "additions": 189,
+    "deletions": 1133,
+    "total_changes": 1322,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "9255acd423248c5adad41b56ebeabfc742d43dc6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T21:50:11Z",
+        "login": "otheomls"
+      },
+      "message": "Merge pull request #81 from unb-mds/feature/issue-21-previsao-eta"
+    },
+    "additions": 1660,
+    "deletions": 736,
+    "total_changes": 2396,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "50cc3ad79850f4ef47f205270658c146d7876c2b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T19:25:33Z",
+        "login": "kaikysousa"
+      },
+      "message": "test(e2e): atualizar testes para novas rotas e validar botão de favor…"
+    },
+    "additions": 17,
+    "deletions": 8,
+    "total_changes": 25,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "06081c24abd281e20bb2aefdb72f6336b2850462",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T19:25:15Z",
+        "login": "kaikysousa"
+      },
+      "message": "refactor(ui): remover barra de pesquisa global inativa e atualizar si…"
+    },
+    "additions": 4,
+    "deletions": 15,
+    "total_changes": 19,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "246a4c83d388d5dc2a81092b3cb46080fb5e17f6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T19:24:57Z",
+        "login": "kaikysousa"
+      },
+      "message": "fix(detalhes): corrigir e implementar botão Acompanhar Favorito na te…"
+    },
+    "additions": 163,
+    "deletions": 31,
+    "total_changes": 194,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "0966c4098e19fc492ef28819d6ce844758ed68bf",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T19:24:35Z",
+        "login": "kaikysousa"
+      },
+      "message": "feat(favoritos): especializar página de favoritos como central de tra…"
+    },
+    "additions": 125,
+    "deletions": 50,
+    "total_changes": 175,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "3ae2adb586a1a9a5fa75a60c90cdb076868a4473",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T19:23:26Z",
+        "login": "kaikysousa"
+      },
+      "message": "feat(processos): migrar /proposicoes/ para /processos/ e criar buscad…"
+    },
+    "additions": 163,
+    "deletions": 171,
+    "total_changes": 334,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "ddc975f68f1a6cc81fb9619dfed27f388368c9da",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T19:23:10Z",
+        "login": "kaikysousa"
+      },
+      "message": "feat(deps): adicionar django-filter como dependência e configurar em …"
+    },
+    "additions": 16,
+    "deletions": 0,
+    "total_changes": 16,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "97a926c1ca34b7289e78d7f2c9b55963da6fb631",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T18:17:02Z",
+        "login": "kaikysousa"
+      },
+      "message": "feat(ui): detox da interface e implementacao da pagina de detalhes da…"
+    },
+    "additions": 189,
+    "deletions": 1133,
+    "total_changes": 1322,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "0bf594d91733f6d656b26f756e4f7361bb1d13e0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T17:35:47Z",
+        "login": "kaikysousa"
+      },
+      "message": "feat(processos): implementar previsao de conclusao e exibir widget"
+    },
+    "additions": 38,
+    "deletions": 3,
+    "total_changes": 41,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "f3ac4ed155bb13b06fc3fc49f8697c0a6a101b44",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T17:34:03Z",
+        "login": "kaikysousa"
+      },
+      "message": "feat(usuarios): painel de configuracao de alertas de prazos"
+    },
+    "additions": 174,
+    "deletions": 162,
+    "total_changes": 336,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "a8b539c95c0d95dee9f8344ca3ac2c6d18ec7b9e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T17:30:40Z",
+        "login": "kaikysousa"
+      },
+      "message": "feat(proposicoes): focar listagem e timeline no controle de SLA"
+    },
+    "additions": 27,
+    "deletions": 15,
+    "total_changes": 42,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "b06f7dec57a6db114741ac29328f16c2da9f3999",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T17:28:10Z",
+        "login": "kaikysousa"
+      },
+      "message": "feat(favoritos): implementar filtros temporais e métricas de SLA"
+    },
+    "additions": 107,
+    "deletions": 103,
+    "total_changes": 210,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "c0a02e44b5e11fd435da58b24e0d666095c180eb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T17:25:34Z",
+        "login": "kaikysousa"
+      },
+      "message": "feat(alertas): reestruturar painel com indicadores de SLA e estagnacao"
+    },
+    "additions": 43,
+    "deletions": 20,
+    "total_changes": 63,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "9f03c876fea462dda63b18be8323082925d390cd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T17:16:04Z",
+        "login": "kaikysousa"
+      },
+      "message": "feat(sidebar): atualizar labels para monitor de prazos e configurações"
+    },
+    "additions": 6,
+    "deletions": 5,
+    "total_changes": 11,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "60512dd70470c9f144e0cc6068732ee8de7a9ed6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T17:08:18Z",
+        "login": "kaikysousa"
+      },
+      "message": "test(e2e): corrigir configuração do banco em conftest.py"
+    },
+    "additions": 1,
+    "deletions": 5,
+    "total_changes": 6,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "6d54e81a272bb23471f834e8aa9041c6bb192e66",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T17:00:24Z",
+        "login": "kaikysousa"
+      },
+      "message": "feat(proposicoes): adicionar barra de progresso do ciclo legislativo …"
+    },
+    "additions": 49,
+    "deletions": 1,
+    "total_changes": 50,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "6f05eb0a843415501082d792ea29e15865d1ee33",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T16:52:31Z",
+        "login": "kaikysousa"
+      },
+      "message": "feat(dashboard): adaptar interface para métricas de velocidade e dura…"
+    },
+    "additions": 58,
+    "deletions": 66,
+    "total_changes": 124,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "ea8474fb0be2d821dc7b5189b63ebaf13ba72ae4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T16:49:00Z",
+        "login": "kaikysousa"
+      },
+      "message": "feat: integrar indicadores ao dashboard e adicionar teste e2e"
+    },
+    "additions": 50,
+    "deletions": 5,
+    "total_changes": 55,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "5c6b585d2f0def926acd2b3246e9bc13f3581781",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T16:46:47Z",
+        "login": "kaikysousa"
+      },
+      "message": "feat: adicionar indicadores de tempo e estagnação no dashboard"
+    },
+    "additions": 22,
+    "deletions": 0,
+    "total_changes": 22,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "d0455577a27d9cf12f27e80f0e22fc84c38267af",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T16:40:42Z",
+        "login": "kaikysousa"
+      },
+      "message": "feat: integra notificações no frontend e adiciona testes e2e"
+    },
+    "additions": 78,
+    "deletions": 154,
+    "total_changes": 232,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "9168f72da9c1764c3596ef76f475734337f91d85",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T16:35:08Z",
+        "login": "kaikysousa"
+      },
+      "message": "feat: implementa motor de alertas para processos favoritos e estagnação"
+    },
+    "additions": 119,
+    "deletions": 4,
+    "total_changes": 123,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "947fa39f8ff1c1e56c9a2a240edeb983bd2d30a7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T16:16:19Z",
+        "login": "kaikysousa"
+      },
+      "message": "feat(processos): implementa sync on-demand real-time com as APIs ofic…"
+    },
+    "additions": 155,
+    "deletions": 55,
+    "total_changes": 210,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "f17e4b6f3c3a52f483d9706373389f4456079085",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T15:13:45Z",
+        "login": "kaikysousa"
+      },
+      "message": "fix(Auth): usar get_user_model no formulário de registro"
+    },
+    "additions": 3,
+    "deletions": 4,
+    "total_changes": 7,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "be63682be5b4d4a6e5d2b61d7013cc3bb41ac890",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T15:10:21Z",
+        "login": "kaikysousa"
+      },
+      "message": "feat(Frontend): adicionar coluna de SLA na tabela de proposições"
+    },
+    "additions": 17,
+    "deletions": 2,
+    "total_changes": 19,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "d851c999ca1c93afec3fd8fd433bee985eec32d4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T15:06:36Z",
+        "login": "kaikysousa"
+      },
+      "message": "feat(Processos): adicionar tracking de SLA e dias de tramitação"
+    },
+    "additions": 16,
+    "deletions": 0,
+    "total_changes": 16,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "5f7ae2134ed1be0162d49a196c6246a01195ab4c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-20T13:48:03Z",
+        "login": "kaikysousa"
+      },
+      "message": "feat(proposicoes): adiciona modal interativo para busca e acompanhame…"
+    },
+    "additions": 255,
+    "deletions": 18,
+    "total_changes": 273,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "50298a068ebcdc06fd186fba2483c85699698333",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-20T13:32:29Z",
+        "login": "kaikysousa"
+      },
+      "message": "feat(frontend): implementa timeline dinâmica e adiciona teste E2E com…"
+    },
+    "additions": 107,
+    "deletions": 213,
+    "total_changes": 320,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "3faae07f18a6953c29fa80361c3a4f5be862b2d9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-20T13:15:46Z",
+        "login": "kaikysousa"
+      },
+      "message": "feat(processos): adiciona model Movimentacao para histórico de tramit…"
+    },
+    "additions": 36,
+    "deletions": 1,
+    "total_changes": 37,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "de193f02c254e279cd679395414681911b0b072a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-19T23:14:19Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona .brain/ no gitignore"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "a4d7840f7cb0651b7945c072d02183b93303c756",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-19T23:13:58Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona um teste inicial de sanidade (sanity check) para validação d…"
+    },
+    "additions": 36,
+    "deletions": 0,
+    "total_changes": 36,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "7ba9a207f7bd06539330ec93a0da1df62d610dac",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-19T23:13:42Z",
+        "login": "kaikysousa"
+      },
+      "message": "Cria pytest.ini com as rotas padrão para o módulo de configurações do…"
+    },
+    "additions": 3,
+    "deletions": 0,
+    "total_changes": 3,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "b0189e136d91b5b364416ab9b4435db88651118c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-19T23:12:40Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona dependências de desenvolvimento (pytest, pytest-django, pyte…"
+    },
+    "additions": 359,
+    "deletions": 0,
+    "total_changes": 359,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "e5a5731841cc63170d8222902f3498738e9bb7c0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-18T13:41:19Z",
+        "login": "kaikysousa"
+      },
+      "message": "Merge branch 'main' into Melhorar-Django-Admin-para-visualizacao-limp…"
+    },
+    "additions": 2141,
+    "deletions": 820,
+    "total_changes": 2961,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "6654cd8004229fb619d65542ee9e53f482e06b94",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-18T13:36:17Z",
+        "login": "kaikysousa"
+      },
+      "message": "fix: Reverte alteração de porta que foi feito por engano em desenvolv…"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "dfc0308fd0bf4e245c162b3e7e319a7a3ab16177",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-18T13:27:38Z",
+        "login": "kaikysousa"
+      },
+      "message": "Merge pull request #59 from unb-mds/login"
+    },
+    "additions": 185,
+    "deletions": 17,
+    "total_changes": 202,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "097982b3cada7c546e052c8128310e4169d63043",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-18T13:26:10Z",
+        "login": "kaikysousa"
+      },
+      "message": "fix: Refatora para voltar a utilizar variável de ambiente para modo d…"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "af754a5de5ee46dd6cddee6bdc519e3397609575",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-17T21:54:33Z",
+        "login": "otheomls"
+      },
+      "message": "feat(auth): add authentication templates and login flow"
+    },
+    "additions": 33,
+    "deletions": 1,
+    "total_changes": 34,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "84a467c543e2b97dc4a10f32af6e4206e3bb5c83",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-17T21:41:43Z",
+        "login": "otheomls"
+      },
+      "message": "Merge pull request #53 from unb-mds/Estrutura-Base-do-Processo-Legisl…"
+    },
+    "additions": 185,
+    "deletions": 7,
+    "total_changes": 192,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "a2b96f2280798509a64e512fe24fb0ec1489ffc2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-17T21:34:28Z",
+        "login": "kaikysousa"
+      },
+      "message": "Merge branch 'main' into Estrutura-Base-do-Processo-Legislativo-e-Ter…"
+    },
+    "additions": 1998,
+    "deletions": 845,
+    "total_changes": 2843,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "f92000895c03dd76188d8a06bfdedaa42e768a79",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-13T01:48:37Z",
+        "login": "otheomls"
+      },
+      "message": "feat(auth): complete login, signup and access restriction system"
+    },
+    "additions": 155,
+    "deletions": 19,
+    "total_changes": 174,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "4b8dc0dcf27aeb33242a823bf8b1559458f1c984",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-08T04:15:45Z",
+        "login": "kaikysousa"
+      },
+      "message": "Merge pull request #57 from unb-mds/feature/linters-precommit"
+    },
+    "additions": 2005,
+    "deletions": 852,
+    "total_changes": 2857,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "07e26cf46176d4772f28f852775efc01b190b0d3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-08T03:57:35Z",
+        "login": "CauaoClemente"
+      },
+      "message": "chore: configura linters, formatadores e pre-commit (issue #55)"
+    },
+    "additions": 2005,
+    "deletions": 852,
+    "total_changes": 2857,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "5bfe4af618b00de02afd13a44e131af898fd6c82",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-05T21:23:05Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona suporte ao Jazzmin para uma interface de administração mais …"
+    },
+    "additions": 86,
+    "deletions": 3,
+    "total_changes": 89,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "7a7d87cd5bd6e2e0cc16394cfb4bd3e846c20194",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-05T20:33:13Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona script de entrypoint para configuração do cron e execução do…"
+    },
+    "additions": 21,
+    "deletions": 1,
+    "total_changes": 22,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "8743f6cc848ec5bd8436c00960fa3a3af9a08091",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-05T20:33:00Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona atualização sob demanda para visualização de processos legis…"
+    },
+    "additions": 18,
+    "deletions": 0,
+    "total_changes": 18,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "c5f96c11cb38f52b196bd361bceb93be07f9a9a2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-05T20:05:31Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona função para sincronização periódica de processos legislativo…"
+    },
+    "additions": 19,
+    "deletions": 0,
+    "total_changes": 19,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "11d2b8c0c19786bc133e556413126fa68737c9a2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-05T20:05:21Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona suporte para filtragem por data de início na busca de propos…"
+    },
+    "additions": 39,
+    "deletions": 9,
+    "total_changes": 48,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "c3ec5650065d7145033b29d00563414618a49fba",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-05T19:46:35Z",
+        "login": "kaikysousa"
+      },
+      "message": "Melhora auditoria de processos legislativos, incluindo contagem única…"
+    },
+    "additions": 53,
+    "deletions": 17,
+    "total_changes": 70,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "b716776fc3f9a1a8915e158d8ff6e2acf87670bc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-05T19:36:46Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona suporte à nova API do Senado e melhorias na sincronização de…"
+    },
+    "additions": 341,
+    "deletions": 163,
+    "total_changes": 504,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "4b1d9cb68555cea4920cb05854b2efc9b64348c5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-05T19:36:36Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona testes para funções de parsing e atualização de detalhes leg…"
+    },
+    "additions": 401,
+    "deletions": 1,
+    "total_changes": 402,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "a1391823b34eb15876d19b31898949b0a49836ed",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-05T19:36:20Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona comando para auditoria de processos legislativos, comparando…"
+    },
+    "additions": 77,
+    "deletions": 0,
+    "total_changes": 77,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "e691f2c558ab9c77469fe65a25b722be856bbfc4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-05T19:35:47Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona comando para carga histórica de processos legislativos, inte…"
+    },
+    "additions": 180,
+    "deletions": 0,
+    "total_changes": 180,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "ec019aaffa4e714479965380a74d3c109ee68cee",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-05T19:34:44Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona novos campos a ProcessoLegislativos, campos que vem da nova …"
+    },
+    "additions": 71,
+    "deletions": 0,
+    "total_changes": 71,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "346422015fb13cf829c5c3624390abf0402a04d1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-05T19:32:06Z",
+        "login": "kaikysousa"
+      },
+      "message": "Remove a possibilidade de rodar com sqlite nas configurações do django"
+    },
+    "additions": 31,
+    "deletions": 20,
+    "total_changes": 51,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "fbdbbbc71e56302faaa57648aae94bba14529424",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-05T19:30:40Z",
+        "login": "kaikysousa"
+      },
+      "message": "Altera porta do postgres para não conflitar caso a pessoa tenha um po…"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "aa9faa51fe6403693f1f3fe9c4b0a2c87a5a4b11",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-01T03:22:35Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona serviço para integração com as APIs da Câmara e Senado, incl…"
+    },
+    "additions": 463,
+    "deletions": 0,
+    "total_changes": 463,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "bb5a5fe4cb9b356f8868a288f0a25f2cb12f2c12",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-01T02:02:03Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona migração do django de campos e constraints ao modelo Process…"
+    },
+    "additions": 150,
+    "deletions": 0,
+    "total_changes": 150,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "5fb88ab932d4bb9d6a5836131b3b9857800ec4f4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-01T02:01:25Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona comandos de gerenciamento para carga inicial, limpeza e sinc…"
+    },
+    "additions": 68,
+    "deletions": 0,
+    "total_changes": 68,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "96a3bc2a3d1e9b386b031bbb63f32df320d9b95e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-01T02:00:12Z",
+        "login": "kaikysousa"
+      },
+      "message": "Refatora a forme de definir o campo id_externo"
+    },
+    "additions": 9,
+    "deletions": 1,
+    "total_changes": 10,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "5747c0175a1da2c89c465b57f8dd2404ee5ce5c7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-31T22:18:41Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona campos que podem ser providos pela API da camara e senado"
+    },
+    "additions": 23,
+    "deletions": 0,
+    "total_changes": 23,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "a4755c1ca0c1679e428bc53ce9469c65b01f5c95",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-31T21:05:21Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona biblioteca django_crontab nas configurações do django para a…"
+    },
+    "additions": 10,
+    "deletions": 0,
+    "total_changes": 10,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "b0b665710c37bc28913cfa9d6ccbd84465dfe857",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-31T21:02:15Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona bibliotéca do django django-crontab para manusear o serviço …"
+    },
+    "additions": 12,
+    "deletions": 0,
+    "total_changes": 12,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "966660b1bcfd09e23df1fef96cba0fc77c1e0c0c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-31T20:53:00Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona a bibliotéca requests as dependências no uv"
+    },
+    "additions": 118,
+    "deletions": 0,
+    "total_changes": 118,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "8c3335a7cc2f352d2d5881612ec0c1b5c8b4ff6f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-31T20:44:22Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona arquivos adicionais gerados pelo django para o app Processos"
+    },
+    "additions": 60,
+    "deletions": 0,
+    "total_changes": 60,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "fa24d67038339fd76e4c824fbdd72ad24e24203d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-31T20:43:55Z",
+        "login": "kaikysousa"
+      },
+      "message": "Cria o model que sobrescreve o usuário padrão do django e liga o camp…"
+    },
+    "additions": 10,
+    "deletions": 0,
+    "total_changes": 10,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "ee14802cbd6f5c501c50ec9ea35f5e518a226d68",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-31T20:43:03Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona arquivos adicionais gerados pelo django para o app Processos"
+    },
+    "additions": 67,
+    "deletions": 0,
+    "total_changes": 67,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "950d9a34c17a19f7af7fe685a38e742630a689d2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-31T20:42:24Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona os models ProcessoLegislativo e TermoMonitorado ao django admin"
+    },
+    "additions": 18,
+    "deletions": 0,
+    "total_changes": 18,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "a7995c2a666b4a997b157d57aed22624ec93c847",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-31T20:42:00Z",
+        "login": "kaikysousa"
+      },
+      "message": "Cria os models Processo legislativo e Termo monitorado"
+    },
+    "additions": 19,
+    "deletions": 0,
+    "total_changes": 19,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "56302045000e46b813479b2497dafeebcf9a7cd6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-31T20:41:06Z",
+        "login": "kaikysousa"
+      },
+      "message": "Configura um model customizado de User para o django"
+    },
+    "additions": 2,
+    "deletions": 0,
+    "total_changes": 2,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "c8fc99d9cb1096796f73faafa0da6e7657e0f859",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-31T20:40:28Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona novos apps a configuração do django: Processos e Usuarios"
+    },
+    "additions": 2,
+    "deletions": 0,
+    "total_changes": 2,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "1194cf6097253a1e12f2e5d4ee67812911a03bf1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-31T20:15:18Z",
+        "login": "kaikysousa"
+      },
+      "message": "Ajusta as configurações para o django saber quando está rodando dentr…"
+    },
+    "additions": 38,
+    "deletions": 7,
+    "total_changes": 45,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "0f17da1d128b2bbc60d94439011a638ba5a0dde9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-27T15:16:26Z",
+        "login": "delvale412"
+      },
+      "message": "Atualiza readme para conter link do Gitpages"
+    },
+    "additions": 3,
+    "deletions": 0,
+    "total_changes": 3,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "75810209a2822d2fafdbfe8e18167423d88bd31b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-27T14:53:47Z",
+        "login": "delvale412"
+      },
+      "message": "Merge pull request #52 from unb-mds/Configuracao-templates-django"
+    },
+    "additions": 1499,
+    "deletions": 16,
+    "total_changes": 1515,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "8f68bf078255bb853a1e02a8518562706bc4d76f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-27T14:53:26Z",
+        "login": "delvale412"
+      },
+      "message": "Merge pull request #49 from unb-mds/Padrões-de-Software-Livre-#34"
+    },
+    "additions": 417,
+    "deletions": 0,
+    "total_changes": 417,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "a249658dbce8be834e71fc7b6f2809f3f9f8fd1f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-27T12:34:42Z",
+        "login": "kaikysousa"
+      },
+      "message": "Atualiza e organiza a pasta de relatórios de Sprints"
+    },
+    "additions": 148,
+    "deletions": 0,
+    "total_changes": 148,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "7f58170dc5c19b184e41fb9fe7fca3c7ee6b988e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-27T11:50:41Z",
+        "login": "kaikysousa"
+      },
+      "message": "Deleta manage.py perdido na raíz do projeto"
+    },
+    "additions": 0,
+    "deletions": 22,
+    "total_changes": 22,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "932391cad3dcc4579e40da236bb6915dc87c1a28",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-27T11:46:18Z",
+        "login": "kaikysousa"
+      },
+      "message": "Merge pull request #50 from unb-mds/docs/arquitetura"
+    },
+    "additions": 697,
+    "deletions": 0,
+    "total_changes": 697,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "3f6ed535e4f3411a2b175d338b68cbfaa759405b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T22:10:03Z",
+        "login": "kaikysousa"
+      },
+      "message": "Atualiza os templates com ajustes feitos no figma"
+    },
+    "additions": 245,
+    "deletions": 34,
+    "total_changes": 279,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "393f46818587327278c52e3b841d042146f79ef2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T21:28:50Z",
+        "login": "kaikysousa"
+      },
+      "message": "Deleta o diretório que estava tentando fazer deploy do gitpages na main"
+    },
+    "additions": 0,
+    "deletions": 52,
+    "total_changes": 52,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "dc4647a321906ff6d02066c828f61c5ad77744cd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T21:12:24Z",
+        "login": "CauaoClemente"
+      },
+      "message": "Update definir-arquitetura.md"
+    },
+    "additions": 14,
+    "deletions": 17,
+    "total_changes": 31,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "a7cff2cc1702620a64a57e5b9c3d143f9e65f318",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T21:02:29Z",
+        "login": "CauaoClemente"
+      },
+      "message": "docs: adicionando arquivos restantes, incluindo os diagramas, revisar…"
+    },
+    "additions": 340,
+    "deletions": 0,
+    "total_changes": 340,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "ac78b27b2bc173de622c6091dfdb449e10d41c73",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T19:27:17Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona os arquivos estátidos desenvolvidos no figma como templates …"
+    },
+    "additions": 1273,
+    "deletions": 18,
+    "total_changes": 1291,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "3d5df8009f75ed089f5de49f2558088b3b7bc3b7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T07:09:30Z",
+        "login": "CauaoClemente"
+      },
+      "message": "docs: adicionando as tecnologias do projeto, documentação"
+    },
+    "additions": 151,
+    "deletions": 0,
+    "total_changes": 151,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "0ceaca82c461d14a598d6bc2c07f31fdc3395773",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T07:06:57Z",
+        "login": "CauaoClemente"
+      },
+      "message": "docs: adicionando definicoes-back-end"
+    },
+    "additions": 71,
+    "deletions": 0,
+    "total_changes": 71,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "6cdf210520acf213acc920212b2313beb9bf4081",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T07:05:36Z",
+        "login": "CauaoClemente"
+      },
+      "message": "docs: adicionando definicoes-front-end"
+    },
+    "additions": 45,
+    "deletions": 0,
+    "total_changes": 45,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "73f249a16f373b6283a71ab30c93f42c1317bee3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T07:04:22Z",
+        "login": "CauaoClemente"
+      },
+      "message": "docs: adicionando definir-arquitetura"
+    },
+    "additions": 60,
+    "deletions": 0,
+    "total_changes": 60,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "e832797b700327cc969846f4fa8cde86d94f5f17",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T06:59:58Z",
+        "login": "CauaoClemente"
+      },
+      "message": "docs: adicionando documentação index"
+    },
+    "additions": 33,
+    "deletions": 0,
+    "total_changes": 33,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "29145295baaaa0e1141a3c25034cafde73b53709",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T16:50:26Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona setup inicial de app e pasta templates"
+    },
+    "additions": 17,
+    "deletions": 0,
+    "total_changes": 17,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "291be3b26857b366da89bdb86fa5e0de815d1720",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T15:49:42Z",
+        "login": "kaikysousa"
+      },
+      "message": "Hotfix: Atualiza dependências do requirements.txt"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "0a5f656679ab772b3c8f5f94e56f2a5e6f67d48e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T14:58:01Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona documentação de código de conduta"
+    },
+    "additions": 111,
+    "deletions": 0,
+    "total_changes": 111,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "bebe7434bf6f2fe02f60c330bde6a5108039b161",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T14:56:53Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona documentação de como contribuir no projeto"
+    },
+    "additions": 120,
+    "deletions": 0,
+    "total_changes": 120,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "937fb79f54003654316277bd96c296b75ac0374a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T14:55:33Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona templates de padrões de commits e branches"
+    },
+    "additions": 186,
+    "deletions": 0,
+    "total_changes": 186,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "c20014a6635cba9f128d1d059814eb5fe88f0342",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T06:52:42Z",
+        "login": "kaikysousa"
+      },
+      "message": "Deleta arquivo index.html perdido"
+    },
+    "additions": 0,
+    "deletions": 14,
+    "total_changes": 14,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "d80029a575879a2ee790cadfe2297acf5385702c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T06:51:24Z",
+        "login": "kaikysousa"
+      },
+      "message": "Remove arquivos do gitpages que contaminaram a main"
+    },
+    "additions": 0,
+    "deletions": 6399,
+    "total_changes": 6399,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "299c4e55a09e71cda122c119e0b8c16d75527c8e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T06:41:21Z",
+        "login": "delvale412"
+      },
+      "message": "Merge pull request #48 from unb-mds/Review-Inicializacao-do-Projeto-D…"
+    },
+    "additions": 7067,
+    "deletions": 1,
+    "total_changes": 7068,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "f1e6645a545dd997d0991af4ab4e8ebf7aec7ba0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T06:36:05Z",
+        "login": "kaikysousa"
+      },
+      "message": "Delete style.css"
+    },
+    "additions": 0,
+    "deletions": 212,
+    "total_changes": 212,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "9a9ab64a57b51cea708e4a92ffe84d4489f03fb1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T06:35:51Z",
+        "login": "kaikysousa"
+      },
+      "message": "Delete index.html"
+    },
+    "additions": 0,
+    "deletions": 152,
+    "total_changes": 152,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "62aa79283981606bc0a27182b7b2fcf8e1868a14",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T06:35:42Z",
+        "login": "kaikysousa"
+      },
+      "message": "Delete script.js"
+    },
+    "additions": 0,
+    "deletions": 34,
+    "total_changes": 34,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "337d2d1da520aa6ea5db068e5f63c78cfb858c2f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T06:35:01Z",
+        "login": "kaikysousa"
+      },
+      "message": "Merge pull request #45 from unb-mds/figma"
+    },
+    "additions": 398,
+    "deletions": 0,
+    "total_changes": 398,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "8e88a1020efc1ed2bad3ffb9aeb6f8e5fe30b91f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T06:23:32Z",
+        "login": "kaikysousa"
+      },
+      "message": "Reverte commit que apagava os documentos da main"
+    },
+    "additions": 969,
+    "deletions": 0,
+    "total_changes": 969,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "cb680c02533de29dfb33dd1cfcb65c501fca807a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T06:10:53Z",
+        "login": "delvale412"
+      },
+      "message": "Adiciona os tramites aprovados"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "d6d19b746fb2159a9c48d2bbdb6f9d6f908b01d8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T06:10:26Z",
+        "login": "delvale412"
+      },
+      "message": "Adiciona o mapa de calor"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "5338e2fe14a0780c8adf6df873b13bf460af8d72",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T06:08:50Z",
+        "login": "delvale412"
+      },
+      "message": "Adiciona a página de favoritados"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "0bb6782dc90eb7951c2c1deb6c6dab9fd7977100",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T06:06:57Z",
+        "login": "delvale412"
+      },
+      "message": "Adiciona a central do usuário"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "624ad48a44190f4c200bbc2f0db8297917f647ee",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T06:04:22Z",
+        "login": "delvale412"
+      },
+      "message": "Adiciona telas de alertas do figma"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "200076ce1e840f388412d5deab05e4fb7d45afbd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T05:54:05Z",
+        "login": "delvale412"
+      },
+      "message": "adiciona telas de alertas (print3)"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "8acb83b4ee63b3a7d686a6087719de67adb98e0f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T05:49:07Z",
+        "login": "kaikysousa"
+      },
+      "message": "Reverte commits feitos NA BRANCH ERRADA!! e de funcionalidade que não…"
+    },
+    "additions": 0,
+    "deletions": 18,
+    "total_changes": 18,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "069b823a40c9b86d308a17412582f58decca0141",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T05:38:15Z",
+        "login": "kaikysousa"
+      },
+      "message": "Reversão drástica de commits feitos por engano na main!!!!"
+    },
+    "additions": 1,
+    "deletions": 6566,
+    "total_changes": 6567,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "48405220e509bb28b361d4bc9fd811dafa585d2a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T05:18:29Z",
+        "login": "otheomls"
+      },
+      "message": "feat: implementa autenticação"
+    },
+    "additions": 18,
+    "deletions": 0,
+    "total_changes": 18,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "192bd47b7af8737759cdc3355de002f0eab35b4f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T04:14:57Z",
+        "login": "kaikysousa"
+      },
+      "message": "Merge pull request #46 from unb-mds/add-realease-notes"
+    },
+    "additions": 45,
+    "deletions": 0,
+    "total_changes": 45,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "ded265d9c9f8e670276ed465b1865fbd9d967b11",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T04:12:47Z",
+        "login": "kaikysousa"
+      },
+      "message": "Corrige detalhes no passo a passo de rodar com postgress"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "7d7e2a626e1edce2c847f4f8cb01ab578ec050b1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T04:12:28Z",
+        "login": "kaikysousa"
+      },
+      "message": "Altera a porta do postgress para não dar conflito do local com o docker"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "431c5d9ca77c939c5c1fa945c236c37618e0f5dc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T04:00:44Z",
+        "login": "kaikysousa"
+      },
+      "message": "Atualiza o Readme para ensinar a rodar com postgress local"
+    },
+    "additions": 40,
+    "deletions": 11,
+    "total_changes": 51,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "630b82ea606d15fe33ef72daf8d57f23146aad5b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T04:00:16Z",
+        "login": "kaikysousa"
+      },
+      "message": "Atualiza o envExemplo para rodar local com posrgress fora do docker"
+    },
+    "additions": 11,
+    "deletions": 9,
+    "total_changes": 20,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "2afb55967a861f494afe0e22646177be399cbe9d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T03:47:00Z",
+        "login": "kaikysousa"
+      },
+      "message": "Atualiza o Readme para rodar com Uv"
+    },
+    "additions": 41,
+    "deletions": 8,
+    "total_changes": 49,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "72652167e19702330102149a3e5d96835d12af63",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T03:31:13Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona biblioteca dotenv ao pacote de dependências"
+    },
+    "additions": 23,
+    "deletions": 0,
+    "total_changes": 23,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "1dac4ce9dba06a09dfa340ff7866822659f48438",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T03:30:38Z",
+        "login": "kaikysousa"
+      },
+      "message": "Refatora settings do django para aceitar confiiguração por variáveis …"
+    },
+    "additions": 3,
+    "deletions": 0,
+    "total_changes": 3,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "b02d896e917cd14e7b7a49c8ce2b87a4a46fd503",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T03:26:52Z",
+        "login": "kaikysousa"
+      },
+      "message": "Refatora sistema de env para ter um local sem docker e um com docker"
+    },
+    "additions": 16,
+    "deletions": 0,
+    "total_changes": 16,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "54510a6bab86daef968c2fe284059e596aa36b27",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T03:24:25Z",
+        "login": "kaikysousa"
+      },
+      "message": "Altera nome do env de exemplo no Readme para rodar com docker"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "4fb39cac3c2e962d8cba3fc78cf4ec17d73120a4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T03:22:33Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona arquivo polls ao gitignore"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "43cc7a04578dee31cb372174d0a167b21fec10a3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T03:11:09Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona possibilidade de buildar o projeto via uv ou uvicorn(gerenci…"
+    },
+    "additions": 143,
+    "deletions": 0,
+    "total_changes": 143,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "493220c137a8c429871a6a39f304f8ae0148e6d0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T03:07:46Z",
+        "login": "kaikysousa"
+      },
+      "message": "Atualiza README.md com informações do projeto e instruções para rodar…"
+    },
+    "additions": 25,
+    "deletions": 28,
+    "total_changes": 53,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "e2e565233d707470fdd8d242566285907739a13c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T02:56:27Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona README.md com configuração de ambiente detalhada."
+    },
+    "additions": 27,
+    "deletions": 155,
+    "total_changes": 182,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "8cfa02eb3c1a77a3c55a8f4efba20fc2af8fb951",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T02:55:59Z",
+        "login": "kaikysousa"
+      },
+      "message": "Corrige o gitignore para padrão pré-estabelecido anteriormente"
+    },
+    "additions": 175,
+    "deletions": 6,
+    "total_changes": 181,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "8e2bfd47ae919985f6f5759dcbfad9be5b085b2e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T02:53:47Z",
+        "login": "delvale412"
+      },
+      "message": "fix: corrige sintaxe do workflow de deploy"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "ba132f4e5ff822689644be63c714105777d0b675",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T02:53:47Z",
+        "login": "delvale412"
+      },
+      "message": "feat: organiza estrutura e inicia componente dashboard"
+    },
+    "additions": 6472,
+    "deletions": 176,
+    "total_changes": 6648,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "ae01e71eba608716802e841b055adc79c9c25134",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T02:52:55Z",
+        "login": "CauaoClemente"
+      },
+      "message": "Adiciona novos estudos"
+    },
+    "additions": 450,
+    "deletions": 0,
+    "total_changes": 450,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "269ee7bfd74f7e4c10f89f5b69c119d1d8bc9aa6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T02:52:55Z",
+        "login": "millapereira1"
+      },
+      "message": "Rename estudo_API_Milla.md to estudo_API.md"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "188f8f1cc430f7ba0fd1ece013ea060a058fa9f0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T02:52:55Z",
+        "login": "millapereira1"
+      },
+      "message": "Update estudo_Miro.md"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "af08ff5c2923fbf6e7794ef57abd284b49e98a84",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T02:52:55Z",
+        "login": "millapereira1"
+      },
+      "message": "Update estudo_Miro.md"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "763bf5ac2f9dd29b249b0ceae5ebf24237e47b4e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T02:52:55Z",
+        "login": "millapereira1"
+      },
+      "message": "Update estudo_Miro.md"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "76ac82560e272c84e9fc47411eff6b3ff4ace187",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T02:52:55Z",
+        "login": "millapereira1"
+      },
+      "message": "Update estudo_Miro.md"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "4b3e816e02831703a320473e24a1e82edfd64a90",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T02:52:55Z",
+        "login": "millapereira1"
+      },
+      "message": "Corrigindo erros de edição"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "3c8a7b458d6b2db085ed5f3ec37d9b70c253fee5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T02:52:55Z",
+        "login": "millapereira1"
+      },
+      "message": "Adicionando estudos sobre o Miro"
+    },
+    "additions": 54,
+    "deletions": 0,
+    "total_changes": 54,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "bb9da56982df84ccaaad7888d59381bdaff5dcfb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T02:52:55Z",
+        "login": "millapereira1"
+      },
+      "message": "Correção no texto do estudo de Figma"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "42a82b61a3f83d2eb10627ec30fd3425c8754b2b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T02:52:55Z",
+        "login": "millapereira1"
+      },
+      "message": "adicionando estudo sobre FigmaI"
+    },
+    "additions": 57,
+    "deletions": 0,
+    "total_changes": 57,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "cc53d944ee71732aa9cf30efe81c0054c1c31a79",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T02:52:55Z",
+        "login": "CauaoClemente"
+      },
+      "message": "Adicionando estudo de backend e frontend, e depois irei mandar o de c…"
+    },
+    "additions": 178,
+    "deletions": 0,
+    "total_changes": 178,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "7442cd375a064505e020dc7d5dfcbe59cfd533e7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T02:52:55Z",
+        "login": "CauaoClemente"
+      },
+      "message": "Adicionando estudo que havia esquecido sobre requisitos"
+    },
+    "additions": 46,
+    "deletions": 0,
+    "total_changes": 46,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "6b685379243f64190d11bd7770de492fa1a61d43",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T02:38:09Z",
+        "login": "kaikysousa"
+      },
+      "message": "Corrige o gitignore para padrão pré-estabelecido anteriormente"
+    },
+    "additions": 175,
+    "deletions": 6,
+    "total_changes": 181,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "734110d8d07cb832764203256348f83e0b2ead5b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T01:41:24Z",
+        "login": "CauaoClemente"
+      },
+      "message": "Adiciona release note v0.1.0"
+    },
+    "additions": 45,
+    "deletions": 0,
+    "total_changes": 45,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "2be1002c63a15e79b673c4ae9e63a9046cb5ab84",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-23T22:30:06Z",
+        "login": "delvale412"
+      },
+      "message": "concepção modificada e mais robusta"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "de6d0a705f15502560547923cffe16688cd81267",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-23T22:12:08Z",
+        "login": "delvale412"
+      },
+      "message": "concepção inicial do app"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "890de84596b8ddd5222f851a1e8ae3a41a7446bf",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T19:37:54Z",
+        "login": "delvale412"
+      },
+      "message": "Mudança de guia rapido"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "7b1bab080216233f9f84c4f95b63e7a987e7db96",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T19:29:33Z",
+        "login": "delvale412"
+      },
+      "message": "correção yml"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "1ac7ec7b5499660b4a42e1f4c5162f614e9631f6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T19:27:53Z",
+        "login": "delvale412"
+      },
+      "message": "unificando a apresentação do produto com o dashboard técnico"
+    },
+    "additions": 97,
+    "deletions": 25,
+    "total_changes": 122,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "b13914c639360e9d704d6a4a0241dbd22d015d42",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T19:08:53Z",
+        "login": "delvale412"
+      },
+      "message": "fix: corrige sintaxe do workflow de deploy"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "f725287b60051f3537ce7cb147179318be12c315",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T19:05:33Z",
+        "login": "delvale412"
+      },
+      "message": "feat: organiza estrutura e inicia componente dashboard"
+    },
+    "additions": 6500,
+    "deletions": 176,
+    "total_changes": 6676,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "262daa449d1c0f0a804b0bd4b3c89e552abc85d3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T15:09:46Z",
+        "login": "kaikysousa"
+      },
+      "message": "Merge pull request #42 from unb-mds/novos-estudos-caua"
+    },
+    "additions": 450,
+    "deletions": 0,
+    "total_changes": 450,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "ee7fc4b414ad9ae6fbc8dfa4d34b12bba174c55e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T05:19:06Z",
+        "login": "CauaoClemente"
+      },
+      "message": "Alteração Didatica README.md"
+    },
+    "additions": 68,
+    "deletions": 2,
+    "total_changes": 70,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "ba42d033d77a3b87d7e8d864ae70cd2bd82c9c04",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-12T21:17:47Z",
+        "login": "CauaoClemente"
+      },
+      "message": "Adiciona novos estudos"
+    },
+    "additions": 450,
+    "deletions": 0,
+    "total_changes": 450,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "77acf9e6b32f4f40b6029656ffac88672c9328cc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T12:48:39Z",
+        "login": "millapereira1"
+      },
+      "message": "Rename estudo_API_Milla.md to estudo_API.md"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "a884d3e8ececb10def84ae37c504e2eaabdd75da",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T12:46:25Z",
+        "login": "millapereira1"
+      },
+      "message": "Update estudo_Miro.md"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "e96e3c55eb4f80293753b8e292c7034de7976bb1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T12:44:58Z",
+        "login": "millapereira1"
+      },
+      "message": "Update estudo_Miro.md"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "c13aed6385358041fd2723ce62591f7e2cf75dca",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T12:43:48Z",
+        "login": "millapereira1"
+      },
+      "message": "Update estudo_Miro.md"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "74b3fc93007f4259672f5987b34188f1e1f66658",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T12:39:51Z",
+        "login": "millapereira1"
+      },
+      "message": "Update estudo_Miro.md"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "86d5857dfa2a08076ce0788cce39c6737d985611",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T12:37:36Z",
+        "login": "millapereira1"
+      },
+      "message": "Merge pull request #40 from unb-mds/Estudos-Milla"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "46b2bc7123f6997d27c68d9cf724e082fe2372b0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T12:36:25Z",
+        "login": "millapereira1"
+      },
+      "message": "Corrigindo erros de edição"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "80bb5e9347312286c35f4c392fe6f5075d2214b3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T12:31:17Z",
+        "login": "millapereira1"
+      },
+      "message": "Merge pull request #39 from unb-mds/Estudos-Milla"
+    },
+    "additions": 54,
+    "deletions": 0,
+    "total_changes": 54,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "7c2abd0e835a4c0287d1d0815f00b92daf918ed7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T12:26:15Z",
+        "login": "millapereira1"
+      },
+      "message": "Adicionando estudos sobre o Miro"
+    },
+    "additions": 54,
+    "deletions": 0,
+    "total_changes": 54,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "83536bb9b5846b5c2e8a9227bdc3cc9e78e413d1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-10T19:29:32Z",
+        "login": "millapereira1"
+      },
+      "message": "Merge pull request #38 from unb-mds/Estudos-Milla"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "5329d197f2c653440d03bf635f6c0de224f47ce4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-10T19:24:09Z",
+        "login": "millapereira1"
+      },
+      "message": "Correção no texto do estudo de Figma"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "6edabdd19aba4aa67c7253d91a9770ce3b31834b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-10T19:18:50Z",
+        "login": "millapereira1"
+      },
+      "message": "Merge pull request #37 from unb-mds/Estudos-Milla"
+    },
+    "additions": 57,
+    "deletions": 0,
+    "total_changes": 57,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "7701d4ec57694a53c34ba68d5b19f142e7c830ed",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-09T20:30:36Z",
+        "login": "kaikysousa"
+      },
+      "message": "Merge pull request #25 from unb-mds/add-estudo-caua"
+    },
+    "additions": 178,
+    "deletions": 0,
+    "total_changes": 178,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "bf313b6bd3fddc100bc567eff199b18d46e66a38",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-06T10:17:24Z",
+        "login": "millapereira1"
+      },
+      "message": "Merge branch 'Estudos-Milla' of https://github.com/unb-mds/2026-1-Squ…"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "a5cb83395f2140d1987f0f54361aa07c202933a6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-06T10:16:03Z",
+        "login": "millapereira1"
+      },
+      "message": "adicionando estudo sobre FigmaI"
+    },
+    "additions": 57,
+    "deletions": 0,
+    "total_changes": 57,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "f990049993e7409b294a575c2882967fd38dcbe9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-05T23:43:50Z",
+        "login": "delvale412"
+      },
+      "message": "melhora de aspectos visuais e identidade do projeto"
+    },
+    "additions": 140,
+    "deletions": 144,
+    "total_changes": 284,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "9309f495cb83f6a42d19f28efb3f3e0b8e22862d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-05T23:26:30Z",
+        "login": "delvale412"
+      },
+      "message": "implementa nova interface de produto com css/js"
+    },
+    "additions": 402,
+    "deletions": 144,
+    "total_changes": 546,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "c0e43f2f8dcb7100cea251348c5e242bd3a35bf4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-05T23:16:47Z",
+        "login": "delvale412"
+      },
+      "message": "docs: publicacao inicial da pagina de produto do Prisma"
+    },
+    "additions": 144,
+    "deletions": 969,
+    "total_changes": 1113,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "7b52aac428da29ec6ae7b1302e8ac055a383cc61",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-05T21:43:40Z",
+        "login": "kaikysousa"
+      },
+      "message": "Melhora o env de exemplo com comentários e o nome relacionado ao readme"
+    },
+    "additions": 16,
+    "deletions": 10,
+    "total_changes": 26,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "030dd7ff5facde77f5aef0d971c1f5a5ff4d5933",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-05T21:40:47Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona README.md com configuração de ambiente detalhada."
+    },
+    "additions": 103,
+    "deletions": 1,
+    "total_changes": 104,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "a554f9609f3e68081059155e8b1e01e33359b540",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-04T17:08:59Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona configuração do Docker, requirements e ajustes nas variáveis…"
+    },
+    "additions": 73,
+    "deletions": 1,
+    "total_changes": 74,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "61ab6efbbf9d272cb28729ef9cd13d4c38413d77",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-04T17:08:08Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona arquivo de exemplo .env com configurações básicas do Django"
+    },
+    "additions": 10,
+    "deletions": 0,
+    "total_changes": 10,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "77054c1f80c67bbf8e136525ca1b2e4ff7aeadc4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-04T16:28:45Z",
+        "login": "kaikysousa"
+      },
+      "message": "Atualiza configuração do banco de dados para utilizar variáveis de am…"
+    },
+    "additions": 11,
+    "deletions": 5,
+    "total_changes": 16,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "0615a9dd6f515efd450f64aac107997e6680ed60",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-04T16:17:28Z",
+        "login": "kaikysousa"
+      },
+      "message": "Atualiza configurações do django para utilizar variáveis de ambiente …"
+    },
+    "additions": 5,
+    "deletions": 3,
+    "total_changes": 8,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "75081dcc45b3f71bed4aff63ad6d09b2cdd033a2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-04T16:03:37Z",
+        "login": "CauaoClemente"
+      },
+      "message": "Adicionando estudo de backend e frontend, e depois irei mandar o de c…"
+    },
+    "additions": 178,
+    "deletions": 0,
+    "total_changes": 178,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "243c1cc8d745285690a98c8930c78b838d65f5dc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-04T15:59:51Z",
+        "login": "kaikysousa"
+      },
+      "message": "Merge pull request #24 from unb-mds/add-estudo-caua"
+    },
+    "additions": 46,
+    "deletions": 0,
+    "total_changes": 46,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "0fb54f6fd1a060c00c6d47cffff4c10a4bcf5996",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-04T15:45:32Z",
+        "login": "CauaoClemente"
+      },
+      "message": "Adicionando estudo que havia esquecido sobre requisitos"
+    },
+    "additions": 46,
+    "deletions": 0,
+    "total_changes": 46,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "a61e64cf9bc1d61d63da6ee7a47f126f208ad960",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-04T15:44:59Z",
+        "login": "kaikysousa"
+      },
+      "message": "Inicializa projeto Django com configuração básica e arquivos essenciais"
+    },
+    "additions": 218,
+    "deletions": 0,
+    "total_changes": 218,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "6feb00cb0f3679eca98dff96c64fbbb72ff5704e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-04T15:22:37Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona relatório da sprint 3."
+    },
+    "additions": 27,
+    "deletions": 0,
+    "total_changes": 27,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "569cb1683493a38edf98a8bce068d2967ec825e8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-03T19:02:40Z",
+        "login": "delvale412"
+      },
+      "message": "Merge pull request #23 from unb-mds/add-estudo-django"
+    },
+    "additions": 359,
+    "deletions": 0,
+    "total_changes": 359,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "46e038cdb7bbbb72aa7d434155fcf2d6f542a310",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-29T17:00:50Z",
+        "login": "kaikysousa"
+      },
+      "message": "Update sprint title to 'Sprint 1'"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "d8fb33841d87163053ec3367be512e04d55b76d5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-29T01:44:52Z",
+        "login": null
+      },
+      "message": "docs: adiciona estudo sobre django filters"
+    },
+    "additions": 359,
+    "deletions": 0,
+    "total_changes": 359,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "6f1d3aeff2959c3d31b7ac5d1c203d793eea2e12",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-26T23:24:47Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona documento da Sprint 2 com objetivos, conquistas e tarefas fu…"
+    },
+    "additions": 53,
+    "deletions": 0,
+    "total_changes": 53,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "07ea7505ca645d47bb7c57a4c32f272aa5fe9495",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-26T23:21:53Z",
+        "login": "kaikysousa"
+      },
+      "message": "Merge pull request #2 from unb-mds/Estudos-Milla"
+    },
+    "additions": 26,
+    "deletions": 0,
+    "total_changes": 26,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "3779c9f46abde7f8d8327568ef5280941d1803b8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-26T23:21:04Z",
+        "login": "kaikysousa"
+      },
+      "message": "Apply suggestions from code review"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "28bbb2e61b9b6fbc239129baa9d9098ba08d9af1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-26T22:25:05Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona arquivo .gitignore para projeto Django"
+    },
+    "additions": 177,
+    "deletions": 0,
+    "total_changes": 177,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "20391c9bd2d9a78a702228afa9e01d8f1278eab5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-23T12:59:50Z",
+        "login": "millapereira1"
+      },
+      "message": "Ajustando detalhes do estudo de APIs"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "c3905f9078e9bbad951caabed8dd19a601fcb660",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-22T16:39:42Z",
+        "login": "millapereira1"
+      },
+      "message": "Explicação de APIs com analogia do garçom"
+    },
+    "additions": 26,
+    "deletions": 0,
+    "total_changes": 26,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "2f3d7366e627f2c64ea2a8970d165e4d1019b05b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-15T16:08:56Z",
+        "login": "kaikysousa"
+      },
+      "message": "Registra a primeira sprint"
+    },
+    "additions": 47,
+    "deletions": 0,
+    "total_changes": 47,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "b04e251ca52bc1329c74359eb3250118061638d7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-15T14:44:09Z",
+        "login": "kaikysousa"
+      },
+      "message": "Merge pull request #1 from unb-mds/add-estudo-caua"
+    },
+    "additions": 152,
+    "deletions": 0,
+    "total_changes": 152,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "08f63b9f85d24c62df42b9b5ed04216b4ecf8034",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-14T21:01:49Z",
+        "login": "CauaoClemente"
+      },
+      "message": "Adiciona markdown de estudo do git e github"
+    },
+    "additions": 152,
+    "deletions": 0,
+    "total_changes": 152,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "88d63607ba27c1ae279cb2a4c2f431c0a673452d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-13T15:40:30Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona template para relatórios de sprint"
+    },
+    "additions": 36,
+    "deletions": 0,
+    "total_changes": 36,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "f3c05670bacdf81580f30d2d6399fa59332338c6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-13T15:39:36Z",
+        "login": "kaikysousa"
+      },
+      "message": "Adiciona primeiro registro de sprint"
+    },
+    "additions": 24,
+    "deletions": 0,
+    "total_changes": 24,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  },
+  {
+    "sha": "7bcce6f99de019de794af52fa1d8b85937dff6c5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-06T16:34:51Z",
+        "login": "RochaCarla"
+      },
+      "message": "Initial commit"
+    },
+    "additions": 22,
+    "deletions": 0,
+    "total_changes": 22,
+    "repo_name": "2026-1-P.R.I.S.M.A"
+  }
+]

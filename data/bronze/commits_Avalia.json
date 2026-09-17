@@ -1,0 +1,43 @@
+[
+  {
+    "_metadata": {
+      "extracted_at": "2026-09-17T03:58:20.748842",
+      "file_path": "data/bronze/commits_Avalia.json",
+      "record_count": 2
+    }
+  },
+  {
+    "sha": "69f95a30ff99093fe09a4aeaab53d5b725b6aacd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-14T12:03:34Z",
+        "login": null
+      },
+      "message": "exercicio de pipeline"
+    },
+    "additions": 2908,
+    "deletions": 1,
+    "total_changes": 2909,
+    "repo_name": "Avalia"
+  },
+  {
+    "sha": "fb5811f8f4a8105df8426938bfbf7517fed4cc5f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-14T12:00:13Z",
+        "login": "RochaCarla"
+      },
+      "message": "Initial commit"
+    },
+    "additions": 22,
+    "deletions": 0,
+    "total_changes": 22,
+    "repo_name": "Avalia"
+  }
+]

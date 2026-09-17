@@ -1,0 +1,224 @@
+{
+  "owner": "unb-mds",
+  "repository": "diario-de-bordo",
+  "branch": "main",
+  "sha": "9f4d7d0c612ec6c7c4927dc0af1b0df6810578da",
+  "tree": [
+    {
+      "name": ".gitignore",
+      "path": ".gitignore",
+      "type": "file",
+      "sha": "888b088bf2933b3f023d53674529bd7368465c85",
+      "mode": "100644",
+      "extension": ".gitignore",
+      "size": 90,
+      "is_binary": false
+    },
+    {
+      "name": ".nojekyll",
+      "path": ".nojekyll",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".nojekyll",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "README.md",
+      "path": "README.md",
+      "type": "file",
+      "sha": "faa5e6dfe8174bbcd4987b25f304f911a16b66f9",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2202,
+      "is_binary": false
+    },
+    {
+      "name": "_coverpage.md",
+      "path": "_coverpage.md",
+      "type": "file",
+      "sha": "e89696b0051d33daab6e6a023133c26b00307dc0",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 276,
+      "is_binary": false
+    },
+    {
+      "name": "_sidebar.md",
+      "path": "_sidebar.md",
+      "type": "file",
+      "sha": "1b8fa6d0e982ad2c5d428a2f767704a4be5d2d15",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 600,
+      "is_binary": false
+    },
+    {
+      "name": "blog",
+      "path": "blog",
+      "type": "directory",
+      "sha": "e1b337461523072fcb188d1f9a0810e4db9a6b2f",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "2027-03-10-formacao-de-equipe-exemplo.md",
+      "path": "blog/2027-03-10-formacao-de-equipe-exemplo.md",
+      "type": "file",
+      "sha": "d9c05d654d09502faf28dbd16ffd11c071ad0ef5",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1456,
+      "is_binary": false
+    },
+    {
+      "name": "_TEMPLATE.md",
+      "path": "blog/_TEMPLATE.md",
+      "type": "file",
+      "sha": "ec784ec5a066f07a1ef68a6b9837988f6071ddf4",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1358,
+      "is_binary": false
+    },
+    {
+      "name": "data",
+      "path": "data",
+      "type": "directory",
+      "sha": "709fa47ea361693ebaf3ba96dd9609e894d4c3c1",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "perguntas.json",
+      "path": "data/perguntas.json",
+      "type": "file",
+      "sha": "4208bdbf5eb3a499d403013351eec0db2b29a8d9",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 5425,
+      "is_binary": false
+    },
+    {
+      "name": "docs",
+      "path": "docs",
+      "type": "directory",
+      "sha": "107a01bfc36747ea1c39015f8683f3f36bb02a06",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "avaliacao.md",
+      "path": "docs/avaliacao.md",
+      "type": "file",
+      "sha": "8cb47233e1a5144a27cf4fe716129c341fe44266",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2342,
+      "is_binary": false
+    },
+    {
+      "name": "como-escrever-o-meu-diario.md",
+      "path": "docs/como-escrever-o-meu-diario.md",
+      "type": "file",
+      "sha": "91c2440e87bbfe8e32fd8767a0df97dc5df1d210",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2845,
+      "is_binary": false
+    },
+    {
+      "name": "como-usar.md",
+      "path": "docs/como-usar.md",
+      "type": "file",
+      "sha": "f81cbe3e6865fc05e144688ef6b799355a12a8e0",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2892,
+      "is_binary": false
+    },
+    {
+      "name": "github-pages.md",
+      "path": "docs/github-pages.md",
+      "type": "file",
+      "sha": "201e3eb5cacea234be9fde927607a3a5efd39826",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3145,
+      "is_binary": false
+    },
+    {
+      "name": "perguntas.md",
+      "path": "docs/perguntas.md",
+      "type": "file",
+      "sha": "cdadbba0cac8987f6245059730d000eaa07f7556",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2280,
+      "is_binary": false
+    },
+    {
+      "name": "img",
+      "path": "img",
+      "type": "directory",
+      "sha": "741fe15227025a4b52e6c7552d7ad94e14c8cc59",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "logo.svg",
+      "path": "img/logo.svg",
+      "type": "file",
+      "sha": "b65e369cbb3cf84466df27b7282f32184598321d",
+      "mode": "100644",
+      "extension": ".svg",
+      "size": 1000,
+      "is_binary": false
+    },
+    {
+      "name": "index.html",
+      "path": "index.html",
+      "type": "file",
+      "sha": "1c84abf2877afc4a7ab43c6005568fc1fd28bb7f",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 4652,
+      "is_binary": false
+    },
+    {
+      "name": "scripts",
+      "path": "scripts",
+      "type": "directory",
+      "sha": "d5cde5d1cc9aa9a206dd14932957a368448432fe",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "export-entries.py",
+      "path": "scripts/export-entries.py",
+      "type": "file",
+      "sha": "f71b04bdf89a61706f4295a4beca1e0d30abc86e",
+      "mode": "100755",
+      "extension": ".py",
+      "size": 5873,
+      "is_binary": false
+    }
+  ],
+  "truncated": false,
+  "extracted_at": "2026-09-17T04:04:03.051538",
+  "method": "rest",
+  "total_items": 21,
+  "repository_metadata": {
+    "id": 1364853177,
+    "full_name": "unb-mds/diario-de-bordo",
+    "description": null,
+    "created_at": "2026-09-10T20:01:53Z",
+    "updated_at": "2026-09-16T18:11:27Z",
+    "language": "Python",
+    "size": 27,
+    "stars": 0,
+    "forks": 2,
+    "open_issues": 0
+  }
+}

@@ -1,0 +1,553 @@
+[
+  {
+    "_metadata": {
+      "extracted_at": "2026-09-17T03:25:22.588080",
+      "file_path": "data/bronze/commits_2024-1-Gastos-DF-Doc-Squad12.json",
+      "record_count": 32
+    }
+  },
+  {
+    "sha": "843795cc9acd759ef2621bff34e92acd394be899",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-09-04T13:33:41Z",
+        "login": "victorcamaraa"
+      },
+      "message": "Update backend.md"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "90a442e5e2f8779e2564a53413e79c640d42cc6f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-09-04T13:04:41Z",
+        "login": "victorcamaraa"
+      },
+      "message": "Update backend.md"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "3c498e237eed9862a6ea4d159abee43b8953628a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-09-04T13:00:14Z",
+        "login": "victorcamaraa"
+      },
+      "message": "Update backend.md"
+    },
+    "additions": 1,
+    "deletions": 2,
+    "total_changes": 3,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "c73f1be5bbae8f003a6517f73403faa74054e971",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-09-04T04:50:37Z",
+        "login": "victorcamaraa"
+      },
+      "message": "Update backend.md"
+    },
+    "additions": 125,
+    "deletions": 117,
+    "total_changes": 242,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "fe445a9c27065883fcb79325c35ba7fbb0170f3f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-09-04T03:04:19Z",
+        "login": "Vini47"
+      },
+      "message": "breve descrição do front"
+    },
+    "additions": 3,
+    "deletions": 1,
+    "total_changes": 4,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "38ae314980e90315dc7ee0d457ad3d5d709fee8a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-09-04T02:54:52Z",
+        "login": "Vini47"
+      },
+      "message": "fix2"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "eafe51e0f25a010c18f844d850a423f2ee4b7106",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-09-04T02:53:38Z",
+        "login": "Vini47"
+      },
+      "message": "fix"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "bf3626f308d23c6d21a332e85a1adc3f526f7494",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-09-04T02:52:29Z",
+        "login": "Vini47"
+      },
+      "message": "Add files via upload"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "6b3cc29d769e86445b5a30a1be7de3261624df88",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-09-04T02:48:44Z",
+        "login": "Vini47"
+      },
+      "message": "arquitetura atualizada"
+    },
+    "additions": 6,
+    "deletions": 72,
+    "total_changes": 78,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "faca917c0ecd739687a87260bb60a5892a72d3a5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-09-03T21:08:52Z",
+        "login": "victorcamaraa"
+      },
+      "message": "Delete docs/backendPCredito.md"
+    },
+    "additions": 0,
+    "deletions": 172,
+    "total_changes": 172,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "54ae807db4787dde8654faa72140dee53af02538",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-09-03T21:08:33Z",
+        "login": "victorcamaraa"
+      },
+      "message": "Delete docs/backendPCon.md"
+    },
+    "additions": 0,
+    "deletions": 189,
+    "total_changes": 189,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "3db64c3281616747883c72409d0fc5f2951641c3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-09-03T21:08:09Z",
+        "login": "victorcamaraa"
+      },
+      "message": "Delete docs/backendPCompras.md"
+    },
+    "additions": 0,
+    "deletions": 172,
+    "total_changes": 172,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "3412ce04214a8cc433190d486f1ca3c1ce4ca63f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-23T13:45:10Z",
+        "login": "DanNunes777"
+      },
+      "message": "Add files via upload"
+    },
+    "additions": 172,
+    "deletions": 0,
+    "total_changes": 172,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "c1c8e372445f85d87f4bfdef3b2ab6a76e8b642d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-23T13:34:44Z",
+        "login": "DanNunes777"
+      },
+      "message": "Add files via upload"
+    },
+    "additions": 172,
+    "deletions": 0,
+    "total_changes": 172,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "9f43806ae15684864d3c8c158405315fba789036",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-23T13:11:33Z",
+        "login": "DanNunes777"
+      },
+      "message": "Add files via upload"
+    },
+    "additions": 189,
+    "deletions": 0,
+    "total_changes": 189,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "4e4084d0d53536aa65fd6a46b7e19b805c7e4960",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-23T03:56:21Z",
+        "login": "Vini47"
+      },
+      "message": "Merge pull request #4 from unb-mds/api"
+    },
+    "additions": 42,
+    "deletions": 96,
+    "total_changes": 138,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "1629a6b020ac638d50a26e20795d2b0b014082bd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-23T03:54:42Z",
+        "login": "Vini47"
+      },
+      "message": "api"
+    },
+    "additions": 42,
+    "deletions": 96,
+    "total_changes": 138,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "557d64273cba61ac9eeee8f1a98669fd02afc36a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-23T03:33:02Z",
+        "login": "Vini47"
+      },
+      "message": "Merge pull request #3 from unb-mds/backlog"
+    },
+    "additions": 79,
+    "deletions": 10,
+    "total_changes": 89,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "ae0e505a76d3485d1f1cdd453033f12c23882711",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-23T03:32:23Z",
+        "login": "Vini47"
+      },
+      "message": "backlog"
+    },
+    "additions": 79,
+    "deletions": 10,
+    "total_changes": 89,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "60a81971d5b9d9d4c60a92ff8d08ee7679f473f3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-23T02:02:35Z",
+        "login": "Vini47"
+      },
+      "message": "Merge pull request #2 from unb-mds/arquitetura"
+    },
+    "additions": 21,
+    "deletions": 31,
+    "total_changes": 52,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "15146110253c4a0ce9cb3c2030ce54c3bb2c1e56",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-23T02:00:28Z",
+        "login": "Vini47"
+      },
+      "message": "adicionado pagina da arquitetura"
+    },
+    "additions": 21,
+    "deletions": 31,
+    "total_changes": 52,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "1d700c0d836efa37187b384d967e3a7e15e52eb9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-21T22:53:35Z",
+        "login": "Ninja-Haiyai"
+      },
+      "message": "Atualização do documento de Front end"
+    },
+    "additions": 31,
+    "deletions": 0,
+    "total_changes": 31,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "44fad4da96fb370c3579c9aac46e986300a8cc86",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-19T00:33:34Z",
+        "login": "Vini47"
+      },
+      "message": "Add files via upload"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "4488ac9c6007ed54d46705bc0c13c159067bd68f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-15T13:16:46Z",
+        "login": "Vini47"
+      },
+      "message": "Merge pull request #1 from unb-mds/documentacao_inicial_back"
+    },
+    "additions": 27,
+    "deletions": 5,
+    "total_changes": 32,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "1dbd05e4deeb52b63a3975efb906c493f9cd1af0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-15T13:15:36Z",
+        "login": "Vini47"
+      },
+      "message": "documentação inicial com um exemplo que pode ser incrementado"
+    },
+    "additions": 27,
+    "deletions": 5,
+    "total_changes": 32,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "c6ca55642e601c6a8cb0f1a4e91ccdb08a9368bf",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-04T00:21:42Z",
+        "login": "Vini47"
+      },
+      "message": "link da documentação"
+    },
+    "additions": 2,
+    "deletions": 0,
+    "total_changes": 2,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "66e7c4362b6c9c6f4bcefdead6e31c4d65f024d4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-04T00:16:55Z",
+        "login": "Vini47"
+      },
+      "message": "adicionado link para o repositorio principal"
+    },
+    "additions": 3,
+    "deletions": 1,
+    "total_changes": 4,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "3c281b42be8398c9a0fde28286caab597c773d99",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-04T00:04:29Z",
+        "login": "Vini47"
+      },
+      "message": "Update README.md"
+    },
+    "additions": 0,
+    "deletions": 6,
+    "total_changes": 6,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "24155aea12ae707216521fb0f5e57dc6182cfc29",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-04T00:01:08Z",
+        "login": "Vini47"
+      },
+      "message": "adicionado ambiente virtual com as dependencias instaladas"
+    },
+    "additions": 573766,
+    "deletions": 0,
+    "total_changes": 573766,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "f1f61aeb70a4ba00f19de4c3f03cadbc8815bec4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-03T23:48:05Z",
+        "login": "Vini47"
+      },
+      "message": "movendo documentação"
+    },
+    "additions": 608,
+    "deletions": 0,
+    "total_changes": 608,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "9e3c4af6886fce53cda7501251373a599cfe898a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-03T23:40:34Z",
+        "login": "Vini47"
+      },
+      "message": "Delete README.md"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  },
+  {
+    "sha": "2a362b50a40472db40ca63ef91d407df265bfbaf",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-02T14:44:42Z",
+        "login": "RochaCarla"
+      },
+      "message": "Initial commit"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2024-1-Gastos-DF-Doc-Squad12"
+  }
+]

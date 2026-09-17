@@ -1,0 +1,1654 @@
+{
+  "owner": "unb-mds",
+  "repository": "2026-1-P.R.I.S.M.A",
+  "branch": "main",
+  "sha": "c2338b2432ba0a9a2ace1491b018e4cbeaceec17",
+  "tree": [
+    {
+      "name": ".dockerignore",
+      "path": ".dockerignore",
+      "type": "file",
+      "sha": "52b71a46751714b518390e41dd48080f4de95d0a",
+      "mode": "100644",
+      "extension": ".dockerignore",
+      "size": 104,
+      "is_binary": false
+    },
+    {
+      "name": ".env_docker.exemplo",
+      "path": ".env_docker.exemplo",
+      "type": "file",
+      "sha": "c661bd49a6d34bb593f4a69e6ec9a5b1930d420d",
+      "mode": "100644",
+      "extension": ".exemplo",
+      "size": 485,
+      "is_binary": false
+    },
+    {
+      "name": ".env_local.exemplo",
+      "path": ".env_local.exemplo",
+      "type": "file",
+      "sha": "2950a35dbf766ab91d0366cf2a5a849f9fd00f8a",
+      "mode": "100644",
+      "extension": ".exemplo",
+      "size": 450,
+      "is_binary": false
+    },
+    {
+      "name": ".flake8",
+      "path": ".flake8",
+      "type": "file",
+      "sha": "189ed913b20db3cc7013f1819d00e22082e33e2e",
+      "mode": "100644",
+      "extension": ".flake8",
+      "size": 103,
+      "is_binary": false
+    },
+    {
+      "name": ".gitignore",
+      "path": ".gitignore",
+      "type": "file",
+      "sha": "13d7593fe690737b4e72363194328c5fac0cdae7",
+      "mode": "100644",
+      "extension": ".gitignore",
+      "size": 3670,
+      "is_binary": false
+    },
+    {
+      "name": ".pre-commit-config.yaml",
+      "path": ".pre-commit-config.yaml",
+      "type": "file",
+      "sha": "fe37121600f0ff6cf7be307625f3ce998ae504f3",
+      "mode": "100644",
+      "extension": ".yaml",
+      "size": 496,
+      "is_binary": false
+    },
+    {
+      "name": ".python-version",
+      "path": ".python-version",
+      "type": "file",
+      "sha": "e4fba2183587225f216eeada4c78dfab6b2e65f5",
+      "mode": "100644",
+      "extension": ".python-version",
+      "size": 5,
+      "is_binary": false
+    },
+    {
+      "name": "LICENSE",
+      "path": "LICENSE",
+      "type": "file",
+      "sha": "675c19ec0ecdd2613794ad67040a9a3c51d2b67a",
+      "mode": "100644",
+      "extension": "",
+      "size": 1060,
+      "is_binary": false
+    },
+    {
+      "name": "README.md",
+      "path": "README.md",
+      "type": "file",
+      "sha": "3a712f59161b7cda1788810dba9e4e419e2ef923",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4842,
+      "is_binary": false
+    },
+    {
+      "name": "compose.yml",
+      "path": "compose.yml",
+      "type": "file",
+      "sha": "6e943892b1faaf53915fa097bf38f16067484bca",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 902,
+      "is_binary": false
+    },
+    {
+      "name": "docker-entrypoint.sh",
+      "path": "docker-entrypoint.sh",
+      "type": "file",
+      "sha": "0b3a44e52153a7d00eb3f6085475729583ff2f4c",
+      "mode": "100644",
+      "extension": ".sh",
+      "size": 184,
+      "is_binary": false
+    },
+    {
+      "name": "dockerfile",
+      "path": "dockerfile",
+      "type": "file",
+      "sha": "111d83d7eb39459b3461b398eef20e29ec3db458",
+      "mode": "100644",
+      "extension": "",
+      "size": 1083,
+      "is_binary": false
+    },
+    {
+      "name": "docs",
+      "path": "docs",
+      "type": "directory",
+      "sha": "f41f98f16b6eea6a7cf87a211197562ceef70b84",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "Arquitetura",
+      "path": "docs/Arquitetura",
+      "type": "directory",
+      "sha": "9618b54f82a59b50b444da100efc79e1f181dcef",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "arquitetura-interna.md",
+      "path": "docs/Arquitetura/arquitetura-interna.md",
+      "type": "file",
+      "sha": "a601b002d6ec31d7240591001b9cf00872442b6f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3274,
+      "is_binary": false
+    },
+    {
+      "name": "definicoes-back-end.md",
+      "path": "docs/Arquitetura/definicoes-back-end.md",
+      "type": "file",
+      "sha": "30e591bbc2e292a3cf2686a6b793bd65401df547",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2278,
+      "is_binary": false
+    },
+    {
+      "name": "definicoes-front-end.md",
+      "path": "docs/Arquitetura/definicoes-front-end.md",
+      "type": "file",
+      "sha": "b880055db61ca137e84f2dce62461949da4f70f7",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1897,
+      "is_binary": false
+    },
+    {
+      "name": "definir-arquitetura.md",
+      "path": "docs/Arquitetura/definir-arquitetura.md",
+      "type": "file",
+      "sha": "23be44f08828ac3a993a5b8fa036280541c3b493",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2945,
+      "is_binary": false
+    },
+    {
+      "name": "documento-c4.md",
+      "path": "docs/Arquitetura/documento-c4.md",
+      "type": "file",
+      "sha": "104fb395a33f015bacf33c2d128a3771a24d0b0d",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 8053,
+      "is_binary": false
+    },
+    {
+      "name": "index.md",
+      "path": "docs/Arquitetura/index.md",
+      "type": "file",
+      "sha": "f1a72f5ef8e5ef258485dd355c1ad1fe251c030a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1771,
+      "is_binary": false
+    },
+    {
+      "name": "tecnologias_projeto.md",
+      "path": "docs/Arquitetura/tecnologias_projeto.md",
+      "type": "file",
+      "sha": "941873efde27c9a25d022811fad1c4e898e9856c",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3873,
+      "is_binary": false
+    },
+    {
+      "name": "CODE_OF_CONDUCT.md",
+      "path": "docs/CODE_OF_CONDUCT.md",
+      "type": "file",
+      "sha": "a0ba435d9cbd9c8b66b2fc940c7201c42b647b2a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6975,
+      "is_binary": false
+    },
+    {
+      "name": "CONTRIBUTING.md",
+      "path": "docs/CONTRIBUTING.md",
+      "type": "file",
+      "sha": "d701b0268166818d891ab93a119c07b27195ca11",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4255,
+      "is_binary": false
+    },
+    {
+      "name": "Sprints",
+      "path": "docs/Sprints",
+      "type": "directory",
+      "sha": "1486d7d327ccd0bbee7a136de8abd5e0d80fd486",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "sprint-0.md",
+      "path": "docs/Sprints/sprint-0.md",
+      "type": "file",
+      "sha": "006a477773805eafe87616cb476bb5c0c92a3e23",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1070,
+      "is_binary": false
+    },
+    {
+      "name": "sprint-1.md",
+      "path": "docs/Sprints/sprint-1.md",
+      "type": "file",
+      "sha": "b68d34ff088daf50d5ed9db97e5247c4d854ccee",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1849,
+      "is_binary": false
+    },
+    {
+      "name": "sprint-2.md",
+      "path": "docs/Sprints/sprint-2.md",
+      "type": "file",
+      "sha": "affda8639cf91f0cbc78c96884cd776af0266cdf",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1558,
+      "is_binary": false
+    },
+    {
+      "name": "sprint-3.md",
+      "path": "docs/Sprints/sprint-3.md",
+      "type": "file",
+      "sha": "9d82aeaa27f9ac7c6b0e039b8af11b36f99e783b",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1020,
+      "is_binary": false
+    },
+    {
+      "name": "sprint-4.md",
+      "path": "docs/Sprints/sprint-4.md",
+      "type": "file",
+      "sha": "8842ed7bbdb9de1a6fd090357ea06753ef53cfdc",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1282,
+      "is_binary": false
+    },
+    {
+      "name": "sprint-5.md",
+      "path": "docs/Sprints/sprint-5.md",
+      "type": "file",
+      "sha": "367031ddbc6245982e699f76a69f999300db3281",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1291,
+      "is_binary": false
+    },
+    {
+      "name": "sprint-6.md",
+      "path": "docs/Sprints/sprint-6.md",
+      "type": "file",
+      "sha": "dc637edd897be8878fa430e56ae410285774d233",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1242,
+      "is_binary": false
+    },
+    {
+      "name": "sprint-7.md",
+      "path": "docs/Sprints/sprint-7.md",
+      "type": "file",
+      "sha": "6a70d1f21424fdf92533dafef3764136468eaeac",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1228,
+      "is_binary": false
+    },
+    {
+      "name": "template-sprint.md",
+      "path": "docs/Sprints/template-sprint.md",
+      "type": "file",
+      "sha": "ce705101caede821e110f659f2de0b1ff9199a9a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 707,
+      "is_binary": false
+    },
+    {
+      "name": "documentacao-padroes-commits-branches.md",
+      "path": "docs/documentacao-padroes-commits-branches.md",
+      "type": "file",
+      "sha": "d58066c3a56770f8f3317076a1f8c525b6213c9f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 8046,
+      "is_binary": false
+    },
+    {
+      "name": "releases",
+      "path": "docs/releases",
+      "type": "directory",
+      "sha": "2eca680efaf5c876740287eb13905cebac27fa4e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "release_note_v0.1.0.md",
+      "path": "docs/releases/release_note_v0.1.0.md",
+      "type": "file",
+      "sha": "d5166cacc81bc47b85456524c8f1cc91b0c8bb38",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2141,
+      "is_binary": false
+    },
+    {
+      "name": "release_note_v0.2.0.md",
+      "path": "docs/releases/release_note_v0.2.0.md",
+      "type": "file",
+      "sha": "258400281ab7ced6da4a8d800ef25744232a8e24",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6723,
+      "is_binary": false
+    },
+    {
+      "name": "entrypoint.sh",
+      "path": "entrypoint.sh",
+      "type": "file",
+      "sha": "f7326402b76de847e5f98005971d4234f8a47309",
+      "mode": "100644",
+      "extension": ".sh",
+      "size": 367,
+      "is_binary": false
+    },
+    {
+      "name": "estudo",
+      "path": "estudo",
+      "type": "directory",
+      "sha": "3ead72df4aa7c3c89a8cfc7d671c29c6e571bd59",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "estudo_API.md",
+      "path": "estudo/estudo_API.md",
+      "type": "file",
+      "sha": "83d919967fc8de2d28a3c87f3a6e02acb5cab1f1",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1274,
+      "is_binary": false
+    },
+    {
+      "name": "estudo_Figma.md",
+      "path": "estudo/estudo_Figma.md",
+      "type": "file",
+      "sha": "f2b36e27fb079c584e9cbb4f1c202d390658815b",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3303,
+      "is_binary": false
+    },
+    {
+      "name": "estudo_Miro.md",
+      "path": "estudo/estudo_Miro.md",
+      "type": "file",
+      "sha": "ed4715f5dcfa2627185d9a1c91d76c558fd9a4fb",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5015,
+      "is_binary": false
+    },
+    {
+      "name": "estudo_Postgre_caua.md",
+      "path": "estudo/estudo_Postgre_caua.md",
+      "type": "file",
+      "sha": "ba50871e361e2fe7cd6c80c6c525019e0136d046",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5818,
+      "is_binary": false
+    },
+    {
+      "name": "estudo_backend.md",
+      "path": "estudo/estudo_backend.md",
+      "type": "file",
+      "sha": "fe76cf4d6d19bd019fa29cccea8e59a4c2f1e790",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3394,
+      "is_binary": false
+    },
+    {
+      "name": "estudo_django_caua.md",
+      "path": "estudo/estudo_django_caua.md",
+      "type": "file",
+      "sha": "073f147cd9ac5ac88ddf2e10498c42db2b229ed1",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3831,
+      "is_binary": false
+    },
+    {
+      "name": "estudo_djangofilters.md",
+      "path": "estudo/estudo_djangofilters.md",
+      "type": "file",
+      "sha": "8c31d27bd027459e4916962b6c26c4118a0ff5a7",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 7972,
+      "is_binary": false
+    },
+    {
+      "name": "estudo_docker_caua.md",
+      "path": "estudo/estudo_docker_caua.md",
+      "type": "file",
+      "sha": "1dd5edfc883fcce8b71c68910afde4aaf6be4b66",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6421,
+      "is_binary": false
+    },
+    {
+      "name": "estudo_figma_caua.md",
+      "path": "estudo/estudo_figma_caua.md",
+      "type": "file",
+      "sha": "531c09cc53d1248da918d57a6a3e94b91217f53a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3897,
+      "is_binary": false
+    },
+    {
+      "name": "estudo_frontend.md",
+      "path": "estudo/estudo_frontend.md",
+      "type": "file",
+      "sha": "33094bb44acfd58656417955690f81c3fb8a62b1",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3822,
+      "is_binary": false
+    },
+    {
+      "name": "estudo_gitegithub.md",
+      "path": "estudo/estudo_gitegithub.md",
+      "type": "file",
+      "sha": "6e65e0ba694b6a6ba73f1a01f218427951764380",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6581,
+      "is_binary": false
+    },
+    {
+      "name": "estudo_postman_caua.md",
+      "path": "estudo/estudo_postman_caua.md",
+      "type": "file",
+      "sha": "b40407b0940ad5485a92237e6922f8fdc858dbd2",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3304,
+      "is_binary": false
+    },
+    {
+      "name": "estudo_requisitos.md",
+      "path": "estudo/estudo_requisitos.md",
+      "type": "file",
+      "sha": "add6bd9325d712215ed58f7e10784d10f00bad0c",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3481,
+      "is_binary": false
+    },
+    {
+      "name": "figma",
+      "path": "figma",
+      "type": "directory",
+      "sha": "b3022791f836b260f86e1af1650f3179020338ee",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "print1",
+      "path": "figma/print1",
+      "type": "directory",
+      "sha": "27390bbd322af4d103854f5ce6871c0dc7897d25",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "concepcao_inicial.png",
+      "path": "figma/print1/concepcao_inicial.png",
+      "type": "file",
+      "sha": "2a46e0aebaa7fcc2ff0b71be9569e0b0a274f4ad",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 93716,
+      "is_binary": false
+    },
+    {
+      "name": "print2",
+      "path": "figma/print2",
+      "type": "directory",
+      "sha": "0a0681b01e526da0b3720ea97372b94e0979fb90",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "concepcao_modificada.png",
+      "path": "figma/print2/concepcao_modificada.png",
+      "type": "file",
+      "sha": "c184d8d980c1bcfae8972d2070338d14919c97c1",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 511060,
+      "is_binary": false
+    },
+    {
+      "name": "print3",
+      "path": "figma/print3",
+      "type": "directory",
+      "sha": "07084779bac1d04aade76c42bc1b0fcde7de17eb",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "alertas_novo.png",
+      "path": "figma/print3/alertas_novo.png",
+      "type": "file",
+      "sha": "5192368b260f52b9ce8489b6a756e4a067a45a3b",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 499464,
+      "is_binary": false
+    },
+    {
+      "name": "print4",
+      "path": "figma/print4",
+      "type": "directory",
+      "sha": "c4d2e8cdeae08e68c9fbd05b910266a0be594066",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "central_user.png",
+      "path": "figma/print4/central_user.png",
+      "type": "file",
+      "sha": "959d487c468e63cef89c51feff757d5ee35687a9",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 469520,
+      "is_binary": false
+    },
+    {
+      "name": "print5",
+      "path": "figma/print5",
+      "type": "directory",
+      "sha": "927a2eddb2699384dea8270c9607648a5e4a8e15",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "favoritos.png",
+      "path": "figma/print5/favoritos.png",
+      "type": "file",
+      "sha": "6793bed71428a938f5029ceb67424551615993e2",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 373750,
+      "is_binary": false
+    },
+    {
+      "name": "print6",
+      "path": "figma/print6",
+      "type": "directory",
+      "sha": "a9c8da9d14a10e640166a29cbbcf20db0547313d",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "mapa.png",
+      "path": "figma/print6/mapa.png",
+      "type": "file",
+      "sha": "6785b2f2d9258b99698717e96858efde5ff06921",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 475205,
+      "is_binary": false
+    },
+    {
+      "name": "print7",
+      "path": "figma/print7",
+      "type": "directory",
+      "sha": "4b779f71a90de57f98349ef33e2bef089b4b751e",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "aprovadad.png",
+      "path": "figma/print7/aprovadad.png",
+      "type": "file",
+      "sha": "7f723942fbed11ac847ac13b2b804ddffeafffaa",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 617214,
+      "is_binary": false
+    },
+    {
+      "name": "pyproject.toml",
+      "path": "pyproject.toml",
+      "type": "file",
+      "sha": "4c2273fce054ee10630765d68c27fbc2101b15a9",
+      "mode": "100644",
+      "extension": ".toml",
+      "size": 741,
+      "is_binary": false
+    },
+    {
+      "name": "pytest.ini",
+      "path": "pytest.ini",
+      "type": "file",
+      "sha": "278851c9d860ab4e23f96a569c85e013e26e0164",
+      "mode": "100644",
+      "extension": ".ini",
+      "size": 72,
+      "is_binary": false
+    },
+    {
+      "name": "requirements.txt",
+      "path": "requirements.txt",
+      "type": "file",
+      "sha": "a2d992a0d3c2ef9acb8a60da242200cc107dddd6",
+      "mode": "100644",
+      "extension": ".txt",
+      "size": 91,
+      "is_binary": false
+    },
+    {
+      "name": "src",
+      "path": "src",
+      "type": "directory",
+      "sha": "e3278cdec830ba80779b7dbfe97bc9bf6c565ac0",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "Processos",
+      "path": "src/Processos",
+      "type": "directory",
+      "sha": "d802811a60b2178314601ceb4cd4cd86f7929d85",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "src/Processos/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "admin.py",
+      "path": "src/Processos/admin.py",
+      "type": "file",
+      "sha": "7092b32d423f8af314bf52f8c71afdb1526ae078",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3480,
+      "is_binary": false
+    },
+    {
+      "name": "apps.py",
+      "path": "src/Processos/apps.py",
+      "type": "file",
+      "sha": "025ba5415b77f25398b674512346db32aca51261",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 93,
+      "is_binary": false
+    },
+    {
+      "name": "cron.py",
+      "path": "src/Processos/cron.py",
+      "type": "file",
+      "sha": "44351780757ce975253fcae6ab99e6233d9727ec",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 617,
+      "is_binary": false
+    },
+    {
+      "name": "filters.py",
+      "path": "src/Processos/filters.py",
+      "type": "file",
+      "sha": "211561cb79bbefb44c8d3055e03a69a9a73aeab5",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 877,
+      "is_binary": false
+    },
+    {
+      "name": "management",
+      "path": "src/Processos/management",
+      "type": "directory",
+      "sha": "52f8f765f8d093b2deaacf145bc1f87698743022",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "src/Processos/management/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "commands",
+      "path": "src/Processos/management/commands",
+      "type": "directory",
+      "sha": "29e57f56411dc05ae27bb047c6c720769589b797",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "src/Processos/management/commands/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "auditoria_processos.py",
+      "path": "src/Processos/management/commands/auditoria_processos.py",
+      "type": "file",
+      "sha": "58e88b4330feea56be1a41bc4f547ee4b1277658",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 5895,
+      "is_binary": false
+    },
+    {
+      "name": "carga_historica.py",
+      "path": "src/Processos/management/commands/carga_historica.py",
+      "type": "file",
+      "sha": "995a71a4e4e8be34090480098bdc456f53087583",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 7937,
+      "is_binary": false
+    },
+    {
+      "name": "carga_inicial.py",
+      "path": "src/Processos/management/commands/carga_inicial.py",
+      "type": "file",
+      "sha": "54e78a1056b58e0d63c92dfa271f841846c3f3f0",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 988,
+      "is_binary": false
+    },
+    {
+      "name": "limpar_processos.py",
+      "path": "src/Processos/management/commands/limpar_processos.py",
+      "type": "file",
+      "sha": "ba8a839d5ba834888f92bf3d11275326c0075751",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 712,
+      "is_binary": false
+    },
+    {
+      "name": "sync_processos.py",
+      "path": "src/Processos/management/commands/sync_processos.py",
+      "type": "file",
+      "sha": "7af2b054bcb3cfc5b959f6a92b48221c621d4810",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1182,
+      "is_binary": false
+    },
+    {
+      "name": "migrations",
+      "path": "src/Processos/migrations",
+      "type": "directory",
+      "sha": "673e15973519b2991563e4956fa4ae75f1542490",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "0001_initial.py",
+      "path": "src/Processos/migrations/0001_initial.py",
+      "type": "file",
+      "sha": "33f3214d6c535adcd4ef7e13ff2d80710a945864",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1223,
+      "is_binary": false
+    },
+    {
+      "name": "0002_initial.py",
+      "path": "src/Processos/migrations/0002_initial.py",
+      "type": "file",
+      "sha": "7a12efdc4b95294ef00ff05be566269c90b11242",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 570,
+      "is_binary": false
+    },
+    {
+      "name": "0003_movimentacao.py",
+      "path": "src/Processos/migrations/0003_movimentacao.py",
+      "type": "file",
+      "sha": "b2c7303f34145a0bed0d4205db91ce8ddb24db5b",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 848,
+      "is_binary": false
+    },
+    {
+      "name": "0003_processolegislativo_apreciacao_and_more.py",
+      "path": "src/Processos/migrations/0003_processolegislativo_apreciacao_and_more.py",
+      "type": "file",
+      "sha": "30c5b02d40853e3e8d38ae3f7dd597c58a8ec5dc",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4585,
+      "is_binary": false
+    },
+    {
+      "name": "0004_alter_processolegislativo_id_externo_and_more.py",
+      "path": "src/Processos/migrations/0004_alter_processolegislativo_id_externo_and_more.py",
+      "type": "file",
+      "sha": "dcbdac698f7e5ae6bbb0ade27d68866f19f1864f",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 649,
+      "is_binary": false
+    },
+    {
+      "name": "0004_termomonitorado_processos.py",
+      "path": "src/Processos/migrations/0004_termomonitorado_processos.py",
+      "type": "file",
+      "sha": "1240c5e6c6c5af4042093089180a41b30ba41cf0",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 466,
+      "is_binary": false
+    },
+    {
+      "name": "0005_processolegislativo_apelido_and_more.py",
+      "path": "src/Processos/migrations/0005_processolegislativo_apelido_and_more.py",
+      "type": "file",
+      "sha": "1779730f47b22e3f945ecb9351067660deba34d0",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2161,
+      "is_binary": false
+    },
+    {
+      "name": "0006_merge_20260701_0349.py",
+      "path": "src/Processos/migrations/0006_merge_20260701_0349.py",
+      "type": "file",
+      "sha": "f9af31878435bde6ea8f428f8975a3b31ad04d14",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 302,
+      "is_binary": false
+    },
+    {
+      "name": "__init__.py",
+      "path": "src/Processos/migrations/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "models.py",
+      "path": "src/Processos/models.py",
+      "type": "file",
+      "sha": "a111abfde2c0a2f110c2e498e59b962056cb9e46",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 6016,
+      "is_binary": false
+    },
+    {
+      "name": "services.py",
+      "path": "src/Processos/services.py",
+      "type": "file",
+      "sha": "777974a6da13e89c245f323ca912a78429e193ec",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 24799,
+      "is_binary": false
+    },
+    {
+      "name": "tests.py",
+      "path": "src/Processos/tests.py",
+      "type": "file",
+      "sha": "4c240bd28355aea595a45d4d7dbf9663c74bcc27",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 14538,
+      "is_binary": false
+    },
+    {
+      "name": "views.py",
+      "path": "src/Processos/views.py",
+      "type": "file",
+      "sha": "91ea44a218fbd2f408430959283f0419c921093e",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 63,
+      "is_binary": false
+    },
+    {
+      "name": "Usuarios",
+      "path": "src/Usuarios",
+      "type": "directory",
+      "sha": "b64963ae30580ce6cc229ebbfc459f20ad587be2",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "src/Usuarios/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "admin.py",
+      "path": "src/Usuarios/admin.py",
+      "type": "file",
+      "sha": "ed29139e87413944bf8750f45a8cefdf1b69c3c4",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 364,
+      "is_binary": false
+    },
+    {
+      "name": "apps.py",
+      "path": "src/Usuarios/apps.py",
+      "type": "file",
+      "sha": "0ca02671b77404dc9c866cf80e5e7f44e87225ce",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 91,
+      "is_binary": false
+    },
+    {
+      "name": "management",
+      "path": "src/Usuarios/management",
+      "type": "directory",
+      "sha": "7025897228c73403ae13d5ba3d43846b7bf234e3",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "src/Usuarios/management/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "commands",
+      "path": "src/Usuarios/management/commands",
+      "type": "directory",
+      "sha": "97b0ac9fa09307464089dfd8dde9b8db43753c92",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "src/Usuarios/management/commands/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "gerar_alertas.py",
+      "path": "src/Usuarios/management/commands/gerar_alertas.py",
+      "type": "file",
+      "sha": "8611331f8260ec5b53a01aed3a58772895614e47",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2110,
+      "is_binary": false
+    },
+    {
+      "name": "migrations",
+      "path": "src/Usuarios/migrations",
+      "type": "directory",
+      "sha": "e4c6d0c42f02d40ff36d3239f742a77989a2a46c",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "0001_initial.py",
+      "path": "src/Usuarios/migrations/0001_initial.py",
+      "type": "file",
+      "sha": "9ceca62104cfb83b8f66f6d1e7f157c40d231c86",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3050,
+      "is_binary": false
+    },
+    {
+      "name": "0002_notificacao.py",
+      "path": "src/Usuarios/migrations/0002_notificacao.py",
+      "type": "file",
+      "sha": "476f377b575e034afb246df18c85a3f62c01042a",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1321,
+      "is_binary": false
+    },
+    {
+      "name": "0003_userprofile.py",
+      "path": "src/Usuarios/migrations/0003_userprofile.py",
+      "type": "file",
+      "sha": "bbe5b97325be4d3f23d2f14c802642e078753394",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 920,
+      "is_binary": false
+    },
+    {
+      "name": "__init__.py",
+      "path": "src/Usuarios/migrations/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "models.py",
+      "path": "src/Usuarios/models.py",
+      "type": "file",
+      "sha": "7227f86b71211557c957bd5f64c7eea980424743",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1384,
+      "is_binary": false
+    },
+    {
+      "name": "tests.py",
+      "path": "src/Usuarios/tests.py",
+      "type": "file",
+      "sha": "7ce503c2dd97ba78597f6ff6e4393132753573f6",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 60,
+      "is_binary": false
+    },
+    {
+      "name": "views.py",
+      "path": "src/Usuarios/views.py",
+      "type": "file",
+      "sha": "91ea44a218fbd2f408430959283f0419c921093e",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 63,
+      "is_binary": false
+    },
+    {
+      "name": "config",
+      "path": "src/config",
+      "type": "directory",
+      "sha": "3d5173dd09b95ab9c5e3cf1de931749d8e2ee292",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "src/config/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "asgi.py",
+      "path": "src/config/asgi.py",
+      "type": "file",
+      "sha": "50a54f180cf61078f5c228f7e20cc45efcf3933a",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 389,
+      "is_binary": false
+    },
+    {
+      "name": "settings.py",
+      "path": "src/config/settings.py",
+      "type": "file",
+      "sha": "182d7976435ce699fb4946d787e8320a85bb35ad",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 6090,
+      "is_binary": false
+    },
+    {
+      "name": "test_settings.py",
+      "path": "src/config/test_settings.py",
+      "type": "file",
+      "sha": "5906f20435cb4a4eee11eb74561919ee3264fa25",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 158,
+      "is_binary": false
+    },
+    {
+      "name": "urls.py",
+      "path": "src/config/urls.py",
+      "type": "file",
+      "sha": "edb79ebe0bfbd87d91c5f7b9cbbe30dac2862b98",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1583,
+      "is_binary": false
+    },
+    {
+      "name": "wsgi.py",
+      "path": "src/config/wsgi.py",
+      "type": "file",
+      "sha": "190f99c43e0b6aa931d06b94a9006e138cfe7816",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 389,
+      "is_binary": false
+    },
+    {
+      "name": "home",
+      "path": "src/home",
+      "type": "directory",
+      "sha": "f38376dbda698b6f8eae0d05b19d27bfef2e5398",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "src/home/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "admin.py",
+      "path": "src/home/admin.py",
+      "type": "file",
+      "sha": "8c38f3f3dad51e4585f3984282c2a4bec5349c1e",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 63,
+      "is_binary": false
+    },
+    {
+      "name": "apps.py",
+      "path": "src/home/apps.py",
+      "type": "file",
+      "sha": "620f8c55b34299bb428ac0a94b722b620fda07c6",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 83,
+      "is_binary": false
+    },
+    {
+      "name": "forms.py",
+      "path": "src/home/forms.py",
+      "type": "file",
+      "sha": "b6a2e2836812189b72300c6cb5d740bd19012298",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 297,
+      "is_binary": false
+    },
+    {
+      "name": "migrations",
+      "path": "src/home/migrations",
+      "type": "directory",
+      "sha": "9d1dcfdaf1a6857c5f83dc27019c7600e1ffaff8",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "src/home/migrations/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "models.py",
+      "path": "src/home/models.py",
+      "type": "file",
+      "sha": "71a836239075aa6e6e4ecb700e9c42c95c022d91",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 57,
+      "is_binary": false
+    },
+    {
+      "name": "static",
+      "path": "src/home/static",
+      "type": "directory",
+      "sha": "ca556fe54aeea6347e3cecc0b59bdc9dedb2df91",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "home",
+      "path": "src/home/static/home",
+      "type": "directory",
+      "sha": "4ecd0ca45558c42fedb0a42a1ab4dd787beeb373",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "css",
+      "path": "src/home/static/home/css",
+      "type": "directory",
+      "sha": "deb6f20ad0036d267fa3512e20cd73348848a039",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "global.css",
+      "path": "src/home/static/home/css/global.css",
+      "type": "file",
+      "sha": "9a11bb7599fcaae0daf08806bbcbf2bbd3b6dac7",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 319,
+      "is_binary": false
+    },
+    {
+      "name": "js",
+      "path": "src/home/static/home/js",
+      "type": "directory",
+      "sha": "60e61292bdde86133513c94ca5c50c7146f0ac46",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "app.js",
+      "path": "src/home/static/home/js/app.js",
+      "type": "file",
+      "sha": "21b778993ba0117927c75aedc25780de55f24e5d",
+      "mode": "100644",
+      "extension": ".js",
+      "size": 82,
+      "is_binary": false
+    },
+    {
+      "name": "tailwind-config.js",
+      "path": "src/home/static/home/js/tailwind-config.js",
+      "type": "file",
+      "sha": "fee0dd9080b6997acadd45cd1223f911d581947f",
+      "mode": "100644",
+      "extension": ".js",
+      "size": 592,
+      "is_binary": false
+    },
+    {
+      "name": "templates",
+      "path": "src/home/templates",
+      "type": "directory",
+      "sha": "7e3d73b6d41c50c9a4fe6e46ea4e02a4b6794157",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "home",
+      "path": "src/home/templates/home",
+      "type": "directory",
+      "sha": "3481cdd7faf49d16c8bc0b4e19e7fa770ddadcbb",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "alertas.html",
+      "path": "src/home/templates/home/alertas.html",
+      "type": "file",
+      "sha": "8808316f164a8345c918e23c1aeea7ad9811bc55",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 6689,
+      "is_binary": false
+    },
+    {
+      "name": "base.html",
+      "path": "src/home/templates/home/base.html",
+      "type": "file",
+      "sha": "c38030f4290453755562fc6f99c148628bce6289",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 1007,
+      "is_binary": false
+    },
+    {
+      "name": "components",
+      "path": "src/home/templates/home/components",
+      "type": "directory",
+      "sha": "88da4473f41bedfa7c8a01544d4f7db39f6bc84f",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "header.html",
+      "path": "src/home/templates/home/components/header.html",
+      "type": "file",
+      "sha": "b52bf79e960821a99707bab239460880ae0ce48b",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 393,
+      "is_binary": false
+    },
+    {
+      "name": "sidebar.html",
+      "path": "src/home/templates/home/components/sidebar.html",
+      "type": "file",
+      "sha": "402703344b2b63c5d1ab6a5a4765fa5cdae0842d",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 2310,
+      "is_binary": false
+    },
+    {
+      "name": "favoritos.html",
+      "path": "src/home/templates/home/favoritos.html",
+      "type": "file",
+      "sha": "d3f8668999ea1cf0ad9c91cff5cacfb86eb79c88",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 9291,
+      "is_binary": false
+    },
+    {
+      "name": "processos.html",
+      "path": "src/home/templates/home/processos.html",
+      "type": "file",
+      "sha": "d8b1242d4237c7cb8bf4e87e772e4b54b83cec66",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 16334,
+      "is_binary": false
+    },
+    {
+      "name": "proposicao_detalhes.html",
+      "path": "src/home/templates/home/proposicao_detalhes.html",
+      "type": "file",
+      "sha": "b6475086195e6aed56cd2b885d0b8989b33cf0cc",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 8398,
+      "is_binary": false
+    },
+    {
+      "name": "usuario.html",
+      "path": "src/home/templates/home/usuario.html",
+      "type": "file",
+      "sha": "5ab71bfaaa250dae2715726875eec02dfdd0b9de",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 5515,
+      "is_binary": false
+    },
+    {
+      "name": "registration",
+      "path": "src/home/templates/registration",
+      "type": "directory",
+      "sha": "867913003800db454f9d5e18138e5c5b01cc2e87",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "base_auth.html",
+      "path": "src/home/templates/registration/base_auth.html",
+      "type": "file",
+      "sha": "f4cc2f75d5b3018ede68c9ed9f6476821add70aa",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 3684,
+      "is_binary": false
+    },
+    {
+      "name": "login.html",
+      "path": "src/home/templates/registration/login.html",
+      "type": "file",
+      "sha": "1bea1c31a791fe4c44f8b9d4a74a63d32ace1613",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 1555,
+      "is_binary": false
+    },
+    {
+      "name": "password_reset_complete.html",
+      "path": "src/home/templates/registration/password_reset_complete.html",
+      "type": "file",
+      "sha": "c99e9a68a024137fb15b9c85b7202c45ff853c6f",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 899,
+      "is_binary": false
+    },
+    {
+      "name": "password_reset_confirm.html",
+      "path": "src/home/templates/registration/password_reset_confirm.html",
+      "type": "file",
+      "sha": "4c41f094776124508f005d94bd64cc8471262aad",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 1556,
+      "is_binary": false
+    },
+    {
+      "name": "password_reset_done.html",
+      "path": "src/home/templates/registration/password_reset_done.html",
+      "type": "file",
+      "sha": "f042cdc65321e97c230653380b1b2e6c77fab1cc",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 1097,
+      "is_binary": false
+    },
+    {
+      "name": "password_reset_form.html",
+      "path": "src/home/templates/registration/password_reset_form.html",
+      "type": "file",
+      "sha": "a71a1eda13c46f3309e00bca9733183a4a24d5b3",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 1395,
+      "is_binary": false
+    },
+    {
+      "name": "signup.html",
+      "path": "src/home/templates/registration/signup.html",
+      "type": "file",
+      "sha": "68580e6134d47af845c8c41ac51d004a7444e6c7",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 1083,
+      "is_binary": false
+    },
+    {
+      "name": "tests.py",
+      "path": "src/home/tests.py",
+      "type": "file",
+      "sha": "7ce503c2dd97ba78597f6ff6e4393132753573f6",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 60,
+      "is_binary": false
+    },
+    {
+      "name": "views.py",
+      "path": "src/home/views.py",
+      "type": "file",
+      "sha": "4db6be15c072128478bb4e9d929b92371f0b8ef9",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 11103,
+      "is_binary": false
+    },
+    {
+      "name": "manage.py",
+      "path": "src/manage.py",
+      "type": "file",
+      "sha": "d28672eaec0cdbe457a422d46b437d689c87427a",
+      "mode": "100755",
+      "extension": ".py",
+      "size": 662,
+      "is_binary": false
+    },
+    {
+      "name": "tests",
+      "path": "src/tests",
+      "type": "directory",
+      "sha": "bcc796cc7b1149503ccb022f64e2c1995778ee5d",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "e2e",
+      "path": "src/tests/e2e",
+      "type": "directory",
+      "sha": "fb28269bc2304bc9f7d9528bed3888d12ee9aead",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "conftest.py",
+      "path": "src/tests/e2e/conftest.py",
+      "type": "file",
+      "sha": "7409d4a42aadf58ecfebcf38177efb71e17a39f0",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 496,
+      "is_binary": false
+    },
+    {
+      "name": "test_alertas.py",
+      "path": "src/tests/e2e/test_alertas.py",
+      "type": "file",
+      "sha": "d34009cb99e25c1ef6af5bf012bc739ea392614c",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2286,
+      "is_binary": false
+    },
+    {
+      "name": "test_configuracoes.py",
+      "path": "src/tests/e2e/test_configuracoes.py",
+      "type": "file",
+      "sha": "94f66b6cf2ba074281dc0c36d24074138e3cb731",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1438,
+      "is_binary": false
+    },
+    {
+      "name": "test_favoritos.py",
+      "path": "src/tests/e2e/test_favoritos.py",
+      "type": "file",
+      "sha": "66076e483526781fd21f498a1b4b86f9de4e5ca2",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1474,
+      "is_binary": false
+    },
+    {
+      "name": "test_sanity.py",
+      "path": "src/tests/e2e/test_sanity.py",
+      "type": "file",
+      "sha": "53c0048ae4d76c462775ffe1d96785e956f8b754",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 820,
+      "is_binary": false
+    },
+    {
+      "name": "test_timeline.py",
+      "path": "src/tests/e2e/test_timeline.py",
+      "type": "file",
+      "sha": "77b962f8edafb011b5271299fd68528817a8de4f",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4453,
+      "is_binary": false
+    },
+    {
+      "name": "uv.lock",
+      "path": "uv.lock",
+      "type": "file",
+      "sha": "4c886e4b978dde3b3d9a984f0301d4f115072e67",
+      "mode": "100644",
+      "extension": ".lock",
+      "size": 76358,
+      "is_binary": false
+    }
+  ],
+  "truncated": false,
+  "extracted_at": "2026-09-17T04:03:56.047184",
+  "method": "rest",
+  "total_items": 170,
+  "repository_metadata": {
+    "id": 1203020564,
+    "full_name": "unb-mds/2026-1-P.R.I.S.M.A",
+    "description": null,
+    "created_at": "2026-04-06T16:34:51Z",
+    "updated_at": "2026-07-01T05:43:28Z",
+    "language": "Python",
+    "size": 3484,
+    "stars": 2,
+    "forks": 0,
+    "open_issues": 13
+  }
+}

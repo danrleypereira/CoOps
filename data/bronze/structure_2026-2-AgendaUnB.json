@@ -1,0 +1,350 @@
+{
+  "owner": "unb-mds",
+  "repository": "2026-2-AgendaUnB",
+  "branch": "main",
+  "sha": "45f7d6650a58287bcffb2671ab75912dc43208d8",
+  "tree": [
+    {
+      "name": ".env.example",
+      "path": ".env.example",
+      "type": "file",
+      "sha": "f806a4b72c4649ffa3ce1a4c454f83db51d7a0d0",
+      "mode": "100644",
+      "extension": ".example",
+      "size": 164,
+      "is_binary": false
+    },
+    {
+      "name": ".gitattributes",
+      "path": ".gitattributes",
+      "type": "file",
+      "sha": "7b71dc12194751a2d6de7c719d318bdd11922be4",
+      "mode": "100644",
+      "extension": ".gitattributes",
+      "size": 89,
+      "is_binary": false
+    },
+    {
+      "name": ".github",
+      "path": ".github",
+      "type": "directory",
+      "sha": "0163e0cdd57ddfd0389c34c398ea0020867d9411",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "workflows",
+      "path": ".github/workflows",
+      "type": "directory",
+      "sha": "a390153e6eafa18a0c39a8e52bbcfb47e3c47484",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "docs.yml",
+      "path": ".github/workflows/docs.yml",
+      "type": "file",
+      "sha": "849b23ebbc88b172afe3e14fe96c758967c733f0",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 1000,
+      "is_binary": false
+    },
+    {
+      "name": ".gitignore",
+      "path": ".gitignore",
+      "type": "file",
+      "sha": "6d7d277050219ceae7244b5be8595b427863a2cd",
+      "mode": "100644",
+      "extension": ".gitignore",
+      "size": 290,
+      "is_binary": false
+    },
+    {
+      "name": ".vscode",
+      "path": ".vscode",
+      "type": "directory",
+      "sha": "65c6c46571d0870fad39ced3ccbbdfcadb658a11",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "settings.json",
+      "path": ".vscode/settings.json",
+      "type": "file",
+      "sha": "3b664107303df336bab8010caad42ddaed24550e",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 38,
+      "is_binary": false
+    },
+    {
+      "name": "AI-USAGE.md",
+      "path": "AI-USAGE.md",
+      "type": "file",
+      "sha": "e7b034a13bd5ad19ec02218b7bb3b112f0f4207a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5334,
+      "is_binary": false
+    },
+    {
+      "name": "README.md",
+      "path": "README.md",
+      "type": "file",
+      "sha": "6f1a7f8d5f2e1bd632e86efb8009ae36515c3d8c",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3107,
+      "is_binary": false
+    },
+    {
+      "name": "docs",
+      "path": "docs",
+      "type": "directory",
+      "sha": "45d39716db3c642677f40142ed36f694ea7a3c80",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "Architecture.md",
+      "path": "docs/Architecture.md",
+      "type": "file",
+      "sha": "303cdb800cfd93ff58957da68136139db3c1697c",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 263,
+      "is_binary": false
+    },
+    {
+      "name": "CONTRIBUTING.md",
+      "path": "docs/CONTRIBUTING.md",
+      "type": "file",
+      "sha": "82c7a9c4246fc3abf6ad0bee65c640e8c4abe08b",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2303,
+      "is_binary": false
+    },
+    {
+      "name": "documento-de-visao.md",
+      "path": "docs/documento-de-visao.md",
+      "type": "file",
+      "sha": "f7d5bc37279c097eaeb4e23dbb9bc0d358bba424",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 7900,
+      "is_binary": false
+    },
+    {
+      "name": "index.md",
+      "path": "docs/index.md",
+      "type": "file",
+      "sha": "6686032a7b368b5d3359b3c1a5f240e489a2c07f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4774,
+      "is_binary": false
+    },
+    {
+      "name": "padroes.md",
+      "path": "docs/padroes.md",
+      "type": "file",
+      "sha": "a964d112af99780c480400d2cecb50ea806073e5",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 8769,
+      "is_binary": false
+    },
+    {
+      "name": "requisitos.md",
+      "path": "docs/requisitos.md",
+      "type": "file",
+      "sha": "e319cdb17308c0c89cb793de049cf160bddfa065",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 7652,
+      "is_binary": false
+    },
+    {
+      "name": "sprints",
+      "path": "docs/sprints",
+      "type": "directory",
+      "sha": "4c566dbc3077c9bed069619c2d6e179e4a2ab9a9",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "sprint-0.md",
+      "path": "docs/sprints/sprint-0.md",
+      "type": "file",
+      "sha": "cb6152753ef4a227386be1e39515c4e120dc1801",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1788,
+      "is_binary": false
+    },
+    {
+      "name": "sprint-1.md",
+      "path": "docs/sprints/sprint-1.md",
+      "type": "file",
+      "sha": "365472640a69fe5b02149461aff08557dd58bcc0",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1588,
+      "is_binary": false
+    },
+    {
+      "name": "index.html",
+      "path": "index.html",
+      "type": "file",
+      "sha": "bdf028ec3df92ec9773da4ce197111765fe8aba3",
+      "mode": "100644",
+      "extension": ".html",
+      "size": 739,
+      "is_binary": false
+    },
+    {
+      "name": "mkdocs.yml",
+      "path": "mkdocs.yml",
+      "type": "file",
+      "sha": "4c82b70e4d6c1ecf2a9a799a5929e5f4b14b47a2",
+      "mode": "100644",
+      "extension": ".yml",
+      "size": 1638,
+      "is_binary": false
+    },
+    {
+      "name": "package-lock.json",
+      "path": "package-lock.json",
+      "type": "file",
+      "sha": "ed7ad6019f4eb3b4ce53fb6380ae40d2409eb1bc",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 56865,
+      "is_binary": false
+    },
+    {
+      "name": "package.json",
+      "path": "package.json",
+      "type": "file",
+      "sha": "9a81788f0f091614d17bf292ca95f05cc0a87a23",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 412,
+      "is_binary": false
+    },
+    {
+      "name": "padrao.md",
+      "path": "padrao.md",
+      "type": "file",
+      "sha": "a964d112af99780c480400d2cecb50ea806073e5",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 8769,
+      "is_binary": false
+    },
+    {
+      "name": "public",
+      "path": "public",
+      "type": "directory",
+      "sha": "162dadcfc53133993866bcd70fdbdcbcf2c79f0b",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "Marca-UnB.png",
+      "path": "public/Marca-UnB.png",
+      "type": "file",
+      "sha": "bcd577315264e7c5cf4cbf49429b495035b15689",
+      "mode": "100644",
+      "extension": ".png",
+      "size": 3942,
+      "is_binary": false
+    },
+    {
+      "name": "shaderopt-dark.webm",
+      "path": "public/shaderopt-dark.webm",
+      "type": "file",
+      "sha": "9e1d8f75ed1778861b44cb296ad39387006e8a85",
+      "mode": "100644",
+      "extension": ".webm",
+      "size": 1027916,
+      "is_binary": false
+    },
+    {
+      "name": "shaderopt-light.webm",
+      "path": "public/shaderopt-light.webm",
+      "type": "file",
+      "sha": "50d513642afa90b66e9dd6f60445453acd6d202d",
+      "mode": "100644",
+      "extension": ".webm",
+      "size": 2626756,
+      "is_binary": false
+    },
+    {
+      "name": "requisitos.md",
+      "path": "requisitos.md",
+      "type": "file",
+      "sha": "e319cdb17308c0c89cb793de049cf160bddfa065",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 7652,
+      "is_binary": false
+    },
+    {
+      "name": "src",
+      "path": "src",
+      "type": "directory",
+      "sha": "aee36dd6b5716968b2f5bbb1140f2c2350bef4bd",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "App.jsx",
+      "path": "src/App.jsx",
+      "type": "file",
+      "sha": "7d8d87ddfbef30090a8523b0d0ad285d855f3406",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 36072,
+      "is_binary": false
+    },
+    {
+      "name": "main.jsx",
+      "path": "src/main.jsx",
+      "type": "file",
+      "sha": "e8e6289913e402574c7208981eb44c3a375874d8",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 135,
+      "is_binary": false
+    },
+    {
+      "name": "vite.config.js",
+      "path": "vite.config.js",
+      "type": "file",
+      "sha": "54164ce2d5ea37574fcfda3979f1ce0cda5cc4d0",
+      "mode": "100644",
+      "extension": ".js",
+      "size": 134,
+      "is_binary": false
+    }
+  ],
+  "truncated": false,
+  "extracted_at": "2026-09-17T04:04:00.271858",
+  "method": "rest",
+  "total_items": 34,
+  "repository_metadata": {
+    "id": 1338351818,
+    "full_name": "unb-mds/2026-2-AgendaUnB",
+    "description": "Grupo G8 - Metodos de Desenvolvimento de Software 2026/2",
+    "created_at": "2026-08-18T11:58:00Z",
+    "updated_at": "2026-09-16T16:18:33Z",
+    "language": "JavaScript",
+    "size": 62494,
+    "stars": 3,
+    "forks": 0,
+    "open_issues": 0
+  }
+}

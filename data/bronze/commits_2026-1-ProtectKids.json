@@ -1,0 +1,5568 @@
+[
+  {
+    "_metadata": {
+      "extracted_at": "2026-09-17T04:02:11.383618",
+      "file_path": "data/bronze/commits_2026-1-ProtectKids.json",
+      "record_count": 327
+    }
+  },
+  {
+    "sha": "bc9b9a788641e8016f686ad318dbaaaa15f87cfd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T15:48:43Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Add files via upload"
+    },
+    "additions": 1579,
+    "deletions": 0,
+    "total_changes": 1579,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "a09e0a3897e505d385f67e19ba8981f527e0a2e5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T15:06:35Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Merge pull request #198 from unb-mds/revisao-sprint10"
+    },
+    "additions": 16,
+    "deletions": 3,
+    "total_changes": 19,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "c3d3d8542074109adf87e3e313e83d9b4e6b8b90",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T15:05:28Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Finalize Release 2 with Sprint 10"
+    },
+    "additions": 16,
+    "deletions": 3,
+    "total_changes": 19,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "97b5df37acce5ff2e97bfd1fd292f74ac72695e6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T14:59:07Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Merge pull request #197 from unb-mds/revisao-sprint09"
+    },
+    "additions": 23,
+    "deletions": 4,
+    "total_changes": 27,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "36bd1d7113787a1d18a5b96ba7a2316d4c1883b2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T14:56:32Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Ajustes da revião"
+    },
+    "additions": 23,
+    "deletions": 4,
+    "total_changes": 27,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "19f8871eec921000e8a654c64d1ba34f60ed53d5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T14:42:02Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Merge pull request #196 from unb-mds/revisãosprint08"
+    },
+    "additions": 10,
+    "deletions": 7,
+    "total_changes": 17,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "c4e72ffdb564d4ba568dfb3a005ff6709f9ee56a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T14:40:03Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Revise Sprint 08 documentação e revisao."
+    },
+    "additions": 10,
+    "deletions": 7,
+    "total_changes": 17,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "a6f11bfb49a5f2927ff34438793854c18f8d99cd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T14:28:11Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Merge pull request #195 from unb-mds/Revisão-dasprint07"
+    },
+    "additions": 13,
+    "deletions": 3,
+    "total_changes": 16,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "11b6ac4ed098c89664fb4a2aa1dd11ea7fad1316",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T14:27:00Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Sptrint07-pós entrega R1"
+    },
+    "additions": 13,
+    "deletions": 3,
+    "total_changes": 16,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "4b2476afd541b9f7792ea2f13dff4ac04aa1e088",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T14:01:41Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Merge pull request #194 from unb-mds/revisao06sprint"
+    },
+    "additions": 10,
+    "deletions": 2,
+    "total_changes": 12,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "cfc82c7e21e1bc9efbeacd2bf9bb2054ac4e59d4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T14:00:06Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Consolidate Sprint 06 and define project name ProtectKids"
+    },
+    "additions": 10,
+    "deletions": 2,
+    "total_changes": 12,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "49dab6ed45089a01e0842804757336c7ae7c4f7b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T13:51:35Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Merge pull request #193 from unb-mds/revisao-sprint05"
+    },
+    "additions": 4,
+    "deletions": 4,
+    "total_changes": 8,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "47ce1ae737b60a209ea3127b9cb4905c0b753ab9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T13:50:52Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Update sprint_05.md  adicionando os detalhes"
+    },
+    "additions": 4,
+    "deletions": 4,
+    "total_changes": 8,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "725f7f967c7190b6808b1b4ea429ecf39b9c8d16",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T13:45:42Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Update README.md"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "da8b63911a2e48092afaa5d629d8cddcabf1efb3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T13:41:21Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Merge pull request #178 from unb-mds/correçoes-readme"
+    },
+    "additions": 10,
+    "deletions": 0,
+    "total_changes": 10,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "849abee10fbe51d6258efe4660f8807b7c484fc3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T13:41:08Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Merge branch 'main' into correçoes-readme"
+    },
+    "additions": 683,
+    "deletions": 101,
+    "total_changes": 784,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "ce3e8563f1abb4014157b5388f83368018efe856",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T13:35:10Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Merge pull request #192 from unb-mds/revisando-sprint-4"
+    },
+    "additions": 6,
+    "deletions": 2,
+    "total_changes": 8,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "f0ffdd0b985a443e4b597ca190795604b17a5a75",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T13:32:09Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Revise Sprint 04 explicaçap do CI/CD"
+    },
+    "additions": 6,
+    "deletions": 2,
+    "total_changes": 8,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "3e7b3359ca21c70b9ce34eef3cc8f292a97a17cc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T12:32:15Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "docs: revisa README para entrega final"
+    },
+    "additions": 175,
+    "deletions": 74,
+    "total_changes": 249,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "948341fa57296eeaff497eec385ddaca798416c9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T05:57:26Z",
+        "login": "cgbriel28"
+      },
+      "message": "revisao e adesao na sprint 3"
+    },
+    "additions": 11,
+    "deletions": 8,
+    "total_changes": 19,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "1ae13d6b25b3e8c3358297d59abe38da163bb93e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T05:54:23Z",
+        "login": "cgbriel28"
+      },
+      "message": "revisao e correçao de sprint 06 e 10"
+    },
+    "additions": 44,
+    "deletions": 27,
+    "total_changes": 71,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "dc7b454a6c2f4ac47d909b749ceac85f06e71a1b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T05:13:50Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Merge pull request #179 from unb-mds/revisao-sprint"
+    },
+    "additions": 3,
+    "deletions": 2,
+    "total_changes": 5,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "70b01acb9acdb86595008448d996ceb4398833d8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T05:11:52Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Revise sprint 00  correção de informação"
+    },
+    "additions": 3,
+    "deletions": 2,
+    "total_changes": 5,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "c388d1625cdb837a77d5e5bb748dbd6a5fa86496",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T04:38:01Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Revise Functional Requirements section in requisitos.md"
+    },
+    "additions": 10,
+    "deletions": 9,
+    "total_changes": 19,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "84c68246c90e4520a2e8be8b27f65715dc14c6e9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T04:36:42Z",
+        "login": "cgbriel28"
+      },
+      "message": "documentaçao da sprint 10 e ata de reuniao da 06 ate 10"
+    },
+    "additions": 316,
+    "deletions": 0,
+    "total_changes": 316,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "4e0cca81555ea81ec048601939d75958c710f093",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T04:31:59Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Enhance README with detailed project documentation"
+    },
+    "additions": 3,
+    "deletions": 1,
+    "total_changes": 4,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "379d008499bb3f8c1e4605aa36928ca56cb53d08",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T04:11:50Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Update contributors list and participation note"
+    },
+    "additions": 2,
+    "deletions": 1,
+    "total_changes": 3,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "00b60276701dc2e8472be41b33b6a4d0b4a40795",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T04:08:18Z",
+        "login": "cgbriel28"
+      },
+      "message": "atas de reuniao 00 ate 05"
+    },
+    "additions": 134,
+    "deletions": 2,
+    "total_changes": 136,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "404bb4c4856c3ee0a5f629ab3a655fe3b0b3c1c5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T23:00:29Z",
+        "login": "marispmorais"
+      },
+      "message": "docs: atualização na sessão de testes na documentação"
+    },
+    "additions": 144,
+    "deletions": 38,
+    "total_changes": 182,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "ef817492311e9ee19772fbbd92ed9647b585575a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T22:41:19Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "fix:alteraçoes finais para deploy do sistema (#176)"
+    },
+    "additions": 11,
+    "deletions": 20,
+    "total_changes": 31,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "4ec234238b03fa4c48ba0f2419b2dd940723eb14",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T22:22:40Z",
+        "login": "marispmorais"
+      },
+      "message": "Merge pull request #175 from unb-mds/docs/testes-e-cicd"
+    },
+    "additions": 121,
+    "deletions": 79,
+    "total_changes": 200,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "5fcf645e11458b8660e33e3dac400ecb6317b4d4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T22:20:32Z",
+        "login": "marispmorais"
+      },
+      "message": "docs: atualiza estrategia de testes e adiciona documentacao de CI/CD"
+    },
+    "additions": 121,
+    "deletions": 79,
+    "total_changes": 200,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "cfafadc19e8332e6639f9a41018f5b9060658019",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T22:15:02Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Test/coverage 70 (#174)"
+    },
+    "additions": 385,
+    "deletions": 68,
+    "total_changes": 453,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "4daee15a7ca0e7f46c68b61921a41f3462801625",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T21:54:58Z",
+        "login": "marispmorais"
+      },
+      "message": "Update README.md"
+    },
+    "additions": 3,
+    "deletions": 0,
+    "total_changes": 3,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "9bac810e441493c835150fc8d5e05fb510b248cf",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T21:51:44Z",
+        "login": "marispmorais"
+      },
+      "message": "Merge pull request #173 from unb-mds/feature/testes-issue-5"
+    },
+    "additions": 172,
+    "deletions": 0,
+    "total_changes": 172,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "e33d4066c894c699166f6dd78b12fe44590e5441",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T21:50:15Z",
+        "login": "marispmorais"
+      },
+      "message": "Merge pull request #172 from unb-mds/feature/testes-issue-4"
+    },
+    "additions": 84,
+    "deletions": 0,
+    "total_changes": 84,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "6be8180f6c235b45db2d64c19cc2a5acd2310404",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T21:48:26Z",
+        "login": "marispmorais"
+      },
+      "message": "test: adiciona testes da Issue 5 - endpoints de analytics"
+    },
+    "additions": 172,
+    "deletions": 0,
+    "total_changes": 172,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "09a3af2b283d3a5e57319b4f3064bb2b6643b05a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T21:37:31Z",
+        "login": "marispmorais"
+      },
+      "message": "test: adiciona testes da Issue 4 - tramitacoes de proposicoes"
+    },
+    "additions": 84,
+    "deletions": 0,
+    "total_changes": 84,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "c35a1b5bd7b69b5c0695564d842995146d6324ad",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T21:36:38Z",
+        "login": "marispmorais"
+      },
+      "message": "Merge pull request #171 from unb-mds/feature/testes-issue-3"
+    },
+    "additions": 81,
+    "deletions": 0,
+    "total_changes": 81,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "62ba2be60c17bb381daf94667bbfc90a0c14e4f0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T21:30:50Z",
+        "login": "marispmorais"
+      },
+      "message": "test: adiciona testes da Issue 3 - busca por ID e validacao de 404"
+    },
+    "additions": 81,
+    "deletions": 0,
+    "total_changes": 81,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "7b9ac17878bd84a6856f722fced50163c0c3e47d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T21:21:04Z",
+        "login": "marispmorais"
+      },
+      "message": "Merge pull request #170 from unb-mds/feature/testes-issue-2"
+    },
+    "additions": 57,
+    "deletions": 0,
+    "total_changes": 57,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "ec50e0ee73892308ffb5d1b141481b7d55e5802a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T21:17:55Z",
+        "login": "marispmorais"
+      },
+      "message": "Merge pull request #169 from unb-mds/feature/testes-issue-1"
+    },
+    "additions": 133,
+    "deletions": 2,
+    "total_changes": 135,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "36df01af26c11a350edd3eda81aeec742d54e9f9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T21:12:39Z",
+        "login": "marispmorais"
+      },
+      "message": "test: adiciona testes da Issue 2 - filtros de origem Camara/Senado"
+    },
+    "additions": 57,
+    "deletions": 0,
+    "total_changes": 57,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "be06eda4f587c541de62e084f5acbb593cd39d1c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T20:56:57Z",
+        "login": "marispmorais"
+      },
+      "message": "test: adiciona testes da Issue 1 - rota raiz e listagem de proposicoes"
+    },
+    "additions": 132,
+    "deletions": 4,
+    "total_changes": 136,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "1a7a3e3fbb92bfea85dd39b381affcc9150738e7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T20:53:07Z",
+        "login": "marispmorais"
+      },
+      "message": "chore: resolve conflito de merge no test_main.py"
+    },
+    "additions": 7,
+    "deletions": 4,
+    "total_changes": 11,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "f51b794a6ca374a03219c8ec046d64b8dbb53ff0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T20:07:23Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Feat/testes api (#166)"
+    },
+    "additions": 1714,
+    "deletions": 538,
+    "total_changes": 2252,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "496acd5745a687d18ddacc055faccda0c4ec3299",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T16:20:15Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "fix:pytest nao gerava coverage"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "e66c17a574a70c2c8bf9c92bca146573dca136c3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T16:08:11Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #162 from unb-mds/feat/frontend-site"
+    },
+    "additions": 1827,
+    "deletions": 472,
+    "total_changes": 2299,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "618a97bdaed630933510b262060edf1326b9b140",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T07:19:35Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "feat: integraçoes finais do frontend"
+    },
+    "additions": 1827,
+    "deletions": 472,
+    "total_changes": 2299,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "cf91ddcb18786e4aa683126c32b48c41ee429e8f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T06:54:20Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #152 from unb-mds/docs/requisitos"
+    },
+    "additions": 13,
+    "deletions": 21,
+    "total_changes": 34,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "7fb8c2dc5021e489af0cd5a0d895963d0520b2d8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T06:31:56Z",
+        "login": "marispmorais"
+      },
+      "message": "Merge pull request #158 from unb-mds/infra/config-testes"
+    },
+    "additions": 72,
+    "deletions": 8,
+    "total_changes": 80,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "019040a61b1bd8b17dbdb5d81c76d0d05669fb8d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T06:30:16Z",
+        "login": "marispmorais"
+      },
+      "message": "merge: resolve conflitos com main"
+    },
+    "additions": 5585,
+    "deletions": 1101,
+    "total_changes": 6686,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "45302d03fe12a0559bf23d4dce8ce073737c3e6e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T06:19:44Z",
+        "login": "marispmorais"
+      },
+      "message": "test: configura pytest-cov, ajusta gitignore, README e CI"
+    },
+    "additions": 73,
+    "deletions": 9,
+    "total_changes": 82,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "3571e093f12c6cdd8f099a62af922df2df08c6df",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T03:31:48Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #154 from unb-mds/feat/frontend-site"
+    },
+    "additions": 1172,
+    "deletions": 571,
+    "total_changes": 1743,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "b9ee5ec1cd1b17069b7e6e403a2a266e2017388e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T03:31:39Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge branch 'main' into feat/frontend-site"
+    },
+    "additions": 78,
+    "deletions": 1,
+    "total_changes": 79,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "128cf3ce01a501d19f6b0d1f0a9b7cecb1f64760",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T03:30:22Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "fix: estabiliza frontend e corrige build do projeto"
+    },
+    "additions": 1172,
+    "deletions": 572,
+    "total_changes": 1744,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "99b56a2a9a43644645082ba9a4d138ee69d285e8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T03:26:06Z",
+        "login": "marispmorais"
+      },
+      "message": "Merge pull request #153 from unb-mds/docs/estrategia-testes"
+    },
+    "additions": 78,
+    "deletions": 2,
+    "total_changes": 80,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "56f6e58d329037c573861050bb746c9a5b850b80",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T03:23:29Z",
+        "login": "marispmorais"
+      },
+      "message": "Fix: Remove versão antiga do pytest (8.1.1) vinda da main"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "c9f79117f23bb24def413923e19cd0458aa3ad83",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T03:22:02Z",
+        "login": "marispmorais"
+      },
+      "message": "Conclui o merge da main"
+    },
+    "additions": 4594,
+    "deletions": 787,
+    "total_changes": 5381,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "8571e99783ccbf8d6f6e9be637baab304e462973",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T02:11:46Z",
+        "login": "marispmorais"
+      },
+      "message": "CI: remoção da duplicata do pytest"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "652a5fc76c4d5ea3e138053f9ffff3b31e971da9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T01:45:44Z",
+        "login": "marispmorais"
+      },
+      "message": "docs: adiciona estudo e documento de estrategia de testes"
+    },
+    "additions": 78,
+    "deletions": 0,
+    "total_changes": 78,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "b14777ba060f93e371255bc1cc372be78b326274",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T01:24:40Z",
+        "login": "marispmorais"
+      },
+      "message": "feat: organiza infra, docs e ignora pastas de build"
+    },
+    "additions": 91,
+    "deletions": 1,
+    "total_changes": 92,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "1e724b448b67456faf2a49f6549c2a5bc2928fc7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T00:00:44Z",
+        "login": "wandinhawright"
+      },
+      "message": "frontend: correção de paths"
+    },
+    "additions": 7,
+    "deletions": 49,
+    "total_changes": 56,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "e092d6e43750202105820c5b851ac30ae81bd3d3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T00:00:28Z",
+        "login": "wandinhawright"
+      },
+      "message": "frontend: atualizações no arquivo api.js"
+    },
+    "additions": 34,
+    "deletions": 9,
+    "total_changes": 43,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "42ddcf6ecad16c15461402c7a74e1b0b9ef03b9b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T23:59:59Z",
+        "login": "wandinhawright"
+      },
+      "message": "frontend:  página de busca atualizada com as configurações corretas d…"
+    },
+    "additions": 159,
+    "deletions": 79,
+    "total_changes": 238,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "46990578095b901874ab5fbda621efc500dc8cbb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T23:59:26Z",
+        "login": "wandinhawright"
+      },
+      "message": "frontend: header atualizada e separada em um novo arquivo na pasta de…"
+    },
+    "additions": 44,
+    "deletions": 0,
+    "total_changes": 44,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "a8124b059265fff64dac48049ad487d29f1e7722",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T23:58:55Z",
+        "login": "wandinhawright"
+      },
+      "message": "frontend: componete criado separado e adicionado na página de início …"
+    },
+    "additions": 48,
+    "deletions": 0,
+    "total_changes": 48,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "66e0cb4db090da4199fc9718b7162bc9cee23762",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T23:58:44Z",
+        "login": "wandinhawright"
+      },
+      "message": "frontend: componete criado separado e adicionado na página de início …"
+    },
+    "additions": 14,
+    "deletions": 0,
+    "total_changes": 14,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "63f8c1efdeb815bd0a445aa2c5e7cfe8622b2db0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T23:58:02Z",
+        "login": "wandinhawright"
+      },
+      "message": "frontend: página de início atualizada com as configurações corretas d…"
+    },
+    "additions": 291,
+    "deletions": 186,
+    "total_changes": 477,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "dcbc411ecada1f1fef664772c9299d8efda74891",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T23:57:06Z",
+        "login": "wandinhawright"
+      },
+      "message": "frontend: remoção de itens inutilizados no projeto"
+    },
+    "additions": 0,
+    "deletions": 30,
+    "total_changes": 30,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "2e479aa577db676106727ca6bc1ff64ce24a582a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T23:08:31Z",
+        "login": "Danielly-Mendes"
+      },
+      "message": "Merge branch 'main' into docs/requisitos"
+    },
+    "additions": 4503,
+    "deletions": 786,
+    "total_changes": 5289,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "8715e063f4e619be0679e7f5870b4ac511573c22",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T14:32:07Z",
+        "login": "wandinhawright"
+      },
+      "message": "frontend: justificativa da paleta de cores"
+    },
+    "additions": 33,
+    "deletions": 25,
+    "total_changes": 58,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "ce5a54f34e78ceafbc1546a1c64795670b8be4a2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T14:08:40Z",
+        "login": "wandinhawright"
+      },
+      "message": "frontend: adiciona a imagem onde estava faltando."
+    },
+    "additions": 10,
+    "deletions": 16,
+    "total_changes": 26,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "f32943fa742d4ae53c35e8b1b2f984889a72c046",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T14:08:05Z",
+        "login": "wandinhawright"
+      },
+      "message": "frontend: corrige o caminhos dos links no footer"
+    },
+    "additions": 3,
+    "deletions": 3,
+    "total_changes": 6,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "1cc2822af25f28e006bf97a57c414d23459942d6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T14:07:42Z",
+        "login": "wandinhawright"
+      },
+      "message": "frontend: remoção de imagens e icones inutilizados"
+    },
+    "additions": 0,
+    "deletions": 25,
+    "total_changes": 25,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "0d94120c745e0856df6606b914fad1e0747eb002",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T13:50:58Z",
+        "login": "wandinhawright"
+      },
+      "message": "frontend: Substituição do frame antigo de busca para o novo do figma"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "c2d52fe17930564863caddb43d12fade801c98a0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T13:50:36Z",
+        "login": "wandinhawright"
+      },
+      "message": "frontend: Substituição do frame antigo de sobre o projeto para o novo…"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "25405d3b9d29e647856b46940761e84e83d1948d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T13:50:05Z",
+        "login": "wandinhawright"
+      },
+      "message": "frontend: Substituição do frame antigo de lei para o novo do figma"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "3610e3df00d62cb84016411377a8ac526696a25d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T13:49:42Z",
+        "login": "wandinhawright"
+      },
+      "message": "frontend: Substituição do frame antigo de inicio para o novo do figma"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "ce3f82013c037e146ed4861c7f0e27774dd2a9a7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T13:49:06Z",
+        "login": "wandinhawright"
+      },
+      "message": "frontend: Substituição do frame antigo de filtro de busca para o novo…"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "18c19dba15b5e6d2540f3c7795c5ae40eeae7673",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T06:31:36Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "docs: correçao final no arquitetura.md"
+    },
+    "additions": 9,
+    "deletions": 8,
+    "total_changes": 17,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "cf1a6e4fcddecb306402208b53e379bc0bc8e38a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T06:24:46Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #151 from unb-mds/docs/arquitetura"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "954aa5b302e97e29a3ba9a23b0418ef743ef810a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T06:22:55Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "docs: corrige link errado para arquitetura c4"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "308997179c8f89fe3bc10e3249e00ca6ea895652",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T06:13:14Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #150 from unb-mds/docs/arquitetura"
+    },
+    "additions": 22,
+    "deletions": 3,
+    "total_changes": 25,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "38e5d302864cc217763627385ef09c88f421189c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T06:12:18Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Revise C4 architecture documentation with new diagrams"
+    },
+    "additions": 22,
+    "deletions": 3,
+    "total_changes": 25,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "0622542ba53d05e2fa44aa271b268a725b478a83",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T06:07:13Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #149 from unb-mds/docs/arquitetura"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "ccf18cd2d923a9f9913ddf8806d52cd11cecb8f0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T06:05:45Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "docs: corrige c4 nivel 1 e 2, e adiciona nivel 3"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "ba7df5d3e2363b45196f8acdbf90de6793599189",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T05:53:15Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #148 from unb-mds/fix/backend_crawler"
+    },
+    "additions": 96,
+    "deletions": 57,
+    "total_changes": 153,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "00cfbc51d406389841e9ce3703438e76301dec3e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T05:44:41Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "fix:alteraçoes feitas após verificaçao no sonarqube"
+    },
+    "additions": 96,
+    "deletions": 57,
+    "total_changes": 153,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "94ba139731ddcacbed614bc7e99f6562b287dbda",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T05:25:36Z",
+        "login": "cgbriel28"
+      },
+      "message": "datass das sprint corrigidas"
+    },
+    "additions": 11,
+    "deletions": 11,
+    "total_changes": 22,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "4a26acee9d132cfd5c034965d22bdf3866d2f78b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T05:17:38Z",
+        "login": "cgbriel28"
+      },
+      "message": "revisao de documentaçao e alterao na sprint 6"
+    },
+    "additions": 6,
+    "deletions": 46,
+    "total_changes": 52,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "f675d4aa0d3e7a5f608133bdf77e9ce50abcb679",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T05:05:07Z",
+        "login": "cgbriel28"
+      },
+      "message": "documentaçao das issues 6 a 9"
+    },
+    "additions": 220,
+    "deletions": 0,
+    "total_changes": 220,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "93bc356474dac34530f101f7ca30679185d187d2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T04:47:53Z",
+        "login": "cgbriel28"
+      },
+      "message": "revisao e correçao do index"
+    },
+    "additions": 109,
+    "deletions": 11,
+    "total_changes": 120,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "d794d007852748abd37e209f75442b90e30e9292",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T04:37:20Z",
+        "login": "cgbriel28"
+      },
+      "message": "sprint 0 a 5"
+    },
+    "additions": 228,
+    "deletions": 0,
+    "total_changes": 228,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "dd416d1deb6e2a38f58676c18b8e02e64abf12b7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T03:43:13Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #144 from unb-mds/fix/backend_crawler"
+    },
+    "additions": 304,
+    "deletions": 52,
+    "total_changes": 356,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "46cdac50c7865281e4fb6985bec9130c3afaeb8f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T03:37:10Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "fix:correçao na ETL"
+    },
+    "additions": 304,
+    "deletions": 52,
+    "total_changes": 356,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "efaf502b7baf5aa7b8aa01ade60d361b288cc0b0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-28T22:54:47Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2026-1-Squad10 into…"
+    },
+    "additions": 2196,
+    "deletions": 312,
+    "total_changes": 2508,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "73498913e31818dde5deea4287d1ae0d203fac3d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-27T20:43:05Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #142 from unb-mds/feat/frontend-site"
+    },
+    "additions": 1122,
+    "deletions": 243,
+    "total_changes": 1365,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "189dfafb1eb3f5d2a8a7cf7b0d21761455ee7700",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-27T19:56:10Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Merge remote-tracking branch 'origin/main' into feat/frontend-site"
+    },
+    "additions": 3509,
+    "deletions": 399,
+    "total_changes": 3908,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "8e4266110cc09f9aba06e94e08a3fac52b8f3b92",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-27T17:39:19Z",
+        "login": "cgbriel28"
+      },
+      "message": "esqueleto das organizaçoes das sprints"
+    },
+    "additions": 196,
+    "deletions": 8,
+    "total_changes": 204,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "452096fe00251c874724813e16543f80d086fe3c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-27T16:16:40Z",
+        "login": "cgbriel28"
+      },
+      "message": "troca da barras"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "c5183d15a84d5db0ac0cde6b2c8edf77dd3ec3ef",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-27T16:15:43Z",
+        "login": "wandinhawright"
+      },
+      "message": "frontend: alterção nas cores da página sobre"
+    },
+    "additions": 26,
+    "deletions": 10,
+    "total_changes": 36,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "c8c789fa04727dfb946f3943225fa25b09017191",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-27T15:55:01Z",
+        "login": "cgbriel28"
+      },
+      "message": "teste de cores"
+    },
+    "additions": 114,
+    "deletions": 26,
+    "total_changes": 140,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "61e245db1f8c04d87c2c8416ea01d28f6dce74dd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-27T15:54:40Z",
+        "login": "wandinhawright"
+      },
+      "message": "frontend: ajuste de tamanho da seção de qualidades"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "b1c2d8111772eb802e3a152dc075ec7427b4a5cf",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-27T15:54:07Z",
+        "login": "wandinhawright"
+      },
+      "message": "frontend: alteração das cores do footer"
+    },
+    "additions": 36,
+    "deletions": 32,
+    "total_changes": 68,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "087f64a266d084300ad06a6c64c79855be0a136d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-27T15:53:45Z",
+        "login": "wandinhawright"
+      },
+      "message": "frontend: concerto das rotas da header"
+    },
+    "additions": 6,
+    "deletions": 6,
+    "total_changes": 12,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "2d20f6b378c4efb6e71e44b886ee4e15465edb18",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-27T15:40:53Z",
+        "login": "wandinhawright"
+      },
+      "message": "frontend: seção de qualidades do site"
+    },
+    "additions": 60,
+    "deletions": 0,
+    "total_changes": 60,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "ed3535bbf9598561b290c3a1009a1da3d3d6e1de",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-27T15:37:57Z",
+        "login": "cgbriel28"
+      },
+      "message": "Atualizaçao de visao geral e indexs"
+    },
+    "additions": 129,
+    "deletions": 31,
+    "total_changes": 160,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "cf1e6f483bb56be4ad5d3f56b736c5b4e2df4a76",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-27T05:09:38Z",
+        "login": "wandinhawright"
+      },
+      "message": "frontend: Remoção do conteúdo da página de início e adição do novo co…"
+    },
+    "additions": 139,
+    "deletions": 134,
+    "total_changes": 273,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "0c8bace0a60370a5a10e6a033d1dcdb3d9210de1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-26T21:03:18Z",
+        "login": "wandinhawright"
+      },
+      "message": "frontend: alteração nas cores da header"
+    },
+    "additions": 835,
+    "deletions": 62,
+    "total_changes": 897,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "9f47dc50fd65ce6bb818a25b6a74df2ecabbbd70",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-26T17:53:02Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Change docker-compose command to docker compose"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "6a83c88fbdab91753e1c40529bbd21c79d79f65d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-25T22:48:01Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Fix/backend crawler (#138)"
+    },
+    "additions": 319,
+    "deletions": 90,
+    "total_changes": 409,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "3f216ead6c58f5941ec7436ec558996266c795cd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-25T22:45:44Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "fix: melhora nos filtros de busca para os dashboards do frontend"
+    },
+    "additions": 319,
+    "deletions": 73,
+    "total_changes": 392,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "4045ff77e81b24d4bbeb59c391cf2570e2c1776e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-25T21:58:22Z",
+        "login": "VegasVvegas"
+      },
+      "message": "corrigindo indentação"
+    },
+    "additions": 0,
+    "deletions": 2,
+    "total_changes": 2,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "35ff8a367661ef89c1e2bbb87bd3d7ba4a7f2798",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-25T21:44:38Z",
+        "login": "VegasVvegas"
+      },
+      "message": "adiciona documentação do Docker Compose ao MkDocs"
+    },
+    "additions": 13,
+    "deletions": 5,
+    "total_changes": 18,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "15fa5a8f6402bb5908ae62e4ce96e212249c4f20",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-25T21:36:09Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Create Docker Compose documentation"
+    },
+    "additions": 624,
+    "deletions": 0,
+    "total_changes": 624,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "f9e0a6597b82cbf4ae9e6687661af99bf6a96090",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-25T21:32:18Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Revisão"
+    },
+    "additions": 3,
+    "deletions": 3,
+    "total_changes": 6,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "5ab9fbd05e0f9b6e556fbe9860b11c5947b5f76c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-25T21:30:40Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Fix/backend crawler (#136)"
+    },
+    "additions": 346,
+    "deletions": 112,
+    "total_changes": 458,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "3830a1ef459dd85dbc4e08f6399bde5ab15dd768",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-25T21:28:25Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "adicionado https try em todas as funções"
+    },
+    "additions": 330,
+    "deletions": 113,
+    "total_changes": 443,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "732baafe72bc4ba390cfefa0ecde75c45475036d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-25T20:34:21Z",
+        "login": "VegasVvegas"
+      },
+      "message": " corrige formatação e informações do README"
+    },
+    "additions": 8,
+    "deletions": 7,
+    "total_changes": 15,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "7229fab126bf92d2f5944cf544b02c4c91a142e9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-25T17:50:35Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Revise API contract for ProtectKids integration (#123)"
+    },
+    "additions": 300,
+    "deletions": 90,
+    "total_changes": 390,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "a3990fa8e2c41c4c4a5fc733f7ec783ea64a1cfb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-25T17:45:46Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Fix/backend crawler (#122)"
+    },
+    "additions": 53,
+    "deletions": 30,
+    "total_changes": 83,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "77910a76a9abf649544dfccb536e16d1b2fa01f3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-25T17:44:49Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "docs: corrige  contrato de integracao da api"
+    },
+    "additions": 300,
+    "deletions": 90,
+    "total_changes": 390,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "ce5ef9dab1e5caa0d69248c3dd1a43d44d071a0e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-25T16:44:58Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "limpeza segure dos arqvuiso temporarios e correção do ID instável"
+    },
+    "additions": 53,
+    "deletions": 30,
+    "total_changes": 83,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "0ccc3d36f3276b7d381b8ac3c0e5d5b1c7749fc1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-25T16:31:58Z",
+        "login": "Danielly-Mendes"
+      },
+      "message": "Fix/backend crawler (#118)"
+    },
+    "additions": 398,
+    "deletions": 55,
+    "total_changes": 453,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "96c4597b3182c3558752a600befd8c96efbb4446",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-25T15:55:12Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge remote-tracking branch 'origin/main' into fix/backend_crawler"
+    },
+    "additions": 267,
+    "deletions": 89,
+    "total_changes": 356,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "dadff11dbde0f58c49ca4746b1b73ae9475e266e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-25T14:55:48Z",
+        "login": "Danielly-Mendes"
+      },
+      "message": "feat: implementa função reprocessar_classificação refs #116"
+    },
+    "additions": 75,
+    "deletions": 0,
+    "total_changes": 75,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "d62e857bb04d8660d1417cc323ab6159cec036cc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-24T20:22:46Z",
+        "login": "Danielly-Mendes"
+      },
+      "message": "fix: altera escopo do tema de Proposicao para 'Protecao Infantil' ref…"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "c0ec0b085afb4458aa8df6805f932fe3c3a1fc2d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-24T20:16:22Z",
+        "login": "Danielly-Mendes"
+      },
+      "message": "fix: ajustando e padronizando tema geral em senado_api refs #116"
+    },
+    "additions": 10,
+    "deletions": 3,
+    "total_changes": 13,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "03844d80b5cca9ceacca8c67d1ff76990dd54d50",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-24T18:55:27Z",
+        "login": "Danielly-Mendes"
+      },
+      "message": "fix: melhora função classificar_com_ia e padronização do tema geral e…"
+    },
+    "additions": 313,
+    "deletions": 52,
+    "total_changes": 365,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "2d37672b38e9c8a89ce4633eb1b3f9a690cda33c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-24T04:25:06Z",
+        "login": "Danielly-Mendes"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2026-1-ProtectKids …"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "43864cc8f811baf7802cbe9952f278c73517bd4f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-24T04:21:30Z",
+        "login": "cgbriel28"
+      },
+      "message": "centralizaçao e aumento da fonte do menu"
+    },
+    "additions": 17,
+    "deletions": 0,
+    "total_changes": 17,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "dc820e7bb4c7b00b2eb0a5688dcfcea4ecfcfe42",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-24T04:21:30Z",
+        "login": "cgbriel28"
+      },
+      "message": "novas cores e fontes"
+    },
+    "additions": 21,
+    "deletions": 22,
+    "total_changes": 43,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "6c07eb255d09b57668d71366206de81dc5ba9182",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-24T04:21:30Z",
+        "login": "cgbriel28"
+      },
+      "message": "teste de interface mkdoc"
+    },
+    "additions": 26,
+    "deletions": 18,
+    "total_changes": 44,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "05a9a28f5d68b25c62ae3fb941f280347edaa2bc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-24T04:21:30Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Fix/backend crwaler (#114)"
+    },
+    "additions": 166,
+    "deletions": 44,
+    "total_changes": 210,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "c2aaf7fa48f8d626808ba698fe8f5ce1e9428f36",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-24T04:21:30Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Feat/fix docker (#113)"
+    },
+    "additions": 26,
+    "deletions": 9,
+    "total_changes": 35,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "2e593f8f92fbe155f2140ff0bb6cd850ac2a4672",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-24T01:32:01Z",
+        "login": "cgbriel28"
+      },
+      "message": "centralizaçao e aumento da fonte do menu"
+    },
+    "additions": 17,
+    "deletions": 0,
+    "total_changes": 17,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "e11e7633e3626ac06bd68756a54037c609d7fd34",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-24T01:26:12Z",
+        "login": "cgbriel28"
+      },
+      "message": "novas cores e fontes"
+    },
+    "additions": 21,
+    "deletions": 22,
+    "total_changes": 43,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "10b220fb21757d74e343cbb2c120f1700343b1e9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-24T01:02:49Z",
+        "login": "cgbriel28"
+      },
+      "message": "teste de interface mkdoc"
+    },
+    "additions": 26,
+    "deletions": 18,
+    "total_changes": 44,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "e6511e87a17013d1f0833bd6a7223539d007eacb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-23T22:53:02Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Fix/backend crwaler (#114)"
+    },
+    "additions": 166,
+    "deletions": 44,
+    "total_changes": 210,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "5eece1fdf7568c59b6becd17206df6e0c603a259",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-23T22:37:03Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Feat/fix docker (#113)"
+    },
+    "additions": 26,
+    "deletions": 9,
+    "total_changes": 35,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "66edc8b46841484c8611b718d1dce7fd165fb318",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-23T21:15:36Z",
+        "login": "wandinhawright"
+      },
+      "message": "correção de hexadecimal da cor branca"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "0f7c4a8ff3c79ed4b71fa966cdf8c7cab300e4ed",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-23T20:33:16Z",
+        "login": "Danielly-Mendes"
+      },
+      "message": "Docs: remove antigo RF08 e atualiza subtemas refs #106"
+    },
+    "additions": 13,
+    "deletions": 21,
+    "total_changes": 34,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "851cc474cdcf6276ad328bb44158bfae26a56c90",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-22T13:39:38Z",
+        "login": "Danielly-Mendes"
+      },
+      "message": "Merge pull request #105 from unb-mds/docs/storyMap"
+    },
+    "additions": 15,
+    "deletions": 0,
+    "total_changes": 15,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "4d554293cd7234c008f38536554feb1eb44be3b4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-22T13:27:58Z",
+        "login": null
+      },
+      "message": "Docs: adiciona critérios de aceitação Closes #88"
+    },
+    "additions": 4,
+    "deletions": 0,
+    "total_changes": 4,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "692bfac2dcb2b05b22615d40c9734d64f5f6f969",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T22:18:10Z",
+        "login": "wandinhawright"
+      },
+      "message": "nova paleta de cores no design do figma"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "a35cc73c3e59f010a6f2734f36a403518aea613e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T20:26:32Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Revise infrastructure setup instructions in README"
+    },
+    "additions": 4,
+    "deletions": 2,
+    "total_changes": 6,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "2e183b6898724bf0376c61da43a879068e2e3153",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T20:20:53Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "fix:corrige variavel com nome errado (#104)"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "76ffeecea3b1285e630cb4d631436b7613df29a7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T16:42:23Z",
+        "login": null
+      },
+      "message": "docs: Adiciona Épicos 3 e 4,  funcionalidades e User Stories relacion…"
+    },
+    "additions": 6,
+    "deletions": 2,
+    "total_changes": 8,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "20f6bf05781a81179a7af3d77c2552dc7cfa338d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-21T03:07:29Z",
+        "login": null
+      },
+      "message": "Reestruturação e reorganização dos Épicos 1 e 2 refs #88"
+    },
+    "additions": 7,
+    "deletions": 0,
+    "total_changes": 7,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "5860f29711284826498eccaac9187a4ffe9372d5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-18T15:33:44Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Feat/contrato api (#103)"
+    },
+    "additions": 201,
+    "deletions": 13,
+    "total_changes": 214,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "d536514a5d8dae8759353675e65916f0ebb307bb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-17T19:45:51Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #100 from unb-mds/feat/implementa_tramitacao"
+    },
+    "additions": 73,
+    "deletions": 8,
+    "total_changes": 81,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "d45bb824b8eb59e2705174b9d8bad22742a2e7ec",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-17T19:37:01Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "feat: permite ao usuário aumentar o numero de paginas baixadas"
+    },
+    "additions": 8,
+    "deletions": 7,
+    "total_changes": 15,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "9d283c5a2b109a805c32b870ee144204ab9cb1d3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-17T19:34:22Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "feat: adiciona filtos para nuvem de palavras"
+    },
+    "additions": 25,
+    "deletions": 4,
+    "total_changes": 29,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "01ca3280d09f1420c539034afefac1e436175f43",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-17T19:03:52Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "feat: adiciona endpoint para nuvem de palavras"
+    },
+    "additions": 44,
+    "deletions": 1,
+    "total_changes": 45,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "84f85a0c5c6c49cd0b6238e62146c4d9519670bf",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-17T19:00:01Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #99 from unb-mds/feat/implementa_tramitacao"
+    },
+    "additions": 7,
+    "deletions": 34,
+    "total_changes": 41,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "9988f6d3c185e2b2f30de71cf6166ffc331f93f4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-17T18:59:49Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge branch 'main' into feat/implementa_tramitacao"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "548b742851388b26598db01962e2ce4db8751dc5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-17T16:27:49Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "feat: resolve conflitos no models.py e corrige funçao duplicada"
+    },
+    "additions": 194,
+    "deletions": 101,
+    "total_changes": 295,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "743575dca91c8d0d2e1647c34967a4ba79ff60e4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-17T16:17:50Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #98 from unb-mds/fix/corrige-senado"
+    },
+    "additions": 73,
+    "deletions": 4,
+    "total_changes": 77,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "48faf493f0881cf8713b1b862bd09b700a004fe1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-17T14:21:58Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "feat:adiciona tempo de tramitação na main"
+    },
+    "additions": 73,
+    "deletions": 4,
+    "total_changes": 77,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "3d9127b95627ee41b8d24a200282136307c221a9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-17T14:21:03Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #96 from unb-mds/fix/docs-requisitos"
+    },
+    "additions": 29,
+    "deletions": 28,
+    "total_changes": 57,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "83cfff846b64457c022441c0947043c186730839",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-17T01:30:44Z",
+        "login": "Danielly-Mendes"
+      },
+      "message": "fix: inclui integração com senado e ajuste no escopo closes #75"
+    },
+    "additions": 29,
+    "deletions": 28,
+    "total_changes": 57,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "e12d483f9d34232e18c71ff2bebb0303debd96e0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-16T16:47:38Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Feat/implementa tramitacao (#95)"
+    },
+    "additions": 27,
+    "deletions": 27,
+    "total_changes": 54,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "308a992df4f05e382e8777e8b37bef1a56a3f918",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-16T15:42:49Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "fix:corrige problema de relacao entre o banco de dados e a .env"
+    },
+    "additions": 26,
+    "deletions": 22,
+    "total_changes": 48,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "784bd83be2d1e83cf880550b4f05a46429f4491c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-16T14:40:53Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "feat: adiciona extrator de tramitacoes e workflow quinzenal (#94)"
+    },
+    "additions": 157,
+    "deletions": 2,
+    "total_changes": 159,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "5a23c5672eca2a5a5cd8fd509e08b3bca5428f59",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-16T14:39:24Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "fix: agora vai"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "3bc5b71f60a02bcd804271367b69a16cb318413b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-16T14:36:30Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "fix: corrige erro de variavel"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "2c8aa27f18bc6aeb78d659500faaa62d78bfa806",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-16T14:11:07Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "feat: adiciona extrator de tramitacoes e workflow quinzenal"
+    },
+    "additions": 156,
+    "deletions": 1,
+    "total_changes": 157,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "e0f1b7f3f0d1f3ac30d1520888309eb6e638fab5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-16T05:48:09Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #92 from unb-mds/feat/otimizacao_database"
+    },
+    "additions": 380,
+    "deletions": 175,
+    "total_changes": 555,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "e2be59d83a367f5d0472f3ebfe321ac65546935c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-16T05:38:32Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "fix:correção final dos ruidos da nlp"
+    },
+    "additions": 156,
+    "deletions": 102,
+    "total_changes": 258,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "50fd72a70033464d0c959f841e7aac1f36487a9f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-16T05:32:12Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #87 from unb-mds/fix/docs-requisitos"
+    },
+    "additions": 144,
+    "deletions": 94,
+    "total_changes": 238,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "49130d8c21a7b3d0d90ecdfb80f7de1cc98da388",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-16T05:12:38Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Update PostgreSQL healthcheck to use environment variables"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "48ed47ae5755f329cfd8c9f8dc5c39365e5e1518",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-16T05:09:41Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #86 from unb-mds/feat/healthcheck-postgres"
+    },
+    "additions": 12,
+    "deletions": 8,
+    "total_changes": 20,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "0b325db6d4f74367bc5b3d95e3c377f89f54aa85",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-16T05:07:51Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "feat:implementa filtros da nlp para remover ruidos da API do senado"
+    },
+    "additions": 111,
+    "deletions": 44,
+    "total_changes": 155,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "11d3df21f4f99a416d9e970bb25f39462e94b03e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-16T04:52:19Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Feat/otimizacao database (#91)"
+    },
+    "additions": 121,
+    "deletions": 37,
+    "total_changes": 158,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "69dd145f38b370e57975e42f5c5fd0a5c1e9fa61",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-16T04:23:35Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "fix: troca do pdfplumber pelo pymudf que é mais leve"
+    },
+    "additions": 48,
+    "deletions": 22,
+    "total_changes": 70,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "95139d7c9b04bb4bdaa335feeeecdccccd794232",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-16T04:10:37Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "adiciona feature para baixar diversos pdfs ao mesmo tempo, otimizando…"
+    },
+    "additions": 52,
+    "deletions": 24,
+    "total_changes": 76,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "906f4fed5d04d2fa91ac7e51cd10da6c83c37f94",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-16T03:58:44Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "funcao adicionada para otimizar a extracao dos pdfs"
+    },
+    "additions": 39,
+    "deletions": 9,
+    "total_changes": 48,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "51157de8db3733501dbb98eaee98965d2462b832",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-15T23:59:31Z",
+        "login": "Danielly-Mendes"
+      },
+      "message": "Docs: Ajusta descrição do MVP e arquitetura closes #75"
+    },
+    "additions": 27,
+    "deletions": 32,
+    "total_changes": 59,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "b32d9d744f5cabf71e546c0149875897dc1e94ca",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-15T23:59:31Z",
+        "login": "Danielly-Mendes"
+      },
+      "message": "fix: Complementa descrição de RFs e critérios de aceitação refs #75"
+    },
+    "additions": 36,
+    "deletions": 26,
+    "total_changes": 62,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "a778bd4f974b81d4b29582f9fce0896468de0495",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-15T23:59:31Z",
+        "login": "Danielly-Mendes"
+      },
+      "message": "Docs: Adiciona e melhora user stories refs #75"
+    },
+    "additions": 45,
+    "deletions": 24,
+    "total_changes": 69,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "318ed52fbef61e81b47c42059500c00e2a31aedd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-15T23:59:31Z",
+        "login": "Danielly-Mendes"
+      },
+      "message": "docs: expande requisitos e adiciona personas do projeto refs #75"
+    },
+    "additions": 42,
+    "deletions": 18,
+    "total_changes": 60,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "589ec33679a8dbfcf1599be938a684f9aa052bbc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-15T14:03:27Z",
+        "login": "VegasVvegas"
+      },
+      "message": "feat(infra): add postgres healthcheck and env variables"
+    },
+    "additions": 4,
+    "deletions": 4,
+    "total_changes": 8,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "1826190d87bc296292b3f0a159ccadf4b048ae49",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-15T12:45:19Z",
+        "login": "VegasVvegas"
+      },
+      "message": "docs(infra): adiciona arquivo .env.example"
+    },
+    "additions": 4,
+    "deletions": 0,
+    "total_changes": 4,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "0e429db477db11de3eee4063ee8b62383ca65ae2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-15T11:22:22Z",
+        "login": "VegasVvegas"
+      },
+      "message": "feat(infra): aguarda PostgreSQL saudável antes de iniciar o backend"
+    },
+    "additions": 2,
+    "deletions": 1,
+    "total_changes": 3,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "d532ae41931a86404a2307244c58486958adb626",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-15T11:14:48Z",
+        "login": "VegasVvegas"
+      },
+      "message": "feat(infra): melhora a inicialização do PostgreSQL com healthcheck"
+    },
+    "additions": 6,
+    "deletions": 3,
+    "total_changes": 9,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "d746643846a9b2d648dfdeeed5ba9a328448350f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-11T01:41:15Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #85 from unb-mds/fix/corrige-senado"
+    },
+    "additions": 28,
+    "deletions": 16,
+    "total_changes": 44,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "3a45f5193d9a8a62501091e0e293dd3c8c609a89",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-11T01:36:16Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "fix:correcao final da api do senado"
+    },
+    "additions": 28,
+    "deletions": 16,
+    "total_changes": 44,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "e835c2502c09fc343f9b76d2b4cae66dc7dc1d74",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-11T00:51:32Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #84 from unb-mds/fix/corrige-senado"
+    },
+    "additions": 44,
+    "deletions": 38,
+    "total_changes": 82,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "5f1d7a4f8c56465818a89f57257af96eece8951e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-11T00:46:41Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "fix: atualiza script do senado com extrator json recursivo"
+    },
+    "additions": 44,
+    "deletions": 38,
+    "total_changes": 82,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "0eb07b4ca76c2f429330aeaa0ad0b3be0e20ad38",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-10T23:33:09Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #83 from unb-mds/feat/implementa-senado"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "85b2cbf84b4cb99f7fa4234381cefc011d70feeb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-10T23:29:27Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "fix: corrige inicializacao incorreta no camara_api"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "f38952755bca01e927ca5428eb5cbec65ce4ccb7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-10T22:53:19Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #82 from unb-mds/feat/implementa-senado"
+    },
+    "additions": 208,
+    "deletions": 10,
+    "total_changes": 218,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "776a5ba5fd51673248283bc2d96aa48f1f12ff57",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-10T22:51:19Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "feat/implementação da API do senado"
+    },
+    "additions": 3,
+    "deletions": 3,
+    "total_changes": 6,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "09aae02db97dc3c2e6c7e006de992c9bd9bd723e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-10T22:29:56Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "feat: config de docker e esteira ci/cd no GHCR"
+    },
+    "additions": 207,
+    "deletions": 9,
+    "total_changes": 216,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "ad63bd85331ab2ad8956106c15cbb24a69ff80ce",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-08T17:55:57Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Upgrade Dockerfile to use Python 3.13"
+    },
+    "additions": 6,
+    "deletions": 5,
+    "total_changes": 11,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "721f713ee65b36a2b5c027c908a3de16ff72509b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-08T00:54:45Z",
+        "login": "wandinhawright"
+      },
+      "message": "nova paleta de cores"
+    },
+    "additions": 33,
+    "deletions": 12,
+    "total_changes": 45,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "72683f8349cab23e7546d50a84b800299ecc419d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-27T06:34:12Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #74 from unb-mds/feat/mkdocs"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "d6a4828d319ba7c688a497f5afea5f6517c07aa5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-27T06:32:27Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "fix:correção do envio da imagem do diagrama c4"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "9ebabb1d8ea5c09000492d0fa7ae1fd07981e945",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-27T06:27:11Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #73 from unb-mds/feat/mkdocs"
+    },
+    "additions": 8,
+    "deletions": 10,
+    "total_changes": 18,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "3bbd9af0d251fbdae4a3bed02e1e0b9e3c9f6842",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-27T06:25:02Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "docs: adiciona diagrama do modelo c4 a arquitetura"
+    },
+    "additions": 8,
+    "deletions": 10,
+    "total_changes": 18,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "f2b7b99eb466bd450427812892882c31dd6d82b4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-27T06:12:48Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #72 from unb-mds/feat/mkdocs"
+    },
+    "additions": 16,
+    "deletions": 4,
+    "total_changes": 20,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "cde48a95996bad6d2cd6f99dc313a2d1c59ec881",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-27T06:11:55Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "UI: Aplicada paleta de cores baseada no prototipo do Figma"
+    },
+    "additions": 16,
+    "deletions": 4,
+    "total_changes": 20,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "7e2eea286ece6b1ea9d2c8c9dabc6d559002f612",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-27T06:01:52Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #71 from unb-mds/feat/mkdocs"
+    },
+    "additions": 1,
+    "deletions": 2,
+    "total_changes": 3,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "bbc4bb0d42ab60e17f9ff7c166a7ee9f44754805",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-27T06:00:24Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Fix: Removido background branco global do CSS"
+    },
+    "additions": 1,
+    "deletions": 2,
+    "total_changes": 3,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "8fb22cd1fb4efe02cd666635bfa201d6bf000b08",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-27T05:49:34Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #70 from unb-mds/feat/mkdocs"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "431353ae744ed6164ca8086457a290755c562e1c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-27T05:48:41Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "restaurando pasta de testes"
+    },
+    "additions": 18,
+    "deletions": 0,
+    "total_changes": 18,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "6c7ec6ac290fa0dd35fd19117681fe5a1f33416d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-27T05:43:45Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "fix:correção mkdocs"
+    },
+    "additions": 1,
+    "deletions": 19,
+    "total_changes": 20,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "1468ccf6b3b3799b87e48a617ded1733f4d4b8e3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-27T03:43:00Z",
+        "login": "Golira12"
+      },
+      "message": "Add team members to the README"
+    },
+    "additions": 9,
+    "deletions": 1,
+    "total_changes": 10,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "586f3773789191faacf35e5a0c8b8df35afb3afa",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-27T03:38:05Z",
+        "login": "Golira12"
+      },
+      "message": "Revise README for clarity and updates"
+    },
+    "additions": 38,
+    "deletions": 193,
+    "total_changes": 231,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "223c75ed2d7fd0661127a50dafd524b82d1903d3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-27T02:57:21Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #69 from unb-mds/feat/frontend-site"
+    },
+    "additions": 796,
+    "deletions": 1539,
+    "total_changes": 2335,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "5e270143cdcaa6dc511cad246664202cc14f1de4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-27T02:55:22Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "fix: corrige paleta de cores do site"
+    },
+    "additions": 796,
+    "deletions": 1539,
+    "total_changes": 2335,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "6dc6be7433df8c962b1a005940b87c8c9bf436ac",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-27T01:20:20Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #68 from unb-mds/feat/frontend-site"
+    },
+    "additions": 172,
+    "deletions": 32,
+    "total_changes": 204,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "4518c10903356feee4bcf9c8a1297b84c1997474",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-27T01:09:42Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "feat: adiciona filtro de busca e rankings no frontend"
+    },
+    "additions": 172,
+    "deletions": 32,
+    "total_changes": 204,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "84edef49d096e859c8ee8fd19416d8137bfccac0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-27T00:39:25Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #67 from unb-mds/feat/frontend-site"
+    },
+    "additions": 1307,
+    "deletions": 200,
+    "total_changes": 1507,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "3f7f5d0cd6d49b1883531e55713c9ebdb7358103",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-27T00:19:22Z",
+        "login": "cgbriel28"
+      },
+      "message": "docs: atualiza documentação do mkdocs"
+    },
+    "additions": 4,
+    "deletions": 4,
+    "total_changes": 8,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "960721259b845254a9d454e01c0d757cb14950f8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-27T00:08:07Z",
+        "login": "cgbriel28"
+      },
+      "message": "docs: adiciona documentação da arquitetura e visão geral"
+    },
+    "additions": 61,
+    "deletions": 18,
+    "total_changes": 79,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "db032e52a7c9e6af8b3c6afcb9aaaf855e7b9e2b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T22:59:05Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "feat: adiciona paginas Sobre, Detalhes da Lei e roteamento dinamico"
+    },
+    "additions": 1307,
+    "deletions": 200,
+    "total_changes": 1507,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "16a320dce81b3104464ddf77137ad1e1f2b1478c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T22:21:30Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Segunda atualização do readme"
+    },
+    "additions": 208,
+    "deletions": 25,
+    "total_changes": 233,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "1c6523771fc11c55463b4138a662fd06b7eb7b4e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T15:33:04Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Update README.md"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "8337e76724954b859988e468069df9a0c22a77c7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T15:32:48Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Remove test instructions from README"
+    },
+    "additions": 1,
+    "deletions": 43,
+    "total_changes": 44,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "8b61b5f85669a9ad951a2a532dd6271bfd0115cf",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-21T20:12:59Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #65 from unb-mds/feat/nlp"
+    },
+    "additions": 77,
+    "deletions": 33,
+    "total_changes": 110,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "bd22eb1a15ac0becb27eae245365a8b2b15c9aed",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-21T19:06:29Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "feat:finalizando o nlp para requisições na api"
+    },
+    "additions": 77,
+    "deletions": 33,
+    "total_changes": 110,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "ef8178475afc015df7f9a0da9579e942d72a83e9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-21T17:46:15Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #63 from unb-mds/feat/nlp"
+    },
+    "additions": 147,
+    "deletions": 41,
+    "total_changes": 188,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "339c997a1497dd885edd1106151bd1bc6850c10f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-21T17:34:38Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "feat: integra extracao de pdfs e classificacao nlp no crawler"
+    },
+    "additions": 147,
+    "deletions": 41,
+    "total_changes": 188,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "4e5f3b7cf3619ae953b2fff128c6c7c7d141ffed",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-21T16:10:02Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #60 from unb-mds/feat/database"
+    },
+    "additions": 5,
+    "deletions": 0,
+    "total_changes": 5,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "9b9dc6d0fc7ab038fd7a1157b76df6b258d5d08f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-21T16:03:28Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "fix: corrige colunas no banco de dados"
+    },
+    "additions": 5,
+    "deletions": 0,
+    "total_changes": 5,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "ea40d0c42c3e5e9a75179b36f1d0f0b6a7281efc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-21T15:50:18Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #58 from unb-mds/feat/database"
+    },
+    "additions": 32,
+    "deletions": 0,
+    "total_changes": 32,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "994d93b3c3a3ccd80e70858f399661013e0b347f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-21T15:08:52Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "ci: configura github actions para testes automatizados"
+    },
+    "additions": 32,
+    "deletions": 0,
+    "total_changes": 32,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "f7304b4ca601ae94068ec06e00f9b3c1f0826e49",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-21T15:03:38Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #57 from unb-mds/feat/database"
+    },
+    "additions": 27,
+    "deletions": 17,
+    "total_changes": 44,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "5495cd2444905d3958f3a25a0fea2faa11f458cf",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-21T02:48:12Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "fix: corrige variavel id_proposicao e logica de agrupamento"
+    },
+    "additions": 27,
+    "deletions": 17,
+    "total_changes": 44,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "f595cba6724da7faf4b9adca9dab779a26288f2f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-21T00:27:17Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #55 from unb-mds/feat/database"
+    },
+    "additions": 5,
+    "deletions": 16,
+    "total_changes": 21,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "ff8f984300e3f9fac33e805d3b7fbbe3a67dae34",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-20T23:15:28Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2026-1-Squad10 into…"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "f71e334015aaf3181b8be66035dc3886dfd25201",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-20T23:15:21Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "fix: remoção da rota teste no banco de dados"
+    },
+    "additions": 5,
+    "deletions": 16,
+    "total_changes": 21,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "90265dea7b2d76dc79847f7ac7783c38e0d27dea",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-20T23:10:03Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #54 from unb-mds/feat/crawler_camara"
+    },
+    "additions": 85,
+    "deletions": 15,
+    "total_changes": 100,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "9da1aeb0d2dacde18cc11bccb6b5faabf46e1041",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-20T23:09:41Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "fix(crawler): implementa extracao das siglas de partidos e uf"
+    },
+    "additions": 33,
+    "deletions": 11,
+    "total_changes": 44,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "ad24b24533d7d22df05bc8ccb5d6ec1cc9a9bf3d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-20T22:31:00Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "feat(analytics): cria rotas de ranking dos parlamentares"
+    },
+    "additions": 52,
+    "deletions": 4,
+    "total_changes": 56,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "df945fe48503c442557771079e838c0d57d87e84",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-20T21:59:32Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #53 from unb-mds/feat/camara-api"
+    },
+    "additions": 5,
+    "deletions": 2931137,
+    "total_changes": 2931142,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "f453c4f5a5d8f8f808ee2924d14d4410688f4c9a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-20T21:53:19Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "fix: alteração no nome da pasta de estudos e inclusao do venv no giti…"
+    },
+    "additions": 5,
+    "deletions": 2931137,
+    "total_changes": 2931142,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "1bc9e914e32729d683077f5cfbe31d8ddf1960df",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-20T21:46:23Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "fix: alteração no nome da pasta de estudos pra não gerar ambiguidade"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "1826bba9eceac1b39abbbaccee2a51fa3b135ef7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-20T16:06:47Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #50 from unb-mds/fix/docs-requisitos"
+    },
+    "additions": 147,
+    "deletions": 94,
+    "total_changes": 241,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "4fada7d5f9bdd27c14200a3df563a23fe2eebf36",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-18T20:54:31Z",
+        "login": "Danielly-Mendes"
+      },
+      "message": "docs: revisão e reinserção de requisitos não funcionais"
+    },
+    "additions": 147,
+    "deletions": 94,
+    "total_changes": 241,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "00b579f7348326aa9ddede5392c56f9528cdfcae",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-18T16:49:13Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #47 from unb-mds/feat/camara-api"
+    },
+    "additions": 291,
+    "deletions": 44,
+    "total_changes": 335,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "068f78db96d1506486c68dfa7cfa0cc5aead9fa4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-18T16:37:20Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "feat(crawler): corrige esquema do banco, adiciona criacao automatica …"
+    },
+    "additions": 123,
+    "deletions": 144,
+    "total_changes": 267,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "696b7fd7ad097f441a3aaadff9748c66f4d32c86",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-18T15:45:03Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge branch 'main' into feat/camara-api"
+    },
+    "additions": 2934074,
+    "deletions": 12317,
+    "total_changes": 2946391,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "5851f6b0639f45d55ce8764a08da488b5f6850da",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-18T05:40:17Z",
+        "login": "marispmorais"
+      },
+      "message": "Update README.md"
+    },
+    "additions": 39,
+    "deletions": 25,
+    "total_changes": 64,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "36e37c0e45824973375d7f3ed6eb70418ef88876",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-18T05:27:40Z",
+        "login": "marispmorais"
+      },
+      "message": "feat: configura ambiente de testes automatizados no backend e frontend"
+    },
+    "additions": 2932389,
+    "deletions": 10,
+    "total_changes": 2932399,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "8a8bacf9ebd725d70b642b0a886433de75a9abab",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T14:14:11Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #46 from unb-mds/feat/metricas-qualidade-horario"
+    },
+    "additions": 556,
+    "deletions": 8,
+    "total_changes": 564,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "6a9aeecb71d9d967f297246c4172412745c56465",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T14:10:29Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "chore: atualiza grafico de commits por horario"
+    },
+    "additions": 556,
+    "deletions": 8,
+    "total_changes": 564,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "bd05b627e31bfc9fe6e5fd5671ee81dbf4b475f6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T05:18:03Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #44 from unb-mds/feat/metricas-por-membro"
+    },
+    "additions": 105,
+    "deletions": 13,
+    "total_changes": 118,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "5f660be3912cd99ce1a90fe2c30ba2a0802e4455",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T05:17:28Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "feat: padroniza usernames dos autores e adiciona gráfico de contribui…"
+    },
+    "additions": 105,
+    "deletions": 13,
+    "total_changes": 118,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "4387c8b7bc74430ec8483c50c17600d802faa435",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T04:38:25Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #43 from unb-mds/fix/actions-correcoes"
+    },
+    "additions": 1,
+    "deletions": 50,
+    "total_changes": 51,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "f04924eb5a0b9700a71ba5eb94513308228f4138",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T04:34:45Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2026-1-Squad10 into…"
+    },
+    "additions": 25,
+    "deletions": 1,
+    "total_changes": 26,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "5f69288516821fe258604207ec7c75f7d81dbe1d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T04:34:26Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "fix: adiciona tema mkdocs-material e remove action duplicada"
+    },
+    "additions": 1,
+    "deletions": 50,
+    "total_changes": 51,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "825388284234135d02d4816ba7856ef0ac3f0c39",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T04:02:50Z",
+        "login": "github-actions[bot]"
+      },
+      "message": "chore(metricas): atualiza data.json [skip ci]"
+    },
+    "additions": 25,
+    "deletions": 1,
+    "total_changes": 26,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "8b22c2416f88b474893553266a957ca61369bb06",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T04:01:35Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2026-1-Squad10"
+    },
+    "additions": 25,
+    "deletions": 1,
+    "total_changes": 26,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "5655b014718c6e0e3ce38972f1d695cfa1aed7df",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T04:00:57Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "ci: adiciona pipeline unificada para deploy do mkdocs e dashboard"
+    },
+    "additions": 41,
+    "deletions": 0,
+    "total_changes": 41,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "e9c981119db5414e525cc61acd5bda3d0c69b1b2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T03:58:10Z",
+        "login": "github-actions[bot]"
+      },
+      "message": "chore(metricas): atualiza data.json [skip ci]"
+    },
+    "additions": 25,
+    "deletions": 1,
+    "total_changes": 26,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "27d00cf7c0ef85095e7946116b9e5b0902e8aaf8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T03:57:19Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2026-1-Squad10"
+    },
+    "additions": 25,
+    "deletions": 1,
+    "total_changes": 26,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "d38f5fc2642c2324c119526fd9d4bcdf3bdaecf6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T03:51:08Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "chore: remove pasta site gerada pelo mkdocs do versionamento"
+    },
+    "additions": 4,
+    "deletions": 12307,
+    "total_changes": 12311,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "8df652a5623808700b6ac0e0ef5508ee94f64ee0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T03:49:47Z",
+        "login": "github-actions[bot]"
+      },
+      "message": "chore(metricas): atualiza data.json [skip ci]"
+    },
+    "additions": 25,
+    "deletions": 1,
+    "total_changes": 26,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "e9c8994849428020de009d6d57f4f507a0368b0c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T03:49:28Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #42 from unb-mds/feat/dashboard-correcoes"
+    },
+    "additions": 2,
+    "deletions": 50,
+    "total_changes": 52,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "7f9af7ea0d9a6a664db531cef43b82925ce4fb97",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T03:48:05Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "fix: organiza estrutura de pastas e remove action duplicada"
+    },
+    "additions": 2,
+    "deletions": 50,
+    "total_changes": 52,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "08336496c6f2958544733a1d2fc8144978a59a53",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T03:05:54Z",
+        "login": "github-actions[bot]"
+      },
+      "message": "chore(metricas): atualiza data.json [skip ci]"
+    },
+    "additions": 57,
+    "deletions": 1,
+    "total_changes": 58,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "d1aef71e200d3c58360d348fc5b464754cc08957",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T03:05:33Z",
+        "login": null
+      },
+      "message": "feat: adiciona workflow de métricas de produtividade"
+    },
+    "additions": 55,
+    "deletions": 4,
+    "total_changes": 59,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "a375eba79d15c7ad39cbde8373cb42b3dc0fea47",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T02:56:28Z",
+        "login": null
+      },
+      "message": "fix: atualiza workflow metricas"
+    },
+    "additions": 4,
+    "deletions": 4,
+    "total_changes": 8,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "e460d6bba6af6be0076ba076ff0b14a689277748",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T02:44:25Z",
+        "login": null
+      },
+      "message": "fix: corrige workflow github actions"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "a93d882ec608f6d7200fd61325f053590221d52c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T02:31:38Z",
+        "login": null
+      },
+      "message": "feat: adiciona automacao de metricas"
+    },
+    "additions": 45,
+    "deletions": 0,
+    "total_changes": 45,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "58fa32dcea91ce5cf8bff5a1779b2aeefd994c08",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T00:43:18Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #39 from unb-mds/feat/dashboard-metricas"
+    },
+    "additions": 859,
+    "deletions": 0,
+    "total_changes": 859,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "5886b4dbb3b657cc8b9b2c9a85818f6f9606c684",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-12T22:01:44Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "feat(observabilidade): adiciona script coletor e dashboard base em d3.js"
+    },
+    "additions": 0,
+    "deletions": 34,
+    "total_changes": 34,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "c8139eaa0c9dd387a3be68954aaced3f514da06e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-12T22:00:22Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "feat(observabilidade): adiciona script coletor e dashboard base em d3.js"
+    },
+    "additions": 893,
+    "deletions": 0,
+    "total_changes": 893,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "3daa025de1069af8560a55a7498aaaaa2b1902b9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T16:28:30Z",
+        "login": "Danielly-Mendes"
+      },
+      "message": "adiciona crawler da api da câmara refs #37"
+    },
+    "additions": 265,
+    "deletions": 0,
+    "total_changes": 265,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "41c5313310112f59290e07ffae2bccb554e9b4a3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T16:26:35Z",
+        "login": "Danielly-Mendes"
+      },
+      "message": "fix: corrige tabelas proposicoes e parlamentares"
+    },
+    "additions": 6,
+    "deletions": 3,
+    "total_changes": 9,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "07eba3c46d8a1521e5260dd4557290a4b4498ab1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T16:22:09Z",
+        "login": "Danielly-Mendes"
+      },
+      "message": "fix: retira 'container_name' refs #37"
+    },
+    "additions": 0,
+    "deletions": 2,
+    "total_changes": 2,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "6cef852a4aa22e0afe7044c296336f1c0272cb2d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T16:18:49Z",
+        "login": "Danielly-Mendes"
+      },
+      "message": "feat: adiciona tablename e id_externo refs #37"
+    },
+    "additions": 2,
+    "deletions": 0,
+    "total_changes": 2,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "fa28fe915b9eafc6ce119b582cdf0418b63398fb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-10T21:54:21Z",
+        "login": "cgbriel28"
+      },
+      "message": "docs: atualiza documentação do projeto"
+    },
+    "additions": 66,
+    "deletions": 755,
+    "total_changes": 821,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "556f5d1f0a2c3f5d4d69df227ddface3682dc6d0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-04T15:28:50Z",
+        "login": "cgbriel28"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2026-1-ProtectKids"
+    },
+    "additions": 85,
+    "deletions": 6,
+    "total_changes": 91,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "096a6da24d97cb7339ffce01eb7b63abbb84105f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-04T00:03:32Z",
+        "login": "cgbriel28"
+      },
+      "message": "fix: adiciona css layout"
+    },
+    "additions": 12571,
+    "deletions": 0,
+    "total_changes": 12571,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "9b957d3fd84feaf63ffd23cf2c5808c66a751e84",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-03T22:03:04Z",
+        "login": "wandinhawright"
+      },
+      "message": "Merge origin/main"
+    },
+    "additions": 118,
+    "deletions": 450,
+    "total_changes": 568,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "33fef195384433ab71fb0c4f818c6d44402d9a81",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-03T21:44:55Z",
+        "login": "wandinhawright"
+      },
+      "message": "docker: integração do docker"
+    },
+    "additions": 24,
+    "deletions": 3,
+    "total_changes": 27,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "87156166d1f9ea324a152a6e60c39db4438a8f3e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-02T20:25:07Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #34 from unb-mds/feat/integracao-banco-fastapi"
+    },
+    "additions": 61,
+    "deletions": 3,
+    "total_changes": 64,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "de6b92c4ceaa9f3f12e5f0b9c0c03b38a2db7aac",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-02T18:57:50Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "feat: integra FastAPI ao Postgres via SQL model e configuração báscia…"
+    },
+    "additions": 61,
+    "deletions": 3,
+    "total_changes": 64,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "bc09daed8be51e46b5f56cbc7cf31fa016154101",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-02T17:11:55Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #31 from unb-mds/docs/atualiza-diagramas-c4"
+    },
+    "additions": 0,
+    "deletions": 447,
+    "total_changes": 447,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "7327affe06b05be6638af2679c75724c71ad060f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-02T17:06:07Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "docs: correções  no diagrama C4"
+    },
+    "additions": 0,
+    "deletions": 447,
+    "total_changes": 447,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "e80cc3372969770abe210f4c7d3773f09c0481f4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-02T16:19:29Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #28 from unb-mds/fix/gitignore-python-cache"
+    },
+    "additions": 11,
+    "deletions": 1,
+    "total_changes": 12,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "729f8e444d0e18c13c88f924f7d20a4dc47644e8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-02T16:16:57Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "fix: move gitignore para a raiz e adiciona regras de python"
+    },
+    "additions": 11,
+    "deletions": 4,
+    "total_changes": 15,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "888cb294119bef8d0c44de728eb5ec5e7f7be4c0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-02T16:02:37Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2026-1-Squad10"
+    },
+    "additions": 4255,
+    "deletions": 2,
+    "total_changes": 4257,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "1a1dcb93d68192c68d8afa1881d120fe0944f790",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-19T19:37:14Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Enhance README with project details and setup guide"
+    },
+    "additions": 47,
+    "deletions": 0,
+    "total_changes": 47,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "e3bafebf66b2c275ea2749ff117995a79b4f9c8a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-19T16:19:17Z",
+        "login": "wandinhawright"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2026-1-Squad10"
+    },
+    "additions": 1089,
+    "deletions": 5,
+    "total_changes": 1094,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "bafedfe974294740ce3da8a497271b47a267ed4f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-19T16:18:25Z",
+        "login": "wandinhawright"
+      },
+      "message": "frontend: inicialia o projeto em react e exclui arquivos desnecessários."
+    },
+    "additions": 2913,
+    "deletions": 0,
+    "total_changes": 2913,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "e8428b47ce8720de00e6b1286322697bc20dcc4e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-17T14:06:13Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "feat: setup do banco de dados usando postgres com dados ficticios par…"
+    },
+    "additions": 121,
+    "deletions": 86,
+    "total_changes": 207,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "6eb847d295d9760dd090878a1cfe06365a2cf461",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-14T03:29:22Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2026-1-Squad10"
+    },
+    "additions": 606,
+    "deletions": 4,
+    "total_changes": 610,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "6a43b6deb0976759c62764f961dae91d42309741",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-14T03:29:11Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "docs: adiciona arquitetura C4 nivel 1 e 2"
+    },
+    "additions": 447,
+    "deletions": 0,
+    "total_changes": 447,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "fee898d74694dda8d40256bf45f8cff0d24b58a2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-14T00:19:13Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Delete docs/estudos/gitgithub"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "21bf5866f2de5bee2a7e9007ccdc594f950195d1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-14T00:18:30Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Create docker-estudos.md with Docker concepts"
+    },
+    "additions": 133,
+    "deletions": 0,
+    "total_changes": 133,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "f56f5ec68619db47f97108ffb677d7a442ce51eb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-13T23:59:42Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Create gitgithub"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "b211556cb35191a8574c4cbd753058263465abbd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-13T23:58:06Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Create Git and GitHub usage documentation"
+    },
+    "additions": 188,
+    "deletions": 0,
+    "total_changes": 188,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "447aed8eab60d8f69c3f4278c00d4beca9920854",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-13T20:13:06Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Delete ateste"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "c15c183157ae9764b5997a0564026e1471b86c71",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-13T20:04:37Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Update README.md"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "fb7012dc50da3f2fda988146a84b76c8ca7a4443",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-13T17:32:12Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Add new file 'ateste' with content 'teste'"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "ad425a1673f7a86a6c73bf1208beba8ca65bd65d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-13T17:31:16Z",
+        "login": "VegasVvegas"
+      },
+      "message": "Update README with new contentteste"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "e3548242586dd58390fd1e1ebf7177c0a8db0f82",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-13T12:24:25Z",
+        "login": "Golira12"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2026-1-Squad10"
+    },
+    "additions": 230,
+    "deletions": 3,
+    "total_changes": 233,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "7fdb98f622290692cebb16a69518a1d3608ee9a5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-13T12:20:38Z",
+        "login": "Golira12"
+      },
+      "message": "docs: adiciona resumo de typescript"
+    },
+    "additions": 54,
+    "deletions": 0,
+    "total_changes": 54,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "5b97084afffbef0f6b47b12bb7f6c5aefcadda20",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-13T03:49:28Z",
+        "login": "marispmorais"
+      },
+      "message": "docs: adiciona estudo de Fast API"
+    },
+    "additions": 145,
+    "deletions": 3,
+    "total_changes": 148,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "0c5d69b875f126884f3a1fe16be2411f0d99a691",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-13T03:46:08Z",
+        "login": "marispmorais"
+      },
+      "message": "docs: adiciona estudo de Fast API"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "5f4f9e1db3f3db5be302145eb650487c165ae8ef",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-12T22:05:47Z",
+        "login": "cgbriel28"
+      },
+      "message": "Renumber sections in Requisitos.md for clarity"
+    },
+    "additions": 4,
+    "deletions": 4,
+    "total_changes": 8,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "f3ba33ab03e42b21c29769285b3838d2c49ff0e2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-12T22:04:31Z",
+        "login": "cgbriel28"
+      },
+      "message": "Revise requirements document and add new sections"
+    },
+    "additions": 111,
+    "deletions": 3,
+    "total_changes": 114,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "f0b77a6e748cdd6df1e215af5517195e383e2faf",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-12T20:56:35Z",
+        "login": "marispmorais"
+      },
+      "message": "Update metodologiasageis.md"
+    },
+    "additions": 45,
+    "deletions": 45,
+    "total_changes": 90,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "410fb52284c58c637d7ccc6b81279ee58317cd4e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-12T20:52:27Z",
+        "login": "marispmorais"
+      },
+      "message": "Update metodologiasageis.md"
+    },
+    "additions": 44,
+    "deletions": 44,
+    "total_changes": 88,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "16c47a50941482ecb8ed84f1d97d8f47d3c19fea",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-12T20:49:17Z",
+        "login": "marispmorais"
+      },
+      "message": "Update metodologiasageis.md"
+    },
+    "additions": 85,
+    "deletions": 0,
+    "total_changes": 85,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "801df54fd9be31769f07fb25ec3064ab90d236e8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-12T20:34:05Z",
+        "login": "marispmorais"
+      },
+      "message": "docs: adiciona estudo de metodologias ágeis"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "be6aa75336a36f06c8b16483a1ec1dc7ddab00de",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-12T18:40:37Z",
+        "login": "wandinhawright"
+      },
+      "message": "docs: adiciona o documento com a base do frontend."
+    },
+    "additions": 14,
+    "deletions": 0,
+    "total_changes": 14,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "1f3651a02ebaf276d13e7f370b9c9ae46b36a1ee",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-11T03:03:01Z",
+        "login": "Danielly-Mendes"
+      },
+      "message": "docs: adiciona versão 1.0 do levantamento de requisitos"
+    },
+    "additions": 138,
+    "deletions": 0,
+    "total_changes": 138,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "eeadd7196c9f53657d534b6ab49bd1f1a48262fa",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-10T12:39:56Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "docs: adiciona estudo de postgresql"
+    },
+    "additions": 57,
+    "deletions": 0,
+    "total_changes": 57,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "88af732e6321859fb3125ad0d2c0890b482175b8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-10T04:20:06Z",
+        "login": "marispmorais"
+      },
+      "message": "Delete docs/estudos/Metodologia Ágil"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "ea16d5c90c4db5553b7615b70ea04359f7fe1f25",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-10T04:18:41Z",
+        "login": "marispmorais"
+      },
+      "message": "Create Metodologia Ágil"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "51ec87a02c6fe1fc62251bfd359b0bcbc2ce7a61",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-08T22:41:24Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2026-1-Squad10"
+    },
+    "additions": 71,
+    "deletions": 0,
+    "total_changes": 71,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "f9d1ff03a8f423721db5336173052ac796a83385",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-08T22:38:57Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "Merge pull request #18 from unb-mds/feat/docker-yara"
+    },
+    "additions": 71,
+    "deletions": 0,
+    "total_changes": 71,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "cef074d227804cccfadf3578e4388c8f2d4a08f8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-08T20:14:02Z",
+        "login": null
+      },
+      "message": "feat: adiciona configuração inicial do ambiente Docker"
+    },
+    "additions": 71,
+    "deletions": 0,
+    "total_changes": 71,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "cbab9afbfddc3957f14c9f9962cefdcb7e9a67e8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-07T00:01:11Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "docs: adiciona estudo de tailwind para projeto MDS"
+    },
+    "additions": 3,
+    "deletions": 0,
+    "total_changes": 3,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "87d88d13e3eb3f0834e48031f55889ddad8b758b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-06T00:54:39Z",
+        "login": "wandinhawright"
+      },
+      "message": "docs: adiciona estudo de tailwind para projeto MDS"
+    },
+    "additions": 79,
+    "deletions": 0,
+    "total_changes": 79,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "fcd157d6151a1472859774cf8e9a8d11af725775",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-05T20:19:03Z",
+        "login": "Danielly-Mendes"
+      },
+      "message": "docs: adiciona estudo sobre backend refs #13"
+    },
+    "additions": 106,
+    "deletions": 0,
+    "total_changes": 106,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "d4fb000568c13ce8d965926432188d9e88ab227c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-05T15:00:41Z",
+        "login": "augustogmedeiros"
+      },
+      "message": "docs: adiciona estudo de arquitetura"
+    },
+    "additions": 66,
+    "deletions": 0,
+    "total_changes": 66,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "46dbe59f49b0a38f716eff047f0f0fcd54b61201",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-04T02:48:20Z",
+        "login": "Danielly-Mendes"
+      },
+      "message": "docs: complementa resumo de requisitos refs #6"
+    },
+    "additions": 46,
+    "deletions": 8,
+    "total_changes": 54,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "21318dcdc3e99a69b509f211def767837871cebe",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-03T22:45:14Z",
+        "login": "cgbriel28"
+      },
+      "message": "Expand requirements documentation with examples and techniques"
+    },
+    "additions": 276,
+    "deletions": 68,
+    "total_changes": 344,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "5bf2e08c97b4057294754c9ad9ddd5018f2bbeeb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-03T00:54:33Z",
+        "login": "Danielly-Mendes"
+      },
+      "message": "docs:adiciona resumo de requisitos refs #6"
+    },
+    "additions": 168,
+    "deletions": 0,
+    "total_changes": 168,
+    "repo_name": "2026-1-ProtectKids"
+  },
+  {
+    "sha": "6ff2577a61a27ba66de6170a80e63bef447cfe91",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-03-30T13:37:42Z",
+        "login": "RochaCarla"
+      },
+      "message": "Initial commit"
+    },
+    "additions": 22,
+    "deletions": 0,
+    "total_changes": 22,
+    "repo_name": "2026-1-ProtectKids"
+  }
+]

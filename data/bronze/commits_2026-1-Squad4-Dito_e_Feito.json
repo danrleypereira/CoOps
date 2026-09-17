@@ -1,0 +1,5466 @@
+[
+  {
+    "_metadata": {
+      "extracted_at": "2026-09-17T03:59:41.418445",
+      "file_path": "data/bronze/commits_2026-1-Squad4-Dito_e_Feito.json",
+      "record_count": 321
+    }
+  },
+  {
+    "sha": "6fced4b518937df2bbe18b919d9b1c76e97402b7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-24T22:13:02Z",
+        "login": "gus-ant"
+      },
+      "message": "docs: remove emojis and update collaborators on home page"
+    },
+    "additions": 633,
+    "deletions": 543,
+    "total_changes": 1176,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "aa2ae88dc480995a779d44c0e41f37c9d6596912",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T23:22:50Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "fix: correção nos gráficos (parse de data robusto, bindings de dados …"
+    },
+    "additions": 85,
+    "deletions": 38,
+    "total_changes": 123,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "bd176b980a285b2f941d03b0d1f02dc170ef78ee",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T14:44:16Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge pull request #119 from unb-mds/fix/release-2-adjustments"
+    },
+    "additions": 519,
+    "deletions": 74,
+    "total_changes": 593,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "e1e7d67c902570007850c966e355aff1f46e5346",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T14:43:32Z",
+        "login": "IndianoDev"
+      },
+      "message": "feat(backend): implementar cache via Supabase para rota /api/analisar"
+    },
+    "additions": 95,
+    "deletions": 3,
+    "total_changes": 98,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "6961a18332f58cab1643569f23074d6d9198f273",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T14:41:56Z",
+        "login": "gus-ant"
+      },
+      "message": "docs: update README and presentation adjustments"
+    },
+    "additions": 8,
+    "deletions": 4,
+    "total_changes": 12,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "42bc3571d2c7db25e5af630d05ff3a453d68be0f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T14:36:21Z",
+        "login": "gus-ant"
+      },
+      "message": "fix(frontend): remove coherence evolution chart from state pages"
+    },
+    "additions": 1,
+    "deletions": 9,
+    "total_changes": 10,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "a415d38cd84f7eee8afa4900d916a07f7632866c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T14:27:34Z",
+        "login": "gus-ant"
+      },
+      "message": "fix(frontend): remove coherence evolution chart from state pages"
+    },
+    "additions": 64,
+    "deletions": 64,
+    "total_changes": 128,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "5d18606a988b090360ee74f9ba5821a90763c5f5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T14:12:54Z",
+        "login": "gus-ant"
+      },
+      "message": "docs: adjust slide 3 layout (screenshot on top, cards side-by-side)"
+    },
+    "additions": 154,
+    "deletions": 50,
+    "total_changes": 204,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "ef7fbac0eeaa97b1913fd3f07b691f2386355bab",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T14:08:55Z",
+        "login": "gus-ant"
+      },
+      "message": "fix(frontend): remove Tendencias de Coerencia chart from main page an…"
+    },
+    "additions": 0,
+    "deletions": 8,
+    "total_changes": 8,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "c379e2f9713a41e5e957747bd3a9f0e346924a68",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T14:01:48Z",
+        "login": "gus-ant"
+      },
+      "message": "docs: embed local dashboard mockup and offline QR code into presentat…"
+    },
+    "additions": 357,
+    "deletions": 4,
+    "total_changes": 361,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "ef6eab1a98a8e0ab52ddb4921ae54d49c8306429",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T13:44:30Z",
+        "login": "IndianoDev"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2026-1-Squad4-Dito_…"
+    },
+    "additions": 1014,
+    "deletions": 1,
+    "total_changes": 1015,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "11d32b33ac426033b8c4c6d695110ccd6892fe54",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T13:39:26Z",
+        "login": "IndianoDev"
+      },
+      "message": "docs: adicionar relatório da Sprint 09 e links na navegação"
+    },
+    "additions": 31,
+    "deletions": 0,
+    "total_changes": 31,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "8d2545bbd97a88f9d1ae51f8252b9b417c88a881",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T12:59:35Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge pull request #118 from unb-mds/dev"
+    },
+    "additions": 1014,
+    "deletions": 1,
+    "total_changes": 1015,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "2dbcf369dd3d0e474859b1cb5895ef088c49a20c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T12:55:19Z",
+        "login": "gus-ant"
+      },
+      "message": "fix(frontend): resolve test matchers error after pulling main"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "0b39466e5e31c4b6265c0ed73d2fb4e5b7faf880",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T12:53:48Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2026-1-Squad4-Dito_…"
+    },
+    "additions": 9754,
+    "deletions": 183,
+    "total_changes": 9937,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "5cc4e82a2e1fb649a2286021dd516f997da3d3a3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T12:49:35Z",
+        "login": "gus-ant"
+      },
+      "message": "test(frontend): implement unit and integration tests with vitest and …"
+    },
+    "additions": 1014,
+    "deletions": 1,
+    "total_changes": 1015,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "ccf01ce301f90d9fa7a462134988a165564ca2dd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T03:08:36Z",
+        "login": "Velho008"
+      },
+      "message": "Merge pull request #116 from unb-mds/dev"
+    },
+    "additions": 17459,
+    "deletions": 1663,
+    "total_changes": 19122,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "36c46b91c3d2d9b52aa13b82041a600afab95c30",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T02:50:52Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge pull request #115 from unb-mds/docs/release-2-notes"
+    },
+    "additions": 132,
+    "deletions": 15,
+    "total_changes": 147,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "afddb1f6c54bcc84dbca19c26e07b1684760c333",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T02:47:02Z",
+        "login": "IndianoDev"
+      },
+      "message": "feat: resgata o JSON com 592 politicos da branch deploy antes dela se…"
+    },
+    "additions": 7529,
+    "deletions": 1318,
+    "total_changes": 8847,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "6dd764946367ceaa1294927e6aa4db1bd4d0b13e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T02:42:29Z",
+        "login": "gus-ant"
+      },
+      "message": "docs: add release 2 notes and update team profiles with enrollment nu…"
+    },
+    "additions": 132,
+    "deletions": 15,
+    "total_changes": 147,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "c322a76b9904907ebbf6e909d65540ad70a6ff86",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T02:36:42Z",
+        "login": "IndianoDev"
+      },
+      "message": "fix: corrige botão de download para puxar da api do backend"
+    },
+    "additions": 2,
+    "deletions": 7,
+    "total_changes": 9,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "6b63eac7d2243d9c60ff22695ff2082d128f969a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T02:17:34Z",
+        "login": "Velho008"
+      },
+      "message": "Merge pull request #114 from unb-mds/bugfix/visao_geral"
+    },
+    "additions": 34,
+    "deletions": 35,
+    "total_changes": 69,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "efa2908d75ff5d5269b615dbab6374452daf54b4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T02:14:55Z",
+        "login": "Velho008"
+      },
+      "message": "BUGFIX: atualiza os votos analisados para parlamentares analisados"
+    },
+    "additions": 34,
+    "deletions": 35,
+    "total_changes": 69,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "afe035bedcdd0a1d8a08e521010a3d8150e591a6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T02:10:21Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge pull request #113 from unb-mds/backend/database"
+    },
+    "additions": 2075,
+    "deletions": 69,
+    "total_changes": 2144,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "4af5cf54d6777d66e7b3fb5318ea6357635a37e5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T02:07:45Z",
+        "login": "Velho008"
+      },
+      "message": "FEAT: adiciona script python que preencheu a database"
+    },
+    "additions": 284,
+    "deletions": 0,
+    "total_changes": 284,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "3d86f6d383507ec4291c3781cfd647f9273877d6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T00:04:08Z",
+        "login": "Velho008"
+      },
+      "message": "FEAT: fim da implementação para gerar o banco de dados"
+    },
+    "additions": 1692,
+    "deletions": 41,
+    "total_changes": 1733,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "44f26d4bff87f07e1bc4756d2f62e9690f048559",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T00:03:32Z",
+        "login": "Velho008"
+      },
+      "message": "FEAT: scan_senators atualizado e sem restrições"
+    },
+    "additions": 17,
+    "deletions": 28,
+    "total_changes": 45,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "6e083fcd7aa4eb6aba9c7fe0a08ef938d72758c4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-01T00:03:01Z",
+        "login": "Velho008"
+      },
+      "message": "FEAT: adicionado script para pegar dados de deputados"
+    },
+    "additions": 82,
+    "deletions": 0,
+    "total_changes": 82,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "85eb780efd9117616c45412115b12c3e18d1bd0d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T23:57:45Z",
+        "login": "Velho008"
+      },
+      "message": "Merge pull request #109 from unb-mds/feature/logo"
+    },
+    "additions": 15,
+    "deletions": 7,
+    "total_changes": 22,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "c8abebd22f67b012e62b3883f3b510553b14f5b3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T23:53:36Z",
+        "login": "Velho008"
+      },
+      "message": "FEAT: implementa a logo do Dito e Feito"
+    },
+    "additions": 15,
+    "deletions": 7,
+    "total_changes": 22,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "63909fa741b12d2532c9114113809cf42b526fa9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T23:05:26Z",
+        "login": "IndianoDev"
+      },
+      "message": "Merge pull request #106 from unb-mds/fix/supabase-schema-alignment"
+    },
+    "additions": 1254,
+    "deletions": 19,
+    "total_changes": 1273,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "89e41fdddf1769f4baf621f872950ae82f19eee5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T23:05:05Z",
+        "login": "IndianoDev"
+      },
+      "message": "resolve conflito: aceita versao Gemini do dev no scan_senators"
+    },
+    "additions": 648,
+    "deletions": 305,
+    "total_changes": 953,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "0f99cde467dfc2b8a5dc90a3160a1b78f49ca683",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T19:59:07Z",
+        "login": "gus-ant"
+      },
+      "message": "fix(frontend): integrate real supabase metrics, replace static mocks …"
+    },
+    "additions": 334,
+    "deletions": 210,
+    "total_changes": 544,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "47d654c073f65654ca7ba07027d49c36706460f8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-30T03:12:20Z",
+        "login": "gus-ant"
+      },
+      "message": "feat(backend): integrar Gemini API e restaurar carregamento rapido vi…"
+    },
+    "additions": 316,
+    "deletions": 96,
+    "total_changes": 412,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "cb82434cadaeeba055450529c3d130d713365cd2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T22:32:04Z",
+        "login": "IndianoDev"
+      },
+      "message": "fix: alinhar schema do Supabase com backend atual"
+    },
+    "additions": 1257,
+    "deletions": 21,
+    "total_changes": 1278,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "da8b62f00f4d08bcca8b65650925f9196f0f0275",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T15:32:06Z",
+        "login": "Velho008"
+      },
+      "message": "Merge pull request #100 from unb-mds/feat/visao-geral-rankings-mapa"
+    },
+    "additions": 451,
+    "deletions": 124,
+    "total_changes": 575,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "3facfa081a78e4d6517b9816798a61a161e485c1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T15:01:22Z",
+        "login": "IndianoDev"
+      },
+      "message": "Merge pull request #101 from unb-mds/deploy"
+    },
+    "additions": 198,
+    "deletions": 5,
+    "total_changes": 203,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "1bec2bbaf681c5b40dfe6a116b85d20d3bd6e2d9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T15:00:59Z",
+        "login": "IndianoDev"
+      },
+      "message": "Merge pull request #97 from unb-mds/feat/db-migration-005-views"
+    },
+    "additions": 51,
+    "deletions": 1,
+    "total_changes": 52,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "d77ac6d64e343f082936e815ce189015d0a88595",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T04:37:56Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge pull request #105 from unb-mds/feat/cache-api-analisar"
+    },
+    "additions": 47,
+    "deletions": 2,
+    "total_changes": 49,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "e6a6c49e35378ce46f88544c66f43c56c432c651",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T04:37:29Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge branch 'dev' into feat/cache-api-analisar"
+    },
+    "additions": 6767,
+    "deletions": 1854,
+    "total_changes": 8621,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "0bbde7a8d1a23e8258a2e7df7921fcfb83e58d9c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-29T04:26:14Z",
+        "login": "gus-ant"
+      },
+      "message": "feat: implementa cache-first na api de analise para economia de tokens"
+    },
+    "additions": 697,
+    "deletions": 299,
+    "total_changes": 996,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "e73f7d6a135d462acdf499d175b19deb2dd2c3c1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-28T15:47:06Z",
+        "login": "IndianoDev"
+      },
+      "message": "feat(deploy): preparar projeto para producao no Render e Vercel"
+    },
+    "additions": 198,
+    "deletions": 5,
+    "total_changes": 203,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "0ae56ee4b005c3e8c01aa9bbeb5a15236f960efb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-28T15:33:43Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "ci: adiciona pipeline de testes integrados e unitarios no github actions"
+    },
+    "additions": 66,
+    "deletions": 0,
+    "total_changes": 66,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "1f25b9af53b098d85192e8888e7211c6c033d13f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-28T14:50:45Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "feat: reestrutura VisaoGeral com rankings e escala de cor no MapaBrasil"
+    },
+    "additions": 123,
+    "deletions": 36,
+    "total_changes": 159,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "9156aaab65e7fe0ef9c8ccaf64eebdd357d4201c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-28T14:24:30Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "feat: adiciona dashboard com ranking, graficos e metricas nas telas d…"
+    },
+    "additions": 262,
+    "deletions": 88,
+    "total_changes": 350,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "9f72b5b47215be5c1b1e9891d6e6fb111da0bbc1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-28T04:12:57Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge pull request #98 from unb-mds/feat/coerencia-booleana"
+    },
+    "additions": 649,
+    "deletions": 1164,
+    "total_changes": 1813,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "ec16cc0631ec7ab4f42ff94bd3461574a50b0a26",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-28T03:58:09Z",
+        "login": "gus-ant"
+      },
+      "message": "docs: adiciona documentacao sobre coerencia politica real e carga inc…"
+    },
+    "additions": 167,
+    "deletions": 4,
+    "total_changes": 171,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "38392b64fc8016cfba7d0c5384f8aee976317f51",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-28T03:09:42Z",
+        "login": "IndianoDev"
+      },
+      "message": "feat(db): adiciona migration 005 com views para endpoints do backend"
+    },
+    "additions": 51,
+    "deletions": 1,
+    "total_changes": 52,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "f1d1cc9a089697e38f351075c4a2c47018173d96",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-27T20:27:40Z",
+        "login": "gus-ant"
+      },
+      "message": "feat(analise): refatorar pipeline e frontend para modelo de coerencia…"
+    },
+    "additions": 482,
+    "deletions": 1160,
+    "total_changes": 1642,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "e53d26345db7fdf2726274abbd0e65331f3e87c0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-27T17:21:55Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge pull request #96 from unb-mds/feat/coerencia-politica"
+    },
+    "additions": 922,
+    "deletions": 353,
+    "total_changes": 1275,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "a67d7ddf0d8e48b8c55fc247c7c5225c92f19cab",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-27T17:18:13Z",
+        "login": "gus-ant"
+      },
+      "message": "feat(analise): implementar coerencia politica real (discurso vs voto)…"
+    },
+    "additions": 922,
+    "deletions": 353,
+    "total_changes": 1275,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "dd6ddd5f21afdae3249d97785b97a8446c29d699",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-27T16:56:11Z",
+        "login": "IndianoDev"
+      },
+      "message": "Merge pull request #95 from unb-mds/feat/db-melhorias-views"
+    },
+    "additions": 74,
+    "deletions": 1,
+    "total_changes": 75,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "62a9dabc9147bd2f0d04b7f8a7759820ba1b68bf",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-27T16:55:51Z",
+        "login": "IndianoDev"
+      },
+      "message": "Merge pull request #94 from unb-mds/fix/docker-instabilidades"
+    },
+    "additions": 1,
+    "deletions": 8,
+    "total_changes": 9,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "d1a02c126b1e1a7169d07798df6677f1f5ced73c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-27T16:46:58Z",
+        "login": "IndianoDev"
+      },
+      "message": "Merge pull request #92 from unb-mds/feat/carga-incremental-senado"
+    },
+    "additions": 242,
+    "deletions": 37,
+    "total_changes": 279,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "d1328f964edd51cc07e1d18c49317b8ae713113b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-27T16:45:54Z",
+        "login": "IndianoDev"
+      },
+      "message": "Merge pull request #91 from unb-mds/feat/dashboard-partidos-estados-l…"
+    },
+    "additions": 1112,
+    "deletions": 19,
+    "total_changes": 1131,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "7a46f28649e8f400f4176d148632b54d2ea469c7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-27T16:17:54Z",
+        "login": "IndianoDev"
+      },
+      "message": "feat(db): atualiza migrations e adiciona seed com dados reais"
+    },
+    "additions": 74,
+    "deletions": 1,
+    "total_changes": 75,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "2401381357045dfb92789c19149639234ad0799b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-27T15:45:39Z",
+        "login": "IndianoDev"
+      },
+      "message": "fix(backend): remove ferramentas de compilação desnecessárias para ot…"
+    },
+    "additions": 0,
+    "deletions": 7,
+    "total_changes": 7,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "8cf3ed8f9b4425abe805af8f217f43b415901495",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-27T15:34:17Z",
+        "login": "IndianoDev"
+      },
+      "message": "docs: atualiza documentação do banco de dados"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "9d261c4e185e614927e8e18eaf67fef0853341d4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-27T00:28:45Z",
+        "login": "gus-ant"
+      },
+      "message": "feat: implementa carga historica e atualizacao incremental para o Senado"
+    },
+    "additions": 242,
+    "deletions": 37,
+    "total_changes": 279,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "c21111c6a746e79780bd859d56e20f867ebc65ef",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-25T21:42:15Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "feat: dashboard de partidos e estados com logos e bandeiras"
+    },
+    "additions": 1112,
+    "deletions": 19,
+    "total_changes": 1131,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "78334b0e4150728b5e25377a0425de3c33de568d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-25T16:43:58Z",
+        "login": "Velho008"
+      },
+      "message": "Merge pull request #88 from unb-mds/feature/Relatorios"
+    },
+    "additions": 232,
+    "deletions": 41,
+    "total_changes": 273,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "9b8082edc0dff9ee7e3475d6e1cfa5ecae1c7f6e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-25T16:39:20Z",
+        "login": "Velho008"
+      },
+      "message": "FEATURE: pagina de relatorios atualizada e funcional"
+    },
+    "additions": 232,
+    "deletions": 41,
+    "total_changes": 273,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "fe750f3daa8ae295943ce6c9bb49a77b3ff9fd6f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-25T16:04:33Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge pull request #86 from unb-mds/Docs(sprint-08-doc)"
+    },
+    "additions": 31,
+    "deletions": 0,
+    "total_changes": 31,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "58aa9266236449f0de72688792eae40bd2c2e924",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-25T16:00:04Z",
+        "login": "gus-ant"
+      },
+      "message": "docs(sprint-08): adiciona planejamento da sprint 08"
+    },
+    "additions": 31,
+    "deletions": 0,
+    "total_changes": 31,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "22e91a71b623a1031dc677b1b47415e102abf25f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-24T16:07:34Z",
+        "login": "IndianoDev"
+      },
+      "message": "feat: adiciona conteinerização Docker e corrige bind do Flask para 0.…"
+    },
+    "additions": 283,
+    "deletions": 6,
+    "total_changes": 289,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "7d867bf11ea62ed5f04512e3b4c2f5bf4a1bf4f5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-24T15:04:58Z",
+        "login": "Velho008"
+      },
+      "message": "Merge pull request #78 from unb-mds/feat/ajustes-visuais-e-responsivi…"
+    },
+    "additions": 202,
+    "deletions": 102,
+    "total_changes": 304,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "8e1b9949338f4e9c1ac20dd8747cdcf7d4ebc3f4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-24T15:03:15Z",
+        "login": "Velho008"
+      },
+      "message": "Merge branch 'dev' into feat/ajustes-visuais-e-responsividade-mobile"
+    },
+    "additions": 3930,
+    "deletions": 681,
+    "total_changes": 4611,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "3c171543f46ea41952f149367d2b22208573176c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-23T20:30:02Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "feat: melhorias visuais de identificacao, responsividade mobile e pla…"
+    },
+    "additions": 205,
+    "deletions": 105,
+    "total_changes": 310,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "e4a8b0a0d526a8281f8ae67080184b141b65ab1b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-22T15:34:10Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge pull request #75 from unb-mds/docs/documentacao-release-1"
+    },
+    "additions": 146,
+    "deletions": 1,
+    "total_changes": 147,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "6ae2b7140f13bf98d32ec98864be3d1fc2bab46b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-20T23:37:51Z",
+        "login": "gus-ant"
+      },
+      "message": "feat(frontend): support dynamic politician type mapping from API metrics"
+    },
+    "additions": 41,
+    "deletions": 3,
+    "total_changes": 44,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "a6bb38058af76918baa51b4b99c9c4bb833752af",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-17T18:04:18Z",
+        "login": "gus-ant"
+      },
+      "message": "docs: adiciona documentacao da release 1 no mkdocs"
+    },
+    "additions": 146,
+    "deletions": 1,
+    "total_changes": 147,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "db459a49cd6d876f8606580f91f3838ec3e82011",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-17T15:35:48Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge pull request #74 from unb-mds/feat/docker-containerization"
+    },
+    "additions": 253,
+    "deletions": 0,
+    "total_changes": 253,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "658718118eccd43e5faaaceb3b8cf0743ac2259b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-15T18:48:42Z",
+        "login": "IndianoDev"
+      },
+      "message": "feat: adiciona containerizacao com Docker para backend e frontend"
+    },
+    "additions": 111,
+    "deletions": 0,
+    "total_changes": 111,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "f17bda6edcd235c8f825c7aad1c13dbd9cebe769",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-12T12:35:57Z",
+        "login": "gus-ant"
+      },
+      "message": "docs: add multi-house pipeline expansion documentation and Colab note…"
+    },
+    "additions": 108,
+    "deletions": 0,
+    "total_changes": 108,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "0d3c37b1a4531be6c174a808525dba9352d51d30",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-10T17:47:39Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge pull request #70 from unb-mds/feature/implementacao-testes"
+    },
+    "additions": 3915,
+    "deletions": 1343,
+    "total_changes": 5258,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "14404a249c96b3015cc47d7b725490ceed92830a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-10T16:04:41Z",
+        "login": "IndianoDev"
+      },
+      "message": "criando um arquivo CONTEXTO.md para ajudar os agentes de IA"
+    },
+    "additions": 142,
+    "deletions": 0,
+    "total_changes": 142,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "4d778f9aadb9e667b21e257fd89b38f484d8afa2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-10T14:03:15Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "feat: implementa testes unitarios e e2e no backend e frontend"
+    },
+    "additions": 3524,
+    "deletions": 677,
+    "total_changes": 4201,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "5937dc456b5ff6b72f5c06dc54983325e98830bc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-05T15:28:10Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge pull request #69 from unb-mds/dev"
+    },
+    "additions": 886,
+    "deletions": 155,
+    "total_changes": 1041,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "07028e8385165ea21c07dc79b59b0bd4f0b7747a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-05T15:22:13Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "Merge pull request #68 from unb-mds/fecture/adicionando-graficos-e-de…"
+    },
+    "additions": 496,
+    "deletions": 59,
+    "total_changes": 555,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "1575104a85df0dbe3c92a7a9eb0c8e45a7721f12",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-05T14:50:19Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "feat: alteraçoes em graficos e deixando funcional o comparar e a pesq…"
+    },
+    "additions": 496,
+    "deletions": 59,
+    "total_changes": 555,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "04007b6e0b7a564ac2a93ba3ad00f4caa10923e2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-05T14:35:43Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "Merge pull request #66 from unb-mds/fecture/adicionando-e-melhorando-…"
+    },
+    "additions": 430,
+    "deletions": 136,
+    "total_changes": 566,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "07b5d6fcba0bdb7f90cd36ef42699db2f02e91c6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-05T14:26:42Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "feat: alteraçoes em graficos"
+    },
+    "additions": 430,
+    "deletions": 136,
+    "total_changes": 566,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "d955a53a50eb6689ee1b199fe5027aa4c69154e1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-04T21:45:30Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "Revert \"feat: integração front e back\""
+    },
+    "additions": 257,
+    "deletions": 629,
+    "total_changes": 886,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "335570152f56ee6d8842469f08538440b1e091a2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-04T21:36:54Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "feat: integração front e back"
+    },
+    "additions": 629,
+    "deletions": 257,
+    "total_changes": 886,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "0cf3ca56ca667f6f1771e10055e82b8262df6c1f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-04T16:36:22Z",
+        "login": "IndianoDev"
+      },
+      "message": "docs(nav): registra Sprint 06 e Sprint 07 na navegação do MkDocs"
+    },
+    "additions": 2,
+    "deletions": 0,
+    "total_changes": 2,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "0bc468ea6a3593230d30b977388a9139e54f8b98",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-04T16:36:21Z",
+        "login": "IndianoDev"
+      },
+      "message": "docs(sprints): adiciona registros da Sprint 06 e Sprint 07 ao MkDocs"
+    },
+    "additions": 76,
+    "deletions": 0,
+    "total_changes": 76,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "1b5db87b01ba9b89523da976848de4c4d64db546",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-04T16:36:21Z",
+        "login": "IndianoDev"
+      },
+      "message": "feat(db): atualiza arquivos do banco de dados"
+    },
+    "additions": 21,
+    "deletions": 21,
+    "total_changes": 42,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "cfb084484d16d6605d513639ad173b772a037c11",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-04T16:36:21Z",
+        "login": "IndianoDev"
+      },
+      "message": "feat(db): adiciona dashboard_metrics gerado pelo scan_senators"
+    },
+    "additions": 292,
+    "deletions": 645,
+    "total_changes": 937,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "46b316657f776989bd18ee595d389f07f58f622a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-04T15:17:49Z",
+        "login": "Velho008"
+      },
+      "message": "Merge pull request #61 from unb-mds/main"
+    },
+    "additions": 598,
+    "deletions": 3,
+    "total_changes": 601,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "ad737bba23ef14f8f5ce4a305c490a04f9b61dbc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-03T13:07:23Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "Merge pull request #60 from unb-mds/dev"
+    },
+    "additions": 5,
+    "deletions": 4,
+    "total_changes": 9,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "e3394a16826eb2da8121da0e648e9f72d5d15809",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-06-02T13:46:53Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "docs: melhorando requisitos de gráficos"
+    },
+    "additions": 5,
+    "deletions": 4,
+    "total_changes": 9,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "e58a0c176e3cb157e0a2b8dfcddbe2c525a3085c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T19:04:33Z",
+        "login": "gus-ant"
+      },
+      "message": "Update authors in backend documentation"
+    },
+    "additions": 1,
+    "deletions": 2,
+    "total_changes": 3,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "ce6dcda72bd04559cab4e348c2e7873cd1ece87d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T18:33:30Z",
+        "login": "IndianoDev"
+      },
+      "message": "criado mk para banco de dados"
+    },
+    "additions": 268,
+    "deletions": 0,
+    "total_changes": 268,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "15f40b0eb8c936bd41fc99c5934d75f9a1cc63d9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T18:11:24Z",
+        "login": "IndianoDev"
+      },
+      "message": "Possivel roteiro de apresentação"
+    },
+    "additions": 326,
+    "deletions": 0,
+    "total_changes": 326,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "eb4242da2cf9e9eb40772946eb1ac81305890d89",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T16:22:39Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2026-1-Squad4-Dito_…"
+    },
+    "additions": 0,
+    "deletions": 76,
+    "total_changes": 76,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "bf632c33073074ff447c237a52b54a524bbb4402",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T16:22:35Z",
+        "login": "gus-ant"
+      },
+      "message": "feat(mkdocs): config update"
+    },
+    "additions": 3,
+    "deletions": 1,
+    "total_changes": 4,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "2ff38d43238cb626b41440e9835999c1ca8de7d8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T16:17:12Z",
+        "login": "Velho008"
+      },
+      "message": "fix: apagado arquivo inutil temp_req.txt"
+    },
+    "additions": 0,
+    "deletions": 76,
+    "total_changes": 76,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "ce64b160120c47f939bb229a579be6e5c05be2a0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T16:13:07Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2026-1-Squad4-Dito_…"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "0deec4dfbb7a99b84b1ce833921e9bcc66bc4216",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T16:13:04Z",
+        "login": "gus-ant"
+      },
+      "message": "feat(readme): Arruma a documentação e Atualiza o README"
+    },
+    "additions": 318,
+    "deletions": 123,
+    "total_changes": 441,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "d4d3d9d0578da7e9ae65f7f0001c1b93a1d8d78b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T15:56:12Z",
+        "login": "Velho008"
+      },
+      "message": "fix: roles corretas no sobre do time"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "4dee3c15facc11c423c4e58ebd97e04b1b87ff08",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T15:46:13Z",
+        "login": "Velho008"
+      },
+      "message": "fix: apaguei arquivo inutil"
+    },
+    "additions": 0,
+    "deletions": 98,
+    "total_changes": 98,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "e430f2d9e848b784e15f2e0272b042673519d97b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T14:33:46Z",
+        "login": "Velho008"
+      },
+      "message": "fix: adiciona index.html para o analytics"
+    },
+    "additions": 582,
+    "deletions": 0,
+    "total_changes": 582,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "ddcafdf85c1863bbb7494a444b12712071342d8c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T14:17:06Z",
+        "login": "Velho008"
+      },
+      "message": "Merge pull request #58 from unb-mds/dev"
+    },
+    "additions": 1123,
+    "deletions": 634,
+    "total_changes": 1757,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "ce077b949b22320a9b1c617139d8948ce92fff6c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T14:16:53Z",
+        "login": "Velho008"
+      },
+      "message": "Merge branch 'main' into dev"
+    },
+    "additions": 4458,
+    "deletions": 1194,
+    "total_changes": 5652,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "460d192f56f897d375c0b8c3232589923bb3fe4e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T00:57:01Z",
+        "login": "IndianoDev"
+      },
+      "message": "Merge pull request #57 from unb-mds/feat/db-migrations-e-views"
+    },
+    "additions": 2,
+    "deletions": 0,
+    "total_changes": 2,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "a25c8dd8873972c05bcc361a0c5241d556b0d45b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T00:56:50Z",
+        "login": "IndianoDev"
+      },
+      "message": "Merge branch 'main' into feat/db-migrations-e-views"
+    },
+    "additions": 4404,
+    "deletions": 1193,
+    "total_changes": 5597,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "1833e49d6bd885c1a577b1a003fe07cb520fc13f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T00:44:51Z",
+        "login": "IndianoDev"
+      },
+      "message": "fix: remove .env do tracking"
+    },
+    "additions": 2,
+    "deletions": 0,
+    "total_changes": 2,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "ec1ed401a4a125cf610808e92b11b62c22389941",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-26T00:37:22Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "Merge pull request #55 from unb-mds/feat/procura-avancada-e-perfil"
+    },
+    "additions": 245,
+    "deletions": 28,
+    "total_changes": 273,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "b9b64232d37b7e50a6d89a8dbfcc8c4d79a7a871",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T23:36:55Z",
+        "login": "IndianoDev"
+      },
+      "message": "feat(db): adiciona schema completo do PostgreSQL"
+    },
+    "additions": 94,
+    "deletions": 0,
+    "total_changes": 94,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "10f89bea065127b3cd3f9ec9cd201c43e40f6f18",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T23:32:03Z",
+        "login": "IndianoDev"
+      },
+      "message": "Merge pull request #54 from unb-mds/feat/backend_estavel"
+    },
+    "additions": 4278,
+    "deletions": 1279,
+    "total_changes": 5557,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "08d498df98bd336ca027196fd3419d0549fec13d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T23:29:39Z",
+        "login": "IndianoDev"
+      },
+      "message": "corrigindo troca de nomes do grafico do rank analytics"
+    },
+    "additions": 22,
+    "deletions": 17,
+    "total_changes": 39,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "001d16b13799b98c460453c5e15aa6dd99778ea6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T23:27:35Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "feat: adiciona procura avançada e perfil"
+    },
+    "additions": 245,
+    "deletions": 28,
+    "total_changes": 273,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "e5eb01bcc6960c367a8370656306e29a3576288b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T23:18:49Z",
+        "login": "IndianoDev"
+      },
+      "message": "chore: unifica nomes de autores no script de analise de metricas"
+    },
+    "additions": 40,
+    "deletions": 8,
+    "total_changes": 48,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "78a6d4b3f3794bb8bc78956d67e994349bd545eb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T22:55:40Z",
+        "login": "IndianoDev"
+      },
+      "message": "docs: adiciona Sprint 05 e atualiza navegacao no mkdocs"
+    },
+    "additions": 81,
+    "deletions": 0,
+    "total_changes": 81,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "80e71d85ba8343ffdad3245804761a5770107937",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T22:40:33Z",
+        "login": "IndianoDev"
+      },
+      "message": "Merge pull request #52 from unb-mds/feat/db-migrations-e-views"
+    },
+    "additions": 53,
+    "deletions": 1,
+    "total_changes": 54,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "631bb26f9ccbf7a815be6d570f23e1a9259405d3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T22:35:15Z",
+        "login": "IndianoDev"
+      },
+      "message": "Merge branch 'main' into feat/db-migrations-e-views"
+    },
+    "additions": 6468,
+    "deletions": 1,
+    "total_changes": 6469,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "b4d5a46f0d0a5bd760de4ae0387cbfe47850c368",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T22:35:15Z",
+        "login": "IndianoDev"
+      },
+      "message": "Merge branch 'main' into feat/db-migrations-e-views"
+    },
+    "additions": 6468,
+    "deletions": 1,
+    "total_changes": 6469,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "fef8621684135be62cb7563b1c2b1aa7825a6586",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T22:14:37Z",
+        "login": "Velho008"
+      },
+      "message": "Merge pull request #53 from unb-mds/fix/politicos_botao"
+    },
+    "additions": 37,
+    "deletions": 7,
+    "total_changes": 44,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "e88718a15e3e3a2711eda2253a238d238ba5d618",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T22:13:48Z",
+        "login": "Velho008"
+      },
+      "message": "fix: botão 'mais coerentes' igual o do figma"
+    },
+    "additions": 37,
+    "deletions": 7,
+    "total_changes": 44,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "66bf5aa4b74a638bcc9c07af54c0a51fc84ef2ba",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T21:54:42Z",
+        "login": "IndianoDev"
+      },
+      "message": "fix: remove .env do repositorio e adiciona ao gitignore"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "5083ceba8843900f676b68dd1648d28bfc301f7d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T21:52:14Z",
+        "login": "IndianoDev"
+      },
+      "message": "docs(db): atualiza migrations.sql com integracao do backend"
+    },
+    "additions": 44,
+    "deletions": 1,
+    "total_changes": 45,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "9a2aca872d770d719596b8f740d83d220b61ce8e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T21:51:50Z",
+        "login": "Velho008"
+      },
+      "message": "Merge pull request #50 from unb-mds/fix/politicos_foto"
+    },
+    "additions": 63,
+    "deletions": 8,
+    "total_changes": 71,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "c563d5cf9a7137a102072a775ca529201f75fd41",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T21:50:20Z",
+        "login": "Velho008"
+      },
+      "message": "fix: boas praticas de codigo aplicadas"
+    },
+    "additions": 9,
+    "deletions": 2,
+    "total_changes": 11,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "86e9d22c3252b292b890c02234dd97d0d0e65d0f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T21:50:02Z",
+        "login": "Velho008"
+      },
+      "message": "feature: mock atualizado com fotos genericas"
+    },
+    "additions": 54,
+    "deletions": 6,
+    "total_changes": 60,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "bd21c29e2a805538aec792cd81b4330a0b0027e5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T21:33:24Z",
+        "login": "Velho008"
+      },
+      "message": "Merge pull request #49 from unb-mds/fix/sidebar_simbols"
+    },
+    "additions": 90,
+    "deletions": 11,
+    "total_changes": 101,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "a6fdd791d739f14fce1758474112b52883e122fd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T21:32:35Z",
+        "login": "Velho008"
+      },
+      "message": "fix: simbolos da sidebar iguais ao figma"
+    },
+    "additions": 90,
+    "deletions": 11,
+    "total_changes": 101,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "14099366cf5ed0cb62d8f2d4f486dab4b33d19de",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T16:11:10Z",
+        "login": "Velho008"
+      },
+      "message": "Merge pull request #47 from unb-mds/feature/sobre_metodologia"
+    },
+    "additions": 57,
+    "deletions": 10,
+    "total_changes": 67,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "cdf986f80b89b267f1f84e1ef91a8a8fb2f14b1d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T16:10:09Z",
+        "login": "Velho008"
+      },
+      "message": "feature: metodologia atualizado, cards repensados e simbolos refeitos"
+    },
+    "additions": 57,
+    "deletions": 10,
+    "total_changes": 67,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "258b5544f262b6a374753d73fd8fe2da351ffb35",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T15:51:54Z",
+        "login": "Velho008"
+      },
+      "message": "Merge pull request #46 from unb-mds/feature/sobre_dados"
+    },
+    "additions": 79,
+    "deletions": 0,
+    "total_changes": 79,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "d452432ebb57f37ab7d1f0146f499ab0f4c97380",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T15:50:56Z",
+        "login": "Velho008"
+      },
+      "message": "feature: topico fonte de dados mais organizado, setinha e texto aprim…"
+    },
+    "additions": 22,
+    "deletions": 13,
+    "total_changes": 35,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "7525673aadfb8c79599839838998687c307b1e5a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T15:44:21Z",
+        "login": "Velho008"
+      },
+      "message": "feature: fontes de dados adicionado em sobre"
+    },
+    "additions": 70,
+    "deletions": 0,
+    "total_changes": 70,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "55f8ddf6fc766a48d62a8f52485af17a8b1270f7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T15:32:16Z",
+        "login": "Velho008"
+      },
+      "message": "fix: removido membro fantasma do sobre"
+    },
+    "additions": 0,
+    "deletions": 7,
+    "total_changes": 7,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "79697ba2870ef7e1dfa4b43fdb5e451c2d8543c4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T13:39:33Z",
+        "login": "Velho008"
+      },
+      "message": "fix: footer online"
+    },
+    "additions": 3,
+    "deletions": 1,
+    "total_changes": 4,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "f330b2febed30dbb8bc1a2203a1332bdc462e630",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T13:37:25Z",
+        "login": "Velho008"
+      },
+      "message": "fix: footer online novamente"
+    },
+    "additions": 2,
+    "deletions": 0,
+    "total_changes": 2,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "d8ffbad3cc8a0646eae338b859fb82f4cc77c478",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T13:12:06Z",
+        "login": "Velho008"
+      },
+      "message": "Update frontend technologies in README"
+    },
+    "additions": 3,
+    "deletions": 1,
+    "total_changes": 4,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "ea208e1d815c3428a44616cbdb63f4adeca70ac1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T13:04:36Z",
+        "login": "Velho008"
+      },
+      "message": "Merge pull request #44 from unb-mds/fix/sidebar"
+    },
+    "additions": 18,
+    "deletions": 4,
+    "total_changes": 22,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "0220f5e196e57a0be30c099d38349600231b3bd9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T13:02:03Z",
+        "login": "Velho008"
+      },
+      "message": "fix: simbolos corretos na sidebar"
+    },
+    "additions": 18,
+    "deletions": 4,
+    "total_changes": 22,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "686cef0dbdee005662de1b3f5daa28dcdd2f7f64",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-25T01:22:24Z",
+        "login": "gus-ant"
+      },
+      "message": "feat: implementa pipeline estavel do backend do senado"
+    },
+    "additions": 4278,
+    "deletions": 1279,
+    "total_changes": 5557,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "743e6dc70fce54cb10edd5673456c531cdb70fae",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T23:20:05Z",
+        "login": "Velho008"
+      },
+      "message": "Merge pull request #37 from unb-mds/fix/estilo"
+    },
+    "additions": 156,
+    "deletions": 140,
+    "total_changes": 296,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "c48a04224685c8db950297a7661c213ee26e55b2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T23:18:48Z",
+        "login": "Velho008"
+      },
+      "message": "fix: sobre com estilização correta e formatação melhor"
+    },
+    "additions": 124,
+    "deletions": 125,
+    "total_changes": 249,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "9c1cc0ecbd6b26d2d1b773c36b2f70c791696406",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T23:16:40Z",
+        "login": "Velho008"
+      },
+      "message": "fix: cores seguem o manual da marca escolhido no github e figma"
+    },
+    "additions": 31,
+    "deletions": 28,
+    "total_changes": 59,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "24142eb0dca7b24639ab35e3b567a52213f18ed5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T22:54:27Z",
+        "login": "Velho008"
+      },
+      "message": "fix: tailwind.config corretamente configurado, fontes adicionadas no …"
+    },
+    "additions": 27,
+    "deletions": 13,
+    "total_changes": 40,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "fe3c51cf220de066421a0fe9149340bce3af93c0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T22:43:01Z",
+        "login": "Velho008"
+      },
+      "message": "Merge pull request #36 from unb-mds/fix/sobre"
+    },
+    "additions": 94,
+    "deletions": 21,
+    "total_changes": 115,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "b9256d6d90180b04740608a3ac172dd0373ffaa5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T22:42:18Z",
+        "login": "Velho008"
+      },
+      "message": "fix: pagina sobre devidamente organizada."
+    },
+    "additions": 94,
+    "deletions": 21,
+    "total_changes": 115,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "f37b92c252c2dfc077dcfe509cc9c1eacdc9d1d6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T18:51:36Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "Merge pull request #35 from unb-mds/feature/prototipo-v3"
+    },
+    "additions": 428,
+    "deletions": 461,
+    "total_changes": 889,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "ac201e034027caeaf5fa670dbe622e2482d5104b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T18:48:46Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "Merge branch 'dev' of https://github.com/unb-mds/2026-1-Squad4-Dito_e…"
+    },
+    "additions": 1,
+    "deletions": 3,
+    "total_changes": 4,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "c6b4f35187c2c9843100cd4ea252f0a5376f9b97",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T18:43:12Z",
+        "login": "Velho008"
+      },
+      "message": "restaurada versao antiga e melhor do sobre"
+    },
+    "additions": 20,
+    "deletions": 122,
+    "total_changes": 142,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "c0454f6dbe09e0cf37f4bce224998f678c6c720a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T18:32:12Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "feat: prototipo v3"
+    },
+    "additions": 419,
+    "deletions": 435,
+    "total_changes": 854,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "1d8b08037af7d74e3556b023e80e6cb587b889fe",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T18:27:23Z",
+        "login": "Velho008"
+      },
+      "message": "Merge pull request #34 from unb-mds/feature/sidebar"
+    },
+    "additions": 30,
+    "deletions": 31,
+    "total_changes": 61,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "be715398b0acb7f54262fcb6c39a0c4e97b4c5d6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T18:27:10Z",
+        "login": "Velho008"
+      },
+      "message": "Merge branch 'dev' into feature/sidebar"
+    },
+    "additions": 531,
+    "deletions": 583,
+    "total_changes": 1114,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "e08cfa2b243a3154d206207e1d802b3631632960",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T18:14:46Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "feat:prototipov2"
+    },
+    "additions": 4,
+    "deletions": 122,
+    "total_changes": 126,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "234f02a3f76b497b31bf1fc81ec78cbadd211308",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T18:13:59Z",
+        "login": "Velho008"
+      },
+      "message": "sidebar levemente alterada para seguir o paddrão do figma"
+    },
+    "additions": 13,
+    "deletions": 5,
+    "total_changes": 18,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "6c824881eacad48ace1c3dd5156917a219ab4884",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T18:07:49Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "feat: prototipo versao 2"
+    },
+    "additions": 562,
+    "deletions": 603,
+    "total_changes": 1165,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "18bc98901cb0b118b4e0fc2745c01bf6b241399c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T18:00:23Z",
+        "login": "Velho008"
+      },
+      "message": "fix: icone do vs alterado, pequena linha adicionada para melhor design"
+    },
+    "additions": 4,
+    "deletions": 2,
+    "total_changes": 6,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "1913da8efbee1ac5cc9ea1463995843ffbe0cf8b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T17:49:11Z",
+        "login": "Velho008"
+      },
+      "message": "Merge pull request #33 from unb-mds/feature/sobre"
+    },
+    "additions": 29,
+    "deletions": 11,
+    "total_changes": 40,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "9ca7cde5f748163748261c11112c7a4cc203dddb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T17:46:20Z",
+        "login": "Velho008"
+      },
+      "message": "feature: foto do time ao lado do texto, imagem ao lado de squad 4"
+    },
+    "additions": 29,
+    "deletions": 11,
+    "total_changes": 40,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "a876de74eb6d194ae396d09fc776b5c78f8ca78c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T16:22:15Z",
+        "login": "Velho008"
+      },
+      "message": "Merge pull request #32 from unb-mds/feature/sobre_foto"
+    },
+    "additions": 18,
+    "deletions": 5,
+    "total_changes": 23,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "e109b7a66bd40b35eb0219454b10bdb1a4fd2104",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T16:18:42Z",
+        "login": "Velho008"
+      },
+      "message": "feature: cards do time em sobre contem foto dos membros"
+    },
+    "additions": 18,
+    "deletions": 5,
+    "total_changes": 23,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "fa1186d4dc6d1a0eab6c4683a91733f0826456b9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T16:12:28Z",
+        "login": "Velho008"
+      },
+      "message": "Merge pull request #30 from unb-mds/feature/sobre_git"
+    },
+    "additions": 52,
+    "deletions": 23,
+    "total_changes": 75,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "ebaf5ee20bf0945d78889a57e258d9d26764cd32",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T16:09:30Z",
+        "login": "Velho008"
+      },
+      "message": "feature: ao clicar nos cards do time em sobre, o user vai pro github …"
+    },
+    "additions": 50,
+    "deletions": 14,
+    "total_changes": 64,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "e1fd7a9dc1a2eca90a189d6ad36955c755af636c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T15:38:59Z",
+        "login": "Velho008"
+      },
+      "message": "retirados alguns arquivos inuteis"
+    },
+    "additions": 0,
+    "deletions": 9,
+    "total_changes": 9,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "c74328e1a65cf541b6bc9710725ed2ead0269619",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T15:38:43Z",
+        "login": "Velho008"
+      },
+      "message": "atualizado .gitignore pra nao levar o .vscode pro repo"
+    },
+    "additions": 2,
+    "deletions": 0,
+    "total_changes": 2,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "d6aec1ddc4c2f3bda1712a9837b0271eccd94293",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T12:58:36Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "Merge pull request #29 from unb-mds/dev"
+    },
+    "additions": 6465,
+    "deletions": 6,
+    "total_changes": 6471,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "0bc850ff0f195a76110e2895067803126b26b402",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T12:58:36Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "Merge pull request #29 from unb-mds/dev"
+    },
+    "additions": 6465,
+    "deletions": 6,
+    "total_changes": 6471,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "6324cabc893e9a9d296de0da24110f6e79f0dd8a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T12:54:56Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "prototipo do frontend"
+    },
+    "additions": 6465,
+    "deletions": 6,
+    "total_changes": 6471,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "e7dde5d11bc6513777d369686fe94da03794b2a8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T12:54:56Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "prototipo do frontend"
+    },
+    "additions": 6465,
+    "deletions": 6,
+    "total_changes": 6471,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "cf4761a379f5200aa213d64f5df1fa6a94a63bda",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T01:05:08Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge pull request #28 from unb-mds/feat/db-migrations-e-views"
+    },
+    "additions": 74,
+    "deletions": 0,
+    "total_changes": 74,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "9f772b5aff0374038a44e69883316196aae5aec3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-24T01:05:08Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge pull request #28 from unb-mds/feat/db-migrations-e-views"
+    },
+    "additions": 74,
+    "deletions": 0,
+    "total_changes": 74,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "39aada28ff4683f41ea492e11735ea813a548512",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-23T19:39:55Z",
+        "login": "IndianoDev"
+      },
+      "message": "feat(db): adiciona migrations.sql com cache_analise e views de ranking"
+    },
+    "additions": 74,
+    "deletions": 0,
+    "total_changes": 74,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "775f9294f42d1b94a0ba3c23c73b5ed5b04b8f52",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-23T19:39:55Z",
+        "login": "IndianoDev"
+      },
+      "message": "feat(db): adiciona migrations.sql com cache_analise e views de ranking"
+    },
+    "additions": 74,
+    "deletions": 0,
+    "total_changes": 74,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "41b4c614cb5aaeff5498bb4ce14222ec3a276e80",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-23T15:49:43Z",
+        "login": "IndianoDev"
+      },
+      "message": "docs(db): adiciona guia de migrations com Alembic"
+    },
+    "additions": 378,
+    "deletions": 0,
+    "total_changes": 378,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "561f5d541a7beb9684575d57819d5c92a5e7253a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-23T15:49:43Z",
+        "login": "IndianoDev"
+      },
+      "message": "docs(db): adiciona guia de migrations com Alembic"
+    },
+    "additions": 378,
+    "deletions": 0,
+    "total_changes": 378,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "bbf4434239cb30b7a8f8823371ee2a3f37585d00",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-23T15:29:05Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "documentaçao do force indevido"
+    },
+    "additions": 24,
+    "deletions": 0,
+    "total_changes": 24,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "5de0aedf498ec11d1711908d5f22288845cd6bd7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-23T15:29:05Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "documentaçao do force indevido"
+    },
+    "additions": 24,
+    "deletions": 0,
+    "total_changes": 24,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "1d8610bdb4d4c603ce2d36a958879287c27450a1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-23T15:20:34Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "figma finalizado"
+    },
+    "additions": 7,
+    "deletions": 0,
+    "total_changes": 7,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "156895c3c45df395220412d5a6960f5c8f6f71ca",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-23T15:20:34Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "figma finalizado"
+    },
+    "additions": 7,
+    "deletions": 0,
+    "total_changes": 7,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "7ae287a57a7f59ab7c059a73984c7fe0552a2875",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-23T15:15:33Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "figma finalizado"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "82c5c7c282d82d5e6f0720d2a826037ea3d360fa",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-23T15:15:33Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "figma finalizado"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "d02151f89786af099378ca16dfcfc32b8ffeb2ea",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-23T04:29:25Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge pull request #26 from unb-mds/feat_arq_organizacao_arq"
+    },
+    "additions": 112,
+    "deletions": 101454,
+    "total_changes": 101566,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "57ea15609bdd1c8ba5b53cb569ff4b667edb20cf",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-23T04:29:25Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge pull request #26 from unb-mds/feat_arq_organizacao_arq"
+    },
+    "additions": 112,
+    "deletions": 101454,
+    "total_changes": 101566,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "d3ad70373113aa326171d81d946cc5099992ffe0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-23T04:27:06Z",
+        "login": "gus-ant"
+      },
+      "message": "feat_arq_organizacao_arq"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "4b25c52f72768c7263a7f19aa0f3a79c2a0cd08e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-23T04:27:06Z",
+        "login": "gus-ant"
+      },
+      "message": "feat_arq_organizacao_arq"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "8766c18c699047665bfe49b03b2cc78bf2a3b224",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-23T04:24:39Z",
+        "login": "gus-ant"
+      },
+      "message": "feat:(readme): modificação simples"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "2ab494cbc42744204eb7b8c9dcd18d62981ad9ec",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-23T04:24:39Z",
+        "login": "gus-ant"
+      },
+      "message": "feat:(readme): modificação simples"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "4b1df866e68d2a6d9ad2e2c5e5741678918819b3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-23T04:24:03Z",
+        "login": "gus-ant"
+      },
+      "message": "feat(arq): organização das pastas e adição do ESTRUTURA.md"
+    },
+    "additions": 110,
+    "deletions": 101453,
+    "total_changes": 101563,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "00a118455d98ed8870b6f1f0e7cbd8ada8467333",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-23T04:24:03Z",
+        "login": "gus-ant"
+      },
+      "message": "feat(arq): organização das pastas e adição do ESTRUTURA.md"
+    },
+    "additions": 110,
+    "deletions": 101453,
+    "total_changes": 101563,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "cf94131c07314910eafabc6b321f99006fcb1110",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-23T02:03:53Z",
+        "login": "IndianoDev"
+      },
+      "message": "criando o documento conexao, onde explica como funciona inicialmente …"
+    },
+    "additions": 166,
+    "deletions": 0,
+    "total_changes": 166,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "42bb84cd27928246159e24192c36221acaed124d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-23T02:03:53Z",
+        "login": "IndianoDev"
+      },
+      "message": "criando o documento conexao, onde explica como funciona inicialmente …"
+    },
+    "additions": 166,
+    "deletions": 0,
+    "total_changes": 166,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "987f9dba80a4e5ab3f9c3dca9238219d20d57c6b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-23T01:30:11Z",
+        "login": "IndianoDev"
+      },
+      "message": "feat(db): migra schema para Supabase com suporte a pgvector"
+    },
+    "additions": 25,
+    "deletions": 21,
+    "total_changes": 46,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "dda6fca7498e2c7aae1e050584c0f0f9478ac958",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-23T01:30:11Z",
+        "login": "IndianoDev"
+      },
+      "message": "feat(db): migra schema para Supabase com suporte a pgvector"
+    },
+    "additions": 25,
+    "deletions": 21,
+    "total_changes": 46,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "71f8d12014a729f57e5b92236950471368d1a07b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-21T01:53:37Z",
+        "login": "gus-ant"
+      },
+      "message": "Add metrics dashboard link to README"
+    },
+    "additions": 6,
+    "deletions": 1,
+    "total_changes": 7,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "5151ad7b031d1c08fd7bda9fc416d8bfee98b01d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-21T01:53:37Z",
+        "login": "gus-ant"
+      },
+      "message": "Add metrics dashboard link to README"
+    },
+    "additions": 6,
+    "deletions": 1,
+    "total_changes": 7,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "0f19b085c9dbad051dc08a0e221c9b74b883e6b8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-21T01:49:52Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge pull request #25 from unb-mds/llm-feat"
+    },
+    "additions": 103258,
+    "deletions": 419,
+    "total_changes": 103677,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "6e549f652e65cd27464729bbc7ed6f62de718f3a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-21T01:49:52Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge pull request #25 from unb-mds/llm-feat"
+    },
+    "additions": 103258,
+    "deletions": 419,
+    "total_changes": 103677,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "1ad7631ecfd4e01123284340f2f4caffd30335b5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-21T01:46:26Z",
+        "login": "gus-ant"
+      },
+      "message": "Refactor code structure for improved readability and maintainability"
+    },
+    "additions": 57590,
+    "deletions": 0,
+    "total_changes": 57590,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "70b500b48cf65c5894491ffd1ad9eadf7db34bf3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-21T01:46:26Z",
+        "login": "gus-ant"
+      },
+      "message": "Refactor code structure for improved readability and maintainability"
+    },
+    "additions": 57590,
+    "deletions": 0,
+    "total_changes": 57590,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "8bf45772755a26423aef6f974b7c03fa04e7e015",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-21T01:40:08Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge branch 'main' into llm-feat"
+    },
+    "additions": 42978,
+    "deletions": 2,
+    "total_changes": 42980,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "08e8a6cf02db8918a678de0cc86ffe0b9ef6f56e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-21T01:40:08Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge branch 'main' into llm-feat"
+    },
+    "additions": 42978,
+    "deletions": 2,
+    "total_changes": 42980,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "25196e862bcafa08c2402a913d7cfaca52d25da4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-21T01:40:05Z",
+        "login": "gus-ant"
+      },
+      "message": "feat: configure mkdocs on root and repo metrics on /analytics subroute"
+    },
+    "additions": 42978,
+    "deletions": 2,
+    "total_changes": 42980,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "5933080e17fccd988bc99c17ca3df14d58a6c1e6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-21T01:40:05Z",
+        "login": "gus-ant"
+      },
+      "message": "feat: configure mkdocs on root and repo metrics on /analytics subroute"
+    },
+    "additions": 42978,
+    "deletions": 2,
+    "total_changes": 42980,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "51f8acf0b82ee225e7bb148bae1e5f15c371b054",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-21T01:16:58Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2026-1-Squad4-Dito_…"
+    },
+    "additions": 61,
+    "deletions": 0,
+    "total_changes": 61,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "8f65e699b3f78317967f5ad3296066d2305547bc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-21T01:16:58Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2026-1-Squad4-Dito_…"
+    },
+    "additions": 61,
+    "deletions": 0,
+    "total_changes": 61,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "321321779d319a7802ae8bdc121d9a0f1a8e0fc0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-20T16:10:42Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge pull request #24 from unb-mds/aula-11-05"
+    },
+    "additions": 61,
+    "deletions": 0,
+    "total_changes": 61,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "aafaa5291863641c85914293a36f56a217bdce5d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-20T16:10:42Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge pull request #24 from unb-mds/aula-11-05"
+    },
+    "additions": 61,
+    "deletions": 0,
+    "total_changes": 61,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "afdf5a50fbea62e2ebb3981e541abfbce657fd8a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-20T16:08:37Z",
+        "login": "gus-ant"
+      },
+      "message": "Adição do README"
+    },
+    "additions": 61,
+    "deletions": 0,
+    "total_changes": 61,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "c0703ab306ec9d12ab9529077f61ed98b15c0218",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-20T16:08:37Z",
+        "login": "gus-ant"
+      },
+      "message": "Adição do README"
+    },
+    "additions": 61,
+    "deletions": 0,
+    "total_changes": 61,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "51adeeba87dfa98ab6564e492c0b95371bc55283",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-19T04:17:41Z",
+        "login": "gus-ant"
+      },
+      "message": "refatoracao do index preview"
+    },
+    "additions": 25,
+    "deletions": 13,
+    "total_changes": 38,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "57d1039116da66815adf79ba7ba9b7ecc180c1f4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-19T04:17:41Z",
+        "login": "gus-ant"
+      },
+      "message": "refatoracao do index preview"
+    },
+    "additions": 25,
+    "deletions": 13,
+    "total_changes": 38,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "d529686d23b9431b632f176dd4d089304006dfd4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-19T04:07:39Z",
+        "login": "gus-ant"
+      },
+      "message": "feat: adiciona preview do monitoramento legislativo com analise BERT …"
+    },
+    "additions": 2678,
+    "deletions": 417,
+    "total_changes": 3095,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "d157031a9c2af6288b271590152f314b39a260a8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-19T04:07:39Z",
+        "login": "gus-ant"
+      },
+      "message": "feat: adiciona preview do monitoramento legislativo com analise BERT …"
+    },
+    "additions": 2678,
+    "deletions": 417,
+    "total_changes": 3095,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "fcd61ddf8c71c1affd9fd911a2fda836cad09bfe",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-19T01:42:13Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge pull request #19 from unb-mds/aula-11-05"
+    },
+    "additions": 961,
+    "deletions": 42564,
+    "total_changes": 43525,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "3b2a499ae74b2be509c72969f269f2af4206e27b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-19T01:42:13Z",
+        "login": "gus-ant"
+      },
+      "message": "Merge pull request #19 from unb-mds/aula-11-05"
+    },
+    "additions": 961,
+    "deletions": 42564,
+    "total_changes": 43525,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "74dbf55581f1c6e1534f4c42350aa606a9f88ec0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-14T20:19:09Z",
+        "login": "IndianoDev"
+      },
+      "message": "Merge pull request #22 from unb-mds/estudos/banco-de-dados"
+    },
+    "additions": 349,
+    "deletions": 0,
+    "total_changes": 349,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "96fc128eeae21fc89dc687a7f3bfe722000760f0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-14T20:19:09Z",
+        "login": "IndianoDev"
+      },
+      "message": "Merge pull request #22 from unb-mds/estudos/banco-de-dados"
+    },
+    "additions": 349,
+    "deletions": 0,
+    "total_changes": 349,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "7fa850959853ef3fb60225d8eb97033e239c6d81",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-14T18:25:55Z",
+        "login": "IndianoDev"
+      },
+      "message": "feat(db): cria schema inicial do banco de dados PostgreSQL"
+    },
+    "additions": 90,
+    "deletions": 0,
+    "total_changes": 90,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "726d5d95e571de7167dbb974468efeb36da6c1b1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-14T18:25:55Z",
+        "login": "IndianoDev"
+      },
+      "message": "feat(db): cria schema inicial do banco de dados PostgreSQL"
+    },
+    "additions": 90,
+    "deletions": 0,
+    "total_changes": 90,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "cc7018742f453ea28a3ae213a76f0f49367ae744",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-14T18:06:29Z",
+        "login": "IndianoDev"
+      },
+      "message": "feat(db): cria schema inicial do banco de dados PostgreSQL"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "e66a0dbeeb0ce88bc3ff1ef4bd57413d9ad7ae7c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-14T18:06:29Z",
+        "login": "IndianoDev"
+      },
+      "message": "feat(db): cria schema inicial do banco de dados PostgreSQL"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "42ec4da792abc2a2fcdfe99c27783162e48ae2f5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T20:04:11Z",
+        "login": "IndianoDev"
+      },
+      "message": "conteudo 4 de estudos de banco de dados"
+    },
+    "additions": 259,
+    "deletions": 0,
+    "total_changes": 259,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "691cbe7c96c04eec11653fc4169c30d96e63941d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T20:04:11Z",
+        "login": "IndianoDev"
+      },
+      "message": "conteudo 4 de estudos de banco de dados"
+    },
+    "additions": 259,
+    "deletions": 0,
+    "total_changes": 259,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "0923f4f717eb900db57e508b8af530f65735d355",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T15:35:48Z",
+        "login": "gus-ant"
+      },
+      "message": "Adiciona issues-por-semana e update do Dashboard UI com o ranking dos…"
+    },
+    "additions": 102,
+    "deletions": 38,
+    "total_changes": 140,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "23dd4f32f6e0048b68a294fd94e4e78612dc325f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T15:35:48Z",
+        "login": "gus-ant"
+      },
+      "message": "Adiciona issues-por-semana e update do Dashboard UI com o ranking dos…"
+    },
+    "additions": 102,
+    "deletions": 38,
+    "total_changes": 140,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "9aecbc1170f54759be2ea6b191c30a875e673a0d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T01:15:38Z",
+        "login": "gus-ant"
+      },
+      "message": "feat: replace weekly velocity KPI with total issues tracking in dashb…"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "120f7d515c78b861a86a58f11811fdc1449aab47",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T01:15:38Z",
+        "login": "gus-ant"
+      },
+      "message": "feat: replace weekly velocity KPI with total issues tracking in dashb…"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "00ad97875b0649a2e3386fc98ac490cc8b4ba2e1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T01:07:07Z",
+        "login": "gus-ant"
+      },
+      "message": "Update da formatação de nomes e aumento de contribuidores para 7"
+    },
+    "additions": 104,
+    "deletions": 33,
+    "total_changes": 137,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "d858fe4a31c748ce1353f65f64ec186467ed8849",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T01:07:07Z",
+        "login": "gus-ant"
+      },
+      "message": "Update da formatação de nomes e aumento de contribuidores para 7"
+    },
+    "additions": 104,
+    "deletions": 33,
+    "total_changes": 137,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "4d4ae1dcaf26ef7840fcf5dded605e49675d13fe",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T00:26:16Z",
+        "login": "gus-ant"
+      },
+      "message": "Melhoria da legibilidade do dashboard"
+    },
+    "additions": 527,
+    "deletions": 507,
+    "total_changes": 1034,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "8f84eefb1f7d4e11e01b91a329417c92613bb5ab",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-13T00:26:16Z",
+        "login": "gus-ant"
+      },
+      "message": "Melhoria da legibilidade do dashboard"
+    },
+    "additions": 527,
+    "deletions": 507,
+    "total_changes": 1034,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "7656a10aa1485c80ac71d13ee335c44e49291540",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-12T21:35:40Z",
+        "login": "gus-ant"
+      },
+      "message": "Alteração e aprimoramento das métricas principais"
+    },
+    "additions": 354,
+    "deletions": 227,
+    "total_changes": 581,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "75b501f13d5d118b1d5952739539c7668eb06ca8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-12T21:35:40Z",
+        "login": "gus-ant"
+      },
+      "message": "Alteração e aprimoramento das métricas principais"
+    },
+    "additions": 354,
+    "deletions": 227,
+    "total_changes": 581,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "84f1f33f6e211e8f93894892535e373ced248672",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-12T20:55:36Z",
+        "login": "gus-ant"
+      },
+      "message": "Update do Dashboard para exibir melhores métricas"
+    },
+    "additions": 321,
+    "deletions": 94,
+    "total_changes": 415,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "fb18f5d154114c4a00dd77e56c092040a372bc5b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-12T20:55:36Z",
+        "login": "gus-ant"
+      },
+      "message": "Update do Dashboard para exibir melhores métricas"
+    },
+    "additions": 321,
+    "deletions": 94,
+    "total_changes": 415,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "bbd9c1441f8d02bd1a525685bbb9c088d3dbaaee",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T21:12:18Z",
+        "login": "gus-ant"
+      },
+      "message": "adiciona suporte dinamico para as branches e gatilho para aula-11-05"
+    },
+    "additions": 4,
+    "deletions": 2,
+    "total_changes": 6,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "8a81e7420c3984bbe5d6b61abdfeeff379fa6a2e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T21:12:18Z",
+        "login": "gus-ant"
+      },
+      "message": "adiciona suporte dinamico para as branches e gatilho para aula-11-05"
+    },
+    "additions": 4,
+    "deletions": 2,
+    "total_changes": 6,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "f201f6da07db5458a2255445a8b9a1b835e60d95",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T20:51:19Z",
+        "login": "gus-ant"
+      },
+      "message": "Atualiza branch para main e configura cron para 5 min"
+    },
+    "additions": 6,
+    "deletions": 6,
+    "total_changes": 12,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "3bca8cfa37a24d7a060b6dc68c3649ac66c93fcb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T20:51:19Z",
+        "login": "gus-ant"
+      },
+      "message": "Atualiza branch para main e configura cron para 5 min"
+    },
+    "additions": 6,
+    "deletions": 6,
+    "total_changes": 12,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "e8637c71de0e67a127e5a51fa3d41ee3f1a6b98a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T20:25:01Z",
+        "login": "gus-ant"
+      },
+      "message": "Atualizar a versão do Node.js de 20 para 24 nos arquivos de workflow."
+    },
+    "additions": 8,
+    "deletions": 8,
+    "total_changes": 16,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "1a859e160f91106fde6e67122a545edb3ba79aa5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T20:25:01Z",
+        "login": "gus-ant"
+      },
+      "message": "Atualizar a versão do Node.js de 20 para 24 nos arquivos de workflow."
+    },
+    "additions": 8,
+    "deletions": 8,
+    "total_changes": 16,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "4d98e0661b9412a05c6573a58ee86fffc2a0efd3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T20:14:44Z",
+        "login": "gus-ant"
+      },
+      "message": "Atualização do github metrics"
+    },
+    "additions": 6,
+    "deletions": 84,
+    "total_changes": 90,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "0784e4b5d374e2d129853904c8b7f8bfe134af8a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T20:14:44Z",
+        "login": "gus-ant"
+      },
+      "message": "Atualização do github metrics"
+    },
+    "additions": 6,
+    "deletions": 84,
+    "total_changes": 90,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "0a7662a4af4bf5fe14ab50b1c363d7a2a9b4a088",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T16:40:05Z",
+        "login": "gus-ant"
+      },
+      "message": "Adicao do metrics"
+    },
+    "additions": 31,
+    "deletions": 43,
+    "total_changes": 74,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "87c73c6a00acca13ba69c56611066a39e30d3c97",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T16:40:05Z",
+        "login": "gus-ant"
+      },
+      "message": "Adicao do metrics"
+    },
+    "additions": 31,
+    "deletions": 43,
+    "total_changes": 74,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "98072b833d3ef8800fb2343ddf781458190dc144",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T16:31:15Z",
+        "login": "gus-ant"
+      },
+      "message": "Edit collect.js para carregar index corretamente"
+    },
+    "additions": 134,
+    "deletions": 8,
+    "total_changes": 142,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "5982f6504212f9d6be42ce96476ae06438e103af",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T16:31:15Z",
+        "login": "gus-ant"
+      },
+      "message": "Edit collect.js para carregar index corretamente"
+    },
+    "additions": 134,
+    "deletions": 8,
+    "total_changes": 142,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "f16abb069464d91d7312c42322edb5854ca902da",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T16:26:43Z",
+        "login": "gus-ant"
+      },
+      "message": "modificar metrics workflow for push trigger and renaming"
+    },
+    "additions": 12,
+    "deletions": 39,
+    "total_changes": 51,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "305440e8ba3acfde9009e2cd25b78ec754103262",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T16:26:43Z",
+        "login": "gus-ant"
+      },
+      "message": "modificar metrics workflow for push trigger and renaming"
+    },
+    "additions": 12,
+    "deletions": 39,
+    "total_changes": 51,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "51ea2a9164114c69dab292bbeeabb778f1908f23",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T16:21:31Z",
+        "login": "Velho008"
+      },
+      "message": "troquei local do index"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "1bcb0cba35404a433564d81aa3554b602f013e33",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T16:21:31Z",
+        "login": "Velho008"
+      },
+      "message": "troquei local do index"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "edf90734df3097276bd5fe39c7b4e02962c2102e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T16:20:09Z",
+        "login": "gus-ant"
+      },
+      "message": "Update HTML structure and content for dashboard"
+    },
+    "additions": 100,
+    "deletions": 5,
+    "total_changes": 105,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "2dfa5e02cd269e0528aaa1d980f26bead7fae75d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T16:20:09Z",
+        "login": "gus-ant"
+      },
+      "message": "Update HTML structure and content for dashboard"
+    },
+    "additions": 100,
+    "deletions": 5,
+    "total_changes": 105,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "6f404b28c12996cfd413a7e249459385d3dc2125",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T16:15:50Z",
+        "login": "Velho008"
+      },
+      "message": "Add GitHub Actions workflow for repo metrics"
+    },
+    "additions": 83,
+    "deletions": 0,
+    "total_changes": 83,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "7e5f5409583e883853026132ea657a587f467963",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T16:15:50Z",
+        "login": "Velho008"
+      },
+      "message": "Add GitHub Actions workflow for repo metrics"
+    },
+    "additions": 83,
+    "deletions": 0,
+    "total_changes": 83,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "e1ffa5c6ffebb3a4efcbc4b95ac4254223b59a21",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T16:11:51Z",
+        "login": "Velho008"
+      },
+      "message": "index criado no braço e yml atualizado"
+    },
+    "additions": 63,
+    "deletions": 6,
+    "total_changes": 69,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "2f4d716ff693de623234d329230b8a99d220133b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T16:11:51Z",
+        "login": "Velho008"
+      },
+      "message": "index criado no braço e yml atualizado"
+    },
+    "additions": 63,
+    "deletions": 6,
+    "total_changes": 69,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "72254f0f19071b40eac7c51036efee64be6c3338",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T16:07:43Z",
+        "login": "Velho008"
+      },
+      "message": "tirei readme pra não dar conflito"
+    },
+    "additions": 0,
+    "deletions": 51,
+    "total_changes": 51,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "c97cbdef36722554204f137ccd00024fecf2ce03",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T16:07:43Z",
+        "login": "Velho008"
+      },
+      "message": "tirei readme pra não dar conflito"
+    },
+    "additions": 0,
+    "deletions": 51,
+    "total_changes": 51,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "866057ee34db589c57520f7d78f01fd7b4ae46a3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T16:05:16Z",
+        "login": "Velho008"
+      },
+      "message": "removi conflito"
+    },
+    "additions": 0,
+    "deletions": 42511,
+    "total_changes": 42511,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "540364205cb192e9551b43be3202fe8fef40c798",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T16:05:16Z",
+        "login": "Velho008"
+      },
+      "message": "removi conflito"
+    },
+    "additions": 0,
+    "deletions": 42511,
+    "total_changes": 42511,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "c5966db494c6123180d8c203c32016ad67bb55c7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T16:01:56Z",
+        "login": "Velho008"
+      },
+      "message": "metrics atualizado"
+    },
+    "additions": 21,
+    "deletions": 18,
+    "total_changes": 39,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "e5576dcc0219015360752d6168df8ef7c948b92f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T16:01:56Z",
+        "login": "Velho008"
+      },
+      "message": "metrics atualizado"
+    },
+    "additions": 21,
+    "deletions": 18,
+    "total_changes": 39,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "837cd3da8ea085cb923ec2287d4dd132fe6933f8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T15:55:34Z",
+        "login": "Velho008"
+      },
+      "message": "script adicionado"
+    },
+    "additions": 162,
+    "deletions": 0,
+    "total_changes": 162,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "820de6b164f1229273e08521816080373c861ea0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T15:55:34Z",
+        "login": "Velho008"
+      },
+      "message": "script adicionado"
+    },
+    "additions": 162,
+    "deletions": 0,
+    "total_changes": 162,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "e38ed74c3bce4062d4d331d892846bd35ae52d74",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T15:52:39Z",
+        "login": "Velho008"
+      },
+      "message": "Add GitHub Actions workflow for repo metrics"
+    },
+    "additions": 39,
+    "deletions": 0,
+    "total_changes": 39,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "472a590a1003e71d4492590fab05d54026ca19c6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T15:52:39Z",
+        "login": "Velho008"
+      },
+      "message": "Add GitHub Actions workflow for repo metrics"
+    },
+    "additions": 39,
+    "deletions": 0,
+    "total_changes": 39,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "10048f71e09d0c9cb34ca6a7729300bbd6340db1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T15:41:13Z",
+        "login": "gus-ant"
+      },
+      "message": "Atualização mkdocs sprint 4"
+    },
+    "additions": 548,
+    "deletions": 0,
+    "total_changes": 548,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "c103deb5865e7e36410d3abbaf91664598643153",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T15:41:13Z",
+        "login": "gus-ant"
+      },
+      "message": "Atualização mkdocs sprint 4"
+    },
+    "additions": 548,
+    "deletions": 0,
+    "total_changes": 548,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "f552bb2c36837bd2c9fd3fd27eeb4a51c53c0a89",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T13:47:58Z",
+        "login": "gus-ant"
+      },
+      "message": "Renomear estudo_front to estudo_front.md"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "eff97872e45a0a03c7251aae4ea579b24ea59365",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T13:47:58Z",
+        "login": "gus-ant"
+      },
+      "message": "Renomear estudo_front to estudo_front.md"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "6c660633f1db3bad2138fff6bb9c03c41b59d0a9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T00:12:21Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "estudo front"
+    },
+    "additions": 70,
+    "deletions": 0,
+    "total_changes": 70,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "70a7313421ff9671e7b2b766020f5816ce5574e5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-11T00:12:21Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "estudo front"
+    },
+    "additions": 70,
+    "deletions": 0,
+    "total_changes": 70,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "c874a818e03c859624a055f9b594806371535674",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-06T22:02:32Z",
+        "login": "nerylucas"
+      },
+      "message": "Add files via upload"
+    },
+    "additions": 30,
+    "deletions": 0,
+    "total_changes": 30,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "1066a6ea904f68179e8ea00e48093dfc1c24217b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-06T22:02:32Z",
+        "login": "nerylucas"
+      },
+      "message": "Add files via upload"
+    },
+    "additions": 30,
+    "deletions": 0,
+    "total_changes": 30,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "6820c238a963bda033ce0cbcc52f82a60a1f3069",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-05T02:49:19Z",
+        "login": "gus-ant"
+      },
+      "message": "Adição do estudo de Coleta e Ingestão de Dados"
+    },
+    "additions": 97,
+    "deletions": 0,
+    "total_changes": 97,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "0efc234a63d1cc54d5a6cafe44e4407a262afa6e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-05T02:49:19Z",
+        "login": "gus-ant"
+      },
+      "message": "Adição do estudo de Coleta e Ingestão de Dados"
+    },
+    "additions": 97,
+    "deletions": 0,
+    "total_changes": 97,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "01f397e2ef039d93b81e6f5a371fa26a21455a86",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-01T13:01:35Z",
+        "login": "IndianoDev"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2026-1-Squad4-Dito_…"
+    },
+    "additions": 41982,
+    "deletions": 0,
+    "total_changes": 41982,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "26a13691a4246acd532d84baf498e8559985fe46",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-01T13:01:35Z",
+        "login": "IndianoDev"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/2026-1-Squad4-Dito_…"
+    },
+    "additions": 41982,
+    "deletions": 0,
+    "total_changes": 41982,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "a8fa26f40a933545c6831c69e3393aafb31c244c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-01T13:01:28Z",
+        "login": "IndianoDev"
+      },
+      "message": "feat: inclusão dos tópicos 02 (tipos de dados) e 03 (modelagem ER)"
+    },
+    "additions": 402,
+    "deletions": 0,
+    "total_changes": 402,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "22258a92a33d0557113b2fc8fc850bfb535188ff",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-05-01T13:01:28Z",
+        "login": "IndianoDev"
+      },
+      "message": "feat: inclusão dos tópicos 02 (tipos de dados) e 03 (modelagem ER)"
+    },
+    "additions": 402,
+    "deletions": 0,
+    "total_changes": 402,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "486d8d82f649bd2474db107cde3ddf1a0c03eec6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-29T20:52:14Z",
+        "login": "gus-ant"
+      },
+      "message": "Atualização da documentação e criação do MKdocs do projeto"
+    },
+    "additions": 41972,
+    "deletions": 0,
+    "total_changes": 41972,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "9d8c0f958d6aa6be94e36ca695d7b788fee2479f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-29T20:52:14Z",
+        "login": "gus-ant"
+      },
+      "message": "Atualização da documentação e criação do MKdocs do projeto"
+    },
+    "additions": 41972,
+    "deletions": 0,
+    "total_changes": 41972,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "45ceae3901859e9b88e74430518590c0d6bbe901",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-28T15:09:55Z",
+        "login": "Velho008"
+      },
+      "message": "inicio do projeto figma, documentando alterações"
+    },
+    "additions": 10,
+    "deletions": 0,
+    "total_changes": 10,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "dfee7de8e53684619be2ebad0efa093a1483614c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-28T15:09:55Z",
+        "login": "Velho008"
+      },
+      "message": "inicio do projeto figma, documentando alterações"
+    },
+    "additions": 10,
+    "deletions": 0,
+    "total_changes": 10,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "e8e66e1f57a240e01f4d76e6fb7198d051a66360",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-24T16:05:03Z",
+        "login": "IndianoDev"
+      },
+      "message": "realizando a parte 1 do estudo de banco de dados"
+    },
+    "additions": 194,
+    "deletions": 0,
+    "total_changes": 194,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "fb97dff2c726a0bf7fe3608ed25054d23f6c64d6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-24T16:05:03Z",
+        "login": "IndianoDev"
+      },
+      "message": "realizando a parte 1 do estudo de banco de dados"
+    },
+    "additions": 194,
+    "deletions": 0,
+    "total_changes": 194,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "139df27ca5ef3c5dd2c3731379fa6de9cc7d01b8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-23T22:06:03Z",
+        "login": "gus-ant"
+      },
+      "message": "Estudo de Arquitetura para Deploy de Modelos de IA"
+    },
+    "additions": 52,
+    "deletions": 0,
+    "total_changes": 52,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "660682b4390cedd36c38f3c54d5f32577ef8dc6f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-23T22:06:03Z",
+        "login": "gus-ant"
+      },
+      "message": "Estudo de Arquitetura para Deploy de Modelos de IA"
+    },
+    "additions": 52,
+    "deletions": 0,
+    "total_changes": 52,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "fa521bd130d11da008fe00d8d9383027c90f8586",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-23T14:56:13Z",
+        "login": "Velho008"
+      },
+      "message": "Update estudo_manual_da_marca.md"
+    },
+    "additions": 0,
+    "deletions": 2,
+    "total_changes": 2,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "fe3a76a7b2bc22bd85f8c85eb430a5be06c9146c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-23T14:56:13Z",
+        "login": "Velho008"
+      },
+      "message": "Update estudo_manual_da_marca.md"
+    },
+    "additions": 0,
+    "deletions": 2,
+    "total_changes": 2,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "6cb62a4f2424d3dc95c9e2cf80fd091bb02d1105",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-22T16:07:48Z",
+        "login": "gus-ant"
+      },
+      "message": "Rename file for consistency in directory structure"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "2e33214a6ae4e663cc3eb7b8f08e6fb8fa5ff4fc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-22T16:07:48Z",
+        "login": "gus-ant"
+      },
+      "message": "Rename file for consistency in directory structure"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "fa0811e5a5b185184f084b4ae481f83bd83c3e01",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-22T15:55:19Z",
+        "login": "Velho008"
+      },
+      "message": "Update estudo_manual_da_marca.md"
+    },
+    "additions": 1,
+    "deletions": 58,
+    "total_changes": 59,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "cfd571c37b940dd266c11c22875f268d42fdbb98",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-22T15:55:19Z",
+        "login": "Velho008"
+      },
+      "message": "Update estudo_manual_da_marca.md"
+    },
+    "additions": 1,
+    "deletions": 58,
+    "total_changes": 59,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "4e6c4c4b4367381732acead5d0316de40046dc98",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-22T15:33:11Z",
+        "login": "gus-ant"
+      },
+      "message": "Update requisitos_gerais_oficiais.md"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "991533deaa239a2abed811ef06358ffcd82fcafb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-22T15:33:11Z",
+        "login": "gus-ant"
+      },
+      "message": "Update requisitos_gerais_oficiais.md"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "a7a4ef7fc2a19b804573fc92aa11bd6ae64973c6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-22T15:15:53Z",
+        "login": "gus-ant"
+      },
+      "message": "Rename Estudos/Arquitetura de Inteligência Artificial para Monitorame…"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "32d3c8d49ceed9408eca37de9bb28c5985003a47",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-22T15:15:53Z",
+        "login": "gus-ant"
+      },
+      "message": "Rename Estudos/Arquitetura de Inteligência Artificial para Monitorame…"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "c3d69be187980323b0194e0fc7d29ad0ba35d94c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-20T23:09:11Z",
+        "login": "nerylucas"
+      },
+      "message": "Add files via upload"
+    },
+    "additions": 40,
+    "deletions": 0,
+    "total_changes": 40,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "f6781f5be6702154dc26240f8ce4c4db3d6c5c4b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-20T23:09:11Z",
+        "login": "nerylucas"
+      },
+      "message": "Add files via upload"
+    },
+    "additions": 40,
+    "deletions": 0,
+    "total_changes": 40,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "6719ec221748a41b0ccacad10bfc05ed061cf7e4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-20T02:54:17Z",
+        "login": "gus-ant"
+      },
+      "message": "Remove Lucas Abdalla Nery from participants list"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "001106dbc769a9e474a79826937430cbd91cfe55",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-20T02:54:17Z",
+        "login": "gus-ant"
+      },
+      "message": "Remove Lucas Abdalla Nery from participants list"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "8aa56cb2baf545fc653301fb064fa4f1cc6bae7e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-20T02:54:07Z",
+        "login": "gus-ant"
+      },
+      "message": "Update Reuniao3.md"
+    },
+    "additions": 7,
+    "deletions": 0,
+    "total_changes": 7,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "26f8f0600522f654bc9681f7a0fb4e4a9305369c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-20T02:54:07Z",
+        "login": "gus-ant"
+      },
+      "message": "Update Reuniao3.md"
+    },
+    "additions": 7,
+    "deletions": 0,
+    "total_changes": 7,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "d075417d500b082c1624c465594d8ddea6518f7e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-20T02:52:04Z",
+        "login": "gus-ant"
+      },
+      "message": "Add meeting notes for Sprint 03"
+    },
+    "additions": 27,
+    "deletions": 0,
+    "total_changes": 27,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "986da4d1fd38175ec0208e0207a793f838f75b10",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-20T02:52:04Z",
+        "login": "gus-ant"
+      },
+      "message": "Add meeting notes for Sprint 03"
+    },
+    "additions": 27,
+    "deletions": 0,
+    "total_changes": 27,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "4e570d7f766848d2cae89ef71b2815892f8e0cf4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-20T02:41:45Z",
+        "login": "nerylucas"
+      },
+      "message": "Create meeting minutes for Sprint 01"
+    },
+    "additions": 29,
+    "deletions": 0,
+    "total_changes": 29,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "d969d0a4f79caf00ed2dd7b4f2e6852d2f6649f7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-20T02:41:45Z",
+        "login": "nerylucas"
+      },
+      "message": "Create meeting minutes for Sprint 01"
+    },
+    "additions": 29,
+    "deletions": 0,
+    "total_changes": 29,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "d09f93aeb98c109dfa765cfd33aa29f65612b5da",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-20T02:40:51Z",
+        "login": "nerylucas"
+      },
+      "message": "Update and rename Reuniao1 to Reuniao1.md"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "c91956f784d6854af07e795b250d213023f321c9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-20T02:40:51Z",
+        "login": "nerylucas"
+      },
+      "message": "Update and rename Reuniao1 to Reuniao1.md"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "1438b1b936b88b8fb4d610dd977cfbe8231c7ba9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-20T02:40:28Z",
+        "login": "nerylucas"
+      },
+      "message": "Add new file Reuniao1"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "bd42a5c161e8c6fba242fadd01642a163c5e616d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-20T02:40:28Z",
+        "login": "nerylucas"
+      },
+      "message": "Add new file Reuniao1"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "18b793e93894d9f49ce20faa044ed9e530a1cdf5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-20T02:39:04Z",
+        "login": "nerylucas"
+      },
+      "message": "Delete Atas/Reuniao2.md"
+    },
+    "additions": 0,
+    "deletions": 47,
+    "total_changes": 47,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "66be7789eff895f7caa028be8a339905832461bb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-20T02:39:04Z",
+        "login": "nerylucas"
+      },
+      "message": "Delete Atas/Reuniao2.md"
+    },
+    "additions": 0,
+    "deletions": 47,
+    "total_changes": 47,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "a78e8611b78cd62dc67148e00c518856e8d00653",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-20T02:38:45Z",
+        "login": "nerylucas"
+      },
+      "message": "Delete Atas/Reuniao1.md"
+    },
+    "additions": 0,
+    "deletions": 30,
+    "total_changes": 30,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "76c957d7b98265fa0dff171cb5052a170dc44635",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-20T02:38:45Z",
+        "login": "nerylucas"
+      },
+      "message": "Delete Atas/Reuniao1.md"
+    },
+    "additions": 0,
+    "deletions": 30,
+    "total_changes": 30,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "2753602c4f79aa826a91a7a41ceab619d3908925",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-20T02:03:26Z",
+        "login": "nerylucas"
+      },
+      "message": "Add files via upload"
+    },
+    "additions": 139,
+    "deletions": 0,
+    "total_changes": 139,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "267008773835c8b919f5e59046ccefa439eee775",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-20T02:03:26Z",
+        "login": "nerylucas"
+      },
+      "message": "Add files via upload"
+    },
+    "additions": 139,
+    "deletions": 0,
+    "total_changes": 139,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "9ac875d99b000b6cc4355c025c818dda97d8b974",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-20T02:02:53Z",
+        "login": "nerylucas"
+      },
+      "message": "Delete Estudos/estudo_ciclo_de_vida_de_software.md"
+    },
+    "additions": 0,
+    "deletions": 103,
+    "total_changes": 103,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "60bc83310a00f08f96e975280ef8ada612a74587",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-20T02:02:53Z",
+        "login": "nerylucas"
+      },
+      "message": "Delete Estudos/estudo_ciclo_de_vida_de_software.md"
+    },
+    "additions": 0,
+    "deletions": 103,
+    "total_changes": 103,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "dfc30732d1fa512405e9cfcd0155936cca412e5c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-20T02:02:33Z",
+        "login": "nerylucas"
+      },
+      "message": "Delete Estudos/estudo_tecnologias.md"
+    },
+    "additions": 0,
+    "deletions": 36,
+    "total_changes": 36,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "09cf89a8f3bf78a16117f17ae93e01bfe5566013",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-20T02:02:33Z",
+        "login": "nerylucas"
+      },
+      "message": "Delete Estudos/estudo_tecnologias.md"
+    },
+    "additions": 0,
+    "deletions": 36,
+    "total_changes": 36,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  },
+  {
+    "sha": "d113ade7fdc904c437ae1761ccc9b7d27f6a9a9b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-04-20T01:38:33Z",
+        "login": "SUDOTMOX"
+      },
+      "message": "Estudo sobre o front e cores"
+    },
+    "additions": 1221,
+    "deletions": 0,
+    "total_changes": 1221,
+    "repo_name": "2026-1-Squad4-Dito_e_Feito"
+  }
+]

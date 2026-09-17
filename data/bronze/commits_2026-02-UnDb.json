@@ -1,0 +1,1386 @@
+[
+  {
+    "_metadata": {
+      "extracted_at": "2026-09-17T04:02:31.428753",
+      "file_path": "data/bronze/commits_2026-02-UnDb.json",
+      "record_count": 81
+    }
+  },
+  {
+    "sha": "79482edbdcf0f615750e1e90b48b105cc87432cc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-11T17:44:13Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge pull request #56 from unb-mds/feature/issue-35-env-example"
+    },
+    "additions": 8,
+    "deletions": 1,
+    "total_changes": 9,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "cbf62bdc370e7d5a820aa7a60f7a6d807f4f07f8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-11T17:30:21Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "merge: atualiza configuracao de ambiente com main"
+    },
+    "additions": 801,
+    "deletions": 76,
+    "total_changes": 877,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "a70221005c65a6e5e85a7ca667e103055ffa08c3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-11T17:18:17Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge pull request #55 from unb-mds/feature/config-banco-dados"
+    },
+    "additions": 792,
+    "deletions": 62,
+    "total_changes": 854,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "e874fe48a531eb3ae20d9315abbcadf390334044",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-11T17:12:26Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "fix(api): remove exposicao individual de avaliacoes"
+    },
+    "additions": 0,
+    "deletions": 18,
+    "total_changes": 18,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "cd34c5d674ecad7e6f9123ca2b818cf4a30d926d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-11T17:00:09Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "docs: esclarece pre-requisito do PostgreSQL"
+    },
+    "additions": 6,
+    "deletions": 1,
+    "total_changes": 7,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "df2e367c367027157d6453cdea8a22a7c8d0b279",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-11T16:44:01Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "fix(api): rejeita campos extras na avaliacao"
+    },
+    "additions": 4,
+    "deletions": 2,
+    "total_changes": 6,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "6421e8c162df9cf175a38b77c3238c065b337f92",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-11T16:40:17Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Modify .env.example for database configuration"
+    },
+    "additions": 3,
+    "deletions": 1,
+    "total_changes": 4,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "4b968a00c3bcd6a179f69d9a540ae5db9ef60cef",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-11T16:22:39Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "merge: resolve conflitos com main no PR de banco"
+    },
+    "additions": 2205,
+    "deletions": 411,
+    "total_changes": 2616,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "dea7a9cc3021e256ae9163cf21021e4219b1afa3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-11T15:36:33Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "fix(db): alinha modelo e documentacao"
+    },
+    "additions": 413,
+    "deletions": 66,
+    "total_changes": 479,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "6750481f9df1fc83babdc3229eb4bd5f78cbae96",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-11T14:34:31Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "feat(database): implementar modelos ORM SQLAlchemy e script de persis…"
+    },
+    "additions": 128,
+    "deletions": 5,
+    "total_changes": 133,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "d0f510a6e3f5baf87fb1bfb3f89240cc6657a8d4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-11T14:08:38Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "docs: remodelagem do banco"
+    },
+    "additions": 32,
+    "deletions": 0,
+    "total_changes": 32,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "dc6dc534b24068fb48c62f4b21e91b94a3c600c8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-11T00:37:27Z",
+        "login": "ailoiol"
+      },
+      "message": "docs: atualiza .env.example e documenta variaveis de ambiente (#35)"
+    },
+    "additions": 18,
+    "deletions": 6,
+    "total_changes": 24,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "6259971e449dad1fe9c868c4c587d1dcf3de0454",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-10T22:30:54Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "feat(db): configura conexao sqlalchemy e adiciona documentacao"
+    },
+    "additions": 28,
+    "deletions": 11,
+    "total_changes": 39,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "58282b66914db736890ac84e234c8521648da312",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-10T22:04:02Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "feat: adicionado requisitos de sql"
+    },
+    "additions": 3,
+    "deletions": 0,
+    "total_changes": 3,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "456f0efa81cb3ee60e5022f8d5d0555ade5324fd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-10T19:59:36Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge pull request #54 from unb-mds/codex/issue-47-validar-acesso"
+    },
+    "additions": 75,
+    "deletions": 25,
+    "total_changes": 100,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "d955e967d56b28b185facdf64795e9c338ca99ff",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-10T18:41:04Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Atualização SKILL.md do Fast API"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "a3a114a7b2fc60613f45ea0ec32e2e46bf2ddf7d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-10T18:40:21Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Atualizar RF01"
+    },
+    "additions": 3,
+    "deletions": 2,
+    "total_changes": 5,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "59f1cf6f325daaa192b4e1fa526208c984d099f8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-10T18:28:49Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "docs: valida modelo de acesso da release 1"
+    },
+    "additions": 74,
+    "deletions": 25,
+    "total_changes": 99,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "342bf1c99a378d0fc15d0b259b56a12030ade483",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-10T18:06:24Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge pull request #53 from unb-mds/codex/issue-33-dockerfile-backend"
+    },
+    "additions": 31,
+    "deletions": 0,
+    "total_changes": 31,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "3531f18368c37ddb18616e343e794f3ab0def920",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-10T17:44:58Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Modificação do dockerfile para adicionar usuário"
+    },
+    "additions": 5,
+    "deletions": 1,
+    "total_changes": 6,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "f01863b695e341537056a0ba86d8b5b23b027c5e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-10T17:33:48Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "feat: adiciona Dockerfile do backend"
+    },
+    "additions": 27,
+    "deletions": 0,
+    "total_changes": 27,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "4e923feb4a7f4b9de072675f9a85cc81eabd7e03",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-05T21:11:19Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge pull request #52 from unb-mds/codex/docs-estudo-docker"
+    },
+    "additions": 299,
+    "deletions": 0,
+    "total_changes": 299,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "cebbf657bc3edc9f83ad929652f1d370b4429c45",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-05T21:11:12Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Update Docker documentation with service details"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "a8a41423bf2de24c0428d4d91a77e3fa991c0edc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-05T21:06:14Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "docs: adiciona estudo sobre Docker"
+    },
+    "additions": 298,
+    "deletions": 0,
+    "total_changes": 298,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "464e81e70a49b4cfd7179e01fa71d822c8114882",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-05T14:11:12Z",
+        "login": "ViniGvdo"
+      },
+      "message": "Adicionando estudo sobre frontend"
+    },
+    "additions": 38,
+    "deletions": 0,
+    "total_changes": 38,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "7499859d96879b5ca2e3ec9482e261c35b1cde02",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-05T03:54:56Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge pull request #46 from unb-mds/docs/requisitos-e-arquitetura"
+    },
+    "additions": 1231,
+    "deletions": 72,
+    "total_changes": 1303,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "0c3d4cd78843d74f5ea546370103c4ba516d697a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-05T03:54:12Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Update decision table with SQLAlchemy and Next.js details"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "104375f4e8d41390228e5d6d21b4e4d55611dd1e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-05T03:54:00Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Atualiza status de skills e decisões pendentes"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "b881ccee33c17792f57ee811e5abedf95c30da6e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-05T03:53:35Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Update architecture documentation with new fields"
+    },
+    "additions": 2,
+    "deletions": 1,
+    "total_changes": 3,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "cb224d7a14d5c2cce9b5308cdd8824c5d22bf2b8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-05T03:46:48Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Atualiza SKILL do fast API"
+    },
+    "additions": 122,
+    "deletions": 52,
+    "total_changes": 174,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "7fc420fe05dadee58bad425221cad1fa383e8064",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-05T03:45:49Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Atualiza CLAUDE.md e README com decisoes tomadas"
+    },
+    "additions": 49,
+    "deletions": 20,
+    "total_changes": 69,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "525374ce4722aa9acfee872e5586ed7ec60f2bf3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-05T03:45:18Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Adiciona skill de requirements (proposed)"
+    },
+    "additions": 241,
+    "deletions": 0,
+    "total_changes": 241,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "71ef6958e8cebfb2dc6dbfea26dc8d168fef925e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-05T03:43:47Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Adiciona specs de implementacao derivado dos requisitos"
+    },
+    "additions": 239,
+    "deletions": 0,
+    "total_changes": 239,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "4998f65c3f7be1880fcac694729e5b9e6b290b50",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-05T03:43:35Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Adiciona documentos de requisitos e arquitetura"
+    },
+    "additions": 579,
+    "deletions": 0,
+    "total_changes": 579,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "087f6f13f0f3f47d11c375ed622589fe424ecc32",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-01T14:19:23Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "feat: add arquivo de estudo de bd"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "db0a104e8ca398abee8c54d1b94b59032316f402",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-01T14:18:01Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "feat:criado o arquivo do estudo de bd"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "14339d965cf8484c2def5dbca061a175eeb248d8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-01T14:12:01Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "fix: arrumado posição da pasta"
+    },
+    "additions": 10,
+    "deletions": 0,
+    "total_changes": 10,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "70f75dda2c910e08e674e13676983f3515031428",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-01T14:09:21Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "Add files via upload"
+    },
+    "additions": 695,
+    "deletions": 0,
+    "total_changes": 695,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "74d3ca653d902fed21d4e565df517cb822972646",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-31T22:54:49Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge pull request #21 from unb-mds/docs/issue-templates"
+    },
+    "additions": 62,
+    "deletions": 7,
+    "total_changes": 69,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "df2a17284180a7b7033e6a2794a4c187a52feb23",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-31T22:51:16Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "docs: padroniza template de issue e cria template de epic"
+    },
+    "additions": 62,
+    "deletions": 7,
+    "total_changes": 69,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "ee4228a370795fd58b991c5c6d4267f18dddadcc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-31T19:40:04Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "fix: arrumado o nome da pasta"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "5950374528d7f5662abe1a7d8644acb429c9058e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-31T19:39:54Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "feat: add o template para a retrsopectiva da sprint00"
+    },
+    "additions": 34,
+    "deletions": 0,
+    "total_changes": 34,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "3074feb01145b8c7150cf695ab0e54a2cf782312",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-31T19:38:18Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "Delete sprints/sprint00 directory"
+    },
+    "additions": 0,
+    "deletions": 34,
+    "total_changes": 34,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "4f97b5c564721d0f9c76deab428650e73dfd46fc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-31T19:38:07Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "Delete sprints/sprint01"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "ba27907d3fe15c79fa938591090545c475c635be",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-31T19:36:46Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "feat: add o template para a retrsopectiva da sprint00"
+    },
+    "additions": 34,
+    "deletions": 0,
+    "total_changes": 34,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "00ee3b6a36e4a4616dd0f6d78163ef3497711f34",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-31T19:36:30Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "feat: add o template para o stand-up"
+    },
+    "additions": 27,
+    "deletions": 0,
+    "total_changes": 27,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "b7226728874dda0026ee97ccce147c752f8f1c35",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-31T19:26:38Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "Create sprint01"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "ae72bd8be893f7bda06f9dc16aa9e1c8d338014f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-31T18:38:15Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "Update README.md"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "7efd0d604a323e6f67cab5746e440ebbb85f5307",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-31T18:36:29Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "Update README.md"
+    },
+    "additions": 3,
+    "deletions": 3,
+    "total_changes": 6,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "4016c7cd067be60b8e43e98758a3ec85321427f6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-31T18:21:53Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "Create tarefa.md"
+    },
+    "additions": 47,
+    "deletions": 0,
+    "total_changes": 47,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "1461401010664b4b3ae91c46faa1316dac504578",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-29T23:11:18Z",
+        "login": "gabrielrdaraujo"
+      },
+      "message": "Merge pull request #7 from unb-mds/chore/agents-bootstrap"
+    },
+    "additions": 44,
+    "deletions": 0,
+    "total_changes": 44,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "e24f11de654e8057018357a67595af1a9b907eae",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-29T23:07:11Z",
+        "login": "gabrielrdaraujo"
+      },
+      "message": "chore: adiciona instruções para agentes"
+    },
+    "additions": 44,
+    "deletions": 0,
+    "total_changes": 44,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "4e4c2cb5d61659cadd90e018fe7594a890ad0c56",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-29T02:32:09Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge pull request #6 from unb-mds/chore/migrate-to-fastapi"
+    },
+    "additions": 326,
+    "deletions": 275,
+    "total_changes": 601,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "a6c9ceca1b69ab8d2fbdc9281240d40c437d509f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-29T02:30:32Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "docs: atualiza README para o setup do FastAPI"
+    },
+    "additions": 13,
+    "deletions": 9,
+    "total_changes": 22,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "2058ef95864ebb3974b7fcb577d0e29c515d38b1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-29T02:25:00Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "feat: migra backend de Django para FastAPI"
+    },
+    "additions": 80,
+    "deletions": 266,
+    "total_changes": 346,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "c9b2c5086ab193dde9a1044b953d6f68e3e3b7e9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-29T01:54:35Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "docs: adiciona CLAUDE.md e skill de FastAPI (technology)"
+    },
+    "additions": 233,
+    "deletions": 0,
+    "total_changes": 233,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "5968d8581c40cd808a7cf681fcb64ccb5c6cd855",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-28T23:33:13Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge pull request #5 from unb-mds/feat/engineering-skills"
+    },
+    "additions": 804,
+    "deletions": 0,
+    "total_changes": 804,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "5cd0fe3c9fd18a117f6c625901802548e2057c35",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-27T17:07:39Z",
+        "login": "gabrielrdaraujo"
+      },
+      "message": "feat: adiciona skills de engenharia"
+    },
+    "additions": 804,
+    "deletions": 0,
+    "total_changes": 804,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "a498fb0fa151ee5e54f8dc286712ee5026be78fe",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-27T16:26:00Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge pull request #4 from unb-mds/feat/project-governance"
+    },
+    "additions": 300,
+    "deletions": 0,
+    "total_changes": 300,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "5bb77d15d8c114bb7fd36b25628450ca4bbf9af6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-27T15:41:03Z",
+        "login": "gabrielrdaraujo"
+      },
+      "message": "feat: adiciona skill de governança do projeto"
+    },
+    "additions": 300,
+    "deletions": 0,
+    "total_changes": 300,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "d5bbf0f403596db1db36f12ebb81ae6dd7baea26",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-26T17:58:47Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge pull request #3 from unb-mds/feature/skill-docker"
+    },
+    "additions": 197,
+    "deletions": 0,
+    "total_changes": 197,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "f3f2420a4847ff09bbebeca4bc328df9a594f3aa",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-26T17:57:07Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "docs: adiciona skill de Docker (technology)"
+    },
+    "additions": 197,
+    "deletions": 0,
+    "total_changes": 197,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "4e3912994c67e3296e6867578bba4c7b37913562",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-25T15:58:53Z",
+        "login": "gabrielrdaraujo"
+      },
+      "message": "Merge pull request #2 from unb-mds/feat/skill-authoring"
+    },
+    "additions": 666,
+    "deletions": 0,
+    "total_changes": 666,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "7be8a3dfcc318d66589ced079d611bb809dcfa7d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-25T15:32:11Z",
+        "login": "gabrielrdaraujo"
+      },
+      "message": "feat: adicionando meta skill"
+    },
+    "additions": 666,
+    "deletions": 0,
+    "total_changes": 666,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "3b36ed1e78d8f37732270d5ce5afef64d208518e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-23T15:11:21Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "estilização das mensagens feitas (chatgpt)"
+    },
+    "additions": 185,
+    "deletions": 69,
+    "total_changes": 254,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "0c87af6d2aa2e343a083eacb33d389862a8c0b6c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-23T15:05:13Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "estilização das mensagens feitas (chatgpt)"
+    },
+    "additions": 65,
+    "deletions": 83,
+    "total_changes": 148,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "2c370085481b68150e7aee192cddf08b4a5b86bc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-23T14:58:29Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "resumao dos comandos mais usados"
+    },
+    "additions": 14,
+    "deletions": 0,
+    "total_changes": 14,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "8ff2574be646656e4a206ae0f77554d20a15e88c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-23T14:58:04Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "fazer fork de um trabalho open source"
+    },
+    "additions": 25,
+    "deletions": 0,
+    "total_changes": 25,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "c6777bb6ca697a962e1e0d4d7e5a26ee01e58280",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-23T14:57:11Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "fazer PR"
+    },
+    "additions": 21,
+    "deletions": 0,
+    "total_changes": 21,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "ee483d2da109973d66c856ae425c1ae7a84c9351",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-23T14:52:03Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "trabalhar em grupo com git"
+    },
+    "additions": 17,
+    "deletions": 2,
+    "total_changes": 19,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "0d49e3a6014bfb93133096203c74021425bd61a8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-23T14:49:48Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "iniciar git com github"
+    },
+    "additions": 17,
+    "deletions": 0,
+    "total_changes": 17,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "0891abda6a1f0b8de7e40d8a4fbb9b8a34d46c91",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-23T14:48:53Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "criar e deletar branchs"
+    },
+    "additions": 32,
+    "deletions": 0,
+    "total_changes": 32,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "690f9b1b818daa09ea0c0eb4ba1826168bc023c2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-23T13:08:51Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "o que configurar no gitignore"
+    },
+    "additions": 24,
+    "deletions": 1,
+    "total_changes": 25,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "d83fe366d827bb2cce954e1356d655e3e5d11e50",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-23T02:18:59Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "fazer e desfazer commits"
+    },
+    "additions": 33,
+    "deletions": 1,
+    "total_changes": 34,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "8bba922cebff6e5c25d54d4fd91354214f510224",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-23T02:11:27Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "conceitos inicias de git e configuração de ambiente"
+    },
+    "additions": 68,
+    "deletions": 1,
+    "total_changes": 69,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "b6c536ecce861582ab48851e50f3415a81d61d7b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-22T23:08:19Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "introdução do que é o git"
+    },
+    "additions": 14,
+    "deletions": 0,
+    "total_changes": 14,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "7d665d86fef4b3ae95ac00630a14132c56414234",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-19T17:53:15Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge pull request #1 from unb-mds/feature/setup-django"
+    },
+    "additions": 273,
+    "deletions": 0,
+    "total_changes": 273,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "9eed6b4ea7b24cc75040d7c943d9b725ccfc0634",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-19T17:52:02Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "feat: setup inicial do projeto Django"
+    },
+    "additions": 273,
+    "deletions": 0,
+    "total_changes": 273,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "04cedbdff947d1ebe26541b95b613646557d533a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-19T17:01:59Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "docs: atualiza README inicial"
+    },
+    "additions": 71,
+    "deletions": 3,
+    "total_changes": 74,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "465328288d9d4d61f60461c26582f244dd7529a8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-19T16:47:21Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "Update README.md"
+    },
+    "additions": 1,
+    "deletions": 0,
+    "total_changes": 1,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "0fdb716b858008975006843f574141d85377e082",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-18T11:57:42Z",
+        "login": "RochaCarla"
+      },
+      "message": "Initial commit"
+    },
+    "additions": 2,
+    "deletions": 0,
+    "total_changes": 2,
+    "repo_name": "2026-02-UnDb"
+  }
+]

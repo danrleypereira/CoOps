@@ -1,0 +1,894 @@
+{
+  "owner": "unb-mds",
+  "repository": "2026-02-UnDb",
+  "branch": "main",
+  "sha": "79482edbdcf0f615750e1e90b48b105cc87432cc",
+  "tree": [
+    {
+      "name": ".gitattributes",
+      "path": ".gitattributes",
+      "type": "file",
+      "sha": "d72fd520b1c12f276273f6d5b6cbc0c7f3bbf884",
+      "mode": "100644",
+      "extension": ".gitattributes",
+      "size": 13,
+      "is_binary": false
+    },
+    {
+      "name": ".github",
+      "path": ".github",
+      "type": "directory",
+      "sha": "ba94d785414b8ed7123242ad1b7653500cbaf1a2",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "ISSUE_TEMPLATE",
+      "path": ".github/ISSUE_TEMPLATE",
+      "type": "directory",
+      "sha": "212a7b73983fe911cdbe2b1a84d0cbad90131231",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "daily.md",
+      "path": ".github/ISSUE_TEMPLATE/daily.md",
+      "type": "file",
+      "sha": "e6362bf1c4eb4de9d1586666fc15e5be2e02a80b",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 350,
+      "is_binary": false
+    },
+    {
+      "name": "epic.md",
+      "path": ".github/ISSUE_TEMPLATE/epic.md",
+      "type": "file",
+      "sha": "1f7ac6eb7079c4fe5ba7db4b1a94fb68bff89175",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 816,
+      "is_binary": false
+    },
+    {
+      "name": "tarefa.md",
+      "path": ".github/ISSUE_TEMPLATE/tarefa.md",
+      "type": "file",
+      "sha": "4a5d4d7bddb6f5f516ae58be95a8b7eef91d44e4",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 710,
+      "is_binary": false
+    },
+    {
+      "name": ".gitignore",
+      "path": ".gitignore",
+      "type": "file",
+      "sha": "3473113d95cda9c020351c27aa05c989b3b32fb4",
+      "mode": "100644",
+      "extension": ".gitignore",
+      "size": 87,
+      "is_binary": false
+    },
+    {
+      "name": ".idea",
+      "path": ".idea",
+      "type": "directory",
+      "sha": "aa97746ca3501817f056a4b3b4bc61821a190475",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".gitignore",
+      "path": ".idea/.gitignore",
+      "type": "file",
+      "sha": "30cf57ed7cba5157ad5f7c05ede08adde945ada6",
+      "mode": "100644",
+      "extension": ".gitignore",
+      "size": 228,
+      "is_binary": false
+    },
+    {
+      "name": "AGENTS.md",
+      "path": "AGENTS.md",
+      "type": "file",
+      "sha": "11c9436cde75f8590b8864dce8d438ab47579953",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1450,
+      "is_binary": false
+    },
+    {
+      "name": "CLAUDE.md",
+      "path": "CLAUDE.md",
+      "type": "file",
+      "sha": "49959cf2dc1739ea60d4213d0f93dead7d6d647f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 4582,
+      "is_binary": false
+    },
+    {
+      "name": "README.md",
+      "path": "README.md",
+      "type": "file",
+      "sha": "e31ed0c12d84b9115bd21e0589bb2e8e710cc070",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3224,
+      "is_binary": false
+    },
+    {
+      "name": "backend",
+      "path": "backend",
+      "type": "directory",
+      "sha": "39495ab0f200442affc7263635907ae46f0e0570",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": ".dockerignore",
+      "path": "backend/.dockerignore",
+      "type": "file",
+      "sha": "f7dec72631356cf18c041fcdd786ea1968a9a95c",
+      "mode": "100644",
+      "extension": ".dockerignore",
+      "size": 113,
+      "is_binary": false
+    },
+    {
+      "name": ".env.example",
+      "path": "backend/.env.example",
+      "type": "file",
+      "sha": "392cbcbf70f9ce8a7ff93512dac60dfda84a5e1b",
+      "mode": "100644",
+      "extension": ".example",
+      "size": 650,
+      "is_binary": false
+    },
+    {
+      "name": "Dockerfile",
+      "path": "backend/Dockerfile",
+      "type": "file",
+      "sha": "4075f01cf5c7c14279b6c84d0419859bf992d8e2",
+      "mode": "100644",
+      "extension": "",
+      "size": 360,
+      "is_binary": false
+    },
+    {
+      "name": "alembic.ini",
+      "path": "backend/alembic.ini",
+      "type": "file",
+      "sha": "d12ba2f1f4831aa08189327c6b3804d8cfe2ebc9",
+      "mode": "100644",
+      "extension": ".ini",
+      "size": 581,
+      "is_binary": false
+    },
+    {
+      "name": "alembic",
+      "path": "backend/alembic",
+      "type": "directory",
+      "sha": "40c31507dd0ee222007bc62ec658970cf5af0d29",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "env.py",
+      "path": "backend/alembic/env.py",
+      "type": "file",
+      "sha": "02dd2f8c15f5c9ad993cbd71359e98deb8ac69a2",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1302,
+      "is_binary": false
+    },
+    {
+      "name": "script.py.mako",
+      "path": "backend/alembic/script.py.mako",
+      "type": "file",
+      "sha": "553d6780effe65ad7622eb1083c51b2b7f8ed77c",
+      "mode": "100644",
+      "extension": ".mako",
+      "size": 608,
+      "is_binary": false
+    },
+    {
+      "name": "versions",
+      "path": "backend/alembic/versions",
+      "type": "directory",
+      "sha": "121c4a764ce342dc023bb0388270bed271763ed5",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "20260911_01_create_initial_schema.py",
+      "path": "backend/alembic/versions/20260911_01_create_initial_schema.py",
+      "type": "file",
+      "sha": "43a658b744d8c2048d85b394790dbc63c1984c9d",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4559,
+      "is_binary": false
+    },
+    {
+      "name": "app",
+      "path": "backend/app",
+      "type": "directory",
+      "sha": "5e5c97e5f8ef6b6971ea15473817c5e0ce2b1fd7",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/app/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "core",
+      "path": "backend/app/core",
+      "type": "directory",
+      "sha": "728e97ab31f7ebbef26e69194c506ec5437e0f30",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/app/core/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "config.py",
+      "path": "backend/app/core/config.py",
+      "type": "file",
+      "sha": "4c1b97a4f449fb004d1c9a6d17bb7bf1ec9553d8",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 151,
+      "is_binary": false
+    },
+    {
+      "name": "database.py",
+      "path": "backend/app/core/database.py",
+      "type": "file",
+      "sha": "d3759c6964e5758fe4fcf72fa86384ae2c46e2eb",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 453,
+      "is_binary": false
+    },
+    {
+      "name": "main.py",
+      "path": "backend/app/main.py",
+      "type": "file",
+      "sha": "66201e13051fb4436eb8b839f99f73107ec18233",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 229,
+      "is_binary": false
+    },
+    {
+      "name": "models",
+      "path": "backend/app/models",
+      "type": "directory",
+      "sha": "20c317793298c750f555a6a660ecfd590dc14594",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/app/models/__init__.py",
+      "type": "file",
+      "sha": "4e317e0204f1b3f4d8ff9fda319c1f6d2c063847",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 300,
+      "is_binary": false
+    },
+    {
+      "name": "avaliacao.py",
+      "path": "backend/app/models/avaliacao.py",
+      "type": "file",
+      "sha": "8009eeab5b39b39379f9d7a4493c755b3adaed39",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2503,
+      "is_binary": false
+    },
+    {
+      "name": "disciplina.py",
+      "path": "backend/app/models/disciplina.py",
+      "type": "file",
+      "sha": "e8d50598f2e910ae0778f7ee9c57ca6fcbf8413b",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 768,
+      "is_binary": false
+    },
+    {
+      "name": "enums.py",
+      "path": "backend/app/models/enums.py",
+      "type": "file",
+      "sha": "c4f6b1563273f75ded7d64dfb6bd6926cf2f3ceb",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 210,
+      "is_binary": false
+    },
+    {
+      "name": "professor.py",
+      "path": "backend/app/models/professor.py",
+      "type": "file",
+      "sha": "15847c8e8a2a62d10ad56d0a5d2ae145e7579002",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 592,
+      "is_binary": false
+    },
+    {
+      "name": "turma.py",
+      "path": "backend/app/models/turma.py",
+      "type": "file",
+      "sha": "f266061a73edac228fbb9245dc72e0bc76bbb670",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1005,
+      "is_binary": false
+    },
+    {
+      "name": "usuario.py",
+      "path": "backend/app/models/usuario.py",
+      "type": "file",
+      "sha": "cb871607accb94516ffdc519af44c0900b9110af",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 931,
+      "is_binary": false
+    },
+    {
+      "name": "routers",
+      "path": "backend/app/routers",
+      "type": "directory",
+      "sha": "f0d89c93f18b408fa0a81faecd9f3494af989452",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/app/routers/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "avaliacoes.py",
+      "path": "backend/app/routers/avaliacoes.py",
+      "type": "file",
+      "sha": "d484df6f5cf41ffc1c6c9690a1b934b386128d48",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 93,
+      "is_binary": false
+    },
+    {
+      "name": "schemas",
+      "path": "backend/app/schemas",
+      "type": "directory",
+      "sha": "ce0e8d55a2ec5c62e5d56a122a5cc2e9de8c5f96",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/app/schemas/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "avaliacao.py",
+      "path": "backend/app/schemas/avaliacao.py",
+      "type": "file",
+      "sha": "78159132034b00251e3b39fa5698f266213d3b6e",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 905,
+      "is_binary": false
+    },
+    {
+      "name": "services",
+      "path": "backend/app/services",
+      "type": "directory",
+      "sha": "6b4ee696e94692d935bf27e2260f5966c8bb96e0",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "backend/app/services/__init__.py",
+      "type": "file",
+      "sha": "63cb6dbfea0952bcc002fda93208dc271adbd7af",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 239,
+      "is_binary": false
+    },
+    {
+      "name": "requirements.txt",
+      "path": "backend/requirements.txt",
+      "type": "file",
+      "sha": "bc69607779e964f8f73d42776a1c142de89c43ca",
+      "mode": "100644",
+      "extension": ".txt",
+      "size": 86,
+      "is_binary": false
+    },
+    {
+      "name": "docs",
+      "path": "docs",
+      "type": "directory",
+      "sha": "760f7684c19fd36a62757029fc0a3fe1507f00f5",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "arquitetura.md",
+      "path": "docs/arquitetura.md",
+      "type": "file",
+      "sha": "033a03402056e997754d48d790bcbbf544f6ca3a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 13236,
+      "is_binary": false
+    },
+    {
+      "name": "diagramas",
+      "path": "docs/diagramas",
+      "type": "directory",
+      "sha": "e92fe7f7e6e4ff11ed93c7eb97e024a8e1e872af",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "gerar_modelos.py",
+      "path": "docs/diagramas/gerar_modelos.py",
+      "type": "file",
+      "sha": "48b3a17c2e1bb3ffec18d986cc3ae67be7175910",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 8293,
+      "is_binary": false
+    },
+    {
+      "name": "modelo conceitual.pdf",
+      "path": "docs/diagramas/modelo conceitual.pdf",
+      "type": "file",
+      "sha": "ae8c6dc109b61651796881720332e6846361ed4a",
+      "mode": "100644",
+      "extension": ".pdf",
+      "size": 3694,
+      "is_binary": false
+    },
+    {
+      "name": "modelo logico.pdf",
+      "path": "docs/diagramas/modelo logico.pdf",
+      "type": "file",
+      "sha": "93a7643a236184988d20f5605c7a918feda9948d",
+      "mode": "100644",
+      "extension": ".pdf",
+      "size": 4407,
+      "is_binary": false
+    },
+    {
+      "name": "estudos",
+      "path": "docs/estudos",
+      "type": "directory",
+      "sha": "9a5ec272ba2a442259bae8a827e4f4e018f628ed",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "docker.md",
+      "path": "docs/estudos/docker.md",
+      "type": "file",
+      "sha": "c68c6874887f4718d12d348967dcfb3da0775403",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 10637,
+      "is_binary": false
+    },
+    {
+      "name": "requisitos.md",
+      "path": "docs/requisitos.md",
+      "type": "file",
+      "sha": "afd8939995a7d5ee9390ca838e1de56745f8b29d",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 15186,
+      "is_binary": false
+    },
+    {
+      "name": "skills",
+      "path": "skills",
+      "type": "directory",
+      "sha": "996c208a6609f0c4258418a0b07dd7a686f8aa0b",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "engineering",
+      "path": "skills/engineering",
+      "type": "directory",
+      "sha": "7c61bd8fed6999ce25e419853a73a7f20b48bb75",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "architecture",
+      "path": "skills/engineering/architecture",
+      "type": "directory",
+      "sha": "8d1abc02b5659b21923a99a0891eeefd19bbc6a9",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "SKILL.md",
+      "path": "skills/engineering/architecture/SKILL.md",
+      "type": "file",
+      "sha": "0f6a8c2f9b5ab865c0ed17dd4bdfd4847b3a6a85",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 18871,
+      "is_binary": false
+    },
+    {
+      "name": "code-review",
+      "path": "skills/engineering/code-review",
+      "type": "directory",
+      "sha": "5c51327e3307f4276394778f46cfa378105bb4e3",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "SKILL.md",
+      "path": "skills/engineering/code-review/SKILL.md",
+      "type": "file",
+      "sha": "5915a491fda048f335f6144036c466a043bac4d2",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 13450,
+      "is_binary": false
+    },
+    {
+      "name": "implementation",
+      "path": "skills/engineering/implementation",
+      "type": "directory",
+      "sha": "5ca83fb9bbddf6e85420b99c80a1f22eea3f4800",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "SKILL.md",
+      "path": "skills/engineering/implementation/SKILL.md",
+      "type": "file",
+      "sha": "5c9def14d1cd2b00136108b4ed47faed00fbea29",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 8857,
+      "is_binary": false
+    },
+    {
+      "name": "testing",
+      "path": "skills/engineering/testing",
+      "type": "directory",
+      "sha": "89f4323ef806c8c6e568ca37d310f9ef5f97750d",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "SKILL.md",
+      "path": "skills/engineering/testing/SKILL.md",
+      "type": "file",
+      "sha": "f3d17367795ae33fa738148870e6be2adb06a122",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 12300,
+      "is_binary": false
+    },
+    {
+      "name": "governance",
+      "path": "skills/governance",
+      "type": "directory",
+      "sha": "ff90987ba24649161775f02f86fc53d02f621737",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "project-governance",
+      "path": "skills/governance/project-governance",
+      "type": "directory",
+      "sha": "6b15c28f481e0aecf077d22cead444c687b0bad0",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "SKILL.md",
+      "path": "skills/governance/project-governance/SKILL.md",
+      "type": "file",
+      "sha": "cd5565cbd6891b941e58a71422a2defcaf8cf9d5",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 11517,
+      "is_binary": false
+    },
+    {
+      "name": "references",
+      "path": "skills/governance/project-governance/references",
+      "type": "directory",
+      "sha": "8ab44052609a30ffc2e439ede6578d6532cba68a",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "HUMAN_APPROVAL_BOUNDARIES.md",
+      "path": "skills/governance/project-governance/references/HUMAN_APPROVAL_BOUNDARIES.md",
+      "type": "file",
+      "sha": "9a254a6ed3de02e18b1001ebbc14ce0ec520319c",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3559,
+      "is_binary": false
+    },
+    {
+      "name": "skill-authoring",
+      "path": "skills/governance/skill-authoring",
+      "type": "directory",
+      "sha": "60b5d178689792d9b16e41c701a253d5b07a90b1",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "SKILL.md",
+      "path": "skills/governance/skill-authoring/SKILL.md",
+      "type": "file",
+      "sha": "0c70284e254cba29f4e22b5593f6f3a64b66107f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 13338,
+      "is_binary": false
+    },
+    {
+      "name": "references",
+      "path": "skills/governance/skill-authoring/references",
+      "type": "directory",
+      "sha": "56172b10f67ec7ff93291cec8b8ef63f42070ca5",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "LIFECYCLE.md",
+      "path": "skills/governance/skill-authoring/references/LIFECYCLE.md",
+      "type": "file",
+      "sha": "a1985ed7c43750d8ffda08b8c2f419df12f281b6",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1534,
+      "is_binary": false
+    },
+    {
+      "name": "SKILL_TEMPLATE.md",
+      "path": "skills/governance/skill-authoring/references/SKILL_TEMPLATE.md",
+      "type": "file",
+      "sha": "21184eb29bd9c3bbe11b88dae10f2beacc838b18",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 1678,
+      "is_binary": false
+    },
+    {
+      "name": "VALIDATION_CHECKLIST.md",
+      "path": "skills/governance/skill-authoring/references/VALIDATION_CHECKLIST.md",
+      "type": "file",
+      "sha": "9f8f99f0462741b2dd20ceef5046db7a49f70b48",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2332,
+      "is_binary": false
+    },
+    {
+      "name": "process",
+      "path": "skills/process",
+      "type": "directory",
+      "sha": "b5cb6ce53758ae6d1b4a06ec96423512c59b74d3",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "requirements",
+      "path": "skills/process/requirements",
+      "type": "directory",
+      "sha": "176e56546f872f36cc184e6d9465e3d85961575f",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "SKILL.md",
+      "path": "skills/process/requirements/SKILL.md",
+      "type": "file",
+      "sha": "3e378f7505135f35b710d68b081f318799e6e617",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 11791,
+      "is_binary": false
+    },
+    {
+      "name": "technology",
+      "path": "skills/technology",
+      "type": "directory",
+      "sha": "34e63bae43d0d43ba09d5f4b7b92b4a1c78125dc",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "docker",
+      "path": "skills/technology/docker",
+      "type": "directory",
+      "sha": "7ac0ff214d2035efd263127fce641182dcd4b430",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "SKILL.md",
+      "path": "skills/technology/docker/SKILL.md",
+      "type": "file",
+      "sha": "ea6919b462d82718f4265444d290e93ed282cbea",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 7657,
+      "is_binary": false
+    },
+    {
+      "name": "fastapi",
+      "path": "skills/technology/fastapi",
+      "type": "directory",
+      "sha": "5a5534388a4277820d9ecef97b755e5300f9142a",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "SKILL.md",
+      "path": "skills/technology/fastapi/SKILL.md",
+      "type": "file",
+      "sha": "d124f4588b3ad7341a1d06a3b57babc83325e9b3",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 11060,
+      "is_binary": false
+    },
+    {
+      "name": "specs.md",
+      "path": "specs.md",
+      "type": "file",
+      "sha": "7876179a4e5de2409fe71dc30486d8065011c294",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 9889,
+      "is_binary": false
+    },
+    {
+      "name": "sprints",
+      "path": "sprints",
+      "type": "directory",
+      "sha": "947b7a499d2b8a5a414a7b26ad45b7d2db687dcf",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "sprint00",
+      "path": "sprints/sprint00",
+      "type": "directory",
+      "sha": "875745a4c6e194609f1f9e9e4bd80c67d41b201c",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "frontend.md",
+      "path": "sprints/sprint00/frontend.md",
+      "type": "file",
+      "sha": "ce1661e54a071fdb473275fce8aa65ad803fce6a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3196,
+      "is_binary": false
+    },
+    {
+      "name": "git.md",
+      "path": "sprints/sprint00/git.md",
+      "type": "file",
+      "sha": "9172e04d36bd860957c72c1399a21045baddab38",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 9458,
+      "is_binary": false
+    },
+    {
+      "name": "retorspectiva.md",
+      "path": "sprints/sprint00/retorspectiva.md",
+      "type": "file",
+      "sha": "4eff463e02aafc67f1206646e0f5f9fc732bbeb3",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 402,
+      "is_binary": false
+    },
+    {
+      "name": "sprint01",
+      "path": "sprints/sprint01",
+      "type": "directory",
+      "sha": "cea5d47a6cc61e2c260dfee435d38eafaecfff0a",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "estudo_metodologia_agil-and-scrum.md",
+      "path": "sprints/sprint01/estudo_metodologia_agil-and-scrum.md",
+      "type": "file",
+      "sha": "8f5b9bfddd21264888c9a8bf91ccc405d7ba6143",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 22616,
+      "is_binary": false
+    },
+    {
+      "name": "sprint02",
+      "path": "sprints/sprint02",
+      "type": "directory",
+      "sha": "bbcefd637dc1e0895f4b0c6b862bf3fb83686f2a",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "banco-de-dados.md",
+      "path": "sprints/sprint02/banco-de-dados.md",
+      "type": "file",
+      "sha": "000c3d35731ff199ca1bd9d9b4d0c6c9064ebbc0",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2436,
+      "is_binary": false
+    }
+  ],
+  "truncated": false,
+  "extracted_at": "2026-09-17T04:03:59.831907",
+  "method": "rest",
+  "total_items": 94,
+  "repository_metadata": {
+    "id": 1338351549,
+    "full_name": "unb-mds/2026-02-UnDb",
+    "description": "Grupo G7 - Metodos de Desenvolvimento de Software 2026/2",
+    "created_at": "2026-08-18T11:57:41Z",
+    "updated_at": "2026-09-16T15:55:42Z",
+    "language": "Python",
+    "size": 2485,
+    "stars": 3,
+    "forks": 0,
+    "open_issues": 29
+  }
+}
