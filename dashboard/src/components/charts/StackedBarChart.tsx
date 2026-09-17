@@ -81,7 +81,14 @@ export default function StackedBarChart({
       .attr('transform', `translate(${margin.left},${margin.top})`);
 
     // Stack the data
-    const stack = d3.stack<StackedBarData>().keys(keys);
+    // Missing (or non-numeric) keys count as 0 instead of producing NaN segments.
+    const stack = d3
+      .stack<StackedBarData>()
+      .keys(keys)
+      .value((d, key) => {
+        const value = Number(d[key]);
+        return Number.isFinite(value) ? value : 0;
+      });
     const series = stack(data);
 
     // Scales
