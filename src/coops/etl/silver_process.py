@@ -27,6 +27,9 @@ def main():
         from coops.silver.available_repos import process_available_repos
 
         # Process data in logical order
+        print("\nListing available repositories...")
+        repo_list_files = process_available_repos()
+
         print("\nStep 1: Processing member analytics...")
         member_files = process_member_analytics()
 
@@ -49,8 +52,6 @@ def main():
             save_hierarchy=True
         )
 
-        print("\nStep 7: Listing available repositories...")
-        repo_list_files = process_available_repos()
 
         # Update registry
         all_files = (member_files + contrib_files + collab_files + temporal_files
