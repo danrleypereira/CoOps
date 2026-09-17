@@ -59,17 +59,27 @@ GITHUB_ORG=coops-org
 
 ### Organization token for GitHub Actions
 
-The default Actions token only sees an organization's **public** members (19
-of 74 in `unb-mds`) and has a lower rate limit. To extract every member, add a
-token as the `COOPS_GITHUB_TOKEN` repository secret; the Bronze and validation
-workflows use it for reading GitHub and fall back to the default token when
-it's not set.
+Members are the organization's members plus everyone who contributed to the
+extracted repositories. The default Actions token only sees **public**
+memberships (none in `unb-mds`, whose members are all concealed), so without
+a token the list has only the contributors, and a lower rate limit applies.
+To include every organization member, add a token as the `COOPS_GITHUB_TOKEN`
+repository secret; the Bronze and validation workflows use it for reading
+GitHub and fall back to the default token when it's not set.
+
+> With this token, concealed memberships are extracted and committed to the
+> fork's public `main`, and the dashboard shows them.
 
 1. Create a [fine-grained token](https://github.com/settings/personal-access-tokens/new):
-   resource owner = the organization, repository access = *Public repositories*
-   (or the repositories to extract), organization permission
-   **Members: Read-only**. A classic token with the `read:org` scope also works.
-2. `gh secret set COOPS_GITHUB_TOKEN --repo <org>/CoOps` and paste it.
+   resource owner = the organization, repository access = **Public
+   repositories** (anything the token can read may be committed publicly, so
+   don't grant private repositories), organization permission
+   **Members: Read-only**.
+2. Paste it at the prompt of `gh secret set COOPS_GITHUB_TOKEN --repo <org>/CoOps`
+   (never in a chat, issue or command line).
+3. Fine-grained tokens expire: renew it and set the secret again before the
+   expiration date. An expired token makes the Bronze workflow fail at
+   "Verify organization is valid" with an HTTP 401.
 
 > To validate a branch against a real organization on GitHub Actions without committing any data, use the **Validate Pipeline (manual)** workflow — see [docs/TESTING_PULL_REQUESTS.md](docs/TESTING_PULL_REQUESTS.md).
 

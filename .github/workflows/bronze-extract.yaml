@@ -76,8 +76,17 @@ jobs:
         run: |
           OWNER="$GITHUB_ORG"
 
-          TYPE=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" \
-            https://api.github.com/users/$OWNER | jq -r .type)
+          STATUS=$(curl -s -o user.json -w '%{http_code}' -H "Authorization: Bearer $GITHUB_TOKEN" \
+            "https://api.github.com/users/$OWNER")
+          if [ "$STATUS" != "200" ]; then
+            echo "[ERROR]: GitHub returned HTTP $STATUS for $OWNER"
+            if [ "$STATUS" = "401" ]; then
+              echo "The token was rejected: renew the COOPS_GITHUB_TOKEN secret (fine-grained tokens expire) or delete it."
+            fi
+            exit 1
+          fi
+          TYPE=$(jq -r .type user.json)
+          rm -f user.json
 
           if [ "$TYPE" = "Organization" ]; then
             echo "[SUCCESS] Valid organization: $OWNER"
@@ -95,9 +104,10 @@ jobs:
       - name: Extract Bronze layer data
         id: extraction
         env:
-          # COOPS_GITHUB_TOKEN (a PAT with read:org) sees private organization
-          # members and has a higher rate limit; the default token only sees
-          # public members. Pushing data below still uses the default token.
+          # COOPS_GITHUB_TOKEN (Members: Read-only) also lists concealed
+          # organization members and has a higher rate limit; the default token
+          # only sees public memberships. Pushing data still uses the default
+          # token.
           GITHUB_TOKEN: ${{ secrets.COOPS_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           GITHUB_ORG: ${{ vars.COOPS_ORG || github.repository_owner }}
           MAX_REPOS: ${{ github.event.inputs.max_repos }}
