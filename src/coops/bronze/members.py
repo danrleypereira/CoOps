@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """
 Organization members extraction for Bronze layer.
-Extracts raw member data from GitHub API with contributor fallback.
+
+"Members" are the union of the organization's members (as visible to the
+token) and everyone who contributed to the extracted repositories.
 """
 
 from typing import Any, Dict, List, Optional
@@ -10,10 +12,10 @@ from coops.utils.data_helpers import strip_metadata
 
 
 def _discover_contributors(client: GitHubAPIClient, use_cache: bool) -> List[Dict[str, Any]]:
-    """Fallback when the members API returns nothing: contributors of the extracted repositories."""
+    """Contributors of the extracted repositories, with their total contributions."""
     repos_data = load_json_data("data/bronze/repositories_filtered.json")
     if not repos_data or not isinstance(repos_data, list):
-        print(" Fallback impossible: No repository data available")
+        print(" Contributors: no repository data available")
         return []
 
     contributor_details: Dict[str, Dict[str, Any]] = {}
@@ -40,14 +42,45 @@ def _discover_contributors(client: GitHubAPIClient, use_cache: bool) -> List[Dic
                 # Accumulate contributions from multiple repos
                 contributor_details[login]['contributions_total'] += contrib.get('contributions', 0)
 
-    if not contributor_details:
-        print(" Fallback failed: No contributors found in repositories")
-        return []
-
     contributors = sorted(contributor_details.values(), key=lambda c: c.get('contributions_total', 0), reverse=True)
-    print(f" Fallback successful: Found {len(contributors)} active contributors")
-    print(f"Top contributor: {contributors[0]['login']} ({contributors[0]['contributions_total']} contributions)")
+    if contributors:
+        print(f" Contributors: found {len(contributors)} across the extracted repositories")
+        print(f"Top contributor: {contributors[0]['login']} ({contributors[0]['contributions_total']} contributions)")
+    else:
+        print(" Contributors: none found in the extracted repositories")
     return contributors
+
+
+def _merge_members(
+    org_members: List[Dict[str, Any]], contributors: List[Dict[str, Any]]
+) -> List[Dict[str, Any]]:
+    """Union of organization members and contributors, one record per login.
+
+    `is_org_member` tells whether the login was returned by the organization
+    members API; `contributions_total` is 0 for members who didn't contribute.
+    Sorted by contributions (descending), then login.
+    """
+    merged: Dict[str, Dict[str, Any]] = {}
+    for member in org_members:
+        if not (isinstance(member, dict) and member.get('login')):
+            continue
+        merged[member['login']] = {
+            **member,
+            'is_org_member': True,
+            'contributions_total': 0,
+            'data_source': 'members_api',
+        }
+    for contributor in contributors:
+        login = contributor['login']
+        if login in merged:
+            merged[login].update(
+                contributions_total=contributor.get('contributions_total', 0),
+                data_source='members_api+contributors_api',
+                discovered_from_repo=contributor.get('discovered_from_repo'),
+            )
+        else:
+            merged[login] = {**contributor, 'is_org_member': False}
+    return sorted(merged.values(), key=lambda m: (-m.get('contributions_total', 0), m['login'].lower()))
 
 
 # Profile fields kept from /users/{login}: what Silver's member analytics
@@ -112,22 +145,19 @@ def _fetch_member_details(
 
 
 def extract_members(client: GitHubAPIClient, config: OrganizationConfig, use_cache: bool = True) -> List[str]:
-    """Extract organization members to bronze layer with contributor fallback."""
+    """Extract organization members and repository contributors to the bronze layer."""
 
     members_url = f"https://api.github.com/orgs/{config.org_name}/members"
-    raw_members = client.get_paginated(members_url, use_cache=use_cache, per_page=100)
+    org_members = client.get_paginated(members_url, use_cache=use_cache, per_page=100) or []
+    print(f" Organization members API returned {len(org_members)} members")
+    if not org_members:
+        print("   (the default Actions token only sees public memberships; see COOPS_GITHUB_TOKEN)")
 
-    if not raw_members:
-        print(" Organization members API returned empty. This could be due to:")
-        print("   - Private member visibility settings")
-        print("   - Insufficient token permissions")
-        print("   - Organization configuration")
-        print("Activating fallback: discovering active contributors...")
-        raw_members = _discover_contributors(client, use_cache)
-    else:
-        print(f" Successfully fetched {len(raw_members)} organization members via members API")
-
-    print(f" Found {len(raw_members)} organization members")
+    contributors = _discover_contributors(client, use_cache)
+    raw_members = _merge_members(org_members, contributors)
+    org_count = sum(1 for m in raw_members if m['is_org_member'])
+    print(f" Found {len(raw_members)} members ({org_count} organization members, "
+          f"{len(raw_members) - org_count} other contributors)")
 
     if not raw_members:
         print("  No members data available, but continuing with empty dataset")

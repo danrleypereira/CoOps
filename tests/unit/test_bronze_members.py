@@ -1,8 +1,9 @@
 """
 Testes unitários para o módulo bronze.members.
 
-Testa a extração de membros da organização: lista paginada, fallback para
-contributors e perfis detalhados (necessários para o member analytics do Silver).
+Testa a extração de membros: união dos membros da organização com os
+contributors dos repositórios, e perfis detalhados (necessários para o member
+analytics do Silver).
 """
 
 import pytest
@@ -43,6 +44,22 @@ def make_client(members=None, contributors=None, profiles=None, remaining=None):
     return client
 
 
+REPOS = [
+    {"_metadata": {"extracted_at": "2024-01-01"}},
+    None,
+    {"name": "invalid"},  # sem full_name
+    {"full_name": "test-org/repo1", "name": "repo1"},
+    {"full_name": "test-org/repo2", "name": "repo2"},
+]
+
+
+@pytest.fixture(autouse=True)
+def no_repositories():
+    """Por padrão não há repositórios extraídos (nada de ./data real)."""
+    with patch('coops.bronze.members.load_json_data', return_value=None) as mock_load:
+        yield mock_load
+
+
 @pytest.fixture
 def saved():
     """Captura o que é salvo, por caminho."""
@@ -71,7 +88,9 @@ class TestExtractMembers:
 
         assert result == ["data/bronze/members_basic.json", "data/bronze/members_detailed.json"]
         assert [m["login"] for m in saved["data/bronze/members_basic.json"]] == ["user1", "user2"]
-        assert "Successfully fetched 2 organization members" in capsys.readouterr().out
+        out = capsys.readouterr().out
+        assert "Organization members API returned 2 members" in out
+        assert "Found 2 members (2 organization members, 0 other contributors)" in out
 
     def test_members_list_is_paginated(self, saved):
         """A lista de membros não pode parar na primeira página (30 itens)."""
@@ -90,7 +109,8 @@ class TestExtractMembers:
 
         detailed = saved["data/bronze/members_detailed.json"]
         assert detailed == [{"login": "user1", "id": 1, "type": "User", "created_at": "2015-05-05T00:00:00Z",
-                             "public_repos": 42, "followers": 7, "following": 2, "profile_fetched": True}]
+                             "public_repos": 42, "followers": 7, "following": 2, "profile_fetched": True,
+                             "is_org_member": True, "contributions_total": 0, "data_source": "members_api"}]
         client.get_with_cache.assert_called_once_with(
             "https://api.github.com/users/user1", True, return_headers=True)
 
@@ -149,57 +169,74 @@ class TestExtractMembers:
         assert set(saved) == {"data/bronze/members_basic.json", "data/bronze/members_detailed.json"}
 
 
-class TestContributorFallback:
-    """Fallback quando a API de membros não retorna ninguém."""
+class TestContributors:
+    """Contributors dos repositórios extraídos entram na lista de membros."""
 
-    REPOS = [
-        {"_metadata": {"extracted_at": "2024-01-01"}},
-        None,
-        {"name": "invalid"},  # sem full_name
-        {"full_name": "test-org/repo1", "name": "repo1"},
-        {"full_name": "test-org/repo2", "name": "repo2"},
-    ]
+    @staticmethod
+    def contributors(url):
+        if "repo1" in url:
+            return [{"login": "low", "contributions": 5}, {"login": "top", "contributions": 30}]
+        return [{"login": "top", "contributions": 30}]
 
-    def test_fallback_accumulates_and_sorts_contributors(self, saved, capsys):
-        def contributors(url):
-            if "repo1" in url:
-                return [{"login": "low", "contributions": 5}, {"login": "top", "contributions": 30}]
-            return [{"login": "top", "contributions": 30}]
-
-        client = make_client(members=[], contributors=contributors)
-        with patch('coops.bronze.members.load_json_data', return_value=self.REPOS):
-            extract_members(client, config())
+    def test_contributors_are_accumulated_and_sorted(self, saved, capsys, no_repositories):
+        no_repositories.return_value = REPOS
+        client = make_client(members=[], contributors=self.contributors)
+        extract_members(client, config())
 
         basic = saved["data/bronze/members_basic.json"]
-        assert [(m["login"], m["contributions_total"]) for m in basic] == [("top", 60), ("low", 5)]
+        assert [(m["login"], m["contributions_total"], m["is_org_member"]) for m in basic] == [
+            ("top", 60, False), ("low", 5, False)]
         assert basic[0]["data_source"] == "contributors_api"
         contrib_urls = [c.args[0] for c in client.get_paginated.call_args_list[1:]]
         assert contrib_urls == ["https://api.github.com/repos/test-org/repo1/contributors",
                                 "https://api.github.com/repos/test-org/repo2/contributors"]
-        # detailed profiles keep the fallback's contribution counts
+        # detailed profiles keep the contribution counts
         detailed = saved["data/bronze/members_detailed.json"]
         assert [(m["login"], m["contributions_total"]) for m in detailed] == [("top", 60), ("low", 5)]
 
         out = capsys.readouterr().out
-        assert "Fallback successful: Found 2 active contributors" in out
+        assert "Organization members API returned 0 members" in out
+        assert "Contributors: found 2 across the extracted repositories" in out
         assert "Top contributor: top (60 contributions)" in out
+        assert "Found 2 members (0 organization members, 2 other contributors)" in out
+
+    def test_org_members_and_contributors_are_merged(self, saved, capsys, no_repositories):
+        """Membros que não contribuíram também entram; quem é as duas coisas aparece uma vez."""
+        no_repositories.return_value = REPOS
+        client = make_client(members=[{"login": "alice", "id": 1}, {"login": "top", "id": 2}],
+                             contributors=self.contributors)
+        extract_members(client, config())
+
+        basic = saved["data/bronze/members_basic.json"]
+        assert [(m["login"], m["is_org_member"], m["contributions_total"], m["data_source"]) for m in basic] == [
+            ("top", True, 60, "members_api+contributors_api"),
+            ("low", False, 5, "contributors_api"),
+            ("alice", True, 0, "members_api"),
+        ]
+        assert basic[0]["id"] == 2
+        assert "Found 3 members (2 organization members, 1 other contributors)" in capsys.readouterr().out
 
     @pytest.mark.parametrize("members", [[], None])
-    def test_no_repositories_writes_empty_files(self, saved, capsys, members):
+    def test_no_repositories_and_no_org_members_writes_empty_files(self, saved, capsys, members):
         client = make_client(members=members)
-        with patch('coops.bronze.members.load_json_data', return_value=None):
-            result = extract_members(client, config())
+        result = extract_members(client, config())
 
         assert result == ["data/bronze/members_basic.json", "data/bronze/members_detailed.json"]
         assert saved == {"data/bronze/members_basic.json": [], "data/bronze/members_detailed.json": []}
         out = capsys.readouterr().out
-        assert "Fallback impossible" in out
+        assert "Contributors: no repository data available" in out
         assert "Created empty member files" in out
 
-    def test_no_contributors_writes_empty_files(self, saved, capsys):
+    def test_org_members_without_repositories(self, saved, capsys):
+        client = make_client(members=[{"login": "alice"}])
+        extract_members(client, config())
+
+        assert [m["login"] for m in saved["data/bronze/members_basic.json"]] == ["alice"]
+
+    def test_no_contributors_writes_empty_files(self, saved, capsys, no_repositories):
+        no_repositories.return_value = REPOS
         client = make_client(members=[], contributors=[])
-        with patch('coops.bronze.members.load_json_data', return_value=self.REPOS):
-            extract_members(client, config())
+        extract_members(client, config())
 
         assert saved == {"data/bronze/members_basic.json": [], "data/bronze/members_detailed.json": []}
-        assert "Fallback failed" in capsys.readouterr().out
+        assert "Contributors: none found" in capsys.readouterr().out
