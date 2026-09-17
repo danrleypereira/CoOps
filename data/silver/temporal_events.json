@@ -1,9 +1,9 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-17T04:04:40.005657",
+      "extracted_at": "2026-09-17T05:08:01.308314",
       "file_path": "data/silver/temporal_events.json",
-      "record_count": 120092
+      "record_count": 120094
     }
   },
   {
@@ -66658,24 +66658,6 @@
     "user": "acamposs"
   },
   {
-    "date": "2023-11-22T14:09:06",
-    "type": "commit",
-    "repo": "2023.2_DeOlhoRS",
-    "user": "cqcoding",
-    "additions": 78,
-    "deletions": 0,
-    "total_changes": 78
-  },
-  {
-    "date": "2023-11-22T14:18:11",
-    "type": "commit",
-    "repo": "2023.2_DeOlhoRS",
-    "user": "cqcoding",
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0
-  },
-  {
     "date": "2023-11-22T14:22:20",
     "type": "commit",
     "repo": "2023-2-Squad10",
@@ -67535,6 +67517,24 @@
     "type": "event_closed",
     "repo": "squad03-r2",
     "user": "joycedio"
+  },
+  {
+    "date": "2023-11-23T00:32:38",
+    "type": "commit",
+    "repo": "2023.2_DeOlhoRS",
+    "user": "cqcoding",
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0
+  },
+  {
+    "date": "2023-11-23T00:32:38",
+    "type": "commit",
+    "repo": "2023.2_DeOlhoRS",
+    "user": "cqcoding",
+    "additions": 78,
+    "deletions": 0,
+    "total_changes": 78
   },
   {
     "date": "2023-11-23T00:33:32",
@@ -207298,7 +207298,7 @@
     "date": "2024-08-15T04:13:19",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -209347,7 +209347,7 @@
     "date": "2024-08-16T04:10:02",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -210445,7 +210445,7 @@
     "date": "2024-08-17T04:19:51",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -214969,7 +214969,7 @@
     "date": "2024-08-20T04:06:20",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -216793,7 +216793,7 @@
     "date": "2024-08-21T04:13:55",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -219088,7 +219088,7 @@
     "date": "2024-08-22T04:12:54",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -231109,7 +231109,7 @@
     "date": "2024-08-28T04:08:55",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -234028,7 +234028,7 @@
     "date": "2024-08-29T04:13:42",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -235015,7 +235015,7 @@
     "date": "2024-08-30T04:12:36",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -236512,7 +236512,7 @@
     "date": "2024-08-31T04:16:44",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -237307,7 +237307,7 @@
     "date": "2024-09-02T03:17:01",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -239104,7 +239104,7 @@
     "date": "2024-09-03T04:12:59",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -242029,7 +242029,7 @@
     "date": "2024-09-04T04:06:20",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243346,7 +243346,7 @@
     "date": "2024-09-05T04:15:26",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243499,7 +243499,7 @@
     "date": "2024-09-06T04:17:21",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243508,7 +243508,7 @@
     "date": "2024-09-07T04:28:47",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243517,7 +243517,7 @@
     "date": "2024-09-10T04:15:47",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243694,7 +243694,7 @@
     "date": "2024-09-11T04:05:57",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243772,7 +243772,7 @@
     "date": "2024-09-12T04:10:48",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243781,7 +243781,7 @@
     "date": "2024-09-13T04:16:24",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243790,7 +243790,7 @@
     "date": "2024-09-14T04:13:32",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243799,7 +243799,7 @@
     "date": "2024-09-17T04:11:13",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243832,7 +243832,7 @@
     "date": "2024-09-18T04:07:00",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243841,7 +243841,7 @@
     "date": "2024-09-19T04:12:13",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243850,7 +243850,7 @@
     "date": "2024-09-20T04:10:57",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243859,7 +243859,7 @@
     "date": "2024-09-21T04:10:19",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243868,7 +243868,7 @@
     "date": "2024-09-24T04:09:45",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243877,7 +243877,7 @@
     "date": "2024-09-25T04:08:15",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243886,7 +243886,7 @@
     "date": "2024-09-26T04:21:55",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243895,7 +243895,7 @@
     "date": "2024-09-27T04:09:55",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243904,7 +243904,7 @@
     "date": "2024-09-28T04:14:58",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243913,7 +243913,7 @@
     "date": "2024-10-01T04:17:49",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243922,7 +243922,7 @@
     "date": "2024-10-02T04:08:30",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243940,7 +243940,7 @@
     "date": "2024-10-03T04:10:11",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243949,7 +243949,7 @@
     "date": "2024-10-04T04:11:32",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243958,7 +243958,7 @@
     "date": "2024-10-05T04:10:52",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243967,7 +243967,7 @@
     "date": "2024-10-08T04:06:22",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243976,7 +243976,7 @@
     "date": "2024-10-09T03:55:31",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243994,7 +243994,7 @@
     "date": "2024-10-10T04:08:44",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -244021,7 +244021,7 @@
     "date": "2024-10-11T04:14:02",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -244030,7 +244030,7 @@
     "date": "2024-10-12T04:17:07",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -244039,7 +244039,7 @@
     "date": "2024-10-15T04:10:36",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -244048,7 +244048,7 @@
     "date": "2024-10-16T04:09:43",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -244057,7 +244057,7 @@
     "date": "2024-10-17T04:15:17",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -244066,7 +244066,7 @@
     "date": "2024-10-18T04:13:14",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -244075,7 +244075,7 @@
     "date": "2024-10-19T04:16:56",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -244084,7 +244084,7 @@
     "date": "2024-10-22T04:10:45",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -244093,7 +244093,7 @@
     "date": "2024-10-23T04:08:33",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -244102,7 +244102,7 @@
     "date": "2024-10-24T05:17:14",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -244120,7 +244120,7 @@
     "date": "2024-10-25T05:20:39",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -244372,7 +244372,7 @@
     "date": "2024-10-26T05:26:13",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -245389,7 +245389,7 @@
     "date": "2024-10-30T05:16:42",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -246394,7 +246394,7 @@
     "date": "2024-10-31T04:11:42",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -246781,7 +246781,7 @@
     "date": "2024-11-01T05:44:46",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -248254,7 +248254,7 @@
     "date": "2024-11-02T06:12:01",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -250939,7 +250939,7 @@
     "date": "2024-11-05T05:03:49",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -252631,7 +252631,7 @@
     "date": "2024-11-06T05:09:51",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -253759,7 +253759,7 @@
     "date": "2024-11-07T05:19:54",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -254335,7 +254335,7 @@
     "date": "2024-11-08T05:17:33",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -255064,7 +255064,7 @@
     "date": "2024-11-09T05:31:10",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -256978,7 +256978,7 @@
     "date": "2024-11-12T05:16:03",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -258304,7 +258304,7 @@
     "date": "2024-11-13T05:09:42",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -259021,7 +259021,7 @@
     "date": "2024-11-14T05:15:23",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -259306,7 +259306,7 @@
     "date": "2024-11-15T05:42:50",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -262255,7 +262255,7 @@
     "date": "2024-11-19T05:29:06",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -263206,7 +263206,7 @@
     "date": "2024-11-20T05:10:39",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -263935,7 +263935,7 @@
     "date": "2024-11-22T05:32:03",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -264862,7 +264862,7 @@
     "date": "2024-11-23T05:48:08",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -267733,7 +267733,7 @@
     "date": "2024-11-26T05:27:14",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -269125,7 +269125,7 @@
     "date": "2024-11-27T05:23:14",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -270751,7 +270751,7 @@
     "date": "2024-11-28T05:34:50",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -271321,7 +271321,7 @@
     "date": "2024-11-29T05:35:17",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -271969,7 +271969,7 @@
     "date": "2024-11-30T05:30:25",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -273310,7 +273310,7 @@
     "date": "2024-12-02T03:35:04",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -273967,7 +273967,7 @@
     "date": "2024-12-03T05:36:20",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -275251,7 +275251,7 @@
     "date": "2024-12-04T05:19:50",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -275860,7 +275860,7 @@
     "date": "2024-12-05T05:31:31",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -276418,7 +276418,7 @@
     "date": "2024-12-06T05:35:47",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -276994,7 +276994,7 @@
     "date": "2024-12-07T05:39:55",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -281131,7 +281131,7 @@
     "date": "2024-12-10T05:16:28",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -283492,7 +283492,7 @@
     "date": "2024-12-11T05:23:28",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -284611,7 +284611,7 @@
     "date": "2024-12-12T05:14:52",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -287005,7 +287005,7 @@
     "date": "2024-12-13T05:13:49",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -287458,7 +287458,7 @@
     "date": "2024-12-14T05:07:46",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -288325,7 +288325,7 @@
     "date": "2024-12-17T04:52:11",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -288664,7 +288664,7 @@
     "date": "2024-12-18T04:37:31",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -288871,7 +288871,7 @@
     "date": "2024-12-19T04:53:58",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -289072,7 +289072,7 @@
     "date": "2024-12-20T05:16:55",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -289180,7 +289180,7 @@
     "date": "2024-12-21T04:47:35",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -289756,7 +289756,7 @@
     "date": "2024-12-24T04:33:51",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -290023,7 +290023,7 @@
     "date": "2024-12-25T03:56:31",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -290749,7 +290749,7 @@
     "date": "2024-12-27T03:48:21",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -290806,7 +290806,7 @@
     "date": "2024-12-28T04:31:24",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -292042,7 +292042,7 @@
     "date": "2024-12-31T04:29:29",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -292210,7 +292210,7 @@
     "date": "2025-01-01T04:04:44",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -292255,7 +292255,7 @@
     "date": "2025-01-02T03:19:14",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -292417,7 +292417,7 @@
     "date": "2025-01-03T03:52:52",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -292489,7 +292489,7 @@
     "date": "2025-01-04T03:54:37",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -293500,7 +293500,7 @@
     "date": "2025-01-07T03:52:04",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -294139,7 +294139,7 @@
     "date": "2025-01-08T04:00:55",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -295384,7 +295384,7 @@
     "date": "2025-01-09T04:20:47",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -295735,7 +295735,7 @@
     "date": "2025-01-10T04:17:28",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -296587,7 +296587,7 @@
     "date": "2025-01-11T04:18:11",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -298513,7 +298513,7 @@
     "date": "2025-01-14T04:20:26",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -300307,7 +300307,7 @@
     "date": "2025-01-15T04:17:29",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -300922,7 +300922,7 @@
     "date": "2025-01-16T04:41:42",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -301345,7 +301345,7 @@
     "date": "2025-01-17T05:06:26",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -302530,7 +302530,7 @@
     "date": "2025-01-18T05:11:00",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -307336,7 +307336,7 @@
     "date": "2025-01-21T04:37:16",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -308542,7 +308542,7 @@
     "date": "2025-01-22T04:47:31",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -311536,7 +311536,7 @@
     "date": "2025-01-23T04:46:35",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -312850,7 +312850,7 @@
     "date": "2025-01-24T05:03:46",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -320242,7 +320242,7 @@
     "date": "2025-01-28T03:30:33",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -321673,7 +321673,7 @@
     "date": "2025-01-29T03:32:27",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "actions",
+    "user": "unknown",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -804761,5 +804761,23 @@
     "type": "event_assigned",
     "repo": "2026-02-UnDb",
     "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-17T04:22:28",
+    "type": "commit",
+    "repo": "DFemObras-2025.1",
+    "user": "github-actions[bot]",
+    "additions": 700,
+    "deletions": 1,
+    "total_changes": 701
+  },
+  {
+    "date": "2026-09-17T04:37:13",
+    "type": "commit",
+    "repo": "2026-1-SafeStreets",
+    "user": "actions-user",
+    "additions": 7,
+    "deletions": 7,
+    "total_changes": 14
   }
 ]

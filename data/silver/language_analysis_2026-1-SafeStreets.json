@@ -2,7 +2,7 @@
   "repository": "2026-1-SafeStreets",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T04:03:50.169570",
+  "analyzed_at": "2026-09-17T05:07:08.803921",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -706,7 +706,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T04:04:44.667661",
+    "extracted_at": "2026-09-17T05:08:04.831543",
     "file_path": "data/silver/language_analysis_2026-1-SafeStreets.json"
   }
 }

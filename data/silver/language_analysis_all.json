@@ -1,7 +1,7 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-17T04:04:45.118359",
+      "extracted_at": "2026-09-17T05:08:05.137815",
       "file_path": "data/silver/language_analysis_all.json",
       "record_count": 97
     }
@@ -10,7 +10,7 @@
     "repository": "2023-2-Squad03-LicitAL",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:12.675831",
+    "analyzed_at": "2026-09-17T05:06:36.706435",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -1574,17 +1574,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:43.263852",
-      "file_path": "data/silver/language_analysis_2023-2-Squad03-LicitAL.json"
-    }
+    ]
   },
   {
     "repository": "2023-2-Squad02-Desmatazonia",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:10.919852",
+    "analyzed_at": "2026-09-17T05:06:35.383887",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -2148,17 +2144,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:43.662033",
-      "file_path": "data/silver/language_analysis_2023-2-Squad02-Desmatazonia.json"
-    }
+    ]
   },
   {
     "repository": "2024-2-Agio",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:30.644177",
+    "analyzed_at": "2026-09-17T05:06:52.877595",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -2600,17 +2592,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:43.669260",
-      "file_path": "data/silver/language_analysis_2024-2-Agio.json"
-    }
+    ]
   },
   {
     "repository": "2026-2-Bandejao-UnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:59.412432",
+    "analyzed_at": "2026-09-17T05:07:17.081264",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -2714,17 +2702,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:43.671215",
-      "file_path": "data/silver/language_analysis_2026-2-Bandejao-UnB.json"
-    }
+    ]
   },
   {
     "repository": "2026-2-AgendaUnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:04:00.271858",
+    "analyzed_at": "2026-09-17T05:07:18.009811",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -2954,17 +2938,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:43.671867",
-      "file_path": "data/silver/language_analysis_2026-2-AgendaUnB.json"
-    }
+    ]
   },
   {
     "repository": "2026-2-Bandejao",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:04:02.119639",
+    "analyzed_at": "2026-09-17T05:07:19.572826",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -3374,17 +3354,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:43.673070",
-      "file_path": "data/silver/language_analysis_2026-2-Bandejao.json"
-    }
+    ]
   },
   {
     "repository": "2023-2-JuizVirtual",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:14.928995",
+    "analyzed_at": "2026-09-17T05:06:38.500579",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -3948,17 +3924,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:43.675601",
-      "file_path": "data/silver/language_analysis_2023-2-JuizVirtual.json"
-    }
+    ]
   },
   {
     "repository": "2025-2-GuiaDev",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:47.869997",
+    "analyzed_at": "2026-09-17T05:07:06.786248",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -4674,17 +4646,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:43.679412",
-      "file_path": "data/silver/language_analysis_2025-2-GuiaDev.json"
-    }
+    ]
   },
   {
     "repository": "2023-2-Squad04",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:13.791514",
+    "analyzed_at": "2026-09-17T05:06:37.448671",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -5078,17 +5046,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:43.683602",
-      "file_path": "data/silver/language_analysis_2023-2-Squad04.json"
-    }
+    ]
   },
   {
     "repository": "2023-2-Squad10",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:18.026614",
+    "analyzed_at": "2026-09-17T05:06:41.371405",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -5568,17 +5532,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:43.707173",
-      "file_path": "data/silver/language_analysis_2023-2-Squad10.json"
-    }
+    ]
   },
   {
     "repository": "2026-1-Squad07",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:52.489157",
+    "analyzed_at": "2026-09-17T05:07:10.859216",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -6232,17 +6192,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:43.754647",
-      "file_path": "data/silver/language_analysis_2026-1-Squad07.json"
-    }
+    ]
   },
   {
     "repository": "2024-1-Squad02-CulturaTransparente",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:22.669181",
+    "analyzed_at": "2026-09-17T05:06:45.436628",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -6868,17 +6824,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:43.761343",
-      "file_path": "data/silver/language_analysis_2024-1-Squad02-CulturaTransparente.json"
-    }
+    ]
   },
   {
     "repository": "mapadaacessibilidade",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:36.386539",
+    "analyzed_at": "2026-09-17T05:06:57.274060",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -7722,17 +7674,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:43.784544",
-      "file_path": "data/silver/language_analysis_mapadaacessibilidade.json"
-    }
+    ]
   },
   {
     "repository": "2023-2-SuaGradeUnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:18.523516",
+    "analyzed_at": "2026-09-17T05:06:41.813526",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -8346,17 +8294,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:43.827384",
-      "file_path": "data/silver/language_analysis_2023-2-SuaGradeUnB.json"
-    }
+    ]
   },
   {
     "repository": "2026-2-MonitoraUnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:04:01.629262",
+    "analyzed_at": "2026-09-17T05:07:19.167844",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -8460,17 +8404,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:43.831447",
-      "file_path": "data/silver/language_analysis_2026-2-MonitoraUnB.json"
-    }
+    ]
   },
   {
     "repository": "portfolio-MDS",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:21.462729",
+    "analyzed_at": "2026-09-17T05:06:44.445701",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -9014,17 +8954,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:43.832357",
-      "file_path": "data/silver/language_analysis_portfolio-MDS.json"
-    }
+    ]
   },
   {
     "repository": "2024-2-ChamaControl",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:33.065693",
+    "analyzed_at": "2026-09-17T05:06:54.835055",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -9562,17 +9498,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:43.834764",
-      "file_path": "data/silver/language_analysis_2024-2-ChamaControl.json"
-    }
+    ]
   },
   {
     "repository": "2026.1-ContraDito",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:54.174196",
+    "analyzed_at": "2026-09-17T05:07:12.100569",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -10276,17 +10208,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:43.838726",
-      "file_path": "data/silver/language_analysis_2026.1-ContraDito.json"
-    }
+    ]
   },
   {
     "repository": "2024-2-Squad06",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:31.484024",
+    "analyzed_at": "2026-09-17T05:06:53.583794",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -10828,17 +10756,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:43.843636",
-      "file_path": "data/silver/language_analysis_2024-2-Squad06.json"
-    }
+    ]
   },
   {
     "repository": "exemplogitpage",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:48.374938",
+    "analyzed_at": "2026-09-17T05:07:07.204775",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -10874,17 +10798,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:43.845579",
-      "file_path": "data/silver/language_analysis_exemplogitpage.json"
-    }
+    ]
   },
   {
     "repository": "2025-2-SeLiga",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:46.746577",
+    "analyzed_at": "2026-09-17T05:07:06.013540",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -11466,17 +11386,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:43.846495",
-      "file_path": "data/silver/language_analysis_2025-2-SeLiga.json"
-    }
+    ]
   },
   {
     "repository": "2026-1-Squad13",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:54.626307",
+    "analyzed_at": "2026-09-17T05:07:12.581448",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -12180,17 +12096,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:43.851060",
-      "file_path": "data/silver/language_analysis_2026-1-Squad13.json"
-    }
+    ]
   },
   {
     "repository": "2023.2_DeOlhoRS",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:16.350544",
+    "analyzed_at": "2026-09-17T05:06:40.360372",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -13354,17 +13266,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:43.924187",
-      "file_path": "data/silver/language_analysis_2023.2_DeOlhoRS.json"
-    }
+    ]
   },
   {
     "repository": "2025-1-Eletta",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:39.536240",
+    "analyzed_at": "2026-09-17T05:06:59.932502",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -14212,17 +14120,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.067585",
-      "file_path": "data/silver/language_analysis_2025-1-Eletta.json"
-    }
+    ]
   },
   {
     "repository": "2025-2-Synapse",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:47.331974",
+    "analyzed_at": "2026-09-17T05:07:06.370390",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -14790,17 +14694,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.074179",
-      "file_path": "data/silver/language_analysis_2025-2-Synapse.json"
-    }
+    ]
   },
   {
     "repository": "2023.2_Gotinha",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:21.103141",
+    "analyzed_at": "2026-09-17T05:06:44.099934",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -15050,17 +14950,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.077131",
-      "file_path": "data/silver/language_analysis_2023.2_Gotinha.json"
-    }
+    ]
   },
   {
     "repository": "Mds-ArenaPesadelo",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:24.619376",
+    "analyzed_at": "2026-09-17T05:06:47.072313",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -15726,17 +15622,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.079797",
-      "file_path": "data/silver/language_analysis_Mds-ArenaPesadelo.json"
-    }
+    ]
   },
   {
     "repository": "2024-2-AcheiUnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:30.180990",
+    "analyzed_at": "2026-09-17T05:06:52.382563",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -16550,17 +16442,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.086098",
-      "file_path": "data/silver/language_analysis_2024-2-AcheiUnB.json"
-    }
+    ]
   },
   {
     "repository": "2026-1-Squad14",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:55.140029",
+    "analyzed_at": "2026-09-17T05:07:13.008546",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -16596,17 +16484,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.090042",
-      "file_path": "data/silver/language_analysis_2026-1-Squad14.json"
-    }
+    ]
   },
   {
     "repository": "2026-2-GlossarioUnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:04:01.170698",
+    "analyzed_at": "2026-09-17T05:07:18.833661",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -16750,17 +16634,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.090456",
-      "file_path": "data/silver/language_analysis_2026-2-GlossarioUnB.json"
-    }
+    ]
   },
   {
     "repository": "2024-1-Squad08",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:25.647706",
+    "analyzed_at": "2026-09-17T05:06:47.990803",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -17092,17 +16972,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.091324",
-      "file_path": "data/silver/language_analysis_2024-1-Squad08.json"
-    }
+    ]
   },
   {
     "repository": "2025.1-RelatoriosInteligentesBCB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:38.558521",
+    "analyzed_at": "2026-09-17T05:06:59.126417",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -17314,17 +17190,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.092542",
-      "file_path": "data/silver/language_analysis_2025.1-RelatoriosInteligentesBCB.json"
-    }
+    ]
   },
   {
     "repository": "2025-2-OncoMap",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:44.663154",
+    "analyzed_at": "2026-09-17T05:07:04.084196",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -18082,17 +17954,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.097193",
-      "file_path": "data/silver/language_analysis_2025-2-OncoMap.json"
-    }
+    ]
   },
   {
     "repository": "2025-2-InfoSchool",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:45.149983",
+    "analyzed_at": "2026-09-17T05:07:04.566392",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -18708,17 +18576,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.107946",
-      "file_path": "data/silver/language_analysis_2025-2-InfoSchool.json"
-    }
+    ]
   },
   {
     "repository": "2025-2-Eh_Fake",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:43.640193",
+    "analyzed_at": "2026-09-17T05:07:03.277818",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -19314,17 +19178,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.112170",
-      "file_path": "data/silver/language_analysis_2025-2-Eh_Fake.json"
-    }
+    ]
   },
   {
     "repository": "2023-2-Squad07",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:15.385140",
+    "analyzed_at": "2026-09-17T05:06:38.904845",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -19756,17 +19616,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.116234",
-      "file_path": "data/silver/language_analysis_2023-2-Squad07.json"
-    }
+    ]
   },
   {
     "repository": "2025-2-Squad12",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:48.835104",
+    "analyzed_at": "2026-09-17T05:07:07.679419",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -20144,17 +20000,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.119279",
-      "file_path": "data/silver/language_analysis_2025-2-Squad12.json"
-    }
+    ]
   },
   {
     "repository": "2026-1-Guard.IA",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:51.942464",
+    "analyzed_at": "2026-09-17T05:07:10.495489",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -20728,17 +20580,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.121353",
-      "file_path": "data/silver/language_analysis_2026-1-Guard.IA.json"
-    }
+    ]
   },
   {
     "repository": "Gastos-DF-2024-02",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:35.599945",
+    "analyzed_at": "2026-09-17T05:06:56.700841",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -21390,17 +21238,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.124673",
-      "file_path": "data/silver/language_analysis_Gastos-DF-2024-02.json"
-    }
+    ]
   },
   {
     "repository": "2025-1-NoFluxoUNB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:37.555876",
+    "analyzed_at": "2026-09-17T05:06:58.271379",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -22670,17 +22514,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.133168",
-      "file_path": "data/silver/language_analysis_2025-1-NoFluxoUNB.json"
-    }
+    ]
   },
   {
     "repository": "2024-1-EducaMinas-backend",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:27.703297",
+    "analyzed_at": "2026-09-17T05:06:50.054464",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -23024,17 +22864,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.146692",
-      "file_path": "data/silver/language_analysis_2024-1-EducaMinas-backend.json"
-    }
+    ]
   },
   {
     "repository": "2026-2-Followw",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:58.968849",
+    "analyzed_at": "2026-09-17T05:07:16.718345",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -23276,17 +23112,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.148436",
-      "file_path": "data/silver/language_analysis_2026-2-Followw.json"
-    }
+    ]
   },
   {
     "repository": "2024-2-SuaFinanca",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:34.883443",
+    "analyzed_at": "2026-09-17T05:06:56.153641",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -24624,17 +24456,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.253070",
-      "file_path": "data/silver/language_analysis_2024-2-SuaFinanca.json"
-    }
+    ]
   },
   {
     "repository": "2025-2-Lumina",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:46.266389",
+    "analyzed_at": "2026-09-17T05:07:05.513886",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -25250,17 +25078,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.465513",
-      "file_path": "data/silver/language_analysis_2025-2-Lumina.json"
-    }
+    ]
   },
   {
     "repository": "2024-1-Squad-10",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:26.661308",
+    "analyzed_at": "2026-09-17T05:06:48.961775",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -25704,17 +25528,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.471474",
-      "file_path": "data/silver/language_analysis_2024-1-Squad-10.json"
-    }
+    ]
   },
   {
     "repository": "2024-1-MinasDeCultura",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:25.032727",
+    "analyzed_at": "2026-09-17T05:06:47.482034",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -26642,17 +26462,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.474304",
-      "file_path": "data/silver/language_analysis_2024-1-MinasDeCultura.json"
-    }
+    ]
   },
   {
     "repository": "codigoruim",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:56.595539",
+    "analyzed_at": "2026-09-17T05:07:14.477756",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -26770,17 +26586,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.478371",
-      "file_path": "data/silver/language_analysis_codigoruim.json"
-    }
+    ]
   },
   {
     "repository": "2025_1-Jakebot",
     "owner": "unb-mds",
     "branch": "master",
-    "analyzed_at": "2026-09-17T04:03:41.459852",
+    "analyzed_at": "2026-09-17T05:07:01.501311",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -27258,17 +27070,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.479662",
-      "file_path": "data/silver/language_analysis_2025_1-Jakebot.json"
-    }
+    ]
   },
   {
     "repository": "2024-2-Lumina",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:31.061910",
+    "analyzed_at": "2026-09-17T05:06:53.202656",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -27926,17 +27734,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.482262",
-      "file_path": "data/silver/language_analysis_2024-2-Lumina.json"
-    }
+    ]
   },
   {
     "repository": "DFemObras",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:32.047148",
+    "analyzed_at": "2026-09-17T05:06:54.016833",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -28594,17 +28398,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.486550",
-      "file_path": "data/silver/language_analysis_DFemObras.json"
-    }
+    ]
   },
   {
     "repository": "2026-2-Cerradinho-API",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:58.093914",
+    "analyzed_at": "2026-09-17T05:07:15.849811",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -28776,17 +28576,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.490549",
-      "file_path": "data/silver/language_analysis_2026-2-Cerradinho-API.json"
-    }
+    ]
   },
   {
     "repository": "Squad09-UnBHUB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:26.209916",
+    "analyzed_at": "2026-09-17T05:06:48.514966",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -29270,17 +29066,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.492598",
-      "file_path": "data/silver/language_analysis_Squad09-UnBHUB.json"
-    }
+    ]
   },
   {
     "repository": "2025-2-Portal-dos-Professores",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:43.176625",
+    "analyzed_at": "2026-09-17T05:07:02.830068",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -30062,17 +29854,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.497105",
-      "file_path": "data/silver/language_analysis_2025-2-Portal-dos-Professores.json"
-    }
+    ]
   },
   {
     "repository": "Gastos-DF-Squad12",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:27.145854",
+    "analyzed_at": "2026-09-17T05:06:49.551714",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -30802,17 +30590,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.519308",
-      "file_path": "data/silver/language_analysis_Gastos-DF-Squad12.json"
-    }
+    ]
   },
   {
     "repository": "teste",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:18.963745",
+    "analyzed_at": "2026-09-17T05:06:42.162767",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -30874,17 +30658,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.558149",
-      "file_path": "data/silver/language_analysis_teste.json"
-    }
+    ]
   },
   {
     "repository": "G2-2026-2",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:57.551751",
+    "analyzed_at": "2026-09-17T05:07:15.410651",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -31006,17 +30786,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.559161",
-      "file_path": "data/silver/language_analysis_G2-2026-2.json"
-    }
+    ]
   },
   {
     "repository": "Fique-de-Olho",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:58.527017",
+    "analyzed_at": "2026-09-17T05:07:16.259816",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -31228,17 +31004,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.560187",
-      "file_path": "data/silver/language_analysis_Fique-de-Olho.json"
-    }
+    ]
   },
   {
     "repository": "2023.2-LicitaX",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:19.952102",
+    "analyzed_at": "2026-09-17T05:06:43.209161",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -31534,17 +31306,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.561741",
-      "file_path": "data/silver/language_analysis_2023.2-LicitaX.json"
-    }
+    ]
   },
   {
     "repository": "2024-2-Squad01",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:29.097372",
+    "analyzed_at": "2026-09-17T05:06:51.483909",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -32360,17 +32128,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.564016",
-      "file_path": "data/silver/language_analysis_2024-2-Squad01.json"
-    }
+    ]
   },
   {
     "repository": "2026-2-VeritasIA",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:51.063880",
+    "analyzed_at": "2026-09-17T05:07:09.499946",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -33016,17 +32780,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.568634",
-      "file_path": "data/silver/language_analysis_2026-2-VeritasIA.json"
-    }
+    ]
   },
   {
     "repository": "VIDAProject",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:41.015523",
+    "analyzed_at": "2026-09-17T05:07:01.137812",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -33550,17 +33310,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.572064",
-      "file_path": "data/silver/language_analysis_VIDAProject.json"
-    }
+    ]
   },
   {
     "repository": "2023.2_Licitaiba",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:20.441145",
+    "analyzed_at": "2026-09-17T05:06:43.713556",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -33830,17 +33586,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.574159",
-      "file_path": "data/silver/language_analysis_2023.2_Licitaiba.json"
-    }
+    ]
   },
   {
     "repository": "2024-2-Datazonia",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:33.563988",
+    "analyzed_at": "2026-09-17T05:06:55.235385",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -34166,17 +33918,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.575346",
-      "file_path": "data/silver/language_analysis_2024-2-Datazonia.json"
-    }
+    ]
   },
   {
     "repository": "2023-2-Squad09-Gotinha",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:17.126033",
+    "analyzed_at": "2026-09-17T05:06:40.894257",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -34750,17 +34498,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.577559",
-      "file_path": "data/silver/language_analysis_2023-2-Squad09-Gotinha.json"
-    }
+    ]
   },
   {
     "repository": "2024-1-EducaMinas-frontend",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:24.114085",
+    "analyzed_at": "2026-09-17T05:06:46.678023",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -35350,17 +35094,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.581624",
-      "file_path": "data/silver/language_analysis_2024-1-EducaMinas-frontend.json"
-    }
+    ]
   },
   {
     "repository": "Avalia",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:49.636945",
+    "analyzed_at": "2026-09-17T05:07:08.431584",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -35462,17 +35202,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.584339",
-      "file_path": "data/silver/language_analysis_Avalia.json"
-    }
+    ]
   },
   {
     "repository": "2026-02-TambureteiUnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:04:00.727806",
+    "analyzed_at": "2026-09-17T05:07:18.492272",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -35602,17 +35338,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.584869",
-      "file_path": "data/silver/language_analysis_2026-02-TambureteiUnB.json"
-    }
+    ]
   },
   {
     "repository": "Sonorus-2025.1",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:38.080136",
+    "analyzed_at": "2026-09-17T05:06:58.690152",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -36168,17 +35900,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.586357",
-      "file_path": "data/silver/language_analysis_Sonorus-2025.1.json"
-    }
+    ]
   },
   {
     "repository": "2026-02-UnDb",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:59.831907",
+    "analyzed_at": "2026-09-17T05:07:17.529003",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -36444,17 +36172,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.589572",
-      "file_path": "data/silver/language_analysis_2026-02-UnDb.json"
-    }
+    ]
   },
   {
     "repository": "2023-2-Squad05-TesouroMineiro",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:14.445885",
+    "analyzed_at": "2026-09-17T05:06:38.049455",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -37128,17 +36852,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.608384",
-      "file_path": "data/silver/language_analysis_2023-2-Squad05-TesouroMineiro.json"
-    }
+    ]
   },
   {
     "repository": "MDS-MonitoraBSB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:32.474594",
+    "analyzed_at": "2026-09-17T05:06:54.430329",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -37740,17 +37460,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.646572",
-      "file_path": "data/silver/language_analysis_MDS-MonitoraBSB.json"
-    }
+    ]
   },
   {
     "repository": "2023-2-Squad01",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:10.513321",
+    "analyzed_at": "2026-09-17T05:06:34.998957",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -37840,29 +37556,25 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.649469",
-      "file_path": "data/silver/language_analysis_2023-2-Squad01.json"
-    }
+    ]
   },
   {
     "repository": "DFemObras-2025.1",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:40.504239",
+    "analyzed_at": "2026-09-17T05:07:00.688065",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
     },
     "total_files": 168,
-    "total_bytes": 15830322,
+    "total_bytes": 15851731,
     "languages": [
       {
         "language": "JPEG Image",
         "file_count": 33,
         "total_bytes": 6730743,
-        "percentage": 42.52,
+        "percentage": 42.46,
         "files": [
           {
             "path": "TestesMapa/documentação/fotos/nathan.jpg",
@@ -37930,7 +37642,7 @@
         "language": "PNG Image",
         "file_count": 30,
         "total_bytes": 5963641,
-        "percentage": 37.67,
+        "percentage": 37.62,
         "files": [
           {
             "path": "docs/Documento Responsividade/obras-desktop.png",
@@ -37997,8 +37709,8 @@
       {
         "language": "JSON",
         "file_count": 6,
-        "total_bytes": 2143511,
-        "percentage": 13.54,
+        "total_bytes": 2164920,
+        "percentage": 13.66,
         "files": [
           {
             "path": "TestesMapa/obrasgov/obras_com_lat_long.json",
@@ -38019,6 +37731,12 @@
             "extension": ".json"
           },
           {
+            "path": "TestesMapa/obrasgov/src/obras_com_lat_long.json",
+            "name": "obras_com_lat_long.json",
+            "size": 21411,
+            "extension": ".json"
+          },
+          {
             "path": "TestesMapa/package.json",
             "name": "package.json",
             "size": 531,
@@ -38029,12 +37747,6 @@
             "name": "package.json",
             "size": 423,
             "extension": ".json"
-          },
-          {
-            "path": "TestesMapa/obrasgov/src/obras_com_lat_long.json",
-            "name": "obras_com_lat_long.json",
-            "size": 2,
-            "extension": ".json"
           }
         ]
       },
@@ -38042,7 +37754,7 @@
         "language": "PDF",
         "file_count": 3,
         "total_bytes": 540847,
-        "percentage": 3.42,
+        "percentage": 3.41,
         "files": [
           {
             "path": "docs/Documento de Arquitetura/DiagramaArquitetura.pdf",
@@ -38068,7 +37780,7 @@
         "language": "HTML",
         "file_count": 10,
         "total_bytes": 179777,
-        "percentage": 1.14,
+        "percentage": 1.13,
         "files": [
           {
             "path": "TestesMapa/documentação/html_externo/arq_2.html",
@@ -38136,7 +37848,7 @@
         "language": "Markdown",
         "file_count": 44,
         "total_bytes": 132288,
-        "percentage": 0.84,
+        "percentage": 0.83,
         "files": [
           {
             "path": "docs/estudos/APIObrasgov.md",
@@ -38474,17 +38186,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.650947",
-      "file_path": "data/silver/language_analysis_DFemObras-2025.1.json"
-    }
+    ]
   },
   {
     "repository": "LicitaBSB-24.1",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:23.111283",
+    "analyzed_at": "2026-09-17T05:06:45.849240",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -39378,17 +39086,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.657984",
-      "file_path": "data/silver/language_analysis_LicitaBSB-24.1.json"
-    }
+    ]
   },
   {
     "repository": "2026-1-SafeStreets",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:50.169570",
+    "analyzed_at": "2026-09-17T05:07:08.803921",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -40090,17 +39794,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.667661",
-      "file_path": "data/silver/language_analysis_2026-1-SafeStreets.json"
-    }
+    ]
   },
   {
     "repository": "2026-1-ProtectKids",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:55.610402",
+    "analyzed_at": "2026-09-17T05:07:13.619622",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -40630,17 +40330,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.672603",
-      "file_path": "data/silver/language_analysis_2026-1-ProtectKids.json"
-    }
+    ]
   },
   {
     "repository": "2025-2-Integralizei_UnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:44.130777",
+    "analyzed_at": "2026-09-17T05:07:03.661706",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -41600,17 +41296,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.676722",
-      "file_path": "data/silver/language_analysis_2025-2-Integralizei_UnB.json"
-    }
+    ]
   },
   {
     "repository": "Projeto-P.I.T.E.R",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:42.621948",
+    "analyzed_at": "2026-09-17T05:07:02.421596",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -42088,17 +41780,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.683289",
-      "file_path": "data/silver/language_analysis_Projeto-P.I.T.E.R.json"
-    }
+    ]
   },
   {
     "repository": "2025-2-Squad-01",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:42.228419",
+    "analyzed_at": "2026-09-17T05:07:02.018102",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -42760,17 +42448,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.694370",
-      "file_path": "data/silver/language_analysis_2025-2-Squad-01.json"
-    }
+    ]
   },
   {
     "repository": "2025-1-GovInsights",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:39.053976",
+    "analyzed_at": "2026-09-17T05:06:59.550492",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -43238,17 +42922,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.711748",
-      "file_path": "data/silver/language_analysis_2025-1-GovInsights.json"
-    }
+    ]
   },
   {
     "repository": "2024-2-Urbanize",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:29.688832",
+    "analyzed_at": "2026-09-17T05:06:51.937861",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -44306,17 +43986,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.733022",
-      "file_path": "data/silver/language_analysis_2024-2-Urbanize.json"
-    }
+    ]
   },
   {
     "repository": "2026-1-Squad4-Dito_e_Feito",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:51.424222",
+    "analyzed_at": "2026-09-17T05:07:10.107398",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -44900,17 +44576,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.773905",
-      "file_path": "data/silver/language_analysis_2026-1-Squad4-Dito_e_Feito.json"
-    }
+    ]
   },
   {
     "repository": "2026-1-LegisKids",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:53.187276",
+    "analyzed_at": "2026-09-17T05:07:11.274449",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -45544,17 +45216,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.779206",
-      "file_path": "data/silver/language_analysis_2026-1-LegisKids.json"
-    }
+    ]
   },
   {
     "repository": "2026-1-Mapa_L.I.L.A.S",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:50.649525",
+    "analyzed_at": "2026-09-17T05:07:09.170267",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -46366,17 +46034,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.786726",
-      "file_path": "data/silver/language_analysis_2026-1-Mapa_L.I.L.A.S.json"
-    }
+    ]
   },
   {
     "repository": "ParticipeMais",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:36.815670",
+    "analyzed_at": "2026-09-17T05:06:57.701066",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -46954,17 +46618,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.793467",
-      "file_path": "data/silver/language_analysis_ParticipeMais.json"
-    }
+    ]
   },
   {
     "repository": "diario-de-bordo",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:04:03.051538",
+    "analyzed_at": "2026-09-17T05:07:20.298575",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -47124,17 +46784,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.797549",
-      "file_path": "data/silver/language_analysis_diario-de-bordo.json"
-    }
+    ]
   },
   {
     "repository": "2026-1-P.R.I.S.M.A",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:56.047184",
+    "analyzed_at": "2026-09-17T05:07:14.057256",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -47606,17 +47262,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.798874",
-      "file_path": "data/silver/language_analysis_2026-1-P.R.I.S.M.A.json"
-    }
+    ]
   },
   {
     "repository": "teste-ru",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:04:02.571444",
+    "analyzed_at": "2026-09-17T05:07:19.953767",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -47830,17 +47482,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.801219",
-      "file_path": "data/silver/language_analysis_teste-ru.json"
-    }
+    ]
   },
   {
     "repository": "2025-1-RelatAI",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:40.040321",
+    "analyzed_at": "2026-09-17T05:07:00.312840",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -48354,17 +48002,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.802515",
-      "file_path": "data/silver/language_analysis_2025-1-RelatAI.json"
-    }
+    ]
   },
   {
     "repository": "2026.2-UnB_Core",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:57.122288",
+    "analyzed_at": "2026-09-17T05:07:14.965621",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -48596,17 +48240,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.805037",
-      "file_path": "data/silver/language_analysis_2026.2-UnB_Core.json"
-    }
+    ]
   },
   {
     "repository": "2025-2-Mural-UnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:45.765095",
+    "analyzed_at": "2026-09-17T05:07:05.092486",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -49482,17 +49122,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.809763",
-      "file_path": "data/silver/language_analysis_2025-2-Mural-UnB.json"
-    }
+    ]
   },
   {
     "repository": "2026-1-squad0x",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:53.592930",
+    "analyzed_at": "2026-09-17T05:07:11.675084",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -49528,17 +49164,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.821525",
-      "file_path": "data/silver/language_analysis_2026-1-squad0x.json"
-    }
+    ]
   },
   {
     "repository": ".github",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:49.246145",
+    "analyzed_at": "2026-09-17T05:07:08.058176",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -49560,17 +49192,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.822135",
-      "file_path": "data/silver/language_analysis_.github.json"
-    }
+    ]
   },
   {
     "repository": "squad03-r2",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:19.464675",
+    "analyzed_at": "2026-09-17T05:06:42.529730",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -49802,17 +49430,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.822728",
-      "file_path": "data/silver/language_analysis_squad03-r2.json"
-    }
+    ]
   },
   {
     "repository": "2024-1-Gastos-DF-Doc-Squad12",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:28.549680",
+    "analyzed_at": "2026-09-17T05:06:50.862406",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -50802,17 +50426,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:44.916038",
-      "file_path": "data/silver/language_analysis_2024-1-Gastos-DF-Doc-Squad12.json"
-    }
+    ]
   },
   {
     "repository": "2024-1-forUnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-17T04:03:22.048364",
+    "analyzed_at": "2026-09-17T05:06:45.018829",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -51618,17 +51238,13 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:45.103359",
-      "file_path": "data/silver/language_analysis_2024-1-forUnB.json"
-    }
+    ]
   },
   {
     "repository": "2024-1-squad04",
     "owner": "unb-mds",
     "branch": "dev",
-    "analyzed_at": "2026-09-17T04:03:23.681838",
+    "analyzed_at": "2026-09-17T05:06:46.264694",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -52162,10 +51778,6 @@
           }
         ]
       }
-    ],
-    "_metadata": {
-      "extracted_at": "2026-09-17T04:04:45.115304",
-      "file_path": "data/silver/language_analysis_2024-1-squad04.json"
-    }
+    ]
   }
 ]

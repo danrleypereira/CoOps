@@ -2,7 +2,7 @@
   "repository": "DFemObras-2025.1",
   "owner": "unb-mds",
   "branch": "main",
-  "extracted_at": "2026-09-17T04:03:40.504239",
+  "extracted_at": "2026-09-17T05:07:00.688065",
   "hierarchy": {
     "name": "root",
     "type": "directory",
@@ -811,7 +811,7 @@
         "name": "obras_com_lat_long.json",
         "type": "file",
         "language": "JSON",
-        "size": 2,
+        "size": 21411,
         "extension": ".json",
         "path": "TestesMapa/obrasgov/src/obras_com_lat_long.json"
       },
@@ -1552,7 +1552,7 @@
     ]
   },
   "_metadata": {
-    "extracted_at": "2026-09-17T04:04:44.652257",
+    "extracted_at": "2026-09-17T05:08:04.822244",
     "file_path": "data/silver/hierarchy_DFemObras-2025.1.json"
   }
 }

@@ -2,7 +2,7 @@
   "repository": "mapadaacessibilidade",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T04:03:36.386539",
+  "analyzed_at": "2026-09-17T05:06:57.274060",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -848,7 +848,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T04:04:43.784544",
+    "extracted_at": "2026-09-17T05:08:04.223525",
     "file_path": "data/silver/language_analysis_mapadaacessibilidade.json"
   }
 }

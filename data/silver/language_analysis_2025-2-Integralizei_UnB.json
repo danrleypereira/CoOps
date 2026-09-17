@@ -2,7 +2,7 @@
   "repository": "2025-2-Integralizei_UnB",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T04:03:44.130777",
+  "analyzed_at": "2026-09-17T05:07:03.661706",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -964,7 +964,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T04:04:44.676722",
+    "extracted_at": "2026-09-17T05:08:04.837744",
     "file_path": "data/silver/language_analysis_2025-2-Integralizei_UnB.json"
   }
 }

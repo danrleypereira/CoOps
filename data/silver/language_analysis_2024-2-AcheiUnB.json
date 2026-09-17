@@ -2,7 +2,7 @@
   "repository": "2024-2-AcheiUnB",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T04:03:30.180990",
+  "analyzed_at": "2026-09-17T05:06:52.382563",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -818,7 +818,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T04:04:44.086098",
+    "extracted_at": "2026-09-17T05:08:04.430691",
     "file_path": "data/silver/language_analysis_2024-2-AcheiUnB.json"
   }
 }

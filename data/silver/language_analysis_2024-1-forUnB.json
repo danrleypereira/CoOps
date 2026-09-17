@@ -2,7 +2,7 @@
   "repository": "2024-1-forUnB",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T04:03:22.048364",
+  "analyzed_at": "2026-09-17T05:06:45.018829",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -810,7 +810,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T04:04:45.103359",
+    "extracted_at": "2026-09-17T05:08:05.127558",
     "file_path": "data/silver/language_analysis_2024-1-forUnB.json"
   }
 }

@@ -2,7 +2,7 @@
   "repository": "Sonorus-2025.1",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T04:03:38.080136",
+  "analyzed_at": "2026-09-17T05:06:58.690152",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -560,7 +560,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T04:04:44.586357",
+    "extracted_at": "2026-09-17T05:08:04.777492",
     "file_path": "data/silver/language_analysis_Sonorus-2025.1.json"
   }
 }

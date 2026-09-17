@@ -2,7 +2,7 @@
   "repository": "VIDAProject",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T04:03:41.015523",
+  "analyzed_at": "2026-09-17T05:07:01.137812",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -528,7 +528,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T04:04:44.572064",
+    "extracted_at": "2026-09-17T05:08:04.767766",
     "file_path": "data/silver/language_analysis_VIDAProject.json"
   }
 }

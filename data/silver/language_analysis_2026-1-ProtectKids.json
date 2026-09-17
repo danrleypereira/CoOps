@@ -2,7 +2,7 @@
   "repository": "2026-1-ProtectKids",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T04:03:55.610402",
+  "analyzed_at": "2026-09-17T05:07:13.619622",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -534,7 +534,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T04:04:44.672603",
+    "extracted_at": "2026-09-17T05:08:04.834939",
     "file_path": "data/silver/language_analysis_2026-1-ProtectKids.json"
   }
 }

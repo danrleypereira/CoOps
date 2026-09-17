@@ -2,7 +2,7 @@
   "repository": "2026-2-MonitoraUnB",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T04:04:01.629262",
+  "analyzed_at": "2026-09-17T05:07:19.167844",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -108,7 +108,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T04:04:43.831447",
+    "extracted_at": "2026-09-17T05:08:04.253891",
     "file_path": "data/silver/language_analysis_2026-2-MonitoraUnB.json"
   }
 }

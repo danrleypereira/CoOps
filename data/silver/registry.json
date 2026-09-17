@@ -1,6 +1,9 @@
 {
   "all_processed": {
     "files": [
+      "data/silver/members_analytics.json",
+      "data/silver/member_status_distribution.json",
+      "data/silver/maturity_bands.json",
       "data/silver/contribution_metrics.json",
       "data/silver/repository_metrics.json",
       "data/silver/contribution_distribution.json",
@@ -209,9 +212,10 @@
       "data/silver/hierarchy_2024-1-forUnB.json",
       "data/silver/language_analysis_2024-1-squad04.json",
       "data/silver/hierarchy_2024-1-squad04.json",
-      "data/silver/language_analysis_all.json"
+      "data/silver/language_analysis_all.json",
+      "data/silver/available_repos.json"
     ],
-    "updated_at": "2026-09-17T04:04:45.174599",
+    "updated_at": "2026-09-17T05:08:05.177174",
     "layer": "silver"
   }
 }
