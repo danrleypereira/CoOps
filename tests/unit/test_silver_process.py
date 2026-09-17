@@ -53,7 +53,8 @@ class TestSilverProcess:
                                     silver_process.main()
         
         captured = capsys.readouterr()
-        assert "Generated 6 files" in captured.out
+        assert "Generated 7 files" in captured.out
+        assert "data/silver/available_repos.json" in captured.out
         assert "member1.json" in captured.out
         assert "member2.json" in captured.out
         assert "contrib.json" in captured.out
@@ -91,7 +92,8 @@ class TestSilverProcess:
                                     silver_process.main()
         
         captured = capsys.readouterr()
-        assert "Generated 3 files" in captured.out
+        assert "Generated 4 files" in captured.out
+        assert "data/silver/available_repos.json" in captured.out
         assert "member.json" in captured.out
         assert "contrib.json" in captured.out
         assert "collab.json" in captured.out
