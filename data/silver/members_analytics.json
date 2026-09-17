@@ -1,7 +1,7 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-17T05:07:57.406876",
+      "extracted_at": "2026-09-17T06:26:29.330186",
       "file_path": "data/silver/members_analytics.json",
       "record_count": 482
     }
@@ -132,7 +132,7 @@
     "following": 0,
     "created_at": "2026-03-11T15:26:53Z",
     "updated_at": "2026-09-07T19:52:20Z",
-    "maturity_score": 10.540684024926017,
+    "maturity_score": 10.54068402492602,
     "status": "new",
     "account_age_days": 189
   },
@@ -236,7 +236,7 @@
     "following": 14,
     "created_at": "2023-03-01T17:34:04Z",
     "updated_at": "2026-09-03T15:18:21Z",
-    "maturity_score": 66.66662714421672,
+    "maturity_score": 66.66662714421673,
     "status": "established",
     "account_age_days": 1295
   },
@@ -262,22 +262,9 @@
     "following": 7,
     "created_at": "2023-03-15T12:03:27Z",
     "updated_at": "2026-09-06T18:33:24Z",
-    "maturity_score": 30.378647829404805,
+    "maturity_score": 30.378647829404798,
     "status": "new",
     "account_age_days": 1281
-  },
-  {
-    "login": "TiagoUNB",
-    "id": 211538615,
-    "name": "Tiago",
-    "public_repos": 9,
-    "followers": 0,
-    "following": 0,
-    "created_at": "2025-05-13T15:25:19Z",
-    "updated_at": "2026-09-16T21:49:46Z",
-    "maturity_score": 10.006994637228292,
-    "status": "new",
-    "account_age_days": 491
   },
   {
     "login": "henriquemendeselias",
@@ -291,6 +278,19 @@
     "maturity_score": 41.322325561852274,
     "status": "new",
     "account_age_days": 728
+  },
+  {
+    "login": "TiagoUNB",
+    "id": 211538615,
+    "name": "Tiago",
+    "public_repos": 9,
+    "followers": 0,
+    "following": 0,
+    "created_at": "2025-05-13T15:25:19Z",
+    "updated_at": "2026-09-16T21:49:46Z",
+    "maturity_score": 10.006994637228292,
+    "status": "new",
+    "account_age_days": 491
   },
   {
     "login": "joseandre25",
@@ -392,7 +392,7 @@
     "following": 6,
     "created_at": "2022-06-25T14:47:06Z",
     "updated_at": "2026-09-10T12:32:45Z",
-    "maturity_score": 33.961401534747466,
+    "maturity_score": 33.96140153474745,
     "status": "established",
     "account_age_days": 1544
   },
@@ -457,22 +457,22 @@
     "following": 10,
     "created_at": "2024-07-19T22:35:15Z",
     "updated_at": "2026-09-16T15:41:31Z",
-    "maturity_score": 65.52364571282315,
+    "maturity_score": 65.52364571282317,
     "status": "established",
     "account_age_days": 789
   },
   {
-    "login": "manu-sgc",
-    "id": 151690205,
-    "name": "Manoela Garcia",
-    "public_repos": 11,
-    "followers": 9,
-    "following": 8,
-    "created_at": "2023-11-21T23:08:16Z",
-    "updated_at": "2026-09-16T17:12:21Z",
-    "maturity_score": 56.9755640512534,
-    "status": "established",
-    "account_age_days": 1030
+    "login": "KaioAmouryUnB",
+    "id": 227636246,
+    "name": "Kaio Amoury",
+    "public_repos": 2,
+    "followers": 0,
+    "following": 1,
+    "created_at": "2025-08-20T15:33:20Z",
+    "updated_at": "2026-09-09T19:26:12Z",
+    "maturity_score": 6.282741671938959,
+    "status": "new",
+    "account_age_days": 392
   },
   {
     "login": "luccameds",
@@ -488,17 +488,17 @@
     "account_age_days": 2356
   },
   {
-    "login": "KaioAmouryUnB",
-    "id": 227636246,
-    "name": "Kaio Amoury",
-    "public_repos": 2,
-    "followers": 0,
-    "following": 1,
-    "created_at": "2025-08-20T15:33:20Z",
-    "updated_at": "2026-09-09T19:26:12Z",
-    "maturity_score": 6.282741671938959,
-    "status": "new",
-    "account_age_days": 392
+    "login": "manu-sgc",
+    "id": 151690205,
+    "name": "Manoela Garcia",
+    "public_repos": 11,
+    "followers": 9,
+    "following": 8,
+    "created_at": "2023-11-21T23:08:16Z",
+    "updated_at": "2026-09-16T17:12:21Z",
+    "maturity_score": 56.9755640512534,
+    "status": "established",
+    "account_age_days": 1030
   },
   {
     "login": "thatsrenan",
@@ -527,19 +527,6 @@
     "account_age_days": 1136
   },
   {
-    "login": "gus-ant",
-    "id": 176245725,
-    "name": "Gustavo Antonio",
-    "public_repos": 28,
-    "followers": 16,
-    "following": 30,
-    "created_at": "2024-07-21T21:21:47Z",
-    "updated_at": "2026-09-13T15:20:19Z",
-    "maturity_score": 70.10090341601268,
-    "status": "established",
-    "account_age_days": 787
-  },
-  {
     "login": "claranunes22",
     "id": 214158924,
     "name": "Clara Nunes",
@@ -551,6 +538,19 @@
     "maturity_score": 19.024042554896063,
     "status": "new",
     "account_age_days": 474
+  },
+  {
+    "login": "gus-ant",
+    "id": 176245725,
+    "name": "Gustavo Antonio",
+    "public_repos": 28,
+    "followers": 16,
+    "following": 30,
+    "created_at": "2024-07-21T21:21:47Z",
+    "updated_at": "2026-09-13T15:20:19Z",
+    "maturity_score": 70.10090341601268,
+    "status": "established",
+    "account_age_days": 787
   },
   {
     "login": "RenanSantoss21",
@@ -566,19 +566,6 @@
     "account_age_days": 927
   },
   {
-    "login": "staann",
-    "id": 181267285,
-    "name": "Gustavo Choueiri",
-    "public_repos": 23,
-    "followers": 9,
-    "following": 15,
-    "created_at": "2024-09-11T17:24:54Z",
-    "updated_at": "2026-09-13T00:12:51Z",
-    "maturity_score": 58.8864784102892,
-    "status": "established",
-    "account_age_days": 735
-  },
-  {
     "login": "guxvr",
     "id": 172512835,
     "name": "Gustavo Xavier Evangelista",
@@ -590,6 +577,19 @@
     "maturity_score": 54.211149173218374,
     "status": "new",
     "account_age_days": 826
+  },
+  {
+    "login": "staann",
+    "id": 181267285,
+    "name": "Gustavo Choueiri",
+    "public_repos": 23,
+    "followers": 9,
+    "following": 15,
+    "created_at": "2024-09-11T17:24:54Z",
+    "updated_at": "2026-09-13T00:12:51Z",
+    "maturity_score": 58.8864784102892,
+    "status": "established",
+    "account_age_days": 735
   },
   {
     "login": "SAnjos3",
@@ -696,6 +696,32 @@
     "account_age_days": 694
   },
   {
+    "login": "Luizz97",
+    "id": 212640680,
+    "name": null,
+    "public_repos": 4,
+    "followers": 2,
+    "following": 1,
+    "created_at": "2025-05-21T01:24:13Z",
+    "updated_at": "2026-09-16T15:23:55Z",
+    "maturity_score": 29.89263395613323,
+    "status": "new",
+    "account_age_days": 484
+  },
+  {
+    "login": "Nibaacriba",
+    "id": 37427113,
+    "name": "GabrielBarbaceli",
+    "public_repos": 11,
+    "followers": 2,
+    "following": 0,
+    "created_at": "2018-03-16T01:52:39Z",
+    "updated_at": "2026-09-06T12:16:32Z",
+    "maturity_score": 33.447833078469955,
+    "status": "established",
+    "account_age_days": 3107
+  },
+  {
     "login": "RochaCarla",
     "id": 5897389,
     "name": "Carla Rocha",
@@ -707,32 +733,6 @@
     "maturity_score": 130.78479596905117,
     "status": "established",
     "account_age_days": 4694
-  },
-  {
-    "login": "Nibaacriba",
-    "id": 37427113,
-    "name": "GabrielBarbaceli",
-    "public_repos": 11,
-    "followers": 2,
-    "following": 0,
-    "created_at": "2018-03-16T01:52:39Z",
-    "updated_at": "2026-09-06T12:16:32Z",
-    "maturity_score": 33.44783307846997,
-    "status": "established",
-    "account_age_days": 3107
-  },
-  {
-    "login": "Luizz97",
-    "id": 212640680,
-    "name": null,
-    "public_repos": 4,
-    "followers": 2,
-    "following": 1,
-    "created_at": "2025-05-21T01:24:13Z",
-    "updated_at": "2026-09-16T15:23:55Z",
-    "maturity_score": 29.89263395613324,
-    "status": "new",
-    "account_age_days": 484
   },
   {
     "login": "hisarxt",
@@ -761,6 +761,19 @@
     "account_age_days": 1250
   },
   {
+    "login": "JuliaGabP",
+    "id": 149431356,
+    "name": "Julia Gabriela",
+    "public_repos": 22,
+    "followers": 5,
+    "following": 4,
+    "created_at": "2023-10-30T19:43:32Z",
+    "updated_at": "2026-09-14T19:16:36Z",
+    "maturity_score": 48.72137128841553,
+    "status": "established",
+    "account_age_days": 1052
+  },
+  {
     "login": "pedroeverton217",
     "id": 117595816,
     "name": "Pedro_Everton",
@@ -785,19 +798,6 @@
     "maturity_score": 45.935167958516864,
     "status": "new",
     "account_age_days": 1114
-  },
-  {
-    "login": "JuliaGabP",
-    "id": 149431356,
-    "name": "Julia Gabriela",
-    "public_repos": 22,
-    "followers": 5,
-    "following": 4,
-    "created_at": "2023-10-30T19:43:32Z",
-    "updated_at": "2026-09-14T19:16:36Z",
-    "maturity_score": 48.72137128841553,
-    "status": "established",
-    "account_age_days": 1052
   },
   {
     "login": "VHbernardes",
@@ -826,17 +826,17 @@
     "account_age_days": 1532
   },
   {
-    "login": "vitor-hoffmann",
-    "id": 137011464,
-    "name": "Vitor Valerio Hoffmann",
-    "public_repos": 23,
-    "followers": 4,
-    "following": 2,
-    "created_at": "2023-06-18T23:17:01Z",
-    "updated_at": "2026-09-03T21:24:40Z",
-    "maturity_score": 45.26251193703068,
-    "status": "established",
-    "account_age_days": 1186
+    "login": "314dro",
+    "id": 142694744,
+    "name": "Pedro Henrique Martins Silva",
+    "public_repos": 5,
+    "followers": 6,
+    "following": 8,
+    "created_at": "2023-08-19T21:11:17Z",
+    "updated_at": "2026-09-15T17:41:13Z",
+    "maturity_score": 47.80625054610969,
+    "status": "new",
+    "account_age_days": 1124
   },
   {
     "login": "JoaoPedrooSS",
@@ -852,17 +852,17 @@
     "account_age_days": 1250
   },
   {
-    "login": "314dro",
-    "id": 142694744,
-    "name": "Pedro Henrique Martins Silva",
-    "public_repos": 5,
-    "followers": 6,
-    "following": 8,
-    "created_at": "2023-08-19T21:11:17Z",
-    "updated_at": "2026-09-15T17:41:13Z",
-    "maturity_score": 47.80625054610969,
-    "status": "new",
-    "account_age_days": 1124
+    "login": "vitor-hoffmann",
+    "id": 137011464,
+    "name": "Vitor Valerio Hoffmann",
+    "public_repos": 23,
+    "followers": 4,
+    "following": 2,
+    "created_at": "2023-06-18T23:17:01Z",
+    "updated_at": "2026-09-03T21:24:40Z",
+    "maturity_score": 45.26251193703068,
+    "status": "established",
+    "account_age_days": 1186
   },
   {
     "login": "thegm445",
@@ -891,19 +891,6 @@
     "account_age_days": 512
   },
   {
-    "login": "y123yuri",
-    "id": 165211307,
-    "name": "Yuri Andrade",
-    "public_repos": 7,
-    "followers": 5,
-    "following": 1,
-    "created_at": "2024-03-27T20:11:34Z",
-    "updated_at": "2026-01-05T17:23:03Z",
-    "maturity_score": 45.476928689796694,
-    "status": "new",
-    "account_age_days": 903
-  },
-  {
     "login": "joaoleless",
     "id": 213525219,
     "name": "João Leles ",
@@ -917,17 +904,17 @@
     "account_age_days": 478
   },
   {
-    "login": "claudiohsc",
-    "id": 79493200,
-    "name": "Cláudio Henrique",
-    "public_repos": 30,
-    "followers": 18,
-    "following": 17,
-    "created_at": "2021-02-23T02:43:05Z",
-    "updated_at": "2026-09-17T03:26:30Z",
-    "maturity_score": 72.99937510359842,
-    "status": "established",
-    "account_age_days": 2032
+    "login": "y123yuri",
+    "id": 165211307,
+    "name": "Yuri Andrade",
+    "public_repos": 7,
+    "followers": 5,
+    "following": 1,
+    "created_at": "2024-03-27T20:11:34Z",
+    "updated_at": "2026-01-05T17:23:03Z",
+    "maturity_score": 45.476928689796694,
+    "status": "new",
+    "account_age_days": 903
   },
   {
     "login": "ArturFGaldino",
@@ -943,17 +930,17 @@
     "account_age_days": 681
   },
   {
-    "login": "nateejpg",
-    "id": 91135190,
-    "name": "Natejpg",
-    "public_repos": 19,
-    "followers": 16,
-    "following": 22,
-    "created_at": "2021-09-21T13:12:15Z",
-    "updated_at": "2026-09-03T00:13:32Z",
-    "maturity_score": 69.40530874069624,
+    "login": "claudiohsc",
+    "id": 79493200,
+    "name": "Cláudio Henrique",
+    "public_repos": 30,
+    "followers": 18,
+    "following": 17,
+    "created_at": "2021-02-23T02:43:05Z",
+    "updated_at": "2026-09-17T03:26:30Z",
+    "maturity_score": 72.99937510359842,
     "status": "established",
-    "account_age_days": 1821
+    "account_age_days": 2032
   },
   {
     "login": "davi-aguiar-vieira",
@@ -967,6 +954,19 @@
     "maturity_score": 70.52033736227321,
     "status": "established",
     "account_age_days": 1112
+  },
+  {
+    "login": "nateejpg",
+    "id": 91135190,
+    "name": "Natejpg",
+    "public_repos": 19,
+    "followers": 16,
+    "following": 22,
+    "created_at": "2021-09-21T13:12:15Z",
+    "updated_at": "2026-09-03T00:13:32Z",
+    "maturity_score": 69.40530874069624,
+    "status": "established",
+    "account_age_days": 1821
   },
   {
     "login": "TsukiRaiito",
@@ -995,30 +995,17 @@
     "account_age_days": 1381
   },
   {
-    "login": "Neoprot",
-    "id": 119744000,
-    "name": "Kauã Seichi",
-    "public_repos": 18,
-    "followers": 10,
-    "following": 11,
-    "created_at": "2022-12-03T14:14:08Z",
-    "updated_at": "2026-09-05T15:26:12Z",
-    "maturity_score": 60.40758896155554,
-    "status": "established",
-    "account_age_days": 1383
-  },
-  {
-    "login": "Mach1r0",
-    "id": 101157293,
-    "name": "Daniel Ferreira Nunes",
-    "public_repos": 28,
-    "followers": 36,
-    "following": 45,
-    "created_at": "2022-03-08T02:00:47Z",
-    "updated_at": "2026-09-14T18:14:53Z",
-    "maturity_score": 86.02602388674948,
-    "status": "established",
-    "account_age_days": 1654
+    "login": "IsraelSoares-25",
+    "id": 242254122,
+    "name": "Israel Soares de Paiva",
+    "public_repos": 2,
+    "followers": 4,
+    "following": 7,
+    "created_at": "2025-11-05T17:14:08Z",
+    "updated_at": "2026-06-11T02:43:39Z",
+    "maturity_score": 38.36246622147979,
+    "status": "new",
+    "account_age_days": 315
   },
   {
     "login": "leohssjr",
@@ -1034,30 +1021,30 @@
     "account_age_days": 1140
   },
   {
-    "login": "IsraelSoares-25",
-    "id": 242254122,
-    "name": "Israel Soares de Paiva",
-    "public_repos": 2,
-    "followers": 4,
-    "following": 7,
-    "created_at": "2025-11-05T17:14:08Z",
-    "updated_at": "2026-06-11T02:43:39Z",
-    "maturity_score": 38.36246622147979,
-    "status": "new",
-    "account_age_days": 315
+    "login": "Mach1r0",
+    "id": 101157293,
+    "name": "Daniel Ferreira Nunes",
+    "public_repos": 28,
+    "followers": 36,
+    "following": 45,
+    "created_at": "2022-03-08T02:00:47Z",
+    "updated_at": "2026-09-14T18:14:53Z",
+    "maturity_score": 86.02602388674948,
+    "status": "established",
+    "account_age_days": 1654
   },
   {
-    "login": "SchneiderCode1",
-    "id": 165057013,
-    "name": "Henrique Schneider Fernandes da Rosa",
-    "public_repos": 6,
-    "followers": 2,
-    "following": 2,
-    "created_at": "2024-03-26T15:44:49Z",
-    "updated_at": "2026-09-03T11:13:30Z",
-    "maturity_score": 31.2139436923781,
-    "status": "new",
-    "account_age_days": 904
+    "login": "Neoprot",
+    "id": 119744000,
+    "name": "Kauã Seichi",
+    "public_repos": 18,
+    "followers": 10,
+    "following": 11,
+    "created_at": "2022-12-03T14:14:08Z",
+    "updated_at": "2026-09-05T15:26:12Z",
+    "maturity_score": 60.40758896155554,
+    "status": "established",
+    "account_age_days": 1383
   },
   {
     "login": "1emes",
@@ -1071,6 +1058,19 @@
     "maturity_score": 63.210028668056495,
     "status": "established",
     "account_age_days": 915
+  },
+  {
+    "login": "SchneiderCode1",
+    "id": 165057013,
+    "name": "Henrique Schneider Fernandes da Rosa",
+    "public_repos": 6,
+    "followers": 2,
+    "following": 2,
+    "created_at": "2024-03-26T15:44:49Z",
+    "updated_at": "2026-09-03T11:13:30Z",
+    "maturity_score": 31.21394369237809,
+    "status": "new",
+    "account_age_days": 904
   },
   {
     "login": "erickaalves",
@@ -1099,6 +1099,19 @@
     "account_age_days": 731
   },
   {
+    "login": "DaviUrsulino",
+    "id": 187406144,
+    "name": "Davi Ursulino",
+    "public_repos": 10,
+    "followers": 0,
+    "following": 0,
+    "created_at": "2024-11-05T13:02:05Z",
+    "updated_at": "2026-09-16T13:18:31Z",
+    "maturity_score": 10.455466971469868,
+    "status": "established",
+    "account_age_days": 680
+  },
+  {
     "login": "Paxxaglia",
     "id": 109971590,
     "name": "Iago Passaglia",
@@ -1125,19 +1138,6 @@
     "account_age_days": 1337
   },
   {
-    "login": "DaviUrsulino",
-    "id": 187406144,
-    "name": "Davi Ursulino",
-    "public_repos": 10,
-    "followers": 0,
-    "following": 0,
-    "created_at": "2024-11-05T13:02:05Z",
-    "updated_at": "2026-09-16T13:18:31Z",
-    "maturity_score": 10.455466971469868,
-    "status": "established",
-    "account_age_days": 680
-  },
-  {
     "login": "WillxBernardo",
     "id": 124713089,
     "name": "William Bernardo",
@@ -1149,32 +1149,6 @@
     "maturity_score": 62.34564245612596,
     "status": "established",
     "account_age_days": 1317
-  },
-  {
-    "login": "Vini47",
-    "id": 79549264,
-    "name": "Vinicius Castelo",
-    "public_repos": 1,
-    "followers": 9,
-    "following": 12,
-    "created_at": "2021-02-23T23:44:05Z",
-    "updated_at": "2026-09-12T13:55:06Z",
-    "maturity_score": 51.939531305909945,
-    "status": "new",
-    "account_age_days": 2031
-  },
-  {
-    "login": "TiagoBalieiro",
-    "id": 143669941,
-    "name": "Tiago Antunes Balieiro",
-    "public_repos": 5,
-    "followers": 12,
-    "following": 10,
-    "created_at": "2023-08-31T00:53:30Z",
-    "updated_at": "2026-09-07T02:35:06Z",
-    "maturity_score": 60.18212176715851,
-    "status": "established",
-    "account_age_days": 1113
   },
   {
     "login": "Davicamilo23",
@@ -1190,6 +1164,19 @@
     "account_age_days": 1108
   },
   {
+    "login": "TiagoBalieiro",
+    "id": 143669941,
+    "name": "Tiago Antunes Balieiro",
+    "public_repos": 5,
+    "followers": 12,
+    "following": 10,
+    "created_at": "2023-08-31T00:53:30Z",
+    "updated_at": "2026-09-07T02:35:06Z",
+    "maturity_score": 60.18212176715851,
+    "status": "established",
+    "account_age_days": 1113
+  },
+  {
     "login": "Velho008",
     "id": 186762566,
     "name": "Gabriel Velho de Souza",
@@ -1201,6 +1188,19 @@
     "maturity_score": 64.88261839037487,
     "status": "established",
     "account_age_days": 687
+  },
+  {
+    "login": "Vini47",
+    "id": 79549264,
+    "name": "Vinicius Castelo",
+    "public_repos": 1,
+    "followers": 9,
+    "following": 12,
+    "created_at": "2021-02-23T23:44:05Z",
+    "updated_at": "2026-09-12T13:55:06Z",
+    "maturity_score": 51.939531305909945,
+    "status": "new",
+    "account_age_days": 2031
   },
   {
     "login": "Nathan-bs",
@@ -1216,19 +1216,6 @@
     "account_age_days": 1113
   },
   {
-    "login": "PedroGomes-phgr",
-    "id": 214181005,
-    "name": "pedrohgr",
-    "public_repos": 8,
-    "followers": 2,
-    "following": 5,
-    "created_at": "2025-05-30T20:36:23Z",
-    "updated_at": "2026-09-05T23:13:11Z",
-    "maturity_score": 31.645576907388175,
-    "status": "new",
-    "account_age_days": 474
-  },
-  {
     "login": "nathanpromao",
     "id": 57817030,
     "name": null,
@@ -1237,22 +1224,22 @@
     "following": 0,
     "created_at": "2019-11-15T23:16:11Z",
     "updated_at": "2026-04-11T22:11:38Z",
-    "maturity_score": 7.207459711347091,
+    "maturity_score": 7.20745971134709,
     "status": "new",
     "account_age_days": 2497
   },
   {
-    "login": "Phill-Chill",
-    "id": 164696319,
-    "name": "Philipe Amâncio",
-    "public_repos": 11,
-    "followers": 9,
-    "following": 13,
-    "created_at": "2024-03-23T23:42:54Z",
-    "updated_at": "2026-09-03T14:34:03Z",
-    "maturity_score": 56.91204399854557,
-    "status": "established",
-    "account_age_days": 907
+    "login": "PedroGomes-phgr",
+    "id": 214181005,
+    "name": "pedrohgr",
+    "public_repos": 8,
+    "followers": 2,
+    "following": 5,
+    "created_at": "2025-05-30T20:36:23Z",
+    "updated_at": "2026-09-05T23:13:11Z",
+    "maturity_score": 31.64557690738817,
+    "status": "new",
+    "account_age_days": 474
   },
   {
     "login": "Jonathan-Carpaneda",
@@ -1266,6 +1253,19 @@
     "maturity_score": 43.69162624120201,
     "status": "new",
     "account_age_days": 1627
+  },
+  {
+    "login": "Phill-Chill",
+    "id": 164696319,
+    "name": "Philipe Amâncio",
+    "public_repos": 11,
+    "followers": 9,
+    "following": 13,
+    "created_at": "2024-03-23T23:42:54Z",
+    "updated_at": "2026-09-03T14:34:03Z",
+    "maturity_score": 56.91204399854557,
+    "status": "established",
+    "account_age_days": 907
   },
   {
     "login": "BrunoHDuarte2",
@@ -1320,19 +1320,6 @@
     "account_age_days": 593
   },
   {
-    "login": "isaacbatista26",
-    "id": 118384776,
-    "name": "Isaac Batista",
-    "public_repos": 10,
-    "followers": 9,
-    "following": 20,
-    "created_at": "2022-11-16T17:39:33Z",
-    "updated_at": "2026-09-12T22:47:38Z",
-    "maturity_score": 56.86785845144453,
-    "status": "established",
-    "account_age_days": 1400
-  },
-  {
     "login": "gabriel-lima258",
     "id": 116119327,
     "name": "Gabriel Lima",
@@ -1344,6 +1331,19 @@
     "maturity_score": 89.60626729801169,
     "status": "established",
     "account_age_days": 1429
+  },
+  {
+    "login": "isaacbatista26",
+    "id": 118384776,
+    "name": "Isaac Batista",
+    "public_repos": 10,
+    "followers": 9,
+    "following": 20,
+    "created_at": "2022-11-16T17:39:33Z",
+    "updated_at": "2026-09-12T22:47:38Z",
+    "maturity_score": 56.86785845144453,
+    "status": "established",
+    "account_age_days": 1400
   },
   {
     "login": "ArthurDevWorks",
@@ -1359,19 +1359,6 @@
     "account_age_days": 694
   },
   {
-    "login": "GabrielCastelo-31",
-    "id": 81991244,
-    "name": "Gabriel Henrique Castelo",
-    "public_repos": 15,
-    "followers": 22,
-    "following": 36,
-    "created_at": "2021-04-05T19:37:37Z",
-    "updated_at": "2026-08-23T19:10:35Z",
-    "maturity_score": 74.82584663733444,
-    "status": "established",
-    "account_age_days": 1990
-  },
-  {
     "login": "andre-maia51",
     "id": 76632983,
     "name": "André Maia",
@@ -1385,30 +1372,17 @@
     "account_age_days": 2090
   },
   {
-    "login": "gio221",
-    "id": 111579005,
-    "name": null,
-    "public_repos": 21,
-    "followers": 11,
-    "following": 10,
-    "created_at": "2022-08-19T13:14:27Z",
-    "updated_at": "2026-09-09T20:06:48Z",
-    "maturity_score": 62.624526055304706,
+    "login": "GabrielCastelo-31",
+    "id": 81991244,
+    "name": "Gabriel Henrique Castelo",
+    "public_repos": 15,
+    "followers": 22,
+    "following": 36,
+    "created_at": "2021-04-05T19:37:37Z",
+    "updated_at": "2026-08-23T19:10:35Z",
+    "maturity_score": 74.82584663733444,
     "status": "established",
-    "account_age_days": 1489
-  },
-  {
-    "login": "pLopess",
-    "id": 87770252,
-    "name": "Pedro Lopes",
-    "public_repos": 9,
-    "followers": 20,
-    "following": 24,
-    "created_at": "2021-07-21T15:00:58Z",
-    "updated_at": "2026-09-10T19:26:34Z",
-    "maturity_score": 71.56878026101874,
-    "status": "established",
-    "account_age_days": 1883
+    "account_age_days": 1990
   },
   {
     "login": "Ana-Luiza-SC",
@@ -1424,6 +1398,32 @@
     "account_age_days": 1176
   },
   {
+    "login": "Fabiovieira05",
+    "id": 91705761,
+    "name": "Fábio Alessandro",
+    "public_repos": 10,
+    "followers": 2,
+    "following": 0,
+    "created_at": "2021-10-01T00:00:00Z",
+    "updated_at": "2026-09-03T07:02:28Z",
+    "maturity_score": 32.91730069713473,
+    "status": "established",
+    "account_age_days": 1812
+  },
+  {
+    "login": "gio221",
+    "id": 111579005,
+    "name": null,
+    "public_repos": 21,
+    "followers": 11,
+    "following": 10,
+    "created_at": "2022-08-19T13:14:27Z",
+    "updated_at": "2026-09-09T20:06:48Z",
+    "maturity_score": 62.624526055304706,
+    "status": "established",
+    "account_age_days": 1489
+  },
+  {
     "login": "johnaopedro",
     "id": 87997969,
     "name": "João Pedro",
@@ -1435,19 +1435,6 @@
     "maturity_score": 40.76826208217949,
     "status": "established",
     "account_age_days": 1878
-  },
-  {
-    "login": "Fabiovieira05",
-    "id": 91705761,
-    "name": "Fábio Alessandro",
-    "public_repos": 10,
-    "followers": 2,
-    "following": 0,
-    "created_at": "2021-10-01T00:00:00Z",
-    "updated_at": "2026-09-03T07:02:28Z",
-    "maturity_score": 32.917300697134735,
-    "status": "established",
-    "account_age_days": 1812
   },
   {
     "login": "macedoPedro20",
@@ -1463,17 +1450,17 @@
     "account_age_days": 810
   },
   {
-    "login": "LuizaMaluf",
-    "id": 117913962,
-    "name": "Luiza Maluf",
-    "public_repos": 16,
-    "followers": 13,
-    "following": 15,
-    "created_at": "2022-11-10T12:17:18Z",
-    "updated_at": "2026-09-10T03:18:19Z",
-    "maturity_score": 64.90539415303101,
+    "login": "pLopess",
+    "id": 87770252,
+    "name": "Pedro Lopes",
+    "public_repos": 9,
+    "followers": 20,
+    "following": 24,
+    "created_at": "2021-07-21T15:00:58Z",
+    "updated_at": "2026-09-10T19:26:34Z",
+    "maturity_score": 71.56878026101874,
     "status": "established",
-    "account_age_days": 1406
+    "account_age_days": 1883
   },
   {
     "login": "johan-rocha",
@@ -1489,17 +1476,17 @@
     "account_age_days": 1607
   },
   {
-    "login": "LiviaYasmin",
-    "id": 108472844,
-    "name": "Lívia Yasmin",
-    "public_repos": 7,
-    "followers": 2,
-    "following": 0,
-    "created_at": "2022-06-30T13:28:36Z",
-    "updated_at": "2026-08-30T04:20:58Z",
-    "maturity_score": 31.880339246105542,
-    "status": "new",
-    "account_age_days": 1539
+    "login": "LuizaMaluf",
+    "id": 117913962,
+    "name": "Luiza Maluf",
+    "public_repos": 16,
+    "followers": 13,
+    "following": 15,
+    "created_at": "2022-11-10T12:17:18Z",
+    "updated_at": "2026-09-10T03:18:19Z",
+    "maturity_score": 64.90539415303103,
+    "status": "established",
+    "account_age_days": 1406
   },
   {
     "login": "Bryan70897",
@@ -1513,6 +1500,19 @@
     "maturity_score": 21.235879330900875,
     "status": "new",
     "account_age_days": 618
+  },
+  {
+    "login": "LiviaYasmin",
+    "id": 108472844,
+    "name": "Lívia Yasmin",
+    "public_repos": 7,
+    "followers": 2,
+    "following": 0,
+    "created_at": "2022-06-30T13:28:36Z",
+    "updated_at": "2026-08-30T04:20:58Z",
+    "maturity_score": 31.880339246105535,
+    "status": "new",
+    "account_age_days": 1539
   },
   {
     "login": "AlexandreLJr",
@@ -1567,19 +1567,6 @@
     "account_age_days": 1518
   },
   {
-    "login": "LuizGust4vo",
-    "id": 62315709,
-    "name": "Luiz Gustavo",
-    "public_repos": 15,
-    "followers": 12,
-    "following": 18,
-    "created_at": "2020-03-18T00:58:51Z",
-    "updated_at": "2026-09-09T23:29:13Z",
-    "maturity_score": 63.50312967418445,
-    "status": "established",
-    "account_age_days": 2374
-  },
-  {
     "login": "angelicaccampos",
     "id": 82877749,
     "name": "Angélica Campos",
@@ -1606,19 +1593,6 @@
     "account_age_days": 1282
   },
   {
-    "login": "phenric26",
-    "id": 141793385,
-    "name": "Pedro Henrique",
-    "public_repos": 17,
-    "followers": 8,
-    "following": 4,
-    "created_at": "2023-08-09T01:33:59Z",
-    "updated_at": "2026-09-09T11:34:04Z",
-    "maturity_score": 56.133241120053434,
-    "status": "established",
-    "account_age_days": 1135
-  },
-  {
     "login": "jorgevasquez25",
     "id": 247237551,
     "name": "Jorge Vásquez",
@@ -1630,6 +1604,19 @@
     "maturity_score": 32.640269225567906,
     "status": "new",
     "account_age_days": 289
+  },
+  {
+    "login": "LuizGust4vo",
+    "id": 62315709,
+    "name": "Luiz Gustavo",
+    "public_repos": 15,
+    "followers": 12,
+    "following": 18,
+    "created_at": "2020-03-18T00:58:51Z",
+    "updated_at": "2026-09-09T23:29:13Z",
+    "maturity_score": 63.50312967418445,
+    "status": "established",
+    "account_age_days": 2374
   },
   {
     "login": "luizhtmoreira",
@@ -1645,17 +1632,17 @@
     "account_age_days": 498
   },
   {
-    "login": "viniiribeiro",
-    "id": 83011443,
-    "name": "Vinícius Ribeiro",
-    "public_repos": 3,
-    "followers": 13,
-    "following": 14,
-    "created_at": "2021-04-22T11:10:17Z",
-    "updated_at": "2026-08-21T15:30:28Z",
-    "maturity_score": 60.73393828566155,
+    "login": "phenric26",
+    "id": 141793385,
+    "name": "Pedro Henrique",
+    "public_repos": 17,
+    "followers": 8,
+    "following": 4,
+    "created_at": "2023-08-09T01:33:59Z",
+    "updated_at": "2026-09-09T11:34:04Z",
+    "maturity_score": 56.133241120053434,
     "status": "established",
-    "account_age_days": 1973
+    "account_age_days": 1135
   },
   {
     "login": "arthurpalhares1",
@@ -1684,6 +1671,32 @@
     "account_age_days": 853
   },
   {
+    "login": "viniiribeiro",
+    "id": 83011443,
+    "name": "Vinícius Ribeiro",
+    "public_repos": 3,
+    "followers": 13,
+    "following": 14,
+    "created_at": "2021-04-22T11:10:17Z",
+    "updated_at": "2026-08-21T15:30:28Z",
+    "maturity_score": 60.733938285661566,
+    "status": "established",
+    "account_age_days": 1973
+  },
+  {
+    "login": "enzo-fb",
+    "id": 198164711,
+    "name": "Enzo F. Borges",
+    "public_repos": 7,
+    "followers": 2,
+    "following": 6,
+    "created_at": "2025-02-07T04:40:45Z",
+    "updated_at": "2026-09-07T16:00:31Z",
+    "maturity_score": 31.39893387235101,
+    "status": "new",
+    "account_age_days": 587
+  },
+  {
     "login": "zlimaz",
     "id": 98031566,
     "name": "MIGUEL ARTHUR",
@@ -1697,17 +1710,17 @@
     "account_age_days": 1701
   },
   {
-    "login": "enzo-fb",
-    "id": 198164711,
-    "name": "Enzo F. Borges",
-    "public_repos": 7,
-    "followers": 2,
-    "following": 6,
-    "created_at": "2025-02-07T04:40:45Z",
-    "updated_at": "2026-09-07T16:00:31Z",
-    "maturity_score": 31.398933872351016,
+    "login": "CaioMota16",
+    "id": 160689206,
+    "name": "Caio Bechepeche Mota",
+    "public_repos": 4,
+    "followers": 4,
+    "following": 5,
+    "created_at": "2024-02-21T02:16:38Z",
+    "updated_at": "2026-08-24T23:36:04Z",
+    "maturity_score": 40.44001192361633,
     "status": "new",
-    "account_age_days": 587
+    "account_age_days": 939
   },
   {
     "login": "IndianoDev",
@@ -1721,19 +1734,6 @@
     "maturity_score": 63.03174471523955,
     "status": "established",
     "account_age_days": 1995
-  },
-  {
-    "login": "CaioMota16",
-    "id": 160689206,
-    "name": "Caio Bechepeche Mota",
-    "public_repos": 4,
-    "followers": 4,
-    "following": 5,
-    "created_at": "2024-02-21T02:16:38Z",
-    "updated_at": "2026-08-24T23:36:04Z",
-    "maturity_score": 40.44001192361633,
-    "status": "new",
-    "account_age_days": 939
   },
   {
     "login": "xGabrielCv",
@@ -1801,19 +1801,6 @@
     "account_age_days": 1110
   },
   {
-    "login": "oalbertocavalcante",
-    "id": 166456618,
-    "name": "Alberto Cavalcante",
-    "public_repos": 39,
-    "followers": 9,
-    "following": 14,
-    "created_at": "2024-04-08T23:28:54Z",
-    "updated_at": "2026-09-11T08:33:39Z",
-    "maturity_score": 60.51507328851274,
-    "status": "established",
-    "account_age_days": 891
-  },
-  {
     "login": "joaoPedro-201",
     "id": 178330046,
     "name": "João Pedro de Sousa Silva",
@@ -1825,6 +1812,19 @@
     "maturity_score": 42.41645144457741,
     "status": "new",
     "account_age_days": 764
+  },
+  {
+    "login": "oalbertocavalcante",
+    "id": 166456618,
+    "name": "Alberto Cavalcante",
+    "public_repos": 39,
+    "followers": 9,
+    "following": 14,
+    "created_at": "2024-04-08T23:28:54Z",
+    "updated_at": "2026-09-11T08:33:39Z",
+    "maturity_score": 60.51507328851274,
+    "status": "established",
+    "account_age_days": 891
   },
   {
     "login": "CaioPacheco",
@@ -1900,7 +1900,7 @@
     "following": 4,
     "created_at": "2024-12-03T23:36:16Z",
     "updated_at": "2026-09-14T17:24:51Z",
-    "maturity_score": 29.371917421360084,
+    "maturity_score": 29.371917421360077,
     "status": "new",
     "account_age_days": 652
   },
@@ -1926,7 +1926,7 @@
     "following": 12,
     "created_at": "2021-03-26T13:35:32Z",
     "updated_at": "2026-08-26T17:09:53Z",
-    "maturity_score": 29.06878380665839,
+    "maturity_score": 29.068783806658384,
     "status": "new",
     "account_age_days": 2000
   },
@@ -1957,6 +1957,19 @@
     "account_age_days": 505
   },
   {
+    "login": "Cayoalencar",
+    "id": 114755918,
+    "name": "Cayo Alencar",
+    "public_repos": 17,
+    "followers": 14,
+    "following": 13,
+    "created_at": "2022-09-30T14:35:22Z",
+    "updated_at": "2026-09-14T14:18:43Z",
+    "maturity_score": 66.47108858220552,
+    "status": "established",
+    "account_age_days": 1447
+  },
+  {
     "login": "DanielFsR",
     "id": 118537519,
     "name": "Daniel Ferreira Santos Rabelo",
@@ -1970,30 +1983,17 @@
     "account_age_days": 1398
   },
   {
-    "login": "manuvaladares",
-    "id": 119461383,
-    "name": "Manuella Valadares",
-    "public_repos": 18,
-    "followers": 20,
-    "following": 10,
-    "created_at": "2022-11-29T23:23:06Z",
-    "updated_at": "2026-09-02T23:17:08Z",
-    "maturity_score": 73.34157526250115,
-    "status": "established",
-    "account_age_days": 1387
-  },
-  {
-    "login": "mat054",
-    "id": 140627829,
-    "name": "Mateus de Castro",
-    "public_repos": 22,
-    "followers": 11,
+    "login": "Dgprogramas",
+    "id": 212963810,
+    "name": "Diogo Alves",
+    "public_repos": 7,
+    "followers": 6,
     "following": 8,
-    "created_at": "2023-07-26T14:18:40Z",
-    "updated_at": "2026-09-14T21:11:47Z",
-    "maturity_score": 62.62793928247183,
-    "status": "established",
-    "account_age_days": 1148
+    "created_at": "2025-05-22T21:52:14Z",
+    "updated_at": "2026-08-27T17:36:09Z",
+    "maturity_score": 48.24653593297205,
+    "status": "new",
+    "account_age_days": 482
   },
   {
     "login": "GabrielSPinto",
@@ -2007,19 +2007,6 @@
     "maturity_score": 73.65790627262119,
     "status": "established",
     "account_age_days": 1107
-  },
-  {
-    "login": "Cayoalencar",
-    "id": 114755918,
-    "name": "Cayo Alencar",
-    "public_repos": 17,
-    "followers": 14,
-    "following": 13,
-    "created_at": "2022-09-30T14:35:22Z",
-    "updated_at": "2026-09-14T14:18:43Z",
-    "maturity_score": 66.47108858220552,
-    "status": "established",
-    "account_age_days": 1447
   },
   {
     "login": "GFlyan",
@@ -2048,43 +2035,30 @@
     "account_age_days": 1276
   },
   {
-    "login": "Dgprogramas",
-    "id": 212963810,
-    "name": "Diogo Alves",
-    "public_repos": 7,
-    "followers": 6,
+    "login": "manuvaladares",
+    "id": 119461383,
+    "name": "Manuella Valadares",
+    "public_repos": 18,
+    "followers": 20,
+    "following": 10,
+    "created_at": "2022-11-29T23:23:06Z",
+    "updated_at": "2026-09-02T23:17:08Z",
+    "maturity_score": 73.34157526250115,
+    "status": "established",
+    "account_age_days": 1387
+  },
+  {
+    "login": "mat054",
+    "id": 140627829,
+    "name": "Mateus de Castro",
+    "public_repos": 22,
+    "followers": 11,
     "following": 8,
-    "created_at": "2025-05-22T21:52:14Z",
-    "updated_at": "2026-08-27T17:36:09Z",
-    "maturity_score": 48.24653593297205,
-    "status": "new",
-    "account_age_days": 482
-  },
-  {
-    "login": "yanzin00",
-    "id": 118907920,
-    "name": "Yan Guimarães ",
-    "public_repos": 7,
-    "followers": 15,
-    "following": 34,
-    "created_at": "2022-11-23T13:25:50Z",
-    "updated_at": "2026-08-24T21:43:37Z",
-    "maturity_score": 65.31006536549536,
+    "created_at": "2023-07-26T14:18:40Z",
+    "updated_at": "2026-09-14T21:11:47Z",
+    "maturity_score": 62.62793928247183,
     "status": "established",
-    "account_age_days": 1393
-  },
-  {
-    "login": "jlucasiqueira",
-    "id": 143570377,
-    "name": "Joao Lucas Araujo Siqueira",
-    "public_repos": 21,
-    "followers": 9,
-    "following": 16,
-    "created_at": "2023-08-30T01:42:51Z",
-    "updated_at": "2026-09-16T17:35:35Z",
-    "maturity_score": 58.83313406190298,
-    "status": "established",
-    "account_age_days": 1114
+    "account_age_days": 1148
   },
   {
     "login": "Brwnds",
@@ -2100,6 +2074,19 @@
     "account_age_days": 1366
   },
   {
+    "login": "jlucasiqueira",
+    "id": 143570377,
+    "name": "Joao Lucas Araujo Siqueira",
+    "public_repos": 21,
+    "followers": 9,
+    "following": 16,
+    "created_at": "2023-08-30T01:42:51Z",
+    "updated_at": "2026-09-16T17:35:35Z",
+    "maturity_score": 58.83313406190298,
+    "status": "established",
+    "account_age_days": 1114
+  },
+  {
     "login": "Paulosrsr",
     "id": 136831889,
     "name": "Paulo Sérgio ",
@@ -2108,9 +2095,22 @@
     "following": 0,
     "created_at": "2023-06-16T15:27:43Z",
     "updated_at": "2026-09-07T13:54:12Z",
-    "maturity_score": 6.83627081434972,
+    "maturity_score": 6.836270814349719,
     "status": "new",
     "account_age_days": 1188
+  },
+  {
+    "login": "yanzin00",
+    "id": 118907920,
+    "name": "Yan Guimarães ",
+    "public_repos": 7,
+    "followers": 15,
+    "following": 34,
+    "created_at": "2022-11-23T13:25:50Z",
+    "updated_at": "2026-08-24T21:43:37Z",
+    "maturity_score": 65.31006536549536,
+    "status": "established",
+    "account_age_days": 1393
   },
   {
     "login": "BiancaPatrocinio7",
@@ -2126,30 +2126,17 @@
     "account_age_days": 2217
   },
   {
-    "login": "PedroALuciano",
-    "id": 108702746,
-    "name": "Pedro Luciano de Azevedo",
-    "public_repos": 17,
-    "followers": 9,
-    "following": 6,
-    "created_at": "2022-07-04T23:48:35Z",
-    "updated_at": "2026-09-04T15:21:30Z",
-    "maturity_score": 58.39128559042322,
+    "login": "EricAraujoBsB",
+    "id": 86008218,
+    "name": null,
+    "public_repos": 11,
+    "followers": 3,
+    "following": 0,
+    "created_at": "2021-06-16T14:42:31Z",
+    "updated_at": "2026-09-06T01:48:30Z",
+    "maturity_score": 38.96038691976567,
     "status": "established",
-    "account_age_days": 1535
-  },
-  {
-    "login": "Mateushqms",
-    "id": 163928182,
-    "name": "Mateus Henrique Queiroz Magalhães Sousa",
-    "public_repos": 10,
-    "followers": 4,
-    "following": 3,
-    "created_at": "2024-03-18T21:28:22Z",
-    "updated_at": "2026-09-14T05:31:47Z",
-    "maturity_score": 42.790812007374605,
-    "status": "established",
-    "account_age_days": 912
+    "account_age_days": 1918
   },
   {
     "login": "leozinlima",
@@ -2165,17 +2152,30 @@
     "account_age_days": 1582
   },
   {
-    "login": "EricAraujoBsB",
-    "id": 86008218,
-    "name": null,
-    "public_repos": 11,
-    "followers": 3,
-    "following": 0,
-    "created_at": "2021-06-16T14:42:31Z",
-    "updated_at": "2026-09-06T01:48:30Z",
-    "maturity_score": 38.96038691976567,
+    "login": "Mateushqms",
+    "id": 163928182,
+    "name": "Mateus Henrique Queiroz Magalhães Sousa",
+    "public_repos": 10,
+    "followers": 4,
+    "following": 3,
+    "created_at": "2024-03-18T21:28:22Z",
+    "updated_at": "2026-09-14T05:31:47Z",
+    "maturity_score": 42.790812007374605,
     "status": "established",
-    "account_age_days": 1918
+    "account_age_days": 912
+  },
+  {
+    "login": "PedroALuciano",
+    "id": 108702746,
+    "name": "Pedro Luciano de Azevedo",
+    "public_repos": 17,
+    "followers": 9,
+    "following": 6,
+    "created_at": "2022-07-04T23:48:35Z",
+    "updated_at": "2026-09-04T15:21:30Z",
+    "maturity_score": 58.39128559042322,
+    "status": "established",
+    "account_age_days": 1535
   },
   {
     "login": "ianpedersoli",
@@ -2204,19 +2204,6 @@
     "account_age_days": 327
   },
   {
-    "login": "IderlanJ",
-    "id": 101422838,
-    "name": "Iderlan Junio",
-    "public_repos": 4,
-    "followers": 21,
-    "following": 22,
-    "created_at": "2022-03-11T17:57:21Z",
-    "updated_at": "2026-09-08T21:49:43Z",
-    "maturity_score": 70.35373102642869,
-    "status": "established",
-    "account_age_days": 1650
-  },
-  {
     "login": "EdsonToppzera",
     "id": 157309764,
     "name": "Edson Gabriel",
@@ -2230,69 +2217,17 @@
     "account_age_days": 969
   },
   {
-    "login": "M4RINH0",
-    "id": 95291227,
-    "name": "Douglas Marinho",
-    "public_repos": 14,
-    "followers": 9,
-    "following": 12,
-    "created_at": "2021-11-30T12:58:25Z",
-    "updated_at": "2026-09-16T17:37:13Z",
-    "maturity_score": 57.91010909893572,
+    "login": "IderlanJ",
+    "id": 101422838,
+    "name": "Iderlan Junio",
+    "public_repos": 4,
+    "followers": 21,
+    "following": 22,
+    "created_at": "2022-03-11T17:57:21Z",
+    "updated_at": "2026-09-08T21:49:43Z",
+    "maturity_score": 70.35373102642869,
     "status": "established",
-    "account_age_days": 1751
-  },
-  {
-    "login": "dependabot[bot]",
-    "id": 49699333,
-    "name": null,
-    "public_repos": 0,
-    "followers": 0,
-    "following": 0,
-    "created_at": "2019-04-16T22:34:25Z",
-    "updated_at": "2019-05-23T08:22:16Z",
-    "maturity_score": 3.952536424749333,
-    "status": "new",
-    "account_age_days": 2710
-  },
-  {
-    "login": "paulomh",
-    "id": 129633592,
-    "name": "Paulo Henrique Melo de Souza",
-    "public_repos": 7,
-    "followers": 10,
-    "following": 6,
-    "created_at": "2023-04-02T00:25:01Z",
-    "updated_at": "2026-09-13T13:39:55Z",
-    "maturity_score": 57.76764378158773,
-    "status": "established",
-    "account_age_days": 1264
-  },
-  {
-    "login": "Ninja-Haiyai",
-    "id": 73038704,
-    "name": "Matheus Barros do Nascimento ",
-    "public_repos": 6,
-    "followers": 6,
-    "following": 8,
-    "created_at": "2020-10-17T19:37:55Z",
-    "updated_at": "2026-08-30T23:12:34Z",
-    "maturity_score": 48.595096606525644,
-    "status": "new",
-    "account_age_days": 2160
-  },
-  {
-    "login": "Edumorais08",
-    "id": 139409504,
-    "name": "Eduardo Morais",
-    "public_repos": 22,
-    "followers": 12,
-    "following": 16,
-    "created_at": "2023-07-13T00:04:11Z",
-    "updated_at": "2026-09-08T23:31:26Z",
-    "maturity_score": 64.23484887327751,
-    "status": "established",
-    "account_age_days": 1162
+    "account_age_days": 1650
   },
   {
     "login": "ArthurNRamalho",
@@ -2308,6 +2243,32 @@
     "account_age_days": 1024
   },
   {
+    "login": "dependabot[bot]",
+    "id": 49699333,
+    "name": null,
+    "public_repos": 0,
+    "followers": 0,
+    "following": 0,
+    "created_at": "2019-04-16T22:34:25Z",
+    "updated_at": "2019-05-23T08:22:16Z",
+    "maturity_score": 3.952536424749333,
+    "status": "new",
+    "account_age_days": 2710
+  },
+  {
+    "login": "Edumorais08",
+    "id": 139409504,
+    "name": "Eduardo Morais",
+    "public_repos": 22,
+    "followers": 12,
+    "following": 16,
+    "created_at": "2023-07-13T00:04:11Z",
+    "updated_at": "2026-09-08T23:31:26Z",
+    "maturity_score": 64.23484887327751,
+    "status": "established",
+    "account_age_days": 1162
+  },
+  {
     "login": "KauaVL",
     "id": 130499937,
     "name": null,
@@ -2321,6 +2282,45 @@
     "account_age_days": 1254
   },
   {
+    "login": "M4RINH0",
+    "id": 95291227,
+    "name": "Douglas Marinho",
+    "public_repos": 14,
+    "followers": 9,
+    "following": 12,
+    "created_at": "2021-11-30T12:58:25Z",
+    "updated_at": "2026-09-16T17:37:13Z",
+    "maturity_score": 57.91010909893572,
+    "status": "established",
+    "account_age_days": 1751
+  },
+  {
+    "login": "Ninja-Haiyai",
+    "id": 73038704,
+    "name": "Matheus Barros do Nascimento ",
+    "public_repos": 6,
+    "followers": 6,
+    "following": 8,
+    "created_at": "2020-10-17T19:37:55Z",
+    "updated_at": "2026-08-30T23:12:34Z",
+    "maturity_score": 48.595096606525644,
+    "status": "new",
+    "account_age_days": 2160
+  },
+  {
+    "login": "paulomh",
+    "id": 129633592,
+    "name": "Paulo Henrique Melo de Souza",
+    "public_repos": 7,
+    "followers": 10,
+    "following": 6,
+    "created_at": "2023-04-02T00:25:01Z",
+    "updated_at": "2026-09-13T13:39:55Z",
+    "maturity_score": 57.76764378158773,
+    "status": "established",
+    "account_age_days": 1264
+  },
+  {
     "login": "LORliveira",
     "id": 101184699,
     "name": "Loliveirinha",
@@ -2332,58 +2332,6 @@
     "maturity_score": 39.348535149035406,
     "status": "established",
     "account_age_days": 1653
-  },
-  {
-    "login": "CristianoMoraiss",
-    "id": 164538943,
-    "name": "Cristiano Borges de Morais",
-    "public_repos": 1,
-    "followers": 4,
-    "following": 6,
-    "created_at": "2024-03-22T16:27:08Z",
-    "updated_at": "2026-09-07T18:52:02Z",
-    "maturity_score": 37.67437233745058,
-    "status": "new",
-    "account_age_days": 908
-  },
-  {
-    "login": "BGrangeiro",
-    "id": 197856263,
-    "name": "Bruno Henryque Grangeiro",
-    "public_repos": 6,
-    "followers": 4,
-    "following": 3,
-    "created_at": "2025-02-05T03:14:47Z",
-    "updated_at": "2026-09-16T13:13:05Z",
-    "maturity_score": 41.216549964297826,
-    "status": "new",
-    "account_age_days": 589
-  },
-  {
-    "login": "GiovanniMateus",
-    "id": 191532479,
-    "name": "Giovanni Mateus de Mendonça Leles",
-    "public_repos": 6,
-    "followers": 10,
-    "following": 14,
-    "created_at": "2024-12-12T22:37:58Z",
-    "updated_at": "2026-09-13T17:26:33Z",
-    "maturity_score": 57.02948526618553,
-    "status": "established",
-    "account_age_days": 643
-  },
-  {
-    "login": "HeitorM50",
-    "id": 172512774,
-    "name": "Heitor Ricardo",
-    "public_repos": 10,
-    "followers": 6,
-    "following": 9,
-    "created_at": "2024-06-12T13:57:38Z",
-    "updated_at": "2026-08-25T21:02:39Z",
-    "maturity_score": 49.470791147013216,
-    "status": "established",
-    "account_age_days": 826
   },
   {
     "login": "ananunesv",
@@ -2412,6 +2360,32 @@
     "account_age_days": 910
   },
   {
+    "login": "BGrangeiro",
+    "id": 197856263,
+    "name": "Bruno Henryque Grangeiro",
+    "public_repos": 6,
+    "followers": 4,
+    "following": 3,
+    "created_at": "2025-02-05T03:14:47Z",
+    "updated_at": "2026-09-16T13:13:05Z",
+    "maturity_score": 41.216549964297826,
+    "status": "new",
+    "account_age_days": 589
+  },
+  {
+    "login": "CristianoMoraiss",
+    "id": 164538943,
+    "name": "Cristiano Borges de Morais",
+    "public_repos": 1,
+    "followers": 4,
+    "following": 6,
+    "created_at": "2024-03-22T16:27:08Z",
+    "updated_at": "2026-09-07T18:52:02Z",
+    "maturity_score": 37.67437233745058,
+    "status": "new",
+    "account_age_days": 908
+  },
+  {
     "login": "DanielAlmeidaFrota",
     "id": 244839088,
     "name": "Daniel Almeida",
@@ -2420,35 +2394,35 @@
     "following": 0,
     "created_at": "2025-11-18T23:10:26Z",
     "updated_at": "2026-09-08T19:16:45Z",
-    "maturity_score": 6.152703268759014,
+    "maturity_score": 6.152703268759013,
     "status": "new",
     "account_age_days": 302
   },
   {
-    "login": "Otavio4283",
-    "id": 110172609,
-    "name": null,
-    "public_repos": 11,
-    "followers": 5,
-    "following": 1,
-    "created_at": "2022-07-28T11:54:21Z",
-    "updated_at": "2024-08-14T00:29:23Z",
-    "maturity_score": 46.95050361229484,
+    "login": "GiovanniMateus",
+    "id": 191532479,
+    "name": "Giovanni Mateus de Mendonça Leles",
+    "public_repos": 6,
+    "followers": 10,
+    "following": 14,
+    "created_at": "2024-12-12T22:37:58Z",
+    "updated_at": "2026-09-13T17:26:33Z",
+    "maturity_score": 57.02948526618553,
     "status": "established",
-    "account_age_days": 1511
+    "account_age_days": 643
   },
   {
-    "login": "FelipeRibeirooo",
-    "id": 143733331,
-    "name": "Felipe Ribeiro",
-    "public_repos": 1,
-    "followers": 4,
-    "following": 2,
-    "created_at": "2023-08-31T15:23:16Z",
-    "updated_at": "2024-07-08T21:29:01Z",
-    "maturity_score": 37.775606965999614,
-    "status": "new",
-    "account_age_days": 1112
+    "login": "HeitorM50",
+    "id": 172512774,
+    "name": "Heitor Ricardo",
+    "public_repos": 10,
+    "followers": 6,
+    "following": 9,
+    "created_at": "2024-06-12T13:57:38Z",
+    "updated_at": "2026-08-25T21:02:39Z",
+    "maturity_score": 49.470791147013216,
+    "status": "established",
+    "account_age_days": 826
   },
   {
     "login": "brunodantas9",
@@ -2477,17 +2451,17 @@
     "account_age_days": 490
   },
   {
-    "login": "Pedrop06",
-    "id": 163420259,
-    "name": "Pedro Paulo Almeida",
-    "public_repos": 2,
-    "followers": 3,
-    "following": 7,
-    "created_at": "2024-03-14T12:48:30Z",
-    "updated_at": "2026-09-05T14:42:18Z",
-    "maturity_score": 34.432277824530374,
+    "login": "FelipeRibeirooo",
+    "id": 143733331,
+    "name": "Felipe Ribeiro",
+    "public_repos": 1,
+    "followers": 4,
+    "following": 2,
+    "created_at": "2023-08-31T15:23:16Z",
+    "updated_at": "2024-07-08T21:29:01Z",
+    "maturity_score": 37.775606965999614,
     "status": "new",
-    "account_age_days": 916
+    "account_age_days": 1112
   },
   {
     "login": "jot4-ge",
@@ -2503,6 +2477,32 @@
     "account_age_days": 491
   },
   {
+    "login": "Otavio4283",
+    "id": 110172609,
+    "name": null,
+    "public_repos": 11,
+    "followers": 5,
+    "following": 1,
+    "created_at": "2022-07-28T11:54:21Z",
+    "updated_at": "2024-08-14T00:29:23Z",
+    "maturity_score": 46.95050361229484,
+    "status": "established",
+    "account_age_days": 1511
+  },
+  {
+    "login": "Pedrop06",
+    "id": 163420259,
+    "name": "Pedro Paulo Almeida",
+    "public_repos": 2,
+    "followers": 3,
+    "following": 7,
+    "created_at": "2024-03-14T12:48:30Z",
+    "updated_at": "2026-09-05T14:42:18Z",
+    "maturity_score": 34.432277824530374,
+    "status": "new",
+    "account_age_days": 916
+  },
+  {
     "login": "EliasOliver21",
     "id": 101871853,
     "name": "Elias",
@@ -2514,19 +2514,6 @@
     "maturity_score": 56.780502647702725,
     "status": "established",
     "account_age_days": 1643
-  },
-  {
-    "login": "SemC0ndicao",
-    "id": 117684340,
-    "name": "Vitor Evangelista ",
-    "public_repos": 5,
-    "followers": 0,
-    "following": 1,
-    "created_at": "2022-11-07T20:21:54Z",
-    "updated_at": "2026-04-12T16:24:41Z",
-    "maturity_score": 9.000950899370272,
-    "status": "new",
-    "account_age_days": 1409
   },
   {
     "login": "Gustavo-0611",
@@ -2542,17 +2529,17 @@
     "account_age_days": 117
   },
   {
-    "login": "knz13",
-    "id": 82895172,
-    "name": "Otavio Maya",
-    "public_repos": 29,
-    "followers": 40,
-    "following": 27,
-    "created_at": "2021-04-20T15:42:26Z",
-    "updated_at": "2026-09-10T04:39:39Z",
-    "maturity_score": 88.26944841822653,
-    "status": "established",
-    "account_age_days": 1975
+    "login": "SemC0ndicao",
+    "id": 117684340,
+    "name": "Vitor Evangelista ",
+    "public_repos": 5,
+    "followers": 0,
+    "following": 1,
+    "created_at": "2022-11-07T20:21:54Z",
+    "updated_at": "2026-04-12T16:24:41Z",
+    "maturity_score": 9.000950899370272,
+    "status": "new",
+    "account_age_days": 1409
   },
   {
     "login": "auslogyc",
@@ -2568,6 +2555,19 @@
     "account_age_days": 1598
   },
   {
+    "login": "knz13",
+    "id": 82895172,
+    "name": "Otavio Maya",
+    "public_repos": 29,
+    "followers": 40,
+    "following": 27,
+    "created_at": "2021-04-20T15:42:26Z",
+    "updated_at": "2026-09-10T04:39:39Z",
+    "maturity_score": 88.26944841822653,
+    "status": "established",
+    "account_age_days": 1975
+  },
+  {
     "login": "alanagabriele",
     "id": 85856457,
     "name": "Alana Gabriele",
@@ -2579,6 +2579,19 @@
     "maturity_score": 83.88973257601722,
     "status": "established",
     "account_age_days": 1921
+  },
+  {
+    "login": "arthurvbl",
+    "id": 186127003,
+    "name": "Arthur Laterza",
+    "public_repos": 3,
+    "followers": 2,
+    "following": 4,
+    "created_at": "2024-10-24T03:31:48Z",
+    "updated_at": "2026-08-10T11:47:12Z",
+    "maturity_score": 29.402364836975263,
+    "status": "new",
+    "account_age_days": 693
   },
   {
     "login": "caio-venancio",
@@ -2607,30 +2620,17 @@
     "account_age_days": 782
   },
   {
-    "login": "arthurvbl",
-    "id": 186127003,
-    "name": "Arthur Laterza",
-    "public_repos": 3,
-    "followers": 2,
-    "following": 4,
-    "created_at": "2024-10-24T03:31:48Z",
-    "updated_at": "2026-08-10T11:47:12Z",
-    "maturity_score": 29.40236483697527,
+    "login": "AnnaBeatrizAraujo",
+    "id": 186416196,
+    "name": "Ana Beatriz Araújo",
+    "public_repos": 1,
+    "followers": 3,
+    "following": 0,
+    "created_at": "2024-10-26T17:53:35Z",
+    "updated_at": "2026-09-08T16:56:26Z",
+    "maturity_score": 33.07439867596148,
     "status": "new",
-    "account_age_days": 693
-  },
-  {
-    "login": "VieiraLaris",
-    "id": 116472322,
-    "name": "Larissa de Jesus Vieira",
-    "public_repos": 11,
-    "followers": 10,
-    "following": 16,
-    "created_at": "2022-10-23T02:16:59Z",
-    "updated_at": "2026-08-30T00:43:20Z",
-    "maturity_score": 59.04393970581854,
-    "status": "established",
-    "account_age_days": 1425
+    "account_age_days": 690
   },
   {
     "login": "Davi-KLevy",
@@ -2646,17 +2646,17 @@
     "account_age_days": 1533
   },
   {
-    "login": "AnnaBeatrizAraujo",
-    "id": 186416196,
-    "name": "Ana Beatriz Araújo",
-    "public_repos": 1,
-    "followers": 3,
-    "following": 0,
-    "created_at": "2024-10-26T17:53:35Z",
-    "updated_at": "2026-09-08T16:56:26Z",
-    "maturity_score": 33.07439867596148,
-    "status": "new",
-    "account_age_days": 690
+    "login": "VieiraLaris",
+    "id": 116472322,
+    "name": "Larissa de Jesus Vieira",
+    "public_repos": 11,
+    "followers": 10,
+    "following": 16,
+    "created_at": "2022-10-23T02:16:59Z",
+    "updated_at": "2026-08-30T00:43:20Z",
+    "maturity_score": 59.04393970581854,
+    "status": "established",
+    "account_age_days": 1425
   },
   {
     "login": "cadumotta",
@@ -2672,19 +2672,6 @@
     "account_age_days": 1273
   },
   {
-    "login": "VegasVvegas",
-    "id": 122989946,
-    "name": "Yara Xavier",
-    "public_repos": 15,
-    "followers": 28,
-    "following": 33,
-    "created_at": "2023-01-18T13:46:21Z",
-    "updated_at": "2026-08-26T12:04:35Z",
-    "maturity_score": 79.2631483867929,
-    "status": "established",
-    "account_age_days": 1337
-  },
-  {
     "login": "nicolaszanin06",
     "id": 213249676,
     "name": "Nicolas Zanin",
@@ -2698,30 +2685,17 @@
     "account_age_days": 480
   },
   {
-    "login": "VictorPontual",
-    "id": 129227815,
-    "name": "VICTOR PONTUAL GUEDES ARRUDA NOBREGA",
-    "public_repos": 8,
-    "followers": 6,
-    "following": 8,
-    "created_at": "2023-03-28T21:15:34Z",
-    "updated_at": "2026-09-16T20:20:33Z",
-    "maturity_score": 49.08286894697211,
-    "status": "new",
-    "account_age_days": 1268
-  },
-  {
-    "login": "marcoslbz",
-    "id": 98031338,
-    "name": "Marcos Bezerra",
+    "login": "VegasVvegas",
+    "id": 122989946,
+    "name": "Yara Xavier",
     "public_repos": 15,
-    "followers": 4,
-    "following": 7,
-    "created_at": "2022-01-19T13:20:12Z",
-    "updated_at": "2026-09-04T17:23:06Z",
-    "maturity_score": 44.22630406996801,
+    "followers": 28,
+    "following": 33,
+    "created_at": "2023-01-18T13:46:21Z",
+    "updated_at": "2026-08-26T12:04:35Z",
+    "maturity_score": 79.2631483867929,
     "status": "established",
-    "account_age_days": 1701
+    "account_age_days": 1337
   },
   {
     "login": "daviaraujobr",
@@ -2750,6 +2724,32 @@
     "account_age_days": 874
   },
   {
+    "login": "marcoslbz",
+    "id": 98031338,
+    "name": "Marcos Bezerra",
+    "public_repos": 15,
+    "followers": 4,
+    "following": 7,
+    "created_at": "2022-01-19T13:20:12Z",
+    "updated_at": "2026-09-04T17:23:06Z",
+    "maturity_score": 44.22630406996801,
+    "status": "established",
+    "account_age_days": 1701
+  },
+  {
+    "login": "VictorPontual",
+    "id": 129227815,
+    "name": "VICTOR PONTUAL GUEDES ARRUDA NOBREGA",
+    "public_repos": 8,
+    "followers": 6,
+    "following": 8,
+    "created_at": "2023-03-28T21:15:34Z",
+    "updated_at": "2026-09-16T20:20:33Z",
+    "maturity_score": 49.08286894697211,
+    "status": "new",
+    "account_age_days": 1268
+  },
+  {
     "login": "gusmoles",
     "id": 132620834,
     "name": "Guilherme Gusmão",
@@ -2761,19 +2761,6 @@
     "maturity_score": 65.41404916647555,
     "status": "established",
     "account_age_days": 1231
-  },
-  {
-    "login": "PhFariaa",
-    "id": 126727677,
-    "name": "Pedro Henrique Faria da Mota",
-    "public_repos": 9,
-    "followers": 12,
-    "following": 11,
-    "created_at": "2023-03-01T22:31:59Z",
-    "updated_at": "2026-09-14T17:03:43Z",
-    "maturity_score": 61.79026136666898,
-    "status": "established",
-    "account_age_days": 1295
   },
   {
     "login": "ArthurGuilher62",
@@ -2789,19 +2776,6 @@
     "account_age_days": 911
   },
   {
-    "login": "luannvi",
-    "id": 172428627,
-    "name": "Luan Vinícius ",
-    "public_repos": 1,
-    "followers": 4,
-    "following": 5,
-    "created_at": "2024-06-11T17:57:40Z",
-    "updated_at": "2026-08-28T11:48:22Z",
-    "maturity_score": 37.627706367554474,
-    "status": "new",
-    "account_age_days": 827
-  },
-  {
     "login": "BeatrizSants",
     "id": 165945167,
     "name": "Beatriz",
@@ -2813,6 +2787,19 @@
     "maturity_score": 33.20485669510705,
     "status": "new",
     "account_age_days": 896
+  },
+  {
+    "login": "luannvi",
+    "id": 172428627,
+    "name": "Luan Vinícius ",
+    "public_repos": 1,
+    "followers": 4,
+    "following": 5,
+    "created_at": "2024-06-11T17:57:40Z",
+    "updated_at": "2026-08-28T11:48:22Z",
+    "maturity_score": 37.627706367554474,
+    "status": "new",
+    "account_age_days": 827
   },
   {
     "login": "osakareaper",
@@ -2828,17 +2815,17 @@
     "account_age_days": 1324
   },
   {
-    "login": "luizh-gsoares",
-    "id": 99836497,
-    "name": "Luiz Henrique Soares",
-    "public_repos": 24,
-    "followers": 9,
-    "following": 9,
-    "created_at": "2022-02-16T19:48:29Z",
-    "updated_at": "2026-09-10T14:20:49Z",
-    "maturity_score": 59.419814960010235,
+    "login": "PhFariaa",
+    "id": 126727677,
+    "name": "Pedro Henrique Faria da Mota",
+    "public_repos": 9,
+    "followers": 12,
+    "following": 11,
+    "created_at": "2023-03-01T22:31:59Z",
+    "updated_at": "2026-09-14T17:03:43Z",
+    "maturity_score": 61.79026136666898,
     "status": "established",
-    "account_age_days": 1673
+    "account_age_days": 1295
   },
   {
     "login": "ArtyMend07",
@@ -2854,19 +2841,6 @@
     "account_age_days": 1363
   },
   {
-    "login": "GGDornelas",
-    "id": 165059250,
-    "name": "Giovanni Dornelas",
-    "public_repos": 3,
-    "followers": 2,
-    "following": 0,
-    "created_at": "2024-03-26T16:02:49Z",
-    "updated_at": "2026-08-28T21:48:53Z",
-    "maturity_score": 29.535096328571832,
-    "status": "new",
-    "account_age_days": 904
-  },
-  {
     "login": "dtdanielteles",
     "id": 86857101,
     "name": "Daniel Teles",
@@ -2878,19 +2852,6 @@
     "maturity_score": 57.97182351465499,
     "status": "established",
     "account_age_days": 1902
-  },
-  {
-    "login": "RafaelWasconcelos",
-    "id": 153397139,
-    "name": "Rafael Wasconcelos",
-    "public_repos": 5,
-    "followers": 9,
-    "following": 3,
-    "created_at": "2023-12-09T21:43:12Z",
-    "updated_at": "2026-08-25T19:22:46Z",
-    "maturity_score": 54.88731601968943,
-    "status": "new",
-    "account_age_days": 1012
   },
   {
     "login": "gabiiverissimo-dev",
@@ -2906,43 +2867,43 @@
     "account_age_days": 330
   },
   {
-    "login": "patyhelenaa",
-    "id": 94008339,
-    "name": null,
-    "public_repos": 15,
-    "followers": 6,
-    "following": 3,
-    "created_at": "2021-11-09T17:40:24Z",
-    "updated_at": "2026-09-16T08:48:46Z",
-    "maturity_score": 50.97618330086271,
-    "status": "established",
-    "account_age_days": 1772
+    "login": "GGDornelas",
+    "id": 165059250,
+    "name": "Giovanni Dornelas",
+    "public_repos": 3,
+    "followers": 2,
+    "following": 0,
+    "created_at": "2024-03-26T16:02:49Z",
+    "updated_at": "2026-08-28T21:48:53Z",
+    "maturity_score": 29.535096328571825,
+    "status": "new",
+    "account_age_days": 904
   },
   {
-    "login": "rayenealmeida",
-    "id": 85962730,
-    "name": "Rayene Almeida",
+    "login": "luizh-gsoares",
+    "id": 99836497,
+    "name": "Luiz Henrique Soares",
     "public_repos": 24,
-    "followers": 25,
-    "following": 21,
-    "created_at": "2021-06-15T18:59:03Z",
-    "updated_at": "2026-09-09T23:49:27Z",
-    "maturity_score": 78.59859846754516,
+    "followers": 9,
+    "following": 9,
+    "created_at": "2022-02-16T19:48:29Z",
+    "updated_at": "2026-09-10T14:20:49Z",
+    "maturity_score": 59.419814960010235,
     "status": "established",
-    "account_age_days": 1919
+    "account_age_days": 1673
   },
   {
-    "login": "mateuscavati",
-    "id": 117764744,
-    "name": "Mateus Cavalcante de Sousa",
-    "public_repos": 12,
-    "followers": 3,
-    "following": 5,
-    "created_at": "2022-11-08T17:33:52Z",
-    "updated_at": "2026-08-31T19:53:16Z",
-    "maturity_score": 39.046053050731764,
-    "status": "established",
-    "account_age_days": 1408
+    "login": "RafaelWasconcelos",
+    "id": 153397139,
+    "name": "Rafael Wasconcelos",
+    "public_repos": 5,
+    "followers": 9,
+    "following": 3,
+    "created_at": "2023-12-09T21:43:12Z",
+    "updated_at": "2026-08-25T19:22:46Z",
+    "maturity_score": 54.88731601968943,
+    "status": "new",
+    "account_age_days": 1012
   },
   {
     "login": "arthurfernandesj",
@@ -2958,6 +2919,45 @@
     "account_age_days": 1826
   },
   {
+    "login": "iicaroll",
+    "id": 186641335,
+    "name": "Ana Caroline ",
+    "public_repos": 3,
+    "followers": 3,
+    "following": 5,
+    "created_at": "2024-10-28T21:52:18Z",
+    "updated_at": "2026-09-16T17:20:47Z",
+    "maturity_score": 35.152390941264315,
+    "status": "new",
+    "account_age_days": 688
+  },
+  {
+    "login": "mateuscavati",
+    "id": 117764744,
+    "name": "Mateus Cavalcante de Sousa",
+    "public_repos": 12,
+    "followers": 3,
+    "following": 5,
+    "created_at": "2022-11-08T17:33:52Z",
+    "updated_at": "2026-08-31T19:53:16Z",
+    "maturity_score": 39.046053050731764,
+    "status": "established",
+    "account_age_days": 1408
+  },
+  {
+    "login": "patyhelenaa",
+    "id": 94008339,
+    "name": null,
+    "public_repos": 15,
+    "followers": 6,
+    "following": 3,
+    "created_at": "2021-11-09T17:40:24Z",
+    "updated_at": "2026-09-16T08:48:46Z",
+    "maturity_score": 50.97618330086271,
+    "status": "established",
+    "account_age_days": 1772
+  },
+  {
     "login": "pedrorocharfl",
     "id": 144711802,
     "name": "Pedro Lima",
@@ -2971,17 +2971,17 @@
     "account_age_days": 1101
   },
   {
-    "login": "iicaroll",
-    "id": 186641335,
-    "name": "Ana Caroline ",
-    "public_repos": 3,
-    "followers": 3,
-    "following": 5,
-    "created_at": "2024-10-28T21:52:18Z",
-    "updated_at": "2026-09-16T17:20:47Z",
-    "maturity_score": 35.152390941264315,
-    "status": "new",
-    "account_age_days": 688
+    "login": "rayenealmeida",
+    "id": 85962730,
+    "name": "Rayene Almeida",
+    "public_repos": 24,
+    "followers": 25,
+    "following": 21,
+    "created_at": "2021-06-15T18:59:03Z",
+    "updated_at": "2026-09-09T23:49:27Z",
+    "maturity_score": 78.59859846754516,
+    "status": "established",
+    "account_age_days": 1919
   },
   {
     "login": "daramariabs",
@@ -2997,32 +2997,6 @@
     "account_age_days": 2281
   },
   {
-    "login": "Goizzz",
-    "id": 111159833,
-    "name": "Pedro Gois",
-    "public_repos": 9,
-    "followers": 3,
-    "following": 1,
-    "created_at": "2022-08-12T23:55:06Z",
-    "updated_at": "2026-07-10T00:28:06Z",
-    "maturity_score": 38.28925169358976,
-    "status": "new",
-    "account_age_days": 1496
-  },
-  {
-    "login": "mtsmgn0",
-    "id": 143732873,
-    "name": "Mateus Magno",
-    "public_repos": 7,
-    "followers": 5,
-    "following": 9,
-    "created_at": "2023-08-31T15:18:28Z",
-    "updated_at": "2026-09-01T20:17:32Z",
-    "maturity_score": 45.58092118523838,
-    "status": "new",
-    "account_age_days": 1112
-  },
-  {
     "login": "Dodeglinhass",
     "id": 108148904,
     "name": "Douglas Wilson",
@@ -3034,6 +3008,19 @@
     "maturity_score": 45.74522712417429,
     "status": "new",
     "account_age_days": 1545
+  },
+  {
+    "login": "Goizzz",
+    "id": 111159833,
+    "name": "Pedro Gois",
+    "public_repos": 9,
+    "followers": 3,
+    "following": 1,
+    "created_at": "2022-08-12T23:55:06Z",
+    "updated_at": "2026-07-10T00:28:06Z",
+    "maturity_score": 38.28925169358976,
+    "status": "new",
+    "account_age_days": 1496
   },
   {
     "login": "lucasarruda9",
@@ -3049,6 +3036,19 @@
     "account_age_days": 1363
   },
   {
+    "login": "mtsmgn0",
+    "id": 143732873,
+    "name": "Mateus Magno",
+    "public_repos": 7,
+    "followers": 5,
+    "following": 9,
+    "created_at": "2023-08-31T15:18:28Z",
+    "updated_at": "2026-09-01T20:17:32Z",
+    "maturity_score": 45.58092118523838,
+    "status": "new",
+    "account_age_days": 1112
+  },
+  {
     "login": "SUDOTMOX",
     "id": 248756952,
     "name": null,
@@ -3060,45 +3060,6 @@
     "maturity_score": 20.842780230027635,
     "status": "new",
     "account_age_days": 281
-  },
-  {
-    "login": "SkywalkerSupreme",
-    "id": 141163236,
-    "name": "Larissa Stéfane",
-    "public_repos": 3,
-    "followers": 9,
-    "following": 0,
-    "created_at": "2023-08-01T15:27:01Z",
-    "updated_at": "2026-07-05T05:13:50Z",
-    "maturity_score": 53.731290775138,
-    "status": "new",
-    "account_age_days": 1142
-  },
-  {
-    "login": "samuelncaetano",
-    "id": 157507873,
-    "name": null,
-    "public_repos": 10,
-    "followers": 5,
-    "following": 1,
-    "created_at": "2024-01-23T15:28:02Z",
-    "updated_at": "2026-09-04T16:32:53Z",
-    "maturity_score": 46.4664912465945,
-    "status": "established",
-    "account_age_days": 967
-  },
-  {
-    "login": "Szervinsk",
-    "id": 165739040,
-    "name": "Matheus",
-    "public_repos": 12,
-    "followers": 5,
-    "following": 15,
-    "created_at": "2024-04-02T01:12:04Z",
-    "updated_at": "2026-09-01T20:07:32Z",
-    "maturity_score": 46.93067897418152,
-    "status": "established",
-    "account_age_days": 898
   },
   {
     "login": "camposs04",
@@ -3114,17 +3075,17 @@
     "account_age_days": 935
   },
   {
-    "login": "oicruc",
-    "id": 193807139,
-    "name": null,
-    "public_repos": 2,
+    "login": "filipeBG-07",
+    "id": 174053010,
+    "name": "Filipe Brito",
+    "public_repos": 1,
     "followers": 1,
-    "following": 4,
-    "created_at": "2025-01-05T15:17:03Z",
-    "updated_at": "2026-07-14T18:20:44Z",
-    "maturity_score": 20.373640216222803,
+    "following": 5,
+    "created_at": "2024-06-27T18:20:43Z",
+    "updated_at": "2026-09-15T11:39:10Z",
+    "maturity_score": 19.29213532295958,
     "status": "new",
-    "account_age_days": 619
+    "account_age_days": 811
   },
   {
     "login": "GustavoEmmanuel-1",
@@ -3140,19 +3101,6 @@
     "account_age_days": 696
   },
   {
-    "login": "filipeBG-07",
-    "id": 174053010,
-    "name": "Filipe Brito",
-    "public_repos": 1,
-    "followers": 1,
-    "following": 5,
-    "created_at": "2024-06-27T18:20:43Z",
-    "updated_at": "2026-09-15T11:39:10Z",
-    "maturity_score": 19.29213532295958,
-    "status": "new",
-    "account_age_days": 811
-  },
-  {
     "login": "marispmorais",
     "id": 211054600,
     "name": null,
@@ -3164,6 +3112,71 @@
     "maturity_score": 5.1827295050423,
     "status": "new",
     "account_age_days": 495
+  },
+  {
+    "login": "oicruc",
+    "id": 193807139,
+    "name": null,
+    "public_repos": 2,
+    "followers": 1,
+    "following": 4,
+    "created_at": "2025-01-05T15:17:03Z",
+    "updated_at": "2026-07-14T18:20:44Z",
+    "maturity_score": 20.373640216222803,
+    "status": "new",
+    "account_age_days": 619
+  },
+  {
+    "login": "samuelncaetano",
+    "id": 157507873,
+    "name": null,
+    "public_repos": 10,
+    "followers": 5,
+    "following": 1,
+    "created_at": "2024-01-23T15:28:02Z",
+    "updated_at": "2026-09-04T16:32:53Z",
+    "maturity_score": 46.4664912465945,
+    "status": "established",
+    "account_age_days": 967
+  },
+  {
+    "login": "SkywalkerSupreme",
+    "id": 141163236,
+    "name": "Larissa Stéfane",
+    "public_repos": 3,
+    "followers": 9,
+    "following": 0,
+    "created_at": "2023-08-01T15:27:01Z",
+    "updated_at": "2026-07-05T05:13:50Z",
+    "maturity_score": 53.731290775138,
+    "status": "new",
+    "account_age_days": 1142
+  },
+  {
+    "login": "Szervinsk",
+    "id": 165739040,
+    "name": "Matheus",
+    "public_repos": 12,
+    "followers": 5,
+    "following": 15,
+    "created_at": "2024-04-02T01:12:04Z",
+    "updated_at": "2026-09-01T20:07:32Z",
+    "maturity_score": 46.93067897418152,
+    "status": "established",
+    "account_age_days": 898
+  },
+  {
+    "login": "Blazemorales",
+    "id": 167719658,
+    "name": "João Morais",
+    "public_repos": 9,
+    "followers": 2,
+    "following": 3,
+    "created_at": "2024-04-21T22:18:49Z",
+    "updated_at": "2026-09-15T14:47:51Z",
+    "maturity_score": 32.26939350118691,
+    "status": "new",
+    "account_age_days": 878
   },
   {
     "login": "EnzoEmir",
@@ -3179,19 +3192,6 @@
     "account_age_days": 910
   },
   {
-    "login": "Blazemorales",
-    "id": 167719658,
-    "name": "João Morais",
-    "public_repos": 9,
-    "followers": 2,
-    "following": 3,
-    "created_at": "2024-04-21T22:18:49Z",
-    "updated_at": "2026-09-15T14:47:51Z",
-    "maturity_score": 32.269393501186926,
-    "status": "new",
-    "account_age_days": 878
-  },
-  {
     "login": "wandinhawright",
     "id": 203577513,
     "name": "Wanda Maria Wright dos Santos",
@@ -3203,6 +3203,19 @@
     "maturity_score": 36.718576808677014,
     "status": "new",
     "account_age_days": 549
+  },
+  {
+    "login": "Alexandroni07",
+    "id": 170197026,
+    "name": "Gabriel Alexandroni",
+    "public_repos": 32,
+    "followers": 9,
+    "following": 13,
+    "created_at": "2024-05-18T17:08:35Z",
+    "updated_at": "2026-09-10T12:32:34Z",
+    "maturity_score": 59.91501780769502,
+    "status": "established",
+    "account_age_days": 851
   },
   {
     "login": "leoramiroo",
@@ -3231,30 +3244,17 @@
     "account_age_days": 988
   },
   {
-    "login": "pedrogrocha13",
-    "id": 194185658,
-    "name": "Pedro Gonçalves Rocha",
-    "public_repos": 1,
-    "followers": 0,
+    "login": "lucasnferreiradev-lang",
+    "id": 239669229,
+    "name": null,
+    "public_repos": 0,
+    "followers": 1,
     "following": 0,
-    "created_at": "2025-01-08T03:32:06Z",
-    "updated_at": "2026-09-15T19:47:50Z",
-    "maturity_score": 5.292685770408681,
+    "created_at": "2025-10-22T20:30:07Z",
+    "updated_at": "2025-10-22T20:30:07Z",
+    "maturity_score": 16.76248993842917,
     "status": "new",
-    "account_age_days": 617
-  },
-  {
-    "login": "Alexandroni07",
-    "id": 170197026,
-    "name": "Gabriel Alexandroni",
-    "public_repos": 32,
-    "followers": 9,
-    "following": 13,
-    "created_at": "2024-05-18T17:08:35Z",
-    "updated_at": "2026-09-10T12:32:34Z",
-    "maturity_score": 59.91501780769502,
-    "status": "established",
-    "account_age_days": 851
+    "account_age_days": 329
   },
   {
     "login": "matheusqsa",
@@ -3270,17 +3270,30 @@
     "account_age_days": 1327
   },
   {
-    "login": "lucasnferreiradev-lang",
-    "id": 239669229,
-    "name": null,
-    "public_repos": 0,
-    "followers": 1,
+    "login": "pedrogrocha13",
+    "id": 194185658,
+    "name": "Pedro Gonçalves Rocha",
+    "public_repos": 1,
+    "followers": 0,
     "following": 0,
-    "created_at": "2025-10-22T20:30:07Z",
-    "updated_at": "2025-10-22T20:30:07Z",
-    "maturity_score": 16.76248993842917,
+    "created_at": "2025-01-08T03:32:06Z",
+    "updated_at": "2026-09-15T19:47:50Z",
+    "maturity_score": 5.292685770408681,
     "status": "new",
-    "account_age_days": 329
+    "account_age_days": 617
+  },
+  {
+    "login": "JuliaReis18",
+    "id": 152187766,
+    "name": "Júlia Massuda",
+    "public_repos": 12,
+    "followers": 2,
+    "following": 2,
+    "created_at": "2023-11-27T14:01:44Z",
+    "updated_at": "2026-09-13T17:15:08Z",
+    "maturity_score": 33.13331779153305,
+    "status": "established",
+    "account_age_days": 1024
   },
   {
     "login": "RafaBonach",
@@ -3296,19 +3309,6 @@
     "account_age_days": 1609
   },
   {
-    "login": "JuliaReis18",
-    "id": 152187766,
-    "name": "Júlia Massuda",
-    "public_repos": 12,
-    "followers": 2,
-    "following": 2,
-    "created_at": "2023-11-27T14:01:44Z",
-    "updated_at": "2026-09-13T17:15:08Z",
-    "maturity_score": 33.13331779153306,
-    "status": "established",
-    "account_age_days": 1024
-  },
-  {
     "login": "warlleymedeiros",
     "id": 294646625,
     "name": "Warlley Medeiros",
@@ -3320,19 +3320,6 @@
     "maturity_score": 34.145664594282,
     "status": "new",
     "account_age_days": 91
-  },
-  {
-    "login": "DaniloCTM",
-    "id": 42286412,
-    "name": "Danilo César",
-    "public_repos": 21,
-    "followers": 21,
-    "following": 25,
-    "created_at": "2018-08-11T02:07:51Z",
-    "updated_at": "2026-08-22T13:05:33Z",
-    "maturity_score": 75.09044870090032,
-    "status": "established",
-    "account_age_days": 2959
   },
   {
     "login": "artrsousa1",
@@ -3348,43 +3335,43 @@
     "account_age_days": 1529
   },
   {
-    "login": "JoseViniciusQueiroz",
-    "id": 125223478,
-    "name": "Jose_Viniciusq",
-    "public_repos": 8,
-    "followers": 6,
-    "following": 6,
-    "created_at": "2023-02-12T22:29:41Z",
-    "updated_at": "2026-08-30T16:32:41Z",
-    "maturity_score": 49.09991165026632,
-    "status": "new",
-    "account_age_days": 1312
-  },
-  {
-    "login": "paulocerqr",
-    "id": 163113808,
-    "name": "Paulo Henrique Virgílio Cerqueira",
-    "public_repos": 15,
-    "followers": 14,
-    "following": 10,
-    "created_at": "2024-03-12T08:43:47Z",
-    "updated_at": "2026-09-02T12:12:27Z",
-    "maturity_score": 65.89041324994139,
-    "status": "established",
-    "account_age_days": 918
-  },
-  {
-    "login": "HenriqueFontenelle",
-    "id": 150608773,
-    "name": "Henrique Fontenelle",
-    "public_repos": 21,
+    "login": "Atila05",
+    "id": 82632413,
+    "name": "Átila Sobral",
+    "public_repos": 0,
     "followers": 1,
+    "following": 1,
+    "created_at": "2021-04-16T04:40:47Z",
+    "updated_at": "2026-05-23T19:38:22Z",
+    "maturity_score": 17.65862213454818,
+    "status": "new",
+    "account_age_days": 1980
+  },
+  {
+    "login": "Daniel241025",
+    "id": 215087737,
+    "name": "Daniel Rodrigues Freitas",
+    "public_repos": 6,
+    "followers": 2,
     "following": 2,
-    "created_at": "2023-11-12T16:08:13Z",
-    "updated_at": "2026-09-02T12:00:02Z",
-    "maturity_score": 26.609558967341563,
+    "created_at": "2025-06-06T01:31:47Z",
+    "updated_at": "2026-08-12T18:52:22Z",
+    "maturity_score": 30.885277604751266,
+    "status": "new",
+    "account_age_days": 468
+  },
+  {
+    "login": "DaniloCTM",
+    "id": 42286412,
+    "name": "Danilo César",
+    "public_repos": 21,
+    "followers": 21,
+    "following": 25,
+    "created_at": "2018-08-11T02:07:51Z",
+    "updated_at": "2026-08-22T13:05:33Z",
+    "maturity_score": 75.09044870090032,
     "status": "established",
-    "account_age_days": 1039
+    "account_age_days": 2959
   },
   {
     "login": "Heloisa-Santos",
@@ -3400,17 +3387,30 @@
     "account_age_days": 1091
   },
   {
-    "login": "Atila05",
-    "id": 82632413,
-    "name": "Átila Sobral",
-    "public_repos": 0,
+    "login": "HenriqueFontenelle",
+    "id": 150608773,
+    "name": "Henrique Fontenelle",
+    "public_repos": 21,
     "followers": 1,
-    "following": 1,
-    "created_at": "2021-04-16T04:40:47Z",
-    "updated_at": "2026-05-23T19:38:22Z",
-    "maturity_score": 17.65862213454818,
+    "following": 2,
+    "created_at": "2023-11-12T16:08:13Z",
+    "updated_at": "2026-09-02T12:00:02Z",
+    "maturity_score": 26.609558967341563,
+    "status": "established",
+    "account_age_days": 1039
+  },
+  {
+    "login": "JoseViniciusQueiroz",
+    "id": 125223478,
+    "name": "Jose_Viniciusq",
+    "public_repos": 8,
+    "followers": 6,
+    "following": 6,
+    "created_at": "2023-02-12T22:29:41Z",
+    "updated_at": "2026-08-30T16:32:41Z",
+    "maturity_score": 49.09991165026632,
     "status": "new",
-    "account_age_days": 1980
+    "account_age_days": 1312
   },
   {
     "login": "MarcusVRezende",
@@ -3421,22 +3421,48 @@
     "following": 4,
     "created_at": "2023-05-11T21:04:00Z",
     "updated_at": "2026-08-24T11:37:54Z",
-    "maturity_score": 31.36532428201755,
+    "maturity_score": 31.365324282017543,
     "status": "new",
     "account_age_days": 1224
   },
   {
-    "login": "Daniel241025",
-    "id": 215087737,
-    "name": "Daniel Rodrigues Freitas",
-    "public_repos": 6,
+    "login": "paulocerqr",
+    "id": 163113808,
+    "name": "Paulo Henrique Virgílio Cerqueira",
+    "public_repos": 15,
+    "followers": 14,
+    "following": 10,
+    "created_at": "2024-03-12T08:43:47Z",
+    "updated_at": "2026-09-02T12:12:27Z",
+    "maturity_score": 65.89041324994139,
+    "status": "established",
+    "account_age_days": 918
+  },
+  {
+    "login": "arturalvesfn",
+    "id": 194157545,
+    "name": null,
+    "public_repos": 2,
     "followers": 2,
-    "following": 2,
-    "created_at": "2025-06-06T01:31:47Z",
-    "updated_at": "2026-08-12T18:52:22Z",
-    "maturity_score": 30.885277604751273,
+    "following": 3,
+    "created_at": "2025-01-07T21:15:11Z",
+    "updated_at": "2026-08-15T21:07:55Z",
+    "maturity_score": 28.481326868095366,
     "status": "new",
-    "account_age_days": 468
+    "account_age_days": 617
+  },
+  {
+    "login": "CaioSoandrd",
+    "id": 84874942,
+    "name": "Caio Soares de Andrade",
+    "public_repos": 10,
+    "followers": 17,
+    "following": 21,
+    "created_at": "2021-05-26T19:40:07Z",
+    "updated_at": "2026-09-14T00:18:14Z",
+    "maturity_score": 68.78634260234709,
+    "status": "established",
+    "account_age_days": 1939
   },
   {
     "login": "dudupaz",
@@ -3463,45 +3489,6 @@
     "maturity_score": 8.294537683088555,
     "status": "new",
     "account_age_days": 1024
-  },
-  {
-    "login": "CaioSoandrd",
-    "id": 84874942,
-    "name": "Caio Soares de Andrade",
-    "public_repos": 10,
-    "followers": 17,
-    "following": 21,
-    "created_at": "2021-05-26T19:40:07Z",
-    "updated_at": "2026-09-14T00:18:14Z",
-    "maturity_score": 68.78634260234709,
-    "status": "established",
-    "account_age_days": 1939
-  },
-  {
-    "login": "arturalvesfn",
-    "id": 194157545,
-    "name": null,
-    "public_repos": 2,
-    "followers": 2,
-    "following": 3,
-    "created_at": "2025-01-07T21:15:11Z",
-    "updated_at": "2026-08-15T21:07:55Z",
-    "maturity_score": 28.481326868095373,
-    "status": "new",
-    "account_age_days": 617
-  },
-  {
-    "login": "sidts",
-    "id": 122989369,
-    "name": "Enrico Zoratto",
-    "public_repos": 5,
-    "followers": 6,
-    "following": 3,
-    "created_at": "2023-01-18T13:38:25Z",
-    "updated_at": "2026-08-12T13:26:50Z",
-    "maturity_score": 47.89294700913452,
-    "status": "new",
-    "account_age_days": 1337
   },
   {
     "login": "anawcarol",
@@ -3538,9 +3525,22 @@
     "following": 21,
     "created_at": "2022-11-28T19:28:11Z",
     "updated_at": "2026-09-16T18:37:56Z",
-    "maturity_score": 61.77459467136651,
+    "maturity_score": 61.774594671366515,
     "status": "established",
     "account_age_days": 1388
+  },
+  {
+    "login": "sidts",
+    "id": 122989369,
+    "name": "Enrico Zoratto",
+    "public_repos": 5,
+    "followers": 6,
+    "following": 3,
+    "created_at": "2023-01-18T13:38:25Z",
+    "updated_at": "2026-08-12T13:26:50Z",
+    "maturity_score": 47.89294700913452,
+    "status": "new",
+    "account_age_days": 1337
   },
   {
     "login": "Angelicahaas",
@@ -3556,32 +3556,6 @@
     "account_age_days": 1653
   },
   {
-    "login": "gabriel-ggf",
-    "id": 205993922,
-    "name": "Gabriel Guedes Fernandes",
-    "public_repos": 2,
-    "followers": 2,
-    "following": 0,
-    "created_at": "2025-04-02T21:35:39Z",
-    "updated_at": "2026-08-14T20:03:25Z",
-    "maturity_score": 28.407343351449448,
-    "status": "new",
-    "account_age_days": 532
-  },
-  {
-    "login": "mariadenis",
-    "id": 127852640,
-    "name": "Maria Eduarda ",
-    "public_repos": 14,
-    "followers": 4,
-    "following": 2,
-    "created_at": "2023-03-14T11:55:54Z",
-    "updated_at": "2026-08-26T14:00:45Z",
-    "maturity_score": 43.89138703429646,
-    "status": "established",
-    "account_age_days": 1282
-  },
-  {
     "login": "cgbriel28",
     "id": 221913209,
     "name": "Carlos Gabriel ",
@@ -3593,6 +3567,19 @@
     "maturity_score": 39.372508059657655,
     "status": "new",
     "account_age_days": 423
+  },
+  {
+    "login": "gabriel-ggf",
+    "id": 205993922,
+    "name": "Gabriel Guedes Fernandes",
+    "public_repos": 2,
+    "followers": 2,
+    "following": 0,
+    "created_at": "2025-04-02T21:35:39Z",
+    "updated_at": "2026-08-14T20:03:25Z",
+    "maturity_score": 28.40734335144944,
+    "status": "new",
+    "account_age_days": 532
   },
   {
     "login": "LuisGuilherme67",
@@ -3608,43 +3595,17 @@
     "account_age_days": 1381
   },
   {
-    "login": "MylenaTrindade",
-    "id": 144967061,
-    "name": "mymendonca",
-    "public_repos": 9,
-    "followers": 25,
-    "following": 29,
-    "created_at": "2023-09-13T23:54:01Z",
-    "updated_at": "2026-09-06T21:22:22Z",
-    "maturity_score": 75.57121876880501,
+    "login": "mariadenis",
+    "id": 127852640,
+    "name": "Maria Eduarda ",
+    "public_repos": 14,
+    "followers": 4,
+    "following": 2,
+    "created_at": "2023-03-14T11:55:54Z",
+    "updated_at": "2026-08-26T14:00:45Z",
+    "maturity_score": 43.89138703429646,
     "status": "established",
-    "account_age_days": 1099
-  },
-  {
-    "login": "Ascartezin",
-    "id": 193710276,
-    "name": "Arthur Scartezini",
-    "public_repos": 1,
-    "followers": 2,
-    "following": 4,
-    "created_at": "2025-01-04T14:14:19Z",
-    "updated_at": "2026-09-01T13:26:14Z",
-    "maturity_score": 27.26735285600877,
-    "status": "new",
-    "account_age_days": 620
-  },
-  {
-    "login": "g-srodrigues",
-    "id": 193100357,
-    "name": "Gustavo Rodrigues",
-    "public_repos": 3,
-    "followers": 10,
-    "following": 8,
-    "created_at": "2024-12-28T23:07:12Z",
-    "updated_at": "2026-09-09T13:34:07Z",
-    "maturity_score": 55.338058622561185,
-    "status": "established",
-    "account_age_days": 627
+    "account_age_days": 1282
   },
   {
     "login": "alice-mariano",
@@ -3673,6 +3634,45 @@
     "account_age_days": 846
   },
   {
+    "login": "Ascartezin",
+    "id": 193710276,
+    "name": "Arthur Scartezini",
+    "public_repos": 1,
+    "followers": 2,
+    "following": 4,
+    "created_at": "2025-01-04T14:14:19Z",
+    "updated_at": "2026-09-01T13:26:14Z",
+    "maturity_score": 27.267352856008763,
+    "status": "new",
+    "account_age_days": 620
+  },
+  {
+    "login": "g-srodrigues",
+    "id": 193100357,
+    "name": "Gustavo Rodrigues",
+    "public_repos": 3,
+    "followers": 10,
+    "following": 8,
+    "created_at": "2024-12-28T23:07:12Z",
+    "updated_at": "2026-09-09T13:34:07Z",
+    "maturity_score": 55.338058622561185,
+    "status": "established",
+    "account_age_days": 627
+  },
+  {
+    "login": "MylenaTrindade",
+    "id": 144967061,
+    "name": "mymendonca",
+    "public_repos": 9,
+    "followers": 25,
+    "following": 29,
+    "created_at": "2023-09-13T23:54:01Z",
+    "updated_at": "2026-09-06T21:22:22Z",
+    "maturity_score": 75.57121876880501,
+    "status": "established",
+    "account_age_days": 1099
+  },
+  {
     "login": "Paulodemczuk",
     "id": 226184285,
     "name": "Paulo",
@@ -3684,32 +3684,6 @@
     "maturity_score": 36.961192561090606,
     "status": "new",
     "account_age_days": 400
-  },
-  {
-    "login": "IsaqueSH",
-    "id": 101431986,
-    "name": "Isaque Santos",
-    "public_repos": 8,
-    "followers": 27,
-    "following": 41,
-    "created_at": "2022-03-11T21:37:22Z",
-    "updated_at": "2026-09-09T23:32:17Z",
-    "maturity_score": 76.9403321574728,
-    "status": "established",
-    "account_age_days": 1650
-  },
-  {
-    "login": "VictorGCOSTA",
-    "id": 100495785,
-    "name": "Victor",
-    "public_repos": 13,
-    "followers": 7,
-    "following": 6,
-    "created_at": "2022-02-26T23:14:12Z",
-    "updated_at": "2026-09-13T09:22:17Z",
-    "maturity_score": 53.21449263313307,
-    "status": "established",
-    "account_age_days": 1663
   },
   {
     "login": "Atyrson",
@@ -3725,30 +3699,17 @@
     "account_age_days": 2353
   },
   {
-    "login": "MM4k",
-    "id": 125222370,
-    "name": "Marcelo Makoto Araki Takechi",
-    "public_repos": 7,
-    "followers": 8,
-    "following": 8,
-    "created_at": "2023-02-12T21:55:47Z",
-    "updated_at": "2026-09-15T11:20:58Z",
-    "maturity_score": 53.7728511089153,
-    "status": "new",
-    "account_age_days": 1312
-  },
-  {
-    "login": "GuilhermeDavila",
-    "id": 185927742,
-    "name": null,
-    "public_repos": 4,
-    "followers": 2,
+    "login": "delvale412",
+    "id": 122396991,
+    "name": "Matheus Do Vale Lameira ",
+    "public_repos": 1,
+    "followers": 4,
     "following": 2,
-    "created_at": "2024-10-22T13:00:06Z",
-    "updated_at": "2026-08-27T18:12:01Z",
-    "maturity_score": 30.072515433446895,
+    "created_at": "2023-01-10T18:52:43Z",
+    "updated_at": "2026-09-15T11:08:26Z",
+    "maturity_score": 37.87064604546418,
     "status": "new",
-    "account_age_days": 694
+    "account_age_days": 1345
   },
   {
     "login": "eduardar0",
@@ -3764,6 +3725,32 @@
     "account_age_days": 936
   },
   {
+    "login": "GuilhermeDavila",
+    "id": 185927742,
+    "name": null,
+    "public_repos": 4,
+    "followers": 2,
+    "following": 2,
+    "created_at": "2024-10-22T13:00:06Z",
+    "updated_at": "2026-08-27T18:12:01Z",
+    "maturity_score": 30.07251543344689,
+    "status": "new",
+    "account_age_days": 694
+  },
+  {
+    "login": "IsaqueSH",
+    "id": 101431986,
+    "name": "Isaque Santos",
+    "public_repos": 8,
+    "followers": 27,
+    "following": 41,
+    "created_at": "2022-03-11T21:37:22Z",
+    "updated_at": "2026-09-09T23:32:17Z",
+    "maturity_score": 76.9403321574728,
+    "status": "established",
+    "account_age_days": 1650
+  },
+  {
     "login": "millapereira1",
     "id": 270409434,
     "name": null,
@@ -3777,95 +3764,30 @@
     "account_age_days": 177
   },
   {
-    "login": "delvale412",
-    "id": 122396991,
-    "name": "Matheus Do Vale Lameira ",
-    "public_repos": 1,
-    "followers": 4,
-    "following": 2,
-    "created_at": "2023-01-10T18:52:43Z",
-    "updated_at": "2026-09-15T11:08:26Z",
-    "maturity_score": 37.87064604546418,
-    "status": "new",
-    "account_age_days": 1345
-  },
-  {
-    "login": "HladczukLe",
-    "id": 109438911,
-    "name": "Letícia Hladczuk",
-    "public_repos": 11,
-    "followers": 13,
-    "following": 15,
-    "created_at": "2022-07-16T20:43:55Z",
-    "updated_at": "2026-09-08T19:28:35Z",
-    "maturity_score": 63.90041340979246,
-    "status": "established",
-    "account_age_days": 1523
-  },
-  {
-    "login": "romuloreisdev",
-    "id": 143734393,
-    "name": "Rômulo Reis",
-    "public_repos": 4,
-    "followers": 1,
-    "following": 1,
-    "created_at": "2023-08-31T15:36:01Z",
-    "updated_at": "2026-03-03T19:41:52Z",
-    "maturity_score": 22.198664524138977,
-    "status": "new",
-    "account_age_days": 1112
-  },
-  {
-    "login": "FelipeFreire-gf",
-    "id": 62055315,
-    "name": "Felipe das Neves",
-    "public_repos": 14,
+    "login": "MM4k",
+    "id": 125222370,
+    "name": "Marcelo Makoto Araki Takechi",
+    "public_repos": 7,
     "followers": 8,
-    "following": 3,
-    "created_at": "2020-03-11T09:34:48Z",
-    "updated_at": "2026-09-16T17:40:25Z",
-    "maturity_score": 55.956280073274456,
-    "status": "established",
-    "account_age_days": 2380
+    "following": 8,
+    "created_at": "2023-02-12T21:55:47Z",
+    "updated_at": "2026-09-15T11:20:58Z",
+    "maturity_score": 53.7728511089153,
+    "status": "new",
+    "account_age_days": 1312
   },
   {
-    "login": "eduardodpms",
-    "id": 129913628,
-    "name": "Eduardo de Pina",
-    "public_repos": 21,
-    "followers": 20,
-    "following": 39,
-    "created_at": "2023-04-05T00:36:29Z",
-    "updated_at": "2026-09-13T15:43:19Z",
-    "maturity_score": 73.73380263609398,
-    "status": "established",
-    "account_age_days": 1261
-  },
-  {
-    "login": "Samuel-A-Santos",
-    "id": 117104826,
-    "name": "Samuel Santos",
-    "public_repos": 15,
-    "followers": 4,
+    "login": "VictorGCOSTA",
+    "id": 100495785,
+    "name": "Victor",
+    "public_repos": 13,
+    "followers": 7,
     "following": 6,
-    "created_at": "2022-10-31T16:14:11Z",
-    "updated_at": "2026-06-18T14:29:53Z",
-    "maturity_score": 44.13467303524669,
+    "created_at": "2022-02-26T23:14:12Z",
+    "updated_at": "2026-09-13T09:22:17Z",
+    "maturity_score": 53.21449263313307,
     "status": "established",
-    "account_age_days": 1416
-  },
-  {
-    "login": "pratamz250",
-    "id": 183659431,
-    "name": "Isaac Menezes Pereira",
-    "public_repos": 24,
-    "followers": 4,
-    "following": 9,
-    "created_at": "2024-10-02T20:45:12Z",
-    "updated_at": "2026-08-21T22:05:13Z",
-    "maturity_score": 45.13152699463361,
-    "status": "established",
-    "account_age_days": 714
+    "account_age_days": 1663
   },
   {
     "login": "arthursouto09",
@@ -3881,17 +3803,108 @@
     "account_age_days": 1031
   },
   {
-    "login": "Pnery2004",
-    "id": 101436060,
-    "name": null,
-    "public_repos": 2,
+    "login": "eduardodpms",
+    "id": 129913628,
+    "name": "Eduardo de Pina",
+    "public_repos": 21,
+    "followers": 20,
+    "following": 39,
+    "created_at": "2023-04-05T00:36:29Z",
+    "updated_at": "2026-09-13T15:43:19Z",
+    "maturity_score": 73.73380263609398,
+    "status": "established",
+    "account_age_days": 1261
+  },
+  {
+    "login": "FelipeFreire-gf",
+    "id": 62055315,
+    "name": "Felipe das Neves",
+    "public_repos": 14,
+    "followers": 8,
+    "following": 3,
+    "created_at": "2020-03-11T09:34:48Z",
+    "updated_at": "2026-09-16T17:40:25Z",
+    "maturity_score": 55.956280073274456,
+    "status": "established",
+    "account_age_days": 2380
+  },
+  {
+    "login": "HladczukLe",
+    "id": 109438911,
+    "name": "Letícia Hladczuk",
+    "public_repos": 11,
+    "followers": 13,
+    "following": 15,
+    "created_at": "2022-07-16T20:43:55Z",
+    "updated_at": "2026-09-08T19:28:35Z",
+    "maturity_score": 63.90041340979248,
+    "status": "established",
+    "account_age_days": 1523
+  },
+  {
+    "login": "pratamz250",
+    "id": 183659431,
+    "name": "Isaac Menezes Pereira",
+    "public_repos": 24,
     "followers": 4,
-    "following": 4,
-    "created_at": "2022-03-12T00:05:19Z",
-    "updated_at": "2026-09-05T14:31:16Z",
-    "maturity_score": 39.1891633366464,
+    "following": 9,
+    "created_at": "2024-10-02T20:45:12Z",
+    "updated_at": "2026-08-21T22:05:13Z",
+    "maturity_score": 45.13152699463361,
+    "status": "established",
+    "account_age_days": 714
+  },
+  {
+    "login": "romuloreisdev",
+    "id": 143734393,
+    "name": "Rômulo Reis",
+    "public_repos": 4,
+    "followers": 1,
+    "following": 1,
+    "created_at": "2023-08-31T15:36:01Z",
+    "updated_at": "2026-03-03T19:41:52Z",
+    "maturity_score": 22.198664524138977,
     "status": "new",
-    "account_age_days": 1650
+    "account_age_days": 1112
+  },
+  {
+    "login": "Samuel-A-Santos",
+    "id": 117104826,
+    "name": "Samuel Santos",
+    "public_repos": 15,
+    "followers": 4,
+    "following": 6,
+    "created_at": "2022-10-31T16:14:11Z",
+    "updated_at": "2026-06-18T14:29:53Z",
+    "maturity_score": 44.13467303524669,
+    "status": "established",
+    "account_age_days": 1416
+  },
+  {
+    "login": "Danielly-Mendes",
+    "id": 165936030,
+    "name": "DaniellyMendes",
+    "public_repos": 2,
+    "followers": 1,
+    "following": 3,
+    "created_at": "2024-04-03T16:40:14Z",
+    "updated_at": "2026-08-12T19:20:51Z",
+    "maturity_score": 20.558308408232634,
+    "status": "new",
+    "account_age_days": 896
+  },
+  {
+    "login": "ErickRyan-pimba",
+    "id": 215231108,
+    "name": "ErickRyan-pimba",
+    "public_repos": 0,
+    "followers": 0,
+    "following": 0,
+    "created_at": "2025-06-07T02:17:40Z",
+    "updated_at": "2026-03-26T11:21:47Z",
+    "maturity_score": 3.0742341479588235,
+    "status": "new",
+    "account_age_days": 467
   },
   {
     "login": "Lithuania0",
@@ -3902,7 +3915,7 @@
     "following": 2,
     "created_at": "2024-11-15T15:44:15Z",
     "updated_at": "2025-07-12T02:57:36Z",
-    "maturity_score": 27.306071883527874,
+    "maturity_score": 27.306071883527867,
     "status": "new",
     "account_age_days": 670
   },
@@ -3920,17 +3933,17 @@
     "account_age_days": 904
   },
   {
-    "login": "ErickRyan-pimba",
-    "id": 215231108,
-    "name": "ErickRyan-pimba",
-    "public_repos": 0,
-    "followers": 0,
-    "following": 0,
-    "created_at": "2025-06-07T02:17:40Z",
-    "updated_at": "2026-03-26T11:21:47Z",
-    "maturity_score": 3.0742341479588235,
+    "login": "Pnery2004",
+    "id": 101436060,
+    "name": null,
+    "public_repos": 2,
+    "followers": 4,
+    "following": 4,
+    "created_at": "2022-03-12T00:05:19Z",
+    "updated_at": "2026-09-05T14:31:16Z",
+    "maturity_score": 39.1891633366464,
     "status": "new",
-    "account_age_days": 467
+    "account_age_days": 1650
   },
   {
     "login": "valexim",
@@ -3946,43 +3959,30 @@
     "account_age_days": 1176
   },
   {
-    "login": "Danielly-Mendes",
-    "id": 165936030,
-    "name": "DaniellyMendes",
-    "public_repos": 2,
-    "followers": 1,
+    "login": "devEduardoReis",
+    "id": 206781448,
+    "name": null,
+    "public_repos": 1,
+    "followers": 0,
+    "following": 0,
+    "created_at": "2025-04-08T22:34:30Z",
+    "updated_at": "2026-04-22T16:20:58Z",
+    "maturity_score": 5.2130418159505165,
+    "status": "new",
+    "account_age_days": 526
+  },
+  {
+    "login": "Mateus0xC",
+    "id": 185991436,
+    "name": "Mateus Barreto",
+    "public_repos": 3,
+    "followers": 3,
     "following": 3,
-    "created_at": "2024-04-03T16:40:14Z",
-    "updated_at": "2026-08-12T19:20:51Z",
-    "maturity_score": 20.558308408232634,
+    "created_at": "2024-10-23T01:11:38Z",
+    "updated_at": "2026-08-30T00:59:32Z",
+    "maturity_score": 35.15672622853988,
     "status": "new",
-    "account_age_days": 896
-  },
-  {
-    "login": "rafaelcarvalhoj",
-    "id": 105162671,
-    "name": "Rafael Carvalho",
-    "public_repos": 26,
-    "followers": 18,
-    "following": 24,
-    "created_at": "2022-05-08T14:49:12Z",
-    "updated_at": "2026-09-12T23:32:28Z",
-    "maturity_score": 72.46297733629682,
-    "status": "established",
-    "account_age_days": 1592
-  },
-  {
-    "login": "Renurin",
-    "id": 151562116,
-    "name": "tosk",
-    "public_repos": 7,
-    "followers": 2,
-    "following": 2,
-    "created_at": "2023-11-20T17:23:21Z",
-    "updated_at": "2026-08-19T12:09:04Z",
-    "maturity_score": 31.68019737142246,
-    "status": "new",
-    "account_age_days": 1031
+    "account_age_days": 694
   },
   {
     "login": "MateuSansete",
@@ -4006,9 +4006,35 @@
     "following": 10,
     "created_at": "2024-03-18T19:17:25Z",
     "updated_at": "2026-09-05T19:09:47Z",
-    "maturity_score": 48.293035639898534,
+    "maturity_score": 48.29303563989853,
     "status": "new",
     "account_age_days": 912
+  },
+  {
+    "login": "rafaelcarvalhoj",
+    "id": 105162671,
+    "name": "Rafael Carvalho",
+    "public_repos": 26,
+    "followers": 18,
+    "following": 24,
+    "created_at": "2022-05-08T14:49:12Z",
+    "updated_at": "2026-09-12T23:32:28Z",
+    "maturity_score": 72.46297733629682,
+    "status": "established",
+    "account_age_days": 1592
+  },
+  {
+    "login": "Renurin",
+    "id": 151562116,
+    "name": "tosk",
+    "public_repos": 7,
+    "followers": 2,
+    "following": 2,
+    "created_at": "2023-11-20T17:23:21Z",
+    "updated_at": "2026-08-19T12:09:04Z",
+    "maturity_score": 31.68019737142245,
+    "status": "new",
+    "account_age_days": 1031
   },
   {
     "login": "Zaclonic",
@@ -4019,35 +4045,22 @@
     "following": 4,
     "created_at": "2024-05-22T00:28:48Z",
     "updated_at": "2026-09-07T21:46:04Z",
-    "maturity_score": 29.503158449877542,
+    "maturity_score": 29.503158449877535,
     "status": "new",
     "account_age_days": 848
   },
   {
-    "login": "Mateus0xC",
-    "id": 185991436,
-    "name": "Mateus Barreto",
-    "public_repos": 3,
-    "followers": 3,
-    "following": 3,
-    "created_at": "2024-10-23T01:11:38Z",
-    "updated_at": "2026-08-30T00:59:32Z",
-    "maturity_score": 35.15672622853988,
+    "login": "Joao-PFG",
+    "id": 188086942,
+    "name": "João Pedro",
+    "public_repos": 0,
+    "followers": 1,
+    "following": 1,
+    "created_at": "2024-11-11T16:26:54Z",
+    "updated_at": "2026-09-02T00:21:23Z",
+    "maturity_score": 17.120299956635172,
     "status": "new",
-    "account_age_days": 694
-  },
-  {
-    "login": "devEduardoReis",
-    "id": 206781448,
-    "name": null,
-    "public_repos": 1,
-    "followers": 0,
-    "following": 0,
-    "created_at": "2025-04-08T22:34:30Z",
-    "updated_at": "2026-04-22T16:20:58Z",
-    "maturity_score": 5.2130418159505165,
-    "status": "new",
-    "account_age_days": 526
+    "account_age_days": 674
   },
   {
     "login": "juliatakaki",
@@ -4076,43 +4089,30 @@
     "account_age_days": 2046
   },
   {
-    "login": "Joao-PFG",
-    "id": 188086942,
-    "name": "João Pedro",
-    "public_repos": 0,
-    "followers": 1,
-    "following": 1,
-    "created_at": "2024-11-11T16:26:54Z",
-    "updated_at": "2026-09-02T00:21:23Z",
-    "maturity_score": 17.120299956635172,
-    "status": "new",
-    "account_age_days": 674
-  },
-  {
-    "login": "rmatuda",
-    "id": 134009750,
-    "name": "Rafael Melo Matuda",
-    "public_repos": 17,
-    "followers": 7,
-    "following": 10,
-    "created_at": "2023-05-18T19:54:43Z",
-    "updated_at": "2026-09-14T14:45:33Z",
-    "maturity_score": 53.812428831420135,
+    "login": "devwallyson",
+    "id": 120031974,
+    "name": "Wallyson Souza",
+    "public_repos": 7,
+    "followers": 16,
+    "following": 14,
+    "created_at": "2022-12-07T14:01:19Z",
+    "updated_at": "2026-09-14T20:15:22Z",
+    "maturity_score": 66.51751089523945,
     "status": "established",
-    "account_age_days": 1217
+    "account_age_days": 1379
   },
   {
-    "login": "luluaroeira",
-    "id": 89143347,
-    "name": "Ana Luiza Komatsu",
-    "public_repos": 6,
-    "followers": 5,
-    "following": 10,
-    "created_at": "2021-08-18T13:27:04Z",
-    "updated_at": "2026-09-09T13:37:18Z",
-    "maturity_score": 45.43600928840011,
+    "login": "gabrielsimplicioo",
+    "id": 276783816,
+    "name": "simplicio",
+    "public_repos": 2,
+    "followers": 1,
+    "following": 2,
+    "created_at": "2026-04-17T00:31:46Z",
+    "updated_at": "2026-06-30T15:55:47Z",
+    "maturity_score": 19.677256778410047,
     "status": "new",
-    "account_age_days": 1855
+    "account_age_days": 153
   },
   {
     "login": "LeticiaMonteiroo",
@@ -4128,17 +4128,17 @@
     "account_age_days": 1020
   },
   {
-    "login": "devwallyson",
-    "id": 120031974,
-    "name": "Wallyson Souza",
-    "public_repos": 7,
-    "followers": 16,
-    "following": 14,
-    "created_at": "2022-12-07T14:01:19Z",
-    "updated_at": "2026-09-14T20:15:22Z",
-    "maturity_score": 66.51751089523945,
-    "status": "established",
-    "account_age_days": 1379
+    "login": "luluaroeira",
+    "id": 89143347,
+    "name": "Ana Luiza Komatsu",
+    "public_repos": 6,
+    "followers": 5,
+    "following": 10,
+    "created_at": "2021-08-18T13:27:04Z",
+    "updated_at": "2026-09-09T13:37:18Z",
+    "maturity_score": 45.43600928840011,
+    "status": "new",
+    "account_age_days": 1855
   },
   {
     "login": "nerylucas",
@@ -4149,7 +4149,7 @@
     "following": 4,
     "created_at": "2022-01-10T20:42:11Z",
     "updated_at": "2026-09-10T01:02:25Z",
-    "maturity_score": 27.77410395198813,
+    "maturity_score": 27.774103951988124,
     "status": "new",
     "account_age_days": 1710
   },
@@ -4167,43 +4167,17 @@
     "account_age_days": 449
   },
   {
-    "login": "gabrielsimplicioo",
-    "id": 276783816,
-    "name": "simplicio",
-    "public_repos": 2,
-    "followers": 1,
-    "following": 2,
-    "created_at": "2026-04-17T00:31:46Z",
-    "updated_at": "2026-06-30T15:55:47Z",
-    "maturity_score": 19.67725677841005,
-    "status": "new",
-    "account_age_days": 153
-  },
-  {
-    "login": "joycejdm",
-    "id": 155927112,
-    "name": "Joyce Dionizio",
-    "public_repos": 3,
-    "followers": 2,
-    "following": 1,
-    "created_at": "2024-01-08T00:21:50Z",
-    "updated_at": "2026-06-18T17:48:26Z",
-    "maturity_score": 29.576941805247994,
-    "status": "new",
-    "account_age_days": 983
-  },
-  {
-    "login": "vitorfleonardo",
-    "id": 69637300,
-    "name": "Vitor Feijó Leonardo",
-    "public_repos": 33,
-    "followers": 38,
-    "following": 30,
-    "created_at": "2020-08-13T14:04:58Z",
-    "updated_at": "2026-08-29T13:40:29Z",
-    "maturity_score": 87.70429526235915,
+    "login": "rmatuda",
+    "id": 134009750,
+    "name": "Rafael Melo Matuda",
+    "public_repos": 17,
+    "followers": 7,
+    "following": 10,
+    "created_at": "2023-05-18T19:54:43Z",
+    "updated_at": "2026-09-14T14:45:33Z",
+    "maturity_score": 53.812428831420135,
     "status": "established",
-    "account_age_days": 2225
+    "account_age_days": 1217
   },
   {
     "login": "cibelinda",
@@ -4232,17 +4206,17 @@
     "account_age_days": 695
   },
   {
-    "login": "Lulu-souza",
-    "id": 209020931,
-    "name": null,
-    "public_repos": 2,
-    "followers": 1,
-    "following": 0,
-    "created_at": "2025-04-24T19:01:30Z",
-    "updated_at": "2026-09-08T13:11:47Z",
-    "maturity_score": 20.276965272305087,
+    "login": "joycejdm",
+    "id": 155927112,
+    "name": "Joyce Dionizio",
+    "public_repos": 3,
+    "followers": 2,
+    "following": 1,
+    "created_at": "2024-01-08T00:21:50Z",
+    "updated_at": "2026-06-18T17:48:26Z",
+    "maturity_score": 29.576941805247987,
     "status": "new",
-    "account_age_days": 510
+    "account_age_days": 983
   },
   {
     "login": "LucasNF-Dev",
@@ -4258,6 +4232,19 @@
     "account_age_days": 447
   },
   {
+    "login": "Lulu-souza",
+    "id": 209020931,
+    "name": null,
+    "public_repos": 2,
+    "followers": 1,
+    "following": 0,
+    "created_at": "2025-04-24T19:01:30Z",
+    "updated_at": "2026-09-08T13:11:47Z",
+    "maturity_score": 20.276965272305087,
+    "status": "new",
+    "account_age_days": 510
+  },
+  {
     "login": "Thomas4ugust0",
     "id": 218616489,
     "name": "Thomas Augusto",
@@ -4271,30 +4258,43 @@
     "account_age_days": 443
   },
   {
-    "login": "Guga301104",
-    "id": 186294456,
-    "name": "Gustavo Gontijo",
-    "public_repos": 6,
-    "followers": 5,
-    "following": 8,
-    "created_at": "2024-10-25T12:09:44Z",
-    "updated_at": "2026-09-14T11:19:43Z",
-    "maturity_score": 44.94271280953587,
-    "status": "new",
-    "account_age_days": 691
+    "login": "vitorfleonardo",
+    "id": 69637300,
+    "name": "Vitor Feijó Leonardo",
+    "public_repos": 33,
+    "followers": 38,
+    "following": 30,
+    "created_at": "2020-08-13T14:04:58Z",
+    "updated_at": "2026-08-29T13:40:29Z",
+    "maturity_score": 87.70429526235915,
+    "status": "established",
+    "account_age_days": 2225
   },
   {
-    "login": "LucasMF1",
-    "id": 141961882,
+    "login": "CauaoClemente",
+    "id": 236893424,
     "name": null,
-    "public_repos": 12,
-    "followers": 6,
-    "following": 2,
-    "created_at": "2023-08-10T20:12:45Z",
-    "updated_at": "2026-09-10T20:27:02Z",
-    "maturity_score": 50.12980429563472,
-    "status": "established",
-    "account_age_days": 1133
+    "public_repos": 3,
+    "followers": 1,
+    "following": 0,
+    "created_at": "2025-10-08T19:03:10Z",
+    "updated_at": "2026-08-26T17:28:06Z",
+    "maturity_score": 20.942147523245275,
+    "status": "new",
+    "account_age_days": 343
+  },
+  {
+    "login": "Donnk61",
+    "id": 169686699,
+    "name": "Luís Henrique",
+    "public_repos": 4,
+    "followers": 4,
+    "following": 1,
+    "created_at": "2024-05-13T15:03:55Z",
+    "updated_at": "2026-08-28T17:46:54Z",
+    "maturity_score": 40.3937909452832,
+    "status": "new",
+    "account_age_days": 856
   },
   {
     "login": "falaneh",
@@ -4323,17 +4323,17 @@
     "account_age_days": 681
   },
   {
-    "login": "Donnk61",
-    "id": 169686699,
-    "name": "Luís Henrique",
-    "public_repos": 4,
-    "followers": 4,
-    "following": 1,
-    "created_at": "2024-05-13T15:03:55Z",
-    "updated_at": "2026-08-28T17:46:54Z",
-    "maturity_score": 40.3937909452832,
+    "login": "Guga301104",
+    "id": 186294456,
+    "name": "Gustavo Gontijo",
+    "public_repos": 6,
+    "followers": 5,
+    "following": 8,
+    "created_at": "2024-10-25T12:09:44Z",
+    "updated_at": "2026-09-14T11:19:43Z",
+    "maturity_score": 44.94271280953587,
     "status": "new",
-    "account_age_days": 856
+    "account_age_days": 691
   },
   {
     "login": "lucasaraujoszz",
@@ -4349,43 +4349,30 @@
     "account_age_days": 869
   },
   {
-    "login": "CauaoClemente",
-    "id": 236893424,
+    "login": "LucasMF1",
+    "id": 141961882,
     "name": null,
-    "public_repos": 3,
-    "followers": 1,
-    "following": 0,
-    "created_at": "2025-10-08T19:03:10Z",
-    "updated_at": "2026-08-26T17:28:06Z",
-    "maturity_score": 20.942147523245275,
-    "status": "new",
-    "account_age_days": 343
-  },
-  {
-    "login": "henriquecq",
-    "id": 110349110,
-    "name": "Henrique Quenino",
-    "public_repos": 8,
-    "followers": 25,
-    "following": 35,
-    "created_at": "2022-07-31T17:20:37Z",
-    "updated_at": "2026-09-12T13:20:33Z",
-    "maturity_score": 75.41320572182222,
+    "public_repos": 12,
+    "followers": 6,
+    "following": 2,
+    "created_at": "2023-08-10T20:12:45Z",
+    "updated_at": "2026-09-10T20:27:02Z",
+    "maturity_score": 50.12980429563472,
     "status": "established",
-    "account_age_days": 1508
+    "account_age_days": 1133
   },
   {
-    "login": "DanNunes777",
-    "id": 101228207,
-    "name": "DANIEL NUNES DUARTE",
-    "public_repos": 5,
-    "followers": 1,
+    "login": "AndreLivio",
+    "id": 181674474,
+    "name": null,
+    "public_repos": 0,
+    "followers": 0,
     "following": 1,
-    "created_at": "2022-03-09T00:21:36Z",
-    "updated_at": "2026-09-14T10:52:28Z",
-    "maturity_score": 22.94369795667489,
+    "created_at": "2024-09-15T21:59:23Z",
+    "updated_at": "2026-04-24T21:33:16Z",
+    "maturity_score": 3.2978902569806556,
     "status": "new",
-    "account_age_days": 1653
+    "account_age_days": 731
   },
   {
     "login": "BrzGab",
@@ -4401,17 +4388,30 @@
     "account_age_days": 1311
   },
   {
-    "login": "AndreLivio",
-    "id": 181674474,
-    "name": null,
-    "public_repos": 0,
-    "followers": 0,
+    "login": "DanNunes777",
+    "id": 101228207,
+    "name": "DANIEL NUNES DUARTE",
+    "public_repos": 5,
+    "followers": 1,
     "following": 1,
-    "created_at": "2024-09-15T21:59:23Z",
-    "updated_at": "2026-04-24T21:33:16Z",
-    "maturity_score": 3.2978902569806556,
+    "created_at": "2022-03-09T00:21:36Z",
+    "updated_at": "2026-09-14T10:52:28Z",
+    "maturity_score": 22.94369795667489,
     "status": "new",
-    "account_age_days": 731
+    "account_age_days": 1653
+  },
+  {
+    "login": "henriquecq",
+    "id": 110349110,
+    "name": "Henrique Quenino",
+    "public_repos": 8,
+    "followers": 25,
+    "following": 35,
+    "created_at": "2022-07-31T17:20:37Z",
+    "updated_at": "2026-09-12T13:20:33Z",
+    "maturity_score": 75.41320572182222,
+    "status": "established",
+    "account_age_days": 1508
   },
   {
     "login": "luabrantess",
@@ -4453,6 +4453,19 @@
     "account_age_days": 994
   },
   {
+    "login": "Alice-Moura-13",
+    "id": 199379616,
+    "name": null,
+    "public_repos": 2,
+    "followers": 1,
+    "following": 2,
+    "created_at": "2025-02-15T15:43:27Z",
+    "updated_at": "2026-08-24T20:19:10Z",
+    "maturity_score": 20.339431715989733,
+    "status": "new",
+    "account_age_days": 578
+  },
+  {
     "login": "aqela-batata-alt",
     "id": 91281623,
     "name": "Víctor Moreira",
@@ -4466,30 +4479,17 @@
     "account_age_days": 1819
   },
   {
-    "login": "henriquecarv3",
-    "id": 134213039,
-    "name": "Henrique Carvalho Neves",
-    "public_repos": 3,
-    "followers": 6,
-    "following": 6,
-    "created_at": "2023-05-21T13:44:44Z",
-    "updated_at": "2026-09-16T20:04:42Z",
-    "maturity_score": 46.62833574235326,
+    "login": "ArthurFeitosa05",
+    "id": 201158427,
+    "name": "Arthur Feitosa",
+    "public_repos": 1,
+    "followers": 1,
+    "following": 0,
+    "created_at": "2025-02-27T19:53:21Z",
+    "updated_at": "2026-09-16T00:40:14Z",
+    "maturity_score": 19.112564804742618,
     "status": "new",
-    "account_age_days": 1214
-  },
-  {
-    "login": "Luiskr34",
-    "id": 151588257,
-    "name": "Luís Oliveira",
-    "public_repos": 5,
-    "followers": 4,
-    "following": 4,
-    "created_at": "2023-11-21T00:35:04Z",
-    "updated_at": "2026-09-08T19:27:57Z",
-    "maturity_score": 41.03366362938692,
-    "status": "new",
-    "account_age_days": 1031
+    "account_age_days": 566
   },
   {
     "login": "arthurhvieira1",
@@ -4513,9 +4513,22 @@
     "following": 1,
     "created_at": "2023-11-10T22:33:54Z",
     "updated_at": "2026-09-17T02:17:02Z",
-    "maturity_score": 27.526135926198688,
+    "maturity_score": 27.52613592619868,
     "status": "new",
     "account_age_days": 1041
+  },
+  {
+    "login": "henriquecarv3",
+    "id": 134213039,
+    "name": "Henrique Carvalho Neves",
+    "public_repos": 3,
+    "followers": 6,
+    "following": 6,
+    "created_at": "2023-05-21T13:44:44Z",
+    "updated_at": "2026-09-16T20:04:42Z",
+    "maturity_score": 46.62833574235326,
+    "status": "new",
+    "account_age_days": 1214
   },
   {
     "login": "lopes061",
@@ -4531,69 +4544,17 @@
     "account_age_days": 2173
   },
   {
-    "login": "ArthurFeitosa05",
-    "id": 201158427,
-    "name": "Arthur Feitosa",
-    "public_repos": 1,
-    "followers": 1,
-    "following": 0,
-    "created_at": "2025-02-27T19:53:21Z",
-    "updated_at": "2026-09-16T00:40:14Z",
-    "maturity_score": 19.112564804742618,
-    "status": "new",
-    "account_age_days": 566
-  },
-  {
-    "login": "Alice-Moura-13",
-    "id": 199379616,
-    "name": null,
-    "public_repos": 2,
-    "followers": 1,
-    "following": 2,
-    "created_at": "2025-02-15T15:43:27Z",
-    "updated_at": "2026-08-24T20:19:10Z",
-    "maturity_score": 20.339431715989733,
-    "status": "new",
-    "account_age_days": 578
-  },
-  {
-    "login": "samarawwleticia",
-    "id": 129631162,
-    "name": "Samara Letícia",
-    "public_repos": 21,
-    "followers": 7,
-    "following": 21,
-    "created_at": "2023-04-01T23:02:38Z",
-    "updated_at": "2026-09-11T18:32:45Z",
-    "maturity_score": 54.433371894252474,
-    "status": "established",
-    "account_age_days": 1264
-  },
-  {
-    "login": "joaofmoreiraa",
-    "id": 144493751,
-    "name": "Joao Victor Felix Moreira",
+    "login": "Luiskr34",
+    "id": 151588257,
+    "name": "Luís Oliveira",
     "public_repos": 5,
-    "followers": 13,
-    "following": 18,
-    "created_at": "2023-09-08T21:17:09Z",
-    "updated_at": "2026-09-12T23:04:04Z",
-    "maturity_score": 61.66022530696526,
-    "status": "established",
-    "account_age_days": 1104
-  },
-  {
-    "login": "pyramidsf",
-    "id": 175058013,
-    "name": "Maria Eduarda de Amorim",
-    "public_repos": 5,
-    "followers": 20,
-    "following": 9,
-    "created_at": "2024-07-08T19:54:34Z",
-    "updated_at": "2026-08-26T18:37:17Z",
-    "maturity_score": 69.6086576356868,
-    "status": "established",
-    "account_age_days": 800
+    "followers": 4,
+    "following": 4,
+    "created_at": "2023-11-21T00:35:04Z",
+    "updated_at": "2026-09-08T19:27:57Z",
+    "maturity_score": 41.03366362938692,
+    "status": "new",
+    "account_age_days": 1031
   },
   {
     "login": "bigkaio",
@@ -4609,6 +4570,32 @@
     "account_age_days": 1351
   },
   {
+    "login": "joaofmoreiraa",
+    "id": 144493751,
+    "name": "Joao Victor Felix Moreira",
+    "public_repos": 5,
+    "followers": 13,
+    "following": 18,
+    "created_at": "2023-09-08T21:17:09Z",
+    "updated_at": "2026-09-12T23:04:04Z",
+    "maturity_score": 61.66022530696527,
+    "status": "established",
+    "account_age_days": 1104
+  },
+  {
+    "login": "LeonardoLopesJr",
+    "id": 213665065,
+    "name": null,
+    "public_repos": 5,
+    "followers": 2,
+    "following": 2,
+    "created_at": "2025-05-27T16:28:05Z",
+    "updated_at": "2026-08-21T00:31:50Z",
+    "maturity_score": 30.432329547292085,
+    "status": "new",
+    "account_age_days": 477
+  },
+  {
     "login": "Maria-Laura-Regis",
     "id": 186978721,
     "name": "Maria Laura Regis",
@@ -4622,17 +4609,30 @@
     "account_age_days": 685
   },
   {
-    "login": "LeonardoLopesJr",
-    "id": 213665065,
-    "name": null,
+    "login": "pyramidsf",
+    "id": 175058013,
+    "name": "Maria Eduarda de Amorim",
     "public_repos": 5,
-    "followers": 2,
-    "following": 2,
-    "created_at": "2025-05-27T16:28:05Z",
-    "updated_at": "2026-08-21T00:31:50Z",
-    "maturity_score": 30.432329547292092,
-    "status": "new",
-    "account_age_days": 477
+    "followers": 20,
+    "following": 9,
+    "created_at": "2024-07-08T19:54:34Z",
+    "updated_at": "2026-08-26T18:37:17Z",
+    "maturity_score": 69.6086576356868,
+    "status": "established",
+    "account_age_days": 800
+  },
+  {
+    "login": "samarawwleticia",
+    "id": 129631162,
+    "name": "Samara Letícia",
+    "public_repos": 21,
+    "followers": 7,
+    "following": 21,
+    "created_at": "2023-04-01T23:02:38Z",
+    "updated_at": "2026-09-11T18:32:45Z",
+    "maturity_score": 54.433371894252474,
+    "status": "established",
+    "account_age_days": 1264
   },
   {
     "login": "vitorcoelho21",
@@ -4648,17 +4648,17 @@
     "account_age_days": 253
   },
   {
-    "login": "matheusbmello",
-    "id": 100366395,
-    "name": "Matheus de Mello",
-    "public_repos": 7,
+    "login": "alvezclari",
+    "id": 145598542,
+    "name": "Maria Clara",
+    "public_repos": 3,
     "followers": 7,
-    "following": 9,
-    "created_at": "2022-02-24T15:19:34Z",
-    "updated_at": "2024-11-28T12:50:47Z",
-    "maturity_score": 51.53624586999962,
+    "following": 11,
+    "created_at": "2023-09-20T17:20:35Z",
+    "updated_at": "2026-09-15T10:15:13Z",
+    "maturity_score": 49.24605466104466,
     "status": "new",
-    "account_age_days": 1665
+    "account_age_days": 1092
   },
   {
     "login": "cqcoding",
@@ -4674,32 +4674,6 @@
     "account_age_days": 1796
   },
   {
-    "login": "Filipe-002",
-    "id": 90454615,
-    "name": null,
-    "public_repos": 12,
-    "followers": 12,
-    "following": 25,
-    "created_at": "2021-09-10T11:24:02Z",
-    "updated_at": "2026-09-14T16:09:57Z",
-    "maturity_score": 62.75068984553519,
-    "status": "established",
-    "account_age_days": 1832
-  },
-  {
-    "login": "alvezclari",
-    "id": 145598542,
-    "name": "Maria Clara",
-    "public_repos": 3,
-    "followers": 7,
-    "following": 11,
-    "created_at": "2023-09-20T17:20:35Z",
-    "updated_at": "2026-09-15T10:15:13Z",
-    "maturity_score": 49.24605466104466,
-    "status": "new",
-    "account_age_days": 1092
-  },
-  {
     "login": "Diaxiz",
     "id": 88682217,
     "name": "Diassis",
@@ -4713,6 +4687,19 @@
     "account_age_days": 1864
   },
   {
+    "login": "Filipe-002",
+    "id": 90454615,
+    "name": null,
+    "public_repos": 12,
+    "followers": 12,
+    "following": 25,
+    "created_at": "2021-09-10T11:24:02Z",
+    "updated_at": "2026-09-14T16:09:57Z",
+    "maturity_score": 62.75068984553519,
+    "status": "established",
+    "account_age_days": 1832
+  },
+  {
     "login": "LucasItacaramby",
     "id": 146033689,
     "name": "Lucas Chaves",
@@ -4721,22 +4708,22 @@
     "following": 5,
     "created_at": "2023-09-25T21:01:09Z",
     "updated_at": "2026-06-08T03:55:09Z",
-    "maturity_score": 31.30602443423608,
+    "maturity_score": 31.306024434236072,
     "status": "new",
     "account_age_days": 1087
   },
   {
-    "login": "Mxrcio",
-    "id": 82161026,
-    "name": "Marcio",
-    "public_repos": 5,
-    "followers": 0,
-    "following": 0,
-    "created_at": "2021-04-08T13:34:04Z",
-    "updated_at": "2026-03-15T07:00:44Z",
-    "maturity_score": 9.172720601292426,
+    "login": "matheusbmello",
+    "id": 100366395,
+    "name": "Matheus de Mello",
+    "public_repos": 7,
+    "followers": 7,
+    "following": 9,
+    "created_at": "2022-02-24T15:19:34Z",
+    "updated_at": "2024-11-28T12:50:47Z",
+    "maturity_score": 51.53624586999962,
     "status": "new",
-    "account_age_days": 1987
+    "account_age_days": 1665
   },
   {
     "login": "BrunoOLiveirax",
@@ -4752,6 +4739,19 @@
     "account_age_days": 1490
   },
   {
+    "login": "G2SBiell",
+    "id": 84604473,
+    "name": "Gabriel Portacio ",
+    "public_repos": 3,
+    "followers": 0,
+    "following": 1,
+    "created_at": "2021-05-21T23:18:45Z",
+    "updated_at": "2025-12-21T01:40:24Z",
+    "maturity_score": 7.945391711385945,
+    "status": "new",
+    "account_age_days": 1944
+  },
+  {
     "login": "jpnunes2210",
     "id": 165056944,
     "name": "Joao Paulo  Nunes",
@@ -4763,19 +4763,6 @@
     "maturity_score": 20.562747949053197,
     "status": "new",
     "account_age_days": 904
-  },
-  {
-    "login": "WallaceBarrosDev",
-    "id": 193624541,
-    "name": "Wallace Barros da Cruz",
-    "public_repos": 52,
-    "followers": 14,
-    "following": 20,
-    "created_at": "2025-01-03T16:26:21Z",
-    "updated_at": "2026-09-13T23:38:41Z",
-    "maturity_score": 69.28834980907016,
-    "status": "established",
-    "account_age_days": 621
   },
   {
     "login": "laurarogelin",
@@ -4791,17 +4778,30 @@
     "account_age_days": 1124
   },
   {
-    "login": "G2SBiell",
-    "id": 84604473,
-    "name": "Gabriel Portacio ",
-    "public_repos": 3,
+    "login": "Mxrcio",
+    "id": 82161026,
+    "name": "Marcio",
+    "public_repos": 5,
     "followers": 0,
-    "following": 1,
-    "created_at": "2021-05-21T23:18:45Z",
-    "updated_at": "2025-12-21T01:40:24Z",
-    "maturity_score": 7.945391711385945,
+    "following": 0,
+    "created_at": "2021-04-08T13:34:04Z",
+    "updated_at": "2026-03-15T07:00:44Z",
+    "maturity_score": 9.172720601292426,
     "status": "new",
-    "account_age_days": 1944
+    "account_age_days": 1987
+  },
+  {
+    "login": "WallaceBarrosDev",
+    "id": 193624541,
+    "name": "Wallace Barros da Cruz",
+    "public_repos": 52,
+    "followers": 14,
+    "following": 20,
+    "created_at": "2025-01-03T16:26:21Z",
+    "updated_at": "2026-09-13T23:38:41Z",
+    "maturity_score": 69.28834980907016,
+    "status": "established",
+    "account_age_days": 621
   },
   {
     "login": "Bessazs",
@@ -4815,19 +4815,6 @@
     "maturity_score": 53.20707469937177,
     "status": "established",
     "account_age_days": 1401
-  },
-  {
-    "login": "Samuelvlobo",
-    "id": 121406455,
-    "name": "Samuel Lobo",
-    "public_repos": 6,
-    "followers": 4,
-    "following": 4,
-    "created_at": "2022-12-25T21:58:24Z",
-    "updated_at": "2026-08-12T17:59:42Z",
-    "maturity_score": 41.634843439202676,
-    "status": "new",
-    "account_age_days": 1361
   },
   {
     "login": "caiionog",
@@ -4854,6 +4841,19 @@
     "maturity_score": 8.016677211251615,
     "status": "new",
     "account_age_days": 587
+  },
+  {
+    "login": "Samuelvlobo",
+    "id": 121406455,
+    "name": "Samuel Lobo",
+    "public_repos": 6,
+    "followers": 4,
+    "following": 4,
+    "created_at": "2022-12-25T21:58:24Z",
+    "updated_at": "2026-08-12T17:59:42Z",
+    "maturity_score": 41.634843439202676,
+    "status": "new",
+    "account_age_days": 1361
   },
   {
     "login": "leticiatmartins",
@@ -4908,6 +4908,19 @@
     "account_age_days": 1092
   },
   {
+    "login": "amandalimaps",
+    "id": 118859284,
+    "name": "Maria Amanda L. Pinheiro",
+    "public_repos": 2,
+    "followers": 1,
+    "following": 2,
+    "created_at": "2022-11-22T22:40:36Z",
+    "updated_at": "2025-11-15T18:00:30Z",
+    "maturity_score": 20.779105324330967,
+    "status": "new",
+    "account_age_days": 1394
+  },
+  {
     "login": "CaioHabibe",
     "id": 117680471,
     "name": "Caio Falcão Habibe Costa",
@@ -4934,17 +4947,17 @@
     "account_age_days": 1156
   },
   {
-    "login": "amandalimaps",
-    "id": 118859284,
-    "name": "Maria Amanda L. Pinheiro",
-    "public_repos": 2,
-    "followers": 1,
-    "following": 2,
-    "created_at": "2022-11-22T22:40:36Z",
-    "updated_at": "2025-11-15T18:00:30Z",
-    "maturity_score": 20.77910532433097,
+    "login": "Joao-vithor-1",
+    "id": 133594979,
+    "name": null,
+    "public_repos": 3,
+    "followers": 0,
+    "following": 0,
+    "created_at": "2023-05-14T17:12:42Z",
+    "updated_at": "2026-08-18T12:56:27Z",
+    "maturity_score": 7.713005153225442,
     "status": "new",
-    "account_age_days": 1394
+    "account_age_days": 1221
   },
   {
     "login": "Sismene7",
@@ -4960,17 +4973,17 @@
     "account_age_days": 1301
   },
   {
-    "login": "Joao-vithor-1",
-    "id": 133594979,
-    "name": null,
-    "public_repos": 3,
-    "followers": 0,
-    "following": 0,
-    "created_at": "2023-05-14T17:12:42Z",
-    "updated_at": "2026-08-18T12:56:27Z",
-    "maturity_score": 7.713005153225442,
+    "login": "GuilhermeOliveira1327",
+    "id": 185217197,
+    "name": "Guilherme Oliveira",
+    "public_repos": 1,
+    "followers": 2,
+    "following": 7,
+    "created_at": "2024-10-16T13:36:15Z",
+    "updated_at": "2026-09-14T16:25:28Z",
+    "maturity_score": 27.32794125855932,
     "status": "new",
-    "account_age_days": 1221
+    "account_age_days": 700
   },
   {
     "login": "MuriloBDSR",
@@ -4986,6 +4999,19 @@
     "account_age_days": 1386
   },
   {
+    "login": "p-magno",
+    "id": 199936221,
+    "name": "Pedro Magno Rabelo Teles",
+    "public_repos": 2,
+    "followers": 0,
+    "following": 3,
+    "created_at": "2025-02-19T13:23:55Z",
+    "updated_at": "2026-09-03T18:15:42Z",
+    "maturity_score": 6.473021886403004,
+    "status": "new",
+    "account_age_days": 574
+  },
+  {
     "login": "renanpariiz",
     "id": 101299192,
     "name": "Renan Pariz",
@@ -4997,84 +5023,6 @@
     "maturity_score": 100.83011895822965,
     "status": "established",
     "account_age_days": 1652
-  },
-  {
-    "login": "GuilhermeOliveira1327",
-    "id": 185217197,
-    "name": "Guilherme Oliveira",
-    "public_repos": 1,
-    "followers": 2,
-    "following": 7,
-    "created_at": "2024-10-16T13:36:15Z",
-    "updated_at": "2026-09-14T16:25:28Z",
-    "maturity_score": 27.327941258559328,
-    "status": "new",
-    "account_age_days": 700
-  },
-  {
-    "login": "p-magno",
-    "id": 199936221,
-    "name": "Pedro Magno Rabelo Teles",
-    "public_repos": 2,
-    "followers": 0,
-    "following": 3,
-    "created_at": "2025-02-19T13:23:55Z",
-    "updated_at": "2026-09-03T18:15:42Z",
-    "maturity_score": 6.4730218864030045,
-    "status": "new",
-    "account_age_days": 574
-  },
-  {
-    "login": "samuelalvess",
-    "id": 87997616,
-    "name": "Samuel Alves",
-    "public_repos": 10,
-    "followers": 5,
-    "following": 5,
-    "created_at": "2021-07-26T17:41:10Z",
-    "updated_at": "2026-08-31T22:52:41Z",
-    "maturity_score": 46.798122702662944,
-    "status": "established",
-    "account_age_days": 1878
-  },
-  {
-    "login": "mclarasena",
-    "id": 144481802,
-    "name": null,
-    "public_repos": 4,
-    "followers": 5,
-    "following": 0,
-    "created_at": "2023-09-08T17:49:48Z",
-    "updated_at": "2024-07-15T01:58:34Z",
-    "maturity_score": 44.167303428839325,
-    "status": "new",
-    "account_age_days": 1104
-  },
-  {
-    "login": "kalebmacedo",
-    "id": 163928510,
-    "name": "Kaleb de Souza Macedo",
-    "public_repos": 13,
-    "followers": 4,
-    "following": 5,
-    "created_at": "2024-03-18T21:31:59Z",
-    "updated_at": "2026-09-04T00:16:16Z",
-    "maturity_score": 43.51429817782527,
-    "status": "established",
-    "account_age_days": 912
-  },
-  {
-    "login": "code-silva",
-    "id": 193602061,
-    "name": "Anderson Fernandes",
-    "public_repos": 6,
-    "followers": 8,
-    "following": 20,
-    "created_at": "2025-01-03T12:23:00Z",
-    "updated_at": "2026-08-12T12:43:46Z",
-    "maturity_score": 52.998692040259925,
-    "status": "new",
-    "account_age_days": 621
   },
   {
     "login": "andrehsb",
@@ -5090,19 +5038,6 @@
     "account_age_days": 865
   },
   {
-    "login": "JoaquimNetoo",
-    "id": 192152285,
-    "name": "Joaquim Neto",
-    "public_repos": 4,
-    "followers": 4,
-    "following": 3,
-    "created_at": "2024-12-18T22:01:13Z",
-    "updated_at": "2026-08-28T01:48:39Z",
-    "maturity_score": 40.2462411276567,
-    "status": "new",
-    "account_age_days": 637
-  },
-  {
     "login": "bernardoccs1",
     "id": 239639315,
     "name": null,
@@ -5114,6 +5049,19 @@
     "maturity_score": 46.646063045638826,
     "status": "new",
     "account_age_days": 329
+  },
+  {
+    "login": "code-silva",
+    "id": 193602061,
+    "name": "Anderson Fernandes",
+    "public_repos": 6,
+    "followers": 8,
+    "following": 20,
+    "created_at": "2025-01-03T12:23:00Z",
+    "updated_at": "2026-08-12T12:43:46Z",
+    "maturity_score": 52.998692040259925,
+    "status": "new",
+    "account_age_days": 621
   },
   {
     "login": "gsm22",
@@ -5129,6 +5077,58 @@
     "account_age_days": 150
   },
   {
+    "login": "JoaquimNetoo",
+    "id": 192152285,
+    "name": "Joaquim Neto",
+    "public_repos": 4,
+    "followers": 4,
+    "following": 3,
+    "created_at": "2024-12-18T22:01:13Z",
+    "updated_at": "2026-08-28T01:48:39Z",
+    "maturity_score": 40.2462411276567,
+    "status": "new",
+    "account_age_days": 637
+  },
+  {
+    "login": "kalebmacedo",
+    "id": 163928510,
+    "name": "Kaleb de Souza Macedo",
+    "public_repos": 13,
+    "followers": 4,
+    "following": 5,
+    "created_at": "2024-03-18T21:31:59Z",
+    "updated_at": "2026-09-04T00:16:16Z",
+    "maturity_score": 43.51429817782527,
+    "status": "established",
+    "account_age_days": 912
+  },
+  {
+    "login": "mclarasena",
+    "id": 144481802,
+    "name": null,
+    "public_repos": 4,
+    "followers": 5,
+    "following": 0,
+    "created_at": "2023-09-08T17:49:48Z",
+    "updated_at": "2024-07-15T01:58:34Z",
+    "maturity_score": 44.167303428839325,
+    "status": "new",
+    "account_age_days": 1104
+  },
+  {
+    "login": "samuelalvess",
+    "id": 87997616,
+    "name": "Samuel Alves",
+    "public_repos": 10,
+    "followers": 5,
+    "following": 5,
+    "created_at": "2021-07-26T17:41:10Z",
+    "updated_at": "2026-08-31T22:52:41Z",
+    "maturity_score": 46.798122702662944,
+    "status": "established",
+    "account_age_days": 1878
+  },
+  {
     "login": "Thur-sylva",
     "id": 160291426,
     "name": "Arthur Amaral da silva ",
@@ -5140,32 +5140,6 @@
     "maturity_score": 8.800341490756916,
     "status": "new",
     "account_age_days": 943
-  },
-  {
-    "login": "joycedio",
-    "id": 95662749,
-    "name": "Joyce Dionizio",
-    "public_repos": 0,
-    "followers": 1,
-    "following": 2,
-    "created_at": "2021-12-07T00:49:45Z",
-    "updated_at": "2025-09-24T19:57:21Z",
-    "maturity_score": 17.59548497939868,
-    "status": "new",
-    "account_age_days": 1745
-  },
-  {
-    "login": "MMcLovin",
-    "id": 122990047,
-    "name": "Gabriel Fernando",
-    "public_repos": 15,
-    "followers": 10,
-    "following": 14,
-    "created_at": "2023-01-18T13:47:42Z",
-    "updated_at": "2026-09-08T22:25:40Z",
-    "maturity_score": 59.87513724303084,
-    "status": "established",
-    "account_age_days": 1337
   },
   {
     "login": "DudaV228",
@@ -5181,30 +5155,30 @@
     "account_age_days": 1505
   },
   {
-    "login": "JMPNascimento",
-    "id": 144487097,
-    "name": "João Nascimento",
-    "public_repos": 7,
-    "followers": 6,
-    "following": 3,
-    "created_at": "2023-09-08T19:09:05Z",
-    "updated_at": "2026-08-17T12:53:43Z",
-    "maturity_score": 48.66032791312169,
+    "login": "felipecduque7",
+    "id": 293998470,
+    "name": "Felipe C. Duque",
+    "public_repos": 3,
+    "followers": 5,
+    "following": 9,
+    "created_at": "2026-06-15T22:27:24Z",
+    "updated_at": "2026-08-25T18:15:20Z",
+    "maturity_score": 42.26571985905577,
     "status": "new",
-    "account_age_days": 1104
+    "account_age_days": 93
   },
   {
-    "login": "Pablo-R-L",
-    "id": 99687142,
-    "name": null,
-    "public_repos": 12,
-    "followers": 2,
-    "following": 0,
-    "created_at": "2022-02-14T19:41:21Z",
-    "updated_at": "2026-07-19T14:24:19Z",
-    "maturity_score": 33.37917648626782,
+    "login": "GiuliaPaulucci",
+    "id": 182789774,
+    "name": "GiuliaPaulucci",
+    "public_repos": 7,
+    "followers": 13,
+    "following": 24,
+    "created_at": "2024-09-25T15:05:55Z",
+    "updated_at": "2026-06-23T06:16:52Z",
+    "maturity_score": 62.310483786791096,
     "status": "established",
-    "account_age_days": 1675
+    "account_age_days": 721
   },
   {
     "login": "gsVieiraaa",
@@ -5220,30 +5194,30 @@
     "account_age_days": 1651
   },
   {
-    "login": "Marcs2608",
-    "id": 110144378,
-    "name": "Marcos Antonio",
-    "public_repos": 0,
-    "followers": 1,
-    "following": 0,
-    "created_at": "2022-07-28T02:22:37Z",
-    "updated_at": "2026-08-23T17:04:06Z",
-    "maturity_score": 17.523868468093085,
+    "login": "JMPNascimento",
+    "id": 144487097,
+    "name": "João Nascimento",
+    "public_repos": 7,
+    "followers": 6,
+    "following": 3,
+    "created_at": "2023-09-08T19:09:05Z",
+    "updated_at": "2026-08-17T12:53:43Z",
+    "maturity_score": 48.66032791312169,
     "status": "new",
-    "account_age_days": 1512
+    "account_age_days": 1104
   },
   {
-    "login": "GiuliaPaulucci",
-    "id": 182789774,
-    "name": "GiuliaPaulucci",
-    "public_repos": 7,
-    "followers": 13,
-    "following": 24,
-    "created_at": "2024-09-25T15:05:55Z",
-    "updated_at": "2026-06-23T06:16:52Z",
-    "maturity_score": 62.31048378679109,
-    "status": "established",
-    "account_age_days": 721
+    "login": "joycedio",
+    "id": 95662749,
+    "name": "Joyce Dionizio",
+    "public_repos": 0,
+    "followers": 1,
+    "following": 2,
+    "created_at": "2021-12-07T00:49:45Z",
+    "updated_at": "2025-09-24T19:57:21Z",
+    "maturity_score": 17.59548497939868,
+    "status": "new",
+    "account_age_days": 1745
   },
   {
     "login": "lgalencar25",
@@ -5259,6 +5233,45 @@
     "account_age_days": 31
   },
   {
+    "login": "Marcs2608",
+    "id": 110144378,
+    "name": "Marcos Antonio",
+    "public_repos": 0,
+    "followers": 1,
+    "following": 0,
+    "created_at": "2022-07-28T02:22:37Z",
+    "updated_at": "2026-08-23T17:04:06Z",
+    "maturity_score": 17.523868468093085,
+    "status": "new",
+    "account_age_days": 1512
+  },
+  {
+    "login": "MMcLovin",
+    "id": 122990047,
+    "name": "Gabriel Fernando",
+    "public_repos": 15,
+    "followers": 10,
+    "following": 14,
+    "created_at": "2023-01-18T13:47:42Z",
+    "updated_at": "2026-09-08T22:25:40Z",
+    "maturity_score": 59.87513724303084,
+    "status": "established",
+    "account_age_days": 1337
+  },
+  {
+    "login": "Pablo-R-L",
+    "id": 99687142,
+    "name": null,
+    "public_repos": 12,
+    "followers": 2,
+    "following": 0,
+    "created_at": "2022-02-14T19:41:21Z",
+    "updated_at": "2026-07-19T14:24:19Z",
+    "maturity_score": 33.379176486267816,
+    "status": "established",
+    "account_age_days": 1675
+  },
+  {
     "login": "paulinpj",
     "id": 231473584,
     "name": null,
@@ -5267,7 +5280,7 @@
     "following": 3,
     "created_at": "2025-09-10T11:37:11Z",
     "updated_at": "2026-09-10T20:29:38Z",
-    "maturity_score": 27.011134242178606,
+    "maturity_score": 27.0111342421786,
     "status": "new",
     "account_age_days": 371
   },
@@ -5280,87 +5293,9 @@
     "following": 19,
     "created_at": "2025-04-07T01:40:17Z",
     "updated_at": "2026-09-13T12:22:47Z",
-    "maturity_score": 59.21247767423865,
+    "maturity_score": 59.212477674238656,
     "status": "established",
     "account_age_days": 528
-  },
-  {
-    "login": "felipecduque7",
-    "id": 293998470,
-    "name": "Felipe C. Duque",
-    "public_repos": 3,
-    "followers": 5,
-    "following": 9,
-    "created_at": "2026-06-15T22:27:24Z",
-    "updated_at": "2026-08-25T18:15:20Z",
-    "maturity_score": 42.26571985905577,
-    "status": "new",
-    "account_age_days": 93
-  },
-  {
-    "login": "PedroAraujo004",
-    "id": 173406776,
-    "name": "Pedro Araujo",
-    "public_repos": 4,
-    "followers": 2,
-    "following": 1,
-    "created_at": "2024-06-20T20:14:09Z",
-    "updated_at": "2026-09-06T23:21:22Z",
-    "maturity_score": 30.154601552591032,
-    "status": "new",
-    "account_age_days": 818
-  },
-  {
-    "login": "ArturGuanaes",
-    "id": 301095026,
-    "name": null,
-    "public_repos": 0,
-    "followers": 0,
-    "following": 0,
-    "created_at": "2026-07-08T00:17:30Z",
-    "updated_at": "2026-07-08T00:17:36Z",
-    "maturity_score": 2.1383330595080277,
-    "status": "new",
-    "account_age_days": 71
-  },
-  {
-    "login": "italo-lm",
-    "id": 177414389,
-    "name": null,
-    "public_repos": 0,
-    "followers": 2,
-    "following": 3,
-    "created_at": "2024-08-03T16:03:38Z",
-    "updated_at": "2024-08-29T13:15:47Z",
-    "maturity_score": 25.29867728803887,
-    "status": "new",
-    "account_age_days": 774
-  },
-  {
-    "login": "gabrielrdaraujo",
-    "id": 202958432,
-    "name": null,
-    "public_repos": 1,
-    "followers": 2,
-    "following": 3,
-    "created_at": "2025-03-12T12:37:50Z",
-    "updated_at": "2026-08-18T12:05:21Z",
-    "maturity_score": 27.210269658415676,
-    "status": "new",
-    "account_age_days": 553
-  },
-  {
-    "login": "marrathomaz",
-    "id": 245971482,
-    "name": "Thomaz Marra Martins",
-    "public_repos": 2,
-    "followers": 2,
-    "following": 0,
-    "created_at": "2025-11-24T23:25:49Z",
-    "updated_at": "2026-09-12T19:15:50Z",
-    "maturity_score": 28.114948708767876,
-    "status": "new",
-    "account_age_days": 296
   },
   {
     "login": "Aquila27",
@@ -5376,30 +5311,69 @@
     "account_age_days": 914
   },
   {
-    "login": "julia-fortunato",
-    "id": 118139107,
-    "name": "Júlia Fortunato ",
-    "public_repos": 4,
-    "followers": 9,
-    "following": 6,
-    "created_at": "2022-11-13T22:30:48Z",
-    "updated_at": "2026-08-31T18:35:26Z",
-    "maturity_score": 54.503555889476104,
+    "login": "ArturGuanaes",
+    "id": 301095026,
+    "name": null,
+    "public_repos": 0,
+    "followers": 0,
+    "following": 0,
+    "created_at": "2026-07-08T00:17:30Z",
+    "updated_at": "2026-07-08T00:17:36Z",
+    "maturity_score": 2.1383330595080277,
     "status": "new",
-    "account_age_days": 1403
+    "account_age_days": 71
   },
   {
-    "login": "DiegoSousaLeite",
-    "id": 92549594,
-    "name": "Diego Sousa",
-    "public_repos": 23,
-    "followers": 4,
-    "following": 4,
-    "created_at": "2021-10-14T20:31:36Z",
-    "updated_at": "2026-09-11T01:38:03Z",
-    "maturity_score": 45.47041285670111,
-    "status": "established",
-    "account_age_days": 1798
+    "login": "gabrielrdaraujo",
+    "id": 202958432,
+    "name": null,
+    "public_repos": 1,
+    "followers": 2,
+    "following": 3,
+    "created_at": "2025-03-12T12:37:50Z",
+    "updated_at": "2026-08-18T12:05:21Z",
+    "maturity_score": 27.21026965841567,
+    "status": "new",
+    "account_age_days": 553
+  },
+  {
+    "login": "italo-lm",
+    "id": 177414389,
+    "name": null,
+    "public_repos": 0,
+    "followers": 2,
+    "following": 3,
+    "created_at": "2024-08-03T16:03:38Z",
+    "updated_at": "2024-08-29T13:15:47Z",
+    "maturity_score": 25.298677288038864,
+    "status": "new",
+    "account_age_days": 774
+  },
+  {
+    "login": "marrathomaz",
+    "id": 245971482,
+    "name": "Thomaz Marra Martins",
+    "public_repos": 2,
+    "followers": 2,
+    "following": 0,
+    "created_at": "2025-11-24T23:25:49Z",
+    "updated_at": "2026-09-12T19:15:50Z",
+    "maturity_score": 28.11494870876787,
+    "status": "new",
+    "account_age_days": 296
+  },
+  {
+    "login": "PedroAraujo004",
+    "id": 173406776,
+    "name": "Pedro Araujo",
+    "public_repos": 4,
+    "followers": 2,
+    "following": 1,
+    "created_at": "2024-06-20T20:14:09Z",
+    "updated_at": "2026-09-06T23:21:22Z",
+    "maturity_score": 30.154601552591025,
+    "status": "new",
+    "account_age_days": 818
   },
   {
     "login": "alvesingrid",
@@ -5415,19 +5389,6 @@
     "account_age_days": 838
   },
   {
-    "login": "Lucas-Ricarte",
-    "id": 150674398,
-    "name": "Lucas-Ricarte",
-    "public_repos": 5,
-    "followers": 1,
-    "following": 0,
-    "created_at": "2023-11-13T11:14:52Z",
-    "updated_at": "2026-09-17T02:20:18Z",
-    "maturity_score": 22.711229014432686,
-    "status": "new",
-    "account_age_days": 1038
-  },
-  {
     "login": "codex977",
     "id": 290859087,
     "name": null,
@@ -5441,17 +5402,17 @@
     "account_age_days": 104
   },
   {
-    "login": "otheomls",
-    "id": 276396387,
-    "name": "Theo",
-    "public_repos": 0,
-    "followers": 0,
-    "following": 1,
-    "created_at": "2026-04-15T19:21:51Z",
-    "updated_at": "2026-06-12T16:35:50Z",
-    "maturity_score": 2.5217125584596234,
-    "status": "new",
-    "account_age_days": 154
+    "login": "DiegoSousaLeite",
+    "id": 92549594,
+    "name": "Diego Sousa",
+    "public_repos": 23,
+    "followers": 4,
+    "following": 4,
+    "created_at": "2021-10-14T20:31:36Z",
+    "updated_at": "2026-09-11T01:38:03Z",
+    "maturity_score": 45.47041285670111,
+    "status": "established",
+    "account_age_days": 1798
   },
   {
     "login": "Gabrieldualp",
@@ -5467,43 +5428,69 @@
     "account_age_days": 1253
   },
   {
-    "login": "Oleari19",
-    "id": 110275583,
-    "name": "Maria Clara Oleari de Araujo",
-    "public_repos": 11,
-    "followers": 1,
-    "following": 1,
-    "created_at": "2022-07-30T05:18:25Z",
-    "updated_at": "2026-09-04T00:58:29Z",
-    "maturity_score": 24.977596025467392,
-    "status": "established",
-    "account_age_days": 1509
-  },
-  {
-    "login": "MarcoTulioSoares",
-    "id": 110120983,
-    "name": "Marco Tulio Soares",
-    "public_repos": 11,
-    "followers": 2,
-    "following": 1,
-    "created_at": "2022-07-27T16:40:42Z",
-    "updated_at": "2026-09-11T20:42:05Z",
-    "maturity_score": 33.08789057962038,
-    "status": "established",
-    "account_age_days": 1512
-  },
-  {
-    "login": "Guilermanoo",
-    "id": 98980548,
-    "name": "GUILHERME COELHO MENDONÇA",
-    "public_repos": 7,
-    "followers": 2,
-    "following": 2,
-    "created_at": "2022-02-03T19:03:02Z",
-    "updated_at": "2026-09-10T09:37:36Z",
-    "maturity_score": 31.92592393967469,
+    "login": "julia-fortunato",
+    "id": 118139107,
+    "name": "Júlia Fortunato ",
+    "public_repos": 4,
+    "followers": 9,
+    "following": 6,
+    "created_at": "2022-11-13T22:30:48Z",
+    "updated_at": "2026-08-31T18:35:26Z",
+    "maturity_score": 54.503555889476104,
     "status": "new",
-    "account_age_days": 1686
+    "account_age_days": 1403
+  },
+  {
+    "login": "Lucas-Ricarte",
+    "id": 150674398,
+    "name": "Lucas-Ricarte",
+    "public_repos": 5,
+    "followers": 1,
+    "following": 0,
+    "created_at": "2023-11-13T11:14:52Z",
+    "updated_at": "2026-09-17T02:20:18Z",
+    "maturity_score": 22.711229014432686,
+    "status": "new",
+    "account_age_days": 1038
+  },
+  {
+    "login": "otheomls",
+    "id": 276396387,
+    "name": "Theo",
+    "public_repos": 0,
+    "followers": 0,
+    "following": 1,
+    "created_at": "2026-04-15T19:21:51Z",
+    "updated_at": "2026-06-12T16:35:50Z",
+    "maturity_score": 2.5217125584596234,
+    "status": "new",
+    "account_age_days": 154
+  },
+  {
+    "login": "alanafeitosa-ui",
+    "id": 269747096,
+    "name": "Alana Cristyna ",
+    "public_repos": 3,
+    "followers": 2,
+    "following": 1,
+    "created_at": "2026-03-20T14:37:44Z",
+    "updated_at": "2026-08-18T11:57:59Z",
+    "maturity_score": 28.730377372354774,
+    "status": "new",
+    "account_age_days": 180
+  },
+  {
+    "login": "annaaju",
+    "id": 133260264,
+    "name": "anna",
+    "public_repos": 15,
+    "followers": 13,
+    "following": 10,
+    "created_at": "2023-05-11T18:16:56Z",
+    "updated_at": "2026-08-19T13:57:55Z",
+    "maturity_score": 64.65426082051394,
+    "status": "established",
+    "account_age_days": 1224
   },
   {
     "login": "Brunocrzz",
@@ -5519,43 +5506,17 @@
     "account_age_days": 1346
   },
   {
-    "login": "JhuliaCristina",
-    "id": 151583672,
-    "name": null,
-    "public_repos": 4,
-    "followers": 2,
-    "following": 3,
-    "created_at": "2023-11-20T22:49:11Z",
-    "updated_at": "2026-04-28T19:21:02Z",
-    "maturity_score": 30.27018648368525,
-    "status": "new",
-    "account_age_days": 1031
-  },
-  {
-    "login": "annaaju",
-    "id": 133260264,
-    "name": "anna",
-    "public_repos": 15,
-    "followers": 13,
-    "following": 10,
-    "created_at": "2023-05-11T18:16:56Z",
-    "updated_at": "2026-08-19T13:57:55Z",
-    "maturity_score": 64.65426082051393,
+    "login": "eliabexp",
+    "id": 74092305,
+    "name": "eliabe",
+    "public_repos": 7,
+    "followers": 20,
+    "following": 23,
+    "created_at": "2020-11-07T08:01:09Z",
+    "updated_at": "2026-08-21T14:59:11Z",
+    "maturity_score": 70.96305393351591,
     "status": "established",
-    "account_age_days": 1224
-  },
-  {
-    "login": "leticia-oliveira",
-    "id": 81648027,
-    "name": "Letícia Oliveira",
-    "public_repos": 2,
-    "followers": 19,
-    "following": 37,
-    "created_at": "2021-03-30T18:59:49Z",
-    "updated_at": "2026-08-19T22:44:24Z",
-    "maturity_score": 67.01018300379205,
-    "status": "established",
-    "account_age_days": 1996
+    "account_age_days": 2139
   },
   {
     "login": "Golira12",
@@ -5571,30 +5532,69 @@
     "account_age_days": 810
   },
   {
-    "login": "eliabexp",
-    "id": 74092305,
-    "name": "eliabe",
+    "login": "Guilermanoo",
+    "id": 98980548,
+    "name": "GUILHERME COELHO MENDONÇA",
     "public_repos": 7,
-    "followers": 20,
-    "following": 23,
-    "created_at": "2020-11-07T08:01:09Z",
-    "updated_at": "2026-08-21T14:59:11Z",
-    "maturity_score": 70.96305393351591,
-    "status": "established",
-    "account_age_days": 2139
+    "followers": 2,
+    "following": 2,
+    "created_at": "2022-02-03T19:03:02Z",
+    "updated_at": "2026-09-10T09:37:36Z",
+    "maturity_score": 31.925923939674682,
+    "status": "new",
+    "account_age_days": 1686
   },
   {
-    "login": "alanafeitosa-ui",
-    "id": 269747096,
-    "name": "Alana Cristyna ",
-    "public_repos": 3,
+    "login": "JhuliaCristina",
+    "id": 151583672,
+    "name": null,
+    "public_repos": 4,
+    "followers": 2,
+    "following": 3,
+    "created_at": "2023-11-20T22:49:11Z",
+    "updated_at": "2026-04-28T19:21:02Z",
+    "maturity_score": 30.270186483685244,
+    "status": "new",
+    "account_age_days": 1031
+  },
+  {
+    "login": "leticia-oliveira",
+    "id": 81648027,
+    "name": "Letícia Oliveira",
+    "public_repos": 2,
+    "followers": 19,
+    "following": 37,
+    "created_at": "2021-03-30T18:59:49Z",
+    "updated_at": "2026-08-19T22:44:24Z",
+    "maturity_score": 67.01018300379205,
+    "status": "established",
+    "account_age_days": 1996
+  },
+  {
+    "login": "MarcoTulioSoares",
+    "id": 110120983,
+    "name": "Marco Tulio Soares",
+    "public_repos": 11,
     "followers": 2,
     "following": 1,
-    "created_at": "2026-03-20T14:37:44Z",
-    "updated_at": "2026-08-18T11:57:59Z",
-    "maturity_score": 28.73037737235478,
-    "status": "new",
-    "account_age_days": 180
+    "created_at": "2022-07-27T16:40:42Z",
+    "updated_at": "2026-09-11T20:42:05Z",
+    "maturity_score": 33.08789057962037,
+    "status": "established",
+    "account_age_days": 1512
+  },
+  {
+    "login": "Oleari19",
+    "id": 110275583,
+    "name": "Maria Clara Oleari de Araujo",
+    "public_repos": 11,
+    "followers": 1,
+    "following": 1,
+    "created_at": "2022-07-30T05:18:25Z",
+    "updated_at": "2026-09-04T00:58:29Z",
+    "maturity_score": 24.977927041699278,
+    "status": "established",
+    "account_age_days": 1510
   },
   {
     "login": "vitormorhy",
@@ -5610,82 +5610,17 @@
     "account_age_days": 1034
   },
   {
-    "login": "femathrl",
-    "id": 84880995,
-    "name": "femathrl",
-    "public_repos": 5,
-    "followers": 3,
-    "following": 10,
-    "created_at": "2021-05-26T22:52:19Z",
-    "updated_at": "2025-01-13T16:20:51Z",
-    "maturity_score": 36.886387256110666,
-    "status": "new",
-    "account_age_days": 1939
-  },
-  {
-    "login": "LeoFacB",
-    "id": 124631520,
-    "name": "Leonardo Bonetti",
-    "public_repos": 5,
-    "followers": 4,
-    "following": 2,
-    "created_at": "2023-02-06T21:08:19Z",
-    "updated_at": "2026-09-02T16:14:19Z",
-    "maturity_score": 41.15635123272483,
-    "status": "new",
-    "account_age_days": 1318
-  },
-  {
-    "login": "drykette",
-    "id": 23423067,
-    "name": "Adrielly Rodrigues",
-    "public_repos": 14,
-    "followers": 20,
-    "following": 22,
-    "created_at": "2016-11-12T19:40:14Z",
-    "updated_at": "2025-11-26T13:27:34Z",
-    "maturity_score": 73.10838805557084,
-    "status": "established",
-    "account_age_days": 3595
-  },
-  {
-    "login": "Rukkakun",
-    "id": 107811894,
-    "name": "Paulo Lucca",
-    "public_repos": 3,
-    "followers": 2,
-    "following": 4,
-    "created_at": "2022-06-19T19:02:18Z",
-    "updated_at": "2026-08-18T15:24:28Z",
-    "maturity_score": 29.804456438310137,
-    "status": "new",
-    "account_age_days": 1550
-  },
-  {
-    "login": "Pirata2040",
-    "id": 104464466,
-    "name": "PauloF",
-    "public_repos": 8,
+    "login": "AnaBiaGuerra",
+    "id": 270751224,
+    "name": null,
+    "public_repos": 1,
     "followers": 0,
     "following": 0,
-    "created_at": "2022-04-26T20:28:37Z",
-    "updated_at": "2026-09-16T17:54:05Z",
-    "maturity_score": 10.282113249790717,
+    "created_at": "2026-03-24T19:00:53Z",
+    "updated_at": "2026-03-24T19:00:53Z",
+    "maturity_score": 4.66751640796675,
     "status": "new",
-    "account_age_days": 1604
-  },
-  {
-    "login": "IsaLL24",
-    "id": 183651887,
-    "name": "Isabella Lacerda Lima",
-    "public_repos": 7,
-    "followers": 1,
-    "following": 2,
-    "created_at": "2024-10-02T18:54:22Z",
-    "updated_at": "2026-09-06T17:16:31Z",
-    "maturity_score": 23.387409507585417,
-    "status": "new",
-    "account_age_days": 714
+    "account_age_days": 176
   },
   {
     "login": "arthurhc3",
@@ -5701,6 +5636,19 @@
     "account_age_days": 1615
   },
   {
+    "login": "arthurmirandasilva",
+    "id": 284703692,
+    "name": null,
+    "public_repos": 0,
+    "followers": 0,
+    "following": 0,
+    "created_at": "2026-05-14T15:32:16Z",
+    "updated_at": "2026-05-14T15:32:16Z",
+    "maturity_score": 2.418140953475739,
+    "status": "new",
+    "account_age_days": 125
+  },
+  {
     "login": "DanKallaharii",
     "id": 214192740,
     "name": "Daniel Paz ",
@@ -5714,6 +5662,45 @@
     "account_age_days": 474
   },
   {
+    "login": "drykette",
+    "id": 23423067,
+    "name": "Adrielly Rodrigues",
+    "public_repos": 14,
+    "followers": 20,
+    "following": 22,
+    "created_at": "2016-11-12T19:40:14Z",
+    "updated_at": "2025-11-26T13:27:34Z",
+    "maturity_score": 73.10838805557084,
+    "status": "established",
+    "account_age_days": 3595
+  },
+  {
+    "login": "felpp-su",
+    "id": 197075315,
+    "name": "Felippe Ong Su",
+    "public_repos": 0,
+    "followers": 3,
+    "following": 5,
+    "created_at": "2025-01-30T11:42:11Z",
+    "updated_at": "2026-09-03T17:51:19Z",
+    "maturity_score": 30.920167925170627,
+    "status": "new",
+    "account_age_days": 594
+  },
+  {
+    "login": "femathrl",
+    "id": 84880995,
+    "name": "femathrl",
+    "public_repos": 5,
+    "followers": 3,
+    "following": 10,
+    "created_at": "2021-05-26T22:52:19Z",
+    "updated_at": "2025-01-13T16:20:51Z",
+    "maturity_score": 36.886387256110666,
+    "status": "new",
+    "account_age_days": 1939
+  },
+  {
     "login": "Geovanaduartee",
     "id": 302299188,
     "name": null,
@@ -5722,7 +5709,7 @@
     "following": 0,
     "created_at": "2026-07-10T22:00:05Z",
     "updated_at": "2026-09-09T22:34:14Z",
-    "maturity_score": 27.385135891665158,
+    "maturity_score": 27.385135891665147,
     "status": "new",
     "account_age_days": 68
   },
@@ -5740,30 +5727,30 @@
     "account_age_days": 107
   },
   {
-    "login": "arthurmirandasilva",
-    "id": 284703692,
-    "name": null,
-    "public_repos": 0,
-    "followers": 0,
-    "following": 0,
-    "created_at": "2026-05-14T15:32:16Z",
-    "updated_at": "2026-05-14T15:32:16Z",
-    "maturity_score": 2.418140953475739,
+    "login": "IsaLL24",
+    "id": 183651887,
+    "name": "Isabella Lacerda Lima",
+    "public_repos": 7,
+    "followers": 1,
+    "following": 2,
+    "created_at": "2024-10-02T18:54:22Z",
+    "updated_at": "2026-09-06T17:16:31Z",
+    "maturity_score": 23.387409507585417,
     "status": "new",
-    "account_age_days": 125
+    "account_age_days": 714
   },
   {
-    "login": "felpp-su",
-    "id": 197075315,
-    "name": "Felippe Ong Su",
-    "public_repos": 0,
-    "followers": 3,
-    "following": 5,
-    "created_at": "2025-01-30T11:42:11Z",
-    "updated_at": "2026-09-03T17:51:19Z",
-    "maturity_score": 30.920167925170627,
+    "login": "LeoFacB",
+    "id": 124631520,
+    "name": "Leonardo Bonetti",
+    "public_repos": 5,
+    "followers": 4,
+    "following": 2,
+    "created_at": "2023-02-06T21:08:19Z",
+    "updated_at": "2026-09-02T16:14:19Z",
+    "maturity_score": 41.15635123272483,
     "status": "new",
-    "account_age_days": 594
+    "account_age_days": 1318
   },
   {
     "login": "LuizaCarvalho691",
@@ -5779,17 +5766,30 @@
     "account_age_days": 487
   },
   {
-    "login": "AnaBiaGuerra",
-    "id": 270751224,
-    "name": null,
-    "public_repos": 1,
+    "login": "Pirata2040",
+    "id": 104464466,
+    "name": "PauloF",
+    "public_repos": 8,
     "followers": 0,
     "following": 0,
-    "created_at": "2026-03-24T19:00:53Z",
-    "updated_at": "2026-03-24T19:00:53Z",
-    "maturity_score": 4.66751640796675,
+    "created_at": "2022-04-26T20:28:37Z",
+    "updated_at": "2026-09-16T17:54:05Z",
+    "maturity_score": 10.282113249790717,
     "status": "new",
-    "account_age_days": 176
+    "account_age_days": 1604
+  },
+  {
+    "login": "Rukkakun",
+    "id": 107811894,
+    "name": "Paulo Lucca",
+    "public_repos": 3,
+    "followers": 2,
+    "following": 4,
+    "created_at": "2022-06-19T19:02:18Z",
+    "updated_at": "2026-08-18T15:24:28Z",
+    "maturity_score": 29.80445643831013,
+    "status": "new",
+    "account_age_days": 1550
   },
   {
     "login": "VictorSouzaJVTS",
@@ -5818,6 +5818,71 @@
     "account_age_days": 1552
   },
   {
+    "login": "AlvaroBento12",
+    "id": 209044765,
+    "name": "Alvaro Bento",
+    "public_repos": 3,
+    "followers": 0,
+    "following": 0,
+    "created_at": "2025-04-24T23:53:42Z",
+    "updated_at": "2026-08-13T01:03:44Z",
+    "maturity_score": 7.277067878461524,
+    "status": "new",
+    "account_age_days": 510
+  },
+  {
+    "login": "art-miranda",
+    "id": 221900954,
+    "name": null,
+    "public_repos": 0,
+    "followers": 0,
+    "following": 0,
+    "created_at": "2025-07-20T21:54:55Z",
+    "updated_at": "2026-09-09T17:54:22Z",
+    "maturity_score": 3.024866727615979,
+    "status": "new",
+    "account_age_days": 423
+  },
+  {
+    "login": "Brenohrr",
+    "id": 214024282,
+    "name": null,
+    "public_repos": 1,
+    "followers": 0,
+    "following": 0,
+    "created_at": "2025-05-29T19:26:38Z",
+    "updated_at": "2026-01-25T07:04:54Z",
+    "maturity_score": 5.162150468795546,
+    "status": "new",
+    "account_age_days": 475
+  },
+  {
+    "login": "daniel-mouraa",
+    "id": 294324405,
+    "name": "Daniel Moura",
+    "public_repos": 1,
+    "followers": 2,
+    "following": 1,
+    "created_at": "2026-06-16T22:18:07Z",
+    "updated_at": "2026-09-14T19:12:41Z",
+    "maturity_score": 26.317987061618652,
+    "status": "new",
+    "account_age_days": 92
+  },
+  {
+    "login": "danrleypereira",
+    "id": 12025215,
+    "name": "Danrley Pereira",
+    "public_repos": 56,
+    "followers": 48,
+    "following": 34,
+    "created_at": "2015-04-20T00:48:52Z",
+    "updated_at": "2026-09-15T04:57:17Z",
+    "maturity_score": 94.13327550465658,
+    "status": "established",
+    "account_age_days": 4168
+  },
+  {
     "login": "Fernandavazgit1",
     "id": 144569110,
     "name": null,
@@ -5839,113 +5904,9 @@
     "following": 3,
     "created_at": "2022-03-10T23:56:54Z",
     "updated_at": "2026-09-15T18:24:53Z",
-    "maturity_score": 31.5148471975686,
+    "maturity_score": 31.514847197568592,
     "status": "new",
     "account_age_days": 1651
-  },
-  {
-    "login": "danrleypereira",
-    "id": 12025215,
-    "name": "Danrley Pereira",
-    "public_repos": 56,
-    "followers": 48,
-    "following": 34,
-    "created_at": "2015-04-20T00:48:52Z",
-    "updated_at": "2026-09-15T04:57:17Z",
-    "maturity_score": 94.13327550465658,
-    "status": "established",
-    "account_age_days": 4168
-  },
-  {
-    "login": "Brenohrr",
-    "id": 214024282,
-    "name": null,
-    "public_repos": 1,
-    "followers": 0,
-    "following": 0,
-    "created_at": "2025-05-29T19:26:38Z",
-    "updated_at": "2026-01-25T07:04:54Z",
-    "maturity_score": 5.162150468795546,
-    "status": "new",
-    "account_age_days": 475
-  },
-  {
-    "login": "MiguelCardoso28",
-    "id": 237799277,
-    "name": "Miguel Cardoso",
-    "public_repos": 1,
-    "followers": 3,
-    "following": 6,
-    "created_at": "2025-10-13T14:22:05Z",
-    "updated_at": "2026-08-31T15:30:23Z",
-    "maturity_score": 32.71832881776787,
-    "status": "new",
-    "account_age_days": 338
-  },
-  {
-    "login": "art-miranda",
-    "id": 221900954,
-    "name": null,
-    "public_repos": 0,
-    "followers": 0,
-    "following": 0,
-    "created_at": "2025-07-20T21:54:55Z",
-    "updated_at": "2026-09-09T17:54:22Z",
-    "maturity_score": 3.024866727615979,
-    "status": "new",
-    "account_age_days": 423
-  },
-  {
-    "login": "daniel-mouraa",
-    "id": 294324405,
-    "name": "Daniel Moura",
-    "public_repos": 1,
-    "followers": 2,
-    "following": 1,
-    "created_at": "2026-06-16T22:18:07Z",
-    "updated_at": "2026-09-14T19:12:41Z",
-    "maturity_score": 26.31798706161866,
-    "status": "new",
-    "account_age_days": 92
-  },
-  {
-    "login": "Isac-sil-mar",
-    "id": 170209600,
-    "name": "IsacMarques",
-    "public_repos": 2,
-    "followers": 0,
-    "following": 0,
-    "created_at": "2024-05-18T22:17:14Z",
-    "updated_at": "2026-08-13T00:14:22Z",
-    "maturity_score": 6.669630129418987,
-    "status": "new",
-    "account_age_days": 851
-  },
-  {
-    "login": "Ryan1200705",
-    "id": 320617818,
-    "name": null,
-    "public_repos": 0,
-    "followers": 0,
-    "following": 0,
-    "created_at": "2026-08-24T14:57:57Z",
-    "updated_at": "2026-08-24T14:58:08Z",
-    "maturity_score": 1.5890269151739729,
-    "status": "new",
-    "account_age_days": 23
-  },
-  {
-    "login": "AlvaroBento12",
-    "id": 209044765,
-    "name": "Alvaro Bento",
-    "public_repos": 3,
-    "followers": 0,
-    "following": 0,
-    "created_at": "2025-04-24T23:53:42Z",
-    "updated_at": "2026-08-13T01:03:44Z",
-    "maturity_score": 7.277067878461524,
-    "status": "new",
-    "account_age_days": 510
   },
   {
     "login": "heitormontt",
@@ -5961,30 +5922,17 @@
     "account_age_days": 142
   },
   {
-    "login": "mariav-07",
-    "id": 242483262,
-    "name": null,
-    "public_repos": 1,
+    "login": "Isac-sil-mar",
+    "id": 170209600,
+    "name": "IsacMarques",
+    "public_repos": 2,
     "followers": 0,
     "following": 0,
-    "created_at": "2025-11-06T18:48:12Z",
-    "updated_at": "2025-12-02T21:12:42Z",
-    "maturity_score": 4.955727861092653,
+    "created_at": "2024-05-18T22:17:14Z",
+    "updated_at": "2026-08-13T00:14:22Z",
+    "maturity_score": 6.669630129418986,
     "status": "new",
-    "account_age_days": 314
-  },
-  {
-    "login": "smitalo",
-    "id": 173753454,
-    "name": "monoez",
-    "public_repos": 0,
-    "followers": 2,
-    "following": 1,
-    "created_at": "2024-06-25T03:02:27Z",
-    "updated_at": "2026-08-28T15:01:33Z",
-    "maturity_score": 25.323839829982628,
-    "status": "new",
-    "account_age_days": 814
+    "account_age_days": 851
   },
   {
     "login": "MariaMacedoToledo",
@@ -6000,17 +5948,82 @@
     "account_age_days": 8
   },
   {
-    "login": "souzagusta",
-    "id": 42524248,
-    "name": "Gustavo Lima de Souza",
+    "login": "mariav-07",
+    "id": 242483262,
+    "name": null,
     "public_repos": 1,
     "followers": 0,
     "following": 0,
-    "created_at": "2018-08-19T22:58:31Z",
-    "updated_at": "2024-10-22T15:36:59Z",
-    "maturity_score": 6.074391229151305,
+    "created_at": "2025-11-06T18:48:12Z",
+    "updated_at": "2025-12-02T21:12:42Z",
+    "maturity_score": 4.955727861092653,
     "status": "new",
-    "account_age_days": 2950
+    "account_age_days": 314
+  },
+  {
+    "login": "MiguelCardoso28",
+    "id": 237799277,
+    "name": "Miguel Cardoso",
+    "public_repos": 1,
+    "followers": 3,
+    "following": 6,
+    "created_at": "2025-10-13T14:22:05Z",
+    "updated_at": "2026-08-31T15:30:23Z",
+    "maturity_score": 32.71832881776787,
+    "status": "new",
+    "account_age_days": 338
+  },
+  {
+    "login": "Ryan1200705",
+    "id": 320617818,
+    "name": null,
+    "public_repos": 0,
+    "followers": 0,
+    "following": 0,
+    "created_at": "2026-08-24T14:57:57Z",
+    "updated_at": "2026-08-24T14:58:08Z",
+    "maturity_score": 1.5890269151739729,
+    "status": "new",
+    "account_age_days": 23
+  },
+  {
+    "login": "smitalo",
+    "id": 173753454,
+    "name": "monoez",
+    "public_repos": 0,
+    "followers": 2,
+    "following": 1,
+    "created_at": "2024-06-25T03:02:27Z",
+    "updated_at": "2026-08-28T15:01:33Z",
+    "maturity_score": 25.32383982998262,
+    "status": "new",
+    "account_age_days": 814
+  },
+  {
+    "login": "ailoiol",
+    "id": 225410979,
+    "name": "Yasmin de Loiola Araujo",
+    "public_repos": 0,
+    "followers": 0,
+    "following": 0,
+    "created_at": "2025-08-08T14:39:00Z",
+    "updated_at": "2026-09-11T00:38:04Z",
+    "maturity_score": 3.0019435335532694,
+    "status": "new",
+    "account_age_days": 404
+  },
+  {
+    "login": "bcaueLPS",
+    "id": 30941831,
+    "name": null,
+    "public_repos": 0,
+    "followers": 3,
+    "following": 9,
+    "created_at": "2017-08-12T00:16:52Z",
+    "updated_at": "2026-08-21T03:02:19Z",
+    "maturity_score": 31.78034930038548,
+    "status": "new",
+    "account_age_days": 3323
   },
   {
     "login": "brunocva",
@@ -6026,30 +6039,56 @@
     "account_age_days": 1155
   },
   {
-    "login": "Juliovskys",
-    "id": 108846009,
-    "name": "Júlio Cesar",
-    "public_repos": 16,
-    "followers": 13,
-    "following": 15,
-    "created_at": "2022-07-07T01:33:01Z",
-    "updated_at": "2026-09-16T13:38:27Z",
-    "maturity_score": 64.94860361543742,
-    "status": "established",
-    "account_age_days": 1533
+    "login": "Crianex",
+    "id": 217833137,
+    "name": null,
+    "public_repos": 0,
+    "followers": 0,
+    "following": 0,
+    "created_at": "2025-06-24T21:32:50Z",
+    "updated_at": "2026-09-05T03:50:43Z",
+    "maturity_score": 3.0546237913821828,
+    "status": "new",
+    "account_age_days": 449
   },
   {
-    "login": "show-dawn",
-    "id": 117610576,
-    "name": null,
-    "public_repos": 3,
-    "followers": 3,
-    "following": 4,
-    "created_at": "2022-11-07T01:20:12Z",
-    "updated_at": "2026-08-26T00:47:57Z",
-    "maturity_score": 35.51079728168389,
+    "login": "Derick-none",
+    "id": 175745519,
+    "name": "Derick",
+    "public_repos": 1,
+    "followers": 0,
+    "following": 1,
+    "created_at": "2024-07-16T19:24:29Z",
+    "updated_at": "2026-08-17T21:53:42Z",
+    "maturity_score": 5.41735315249726,
     "status": "new",
-    "account_age_days": 1410
+    "account_age_days": 792
+  },
+  {
+    "login": "diangellis",
+    "id": 274620483,
+    "name": "Gabriel Ferreira",
+    "public_repos": 4,
+    "followers": 4,
+    "following": 5,
+    "created_at": "2026-04-08T19:46:42Z",
+    "updated_at": "2026-09-04T20:21:23Z",
+    "maturity_score": 39.5608701536005,
+    "status": "new",
+    "account_age_days": 161
+  },
+  {
+    "login": "EduardoRGS",
+    "id": 78619804,
+    "name": "Eduardo Ribeiro",
+    "public_repos": 18,
+    "followers": 5,
+    "following": 9,
+    "created_at": "2021-02-05T20:14:24Z",
+    "updated_at": "2026-09-16T23:14:41Z",
+    "maturity_score": 48.481303858126644,
+    "status": "established",
+    "account_age_days": 2049
   },
   {
     "login": "jheniferib",
@@ -6063,6 +6102,58 @@
     "maturity_score": 3.5953380171661036,
     "status": "new",
     "account_age_days": 1326
+  },
+  {
+    "login": "josegabriel-iw",
+    "id": 158627845,
+    "name": null,
+    "public_repos": 4,
+    "followers": 0,
+    "following": 1,
+    "created_at": "2024-02-02T23:19:39Z",
+    "updated_at": "2026-09-01T10:27:36Z",
+    "maturity_score": 8.260737626287732,
+    "status": "new",
+    "account_age_days": 957
+  },
+  {
+    "login": "Jp-te",
+    "id": 185824082,
+    "name": "João Paulo da Silva Pereira",
+    "public_repos": 4,
+    "followers": 1,
+    "following": 3,
+    "created_at": "2024-10-21T15:45:55Z",
+    "updated_at": "2026-09-07T21:42:04Z",
+    "maturity_score": 21.963932178668415,
+    "status": "new",
+    "account_age_days": 695
+  },
+  {
+    "login": "Juliovskys",
+    "id": 108846009,
+    "name": "Júlio Cesar",
+    "public_repos": 16,
+    "followers": 13,
+    "following": 15,
+    "created_at": "2022-07-07T01:33:01Z",
+    "updated_at": "2026-09-16T13:38:27Z",
+    "maturity_score": 64.94860361543743,
+    "status": "established",
+    "account_age_days": 1533
+  },
+  {
+    "login": "jv-ibiapina",
+    "id": 151571305,
+    "name": "João Vitor",
+    "public_repos": 2,
+    "followers": 0,
+    "following": 0,
+    "created_at": "2023-11-20T19:18:05Z",
+    "updated_at": "2026-08-19T19:28:47Z",
+    "maturity_score": 6.765463839025083,
+    "status": "new",
+    "account_age_days": 1031
   },
   {
     "login": "lucasqueiroz23",
@@ -6086,165 +6177,9 @@
     "following": 6,
     "created_at": "2023-04-17T12:18:08Z",
     "updated_at": "2026-09-14T14:01:58Z",
-    "maturity_score": 61.18035423966857,
+    "maturity_score": 61.180354239668574,
     "status": "established",
     "account_age_days": 1248
-  },
-  {
-    "login": "NayraNery127",
-    "id": 134748324,
-    "name": null,
-    "public_repos": 3,
-    "followers": 0,
-    "following": 1,
-    "created_at": "2023-05-26T23:48:16Z",
-    "updated_at": "2026-09-15T20:11:28Z",
-    "maturity_score": 7.708070902655065,
-    "status": "new",
-    "account_age_days": 1209
-  },
-  {
-    "login": "Crianex",
-    "id": 217833137,
-    "name": null,
-    "public_repos": 0,
-    "followers": 0,
-    "following": 0,
-    "created_at": "2025-06-24T21:32:50Z",
-    "updated_at": "2026-09-05T03:50:43Z",
-    "maturity_score": 3.0546237913821828,
-    "status": "new",
-    "account_age_days": 449
-  },
-  {
-    "login": "Wallacebarros",
-    "id": 104733992,
-    "name": "Wallace Barros da Cruz ",
-    "public_repos": 36,
-    "followers": 2,
-    "following": 7,
-    "created_at": "2022-05-01T18:49:02Z",
-    "updated_at": "2025-06-17T10:20:56Z",
-    "maturity_score": 36.493878965408804,
-    "status": "established",
-    "account_age_days": 1599
-  },
-  {
-    "login": "jv-ibiapina",
-    "id": 151571305,
-    "name": "João Vitor",
-    "public_repos": 2,
-    "followers": 0,
-    "following": 0,
-    "created_at": "2023-11-20T19:18:05Z",
-    "updated_at": "2026-08-19T19:28:47Z",
-    "maturity_score": 6.765463839025083,
-    "status": "new",
-    "account_age_days": 1031
-  },
-  {
-    "login": "EduardoRGS",
-    "id": 78619804,
-    "name": "Eduardo Ribeiro",
-    "public_repos": 18,
-    "followers": 5,
-    "following": 9,
-    "created_at": "2021-02-05T20:14:24Z",
-    "updated_at": "2026-09-16T23:14:41Z",
-    "maturity_score": 48.481303858126644,
-    "status": "established",
-    "account_age_days": 2049
-  },
-  {
-    "login": "Jp-te",
-    "id": 185824082,
-    "name": "João Paulo da Silva Pereira",
-    "public_repos": 4,
-    "followers": 1,
-    "following": 3,
-    "created_at": "2024-10-21T15:45:55Z",
-    "updated_at": "2026-09-07T21:42:04Z",
-    "maturity_score": 21.963932178668415,
-    "status": "new",
-    "account_age_days": 695
-  },
-  {
-    "login": "Derick-none",
-    "id": 175745519,
-    "name": "Derick",
-    "public_repos": 1,
-    "followers": 0,
-    "following": 1,
-    "created_at": "2024-07-16T19:24:29Z",
-    "updated_at": "2026-08-17T21:53:42Z",
-    "maturity_score": 5.41735315249726,
-    "status": "new",
-    "account_age_days": 792
-  },
-  {
-    "login": "ViniGvdo",
-    "id": 198657137,
-    "name": "Vinicius Gavaldao Franco",
-    "public_repos": 2,
-    "followers": 0,
-    "following": 0,
-    "created_at": "2025-02-10T21:08:08Z",
-    "updated_at": "2026-09-14T16:33:18Z",
-    "maturity_score": 6.480787357418443,
-    "status": "new",
-    "account_age_days": 583
-  },
-  {
-    "login": "ailoiol",
-    "id": 225410979,
-    "name": "Yasmin de Loiola Araujo",
-    "public_repos": 0,
-    "followers": 0,
-    "following": 0,
-    "created_at": "2025-08-08T14:39:00Z",
-    "updated_at": "2026-09-11T00:38:04Z",
-    "maturity_score": 3.0019435335532694,
-    "status": "new",
-    "account_age_days": 404
-  },
-  {
-    "login": "diangellis",
-    "id": 274620483,
-    "name": "Gabriel Ferreira",
-    "public_repos": 4,
-    "followers": 4,
-    "following": 5,
-    "created_at": "2026-04-08T19:46:42Z",
-    "updated_at": "2026-09-04T20:21:23Z",
-    "maturity_score": 39.5608701536005,
-    "status": "new",
-    "account_age_days": 161
-  },
-  {
-    "login": "bcaueLPS",
-    "id": 30941831,
-    "name": null,
-    "public_repos": 0,
-    "followers": 3,
-    "following": 9,
-    "created_at": "2017-08-12T00:16:52Z",
-    "updated_at": "2026-08-21T03:02:19Z",
-    "maturity_score": 31.78034930038548,
-    "status": "new",
-    "account_age_days": 3323
-  },
-  {
-    "login": "thamiresellensa",
-    "id": 202857974,
-    "name": "thamires ellen ",
-    "public_repos": 6,
-    "followers": 6,
-    "following": 17,
-    "created_at": "2025-03-11T20:42:02Z",
-    "updated_at": "2026-09-04T08:20:09Z",
-    "maturity_score": 47.91541748514542,
-    "status": "new",
-    "account_age_days": 554
   },
   {
     "login": "MrD4ntas",
@@ -6260,16 +6195,81 @@
     "account_age_days": 811
   },
   {
-    "login": "josegabriel-iw",
-    "id": 158627845,
+    "login": "NayraNery127",
+    "id": 134748324,
     "name": null,
-    "public_repos": 4,
+    "public_repos": 3,
     "followers": 0,
     "following": 1,
-    "created_at": "2024-02-02T23:19:39Z",
-    "updated_at": "2026-09-01T10:27:36Z",
-    "maturity_score": 8.260737626287732,
+    "created_at": "2023-05-26T23:48:16Z",
+    "updated_at": "2026-09-15T20:11:28Z",
+    "maturity_score": 7.708070902655065,
     "status": "new",
-    "account_age_days": 957
+    "account_age_days": 1209
+  },
+  {
+    "login": "show-dawn",
+    "id": 117610576,
+    "name": null,
+    "public_repos": 3,
+    "followers": 3,
+    "following": 4,
+    "created_at": "2022-11-07T01:20:12Z",
+    "updated_at": "2026-08-26T00:47:57Z",
+    "maturity_score": 35.51079728168389,
+    "status": "new",
+    "account_age_days": 1410
+  },
+  {
+    "login": "souzagusta",
+    "id": 42524248,
+    "name": "Gustavo Lima de Souza",
+    "public_repos": 1,
+    "followers": 0,
+    "following": 0,
+    "created_at": "2018-08-19T22:58:31Z",
+    "updated_at": "2024-10-22T15:36:59Z",
+    "maturity_score": 6.074391229151305,
+    "status": "new",
+    "account_age_days": 2950
+  },
+  {
+    "login": "thamiresellensa",
+    "id": 202857974,
+    "name": "thamires ellen ",
+    "public_repos": 6,
+    "followers": 6,
+    "following": 17,
+    "created_at": "2025-03-11T20:42:02Z",
+    "updated_at": "2026-09-04T08:20:09Z",
+    "maturity_score": 47.91541748514542,
+    "status": "new",
+    "account_age_days": 554
+  },
+  {
+    "login": "ViniGvdo",
+    "id": 198657137,
+    "name": "Vinicius Gavaldao Franco",
+    "public_repos": 2,
+    "followers": 0,
+    "following": 0,
+    "created_at": "2025-02-10T21:08:08Z",
+    "updated_at": "2026-09-14T16:33:18Z",
+    "maturity_score": 6.480787357418443,
+    "status": "new",
+    "account_age_days": 583
+  },
+  {
+    "login": "Wallacebarros",
+    "id": 104733992,
+    "name": "Wallace Barros da Cruz ",
+    "public_repos": 36,
+    "followers": 2,
+    "following": 7,
+    "created_at": "2022-05-01T18:49:02Z",
+    "updated_at": "2025-06-17T10:20:56Z",
+    "maturity_score": 36.4938789654088,
+    "status": "established",
+    "account_age_days": 1599
   }
 ]

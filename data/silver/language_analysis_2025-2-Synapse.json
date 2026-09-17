@@ -2,7 +2,7 @@
   "repository": "2025-2-Synapse",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T05:07:06.370390",
+  "analyzed_at": "2026-09-17T06:25:20.146661",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -572,7 +572,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T05:08:04.422034",
+    "extracted_at": "2026-09-17T06:26:38.666366",
     "file_path": "data/silver/language_analysis_2025-2-Synapse.json"
   }
 }

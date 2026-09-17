@@ -2,7 +2,7 @@
   "repository": "2023.2_Gotinha",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T05:06:44.099934",
+  "analyzed_at": "2026-09-17T06:24:39.368142",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -254,7 +254,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T05:08:04.424270",
+    "extracted_at": "2026-09-17T06:26:38.669647",
     "file_path": "data/silver/language_analysis_2023.2_Gotinha.json"
   }
 }

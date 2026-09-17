@@ -2,7 +2,7 @@
   "repository": "2023.2_Licitaiba",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T05:06:43.713556",
+  "analyzed_at": "2026-09-17T06:24:38.665476",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -274,7 +274,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T05:08:04.769154",
+    "extracted_at": "2026-09-17T06:26:39.214636",
     "file_path": "data/silver/language_analysis_2023.2_Licitaiba.json"
   }
 }

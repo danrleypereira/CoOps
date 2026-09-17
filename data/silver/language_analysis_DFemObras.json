@@ -2,7 +2,7 @@
   "repository": "DFemObras",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T05:06:54.016833",
+  "analyzed_at": "2026-09-17T06:24:57.048888",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -662,7 +662,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T05:08:04.709939",
+    "extracted_at": "2026-09-17T06:26:39.112219",
     "file_path": "data/silver/language_analysis_DFemObras.json"
   }
 }

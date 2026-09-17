@@ -2,7 +2,7 @@
   "repository": "Gastos-DF-Squad12",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T05:06:49.551714",
+  "analyzed_at": "2026-09-17T06:24:49.116923",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -734,7 +734,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T05:08:04.733160",
+    "extracted_at": "2026-09-17T06:26:39.155274",
     "file_path": "data/silver/language_analysis_Gastos-DF-Squad12.json"
   }
 }

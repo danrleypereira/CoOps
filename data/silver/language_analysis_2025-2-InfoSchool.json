@@ -2,7 +2,7 @@
   "repository": "2025-2-InfoSchool",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T05:07:04.566392",
+  "analyzed_at": "2026-09-17T06:25:16.814352",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -620,7 +620,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T05:08:04.445670",
+    "extracted_at": "2026-09-17T06:26:38.702645",
     "file_path": "data/silver/language_analysis_2025-2-InfoSchool.json"
   }
 }

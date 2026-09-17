@@ -2,7 +2,7 @@
   "repository": "2023-2-Squad04",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T05:06:37.448671",
+  "analyzed_at": "2026-09-17T06:24:27.988664",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -398,7 +398,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T05:08:04.155797",
+    "extracted_at": "2026-09-17T06:26:38.252322",
     "file_path": "data/silver/language_analysis_2023-2-Squad04.json"
   }
 }

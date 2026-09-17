@@ -2,7 +2,7 @@
   "repository": "2026-2-VeritasIA",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T05:07:09.499946",
+  "analyzed_at": "2026-09-17T06:25:26.223192",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -650,7 +650,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T05:08:04.765430",
+    "extracted_at": "2026-09-17T06:26:39.208572",
     "file_path": "data/silver/language_analysis_2026-2-VeritasIA.json"
   }
 }

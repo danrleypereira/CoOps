@@ -2,7 +2,7 @@
   "repository": "teste",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T05:06:42.162767",
+  "analyzed_at": "2026-09-17T06:24:36.548984",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -66,7 +66,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T05:08:04.758150",
+    "extracted_at": "2026-09-17T06:26:39.196902",
     "file_path": "data/silver/language_analysis_teste.json"
   }
 }
