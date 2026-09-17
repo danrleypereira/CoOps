@@ -26,6 +26,8 @@ def main():
 
     # Generate executive dashboard KPIs
     members_analytics = load_json('data/silver/members_analytics.json') or []
+    # All extracted members; members_analytics only has those with a profile.
+    members_detailed = load_json('data/bronze/members_detailed.json') or []
     contribution_metrics = load_json('data/silver/contribution_metrics.json') or []
     network_stats = load_json('data/silver/network_statistics.json') or {}
     temporal_stats = load_json('data/silver/temporal_statistics.json') or {}
@@ -33,13 +35,17 @@ def main():
     # Skip metadata if present
     if isinstance(members_analytics, list) and len(members_analytics) > 0 and '_metadata' in members_analytics[0]:
         members_analytics = members_analytics[1:]
+    if isinstance(members_detailed, list) and len(members_detailed) > 0 and '_metadata' in members_detailed[0]:
+        members_detailed = members_detailed[1:]
     if isinstance(contribution_metrics, list) and len(contribution_metrics) > 0 and '_metadata' in contribution_metrics[0]:
         contribution_metrics = contribution_metrics[1:]
 
     executive_kpis = {
         'generated_at': datetime.now().isoformat(),
         'organization_health': {
-            'total_members': len(members_analytics),
+            # Members whose profile couldn't be fetched still count as members.
+            'total_members': max(len(members_detailed), len(members_analytics)),
+            'members_with_profile': len(members_analytics),
             'active_contributors': len([c for c in contribution_metrics if c.get('has_contributed', False)]),
             'new_members': len([m for m in members_analytics if m.get('status') == 'new']),
             'established_members': len([m for m in members_analytics if m.get('status') == 'established'])

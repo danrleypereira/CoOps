@@ -124,7 +124,9 @@ def process_member_analytics() -> List[str]:
     generated_files.append(distribution_file)
 
     # Create maturity bands
+    # Always rewritten, so a run without members doesn't keep a stale file.
     maturity_scores = [m['maturity_score'] for m in processed_members]
+    bands = {'low': 0, 'medium': 0, 'high': 0}
     if maturity_scores:
         bands = {
             'low': len([s for s in maturity_scores if s < np.percentile(maturity_scores, 33)]),
@@ -132,11 +134,11 @@ def process_member_analytics() -> List[str]:
             'high': len([s for s in maturity_scores if s >= np.percentile(maturity_scores, 67)])
         }
 
-        bands_file = save_json_data(
-            bands,
-            "data/silver/maturity_bands.json"
-        )
-        generated_files.append(bands_file)
+    bands_file = save_json_data(
+        bands,
+        "data/silver/maturity_bands.json"
+    )
+    generated_files.append(bands_file)
 
     print(f"Processed {len(processed_members)} members")
     return generated_files

@@ -96,6 +96,12 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   BarChart, PieChart, Histogram (`showKDE`, negative values), Heatmap and
   StackedBarChart — #77–#81.
 - `validate-pipeline.yaml` checks every dataset the dashboard reads.
+- Gold `organization_health.total_members` counts every extracted member,
+  including those whose profile couldn't be fetched (`members_with_profile`
+  is the new count of members with maturity data); `maturity_bands.json` is
+  rewritten even when there are no members.
+- The daily Bronze workflow reads GitHub with the `COOPS_GITHUB_TOKEN` secret
+  when it is set, so private organization members are included.
 ### Removed
 - `sys.path` manipulation hacks in `src/` modules and `tests/conftest.py`.
 - Legacy `fetch_issues.py` GitHub code path (standalone `requests` client, own
