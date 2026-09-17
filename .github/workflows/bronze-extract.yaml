@@ -71,12 +71,12 @@ jobs:
 
       - name: Verify organization is valid
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.COOPS_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           GITHUB_ORG: ${{ vars.COOPS_ORG || github.repository_owner }}
         run: |
           OWNER="$GITHUB_ORG"
 
-          TYPE=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          TYPE=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" \
             https://api.github.com/users/$OWNER | jq -r .type)
 
           if [ "$TYPE" = "Organization" ]; then
@@ -95,7 +95,10 @@ jobs:
       - name: Extract Bronze layer data
         id: extraction
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # COOPS_GITHUB_TOKEN (a PAT with read:org) sees private organization
+          # members and has a higher rate limit; the default token only sees
+          # public members. Pushing data below still uses the default token.
+          GITHUB_TOKEN: ${{ secrets.COOPS_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           GITHUB_ORG: ${{ vars.COOPS_ORG || github.repository_owner }}
           MAX_REPOS: ${{ github.event.inputs.max_repos }}
           MAX_COMMITS_PER_REPO: ${{ github.event.inputs.max_commits_per_repo }}

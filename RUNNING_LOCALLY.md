@@ -57,6 +57,20 @@ GITHUB_ORG=coops-org
 
 > `GITHUB_ORG` in `.secrets` controls which org is extracted when running `uv run coops-bronze` directly. `COOPS_ORG` / `COOPS_GITHUB_TOKEN` are accepted too and take precedence. It does **not** apply to `act`/`gh act`: `--secret-file` only fills `secrets.*`, and the workflows set `GITHUB_ORG` from the `COOPS_ORG` variable, so pass `--var COOPS_ORG=<org>` (as in the examples below), otherwise the owner of your `origin` remote is extracted. On GitHub Actions the workflows use the `COOPS_ORG` repository variable, falling back to the org that owns the repository (`github.repository_owner`): GitHub doesn't allow secret or variable names starting with `GITHUB_`.
 
+### Organization token for GitHub Actions
+
+The default Actions token only sees an organization's **public** members (19
+of 74 in `unb-mds`) and has a lower rate limit. To extract every member, add a
+token as the `COOPS_GITHUB_TOKEN` repository secret; the Bronze and validation
+workflows use it for reading GitHub and fall back to the default token when
+it's not set.
+
+1. Create a [fine-grained token](https://github.com/settings/personal-access-tokens/new):
+   resource owner = the organization, repository access = *Public repositories*
+   (or the repositories to extract), organization permission
+   **Members: Read-only**. A classic token with the `read:org` scope also works.
+2. `gh secret set COOPS_GITHUB_TOKEN --repo <org>/CoOps` and paste it.
+
 > To validate a branch against a real organization on GitHub Actions without committing any data, use the **Validate Pipeline (manual)** workflow — see [docs/TESTING_PULL_REQUESTS.md](docs/TESTING_PULL_REQUESTS.md).
 
 ---
