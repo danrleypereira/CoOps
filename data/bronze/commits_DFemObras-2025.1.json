@@ -1,10 +1,27 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-17T03:31:40.230857",
+      "extracted_at": "2026-09-17T04:46:13.925935",
       "file_path": "data/bronze/commits_DFemObras-2025.1.json",
-      "record_count": 516
+      "record_count": 517
     }
+  },
+  {
+    "sha": "0e3b2cf0bd1a13b5f56d90e6bdcaf078c2bd540b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-17T04:22:28Z",
+        "login": "github-actions[bot]"
+      },
+      "message": "ci: Atualizando obras_com_lat_long.json gerado automaticamente"
+    },
+    "additions": 700,
+    "deletions": 1,
+    "total_changes": 701,
+    "repo_name": "DFemObras-2025.1"
   },
   {
     "sha": "23f2c2a37f7a6bbccd38b63f959d340b395d6b7b",

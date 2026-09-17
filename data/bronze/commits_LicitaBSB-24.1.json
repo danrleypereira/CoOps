@@ -1,19 +1,19 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-17T03:22:59.322269",
+      "extracted_at": "2026-09-17T04:38:24.363634",
       "file_path": "data/bronze/commits_LicitaBSB-24.1.json",
       "record_count": 1394
     }
   },
   {
-    "sha": "5c522d42426422449f83aa496d00829b906cec26",
+    "sha": "2069147122d66280723a15e44fc165690d667ff6",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-11-18T03:47:29Z",
+        "date": "2025-11-19T03:44:40Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -24,13 +24,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "2069147122d66280723a15e44fc165690d667ff6",
+    "sha": "5c522d42426422449f83aa496d00829b906cec26",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-11-19T03:44:40Z",
+        "date": "2025-11-18T03:47:29Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -109,13 +109,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "c2d9c5f2bbcf0a2337ea9a2243184c86c917d32c",
+    "sha": "54a521d75efbb7750bf8fb36968a4e2432982a7c",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-11-14T03:57:53Z",
+        "date": "2025-11-13T04:02:14Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -126,13 +126,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "54a521d75efbb7750bf8fb36968a4e2432982a7c",
+    "sha": "c2d9c5f2bbcf0a2337ea9a2243184c86c917d32c",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-11-13T04:02:14Z",
+        "date": "2025-11-14T03:57:53Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -177,40 +177,6 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "d1314602b2f0c63302e433f31250f924746e63bd",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-11-04T03:51:33Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "05c6bc75f213d4fff3ec9b06fd1fadf12b9bd90a",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-11-07T03:57:48Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
     "sha": "845cc20e27a4b9ba5e41488471a5a6f27962e616",
     "html_url": null,
     "commit": {
@@ -235,6 +201,40 @@
         "name": null,
         "email": null,
         "date": "2025-11-06T03:57:32Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "d1314602b2f0c63302e433f31250f924746e63bd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-04T03:51:33Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "05c6bc75f213d4fff3ec9b06fd1fadf12b9bd90a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-07T03:57:48Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -279,13 +279,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "5c465b3c0e22cb01b396e57146be6c40347cc663",
+    "sha": "1ccb0914c3333a68fa4dae71d586ee26f55d1fda",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-11-01T03:59:42Z",
+        "date": "2025-10-31T03:47:40Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -313,6 +313,23 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
+    "sha": "5c465b3c0e22cb01b396e57146be6c40347cc663",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-11-01T03:59:42Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
     "sha": "bdd1b915f02c5bdb683e224b8f195b7d839965d3",
     "html_url": null,
     "commit": {
@@ -330,64 +347,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "1ccb0914c3333a68fa4dae71d586ee26f55d1fda",
+    "sha": "8ca78b72a3c0f190dcd88a2b95aa6b2a016209a6",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-10-31T03:47:40Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "3b2bdc5ef7dfe87def68cf4519e1ec5d610f7436",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-10-23T03:47:11Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "2c7854d7815106fa224019497622df7b5634498c",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-10-24T03:44:14Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "572d0d2fdcbe2a806dafb8292a08e273ce72d85f",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-10-22T03:57:06Z",
+        "date": "2025-10-21T03:49:52Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -415,13 +381,64 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "8ca78b72a3c0f190dcd88a2b95aa6b2a016209a6",
+    "sha": "2c7854d7815106fa224019497622df7b5634498c",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-10-21T03:49:52Z",
+        "date": "2025-10-24T03:44:14Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "3b2bdc5ef7dfe87def68cf4519e1ec5d610f7436",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-23T03:47:11Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "572d0d2fdcbe2a806dafb8292a08e273ce72d85f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-22T03:57:06Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "bf379fd5238cc74eeec0f06f43a7c62f381a05db",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-16T03:48:31Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -483,23 +500,6 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "bf379fd5238cc74eeec0f06f43a7c62f381a05db",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-10-16T03:48:31Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
     "sha": "819d4bc9ac41f19a4e999e61d733fc6ee1abeac2",
     "html_url": null,
     "commit": {
@@ -534,23 +534,6 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "ee26cda822a53889ec91686c58a23431a52177a8",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-10-10T03:46:02Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
     "sha": "f1678fb115d4c2450bacd9a4024ef2280e8c7bde",
     "html_url": null,
     "commit": {
@@ -558,23 +541,6 @@
         "name": null,
         "email": null,
         "date": "2025-10-11T03:36:19Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "9fd5df774c717bb7867941830c88c7613ea3bad5",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-10-09T03:44:46Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -602,13 +568,30 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "035d920ef6b7aefb8901d9302a2f992433ef1363",
+    "sha": "ee26cda822a53889ec91686c58a23431a52177a8",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-10-04T03:38:18Z",
+        "date": "2025-10-10T03:46:02Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "9fd5df774c717bb7867941830c88c7613ea3bad5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-09T03:44:46Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -626,6 +609,40 @@
         "name": null,
         "email": null,
         "date": "2025-10-03T03:43:46Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "035d920ef6b7aefb8901d9302a2f992433ef1363",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-10-04T03:38:18Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "1f7c4fe8f3ae3740e06d5c170dda9ffe5385bc5d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-30T03:43:20Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -670,30 +687,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "1f7c4fe8f3ae3740e06d5c170dda9ffe5385bc5d",
+    "sha": "5ff7b76480a471ed0f7cd5ff43748a0eb9014b5e",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-09-30T03:43:20Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "7b8dec500c1d1b93c7447ed4ea734c00863a6251",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-09-27T03:40:11Z",
+        "date": "2025-09-24T03:45:09Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -721,13 +721,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "5ff7b76480a471ed0f7cd5ff43748a0eb9014b5e",
+    "sha": "7b8dec500c1d1b93c7447ed4ea734c00863a6251",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-09-24T03:45:09Z",
+        "date": "2025-09-27T03:40:11Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -772,13 +772,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "6f3588a1d6dcde6a415f44e81172706f52083711",
+    "sha": "a69d1b70e9dc322bc0101209b97c9c5e47bbdbd5",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-09-20T03:42:39Z",
+        "date": "2025-09-18T03:40:44Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -806,13 +806,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "cdb02bcc44747bacbd43b06793b754d8bc53726a",
+    "sha": "6f3588a1d6dcde6a415f44e81172706f52083711",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-09-16T03:44:57Z",
+        "date": "2025-09-20T03:42:39Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -840,13 +840,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "a69d1b70e9dc322bc0101209b97c9c5e47bbdbd5",
+    "sha": "cdb02bcc44747bacbd43b06793b754d8bc53726a",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-09-18T03:40:44Z",
+        "date": "2025-09-16T03:44:57Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -874,40 +874,6 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "be12e936edb93ffbb460aa48451d1fcf198c6148",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-09-10T03:37:50Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "4f17d1de6f54e0cba84bc61466210ca1285cd487",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-09-12T03:50:38Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
     "sha": "a4b5354f1aa3a4cde126a15a727b4ef782ddf30b",
     "html_url": null,
     "commit": {
@@ -915,6 +881,23 @@
         "name": null,
         "email": null,
         "date": "2025-09-09T03:43:34Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "be12e936edb93ffbb460aa48451d1fcf198c6148",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-10T03:37:50Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -942,13 +925,30 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "2b9868d98cf93aa75b76ec000893e28c8643c5e1",
+    "sha": "4f17d1de6f54e0cba84bc61466210ca1285cd487",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-09-06T03:38:53Z",
+        "date": "2025-09-12T03:50:38Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "0e1a43e045326cbd34b090a52f338b7ddb0a8999",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-09-03T03:38:49Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -976,13 +976,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "0e1a43e045326cbd34b090a52f338b7ddb0a8999",
+    "sha": "2b9868d98cf93aa75b76ec000893e28c8643c5e1",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-09-03T03:38:49Z",
+        "date": "2025-09-06T03:38:53Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -1044,13 +1044,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "2c41c9f145bc1fdf79f9341cae3359065390c2f7",
+    "sha": "e96fb8197afc0d9058a214cd83976fca33d7c3af",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-08-30T03:44:16Z",
+        "date": "2025-08-29T03:45:50Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -1078,13 +1078,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "e96fb8197afc0d9058a214cd83976fca33d7c3af",
+    "sha": "2c41c9f145bc1fdf79f9341cae3359065390c2f7",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-08-29T03:45:50Z",
+        "date": "2025-08-30T03:44:16Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -1112,13 +1112,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "ed181360f5e92a45434e8e39d0ffde654c9f7346",
+    "sha": "dc97814b85d3638080542e9d37042e067bb737be",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-08-22T03:52:46Z",
+        "date": "2025-08-23T03:54:27Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -1129,13 +1129,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "dc97814b85d3638080542e9d37042e067bb737be",
+    "sha": "ed181360f5e92a45434e8e39d0ffde654c9f7346",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-08-23T03:54:27Z",
+        "date": "2025-08-22T03:52:46Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -1163,23 +1163,6 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "c6f0bef33085723ef45170252d12439c7538a349",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-08-21T03:58:06Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
     "sha": "8385f15a63dee2ec3cf036c9ae7bf6e4ef359819",
     "html_url": null,
     "commit": {
@@ -1197,30 +1180,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "bafbadcccd9a752cb53fab116f9316af5ac794e5",
+    "sha": "c6f0bef33085723ef45170252d12439c7538a349",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-08-14T04:07:52Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "6d13e9ccadec12e5644912e79e53796c0637b4e0",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-08-13T04:00:43Z",
+        "date": "2025-08-21T03:58:06Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -1238,6 +1204,23 @@
         "name": null,
         "email": null,
         "date": "2025-08-16T04:00:04Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "6d13e9ccadec12e5644912e79e53796c0637b4e0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-08-13T04:00:43Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -1282,30 +1265,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "5bfa3a02ea5c409728efcc8b81859d260a99e1fc",
+    "sha": "bafbadcccd9a752cb53fab116f9316af5ac794e5",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-08-09T04:08:45Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "d4cc44db246831905dcf884edaca14a9e8a35efc",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-08-06T04:18:07Z",
+        "date": "2025-08-14T04:07:52Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -1333,13 +1299,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "85e07613e3b41185b899ceb2025524c140f0d067",
+    "sha": "5bfa3a02ea5c409728efcc8b81859d260a99e1fc",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-08-05T04:21:27Z",
+        "date": "2025-08-09T04:08:45Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -1367,6 +1333,40 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
+    "sha": "d4cc44db246831905dcf884edaca14a9e8a35efc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-08-06T04:18:07Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "85e07613e3b41185b899ceb2025524c140f0d067",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-08-05T04:21:27Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
     "sha": "1a135ef2cee22b9cd652d31cad2ea502b1cb20ba",
     "html_url": null,
     "commit": {
@@ -1384,13 +1384,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "f9343a5b9cd0f83b2ec140504537b44737a2f3ef",
+    "sha": "3695208131a17d98ade9d7e9bf051807843433b0",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-08-02T04:11:52Z",
+        "date": "2025-07-31T04:16:26Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -1418,13 +1418,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "3695208131a17d98ade9d7e9bf051807843433b0",
+    "sha": "f9343a5b9cd0f83b2ec140504537b44737a2f3ef",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-07-31T04:16:26Z",
+        "date": "2025-08-02T04:11:52Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -1469,23 +1469,6 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "854befcbd66c6195c744c0212e7003ec0abe18a6",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-07-25T04:13:23Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
     "sha": "0de8f6c5806c1cfd057d2ed83df3e43f72bab8bd",
     "html_url": null,
     "commit": {
@@ -1503,13 +1486,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "567d5fc15d062595b41a343902f00c671c2aa197",
+    "sha": "854befcbd66c6195c744c0212e7003ec0abe18a6",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-07-23T04:15:04Z",
+        "date": "2025-07-25T04:13:23Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -1537,30 +1520,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "fe9e30e0f17b9c976fc6ed0a2f79df38627c4f18",
+    "sha": "567d5fc15d062595b41a343902f00c671c2aa197",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-07-19T04:09:33Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "248b0bfa7d1f020efa40539ddcb564ad0c63b218",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-07-17T04:13:02Z",
+        "date": "2025-07-23T04:15:04Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -1605,6 +1571,40 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
+    "sha": "fe9e30e0f17b9c976fc6ed0a2f79df38627c4f18",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-07-19T04:09:33Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "248b0bfa7d1f020efa40539ddcb564ad0c63b218",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-07-17T04:13:02Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
     "sha": "93fc8c9e02034a0691360e6a5c49b5bdc5f5531c",
     "html_url": null,
     "commit": {
@@ -1612,6 +1612,23 @@
         "name": null,
         "email": null,
         "date": "2025-07-22T04:10:24Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "5a7260f88fe2a113879d7a79204cebc344f7a0b7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-07-09T04:05:17Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -1656,23 +1673,6 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "17a31ade6231e77004dc922362e06e71a3e1816f",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-07-11T04:13:35Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
     "sha": "54f80399f878031a3321353567a7b05aac783ab6",
     "html_url": null,
     "commit": {
@@ -1690,13 +1690,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "5a7260f88fe2a113879d7a79204cebc344f7a0b7",
+    "sha": "17a31ade6231e77004dc922362e06e71a3e1816f",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-07-09T04:05:17Z",
+        "date": "2025-07-11T04:13:35Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -1714,23 +1714,6 @@
         "name": null,
         "email": null,
         "date": "2025-07-03T04:04:33Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "82ff48dc601d9f2f5d3304420a9bc84f20aa16aa",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-07-02T03:59:53Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -1775,6 +1758,23 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
+    "sha": "82ff48dc601d9f2f5d3304420a9bc84f20aa16aa",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-07-02T03:59:53Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
     "sha": "5dd602c737d29ff077746a0e104e03c57166bbf3",
     "html_url": null,
     "commit": {
@@ -1799,23 +1799,6 @@
         "name": null,
         "email": null,
         "date": "2025-07-01T04:10:17Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "99e3ce4f4b774df79c05d573e92178af816c6cc0",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-06-27T04:01:30Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -1860,13 +1843,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "cfe788b38d462e5318dd04e85c3684742ce3ea56",
+    "sha": "99e3ce4f4b774df79c05d573e92178af816c6cc0",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-06-25T03:59:29Z",
+        "date": "2025-06-27T04:01:30Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -1877,13 +1860,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "e273510cf36b07b1beff9a3585606519cae85751",
+    "sha": "cfe788b38d462e5318dd04e85c3684742ce3ea56",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-06-24T04:00:45Z",
+        "date": "2025-06-25T03:59:29Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -1928,23 +1911,6 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "48fbed62a04f0549e0849011b6562e60ec9238df",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-06-18T03:57:14Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
     "sha": "3bbdd5a76c9e2ba3e25419a3eb37ae8365755bd4",
     "html_url": null,
     "commit": {
@@ -1962,13 +1928,47 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "520eb239eb48ecfc32717d3d0555158e17c30636",
+    "sha": "e273510cf36b07b1beff9a3585606519cae85751",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-06-13T04:01:53Z",
+        "date": "2025-06-24T04:00:45Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "48fbed62a04f0549e0849011b6562e60ec9238df",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-06-18T03:57:14Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "897715b608c55e60ca24fb575b8d841722a615ea",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-06-05T03:57:46Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -1986,6 +1986,23 @@
         "name": null,
         "email": null,
         "date": "2025-06-06T03:55:59Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "520eb239eb48ecfc32717d3d0555158e17c30636",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-06-13T04:01:53Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -2030,23 +2047,6 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "897715b608c55e60ca24fb575b8d841722a615ea",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-06-05T03:57:46Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
     "sha": "b420db7a6c612d5af62e1204c0373902a95135a6",
     "html_url": null,
     "commit": {
@@ -2071,23 +2071,6 @@
         "name": null,
         "email": null,
         "date": "2025-05-31T03:55:32Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "faa3ed1cb69989729fbab5ef0dd77b39304ee494",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-06-03T03:56:48Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -2132,6 +2115,40 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
+    "sha": "faa3ed1cb69989729fbab5ef0dd77b39304ee494",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-06-03T03:56:48Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "3d755b541b10bc69cc54508b196d61e174a7bddc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-05-27T03:52:08Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
     "sha": "b29108c84342b176a295f775f8b2c3129099f865",
     "html_url": null,
     "commit": {
@@ -2166,13 +2183,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "3d755b541b10bc69cc54508b196d61e174a7bddc",
+    "sha": "4633d09429bacfa71ac51027ea92b121dbf7e9d3",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-05-27T03:52:08Z",
+        "date": "2025-05-24T03:49:19Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -2200,13 +2217,30 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "4633d09429bacfa71ac51027ea92b121dbf7e9d3",
+    "sha": "6e4d548e069ab6a7812f42e6c83308e18512ffb5",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-05-24T03:49:19Z",
+        "date": "2025-05-20T03:53:56Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "416213339d2cfd1715e5e8d6211857c2f931974b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-05-16T03:58:43Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -2251,40 +2285,6 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "416213339d2cfd1715e5e8d6211857c2f931974b",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-05-16T03:58:43Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "6e4d548e069ab6a7812f42e6c83308e18512ffb5",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-05-20T03:53:56Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
     "sha": "efb182c670457793f573fa229c09403c442ab441",
     "html_url": null,
     "commit": {
@@ -2292,6 +2292,40 @@
         "name": null,
         "email": null,
         "date": "2025-05-22T03:58:20Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "6f08909df37a908088ba4995b4c2c6225172b792",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-05-13T03:53:01Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "9fe7565c80f21ab969b44797037478e8c8cb4029",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-05-10T03:48:37Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -2336,23 +2370,6 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "6f08909df37a908088ba4995b4c2c6225172b792",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-05-13T03:53:01Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
     "sha": "c5a5cdc112acce59d3217ef8074784ed072b3d1f",
     "html_url": null,
     "commit": {
@@ -2370,13 +2387,30 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "9fe7565c80f21ab969b44797037478e8c8cb4029",
+    "sha": "c6b767759c40468c7e09dad8045191f78bae0ad1",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-05-10T03:48:37Z",
+        "date": "2025-05-01T03:58:02Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "bf0267f275025f26247b3f595be954c85bd6d1a1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-05-08T03:58:20Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -2394,23 +2428,6 @@
         "name": null,
         "email": null,
         "date": "2025-04-30T03:47:30Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "c6b767759c40468c7e09dad8045191f78bae0ad1",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-05-01T03:58:02Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -2445,40 +2462,6 @@
         "name": null,
         "email": null,
         "date": "2025-05-02T03:38:36Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "bf0267f275025f26247b3f595be954c85bd6d1a1",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-05-08T03:58:20Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "497cb805cf21a2165adad3c730692fc4ad2eb6b2",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-04-29T03:52:00Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -2540,6 +2523,23 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
+    "sha": "497cb805cf21a2165adad3c730692fc4ad2eb6b2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-04-29T03:52:00Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
     "sha": "2725a043a503d3310d5aa264da591934858fe5b8",
     "html_url": null,
     "commit": {
@@ -2574,13 +2574,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "3ac2fa89e3efc485b3e53170f4e547672907db21",
+    "sha": "166d86007c205ced222f4c6f6257e5694c63d065",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-04-18T03:56:56Z",
+        "date": "2025-04-05T03:42:12Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -2608,13 +2608,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "166d86007c205ced222f4c6f6257e5694c63d065",
+    "sha": "e42440103d2be295f8c32b3ab1d20c47aa411090",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-04-05T03:42:12Z",
+        "date": "2025-04-09T03:42:07Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -2625,13 +2625,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "e42440103d2be295f8c32b3ab1d20c47aa411090",
+    "sha": "3ac2fa89e3efc485b3e53170f4e547672907db21",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-04-09T03:42:07Z",
+        "date": "2025-04-18T03:56:56Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -2659,13 +2659,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "b7dcfe2228f31294c1dc2d82f4da72392cb91412",
+    "sha": "2263957ba7667d15afcf1dc626597b72948d0540",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-03-29T03:45:36Z",
+        "date": "2025-04-02T03:45:32Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -2710,13 +2710,47 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "2263957ba7667d15afcf1dc626597b72948d0540",
+    "sha": "b7dcfe2228f31294c1dc2d82f4da72392cb91412",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-04-02T03:45:32Z",
+        "date": "2025-03-29T03:45:36Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "1d9b1e7da9eeefee762de11faef83c861061761b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-03-25T03:46:33Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "14faaeaa852c71f41632e29f671e854a48689e12",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-03-21T03:39:59Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -2761,40 +2795,6 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "14faaeaa852c71f41632e29f671e854a48689e12",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-03-21T03:39:59Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "1d9b1e7da9eeefee762de11faef83c861061761b",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-03-25T03:46:33Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
     "sha": "0cbc1e41c1c34034161db0d753e7f9807601ba14",
     "html_url": null,
     "commit": {
@@ -2829,23 +2829,6 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "0a5e2cd7541b85098855fbb9d8a4caefa7004218",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-03-14T03:41:15Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
     "sha": "db0431adc4c514be2b0fdbc1b17ca90a0cc9bcf4",
     "html_url": null,
     "commit": {
@@ -2863,13 +2846,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "c129eded67746a0bbdbc6c39cd28b61a32c49988",
+    "sha": "0a5e2cd7541b85098855fbb9d8a4caefa7004218",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-03-18T03:39:40Z",
+        "date": "2025-03-14T03:41:15Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -2897,13 +2880,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "0dd1b2c7dd5b8bc9b3c0dac5f211a30e18803708",
+    "sha": "c129eded67746a0bbdbc6c39cd28b61a32c49988",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-03-06T03:30:16Z",
+        "date": "2025-03-18T03:39:40Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -2948,6 +2931,40 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
+    "sha": "b52332cdaa601edcf8d3625ce8ee766813e56da9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-03-07T03:34:14Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "0dd1b2c7dd5b8bc9b3c0dac5f211a30e18803708",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-03-06T03:30:16Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
     "sha": "caf346914daa27fb822060bf22871ae6945426fc",
     "html_url": null,
     "commit": {
@@ -2965,13 +2982,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "b52332cdaa601edcf8d3625ce8ee766813e56da9",
+    "sha": "66a8d2dfabf381e60221af991e5e0daf53cdb605",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-03-07T03:34:14Z",
+        "date": "2025-02-26T03:33:14Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -3016,13 +3033,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "66a8d2dfabf381e60221af991e5e0daf53cdb605",
+    "sha": "1e5116ee8badc5e2bb1b3eda50f673b7c219f6cf",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-02-26T03:33:14Z",
+        "date": "2025-02-28T03:38:24Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -3040,23 +3057,6 @@
         "name": null,
         "email": null,
         "date": "2025-02-27T03:37:11Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "1e5116ee8badc5e2bb1b3eda50f673b7c219f6cf",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-02-28T03:38:24Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -3101,13 +3101,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "7e466a6042a9aa24d329a93e862da429fb8272d2",
+    "sha": "7c4602398142a7f278bab874fbf82a490e8027b0",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-02-25T03:36:57Z",
+        "date": "2025-02-22T03:30:31Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -3118,13 +3118,13 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "7c4602398142a7f278bab874fbf82a490e8027b0",
+    "sha": "7e466a6042a9aa24d329a93e862da429fb8272d2",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-02-22T03:30:31Z",
+        "date": "2025-02-25T03:36:57Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -3152,40 +3152,6 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "688eb83c043f1af6884161562211c01f077606e6",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-02-18T03:29:26Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "4a32d42eb0ada1e923cce35041e5683cb381a151",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-02-13T03:29:40Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
     "sha": "c7f92ced719f3b6ca5741bbfc41fb80b0381eaf6",
     "html_url": null,
     "commit": {
@@ -3193,6 +3159,23 @@
         "name": null,
         "email": null,
         "date": "2025-02-15T03:32:30Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "688eb83c043f1af6884161562211c01f077606e6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-02-18T03:29:26Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -3220,6 +3203,23 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
+    "sha": "4a32d42eb0ada1e923cce35041e5683cb381a151",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-02-13T03:29:40Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
     "sha": "a45c1463769a8e44b19a29da3d1a247f43f7939b",
     "html_url": null,
     "commit": {
@@ -3227,57 +3227,6 @@
         "name": null,
         "email": null,
         "date": "2025-02-12T03:31:49Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "5e2f44aae1a70270ad14f9dfaa97ee3313f91b18",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-02-05T03:29:15Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "043b792f06a828a24eb8367c317a25ed29176861",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-02-11T03:30:18Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "552263a2e3f93e8bcf413669ab0dbb308925eb63",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-02-06T03:27:55Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -3305,6 +3254,40 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
+    "sha": "552263a2e3f93e8bcf413669ab0dbb308925eb63",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-02-06T03:27:55Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "043b792f06a828a24eb8367c317a25ed29176861",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-02-11T03:30:18Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
     "sha": "2141b005fcf29d68e205b2deaaf60f280848ee95",
     "html_url": null,
     "commit": {
@@ -3322,13 +3305,30 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "4e4c1b9302483f6d97911676c05cceb507e01fe5",
+    "sha": "5e2f44aae1a70270ad14f9dfaa97ee3313f91b18",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-02-04T03:27:59Z",
+        "date": "2025-02-05T03:29:15Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "bb4c9efa3cf04a7a9f78723b8f6adfb0ace7865e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-01-31T03:25:45Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -3346,6 +3346,23 @@
         "name": null,
         "email": null,
         "date": "2025-01-30T03:28:42Z",
+        "login": "actions"
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "4e4c1b9302483f6d97911676c05cceb507e01fe5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-02-04T03:27:59Z",
         "login": "actions"
       },
       "message": "[CI] Licitações extraídas com sucesso!"
@@ -3390,31 +3407,14 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "bb4c9efa3cf04a7a9f78723b8f6adfb0ace7865e",
+    "sha": "33edd83c0112fe040f5fe1b3fc648ffd9f0827f3",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-01-31T03:25:45Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "5aa5cf3602b7f467d67a4a3bb8be8bea9e2c9074",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-01-23T04:46:35Z",
-        "login": "actions"
+        "date": "2025-01-29T03:32:27Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -3431,7 +3431,7 @@
         "name": null,
         "email": null,
         "date": "2025-01-28T03:30:33Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -3448,7 +3448,24 @@
         "name": null,
         "email": null,
         "date": "2025-01-24T05:03:46Z",
-        "login": "actions"
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "5aa5cf3602b7f467d67a4a3bb8be8bea9e2c9074",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-01-23T04:46:35Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -3465,58 +3482,7 @@
         "name": null,
         "email": null,
         "date": "2025-01-22T04:47:31Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "33edd83c0112fe040f5fe1b3fc648ffd9f0827f3",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-01-29T03:32:27Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "8a2ba578b9db2145f558268d3ae819c053f3c5a2",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-01-18T05:11:00Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "8bda221e6881b92fa679111a56b6605918462ca2",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-01-17T05:06:26Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -3533,7 +3499,7 @@
         "name": null,
         "email": null,
         "date": "2025-01-21T04:37:16Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -3543,14 +3509,31 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "19a89835fd4f68991ce79112acec8464400685fc",
+    "sha": "8a2ba578b9db2145f558268d3ae819c053f3c5a2",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2025-01-15T04:17:29Z",
-        "login": "actions"
+        "date": "2025-01-18T05:11:00Z",
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "8bda221e6881b92fa679111a56b6605918462ca2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-01-17T05:06:26Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -3567,7 +3550,24 @@
         "name": null,
         "email": null,
         "date": "2025-01-16T04:41:42Z",
-        "login": "actions"
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "19a89835fd4f68991ce79112acec8464400685fc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-01-15T04:17:29Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -3584,7 +3584,7 @@
         "name": null,
         "email": null,
         "date": "2025-01-14T04:20:26Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -3601,24 +3601,7 @@
         "name": null,
         "email": null,
         "date": "2025-01-11T04:18:11Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "755cf4a9b77f4a34949851ef7eb7eab1873bf03b",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-01-09T04:20:47Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -3635,7 +3618,24 @@
         "name": null,
         "email": null,
         "date": "2025-01-10T04:17:28Z",
-        "login": "actions"
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "755cf4a9b77f4a34949851ef7eb7eab1873bf03b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-01-09T04:20:47Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -3652,24 +3652,7 @@
         "name": null,
         "email": null,
         "date": "2025-01-08T04:00:55Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "10a7defd9b4ed3ea22abba5484a2e86f73860a5a",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-01-01T04:04:44Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -3686,7 +3669,7 @@
         "name": null,
         "email": null,
         "date": "2025-01-07T03:52:04Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -3703,24 +3686,7 @@
         "name": null,
         "email": null,
         "date": "2025-01-04T03:54:37Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "0686e3f3dbd1771183d8fd7c9a2ceb462308e706",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2025-01-02T03:19:14Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -3737,7 +3703,41 @@
         "name": null,
         "email": null,
         "date": "2025-01-03T03:52:52Z",
-        "login": "actions"
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "0686e3f3dbd1771183d8fd7c9a2ceb462308e706",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-01-02T03:19:14Z",
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "10a7defd9b4ed3ea22abba5484a2e86f73860a5a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2025-01-01T04:04:44Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -3754,41 +3754,7 @@
         "name": null,
         "email": null,
         "date": "2024-12-31T04:29:29Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "2a9544f7c3c78af490c4070ba079e094e6b5aa1a",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-12-27T03:48:21Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "dd685febe8ff390619d4291246d2cda2c2150eb9",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-12-24T04:33:51Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -3805,7 +3771,24 @@
         "name": null,
         "email": null,
         "date": "2024-12-28T04:31:24Z",
-        "login": "actions"
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "2a9544f7c3c78af490c4070ba079e094e6b5aa1a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-12-27T03:48:21Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -3822,7 +3805,7 @@
         "name": null,
         "email": null,
         "date": "2024-12-25T03:56:31Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -3832,14 +3815,14 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "7386781efb47f3322ec9877a59948c08c49bf9b2",
+    "sha": "dd685febe8ff390619d4291246d2cda2c2150eb9",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2024-12-20T05:16:55Z",
-        "login": "actions"
+        "date": "2024-12-24T04:33:51Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -3856,7 +3839,24 @@
         "name": null,
         "email": null,
         "date": "2024-12-21T04:47:35Z",
-        "login": "actions"
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "7386781efb47f3322ec9877a59948c08c49bf9b2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-12-20T05:16:55Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -3873,7 +3873,7 @@
         "name": null,
         "email": null,
         "date": "2024-12-19T04:53:58Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -3890,7 +3890,7 @@
         "name": null,
         "email": null,
         "date": "2024-12-18T04:37:31Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -3907,24 +3907,7 @@
         "name": null,
         "email": null,
         "date": "2024-12-17T04:52:11Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "0474ea8aae07e524d17660377ae838c9e30fb66d",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-12-11T05:23:28Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -3941,24 +3924,7 @@
         "name": null,
         "email": null,
         "date": "2024-12-14T05:07:46Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "ac872d8654237d17546ad2d4cb347b6b6c169c45",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-12-10T05:16:28Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -3975,7 +3941,7 @@
         "name": null,
         "email": null,
         "date": "2024-12-13T05:13:49Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -3992,7 +3958,41 @@
         "name": null,
         "email": null,
         "date": "2024-12-12T05:14:52Z",
-        "login": "actions"
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "0474ea8aae07e524d17660377ae838c9e30fb66d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-12-11T05:23:28Z",
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "ac872d8654237d17546ad2d4cb347b6b6c169c45",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-12-10T05:16:28Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4009,7 +4009,7 @@
         "name": null,
         "email": null,
         "date": "2024-12-07T05:39:55Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4026,24 +4026,7 @@
         "name": null,
         "email": null,
         "date": "2024-12-06T05:35:47Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "70162d8f30b82d75207c29a4947ea70dd9d091bc",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-12-04T05:19:50Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4060,7 +4043,24 @@
         "name": null,
         "email": null,
         "date": "2024-12-05T05:31:31Z",
-        "login": "actions"
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "70162d8f30b82d75207c29a4947ea70dd9d091bc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-12-04T05:19:50Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4077,24 +4077,7 @@
         "name": null,
         "email": null,
         "date": "2024-12-03T05:36:20Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "e39da2fed266796365576c0b0f445cbb065daf36",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-11-28T05:34:50Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4111,41 +4094,7 @@
         "name": null,
         "email": null,
         "date": "2024-12-02T03:35:04Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "a86129ff95925dea14fcf1e8d60e17b9556466e8",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-11-29T05:35:17Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "a102a24f38be83e5178ade78bea84d338d6db732",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-11-27T05:23:14Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4162,7 +4111,7 @@
         "name": null,
         "email": null,
         "date": "2024-11-30T05:30:25Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4172,14 +4121,48 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "ed764c9f11884b83178069ff8493d16a6e34a9b6",
+    "sha": "a86129ff95925dea14fcf1e8d60e17b9556466e8",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2024-11-23T05:48:08Z",
-        "login": "actions"
+        "date": "2024-11-29T05:35:17Z",
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "e39da2fed266796365576c0b0f445cbb065daf36",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-11-28T05:34:50Z",
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "a102a24f38be83e5178ade78bea84d338d6db732",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-11-27T05:23:14Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4196,7 +4179,7 @@
         "name": null,
         "email": null,
         "date": "2024-11-26T05:27:14Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4206,14 +4189,14 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "785c85ba1a8329cbc7c3836a84420da2e39bc177",
+    "sha": "ed764c9f11884b83178069ff8493d16a6e34a9b6",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2024-11-20T05:10:39Z",
-        "login": "actions"
+        "date": "2024-11-23T05:48:08Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4230,7 +4213,24 @@
         "name": null,
         "email": null,
         "date": "2024-11-22T05:32:03Z",
-        "login": "actions"
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "785c85ba1a8329cbc7c3836a84420da2e39bc177",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-11-20T05:10:39Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4247,7 +4247,7 @@
         "name": null,
         "email": null,
         "date": "2024-11-19T05:29:06Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4264,41 +4264,7 @@
         "name": null,
         "email": null,
         "date": "2024-11-15T05:42:50Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "1ae287228061794923c650d081bb195380ff9e2a",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-11-12T05:16:03Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "177ce70dfff3d3169fdd43c6a98b0c0c6eb747ac",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-11-13T05:09:42Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4315,7 +4281,41 @@
         "name": null,
         "email": null,
         "date": "2024-11-14T05:15:23Z",
-        "login": "actions"
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "177ce70dfff3d3169fdd43c6a98b0c0c6eb747ac",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-11-13T05:09:42Z",
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "1ae287228061794923c650d081bb195380ff9e2a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-11-12T05:16:03Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4332,75 +4332,7 @@
         "name": null,
         "email": null,
         "date": "2024-11-09T05:31:10Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "0062fadf28c794a5f7114041c40c3f29798c227a",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-11-07T05:19:54Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "d819263d0d41b37b7199d131a5b0037b94a57f2c",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-11-05T05:03:49Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "a9513b462a6038eea7713b754bd1f9d316356ac7",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-11-06T05:09:51Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "91f01dc452894584de5b994cf3464ef29bdec78e",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-11-02T06:12:01Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4417,7 +4349,7 @@
         "name": null,
         "email": null,
         "date": "2024-11-08T05:17:33Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4427,14 +4359,14 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "b8097aaed15e67d58552004d80940a47e09ff254",
+    "sha": "0062fadf28c794a5f7114041c40c3f29798c227a",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2024-10-26T05:26:13Z",
-        "login": "actions"
+        "date": "2024-11-07T05:19:54Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4444,14 +4376,14 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "7de0ef349c4208a87b663e9e38411c01f441634c",
+    "sha": "a9513b462a6038eea7713b754bd1f9d316356ac7",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2024-10-30T05:16:42Z",
-        "login": "actions"
+        "date": "2024-11-06T05:09:51Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4461,14 +4393,14 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "f0b2b2d11d8df0cb6bd1725ef2048fa925f71be2",
+    "sha": "d819263d0d41b37b7199d131a5b0037b94a57f2c",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2024-10-25T05:20:39Z",
-        "login": "actions"
+        "date": "2024-11-05T05:03:49Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4478,14 +4410,14 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "03ce2dfd8e8c6467f0bb2e463b8016e43962c0eb",
+    "sha": "91f01dc452894584de5b994cf3464ef29bdec78e",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2024-10-31T04:11:42Z",
-        "login": "actions"
+        "date": "2024-11-02T06:12:01Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4502,7 +4434,75 @@
         "name": null,
         "email": null,
         "date": "2024-11-01T05:44:46Z",
-        "login": "actions"
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "03ce2dfd8e8c6467f0bb2e463b8016e43962c0eb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-10-31T04:11:42Z",
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "7de0ef349c4208a87b663e9e38411c01f441634c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-10-30T05:16:42Z",
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "b8097aaed15e67d58552004d80940a47e09ff254",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-10-26T05:26:13Z",
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "f0b2b2d11d8df0cb6bd1725ef2048fa925f71be2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-10-25T05:20:39Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4519,24 +4519,7 @@
         "name": null,
         "email": null,
         "date": "2024-10-24T05:17:14Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "e5cbbb2b93eb1840dfd876329007b34a9e108b02",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-10-22T04:10:45Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4553,7 +4536,24 @@
         "name": null,
         "email": null,
         "date": "2024-10-23T04:08:33Z",
-        "login": "actions"
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "e5cbbb2b93eb1840dfd876329007b34a9e108b02",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-10-22T04:10:45Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4570,7 +4570,7 @@
         "name": null,
         "email": null,
         "date": "2024-10-19T04:16:56Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4587,24 +4587,7 @@
         "name": null,
         "email": null,
         "date": "2024-10-18T04:13:14Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "e1eeeeb0aacfc180a9e7544b8f637ede7c6394b4",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-10-15T04:10:36Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4621,41 +4604,7 @@
         "name": null,
         "email": null,
         "date": "2024-10-17T04:15:17Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "68dfbeee692a4c1b748a63a87289050a89baf90d",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-10-12T04:17:07Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "93a1882e503262035a3ddc9a63fabf646c253fa5",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-10-11T04:14:02Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4672,9 +4621,77 @@
         "name": null,
         "email": null,
         "date": "2024-10-16T04:09:43Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "e1eeeeb0aacfc180a9e7544b8f637ede7c6394b4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-10-15T04:10:36Z",
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "68dfbeee692a4c1b748a63a87289050a89baf90d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-10-12T04:17:07Z",
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "93a1882e503262035a3ddc9a63fabf646c253fa5",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-10-11T04:14:02Z",
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "8cb689b62932379190b65f216d876b2e193820cb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-10-10T04:09:04Z",
+        "login": "thaleseuflauzino"
+      },
+      "message": "Merge branch 'main' of https://github.com/unb-mds/licitaBSB-24.1"
     },
     "additions": 0,
     "deletions": 0,
@@ -4699,6 +4716,23 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
+    "sha": "7a06053d8a4fc91f94c266f27728c1eb261ed174",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-10-10T04:08:44Z",
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
     "sha": "31b799aaa5244bf0f4ec3333adcba341d235c8f8",
     "html_url": null,
     "commit": {
@@ -4716,23 +4750,6 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "8cb689b62932379190b65f216d876b2e193820cb",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-10-10T04:09:04Z",
-        "login": "thaleseuflauzino"
-      },
-      "message": "Merge branch 'main' of https://github.com/unb-mds/licitaBSB-24.1"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
     "sha": "0886692dd53311deb7cbee863a72986fbb131687",
     "html_url": null,
     "commit": {
@@ -4740,92 +4757,7 @@
         "name": null,
         "email": null,
         "date": "2024-10-09T03:55:31Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "7a06053d8a4fc91f94c266f27728c1eb261ed174",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-10-10T04:08:44Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "5e509a5cc567ae4245c34ece823eede7105f501e",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-10-03T04:10:11Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "4814a7ab14959972a46b6020e8eda4df874689b1",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-10-04T04:11:32Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "a579f03e5091b03da3ebd40badae224e3de10a4b",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-10-02T04:08:30Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "0bddcf1d5029ac13dd9e53b9538640e49dd45388",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-10-05T04:10:52Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4842,7 +4774,75 @@
         "name": null,
         "email": null,
         "date": "2024-10-08T04:06:22Z",
-        "login": "actions"
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "0bddcf1d5029ac13dd9e53b9538640e49dd45388",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-10-05T04:10:52Z",
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "4814a7ab14959972a46b6020e8eda4df874689b1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-10-04T04:11:32Z",
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "5e509a5cc567ae4245c34ece823eede7105f501e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-10-03T04:10:11Z",
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "a579f03e5091b03da3ebd40badae224e3de10a4b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-10-02T04:08:30Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4859,58 +4859,7 @@
         "name": null,
         "email": null,
         "date": "2024-10-01T04:17:49Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "2dbe5bdfa4176feab0d7b10ca11f5ee606b641b9",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-09-26T04:21:55Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "6ba011702e11014e61f2a16aff7b5cbcb0d43c36",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-09-27T04:09:55Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "ac959f6a18769f1b89caf1db236e2d818554a008",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-09-25T04:08:15Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4927,7 +4876,58 @@
         "name": null,
         "email": null,
         "date": "2024-09-28T04:14:58Z",
-        "login": "actions"
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "6ba011702e11014e61f2a16aff7b5cbcb0d43c36",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-09-27T04:09:55Z",
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "2dbe5bdfa4176feab0d7b10ca11f5ee606b641b9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-09-26T04:21:55Z",
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "ac959f6a18769f1b89caf1db236e2d818554a008",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-09-25T04:08:15Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4944,24 +4944,7 @@
         "name": null,
         "email": null,
         "date": "2024-09-24T04:09:45Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "81fb1d0696e6e88d436dc3d3871b9a6815ba7d97",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-09-19T04:12:13Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4978,7 +4961,7 @@
         "name": null,
         "email": null,
         "date": "2024-09-21T04:10:19Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -4995,7 +4978,24 @@
         "name": null,
         "email": null,
         "date": "2024-09-20T04:10:57Z",
-        "login": "actions"
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "81fb1d0696e6e88d436dc3d3871b9a6815ba7d97",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-09-19T04:12:13Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -5012,41 +5012,7 @@
         "name": null,
         "email": null,
         "date": "2024-09-18T04:07:00Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "c4bb54c1f3d4ce12a81d04e96bed6bc4412bfac0",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-09-13T04:16:24Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "1ef9d0113b46e329412fb79788023652dd69debd",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-09-12T04:10:48Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -5063,24 +5029,7 @@
         "name": null,
         "email": null,
         "date": "2024-09-17T04:11:13Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "ecaf23c76a00ae759fb831ec8d33f0ab22a8dcbc",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-09-11T04:05:57Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -5097,7 +5046,7 @@
         "name": null,
         "email": null,
         "date": "2024-09-14T04:13:32Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -5107,14 +5056,48 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "19061493fc2f1cd03d7d73b8b6e8c443c592a1d8",
+    "sha": "c4bb54c1f3d4ce12a81d04e96bed6bc4412bfac0",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2024-09-07T04:28:47Z",
-        "login": "actions"
+        "date": "2024-09-13T04:16:24Z",
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "1ef9d0113b46e329412fb79788023652dd69debd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-09-12T04:10:48Z",
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "ecaf23c76a00ae759fb831ec8d33f0ab22a8dcbc",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-09-11T04:05:57Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -5131,7 +5114,7 @@
         "name": null,
         "email": null,
         "date": "2024-09-10T04:15:47Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -5141,31 +5124,14 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "1a7f966afdaecff13c6a88deb51834e962c82544",
+    "sha": "19061493fc2f1cd03d7d73b8b6e8c443c592a1d8",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2024-09-05T04:15:26Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "7bd3a9e012457e6ec871d42f1548eb6ba476025f",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-09-04T04:06:20Z",
-        "login": "actions"
+        "date": "2024-09-07T04:28:47Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -5182,7 +5148,92 @@
         "name": null,
         "email": null,
         "date": "2024-09-06T04:17:21Z",
-        "login": "actions"
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "1a7f966afdaecff13c6a88deb51834e962c82544",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-09-05T04:15:26Z",
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "7bd3a9e012457e6ec871d42f1548eb6ba476025f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-09-04T04:06:20Z",
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "ab2e8579757870b84587b0e3e623137ca6509708",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-09-03T04:12:59Z",
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "a309967d6284fc10d101a39ac5ae0ecbe18683cb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-09-02T03:17:01Z",
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "7ed75aadfcf04d8ff4bb038c826646dc0e553ad8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-31T04:16:44Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -5209,57 +5260,6 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "7ed75aadfcf04d8ff4bb038c826646dc0e553ad8",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-08-31T04:16:44Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "ab2e8579757870b84587b0e3e623137ca6509708",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-09-03T04:12:59Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "a309967d6284fc10d101a39ac5ae0ecbe18683cb",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-09-02T03:17:01Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
     "sha": "8f99bbcdabf3e20c163c88bf9fa43c785bb22e2f",
     "html_url": null,
     "commit": {
@@ -5267,7 +5267,7 @@
         "name": null,
         "email": null,
         "date": "2024-08-30T04:12:36Z",
-        "login": "actions"
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -5277,20 +5277,54 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "c239ab50452608dd8d350a446a8d63e278fd4ce0",
+    "sha": "b4fe76272900de2bf558b24474af74f0e2fa1639",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2024-08-23T13:49:09Z",
-        "login": "Otavio4283"
+        "date": "2024-08-29T04:13:42Z",
+        "login": null
       },
-      "message": "fix: finalizando texto da página"
+      "message": "[CI] Licitações extraídas com sucesso!"
     },
-    "additions": 3,
-    "deletions": 3,
-    "total_changes": 6,
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "9800be000195abf87b02ff8f011ef43bd4e4d16e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-28T04:08:55Z",
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "158b4c8fc7614ad20becca9cb791f45c389bb4db",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-27T17:38:36Z",
+        "login": "moonshinerd"
+      },
+      "message": "fix: corrigindo erro de certificado ssl ao fazer a raspagem de dados …"
+    },
+    "additions": 7,
+    "deletions": 1,
+    "total_changes": 8,
     "repo_name": "LicitaBSB-24.1"
   },
   {
@@ -5308,6 +5342,23 @@
     "additions": 55,
     "deletions": 3,
     "total_changes": 58,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "c239ab50452608dd8d350a446a8d63e278fd4ce0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-23T13:49:09Z",
+        "login": "Otavio4283"
+      },
+      "message": "fix: finalizando texto da página"
+    },
+    "additions": 3,
+    "deletions": 3,
+    "total_changes": 6,
     "repo_name": "LicitaBSB-24.1"
   },
   {
@@ -5345,31 +5396,14 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "158b4c8fc7614ad20becca9cb791f45c389bb4db",
+    "sha": "94faa774cb05c672f2ca0db26ac659ec2915017d",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2024-08-27T17:38:36Z",
-        "login": "moonshinerd"
-      },
-      "message": "fix: corrigindo erro de certificado ssl ao fazer a raspagem de dados e atualizando o banco de dados que nao rodou por causa do erro"
-    },
-    "additions": 7,
-    "deletions": 1,
-    "total_changes": 8,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "b4fe76272900de2bf558b24474af74f0e2fa1639",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-08-29T04:13:42Z",
-        "login": "actions"
+        "date": "2024-08-22T04:12:54Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -5379,14 +5413,14 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "9800be000195abf87b02ff8f011ef43bd4e4d16e",
+    "sha": "02733997d87c973bad953d3470adc46be962fee3",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2024-08-28T04:08:55Z",
-        "login": "actions"
+        "date": "2024-08-21T04:13:55Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -5413,40 +5447,6 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "94faa774cb05c672f2ca0db26ac659ec2915017d",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-08-22T04:12:54Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "02733997d87c973bad953d3470adc46be962fee3",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-08-21T04:13:55Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
     "sha": "2db8a46ed9bfe9b0d92fe317242b05da9bcb3421",
     "html_url": null,
     "commit": {
@@ -5461,40 +5461,6 @@
     "additions": 7,
     "deletions": 0,
     "total_changes": 7,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "e310b1182bcbba3c298f1777d3f422d0539ee601",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-08-20T22:39:55Z",
-        "login": "Otavio4283"
-      },
-      "message": "feat: adicionando dados no readme da pasta src"
-    },
-    "additions": 14,
-    "deletions": 0,
-    "total_changes": 14,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "c56338e4c85483ff050decbbf97bf9ef3b457f79",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-08-20T22:49:00Z",
-        "login": "Otavio4283"
-      },
-      "message": "feat: criando arquivo readme de assets"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
     "repo_name": "LicitaBSB-24.1"
   },
   {
@@ -5529,6 +5495,40 @@
     "additions": 9,
     "deletions": 0,
     "total_changes": 9,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "c56338e4c85483ff050decbbf97bf9ef3b457f79",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-20T22:49:00Z",
+        "login": "Otavio4283"
+      },
+      "message": "feat: criando arquivo readme de assets"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "e310b1182bcbba3c298f1777d3f422d0539ee601",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-20T22:39:55Z",
+        "login": "Otavio4283"
+      },
+      "message": "feat: adicionando dados no readme da pasta src"
+    },
+    "additions": 14,
+    "deletions": 0,
+    "total_changes": 14,
     "repo_name": "LicitaBSB-24.1"
   },
   {
@@ -5583,6 +5583,23 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
+    "sha": "495f75fc0358039667c5eefc4137311ddc2b8189",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-20T04:06:20Z",
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
     "sha": "43474a1e5deeefab024d66d8412a51a0e249f2f1",
     "html_url": null,
     "commit": {
@@ -5600,40 +5617,6 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "495f75fc0358039667c5eefc4137311ddc2b8189",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-08-20T04:06:20Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "e3395f80044b4b0c197d0df2fcd722cc9fd4390f",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-08-19T21:09:44Z",
-        "login": "thaleseuflauzino"
-      },
-      "message": ":truck: chore: fix requirements duplicado e onde os workflows puxam"
-    },
-    "additions": 7,
-    "deletions": 30,
-    "total_changes": 37,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
     "sha": "acae7382b6bac231577a0f43421d84a68d25ac5e",
     "html_url": null,
     "commit": {
@@ -5648,23 +5631,6 @@
     "additions": 78,
     "deletions": 0,
     "total_changes": 78,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "d57baf0c9ef01aacd68c1e373c36b92fa006997f",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-08-19T20:58:23Z",
-        "login": "thaleseuflauzino"
-      },
-      "message": ":books: docs: atualizando readme com instrucoes sobre o novo banco de dados"
-    },
-    "additions": 57,
-    "deletions": 66,
-    "total_changes": 123,
     "repo_name": "LicitaBSB-24.1"
   },
   {
@@ -5702,20 +5668,54 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "f8075d19fa68e8dc007124a37dc0077f12d44769",
+    "sha": "e3395f80044b4b0c197d0df2fcd722cc9fd4390f",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2024-08-16T23:19:54Z",
-        "login": "m4rllon"
+        "date": "2024-08-19T21:09:44Z",
+        "login": "thaleseuflauzino"
       },
-      "message": "test: Atualizando testes unitários"
+      "message": ":truck: chore: fix requirements duplicado e onde os workflows puxam"
     },
-    "additions": 67,
-    "deletions": 62,
-    "total_changes": 129,
+    "additions": 7,
+    "deletions": 30,
+    "total_changes": 37,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "d57baf0c9ef01aacd68c1e373c36b92fa006997f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-19T20:58:23Z",
+        "login": "thaleseuflauzino"
+      },
+      "message": ":books: docs: atualizando readme com instrucoes sobre o novo banco de…"
+    },
+    "additions": 57,
+    "deletions": 66,
+    "total_changes": 123,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "b4cc8f75ea531ccafa918d6b42a4510161dedd27",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-17T04:19:51Z",
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
     "repo_name": "LicitaBSB-24.1"
   },
   {
@@ -5745,7 +5745,24 @@
         "date": "2024-08-16T23:23:02Z",
         "login": "MariaCHelena"
       },
-      "message": "Merge pull request #162 from unb-mds/feat-Implementando-funcionalidades-Filter"
+      "message": "Merge pull request #162 from unb-mds/feat-Implementando-funcionalidad…"
+    },
+    "additions": 67,
+    "deletions": 62,
+    "total_changes": 129,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "f8075d19fa68e8dc007124a37dc0077f12d44769",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-16T23:19:54Z",
+        "login": "m4rllon"
+      },
+      "message": "test: Atualizando testes unitários"
     },
     "additions": 67,
     "deletions": 62,
@@ -5770,14 +5787,48 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "b4cc8f75ea531ccafa918d6b42a4510161dedd27",
+    "sha": "6bcf6f07b5ba1dcc4597bbd6f16f439935b9cde6",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2024-08-17T04:19:51Z",
-        "login": "actions"
+        "date": "2024-08-16T13:51:04Z",
+        "login": "Marcelo-Adrian"
+      },
+      "message": "Docs: README do backend"
+    },
+    "additions": 12,
+    "deletions": 0,
+    "total_changes": 12,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "73685790f80b69ec74f6630c360c74dc01a34b97",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-16T04:10:02Z",
+        "login": null
+      },
+      "message": "[CI] Licitações extraídas com sucesso!"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "4df4a447f6b0ca6b098f6b53e1a0a8a25242a012",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-15T04:13:19Z",
+        "login": null
       },
       "message": "[CI] Licitações extraídas com sucesso!"
     },
@@ -5804,23 +5855,6 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "6bcf6f07b5ba1dcc4597bbd6f16f439935b9cde6",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-08-16T13:51:04Z",
-        "login": "Marcelo-Adrian"
-      },
-      "message": "Docs: README do backend"
-    },
-    "additions": 12,
-    "deletions": 0,
-    "total_changes": 12,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
     "sha": "dd35d3c7938879171d0d0c86ffd51edaa96cd991",
     "html_url": null,
     "commit": {
@@ -5835,6 +5869,23 @@
     "additions": 1,
     "deletions": 1,
     "total_changes": 2,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "d0ca8f8947528092814e316795cf290f68112bfb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-14T12:27:18Z",
+        "login": "m4rllon"
+      },
+      "message": "Merge pull request #161 from unb-mds/feat-Implementando-funcionalidad…"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
     "repo_name": "LicitaBSB-24.1"
   },
   {
@@ -5855,57 +5906,6 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "73685790f80b69ec74f6630c360c74dc01a34b97",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-08-16T04:10:02Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "d0ca8f8947528092814e316795cf290f68112bfb",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-08-14T12:27:18Z",
-        "login": "m4rllon"
-      },
-      "message": "Merge pull request #161 from unb-mds/feat-Implementando-funcionalidades-Filter"
-    },
-    "additions": 2,
-    "deletions": 2,
-    "total_changes": 4,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
-    "sha": "4df4a447f6b0ca6b098f6b53e1a0a8a25242a012",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-08-15T04:13:19Z",
-        "login": "actions"
-      },
-      "message": "[CI] Licitações extraídas com sucesso!"
-    },
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
     "sha": "2c0fa7ca0c5f7d083ed0b30cd05363b8fb168842",
     "html_url": null,
     "commit": {
@@ -5923,23 +5923,6 @@
     "repo_name": "LicitaBSB-24.1"
   },
   {
-    "sha": "87f63d07193ee89ace618bcdbc486c8553d915bb",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2024-08-14T12:05:38Z",
-        "login": "m4rllon"
-      },
-      "message": "Merge pull request #159 from unb-mds/feat-Implementando-funcionalidades-Filter"
-    },
-    "additions": 10,
-    "deletions": 14,
-    "total_changes": 24,
-    "repo_name": "LicitaBSB-24.1"
-  },
-  {
     "sha": "fda20d3e8633a8648b76368d9ca1718921ce4f52",
     "html_url": null,
     "commit": {
@@ -5949,11 +5932,28 @@
         "date": "2024-08-14T12:09:02Z",
         "login": "m4rllon"
       },
-      "message": "Merge pull request #160 from unb-mds/feat-Implementando-funcionalidades-Filter"
+      "message": "Merge pull request #160 from unb-mds/feat-Implementando-funcionalidad…"
     },
     "additions": 2,
     "deletions": 2,
     "total_changes": 4,
+    "repo_name": "LicitaBSB-24.1"
+  },
+  {
+    "sha": "87f63d07193ee89ace618bcdbc486c8553d915bb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2024-08-14T12:05:38Z",
+        "login": "m4rllon"
+      },
+      "message": "Merge pull request #159 from unb-mds/feat-Implementando-funcionalidad…"
+    },
+    "additions": 10,
+    "deletions": 14,
+    "total_changes": 24,
     "repo_name": "LicitaBSB-24.1"
   },
   {
