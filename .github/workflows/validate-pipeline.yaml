@@ -177,6 +177,7 @@ jobs:
               "silver/temporal_events.json", "silver/temporal_statistics.json",
               "silver/network_statistics.json",
               "silver/members_analytics.json", "silver/available_repos.json",
+              "silver/activity_heatmap.json", "silver/repository_metrics.json",
               "bronze/members_detailed.json",
               "gold/executive_dashboard.json", "gold/timeline_last_7_days.json",
               "gold/timeline_last_12_months.json",
@@ -184,12 +185,14 @@ jobs:
           ]
           if os.environ.get("RUN_AI") == "true":
               required.append("silver/ai/members_ai.json")
+          hierarchies = []
           if os.environ.get("SKIP_STRUCTURE") != "true":
               required.append("silver/language_analysis_all.json")
-              required += sorted(os.path.relpath(p, "data") for p in glob.glob("data/silver/hierarchy_*.json"))
+              hierarchies = sorted(os.path.relpath(p, "data") for p in glob.glob("data/silver/hierarchy_*.json"))
+              required += hierarchies
           # These must not be empty: the dashboard pages built on them show nothing otherwise.
           non_empty = {"bronze/repositories_filtered.json", "bronze/members_detailed.json",
-                       "silver/available_repos.json"}
+                       "silver/available_repos.json", "silver/members_analytics.json"}
 
           def size(data):
               if isinstance(data, list):
@@ -214,6 +217,10 @@ jobs:
                   failed = True
               else:
                   rows.append((rel, "ok", records))
+
+          if os.environ.get("SKIP_STRUCTURE") != "true" and not hierarchies:
+              rows.append(("silver/hierarchy_<repo>.json", "FAILED: none produced", 0))
+              failed = True
 
           summary = [
               f"### Pipeline validation: `{os.environ['GITHUB_ORG']}`",
