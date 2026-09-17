@@ -219,6 +219,30 @@ def test_get_paginated_max_pages(tmp_path):
         
         assert mock_get.call_count == 2
 
+def test_get_paginated_warns_when_a_later_page_fails(tmp_path, capsys):
+    """Uma página que falha no meio devolve o parcial, mas com aviso"""
+    client = GitHubAPIClient(token="test", cache_dir=str(tmp_path / "cache"))
+
+    with patch.object(client, 'get_with_cache') as mock_get:
+        mock_get.side_effect = [[{"id": 1}, {"id": 2}], None]
+
+        results = client.get_paginated("https://api.github.com/test", per_page=2)
+
+    assert results == [{"id": 1}, {"id": 2}]
+    out = capsys.readouterr().out
+    assert "Stopped paginating https://api.github.com/test at page 2" in out
+    assert "returning the 2 items fetched so far" in out
+
+
+def test_get_paginated_first_page_failure_is_not_a_partial_result(tmp_path, capsys):
+    client = GitHubAPIClient(token="test", cache_dir=str(tmp_path / "cache"))
+
+    with patch.object(client, 'get_with_cache', return_value=None):
+        assert client.get_paginated("https://api.github.com/test") == []
+
+    assert "Stopped paginating" not in capsys.readouterr().out
+
+
 def test_get_paginated_non_list_response(tmp_path):
     """Testa paginação com resposta não-lista"""
     cache_dir = str(tmp_path / "cache")

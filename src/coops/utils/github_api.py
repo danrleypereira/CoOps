@@ -1098,6 +1098,9 @@ class GitHubAPIClient:
             url = f"{base_url}{sep}per_page={per_page}&page={page}"
             data = self.get_with_cache(url, use_cache)
             if data is None:
+                if page > start_page:
+                    print(f"[WARN] Stopped paginating {base_url} at page {page}: "
+                          f"returning the {len(results)} items fetched so far")
                 break
             if isinstance(data, list):
                 results.extend(data)
