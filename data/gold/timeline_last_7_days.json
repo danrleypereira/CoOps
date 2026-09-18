@@ -1,426 +1,10 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-17T10:47:09.721169",
+      "extracted_at": "2026-09-18T10:28:53.906829",
       "file_path": "data/gold/timeline_last_7_days.json",
       "record_count": 7
     }
-  },
-  {
-    "date": "2026-09-11",
-    "total_events": 985,
-    "issues_created": 78,
-    "issues_closed": 48,
-    "prs_created": 13,
-    "prs_closed": 17,
-    "commits": 52,
-    "comments": 0,
-    "unique_users": 40,
-    "unique_repos": 17,
-    "authors": [
-      {
-        "name": "DanielAlmeidaFrota",
-        "commits": 3,
-        "issues_created": 53,
-        "issues_closed": 31,
-        "prs_created": 0,
-        "prs_closed": 0,
-        "comments": 0,
-        "repositories": [
-          "2026.2-UnB_Core"
-        ]
-      },
-      {
-        "name": "Gustavo-0611",
-        "commits": 2,
-        "issues_created": 0,
-        "issues_closed": 1,
-        "prs_created": 0,
-        "prs_closed": 0,
-        "comments": 0,
-        "repositories": [
-          "2026-2-Bandejao"
-        ]
-      },
-      {
-        "name": "ailoiol",
-        "commits": 1,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 1,
-        "prs_closed": 1,
-        "comments": 0,
-        "repositories": [
-          "2026-02-UnDb"
-        ]
-      },
-      {
-        "name": "caiionog",
-        "commits": 2,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 0,
-        "prs_closed": 1,
-        "comments": 0,
-        "repositories": [
-          "G2-2026-2"
-        ]
-      },
-      {
-        "name": "giiicostaa",
-        "commits": 0,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 0,
-        "prs_closed": 1,
-        "comments": 0,
-        "repositories": [
-          "G2-2026-2"
-        ]
-      },
-      {
-        "name": "gsm22",
-        "commits": 0,
-        "issues_created": 3,
-        "issues_closed": 0,
-        "prs_created": 0,
-        "prs_closed": 1,
-        "comments": 0,
-        "repositories": [
-          "G2-2026-2"
-        ]
-      },
-      {
-        "name": "lgalencar25",
-        "commits": 0,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 0,
-        "prs_closed": 1,
-        "comments": 0,
-        "repositories": [
-          "G2-2026-2"
-        ]
-      },
-      {
-        "name": "DanKallaharii",
-        "commits": 1,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 2,
-        "prs_closed": 1,
-        "comments": 0,
-        "repositories": [
-          "2026.2-UnB_Core"
-        ]
-      },
-      {
-        "name": "github-actions[bot]",
-        "commits": 8,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 0,
-        "prs_closed": 0,
-        "comments": 0,
-        "repositories": [
-          "2024-2-SuaFinanca",
-          "2025-2-Eh_Fake",
-          "2025-2-Mural-UnB",
-          "2025-2-Squad-01",
-          "2026-1-Guard.IA",
-          "2026-1-LegisKids",
-          "2026-1-Mapa_L.I.L.A.S",
-          "2026-1-ProtectKids",
-          "2026-1-Squad07",
-          "2026-2-VeritasIA",
-          "2026.1-ContraDito",
-          "DFemObras",
-          "DFemObras-2025.1",
-          "teste-ru"
-        ]
-      },
-      {
-        "name": "Flyxs",
-        "commits": 0,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 0,
-        "prs_closed": 1,
-        "comments": 0,
-        "repositories": [
-          "2025-2-OncoMap",
-          "Avalia"
-        ]
-      },
-      {
-        "name": "eliabexp",
-        "commits": 1,
-        "issues_created": 4,
-        "issues_closed": 5,
-        "prs_created": 0,
-        "prs_closed": 0,
-        "comments": 0,
-        "repositories": [
-          "2026-2-Followw"
-        ]
-      },
-      {
-        "name": "gabrielsimplicioo",
-        "commits": 0,
-        "issues_created": 15,
-        "issues_closed": 0,
-        "prs_created": 0,
-        "prs_closed": 0,
-        "comments": 0,
-        "repositories": [
-          "2026-2-Cerradinho-API"
-        ]
-      },
-      {
-        "name": "SamukaToned",
-        "commits": 3,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 0,
-        "prs_closed": 0,
-        "comments": 0,
-        "repositories": [
-          "2026-2-Followw"
-        ]
-      },
-      {
-        "name": "paulinpj",
-        "commits": 0,
-        "issues_created": 0,
-        "issues_closed": 2,
-        "prs_created": 0,
-        "prs_closed": 1,
-        "comments": 0,
-        "repositories": [
-          "2026-2-Cerradinho-API"
-        ]
-      },
-      {
-        "name": "art-miranda",
-        "commits": 0,
-        "issues_created": 3,
-        "issues_closed": 1,
-        "prs_created": 3,
-        "prs_closed": 3,
-        "comments": 0,
-        "repositories": [
-          "2026-2-Cerradinho-API"
-        ]
-      },
-      {
-        "name": "vitorcoelho21",
-        "commits": 0,
-        "issues_created": 0,
-        "issues_closed": 1,
-        "prs_created": 3,
-        "prs_closed": 3,
-        "comments": 0,
-        "repositories": [
-          "2026-2-Cerradinho-API"
-        ]
-      },
-      {
-        "name": "actions-user",
-        "commits": 1,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 0,
-        "prs_closed": 0,
-        "comments": 0,
-        "repositories": [
-          "2026-1-SafeStreets",
-          "2026.1-ContraDito",
-          "DFemObras",
-          "Gastos-DF-2024-02"
-        ]
-      },
-      {
-        "name": "pablosousaa",
-        "commits": 6,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 2,
-        "prs_closed": 2,
-        "comments": 0,
-        "repositories": [
-          "2026-2-MonitoraUnB"
-        ]
-      },
-      {
-        "name": "Joao-vithor-1",
-        "commits": 3,
-        "issues_created": 0,
-        "issues_closed": 1,
-        "prs_created": 1,
-        "prs_closed": 1,
-        "comments": 0,
-        "repositories": [
-          "2026.2-UnB_Core"
-        ]
-      },
-      {
-        "name": "warlleymedeiros",
-        "commits": 2,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 0,
-        "prs_closed": 0,
-        "comments": 0,
-        "repositories": [
-          "2026-02-UnDb"
-        ]
-      },
-      {
-        "name": "smitalo",
-        "commits": 1,
-        "issues_created": 0,
-        "issues_closed": 1,
-        "prs_created": 0,
-        "prs_closed": 0,
-        "comments": 0,
-        "repositories": [
-          "2026-2-GlossarioUnB"
-        ]
-      },
-      {
-        "name": "nicolaszanin06",
-        "commits": 9,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 1,
-        "prs_closed": 0,
-        "comments": 0,
-        "repositories": [
-          "2026-02-UnDb"
-        ]
-      },
-      {
-        "name": "thamiresellensa",
-        "commits": 0,
-        "issues_created": 0,
-        "issues_closed": 3,
-        "prs_created": 0,
-        "prs_closed": 0,
-        "comments": 0,
-        "repositories": [
-          "2026-02-TambureteiUnB"
-        ]
-      },
-      {
-        "name": "MariaMacedoToledo",
-        "commits": 2,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 0,
-        "prs_closed": 0,
-        "comments": 0,
-        "repositories": [
-          "2026-2-MonitoraUnB"
-        ]
-      },
-      {
-        "name": "unknown",
-        "commits": 1,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 0,
-        "prs_closed": 0,
-        "comments": 0,
-        "repositories": [
-          "2023-2-JuizVirtual",
-          "2023-2-Squad04",
-          "2023-2-Squad05-TesouroMineiro",
-          "2023-2-Squad09-Gotinha",
-          "2023-2-Squad10",
-          "2024-1-MinasDeCultura",
-          "2024-1-Squad-10",
-          "2024-1-forUnB",
-          "2024-1-squad04",
-          "2024-2-AcheiUnB",
-          "2024-2-ChamaControl",
-          "2024-2-Urbanize",
-          "2025-1-NoFluxoUNB",
-          "2025-1-RelatAI",
-          "2025-2-OncoMap",
-          "2025-2-Portal-dos-Professores",
-          "2025-2-Synapse",
-          "2025.1-RelatoriosInteligentesBCB",
-          "2025_1-Jakebot",
-          "2026-1-LegisKids",
-          "2026-1-Mapa_L.I.L.A.S",
-          "2026-1-P.R.I.S.M.A",
-          "2026-1-ProtectKids",
-          "2026-1-SafeStreets",
-          "2026-1-Squad13",
-          "2026-2-MonitoraUnB",
-          "2026-2-VeritasIA",
-          "Avalia",
-          "DFemObras",
-          "DFemObras-2025.1",
-          "Fique-de-Olho",
-          "Gastos-DF-Squad12",
-          "LicitaBSB-24.1",
-          "Mds-ArenaPesadelo",
-          "Projeto-P.I.T.E.R",
-          "Sonorus-2025.1",
-          "portfolio-MDS",
-          "teste"
-        ]
-      },
-      {
-        "name": "mariav-07",
-        "commits": 2,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 0,
-        "prs_closed": 0,
-        "comments": 0,
-        "repositories": [
-          "2026-02-TambureteiUnB"
-        ]
-      },
-      {
-        "name": "alanafeitosa-ui",
-        "commits": 0,
-        "issues_created": 0,
-        "issues_closed": 1,
-        "prs_created": 0,
-        "prs_closed": 0,
-        "comments": 0,
-        "repositories": [
-          "2026-2-Bandejao-UnB"
-        ]
-      },
-      {
-        "name": "AnaBiaGuerra",
-        "commits": 2,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 0,
-        "prs_closed": 0,
-        "comments": 0,
-        "repositories": [
-          "2026-2-MonitoraUnB"
-        ]
-      },
-      {
-        "name": "Aquila27",
-        "commits": 2,
-        "issues_created": 0,
-        "issues_closed": 1,
-        "prs_created": 0,
-        "prs_closed": 0,
-        "comments": 0,
-        "repositories": [
-          "2026-2-MonitoraUnB"
-        ]
-      }
-    ]
   },
   {
     "date": "2026-09-12",
@@ -579,14 +163,14 @@
   },
   {
     "date": "2026-09-13",
-    "total_events": 169,
+    "total_events": 185,
     "issues_created": 7,
     "issues_closed": 17,
     "prs_created": 11,
     "prs_closed": 4,
-    "commits": 27,
+    "commits": 43,
     "comments": 0,
-    "unique_users": 29,
+    "unique_users": 30,
     "unique_repos": 13,
     "authors": [
       {
@@ -666,6 +250,18 @@
         ]
       },
       {
+        "name": "gabrielrdaraujo",
+        "commits": 3,
+        "issues_created": 0,
+        "issues_closed": 0,
+        "prs_created": 2,
+        "prs_closed": 0,
+        "comments": 0,
+        "repositories": [
+          "2026-02-UnDb"
+        ]
+      },
+      {
         "name": "alanafeitosa-ui",
         "commits": 0,
         "issues_created": 1,
@@ -675,18 +271,6 @@
         "comments": 0,
         "repositories": [
           "2026-2-Bandejao-UnB"
-        ]
-      },
-      {
-        "name": "gabrielrdaraujo",
-        "commits": 0,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 2,
-        "prs_closed": 0,
-        "comments": 0,
-        "repositories": [
-          "2026-02-UnDb"
         ]
       },
       {
@@ -703,7 +287,7 @@
       },
       {
         "name": "nicolaszanin06",
-        "commits": 0,
+        "commits": 9,
         "issues_created": 1,
         "issues_closed": 3,
         "prs_created": 0,
@@ -735,6 +319,56 @@
         "comments": 0,
         "repositories": [
           "2026-2-Bandejao-UnB"
+        ]
+      },
+      {
+        "name": "unknown",
+        "commits": 2,
+        "issues_created": 0,
+        "issues_closed": 0,
+        "prs_created": 0,
+        "prs_closed": 0,
+        "comments": 0,
+        "repositories": [
+          "2023-2-JuizVirtual",
+          "2023-2-Squad04",
+          "2023-2-Squad05-TesouroMineiro",
+          "2023-2-Squad09-Gotinha",
+          "2023-2-Squad10",
+          "2024-1-MinasDeCultura",
+          "2024-1-Squad-10",
+          "2024-1-forUnB",
+          "2024-1-squad04",
+          "2024-2-AcheiUnB",
+          "2024-2-ChamaControl",
+          "2024-2-Urbanize",
+          "2025-1-NoFluxoUNB",
+          "2025-1-RelatAI",
+          "2025-2-OncoMap",
+          "2025-2-Portal-dos-Professores",
+          "2025-2-Synapse",
+          "2025.1-RelatoriosInteligentesBCB",
+          "2025_1-Jakebot",
+          "2026-02-UnDb",
+          "2026-1-LegisKids",
+          "2026-1-Mapa_L.I.L.A.S",
+          "2026-1-P.R.I.S.M.A",
+          "2026-1-ProtectKids",
+          "2026-1-SafeStreets",
+          "2026-1-Squad13",
+          "2026-2-MonitoraUnB",
+          "2026-2-VeritasIA",
+          "Avalia",
+          "DFemObras",
+          "DFemObras-2025.1",
+          "Fique-de-Olho",
+          "Gastos-DF-Squad12",
+          "LicitaBSB-24.1",
+          "Mds-ArenaPesadelo",
+          "Projeto-P.I.T.E.R",
+          "Sonorus-2025.1",
+          "portfolio-MDS",
+          "teste"
         ]
       },
       {
@@ -847,7 +481,7 @@
       },
       {
         "name": "ViniGvdo",
-        "commits": 0,
+        "commits": 2,
         "issues_created": 0,
         "issues_closed": 0,
         "prs_created": 1,
@@ -873,12 +507,12 @@
   },
   {
     "date": "2026-09-14",
-    "total_events": 315,
+    "total_events": 319,
     "issues_created": 2,
     "issues_closed": 24,
     "prs_created": 14,
-    "prs_closed": 14,
-    "commits": 65,
+    "prs_closed": 13,
+    "commits": 70,
     "comments": 0,
     "unique_users": 36,
     "unique_repos": 17,
@@ -909,7 +543,7 @@
       },
       {
         "name": "nicolaszanin06",
-        "commits": 0,
+        "commits": 2,
         "issues_created": 1,
         "issues_closed": 4,
         "prs_created": 1,
@@ -1144,6 +778,18 @@
         ]
       },
       {
+        "name": "gabrielrdaraujo",
+        "commits": 1,
+        "issues_created": 0,
+        "issues_closed": 0,
+        "prs_created": 0,
+        "prs_closed": 0,
+        "comments": 0,
+        "repositories": [
+          "2026-02-UnDb"
+        ]
+      },
+      {
         "name": "smitalo",
         "commits": 1,
         "issues_created": 0,
@@ -1181,7 +827,7 @@
       },
       {
         "name": "warlleymedeiros",
-        "commits": 0,
+        "commits": 2,
         "issues_created": 0,
         "issues_closed": 0,
         "prs_created": 4,
@@ -1243,6 +889,7 @@
           "2025-2-Synapse",
           "2025.1-RelatoriosInteligentesBCB",
           "2025_1-Jakebot",
+          "2026-02-UnDb",
           "2026-1-LegisKids",
           "2026-1-Mapa_L.I.L.A.S",
           "2026-1-P.R.I.S.M.A",
@@ -1282,7 +929,7 @@
         "issues_created": 0,
         "issues_closed": 0,
         "prs_created": 1,
-        "prs_closed": 1,
+        "prs_closed": 0,
         "comments": 0,
         "repositories": [
           "2025-1-NoFluxoUNB"
@@ -1304,12 +951,12 @@
   },
   {
     "date": "2026-09-15",
-    "total_events": 247,
+    "total_events": 258,
     "issues_created": 19,
     "issues_closed": 19,
     "prs_created": 11,
     "prs_closed": 10,
-    "commits": 34,
+    "commits": 45,
     "comments": 0,
     "unique_users": 36,
     "unique_repos": 17,
@@ -1352,6 +999,18 @@
         ]
       },
       {
+        "name": "nicolaszanin06",
+        "commits": 7,
+        "issues_created": 0,
+        "issues_closed": 0,
+        "prs_created": 3,
+        "prs_closed": 1,
+        "comments": 0,
+        "repositories": [
+          "2026-02-UnDb"
+        ]
+      },
+      {
         "name": "daniel-mouraa",
         "commits": 0,
         "issues_created": 0,
@@ -1361,18 +1020,6 @@
         "comments": 0,
         "repositories": [
           "2026-2-Cerradinho-API"
-        ]
-      },
-      {
-        "name": "nicolaszanin06",
-        "commits": 0,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 3,
-        "prs_closed": 1,
-        "comments": 0,
-        "repositories": [
-          "2026-02-UnDb"
         ]
       },
       {
@@ -1537,8 +1184,20 @@
         ]
       },
       {
+        "name": "gabrielrdaraujo",
+        "commits": 2,
+        "issues_created": 0,
+        "issues_closed": 0,
+        "prs_created": 0,
+        "prs_closed": 0,
+        "comments": 0,
+        "repositories": [
+          "2026-02-UnDb"
+        ]
+      },
+      {
         "name": "warlleymedeiros",
-        "commits": 0,
+        "commits": 2,
         "issues_created": 0,
         "issues_closed": 0,
         "prs_created": 2,
@@ -1600,6 +1259,7 @@
           "2025-2-Synapse",
           "2025.1-RelatoriosInteligentesBCB",
           "2025_1-Jakebot",
+          "2026-02-UnDb",
           "2026-1-LegisKids",
           "2026-1-Mapa_L.I.L.A.S",
           "2026-1-P.R.I.S.M.A",
@@ -1700,12 +1360,12 @@
   },
   {
     "date": "2026-09-16",
-    "total_events": 208,
+    "total_events": 218,
     "issues_created": 3,
     "issues_closed": 1,
     "prs_created": 13,
     "prs_closed": 31,
-    "commits": 59,
+    "commits": 69,
     "comments": 0,
     "unique_users": 38,
     "unique_repos": 19,
@@ -1759,8 +1419,20 @@
         ]
       },
       {
+        "name": "gabrielrdaraujo",
+        "commits": 4,
+        "issues_created": 2,
+        "issues_closed": 0,
+        "prs_created": 4,
+        "prs_closed": 9,
+        "comments": 0,
+        "repositories": [
+          "2026-02-UnDb"
+        ]
+      },
+      {
         "name": "nicolaszanin06",
-        "commits": 0,
+        "commits": 6,
         "issues_created": 0,
         "issues_closed": 0,
         "prs_created": 0,
@@ -1999,18 +1671,6 @@
         ]
       },
       {
-        "name": "gabrielrdaraujo",
-        "commits": 0,
-        "issues_created": 2,
-        "issues_closed": 0,
-        "prs_created": 4,
-        "prs_closed": 9,
-        "comments": 0,
-        "repositories": [
-          "2026-02-UnDb"
-        ]
-      },
-      {
         "name": "ViniGvdo",
         "commits": 0,
         "issues_created": 0,
@@ -2086,6 +1746,7 @@
           "2025-2-Synapse",
           "2025.1-RelatoriosInteligentesBCB",
           "2025_1-Jakebot",
+          "2026-02-UnDb",
           "2026-1-LegisKids",
           "2026-1-Mapa_L.I.L.A.S",
           "2026-1-P.R.I.S.M.A",
@@ -2111,16 +1772,28 @@
   },
   {
     "date": "2026-09-17",
-    "total_events": 29,
-    "issues_created": 2,
-    "issues_closed": 0,
-    "prs_created": 2,
-    "prs_closed": 2,
-    "commits": 5,
+    "total_events": 138,
+    "issues_created": 3,
+    "issues_closed": 8,
+    "prs_created": 9,
+    "prs_closed": 9,
+    "commits": 23,
     "comments": 0,
-    "unique_users": 6,
-    "unique_repos": 6,
+    "unique_users": 16,
+    "unique_repos": 10,
     "authors": [
+      {
+        "name": "nicolaszanin06",
+        "commits": 8,
+        "issues_created": 0,
+        "issues_closed": 3,
+        "prs_created": 3,
+        "prs_closed": 3,
+        "comments": 0,
+        "repositories": [
+          "2026-02-UnDb"
+        ]
+      },
       {
         "name": "eliabexp",
         "commits": 0,
@@ -2136,13 +1809,63 @@
       {
         "name": "warlleymedeiros",
         "commits": 0,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 0,
-        "prs_closed": 1,
+        "issues_created": 1,
+        "issues_closed": 2,
+        "prs_created": 1,
+        "prs_closed": 2,
         "comments": 0,
         "repositories": [
           "2026-02-UnDb"
+        ]
+      },
+      {
+        "name": "unknown",
+        "commits": 3,
+        "issues_created": 0,
+        "issues_closed": 0,
+        "prs_created": 0,
+        "prs_closed": 0,
+        "comments": 0,
+        "repositories": [
+          "2023-2-JuizVirtual",
+          "2023-2-Squad04",
+          "2023-2-Squad05-TesouroMineiro",
+          "2023-2-Squad09-Gotinha",
+          "2023-2-Squad10",
+          "2024-1-MinasDeCultura",
+          "2024-1-Squad-10",
+          "2024-1-forUnB",
+          "2024-1-squad04",
+          "2024-2-AcheiUnB",
+          "2024-2-ChamaControl",
+          "2024-2-Urbanize",
+          "2025-1-NoFluxoUNB",
+          "2025-1-RelatAI",
+          "2025-2-OncoMap",
+          "2025-2-Portal-dos-Professores",
+          "2025-2-Synapse",
+          "2025.1-RelatoriosInteligentesBCB",
+          "2025_1-Jakebot",
+          "2026-02-UnDb",
+          "2026-1-LegisKids",
+          "2026-1-Mapa_L.I.L.A.S",
+          "2026-1-P.R.I.S.M.A",
+          "2026-1-ProtectKids",
+          "2026-1-SafeStreets",
+          "2026-1-Squad13",
+          "2026-2-MonitoraUnB",
+          "2026-2-VeritasIA",
+          "Avalia",
+          "DFemObras",
+          "DFemObras-2025.1",
+          "Fique-de-Olho",
+          "Gastos-DF-Squad12",
+          "LicitaBSB-24.1",
+          "Mds-ArenaPesadelo",
+          "Projeto-P.I.T.E.R",
+          "Sonorus-2025.1",
+          "portfolio-MDS",
+          "teste"
         ]
       },
       {
@@ -2152,18 +1875,6 @@
         "issues_closed": 0,
         "prs_created": 1,
         "prs_closed": 1,
-        "comments": 0,
-        "repositories": [
-          "2026-02-UnDb"
-        ]
-      },
-      {
-        "name": "nicolaszanin06",
-        "commits": 0,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 1,
-        "prs_closed": 0,
         "comments": 0,
         "repositories": [
           "2026-02-UnDb"
@@ -2207,6 +1918,228 @@
           "2026.1-ContraDito",
           "DFemObras",
           "Gastos-DF-2024-02"
+        ]
+      },
+      {
+        "name": "Thur-sylva",
+        "commits": 0,
+        "issues_created": 0,
+        "issues_closed": 1,
+        "prs_created": 0,
+        "prs_closed": 0,
+        "comments": 0,
+        "repositories": [
+          "Fique-de-Olho"
+        ]
+      },
+      {
+        "name": "pithzin",
+        "commits": 1,
+        "issues_created": 0,
+        "issues_closed": 0,
+        "prs_created": 0,
+        "prs_closed": 0,
+        "comments": 0,
+        "repositories": [
+          "2026-2-Bandejao"
+        ]
+      },
+      {
+        "name": "gabrielrdaraujo",
+        "commits": 5,
+        "issues_created": 0,
+        "issues_closed": 2,
+        "prs_created": 2,
+        "prs_closed": 2,
+        "comments": 0,
+        "repositories": [
+          "2026-02-UnDb"
+        ]
+      },
+      {
+        "name": "Mendezalv",
+        "commits": 0,
+        "issues_created": 0,
+        "issues_closed": 0,
+        "prs_created": 1,
+        "prs_closed": 0,
+        "comments": 0,
+        "repositories": [
+          "2026-2-Followw"
+        ]
+      },
+      {
+        "name": "Isac-sil-mar",
+        "commits": 1,
+        "issues_created": 0,
+        "issues_closed": 0,
+        "prs_created": 0,
+        "prs_closed": 0,
+        "comments": 0,
+        "repositories": [
+          "Fique-de-Olho"
+        ]
+      },
+      {
+        "name": "daniel-mouraa",
+        "commits": 0,
+        "issues_created": 0,
+        "issues_closed": 0,
+        "prs_created": 1,
+        "prs_closed": 1,
+        "comments": 0,
+        "repositories": [
+          "2026-2-Cerradinho-API"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-09-18",
+    "total_events": 92,
+    "issues_created": 2,
+    "issues_closed": 14,
+    "prs_created": 10,
+    "prs_closed": 4,
+    "commits": 12,
+    "comments": 0,
+    "unique_users": 13,
+    "unique_repos": 9,
+    "authors": [
+      {
+        "name": "thamiresellensa",
+        "commits": 0,
+        "issues_created": 0,
+        "issues_closed": 1,
+        "prs_created": 0,
+        "prs_closed": 0,
+        "comments": 0,
+        "repositories": [
+          "2026-02-TambureteiUnB"
+        ]
+      },
+      {
+        "name": "Vitor-Trancoso",
+        "commits": 7,
+        "issues_created": 1,
+        "issues_closed": 1,
+        "prs_created": 1,
+        "prs_closed": 2,
+        "comments": 0,
+        "repositories": [
+          "2025-1-NoFluxoUNB"
+        ]
+      },
+      {
+        "name": "ailoiol",
+        "commits": 0,
+        "issues_created": 0,
+        "issues_closed": 0,
+        "prs_created": 2,
+        "prs_closed": 1,
+        "comments": 0,
+        "repositories": [
+          "2026-02-UnDb"
+        ]
+      },
+      {
+        "name": "pablosousaa",
+        "commits": 0,
+        "issues_created": 1,
+        "issues_closed": 1,
+        "prs_created": 0,
+        "prs_closed": 0,
+        "comments": 0,
+        "repositories": [
+          "2026-2-MonitoraUnB"
+        ]
+      },
+      {
+        "name": "warlleymedeiros",
+        "commits": 0,
+        "issues_created": 0,
+        "issues_closed": 0,
+        "prs_created": 6,
+        "prs_closed": 1,
+        "comments": 0,
+        "repositories": [
+          "2026-02-UnDb"
+        ]
+      },
+      {
+        "name": "darkymeubem",
+        "commits": 0,
+        "issues_created": 0,
+        "issues_closed": 11,
+        "prs_created": 0,
+        "prs_closed": 0,
+        "comments": 0,
+        "repositories": [
+          "2025-1-NoFluxoUNB"
+        ]
+      },
+      {
+        "name": "github-actions[bot]",
+        "commits": 3,
+        "issues_created": 0,
+        "issues_closed": 0,
+        "prs_created": 0,
+        "prs_closed": 0,
+        "comments": 0,
+        "repositories": [
+          "2024-2-SuaFinanca",
+          "2025-2-Eh_Fake",
+          "2025-2-Mural-UnB",
+          "2025-2-Squad-01",
+          "2026-1-Guard.IA",
+          "2026-1-LegisKids",
+          "2026-1-Mapa_L.I.L.A.S",
+          "2026-1-ProtectKids",
+          "2026-1-Squad07",
+          "2026-2-VeritasIA",
+          "2026.1-ContraDito",
+          "DFemObras",
+          "DFemObras-2025.1",
+          "teste-ru"
+        ]
+      },
+      {
+        "name": "actions-user",
+        "commits": 1,
+        "issues_created": 0,
+        "issues_closed": 0,
+        "prs_created": 0,
+        "prs_closed": 0,
+        "comments": 0,
+        "repositories": [
+          "2026-1-SafeStreets",
+          "2026.1-ContraDito",
+          "DFemObras",
+          "Gastos-DF-2024-02"
+        ]
+      },
+      {
+        "name": "LuisFelipe311",
+        "commits": 0,
+        "issues_created": 0,
+        "issues_closed": 0,
+        "prs_created": 1,
+        "prs_closed": 0,
+        "comments": 0,
+        "repositories": [
+          "2026-2-Bandejao-UnB"
+        ]
+      },
+      {
+        "name": "Thomas4ugust0",
+        "commits": 1,
+        "issues_created": 0,
+        "issues_closed": 0,
+        "prs_created": 0,
+        "prs_closed": 0,
+        "comments": 0,
+        "repositories": [
+          "2026-2-AgendaUnB"
         ]
       }
     ]
