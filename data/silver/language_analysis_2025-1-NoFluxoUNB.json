@@ -2,19 +2,19 @@
   "repository": "2025-1-NoFluxoUNB",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T10:45:14.625001",
+  "analyzed_at": "2026-09-18T10:26:49.763221",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
   },
-  "total_files": 1010,
-  "total_bytes": 33472238,
+  "total_files": 1014,
+  "total_bytes": 33525895,
   "languages": [
     {
       "language": "PNG Image",
       "file_count": 70,
       "total_bytes": 18853234,
-      "percentage": 56.32,
+      "percentage": 56.23,
       "files": [
         {
           "path": "documentacao/estudos/Github/Assets/ex_repositorio.png",
@@ -81,8 +81,8 @@
     {
       "language": "JSON",
       "file_count": 110,
-      "total_bytes": 3361983,
-      "percentage": 10.04,
+      "total_bytes": 3362064,
+      "percentage": 10.03,
       "files": [
         {
           "path": "no_fluxo_backend/docs/database_schema.json",
@@ -99,7 +99,7 @@
         {
           "path": "no_fluxo_backend/package-lock.json",
           "name": "package-lock.json",
-          "size": 312435,
+          "size": 312516,
           "extension": ".json"
         },
         {
@@ -148,9 +148,9 @@
     },
     {
       "language": "Unknown",
-      "file_count": 226,
-      "total_bytes": 2894649,
-      "percentage": 8.65,
+      "file_count": 227,
+      "total_bytes": 2922958,
+      "percentage": 8.72,
       "files": [
         {
           "path": "no_fluxo_frontend_svelte/static/pdf.worker.min.mjs",
@@ -189,6 +189,12 @@
           "extension": ".svelte"
         },
         {
+          "path": "no_fluxo_frontend_svelte/src/routes/(protected)/admin/tickets/+page.svelte",
+          "name": "+page.svelte",
+          "size": 24906,
+          "extension": ".svelte"
+        },
+        {
           "path": "no_fluxo_frontend_svelte/src/routes/meu-fluxograma/[courseName]/+page.svelte",
           "name": "+page.svelte",
           "size": 23933,
@@ -198,12 +204,6 @@
           "path": "no_fluxo_frontend_svelte/src/lib/components/chat/ChatPanel.svelte",
           "name": "ChatPanel.svelte",
           "size": 22858,
-          "extension": ".svelte"
-        },
-        {
-          "path": "no_fluxo_frontend_svelte/src/routes/(protected)/admin/tickets/+page.svelte",
-          "name": "+page.svelte",
-          "size": 22498,
           "extension": ".svelte"
         },
         {
@@ -218,7 +218,7 @@
       "language": "Markdown",
       "file_count": 135,
       "total_bytes": 1793831,
-      "percentage": 5.36,
+      "percentage": 5.35,
       "files": [
         {
           "path": "plans/05-MODELS-TYPES.md",
@@ -284,9 +284,9 @@
     },
     {
       "language": "TypeScript",
-      "file_count": 260,
-      "total_bytes": 1752904,
-      "percentage": 5.24,
+      "file_count": 261,
+      "total_bytes": 1758528,
+      "percentage": 5.25,
       "files": [
         {
           "path": "no_fluxo_backend/scripts/export_schema.ts",
@@ -354,7 +354,7 @@
       "language": "PDF",
       "file_count": 17,
       "total_bytes": 1197873,
-      "percentage": 3.58,
+      "percentage": 3.57,
       "files": [
         {
           "path": "documentacao/estudos/SCRUM e Programação eXtrema/SRUM e programação eXtrema.pdf",
@@ -422,7 +422,7 @@
       "language": "JPEG Image",
       "file_count": 4,
       "total_bytes": 774924,
-      "percentage": 2.32,
+      "percentage": 2.31,
       "files": [
         {
           "path": "assets/Logo_eu_3 editada.JPG",
@@ -522,7 +522,7 @@
       "language": "Log File",
       "file_count": 1,
       "total_bytes": 657761,
-      "percentage": 1.97,
+      "percentage": 1.96,
       "files": [
         {
           "path": "logs/ai_agent.log",
@@ -535,7 +535,7 @@
     {
       "language": "Python",
       "file_count": 42,
-      "total_bytes": 468918,
+      "total_bytes": 468911,
       "percentage": 1.4,
       "files": [
         {
@@ -602,9 +602,9 @@
     },
     {
       "language": "SQL",
-      "file_count": 9,
-      "total_bytes": 349468,
-      "percentage": 1.04,
+      "file_count": 11,
+      "total_bytes": 368755,
+      "percentage": 1.1,
       "files": [
         {
           "path": "no_fluxo_backend/docs/database_functions.sql",
@@ -637,6 +637,18 @@
           "extension": ".sql"
         },
         {
+          "path": "no_fluxo_backend/docs/supabase_migrations/ticket_chat.sql",
+          "name": "ticket_chat.sql",
+          "size": 11781,
+          "extension": ".sql"
+        },
+        {
+          "path": "no_fluxo_backend/docs/supabase_migrations/ticket_chat_nao_lidas.sql",
+          "name": "ticket_chat_nao_lidas.sql",
+          "size": 7506,
+          "extension": ".sql"
+        },
+        {
           "path": "no_fluxo_backend/docs/database_triggers.sql",
           "name": "database_triggers.sql",
           "size": 7418,
@@ -652,12 +664,6 @@
           "path": "no_fluxo_backend/nova_view_equivalencias.sql",
           "name": "nova_view_equivalencias.sql",
           "size": 1819,
-          "extension": ".sql"
-        },
-        {
-          "path": "no_fluxo_backend/docs/supabase_migrations/preferencias_grade.sql",
-          "name": "preferencias_grade.sql",
-          "size": 863,
           "extension": ".sql"
         }
       ]
@@ -927,7 +933,7 @@
     {
       "language": "Text",
       "file_count": 15,
-      "total_bytes": 32053,
+      "total_bytes": 32049,
       "percentage": 0.1,
       "files": [
         {
@@ -939,7 +945,7 @@
         {
           "path": "requirements.txt",
           "name": "requirements.txt",
-          "size": 1394,
+          "size": 1393,
           "extension": ".txt"
         },
         {
@@ -957,7 +963,7 @@
         {
           "path": "tests-python/requirements.txt",
           "name": "requirements.txt",
-          "size": 281,
+          "size": 279,
           "extension": ".txt"
         },
         {
@@ -987,7 +993,7 @@
         {
           "path": "DBA/parse_pdf/requirements.txt",
           "name": "requirements.txt",
-          "size": 78,
+          "size": 77,
           "extension": ".txt"
         }
       ]
@@ -1261,20 +1267,20 @@
     {
       "language": "INI",
       "file_count": 1,
-      "total_bytes": 446,
+      "total_bytes": 813,
       "percentage": 0.0,
       "files": [
         {
           "path": "tests-python/pytest.ini",
           "name": "pytest.ini",
-          "size": 446,
+          "size": 813,
           "extension": ".ini"
         }
       ]
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T10:46:36.298874",
+    "extracted_at": "2026-09-18T10:28:16.748359",
     "file_path": "data/silver/language_analysis_2025-1-NoFluxoUNB.json"
   }
 }

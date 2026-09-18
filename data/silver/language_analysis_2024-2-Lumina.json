@@ -2,7 +2,7 @@
   "repository": "2024-2-Lumina",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T10:45:07.128362",
+  "analyzed_at": "2026-09-18T10:26:42.866794",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -662,7 +662,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T10:46:36.615907",
+    "extracted_at": "2026-09-18T10:28:17.132922",
     "file_path": "data/silver/language_analysis_2024-2-Lumina.json"
   }
 }

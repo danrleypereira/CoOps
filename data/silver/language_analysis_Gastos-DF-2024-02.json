@@ -2,7 +2,7 @@
   "repository": "Gastos-DF-2024-02",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T10:45:12.438109",
+  "analyzed_at": "2026-09-18T10:26:47.484531",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -656,7 +656,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T10:46:36.290759",
+    "extracted_at": "2026-09-18T10:28:16.738902",
     "file_path": "data/silver/language_analysis_Gastos-DF-2024-02.json"
   }
 }

@@ -1,7 +1,7 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-17T10:46:29.093380",
+      "extracted_at": "2026-09-18T10:28:08.554270",
       "file_path": "data/silver/repository_metrics.json",
       "record_count": 97
     }
@@ -23,11 +23,11 @@
     "repo": "LicitaBSB-24.1"
   },
   {
-    "issues": 108,
-    "prs": 60,
-    "commits": 1212,
+    "issues": 109,
+    "prs": 61,
+    "commits": 1219,
     "comments": 0,
-    "total_activity": 1380,
+    "total_activity": 1389,
     "repo": "2025-1-NoFluxoUNB"
   },
   {
@@ -57,9 +57,9 @@
   {
     "issues": 94,
     "prs": 45,
-    "commits": 842,
+    "commits": 843,
     "comments": 0,
-    "total_activity": 981,
+    "total_activity": 982,
     "repo": "2023-2-Squad04"
   },
   {
@@ -97,9 +97,9 @@
   {
     "issues": 91,
     "prs": 59,
-    "commits": 548,
+    "commits": 549,
     "comments": 0,
-    "total_activity": 698,
+    "total_activity": 699,
     "repo": "2026-1-SafeStreets"
   },
   {
@@ -169,9 +169,9 @@
   {
     "issues": 60,
     "prs": 14,
-    "commits": 521,
+    "commits": 523,
     "comments": 0,
-    "total_activity": 595,
+    "total_activity": 597,
     "repo": "2026-2-VeritasIA"
   },
   {
@@ -249,9 +249,9 @@
   {
     "issues": 84,
     "prs": 38,
-    "commits": 359,
+    "commits": 360,
     "comments": 0,
-    "total_activity": 481,
+    "total_activity": 482,
     "repo": "2026-1-Mapa_L.I.L.A.S"
   },
   {
@@ -479,6 +479,14 @@
     "repo": "Mds-ArenaPesadelo"
   },
   {
+    "issues": 48,
+    "prs": 52,
+    "commits": 141,
+    "comments": 0,
+    "total_activity": 241,
+    "repo": "2026-02-UnDb"
+  },
+  {
     "issues": 85,
     "prs": 23,
     "commits": 130,
@@ -551,14 +559,6 @@
     "repo": "2024-2-Datazonia"
   },
   {
-    "issues": 47,
-    "prs": 39,
-    "commits": 81,
-    "comments": 0,
-    "total_activity": 167,
-    "repo": "2026-02-UnDb"
-  },
-  {
     "issues": 63,
     "prs": 2,
     "commits": 81,
@@ -568,10 +568,10 @@
   },
   {
     "issues": 55,
-    "prs": 38,
+    "prs": 39,
     "commits": 50,
     "comments": 0,
-    "total_activity": 143,
+    "total_activity": 144,
     "repo": "2026-2-Cerradinho-API"
   },
   {
@@ -601,9 +601,9 @@
   {
     "issues": 16,
     "prs": 1,
-    "commits": 54,
+    "commits": 55,
     "comments": 0,
-    "total_activity": 71,
+    "total_activity": 72,
     "repo": "2026-2-Bandejao"
   },
   {
@@ -639,19 +639,19 @@
     "repo": "2023.2_Gotinha"
   },
   {
-    "issues": 6,
+    "issues": 7,
     "prs": 5,
     "commits": 30,
     "comments": 0,
-    "total_activity": 41,
+    "total_activity": 42,
     "repo": "2026-2-MonitoraUnB"
   },
   {
     "issues": 0,
     "prs": 5,
-    "commits": 35,
+    "commits": 36,
     "comments": 0,
-    "total_activity": 40,
+    "total_activity": 41,
     "repo": "2026-2-AgendaUnB"
   },
   {
@@ -665,25 +665,25 @@
   {
     "issues": 14,
     "prs": 2,
-    "commits": 18,
+    "commits": 19,
     "comments": 0,
-    "total_activity": 34,
+    "total_activity": 35,
     "repo": "Fique-de-Olho"
   },
   {
     "issues": 14,
-    "prs": 2,
+    "prs": 3,
     "commits": 12,
     "comments": 0,
-    "total_activity": 28,
+    "total_activity": 29,
     "repo": "2026-2-Followw"
   },
   {
     "issues": 18,
-    "prs": 3,
+    "prs": 4,
     "commits": 7,
     "comments": 0,
-    "total_activity": 28,
+    "total_activity": 29,
     "repo": "2026-2-Bandejao-UnB"
   },
   {

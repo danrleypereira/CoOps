@@ -2,7 +2,7 @@
   "repository": "Fique-de-Olho",
   "owner": "unb-mds",
   "branch": "main",
-  "extracted_at": "2026-09-17T10:45:41.662861",
+  "extracted_at": "2026-09-18T10:27:15.588054",
   "hierarchy": {
     "name": "root",
     "type": "directory",
@@ -633,7 +633,7 @@
         "name": "personas.md",
         "type": "file",
         "language": "Markdown",
-        "size": 8969,
+        "size": 8915,
         "extension": ".md",
         "path": "docs/Requisitos/produto/personas.md"
       },
@@ -742,7 +742,7 @@
     ]
   },
   "_metadata": {
-    "extracted_at": "2026-09-17T10:46:36.688829",
+    "extracted_at": "2026-09-18T10:28:17.220996",
     "file_path": "data/silver/hierarchy_Fique-de-Olho.json"
   }
 }

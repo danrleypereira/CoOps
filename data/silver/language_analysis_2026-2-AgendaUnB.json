@@ -2,13 +2,13 @@
   "repository": "2026-2-AgendaUnB",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T10:45:44.265757",
+  "analyzed_at": "2026-09-18T10:27:18.545035",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
   },
   "total_files": 27,
-  "total_bytes": 3816089,
+  "total_bytes": 3816103,
   "languages": [
     {
       "language": "WebM Video",
@@ -33,7 +33,7 @@
     {
       "language": "Markdown",
       "file_count": 12,
-      "total_bytes": 59899,
+      "total_bytes": 59913,
       "percentage": 1.57,
       "files": [
         {
@@ -81,7 +81,7 @@
         {
           "path": "README.md",
           "name": "README.md",
-          "size": 3107,
+          "size": 3121,
           "extension": ".md"
         },
         {
@@ -234,7 +234,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T10:46:35.875253",
+    "extracted_at": "2026-09-18T10:28:16.240661",
     "file_path": "data/silver/language_analysis_2026-2-AgendaUnB.json"
   }
 }

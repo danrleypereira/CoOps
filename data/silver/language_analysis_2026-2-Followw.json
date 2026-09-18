@@ -2,7 +2,7 @@
   "repository": "2026-2-Followw",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T10:45:42.256931",
+  "analyzed_at": "2026-09-18T10:27:16.595204",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -246,7 +246,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T10:46:36.312856",
+    "extracted_at": "2026-09-18T10:28:16.764880",
     "file_path": "data/silver/language_analysis_2026-2-Followw.json"
   }
 }

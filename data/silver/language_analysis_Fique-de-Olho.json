@@ -2,13 +2,13 @@
   "repository": "Fique-de-Olho",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T10:45:41.662861",
+  "analyzed_at": "2026-09-18T10:27:15.588054",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
   },
   "total_files": 63,
-  "total_bytes": 473473,
+  "total_bytes": 473419,
   "languages": [
     {
       "language": "PNG Image",
@@ -39,8 +39,8 @@
     {
       "language": "Markdown",
       "file_count": 45,
-      "total_bytes": 158009,
-      "percentage": 33.37,
+      "total_bytes": 157955,
+      "percentage": 33.36,
       "files": [
         {
           "path": "docs/Requisitos/produto/backlog.md",
@@ -63,7 +63,7 @@
         {
           "path": "docs/Requisitos/produto/personas.md",
           "name": "personas.md",
-          "size": 8969,
+          "size": 8915,
           "extension": ".md"
         },
         {
@@ -216,7 +216,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T10:46:36.688339",
+    "extracted_at": "2026-09-18T10:28:17.220391",
     "file_path": "data/silver/language_analysis_Fique-de-Olho.json"
   }
 }

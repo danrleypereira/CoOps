@@ -2,7 +2,7 @@
   "repository": "2026-2-GlossarioUnB",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T10:45:45.390561",
+  "analyzed_at": "2026-09-18T10:27:19.940605",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -148,7 +148,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T10:46:36.257816",
+    "extracted_at": "2026-09-18T10:28:16.701741",
     "file_path": "data/silver/language_analysis_2026-2-GlossarioUnB.json"
   }
 }

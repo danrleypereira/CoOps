@@ -2,7 +2,7 @@
   "repository": "LicitaBSB-24.1",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T10:44:56.961831",
+  "analyzed_at": "2026-09-18T10:26:33.101852",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -898,7 +898,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T10:46:36.780597",
+    "extracted_at": "2026-09-18T10:28:17.330334",
     "file_path": "data/silver/language_analysis_LicitaBSB-24.1.json"
   }
 }

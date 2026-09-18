@@ -2,7 +2,7 @@
   "repository": "2026-2-Bandejao",
   "owner": "unb-mds",
   "branch": "main",
-  "extracted_at": "2026-09-17T10:45:46.648208",
+  "extracted_at": "2026-09-18T10:27:20.958885",
   "hierarchy": {
     "name": "root",
     "type": "directory",
@@ -19,7 +19,7 @@
         "name": "README.md",
         "type": "file",
         "language": "Markdown",
-        "size": 2291,
+        "size": 2360,
         "extension": ".md",
         "path": "README.md"
       },
@@ -397,7 +397,7 @@
         "name": "contexto.md",
         "type": "file",
         "language": "Markdown",
-        "size": 5745,
+        "size": 6526,
         "extension": ".md",
         "path": "contexto.md"
       },
@@ -419,7 +419,7 @@
         "name": "Arquitetura.md",
         "type": "file",
         "language": "Markdown",
-        "size": 3164,
+        "size": 3504,
         "extension": ".md",
         "path": "docs/Arquitetura.md"
       },
@@ -427,7 +427,7 @@
         "name": "Requisitos.md",
         "type": "file",
         "language": "Markdown",
-        "size": 2375,
+        "size": 2874,
         "extension": ".md",
         "path": "docs/Requisitos.md"
       },
@@ -435,7 +435,7 @@
         "name": "documento_de_visao.md",
         "type": "file",
         "language": "Markdown",
-        "size": 3767,
+        "size": 4437,
         "extension": ".md",
         "path": "docs/documento_de_visao.md"
       },
@@ -808,7 +808,7 @@
     ]
   },
   "_metadata": {
-    "extracted_at": "2026-09-17T10:46:35.877035",
+    "extracted_at": "2026-09-18T10:28:16.243077",
     "file_path": "data/silver/hierarchy_2026-2-Bandejao.json"
   }
 }

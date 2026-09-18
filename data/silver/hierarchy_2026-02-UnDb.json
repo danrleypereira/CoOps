@@ -2,7 +2,7 @@
   "repository": "2026-02-UnDb",
   "owner": "unb-mds",
   "branch": "main",
-  "extracted_at": "2026-09-17T10:45:43.614187",
+  "extracted_at": "2026-09-18T10:27:18.067032",
   "hierarchy": {
     "name": "root",
     "type": "directory",
@@ -52,10 +52,40 @@
         "path": ".github/ISSUE_TEMPLATE/tarefa.md"
       },
       {
+        "name": "PULL_REQUEST_TEMPLATE.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 640,
+        "extension": ".md",
+        "path": ".github/PULL_REQUEST_TEMPLATE.md"
+      },
+      {
+        "name": "workflows",
+        "type": "directory",
+        "path": ".github/workflows",
+        "children": []
+      },
+      {
+        "name": "pages.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 1783,
+        "extension": ".yml",
+        "path": ".github/workflows/pages.yml"
+      },
+      {
+        "name": "pull-request.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 2675,
+        "extension": ".yml",
+        "path": ".github/workflows/pull-request.yml"
+      },
+      {
         "name": ".gitignore",
         "type": "file",
         "language": "Git Ignore",
-        "size": 87,
+        "size": 103,
         "extension": ".gitignore",
         "path": ".gitignore"
       },
@@ -85,15 +115,23 @@
         "name": "CLAUDE.md",
         "type": "file",
         "language": "Markdown",
-        "size": 4582,
+        "size": 4641,
         "extension": ".md",
         "path": "CLAUDE.md"
+      },
+      {
+        "name": "CONTRIBUTING.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3302,
+        "extension": ".md",
+        "path": "CONTRIBUTING.md"
       },
       {
         "name": "README.md",
         "type": "file",
         "language": "Markdown",
-        "size": 3224,
+        "size": 4661,
         "extension": ".md",
         "path": "README.md"
       },
@@ -123,7 +161,7 @@
         "name": "Dockerfile",
         "type": "file",
         "language": "No Extension",
-        "size": 360,
+        "size": 446,
         "extension": "",
         "path": "backend/Dockerfile"
       },
@@ -186,6 +224,28 @@
         "path": "backend/app/__init__.py"
       },
       {
+        "name": "commands",
+        "type": "directory",
+        "path": "backend/app/commands",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 62,
+        "extension": ".py",
+        "path": "backend/app/commands/__init__.py"
+      },
+      {
+        "name": "importar_sigaa.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1436,
+        "extension": ".py",
+        "path": "backend/app/commands/importar_sigaa.py"
+      },
+      {
         "name": "core",
         "type": "directory",
         "path": "backend/app/core",
@@ -216,10 +276,32 @@
         "path": "backend/app/core/database.py"
       },
       {
+        "name": "domain",
+        "type": "directory",
+        "path": "backend/app/domain",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 44,
+        "extension": ".py",
+        "path": "backend/app/domain/__init__.py"
+      },
+      {
+        "name": "avaliacoes.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3371,
+        "extension": ".py",
+        "path": "backend/app/domain/avaliacoes.py"
+      },
+      {
         "name": "main.py",
         "type": "file",
         "language": "Python",
-        "size": 229,
+        "size": 281,
         "extension": ".py",
         "path": "backend/app/main.py"
       },
@@ -286,6 +368,52 @@
         "path": "backend/app/models/usuario.py"
       },
       {
+        "name": "repositories",
+        "type": "directory",
+        "path": "backend/app/repositories",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 45,
+        "extension": ".py",
+        "path": "backend/app/repositories/__init__.py"
+      },
+      {
+        "name": "avaliacao_repository.py",
+        "type": "file",
+        "language": "Python",
+        "size": 780,
+        "extension": ".py",
+        "path": "backend/app/repositories/avaliacao_repository.py"
+      },
+      {
+        "name": "disciplina_repository.py",
+        "type": "file",
+        "language": "Python",
+        "size": 439,
+        "extension": ".py",
+        "path": "backend/app/repositories/disciplina_repository.py"
+      },
+      {
+        "name": "professor_repository.py",
+        "type": "file",
+        "language": "Python",
+        "size": 495,
+        "extension": ".py",
+        "path": "backend/app/repositories/professor_repository.py"
+      },
+      {
+        "name": "turma_repository.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1006,
+        "extension": ".py",
+        "path": "backend/app/repositories/turma_repository.py"
+      },
+      {
         "name": "routers",
         "type": "directory",
         "path": "backend/app/routers",
@@ -308,6 +436,14 @@
         "path": "backend/app/routers/avaliacoes.py"
       },
       {
+        "name": "professores.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2103,
+        "extension": ".py",
+        "path": "backend/app/routers/professores.py"
+      },
+      {
         "name": "schemas",
         "type": "directory",
         "path": "backend/app/schemas",
@@ -325,9 +461,39 @@
         "name": "avaliacao.py",
         "type": "file",
         "language": "Python",
-        "size": 905,
+        "size": 2499,
         "extension": ".py",
         "path": "backend/app/schemas/avaliacao.py"
+      },
+      {
+        "name": "institucional.py",
+        "type": "file",
+        "language": "Python",
+        "size": 389,
+        "extension": ".py",
+        "path": "backend/app/schemas/institucional.py"
+      },
+      {
+        "name": "scrapers",
+        "type": "directory",
+        "path": "backend/app/scrapers",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 64,
+        "extension": ".py",
+        "path": "backend/app/scrapers/__init__.py"
+      },
+      {
+        "name": "sigaa_poc.py",
+        "type": "file",
+        "language": "Python",
+        "size": 9686,
+        "extension": ".py",
+        "path": "backend/app/scrapers/sigaa_poc.py"
       },
       {
         "name": "services",
@@ -344,6 +510,22 @@
         "path": "backend/app/services/__init__.py"
       },
       {
+        "name": "avaliacao_service.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3362,
+        "extension": ".py",
+        "path": "backend/app/services/avaliacao_service.py"
+      },
+      {
+        "name": "sigaa_import_service.py",
+        "type": "file",
+        "language": "Python",
+        "size": 7639,
+        "extension": ".py",
+        "path": "backend/app/services/sigaa_import_service.py"
+      },
+      {
         "name": "requirements.txt",
         "type": "file",
         "language": "Text",
@@ -352,18 +534,108 @@
         "path": "backend/requirements.txt"
       },
       {
+        "name": "tests",
+        "type": "directory",
+        "path": "backend/tests",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 25,
+        "extension": ".py",
+        "path": "backend/tests/__init__.py"
+      },
+      {
+        "name": "test_agregacao_avaliacoes.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3559,
+        "extension": ".py",
+        "path": "backend/tests/test_agregacao_avaliacoes.py"
+      },
+      {
+        "name": "test_avaliacao.py",
+        "type": "file",
+        "language": "Python",
+        "size": 6958,
+        "extension": ".py",
+        "path": "backend/tests/test_avaliacao.py"
+      },
+      {
+        "name": "test_consulta_agregada.py",
+        "type": "file",
+        "language": "Python",
+        "size": 9293,
+        "extension": ".py",
+        "path": "backend/tests/test_consulta_agregada.py"
+      },
+      {
+        "name": "test_fluxo_sigaa_integrado.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2112,
+        "extension": ".py",
+        "path": "backend/tests/test_fluxo_sigaa_integrado.py"
+      },
+      {
+        "name": "test_sigaa_import_service.py",
+        "type": "file",
+        "language": "Python",
+        "size": 11399,
+        "extension": ".py",
+        "path": "backend/tests/test_sigaa_import_service.py"
+      },
+      {
+        "name": "test_sigaa_poc_unittest.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3922,
+        "extension": ".py",
+        "path": "backend/tests/test_sigaa_poc_unittest.py"
+      },
+      {
         "name": "docs",
         "type": "directory",
         "path": "docs",
         "children": []
       },
       {
+        "name": "agent-skills.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 45078,
+        "extension": ".md",
+        "path": "docs/agent-skills.md"
+      },
+      {
         "name": "arquitetura.md",
         "type": "file",
         "language": "Markdown",
-        "size": 13236,
+        "size": 14164,
         "extension": ".md",
         "path": "docs/arquitetura.md"
+      },
+      {
+        "name": "assets",
+        "type": "directory",
+        "path": "docs/assets",
+        "children": []
+      },
+      {
+        "name": "stylesheets",
+        "type": "directory",
+        "path": "docs/assets/stylesheets",
+        "children": []
+      },
+      {
+        "name": "extra.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 593,
+        "extension": ".css",
+        "path": "docs/assets/stylesheets/extra.css"
       },
       {
         "name": "diagramas",
@@ -410,12 +682,84 @@
         "path": "docs/estudos/docker.md"
       },
       {
+        "name": "mapeamento-sigaa.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 36775,
+        "extension": ".md",
+        "path": "docs/estudos/mapeamento-sigaa.md"
+      },
+      {
+        "name": "sigaa-poc.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 5885,
+        "extension": ".md",
+        "path": "docs/estudos/sigaa-poc.md"
+      },
+      {
+        "name": "figma.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 895,
+        "extension": ".md",
+        "path": "docs/figma.md"
+      },
+      {
+        "name": "importacao-sigaa.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 4229,
+        "extension": ".md",
+        "path": "docs/importacao-sigaa.md"
+      },
+      {
+        "name": "index.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1698,
+        "extension": ".md",
+        "path": "docs/index.md"
+      },
+      {
+        "name": "modelos.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 583,
+        "extension": ".md",
+        "path": "docs/modelos.md"
+      },
+      {
         "name": "requisitos.md",
         "type": "file",
         "language": "Markdown",
-        "size": 15186,
+        "size": 17791,
         "extension": ".md",
         "path": "docs/requisitos.md"
+      },
+      {
+        "name": "visao.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 7239,
+        "extension": ".md",
+        "path": "docs/visao.md"
+      },
+      {
+        "name": "mkdocs.yml",
+        "type": "file",
+        "language": "YAML",
+        "size": 1978,
+        "extension": ".yml",
+        "path": "mkdocs.yml"
+      },
+      {
+        "name": "requirements-docs.txt",
+        "type": "file",
+        "language": "Text",
+        "size": 21,
+        "extension": ".txt",
+        "path": "requirements-docs.txt"
       },
       {
         "name": "skills",
@@ -570,6 +914,62 @@
         "children": []
       },
       {
+        "name": "ambiguity-removal",
+        "type": "directory",
+        "path": "skills/process/ambiguity-removal",
+        "children": []
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 9578,
+        "extension": ".md",
+        "path": "skills/process/ambiguity-removal/SKILL.md"
+      },
+      {
+        "name": "evals",
+        "type": "directory",
+        "path": "skills/process/ambiguity-removal/evals",
+        "children": []
+      },
+      {
+        "name": "evals.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 2725,
+        "extension": ".json",
+        "path": "skills/process/ambiguity-removal/evals/evals.json"
+      },
+      {
+        "name": "grill-me",
+        "type": "directory",
+        "path": "skills/process/grill-me",
+        "children": []
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6474,
+        "extension": ".md",
+        "path": "skills/process/grill-me/SKILL.md"
+      },
+      {
+        "name": "meeting-minutes",
+        "type": "directory",
+        "path": "skills/process/meeting-minutes",
+        "children": []
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6812,
+        "extension": ".md",
+        "path": "skills/process/meeting-minutes/SKILL.md"
+      },
+      {
         "name": "requirements",
         "type": "directory",
         "path": "skills/process/requirements",
@@ -588,6 +988,72 @@
         "type": "directory",
         "path": "skills/technology",
         "children": []
+      },
+      {
+        "name": "database-design",
+        "type": "directory",
+        "path": "skills/technology/database-design",
+        "children": []
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 7874,
+        "extension": ".md",
+        "path": "skills/technology/database-design/SKILL.md"
+      },
+      {
+        "name": "evals",
+        "type": "directory",
+        "path": "skills/technology/database-design/evals",
+        "children": []
+      },
+      {
+        "name": "evals.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 1850,
+        "extension": ".json",
+        "path": "skills/technology/database-design/evals/evals.json"
+      },
+      {
+        "name": "references",
+        "type": "directory",
+        "path": "skills/technology/database-design/references",
+        "children": []
+      },
+      {
+        "name": "constraints.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1731,
+        "extension": ".md",
+        "path": "skills/technology/database-design/references/constraints.md"
+      },
+      {
+        "name": "indexing.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1049,
+        "extension": ".md",
+        "path": "skills/technology/database-design/references/indexing.md"
+      },
+      {
+        "name": "modeling-workflow.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2050,
+        "extension": ".md",
+        "path": "skills/technology/database-design/references/modeling-workflow.md"
+      },
+      {
+        "name": "normalization.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1319,
+        "extension": ".md",
+        "path": "skills/technology/database-design/references/normalization.md"
       },
       {
         "name": "docker",
@@ -618,10 +1084,84 @@
         "path": "skills/technology/fastapi/SKILL.md"
       },
       {
+        "name": "postgresql",
+        "type": "directory",
+        "path": "skills/technology/postgresql",
+        "children": []
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 7467,
+        "extension": ".md",
+        "path": "skills/technology/postgresql/SKILL.md"
+      },
+      {
+        "name": "evals",
+        "type": "directory",
+        "path": "skills/technology/postgresql/evals",
+        "children": []
+      },
+      {
+        "name": "evals.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 1988,
+        "extension": ".json",
+        "path": "skills/technology/postgresql/evals/evals.json"
+      },
+      {
+        "name": "references",
+        "type": "directory",
+        "path": "skills/technology/postgresql/references",
+        "children": []
+      },
+      {
+        "name": "constraints.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1442,
+        "extension": ".md",
+        "path": "skills/technology/postgresql/references/constraints.md"
+      },
+      {
+        "name": "data-types.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1959,
+        "extension": ".md",
+        "path": "skills/technology/postgresql/references/data-types.md"
+      },
+      {
+        "name": "indexes.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1347,
+        "extension": ".md",
+        "path": "skills/technology/postgresql/references/indexes.md"
+      },
+      {
+        "name": "performance.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 1321,
+        "extension": ".md",
+        "path": "skills/technology/postgresql/references/performance.md"
+      },
+      {
+        "name": "postgresql-gotchas.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2332,
+        "extension": ".md",
+        "path": "skills/technology/postgresql/references/postgresql-gotchas.md"
+      },
+      {
         "name": "specs.md",
         "type": "file",
         "language": "Markdown",
-        "size": 9889,
+        "size": 10618,
         "extension": ".md",
         "path": "specs.md"
       },
@@ -685,14 +1225,28 @@
         "name": "banco-de-dados.md",
         "type": "file",
         "language": "Markdown",
-        "size": 2436,
+        "size": 2466,
         "extension": ".md",
         "path": "sprints/sprint02/banco-de-dados.md"
+      },
+      {
+        "name": "sprint03",
+        "type": "directory",
+        "path": "sprints/sprint03",
+        "children": []
+      },
+      {
+        "name": "ata-reuniao-2026-09-14.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2908,
+        "extension": ".md",
+        "path": "sprints/sprint03/ata-reuniao-2026-09-14.md"
       }
     ]
   },
   "_metadata": {
-    "extracted_at": "2026-09-17T10:46:36.717238",
+    "extracted_at": "2026-09-18T10:28:17.254582",
     "file_path": "data/silver/hierarchy_2026-02-UnDb.json"
   }
 }

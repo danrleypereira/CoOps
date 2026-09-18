@@ -2,7 +2,7 @@
   "repository": "2026-1-Mapa_L.I.L.A.S",
   "owner": "unb-mds",
   "branch": "main",
-  "extracted_at": "2026-09-17T10:45:31.460509",
+  "extracted_at": "2026-09-18T10:27:06.065340",
   "hierarchy": {
     "name": "root",
     "type": "directory",
@@ -1549,7 +1549,7 @@
         "name": "ingestion-history.json",
         "type": "file",
         "language": "JSON",
-        "size": 19908,
+        "size": 20192,
         "extension": ".json",
         "path": "docs/ingestion/ingestion-history.json"
       },
@@ -3288,7 +3288,7 @@
     ]
   },
   "_metadata": {
-    "extracted_at": "2026-09-17T10:46:36.898298",
+    "extracted_at": "2026-09-18T10:28:17.472715",
     "file_path": "data/silver/hierarchy_2026-1-Mapa_L.I.L.A.S.json"
   }
 }

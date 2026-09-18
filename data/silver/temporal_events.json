@@ -1,9 +1,9 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-17T10:46:32.313130",
+      "extracted_at": "2026-09-18T10:28:12.197716",
       "file_path": "data/silver/temporal_events.json",
-      "record_count": 120095
+      "record_count": 120340
     }
   },
   {
@@ -192193,7 +192193,7 @@
     "date": "2024-08-10T04:21:33",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -195514,7 +195514,7 @@
     "total_changes": 14
   },
   {
-    "date": "2024-08-12T12:19:25",
+    "date": "2024-08-12T12:19:08",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
     "user": "thaleseuflauzino",
@@ -199378,7 +199378,7 @@
     "date": "2024-08-13T04:13:18",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -204127,7 +204127,7 @@
     "date": "2024-08-14T04:12:55",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -207298,7 +207298,7 @@
     "date": "2024-08-15T04:13:19",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -209347,7 +209347,7 @@
     "date": "2024-08-16T04:10:02",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -210445,7 +210445,7 @@
     "date": "2024-08-17T04:19:51",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -214969,7 +214969,7 @@
     "date": "2024-08-20T04:06:20",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -216793,7 +216793,7 @@
     "date": "2024-08-21T04:13:55",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -219088,7 +219088,7 @@
     "date": "2024-08-22T04:12:54",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -231109,7 +231109,7 @@
     "date": "2024-08-28T04:08:55",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -234028,7 +234028,7 @@
     "date": "2024-08-29T04:13:42",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -235015,7 +235015,7 @@
     "date": "2024-08-30T04:12:36",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -236512,7 +236512,7 @@
     "date": "2024-08-31T04:16:44",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -237307,7 +237307,7 @@
     "date": "2024-09-02T03:17:01",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -239104,7 +239104,7 @@
     "date": "2024-09-03T04:12:59",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -242029,7 +242029,7 @@
     "date": "2024-09-04T04:06:20",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243346,7 +243346,7 @@
     "date": "2024-09-05T04:15:26",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243499,7 +243499,7 @@
     "date": "2024-09-06T04:17:21",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243508,7 +243508,7 @@
     "date": "2024-09-07T04:28:47",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243517,7 +243517,7 @@
     "date": "2024-09-10T04:15:47",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243694,7 +243694,7 @@
     "date": "2024-09-11T04:05:57",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243772,7 +243772,7 @@
     "date": "2024-09-12T04:10:48",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243781,7 +243781,7 @@
     "date": "2024-09-13T04:16:24",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243790,7 +243790,7 @@
     "date": "2024-09-14T04:13:32",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243799,7 +243799,7 @@
     "date": "2024-09-17T04:11:13",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243832,7 +243832,7 @@
     "date": "2024-09-18T04:07:00",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243841,7 +243841,7 @@
     "date": "2024-09-19T04:12:13",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243850,7 +243850,7 @@
     "date": "2024-09-20T04:10:57",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243859,7 +243859,7 @@
     "date": "2024-09-21T04:10:19",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243868,7 +243868,7 @@
     "date": "2024-09-24T04:09:45",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243877,7 +243877,7 @@
     "date": "2024-09-25T04:08:15",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243886,7 +243886,7 @@
     "date": "2024-09-26T04:21:55",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243895,7 +243895,7 @@
     "date": "2024-09-27T04:09:55",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243904,7 +243904,7 @@
     "date": "2024-09-28T04:14:58",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243913,7 +243913,7 @@
     "date": "2024-10-01T04:17:49",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243922,7 +243922,7 @@
     "date": "2024-10-02T04:08:30",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243940,7 +243940,7 @@
     "date": "2024-10-03T04:10:11",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243949,7 +243949,7 @@
     "date": "2024-10-04T04:11:32",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243958,7 +243958,7 @@
     "date": "2024-10-05T04:10:52",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243967,7 +243967,7 @@
     "date": "2024-10-08T04:06:22",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243976,7 +243976,7 @@
     "date": "2024-10-09T03:55:31",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -243994,7 +243994,7 @@
     "date": "2024-10-10T04:08:44",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -244021,7 +244021,7 @@
     "date": "2024-10-11T04:14:02",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -244030,7 +244030,7 @@
     "date": "2024-10-12T04:17:07",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -244039,7 +244039,7 @@
     "date": "2024-10-15T04:10:36",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -244048,7 +244048,7 @@
     "date": "2024-10-16T04:09:43",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -244057,7 +244057,7 @@
     "date": "2024-10-17T04:15:17",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -244066,7 +244066,7 @@
     "date": "2024-10-18T04:13:14",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -244075,7 +244075,7 @@
     "date": "2024-10-19T04:16:56",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -244084,7 +244084,7 @@
     "date": "2024-10-22T04:10:45",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -244093,7 +244093,7 @@
     "date": "2024-10-23T04:08:33",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -244102,7 +244102,7 @@
     "date": "2024-10-24T05:17:14",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -244120,7 +244120,7 @@
     "date": "2024-10-25T05:20:39",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -244372,7 +244372,7 @@
     "date": "2024-10-26T05:26:13",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -245389,7 +245389,7 @@
     "date": "2024-10-30T05:16:42",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -246394,7 +246394,7 @@
     "date": "2024-10-31T04:11:42",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -246781,7 +246781,7 @@
     "date": "2024-11-01T05:44:46",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -248254,7 +248254,7 @@
     "date": "2024-11-02T06:12:01",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -250939,7 +250939,7 @@
     "date": "2024-11-05T05:03:49",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -252631,7 +252631,7 @@
     "date": "2024-11-06T05:09:51",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -253759,7 +253759,7 @@
     "date": "2024-11-07T05:19:54",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -254335,7 +254335,7 @@
     "date": "2024-11-08T05:17:33",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -255064,7 +255064,7 @@
     "date": "2024-11-09T05:31:10",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -256978,7 +256978,7 @@
     "date": "2024-11-12T05:16:03",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -258304,7 +258304,7 @@
     "date": "2024-11-13T05:09:42",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -259021,7 +259021,7 @@
     "date": "2024-11-14T05:15:23",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -259306,7 +259306,7 @@
     "date": "2024-11-15T05:42:50",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -262255,7 +262255,7 @@
     "date": "2024-11-19T05:29:06",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -263206,7 +263206,7 @@
     "date": "2024-11-20T05:10:39",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -263935,7 +263935,7 @@
     "date": "2024-11-22T05:32:03",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -264862,7 +264862,7 @@
     "date": "2024-11-23T05:48:08",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -267733,7 +267733,7 @@
     "date": "2024-11-26T05:27:14",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -269125,7 +269125,7 @@
     "date": "2024-11-27T05:23:14",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -270751,7 +270751,7 @@
     "date": "2024-11-28T05:34:50",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -271321,7 +271321,7 @@
     "date": "2024-11-29T05:35:17",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -271969,7 +271969,7 @@
     "date": "2024-11-30T05:30:25",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -273310,7 +273310,7 @@
     "date": "2024-12-02T03:35:04",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -273967,7 +273967,7 @@
     "date": "2024-12-03T05:36:20",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -275251,7 +275251,7 @@
     "date": "2024-12-04T05:19:50",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -275860,7 +275860,7 @@
     "date": "2024-12-05T05:31:31",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -276418,7 +276418,7 @@
     "date": "2024-12-06T05:35:47",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -276994,7 +276994,7 @@
     "date": "2024-12-07T05:39:55",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -281131,7 +281131,7 @@
     "date": "2024-12-10T05:16:28",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -283492,7 +283492,7 @@
     "date": "2024-12-11T05:23:28",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -284611,7 +284611,7 @@
     "date": "2024-12-12T05:14:52",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -287005,7 +287005,7 @@
     "date": "2024-12-13T05:13:49",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -287458,7 +287458,7 @@
     "date": "2024-12-14T05:07:46",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -288325,7 +288325,7 @@
     "date": "2024-12-17T04:52:11",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -288664,7 +288664,7 @@
     "date": "2024-12-18T04:37:31",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -288871,7 +288871,7 @@
     "date": "2024-12-19T04:53:58",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -289072,7 +289072,7 @@
     "date": "2024-12-20T05:16:55",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -289180,7 +289180,7 @@
     "date": "2024-12-21T04:47:35",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -289756,7 +289756,7 @@
     "date": "2024-12-24T04:33:51",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -290023,7 +290023,7 @@
     "date": "2024-12-25T03:56:31",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -290749,7 +290749,7 @@
     "date": "2024-12-27T03:48:21",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -290806,7 +290806,7 @@
     "date": "2024-12-28T04:31:24",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -292042,7 +292042,7 @@
     "date": "2024-12-31T04:29:29",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -292210,7 +292210,7 @@
     "date": "2025-01-01T04:04:44",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -292255,7 +292255,7 @@
     "date": "2025-01-02T03:19:14",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -292417,7 +292417,7 @@
     "date": "2025-01-03T03:52:52",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -292489,7 +292489,7 @@
     "date": "2025-01-04T03:54:37",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -293500,7 +293500,7 @@
     "date": "2025-01-07T03:52:04",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -294139,7 +294139,7 @@
     "date": "2025-01-08T04:00:55",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -295384,7 +295384,7 @@
     "date": "2025-01-09T04:20:47",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -295735,7 +295735,7 @@
     "date": "2025-01-10T04:17:28",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -296587,7 +296587,7 @@
     "date": "2025-01-11T04:18:11",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -298513,7 +298513,7 @@
     "date": "2025-01-14T04:20:26",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -300307,7 +300307,7 @@
     "date": "2025-01-15T04:17:29",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -300922,7 +300922,7 @@
     "date": "2025-01-16T04:41:42",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -301345,7 +301345,7 @@
     "date": "2025-01-17T05:06:26",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -302530,7 +302530,7 @@
     "date": "2025-01-18T05:11:00",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -307336,7 +307336,7 @@
     "date": "2025-01-21T04:37:16",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -308542,7 +308542,7 @@
     "date": "2025-01-22T04:47:31",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -311536,7 +311536,7 @@
     "date": "2025-01-23T04:46:35",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -312850,7 +312850,7 @@
     "date": "2025-01-24T05:03:46",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -320242,7 +320242,7 @@
     "date": "2025-01-28T03:30:33",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -321673,7 +321673,7 @@
     "date": "2025-01-29T03:32:27",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -357763,7 +357763,7 @@
     "date": "2025-04-23T04:41:46",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -358825,7 +358825,7 @@
     "date": "2025-04-24T03:47:30",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -359158,7 +359158,7 @@
     "date": "2025-04-25T03:46:08",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -359698,7 +359698,7 @@
     "date": "2025-04-26T03:47:57",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -361327,7 +361327,7 @@
     "date": "2025-04-29T03:52:00",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -361849,7 +361849,7 @@
     "date": "2025-04-30T03:47:30",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -362371,7 +362371,7 @@
     "date": "2025-05-01T03:58:02",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -365758,7 +365758,7 @@
     "date": "2025-05-02T03:38:36",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -371935,7 +371935,7 @@
     "date": "2025-05-07T03:56:28",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -373099,7 +373099,7 @@
     "date": "2025-05-08T03:58:20",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -374647,7 +374647,7 @@
     "date": "2025-05-09T03:51:16",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -375130,7 +375130,7 @@
     "date": "2025-05-10T03:48:37",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -376075,7 +376075,7 @@
     "date": "2025-05-13T03:53:01",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -376609,7 +376609,7 @@
     "date": "2025-05-14T03:50:31",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -378211,7 +378211,7 @@
     "date": "2025-05-15T03:52:23",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -379030,7 +379030,7 @@
     "date": "2025-05-16T03:58:43",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -379492,7 +379492,7 @@
     "date": "2025-05-17T03:54:44",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -381463,7 +381463,7 @@
     "date": "2025-05-20T03:53:56",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -381919,7 +381919,7 @@
     "date": "2025-05-21T03:54:52",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -383812,7 +383812,7 @@
     "date": "2025-05-22T03:58:20",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -385264,7 +385264,7 @@
     "date": "2025-05-23T03:55:16",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -387184,7 +387184,7 @@
     "date": "2025-05-24T03:49:19",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -393754,7 +393754,7 @@
     "date": "2025-05-27T03:52:08",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -396025,7 +396025,7 @@
     "date": "2025-05-28T03:55:49",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -397726,7 +397726,7 @@
     "date": "2025-05-29T03:56:22",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -398734,7 +398734,7 @@
     "date": "2025-05-30T03:55:17",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -400063,7 +400063,7 @@
     "date": "2025-05-31T03:55:32",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -402880,7 +402880,7 @@
     "date": "2025-06-02T03:50:17",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -404587,7 +404587,7 @@
     "date": "2025-06-03T03:56:48",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -405364,7 +405364,7 @@
     "date": "2025-06-04T03:56:41",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -406915,7 +406915,7 @@
     "date": "2025-06-05T03:57:46",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -408421,7 +408421,7 @@
     "date": "2025-06-06T03:55:59",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -413305,7 +413305,7 @@
     "date": "2025-06-11T03:57:45",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -414229,7 +414229,7 @@
     "date": "2025-06-12T04:03:14",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -414520,7 +414520,7 @@
     "date": "2025-06-13T04:01:53",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -415606,7 +415606,7 @@
     "date": "2025-06-14T03:56:23",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -417355,7 +417355,7 @@
     "date": "2025-06-17T04:00:00",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -418339,7 +418339,7 @@
     "date": "2025-06-18T03:57:14",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -419728,7 +419728,7 @@
     "date": "2025-06-19T04:01:53",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -423871,7 +423871,7 @@
     "date": "2025-06-24T04:00:45",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -425101,7 +425101,7 @@
     "date": "2025-06-25T03:59:29",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -426799,7 +426799,7 @@
     "date": "2025-06-26T03:57:15",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -427690,7 +427690,7 @@
     "date": "2025-06-27T04:01:30",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -428989,7 +428989,7 @@
     "date": "2025-06-28T03:56:03",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -432268,7 +432268,7 @@
     "date": "2025-07-01T04:10:17",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -433057,7 +433057,7 @@
     "date": "2025-07-02T03:59:53",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -434338,7 +434338,7 @@
     "date": "2025-07-03T04:04:33",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -434740,7 +434740,7 @@
     "date": "2025-07-04T04:00:30",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -436441,7 +436441,7 @@
     "date": "2025-07-05T03:58:45",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -440995,7 +440995,7 @@
     "date": "2025-07-08T04:02:22",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -446299,7 +446299,7 @@
     "date": "2025-07-09T04:05:17",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -450598,7 +450598,7 @@
     "date": "2025-07-10T04:02:42",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -452257,7 +452257,7 @@
     "date": "2025-07-11T04:13:35",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -453133,7 +453133,7 @@
     "date": "2025-07-12T04:10:29",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -453469,7 +453469,7 @@
     "date": "2025-07-15T04:15:17",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -453553,7 +453553,7 @@
     "date": "2025-07-16T04:09:31",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -453607,7 +453607,7 @@
     "date": "2025-07-17T04:13:02",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -453787,7 +453787,7 @@
     "date": "2025-07-18T04:09:30",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -453823,7 +453823,7 @@
     "date": "2025-07-19T04:09:33",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -453868,7 +453868,7 @@
     "date": "2025-07-22T04:10:24",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -453916,7 +453916,7 @@
     "date": "2025-07-23T04:15:04",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -453988,7 +453988,7 @@
     "date": "2025-07-24T04:12:53",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -454015,7 +454015,7 @@
     "date": "2025-07-25T04:13:23",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -454060,7 +454060,7 @@
     "date": "2025-07-26T04:11:59",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -454153,7 +454153,7 @@
     "date": "2025-07-29T04:19:05",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -454189,7 +454189,7 @@
     "date": "2025-07-30T04:16:09",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -454243,7 +454243,7 @@
     "date": "2025-07-31T04:16:26",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -454324,7 +454324,7 @@
     "date": "2025-08-01T04:24:33",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -454396,7 +454396,7 @@
     "date": "2025-08-02T04:11:52",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -454432,7 +454432,7 @@
     "date": "2025-08-05T04:21:27",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -454477,7 +454477,7 @@
     "date": "2025-08-06T04:18:07",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -454531,7 +454531,7 @@
     "date": "2025-08-07T04:18:25",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -454567,7 +454567,7 @@
     "date": "2025-08-08T04:20:33",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -454603,7 +454603,7 @@
     "date": "2025-08-09T04:08:45",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -454663,7 +454663,7 @@
     "date": "2025-08-12T03:58:33",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -454690,7 +454690,7 @@
     "date": "2025-08-13T04:00:43",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -454726,7 +454726,7 @@
     "date": "2025-08-14T04:07:52",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -454744,7 +454744,7 @@
     "date": "2025-08-15T04:05:14",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -454762,7 +454762,7 @@
     "date": "2025-08-16T04:00:04",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -454780,7 +454780,7 @@
     "date": "2025-08-19T03:49:55",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -454798,7 +454798,7 @@
     "date": "2025-08-20T03:53:08",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -454879,7 +454879,7 @@
     "date": "2025-08-21T03:58:06",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -454918,7 +454918,7 @@
     "date": "2025-08-22T03:52:46",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -455065,7 +455065,7 @@
     "date": "2025-08-23T03:54:27",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -456796,7 +456796,7 @@
     "date": "2025-08-26T03:56:34",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -457828,7 +457828,7 @@
     "date": "2025-08-27T03:44:47",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -458494,7 +458494,7 @@
     "date": "2025-08-28T03:53:10",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -459274,7 +459274,7 @@
     "date": "2025-08-29T03:45:50",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -460159,7 +460159,7 @@
     "date": "2025-08-30T03:44:16",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -463297,7 +463297,7 @@
     "date": "2025-09-02T03:48:13",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -464422,7 +464422,7 @@
     "date": "2025-09-03T03:38:49",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -466468,7 +466468,7 @@
     "date": "2025-09-04T03:37:54",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -467272,7 +467272,7 @@
     "date": "2025-09-05T03:43:16",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -468652,7 +468652,7 @@
     "date": "2025-09-06T03:38:53",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -472861,7 +472861,7 @@
     "date": "2025-09-09T03:43:34",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -473950,7 +473950,7 @@
     "date": "2025-09-10T03:37:50",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -475552,7 +475552,7 @@
     "date": "2025-09-11T03:41:46",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -476863,7 +476863,7 @@
     "date": "2025-09-12T03:50:38",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -478174,7 +478174,7 @@
     "date": "2025-09-13T03:36:31",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -557804,9 +557804,9 @@
     "type": "commit",
     "repo": "2025-2-Squad-01",
     "user": "github-actions[bot]",
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0
+    "additions": 404571,
+    "deletions": 2872470,
+    "total_changes": 3277041
   },
   {
     "date": "2025-11-10T14:03:16",
@@ -562763,18 +562763,18 @@
     "type": "commit",
     "repo": "2025-2-Squad-01",
     "user": "github-actions[bot]",
-    "additions": 43041,
-    "deletions": 5444,
-    "total_changes": 48485
+    "additions": 43651,
+    "deletions": 12283,
+    "total_changes": 55934
   },
   {
     "date": "2025-11-13T20:07:17",
     "type": "commit",
     "repo": "2025-2-Squad-01",
     "user": "github-actions[bot]",
-    "additions": 43651,
-    "deletions": 12283,
-    "total_changes": 55934
+    "additions": 43041,
+    "deletions": 5444,
+    "total_changes": 48485
   },
   {
     "date": "2025-11-13T20:07:17",
@@ -644330,9 +644330,9 @@
     "type": "commit",
     "repo": "2025-2-Squad-01",
     "user": "github-actions[bot]",
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0
+    "additions": 510536,
+    "deletions": 428396,
+    "total_changes": 938932
   },
   {
     "date": "2026-04-30T08:10:45",
@@ -797551,10 +797551,37 @@
     "user": "gsm22"
   },
   {
+    "date": "2026-09-11T18:00:07",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 191,
+    "deletions": 5,
+    "total_changes": 196
+  },
+  {
+    "date": "2026-09-11T18:00:37",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0
+  },
+  {
     "date": "2026-09-11T18:01:08",
     "type": "pr_created",
     "repo": "2026-02-UnDb",
     "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-11T18:04:30",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 191,
+    "deletions": 5,
+    "total_changes": 196
   },
   {
     "date": "2026-09-11T18:04:30",
@@ -798553,6 +798580,15 @@
     "total_changes": 4772
   },
   {
+    "date": "2026-09-13T13:51:23",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo",
+    "additions": 395,
+    "deletions": 0,
+    "total_changes": 395
+  },
+  {
     "date": "2026-09-13T14:06:13",
     "type": "issue_created",
     "repo": "2026-2-Bandejao-UnB",
@@ -798583,6 +798619,15 @@
     "user": "paulinpj"
   },
   {
+    "date": "2026-09-13T15:24:39",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo",
+    "additions": 140,
+    "deletions": 25,
+    "total_changes": 165
+  },
+  {
     "date": "2026-09-13T15:27:56",
     "type": "pr_created",
     "repo": "2026-02-UnDb",
@@ -798593,6 +798638,15 @@
     "type": "event_project_v2_item_status_changed",
     "repo": "2026-02-UnDb",
     "user": "github-project-automation[bot]"
+  },
+  {
+    "date": "2026-09-13T16:01:26",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo",
+    "additions": 585,
+    "deletions": 0,
+    "total_changes": 585
   },
   {
     "date": "2026-09-13T16:06:53",
@@ -798637,10 +798691,37 @@
     "user": "nicolaszanin06"
   },
   {
+    "date": "2026-09-13T17:01:39",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 191,
+    "deletions": 5,
+    "total_changes": 196
+  },
+  {
+    "date": "2026-09-13T17:01:39",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 24,
+    "deletions": 31,
+    "total_changes": 55
+  },
+  {
     "date": "2026-09-13T17:05:07",
     "type": "event_review_requested",
     "repo": "2026-02-UnDb",
     "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-13T17:09:35",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 503,
+    "deletions": 0,
+    "total_changes": 503
   },
   {
     "date": "2026-09-13T17:09:36",
@@ -798683,6 +798764,33 @@
     "type": "event_base_ref_changed",
     "repo": "2026-02-UnDb",
     "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-13T17:17:55",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 694,
+    "deletions": 5,
+    "total_changes": 699
+  },
+  {
+    "date": "2026-09-13T17:17:55",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4
+  },
+  {
+    "date": "2026-09-13T17:19:44",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 585,
+    "deletions": 0,
+    "total_changes": 585
   },
   {
     "date": "2026-09-13T17:19:45",
@@ -798737,6 +798845,24 @@
     "type": "pr_created",
     "repo": "2026-2-Bandejao-UnB",
     "user": "AlvaroBento12"
+  },
+  {
+    "date": "2026-09-13T19:09:29",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "unknown",
+    "additions": 384,
+    "deletions": 0,
+    "total_changes": 384
+  },
+  {
+    "date": "2026-09-13T19:24:51",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "unknown",
+    "additions": 36,
+    "deletions": 4,
+    "total_changes": 40
   },
   {
     "date": "2026-09-13T19:28:47",
@@ -798887,6 +799013,24 @@
     "type": "event_project_v2_item_status_changed",
     "repo": "2026-02-UnDb",
     "user": "github-project-automation[bot]"
+  },
+  {
+    "date": "2026-09-13T20:53:04",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 5,
+    "deletions": 5,
+    "total_changes": 10
+  },
+  {
+    "date": "2026-09-13T20:54:12",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 416,
+    "deletions": 0,
+    "total_changes": 416
   },
   {
     "date": "2026-09-13T20:54:13",
@@ -799339,6 +799483,15 @@
     "user": "github-project-automation[bot]"
   },
   {
+    "date": "2026-09-13T22:31:28",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "ViniGvdo",
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2
+  },
+  {
     "date": "2026-09-13T22:32:25",
     "type": "commit",
     "repo": "G2-2026-2",
@@ -799346,6 +799499,15 @@
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
+  },
+  {
+    "date": "2026-09-13T22:37:33",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "ViniGvdo",
+    "additions": 13,
+    "deletions": 6,
+    "total_changes": 19
   },
   {
     "date": "2026-09-13T22:39:28",
@@ -799483,6 +799645,15 @@
     "user": "github-project-automation[bot]"
   },
   {
+    "date": "2026-09-13T23:46:34",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 7,
+    "deletions": 4,
+    "total_changes": 11
+  },
+  {
     "date": "2026-09-13T23:47:23",
     "type": "pr_closed",
     "repo": "2026-2-Cerradinho-API",
@@ -799532,6 +799703,15 @@
     "type": "event_closed",
     "repo": "2026-2-Bandejao",
     "user": "Gabrieldualp"
+  },
+  {
+    "date": "2026-09-14T00:50:28",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 19,
+    "deletions": 9,
+    "total_changes": 28
   },
   {
     "date": "2026-09-14T00:50:29",
@@ -800269,6 +800449,15 @@
     "user": "nicolaszanin06"
   },
   {
+    "date": "2026-09-14T02:08:26",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 120,
+    "deletions": 44,
+    "total_changes": 164
+  },
+  {
     "date": "2026-09-14T02:08:38",
     "type": "event_project_v2_item_status_changed",
     "repo": "2026-02-UnDb",
@@ -800660,6 +800849,15 @@
     "additions": 7,
     "deletions": 6,
     "total_changes": 13
+  },
+  {
+    "date": "2026-09-14T13:17:05",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo",
+    "additions": 120,
+    "deletions": 44,
+    "total_changes": 164
   },
   {
     "date": "2026-09-14T13:17:06",
@@ -801239,12 +801437,6 @@
   },
   {
     "date": "2026-09-14T21:22:03",
-    "type": "pr_closed",
-    "repo": "2025-1-NoFluxoUNB",
-    "user": "Vitor-Trancoso"
-  },
-  {
-    "date": "2026-09-14T21:22:03",
     "type": "event_head_ref_deleted",
     "repo": "2025-1-NoFluxoUNB",
     "user": "Vitor-Trancoso"
@@ -801269,6 +801461,15 @@
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
+  },
+  {
+    "date": "2026-09-14T22:23:26",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros",
+    "additions": 175,
+    "deletions": 0,
+    "total_changes": 175
   },
   {
     "date": "2026-09-14T22:29:29",
@@ -801329,6 +801530,15 @@
     "additions": 90,
     "deletions": 0,
     "total_changes": 90
+  },
+  {
+    "date": "2026-09-14T22:47:29",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros",
+    "additions": 184,
+    "deletions": 0,
+    "total_changes": 184
   },
   {
     "date": "2026-09-14T22:48:26",
@@ -801694,6 +801904,33 @@
     "user": "nicolaszanin06"
   },
   {
+    "date": "2026-09-15T01:03:00",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4
+  },
+  {
+    "date": "2026-09-15T01:03:09",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 11,
+    "deletions": 18,
+    "total_changes": 29
+  },
+  {
+    "date": "2026-09-15T01:04:31",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 175,
+    "deletions": 0,
+    "total_changes": 175
+  },
+  {
     "date": "2026-09-15T01:04:31",
     "type": "event_closed",
     "repo": "2026-02-UnDb",
@@ -801718,10 +801955,28 @@
     "user": "warlleymedeiros"
   },
   {
+    "date": "2026-09-15T01:06:49",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0
+  },
+  {
     "date": "2026-09-15T01:07:01",
     "type": "event_review_requested",
     "repo": "2026-02-UnDb",
     "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-15T01:08:02",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 181,
+    "deletions": 4,
+    "total_changes": 185
   },
   {
     "date": "2026-09-15T01:08:03",
@@ -801788,6 +802043,15 @@
     "type": "event_project_v2_item_status_changed",
     "repo": "2026-2-Cerradinho-API",
     "user": "github-project-automation[bot]"
+  },
+  {
+    "date": "2026-09-15T01:19:04",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 155,
+    "deletions": 0,
+    "total_changes": 155
   },
   {
     "date": "2026-09-15T01:19:33",
@@ -802861,6 +803125,24 @@
     "user": "Gustavo-0611"
   },
   {
+    "date": "2026-09-15T13:59:45",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo",
+    "additions": 4,
+    "deletions": 4,
+    "total_changes": 8
+  },
+  {
+    "date": "2026-09-15T14:05:26",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo",
+    "additions": 155,
+    "deletions": 0,
+    "total_changes": 155
+  },
+  {
     "date": "2026-09-15T14:05:26",
     "type": "event_closed",
     "repo": "2026-02-UnDb",
@@ -802883,6 +803165,15 @@
     "type": "event_head_ref_deleted",
     "repo": "2026-02-UnDb",
     "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-15T14:37:08",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros",
+    "additions": 102,
+    "deletions": 0,
+    "total_changes": 102
   },
   {
     "date": "2026-09-15T14:38:02",
@@ -802958,6 +803249,15 @@
     "type": "event_head_ref_deleted",
     "repo": "2026-02-UnDb",
     "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-15T15:26:44",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros",
+    "additions": 188,
+    "deletions": 0,
+    "total_changes": 188
   },
   {
     "date": "2026-09-15T17:00:16",
@@ -803084,6 +803384,15 @@
     "type": "event_assigned",
     "repo": "2026.2-UnB_Core",
     "user": "Joao-vithor-1"
+  },
+  {
+    "date": "2026-09-15T22:54:35",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 210,
+    "deletions": 11,
+    "total_changes": 221
   },
   {
     "date": "2026-09-15T22:55:18",
@@ -803213,6 +803522,15 @@
     "additions": 10,
     "deletions": 0,
     "total_changes": 10
+  },
+  {
+    "date": "2026-09-16T00:44:20",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo",
+    "additions": 210,
+    "deletions": 11,
+    "total_changes": 221
   },
   {
     "date": "2026-09-16T00:44:20",
@@ -803884,6 +804202,15 @@
     "total_changes": 0
   },
   {
+    "date": "2026-09-16T15:21:00",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo",
+    "additions": 158,
+    "deletions": 2,
+    "total_changes": 160
+  },
+  {
     "date": "2026-09-16T15:23:56",
     "type": "commit",
     "repo": "2026-2-GlossarioUnB",
@@ -803992,6 +804319,15 @@
     "total_changes": 12
   },
   {
+    "date": "2026-09-16T15:33:07",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 158,
+    "deletions": 2,
+    "total_changes": 160
+  },
+  {
     "date": "2026-09-16T15:33:08",
     "type": "event_closed",
     "repo": "2026-02-UnDb",
@@ -804034,6 +804370,15 @@
     "total_changes": 5
   },
   {
+    "date": "2026-09-16T16:01:37",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo",
+    "additions": 11,
+    "deletions": 11,
+    "total_changes": 22
+  },
+  {
     "date": "2026-09-16T16:05:53",
     "type": "issue_created",
     "repo": "2026-02-UnDb",
@@ -804062,6 +804407,15 @@
     "type": "event_review_requested",
     "repo": "2026-02-UnDb",
     "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-16T16:10:30",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 11,
+    "deletions": 11,
+    "total_changes": 22
   },
   {
     "date": "2026-09-16T16:10:31",
@@ -804346,6 +804700,15 @@
     "total_changes": 2
   },
   {
+    "date": "2026-09-16T16:40:48",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo",
+    "additions": 285,
+    "deletions": 1,
+    "total_changes": 286
+  },
+  {
     "date": "2026-09-16T16:44:37",
     "type": "issue_created",
     "repo": "2026-02-UnDb",
@@ -804383,6 +804746,15 @@
     "type": "event_review_requested",
     "repo": "2026-02-UnDb",
     "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-16T16:46:37",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 285,
+    "deletions": 1,
+    "total_changes": 286
   },
   {
     "date": "2026-09-16T16:46:38",
@@ -804583,6 +804955,33 @@
     "user": "warlleymedeiros"
   },
   {
+    "date": "2026-09-16T23:38:38",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1
+  },
+  {
+    "date": "2026-09-16T23:40:27",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 829,
+    "deletions": 42,
+    "total_changes": 871
+  },
+  {
+    "date": "2026-09-16T23:45:37",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 101,
+    "deletions": 0,
+    "total_changes": 101
+  },
+  {
     "date": "2026-09-16T23:45:38",
     "type": "pr_closed",
     "repo": "2026-02-UnDb",
@@ -804611,6 +805010,15 @@
     "type": "event_assigned",
     "repo": "2026-02-UnDb",
     "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-17T00:20:48",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 829,
+    "deletions": 43,
+    "total_changes": 872
   },
   {
     "date": "2026-09-17T00:27:18",
@@ -804662,6 +805070,15 @@
   },
   {
     "date": "2026-09-17T00:28:45",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 188,
+    "deletions": 0,
+    "total_changes": 188
+  },
+  {
+    "date": "2026-09-17T00:28:45",
     "type": "event_closed",
     "repo": "2026-02-UnDb",
     "user": "nicolaszanin06"
@@ -804697,16 +805114,61 @@
     "user": "eliabexp"
   },
   {
+    "date": "2026-09-17T00:34:19",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "unknown",
+    "additions": 60,
+    "deletions": 0,
+    "total_changes": 60
+  },
+  {
     "date": "2026-09-17T00:40:50",
     "type": "pr_created",
     "repo": "2026-02-UnDb",
     "user": "ailoiol"
   },
   {
+    "date": "2026-09-17T00:47:05",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "unknown",
+    "additions": 58,
+    "deletions": 0,
+    "total_changes": 58
+  },
+  {
     "date": "2026-09-17T00:54:59",
     "type": "event_base_ref_changed",
     "repo": "2026-02-UnDb",
     "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-17T00:55:12",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 3279,
+    "deletions": 68,
+    "total_changes": 3347
+  },
+  {
+    "date": "2026-09-17T00:59:35",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 158,
+    "deletions": 31,
+    "total_changes": 189
+  },
+  {
+    "date": "2026-09-17T01:02:27",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 245,
+    "deletions": 0,
+    "total_changes": 245
   },
   {
     "date": "2026-09-17T01:02:28",
@@ -804725,6 +805187,15 @@
     "type": "event_merged",
     "repo": "2026-02-UnDb",
     "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-17T01:16:35",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 599,
+    "deletions": 2,
+    "total_changes": 601
   },
   {
     "date": "2026-09-17T01:17:14",
@@ -804782,6 +805253,1230 @@
   },
   {
     "date": "2026-09-17T08:03:13",
+    "type": "commit",
+    "repo": "2026-1-Mapa_L.I.L.A.S",
+    "user": "github-actions[bot]",
+    "additions": 12,
+    "deletions": 1,
+    "total_changes": 13
+  },
+  {
+    "date": "2026-09-17T12:53:19",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "Fique-de-Olho",
+    "user": "Thur-sylva"
+  },
+  {
+    "date": "2026-09-17T12:53:36",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "Fique-de-Olho",
+    "user": "Thur-sylva"
+  },
+  {
+    "date": "2026-09-17T12:53:45",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "Fique-de-Olho",
+    "user": "Thur-sylva"
+  },
+  {
+    "date": "2026-09-17T12:53:57",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "Fique-de-Olho",
+    "user": "Thur-sylva"
+  },
+  {
+    "date": "2026-09-17T12:54:17",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "Fique-de-Olho",
+    "user": "Thur-sylva"
+  },
+  {
+    "date": "2026-09-17T12:54:18",
+    "type": "issue_closed",
+    "repo": "Fique-de-Olho",
+    "user": "Thur-sylva"
+  },
+  {
+    "date": "2026-09-17T12:54:18",
+    "type": "event_closed",
+    "repo": "Fique-de-Olho",
+    "user": "Thur-sylva"
+  },
+  {
+    "date": "2026-09-17T13:31:57",
+    "type": "commit",
+    "repo": "2026-2-Bandejao",
+    "user": "pithzin",
+    "additions": 33,
+    "deletions": 25,
+    "total_changes": 58
+  },
+  {
+    "date": "2026-09-17T13:34:04",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo",
+    "additions": 599,
+    "deletions": 2,
+    "total_changes": 601
+  },
+  {
+    "date": "2026-09-17T13:34:05",
+    "type": "event_closed",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-17T13:34:05",
+    "type": "event_merged",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-17T13:34:13",
+    "type": "pr_closed",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-17T13:34:13",
+    "type": "event_head_ref_deleted",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-17T13:51:30",
+    "type": "pr_created",
+    "repo": "2026-2-Followw",
+    "user": "Mendezalv"
+  },
+  {
+    "date": "2026-09-17T13:52:58",
+    "type": "event_renamed",
+    "repo": "2026-2-Followw",
+    "user": "Mendezalv"
+  },
+  {
+    "date": "2026-09-17T13:59:26",
+    "type": "event_assigned",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp"
+  },
+  {
+    "date": "2026-09-17T14:34:24",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo",
+    "additions": 698,
+    "deletions": 16,
+    "total_changes": 714
+  },
+  {
+    "date": "2026-09-17T14:35:41",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo",
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1
+  },
+  {
+    "date": "2026-09-17T14:41:02",
+    "type": "pr_created",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-17T14:41:13",
+    "type": "event_review_requested",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-17T16:35:16",
+    "type": "event_base_ref_changed",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-17T16:58:21",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 53,
+    "deletions": 4,
+    "total_changes": 57
+  },
+  {
+    "date": "2026-09-17T17:01:06",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06",
+    "additions": 749,
+    "deletions": 19,
+    "total_changes": 768
+  },
+  {
+    "date": "2026-09-17T17:01:06",
+    "type": "event_merged",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-17T17:01:07",
+    "type": "pr_closed",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-17T17:01:07",
+    "type": "event_closed",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-17T17:04:19",
+    "type": "pr_created",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-17T17:06:13",
+    "type": "event_review_requested",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-17T17:40:23",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "2026-02-UnDb",
+    "user": "github-project-automation[bot]"
+  },
+  {
+    "date": "2026-09-17T17:40:23",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "2026-02-UnDb",
+    "user": "github-project-automation[bot]"
+  },
+  {
+    "date": "2026-09-17T17:40:24",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "2026-02-UnDb",
+    "user": "github-project-automation[bot]"
+  },
+  {
+    "date": "2026-09-17T17:40:24",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "2026-02-UnDb",
+    "user": "github-project-automation[bot]"
+  },
+  {
+    "date": "2026-09-17T17:40:25",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "2026-02-UnDb",
+    "user": "github-project-automation[bot]"
+  },
+  {
+    "date": "2026-09-17T18:08:51",
+    "type": "commit",
+    "repo": "2023-2-Squad04",
+    "user": "unknown",
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4
+  },
+  {
+    "date": "2026-09-17T20:01:32",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo",
+    "additions": 57,
+    "deletions": 1,
+    "total_changes": 58
+  },
+  {
+    "date": "2026-09-17T20:07:30",
+    "type": "commit",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo",
+    "additions": 4909,
+    "deletions": 70,
+    "total_changes": 4979
+  },
+  {
+    "date": "2026-09-17T20:07:31",
+    "type": "pr_closed",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-17T20:07:31",
+    "type": "event_closed",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-17T20:07:31",
+    "type": "event_merged",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-17T20:07:32",
+    "type": "issue_closed",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-17T20:07:32",
+    "type": "issue_closed",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-17T20:07:32",
+    "type": "event_closed",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-17T20:07:33",
+    "type": "issue_closed",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-17T20:07:33",
+    "type": "issue_closed",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-17T20:07:33",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "2026-02-UnDb",
+    "user": "github-project-automation[bot]"
+  },
+  {
+    "date": "2026-09-17T20:07:33",
+    "type": "event_closed",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-17T20:07:33",
+    "type": "event_closed",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-17T20:07:34",
+    "type": "event_closed",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-17T20:07:35",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "2026-02-UnDb",
+    "user": "github-project-automation[bot]"
+  },
+  {
+    "date": "2026-09-17T20:07:35",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "2026-02-UnDb",
+    "user": "github-project-automation[bot]"
+  },
+  {
+    "date": "2026-09-17T20:07:35",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "2026-02-UnDb",
+    "user": "github-project-automation[bot]"
+  },
+  {
+    "date": "2026-09-17T20:14:38",
+    "type": "event_assigned",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-17T20:14:45",
+    "type": "event_assigned",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-17T20:15:01",
+    "type": "event_assigned",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-17T20:15:03",
+    "type": "event_assigned",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-17T20:15:46",
+    "type": "event_assigned",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-17T20:15:59",
+    "type": "event_assigned",
+    "repo": "2026-02-UnDb",
+    "user": "ViniGvdo"
+  },
+  {
+    "date": "2026-09-17T20:16:05",
+    "type": "event_assigned",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-17T20:16:14",
+    "type": "event_assigned",
+    "repo": "2026-02-UnDb",
+    "user": "ViniGvdo"
+  },
+  {
+    "date": "2026-09-17T20:16:29",
+    "type": "event_assigned",
+    "repo": "2026-02-UnDb",
+    "user": "TiagoVieira-596"
+  },
+  {
+    "date": "2026-09-17T20:17:05",
+    "type": "event_assigned",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-17T20:24:53",
+    "type": "issue_created",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-17T20:24:55",
+    "type": "event_added_to_project_v2",
+    "repo": "2026-02-UnDb",
+    "user": "github-project-automation[bot]"
+  },
+  {
+    "date": "2026-09-17T20:24:57",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "2026-02-UnDb",
+    "user": "github-project-automation[bot]"
+  },
+  {
+    "date": "2026-09-17T20:24:58",
+    "type": "event_assigned",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-17T20:28:59",
+    "type": "pr_created",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-17T20:29:00",
+    "type": "event_review_requested",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-17T20:34:08",
+    "type": "event_closed",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-17T20:34:09",
+    "type": "pr_closed",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-17T20:34:09",
+    "type": "event_head_ref_deleted",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-17T20:40:40",
+    "type": "pr_created",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-17T20:41:25",
+    "type": "event_review_requested",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-17T20:42:24",
+    "type": "event_closed",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-17T20:42:24",
+    "type": "event_merged",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-17T20:42:34",
+    "type": "event_head_ref_deleted",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-17T20:42:44",
+    "type": "pr_closed",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-17T20:42:44",
+    "type": "event_review_requested",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-17T21:11:35",
+    "type": "pr_created",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-17T21:12:02",
+    "type": "event_convert_to_draft",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-17T21:16:36",
+    "type": "commit",
+    "repo": "Fique-de-Olho",
+    "user": "Isac-sil-mar",
+    "additions": 1,
+    "deletions": 2,
+    "total_changes": 3
+  },
+  {
+    "date": "2026-09-17T21:51:24",
+    "type": "event_review_requested",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-17T21:56:22",
+    "type": "issue_closed",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-17T21:56:22",
+    "type": "event_closed",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-17T21:56:25",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "2026-02-UnDb",
+    "user": "github-project-automation[bot]"
+  },
+  {
+    "date": "2026-09-17T21:56:31",
+    "type": "issue_closed",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-17T21:56:31",
+    "type": "event_closed",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-17T21:56:32",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "2026-02-UnDb",
+    "user": "github-project-automation[bot]"
+  },
+  {
+    "date": "2026-09-17T22:04:06",
+    "type": "event_ready_for_review",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-17T22:04:11",
+    "type": "event_closed",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-17T22:04:11",
+    "type": "event_merged",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-17T22:04:12",
+    "type": "event_referenced",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-17T22:04:53",
+    "type": "event_head_ref_deleted",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-17T22:09:18",
+    "type": "pr_closed",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-17T22:10:50",
+    "type": "issue_closed",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-17T22:10:50",
+    "type": "event_closed",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-17T22:10:52",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "2026-02-UnDb",
+    "user": "github-project-automation[bot]"
+  },
+  {
+    "date": "2026-09-17T22:16:48",
+    "type": "event_assigned",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-17T22:42:19",
+    "type": "pr_created",
+    "repo": "2026-2-Cerradinho-API",
+    "user": "daniel-mouraa"
+  },
+  {
+    "date": "2026-09-17T22:48:39",
+    "type": "pr_closed",
+    "repo": "2026-2-Cerradinho-API",
+    "user": "daniel-mouraa"
+  },
+  {
+    "date": "2026-09-17T22:48:39",
+    "type": "event_closed",
+    "repo": "2026-2-Cerradinho-API",
+    "user": "daniel-mouraa"
+  },
+  {
+    "date": "2026-09-17T22:48:39",
+    "type": "event_merged",
+    "repo": "2026-2-Cerradinho-API",
+    "user": "daniel-mouraa"
+  },
+  {
+    "date": "2026-09-18T00:00:01",
+    "type": "event_closed",
+    "repo": "2026-02-TambureteiUnB",
+    "user": "lucasssmira"
+  },
+  {
+    "date": "2026-09-18T00:00:58",
+    "type": "issue_closed",
+    "repo": "2026-02-TambureteiUnB",
+    "user": "thamiresellensa"
+  },
+  {
+    "date": "2026-09-18T00:04:09",
+    "type": "commit",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso",
+    "additions": 1370,
+    "deletions": 24,
+    "total_changes": 1394
+  },
+  {
+    "date": "2026-09-18T00:04:24",
+    "type": "commit",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso",
+    "additions": 291,
+    "deletions": 2,
+    "total_changes": 293
+  },
+  {
+    "date": "2026-09-18T00:09:39",
+    "type": "issue_created",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T00:09:40",
+    "type": "event_assigned",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T00:09:40",
+    "type": "event_labeled",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T00:09:40",
+    "type": "event_labeled",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T00:11:51",
+    "type": "event_added_to_project_v2",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T00:20:07",
+    "type": "pr_created",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-18T00:20:57",
+    "type": "pr_created",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T00:20:58",
+    "type": "event_assigned",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T00:21:12",
+    "type": "event_labeled",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T00:21:12",
+    "type": "event_labeled",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T00:28:25",
+    "type": "pr_closed",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T00:28:25",
+    "type": "event_head_ref_restored",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T00:29:00",
+    "type": "commit",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso",
+    "additions": 37,
+    "deletions": 33,
+    "total_changes": 70
+  },
+  {
+    "date": "2026-09-18T00:42:34",
+    "type": "issue_created",
+    "repo": "2026-2-MonitoraUnB",
+    "user": "pablosousaa"
+  },
+  {
+    "date": "2026-09-18T00:42:34",
+    "type": "event_assigned",
+    "repo": "2026-2-MonitoraUnB",
+    "user": "pablosousaa"
+  },
+  {
+    "date": "2026-09-18T00:42:34",
+    "type": "event_milestoned",
+    "repo": "2026-2-MonitoraUnB",
+    "user": "pablosousaa"
+  },
+  {
+    "date": "2026-09-18T00:42:35",
+    "type": "event_issue_type_added",
+    "repo": "2026-2-MonitoraUnB",
+    "user": "pablosousaa"
+  },
+  {
+    "date": "2026-09-18T00:42:36",
+    "type": "event_labeled",
+    "repo": "2026-2-MonitoraUnB",
+    "user": "pablosousaa"
+  },
+  {
+    "date": "2026-09-18T00:42:54",
+    "type": "issue_closed",
+    "repo": "2026-2-MonitoraUnB",
+    "user": "pablosousaa"
+  },
+  {
+    "date": "2026-09-18T00:42:54",
+    "type": "event_closed",
+    "repo": "2026-2-MonitoraUnB",
+    "user": "pablosousaa"
+  },
+  {
+    "date": "2026-09-18T00:46:45",
+    "type": "pr_created",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-18T00:47:12",
+    "type": "pr_created",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-18T00:47:14",
+    "type": "commit",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso",
+    "additions": 36,
+    "deletions": 3,
+    "total_changes": 39
+  },
+  {
+    "date": "2026-09-18T00:47:14",
+    "type": "commit",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso",
+    "additions": 10,
+    "deletions": 10,
+    "total_changes": 20
+  },
+  {
+    "date": "2026-09-18T00:47:14",
+    "type": "commit",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso",
+    "additions": 7,
+    "deletions": 2,
+    "total_changes": 9
+  },
+  {
+    "date": "2026-09-18T00:47:30",
+    "type": "event_base_ref_changed",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-18T00:47:36",
+    "type": "pr_created",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-18T00:47:53",
+    "type": "issue_closed",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "darkymeubem"
+  },
+  {
+    "date": "2026-09-18T00:47:53",
+    "type": "event_closed",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T00:47:56",
+    "type": "issue_closed",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "darkymeubem"
+  },
+  {
+    "date": "2026-09-18T00:47:56",
+    "type": "event_closed",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T00:47:58",
+    "type": "issue_closed",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "darkymeubem"
+  },
+  {
+    "date": "2026-09-18T00:47:58",
+    "type": "event_closed",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T00:48:00",
+    "type": "issue_closed",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "darkymeubem"
+  },
+  {
+    "date": "2026-09-18T00:48:00",
+    "type": "event_closed",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T00:48:19",
+    "type": "issue_closed",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "darkymeubem"
+  },
+  {
+    "date": "2026-09-18T00:48:19",
+    "type": "event_closed",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T00:48:21",
+    "type": "issue_closed",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "darkymeubem"
+  },
+  {
+    "date": "2026-09-18T00:48:21",
+    "type": "event_closed",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T00:48:23",
+    "type": "issue_closed",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "darkymeubem"
+  },
+  {
+    "date": "2026-09-18T00:48:23",
+    "type": "event_closed",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T00:48:25",
+    "type": "issue_closed",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "darkymeubem"
+  },
+  {
+    "date": "2026-09-18T00:48:25",
+    "type": "event_closed",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T00:48:45",
+    "type": "event_review_requested",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-18T00:49:37",
+    "type": "pr_created",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-18T00:49:50",
+    "type": "event_review_requested",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-18T00:49:56",
+    "type": "event_review_requested",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-18T00:50:01",
+    "type": "event_review_requested",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-18T00:50:09",
+    "type": "event_review_requested",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-18T00:52:04",
+    "type": "pr_created",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-18T00:53:13",
+    "type": "pr_created",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-18T00:53:14",
+    "type": "event_review_requested",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-18T00:53:14",
+    "type": "event_review_requested",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-18T00:53:26",
+    "type": "event_review_requested",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-18T00:53:39",
+    "type": "event_review_requested",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-18T00:56:19",
+    "type": "event_head_ref_force_pushed",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-18T01:00:47",
+    "type": "issue_closed",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "darkymeubem"
+  },
+  {
+    "date": "2026-09-18T01:00:47",
+    "type": "issue_closed",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "darkymeubem"
+  },
+  {
+    "date": "2026-09-18T01:00:47",
+    "type": "event_referenced",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T01:00:47",
+    "type": "event_closed",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T01:00:47",
+    "type": "event_closed",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T01:00:48",
+    "type": "issue_closed",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "darkymeubem"
+  },
+  {
+    "date": "2026-09-18T01:00:48",
+    "type": "event_closed",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T01:22:28",
+    "type": "event_head_ref_force_pushed",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-18T01:23:14",
+    "type": "commit",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso",
+    "additions": 1695,
+    "deletions": 58,
+    "total_changes": 1753
+  },
+  {
+    "date": "2026-09-18T01:23:14",
+    "type": "event_merged",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T01:23:15",
+    "type": "issue_closed",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T01:23:15",
+    "type": "pr_closed",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T01:23:15",
+    "type": "event_closed",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T01:23:16",
+    "type": "event_closed",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T01:23:17",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "2025-1-NoFluxoUNB",
+    "user": "github-project-automation[bot]"
+  },
+  {
+    "date": "2026-09-18T01:35:30",
+    "type": "pr_created",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-18T01:39:36",
+    "type": "commit",
+    "repo": "2026-2-VeritasIA",
+    "user": "github-actions[bot]",
+    "additions": 147,
+    "deletions": 162,
+    "total_changes": 309
+  },
+  {
+    "date": "2026-09-18T01:46:08",
+    "type": "event_base_ref_changed",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-18T01:46:25",
+    "type": "event_review_requested",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-18T02:03:34",
+    "type": "pr_closed",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-18T02:03:34",
+    "type": "event_closed",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-18T02:03:34",
+    "type": "event_merged",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-18T02:12:12",
+    "type": "pr_closed",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-18T02:12:12",
+    "type": "event_closed",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-18T02:12:12",
+    "type": "event_merged",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-18T02:13:56",
+    "type": "commit",
+    "repo": "2026-2-VeritasIA",
+    "user": "github-actions[bot]",
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2
+  },
+  {
+    "date": "2026-09-18T04:22:16",
+    "type": "commit",
+    "repo": "2026-1-SafeStreets",
+    "user": "actions-user",
+    "additions": 7,
+    "deletions": 7,
+    "total_changes": 14
+  },
+  {
+    "date": "2026-09-18T04:25:26",
+    "type": "pr_created",
+    "repo": "2026-2-Bandejao-UnB",
+    "user": "LuisFelipe311"
+  },
+  {
+    "date": "2026-09-18T04:30:29",
+    "type": "event_connected",
+    "repo": "2026-2-Bandejao-UnB",
+    "user": "LuisFelipe311"
+  },
+  {
+    "date": "2026-09-18T04:30:29",
+    "type": "event_connected",
+    "repo": "2026-2-Bandejao-UnB",
+    "user": "LuisFelipe311"
+  },
+  {
+    "date": "2026-09-18T05:26:23",
+    "type": "commit",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0",
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4
+  },
+  {
+    "date": "2026-09-18T07:40:40",
     "type": "commit",
     "repo": "2026-1-Mapa_L.I.L.A.S",
     "user": "github-actions[bot]",

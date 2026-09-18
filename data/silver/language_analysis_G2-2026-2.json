@@ -2,7 +2,7 @@
   "repository": "G2-2026-2",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T10:45:40.189208",
+  "analyzed_at": "2026-09-18T10:27:14.170676",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -126,7 +126,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T10:46:36.687399",
+    "extracted_at": "2026-09-18T10:28:17.219065",
     "file_path": "data/silver/language_analysis_G2-2026-2.json"
   }
 }

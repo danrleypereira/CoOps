@@ -2,7 +2,7 @@
   "repository": "2025-1-NoFluxoUNB",
   "owner": "unb-mds",
   "branch": "main",
-  "extracted_at": "2026-09-17T10:45:14.625001",
+  "extracted_at": "2026-09-18T10:26:49.763221",
   "hierarchy": {
     "name": "root",
     "type": "directory",
@@ -519,7 +519,7 @@
         "name": "pdf_parser_final.py",
         "type": "file",
         "language": "Python",
-        "size": 17048,
+        "size": 17043,
         "extension": ".py",
         "path": "DBA/parse_pdf/pdf_parser_final.py"
       },
@@ -527,7 +527,7 @@
         "name": "requirements.txt",
         "type": "file",
         "language": "Text",
-        "size": 78,
+        "size": 77,
         "extension": ".txt",
         "path": "DBA/parse_pdf/requirements.txt"
       },
@@ -3436,6 +3436,22 @@
         "path": "no_fluxo_backend/docs/supabase_migrations/security_scans.sql"
       },
       {
+        "name": "ticket_chat.sql",
+        "type": "file",
+        "language": "SQL",
+        "size": 11781,
+        "extension": ".sql",
+        "path": "no_fluxo_backend/docs/supabase_migrations/ticket_chat.sql"
+      },
+      {
+        "name": "ticket_chat_nao_lidas.sql",
+        "type": "file",
+        "language": "SQL",
+        "size": 7506,
+        "extension": ".sql",
+        "path": "no_fluxo_backend/docs/supabase_migrations/ticket_chat_nao_lidas.sql"
+      },
+      {
         "name": "generate-ssl.bat",
         "type": "file",
         "language": "Batch",
@@ -3487,7 +3503,7 @@
         "name": "package-lock.json",
         "type": "file",
         "language": "JSON",
-        "size": 312435,
+        "size": 312516,
         "extension": ".json",
         "path": "no_fluxo_backend/package-lock.json"
       },
@@ -3587,7 +3603,7 @@
         "name": "test_parser.py",
         "type": "file",
         "language": "Python",
-        "size": 14940,
+        "size": 14938,
         "extension": ".py",
         "path": "no_fluxo_backend/parse-pdf/tests/test_parser.py"
       },
@@ -3975,7 +3991,7 @@
         "name": "orquestrador_agent.ts",
         "type": "file",
         "language": "TypeScript",
-        "size": 9084,
+        "size": 9968,
         "extension": ".ts",
         "path": "no_fluxo_backend/src/services/chat/orquestrador_agent.ts"
       },
@@ -4383,7 +4399,7 @@
         "name": "orquestrador-fase2.test.ts",
         "type": "file",
         "language": "TypeScript",
-        "size": 16668,
+        "size": 17513,
         "extension": ".ts",
         "path": "no_fluxo_backend/tests-ts/orquestrador-fase2.test.ts"
       },
@@ -5369,7 +5385,7 @@
         "name": "AccountMenu.svelte",
         "type": "file",
         "language": "Unknown",
-        "size": 3136,
+        "size": 4492,
         "extension": ".svelte",
         "path": "no_fluxo_frontend_svelte/src/lib/components/layout/navbar/AccountMenu.svelte"
       },
@@ -5377,7 +5393,7 @@
         "name": "MobileDrawer.svelte",
         "type": "file",
         "language": "Unknown",
-        "size": 6804,
+        "size": 7494,
         "extension": ".svelte",
         "path": "no_fluxo_frontend_svelte/src/lib/components/layout/navbar/MobileDrawer.svelte"
       },
@@ -5688,6 +5704,20 @@
         "size": 14370,
         "extension": ".svelte",
         "path": "no_fluxo_frontend_svelte/src/lib/components/support/SuporteFab.svelte"
+      },
+      {
+        "name": "tickets",
+        "type": "directory",
+        "path": "no_fluxo_frontend_svelte/src/lib/components/tickets",
+        "children": []
+      },
+      {
+        "name": "TicketChat.svelte",
+        "type": "file",
+        "language": "Unknown",
+        "size": 16645,
+        "extension": ".svelte",
+        "path": "no_fluxo_frontend_svelte/src/lib/components/tickets/TicketChat.svelte"
       },
       {
         "name": "ui",
@@ -6925,7 +6955,7 @@
         "name": "ticket.service.ts",
         "type": "file",
         "language": "TypeScript",
-        "size": 5340,
+        "size": 7341,
         "extension": ".ts",
         "path": "no_fluxo_frontend_svelte/src/lib/services/ticket.service.ts"
       },
@@ -7152,6 +7182,14 @@
         "path": "no_fluxo_frontend_svelte/src/lib/stores/theme.ts"
       },
       {
+        "name": "ticketsNaoLidas.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 1038,
+        "extension": ".ts",
+        "path": "no_fluxo_frontend_svelte/src/lib/stores/ticketsNaoLidas.ts"
+      },
+      {
         "name": "unidade-carga.store.svelte.ts",
         "type": "file",
         "language": "TypeScript",
@@ -7355,7 +7393,7 @@
         "name": "ticket.ts",
         "type": "file",
         "language": "TypeScript",
-        "size": 2985,
+        "size": 3841,
         "extension": ".ts",
         "path": "no_fluxo_frontend_svelte/src/lib/types/ticket.ts"
       },
@@ -7701,7 +7739,7 @@
         "name": "+page.svelte",
         "type": "file",
         "language": "Unknown",
-        "size": 22498,
+        "size": 24906,
         "extension": ".svelte",
         "path": "no_fluxo_frontend_svelte/src/routes/(protected)/admin/tickets/+page.svelte"
       },
@@ -7777,7 +7815,7 @@
         "name": "+page.svelte",
         "type": "file",
         "language": "Unknown",
-        "size": 14019,
+        "size": 21229,
         "extension": ".svelte",
         "path": "no_fluxo_frontend_svelte/src/routes/(protected)/suporte/+page.svelte"
       },
@@ -9163,7 +9201,7 @@
         "name": "requirements.txt",
         "type": "file",
         "language": "Text",
-        "size": 1394,
+        "size": 1393,
         "extension": ".txt",
         "path": "requirements.txt"
       },
@@ -9311,7 +9349,7 @@
         "name": "pytest.ini",
         "type": "file",
         "language": "INI",
-        "size": 446,
+        "size": 813,
         "extension": ".ini",
         "path": "tests-python/pytest.ini"
       },
@@ -9319,7 +9357,7 @@
         "name": "requirements.txt",
         "type": "file",
         "language": "Text",
-        "size": 281,
+        "size": 279,
         "extension": ".txt",
         "path": "tests-python/requirements.txt"
       },
@@ -9350,7 +9388,7 @@
     ]
   },
   "_metadata": {
-    "extracted_at": "2026-09-17T10:46:36.303760",
+    "extracted_at": "2026-09-18T10:28:16.753759",
     "file_path": "data/silver/hierarchy_2025-1-NoFluxoUNB.json"
   }
 }

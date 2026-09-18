@@ -2,7 +2,7 @@
   "repository": "2024-1-EducaMinas-frontend",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-17T10:44:58.153985",
+  "analyzed_at": "2026-09-18T10:26:34.317557",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -594,7 +594,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-17T10:46:36.708838",
+    "extracted_at": "2026-09-18T10:28:17.244209",
     "file_path": "data/silver/language_analysis_2024-1-EducaMinas-frontend.json"
   }
 }
