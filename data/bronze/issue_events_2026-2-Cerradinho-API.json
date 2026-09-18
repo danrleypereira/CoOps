@@ -1,9 +1,33 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-17T09:52:10.824422",
+      "extracted_at": "2026-09-18T09:26:19.117563",
       "file_path": "data/bronze/issue_events_2026-2-Cerradinho-API.json",
-      "record_count": 691
+      "record_count": 693
+    }
+  },
+  {
+    "id": 31354364920,
+    "event": "closed",
+    "created_at": "2026-09-17T22:48:39Z",
+    "repo_name": "2026-2-Cerradinho-API",
+    "actor": {
+      "login": "daniel-mouraa"
+    },
+    "issue": {
+      "number": 94
+    }
+  },
+  {
+    "id": 31354364845,
+    "event": "merged",
+    "created_at": "2026-09-17T22:48:39Z",
+    "repo_name": "2026-2-Cerradinho-API",
+    "actor": {
+      "login": "daniel-mouraa"
+    },
+    "issue": {
+      "number": 94
     }
   },
   {

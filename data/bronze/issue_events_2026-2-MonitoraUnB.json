@@ -1,9 +1,69 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-17T09:52:23.685625",
+      "extracted_at": "2026-09-18T09:26:32.878743",
       "file_path": "data/bronze/issue_events_2026-2-MonitoraUnB.json",
-      "record_count": 59
+      "record_count": 64
+    }
+  },
+  {
+    "id": 31358477712,
+    "event": "closed",
+    "created_at": "2026-09-18T00:42:54Z",
+    "repo_name": "2026-2-MonitoraUnB",
+    "actor": {
+      "login": "pablosousaa"
+    },
+    "issue": {
+      "number": 12
+    }
+  },
+  {
+    "id": 31358465884,
+    "event": "labeled",
+    "created_at": "2026-09-18T00:42:36Z",
+    "repo_name": "2026-2-MonitoraUnB",
+    "actor": {
+      "login": "pablosousaa"
+    },
+    "issue": {
+      "number": 12
+    }
+  },
+  {
+    "id": 31358465649,
+    "event": "issue_type_added",
+    "created_at": "2026-09-18T00:42:35Z",
+    "repo_name": "2026-2-MonitoraUnB",
+    "actor": {
+      "login": "pablosousaa"
+    },
+    "issue": {
+      "number": 12
+    }
+  },
+  {
+    "id": 31358465074,
+    "event": "assigned",
+    "created_at": "2026-09-18T00:42:34Z",
+    "repo_name": "2026-2-MonitoraUnB",
+    "actor": {
+      "login": "pablosousaa"
+    },
+    "issue": {
+      "number": 12
+    }
+  },
+  {
+    "id": 31358465019,
+    "event": "milestoned",
+    "created_at": "2026-09-18T00:42:34Z",
+    "repo_name": "2026-2-MonitoraUnB",
+    "actor": {
+      "login": "pablosousaa"
+    },
+    "issue": {
+      "number": 12
     }
   },
   {

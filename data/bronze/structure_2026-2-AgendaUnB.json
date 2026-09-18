@@ -2,7 +2,7 @@
   "owner": "unb-mds",
   "repository": "2026-2-AgendaUnB",
   "branch": "main",
-  "sha": "45f7d6650a58287bcffb2671ab75912dc43208d8",
+  "sha": "a7fe3782612e44f0597fddd4180d69b891f84498",
   "tree": [
     {
       "name": ".env.example",
@@ -92,10 +92,10 @@
       "name": "README.md",
       "path": "README.md",
       "type": "file",
-      "sha": "6f1a7f8d5f2e1bd632e86efb8009ae36515c3d8c",
+      "sha": "f2ccc4d2ed688ec060bfbbef1299b6843c17a754",
       "mode": "100644",
       "extension": ".md",
-      "size": 3107,
+      "size": 3121,
       "is_binary": false
     },
     {
@@ -332,7 +332,7 @@
     }
   ],
   "truncated": false,
-  "extracted_at": "2026-09-17T10:45:44.265757",
+  "extracted_at": "2026-09-18T10:27:18.545035",
   "method": "rest",
   "total_items": 34,
   "repository_metadata": {
@@ -340,9 +340,9 @@
     "full_name": "unb-mds/2026-2-AgendaUnB",
     "description": "Grupo G8 - Metodos de Desenvolvimento de Software 2026/2",
     "created_at": "2026-08-18T11:58:00Z",
-    "updated_at": "2026-09-16T16:18:33Z",
+    "updated_at": "2026-09-18T05:26:28Z",
     "language": "JavaScript",
-    "size": 62494,
+    "size": 62509,
     "stars": 3,
     "forks": 0,
     "open_issues": 0

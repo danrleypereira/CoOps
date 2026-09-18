@@ -2,7 +2,7 @@
   "owner": "unb-mds",
   "repository": "2025-1-NoFluxoUNB",
   "branch": "main",
-  "sha": "306bf0b19dffe9b25b113cc9251fd04c8aef7aa4",
+  "sha": "6f7f7a199fc508cabacbba403747273a7b51531b",
   "tree": [
     {
       "name": ".claude",
@@ -468,7 +468,7 @@
       "name": "DBA",
       "path": "DBA",
       "type": "directory",
-      "sha": "dcfa6d6334c8cfa3c37e612e8f5a228d2326af01",
+      "sha": "ffc60dc9e9dc531fe018a7e7b201d7bb8596c630",
       "mode": "040000",
       "children": []
     },
@@ -632,7 +632,7 @@
       "name": "parse_pdf",
       "path": "DBA/parse_pdf",
       "type": "directory",
-      "sha": "cbc64d7b4ea426587fb60175d9f428181969828c",
+      "sha": "f3905f011fe221031295f6a81114954fb7ba41ed",
       "mode": "040000",
       "children": []
     },
@@ -650,20 +650,20 @@
       "name": "pdf_parser_final.py",
       "path": "DBA/parse_pdf/pdf_parser_final.py",
       "type": "file",
-      "sha": "f3025890f16f5bd21607642337b8d5a2a8b8207b",
+      "sha": "4ed4ef82e9f7d1db783cf5bff8749b16c79bf6a8",
       "mode": "100644",
       "extension": ".py",
-      "size": 17048,
+      "size": 17043,
       "is_binary": false
     },
     {
       "name": "requirements.txt",
       "path": "DBA/parse_pdf/requirements.txt",
       "type": "file",
-      "sha": "e8f8724deaf9ae619fc6ffe7fdba3bec9f7da6f2",
+      "sha": "c95c1ebe5be4342a78a2bb1c0bdad606faf8622f",
       "mode": "100644",
       "extension": ".txt",
-      "size": 78,
+      "size": 77,
       "is_binary": false
     },
     {
@@ -4140,7 +4140,7 @@
       "name": "no_fluxo_backend",
       "path": "no_fluxo_backend",
       "type": "directory",
-      "sha": "1e72dfb40e2631f5c01df9acaeae029036073b52",
+      "sha": "1e4ec93393f6490119120e2eeec753a99edd2a50",
       "mode": "040000",
       "children": []
     },
@@ -4218,7 +4218,7 @@
       "name": "docs",
       "path": "no_fluxo_backend/docs",
       "type": "directory",
-      "sha": "b3a92f7db2fcb965bd7484996891adca828da78c",
+      "sha": "99f040899e96d9d904b108dcc2a714326be5a36e",
       "mode": "040000",
       "children": []
     },
@@ -4276,7 +4276,7 @@
       "name": "supabase_migrations",
       "path": "no_fluxo_backend/docs/supabase_migrations",
       "type": "directory",
-      "sha": "c7e9c33f83e73e04a644c499f17909fcbecdecc9",
+      "sha": "a729ce845a29c05d95ec3c810ac59d01ddc5fef2",
       "mode": "040000",
       "children": []
     },
@@ -4318,6 +4318,26 @@
       "mode": "100644",
       "extension": ".sql",
       "size": 2975,
+      "is_binary": false
+    },
+    {
+      "name": "ticket_chat.sql",
+      "path": "no_fluxo_backend/docs/supabase_migrations/ticket_chat.sql",
+      "type": "file",
+      "sha": "83bb394b277566d7730b3fe8963fcb980b48241d",
+      "mode": "100644",
+      "extension": ".sql",
+      "size": 11781,
+      "is_binary": false
+    },
+    {
+      "name": "ticket_chat_nao_lidas.sql",
+      "path": "no_fluxo_backend/docs/supabase_migrations/ticket_chat_nao_lidas.sql",
+      "type": "file",
+      "sha": "8fba4fde195d82da0d15db4672efc4e881e9b85b",
+      "mode": "100644",
+      "extension": ".sql",
+      "size": 7506,
       "is_binary": false
     },
     {
@@ -4384,10 +4404,10 @@
       "name": "package-lock.json",
       "path": "no_fluxo_backend/package-lock.json",
       "type": "file",
-      "sha": "e5f8e370568004da1590dc9f0a244e48ccfd0572",
+      "sha": "91a77780ce8b73ae024c4fa4bffa01d9211de21d",
       "mode": "100644",
       "extension": ".json",
-      "size": 312435,
+      "size": 312516,
       "is_binary": false
     },
     {
@@ -4404,7 +4424,7 @@
       "name": "parse-pdf",
       "path": "no_fluxo_backend/parse-pdf",
       "type": "directory",
-      "sha": "0c62a21a360870356f1438e91663f211a1aa3e6d",
+      "sha": "b68f531fa43ed2f13decf314d7352740617f807d",
       "mode": "040000",
       "children": []
     },
@@ -4492,7 +4512,7 @@
       "name": "tests",
       "path": "no_fluxo_backend/parse-pdf/tests",
       "type": "directory",
-      "sha": "885142157ff815e1523031a260cf896c95b527cb",
+      "sha": "831f9b24faef9b71e3260cbd0bcf5e1095c1da72",
       "mode": "040000",
       "children": []
     },
@@ -4510,10 +4530,10 @@
       "name": "test_parser.py",
       "path": "no_fluxo_backend/parse-pdf/tests/test_parser.py",
       "type": "file",
-      "sha": "b26158f7611ecaa4922e13a4117747681e254c71",
+      "sha": "44c9e7b72b055dd2cf86a56885f73bb6d9fcc63a",
       "mode": "100644",
       "extension": ".py",
-      "size": 14940,
+      "size": 14938,
       "is_binary": false
     },
     {
@@ -4676,7 +4696,7 @@
       "name": "src",
       "path": "no_fluxo_backend/src",
       "type": "directory",
-      "sha": "e726bb1680499eeb8e10e14604866a1f67d63cfc",
+      "sha": "ab54bb66bc3295b341d39bfbdb89db0c9d05dc14",
       "mode": "040000",
       "children": []
     },
@@ -4830,7 +4850,7 @@
       "name": "services",
       "path": "no_fluxo_backend/src/services",
       "type": "directory",
-      "sha": "d5b63af68b34493ecb07a1ebc2f31cab0e5149c6",
+      "sha": "e9257fd9d770c2a2aca59c250a6e72fb07abd389",
       "mode": "040000",
       "children": []
     },
@@ -4924,7 +4944,7 @@
       "name": "chat",
       "path": "no_fluxo_backend/src/services/chat",
       "type": "directory",
-      "sha": "ecbad59bdca61f12e6fa5b470eed8679737d64e9",
+      "sha": "7dff71cb9209f7864e14815a0e65b9f9ca54e0e4",
       "mode": "040000",
       "children": []
     },
@@ -5000,10 +5020,10 @@
       "name": "orquestrador_agent.ts",
       "path": "no_fluxo_backend/src/services/chat/orquestrador_agent.ts",
       "type": "file",
-      "sha": "c9cf980cc169ff55792f6d2a59e6a0e70c8fa837",
+      "sha": "da3f653b4fa273be0976f1c58d686ea8155efe78",
       "mode": "100644",
       "extension": ".ts",
-      "size": 9084,
+      "size": 9968,
       "is_binary": false
     },
     {
@@ -5354,7 +5374,7 @@
       "name": "tests-ts",
       "path": "no_fluxo_backend/tests-ts",
       "type": "directory",
-      "sha": "1a9a57e2a1cd683c4670e8cccaca05af6e3b04ea",
+      "sha": "0ebb2cfd678384c43ac5140df3f115cd4de593a6",
       "mode": "040000",
       "children": []
     },
@@ -5512,10 +5532,10 @@
       "name": "orquestrador-fase2.test.ts",
       "path": "no_fluxo_backend/tests-ts/orquestrador-fase2.test.ts",
       "type": "file",
-      "sha": "238de2973700c96a9774e286d1ca55f3d74eb500",
+      "sha": "bd24e69169ffed97d94c53977bfdca4bb25d07be",
       "mode": "100644",
       "extension": ".ts",
-      "size": 16668,
+      "size": 17513,
       "is_binary": false
     },
     {
@@ -5680,7 +5700,7 @@
       "name": "no_fluxo_frontend_svelte",
       "path": "no_fluxo_frontend_svelte",
       "type": "directory",
-      "sha": "4c1a6868069dbf33955d636401c6704a44f2595d",
+      "sha": "a6c9c9fb24a0b183a4c326e7172a728352a9ae0a",
       "mode": "040000",
       "children": []
     },
@@ -5856,7 +5876,7 @@
       "name": "src",
       "path": "no_fluxo_frontend_svelte/src",
       "type": "directory",
-      "sha": "c3aded4e93db47269be375407407e436308a7ed0",
+      "sha": "26a0aa34bf557d29be8515b2f68b51c132a978bd",
       "mode": "040000",
       "children": []
     },
@@ -5904,7 +5924,7 @@
       "name": "lib",
       "path": "no_fluxo_frontend_svelte/src/lib",
       "type": "directory",
-      "sha": "efc2d666de755e6e841a92bf403e7849ae664bb2",
+      "sha": "6fe6715a64c736845ae3dd96d603d5837d96a162",
       "mode": "040000",
       "children": []
     },
@@ -5960,7 +5980,7 @@
       "name": "components",
       "path": "no_fluxo_frontend_svelte/src/lib/components",
       "type": "directory",
-      "sha": "f1a37f2b6a2142296dc4bd395f7f5b3b99a4fd03",
+      "sha": "e09bef66076286a8e6bc39523d1a6b335994f769",
       "mode": "040000",
       "children": []
     },
@@ -6610,7 +6630,7 @@
       "name": "layout",
       "path": "no_fluxo_frontend_svelte/src/lib/components/layout",
       "type": "directory",
-      "sha": "59eeb9b655d73a5f8a52f1c8374a6d6d8ac47ea9",
+      "sha": "21759e1025d2df274566270bfda5e1c9c8506da2",
       "mode": "040000",
       "children": []
     },
@@ -6748,7 +6768,7 @@
       "name": "navbar",
       "path": "no_fluxo_frontend_svelte/src/lib/components/layout/navbar",
       "type": "directory",
-      "sha": "5978e690ee56fadfba3f98327a4c44c497de311a",
+      "sha": "292c8647f17e2915c5637572dfe87a639ac8d205",
       "mode": "040000",
       "children": []
     },
@@ -6756,20 +6776,20 @@
       "name": "AccountMenu.svelte",
       "path": "no_fluxo_frontend_svelte/src/lib/components/layout/navbar/AccountMenu.svelte",
       "type": "file",
-      "sha": "d0be55fc51ff9e494fbae46f74dea0328bdd48e8",
+      "sha": "488a12dae92c7bd5756bb870beaa87b2792135d9",
       "mode": "100644",
       "extension": ".svelte",
-      "size": 3136,
+      "size": 4492,
       "is_binary": false
     },
     {
       "name": "MobileDrawer.svelte",
       "path": "no_fluxo_frontend_svelte/src/lib/components/layout/navbar/MobileDrawer.svelte",
       "type": "file",
-      "sha": "94e807b0f20cfdf63787e79679241a8d96d3da93",
+      "sha": "9319ca2521fbaa0577b656ecebc195b092e640b0",
       "mode": "100644",
       "extension": ".svelte",
-      "size": 6804,
+      "size": 7494,
       "is_binary": false
     },
     {
@@ -7158,6 +7178,24 @@
       "mode": "100644",
       "extension": ".svelte",
       "size": 14370,
+      "is_binary": false
+    },
+    {
+      "name": "tickets",
+      "path": "no_fluxo_frontend_svelte/src/lib/components/tickets",
+      "type": "directory",
+      "sha": "e1ce1bb88ffd9c9578cb6bc48fbaecdbc406b03a",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "TicketChat.svelte",
+      "path": "no_fluxo_frontend_svelte/src/lib/components/tickets/TicketChat.svelte",
+      "type": "file",
+      "sha": "91bf822321f07de8ac569da28e9899ad6fdb53f5",
+      "mode": "100644",
+      "extension": ".svelte",
+      "size": 16645,
       "is_binary": false
     },
     {
@@ -8370,7 +8408,7 @@
       "name": "services",
       "path": "no_fluxo_frontend_svelte/src/lib/services",
       "type": "directory",
-      "sha": "273db646a61bf6d85e11bd77df543d8a2517e298",
+      "sha": "db5aae2684dd5175b3397c9c48382ebea823c30d",
       "mode": "040000",
       "children": []
     },
@@ -8716,10 +8754,10 @@
       "name": "ticket.service.ts",
       "path": "no_fluxo_frontend_svelte/src/lib/services/ticket.service.ts",
       "type": "file",
-      "sha": "64b357a1e27a9bdc612397d29a39402ee51b6af3",
+      "sha": "f13f36aad31ad8f1be1c8c6e5d7952b10c2b6478",
       "mode": "100644",
       "extension": ".ts",
-      "size": 5340,
+      "size": 7341,
       "is_binary": false
     },
     {
@@ -8766,7 +8804,7 @@
       "name": "stores",
       "path": "no_fluxo_frontend_svelte/src/lib/stores",
       "type": "directory",
-      "sha": "5e7672db5b43c051af6ea66fd908bf37fe3b068f",
+      "sha": "7fdd8e8b5d936ee54009daf6cd356a09742cbbd1",
       "mode": "040000",
       "children": []
     },
@@ -9001,6 +9039,16 @@
       "is_binary": false
     },
     {
+      "name": "ticketsNaoLidas.ts",
+      "path": "no_fluxo_frontend_svelte/src/lib/stores/ticketsNaoLidas.ts",
+      "type": "file",
+      "sha": "f3057bffb01063a0cf09cf93b2d4c05c1d790c0f",
+      "mode": "100644",
+      "extension": ".ts",
+      "size": 1038,
+      "is_binary": false
+    },
+    {
       "name": "unidade-carga.store.svelte.ts",
       "path": "no_fluxo_frontend_svelte/src/lib/stores/unidade-carga.store.svelte.ts",
       "type": "file",
@@ -9098,7 +9146,7 @@
       "name": "types",
       "path": "no_fluxo_frontend_svelte/src/lib/types",
       "type": "directory",
-      "sha": "4f35c9adfbe0a3189498523f22c9795bd5ab1f8f",
+      "sha": "972ba3b630f594af4410298666a6f6675459b2c3",
       "mode": "040000",
       "children": []
     },
@@ -9256,10 +9304,10 @@
       "name": "ticket.ts",
       "path": "no_fluxo_frontend_svelte/src/lib/types/ticket.ts",
       "type": "file",
-      "sha": "a384c136f76641194a08bfa4f5253ecf860656e9",
+      "sha": "a15eb0161cb7c1003eb01e6a6903ed7d78c758d1",
       "mode": "100644",
       "extension": ".ts",
-      "size": 2985,
+      "size": 3841,
       "is_binary": false
     },
     {
@@ -9614,7 +9662,7 @@
       "name": "routes",
       "path": "no_fluxo_frontend_svelte/src/routes",
       "type": "directory",
-      "sha": "1f5e48c8e80b809cdea4b18cd1cab977fe10cbe0",
+      "sha": "baaf49811b8a489240d0b83c4e23212eb30863b6",
       "mode": "040000",
       "children": []
     },
@@ -9622,7 +9670,7 @@
       "name": "(protected)",
       "path": "no_fluxo_frontend_svelte/src/routes/(protected)",
       "type": "directory",
-      "sha": "dd56a19f4389a8d85db24c6c44404ca0bf044589",
+      "sha": "abcd445c63b4e29e37b8a42d94dd82783846dbea",
       "mode": "040000",
       "children": []
     },
@@ -9640,7 +9688,7 @@
       "name": "admin",
       "path": "no_fluxo_frontend_svelte/src/routes/(protected)/admin",
       "type": "directory",
-      "sha": "d2f99960b46e3a5941bc295cfb89826ce551bc53",
+      "sha": "3e4839a40a47c0aa68648ff1b402f8e445cdcbb4",
       "mode": "040000",
       "children": []
     },
@@ -9684,7 +9732,7 @@
       "name": "tickets",
       "path": "no_fluxo_frontend_svelte/src/routes/(protected)/admin/tickets",
       "type": "directory",
-      "sha": "8ae5868b303dbc94bec58cce6f85c7ceb449f888",
+      "sha": "e91d238f7884ce6f0ebfe175787e6d036e436ee3",
       "mode": "040000",
       "children": []
     },
@@ -9692,10 +9740,10 @@
       "name": "+page.svelte",
       "path": "no_fluxo_frontend_svelte/src/routes/(protected)/admin/tickets/+page.svelte",
       "type": "file",
-      "sha": "44ecc4254ab286fcaa2e03fb066e6e1a82234317",
+      "sha": "0bdf686b9a314de82eb9271624e083d8e4378ac4",
       "mode": "100644",
       "extension": ".svelte",
-      "size": 22498,
+      "size": 24906,
       "is_binary": false
     },
     {
@@ -9782,7 +9830,7 @@
       "name": "suporte",
       "path": "no_fluxo_frontend_svelte/src/routes/(protected)/suporte",
       "type": "directory",
-      "sha": "0223815b7341d68f5b599deed1779e186daad30c",
+      "sha": "e0519835d7d949bdbecbb5a7df119ae88eb6d50e",
       "mode": "040000",
       "children": []
     },
@@ -9790,10 +9838,10 @@
       "name": "+page.svelte",
       "path": "no_fluxo_frontend_svelte/src/routes/(protected)/suporte/+page.svelte",
       "type": "file",
-      "sha": "ba52f2cff1aa1e9209f9d404b7b0f924ca97e313",
+      "sha": "2a48f8c2b44763ccb2ce4627a3f1c61934747902",
       "mode": "100644",
       "extension": ".svelte",
-      "size": 14019,
+      "size": 21229,
       "is_binary": false
     },
     {
@@ -11550,10 +11598,10 @@
       "name": "requirements.txt",
       "path": "requirements.txt",
       "type": "file",
-      "sha": "877b2bb734d6594438161f49bedcd6ccf1336e25",
+      "sha": "00b07f3a807d029200b9e53645c28212fd9f42bf",
       "mode": "100644",
       "extension": ".txt",
-      "size": 1394,
+      "size": 1393,
       "is_binary": false
     },
     {
@@ -11690,7 +11738,7 @@
       "name": "tests-python",
       "path": "tests-python",
       "type": "directory",
-      "sha": "6b0c83dfbf21dcb40f19d070dbc765e20b61f819",
+      "sha": "312a99612886f5f4477cd7dd5e553189ad4bd750",
       "mode": "040000",
       "children": []
     },
@@ -11738,20 +11786,20 @@
       "name": "pytest.ini",
       "path": "tests-python/pytest.ini",
       "type": "file",
-      "sha": "5804920115d3f5aa5f8d624ca30e85227e3fc7b3",
+      "sha": "176c6757933596b13e650d8f21695983cc7796bc",
       "mode": "100644",
       "extension": ".ini",
-      "size": 446,
+      "size": 813,
       "is_binary": false
     },
     {
       "name": "requirements.txt",
       "path": "tests-python/requirements.txt",
       "type": "file",
-      "sha": "7fe9443ab1048d6742eda2a44c6731e24e95303d",
+      "sha": "36d21325982bb5b17f05af169c7a5976e2b91429",
       "mode": "100644",
       "extension": ".txt",
-      "size": 281,
+      "size": 279,
       "is_binary": false
     },
     {
@@ -11786,19 +11834,19 @@
     }
   ],
   "truncated": false,
-  "extracted_at": "2026-09-17T10:45:14.625001",
+  "extracted_at": "2026-09-18T10:26:49.763221",
   "method": "rest",
-  "total_items": 1220,
+  "total_items": 1225,
   "repository_metadata": {
     "id": 957040204,
     "full_name": "unb-mds/2025-1-NoFluxoUNB",
     "description": "Fluxograma interativo com chat-bot que auxilia na escolha e visualização da sua estrutura curricular da UnB.",
     "created_at": "2025-03-29T12:09:56Z",
-    "updated_at": "2026-09-14T21:22:03Z",
+    "updated_at": "2026-09-18T01:23:19Z",
     "language": "TypeScript",
-    "size": 142682,
+    "size": 142776,
     "stars": 23,
     "forks": 9,
-    "open_issues": 14
+    "open_issues": 3
   }
 }

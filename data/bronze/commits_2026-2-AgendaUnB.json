@@ -1,10 +1,27 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-17T10:42:05.978200",
+      "extracted_at": "2026-09-18T10:23:58.226410",
       "file_path": "data/bronze/commits_2026-2-AgendaUnB.json",
-      "record_count": 35
+      "record_count": 36
     }
+  },
+  {
+    "sha": "a7fe3782612e44f0597fddd4180d69b891f84498",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-18T05:26:23Z",
+        "login": "Thomas4ugust0"
+      },
+      "message": "fix: Corrigir link para AgendaUnB"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-2-AgendaUnB"
   },
   {
     "sha": "45f7d6650a58287bcffb2671ab75912dc43208d8",

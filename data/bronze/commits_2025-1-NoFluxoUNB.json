@@ -1,10 +1,129 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-17T10:09:42.655574",
+      "extracted_at": "2026-09-18T09:49:08.200308",
       "file_path": "data/bronze/commits_2025-1-NoFluxoUNB.json",
-      "record_count": 1212
+      "record_count": 1219
     }
+  },
+  {
+    "sha": "6f7f7a199fc508cabacbba403747273a7b51531b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-18T01:23:14Z",
+        "login": "Vitor-Trancoso"
+      },
+      "message": "Merge pull request #171 from unb-mds/feat/chat-tickets"
+    },
+    "additions": 1695,
+    "deletions": 58,
+    "total_changes": 1753,
+    "repo_name": "2025-1-NoFluxoUNB"
+  },
+  {
+    "sha": "b6a338b8b637f49aa08c3ea2d3b634d147066159",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-18T00:47:14Z",
+        "login": "Vitor-Trancoso"
+      },
+      "message": "feat(assistente): guardrail de escopo no Darcy"
+    },
+    "additions": 36,
+    "deletions": 3,
+    "total_changes": 39,
+    "repo_name": "2025-1-NoFluxoUNB"
+  },
+  {
+    "sha": "60426e8f982dacc28726250bd89b64c5ac1aeb54",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-18T00:47:14Z",
+        "login": "Vitor-Trancoso"
+      },
+      "message": "refactor(pdf): migra PyPDF2 (descontinuada) para pypdf"
+    },
+    "additions": 10,
+    "deletions": 10,
+    "total_changes": 20,
+    "repo_name": "2025-1-NoFluxoUNB"
+  },
+  {
+    "sha": "b632cfb8871556bb026ca0486b9d8da47dd4b23e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-18T00:47:14Z",
+        "login": "Vitor-Trancoso"
+      },
+      "message": "test(python): mede cobertura só do código de produção no Pytest"
+    },
+    "additions": 7,
+    "deletions": 2,
+    "total_changes": 9,
+    "repo_name": "2025-1-NoFluxoUNB"
+  },
+  {
+    "sha": "cd0d7e46de2c6ab8c5d1e21cb595eb0ae547aba7",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-18T00:29:00Z",
+        "login": "Vitor-Trancoso"
+      },
+      "message": "fix(ci): destrava os gates de backend que barravam o PR do chat"
+    },
+    "additions": 37,
+    "deletions": 33,
+    "total_changes": 70,
+    "repo_name": "2025-1-NoFluxoUNB"
+  },
+  {
+    "sha": "c4579a37a13f67df4898ac3fa6177df21bec1783",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-18T00:04:24Z",
+        "login": "Vitor-Trancoso"
+      },
+      "message": "feat(suporte): contador de não lidas estilo WhatsApp e acesso pela na…"
+    },
+    "additions": 291,
+    "deletions": 2,
+    "total_changes": 293,
+    "repo_name": "2025-1-NoFluxoUNB"
+  },
+  {
+    "sha": "95a22221d1ba4d245a04dc0c063b6359392e2291",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-18T00:04:09Z",
+        "login": "Vitor-Trancoso"
+      },
+      "message": "feat(suporte): chat bidirecional entre usuário e time técnico nos cha…"
+    },
+    "additions": 1370,
+    "deletions": 24,
+    "total_changes": 1394,
+    "repo_name": "2025-1-NoFluxoUNB"
   },
   {
     "sha": "306bf0b19dffe9b25b113cc9251fd04c8aef7aa4",

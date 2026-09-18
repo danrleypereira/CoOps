@@ -1,9 +1,33 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-17T09:52:14.126805",
+      "extracted_at": "2026-09-18T09:26:22.613656",
       "file_path": "data/bronze/issue_events_2026-2-Bandejao-UnB.json",
-      "record_count": 61
+      "record_count": 63
+    }
+  },
+  {
+    "id": 31367277084,
+    "event": "connected",
+    "created_at": "2026-09-18T04:30:29Z",
+    "repo_name": "2026-2-Bandejao-UnB",
+    "actor": {
+      "login": "LuisFelipe311"
+    },
+    "issue": {
+      "number": 16
+    }
+  },
+  {
+    "id": 31367277046,
+    "event": "connected",
+    "created_at": "2026-09-18T04:30:29Z",
+    "repo_name": "2026-2-Bandejao-UnB",
+    "actor": {
+      "login": "LuisFelipe311"
+    },
+    "issue": {
+      "number": 22
     }
   },
   {

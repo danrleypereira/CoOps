@@ -2,7 +2,7 @@
   "owner": "unb-mds",
   "repository": "2023-2-Squad04",
   "branch": "main",
-  "sha": "d641bce9b90428f710043fa95ca1735445e9b221",
+  "sha": "e4640a3d9c38113900ebef61778917386f3b637a",
   "tree": [
     {
       "name": ".github",
@@ -1222,7 +1222,7 @@
       "name": "src",
       "path": "src",
       "type": "directory",
-      "sha": "edacd8332f05606ed39bc90982ef8b71b7f55bd0",
+      "sha": "62a37e58a59060a5e0332afc19ae2df999c296ae",
       "mode": "040000",
       "children": []
     },
@@ -1278,7 +1278,7 @@
       "name": "lista_pdfs.txt",
       "path": "src/lista_pdfs.txt",
       "type": "file",
-      "sha": "adef20de77ec7a3050a3c65fe7e7c9ab2fc45188",
+      "sha": "2ffe5d2cc4b90e93c9f8f16dca46d5c711a9dcf8",
       "mode": "100644",
       "extension": ".txt",
       "size": 64,
@@ -1298,7 +1298,7 @@
       "name": "pdf_downloader_last_date.txt",
       "path": "src/pdf_downloader_last_date.txt",
       "type": "file",
-      "sha": "8046162301fa072c3c4ff789832698a45769f143",
+      "sha": "8de06088b49a275d7c13731afc598a1abfe8ee42",
       "mode": "100644",
       "extension": ".txt",
       "size": 10,
@@ -1344,7 +1344,7 @@
     }
   ],
   "truncated": false,
-  "extracted_at": "2026-09-17T10:44:45.274372",
+  "extracted_at": "2026-09-18T10:26:22.301534",
   "method": "rest",
   "total_items": 139,
   "repository_metadata": {
@@ -1352,9 +1352,9 @@
     "full_name": "unb-mds/2023-2-Squad04",
     "description": "O projeto \"Licitaíba\" é uma iniciativa destinada a automatizar a coleta e o acompanhamento de informações relacionadas a licitações públicas no estado da Paraíba, Brasil.",
     "created_at": "2023-09-03T12:44:30Z",
-    "updated_at": "2026-09-16T18:08:31Z",
+    "updated_at": "2026-09-17T18:08:56Z",
     "language": "Python",
-    "size": 37687,
+    "size": 37688,
     "stars": 5,
     "forks": 4,
     "open_issues": 0

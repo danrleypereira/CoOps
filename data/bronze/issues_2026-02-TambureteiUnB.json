@@ -1,7 +1,7 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-17T09:52:20.609825",
+      "extracted_at": "2026-09-18T09:26:29.833360",
       "file_path": "data/bronze/issues_2026-02-TambureteiUnB.json",
       "record_count": 16
     }
@@ -1516,11 +1516,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 1,
-      "closed_issues": 4,
+      "open_issues": 0,
+      "closed_issues": 5,
       "state": "open",
       "created_at": "2026-09-04T16:27:14Z",
-      "updated_at": "2026-09-16T03:47:40Z",
+      "updated_at": "2026-09-18T00:00:01Z",
       "due_on": "2026-09-04T00:00:00Z",
       "closed_at": null
     },
@@ -1671,7 +1671,7 @@
       "site_admin": false
     },
     "labels": [],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignees": [
       {
@@ -1726,18 +1726,18 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 1,
-      "closed_issues": 4,
+      "open_issues": 0,
+      "closed_issues": 5,
       "state": "open",
       "created_at": "2026-09-04T16:27:14Z",
-      "updated_at": "2026-09-16T03:47:40Z",
+      "updated_at": "2026-09-18T00:00:01Z",
       "due_on": "2026-09-04T00:00:00Z",
       "closed_at": null
     },
-    "comments": 0,
+    "comments": 1,
     "created_at": "2026-09-04T16:51:55Z",
-    "updated_at": "2026-09-16T04:28:06Z",
-    "closed_at": null,
+    "updated_at": "2026-09-18T00:00:58Z",
+    "closed_at": "2026-09-18T00:00:01Z",
     "assignee": {
       "login": "lucasssmira",
       "id": 77651476,
@@ -1775,7 +1775,27 @@
       "total_blocking": 0
     },
     "body": "Descrição\nAnalisar as histórias de usuário sob a perspectiva arquitetural, identificando os principais componentes e responsabilidades necessários para o funcionamento do sistema Tamburetei.\nTarefas\n\nAnalisar as histórias de usuário\n\nIdentificar os principais componentes do sistema\n\nDefinir responsabilidades de cada componente\n\nIdentificar a comunicação entre Frontend, Backend e Banco de Dados\n\nRelacionar as decisões arquiteturais às necessidades do sistema\n\nRegistrar as decisões para orientar as próximas etapas de desenvolvimento\nResultado esperado\nTer uma visão arquitetural inicial do sistema alinhada às histórias de usuário priorizadas.",
-    "closed_by": null,
+    "closed_by": {
+      "login": "lucasssmira",
+      "id": 77651476,
+      "node_id": "MDQ6VXNlcjc3NjUxNDc2",
+      "avatar_url": "https://avatars.githubusercontent.com/u/77651476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/lucasssmira",
+      "html_url": "https://github.com/lucasssmira",
+      "followers_url": "https://api.github.com/users/lucasssmira/followers",
+      "following_url": "https://api.github.com/users/lucasssmira/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lucasssmira/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lucasssmira/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lucasssmira/subscriptions",
+      "organizations_url": "https://api.github.com/users/lucasssmira/orgs",
+      "repos_url": "https://api.github.com/users/lucasssmira/repos",
+      "events_url": "https://api.github.com/users/lucasssmira/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lucasssmira/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
     "reactions": {
       "url": "https://api.github.com/repos/unb-mds/2026-02-TambureteiUnB/issues/8/reactions",
       "total_count": 0,
@@ -1790,7 +1810,7 @@
     },
     "timeline_url": "https://api.github.com/repos/unb-mds/2026-02-TambureteiUnB/issues/8/timeline",
     "performed_via_github_app": null,
-    "state_reason": null,
+    "state_reason": "completed",
     "pinned_comment": null,
     "repo_name": "2026-02-TambureteiUnB"
   },
@@ -1860,11 +1880,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 1,
-      "closed_issues": 4,
+      "open_issues": 0,
+      "closed_issues": 5,
       "state": "open",
       "created_at": "2026-09-04T16:27:14Z",
-      "updated_at": "2026-09-16T03:47:40Z",
+      "updated_at": "2026-09-18T00:00:01Z",
       "due_on": "2026-09-04T00:00:00Z",
       "closed_at": null
     },
@@ -2037,11 +2057,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 1,
-      "closed_issues": 4,
+      "open_issues": 0,
+      "closed_issues": 5,
       "state": "open",
       "created_at": "2026-09-04T16:27:14Z",
-      "updated_at": "2026-09-16T03:47:40Z",
+      "updated_at": "2026-09-18T00:00:01Z",
       "due_on": "2026-09-04T00:00:00Z",
       "closed_at": null
     },

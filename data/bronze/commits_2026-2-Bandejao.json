@@ -1,10 +1,27 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-17T10:42:11.994434",
+      "extracted_at": "2026-09-18T10:24:03.887256",
       "file_path": "data/bronze/commits_2026-2-Bandejao.json",
-      "record_count": 54
+      "record_count": 55
     }
+  },
+  {
+    "sha": "0c5b6e11f05cfec84a02ae4cbba6ebf18ea38da0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-17T13:31:57Z",
+        "login": "pithzin"
+      },
+      "message": "docs: atualiza planejamento semanal e reclamacoes"
+    },
+    "additions": 33,
+    "deletions": 25,
+    "total_changes": 58,
+    "repo_name": "2026-2-Bandejao"
   },
   {
     "sha": "fa012d155e2b2cdb10e1d2973f92c8f6f3b2a984",

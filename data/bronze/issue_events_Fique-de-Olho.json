@@ -1,9 +1,81 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-17T09:52:11.755160",
+      "extracted_at": "2026-09-18T09:26:20.185341",
       "file_path": "data/bronze/issue_events_Fique-de-Olho.json",
-      "record_count": 75
+      "record_count": 81
+    }
+  },
+  {
+    "id": 31320566363,
+    "event": "closed",
+    "created_at": "2026-09-17T12:54:18Z",
+    "repo_name": "Fique-de-Olho",
+    "actor": {
+      "login": "Thur-sylva"
+    },
+    "issue": {
+      "number": 16
+    }
+  },
+  {
+    "id": 31320829351,
+    "event": "project_v2_item_status_changed",
+    "created_at": "2026-09-17T12:54:17Z",
+    "repo_name": "Fique-de-Olho",
+    "actor": {
+      "login": "Thur-sylva"
+    },
+    "issue": {
+      "number": 16
+    }
+  },
+  {
+    "id": 31320547583,
+    "event": "project_v2_item_status_changed",
+    "created_at": "2026-09-17T12:53:57Z",
+    "repo_name": "Fique-de-Olho",
+    "actor": {
+      "login": "Thur-sylva"
+    },
+    "issue": {
+      "number": 14
+    }
+  },
+  {
+    "id": 31320535964,
+    "event": "project_v2_item_status_changed",
+    "created_at": "2026-09-17T12:53:45Z",
+    "repo_name": "Fique-de-Olho",
+    "actor": {
+      "login": "Thur-sylva"
+    },
+    "issue": {
+      "number": 13
+    }
+  },
+  {
+    "id": 31320523673,
+    "event": "project_v2_item_status_changed",
+    "created_at": "2026-09-17T12:53:36Z",
+    "repo_name": "Fique-de-Olho",
+    "actor": {
+      "login": "Thur-sylva"
+    },
+    "issue": {
+      "number": 12
+    }
+  },
+  {
+    "id": 31320512516,
+    "event": "project_v2_item_status_changed",
+    "created_at": "2026-09-17T12:53:19Z",
+    "repo_name": "Fique-de-Olho",
+    "actor": {
+      "login": "Thur-sylva"
+    },
+    "issue": {
+      "number": 11
     }
   },
   {

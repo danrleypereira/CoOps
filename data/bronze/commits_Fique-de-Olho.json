@@ -1,10 +1,27 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-17T10:41:57.517280",
+      "extracted_at": "2026-09-18T10:23:47.544288",
       "file_path": "data/bronze/commits_Fique-de-Olho.json",
-      "record_count": 18
+      "record_count": 19
     }
+  },
+  {
+    "sha": "4efdaa3e1163166abbcf37d4b58cb5f7f94f845b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-17T21:16:36Z",
+        "login": "Isac-sil-mar"
+      },
+      "message": "Corrige veículo de notificação da aplicação para email."
+    },
+    "additions": 1,
+    "deletions": 2,
+    "total_changes": 3,
+    "repo_name": "Fique-de-Olho"
   },
   {
     "sha": "bb4cde507dd530dd6f5db6483aaf41ac56c56a9f",

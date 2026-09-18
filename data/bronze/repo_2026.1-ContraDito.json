@@ -67,13 +67,13 @@
   "deployments_url": "https://api.github.com/repos/unb-mds/2026.1-ContraDito/deployments",
   "created_at": "2026-03-27T18:55:34Z",
   "updated_at": "2026-09-07T22:10:16Z",
-  "pushed_at": "2026-09-17T01:59:11Z",
+  "pushed_at": "2026-09-18T01:46:24Z",
   "git_url": "git://github.com/unb-mds/2026.1-ContraDito.git",
   "ssh_url": "git@github.com:unb-mds/2026.1-ContraDito.git",
   "clone_url": "https://github.com/unb-mds/2026.1-ContraDito.git",
   "svn_url": "https://github.com/unb-mds/2026.1-ContraDito",
   "homepage": "https://contradito.vercel.app",
-  "size": 15319,
+  "size": 15256,
   "stargazers_count": 9,
   "watchers_count": 9,
   "language": "Python",
@@ -139,7 +139,7 @@
   "network_count": 3,
   "subscribers_count": 1,
   "_metadata": {
-    "extracted_at": "2026-09-17T09:42:25.707761",
+    "extracted_at": "2026-09-18T09:15:56.085564",
     "file_path": "data/bronze/repo_2026.1-ContraDito.json"
   }
 }

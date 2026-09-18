@@ -2,7 +2,7 @@
   "owner": "unb-mds",
   "repository": "2026-2-Bandejao",
   "branch": "main",
-  "sha": "fa012d155e2b2cdb10e1d2973f92c8f6f3b2a984",
+  "sha": "0c5b6e11f05cfec84a02ae4cbba6ebf18ea38da0",
   "tree": [
     {
       "name": ".gitignore",
@@ -18,10 +18,10 @@
       "name": "README.md",
       "path": "README.md",
       "type": "file",
-      "sha": "b81e98aad5af2134bf79c4c47f719d92a8a97bd6",
+      "sha": "eb73f9889558f92cc912307730fb3cd65fc0c4c3",
       "mode": "100644",
       "extension": ".md",
-      "size": 2291,
+      "size": 2360,
       "is_binary": false
     },
     {
@@ -496,10 +496,10 @@
       "name": "contexto.md",
       "path": "contexto.md",
       "type": "file",
-      "sha": "3ed305249c8453305a415b98af0f4b63fd663a31",
+      "sha": "328b7b6fd981302de7bae7ab31f5f8bc2c71d50c",
       "mode": "100644",
       "extension": ".md",
-      "size": 5745,
+      "size": 6526,
       "is_binary": false
     },
     {
@@ -516,7 +516,7 @@
       "name": "docs",
       "path": "docs",
       "type": "directory",
-      "sha": "a2a71eda08cf8f581f61d27e00ce3b904d5b09ae",
+      "sha": "a055edf937cc93bb6049aaae95a2ae6739140192",
       "mode": "040000",
       "children": []
     },
@@ -524,30 +524,30 @@
       "name": "Arquitetura.md",
       "path": "docs/Arquitetura.md",
       "type": "file",
-      "sha": "6b892a5cbe56a0d98d6ea4497028bf12d0ba643f",
+      "sha": "1c5a964ee5d0d1e0e4ddd762c6be5fe61a188f39",
       "mode": "100644",
       "extension": ".md",
-      "size": 3164,
+      "size": 3504,
       "is_binary": false
     },
     {
       "name": "Requisitos.md",
       "path": "docs/Requisitos.md",
       "type": "file",
-      "sha": "57a70183d5db0694e7c23a18a9736211b64d9c10",
+      "sha": "4dde2f48eec461fa5ba9f4ba098e3be222ee3e58",
       "mode": "100644",
       "extension": ".md",
-      "size": 2375,
+      "size": 2874,
       "is_binary": false
     },
     {
       "name": "documento_de_visao.md",
       "path": "docs/documento_de_visao.md",
       "type": "file",
-      "sha": "d90e8c7e0fe06f047e7d20927d0007c95c0f9241",
+      "sha": "890816d607f7d08320e4b655a3ebcd0abae66a31",
       "mode": "100644",
       "extension": ".md",
-      "size": 3767,
+      "size": 4437,
       "is_binary": false
     },
     {
@@ -1016,7 +1016,7 @@
     }
   ],
   "truncated": false,
-  "extracted_at": "2026-09-17T10:45:46.648208",
+  "extracted_at": "2026-09-18T10:27:20.958885",
   "method": "rest",
   "total_items": 106,
   "repository_metadata": {
@@ -1024,9 +1024,9 @@
     "full_name": "unb-mds/2026-2-Bandejao",
     "description": "Grupo G12 - Metodos de Desenvolvimento de Software 2026/2",
     "created_at": "2026-08-18T11:59:18Z",
-    "updated_at": "2026-09-16T16:34:57Z",
+    "updated_at": "2026-09-17T13:33:10Z",
     "language": "Python",
-    "size": 145,
+    "size": 151,
     "stars": 1,
     "forks": 0,
     "open_issues": 2

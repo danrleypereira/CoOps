@@ -1,10 +1,1030 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-17T10:42:02.390240",
+      "extracted_at": "2026-09-18T10:23:54.410983",
       "file_path": "data/bronze/commits_2026-02-UnDb.json",
-      "record_count": 81
+      "record_count": 141
     }
+  },
+  {
+    "sha": "0d2e0502ec25387590bdb4df4768aa741a00849f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-17T20:07:30Z",
+        "login": "gabrielrdaraujo"
+      },
+      "message": "Merge pull request #88 from unb-mds/release/0.1.0-alpha.1"
+    },
+    "additions": 4909,
+    "deletions": 70,
+    "total_changes": 4979,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "4520f6ed3aab0f858095e4974a41d3b9ade2a5d4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-17T20:01:32Z",
+        "login": "gabrielrdaraujo"
+      },
+      "message": "fix(avaliacoes): validar vinculo na consulta agregada"
+    },
+    "additions": 57,
+    "deletions": 1,
+    "total_changes": 58,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "664a43b5e43ca752e624b9fe1e25f50ad4e9a7fb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-17T17:01:06Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge pull request #87 from unb-mds/feature/issue-25-concluir-integracao"
+    },
+    "additions": 749,
+    "deletions": 19,
+    "total_changes": 768,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "da2121315fb33d55bb9fc867a58f2bd720a12d2e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-17T16:58:21Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "fix(sigaa): validar falhas silenciosas da importacao"
+    },
+    "additions": 53,
+    "deletions": 4,
+    "total_changes": 57,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "42622e61a44d56f8c1bb08d68c76fcf31f87bd1f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-17T14:35:41Z",
+        "login": "gabrielrdaraujo"
+      },
+      "message": "chore: corrigir whitespace dos comandos"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "a3a245766a444afb0327c89108c0d11272cda8a0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-17T14:34:24Z",
+        "login": "gabrielrdaraujo"
+      },
+      "message": "feat(sigaa): concluir integracao persistida"
+    },
+    "additions": 698,
+    "deletions": 16,
+    "total_changes": 714,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "96f60058e17045d49d82eaf075e0fb74b207eea4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-17T13:34:04Z",
+        "login": "gabrielrdaraujo"
+      },
+      "message": "Merge pull request #86 from unb-mds/feature/40-consulta-agregada"
+    },
+    "additions": 599,
+    "deletions": 2,
+    "total_changes": 601,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "7df43014aa9945b16325eeda2cdcd55c4b4083fb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-17T01:16:35Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "feat(avaliacoes): implementa consulta agregada"
+    },
+    "additions": 599,
+    "deletions": 2,
+    "total_changes": 601,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "1329317f295d169f6b45ee4b222c2d2c92c75c0f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-17T01:02:27Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge pull request #85 from unb-mds/feature/issue-25-integrar-sigaa"
+    },
+    "additions": 245,
+    "deletions": 0,
+    "total_changes": 245,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "d106e201c0e40ec085d657cf406f3e9d28c3472a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-17T00:59:35Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "fix(sigaa): validate persisted offers"
+    },
+    "additions": 158,
+    "deletions": 31,
+    "total_changes": 189,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "5a97019ae77fab408e6168b2943ff541c9fb6e2a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-17T00:55:12Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge remote-tracking branch 'origin/develop' into feature/issue-25-i…"
+    },
+    "additions": 3279,
+    "deletions": 68,
+    "total_changes": 3347,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "9b95a7d5ed23098c7c31d27c1e012dd31819930b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-17T00:47:05Z",
+        "login": null
+      },
+      "message": "feat(sigaa): adiciona service de"
+    },
+    "additions": 58,
+    "deletions": 0,
+    "total_changes": 58,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "b228cd6e3a66128e427498e6bf8375576ee4ae69",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-17T00:34:19Z",
+        "login": null
+      },
+      "message": "feat(sigaa): adiciona repositories"
+    },
+    "additions": 60,
+    "deletions": 0,
+    "total_changes": 60,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "79516c6d171eda0caac4397cf7ee3ddef8e2e273",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-17T00:28:45Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge pull request #84 from unb-mds/feature/81-skill-ambiguity-removal"
+    },
+    "additions": 188,
+    "deletions": 0,
+    "total_changes": 188,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "3435b27d481e35b40c881fb9562ad97654cf198b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-17T00:20:48Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge remote-tracking branch 'origin/develop' into feature/81-skill-a…"
+    },
+    "additions": 829,
+    "deletions": 43,
+    "total_changes": 872,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "036932b20974f125879f5a5e5560acc40ddc3dee",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-16T23:45:37Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge pull request #83 from unb-mds/feature/81-skill-grill-me"
+    },
+    "additions": 101,
+    "deletions": 0,
+    "total_changes": 101,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "5c39f7abe5ba59b1dbb6819a8227116cbcd1d9ae",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-16T23:40:27Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge branch 'develop' into feature/81-skill-grill-me"
+    },
+    "additions": 829,
+    "deletions": 42,
+    "total_changes": 871,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "d2b83b1794207fcedcf85b4b49eae55df5f09d55",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-16T23:38:38Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "fix: keep grill-me frontmatter portable"
+    },
+    "additions": 0,
+    "deletions": 1,
+    "total_changes": 1,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "a9174b1290e5da4a74d2e34af343d79df9c05948",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-16T16:46:37Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge pull request #80 from unb-mds/docs/github-pages"
+    },
+    "additions": 285,
+    "deletions": 1,
+    "total_changes": 286,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "b52b416ea45844953c784b0e9d28c2d43c1adfad",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-16T16:40:48Z",
+        "login": "gabrielrdaraujo"
+      },
+      "message": "docs: publica documentacao no GitHub Pages"
+    },
+    "additions": 285,
+    "deletions": 1,
+    "total_changes": 286,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "11928f26c550111f6f579176d32f087a07d8dcfb",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-16T16:10:30Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge pull request #78 from unb-mds/docs/atualiza-nome-undb"
+    },
+    "additions": 11,
+    "deletions": 11,
+    "total_changes": 22,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "d46bed8d8dcf9716566e560bd8c1aadbf8277306",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-16T16:01:37Z",
+        "login": "gabrielrdaraujo"
+      },
+      "message": "docs: atualiza nome e referencias do repositorio"
+    },
+    "additions": 11,
+    "deletions": 11,
+    "total_changes": 22,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "579d3b2c4b954989953a59f43510cba3903cd3ce",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-16T15:33:07Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge pull request #76 from unb-mds/docs/visao-e-figma"
+    },
+    "additions": 158,
+    "deletions": 2,
+    "total_changes": 160,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "17f19e08d9f126a31dc531f02f3351ba33fa327d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-16T15:21:00Z",
+        "login": "gabrielrdaraujo"
+      },
+      "message": "docs: adiciona visão do produto e link do Figma"
+    },
+    "additions": 158,
+    "deletions": 2,
+    "total_changes": 160,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "8564d51317f278ab97aa93f5eb1594ad6c39467e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-16T00:44:20Z",
+        "login": "gabrielrdaraujo"
+      },
+      "message": "Merge pull request #74 from unb-mds/feature/38-modelo-avaliacao"
+    },
+    "additions": 210,
+    "deletions": 11,
+    "total_changes": 221,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "fc344d5c00049073ad23cb421eb50d9b9d103fc2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-15T22:54:35Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "feat(avaliacoes): valida escalas da avaliacao"
+    },
+    "additions": 210,
+    "deletions": 11,
+    "total_changes": 221,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "40d24ab03540ff8db867df1628952c3e896de553",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-15T15:26:44Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "feat:add skill ambiguity removal"
+    },
+    "additions": 188,
+    "deletions": 0,
+    "total_changes": 188,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "c108fc334b6e726dbc8f6eb03e144d6c31420421",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-15T14:37:08Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "feat: add skill grill-me"
+    },
+    "additions": 102,
+    "deletions": 0,
+    "total_changes": 102,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "18db35e8169ec595a54be0de100e91ad9b94c090",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-15T14:05:26Z",
+        "login": "gabrielrdaraujo"
+      },
+      "message": "Merge pull request #71 from unb-mds/docs/ata-reuniao-sprint03"
+    },
+    "additions": 155,
+    "deletions": 0,
+    "total_changes": 155,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "5e187da174ec88b985b934ba0906a56f87192b22",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-15T13:59:45Z",
+        "login": "gabrielrdaraujo"
+      },
+      "message": "docs: tratar findings da revisão da ata"
+    },
+    "additions": 4,
+    "deletions": 4,
+    "total_changes": 8,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "2d2583514164b7e863916173e662af5005f50d8e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-15T01:19:04Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "docs: registrar reunião e propor skill de atas"
+    },
+    "additions": 155,
+    "deletions": 0,
+    "total_changes": 155,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "9d9f7abd8b88bcf191c7c81c81afde45223da8bd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-15T01:08:02Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge pull request #69 from unb-mds/feature/skill-postgresql"
+    },
+    "additions": 181,
+    "deletions": 4,
+    "total_changes": 185,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "caa513272bd0e3dc97c6e607fc774db095c0c6e0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-15T01:06:49Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge branch 'develop' into feature/skill-postgresql"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "fb55b9a06efb0da0a999bb6b3f6603a8d50c026a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-15T01:04:31Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge pull request #68 from unb-mds/feature/skill-database-design"
+    },
+    "additions": 175,
+    "deletions": 0,
+    "total_changes": 175,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "77dee11c657fc444ea2e77bb8ba940f8158a290e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-15T01:03:09Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "fix: integrar skills de banco e PostgreSQL"
+    },
+    "additions": 11,
+    "deletions": 18,
+    "total_changes": 29,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "839470f671e60e0ca80294b095f00ea8e791471a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-15T01:03:00Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "fix: alinhar skill database-design ao modelo vigente"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "8af251d358c5de881e1f8d2f5df65c74d6c31474",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-14T22:47:29Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "feat: add skill auxliar ao postgresql"
+    },
+    "additions": 184,
+    "deletions": 0,
+    "total_changes": 184,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "5663a20d1b4362c3a90f0eb3604cd84e14649f8f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-14T22:23:26Z",
+        "login": "warlleymedeiros"
+      },
+      "message": "feat: add skill de design de bd"
+    },
+    "additions": 175,
+    "deletions": 0,
+    "total_changes": 175,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "0f107cd2293a6c7972e72a871f6100a4e81fb43c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-14T13:17:05Z",
+        "login": "gabrielrdaraujo"
+      },
+      "message": "Merge pull request #65 from unb-mds/docs/38-consistencia-backlog"
+    },
+    "additions": 120,
+    "deletions": 44,
+    "total_changes": 164,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "abdb29522fedcd42b6e68bf5aeb18901795aac40",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-14T02:08:26Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "docs: alinhar requisitos aprovados e verificacoes do backend"
+    },
+    "additions": 120,
+    "deletions": 44,
+    "total_changes": 164,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "b6327e1b5706475e5ae740e2f3cf47d18f916be3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-14T00:50:28Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge pull request #63 from unb-mds/docs/issue-28-proposta-frontend"
+    },
+    "additions": 19,
+    "deletions": 9,
+    "total_changes": 28,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "d6ba0f28bb673d05f1d84920d127fe7ba911e9c4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-13T23:46:34Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "docs: registrar validação da stack frontend"
+    },
+    "additions": 7,
+    "deletions": 4,
+    "total_changes": 11,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "01e116e9e55c55b6c8957d2d930a1b089c93ef3b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-13T22:37:33Z",
+        "login": "ViniGvdo"
+      },
+      "message": "docs: atualizando a documentação do frontend"
+    },
+    "additions": 13,
+    "deletions": 6,
+    "total_changes": 19,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "7c8be613603c45868c9073e012e7460ac7bab2ad",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-13T22:31:28Z",
+        "login": "ViniGvdo"
+      },
+      "message": "docs: adicionando especificação da arquitetura frontend"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "a0e016eb3ffcf9a6e420ac7dc17fbac95c11cb3b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-13T20:54:12Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge pull request #62 from unb-mds/feature/issue-23-viabilidade-scraper"
+    },
+    "additions": 416,
+    "deletions": 0,
+    "total_changes": 416,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "74298480cd10d63247121e4d3ef61dc531597810",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-13T20:53:04Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "fix: preserva separacao entre docentes do SIGAA"
+    },
+    "additions": 5,
+    "deletions": 5,
+    "total_changes": 10,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "b1e01f27fbc8e46d3b05cdc6035e6245e043c61a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-13T19:24:51Z",
+        "login": null
+      },
+      "message": "test: reforçar validação do parser SIGAA"
+    },
+    "additions": 36,
+    "deletions": 4,
+    "total_changes": 40,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "3a209e2bbd8f1239e76a59c921c66d71ee62c898",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-13T19:09:29Z",
+        "login": null
+      },
+      "message": "feat: testar a extração dos dados da página pública do sigaa por meio…"
+    },
+    "additions": 384,
+    "deletions": 0,
+    "total_changes": 384,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "504d396211f8c3240bb0307f3d8467213c033662",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-13T17:19:44Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge pull request #59 from unb-mds/docs/tutorial-agent-skills"
+    },
+    "additions": 585,
+    "deletions": 0,
+    "total_changes": 585,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "a416dc4a673b6f2deaff4de209af89e1cd8fc519",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-13T17:17:55Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge remote-tracking branch 'origin/develop' into HEAD"
+    },
+    "additions": 694,
+    "deletions": 5,
+    "total_changes": 699,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "1911744e62de84c9852aedaad7d8381a48c3cb0d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-13T17:17:55Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "docs: alinha tutorial ao fluxo atual"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "fe7df44ff69251ade527f65a1291ab2995d5af79",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-13T17:09:35Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge pull request #58 from unb-mds/feature/issue-22-mapeamento-sigaa"
+    },
+    "additions": 503,
+    "deletions": 0,
+    "total_changes": 503,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "8aed302e53173f69a67267328abd87d58005301b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-13T17:01:39Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge remote-tracking branch 'origin/develop' into HEAD"
+    },
+    "additions": 191,
+    "deletions": 5,
+    "total_changes": 196,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "eacd033db445c6ee51ae1ece575ccf4e068bdba0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-13T17:01:39Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "docs: corrige validacao do mapeamento SIGAA"
+    },
+    "additions": 24,
+    "deletions": 31,
+    "total_changes": 55,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "87e1923d77acb9b33652d498a2e01274532433d4",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-13T16:01:26Z",
+        "login": "gabrielrdaraujo"
+      },
+      "message": "docs: cria um tutorial para uso de skills"
+    },
+    "additions": 585,
+    "deletions": 0,
+    "total_changes": 585,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "a934dcee12c770356741b3e0a42ce66a2618d7c8",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-13T15:24:39Z",
+        "login": "gabrielrdaraujo"
+      },
+      "message": "docs: mapeia fontes públicas do SIGAA"
+    },
+    "additions": 140,
+    "deletions": 25,
+    "total_changes": 165,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "e9fec6e8dcb8c8e66fcaf179063363deb2c3ab2a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-13T13:51:23Z",
+        "login": "gabrielrdaraujo"
+      },
+      "message": "docs: mapeia fontes públicas do SIGAA"
+    },
+    "additions": 395,
+    "deletions": 0,
+    "total_changes": 395,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "fabf463860c26765be979163270362051068e1a2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-11T18:04:30Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge pull request #57 from unb-mds/feature/issue-35-env-example"
+    },
+    "additions": 191,
+    "deletions": 5,
+    "total_changes": 196,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "e17f31b2213a6e93d762e9af0d296d6e53512775",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-11T18:00:37Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "Merge remote-tracking branch 'origin/main' into feature/issue-35-env-…"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-02-UnDb"
+  },
+  {
+    "sha": "60b2016ff1548f3631d2a53621d5714e11da85a9",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-11T18:00:07Z",
+        "login": "nicolaszanin06"
+      },
+      "message": "chore: implementa fluxo gitflow e validacoes de PR"
+    },
+    "additions": 191,
+    "deletions": 5,
+    "total_changes": 196,
+    "repo_name": "2026-02-UnDb"
   },
   {
     "sha": "79482edbdcf0f615750e1e90b48b105cc87432cc",
