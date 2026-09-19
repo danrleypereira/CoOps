@@ -2,19 +2,19 @@
   "repository": "2026-2-AgendaUnB",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-18T10:27:18.545035",
+  "analyzed_at": "2026-09-19T10:02:59.807092",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
   },
   "total_files": 27,
-  "total_bytes": 3816103,
+  "total_bytes": 3810364,
   "languages": [
     {
       "language": "WebM Video",
       "file_count": 2,
       "total_bytes": 3654672,
-      "percentage": 95.77,
+      "percentage": 95.91,
       "files": [
         {
           "path": "public/shaderopt-light.webm",
@@ -31,10 +31,36 @@
       ]
     },
     {
+      "language": "JSON",
+      "file_count": 3,
+      "total_bytes": 59303,
+      "percentage": 1.56,
+      "files": [
+        {
+          "path": "package-lock.json",
+          "name": "package-lock.json",
+          "size": 58818,
+          "extension": ".json"
+        },
+        {
+          "path": "package.json",
+          "name": "package.json",
+          "size": 447,
+          "extension": ".json"
+        },
+        {
+          "path": ".vscode/settings.json",
+          "name": "settings.json",
+          "size": 38,
+          "extension": ".json"
+        }
+      ]
+    },
+    {
       "language": "Markdown",
-      "file_count": 12,
-      "total_bytes": 59913,
-      "percentage": 1.57,
+      "file_count": 10,
+      "total_bytes": 44508,
+      "percentage": 1.17,
       "files": [
         {
           "path": "docs/padroes.md",
@@ -43,15 +69,9 @@
           "extension": ".md"
         },
         {
-          "path": "padrao.md",
-          "name": "padrao.md",
-          "size": 8769,
-          "extension": ".md"
-        },
-        {
           "path": "docs/documento-de-visao.md",
           "name": "documento-de-visao.md",
-          "size": 7900,
+          "size": 7908,
           "extension": ".md"
         },
         {
@@ -61,15 +81,9 @@
           "extension": ".md"
         },
         {
-          "path": "requisitos.md",
-          "name": "requisitos.md",
-          "size": 7652,
-          "extension": ".md"
-        },
-        {
-          "path": "AI-USAGE.md",
+          "path": "docs/AI-USAGE.md",
           "name": "AI-USAGE.md",
-          "size": 5334,
+          "size": 6342,
           "extension": ".md"
         },
         {
@@ -95,51 +109,43 @@
           "name": "sprint-0.md",
           "size": 1788,
           "extension": ".md"
-        }
-      ]
-    },
-    {
-      "language": "JSON",
-      "file_count": 3,
-      "total_bytes": 57315,
-      "percentage": 1.5,
-      "files": [
-        {
-          "path": "package-lock.json",
-          "name": "package-lock.json",
-          "size": 56865,
-          "extension": ".json"
         },
         {
-          "path": "package.json",
-          "name": "package.json",
-          "size": 412,
-          "extension": ".json"
+          "path": "docs/sprints/sprint-1.md",
+          "name": "sprint-1.md",
+          "size": 1588,
+          "extension": ".md"
         },
         {
-          "path": ".vscode/settings.json",
-          "name": "settings.json",
-          "size": 38,
-          "extension": ".json"
+          "path": "docs/Architecture.md",
+          "name": "Architecture.md",
+          "size": 263,
+          "extension": ".md"
         }
       ]
     },
     {
       "language": "JavaScript",
-      "file_count": 3,
-      "total_bytes": 36341,
-      "percentage": 0.95,
+      "file_count": 4,
+      "total_bytes": 28225,
+      "percentage": 0.74,
       "files": [
         {
           "path": "src/App.jsx",
           "name": "App.jsx",
-          "size": 36072,
+          "size": 23551,
+          "extension": ".jsx"
+        },
+        {
+          "path": "src/pages/SecondPage.jsx",
+          "name": "SecondPage.jsx",
+          "size": 4099,
           "extension": ".jsx"
         },
         {
           "path": "src/main.jsx",
           "name": "main.jsx",
-          "size": 135,
+          "size": 441,
           "extension": ".jsx"
         },
         {
@@ -147,6 +153,20 @@
           "name": "vite.config.js",
           "size": 134,
           "extension": ".js"
+        }
+      ]
+    },
+    {
+      "language": "CSS",
+      "file_count": 1,
+      "total_bytes": 15787,
+      "percentage": 0.41,
+      "files": [
+        {
+          "path": "src/styles/global.css",
+          "name": "global.css",
+          "size": 15787,
+          "extension": ".css"
         }
       ]
     },
@@ -167,13 +187,13 @@
     {
       "language": "YAML",
       "file_count": 2,
-      "total_bytes": 2638,
+      "total_bytes": 2645,
       "percentage": 0.07,
       "files": [
         {
           "path": "mkdocs.yml",
           "name": "mkdocs.yml",
-          "size": 1638,
+          "size": 1645,
           "extension": ".yml"
         },
         {
@@ -234,7 +254,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-18T10:28:16.240661",
+    "extracted_at": "2026-09-19T10:03:51.419806",
     "file_path": "data/silver/language_analysis_2026-2-AgendaUnB.json"
   }
 }

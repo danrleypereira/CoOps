@@ -2,13 +2,13 @@
   "repository": "2023-2-Squad04",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-18T10:26:22.301534",
+  "analyzed_at": "2026-09-19T10:02:13.325054",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
   },
   "total_files": 113,
-  "total_bytes": 36456731,
+  "total_bytes": 36459991,
   "languages": [
     {
       "language": "GIF Image",
@@ -27,13 +27,13 @@
     {
       "language": "JSON",
       "file_count": 2,
-      "total_bytes": 7955102,
-      "percentage": 21.82,
+      "total_bytes": 7958362,
+      "percentage": 21.83,
       "files": [
         {
           "path": "src/dados/data.json",
           "name": "data.json",
-          "size": 7891875,
+          "size": 7895135,
           "extension": ".json"
         },
         {
@@ -48,7 +48,7 @@
       "language": "PNG Image",
       "file_count": 29,
       "total_bytes": 4697526,
-      "percentage": 12.89,
+      "percentage": 12.88,
       "files": [
         {
           "path": "docs/assets/imgs/equipe_mobile1.png",
@@ -398,7 +398,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-18T10:28:16.253799",
+    "extracted_at": "2026-09-19T10:03:51.432369",
     "file_path": "data/silver/language_analysis_2023-2-Squad04.json"
   }
 }

@@ -2,7 +2,7 @@
   "repository": "2024-2-Urbanize",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-18T10:26:41.161016",
+  "analyzed_at": "2026-09-19T10:02:29.691585",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -1062,7 +1062,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-18T10:28:17.409346",
+    "extracted_at": "2026-09-19T10:03:52.578781",
     "file_path": "data/silver/language_analysis_2024-2-Urbanize.json"
   }
 }

@@ -2,7 +2,7 @@
   "repository": "2026-2-VeritasIA",
   "owner": "unb-mds",
   "branch": "main",
-  "extracted_at": "2026-09-18T10:27:06.539107",
+  "extracted_at": "2026-09-19T10:02:50.158542",
   "hierarchy": {
     "name": "root",
     "type": "directory",
@@ -1541,7 +1541,7 @@
         "name": "cnn.json",
         "type": "file",
         "language": "JSON",
-        "size": 4,
+        "size": 11351,
         "extension": ".json",
         "path": "scrapers/resultados/cnn.json"
       },
@@ -1549,7 +1549,7 @@
         "name": "g1.json",
         "type": "file",
         "language": "JSON",
-        "size": 90240,
+        "size": 103744,
         "extension": ".json",
         "path": "scrapers/resultados/g1.json"
       },
@@ -1557,7 +1557,7 @@
         "name": "metropoles.json",
         "type": "file",
         "language": "JSON",
-        "size": 2969,
+        "size": 7533,
         "extension": ".json",
         "path": "scrapers/resultados/metropoles.json"
       },
@@ -1565,7 +1565,7 @@
         "name": "r7.json",
         "type": "file",
         "language": "JSON",
-        "size": 10033,
+        "size": 1804,
         "extension": ".json",
         "path": "scrapers/resultados/r7.json"
       },
@@ -1573,7 +1573,7 @@
         "name": "resultados.json",
         "type": "file",
         "language": "JSON",
-        "size": 104688,
+        "size": 126026,
         "extension": ".json",
         "path": "scrapers/resultados/resultados.json"
       },
@@ -1672,7 +1672,7 @@
     ]
   },
   "_metadata": {
-    "extracted_at": "2026-09-18T10:28:17.231159",
+    "extracted_at": "2026-09-19T10:03:52.385904",
     "file_path": "data/silver/hierarchy_2026-2-VeritasIA.json"
   }
 }

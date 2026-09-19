@@ -2,7 +2,7 @@
   "repository": "2026-1-P.R.I.S.M.A",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-18T10:27:12.372533",
+  "analyzed_at": "2026-09-19T10:02:55.464484",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -476,7 +476,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-18T10:28:17.483558",
+    "extracted_at": "2026-09-19T10:03:52.648017",
     "file_path": "data/silver/language_analysis_2026-1-P.R.I.S.M.A.json"
   }
 }

@@ -1,9 +1,9 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-18T10:28:15.474522",
+      "extracted_at": "2026-09-19T10:03:50.668550",
       "file_path": "data/silver/members_statistics.json",
-      "record_count": 556
+      "record_count": 557
     }
   },
   {
@@ -158,12 +158,12 @@
   },
   {
     "name": "nicolaszanin06",
-    "total_events": 575,
+    "total_events": 601,
     "total_commits": 76,
     "total_issues_created": 36,
-    "total_issues_closed": 14,
-    "total_prs_created": 16,
-    "total_prs_closed": 16,
+    "total_issues_closed": 21,
+    "total_prs_created": 18,
+    "total_prs_closed": 18,
     "total_comments": 0,
     "repos": [
       "2026-02-UnDb"
@@ -171,15 +171,15 @@
     "repos_count": 1,
     "activity_period": {
       "first_activity": "2026-08-19T17:01:59",
-      "last_activity": "2026-09-18T02:12:12",
-      "days": 29,
-      "weeks": 4.14
+      "last_activity": "2026-09-19T01:21:43",
+      "days": 30,
+      "weeks": 4.29
     },
-    "avg_weekly_activity": 138.79,
-    "avg_daily_activity": 19.83,
-    "avg_commits_per_week": 18.34,
-    "avg_prs_per_week": 7.72,
-    "avg_issues_per_week": 12.07
+    "avg_weekly_activity": 140.23,
+    "avg_daily_activity": 20.03,
+    "avg_commits_per_week": 17.73,
+    "avg_prs_per_week": 8.4,
+    "avg_issues_per_week": 13.3
   },
   {
     "name": "WallaceBarrosDev",
@@ -191,7 +191,7 @@
     "total_prs_closed": 0,
     "total_comments": 0,
     "repos": [
-      "2025-1-NoFluxoUNB"
+      "2025-1-NoFluxoUnB"
     ],
     "repos_count": 1,
     "activity_period": {
@@ -205,31 +205,6 @@
     "avg_commits_per_week": 130.0,
     "avg_prs_per_week": 0.0,
     "avg_issues_per_week": 0.0
-  },
-  {
-    "name": "art-miranda",
-    "total_events": 89,
-    "total_commits": 2,
-    "total_issues_created": 4,
-    "total_issues_closed": 4,
-    "total_prs_created": 5,
-    "total_prs_closed": 5,
-    "total_comments": 0,
-    "repos": [
-      "2026-2-Cerradinho-API"
-    ],
-    "repos_count": 1,
-    "activity_period": {
-      "first_activity": "2026-09-09T18:20:54",
-      "last_activity": "2026-09-15T01:16:52",
-      "days": 5,
-      "weeks": 0.71
-    },
-    "avg_weekly_activity": 124.6,
-    "avg_daily_activity": 17.8,
-    "avg_commits_per_week": 2.8,
-    "avg_prs_per_week": 14.0,
-    "avg_issues_per_week": 11.2
   },
   {
     "name": "vitorcoelho21",
@@ -282,6 +257,31 @@
     "avg_issues_per_week": 10.2
   },
   {
+    "name": "art-miranda",
+    "total_events": 105,
+    "total_commits": 2,
+    "total_issues_created": 5,
+    "total_issues_closed": 4,
+    "total_prs_created": 5,
+    "total_prs_closed": 5,
+    "total_comments": 0,
+    "repos": [
+      "2026-2-Cerradinho-API"
+    ],
+    "repos_count": 1,
+    "activity_period": {
+      "first_activity": "2026-09-09T18:20:54",
+      "last_activity": "2026-09-18T15:40:26",
+      "days": 8,
+      "weeks": 1.14
+    },
+    "avg_weekly_activity": 91.88,
+    "avg_daily_activity": 13.12,
+    "avg_commits_per_week": 1.75,
+    "avg_prs_per_week": 8.75,
+    "avg_issues_per_week": 7.88
+  },
+  {
     "name": "rafgpereira",
     "total_events": 2018,
     "total_commits": 257,
@@ -291,8 +291,8 @@
     "total_prs_closed": 60,
     "total_comments": 0,
     "repos": [
-      "2024-1-EducaMinas-backend",
-      "2024-1-EducaMinas-frontend"
+      "2024-1-EducaMinas-frontend",
+      "2024-1-EducaMinas-backend"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -317,8 +317,8 @@
     "total_prs_closed": 18,
     "total_comments": 0,
     "repos": [
-      "2023-2-JuizVirtual",
-      "2023-2-SuaGradeUnB"
+      "2023-2-SuaGradeUnB",
+      "2023-2-JuizVirtual"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -560,6 +560,31 @@
     "avg_issues_per_week": 1.24
   },
   {
+    "name": "gabrielrdaraujo",
+    "total_events": 183,
+    "total_commits": 21,
+    "total_issues_created": 8,
+    "total_issues_closed": 8,
+    "total_prs_created": 12,
+    "total_prs_closed": 12,
+    "total_comments": 0,
+    "repos": [
+      "2026-02-UnDb"
+    ],
+    "repos_count": 1,
+    "activity_period": {
+      "first_activity": "2026-08-25T15:32:11",
+      "last_activity": "2026-09-18T22:28:28",
+      "days": 24,
+      "weeks": 3.43
+    },
+    "avg_weekly_activity": 53.38,
+    "avg_daily_activity": 7.62,
+    "avg_commits_per_week": 6.12,
+    "avg_prs_per_week": 7.0,
+    "avg_issues_per_week": 4.67
+  },
+  {
     "name": "BeatrizSants",
     "total_events": 701,
     "total_commits": 38,
@@ -633,31 +658,6 @@
     "avg_commits_per_week": 6.64,
     "avg_prs_per_week": 2.74,
     "avg_issues_per_week": 8.8
-  },
-  {
-    "name": "gabrielrdaraujo",
-    "total_events": 167,
-    "total_commits": 21,
-    "total_issues_created": 8,
-    "total_issues_closed": 8,
-    "total_prs_created": 12,
-    "total_prs_closed": 12,
-    "total_comments": 0,
-    "repos": [
-      "2026-02-UnDb"
-    ],
-    "repos_count": 1,
-    "activity_period": {
-      "first_activity": "2026-08-25T15:32:11",
-      "last_activity": "2026-09-17T22:16:48",
-      "days": 23,
-      "weeks": 3.29
-    },
-    "avg_weekly_activity": 50.83,
-    "avg_daily_activity": 7.26,
-    "avg_commits_per_week": 6.39,
-    "avg_prs_per_week": 7.3,
-    "avg_issues_per_week": 4.87
   },
   {
     "name": "LuisGuilherme67",
@@ -810,31 +810,6 @@
     "avg_issues_per_week": 0.0
   },
   {
-    "name": "eliabexp",
-    "total_events": 92,
-    "total_commits": 4,
-    "total_issues_created": 13,
-    "total_issues_closed": 6,
-    "total_prs_created": 2,
-    "total_prs_closed": 1,
-    "total_comments": 0,
-    "repos": [
-      "2026-2-Followw"
-    ],
-    "repos_count": 1,
-    "activity_period": {
-      "first_activity": "2026-09-03T01:39:30",
-      "last_activity": "2026-09-17T13:59:26",
-      "days": 14,
-      "weeks": 2.0
-    },
-    "avg_weekly_activity": 46.0,
-    "avg_daily_activity": 6.57,
-    "avg_commits_per_week": 2.0,
-    "avg_prs_per_week": 1.5,
-    "avg_issues_per_week": 9.5
-  },
-  {
     "name": "Nibaacriba",
     "total_events": 644,
     "total_commits": 105,
@@ -869,8 +844,8 @@
     "total_prs_closed": 14,
     "total_comments": 0,
     "repos": [
-      "Avalia",
-      "2025-2-Squad-01"
+      "2025-2-Squad-01",
+      "Avalia"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -945,8 +920,8 @@
     "total_prs_closed": 8,
     "total_comments": 0,
     "repos": [
-      "Avalia",
-      "Projeto-P.I.T.E.R"
+      "Projeto-P.I.T.E.R",
+      "Avalia"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -1135,6 +1110,31 @@
     "avg_commits_per_week": 10.96,
     "avg_prs_per_week": 4.05,
     "avg_issues_per_week": 4.13
+  },
+  {
+    "name": "eliabexp",
+    "total_events": 93,
+    "total_commits": 4,
+    "total_issues_created": 13,
+    "total_issues_closed": 6,
+    "total_prs_created": 2,
+    "total_prs_closed": 1,
+    "total_comments": 0,
+    "repos": [
+      "2026-2-Followw"
+    ],
+    "repos_count": 1,
+    "activity_period": {
+      "first_activity": "2026-09-03T01:39:30",
+      "last_activity": "2026-09-19T03:42:36",
+      "days": 16,
+      "weeks": 2.29
+    },
+    "avg_weekly_activity": 40.69,
+    "avg_daily_activity": 5.81,
+    "avg_commits_per_week": 1.75,
+    "avg_prs_per_week": 1.31,
+    "avg_issues_per_week": 8.31
   },
   {
     "name": "daniel-mouraa",
@@ -1641,6 +1641,31 @@
     "avg_issues_per_week": 16.0
   },
   {
+    "name": "warlleymedeiros",
+    "total_events": 135,
+    "total_commits": 35,
+    "total_issues_created": 4,
+    "total_issues_closed": 4,
+    "total_prs_created": 17,
+    "total_prs_closed": 17,
+    "total_comments": 0,
+    "repos": [
+      "2026-02-UnDb"
+    ],
+    "repos_count": 1,
+    "activity_period": {
+      "first_activity": "2026-08-19T16:47:21",
+      "last_activity": "2026-09-18T20:49:49",
+      "days": 30,
+      "weeks": 4.29
+    },
+    "avg_weekly_activity": 31.5,
+    "avg_daily_activity": 4.5,
+    "avg_commits_per_week": 8.17,
+    "avg_prs_per_week": 7.93,
+    "avg_issues_per_week": 1.87
+  },
+  {
     "name": "HugoFreitass",
     "total_events": 432,
     "total_commits": 104,
@@ -1650,8 +1675,8 @@
     "total_prs_closed": 9,
     "total_comments": 0,
     "repos": [
-      "Avalia",
-      "2025-2-GuiaDev"
+      "2025-2-GuiaDev",
+      "Avalia"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -1665,31 +1690,6 @@
     "avg_commits_per_week": 7.51,
     "avg_prs_per_week": 1.37,
     "avg_issues_per_week": 2.16
-  },
-  {
-    "name": "warlleymedeiros",
-    "total_events": 129,
-    "total_commits": 35,
-    "total_issues_created": 4,
-    "total_issues_closed": 4,
-    "total_prs_created": 17,
-    "total_prs_closed": 12,
-    "total_comments": 0,
-    "repos": [
-      "2026-02-UnDb"
-    ],
-    "repos_count": 1,
-    "activity_period": {
-      "first_activity": "2026-08-19T16:47:21",
-      "last_activity": "2026-09-18T02:12:12",
-      "days": 29,
-      "weeks": 4.14
-    },
-    "avg_weekly_activity": 31.14,
-    "avg_daily_activity": 4.45,
-    "avg_commits_per_week": 8.45,
-    "avg_prs_per_week": 7.0,
-    "avg_issues_per_week": 1.93
   },
   {
     "name": "Aquila27",
@@ -1839,6 +1839,31 @@
     "avg_daily_activity": 3.0,
     "avg_commits_per_week": 20.0,
     "avg_prs_per_week": 0.0,
+    "avg_issues_per_week": 0.0
+  },
+  {
+    "name": "Bielziin07",
+    "total_events": 3,
+    "total_commits": 1,
+    "total_issues_created": 0,
+    "total_issues_closed": 0,
+    "total_prs_created": 1,
+    "total_prs_closed": 1,
+    "total_comments": 0,
+    "repos": [
+      "2026-2-AgendaUnB"
+    ],
+    "repos_count": 1,
+    "activity_period": {
+      "first_activity": "2026-09-19T02:39:09",
+      "last_activity": "2026-09-19T02:56:15",
+      "days": 0,
+      "weeks": 0.1
+    },
+    "avg_weekly_activity": 30.0,
+    "avg_daily_activity": 3.0,
+    "avg_commits_per_week": 10.0,
+    "avg_prs_per_week": 20.0,
     "avg_issues_per_week": 0.0
   },
   {
@@ -2176,8 +2201,8 @@
     "total_prs_closed": 10,
     "total_comments": 0,
     "repos": [
-      "Avalia",
-      "2025-2-Squad-01"
+      "2025-2-Squad-01",
+      "Avalia"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -2352,8 +2377,8 @@
     "total_prs_closed": 12,
     "total_comments": 0,
     "repos": [
-      "2023.2_Licitaiba",
-      "2023-2-Squad04"
+      "2023-2-Squad04",
+      "2023.2_Licitaiba"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -2904,8 +2929,8 @@
     "total_prs_closed": 5,
     "total_comments": 0,
     "repos": [
-      "Avalia",
-      "2025-2-GuiaDev"
+      "2025-2-GuiaDev",
+      "Avalia"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -3232,8 +3257,8 @@
     "total_prs_closed": 21,
     "total_comments": 0,
     "repos": [
-      "2024-1-EducaMinas-backend",
-      "2024-1-EducaMinas-frontend"
+      "2024-1-EducaMinas-frontend",
+      "2024-1-EducaMinas-backend"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -3908,8 +3933,8 @@
     "total_prs_closed": 9,
     "total_comments": 0,
     "repos": [
-      "2023.2_Licitaiba",
-      "2023-2-Squad04"
+      "2023-2-Squad04",
+      "2023.2_Licitaiba"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -3959,8 +3984,8 @@
     "total_prs_closed": 5,
     "total_comments": 0,
     "repos": [
-      "Avalia",
-      "2025-2-GuiaDev"
+      "2025-2-GuiaDev",
+      "Avalia"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -4236,8 +4261,8 @@
     "total_prs_closed": 21,
     "total_comments": 0,
     "repos": [
-      "2024-1-Gastos-DF-Doc-Squad12",
-      "Gastos-DF-Squad12"
+      "Gastos-DF-Squad12",
+      "2024-1-Gastos-DF-Doc-Squad12"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -4364,7 +4389,7 @@
     "total_comments": 0,
     "repos": [
       "MDS-MonitoraBSB",
-      "2025-1-NoFluxoUNB"
+      "2025-1-NoFluxoUnB"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -4389,8 +4414,8 @@
     "total_prs_closed": 3,
     "total_comments": 0,
     "repos": [
-      "Avalia",
-      "2025-2-GuiaDev"
+      "2025-2-GuiaDev",
+      "Avalia"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -4404,31 +4429,6 @@
     "avg_commits_per_week": 7.65,
     "avg_prs_per_week": 0.43,
     "avg_issues_per_week": 1.01
-  },
-  {
-    "name": "Joao-vithor-1",
-    "total_events": 64,
-    "total_commits": 10,
-    "total_issues_created": 7,
-    "total_issues_closed": 7,
-    "total_prs_created": 3,
-    "total_prs_closed": 3,
-    "total_comments": 0,
-    "repos": [
-      "2026.2-UnB_Core"
-    ],
-    "repos_count": 1,
-    "activity_period": {
-      "first_activity": "2026-08-18T20:10:13",
-      "last_activity": "2026-09-15T22:32:21",
-      "days": 28,
-      "weeks": 4.0
-    },
-    "avg_weekly_activity": 16.0,
-    "avg_daily_activity": 2.29,
-    "avg_commits_per_week": 2.5,
-    "avg_prs_per_week": 1.5,
-    "avg_issues_per_week": 3.5
   },
   {
     "name": "Donnk61",
@@ -4590,8 +4590,8 @@
     "total_prs_closed": 2,
     "total_comments": 0,
     "repos": [
-      "Avalia",
-      "2025-2-GuiaDev"
+      "2025-2-GuiaDev",
+      "Avalia"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -4605,6 +4605,31 @@
     "avg_commits_per_week": 2.48,
     "avg_prs_per_week": 0.29,
     "avg_issues_per_week": 1.53
+  },
+  {
+    "name": "Joao-vithor-1",
+    "total_events": 65,
+    "total_commits": 10,
+    "total_issues_created": 7,
+    "total_issues_closed": 7,
+    "total_prs_created": 3,
+    "total_prs_closed": 3,
+    "total_comments": 0,
+    "repos": [
+      "2026.2-UnB_Core"
+    ],
+    "repos_count": 1,
+    "activity_period": {
+      "first_activity": "2026-08-18T20:10:13",
+      "last_activity": "2026-09-18T10:57:23",
+      "days": 30,
+      "weeks": 4.29
+    },
+    "avg_weekly_activity": 15.17,
+    "avg_daily_activity": 2.17,
+    "avg_commits_per_week": 2.33,
+    "avg_prs_per_week": 1.4,
+    "avg_issues_per_week": 3.27
   },
   {
     "name": "samuelncaetano",
@@ -4716,8 +4741,8 @@
     "total_prs_closed": 7,
     "total_comments": 0,
     "repos": [
-      "Avalia",
-      "2025-2-Mural-UnB"
+      "2025-2-Mural-UnB",
+      "Avalia"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -4792,8 +4817,8 @@
     "total_prs_closed": 11,
     "total_comments": 0,
     "repos": [
-      "2024-1-EducaMinas-backend",
-      "2024-1-EducaMinas-frontend"
+      "2024-1-EducaMinas-frontend",
+      "2024-1-EducaMinas-backend"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -5619,8 +5644,8 @@
     "total_prs_closed": 13,
     "total_comments": 0,
     "repos": [
-      "2024-1-Gastos-DF-Doc-Squad12",
-      "Gastos-DF-Squad12"
+      "Gastos-DF-Squad12",
+      "2024-1-Gastos-DF-Doc-Squad12"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -6020,7 +6045,7 @@
     "total_prs_closed": 0,
     "total_comments": 0,
     "repos": [
-      "2025-1-NoFluxoUNB"
+      "2025-1-NoFluxoUnB"
     ],
     "repos_count": 1,
     "activity_period": {
@@ -6111,6 +6136,31 @@
     "avg_issues_per_week": 0.98
   },
   {
+    "name": "Thomas4ugust0",
+    "total_events": 41,
+    "total_commits": 26,
+    "total_issues_created": 0,
+    "total_issues_closed": 0,
+    "total_prs_created": 2,
+    "total_prs_closed": 2,
+    "total_comments": 0,
+    "repos": [
+      "2026-2-AgendaUnB"
+    ],
+    "repos_count": 1,
+    "activity_period": {
+      "first_activity": "2026-08-23T23:30:16",
+      "last_activity": "2026-09-19T03:19:34",
+      "days": 26,
+      "weeks": 3.71
+    },
+    "avg_weekly_activity": 11.04,
+    "avg_daily_activity": 1.58,
+    "avg_commits_per_week": 7.0,
+    "avg_prs_per_week": 1.08,
+    "avg_issues_per_week": 0.0
+  },
+  {
     "name": "leoramiroo",
     "total_events": 162,
     "total_commits": 32,
@@ -6145,8 +6195,8 @@
     "total_prs_closed": 13,
     "total_comments": 0,
     "repos": [
-      "2024-1-EducaMinas-backend",
-      "2024-1-EducaMinas-frontend"
+      "2024-1-EducaMinas-frontend",
+      "2024-1-EducaMinas-backend"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -6437,6 +6487,31 @@
     "avg_issues_per_week": 0.43
   },
   {
+    "name": "Vitor-Trancoso",
+    "total_events": 787,
+    "total_commits": 331,
+    "total_issues_created": 12,
+    "total_issues_closed": 9,
+    "total_prs_created": 30,
+    "total_prs_closed": 27,
+    "total_comments": 0,
+    "repos": [
+      "2025-1-NoFluxoUnB"
+    ],
+    "repos_count": 1,
+    "activity_period": {
+      "first_activity": "2025-03-31T19:06:03",
+      "last_activity": "2026-09-18T20:36:35",
+      "days": 536,
+      "weeks": 76.57
+    },
+    "avg_weekly_activity": 10.28,
+    "avg_daily_activity": 1.47,
+    "avg_commits_per_week": 4.32,
+    "avg_prs_per_week": 0.74,
+    "avg_issues_per_week": 0.27
+  },
+  {
     "name": "JoseViniciusQueiroz",
     "total_events": 218,
     "total_commits": 30,
@@ -6546,7 +6621,7 @@
     "total_prs_closed": 0,
     "total_comments": 0,
     "repos": [
-      "2025-1-NoFluxoUNB"
+      "2025-1-NoFluxoUnB"
     ],
     "repos_count": 1,
     "activity_period": {
@@ -6571,7 +6646,7 @@
     "total_prs_closed": 0,
     "total_comments": 0,
     "repos": [
-      "2025-1-NoFluxoUNB"
+      "2025-1-NoFluxoUnB"
     ],
     "repos_count": 1,
     "activity_period": {
@@ -6721,7 +6796,7 @@
     "total_prs_closed": 0,
     "total_comments": 0,
     "repos": [
-      "2025-1-NoFluxoUNB"
+      "2025-1-NoFluxoUnB"
     ],
     "repos_count": 1,
     "activity_period": {
@@ -6859,6 +6934,31 @@
     "avg_daily_activity": 1.41,
     "avg_commits_per_week": 1.9,
     "avg_prs_per_week": 1.67,
+    "avg_issues_per_week": 0.0
+  },
+  {
+    "name": "ailoiol",
+    "total_events": 24,
+    "total_commits": 1,
+    "total_issues_created": 0,
+    "total_issues_closed": 0,
+    "total_prs_created": 4,
+    "total_prs_closed": 4,
+    "total_comments": 0,
+    "repos": [
+      "2026-02-UnDb"
+    ],
+    "repos_count": 1,
+    "activity_period": {
+      "first_activity": "2026-08-31T21:44:36",
+      "last_activity": "2026-09-18T13:31:02",
+      "days": 17,
+      "weeks": 2.43
+    },
+    "avg_weekly_activity": 9.88,
+    "avg_daily_activity": 1.41,
+    "avg_commits_per_week": 0.41,
+    "avg_prs_per_week": 3.29,
     "avg_issues_per_week": 0.0
   },
   {
@@ -7047,7 +7147,7 @@
     "total_prs_closed": 11,
     "total_comments": 0,
     "repos": [
-      "2025-1-NoFluxoUNB"
+      "2025-1-NoFluxoUnB"
     ],
     "repos_count": 1,
     "activity_period": {
@@ -7215,56 +7315,6 @@
     "avg_issues_per_week": 2.12
   },
   {
-    "name": "ailoiol",
-    "total_events": 23,
-    "total_commits": 1,
-    "total_issues_created": 0,
-    "total_issues_closed": 0,
-    "total_prs_created": 4,
-    "total_prs_closed": 3,
-    "total_comments": 0,
-    "repos": [
-      "2026-02-UnDb"
-    ],
-    "repos_count": 1,
-    "activity_period": {
-      "first_activity": "2026-08-31T21:44:36",
-      "last_activity": "2026-09-18T02:03:34",
-      "days": 17,
-      "weeks": 2.43
-    },
-    "avg_weekly_activity": 9.47,
-    "avg_daily_activity": 1.35,
-    "avg_commits_per_week": 0.41,
-    "avg_prs_per_week": 2.88,
-    "avg_issues_per_week": 0.0
-  },
-  {
-    "name": "Vitor-Trancoso",
-    "total_events": 714,
-    "total_commits": 321,
-    "total_issues_created": 8,
-    "total_issues_closed": 8,
-    "total_prs_created": 23,
-    "total_prs_closed": 23,
-    "total_comments": 0,
-    "repos": [
-      "2025-1-NoFluxoUNB"
-    ],
-    "repos_count": 1,
-    "activity_period": {
-      "first_activity": "2025-03-31T19:06:03",
-      "last_activity": "2026-09-18T01:23:16",
-      "days": 535,
-      "weeks": 76.43
-    },
-    "avg_weekly_activity": 9.34,
-    "avg_daily_activity": 1.33,
-    "avg_commits_per_week": 4.2,
-    "avg_prs_per_week": 0.6,
-    "avg_issues_per_week": 0.21
-  },
-  {
     "name": "HenriqueFontenelle",
     "total_events": 105,
     "total_commits": 30,
@@ -7299,8 +7349,8 @@
     "total_prs_closed": 29,
     "total_comments": 0,
     "repos": [
-      "2023.2_Licitaiba",
-      "2023-2-Squad04"
+      "2023-2-Squad04",
+      "2023.2_Licitaiba"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -7339,31 +7389,6 @@
     "avg_commits_per_week": 2.06,
     "avg_prs_per_week": 0.9,
     "avg_issues_per_week": 1.08
-  },
-  {
-    "name": "Thomas4ugust0",
-    "total_events": 33,
-    "total_commits": 20,
-    "total_issues_created": 0,
-    "total_issues_closed": 0,
-    "total_prs_created": 2,
-    "total_prs_closed": 2,
-    "total_comments": 0,
-    "repos": [
-      "2026-2-AgendaUnB"
-    ],
-    "repos_count": 1,
-    "activity_period": {
-      "first_activity": "2026-08-23T23:30:16",
-      "last_activity": "2026-09-18T05:26:23",
-      "days": 25,
-      "weeks": 3.57
-    },
-    "avg_weekly_activity": 9.24,
-    "avg_daily_activity": 1.32,
-    "avg_commits_per_week": 5.6,
-    "avg_prs_per_week": 1.12,
-    "avg_issues_per_week": 0.0
   },
   {
     "name": "Cayoalencar",
@@ -7425,8 +7450,8 @@
     "total_prs_closed": 7,
     "total_comments": 0,
     "repos": [
-      "Avalia",
-      "2025-2-Integralizei_UnB"
+      "2025-2-Integralizei_UnB",
+      "Avalia"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -7501,8 +7526,8 @@
     "total_prs_closed": 13,
     "total_comments": 0,
     "repos": [
-      "2025.1-RelatoriosInteligentesBCB",
-      "2025-2-GuiaDev"
+      "2025-2-GuiaDev",
+      "2025.1-RelatoriosInteligentesBCB"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -7727,8 +7752,8 @@
     "total_prs_closed": 9,
     "total_comments": 0,
     "repos": [
-      "portfolio-MDS",
-      "DFemObras"
+      "DFemObras",
+      "portfolio-MDS"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -8081,10 +8106,10 @@
     "total_prs_closed": 7,
     "total_comments": 0,
     "repos": [
-      "Avalia",
-      "diario-de-bordo",
+      "2025-2-Integralizei_UnB",
       "2026.1-ContraDito",
-      "2025-2-Integralizei_UnB"
+      "Avalia",
+      "diario-de-bordo"
     ],
     "repos_count": 4,
     "activity_period": {
@@ -8234,8 +8259,8 @@
     "total_prs_closed": 8,
     "total_comments": 0,
     "repos": [
-      "2024-1-EducaMinas-backend",
-      "2024-1-EducaMinas-frontend"
+      "2024-1-EducaMinas-frontend",
+      "2024-1-EducaMinas-backend"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -8385,8 +8410,8 @@
     "total_prs_closed": 4,
     "total_comments": 0,
     "repos": [
-      "2024-1-Gastos-DF-Doc-Squad12",
-      "Gastos-DF-Squad12"
+      "Gastos-DF-Squad12",
+      "2024-1-Gastos-DF-Doc-Squad12"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -8561,8 +8586,8 @@
     "total_prs_closed": 3,
     "total_comments": 0,
     "repos": [
-      "Avalia",
-      "Projeto-P.I.T.E.R"
+      "Projeto-P.I.T.E.R",
+      "Avalia"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -8662,8 +8687,8 @@
     "total_prs_closed": 21,
     "total_comments": 0,
     "repos": [
-      "Mds-ArenaPesadelo",
-      "2024-2-AcheiUnB"
+      "2024-2-AcheiUnB",
+      "Mds-ArenaPesadelo"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -8763,8 +8788,8 @@
     "total_prs_closed": 16,
     "total_comments": 0,
     "repos": [
-      "Avalia",
-      "2025-2-Mural-UnB"
+      "2025-2-Mural-UnB",
+      "Avalia"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -8778,6 +8803,31 @@
     "avg_commits_per_week": 2.03,
     "avg_prs_per_week": 0.62,
     "avg_issues_per_week": 0.49
+  },
+  {
+    "name": "ViniGvdo",
+    "total_events": 17,
+    "total_commits": 3,
+    "total_issues_created": 0,
+    "total_issues_closed": 0,
+    "total_prs_created": 2,
+    "total_prs_closed": 2,
+    "total_comments": 0,
+    "repos": [
+      "2026-02-UnDb"
+    ],
+    "repos_count": 1,
+    "activity_period": {
+      "first_activity": "2026-08-31T21:37:20",
+      "last_activity": "2026-09-19T02:39:22",
+      "days": 18,
+      "weeks": 2.57
+    },
+    "avg_weekly_activity": 6.61,
+    "avg_daily_activity": 0.94,
+    "avg_commits_per_week": 1.17,
+    "avg_prs_per_week": 1.56,
+    "avg_issues_per_week": 0.0
   },
   {
     "name": "isacostaf",
@@ -9139,8 +9189,8 @@
     "total_prs_closed": 5,
     "total_comments": 0,
     "repos": [
-      "Avalia",
-      "2025-2-Mural-UnB"
+      "2025-2-Mural-UnB",
+      "Avalia"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -9229,31 +9279,6 @@
     "avg_commits_per_week": 1.07,
     "avg_prs_per_week": 0.57,
     "avg_issues_per_week": 0.14
-  },
-  {
-    "name": "ViniGvdo",
-    "total_events": 14,
-    "total_commits": 3,
-    "total_issues_created": 0,
-    "total_issues_closed": 0,
-    "total_prs_created": 1,
-    "total_prs_closed": 1,
-    "total_comments": 0,
-    "repos": [
-      "2026-02-UnDb"
-    ],
-    "repos_count": 1,
-    "activity_period": {
-      "first_activity": "2026-08-31T21:37:20",
-      "last_activity": "2026-09-17T20:16:14",
-      "days": 16,
-      "weeks": 2.29
-    },
-    "avg_weekly_activity": 6.12,
-    "avg_daily_activity": 0.88,
-    "avg_commits_per_week": 1.31,
-    "avg_prs_per_week": 0.88,
-    "avg_issues_per_week": 0.0
   },
   {
     "name": "CaioMelo25",
@@ -9790,7 +9815,7 @@
     "total_prs_closed": 1,
     "total_comments": 0,
     "repos": [
-      "2025-1-NoFluxoUNB"
+      "2025-1-NoFluxoUnB"
     ],
     "repos_count": 1,
     "activity_period": {
@@ -10168,8 +10193,8 @@
     "total_prs_closed": 6,
     "total_comments": 0,
     "repos": [
-      "2026-1-LegisKids",
-      "2026-2-Cerradinho-API"
+      "2026-2-Cerradinho-API",
+      "2026-1-LegisKids"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -10261,8 +10286,8 @@
   },
   {
     "name": "actions",
-    "total_events": 316,
-    "total_commits": 316,
+    "total_events": 313,
+    "total_commits": 313,
     "total_issues_created": 0,
     "total_issues_closed": 0,
     "total_prs_created": 0,
@@ -10273,10 +10298,10 @@
     ],
     "repos_count": 1,
     "activity_period": {
-      "first_activity": "2024-08-10T04:21:33",
+      "first_activity": "2024-08-15T04:13:19",
       "last_activity": "2025-11-26T03:48:39",
-      "days": 472,
-      "weeks": 67.43
+      "days": 467,
+      "weeks": 66.71
     },
     "avg_weekly_activity": 4.69,
     "avg_daily_activity": 0.67,
@@ -10319,8 +10344,8 @@
     "total_prs_closed": 8,
     "total_comments": 0,
     "repos": [
-      "Avalia",
-      "2025-2-SeLiga"
+      "2025-2-SeLiga",
+      "Avalia"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -10421,8 +10446,8 @@
     "total_prs_closed": 2,
     "total_comments": 0,
     "repos": [
-      "2023.2_Licitaiba",
-      "2023-2-Squad04"
+      "2023-2-Squad04",
+      "2023.2_Licitaiba"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -10514,29 +10539,29 @@
   },
   {
     "name": "actions-user",
-    "total_events": 376,
-    "total_commits": 376,
+    "total_events": 377,
+    "total_commits": 377,
     "total_issues_created": 0,
     "total_issues_closed": 0,
     "total_prs_created": 0,
     "total_prs_closed": 0,
     "total_comments": 0,
     "repos": [
-      "Gastos-DF-2024-02",
-      "2026-1-SafeStreets",
+      "DFemObras",
       "2026.1-ContraDito",
-      "DFemObras"
+      "Gastos-DF-2024-02",
+      "2026-1-SafeStreets"
     ],
     "repos_count": 4,
     "activity_period": {
       "first_activity": "2025-01-03T23:15:33",
-      "last_activity": "2026-09-18T04:22:16",
-      "days": 622,
-      "weeks": 88.86
+      "last_activity": "2026-09-19T04:19:07",
+      "days": 623,
+      "weeks": 89.0
     },
-    "avg_weekly_activity": 4.23,
-    "avg_daily_activity": 0.6,
-    "avg_commits_per_week": 4.23,
+    "avg_weekly_activity": 4.24,
+    "avg_daily_activity": 0.61,
+    "avg_commits_per_week": 4.24,
     "avg_prs_per_week": 0.0,
     "avg_issues_per_week": 0.0
   },
@@ -10550,8 +10575,8 @@
     "total_prs_closed": 3,
     "total_comments": 0,
     "repos": [
-      "2025-2-Squad12",
-      "DFemObras-2025.1"
+      "DFemObras-2025.1",
+      "2025-2-Squad12"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -11502,7 +11527,7 @@
     "total_prs_closed": 12,
     "total_comments": 0,
     "repos": [
-      "2025-1-NoFluxoUNB"
+      "2025-1-NoFluxoUnB"
     ],
     "repos_count": 1,
     "activity_period": {
@@ -11803,7 +11828,7 @@
     "total_prs_closed": 5,
     "total_comments": 0,
     "repos": [
-      "2025-1-NoFluxoUNB"
+      "2025-1-NoFluxoUnB"
     ],
     "repos_count": 1,
     "activity_period": {
@@ -12378,7 +12403,7 @@
     "total_prs_closed": 2,
     "total_comments": 0,
     "repos": [
-      "2025-1-NoFluxoUNB"
+      "2025-1-NoFluxoUnB"
     ],
     "repos_count": 1,
     "activity_period": {
@@ -12454,7 +12479,7 @@
     "total_comments": 0,
     "repos": [
       "2025-2-SeLiga",
-      "2025-1-NoFluxoUNB"
+      "2025-1-NoFluxoUnB"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -12479,99 +12504,99 @@
     "total_prs_closed": 3,
     "total_comments": 0,
     "repos": [
-      "2026-1-ProtectKids",
-      "2025-2-SeLiga",
-      "2025-2-Portal-dos-Professores",
-      "DFemObras-2025.1",
-      "2025-2-Mural-UnB",
-      "2025.1-RelatoriosInteligentesBCB",
-      "2023-2-Squad04",
-      "Sonorus-2025.1",
-      "2026-2-Bandejao-UnB",
-      "2026-1-P.R.I.S.M.A",
-      "2026-2-Bandejao",
-      ".github",
-      "2025-1-GovInsights",
-      "2023.2_DeOlhoRS",
-      "2023-2-Squad02-Desmatazonia",
-      "2023-2-Squad01",
-      "G2-2026-2",
-      "2026-2-VeritasIA",
-      "DFemObras",
-      "2025-1-RelatAI",
-      "2025-2-InfoSchool",
-      "2025-2-GuiaDev",
-      "Squad09-UnBHUB",
-      "2024-2-Squad06",
-      "2026-2-Cerradinho-API",
-      "2023-2-Squad05-TesouroMineiro",
-      "MDS-MonitoraBSB",
-      "2024-1-Squad08",
-      "2023-2-Squad07",
-      "2024-2-Lumina",
-      "2026-2-Followw",
-      "Gastos-DF-Squad12",
-      "2024-2-Datazonia",
-      "2025-2-Squad-01",
-      "2026-02-UnDb",
-      "2024-2-AcheiUnB",
-      "2024-1-EducaMinas-frontend",
-      "2023-2-Squad09-Gotinha",
-      "Mds-ArenaPesadelo",
-      "2026-1-Squad14",
-      "2026-2-MonitoraUnB",
-      "2024-1-EducaMinas-backend",
-      "2023-2-Squad10",
-      "2023-2-JuizVirtual",
-      "LicitaBSB-24.1",
-      "2025-2-Integralizei_UnB",
-      "2024-2-Urbanize",
-      "2024-1-Squad02-CulturaTransparente",
-      "2025-1-NoFluxoUNB",
-      "mapadaacessibilidade",
-      "2025_1-Jakebot",
-      "squad03-r2",
       "teste-ru",
-      "2026.1-ContraDito",
-      "2024-2-Agio",
-      "exemplogitpage",
-      "Fique-de-Olho",
-      "2026-1-Squad13",
-      "2024-1-squad04",
-      "2026-1-squad0x",
-      "2026-02-TambureteiUnB",
-      "2023-2-Squad03-LicitAL",
-      "Gastos-DF-2024-02",
-      "2024-2-Squad01",
-      "2024-1-Squad-10",
-      "2024-1-Gastos-DF-Doc-Squad12",
-      "2025-2-Synapse",
-      "ParticipeMais",
-      "VIDAProject",
-      "2026-2-GlossarioUnB",
-      "2026-1-LegisKids",
-      "2026.2-UnB_Core",
-      "codigoruim",
-      "teste",
-      "2024-2-SuaFinanca",
-      "2025-1-Eletta",
-      "2025-2-Lumina",
-      "2025-2-Squad12",
-      "Projeto-P.I.T.E.R",
-      "2026-1-Mapa_L.I.L.A.S",
-      "2024-1-MinasDeCultura",
-      "2023-2-SuaGradeUnB",
-      "2024-2-ChamaControl",
-      "2026-1-Guard.IA",
-      "2024-1-forUnB",
-      "2023.2_Licitaiba",
       "2023.2_Gotinha",
-      "Avalia",
+      "2026.1-ContraDito",
       "2025-2-OncoMap",
-      "2026-1-SafeStreets",
+      "VIDAProject",
+      "2025-1-Eletta",
+      "2026-1-Squad14",
+      "2023-2-Squad07",
+      "teste",
+      "2024-1-Squad-10",
+      "Gastos-DF-Squad12",
+      "Avalia",
+      "2023-2-Squad01",
+      "2024-2-SuaFinanca",
+      "2024-1-Squad02-CulturaTransparente",
+      "2024-2-Urbanize",
+      "Mds-ArenaPesadelo",
+      "2026-2-Bandejao-UnB",
+      "Projeto-P.I.T.E.R",
+      "codigoruim",
       "2026-1-Squad07",
+      "ParticipeMais",
+      "2024-2-Agio",
+      "2025-2-Integralizei_UnB",
+      "2026-2-Bandejao",
+      "DFemObras",
+      "mapadaacessibilidade",
+      "2025-2-Squad-01",
+      "2023-2-JuizVirtual",
+      "2024-2-ChamaControl",
+      "2025-1-GovInsights",
+      "MDS-MonitoraBSB",
+      "Fique-de-Olho",
+      "2023-2-Squad02-Desmatazonia",
+      "2026-1-Guard.IA",
+      "2025_1-Jakebot",
+      "2025-1-NoFluxoUnB",
+      "exemplogitpage",
+      "2026-1-SafeStreets",
+      "2025-2-Portal-dos-Professores",
+      "squad03-r2",
+      "2025-1-RelatAI",
+      "2024-2-Squad06",
+      "2026-1-ProtectKids",
+      "2023-2-Squad09-Gotinha",
+      "LicitaBSB-24.1",
+      "2025-2-GuiaDev",
+      "2024-1-forUnB",
+      "DFemObras-2025.1",
+      "2025-2-Synapse",
+      "2025-2-SeLiga",
+      "2024-1-MinasDeCultura",
+      "2024-1-EducaMinas-frontend",
+      "2023-2-Squad03-LicitAL",
+      "2026.2-UnB_Core",
+      "2024-1-EducaMinas-backend",
+      "2024-2-AcheiUnB",
+      "Gastos-DF-2024-02",
+      "2025-2-InfoSchool",
       "2025-2-Eh_Fake",
-      "2026-2-AgendaUnB"
+      "2026-1-squad0x",
+      "2026-1-P.R.I.S.M.A",
+      "2024-1-Gastos-DF-Doc-Squad12",
+      "2024-1-squad04",
+      "2023.2_DeOlhoRS",
+      "2024-1-Squad08",
+      "2026-1-LegisKids",
+      "2025-2-Lumina",
+      "2024-2-Lumina",
+      "2023-2-SuaGradeUnB",
+      "2023-2-Squad05-TesouroMineiro",
+      "2026-02-UnDb",
+      "2024-2-Datazonia",
+      "2025-2-Mural-UnB",
+      "2026-2-MonitoraUnB",
+      "2026-2-VeritasIA",
+      "G2-2026-2",
+      ".github",
+      "2026-2-AgendaUnB",
+      "2026-02-TambureteiUnB",
+      "2026-1-Squad13",
+      "2024-2-Squad01",
+      "2026-1-Mapa_L.I.L.A.S",
+      "2025.1-RelatoriosInteligentesBCB",
+      "2023.2_Licitaiba",
+      "2026-2-Followw",
+      "2025-2-Squad12",
+      "Sonorus-2025.1",
+      "2023-2-Squad10",
+      "2026-2-Cerradinho-API",
+      "2023-2-Squad04",
+      "Squad09-UnBHUB",
+      "2026-2-GlossarioUnB"
     ],
     "repos_count": 93,
     "activity_period": {
@@ -12646,9 +12671,9 @@
     "total_prs_closed": 1,
     "total_comments": 0,
     "repos": [
-      "MDS-MonitoraBSB",
+      "Gastos-DF-Squad12",
       "2024-1-Gastos-DF-Doc-Squad12",
-      "Gastos-DF-Squad12"
+      "MDS-MonitoraBSB"
     ],
     "repos_count": 3,
     "activity_period": {
@@ -12798,7 +12823,7 @@
     "total_prs_closed": 0,
     "total_comments": 0,
     "repos": [
-      "2025-1-NoFluxoUNB"
+      "2025-1-NoFluxoUnB"
     ],
     "repos_count": 1,
     "activity_period": {
@@ -12898,8 +12923,8 @@
     "total_prs_closed": 9,
     "total_comments": 0,
     "repos": [
-      "Sonorus-2025.1",
-      "Gastos-DF-Squad12"
+      "Gastos-DF-Squad12",
+      "Sonorus-2025.1"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -12949,8 +12974,8 @@
     "total_prs_closed": 0,
     "total_comments": 0,
     "repos": [
-      "2023-2-Squad03-LicitAL",
-      "2023-2-JuizVirtual"
+      "2023-2-JuizVirtual",
+      "2023-2-Squad03-LicitAL"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -13075,7 +13100,7 @@
     "total_prs_closed": 1,
     "total_comments": 0,
     "repos": [
-      "2025-1-NoFluxoUNB"
+      "2025-1-NoFluxoUnB"
     ],
     "repos_count": 1,
     "activity_period": {
@@ -13176,7 +13201,7 @@
     "total_prs_closed": 4,
     "total_comments": 0,
     "repos": [
-      "2025-1-NoFluxoUNB"
+      "2025-1-NoFluxoUnB"
     ],
     "repos_count": 1,
     "activity_period": {
@@ -13754,8 +13779,8 @@
     "total_prs_closed": 1,
     "total_comments": 0,
     "repos": [
-      "G2-2026-2",
-      "2025-2-Squad-01"
+      "2025-2-Squad-01",
+      "G2-2026-2"
     ],
     "repos_count": 2,
     "activity_period": {
@@ -13780,11 +13805,11 @@
     "total_prs_closed": 5,
     "total_comments": 0,
     "repos": [
-      "2026-1-ProtectKids",
       "2025-2-Squad-01",
-      "DFemObras-2025.1",
+      "2025-1-NoFluxoUnB",
       "2026-02-TambureteiUnB",
-      "2025-1-NoFluxoUNB"
+      "DFemObras-2025.1",
+      "2026-1-ProtectKids"
     ],
     "repos_count": 5,
     "activity_period": {
@@ -13985,21 +14010,21 @@
     "total_prs_closed": 0,
     "total_comments": 20,
     "repos": [
-      "2023-2-Squad04",
+      "MDS-MonitoraBSB",
+      "VIDAProject",
+      "2025_1-Jakebot",
+      "2023-2-JuizVirtual",
       "2024-1-Squad08",
+      "2025-1-Eletta",
+      "2026-1-SafeStreets",
       "2024-2-AcheiUnB",
       "Gastos-DF-2024-02",
-      "VIDAProject",
-      "2023-2-JuizVirtual",
-      "Mds-ArenaPesadelo",
-      "2025-1-Eletta",
-      "2025_1-Jakebot",
+      "2025-1-GovInsights",
+      "2023-2-Squad04",
       "2024-1-Squad-10",
-      "2026-1-SafeStreets",
       "2024-1-squad04",
       "2023-2-SuaGradeUnB",
-      "2025-1-GovInsights",
-      "MDS-MonitoraBSB"
+      "Mds-ArenaPesadelo"
     ],
     "repos_count": 15,
     "activity_period": {

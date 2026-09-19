@@ -2,7 +2,7 @@
   "repository": "2026-2-AgendaUnB",
   "owner": "unb-mds",
   "branch": "main",
-  "extracted_at": "2026-09-18T10:27:18.545035",
+  "extracted_at": "2026-09-19T10:02:59.807092",
   "hierarchy": {
     "name": "root",
     "type": "directory",
@@ -66,14 +66,6 @@
         "path": ".vscode/settings.json"
       },
       {
-        "name": "AI-USAGE.md",
-        "type": "file",
-        "language": "Markdown",
-        "size": 5334,
-        "extension": ".md",
-        "path": "AI-USAGE.md"
-      },
-      {
         "name": "README.md",
         "type": "file",
         "language": "Markdown",
@@ -86,6 +78,14 @@
         "type": "directory",
         "path": "docs",
         "children": []
+      },
+      {
+        "name": "AI-USAGE.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6342,
+        "extension": ".md",
+        "path": "docs/AI-USAGE.md"
       },
       {
         "name": "Architecture.md",
@@ -107,7 +107,7 @@
         "name": "documento-de-visao.md",
         "type": "file",
         "language": "Markdown",
-        "size": 7900,
+        "size": 7908,
         "extension": ".md",
         "path": "docs/documento-de-visao.md"
       },
@@ -169,7 +169,7 @@
         "name": "mkdocs.yml",
         "type": "file",
         "language": "YAML",
-        "size": 1638,
+        "size": 1645,
         "extension": ".yml",
         "path": "mkdocs.yml"
       },
@@ -177,7 +177,7 @@
         "name": "package-lock.json",
         "type": "file",
         "language": "JSON",
-        "size": 56865,
+        "size": 58818,
         "extension": ".json",
         "path": "package-lock.json"
       },
@@ -185,17 +185,9 @@
         "name": "package.json",
         "type": "file",
         "language": "JSON",
-        "size": 412,
+        "size": 447,
         "extension": ".json",
         "path": "package.json"
-      },
-      {
-        "name": "padrao.md",
-        "type": "file",
-        "language": "Markdown",
-        "size": 8769,
-        "extension": ".md",
-        "path": "padrao.md"
       },
       {
         "name": "public",
@@ -228,14 +220,6 @@
         "path": "public/shaderopt-light.webm"
       },
       {
-        "name": "requisitos.md",
-        "type": "file",
-        "language": "Markdown",
-        "size": 7652,
-        "extension": ".md",
-        "path": "requisitos.md"
-      },
-      {
         "name": "src",
         "type": "directory",
         "path": "src",
@@ -245,7 +229,7 @@
         "name": "App.jsx",
         "type": "file",
         "language": "JavaScript",
-        "size": 36072,
+        "size": 23551,
         "extension": ".jsx",
         "path": "src/App.jsx"
       },
@@ -253,9 +237,37 @@
         "name": "main.jsx",
         "type": "file",
         "language": "JavaScript",
-        "size": 135,
+        "size": 441,
         "extension": ".jsx",
         "path": "src/main.jsx"
+      },
+      {
+        "name": "pages",
+        "type": "directory",
+        "path": "src/pages",
+        "children": []
+      },
+      {
+        "name": "SecondPage.jsx",
+        "type": "file",
+        "language": "JavaScript",
+        "size": 4099,
+        "extension": ".jsx",
+        "path": "src/pages/SecondPage.jsx"
+      },
+      {
+        "name": "styles",
+        "type": "directory",
+        "path": "src/styles",
+        "children": []
+      },
+      {
+        "name": "global.css",
+        "type": "file",
+        "language": "CSS",
+        "size": 15787,
+        "extension": ".css",
+        "path": "src/styles/global.css"
       },
       {
         "name": "vite.config.js",
@@ -268,7 +280,7 @@
     ]
   },
   "_metadata": {
-    "extracted_at": "2026-09-18T10:28:16.241161",
+    "extracted_at": "2026-09-19T10:03:51.420287",
     "file_path": "data/silver/hierarchy_2026-2-AgendaUnB.json"
   }
 }

@@ -2,7 +2,7 @@
   "repository": "2023.2_DeOlhoRS",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-18T10:26:25.334211",
+  "analyzed_at": "2026-09-19T10:02:16.587753",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -1168,7 +1168,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-18T10:28:16.518045",
+    "extracted_at": "2026-09-19T10:03:51.689796",
     "file_path": "data/silver/language_analysis_2023.2_DeOlhoRS.json"
   }
 }

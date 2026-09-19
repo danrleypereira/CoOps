@@ -1,12 +1,12 @@
 {
-  "total_users": 562,
-  "total_collaborations": 3406,
+  "total_users": 563,
+  "total_collaborations": 3411,
   "total_repositories": 97,
   "cross_repo_contributors": 76,
-  "avg_collaborators_per_user": 12.12099644128114,
-  "avg_contributors_per_repo": 8.350515463917526,
+  "avg_collaborators_per_user": 12.117229129662523,
+  "avg_contributors_per_repo": 8.360824742268042,
   "_metadata": {
-    "extracted_at": "2026-09-18T10:28:10.004916",
+    "extracted_at": "2026-09-19T10:03:45.170882",
     "file_path": "data/silver/network_statistics.json"
   }
 }

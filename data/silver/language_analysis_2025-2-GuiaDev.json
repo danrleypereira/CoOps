@@ -2,7 +2,7 @@
   "repository": "2025-2-GuiaDev",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-18T10:27:02.274238",
+  "analyzed_at": "2026-09-19T10:02:47.207215",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -720,7 +720,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-18T10:28:16.249206",
+    "extracted_at": "2026-09-19T10:03:51.427888",
     "file_path": "data/silver/language_analysis_2025-2-GuiaDev.json"
   }
 }

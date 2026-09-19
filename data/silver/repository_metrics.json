@@ -1,7 +1,7 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-18T10:28:08.554270",
+      "extracted_at": "2026-09-19T10:03:43.540809",
       "file_path": "data/silver/repository_metrics.json",
       "record_count": 97
     }
@@ -23,12 +23,12 @@
     "repo": "LicitaBSB-24.1"
   },
   {
-    "issues": 109,
-    "prs": 61,
-    "commits": 1219,
+    "issues": 113,
+    "prs": 68,
+    "commits": 1229,
     "comments": 0,
-    "total_activity": 1389,
-    "repo": "2025-1-NoFluxoUNB"
+    "total_activity": 1410,
+    "repo": "2025-1-NoFluxoUnB"
   },
   {
     "issues": 161,
@@ -57,9 +57,9 @@
   {
     "issues": 94,
     "prs": 45,
-    "commits": 843,
+    "commits": 844,
     "comments": 0,
-    "total_activity": 982,
+    "total_activity": 983,
     "repo": "2023-2-Squad04"
   },
   {
@@ -97,9 +97,9 @@
   {
     "issues": 91,
     "prs": 59,
-    "commits": 549,
+    "commits": 550,
     "comments": 0,
-    "total_activity": 699,
+    "total_activity": 700,
     "repo": "2026-1-SafeStreets"
   },
   {
@@ -169,17 +169,17 @@
   {
     "issues": 60,
     "prs": 14,
-    "commits": 523,
+    "commits": 525,
     "comments": 0,
-    "total_activity": 597,
+    "total_activity": 599,
     "repo": "2026-2-VeritasIA"
   },
   {
     "issues": 66,
     "prs": 11,
-    "commits": 517,
+    "commits": 518,
     "comments": 0,
-    "total_activity": 594,
+    "total_activity": 595,
     "repo": "DFemObras-2025.1"
   },
   {
@@ -249,9 +249,9 @@
   {
     "issues": 84,
     "prs": 38,
-    "commits": 360,
+    "commits": 361,
     "comments": 0,
-    "total_activity": 482,
+    "total_activity": 483,
     "repo": "2026-1-Mapa_L.I.L.A.S"
   },
   {
@@ -471,20 +471,20 @@
     "repo": "2023-2-Squad10"
   },
   {
+    "issues": 48,
+    "prs": 55,
+    "commits": 141,
+    "comments": 0,
+    "total_activity": 244,
+    "repo": "2026-02-UnDb"
+  },
+  {
     "issues": 75,
     "prs": 26,
     "commits": 142,
     "comments": 0,
     "total_activity": 243,
     "repo": "Mds-ArenaPesadelo"
-  },
-  {
-    "issues": 48,
-    "prs": 52,
-    "commits": 141,
-    "comments": 0,
-    "total_activity": 241,
-    "repo": "2026-02-UnDb"
   },
   {
     "issues": 85,
@@ -567,11 +567,11 @@
     "repo": "2023-2-Squad03-LicitAL"
   },
   {
-    "issues": 55,
+    "issues": 56,
     "prs": 39,
     "commits": 50,
     "comments": 0,
-    "total_activity": 144,
+    "total_activity": 145,
     "repo": "2026-2-Cerradinho-API"
   },
   {
@@ -639,20 +639,20 @@
     "repo": "2023.2_Gotinha"
   },
   {
+    "issues": 0,
+    "prs": 6,
+    "commits": 43,
+    "comments": 0,
+    "total_activity": 49,
+    "repo": "2026-2-AgendaUnB"
+  },
+  {
     "issues": 7,
     "prs": 5,
     "commits": 30,
     "comments": 0,
     "total_activity": 42,
     "repo": "2026-2-MonitoraUnB"
-  },
-  {
-    "issues": 0,
-    "prs": 5,
-    "commits": 36,
-    "comments": 0,
-    "total_activity": 41,
-    "repo": "2026-2-AgendaUnB"
   },
   {
     "issues": 0,

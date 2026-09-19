@@ -2,7 +2,7 @@
   "repository": "2024-2-Datazonia",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-18T10:26:45.558940",
+  "analyzed_at": "2026-09-19T10:02:33.522776",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -330,7 +330,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-18T10:28:17.237329",
+    "extracted_at": "2026-09-19T10:03:52.391943",
     "file_path": "data/silver/language_analysis_2024-2-Datazonia.json"
   }
 }

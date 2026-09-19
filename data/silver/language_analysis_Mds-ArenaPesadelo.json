@@ -2,7 +2,7 @@
   "repository": "Mds-ArenaPesadelo",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-18T10:26:34.933458",
+  "analyzed_at": "2026-09-19T10:02:24.809715",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -670,7 +670,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-18T10:28:16.690084",
+    "extracted_at": "2026-09-19T10:03:51.861198",
     "file_path": "data/silver/language_analysis_Mds-ArenaPesadelo.json"
   }
 }

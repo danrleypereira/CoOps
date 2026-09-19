@@ -1,9 +1,9 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-18T10:28:13.202184",
+      "extracted_at": "2026-09-19T10:03:48.389540",
       "file_path": "data/silver/cycle_times.json",
-      "record_count": 8641
+      "record_count": 8663
     }
   },
   {
@@ -19168,7 +19168,15 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
+    "number": 175,
+    "created_at": "2026-09-18T18:48:52",
+    "closed_at": "2026-09-18T19:58:32",
+    "cycle_time_days": 0.04837962962962963
+  },
+  {
+    "type": "issue",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 170,
     "created_at": "2026-09-18T00:09:39",
     "closed_at": "2026-09-18T01:23:15",
@@ -19176,7 +19184,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 167,
     "created_at": "2026-09-03T14:33:35",
     "closed_at": "2026-09-18T01:00:47",
@@ -19184,7 +19192,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 166,
     "created_at": "2026-09-03T14:32:43",
     "closed_at": "2026-09-18T00:48:21",
@@ -19192,7 +19200,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 165,
     "created_at": "2026-09-03T14:31:54",
     "closed_at": "2026-09-18T00:48:23",
@@ -19200,7 +19208,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 164,
     "created_at": "2026-09-03T14:31:08",
     "closed_at": "2026-09-18T00:48:00",
@@ -19208,7 +19216,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 162,
     "created_at": "2026-09-03T13:34:15",
     "closed_at": "2026-09-18T01:00:47",
@@ -19216,7 +19224,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 161,
     "created_at": "2026-09-03T13:33:07",
     "closed_at": "2026-09-18T00:47:58",
@@ -19224,7 +19232,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 160,
     "created_at": "2026-09-03T13:31:44",
     "closed_at": "2026-09-18T00:48:25",
@@ -19232,7 +19240,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 159,
     "created_at": "2026-09-03T13:30:17",
     "closed_at": "2026-09-18T00:48:19",
@@ -19240,7 +19248,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 155,
     "created_at": "2026-09-01T17:43:03",
     "closed_at": "2026-09-18T00:47:56",
@@ -19248,7 +19256,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 154,
     "created_at": "2026-09-01T17:41:38",
     "closed_at": "2026-09-18T01:00:48",
@@ -19256,7 +19264,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 153,
     "created_at": "2026-09-01T17:39:29",
     "closed_at": "2026-09-04T12:46:33",
@@ -19264,7 +19272,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 152,
     "created_at": "2026-09-01T17:38:36",
     "closed_at": "2026-09-18T00:47:53",
@@ -19272,7 +19280,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 151,
     "created_at": "2026-09-01T17:37:58",
     "closed_at": "2026-09-04T12:46:16",
@@ -19280,7 +19288,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 150,
     "created_at": "2026-09-01T17:36:50",
     "closed_at": "2026-09-04T12:45:46",
@@ -19288,7 +19296,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 148,
     "created_at": "2026-08-16T14:37:31",
     "closed_at": "2026-08-16T21:06:13",
@@ -19296,7 +19304,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 138,
     "created_at": "2026-07-21T12:22:11",
     "closed_at": "2026-08-16T14:35:16",
@@ -19304,7 +19312,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 119,
     "created_at": "2026-04-03T20:24:20",
     "closed_at": "2026-07-09T13:42:24",
@@ -19312,7 +19320,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 118,
     "created_at": "2026-04-03T18:29:58",
     "closed_at": "2026-07-09T13:38:00",
@@ -19320,7 +19328,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 116,
     "created_at": "2026-04-02T11:48:33",
     "closed_at": "2026-04-03T18:22:45",
@@ -19328,7 +19336,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 115,
     "created_at": "2026-04-02T11:36:37",
     "closed_at": "2026-08-07T11:13:11",
@@ -19336,7 +19344,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 114,
     "created_at": "2026-04-02T11:36:09",
     "closed_at": "2026-08-07T11:13:18",
@@ -19344,7 +19352,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 113,
     "created_at": "2026-04-02T11:35:23",
     "closed_at": "2026-08-07T11:13:25",
@@ -19352,7 +19360,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 112,
     "created_at": "2026-04-02T11:34:19",
     "closed_at": "2026-07-09T13:41:05",
@@ -19360,7 +19368,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 111,
     "created_at": "2026-04-02T11:33:45",
     "closed_at": "2026-07-09T13:38:39",
@@ -19368,7 +19376,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 110,
     "created_at": "2026-04-02T11:32:50",
     "closed_at": "2026-07-09T13:38:56",
@@ -19376,7 +19384,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 109,
     "created_at": "2026-04-02T11:26:02",
     "closed_at": "2026-08-07T11:13:37",
@@ -19384,7 +19392,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 101,
     "created_at": "2026-03-03T13:08:45",
     "closed_at": "2026-03-11T15:16:54",
@@ -19392,7 +19400,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 100,
     "created_at": "2026-03-03T13:07:06",
     "closed_at": "2026-03-11T15:16:49",
@@ -19400,7 +19408,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 99,
     "created_at": "2026-03-03T13:06:03",
     "closed_at": "2026-03-11T15:16:27",
@@ -19408,7 +19416,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 98,
     "created_at": "2026-03-03T13:04:45",
     "closed_at": "2026-04-06T17:51:05",
@@ -19416,7 +19424,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 97,
     "created_at": "2026-03-03T13:02:12",
     "closed_at": "2026-03-11T15:14:20",
@@ -19424,7 +19432,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 96,
     "created_at": "2026-02-26T02:27:24",
     "closed_at": "2026-03-13T01:51:22",
@@ -19432,7 +19440,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 92,
     "created_at": "2025-07-08T18:05:35",
     "closed_at": "2025-07-09T12:19:19",
@@ -19440,7 +19448,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 90,
     "created_at": "2025-07-06T14:47:25",
     "closed_at": "2025-07-09T12:18:54",
@@ -19448,7 +19456,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 89,
     "created_at": "2025-07-05T19:53:06",
     "closed_at": "2025-07-09T12:18:47",
@@ -19456,7 +19464,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 86,
     "created_at": "2025-06-30T13:41:50",
     "closed_at": "2025-07-07T22:55:23",
@@ -19464,7 +19472,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 85,
     "created_at": "2025-06-30T13:39:43",
     "closed_at": "2025-07-08T20:15:06",
@@ -19472,7 +19480,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 84,
     "created_at": "2025-06-30T13:36:02",
     "closed_at": "2025-07-07T22:56:10",
@@ -19480,7 +19488,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 82,
     "created_at": "2025-06-28T16:30:07",
     "closed_at": "2025-07-01T18:42:18",
@@ -19488,7 +19496,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 81,
     "created_at": "2025-06-27T13:45:15",
     "closed_at": "2025-07-08T21:19:22",
@@ -19496,7 +19504,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 79,
     "created_at": "2025-06-26T19:35:04",
     "closed_at": "2025-07-09T12:18:50",
@@ -19504,7 +19512,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 77,
     "created_at": "2025-06-25T16:15:48",
     "closed_at": "2025-06-30T23:02:22",
@@ -19512,7 +19520,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 75,
     "created_at": "2025-06-25T14:53:27",
     "closed_at": "2025-06-25T14:56:09",
@@ -19520,7 +19528,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 74,
     "created_at": "2025-06-25T13:27:12",
     "closed_at": "2025-07-06T19:01:00",
@@ -19528,7 +19536,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 72,
     "created_at": "2025-06-20T14:29:43",
     "closed_at": "2025-06-24T21:10:07",
@@ -19536,7 +19544,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 67,
     "created_at": "2025-05-28T13:11:56",
     "closed_at": "2025-06-12T19:56:08",
@@ -19544,7 +19552,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 66,
     "created_at": "2025-05-23T14:54:59",
     "closed_at": "2025-05-29T22:55:55",
@@ -19552,7 +19560,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 65,
     "created_at": "2025-05-23T14:53:18",
     "closed_at": "2025-06-27T01:47:22",
@@ -19560,7 +19568,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 64,
     "created_at": "2025-05-23T14:51:58",
     "closed_at": "2025-06-17T20:48:33",
@@ -19568,7 +19576,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 63,
     "created_at": "2025-05-23T14:50:21",
     "closed_at": "2025-05-29T02:44:10",
@@ -19576,7 +19584,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 62,
     "created_at": "2025-05-23T14:48:32",
     "closed_at": "2025-05-29T22:55:54",
@@ -19584,7 +19592,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 61,
     "created_at": "2025-05-23T14:44:01",
     "closed_at": "2025-06-18T02:12:37",
@@ -19592,7 +19600,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 60,
     "created_at": "2025-05-23T14:41:20",
     "closed_at": "2025-06-13T18:11:06",
@@ -19600,7 +19608,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 59,
     "created_at": "2025-05-23T14:37:35",
     "closed_at": "2025-05-29T13:09:54",
@@ -19608,7 +19616,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 58,
     "created_at": "2025-05-23T14:35:25",
     "closed_at": "2025-06-03T11:46:38",
@@ -19616,7 +19624,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 57,
     "created_at": "2025-05-23T14:31:51",
     "closed_at": "2025-05-28T13:07:30",
@@ -19624,7 +19632,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 56,
     "created_at": "2025-05-23T14:23:12",
     "closed_at": "2025-07-09T12:18:45",
@@ -19632,7 +19640,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 55,
     "created_at": "2025-05-23T14:17:17",
     "closed_at": "2025-07-09T12:19:04",
@@ -19640,7 +19648,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 54,
     "created_at": "2025-05-23T14:10:42",
     "closed_at": "2025-06-01T20:46:15",
@@ -19648,7 +19656,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 53,
     "created_at": "2025-05-23T14:06:31",
     "closed_at": "2025-06-26T19:38:54",
@@ -19656,7 +19664,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 52,
     "created_at": "2025-05-23T14:01:37",
     "closed_at": "2025-06-30T13:29:22",
@@ -19664,7 +19672,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 51,
     "created_at": "2025-05-23T13:56:31",
     "closed_at": "2025-06-24T11:34:30",
@@ -19672,7 +19680,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 46,
     "created_at": "2025-05-09T14:38:29",
     "closed_at": "2025-05-22T19:28:31",
@@ -19680,7 +19688,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 45,
     "created_at": "2025-05-09T14:19:35",
     "closed_at": "2025-05-23T13:37:35",
@@ -19688,7 +19696,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 44,
     "created_at": "2025-05-09T13:57:17",
     "closed_at": "2025-05-22T19:23:52",
@@ -19696,7 +19704,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 43,
     "created_at": "2025-05-09T13:44:03",
     "closed_at": "2025-05-09T15:20:47",
@@ -19704,7 +19712,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 42,
     "created_at": "2025-05-08T22:46:11",
     "closed_at": "2025-05-22T19:27:58",
@@ -19712,7 +19720,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 41,
     "created_at": "2025-05-07T14:04:27",
     "closed_at": "2025-05-22T19:23:41",
@@ -19720,7 +19728,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 40,
     "created_at": "2025-05-06T23:41:55",
     "closed_at": "2025-05-06T23:42:32",
@@ -19728,7 +19736,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 39,
     "created_at": "2025-05-06T17:57:20",
     "closed_at": "2025-05-07T20:14:05",
@@ -19736,7 +19744,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 38,
     "created_at": "2025-05-06T17:44:28",
     "closed_at": "2025-05-07T20:13:48",
@@ -19744,7 +19752,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 37,
     "created_at": "2025-05-05T17:26:08",
     "closed_at": "2025-05-07T01:48:53",
@@ -19752,7 +19760,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 36,
     "created_at": "2025-05-05T17:24:20",
     "closed_at": "2025-05-22T19:33:28",
@@ -19760,7 +19768,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 35,
     "created_at": "2025-05-05T17:20:11",
     "closed_at": "2025-05-14T15:40:46",
@@ -19768,7 +19776,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 34,
     "created_at": "2025-05-05T17:17:37",
     "closed_at": "2025-05-22T19:28:14",
@@ -19776,7 +19784,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 33,
     "created_at": "2025-05-05T17:15:12",
     "closed_at": "2025-05-07T20:07:11",
@@ -19784,7 +19792,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 32,
     "created_at": "2025-05-05T17:12:48",
     "closed_at": "2025-05-07T20:06:38",
@@ -19792,7 +19800,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 31,
     "created_at": "2025-05-05T17:09:23",
     "closed_at": "2025-05-07T01:36:27",
@@ -19800,7 +19808,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 30,
     "created_at": "2025-05-01T18:40:16",
     "closed_at": "2025-05-02T20:55:56",
@@ -19808,7 +19816,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 29,
     "created_at": "2025-05-01T15:11:50",
     "closed_at": "2025-05-06T23:45:38",
@@ -19816,7 +19824,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 28,
     "created_at": "2025-05-01T15:08:22",
     "closed_at": "2025-05-05T12:53:04",
@@ -19824,7 +19832,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 27,
     "created_at": "2025-05-01T15:00:21",
     "closed_at": "2025-05-05T12:51:35",
@@ -19832,7 +19840,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 26,
     "created_at": "2025-04-30T23:46:54",
     "closed_at": "2025-05-07T00:05:18",
@@ -19840,7 +19848,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 23,
     "created_at": "2025-04-25T14:38:22",
     "closed_at": "2025-04-25T14:39:31",
@@ -19848,7 +19856,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 22,
     "created_at": "2025-04-17T20:13:01",
     "closed_at": "2025-05-01T13:07:21",
@@ -19856,7 +19864,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 21,
     "created_at": "2025-04-17T19:56:20",
     "closed_at": "2025-05-01T13:05:30",
@@ -19864,7 +19872,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 20,
     "created_at": "2025-04-17T19:48:25",
     "closed_at": "2025-04-17T19:50:24",
@@ -19872,7 +19880,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 19,
     "created_at": "2025-04-17T18:43:37",
     "closed_at": "2025-05-01T13:07:04",
@@ -19880,7 +19888,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 18,
     "created_at": "2025-04-17T18:32:43",
     "closed_at": "2025-05-01T13:06:53",
@@ -19888,7 +19896,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 17,
     "created_at": "2025-04-16T22:31:43",
     "closed_at": "2025-05-22T19:27:47",
@@ -19896,7 +19904,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 16,
     "created_at": "2025-04-15T14:31:26",
     "closed_at": "2025-05-01T13:06:24",
@@ -19904,7 +19912,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 15,
     "created_at": "2025-04-14T21:32:06",
     "closed_at": "2025-04-19T15:05:27",
@@ -19912,7 +19920,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 14,
     "created_at": "2025-04-14T00:13:15",
     "closed_at": "2025-04-15T02:21:29",
@@ -19920,7 +19928,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 13,
     "created_at": "2025-04-12T18:26:45",
     "closed_at": "2025-04-24T23:00:14",
@@ -19928,7 +19936,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 12,
     "created_at": "2025-04-10T13:59:23",
     "closed_at": "2025-04-15T12:55:37",
@@ -19936,7 +19944,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 10,
     "created_at": "2025-04-08T23:52:11",
     "closed_at": "2025-04-08T23:52:49",
@@ -19944,7 +19952,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 9,
     "created_at": "2025-04-08T23:40:33",
     "closed_at": "2025-04-16T22:25:51",
@@ -19952,7 +19960,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 8,
     "created_at": "2025-04-08T23:21:12",
     "closed_at": "2025-04-09T23:14:13",
@@ -19960,7 +19968,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 7,
     "created_at": "2025-04-08T22:49:47",
     "closed_at": "2025-04-08T22:49:55",
@@ -19968,7 +19976,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 6,
     "created_at": "2025-04-05T20:15:19",
     "closed_at": "2025-04-08T22:41:27",
@@ -19976,7 +19984,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 5,
     "created_at": "2025-04-05T01:44:32",
     "closed_at": "2025-04-05T01:45:04",
@@ -19984,7 +19992,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 4,
     "created_at": "2025-04-04T22:40:42",
     "closed_at": "2025-04-04T22:41:50",
@@ -19992,7 +20000,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 3,
     "created_at": "2025-04-04T01:32:29",
     "closed_at": "2025-04-07T22:09:30",
@@ -20000,7 +20008,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 2,
     "created_at": "2025-04-03T13:35:30",
     "closed_at": "2025-04-03T15:09:15",
@@ -20008,7 +20016,7 @@
   },
   {
     "type": "issue",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 1,
     "created_at": "2025-04-03T13:24:38",
     "closed_at": "2025-04-03T13:25:16",
@@ -39137,10 +39145,42 @@
   {
     "type": "issue",
     "repo": "2026-02-UnDb",
+    "number": 51,
+    "created_at": "2026-09-05T17:48:06",
+    "closed_at": "2026-09-18T21:17:24",
+    "cycle_time_days": 13.145347222222222
+  },
+  {
+    "type": "issue",
+    "repo": "2026-02-UnDb",
     "number": 47,
     "created_at": "2026-09-05T17:48:04",
     "closed_at": "2026-09-10T19:59:38",
     "cycle_time_days": 5.09136574074074
+  },
+  {
+    "type": "issue",
+    "repo": "2026-02-UnDb",
+    "number": 45,
+    "created_at": "2026-09-05T02:57:57",
+    "closed_at": "2026-09-18T21:17:16",
+    "cycle_time_days": 13.763414351851852
+  },
+  {
+    "type": "issue",
+    "repo": "2026-02-UnDb",
+    "number": 44,
+    "created_at": "2026-09-05T02:57:42",
+    "closed_at": "2026-09-18T21:17:04",
+    "cycle_time_days": 13.763449074074074
+  },
+  {
+    "type": "issue",
+    "repo": "2026-02-UnDb",
+    "number": 43,
+    "created_at": "2026-09-01T14:16:13",
+    "closed_at": "2026-09-18T21:16:54",
+    "cycle_time_days": 17.292141203703704
   },
   {
     "type": "issue",
@@ -39189,6 +39229,30 @@
     "created_at": "2026-09-01T13:32:39",
     "closed_at": "2026-09-05T17:39:52",
     "cycle_time_days": 4.171678240740741
+  },
+  {
+    "type": "issue",
+    "repo": "2026-02-UnDb",
+    "number": 31,
+    "created_at": "2026-09-01T13:32:21",
+    "closed_at": "2026-09-19T01:21:43",
+    "cycle_time_days": 17.492615740740742
+  },
+  {
+    "type": "issue",
+    "repo": "2026-02-UnDb",
+    "number": 30,
+    "created_at": "2026-09-01T13:32:06",
+    "closed_at": "2026-09-18T21:16:24",
+    "cycle_time_days": 17.322430555555556
+  },
+  {
+    "type": "issue",
+    "repo": "2026-02-UnDb",
+    "number": 29,
+    "created_at": "2026-09-01T13:31:49",
+    "closed_at": "2026-09-18T21:08:54",
+    "cycle_time_days": 17.31741898148148
   },
   {
     "type": "issue",
@@ -53728,7 +53792,39 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
+    "number": 176,
+    "created_at": "2026-09-18T18:51:18",
+    "closed_at": "2026-09-18T19:58:31",
+    "cycle_time_days": 0.04667824074074074
+  },
+  {
+    "type": "pr",
+    "repo": "2025-1-NoFluxoUnB",
+    "number": 174,
+    "created_at": "2026-09-18T16:03:49",
+    "closed_at": "2026-09-18T16:05:22",
+    "cycle_time_days": 0.0010763888888888889
+  },
+  {
+    "type": "pr",
+    "repo": "2025-1-NoFluxoUnB",
+    "number": 173,
+    "created_at": "2026-09-18T15:38:09",
+    "closed_at": "2026-09-18T15:49:48",
+    "cycle_time_days": 0.008090277777777778
+  },
+  {
+    "type": "pr",
+    "repo": "2025-1-NoFluxoUnB",
+    "number": 172,
+    "created_at": "2026-09-18T14:57:57",
+    "closed_at": "2026-09-18T14:59:10",
+    "cycle_time_days": 0.0008449074074074074
+  },
+  {
+    "type": "pr",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 171,
     "created_at": "2026-09-18T00:20:57",
     "closed_at": "2026-09-18T01:23:14",
@@ -53736,7 +53832,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 169,
     "created_at": "2026-09-14T21:21:49",
     "closed_at": "2026-09-14T21:21:58",
@@ -53744,7 +53840,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 168,
     "created_at": "2026-09-12T20:34:59",
     "closed_at": "2026-09-13T12:22:27",
@@ -53752,7 +53848,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 158,
     "created_at": "2026-09-02T14:40:39",
     "closed_at": "2026-09-02T14:45:25",
@@ -53760,7 +53856,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 157,
     "created_at": "2026-09-01T23:45:12",
     "closed_at": "2026-09-02T11:26:26",
@@ -53768,7 +53864,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 149,
     "created_at": "2026-08-30T22:53:33",
     "closed_at": "2026-08-30T23:07:22",
@@ -53776,7 +53872,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 147,
     "created_at": "2026-08-14T16:18:30",
     "closed_at": "2026-08-14T17:44:12",
@@ -53784,7 +53880,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 146,
     "created_at": "2026-08-13T12:53:03",
     "closed_at": "2026-08-13T14:19:27",
@@ -53792,7 +53888,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 145,
     "created_at": "2026-08-13T04:12:45",
     "closed_at": "2026-08-13T04:12:53",
@@ -53800,7 +53896,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 144,
     "created_at": "2026-08-05T12:35:35",
     "closed_at": "2026-08-05T12:38:10",
@@ -53808,7 +53904,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 143,
     "created_at": "2026-08-05T12:18:11",
     "closed_at": "2026-08-05T12:24:02",
@@ -53816,7 +53912,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 142,
     "created_at": "2026-08-03T23:10:31",
     "closed_at": "2026-08-03T23:12:08",
@@ -53824,7 +53920,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 141,
     "created_at": "2026-08-03T22:27:09",
     "closed_at": "2026-08-03T22:29:07",
@@ -53832,7 +53928,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 140,
     "created_at": "2026-08-03T19:55:47",
     "closed_at": "2026-08-03T19:56:33",
@@ -53840,7 +53936,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 139,
     "created_at": "2026-08-03T19:34:04",
     "closed_at": "2026-08-03T19:36:27",
@@ -53848,7 +53944,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 137,
     "created_at": "2026-07-15T00:53:18",
     "closed_at": "2026-07-15T00:53:50",
@@ -53856,7 +53952,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 136,
     "created_at": "2026-07-11T14:35:14",
     "closed_at": "2026-07-11T14:38:05",
@@ -53864,7 +53960,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 135,
     "created_at": "2026-06-30T22:18:22",
     "closed_at": "2026-06-30T22:38:55",
@@ -53872,7 +53968,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 134,
     "created_at": "2026-06-30T22:18:20",
     "closed_at": "2026-06-30T22:31:42",
@@ -53880,7 +53976,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 133,
     "created_at": "2026-06-30T22:18:17",
     "closed_at": "2026-06-30T22:32:14",
@@ -53888,7 +53984,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 132,
     "created_at": "2026-06-30T22:18:15",
     "closed_at": "2026-06-30T22:32:10",
@@ -53896,7 +53992,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 131,
     "created_at": "2026-06-30T22:17:25",
     "closed_at": "2026-06-30T22:43:09",
@@ -53904,7 +54000,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 130,
     "created_at": "2026-06-30T22:17:23",
     "closed_at": "2026-06-30T22:32:07",
@@ -53912,7 +54008,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 129,
     "created_at": "2026-06-30T22:17:21",
     "closed_at": "2026-06-30T22:31:38",
@@ -53920,7 +54016,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 128,
     "created_at": "2026-06-08T00:11:40",
     "closed_at": "2026-06-08T00:46:22",
@@ -53928,7 +54024,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 127,
     "created_at": "2026-06-07T21:54:18",
     "closed_at": "2026-06-30T22:47:56",
@@ -53936,7 +54032,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 126,
     "created_at": "2026-05-22T20:01:20",
     "closed_at": "2026-05-22T20:02:48",
@@ -53944,7 +54040,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 125,
     "created_at": "2026-05-22T19:48:50",
     "closed_at": "2026-05-22T19:55:42",
@@ -53952,7 +54048,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 124,
     "created_at": "2026-05-22T19:41:18",
     "closed_at": "2026-05-22T19:41:59",
@@ -53960,7 +54056,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 123,
     "created_at": "2026-05-22T19:15:22",
     "closed_at": "2026-05-22T19:26:14",
@@ -53968,7 +54064,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 122,
     "created_at": "2026-05-22T18:49:07",
     "closed_at": "2026-05-22T18:49:30",
@@ -53976,7 +54072,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 121,
     "created_at": "2026-05-22T17:21:40",
     "closed_at": "2026-05-22T17:35:58",
@@ -53984,7 +54080,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 120,
     "created_at": "2026-05-11T03:13:22",
     "closed_at": "2026-05-11T12:21:55",
@@ -53992,7 +54088,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 117,
     "created_at": "2026-04-03T18:22:20",
     "closed_at": "2026-04-03T18:25:45",
@@ -54000,7 +54096,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 107,
     "created_at": "2026-03-18T21:32:36",
     "closed_at": "2026-08-31T15:44:39",
@@ -54008,7 +54104,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 106,
     "created_at": "2026-03-18T15:42:48",
     "closed_at": "2026-08-31T15:44:51",
@@ -54016,7 +54112,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 105,
     "created_at": "2026-03-18T14:32:06",
     "closed_at": "2026-03-18T14:33:17",
@@ -54024,7 +54120,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 104,
     "created_at": "2026-03-11T16:23:41",
     "closed_at": "2026-03-11T16:23:51",
@@ -54032,7 +54128,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 103,
     "created_at": "2026-03-11T14:49:39",
     "closed_at": "2026-03-11T14:54:31",
@@ -54040,7 +54136,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 102,
     "created_at": "2026-03-05T17:44:27",
     "closed_at": "2026-03-05T18:57:42",
@@ -54048,7 +54144,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 95,
     "created_at": "2026-02-18T17:31:38",
     "closed_at": "2026-02-18T17:32:36",
@@ -54056,7 +54152,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 94,
     "created_at": "2025-07-11T06:13:50",
     "closed_at": "2025-07-11T12:30:46",
@@ -54064,7 +54160,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 93,
     "created_at": "2025-07-09T13:02:35",
     "closed_at": "2025-07-09T13:02:55",
@@ -54072,7 +54168,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 91,
     "created_at": "2025-07-07T23:29:19",
     "closed_at": "2025-07-08T13:08:13",
@@ -54080,7 +54176,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 88,
     "created_at": "2025-07-02T19:36:19",
     "closed_at": "2025-07-02T21:44:51",
@@ -54088,7 +54184,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 87,
     "created_at": "2025-07-02T18:57:43",
     "closed_at": "2025-07-02T19:28:26",
@@ -54096,7 +54192,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 83,
     "created_at": "2025-06-30T00:31:47",
     "closed_at": "2025-07-02T18:43:59",
@@ -54104,7 +54200,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 80,
     "created_at": "2025-06-26T19:36:08",
     "closed_at": "2025-06-26T19:37:25",
@@ -54112,7 +54208,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 76,
     "created_at": "2025-06-25T15:13:51",
     "closed_at": "2025-06-25T15:45:08",
@@ -54120,7 +54216,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 73,
     "created_at": "2025-06-22T22:06:14",
     "closed_at": "2025-06-25T18:38:08",
@@ -54128,7 +54224,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 71,
     "created_at": "2025-06-19T18:04:04",
     "closed_at": "2025-06-22T21:44:15",
@@ -54136,7 +54232,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 70,
     "created_at": "2025-06-11T16:07:29",
     "closed_at": "2025-06-19T12:44:44",
@@ -54144,7 +54240,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 69,
     "created_at": "2025-06-05T20:05:21",
     "closed_at": "2025-06-05T20:08:39",
@@ -54152,7 +54248,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 68,
     "created_at": "2025-05-29T22:39:35",
     "closed_at": "2025-05-29T22:55:54",
@@ -54160,7 +54256,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 50,
     "created_at": "2025-05-21T19:48:28",
     "closed_at": "2025-05-22T19:33:04",
@@ -54168,7 +54264,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 49,
     "created_at": "2025-05-21T16:41:11",
     "closed_at": "2025-05-21T16:41:26",
@@ -54176,7 +54272,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 48,
     "created_at": "2025-05-14T22:40:53",
     "closed_at": "2025-05-15T13:28:51",
@@ -54184,7 +54280,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 47,
     "created_at": "2025-05-14T14:53:51",
     "closed_at": "2025-05-21T16:13:57",
@@ -54192,7 +54288,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 25,
     "created_at": "2025-04-28T17:02:48",
     "closed_at": "2025-04-28T22:43:16",
@@ -54200,7 +54296,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 24,
     "created_at": "2025-04-25T17:18:18",
     "closed_at": "2025-04-25T17:24:10",
@@ -54208,7 +54304,7 @@
   },
   {
     "type": "pr",
-    "repo": "2025-1-NoFluxoUNB",
+    "repo": "2025-1-NoFluxoUnB",
     "number": 11,
     "created_at": "2025-04-09T16:51:36",
     "closed_at": "2025-04-09T16:51:41",
@@ -68641,6 +68737,78 @@
   {
     "type": "pr",
     "repo": "2026-02-UnDb",
+    "number": 103,
+    "created_at": "2026-09-18T22:59:22",
+    "closed_at": "2026-09-19T01:18:35",
+    "cycle_time_days": 0.09667824074074075
+  },
+  {
+    "type": "pr",
+    "repo": "2026-02-UnDb",
+    "number": 102,
+    "created_at": "2026-09-18T21:21:04",
+    "closed_at": "2026-09-18T22:28:28",
+    "cycle_time_days": 0.04680555555555556
+  },
+  {
+    "type": "pr",
+    "repo": "2026-02-UnDb",
+    "number": 101,
+    "created_at": "2026-09-18T21:19:07",
+    "closed_at": "2026-09-18T21:21:25",
+    "cycle_time_days": 0.0015972222222222223
+  },
+  {
+    "type": "pr",
+    "repo": "2026-02-UnDb",
+    "number": 100,
+    "created_at": "2026-09-18T01:35:30",
+    "closed_at": "2026-09-18T13:31:02",
+    "cycle_time_days": 0.49689814814814814
+  },
+  {
+    "type": "pr",
+    "repo": "2026-02-UnDb",
+    "number": 99,
+    "created_at": "2026-09-18T00:53:13",
+    "closed_at": "2026-09-18T18:44:50",
+    "cycle_time_days": 0.7441782407407408
+  },
+  {
+    "type": "pr",
+    "repo": "2026-02-UnDb",
+    "number": 98,
+    "created_at": "2026-09-18T00:52:04",
+    "closed_at": "2026-09-18T20:49:49",
+    "cycle_time_days": 0.8317708333333333
+  },
+  {
+    "type": "pr",
+    "repo": "2026-02-UnDb",
+    "number": 97,
+    "created_at": "2026-09-18T00:49:37",
+    "closed_at": "2026-09-18T19:37:46",
+    "cycle_time_days": 0.7834375
+  },
+  {
+    "type": "pr",
+    "repo": "2026-02-UnDb",
+    "number": 96,
+    "created_at": "2026-09-18T00:47:36",
+    "closed_at": "2026-09-18T18:01:44",
+    "cycle_time_days": 0.7181481481481482
+  },
+  {
+    "type": "pr",
+    "repo": "2026-02-UnDb",
+    "number": 95,
+    "created_at": "2026-09-18T00:47:12",
+    "closed_at": "2026-09-18T14:51:51",
+    "cycle_time_days": 0.5865625
+  },
+  {
+    "type": "pr",
+    "repo": "2026-02-UnDb",
     "number": 94,
     "created_at": "2026-09-18T00:46:45",
     "closed_at": "2026-09-18T02:12:12",
@@ -69005,6 +69173,14 @@
     "created_at": "2026-08-19T17:53:06",
     "closed_at": "2026-08-19T17:53:16",
     "cycle_time_days": 0.00011574074074074075
+  },
+  {
+    "type": "pr",
+    "repo": "2026-2-AgendaUnB",
+    "number": 6,
+    "created_at": "2026-09-19T02:46:32",
+    "closed_at": "2026-09-19T02:56:15",
+    "cycle_time_days": 0.0067476851851851856
   },
   {
     "type": "pr",

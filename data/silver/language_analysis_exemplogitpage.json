@@ -2,7 +2,7 @@
   "repository": "exemplogitpage",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-18T10:27:02.856829",
+  "analyzed_at": "2026-09-19T10:02:47.591888",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -40,7 +40,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-18T10:28:16.428910",
+    "extracted_at": "2026-09-19T10:03:51.602898",
     "file_path": "data/silver/language_analysis_exemplogitpage.json"
   }
 }

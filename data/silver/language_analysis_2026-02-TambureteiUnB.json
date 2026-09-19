@@ -2,7 +2,7 @@
   "repository": "2026-02-TambureteiUnB",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-18T10:27:19.387806",
+  "analyzed_at": "2026-09-19T10:03:00.260926",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -134,7 +134,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-18T10:28:17.247968",
+    "extracted_at": "2026-09-19T10:03:52.402408",
     "file_path": "data/silver/language_analysis_2026-02-TambureteiUnB.json"
   }
 }

@@ -1,16 +1,16 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-18T10:28:17.963142",
+      "extracted_at": "2026-09-19T10:03:52.991338",
       "file_path": "data/silver/language_analysis_all.json",
-      "record_count": 97
+      "record_count": 98
     }
   },
   {
     "repository": "2023-2-Squad03-LicitAL",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:21.156014",
+    "analyzed_at": "2026-09-19T10:02:12.456074",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -1580,7 +1580,7 @@
     "repository": "2023-2-Squad02-Desmatazonia",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:15.797481",
+    "analyzed_at": "2026-09-19T10:02:08.035514",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -2150,7 +2150,7 @@
     "repository": "2024-2-Agio",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:42.355732",
+    "analyzed_at": "2026-09-19T10:02:30.637421",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -2598,7 +2598,7 @@
     "repository": "2026-2-Bandejao-UnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:17.197642",
+    "analyzed_at": "2026-09-19T10:02:58.944554",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -2708,19 +2708,19 @@
     "repository": "2026-2-AgendaUnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:18.545035",
+    "analyzed_at": "2026-09-19T10:02:59.807092",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
     },
     "total_files": 27,
-    "total_bytes": 3816103,
+    "total_bytes": 3810364,
     "languages": [
       {
         "language": "WebM Video",
         "file_count": 2,
         "total_bytes": 3654672,
-        "percentage": 95.77,
+        "percentage": 95.91,
         "files": [
           {
             "path": "public/shaderopt-light.webm",
@@ -2737,10 +2737,36 @@
         ]
       },
       {
+        "language": "JSON",
+        "file_count": 3,
+        "total_bytes": 59303,
+        "percentage": 1.56,
+        "files": [
+          {
+            "path": "package-lock.json",
+            "name": "package-lock.json",
+            "size": 58818,
+            "extension": ".json"
+          },
+          {
+            "path": "package.json",
+            "name": "package.json",
+            "size": 447,
+            "extension": ".json"
+          },
+          {
+            "path": ".vscode/settings.json",
+            "name": "settings.json",
+            "size": 38,
+            "extension": ".json"
+          }
+        ]
+      },
+      {
         "language": "Markdown",
-        "file_count": 12,
-        "total_bytes": 59913,
-        "percentage": 1.57,
+        "file_count": 10,
+        "total_bytes": 44508,
+        "percentage": 1.17,
         "files": [
           {
             "path": "docs/padroes.md",
@@ -2749,15 +2775,9 @@
             "extension": ".md"
           },
           {
-            "path": "padrao.md",
-            "name": "padrao.md",
-            "size": 8769,
-            "extension": ".md"
-          },
-          {
             "path": "docs/documento-de-visao.md",
             "name": "documento-de-visao.md",
-            "size": 7900,
+            "size": 7908,
             "extension": ".md"
           },
           {
@@ -2767,15 +2787,9 @@
             "extension": ".md"
           },
           {
-            "path": "requisitos.md",
-            "name": "requisitos.md",
-            "size": 7652,
-            "extension": ".md"
-          },
-          {
-            "path": "AI-USAGE.md",
+            "path": "docs/AI-USAGE.md",
             "name": "AI-USAGE.md",
-            "size": 5334,
+            "size": 6342,
             "extension": ".md"
           },
           {
@@ -2801,51 +2815,43 @@
             "name": "sprint-0.md",
             "size": 1788,
             "extension": ".md"
-          }
-        ]
-      },
-      {
-        "language": "JSON",
-        "file_count": 3,
-        "total_bytes": 57315,
-        "percentage": 1.5,
-        "files": [
-          {
-            "path": "package-lock.json",
-            "name": "package-lock.json",
-            "size": 56865,
-            "extension": ".json"
           },
           {
-            "path": "package.json",
-            "name": "package.json",
-            "size": 412,
-            "extension": ".json"
+            "path": "docs/sprints/sprint-1.md",
+            "name": "sprint-1.md",
+            "size": 1588,
+            "extension": ".md"
           },
           {
-            "path": ".vscode/settings.json",
-            "name": "settings.json",
-            "size": 38,
-            "extension": ".json"
+            "path": "docs/Architecture.md",
+            "name": "Architecture.md",
+            "size": 263,
+            "extension": ".md"
           }
         ]
       },
       {
         "language": "JavaScript",
-        "file_count": 3,
-        "total_bytes": 36341,
-        "percentage": 0.95,
+        "file_count": 4,
+        "total_bytes": 28225,
+        "percentage": 0.74,
         "files": [
           {
             "path": "src/App.jsx",
             "name": "App.jsx",
-            "size": 36072,
+            "size": 23551,
+            "extension": ".jsx"
+          },
+          {
+            "path": "src/pages/SecondPage.jsx",
+            "name": "SecondPage.jsx",
+            "size": 4099,
             "extension": ".jsx"
           },
           {
             "path": "src/main.jsx",
             "name": "main.jsx",
-            "size": 135,
+            "size": 441,
             "extension": ".jsx"
           },
           {
@@ -2853,6 +2859,20 @@
             "name": "vite.config.js",
             "size": 134,
             "extension": ".js"
+          }
+        ]
+      },
+      {
+        "language": "CSS",
+        "file_count": 1,
+        "total_bytes": 15787,
+        "percentage": 0.41,
+        "files": [
+          {
+            "path": "src/styles/global.css",
+            "name": "global.css",
+            "size": 15787,
+            "extension": ".css"
           }
         ]
       },
@@ -2873,13 +2893,13 @@
       {
         "language": "YAML",
         "file_count": 2,
-        "total_bytes": 2638,
+        "total_bytes": 2645,
         "percentage": 0.07,
         "files": [
           {
             "path": "mkdocs.yml",
             "name": "mkdocs.yml",
-            "size": 1638,
+            "size": 1645,
             "extension": ".yml"
           },
           {
@@ -2944,7 +2964,7 @@
     "repository": "2026-2-Bandejao",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:20.958885",
+    "analyzed_at": "2026-09-19T10:03:01.552195",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -3360,7 +3380,7 @@
     "repository": "2023-2-JuizVirtual",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:23.707969",
+    "analyzed_at": "2026-09-19T10:02:14.422629",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -3930,7 +3950,7 @@
     "repository": "2025-2-GuiaDev",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:02.274238",
+    "analyzed_at": "2026-09-19T10:02:47.207215",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -4652,13 +4672,13 @@
     "repository": "2023-2-Squad04",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:22.301534",
+    "analyzed_at": "2026-09-19T10:02:13.325054",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
     },
     "total_files": 113,
-    "total_bytes": 36456731,
+    "total_bytes": 36459991,
     "languages": [
       {
         "language": "GIF Image",
@@ -4677,13 +4697,13 @@
       {
         "language": "JSON",
         "file_count": 2,
-        "total_bytes": 7955102,
-        "percentage": 21.82,
+        "total_bytes": 7958362,
+        "percentage": 21.83,
         "files": [
           {
             "path": "src/dados/data.json",
             "name": "data.json",
-            "size": 7891875,
+            "size": 7895135,
             "extension": ".json"
           },
           {
@@ -4698,7 +4718,7 @@
         "language": "PNG Image",
         "file_count": 29,
         "total_bytes": 4697526,
-        "percentage": 12.89,
+        "percentage": 12.88,
         "files": [
           {
             "path": "docs/assets/imgs/equipe_mobile1.png",
@@ -5052,7 +5072,7 @@
     "repository": "2023-2-Squad10",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:27.365186",
+    "analyzed_at": "2026-09-19T10:02:18.202994",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -5538,7 +5558,7 @@
     "repository": "2026-1-Squad07",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:08.151773",
+    "analyzed_at": "2026-09-19T10:02:51.756462",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -6198,7 +6218,7 @@
     "repository": "2024-1-Squad02-CulturaTransparente",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:32.540606",
+    "analyzed_at": "2026-09-19T10:02:22.936732",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -6830,7 +6850,7 @@
     "repository": "mapadaacessibilidade",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:48.370036",
+    "analyzed_at": "2026-09-19T10:02:35.734573",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -7680,7 +7700,7 @@
     "repository": "2023-2-SuaGradeUnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:27.965894",
+    "analyzed_at": "2026-09-19T10:02:18.761149",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -8300,7 +8320,7 @@
     "repository": "2026-2-MonitoraUnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:20.465895",
+    "analyzed_at": "2026-09-19T10:03:01.097879",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -8410,7 +8430,7 @@
     "repository": "portfolio-MDS",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:31.364756",
+    "analyzed_at": "2026-09-19T10:02:21.861614",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -8960,7 +8980,7 @@
     "repository": "2024-2-ChamaControl",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:45.094853",
+    "analyzed_at": "2026-09-19T10:02:33.019312",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -9504,7 +9524,7 @@
     "repository": "2026.1-ContraDito",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:09.880542",
+    "analyzed_at": "2026-09-19T10:02:53.377983",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -10214,7 +10234,7 @@
     "repository": "2024-2-Squad06",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:43.456030",
+    "analyzed_at": "2026-09-19T10:02:31.558061",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -10762,7 +10782,7 @@
     "repository": "exemplogitpage",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:02.856829",
+    "analyzed_at": "2026-09-19T10:02:47.591888",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -10804,7 +10824,7 @@
     "repository": "2025-2-SeLiga",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:01.013041",
+    "analyzed_at": "2026-09-19T10:02:46.082997",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -11392,7 +11412,7 @@
     "repository": "2026-1-Squad13",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:10.479256",
+    "analyzed_at": "2026-09-19T10:02:53.926192",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -12102,7 +12122,7 @@
     "repository": "2023.2_DeOlhoRS",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:25.334211",
+    "analyzed_at": "2026-09-19T10:02:16.587753",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -13272,7 +13292,7 @@
     "repository": "2025-1-Eletta",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:52.279953",
+    "analyzed_at": "2026-09-19T10:02:38.921432",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -14126,7 +14146,7 @@
     "repository": "2025-2-Synapse",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:01.657504",
+    "analyzed_at": "2026-09-19T10:02:46.643837",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -14700,7 +14720,7 @@
     "repository": "2023.2_Gotinha",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:30.856794",
+    "analyzed_at": "2026-09-19T10:02:21.166409",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -14956,7 +14976,7 @@
     "repository": "Mds-ArenaPesadelo",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:34.933458",
+    "analyzed_at": "2026-09-19T10:02:24.809715",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -15628,7 +15648,7 @@
     "repository": "2024-2-AcheiUnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:41.833443",
+    "analyzed_at": "2026-09-19T10:02:30.159385",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -16448,7 +16468,7 @@
     "repository": "2026-1-Squad14",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:11.191909",
+    "analyzed_at": "2026-09-19T10:02:54.391040",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -16490,7 +16510,7 @@
     "repository": "2026-2-GlossarioUnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:19.940605",
+    "analyzed_at": "2026-09-19T10:03:00.731178",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -16640,7 +16660,7 @@
     "repository": "2024-1-Squad08",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:36.158470",
+    "analyzed_at": "2026-09-19T10:02:25.742541",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -16978,7 +16998,7 @@
     "repository": "2025.1-RelatoriosInteligentesBCB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:51.074447",
+    "analyzed_at": "2026-09-19T10:02:37.905069",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -17196,7 +17216,7 @@
     "repository": "2025-2-OncoMap",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:58.421965",
+    "analyzed_at": "2026-09-19T10:02:43.957761",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -17960,7 +17980,7 @@
     "repository": "2025-2-InfoSchool",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:59.044461",
+    "analyzed_at": "2026-09-19T10:02:44.493844",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -18582,7 +18602,7 @@
     "repository": "2025-2-Eh_Fake",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:57.117346",
+    "analyzed_at": "2026-09-19T10:02:42.884051",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -19184,7 +19204,7 @@
     "repository": "2023-2-Squad07",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:24.358766",
+    "analyzed_at": "2026-09-19T10:02:14.938542",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -19622,7 +19642,7 @@
     "repository": "2025-2-Squad12",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:03.603364",
+    "analyzed_at": "2026-09-19T10:02:48.082100",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -20006,7 +20026,7 @@
     "repository": "2026-1-Guard.IA",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:07.609003",
+    "analyzed_at": "2026-09-19T10:02:51.054571",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -20586,7 +20606,7 @@
     "repository": "Gastos-DF-2024-02",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:47.484531",
+    "analyzed_at": "2026-09-19T10:02:35.120856",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -22526,7 +22546,7 @@
     "repository": "2024-1-EducaMinas-backend",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:38.597895",
+    "analyzed_at": "2026-09-19T10:02:27.640498",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -22876,7 +22896,7 @@
     "repository": "2026-2-Followw",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:16.595204",
+    "analyzed_at": "2026-09-19T10:02:58.393923",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -23124,7 +23144,7 @@
     "repository": "2024-2-SuaFinanca",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:46.770979",
+    "analyzed_at": "2026-09-19T10:02:34.491770",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -24468,7 +24488,7 @@
     "repository": "2025-2-Lumina",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:00.380771",
+    "analyzed_at": "2026-09-19T10:02:45.611283",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -25090,7 +25110,7 @@
     "repository": "2024-1-Squad-10",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:37.263991",
+    "analyzed_at": "2026-09-19T10:02:26.677660",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -25540,7 +25560,7 @@
     "repository": "2024-1-MinasDeCultura",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:35.565317",
+    "analyzed_at": "2026-09-19T10:02:25.278687",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -26474,7 +26494,7 @@
     "repository": "codigoruim",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:12.865531",
+    "analyzed_at": "2026-09-19T10:02:56.029636",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -26598,7 +26618,7 @@
     "repository": "2025_1-Jakebot",
     "owner": "unb-mds",
     "branch": "master",
-    "analyzed_at": "2026-09-18T10:26:54.495443",
+    "analyzed_at": "2026-09-19T10:02:40.954968",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -27082,7 +27102,7 @@
     "repository": "2024-2-Lumina",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:42.866794",
+    "analyzed_at": "2026-09-19T10:02:31.047217",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -27746,7 +27766,7 @@
     "repository": "DFemObras",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:44.047286",
+    "analyzed_at": "2026-09-19T10:02:32.069737",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -28410,7 +28430,7 @@
     "repository": "2026-2-Cerradinho-API",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:14.934509",
+    "analyzed_at": "2026-09-19T10:02:57.450979",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -28588,7 +28608,7 @@
     "repository": "Squad09-UnBHUB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:36.754903",
+    "analyzed_at": "2026-09-19T10:02:26.223119",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -29078,7 +29098,7 @@
     "repository": "2025-2-Portal-dos-Professores",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:56.525706",
+    "analyzed_at": "2026-09-19T10:02:42.394308",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -29866,7 +29886,7 @@
     "repository": "Gastos-DF-Squad12",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:38.018776",
+    "analyzed_at": "2026-09-19T10:02:27.206695",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -30602,7 +30622,7 @@
     "repository": "teste",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:28.484769",
+    "analyzed_at": "2026-09-19T10:02:19.214599",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -30670,7 +30690,7 @@
     "repository": "G2-2026-2",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:14.170676",
+    "analyzed_at": "2026-09-19T10:02:57.011895",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -30798,7 +30818,7 @@
     "repository": "Fique-de-Olho",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:15.588054",
+    "analyzed_at": "2026-09-19T10:02:57.967622",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -31016,7 +31036,7 @@
     "repository": "2023.2-LicitaX",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:29.610736",
+    "analyzed_at": "2026-09-19T10:02:20.196607",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -31318,7 +31338,7 @@
     "repository": "2024-2-Squad01",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:40.456604",
+    "analyzed_at": "2026-09-19T10:02:29.122034",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -32140,19 +32160,19 @@
     "repository": "2026-2-VeritasIA",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:06.539107",
+    "analyzed_at": "2026-09-19T10:02:50.158542",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
     },
     "total_files": 171,
-    "total_bytes": 3132834,
+    "total_bytes": 3175358,
     "languages": [
       {
         "language": "PNG Image",
         "file_count": 6,
         "total_bytes": 1955818,
-        "percentage": 62.43,
+        "percentage": 61.59,
         "files": [
           {
             "path": "Frontend/src/assets/logo2.png",
@@ -32195,8 +32215,8 @@
       {
         "language": "JSON",
         "file_count": 12,
-        "total_bytes": 672286,
-        "percentage": 21.46,
+        "total_bytes": 714810,
+        "percentage": 22.51,
         "files": [
           {
             "path": "Frontend/package-lock.json",
@@ -32213,13 +32233,13 @@
           {
             "path": "scrapers/resultados/resultados.json",
             "name": "resultados.json",
-            "size": 104688,
+            "size": 126026,
             "extension": ".json"
           },
           {
             "path": "scrapers/resultados/g1.json",
             "name": "g1.json",
-            "size": 90240,
+            "size": 103744,
             "extension": ".json"
           },
           {
@@ -32229,9 +32249,9 @@
             "extension": ".json"
           },
           {
-            "path": "scrapers/resultados/r7.json",
-            "name": "r7.json",
-            "size": 10033,
+            "path": "scrapers/resultados/cnn.json",
+            "name": "cnn.json",
+            "size": 11351,
             "extension": ".json"
           },
           {
@@ -32243,19 +32263,19 @@
           {
             "path": "scrapers/resultados/metropoles.json",
             "name": "metropoles.json",
-            "size": 2969,
+            "size": 7533,
+            "extension": ".json"
+          },
+          {
+            "path": "scrapers/resultados/r7.json",
+            "name": "r7.json",
+            "size": 1804,
             "extension": ".json"
           },
           {
             "path": "Frontend/package.json",
             "name": "package.json",
             "size": 1059,
-            "extension": ".json"
-          },
-          {
-            "path": "package.json",
-            "name": "package.json",
-            "size": 1026,
             "extension": ".json"
           }
         ]
@@ -32264,7 +32284,7 @@
         "language": "Python",
         "file_count": 36,
         "total_bytes": 123108,
-        "percentage": 3.93,
+        "percentage": 3.88,
         "files": [
           {
             "path": "docs/productivity/collect_metrics.py",
@@ -32332,7 +32352,7 @@
         "language": "Unknown",
         "file_count": 16,
         "total_bytes": 117140,
-        "percentage": 3.74,
+        "percentage": 3.69,
         "files": [
           {
             "path": "backend/tests/__pycache__/test_dashboard_routes.cpython-314-pytest-9.1.1.pyc",
@@ -32400,7 +32420,7 @@
         "language": "Markdown",
         "file_count": 46,
         "total_bytes": 79157,
-        "percentage": 2.53,
+        "percentage": 2.49,
         "files": [
           {
             "path": "docs/backend/LangChain.md",
@@ -32468,7 +32488,7 @@
         "language": "JavaScript",
         "file_count": 26,
         "total_bytes": 71051,
-        "percentage": 2.27,
+        "percentage": 2.24,
         "files": [
           {
             "path": "Frontend/src/pages/Noticias.jsx",
@@ -32536,7 +32556,7 @@
         "language": "HTML",
         "file_count": 4,
         "total_bytes": 50878,
-        "percentage": 1.62,
+        "percentage": 1.6,
         "files": [
           {
             "path": "docs/dashboard/dashboard.html",
@@ -32568,7 +32588,7 @@
         "language": "CSS",
         "file_count": 8,
         "total_bytes": 44720,
-        "percentage": 1.43,
+        "percentage": 1.41,
         "files": [
           {
             "path": "Frontend/src/App.css",
@@ -32792,7 +32812,7 @@
     "repository": "VIDAProject",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:53.941412",
+    "analyzed_at": "2026-09-19T10:02:40.535410",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -33322,7 +33342,7 @@
     "repository": "2023.2_Licitaiba",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:30.303983",
+    "analyzed_at": "2026-09-19T10:02:20.668816",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -33598,7 +33618,7 @@
     "repository": "2024-2-Datazonia",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:45.558940",
+    "analyzed_at": "2026-09-19T10:02:33.522776",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -33930,7 +33950,7 @@
     "repository": "2023-2-Squad09-Gotinha",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:26.075287",
+    "analyzed_at": "2026-09-19T10:02:17.124404",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -34510,7 +34530,7 @@
     "repository": "2024-1-EducaMinas-frontend",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:34.317557",
+    "analyzed_at": "2026-09-19T10:02:24.321564",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -35106,7 +35126,7 @@
     "repository": "Avalia",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:04.646880",
+    "analyzed_at": "2026-09-19T10:02:48.896502",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -35214,7 +35234,7 @@
     "repository": "2026-02-TambureteiUnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:19.387806",
+    "analyzed_at": "2026-09-19T10:03:00.260926",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -35350,7 +35370,7 @@
     "repository": "Sonorus-2025.1",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:50.539800",
+    "analyzed_at": "2026-09-19T10:02:37.464850",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -35912,7 +35932,7 @@
     "repository": "2026-02-UnDb",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:18.067032",
+    "analyzed_at": "2026-09-19T10:02:59.382291",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -36256,7 +36276,7 @@
     "repository": "2023-2-Squad05-TesouroMineiro",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:23.055324",
+    "analyzed_at": "2026-09-19T10:02:13.895694",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -36933,10 +36953,1272 @@
     ]
   },
   {
+    "repository": "2025-1-NoFluxoUnB",
+    "owner": "unb-mds",
+    "branch": "main",
+    "analyzed_at": "2026-09-19T10:02:36.904136",
+    "sample_config": {
+      "max_files_per_language": 10,
+      "strategy": "largest"
+    },
+    "total_files": 997,
+    "total_bytes": 32806081,
+    "languages": [
+      {
+        "language": "PNG Image",
+        "file_count": 68,
+        "total_bytes": 18852651,
+        "percentage": 57.47,
+        "files": [
+          {
+            "path": "documentacao/estudos/Github/Assets/ex_repositorio.png",
+            "name": "ex_repositorio.png",
+            "size": 1851439,
+            "extension": ".png"
+          },
+          {
+            "path": "documentacao/estudos/Github/Assets/fluxograma.png",
+            "name": "fluxograma.png",
+            "size": 1277405,
+            "extension": ".png"
+          },
+          {
+            "path": "documentacao/estudos/Github/Assets/branch.png",
+            "name": "branch.png",
+            "size": 1248105,
+            "extension": ".png"
+          },
+          {
+            "path": "documentacao/planejamento/idv/idv06-05-2025.png",
+            "name": "idv06-05-2025.png",
+            "size": 1185850,
+            "extension": ".png"
+          },
+          {
+            "path": "documentacao/img/home-no-fluxo.png",
+            "name": "home-no-fluxo.png",
+            "size": 992467,
+            "extension": ".png"
+          },
+          {
+            "path": "documentacao/img/fluxograma-no-fluxo.png",
+            "name": "fluxograma-no-fluxo.png",
+            "size": 919625,
+            "extension": ".png"
+          },
+          {
+            "path": "documentacao/img/assis-no-fluxo.png",
+            "name": "assis-no-fluxo.png",
+            "size": 892937,
+            "extension": ".png"
+          },
+          {
+            "path": "docs/testes/evidencias/vini-13-te7-d4-localstorage-malformado.png",
+            "name": "vini-13-te7-d4-localstorage-malformado.png",
+            "size": 792942,
+            "extension": ".png"
+          },
+          {
+            "path": "documentacao/img/leitura-pdf-no-fluxo.png",
+            "name": "leitura-pdf-no-fluxo.png",
+            "size": 681069,
+            "extension": ".png"
+          },
+          {
+            "path": "documentacao/planejamento/idv/img/leitura-pdf-no-fluxo.png",
+            "name": "leitura-pdf-no-fluxo.png",
+            "size": 681069,
+            "extension": ".png"
+          }
+        ]
+      },
+      {
+        "language": "JSON",
+        "file_count": 107,
+        "total_bytes": 3301908,
+        "percentage": 10.06,
+        "files": [
+          {
+            "path": "no_fluxo_backend/docs/database_schema.json",
+            "name": "database_schema.json",
+            "size": 459524,
+            "extension": ".json"
+          },
+          {
+            "path": "no_fluxo_frontend_svelte/package-lock.json",
+            "name": "package-lock.json",
+            "size": 364871,
+            "extension": ".json"
+          },
+          {
+            "path": "no_fluxo_backend/package-lock.json",
+            "name": "package-lock.json",
+            "size": 312516,
+            "extension": ".json"
+          },
+          {
+            "path": "kubernetes_docs/monitoring/dashboards/builds-dashboard.json",
+            "name": "builds-dashboard.json",
+            "size": 153586,
+            "extension": ".json"
+          },
+          {
+            "path": "DBA/turmas_2026_1/turmas_depto_672.json",
+            "name": "turmas_depto_672.json",
+            "size": 143874,
+            "extension": ".json"
+          },
+          {
+            "path": "DBA/dados/cursos-de-graduacao.json",
+            "name": "cursos-de-graduacao.json",
+            "size": 122280,
+            "extension": ".json"
+          },
+          {
+            "path": "DBA/turmas_2026_1/turmas_depto_495.json",
+            "name": "turmas_depto_495.json",
+            "size": 88397,
+            "extension": ".json"
+          },
+          {
+            "path": "DBA/turmas_2026_1/turmas_depto_666.json",
+            "name": "turmas_depto_666.json",
+            "size": 70832,
+            "extension": ".json"
+          },
+          {
+            "path": "DBA/turmas_2026_1/turmas_depto_574.json",
+            "name": "turmas_depto_574.json",
+            "size": 69786,
+            "extension": ".json"
+          },
+          {
+            "path": "DBA/turmas_2026_1/turmas_depto_455.json",
+            "name": "turmas_depto_455.json",
+            "size": 68788,
+            "extension": ".json"
+          }
+        ]
+      },
+      {
+        "language": "Unknown",
+        "file_count": 225,
+        "total_bytes": 2924410,
+        "percentage": 8.91,
+        "files": [
+          {
+            "path": "no_fluxo_frontend_svelte/static/pdf.worker.min.mjs",
+            "name": "pdf.worker.min.mjs",
+            "size": 1078612,
+            "extension": ".mjs"
+          },
+          {
+            "path": "DBA/turmas_2026_1/turmas_unb_20260226_FULL.csv",
+            "name": "turmas_unb_20260226_FULL.csv",
+            "size": 733283,
+            "extension": ".csv"
+          },
+          {
+            "path": "no_fluxo_frontend_svelte/src/lib/components/planejamento/MontadorGradeView.svelte",
+            "name": "MontadorGradeView.svelte",
+            "size": 45601,
+            "extension": ".svelte"
+          },
+          {
+            "path": "no_fluxo_frontend_svelte/src/routes/disciplinas/+page.svelte",
+            "name": "+page.svelte",
+            "size": 44036,
+            "extension": ".svelte"
+          },
+          {
+            "path": "no_fluxo_frontend_svelte/src/lib/components/fluxograma/layout/FluxogramViewportChrome.svelte",
+            "name": "FluxogramViewportChrome.svelte",
+            "size": 33280,
+            "extension": ".svelte"
+          },
+          {
+            "path": "no_fluxo_frontend_svelte/src/lib/components/plano-formatura/PlanoFormaturaView.svelte",
+            "name": "PlanoFormaturaView.svelte",
+            "size": 27494,
+            "extension": ".svelte"
+          },
+          {
+            "path": "no_fluxo_frontend_svelte/src/routes/(protected)/admin/tickets/+page.svelte",
+            "name": "+page.svelte",
+            "size": 24906,
+            "extension": ".svelte"
+          },
+          {
+            "path": "no_fluxo_frontend_svelte/src/routes/meu-fluxograma/[courseName]/+page.svelte",
+            "name": "+page.svelte",
+            "size": 23933,
+            "extension": ".svelte"
+          },
+          {
+            "path": "no_fluxo_frontend_svelte/src/lib/components/chat/ChatPanel.svelte",
+            "name": "ChatPanel.svelte",
+            "size": 22858,
+            "extension": ".svelte"
+          },
+          {
+            "path": "no_fluxo_frontend_svelte/src/lib/components/disciplinas/SubjectChainView.svelte",
+            "name": "SubjectChainView.svelte",
+            "size": 21970,
+            "extension": ".svelte"
+          }
+        ]
+      },
+      {
+        "language": "TypeScript",
+        "file_count": 263,
+        "total_bytes": 1800871,
+        "percentage": 5.49,
+        "files": [
+          {
+            "path": "no_fluxo_backend/scripts/export_schema.ts",
+            "name": "export_schema.ts",
+            "size": 55949,
+            "extension": ".ts"
+          },
+          {
+            "path": "no_fluxo_backend/src/controllers/fluxograma_controller.ts",
+            "name": "fluxograma_controller.ts",
+            "size": 53071,
+            "extension": ".ts"
+          },
+          {
+            "path": "no_fluxo_backend/src/services/plano_formatura.service.ts",
+            "name": "plano_formatura.service.ts",
+            "size": 52006,
+            "extension": ".ts"
+          },
+          {
+            "path": "no_fluxo_backend/src/controllers/PlanejamentoController.ts",
+            "name": "PlanejamentoController.ts",
+            "size": 46883,
+            "extension": ".ts"
+          },
+          {
+            "path": "no_fluxo_backend/tests-ts/grade-actuator.test.ts",
+            "name": "grade-actuator.test.ts",
+            "size": 44040,
+            "extension": ".ts"
+          },
+          {
+            "path": "no_fluxo_frontend_svelte/src/lib/stores/grade.store.svelte.ts",
+            "name": "grade.store.svelte.ts",
+            "size": 39875,
+            "extension": ".ts"
+          },
+          {
+            "path": "no_fluxo_frontend_svelte/src/lib/services/pdf/pdfDataExtractor.ts",
+            "name": "pdfDataExtractor.ts",
+            "size": 37866,
+            "extension": ".ts"
+          },
+          {
+            "path": "no_fluxo_frontend_svelte/src/lib/stores/fluxograma.store.svelte.ts",
+            "name": "fluxograma.store.svelte.ts",
+            "size": 36526,
+            "extension": ".ts"
+          },
+          {
+            "path": "no_fluxo_frontend_svelte/src/lib/services/grade-pool.service.ts",
+            "name": "grade-pool.service.ts",
+            "size": 34506,
+            "extension": ".ts"
+          },
+          {
+            "path": "no_fluxo_frontend_svelte/src/lib/factories/index.ts",
+            "name": "index.ts",
+            "size": 33328,
+            "extension": ".ts"
+          }
+        ]
+      },
+      {
+        "language": "Markdown",
+        "file_count": 136,
+        "total_bytes": 1791271,
+        "percentage": 5.46,
+        "files": [
+          {
+            "path": "plans/05-MODELS-TYPES.md",
+            "name": "05-MODELS-TYPES.md",
+            "size": 74356,
+            "extension": ".md"
+          },
+          {
+            "path": "plans/10-PDF-UPLOAD.md",
+            "name": "10-PDF-UPLOAD.md",
+            "size": 71377,
+            "extension": ".md"
+          },
+          {
+            "path": "plans/11-FLUXOGRAMA.md",
+            "name": "11-FLUXOGRAMA.md",
+            "size": 70961,
+            "extension": ".md"
+          },
+          {
+            "path": "plans/2026-07-04-chat-agente-planejador.md",
+            "name": "2026-07-04-chat-agente-planejador.md",
+            "size": 68224,
+            "extension": ".md"
+          },
+          {
+            "path": "plans/12-STATE-MANAGEMENT.md",
+            "name": "12-STATE-MANAGEMENT.md",
+            "size": 67985,
+            "extension": ".md"
+          },
+          {
+            "path": "plans/13-TESTING.md",
+            "name": "13-TESTING.md",
+            "size": 67772,
+            "extension": ".md"
+          },
+          {
+            "path": "plans/06-COMPONENTS-UI.md",
+            "name": "06-COMPONENTS-UI.md",
+            "size": 62252,
+            "extension": ".md"
+          },
+          {
+            "path": "plans/02-AUTHENTICATION.md",
+            "name": "02-AUTHENTICATION.md",
+            "size": 61732,
+            "extension": ".md"
+          },
+          {
+            "path": "plans/03-ROUTING-LAYOUT.md",
+            "name": "03-ROUTING-LAYOUT.md",
+            "size": 56148,
+            "extension": ".md"
+          },
+          {
+            "path": "plans/08-AUTH-PAGES.md",
+            "name": "08-AUTH-PAGES.md",
+            "size": 52265,
+            "extension": ".md"
+          }
+        ]
+      },
+      {
+        "language": "PDF",
+        "file_count": 17,
+        "total_bytes": 1197873,
+        "percentage": 3.65,
+        "files": [
+          {
+            "path": "documentacao/estudos/SCRUM e Programação eXtrema/SRUM e programação eXtrema.pdf",
+            "name": "SRUM e programação eXtrema.pdf",
+            "size": 394975,
+            "extension": ".pdf"
+          },
+          {
+            "path": "docs/testes/fixtures/kauan/imagem_only.pdf",
+            "name": "imagem_only.pdf",
+            "size": 363564,
+            "extension": ".pdf"
+          },
+          {
+            "path": "docs/visão_do_produto_nflx.pdf",
+            "name": "visão_do_produto_nflx.pdf",
+            "size": 297380,
+            "extension": ".pdf"
+          },
+          {
+            "path": "DBA/parse_pdf/testepdf2.pdf",
+            "name": "testepdf2.pdf",
+            "size": 38895,
+            "extension": ".pdf"
+          },
+          {
+            "path": "no_fluxo_backend/parse-pdf/testepdf2.pdf",
+            "name": "testepdf2.pdf",
+            "size": 38895,
+            "extension": ".pdf"
+          },
+          {
+            "path": "docs/testes/fixtures/historico_valido.pdf",
+            "name": "historico_valido.pdf",
+            "size": 28709,
+            "extension": ".pdf"
+          },
+          {
+            "path": "no_fluxo_frontend_svelte/src/lib/services/pdf/historico_231011417 (6) - Gustavo Choueiri.pdf",
+            "name": "historico_231011417 (6) - Gustavo Choueiri.pdf",
+            "size": 28265,
+            "extension": ".pdf"
+          },
+          {
+            "path": "docs/testes/fixtures/kauan/mencao_endash.pdf",
+            "name": "mencao_endash.pdf",
+            "size": 2377,
+            "extension": ".pdf"
+          },
+          {
+            "path": "tests-python/historico_unb_teste.pdf",
+            "name": "historico_unb_teste.pdf",
+            "size": 2221,
+            "extension": ".pdf"
+          },
+          {
+            "path": "docs/testes/fixtures/kauan/encrypted.pdf",
+            "name": "encrypted.pdf",
+            "size": 1425,
+            "extension": ".pdf"
+          }
+        ]
+      },
+      {
+        "language": "JPEG Image",
+        "file_count": 4,
+        "total_bytes": 774924,
+        "percentage": 2.36,
+        "files": [
+          {
+            "path": "assets/Logo_eu_3 editada.JPG",
+            "name": "Logo_eu_3 editada.JPG",
+            "size": 585625,
+            "extension": ".JPG"
+          },
+          {
+            "path": "documentacao/img/login-no-fluxo.jpeg",
+            "name": "login-no-fluxo.jpeg",
+            "size": 69090,
+            "extension": ".jpeg"
+          },
+          {
+            "path": "documentacao/planejamento/idv/img/login-no-fluxo.jpeg",
+            "name": "login-no-fluxo.jpeg",
+            "size": 69090,
+            "extension": ".jpeg"
+          },
+          {
+            "path": "assets/diagrama.jpeg",
+            "name": "diagrama.jpeg",
+            "size": 51119,
+            "extension": ".jpeg"
+          }
+        ]
+      },
+      {
+        "language": "YAML",
+        "file_count": 16,
+        "total_bytes": 655610,
+        "percentage": 2.0,
+        "files": [
+          {
+            "path": "pnpm-lock.yaml",
+            "name": "pnpm-lock.yaml",
+            "size": 374111,
+            "extension": ".yaml"
+          },
+          {
+            "path": "no_fluxo_frontend_svelte/pnpm-lock.yaml",
+            "name": "pnpm-lock.yaml",
+            "size": 231158,
+            "extension": ".yaml"
+          },
+          {
+            "path": "kubernetes_docs/templates/github-workflow.yml",
+            "name": "github-workflow.yml",
+            "size": 11497,
+            "extension": ".yml"
+          },
+          {
+            "path": ".github/workflows/scrape_turmas_lite.yml",
+            "name": "scrape_turmas_lite.yml",
+            "size": 8287,
+            "extension": ".yml"
+          },
+          {
+            "path": ".github/workflows/security-and-quality.yml",
+            "name": "security-and-quality.yml",
+            "size": 6487,
+            "extension": ".yml"
+          },
+          {
+            "path": ".github/workflows/pipelineCI.yml",
+            "name": "pipelineCI.yml",
+            "size": 5006,
+            "extension": ".yml"
+          },
+          {
+            "path": ".github/workflows/security_scan.yml",
+            "name": "security_scan.yml",
+            "size": 4395,
+            "extension": ".yml"
+          },
+          {
+            "path": "mkdocs.yml",
+            "name": "mkdocs.yml",
+            "size": 2828,
+            "extension": ".yml"
+          },
+          {
+            "path": ".github/workflows/scrape_calendario.yml",
+            "name": "scrape_calendario.yml",
+            "size": 2589,
+            "extension": ".yml"
+          },
+          {
+            "path": ".github/workflows/scrape_equivalencias.yml",
+            "name": "scrape_equivalencias.yml",
+            "size": 2280,
+            "extension": ".yml"
+          }
+        ]
+      },
+      {
+        "language": "Python",
+        "file_count": 42,
+        "total_bytes": 469431,
+        "percentage": 1.43,
+        "files": [
+          {
+            "path": "no_fluxo_backend/parse-pdf/pdf_parser_final.py",
+            "name": "pdf_parser_final.py",
+            "size": 39924,
+            "extension": ".py"
+          },
+          {
+            "path": "DBA/database/01_insert_cursos_matrizes_materias.py",
+            "name": "01_insert_cursos_matrizes_materias.py",
+            "size": 39816,
+            "extension": ".py"
+          },
+          {
+            "path": "no_fluxo_backend/parse-pdf/pdf_parser_ocr.py",
+            "name": "pdf_parser_ocr.py",
+            "size": 32855,
+            "extension": ".py"
+          },
+          {
+            "path": "mcp_agent/api_producao.py",
+            "name": "api_producao.py",
+            "size": 31718,
+            "extension": ".py"
+          },
+          {
+            "path": "no_fluxo_backend/start_and_monitor.py",
+            "name": "start_and_monitor.py",
+            "size": 29908,
+            "extension": ".py"
+          },
+          {
+            "path": "DBA/scraping/scraping_turmas.py",
+            "name": "scraping_turmas.py",
+            "size": 27973,
+            "extension": ".py"
+          },
+          {
+            "path": "scripts/deploy/deploy_local.py",
+            "name": "deploy_local.py",
+            "size": 27300,
+            "extension": ".py"
+          },
+          {
+            "path": "kubernetes_docs/local_build_and_deploy/deploy_local.py",
+            "name": "deploy_local.py",
+            "size": 26996,
+            "extension": ".py"
+          },
+          {
+            "path": "DBA/scraping/scraping_equivalencias.py",
+            "name": "scraping_equivalencias.py",
+            "size": 24509,
+            "extension": ".py"
+          },
+          {
+            "path": "DBA/scraping/scraping_ementa.py",
+            "name": "scraping_ementa.py",
+            "size": 22305,
+            "extension": ".py"
+          }
+        ]
+      },
+      {
+        "language": "SQL",
+        "file_count": 11,
+        "total_bytes": 368755,
+        "percentage": 1.12,
+        "files": [
+          {
+            "path": "no_fluxo_backend/docs/database_functions.sql",
+            "name": "database_functions.sql",
+            "size": 135880,
+            "extension": ".sql"
+          },
+          {
+            "path": "no_fluxo_backend/docs/supabase_migrations/latest_init_from_export.sql",
+            "name": "latest_init_from_export.sql",
+            "size": 133533,
+            "extension": ".sql"
+          },
+          {
+            "path": "no_fluxo_backend/docs/supabase_migrations/casar_disciplinas_function.sql",
+            "name": "casar_disciplinas_function.sql",
+            "size": 33623,
+            "extension": ".sql"
+          },
+          {
+            "path": "no_fluxo_backend/scripts/migrations/export_schema_rpc.sql",
+            "name": "export_schema_rpc.sql",
+            "size": 21312,
+            "extension": ".sql"
+          },
+          {
+            "path": "no_fluxo_backend/docs/rls_policies.sql",
+            "name": "rls_policies.sql",
+            "size": 12045,
+            "extension": ".sql"
+          },
+          {
+            "path": "no_fluxo_backend/docs/supabase_migrations/ticket_chat.sql",
+            "name": "ticket_chat.sql",
+            "size": 11781,
+            "extension": ".sql"
+          },
+          {
+            "path": "no_fluxo_backend/docs/supabase_migrations/ticket_chat_nao_lidas.sql",
+            "name": "ticket_chat_nao_lidas.sql",
+            "size": 7506,
+            "extension": ".sql"
+          },
+          {
+            "path": "no_fluxo_backend/docs/database_triggers.sql",
+            "name": "database_triggers.sql",
+            "size": 7418,
+            "extension": ".sql"
+          },
+          {
+            "path": "no_fluxo_backend/docs/supabase_migrations/security_scans.sql",
+            "name": "security_scans.sql",
+            "size": 2975,
+            "extension": ".sql"
+          },
+          {
+            "path": "no_fluxo_backend/nova_view_equivalencias.sql",
+            "name": "nova_view_equivalencias.sql",
+            "size": 1819,
+            "extension": ".sql"
+          }
+        ]
+      },
+      {
+        "language": "HTML",
+        "file_count": 13,
+        "total_bytes": 264716,
+        "percentage": 0.81,
+        "files": [
+          {
+            "path": "prototipo/src/pages/fluxogramas/engenharia-software.html",
+            "name": "engenharia-software.html",
+            "size": 86475,
+            "extension": ".html"
+          },
+          {
+            "path": "prototipo/src/pages/fluxogramas/index.html",
+            "name": "index.html",
+            "size": 33405,
+            "extension": ".html"
+          },
+          {
+            "path": "prototipo/src/pages/home/index.html",
+            "name": "index.html",
+            "size": 29245,
+            "extension": ".html"
+          },
+          {
+            "path": "no_fluxo_backend/testes-web/index.html",
+            "name": "index.html",
+            "size": 23555,
+            "extension": ".html"
+          },
+          {
+            "path": "prototipo/src/pages/assistente/index.html",
+            "name": "index.html",
+            "size": 18143,
+            "extension": ".html"
+          },
+          {
+            "path": "prototipo/src/pages/auth/index.html",
+            "name": "index.html",
+            "size": 16788,
+            "extension": ".html"
+          },
+          {
+            "path": "DBA/parse_pdf/index.html",
+            "name": "index.html",
+            "size": 12244,
+            "extension": ".html"
+          },
+          {
+            "path": "no_fluxo_backend/parse-pdf/index.html",
+            "name": "index.html",
+            "size": 12244,
+            "extension": ".html"
+          },
+          {
+            "path": "prototipo/src/pages/historico/index.html",
+            "name": "index.html",
+            "size": 11225,
+            "extension": ".html"
+          },
+          {
+            "path": "no_fluxo_frontend_svelte/landing-hero-prototype.html",
+            "name": "landing-hero-prototype.html",
+            "size": 10811,
+            "extension": ".html"
+          }
+        ]
+      },
+      {
+        "language": "JavaScript",
+        "file_count": 27,
+        "total_bytes": 148958,
+        "percentage": 0.45,
+        "files": [
+          {
+            "path": "prototipo/src/pages/fluxogramas/engenharia-software.js",
+            "name": "engenharia-software.js",
+            "size": 60431,
+            "extension": ".js"
+          },
+          {
+            "path": "prototipo/src/pages/assistente/script.js",
+            "name": "script.js",
+            "size": 15772,
+            "extension": ".js"
+          },
+          {
+            "path": "no_fluxo_backend/scripts/setup-tesseract.js",
+            "name": "setup-tesseract.js",
+            "size": 8644,
+            "extension": ".js"
+          },
+          {
+            "path": "prototipo/src/pages/auth/script.js",
+            "name": "script.js",
+            "size": 8639,
+            "extension": ".js"
+          },
+          {
+            "path": "prototipo/src/pages/historico/script.js",
+            "name": "script.js",
+            "size": 8090,
+            "extension": ".js"
+          },
+          {
+            "path": "prototipo/src/pages/assistente/data.js",
+            "name": "data.js",
+            "size": 4732,
+            "extension": ".js"
+          },
+          {
+            "path": "prototipo/src/components/header/Header.js",
+            "name": "Header.js",
+            "size": 4295,
+            "extension": ".js"
+          },
+          {
+            "path": "prototipo/src/components/navigation/Navigation.js",
+            "name": "Navigation.js",
+            "size": 4288,
+            "extension": ".js"
+          },
+          {
+            "path": "prototipo/src/pages/fluxogramas/script.js",
+            "name": "script.js",
+            "size": 3832,
+            "extension": ".js"
+          },
+          {
+            "path": "prototipo/src/data/courses/data.js",
+            "name": "data.js",
+            "size": 3809,
+            "extension": ".js"
+          }
+        ]
+      },
+      {
+        "language": "CSS",
+        "file_count": 10,
+        "total_bytes": 70140,
+        "percentage": 0.21,
+        "files": [
+          {
+            "path": "prototipo/prototipo-identidade-unb/styles.css",
+            "name": "styles.css",
+            "size": 12187,
+            "extension": ".css"
+          },
+          {
+            "path": "prototipo/src/pages/fluxogramas/engenharia-software.css",
+            "name": "engenharia-software.css",
+            "size": 11486,
+            "extension": ".css"
+          },
+          {
+            "path": "prototipo/src/pages/historico/style.css",
+            "name": "style.css",
+            "size": 8117,
+            "extension": ".css"
+          },
+          {
+            "path": "prototipo/src/pages/assistente/style.css",
+            "name": "style.css",
+            "size": 7932,
+            "extension": ".css"
+          },
+          {
+            "path": "no_fluxo_frontend_svelte/src/app.css",
+            "name": "app.css",
+            "size": 7751,
+            "extension": ".css"
+          },
+          {
+            "path": "prototipo/src/pages/fluxogramas/style.css",
+            "name": "style.css",
+            "size": 6159,
+            "extension": ".css"
+          },
+          {
+            "path": "prototipo/src/pages/home/style.css",
+            "name": "style.css",
+            "size": 5576,
+            "extension": ".css"
+          },
+          {
+            "path": "prototipo/src/pages/auth/style.css",
+            "name": "style.css",
+            "size": 4860,
+            "extension": ".css"
+          },
+          {
+            "path": "no_fluxo_frontend_svelte/src/lib/styles/nofluxo-ds.css",
+            "name": "nofluxo-ds.css",
+            "size": 4318,
+            "extension": ".css"
+          },
+          {
+            "path": "prototipo/assets/styles/themes/global.css",
+            "name": "global.css",
+            "size": 1754,
+            "extension": ".css"
+          }
+        ]
+      },
+      {
+        "language": "LaTeX",
+        "file_count": 3,
+        "total_bytes": 64227,
+        "percentage": 0.2,
+        "files": [
+          {
+            "path": "docs/PROJECT_DOCUMENTATION.tex",
+            "name": "PROJECT_DOCUMENTATION.tex",
+            "size": 36800,
+            "extension": ".tex"
+          },
+          {
+            "path": "docs/testes/relatorio-fase1-ci.tex",
+            "name": "relatorio-fase1-ci.tex",
+            "size": 15884,
+            "extension": ".tex"
+          },
+          {
+            "path": "docs/testes/relatorio-ptoss2-caixa-branca.tex",
+            "name": "relatorio-ptoss2-caixa-branca.tex",
+            "size": 11543,
+            "extension": ".tex"
+          }
+        ]
+      },
+      {
+        "language": "No Extension",
+        "file_count": 4,
+        "total_bytes": 39067,
+        "percentage": 0.12,
+        "files": [
+          {
+            "path": "LICENSE",
+            "name": "LICENSE",
+            "size": 35149,
+            "extension": ""
+          },
+          {
+            "path": "documentacao/planejamento/idv/IDV (06-05-2025)",
+            "name": "IDV (06-05-2025)",
+            "size": 3149,
+            "extension": ""
+          },
+          {
+            "path": "documentacao/atas/DD-MM-AA (template)",
+            "name": "DD-MM-AA (template)",
+            "size": 769,
+            "extension": ""
+          },
+          {
+            "path": "prototipo/assets/icons",
+            "name": "icons",
+            "size": 0,
+            "extension": ""
+          }
+        ]
+      },
+      {
+        "language": "Text",
+        "file_count": 15,
+        "total_bytes": 32049,
+        "percentage": 0.1,
+        "files": [
+          {
+            "path": "docs/testes/fixtures/wrong_ext.txt",
+            "name": "wrong_ext.txt",
+            "size": 28709,
+            "extension": ".txt"
+          },
+          {
+            "path": "requirements.txt",
+            "name": "requirements.txt",
+            "size": 1393,
+            "extension": ".txt"
+          },
+          {
+            "path": "DBA/scraping/requirements.txt",
+            "name": "requirements.txt",
+            "size": 575,
+            "extension": ".txt"
+          },
+          {
+            "path": "mcp_agent/requirements.txt",
+            "name": "requirements.txt",
+            "size": 301,
+            "extension": ".txt"
+          },
+          {
+            "path": "tests-python/requirements.txt",
+            "name": "requirements.txt",
+            "size": 279,
+            "extension": ".txt"
+          },
+          {
+            "path": "no_fluxo_backend/parse-pdf/requirements.txt",
+            "name": "requirements.txt",
+            "size": 198,
+            "extension": ".txt"
+          },
+          {
+            "path": "no_fluxo_frontend_svelte/static/robots.txt",
+            "name": "robots.txt",
+            "size": 157,
+            "extension": ".txt"
+          },
+          {
+            "path": "no_fluxo_backend/parse-pdf/requirements_ocr.txt",
+            "name": "requirements_ocr.txt",
+            "size": 119,
+            "extension": ".txt"
+          },
+          {
+            "path": "DBA/database/requirements.txt",
+            "name": "requirements.txt",
+            "size": 116,
+            "extension": ".txt"
+          },
+          {
+            "path": "DBA/parse_pdf/requirements.txt",
+            "name": "requirements.txt",
+            "size": 77,
+            "extension": ".txt"
+          }
+        ]
+      },
+      {
+        "language": "Shell",
+        "file_count": 15,
+        "total_bytes": 22114,
+        "percentage": 0.07,
+        "files": [
+          {
+            "path": "run_all_tests.sh",
+            "name": "run_all_tests.sh",
+            "size": 2648,
+            "extension": ".sh"
+          },
+          {
+            "path": "docs/testes/fixtures/kauan/make-fixtures.sh",
+            "name": "make-fixtures.sh",
+            "size": 2437,
+            "extension": ".sh"
+          },
+          {
+            "path": "no_fluxo_backend/run_tests.sh",
+            "name": "run_tests.sh",
+            "size": 2374,
+            "extension": ".sh"
+          },
+          {
+            "path": "no_fluxo_backend/scripts/test-git.sh",
+            "name": "test-git.sh",
+            "size": 2349,
+            "extension": ".sh"
+          },
+          {
+            "path": "no_fluxo_backend/testes_exemplo.sh",
+            "name": "testes_exemplo.sh",
+            "size": 2345,
+            "extension": ".sh"
+          },
+          {
+            "path": "no_fluxo_backend/scripts/test-env.sh",
+            "name": "test-env.sh",
+            "size": 2136,
+            "extension": ".sh"
+          },
+          {
+            "path": "no_fluxo_backend/scripts/view-logs.sh",
+            "name": "view-logs.sh",
+            "size": 1544,
+            "extension": ".sh"
+          },
+          {
+            "path": "no_fluxo_backend/scripts/dev-full.sh",
+            "name": "dev-full.sh",
+            "size": 1409,
+            "extension": ".sh"
+          },
+          {
+            "path": "no_fluxo_backend/generate-ssl.sh",
+            "name": "generate-ssl.sh",
+            "size": 1000,
+            "extension": ".sh"
+          },
+          {
+            "path": "no_fluxo_backend/monitor_memory.sh",
+            "name": "monitor_memory.sh",
+            "size": 984,
+            "extension": ".sh"
+          }
+        ]
+      },
+      {
+        "language": "SVG Image",
+        "file_count": 3,
+        "total_bytes": 8637,
+        "percentage": 0.03,
+        "files": [
+          {
+            "path": "no_fluxo_frontend_svelte/static/icons/computer_phone.svg",
+            "name": "computer_phone.svg",
+            "size": 7503,
+            "extension": ".svg"
+          },
+          {
+            "path": "no_fluxo_frontend_svelte/static/icons/Google__G__logo.svg",
+            "name": "Google__G__logo.svg",
+            "size": 742,
+            "extension": ".svg"
+          },
+          {
+            "path": "no_fluxo_frontend_svelte/static/favicon.svg",
+            "name": "favicon.svg",
+            "size": 392,
+            "extension": ".svg"
+          }
+        ]
+      },
+      {
+        "language": "Docker Ignore",
+        "file_count": 3,
+        "total_bytes": 2029,
+        "percentage": 0.01,
+        "files": [
+          {
+            "path": ".dockerignore",
+            "name": ".dockerignore",
+            "size": 1126,
+            "extension": ".dockerignore"
+          },
+          {
+            "path": "kubernetes_docs/templates/.dockerignore",
+            "name": ".dockerignore",
+            "size": 767,
+            "extension": ".dockerignore"
+          },
+          {
+            "path": "no_fluxo_backend/.dockerignore",
+            "name": ".dockerignore",
+            "size": 136,
+            "extension": ".dockerignore"
+          }
+        ]
+      },
+      {
+        "language": "Git Ignore",
+        "file_count": 3,
+        "total_bytes": 4897,
+        "percentage": 0.01,
+        "files": [
+          {
+            "path": ".gitignore",
+            "name": ".gitignore",
+            "size": 4383,
+            "extension": ".gitignore"
+          },
+          {
+            "path": "no_fluxo_frontend_svelte/.gitignore",
+            "name": ".gitignore",
+            "size": 382,
+            "extension": ".gitignore"
+          },
+          {
+            "path": "no_fluxo_backend/.gitignore",
+            "name": ".gitignore",
+            "size": 132,
+            "extension": ".gitignore"
+          }
+        ]
+      },
+      {
+        "language": "PowerShell",
+        "file_count": 2,
+        "total_bytes": 4244,
+        "percentage": 0.01,
+        "files": [
+          {
+            "path": "no_fluxo_backend/testes_exemplo.ps1",
+            "name": "testes_exemplo.ps1",
+            "size": 4056,
+            "extension": ".ps1"
+          },
+          {
+            "path": "RUN_BACKEND.ps1",
+            "name": "RUN_BACKEND.ps1",
+            "size": 188,
+            "extension": ".ps1"
+          }
+        ]
+      },
+      {
+        "language": "Batch",
+        "file_count": 4,
+        "total_bytes": 2873,
+        "percentage": 0.01,
+        "files": [
+          {
+            "path": "no_fluxo_backend/generate-ssl.bat",
+            "name": "generate-ssl.bat",
+            "size": 1203,
+            "extension": ".bat"
+          },
+          {
+            "path": "no_fluxo_backend/testes-web/start.bat",
+            "name": "start.bat",
+            "size": 703,
+            "extension": ".bat"
+          },
+          {
+            "path": "mcp_agent/start_api_production.bat",
+            "name": "start_api_production.bat",
+            "size": 581,
+            "extension": ".bat"
+          },
+          {
+            "path": "mcp_agent/start_api.bat",
+            "name": "start_api.bat",
+            "size": 386,
+            "extension": ".bat"
+          }
+        ]
+      },
+      {
+        "language": "TOML",
+        "file_count": 1,
+        "total_bytes": 1351,
+        "percentage": 0.0,
+        "files": [
+          {
+            "path": ".gitleaks.toml",
+            "name": ".gitleaks.toml",
+            "size": 1351,
+            "extension": ".toml"
+          }
+        ]
+      },
+      {
+        "language": "Go",
+        "file_count": 1,
+        "total_bytes": 768,
+        "percentage": 0.0,
+        "files": [
+          {
+            "path": "kubernetes_docs/templates/Dockerfile.go",
+            "name": "Dockerfile.go",
+            "size": 768,
+            "extension": ".go"
+          }
+        ]
+      },
+      {
+        "language": "XML",
+        "file_count": 2,
+        "total_bytes": 780,
+        "percentage": 0.0,
+        "files": [
+          {
+            "path": "no_fluxo_frontend_svelte/static/sitemap.xml",
+            "name": "sitemap.xml",
+            "size": 694,
+            "extension": ".xml"
+          },
+          {
+            "path": "no_fluxo_frontend_svelte/static/BingSiteAuth.xml",
+            "name": "BingSiteAuth.xml",
+            "size": 86,
+            "extension": ".xml"
+          }
+        ]
+      },
+      {
+        "language": "Config",
+        "file_count": 1,
+        "total_bytes": 714,
+        "percentage": 0.0,
+        "files": [
+          {
+            "path": "setup.cfg",
+            "name": "setup.cfg",
+            "size": 714,
+            "extension": ".cfg"
+          }
+        ]
+      },
+      {
+        "language": "INI",
+        "file_count": 1,
+        "total_bytes": 813,
+        "percentage": 0.0,
+        "files": [
+          {
+            "path": "tests-python/pytest.ini",
+            "name": "pytest.ini",
+            "size": 813,
+            "extension": ".ini"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "repository": "MDS-MonitoraBSB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:44.563326",
+    "analyzed_at": "2026-09-19T10:02:32.536609",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -37544,7 +38826,7 @@
     "repository": "2023-2-Squad01",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:15.303316",
+    "analyzed_at": "2026-09-19T10:02:07.566363",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -37640,19 +38922,19 @@
     "repository": "DFemObras-2025.1",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:53.413821",
+    "analyzed_at": "2026-09-19T10:02:39.975351",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
     },
     "total_files": 168,
-    "total_bytes": 15851731,
+    "total_bytes": 15859726,
     "languages": [
       {
         "language": "JPEG Image",
         "file_count": 33,
         "total_bytes": 6730743,
-        "percentage": 42.46,
+        "percentage": 42.44,
         "files": [
           {
             "path": "TestesMapa/documentação/fotos/nathan.jpg",
@@ -37720,7 +39002,7 @@
         "language": "PNG Image",
         "file_count": 30,
         "total_bytes": 5963641,
-        "percentage": 37.62,
+        "percentage": 37.6,
         "files": [
           {
             "path": "docs/Documento Responsividade/obras-desktop.png",
@@ -37787,8 +39069,8 @@
       {
         "language": "JSON",
         "file_count": 6,
-        "total_bytes": 2164920,
-        "percentage": 13.66,
+        "total_bytes": 2172915,
+        "percentage": 13.7,
         "files": [
           {
             "path": "TestesMapa/obrasgov/obras_com_lat_long.json",
@@ -37811,7 +39093,7 @@
           {
             "path": "TestesMapa/obrasgov/src/obras_com_lat_long.json",
             "name": "obras_com_lat_long.json",
-            "size": 21411,
+            "size": 29406,
             "extension": ".json"
           },
           {
@@ -38270,7 +39552,7 @@
     "repository": "LicitaBSB-24.1",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:33.101852",
+    "analyzed_at": "2026-09-19T10:02:23.419964",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -39170,7 +40452,7 @@
     "repository": "2026-1-SafeStreets",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:05.220907",
+    "analyzed_at": "2026-09-19T10:02:49.290082",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -39878,7 +41160,7 @@
     "repository": "2026-1-ProtectKids",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:11.777845",
+    "analyzed_at": "2026-09-19T10:02:54.908666",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -40414,7 +41696,7 @@
     "repository": "2025-2-Integralizei_UnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:57.749515",
+    "analyzed_at": "2026-09-19T10:02:43.369654",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -41380,7 +42662,7 @@
     "repository": "Projeto-P.I.T.E.R",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:55.999600",
+    "analyzed_at": "2026-09-19T10:02:41.952714",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -41864,7 +43146,7 @@
     "repository": "2025-2-Squad-01",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:55.428633",
+    "analyzed_at": "2026-09-19T10:02:41.414994",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -42532,7 +43814,7 @@
     "repository": "2025-1-GovInsights",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:51.652610",
+    "analyzed_at": "2026-09-19T10:02:38.356251",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -43006,7 +44288,7 @@
     "repository": "2024-2-Urbanize",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:41.161016",
+    "analyzed_at": "2026-09-19T10:02:29.691585",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -44070,7 +45352,7 @@
     "repository": "2026-1-Squad4-Dito_e_Feito",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:07.045231",
+    "analyzed_at": "2026-09-19T10:02:50.560307",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -44660,7 +45942,7 @@
     "repository": "2026-1-LegisKids",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:08.739636",
+    "analyzed_at": "2026-09-19T10:02:52.310814",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -45300,13 +46582,13 @@
     "repository": "2026-1-Mapa_L.I.L.A.S",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:06.065340",
+    "analyzed_at": "2026-09-19T10:02:49.706309",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
     },
     "total_files": 337,
-    "total_bytes": 19858500,
+    "total_bytes": 19858782,
     "languages": [
       {
         "language": "PDF",
@@ -45707,8 +46989,8 @@
       {
         "language": "JSON",
         "file_count": 13,
-        "total_bytes": 255067,
-        "percentage": 1.28,
+        "total_bytes": 255349,
+        "percentage": 1.29,
         "files": [
           {
             "path": "frontend/package-lock.json",
@@ -45725,7 +47007,7 @@
           {
             "path": "docs/ingestion/ingestion-history.json",
             "name": "ingestion-history.json",
-            "size": 20192,
+            "size": 20474,
             "extension": ".json"
           },
           {
@@ -46118,7 +47400,7 @@
     "repository": "ParticipeMais",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:48.936690",
+    "analyzed_at": "2026-09-19T10:02:36.331436",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -46702,7 +47984,7 @@
     "repository": "diario-de-bordo",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:22.054120",
+    "analyzed_at": "2026-09-19T10:03:02.421216",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -46868,7 +48150,7 @@
     "repository": "2026-1-P.R.I.S.M.A",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:12.372533",
+    "analyzed_at": "2026-09-19T10:02:55.464484",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -47346,7 +48628,7 @@
     "repository": "teste-ru",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:21.423181",
+    "analyzed_at": "2026-09-19T10:03:01.984876",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -47566,7 +48848,7 @@
     "repository": "2025-1-RelatAI",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:52.866642",
+    "analyzed_at": "2026-09-19T10:02:39.469302",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -48086,7 +49368,7 @@
     "repository": "2026.2-UnB_Core",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:13.644781",
+    "analyzed_at": "2026-09-19T10:02:56.461996",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -48324,7 +49606,7 @@
     "repository": "2025-2-Mural-UnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:59.778310",
+    "analyzed_at": "2026-09-19T10:02:45.084389",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -49206,7 +50488,7 @@
     "repository": "2026-1-squad0x",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:09.264316",
+    "analyzed_at": "2026-09-19T10:02:52.747717",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -49248,7 +50530,7 @@
     "repository": ".github",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:27:04.174146",
+    "analyzed_at": "2026-09-19T10:02:48.455945",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -49276,7 +50558,7 @@
     "repository": "squad03-r2",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:29.062642",
+    "analyzed_at": "2026-09-19T10:02:19.690841",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -49514,7 +50796,7 @@
     "repository": "2024-1-Gastos-DF-Doc-Squad12",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:39.759068",
+    "analyzed_at": "2026-09-19T10:02:28.466821",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -50510,7 +51792,7 @@
     "repository": "2024-1-forUnB",
     "owner": "unb-mds",
     "branch": "main",
-    "analyzed_at": "2026-09-18T10:26:31.926701",
+    "analyzed_at": "2026-09-19T10:02:22.440470",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"
@@ -51322,7 +52604,7 @@
     "repository": "2024-1-squad04",
     "owner": "unb-mds",
     "branch": "dev",
-    "analyzed_at": "2026-09-18T10:26:33.775069",
+    "analyzed_at": "2026-09-19T10:02:23.845737",
     "sample_config": {
       "max_files_per_language": 10,
       "strategy": "largest"

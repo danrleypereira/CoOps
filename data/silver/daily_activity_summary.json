@@ -1,9 +1,9 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-18T10:28:12.944806",
+      "extracted_at": "2026-09-19T10:03:48.109854",
       "file_path": "data/silver/daily_activity_summary.json",
-      "record_count": 1072
+      "record_count": 1073
     }
   },
   {
@@ -29700,7 +29700,7 @@
     "prs_closed": 10,
     "commits": 49,
     "comments": 0,
-    "unique_users": 24,
+    "unique_users": 23,
     "unique_repos": 7,
     "authors": [
       {
@@ -29731,8 +29731,8 @@
         "comments": 0
       },
       {
-        "name": "actions",
-        "commits": 1,
+        "name": "unknown",
+        "commits": 3,
         "issues_created": 0,
         "issues_closed": 0,
         "prs_created": 0,
@@ -29781,15 +29781,6 @@
         "issues_created": 1,
         "issues_closed": 0,
         "prs_created": 1,
-        "prs_closed": 0,
-        "comments": 0
-      },
-      {
-        "name": "unknown",
-        "commits": 2,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 0,
         "prs_closed": 0,
         "comments": 0
       },
@@ -30381,7 +30372,7 @@
     "prs_closed": 42,
     "commits": 185,
     "comments": 0,
-    "unique_users": 46,
+    "unique_users": 45,
     "unique_repos": 11,
     "authors": [
       {
@@ -30547,8 +30538,8 @@
         "comments": 0
       },
       {
-        "name": "actions",
-        "commits": 1,
+        "name": "unknown",
+        "commits": 2,
         "issues_created": 0,
         "issues_closed": 0,
         "prs_created": 0,
@@ -30589,15 +30580,6 @@
         "issues_closed": 0,
         "prs_created": 1,
         "prs_closed": 3,
-        "comments": 0
-      },
-      {
-        "name": "unknown",
-        "commits": 1,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 0,
-        "prs_closed": 0,
         "comments": 0
       },
       {
@@ -30746,7 +30728,7 @@
     "prs_closed": 29,
     "commits": 129,
     "comments": 0,
-    "unique_users": 37,
+    "unique_users": 36,
     "unique_repos": 13,
     "authors": [
       {
@@ -30849,8 +30831,8 @@
         "comments": 0
       },
       {
-        "name": "actions",
-        "commits": 1,
+        "name": "unknown",
+        "commits": 2,
         "issues_created": 0,
         "issues_closed": 0,
         "prs_created": 0,
@@ -30860,15 +30842,6 @@
       {
         "name": "Marcelo-Adrian",
         "commits": 2,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 0,
-        "prs_closed": 0,
-        "comments": 0
-      },
-      {
-        "name": "unknown",
-        "commits": 1,
         "issues_created": 0,
         "issues_closed": 0,
         "prs_created": 0,
@@ -118409,11 +118382,11 @@
   },
   {
     "date": "2026-08-13",
-    "total_events": 35,
+    "total_events": 34,
     "issues_created": 0,
     "issues_closed": 0,
     "prs_created": 2,
-    "prs_closed": 2,
+    "prs_closed": 1,
     "commits": 22,
     "comments": 0,
     "unique_users": 5,
@@ -118443,7 +118416,7 @@
         "issues_created": 0,
         "issues_closed": 0,
         "prs_created": 2,
-        "prs_closed": 2,
+        "prs_closed": 1,
         "comments": 0
       },
       {
@@ -118468,11 +118441,11 @@
   },
   {
     "date": "2026-08-14",
-    "total_events": 28,
+    "total_events": 27,
     "issues_created": 0,
     "issues_closed": 0,
     "prs_created": 1,
-    "prs_closed": 1,
+    "prs_closed": 0,
     "commits": 22,
     "comments": 0,
     "unique_users": 4,
@@ -118484,7 +118457,7 @@
         "issues_created": 0,
         "issues_closed": 0,
         "prs_created": 1,
-        "prs_closed": 1,
+        "prs_closed": 0,
         "comments": 0
       },
       {
@@ -119439,11 +119412,11 @@
   },
   {
     "date": "2026-08-30",
-    "total_events": 32,
+    "total_events": 31,
     "issues_created": 3,
     "issues_closed": 0,
     "prs_created": 1,
-    "prs_closed": 1,
+    "prs_closed": 0,
     "commits": 21,
     "comments": 0,
     "unique_users": 7,
@@ -119491,21 +119464,21 @@
         "issues_created": 0,
         "issues_closed": 0,
         "prs_created": 1,
-        "prs_closed": 1,
+        "prs_closed": 0,
         "comments": 0
       }
     ]
   },
   {
     "date": "2026-08-31",
-    "total_events": 243,
+    "total_events": 241,
     "issues_created": 25,
     "issues_closed": 10,
     "prs_created": 5,
-    "prs_closed": 4,
+    "prs_closed": 2,
     "commits": 27,
     "comments": 0,
-    "unique_users": 24,
+    "unique_users": 23,
     "unique_repos": 11,
     "authors": [
       {
@@ -119551,15 +119524,6 @@
         "issues_closed": 1,
         "prs_created": 0,
         "prs_closed": 0,
-        "comments": 0
-      },
-      {
-        "name": "knz13",
-        "commits": 0,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 0,
-        "prs_closed": 2,
         "comments": 0
       },
       {
@@ -119796,11 +119760,11 @@
   },
   {
     "date": "2026-09-02",
-    "total_events": 66,
+    "total_events": 65,
     "issues_created": 0,
     "issues_closed": 1,
     "prs_created": 7,
-    "prs_closed": 4,
+    "prs_closed": 3,
     "commits": 30,
     "comments": 0,
     "unique_users": 14,
@@ -119875,7 +119839,7 @@
         "issues_created": 0,
         "issues_closed": 0,
         "prs_created": 0,
-        "prs_closed": 1,
+        "prs_closed": 0,
         "comments": 0
       },
       {
@@ -119909,11 +119873,11 @@
   },
   {
     "date": "2026-09-03",
-    "total_events": 125,
+    "total_events": 124,
     "issues_created": 13,
     "issues_closed": 2,
     "prs_created": 0,
-    "prs_closed": 1,
+    "prs_closed": 0,
     "commits": 32,
     "comments": 0,
     "unique_users": 13,
@@ -119980,15 +119944,6 @@
         "issues_closed": 2,
         "prs_created": 0,
         "prs_closed": 0,
-        "comments": 0
-      },
-      {
-        "name": "Vitor-Trancoso",
-        "commits": 0,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 0,
-        "prs_closed": 1,
         "comments": 0
       },
       {
@@ -121029,11 +120984,11 @@
   },
   {
     "date": "2026-09-11",
-    "total_events": 988,
+    "total_events": 985,
     "issues_created": 78,
     "issues_closed": 48,
     "prs_created": 13,
-    "prs_closed": 17,
+    "prs_closed": 14,
     "commits": 55,
     "comments": 0,
     "unique_users": 40,
@@ -121171,7 +121126,7 @@
         "issues_created": 3,
         "issues_closed": 1,
         "prs_created": 3,
-        "prs_closed": 3,
+        "prs_closed": 0,
         "comments": 0
       },
       {
@@ -121408,14 +121363,14 @@
   },
   {
     "date": "2026-09-13",
-    "total_events": 185,
+    "total_events": 183,
     "issues_created": 7,
-    "issues_closed": 17,
+    "issues_closed": 16,
     "prs_created": 11,
-    "prs_closed": 4,
+    "prs_closed": 3,
     "commits": 43,
     "comments": 0,
-    "unique_users": 30,
+    "unique_users": 29,
     "unique_repos": 13,
     "authors": [
       {
@@ -121452,15 +121407,6 @@
         "issues_closed": 0,
         "prs_created": 0,
         "prs_closed": 0,
-        "comments": 0
-      },
-      {
-        "name": "hisarxt",
-        "commits": 0,
-        "issues_created": 0,
-        "issues_closed": 0,
-        "prs_created": 0,
-        "prs_closed": 1,
         "comments": 0
       },
       {
@@ -121593,7 +121539,7 @@
         "name": "art-miranda",
         "commits": 0,
         "issues_created": 0,
-        "issues_closed": 3,
+        "issues_closed": 2,
         "prs_created": 0,
         "prs_closed": 0,
         "comments": 0
@@ -122585,15 +122531,15 @@
   },
   {
     "date": "2026-09-18",
-    "total_events": 92,
-    "issues_created": 2,
-    "issues_closed": 14,
-    "prs_created": 10,
-    "prs_closed": 4,
-    "commits": 12,
+    "total_events": 251,
+    "issues_created": 7,
+    "issues_closed": 22,
+    "prs_created": 20,
+    "prs_closed": 27,
+    "commits": 26,
     "comments": 0,
-    "unique_users": 13,
-    "unique_repos": 9,
+    "unique_users": 21,
+    "unique_repos": 12,
     "authors": [
       {
         "name": "thamiresellensa",
@@ -122606,11 +122552,11 @@
       },
       {
         "name": "Vitor-Trancoso",
-        "commits": 7,
-        "issues_created": 1,
-        "issues_closed": 1,
-        "prs_created": 1,
-        "prs_closed": 2,
+        "commits": 17,
+        "issues_created": 5,
+        "issues_closed": 2,
+        "prs_created": 8,
+        "prs_closed": 9,
         "comments": 0
       },
       {
@@ -122619,7 +122565,7 @@
         "issues_created": 0,
         "issues_closed": 0,
         "prs_created": 2,
-        "prs_closed": 1,
+        "prs_closed": 2,
         "comments": 0
       },
       {
@@ -122637,7 +122583,7 @@
         "issues_created": 0,
         "issues_closed": 0,
         "prs_created": 6,
-        "prs_closed": 1,
+        "prs_closed": 6,
         "comments": 0
       },
       {
@@ -122646,7 +122592,7 @@
         "issues_created": 0,
         "issues_closed": 11,
         "prs_created": 0,
-        "prs_closed": 0,
+        "prs_closed": 1,
         "comments": 0
       },
       {
@@ -122678,6 +122624,137 @@
       },
       {
         "name": "Thomas4ugust0",
+        "commits": 4,
+        "issues_created": 0,
+        "issues_closed": 0,
+        "prs_created": 0,
+        "prs_closed": 0,
+        "comments": 0
+      },
+      {
+        "name": "art-miranda",
+        "commits": 0,
+        "issues_created": 1,
+        "issues_closed": 1,
+        "prs_created": 0,
+        "prs_closed": 3,
+        "comments": 0
+      },
+      {
+        "name": "hisarxt",
+        "commits": 0,
+        "issues_created": 0,
+        "issues_closed": 0,
+        "prs_created": 0,
+        "prs_closed": 1,
+        "comments": 0
+      },
+      {
+        "name": "staann",
+        "commits": 0,
+        "issues_created": 0,
+        "issues_closed": 0,
+        "prs_created": 0,
+        "prs_closed": 1,
+        "comments": 0
+      },
+      {
+        "name": "knz13",
+        "commits": 0,
+        "issues_created": 0,
+        "issues_closed": 0,
+        "prs_created": 0,
+        "prs_closed": 2,
+        "comments": 0
+      },
+      {
+        "name": "unknown",
+        "commits": 1,
+        "issues_created": 0,
+        "issues_closed": 0,
+        "prs_created": 0,
+        "prs_closed": 0,
+        "comments": 0
+      },
+      {
+        "name": "nicolaszanin06",
+        "commits": 0,
+        "issues_created": 0,
+        "issues_closed": 6,
+        "prs_created": 2,
+        "prs_closed": 2,
+        "comments": 0
+      },
+      {
+        "name": "ViniGvdo",
+        "commits": 0,
+        "issues_created": 0,
+        "issues_closed": 0,
+        "prs_created": 1,
+        "prs_closed": 0,
+        "comments": 0
+      }
+    ]
+  },
+  {
+    "date": "2026-09-19",
+    "total_events": 21,
+    "issues_created": 0,
+    "issues_closed": 1,
+    "prs_created": 1,
+    "prs_closed": 2,
+    "commits": 9,
+    "comments": 0,
+    "unique_users": 8,
+    "unique_repos": 7,
+    "authors": [
+      {
+        "name": "nicolaszanin06",
+        "commits": 0,
+        "issues_created": 0,
+        "issues_closed": 1,
+        "prs_created": 0,
+        "prs_closed": 0,
+        "comments": 0
+      },
+      {
+        "name": "github-actions[bot]",
+        "commits": 4,
+        "issues_created": 0,
+        "issues_closed": 0,
+        "prs_created": 0,
+        "prs_closed": 0,
+        "comments": 0
+      },
+      {
+        "name": "Bielziin07",
+        "commits": 1,
+        "issues_created": 0,
+        "issues_closed": 0,
+        "prs_created": 1,
+        "prs_closed": 1,
+        "comments": 0
+      },
+      {
+        "name": "ViniGvdo",
+        "commits": 0,
+        "issues_created": 0,
+        "issues_closed": 0,
+        "prs_created": 0,
+        "prs_closed": 1,
+        "comments": 0
+      },
+      {
+        "name": "Thomas4ugust0",
+        "commits": 3,
+        "issues_created": 0,
+        "issues_closed": 0,
+        "prs_created": 0,
+        "prs_closed": 0,
+        "comments": 0
+      },
+      {
+        "name": "actions-user",
         "commits": 1,
         "issues_created": 0,
         "issues_closed": 0,

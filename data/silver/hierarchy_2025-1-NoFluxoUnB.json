@@ -1,8 +1,8 @@
 {
-  "repository": "2025-1-NoFluxoUNB",
+  "repository": "2025-1-NoFluxoUnB",
   "owner": "unb-mds",
   "branch": "main",
-  "extracted_at": "2026-09-18T10:26:49.763221",
+  "extracted_at": "2026-09-19T10:02:36.904136",
   "hierarchy": {
     "name": "root",
     "type": "directory",
@@ -90,14 +90,6 @@
         "size": 594,
         "extension": ".example",
         "path": ".env.local.example"
-      },
-      {
-        "name": ".flaskenv",
-        "type": "file",
-        "language": "Unknown",
-        "size": 24,
-        "extension": ".flaskenv",
-        "path": ".flaskenv"
       },
       {
         "name": ".github",
@@ -233,7 +225,7 @@
         "name": ".gitignore",
         "type": "file",
         "language": "Git Ignore",
-        "size": 4042,
+        "size": 4383,
         "extension": ".gitignore",
         "path": ".gitignore"
       },
@@ -252,78 +244,6 @@
         "size": 21341,
         "extension": ".pylintrc",
         "path": ".pylintrc"
-      },
-      {
-        "name": ".svelte-kit",
-        "type": "directory",
-        "path": ".svelte-kit",
-        "children": []
-      },
-      {
-        "name": "ambient.d.ts",
-        "type": "file",
-        "language": "TypeScript",
-        "size": 11511,
-        "extension": ".ts",
-        "path": ".svelte-kit/ambient.d.ts"
-      },
-      {
-        "name": "generated",
-        "type": "directory",
-        "path": ".svelte-kit/generated",
-        "children": []
-      },
-      {
-        "name": "client",
-        "type": "directory",
-        "path": ".svelte-kit/generated/client",
-        "children": []
-      },
-      {
-        "name": "app.js",
-        "type": "file",
-        "language": "JavaScript",
-        "size": 670,
-        "extension": ".js",
-        "path": ".svelte-kit/generated/client/app.js"
-      },
-      {
-        "name": "matchers.js",
-        "type": "file",
-        "language": "JavaScript",
-        "size": 27,
-        "extension": ".js",
-        "path": ".svelte-kit/generated/client/matchers.js"
-      },
-      {
-        "name": "nodes",
-        "type": "directory",
-        "path": ".svelte-kit/generated/client/nodes",
-        "children": []
-      },
-      {
-        "name": "0.js",
-        "type": "file",
-        "language": "JavaScript",
-        "size": 149,
-        "extension": ".js",
-        "path": ".svelte-kit/generated/client/nodes/0.js"
-      },
-      {
-        "name": "1.js",
-        "type": "file",
-        "language": "JavaScript",
-        "size": 148,
-        "extension": ".js",
-        "path": ".svelte-kit/generated/client/nodes/1.js"
-      },
-      {
-        "name": "tsconfig.json",
-        "type": "file",
-        "language": "JSON",
-        "size": 920,
-        "extension": ".json",
-        "path": ".svelte-kit/tsconfig.json"
       },
       {
         "name": ".vscode",
@@ -401,7 +321,7 @@
         "name": "01_insert_cursos_matrizes_materias.py",
         "type": "file",
         "language": "Python",
-        "size": 39688,
+        "size": 39816,
         "extension": ".py",
         "path": "DBA/database/01_insert_cursos_matrizes_materias.py"
       },
@@ -433,7 +353,7 @@
         "name": "05_insert_calendario_academico.py",
         "type": "file",
         "language": "Python",
-        "size": 7215,
+        "size": 7330,
         "extension": ".py",
         "path": "DBA/database/05_insert_calendario_academico.py"
       },
@@ -481,7 +401,7 @@
         "name": "test_diff_campos.py",
         "type": "file",
         "language": "Python",
-        "size": 6839,
+        "size": 6901,
         "extension": ".py",
         "path": "DBA/database/test_diff_campos.py"
       },
@@ -573,7 +493,7 @@
         "name": "scraping_calendario_academico.py",
         "type": "file",
         "language": "Python",
-        "size": 8151,
+        "size": 8145,
         "extension": ".py",
         "path": "DBA/scraping/scraping_calendario_academico.py"
       },
@@ -1198,106 +1118,6 @@
         "path": "codecov.yml"
       },
       {
-        "name": "coverage",
-        "type": "directory",
-        "path": "coverage",
-        "children": []
-      },
-      {
-        "name": "clover.xml",
-        "type": "file",
-        "language": "XML",
-        "size": 396,
-        "extension": ".xml",
-        "path": "coverage/clover.xml"
-      },
-      {
-        "name": "coverage-final.json",
-        "type": "file",
-        "language": "JSON",
-        "size": 3,
-        "extension": ".json",
-        "path": "coverage/coverage-final.json"
-      },
-      {
-        "name": "lcov-report",
-        "type": "directory",
-        "path": "coverage/lcov-report",
-        "children": []
-      },
-      {
-        "name": "base.css",
-        "type": "file",
-        "language": "CSS",
-        "size": 5394,
-        "extension": ".css",
-        "path": "coverage/lcov-report/base.css"
-      },
-      {
-        "name": "block-navigation.js",
-        "type": "file",
-        "language": "JavaScript",
-        "size": 2655,
-        "extension": ".js",
-        "path": "coverage/lcov-report/block-navigation.js"
-      },
-      {
-        "name": "favicon.png",
-        "type": "file",
-        "language": "PNG Image",
-        "size": 445,
-        "extension": ".png",
-        "path": "coverage/lcov-report/favicon.png"
-      },
-      {
-        "name": "index.html",
-        "type": "file",
-        "language": "HTML",
-        "size": 3703,
-        "extension": ".html",
-        "path": "coverage/lcov-report/index.html"
-      },
-      {
-        "name": "prettify.css",
-        "type": "file",
-        "language": "CSS",
-        "size": 676,
-        "extension": ".css",
-        "path": "coverage/lcov-report/prettify.css"
-      },
-      {
-        "name": "prettify.js",
-        "type": "file",
-        "language": "JavaScript",
-        "size": 17590,
-        "extension": ".js",
-        "path": "coverage/lcov-report/prettify.js"
-      },
-      {
-        "name": "sort-arrow-sprite.png",
-        "type": "file",
-        "language": "PNG Image",
-        "size": 138,
-        "extension": ".png",
-        "path": "coverage/lcov-report/sort-arrow-sprite.png"
-      },
-      {
-        "name": "sorter.js",
-        "type": "file",
-        "language": "JavaScript",
-        "size": 6181,
-        "extension": ".js",
-        "path": "coverage/lcov-report/sorter.js"
-      },
-      {
-        "name": "lcov.info",
-        "type": "file",
-        "language": "Unknown",
-        "size": 0,
-        "extension": ".info",
-        "path": "coverage/lcov.info"
-      },
-      {
         "name": "docs",
         "type": "directory",
         "path": "docs",
@@ -1378,6 +1198,22 @@
         "type": "directory",
         "path": "docs/testes",
         "children": []
+      },
+      {
+        "name": "COMO-EXECUTAR-TESTES.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2418,
+        "extension": ".md",
+        "path": "docs/testes/COMO-EXECUTAR-TESTES.md"
+      },
+      {
+        "name": "PTOSS2-fluxograma-controller.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 7937,
+        "extension": ".md",
+        "path": "docs/testes/PTOSS2-fluxograma-controller.md"
       },
       {
         "name": "estrategia-de-testes.md",
@@ -2836,22 +2672,6 @@
         "path": "documentacao/testes/testes-python.md"
       },
       {
-        "name": "handoff.md",
-        "type": "file",
-        "language": "Markdown",
-        "size": 12915,
-        "extension": ".md",
-        "path": "handoff.md"
-      },
-      {
-        "name": "jest.config.js",
-        "type": "file",
-        "language": "JavaScript",
-        "size": 696,
-        "extension": ".js",
-        "path": "jest.config.js"
-      },
-      {
         "name": "k8s.backend.Dockerfile",
         "type": "file",
         "language": "Unknown",
@@ -3166,20 +2986,6 @@
         "path": "kubernetes_docs/templates/grafana-dashboard.template.json"
       },
       {
-        "name": "logs",
-        "type": "directory",
-        "path": "logs",
-        "children": []
-      },
-      {
-        "name": "ai_agent.log",
-        "type": "file",
-        "language": "Log File",
-        "size": 657761,
-        "extension": ".log",
-        "path": "logs/ai_agent.log"
-      },
-      {
         "name": "mcp_agent",
         "type": "directory",
         "path": "mcp_agent",
@@ -3205,7 +3011,7 @@
         "name": "api_producao.py",
         "type": "file",
         "language": "Python",
-        "size": 31665,
+        "size": 31718,
         "extension": ".py",
         "path": "mcp_agent/api_producao.py"
       },
@@ -3809,7 +3615,7 @@
         "name": "fluxograma_controller.ts",
         "type": "file",
         "language": "TypeScript",
-        "size": 52632,
+        "size": 53071,
         "extension": ".ts",
         "path": "no_fluxo_backend/src/controllers/fluxograma_controller.ts"
       },
@@ -4324,12 +4130,36 @@
         "path": "no_fluxo_backend/tests-ts/equivalencias-cumpridas.test.ts"
       },
       {
+        "name": "fluxograma_controller.blackbox.test.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 20933,
+        "extension": ".ts",
+        "path": "no_fluxo_backend/tests-ts/fluxograma_controller.blackbox.test.ts"
+      },
+      {
+        "name": "fluxograma_controller.routes.test.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 14682,
+        "extension": ".ts",
+        "path": "no_fluxo_backend/tests-ts/fluxograma_controller.routes.test.ts"
+      },
+      {
         "name": "fluxograma_controller.test.ts",
         "type": "file",
         "language": "TypeScript",
         "size": 4601,
         "extension": ".ts",
         "path": "no_fluxo_backend/tests-ts/fluxograma_controller.test.ts"
+      },
+      {
+        "name": "fluxograma_controller.whitebox.test.ts",
+        "type": "file",
+        "language": "TypeScript",
+        "size": 14894,
+        "extension": ".ts",
+        "path": "no_fluxo_backend/tests-ts/fluxograma_controller.whitebox.test.ts"
       },
       {
         "name": "grade-actuator.test.ts",
@@ -5483,7 +5313,7 @@
         "name": "AssistenteChatFab.svelte",
         "type": "file",
         "language": "Unknown",
-        "size": 8015,
+        "size": 8003,
         "extension": ".svelte",
         "path": "no_fluxo_frontend_svelte/src/lib/components/planejamento/AssistenteChatFab.svelte"
       },
@@ -5547,7 +5377,7 @@
         "name": "SubjectTurmaSelector.svelte",
         "type": "file",
         "language": "Unknown",
-        "size": 11532,
+        "size": 11528,
         "extension": ".svelte",
         "path": "no_fluxo_frontend_svelte/src/lib/components/planejamento/SubjectTurmaSelector.svelte"
       },
@@ -7009,7 +6839,7 @@
         "name": "assistente-chat-store-montador.test.ts",
         "type": "file",
         "language": "TypeScript",
-        "size": 2083,
+        "size": 3329,
         "extension": ".ts",
         "path": "no_fluxo_frontend_svelte/src/lib/stores/assistente-chat-store-montador.test.ts"
       },
@@ -7017,7 +6847,7 @@
         "name": "assistente-chat.store.svelte.ts",
         "type": "file",
         "language": "TypeScript",
-        "size": 5314,
+        "size": 5789,
         "extension": ".ts",
         "path": "no_fluxo_frontend_svelte/src/lib/stores/assistente-chat.store.svelte.ts"
       },
@@ -7201,7 +7031,7 @@
         "name": "uploadStore.ts",
         "type": "file",
         "language": "TypeScript",
-        "size": 13512,
+        "size": 14697,
         "extension": ".ts",
         "path": "no_fluxo_frontend_svelte/src/lib/stores/uploadStore.ts"
       },
@@ -7829,7 +7659,7 @@
         "name": "+page.svelte",
         "type": "file",
         "language": "Unknown",
-        "size": 7502,
+        "size": 8994,
         "extension": ".svelte",
         "path": "no_fluxo_frontend_svelte/src/routes/(protected)/upload-historico/+page.svelte"
       },
@@ -8454,18 +8284,10 @@
         "path": "no_fluxo_frontend_svelte/vite.config.ts"
       },
       {
-        "name": "package-lock.json",
-        "type": "file",
-        "language": "JSON",
-        "size": 58942,
-        "extension": ".json",
-        "path": "package-lock.json"
-      },
-      {
         "name": "package.json",
         "type": "file",
         "language": "JSON",
-        "size": 2024,
+        "size": 1733,
         "extension": ".json",
         "path": "package.json"
       },
@@ -8711,7 +8533,7 @@
         "name": "pnpm-lock.yaml",
         "type": "file",
         "language": "YAML",
-        "size": 379180,
+        "size": 374111,
         "extension": ".yaml",
         "path": "pnpm-lock.yaml"
       },
@@ -8719,7 +8541,7 @@
         "name": "pnpm-workspace.yaml",
         "type": "file",
         "language": "YAML",
-        "size": 130,
+        "size": 74,
         "extension": ".yaml",
         "path": "pnpm-workspace.yaml"
       },
@@ -9261,7 +9083,7 @@
         "name": "setup_env.py",
         "type": "file",
         "language": "Python",
-        "size": 6991,
+        "size": 7159,
         "extension": ".py",
         "path": "scripts/setup_env.py"
       },
@@ -9388,7 +9210,7 @@
     ]
   },
   "_metadata": {
-    "extracted_at": "2026-09-19T10:03:51.924028",
-    "file_path": "data/silver/hierarchy_2025-1-NoFluxoUNB.json"
+    "extracted_at": "2026-09-19T10:03:52.479809",
+    "file_path": "data/silver/hierarchy_2025-1-NoFluxoUnB.json"
   }
 }

@@ -1,7 +1,7 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-18T10:28:10.004180",
+      "extracted_at": "2026-09-19T10:03:45.169756",
       "file_path": "data/silver/cross_repository_hubs.json",
       "record_count": 76
     }
@@ -47,7 +47,7 @@
       "Gastos-DF-2024-02",
       "mapadaacessibilidade",
       "ParticipeMais",
-      "2025-1-NoFluxoUNB",
+      "2025-1-NoFluxoUnB",
       "Sonorus-2025.1",
       "2025.1-RelatoriosInteligentesBCB",
       "2025-1-GovInsights",
@@ -104,7 +104,7 @@
       "codigoruim"
     ],
     "repo_count": 93,
-    "total_collaborators": 556
+    "total_collaborators": 557
   },
   {
     "user": "github-project-automation[bot]",
@@ -124,7 +124,7 @@
       "2024-2-Lumina",
       "mapadaacessibilidade",
       "ParticipeMais",
-      "2025-1-NoFluxoUNB",
+      "2025-1-NoFluxoUnB",
       "Sonorus-2025.1",
       "2025-1-GovInsights",
       "2025-1-Eletta",
@@ -215,7 +215,7 @@
   {
     "user": "Copilot",
     "repositories": [
-      "2025-1-NoFluxoUNB",
+      "2025-1-NoFluxoUnB",
       "DFemObras-2025.1",
       "2025-2-Squad-01",
       "2026-1-ProtectKids",
@@ -287,15 +287,6 @@
     "total_collaborators": 15
   },
   {
-    "user": "EstherSousa",
-    "repositories": [
-      "2023-2-Squad03-LicitAL",
-      "2023-2-JuizVirtual"
-    ],
-    "repo_count": 2,
-    "total_collaborators": 20
-  },
-  {
     "user": "M4RINH0",
     "repositories": [
       "2023-2-Squad03-LicitAL",
@@ -314,15 +305,6 @@
     "total_collaborators": 10
   },
   {
-    "user": "joycedio",
-    "repositories": [
-      "2023-2-Squad03-LicitAL",
-      "squad03-r2"
-    ],
-    "repo_count": 2,
-    "total_collaborators": 10
-  },
-  {
     "user": "DiegoSousaLeite",
     "repositories": [
       "2023-2-Squad03-LicitAL",
@@ -332,16 +314,25 @@
     "total_collaborators": 10
   },
   {
-    "user": "DaniloCTM",
+    "user": "EstherSousa",
     "repositories": [
-      "2023-2-Squad04",
-      "2023.2_Licitaiba"
+      "2023-2-Squad03-LicitAL",
+      "2023-2-JuizVirtual"
+    ],
+    "repo_count": 2,
+    "total_collaborators": 20
+  },
+  {
+    "user": "joycedio",
+    "repositories": [
+      "2023-2-Squad03-LicitAL",
+      "squad03-r2"
     ],
     "repo_count": 2,
     "total_collaborators": 10
   },
   {
-    "user": "Carlos-kadu",
+    "user": "aqela-batata-alt",
     "repositories": [
       "2023-2-Squad04",
       "2023.2_Licitaiba"
@@ -359,7 +350,16 @@
     "total_collaborators": 10
   },
   {
-    "user": "aqela-batata-alt",
+    "user": "Carlos-kadu",
+    "repositories": [
+      "2023-2-Squad04",
+      "2023.2_Licitaiba"
+    ],
+    "repo_count": 2,
+    "total_collaborators": 10
+  },
+  {
+    "user": "DaniloCTM",
     "repositories": [
       "2023-2-Squad04",
       "2023.2_Licitaiba"
@@ -377,16 +377,7 @@
     "total_collaborators": 29
   },
   {
-    "user": "juliatakaki",
-    "repositories": [
-      "2023-2-Squad07",
-      "2023.2-LicitaX"
-    ],
-    "repo_count": 2,
-    "total_collaborators": 7
-  },
-  {
-    "user": "gio221",
+    "user": "joseandre25",
     "repositories": [
       "2023-2-Squad07",
       "2023.2-LicitaX"
@@ -404,7 +395,16 @@
     "total_collaborators": 7
   },
   {
-    "user": "joseandre25",
+    "user": "juliatakaki",
+    "repositories": [
+      "2023-2-Squad07",
+      "2023.2-LicitaX"
+    ],
+    "repo_count": 2,
+    "total_collaborators": 7
+  },
+  {
+    "user": "gio221",
     "repositories": [
       "2023-2-Squad07",
       "2023.2-LicitaX"
@@ -458,7 +458,7 @@
     "total_collaborators": 17
   },
   {
-    "user": "JoaoPedrooSS",
+    "user": "johan-rocha",
     "repositories": [
       "2024-1-EducaMinas-frontend",
       "2024-1-EducaMinas-backend"
@@ -494,7 +494,7 @@
     "total_collaborators": 7
   },
   {
-    "user": "johan-rocha",
+    "user": "JoaoPedrooSS",
     "repositories": [
       "2024-1-EducaMinas-frontend",
       "2024-1-EducaMinas-backend"
@@ -521,6 +521,15 @@
     "total_collaborators": 7
   },
   {
+    "user": "victorcamaraa",
+    "repositories": [
+      "Gastos-DF-Squad12",
+      "2024-1-Gastos-DF-Doc-Squad12"
+    ],
+    "repo_count": 2,
+    "total_collaborators": 7
+  },
+  {
     "user": "Dodeglinhass",
     "repositories": [
       "Gastos-DF-Squad12",
@@ -531,15 +540,6 @@
   },
   {
     "user": "Vini47",
-    "repositories": [
-      "Gastos-DF-Squad12",
-      "2024-1-Gastos-DF-Doc-Squad12"
-    ],
-    "repo_count": 2,
-    "total_collaborators": 7
-  },
-  {
-    "user": "victorcamaraa",
     "repositories": [
       "Gastos-DF-Squad12",
       "2024-1-Gastos-DF-Doc-Squad12"
@@ -578,7 +578,7 @@
     "user": "erickaalves",
     "repositories": [
       "MDS-MonitoraBSB",
-      "2025-1-NoFluxoUNB"
+      "2025-1-NoFluxoUnB"
     ],
     "repo_count": 2,
     "total_collaborators": 24
@@ -622,7 +622,7 @@
   {
     "user": "lopes061",
     "repositories": [
-      "2025-1-NoFluxoUNB",
+      "2025-1-NoFluxoUnB",
       "2025-2-SeLiga"
     ],
     "repo_count": 2,
@@ -665,13 +665,13 @@
     "total_collaborators": 18
   },
   {
-    "user": "guxvr",
+    "user": "Marcs2608",
     "repositories": [
       "2025-2-Squad-01",
-      "Avalia"
+      "G2-2026-2"
     ],
     "repo_count": 2,
-    "total_collaborators": 28
+    "total_collaborators": 18
   },
   {
     "user": "pedruck",
@@ -683,13 +683,13 @@
     "total_collaborators": 28
   },
   {
-    "user": "Marcs2608",
+    "user": "guxvr",
     "repositories": [
       "2025-2-Squad-01",
-      "G2-2026-2"
+      "Avalia"
     ],
     "repo_count": 2,
-    "total_collaborators": 18
+    "total_collaborators": 28
   },
   {
     "user": "ananunesv",
@@ -755,7 +755,7 @@
     "total_collaborators": 25
   },
   {
-    "user": "m0yo",
+    "user": "Karmantinedev",
     "repositories": [
       "2025-2-Mural-UnB",
       "Avalia"
@@ -764,7 +764,7 @@
     "total_collaborators": 23
   },
   {
-    "user": "Karmantinedev",
+    "user": "m0yo",
     "repositories": [
       "2025-2-Mural-UnB",
       "Avalia"
@@ -791,7 +791,7 @@
     "total_collaborators": 25
   },
   {
-    "user": "filipeBG-07",
+    "user": "HugoFreitass",
     "repositories": [
       "2025-2-GuiaDev",
       "Avalia"
@@ -800,7 +800,7 @@
     "total_collaborators": 20
   },
   {
-    "user": "Phill-Chill",
+    "user": "PedroGTG",
     "repositories": [
       "2025-2-GuiaDev",
       "Avalia"
@@ -818,7 +818,7 @@
     "total_collaborators": 20
   },
   {
-    "user": "HugoFreitass",
+    "user": "Phill-Chill",
     "repositories": [
       "2025-2-GuiaDev",
       "Avalia"
@@ -827,7 +827,7 @@
     "total_collaborators": 20
   },
   {
-    "user": "PedroGTG",
+    "user": "filipeBG-07",
     "repositories": [
       "2025-2-GuiaDev",
       "Avalia"
@@ -851,7 +851,7 @@
       "2026-2-AgendaUnB"
     ],
     "repo_count": 2,
-    "total_collaborators": 10
+    "total_collaborators": 11
   },
   {
     "user": "italo-lm",
