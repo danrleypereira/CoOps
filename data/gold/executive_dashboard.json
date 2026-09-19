@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-09-18T10:39:08.557963",
+  "generated_at": "2026-09-19T10:15:41.135466",
   "organization_health": {
-    "total_members": 484,
-    "members_with_profile": 482,
-    "active_contributors": 504,
-    "new_members": 258,
+    "total_members": 485,
+    "members_with_profile": 484,
+    "active_contributors": 505,
+    "new_members": 260,
     "established_members": 224
   },
   "collaboration_metrics": {
-    "total_collaborations": 3406,
+    "total_collaborations": 3411,
     "cross_repo_contributors": 76,
-    "avg_collaborators_per_user": 12.12099644128114
+    "avg_collaborators_per_user": 12.117229129662523
   },
   "activity_metrics": {
-    "total_events": 120340,
-    "avg_daily_activity": 108.21942446043165,
-    "date_range_days": 1112
+    "total_events": 120508,
+    "avg_daily_activity": 108.27313566936209,
+    "date_range_days": 1113
   },
   "top_contributors": [
     {
