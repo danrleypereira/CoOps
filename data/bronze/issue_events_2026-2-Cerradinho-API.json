@@ -1,9 +1,201 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-18T09:26:19.117563",
+      "extracted_at": "2026-09-19T09:09:42.022191",
       "file_path": "data/bronze/issue_events_2026-2-Cerradinho-API.json",
-      "record_count": 693
+      "record_count": 709
+    }
+  },
+  {
+    "id": 31400326370,
+    "event": "project_v2_item_status_changed",
+    "created_at": "2026-09-18T15:40:26Z",
+    "repo_name": "2026-2-Cerradinho-API",
+    "actor": {
+      "login": "github-project-automation[bot]"
+    },
+    "issue": {
+      "number": 95
+    }
+  },
+  {
+    "id": 31400314205,
+    "event": "issue_type_added",
+    "created_at": "2026-09-18T15:40:26Z",
+    "repo_name": "2026-2-Cerradinho-API",
+    "actor": {
+      "login": "art-miranda"
+    },
+    "issue": {
+      "number": 95
+    }
+  },
+  {
+    "id": 31400658434,
+    "event": "added_to_project_v2",
+    "created_at": "2026-09-18T15:40:25Z",
+    "repo_name": "2026-2-Cerradinho-API",
+    "actor": {
+      "login": "art-miranda"
+    },
+    "issue": {
+      "number": 95
+    }
+  },
+  {
+    "id": 31400313872,
+    "event": "labeled",
+    "created_at": "2026-09-18T15:40:25Z",
+    "repo_name": "2026-2-Cerradinho-API",
+    "actor": {
+      "login": "art-miranda"
+    },
+    "issue": {
+      "number": 95
+    }
+  },
+  {
+    "id": 31400312574,
+    "event": "assigned",
+    "created_at": "2026-09-18T15:40:24Z",
+    "repo_name": "2026-2-Cerradinho-API",
+    "actor": {
+      "login": "art-miranda"
+    },
+    "issue": {
+      "number": 95
+    }
+  },
+  {
+    "id": 31400312374,
+    "event": "milestoned",
+    "created_at": "2026-09-18T15:40:24Z",
+    "repo_name": "2026-2-Cerradinho-API",
+    "actor": {
+      "login": "art-miranda"
+    },
+    "issue": {
+      "number": 95
+    }
+  },
+  {
+    "id": 31396723950,
+    "event": "demilestoned",
+    "created_at": "2026-09-18T14:40:04Z",
+    "repo_name": "2026-2-Cerradinho-API",
+    "actor": {
+      "login": "art-miranda"
+    },
+    "issue": {
+      "number": 82
+    }
+  },
+  {
+    "id": 31396699933,
+    "event": "demilestoned",
+    "created_at": "2026-09-18T14:39:36Z",
+    "repo_name": "2026-2-Cerradinho-API",
+    "actor": {
+      "login": "art-miranda"
+    },
+    "issue": {
+      "number": 79
+    }
+  },
+  {
+    "id": 31396697295,
+    "event": "demilestoned",
+    "created_at": "2026-09-18T14:39:33Z",
+    "repo_name": "2026-2-Cerradinho-API",
+    "actor": {
+      "login": "art-miranda"
+    },
+    "issue": {
+      "number": 77
+    }
+  },
+  {
+    "id": 31396695228,
+    "event": "demilestoned",
+    "created_at": "2026-09-18T14:39:31Z",
+    "repo_name": "2026-2-Cerradinho-API",
+    "actor": {
+      "login": "art-miranda"
+    },
+    "issue": {
+      "number": 83
+    }
+  },
+  {
+    "id": 31396685788,
+    "event": "milestoned",
+    "created_at": "2026-09-18T14:39:21Z",
+    "repo_name": "2026-2-Cerradinho-API",
+    "actor": {
+      "login": "art-miranda"
+    },
+    "issue": {
+      "number": 79
+    }
+  },
+  {
+    "id": 31396685740,
+    "event": "demilestoned",
+    "created_at": "2026-09-18T14:39:21Z",
+    "repo_name": "2026-2-Cerradinho-API",
+    "actor": {
+      "login": "art-miranda"
+    },
+    "issue": {
+      "number": 79
+    }
+  },
+  {
+    "id": 31396682489,
+    "event": "milestoned",
+    "created_at": "2026-09-18T14:39:18Z",
+    "repo_name": "2026-2-Cerradinho-API",
+    "actor": {
+      "login": "art-miranda"
+    },
+    "issue": {
+      "number": 77
+    }
+  },
+  {
+    "id": 31396682445,
+    "event": "demilestoned",
+    "created_at": "2026-09-18T14:39:18Z",
+    "repo_name": "2026-2-Cerradinho-API",
+    "actor": {
+      "login": "art-miranda"
+    },
+    "issue": {
+      "number": 77
+    }
+  },
+  {
+    "id": 31396669145,
+    "event": "milestoned",
+    "created_at": "2026-09-18T14:39:04Z",
+    "repo_name": "2026-2-Cerradinho-API",
+    "actor": {
+      "login": "art-miranda"
+    },
+    "issue": {
+      "number": 83
+    }
+  },
+  {
+    "id": 31396669085,
+    "event": "demilestoned",
+    "created_at": "2026-09-18T14:39:04Z",
+    "repo_name": "2026-2-Cerradinho-API",
+    "actor": {
+      "login": "art-miranda"
+    },
+    "issue": {
+      "number": 83
     }
   },
   {

@@ -2,7 +2,7 @@
   "owner": "unb-mds",
   "repository": "2026-2-VeritasIA",
   "branch": "main",
-  "sha": "a3f0668b409aa3ea79520af4157848abc00550c4",
+  "sha": "9b6298b1f547c2588bc47062f06934c924d09df5",
   "tree": [
     {
       "name": ".github",
@@ -1082,7 +1082,7 @@
       "name": "docs",
       "path": "docs",
       "type": "directory",
-      "sha": "fd51206a5483976dfa0c8162ad7fadb2aee85e37",
+      "sha": "7e071e3f5752b53427412fcdd85e9ad955ec3ca3",
       "mode": "040000",
       "children": []
     },
@@ -1530,7 +1530,7 @@
       "name": "productivity",
       "path": "docs/productivity",
       "type": "directory",
-      "sha": "ddc6ad333d8d716b47c04d459e7255b2b5f3a83f",
+      "sha": "e219639fbc4d454ac14082c8d364bcdc2fb8db52",
       "mode": "040000",
       "children": []
     },
@@ -1548,7 +1548,7 @@
       "name": "metrics.json",
       "path": "docs/productivity/metrics.json",
       "type": "file",
-      "sha": "42988cfb55e744169c6aa510e457eadf01a91518",
+      "sha": "d449e2cb9b7f5e5fcb1cc55740e42af5bb22ba98",
       "mode": "100644",
       "extension": ".json",
       "size": 9673,
@@ -1890,7 +1890,7 @@
       "name": "scrapers",
       "path": "scrapers",
       "type": "directory",
-      "sha": "9d4ebbfbe9a28a0d036670634116501cd2870894",
+      "sha": "2946ae2151cda5e0bd7bc91b5af4fd0178ca7cf2",
       "mode": "040000",
       "children": []
     },
@@ -1936,7 +1936,7 @@
       "name": "resultados",
       "path": "scrapers/resultados",
       "type": "directory",
-      "sha": "0722141ad9c60424c64fd9a61fe5e0a5ada5894b",
+      "sha": "cbd8caca59a4fbf8d035854958bce10a9fe6bd15",
       "mode": "040000",
       "children": []
     },
@@ -1944,50 +1944,50 @@
       "name": "cnn.json",
       "path": "scrapers/resultados/cnn.json",
       "type": "file",
-      "sha": "c44dc44f37c7b9b807ef282b291b36cda0f0bbeb",
+      "sha": "ebf69126414fac44debbdee466efd14f5d319e18",
       "mode": "100644",
       "extension": ".json",
-      "size": 4,
+      "size": 11351,
       "is_binary": false
     },
     {
       "name": "g1.json",
       "path": "scrapers/resultados/g1.json",
       "type": "file",
-      "sha": "cdf3f63d91d6c504899b3ca70ed96c829c6da21c",
+      "sha": "f42063d4d9f6eec77c214b6b97397dc41f0e909a",
       "mode": "100644",
       "extension": ".json",
-      "size": 90240,
+      "size": 103744,
       "is_binary": false
     },
     {
       "name": "metropoles.json",
       "path": "scrapers/resultados/metropoles.json",
       "type": "file",
-      "sha": "669bbd5aea870b6354cbb6b28cb86a4779c4fe21",
+      "sha": "311f0ce01cb03dc42a38095c7532b2cb8cbb1e81",
       "mode": "100644",
       "extension": ".json",
-      "size": 2969,
+      "size": 7533,
       "is_binary": false
     },
     {
       "name": "r7.json",
       "path": "scrapers/resultados/r7.json",
       "type": "file",
-      "sha": "5e3bbe9430fed04aa072d6b24e111012b5b3f411",
+      "sha": "404652431ffebc95f333ca8e7392758f328b57b4",
       "mode": "100644",
       "extension": ".json",
-      "size": 10033,
+      "size": 1804,
       "is_binary": false
     },
     {
       "name": "resultados.json",
       "path": "scrapers/resultados/resultados.json",
       "type": "file",
-      "sha": "6df40a6d23c35920f55bac703be8492d491d4598",
+      "sha": "7cde4fce088ddb5fdd3e8aa7f6e8dce90d168b7e",
       "mode": "100644",
       "extension": ".json",
-      "size": 104688,
+      "size": 126026,
       "is_binary": false
     },
     {
@@ -2108,7 +2108,7 @@
     }
   ],
   "truncated": false,
-  "extracted_at": "2026-09-18T10:27:06.539107",
+  "extracted_at": "2026-09-19T10:02:50.158542",
   "method": "rest",
   "total_items": 220,
   "repository_metadata": {
@@ -2116,9 +2116,9 @@
     "full_name": "unb-mds/2026-2-VeritasIA",
     "description": "Monitoramento de noticias sobre feminicídio utilizando IA",
     "created_at": "2026-03-18T18:25:01Z",
-    "updated_at": "2026-09-18T02:14:00Z",
+    "updated_at": "2026-09-19T02:13:20Z",
     "language": "Python",
-    "size": 5919,
+    "size": 5964,
     "stars": 4,
     "forks": 0,
     "open_issues": 0

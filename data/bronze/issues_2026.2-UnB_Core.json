@@ -1,7 +1,7 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-18T09:26:08.699285",
+      "extracted_at": "2026-09-19T09:09:33.274752",
       "file_path": "data/bronze/issues_2026.2-UnB_Core.json",
       "record_count": 99
     }
@@ -7869,7 +7869,29 @@
     ],
     "state": "open",
     "locked": false,
-    "assignees": [],
+    "assignees": [
+      {
+        "login": "Joao-vithor-1",
+        "id": 133594979,
+        "node_id": "U_kgDOB_Z_Yw",
+        "avatar_url": "https://avatars.githubusercontent.com/u/133594979?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/Joao-vithor-1",
+        "html_url": "https://github.com/Joao-vithor-1",
+        "followers_url": "https://api.github.com/users/Joao-vithor-1/followers",
+        "following_url": "https://api.github.com/users/Joao-vithor-1/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Joao-vithor-1/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/Joao-vithor-1/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Joao-vithor-1/subscriptions",
+        "organizations_url": "https://api.github.com/users/Joao-vithor-1/orgs",
+        "repos_url": "https://api.github.com/users/Joao-vithor-1/repos",
+        "events_url": "https://api.github.com/users/Joao-vithor-1/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/Joao-vithor-1/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      }
+    ],
     "milestone": {
       "url": "https://api.github.com/repos/unb-mds/2026.2-UnB_Core/milestones/2",
       "html_url": "https://github.com/unb-mds/2026.2-UnB_Core/milestone/2",
@@ -7910,9 +7932,29 @@
     },
     "comments": 0,
     "created_at": "2026-09-10T23:40:11Z",
-    "updated_at": "2026-09-11T03:55:42Z",
+    "updated_at": "2026-09-18T10:57:23Z",
     "closed_at": null,
-    "assignee": null,
+    "assignee": {
+      "login": "Joao-vithor-1",
+      "id": 133594979,
+      "node_id": "U_kgDOB_Z_Yw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/133594979?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Joao-vithor-1",
+      "html_url": "https://github.com/Joao-vithor-1",
+      "followers_url": "https://api.github.com/users/Joao-vithor-1/followers",
+      "following_url": "https://api.github.com/users/Joao-vithor-1/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Joao-vithor-1/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Joao-vithor-1/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Joao-vithor-1/subscriptions",
+      "organizations_url": "https://api.github.com/users/Joao-vithor-1/orgs",
+      "repos_url": "https://api.github.com/users/Joao-vithor-1/repos",
+      "events_url": "https://api.github.com/users/Joao-vithor-1/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Joao-vithor-1/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
     "author_association": "COLLABORATOR",
     "issue_field_values": [],
     "type": {

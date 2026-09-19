@@ -1,7 +1,7 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-18T09:26:14.513682",
+      "extracted_at": "2026-09-19T09:09:38.090924",
       "file_path": "data/bronze/prs_2026-2-Cerradinho-API.json",
       "record_count": 39
     }
@@ -293,10 +293,10 @@
         "site_admin": false
       },
       "open_issues": 0,
-      "closed_issues": 32,
+      "closed_issues": 28,
       "state": "open",
       "created_at": "2026-09-09T02:14:38Z",
-      "updated_at": "2026-09-15T02:15:57Z",
+      "updated_at": "2026-09-18T14:40:04Z",
       "due_on": "2026-09-14T00:00:00Z",
       "closed_at": null
     },
@@ -570,10 +570,10 @@
         "site_admin": false
       },
       "open_issues": 0,
-      "closed_issues": 32,
+      "closed_issues": 28,
       "state": "open",
       "created_at": "2026-09-09T02:14:38Z",
-      "updated_at": "2026-09-15T02:15:57Z",
+      "updated_at": "2026-09-18T14:40:04Z",
       "due_on": "2026-09-14T00:00:00Z",
       "closed_at": null
     },
@@ -754,10 +754,10 @@
         "site_admin": false
       },
       "open_issues": 0,
-      "closed_issues": 32,
+      "closed_issues": 28,
       "state": "open",
       "created_at": "2026-09-09T02:14:38Z",
-      "updated_at": "2026-09-15T02:15:57Z",
+      "updated_at": "2026-09-18T14:40:04Z",
       "due_on": "2026-09-14T00:00:00Z",
       "closed_at": null
     },
@@ -938,10 +938,10 @@
         "site_admin": false
       },
       "open_issues": 0,
-      "closed_issues": 32,
+      "closed_issues": 28,
       "state": "open",
       "created_at": "2026-09-09T02:14:38Z",
-      "updated_at": "2026-09-15T02:15:57Z",
+      "updated_at": "2026-09-18T14:40:04Z",
       "due_on": "2026-09-14T00:00:00Z",
       "closed_at": null
     },
@@ -1122,10 +1122,10 @@
         "site_admin": false
       },
       "open_issues": 0,
-      "closed_issues": 32,
+      "closed_issues": 28,
       "state": "open",
       "created_at": "2026-09-09T02:14:38Z",
-      "updated_at": "2026-09-15T02:15:57Z",
+      "updated_at": "2026-09-18T14:40:04Z",
       "due_on": "2026-09-14T00:00:00Z",
       "closed_at": null
     },
@@ -1317,10 +1317,10 @@
         "site_admin": false
       },
       "open_issues": 0,
-      "closed_issues": 32,
+      "closed_issues": 28,
       "state": "open",
       "created_at": "2026-09-09T02:14:38Z",
-      "updated_at": "2026-09-15T02:15:57Z",
+      "updated_at": "2026-09-18T14:40:04Z",
       "due_on": "2026-09-14T00:00:00Z",
       "closed_at": null
     },
@@ -1481,47 +1481,10 @@
         "site_admin": false
       }
     ],
-    "milestone": {
-      "url": "https://api.github.com/repos/unb-mds/2026-2-Cerradinho-API/milestones/2",
-      "html_url": "https://github.com/unb-mds/2026-2-Cerradinho-API/milestone/2",
-      "labels_url": "https://api.github.com/repos/unb-mds/2026-2-Cerradinho-API/milestones/2/labels",
-      "id": 17745704,
-      "node_id": "MI_kwDOT8WbHM4BDsco",
-      "number": 2,
-      "title": "Sprint 1",
-      "description": "",
-      "creator": {
-        "login": "vitorcoelho21",
-        "id": 253326124,
-        "node_id": "U_kgDODxlzLA",
-        "avatar_url": "https://avatars.githubusercontent.com/u/253326124?v=4",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/vitorcoelho21",
-        "html_url": "https://github.com/vitorcoelho21",
-        "followers_url": "https://api.github.com/users/vitorcoelho21/followers",
-        "following_url": "https://api.github.com/users/vitorcoelho21/following{/other_user}",
-        "gists_url": "https://api.github.com/users/vitorcoelho21/gists{/gist_id}",
-        "starred_url": "https://api.github.com/users/vitorcoelho21/starred{/owner}{/repo}",
-        "subscriptions_url": "https://api.github.com/users/vitorcoelho21/subscriptions",
-        "organizations_url": "https://api.github.com/users/vitorcoelho21/orgs",
-        "repos_url": "https://api.github.com/users/vitorcoelho21/repos",
-        "events_url": "https://api.github.com/users/vitorcoelho21/events{/privacy}",
-        "received_events_url": "https://api.github.com/users/vitorcoelho21/received_events",
-        "type": "User",
-        "user_view_type": "public",
-        "site_admin": false
-      },
-      "open_issues": 0,
-      "closed_issues": 32,
-      "state": "open",
-      "created_at": "2026-09-09T02:14:38Z",
-      "updated_at": "2026-09-15T02:15:57Z",
-      "due_on": "2026-09-14T00:00:00Z",
-      "closed_at": null
-    },
+    "milestone": null,
     "comments": 0,
     "created_at": "2026-09-11T19:11:35Z",
-    "updated_at": "2026-09-11T19:33:14Z",
+    "updated_at": "2026-09-18T14:39:31Z",
     "closed_at": "2026-09-11T19:33:14Z",
     "assignee": {
       "login": "art-miranda",
@@ -1696,10 +1659,10 @@
         "site_admin": false
       },
       "open_issues": 0,
-      "closed_issues": 32,
+      "closed_issues": 28,
       "state": "open",
       "created_at": "2026-09-09T02:14:38Z",
-      "updated_at": "2026-09-15T02:15:57Z",
+      "updated_at": "2026-09-18T14:40:04Z",
       "due_on": "2026-09-14T00:00:00Z",
       "closed_at": null
     },
@@ -1880,10 +1843,10 @@
         "site_admin": false
       },
       "open_issues": 0,
-      "closed_issues": 32,
+      "closed_issues": 28,
       "state": "open",
       "created_at": "2026-09-09T02:14:38Z",
-      "updated_at": "2026-09-15T02:15:57Z",
+      "updated_at": "2026-09-18T14:40:04Z",
       "due_on": "2026-09-14T00:00:00Z",
       "closed_at": null
     },
@@ -2044,47 +2007,10 @@
         "site_admin": false
       }
     ],
-    "milestone": {
-      "url": "https://api.github.com/repos/unb-mds/2026-2-Cerradinho-API/milestones/2",
-      "html_url": "https://github.com/unb-mds/2026-2-Cerradinho-API/milestone/2",
-      "labels_url": "https://api.github.com/repos/unb-mds/2026-2-Cerradinho-API/milestones/2/labels",
-      "id": 17745704,
-      "node_id": "MI_kwDOT8WbHM4BDsco",
-      "number": 2,
-      "title": "Sprint 1",
-      "description": "",
-      "creator": {
-        "login": "vitorcoelho21",
-        "id": 253326124,
-        "node_id": "U_kgDODxlzLA",
-        "avatar_url": "https://avatars.githubusercontent.com/u/253326124?v=4",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/vitorcoelho21",
-        "html_url": "https://github.com/vitorcoelho21",
-        "followers_url": "https://api.github.com/users/vitorcoelho21/followers",
-        "following_url": "https://api.github.com/users/vitorcoelho21/following{/other_user}",
-        "gists_url": "https://api.github.com/users/vitorcoelho21/gists{/gist_id}",
-        "starred_url": "https://api.github.com/users/vitorcoelho21/starred{/owner}{/repo}",
-        "subscriptions_url": "https://api.github.com/users/vitorcoelho21/subscriptions",
-        "organizations_url": "https://api.github.com/users/vitorcoelho21/orgs",
-        "repos_url": "https://api.github.com/users/vitorcoelho21/repos",
-        "events_url": "https://api.github.com/users/vitorcoelho21/events{/privacy}",
-        "received_events_url": "https://api.github.com/users/vitorcoelho21/received_events",
-        "type": "User",
-        "user_view_type": "public",
-        "site_admin": false
-      },
-      "open_issues": 0,
-      "closed_issues": 32,
-      "state": "open",
-      "created_at": "2026-09-09T02:14:38Z",
-      "updated_at": "2026-09-15T02:15:57Z",
-      "due_on": "2026-09-14T00:00:00Z",
-      "closed_at": null
-    },
+    "milestone": null,
     "comments": 0,
     "created_at": "2026-09-11T18:26:18Z",
-    "updated_at": "2026-09-11T19:33:00Z",
+    "updated_at": "2026-09-18T14:39:36Z",
     "closed_at": "2026-09-11T19:32:59Z",
     "assignee": {
       "login": "art-miranda",
@@ -2239,47 +2165,10 @@
         "site_admin": false
       }
     ],
-    "milestone": {
-      "url": "https://api.github.com/repos/unb-mds/2026-2-Cerradinho-API/milestones/2",
-      "html_url": "https://github.com/unb-mds/2026-2-Cerradinho-API/milestone/2",
-      "labels_url": "https://api.github.com/repos/unb-mds/2026-2-Cerradinho-API/milestones/2/labels",
-      "id": 17745704,
-      "node_id": "MI_kwDOT8WbHM4BDsco",
-      "number": 2,
-      "title": "Sprint 1",
-      "description": "",
-      "creator": {
-        "login": "vitorcoelho21",
-        "id": 253326124,
-        "node_id": "U_kgDODxlzLA",
-        "avatar_url": "https://avatars.githubusercontent.com/u/253326124?v=4",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/vitorcoelho21",
-        "html_url": "https://github.com/vitorcoelho21",
-        "followers_url": "https://api.github.com/users/vitorcoelho21/followers",
-        "following_url": "https://api.github.com/users/vitorcoelho21/following{/other_user}",
-        "gists_url": "https://api.github.com/users/vitorcoelho21/gists{/gist_id}",
-        "starred_url": "https://api.github.com/users/vitorcoelho21/starred{/owner}{/repo}",
-        "subscriptions_url": "https://api.github.com/users/vitorcoelho21/subscriptions",
-        "organizations_url": "https://api.github.com/users/vitorcoelho21/orgs",
-        "repos_url": "https://api.github.com/users/vitorcoelho21/repos",
-        "events_url": "https://api.github.com/users/vitorcoelho21/events{/privacy}",
-        "received_events_url": "https://api.github.com/users/vitorcoelho21/received_events",
-        "type": "User",
-        "user_view_type": "public",
-        "site_admin": false
-      },
-      "open_issues": 0,
-      "closed_issues": 32,
-      "state": "open",
-      "created_at": "2026-09-09T02:14:38Z",
-      "updated_at": "2026-09-15T02:15:57Z",
-      "due_on": "2026-09-14T00:00:00Z",
-      "closed_at": null
-    },
+    "milestone": null,
     "comments": 0,
     "created_at": "2026-09-11T17:36:50Z",
-    "updated_at": "2026-09-11T19:32:18Z",
+    "updated_at": "2026-09-18T14:39:33Z",
     "closed_at": "2026-09-11T19:32:17Z",
     "assignee": {
       "login": "art-miranda",
@@ -2454,10 +2343,10 @@
         "site_admin": false
       },
       "open_issues": 0,
-      "closed_issues": 32,
+      "closed_issues": 28,
       "state": "open",
       "created_at": "2026-09-09T02:14:38Z",
-      "updated_at": "2026-09-15T02:15:57Z",
+      "updated_at": "2026-09-18T14:40:04Z",
       "due_on": "2026-09-14T00:00:00Z",
       "closed_at": null
     },
@@ -2889,10 +2778,10 @@
         "site_admin": false
       },
       "open_issues": 0,
-      "closed_issues": 32,
+      "closed_issues": 28,
       "state": "open",
       "created_at": "2026-09-09T02:14:38Z",
-      "updated_at": "2026-09-15T02:15:57Z",
+      "updated_at": "2026-09-18T14:40:04Z",
       "due_on": "2026-09-14T00:00:00Z",
       "closed_at": null
     },
@@ -3231,10 +3120,10 @@
         "site_admin": false
       },
       "open_issues": 0,
-      "closed_issues": 32,
+      "closed_issues": 28,
       "state": "open",
       "created_at": "2026-09-09T02:14:38Z",
-      "updated_at": "2026-09-15T02:15:57Z",
+      "updated_at": "2026-09-18T14:40:04Z",
       "due_on": "2026-09-14T00:00:00Z",
       "closed_at": null
     },
@@ -4212,10 +4101,10 @@
         "site_admin": false
       },
       "open_issues": 0,
-      "closed_issues": 32,
+      "closed_issues": 28,
       "state": "open",
       "created_at": "2026-09-09T02:14:38Z",
-      "updated_at": "2026-09-15T02:15:57Z",
+      "updated_at": "2026-09-18T14:40:04Z",
       "due_on": "2026-09-14T00:00:00Z",
       "closed_at": null
     },
@@ -4384,10 +4273,10 @@
         "site_admin": false
       },
       "open_issues": 0,
-      "closed_issues": 32,
+      "closed_issues": 28,
       "state": "open",
       "created_at": "2026-09-09T02:14:38Z",
-      "updated_at": "2026-09-15T02:15:57Z",
+      "updated_at": "2026-09-18T14:40:04Z",
       "due_on": "2026-09-14T00:00:00Z",
       "closed_at": null
     },
@@ -4579,10 +4468,10 @@
         "site_admin": false
       },
       "open_issues": 0,
-      "closed_issues": 32,
+      "closed_issues": 28,
       "state": "open",
       "created_at": "2026-09-09T02:14:38Z",
-      "updated_at": "2026-09-15T02:15:57Z",
+      "updated_at": "2026-09-18T14:40:04Z",
       "due_on": "2026-09-14T00:00:00Z",
       "closed_at": null
     },
@@ -4774,10 +4663,10 @@
         "site_admin": false
       },
       "open_issues": 0,
-      "closed_issues": 32,
+      "closed_issues": 28,
       "state": "open",
       "created_at": "2026-09-09T02:14:38Z",
-      "updated_at": "2026-09-15T02:15:57Z",
+      "updated_at": "2026-09-18T14:40:04Z",
       "due_on": "2026-09-14T00:00:00Z",
       "closed_at": null
     },
@@ -5158,7 +5047,7 @@
       "closed_issues": 5,
       "state": "open",
       "created_at": "2026-09-04T02:23:45Z",
-      "updated_at": "2026-09-09T14:36:20Z",
+      "updated_at": "2026-09-18T14:39:36Z",
       "due_on": "2026-09-08T00:00:00Z",
       "closed_at": null
     },

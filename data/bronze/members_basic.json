@@ -1,15 +1,15 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-18T10:24:37.789337",
+      "extracted_at": "2026-09-19T10:00:53.178020",
       "file_path": "data/bronze/members_basic.json",
-      "record_count": 484
+      "record_count": 485
     }
   },
   {
     "login": "github-actions[bot]",
     "type": "Bot",
-    "contributions_total": 2480,
+    "contributions_total": 2484,
     "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
     "html_url": "https://github.com/apps/github-actions",
     "data_source": "contributors_api",
@@ -39,7 +39,7 @@
   {
     "login": "actions-user",
     "type": "User",
-    "contributions_total": 376,
+    "contributions_total": 377,
     "avatar_url": "https://avatars.githubusercontent.com/u/65916846?v=4",
     "html_url": "https://github.com/actions-user",
     "data_source": "contributors_api",
@@ -53,17 +53,17 @@
     "avatar_url": "https://avatars.githubusercontent.com/u/73255212?v=4",
     "html_url": "https://github.com/darkymeubem",
     "data_source": "contributors_api",
-    "discovered_from_repo": "2025-1-NoFluxoUNB",
+    "discovered_from_repo": "2025-1-NoFluxoUnB",
     "is_org_member": false
   },
   {
     "login": "Vitor-Trancoso",
     "type": "User",
-    "contributions_total": 321,
+    "contributions_total": 331,
     "avatar_url": "https://avatars.githubusercontent.com/u/179967365?v=4",
     "html_url": "https://github.com/Vitor-Trancoso",
     "data_source": "contributors_api",
-    "discovered_from_repo": "2025-1-NoFluxoUNB",
+    "discovered_from_repo": "2025-1-NoFluxoUnB",
     "is_org_member": false
   },
   {
@@ -453,7 +453,7 @@
     "avatar_url": "https://avatars.githubusercontent.com/u/181267285?v=4",
     "html_url": "https://github.com/staann",
     "data_source": "contributors_api",
-    "discovered_from_repo": "2025-1-NoFluxoUNB",
+    "discovered_from_repo": "2025-1-NoFluxoUnB",
     "is_org_member": false
   },
   {
@@ -573,7 +573,7 @@
     "avatar_url": "https://avatars.githubusercontent.com/u/123188031?v=4",
     "html_url": "https://github.com/hisarxt",
     "data_source": "contributors_api",
-    "discovered_from_repo": "2025-1-NoFluxoUNB",
+    "discovered_from_repo": "2025-1-NoFluxoUnB",
     "is_org_member": false
   },
   {
@@ -1303,7 +1303,7 @@
     "avatar_url": "https://avatars.githubusercontent.com/u/83011443?v=4",
     "html_url": "https://github.com/viniiribeiro",
     "data_source": "contributors_api",
-    "discovered_from_repo": "2025-1-NoFluxoUNB",
+    "discovered_from_repo": "2025-1-NoFluxoUnB",
     "is_org_member": false
   },
   {
@@ -1733,7 +1733,7 @@
     "avatar_url": "https://avatars.githubusercontent.com/u/152187996?v=4",
     "html_url": "https://github.com/ArthurNRamalho",
     "data_source": "contributors_api",
-    "discovered_from_repo": "2025-1-NoFluxoUNB",
+    "discovered_from_repo": "2025-1-NoFluxoUnB",
     "is_org_member": false
   },
   {
@@ -1983,7 +1983,7 @@
     "avatar_url": "https://avatars.githubusercontent.com/u/82895172?v=4",
     "html_url": "https://github.com/knz13",
     "data_source": "contributors_api",
-    "discovered_from_repo": "2025-1-NoFluxoUNB",
+    "discovered_from_repo": "2025-1-NoFluxoUnB",
     "is_org_member": false
   },
   {
@@ -2123,7 +2123,7 @@
     "avatar_url": "https://avatars.githubusercontent.com/u/132620834?v=4",
     "html_url": "https://github.com/gusmoles",
     "data_source": "contributors_api",
-    "discovered_from_repo": "2025-1-NoFluxoUNB",
+    "discovered_from_repo": "2025-1-NoFluxoUnB",
     "is_org_member": false
   },
   {
@@ -2837,6 +2837,16 @@
     "is_org_member": false
   },
   {
+    "login": "Thomas4ugust0",
+    "type": "User",
+    "contributions_total": 26,
+    "avatar_url": "https://avatars.githubusercontent.com/u/218616489?v=4",
+    "html_url": "https://github.com/Thomas4ugust0",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "2026-2-AgendaUnB",
+    "is_org_member": false
+  },
+  {
     "login": "Atyrson",
     "type": "User",
     "contributions_total": 25,
@@ -3224,16 +3234,6 @@
     "html_url": "https://github.com/rmatuda",
     "data_source": "contributors_api",
     "discovered_from_repo": "2024-1-Squad-10",
-    "is_org_member": false
-  },
-  {
-    "login": "Thomas4ugust0",
-    "type": "User",
-    "contributions_total": 20,
-    "avatar_url": "https://avatars.githubusercontent.com/u/218616489?v=4",
-    "html_url": "https://github.com/Thomas4ugust0",
-    "data_source": "contributors_api",
-    "discovered_from_repo": "2026-2-AgendaUnB",
     "is_org_member": false
   },
   {
@@ -3703,7 +3703,7 @@
     "avatar_url": "https://avatars.githubusercontent.com/u/193624541?v=4",
     "html_url": "https://github.com/WallaceBarrosDev",
     "data_source": "contributors_api",
-    "discovered_from_repo": "2025-1-NoFluxoUNB",
+    "discovered_from_repo": "2025-1-NoFluxoUnB",
     "is_org_member": false
   },
   {
@@ -3883,7 +3883,7 @@
     "avatar_url": "https://avatars.githubusercontent.com/u/168923024?v=4",
     "html_url": "https://github.com/andrehsb",
     "data_source": "contributors_api",
-    "discovered_from_repo": "2025-1-NoFluxoUNB",
+    "discovered_from_repo": "2025-1-NoFluxoUnB",
     "is_org_member": false
   },
   {
@@ -4163,7 +4163,7 @@
     "avatar_url": "https://avatars.githubusercontent.com/in/1143301?v=4",
     "html_url": "https://github.com/apps/copilot-swe-agent",
     "data_source": "contributors_api",
-    "discovered_from_repo": "2025-1-NoFluxoUNB",
+    "discovered_from_repo": "2025-1-NoFluxoUnB",
     "is_org_member": false
   },
   {
@@ -4657,6 +4657,16 @@
     "is_org_member": false
   },
   {
+    "login": "Bielziin07",
+    "type": "User",
+    "contributions_total": 1,
+    "avatar_url": "https://avatars.githubusercontent.com/u/292268055?v=4",
+    "html_url": "https://github.com/Bielziin07",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "2026-2-AgendaUnB",
+    "is_org_member": false
+  },
+  {
     "login": "brunocva",
     "type": "User",
     "contributions_total": 1,
@@ -4673,7 +4683,7 @@
     "avatar_url": "https://avatars.githubusercontent.com/u/217833137?v=4",
     "html_url": "https://github.com/Crianex",
     "data_source": "contributors_api",
-    "discovered_from_repo": "2025-1-NoFluxoUNB",
+    "discovered_from_repo": "2025-1-NoFluxoUnB",
     "is_org_member": false
   },
   {
@@ -4843,7 +4853,7 @@
     "avatar_url": "https://avatars.githubusercontent.com/u/104733992?v=4",
     "html_url": "https://github.com/Wallacebarros",
     "data_source": "contributors_api",
-    "discovered_from_repo": "2025-1-NoFluxoUNB",
+    "discovered_from_repo": "2025-1-NoFluxoUnB",
     "is_org_member": false
   }
 ]

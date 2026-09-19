@@ -2,7 +2,7 @@
   "owner": "unb-mds",
   "repository": "2026-2-AgendaUnB",
   "branch": "main",
-  "sha": "a7fe3782612e44f0597fddd4180d69b891f84498",
+  "sha": "6b438efa9592bd9ebb392e7c544cedec226c93b6",
   "tree": [
     {
       "name": ".env.example",
@@ -79,16 +79,6 @@
       "is_binary": false
     },
     {
-      "name": "AI-USAGE.md",
-      "path": "AI-USAGE.md",
-      "type": "file",
-      "sha": "e7b034a13bd5ad19ec02218b7bb3b112f0f4207a",
-      "mode": "100644",
-      "extension": ".md",
-      "size": 5334,
-      "is_binary": false
-    },
-    {
       "name": "README.md",
       "path": "README.md",
       "type": "file",
@@ -102,9 +92,19 @@
       "name": "docs",
       "path": "docs",
       "type": "directory",
-      "sha": "45d39716db3c642677f40142ed36f694ea7a3c80",
+      "sha": "4929da308ca748cad19874de4fa0edaa4eb99e1c",
       "mode": "040000",
       "children": []
+    },
+    {
+      "name": "AI-USAGE.md",
+      "path": "docs/AI-USAGE.md",
+      "type": "file",
+      "sha": "3f374a7dc3d28fdf42b73a08e60114d5a14673ca",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6342,
+      "is_binary": false
     },
     {
       "name": "Architecture.md",
@@ -130,10 +130,10 @@
       "name": "documento-de-visao.md",
       "path": "docs/documento-de-visao.md",
       "type": "file",
-      "sha": "f7d5bc37279c097eaeb4e23dbb9bc0d358bba424",
+      "sha": "024d6d2f3c1a95dbb3df453772b0fa3b31a598d7",
       "mode": "100644",
       "extension": ".md",
-      "size": 7900,
+      "size": 7908,
       "is_binary": false
     },
     {
@@ -208,40 +208,30 @@
       "name": "mkdocs.yml",
       "path": "mkdocs.yml",
       "type": "file",
-      "sha": "4c82b70e4d6c1ecf2a9a799a5929e5f4b14b47a2",
+      "sha": "5fa92ed375040ff8693f98a0588c790bed22f343",
       "mode": "100644",
       "extension": ".yml",
-      "size": 1638,
+      "size": 1645,
       "is_binary": false
     },
     {
       "name": "package-lock.json",
       "path": "package-lock.json",
       "type": "file",
-      "sha": "ed7ad6019f4eb3b4ce53fb6380ae40d2409eb1bc",
+      "sha": "e89b33df5a954c85cafb854d2bb6053fba28d064",
       "mode": "100644",
       "extension": ".json",
-      "size": 56865,
+      "size": 58818,
       "is_binary": false
     },
     {
       "name": "package.json",
       "path": "package.json",
       "type": "file",
-      "sha": "9a81788f0f091614d17bf292ca95f05cc0a87a23",
+      "sha": "cd52fa1e6442effec1cfcf7c48e3ece87e424893",
       "mode": "100644",
       "extension": ".json",
-      "size": 412,
-      "is_binary": false
-    },
-    {
-      "name": "padrao.md",
-      "path": "padrao.md",
-      "type": "file",
-      "sha": "a964d112af99780c480400d2cecb50ea806073e5",
-      "mode": "100644",
-      "extension": ".md",
-      "size": 8769,
+      "size": 447,
       "is_binary": false
     },
     {
@@ -283,20 +273,10 @@
       "is_binary": false
     },
     {
-      "name": "requisitos.md",
-      "path": "requisitos.md",
-      "type": "file",
-      "sha": "e319cdb17308c0c89cb793de049cf160bddfa065",
-      "mode": "100644",
-      "extension": ".md",
-      "size": 7652,
-      "is_binary": false
-    },
-    {
       "name": "src",
       "path": "src",
       "type": "directory",
-      "sha": "aee36dd6b5716968b2f5bbb1140f2c2350bef4bd",
+      "sha": "753688e8edc5dc7782d1ea854efeeef9b0a3846f",
       "mode": "040000",
       "children": []
     },
@@ -304,20 +284,56 @@
       "name": "App.jsx",
       "path": "src/App.jsx",
       "type": "file",
-      "sha": "7d8d87ddfbef30090a8523b0d0ad285d855f3406",
+      "sha": "ab48d4e634042379c19baef8c0f96161113b4caa",
       "mode": "100644",
       "extension": ".jsx",
-      "size": 36072,
+      "size": 23551,
       "is_binary": false
     },
     {
       "name": "main.jsx",
       "path": "src/main.jsx",
       "type": "file",
-      "sha": "e8e6289913e402574c7208981eb44c3a375874d8",
+      "sha": "12e6a38e4cffa1353b1488f6b041a2669eed4724",
       "mode": "100644",
       "extension": ".jsx",
-      "size": 135,
+      "size": 441,
+      "is_binary": false
+    },
+    {
+      "name": "pages",
+      "path": "src/pages",
+      "type": "directory",
+      "sha": "1bbb1baec9bca9b79cda88c172103ccb1b055f1a",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "SecondPage.jsx",
+      "path": "src/pages/SecondPage.jsx",
+      "type": "file",
+      "sha": "0f3c7ca74ccf9ea69c494adae7fcd848dcaa9874",
+      "mode": "100644",
+      "extension": ".jsx",
+      "size": 4099,
+      "is_binary": false
+    },
+    {
+      "name": "styles",
+      "path": "src/styles",
+      "type": "directory",
+      "sha": "e3d898a46254e61eb417e89f60fc9edae4cf72af",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "global.css",
+      "path": "src/styles/global.css",
+      "type": "file",
+      "sha": "92ec834be4f204811503806cd1ae8d43fa154359",
+      "mode": "100644",
+      "extension": ".css",
+      "size": 15787,
       "is_binary": false
     },
     {
@@ -332,17 +348,17 @@
     }
   ],
   "truncated": false,
-  "extracted_at": "2026-09-18T10:27:18.545035",
+  "extracted_at": "2026-09-19T10:02:59.807092",
   "method": "rest",
-  "total_items": 34,
+  "total_items": 36,
   "repository_metadata": {
     "id": 1338351818,
     "full_name": "unb-mds/2026-2-AgendaUnB",
     "description": "Grupo G8 - Metodos de Desenvolvimento de Software 2026/2",
     "created_at": "2026-08-18T11:58:00Z",
-    "updated_at": "2026-09-18T05:26:28Z",
+    "updated_at": "2026-09-19T03:19:45Z",
     "language": "JavaScript",
-    "size": 62509,
+    "size": 62540,
     "stars": 3,
     "forks": 0,
     "open_issues": 0

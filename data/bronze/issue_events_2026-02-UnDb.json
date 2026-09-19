@@ -1,9 +1,489 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-18T09:26:28.661169",
+      "extracted_at": "2026-09-19T09:09:50.082349",
       "file_path": "data/bronze/issue_events_2026-02-UnDb.json",
-      "record_count": 706
+      "record_count": 746
+    }
+  },
+  {
+    "id": 31430716148,
+    "event": "head_ref_deleted",
+    "created_at": "2026-09-19T02:39:22Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "ViniGvdo"
+    },
+    "issue": {
+      "number": 103
+    }
+  },
+  {
+    "id": 31428780219,
+    "event": "project_v2_item_status_changed",
+    "created_at": "2026-09-19T01:21:44Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "github-project-automation[bot]"
+    },
+    "issue": {
+      "number": 31
+    }
+  },
+  {
+    "id": 31428778937,
+    "event": "closed",
+    "created_at": "2026-09-19T01:21:43Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "nicolaszanin06"
+    },
+    "issue": {
+      "number": 31
+    }
+  },
+  {
+    "id": 31428688299,
+    "event": "closed",
+    "created_at": "2026-09-19T01:18:35Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "nicolaszanin06"
+    },
+    "issue": {
+      "number": 103
+    }
+  },
+  {
+    "id": 31428688239,
+    "event": "merged",
+    "created_at": "2026-09-19T01:18:35Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "nicolaszanin06"
+    },
+    "issue": {
+      "number": 103
+    }
+  },
+  {
+    "id": 31422617065,
+    "event": "closed",
+    "created_at": "2026-09-18T22:28:28Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "gabrielrdaraujo"
+    },
+    "issue": {
+      "number": 102
+    }
+  },
+  {
+    "id": 31422617029,
+    "event": "merged",
+    "created_at": "2026-09-18T22:28:28Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "gabrielrdaraujo"
+    },
+    "issue": {
+      "number": 102
+    }
+  },
+  {
+    "id": 31419411497,
+    "event": "review_requested",
+    "created_at": "2026-09-18T21:22:02Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "nicolaszanin06"
+    },
+    "issue": {
+      "number": 102
+    }
+  },
+  {
+    "id": 31419382020,
+    "event": "closed",
+    "created_at": "2026-09-18T21:21:26Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "nicolaszanin06"
+    },
+    "issue": {
+      "number": 101
+    }
+  },
+  {
+    "id": 31419316492,
+    "event": "review_requested",
+    "created_at": "2026-09-18T21:20:08Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "nicolaszanin06"
+    },
+    "issue": {
+      "number": 101
+    }
+  },
+  {
+    "id": 31419198836,
+    "event": "project_v2_item_status_changed",
+    "created_at": "2026-09-18T21:17:26Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "github-project-automation[bot]"
+    },
+    "issue": {
+      "number": 51
+    }
+  },
+  {
+    "id": 31419178635,
+    "event": "closed",
+    "created_at": "2026-09-18T21:17:25Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "nicolaszanin06"
+    },
+    "issue": {
+      "number": 51
+    }
+  },
+  {
+    "id": 31419192364,
+    "event": "project_v2_item_status_changed",
+    "created_at": "2026-09-18T21:17:19Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "github-project-automation[bot]"
+    },
+    "issue": {
+      "number": 45
+    }
+  },
+  {
+    "id": 31419171874,
+    "event": "closed",
+    "created_at": "2026-09-18T21:17:17Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "nicolaszanin06"
+    },
+    "issue": {
+      "number": 45
+    }
+  },
+  {
+    "id": 31419165142,
+    "event": "project_v2_item_status_changed",
+    "created_at": "2026-09-18T21:17:06Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "github-project-automation[bot]"
+    },
+    "issue": {
+      "number": 44
+    }
+  },
+  {
+    "id": 31419162055,
+    "event": "closed",
+    "created_at": "2026-09-18T21:17:04Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "nicolaszanin06"
+    },
+    "issue": {
+      "number": 44
+    }
+  },
+  {
+    "id": 31419156507,
+    "event": "project_v2_item_status_changed",
+    "created_at": "2026-09-18T21:16:55Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "github-project-automation[bot]"
+    },
+    "issue": {
+      "number": 43
+    }
+  },
+  {
+    "id": 31419153148,
+    "event": "closed",
+    "created_at": "2026-09-18T21:16:54Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "nicolaszanin06"
+    },
+    "issue": {
+      "number": 43
+    }
+  },
+  {
+    "id": 31419139624,
+    "event": "project_v2_item_status_changed",
+    "created_at": "2026-09-18T21:16:25Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "github-project-automation[bot]"
+    },
+    "issue": {
+      "number": 30
+    }
+  },
+  {
+    "id": 31419126656,
+    "event": "closed",
+    "created_at": "2026-09-18T21:16:24Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "nicolaszanin06"
+    },
+    "issue": {
+      "number": 30
+    }
+  },
+  {
+    "id": 31418744542,
+    "event": "project_v2_item_status_changed",
+    "created_at": "2026-09-18T21:08:56Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "github-project-automation[bot]"
+    },
+    "issue": {
+      "number": 29
+    }
+  },
+  {
+    "id": 31418741186,
+    "event": "closed",
+    "created_at": "2026-09-18T21:08:54Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "nicolaszanin06"
+    },
+    "issue": {
+      "number": 29
+    }
+  },
+  {
+    "id": 31417731128,
+    "event": "closed",
+    "created_at": "2026-09-18T20:49:49Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "nicolaszanin06"
+    },
+    "issue": {
+      "number": 98
+    }
+  },
+  {
+    "id": 31417731041,
+    "event": "merged",
+    "created_at": "2026-09-18T20:49:49Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "nicolaszanin06"
+    },
+    "issue": {
+      "number": 98
+    }
+  },
+  {
+    "id": 31417707027,
+    "event": "review_requested",
+    "created_at": "2026-09-18T20:49:23Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "nicolaszanin06"
+    },
+    "issue": {
+      "number": 98
+    }
+  },
+  {
+    "id": 31413881004,
+    "event": "closed",
+    "created_at": "2026-09-18T19:37:46Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "gabrielrdaraujo"
+    },
+    "issue": {
+      "number": 97
+    }
+  },
+  {
+    "id": 31413880929,
+    "event": "merged",
+    "created_at": "2026-09-18T19:37:46Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "gabrielrdaraujo"
+    },
+    "issue": {
+      "number": 97
+    }
+  },
+  {
+    "id": 31412539757,
+    "event": "referenced",
+    "created_at": "2026-09-18T19:15:00Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "gabrielrdaraujo"
+    },
+    "issue": {
+      "number": 31
+    }
+  },
+  {
+    "id": 31410778886,
+    "event": "closed",
+    "created_at": "2026-09-18T18:44:50Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "gabrielrdaraujo"
+    },
+    "issue": {
+      "number": 99
+    }
+  },
+  {
+    "id": 31410778748,
+    "event": "merged",
+    "created_at": "2026-09-18T18:44:50Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "gabrielrdaraujo"
+    },
+    "issue": {
+      "number": 99
+    }
+  },
+  {
+    "id": 31410754229,
+    "event": "review_requested",
+    "created_at": "2026-09-18T18:44:25Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "gabrielrdaraujo"
+    },
+    "issue": {
+      "number": 99
+    }
+  },
+  {
+    "id": 31408230408,
+    "event": "closed",
+    "created_at": "2026-09-18T18:01:44Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "gabrielrdaraujo"
+    },
+    "issue": {
+      "number": 96
+    }
+  },
+  {
+    "id": 31408230281,
+    "event": "merged",
+    "created_at": "2026-09-18T18:01:44Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "gabrielrdaraujo"
+    },
+    "issue": {
+      "number": 96
+    }
+  },
+  {
+    "id": 31397421822,
+    "event": "closed",
+    "created_at": "2026-09-18T14:51:51Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "gabrielrdaraujo"
+    },
+    "issue": {
+      "number": 95
+    }
+  },
+  {
+    "id": 31397421728,
+    "event": "merged",
+    "created_at": "2026-09-18T14:51:51Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "gabrielrdaraujo"
+    },
+    "issue": {
+      "number": 95
+    }
+  },
+  {
+    "id": 31397036517,
+    "event": "referenced",
+    "created_at": "2026-09-18T14:45:25Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "gabrielrdaraujo"
+    },
+    "issue": {
+      "number": 29
+    }
+  },
+  {
+    "id": 31394149970,
+    "event": "review_requested",
+    "created_at": "2026-09-18T13:56:55Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "warlleymedeiros"
+    },
+    "issue": {
+      "number": 96
+    }
+  },
+  {
+    "id": 31392627221,
+    "event": "closed",
+    "created_at": "2026-09-18T13:31:02Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "gabrielrdaraujo"
+    },
+    "issue": {
+      "number": 100
+    }
+  },
+  {
+    "id": 31392627053,
+    "event": "merged",
+    "created_at": "2026-09-18T13:31:01Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "gabrielrdaraujo"
+    },
+    "issue": {
+      "number": 100
+    }
+  },
+  {
+    "id": 31392540187,
+    "event": "review_requested",
+    "created_at": "2026-09-18T13:29:30Z",
+    "repo_name": "2026-02-UnDb",
+    "actor": {
+      "login": "gabrielrdaraujo"
+    },
+    "issue": {
+      "number": 100
     }
   },
   {

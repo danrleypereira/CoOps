@@ -1,36 +1,19 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-18T10:19:49.561230",
+      "extracted_at": "2026-09-19T09:56:51.878661",
       "file_path": "data/bronze/commits_2026-1-Mapa_L.I.L.A.S.json",
-      "record_count": 360
+      "record_count": 361
     }
   },
   {
-    "sha": "1dd1af1a32f09ead15a75f51d44aafbf8f1dcb22",
+    "sha": "eea99bd1dcd1df71866035931b48f9887004a677",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2026-09-18T07:40:40Z",
-        "login": "github-actions[bot]"
-      },
-      "message": "chore: atualiza histórico de ingestão"
-    },
-    "additions": 12,
-    "deletions": 1,
-    "total_changes": 13,
-    "repo_name": "2026-1-Mapa_L.I.L.A.S"
-  },
-  {
-    "sha": "f5dd7a3fb0701b197aa8fbe9a7b4c2f1d78bcfaf",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2026-09-17T08:03:13Z",
+        "date": "2026-09-19T07:49:42Z",
         "login": "github-actions[bot]"
       },
       "message": "chore: atualiza histórico de ingestão"
@@ -58,6 +41,23 @@
     "repo_name": "2026-1-Mapa_L.I.L.A.S"
   },
   {
+    "sha": "1dd1af1a32f09ead15a75f51d44aafbf8f1dcb22",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-18T07:40:40Z",
+        "login": "github-actions[bot]"
+      },
+      "message": "chore: atualiza histórico de ingestão"
+    },
+    "additions": 12,
+    "deletions": 1,
+    "total_changes": 13,
+    "repo_name": "2026-1-Mapa_L.I.L.A.S"
+  },
+  {
     "sha": "43ba4e6e027846a1a4ef78e72d8e140d0ae23cb6",
     "html_url": null,
     "commit": {
@@ -65,6 +65,23 @@
         "name": null,
         "email": null,
         "date": "2026-09-15T08:05:11Z",
+        "login": "github-actions[bot]"
+      },
+      "message": "chore: atualiza histórico de ingestão"
+    },
+    "additions": 12,
+    "deletions": 1,
+    "total_changes": 13,
+    "repo_name": "2026-1-Mapa_L.I.L.A.S"
+  },
+  {
+    "sha": "f5dd7a3fb0701b197aa8fbe9a7b4c2f1d78bcfaf",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-17T08:03:13Z",
         "login": "github-actions[bot]"
       },
       "message": "chore: atualiza histórico de ingestão"
@@ -92,13 +109,13 @@
     "repo_name": "2026-1-Mapa_L.I.L.A.S"
   },
   {
-    "sha": "69407dbd86e44905a12e9e5263f1d9fea2e1ea8d",
+    "sha": "2dac08de8eed5a965d4939890377a3a67d5798da",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2026-09-12T07:24:33Z",
+        "date": "2026-09-11T07:36:05Z",
         "login": "github-actions[bot]"
       },
       "message": "chore: atualiza histórico de ingestão"
@@ -109,13 +126,13 @@
     "repo_name": "2026-1-Mapa_L.I.L.A.S"
   },
   {
-    "sha": "2dac08de8eed5a965d4939890377a3a67d5798da",
+    "sha": "69407dbd86e44905a12e9e5263f1d9fea2e1ea8d",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2026-09-11T07:36:05Z",
+        "date": "2026-09-12T07:24:33Z",
         "login": "github-actions[bot]"
       },
       "message": "chore: atualiza histórico de ingestão"
@@ -160,30 +177,13 @@
     "repo_name": "2026-1-Mapa_L.I.L.A.S"
   },
   {
-    "sha": "8e71e9b5e791cf2c0b63db542a6b4947121f2a69",
+    "sha": "4069425eb25ab1bdb1662ea61451bd12d2833e04",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2026-09-06T07:24:26Z",
-        "login": "github-actions[bot]"
-      },
-      "message": "chore: atualiza métricas scrum [skip ci]"
-    },
-    "additions": 35,
-    "deletions": 30,
-    "total_changes": 65,
-    "repo_name": "2026-1-Mapa_L.I.L.A.S"
-  },
-  {
-    "sha": "cb5a45ae4445f7f7240033f2c006330287fa4489",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2026-09-04T07:41:18Z",
+        "date": "2026-09-01T08:02:03Z",
         "login": "github-actions[bot]"
       },
       "message": "chore: atualiza histórico de ingestão"
@@ -211,20 +211,20 @@
     "repo_name": "2026-1-Mapa_L.I.L.A.S"
   },
   {
-    "sha": "4069425eb25ab1bdb1662ea61451bd12d2833e04",
+    "sha": "8e71e9b5e791cf2c0b63db542a6b4947121f2a69",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2026-09-01T08:02:03Z",
+        "date": "2026-09-06T07:24:26Z",
         "login": "github-actions[bot]"
       },
-      "message": "chore: atualiza histórico de ingestão"
+      "message": "chore: atualiza métricas scrum [skip ci]"
     },
-    "additions": 12,
-    "deletions": 1,
-    "total_changes": 13,
+    "additions": 35,
+    "deletions": 30,
+    "total_changes": 65,
     "repo_name": "2026-1-Mapa_L.I.L.A.S"
   },
   {
@@ -245,13 +245,13 @@
     "repo_name": "2026-1-Mapa_L.I.L.A.S"
   },
   {
-    "sha": "0f3aaec8378f09c0783875038a8f9b28128e79f4",
+    "sha": "cb5a45ae4445f7f7240033f2c006330287fa4489",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2026-08-29T09:28:27Z",
+        "date": "2026-09-04T07:41:18Z",
         "login": "github-actions[bot]"
       },
       "message": "chore: atualiza histórico de ingestão"
@@ -262,13 +262,13 @@
     "repo_name": "2026-1-Mapa_L.I.L.A.S"
   },
   {
-    "sha": "3a352fd5dda00ca587a221718ca3fca74be01825",
+    "sha": "0f3aaec8378f09c0783875038a8f9b28128e79f4",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2026-08-28T14:41:40Z",
+        "date": "2026-08-29T09:28:27Z",
         "login": "github-actions[bot]"
       },
       "message": "chore: atualiza histórico de ingestão"
@@ -296,13 +296,13 @@
     "repo_name": "2026-1-Mapa_L.I.L.A.S"
   },
   {
-    "sha": "f5dfb75edfd8ed5f1eb5eb10868518c2cd8110d0",
+    "sha": "3a352fd5dda00ca587a221718ca3fca74be01825",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2026-08-26T03:42:21Z",
+        "date": "2026-08-28T14:41:40Z",
         "login": "github-actions[bot]"
       },
       "message": "chore: atualiza histórico de ingestão"
@@ -330,30 +330,13 @@
     "repo_name": "2026-1-Mapa_L.I.L.A.S"
   },
   {
-    "sha": "807b8ddae159c199fe13282e36883db4306c677c",
+    "sha": "f5dfb75edfd8ed5f1eb5eb10868518c2cd8110d0",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2026-08-23T03:42:33Z",
-        "login": "github-actions[bot]"
-      },
-      "message": "chore: atualiza métricas scrum [skip ci]"
-    },
-    "additions": 77,
-    "deletions": 132,
-    "total_changes": 209,
-    "repo_name": "2026-1-Mapa_L.I.L.A.S"
-  },
-  {
-    "sha": "e1afa2a40eff7d8a1a9ad14535914ccc02e8cb93",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2026-08-22T03:34:11Z",
+        "date": "2026-08-26T03:42:21Z",
         "login": "github-actions[bot]"
       },
       "message": "chore: atualiza histórico de ingestão"
@@ -381,13 +364,13 @@
     "repo_name": "2026-1-Mapa_L.I.L.A.S"
   },
   {
-    "sha": "0aea9a03c39618f2b1e48a2cf608ce2665f45132",
+    "sha": "e1afa2a40eff7d8a1a9ad14535914ccc02e8cb93",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2026-08-20T03:37:58Z",
+        "date": "2026-08-22T03:34:11Z",
         "login": "github-actions[bot]"
       },
       "message": "chore: atualiza histórico de ingestão"
@@ -412,6 +395,40 @@
     "additions": 12,
     "deletions": 1,
     "total_changes": 13,
+    "repo_name": "2026-1-Mapa_L.I.L.A.S"
+  },
+  {
+    "sha": "0aea9a03c39618f2b1e48a2cf608ce2665f45132",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-20T03:37:58Z",
+        "login": "github-actions[bot]"
+      },
+      "message": "chore: atualiza histórico de ingestão"
+    },
+    "additions": 12,
+    "deletions": 1,
+    "total_changes": 13,
+    "repo_name": "2026-1-Mapa_L.I.L.A.S"
+  },
+  {
+    "sha": "807b8ddae159c199fe13282e36883db4306c677c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-23T03:42:33Z",
+        "login": "github-actions[bot]"
+      },
+      "message": "chore: atualiza métricas scrum [skip ci]"
+    },
+    "additions": 77,
+    "deletions": 132,
+    "total_changes": 209,
     "repo_name": "2026-1-Mapa_L.I.L.A.S"
   },
   {
@@ -517,13 +534,13 @@
     "repo_name": "2026-1-Mapa_L.I.L.A.S"
   },
   {
-    "sha": "8474866bd186fd3faedb4445f92865fe1a20926f",
+    "sha": "ed9d16c591d9f9ca62bf5c71cc14c116a432693d",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2026-08-11T04:25:01Z",
+        "date": "2026-08-07T04:49:42Z",
         "login": "github-actions[bot]"
       },
       "message": "chore: atualiza histórico de ingestão"
@@ -568,30 +585,13 @@
     "repo_name": "2026-1-Mapa_L.I.L.A.S"
   },
   {
-    "sha": "ed9d16c591d9f9ca62bf5c71cc14c116a432693d",
+    "sha": "8474866bd186fd3faedb4445f92865fe1a20926f",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2026-08-07T04:49:42Z",
-        "login": "github-actions[bot]"
-      },
-      "message": "chore: atualiza histórico de ingestão"
-    },
-    "additions": 12,
-    "deletions": 1,
-    "total_changes": 13,
-    "repo_name": "2026-1-Mapa_L.I.L.A.S"
-  },
-  {
-    "sha": "fc6d9081acf772b18dff5a0ace6f104e4a95f148",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2026-08-06T05:48:03Z",
+        "date": "2026-08-11T04:25:01Z",
         "login": "github-actions[bot]"
       },
       "message": "chore: atualiza histórico de ingestão"
@@ -636,6 +636,23 @@
     "repo_name": "2026-1-Mapa_L.I.L.A.S"
   },
   {
+    "sha": "fc6d9081acf772b18dff5a0ace6f104e4a95f148",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-08-06T05:48:03Z",
+        "login": "github-actions[bot]"
+      },
+      "message": "chore: atualiza histórico de ingestão"
+    },
+    "additions": 12,
+    "deletions": 1,
+    "total_changes": 13,
+    "repo_name": "2026-1-Mapa_L.I.L.A.S"
+  },
+  {
     "sha": "8734b3c4e1e50704aa9b3d661c49bc3cd310ef4f",
     "html_url": null,
     "commit": {
@@ -660,6 +677,40 @@
         "name": null,
         "email": null,
         "date": "2026-08-01T05:44:40Z",
+        "login": "github-actions[bot]"
+      },
+      "message": "chore: atualiza histórico de ingestão"
+    },
+    "additions": 12,
+    "deletions": 1,
+    "total_changes": 13,
+    "repo_name": "2026-1-Mapa_L.I.L.A.S"
+  },
+  {
+    "sha": "2c98187f3baa1c6551aa0716446c4727161106b2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-26T05:52:50Z",
+        "login": "github-actions[bot]"
+      },
+      "message": "chore: atualiza métricas scrum [skip ci]"
+    },
+    "additions": 42,
+    "deletions": 52,
+    "total_changes": 94,
+    "repo_name": "2026-1-Mapa_L.I.L.A.S"
+  },
+  {
+    "sha": "efe311d2aaace6db9bbfdef1c14a94522a3dbaa6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-07-28T05:36:38Z",
         "login": "github-actions[bot]"
       },
       "message": "chore: atualiza histórico de ingestão"
@@ -721,40 +772,6 @@
     "repo_name": "2026-1-Mapa_L.I.L.A.S"
   },
   {
-    "sha": "efe311d2aaace6db9bbfdef1c14a94522a3dbaa6",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2026-07-28T05:36:38Z",
-        "login": "github-actions[bot]"
-      },
-      "message": "chore: atualiza histórico de ingestão"
-    },
-    "additions": 12,
-    "deletions": 1,
-    "total_changes": 13,
-    "repo_name": "2026-1-Mapa_L.I.L.A.S"
-  },
-  {
-    "sha": "2c98187f3baa1c6551aa0716446c4727161106b2",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2026-07-26T05:52:50Z",
-        "login": "github-actions[bot]"
-      },
-      "message": "chore: atualiza métricas scrum [skip ci]"
-    },
-    "additions": 42,
-    "deletions": 52,
-    "total_changes": 94,
-    "repo_name": "2026-1-Mapa_L.I.L.A.S"
-  },
-  {
     "sha": "7e9cbdc6421474625084539c782130c58437bedf",
     "html_url": null,
     "commit": {
@@ -772,13 +789,13 @@
     "repo_name": "2026-1-Mapa_L.I.L.A.S"
   },
   {
-    "sha": "12dc696187757299b89bc28ab242ba0e2c758c1d",
+    "sha": "0fa892fbd0596a5e4c99d3319193adb731536870",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2026-07-24T05:54:10Z",
+        "date": "2026-07-23T05:57:56Z",
         "login": "github-actions[bot]"
       },
       "message": "chore: atualiza histórico de ingestão"
@@ -789,13 +806,13 @@
     "repo_name": "2026-1-Mapa_L.I.L.A.S"
   },
   {
-    "sha": "0fa892fbd0596a5e4c99d3319193adb731536870",
+    "sha": "12dc696187757299b89bc28ab242ba0e2c758c1d",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2026-07-23T05:57:56Z",
+        "date": "2026-07-24T05:54:10Z",
         "login": "github-actions[bot]"
       },
       "message": "chore: atualiza histórico de ingestão"

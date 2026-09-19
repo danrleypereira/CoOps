@@ -1,10 +1,129 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-18T10:23:58.226410",
+      "extracted_at": "2026-09-19T10:00:18.526098",
       "file_path": "data/bronze/commits_2026-2-AgendaUnB.json",
-      "record_count": 36
+      "record_count": 43
     }
+  },
+  {
+    "sha": "6b438efa9592bd9ebb392e7c544cedec226c93b6",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-19T03:19:34Z",
+        "login": "Thomas4ugust0"
+      },
+      "message": "fix: Merge da segunda página"
+    },
+    "additions": 30,
+    "deletions": 275,
+    "total_changes": 305,
+    "repo_name": "2026-2-AgendaUnB"
+  },
+  {
+    "sha": "476ad8ebfb7f787534e3d3267ccf0778d43f5943",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-19T02:56:15Z",
+        "login": "Thomas4ugust0"
+      },
+      "message": "Merge - Protótipo segunda página"
+    },
+    "additions": 754,
+    "deletions": 417,
+    "total_changes": 1171,
+    "repo_name": "2026-2-AgendaUnB"
+  },
+  {
+    "sha": "c417965a87ad29ec717f62216243b7ebf235c50d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-19T02:55:04Z",
+        "login": "Thomas4ugust0"
+      },
+      "message": "Merge branch 'main' into dev"
+    },
+    "additions": 354,
+    "deletions": 21,
+    "total_changes": 375,
+    "repo_name": "2026-2-AgendaUnB"
+  },
+  {
+    "sha": "d296d93d4c3e9216072c3e95ea52bc0c76be9443",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-19T02:39:09Z",
+        "login": "Bielziin07"
+      },
+      "message": "feat: Criação do protótipo da segunda página."
+    },
+    "additions": 184,
+    "deletions": 8,
+    "total_changes": 192,
+    "repo_name": "2026-2-AgendaUnB"
+  },
+  {
+    "sha": "355f501165919d062aa1f05b85b4fd56adeefaaa",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-18T08:32:00Z",
+        "login": "Thomas4ugust0"
+      },
+      "message": "fix: Organização de pastas"
+    },
+    "additions": 447,
+    "deletions": 1,
+    "total_changes": 448,
+    "repo_name": "2026-2-AgendaUnB"
+  },
+  {
+    "sha": "d436345b83401b4c1cb407a1bad7c4a774032758",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-18T08:13:03Z",
+        "login": "Thomas4ugust0"
+      },
+      "message": "fix: Correção de caminhos no mkdocs"
+    },
+    "additions": 693,
+    "deletions": 0,
+    "total_changes": 693,
+    "repo_name": "2026-2-AgendaUnB"
+  },
+  {
+    "sha": "2aa27198c7db22f4da8ca1f9af049e918b971f02",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-18T07:59:40Z",
+        "login": "Thomas4ugust0"
+      },
+      "message": "feat: Novo layout do front-end para entrada de visitantes"
+    },
+    "additions": 97,
+    "deletions": 363,
+    "total_changes": 460,
+    "repo_name": "2026-2-AgendaUnB"
   },
   {
     "sha": "a7fe3782612e44f0597fddd4180d69b891f84498",

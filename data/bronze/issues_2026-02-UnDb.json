@@ -1,7 +1,7 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-18T09:26:23.655152",
+      "extracted_at": "2026-09-19T09:09:45.689101",
       "file_path": "data/bronze/issues_2026-02-UnDb.json",
       "record_count": 48
     }
@@ -743,7 +743,7 @@
         "archived_by": null
       }
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignees": [],
     "milestone": {
@@ -776,18 +776,18 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 11,
-      "closed_issues": 0,
+      "open_issues": 7,
+      "closed_issues": 4,
       "state": "open",
       "created_at": "2026-09-05T20:19:25Z",
-      "updated_at": "2026-09-14T02:04:21Z",
+      "updated_at": "2026-09-18T21:17:25Z",
       "due_on": "2026-09-25T00:00:00Z",
       "closed_at": null
     },
-    "comments": 0,
+    "comments": 1,
     "created_at": "2026-09-05T17:48:06Z",
-    "updated_at": "2026-09-14T02:04:20Z",
-    "closed_at": null,
+    "updated_at": "2026-09-18T21:17:24Z",
+    "closed_at": "2026-09-18T21:17:24Z",
     "assignee": null,
     "author_association": "COLLABORATOR",
     "issue_field_values": [],
@@ -805,8 +805,28 @@
       "blocking": 0,
       "total_blocking": 0
     },
-    "body": "### 📚 Descrição e objetivo\n\nPermitir ao visitante comparar lado a lado professores que oferecem a mesma disciplina, com os cinco critérios agregados e ordenação pelo percentual de recomendação (RF12–RF13).\n\n### ✅ Critérios de aceite\n\n- [ ] A partir de uma disciplina, interface exibe os professores que a oferecem, conforme os dados institucionais disponíveis.\n- [ ] Exibe os cinco critérios agregados e a quantidade de avaliações de cada professor naquela disciplina (RF08–RF09).\n- [ ] Comparação é acessível sem cadastro (RF04).\n- [ ] Usuário consegue ordenar pelo percentual de recomendação, sem índice composto dos critérios.\n- [ ] Ausência de avaliações é explícita e não apresentada como nota ou recomendação zero (RF10).\n- [ ] Estado conflitante segue o resultado da agregação #40 (RF11).\n- [ ] Dificuldade e Chamada mantêm apresentação neutra, sem codificação de bom/ruim.\n- [ ] Há evidências da comparação com diferentes percentuais e de estados sem avaliações.\n\n### 📝 Tarefas\n\n- [ ] Alinhar contrato de dados com #40 e dados institucionais #25.\n- [ ] Implementar comparação usando estrutura #29 e padrão visual #31.\n- [ ] Integrar a navegação proveniente da busca #45.\n- [ ] Verificar comparação, ordenação, acesso público e estados de ausência de dados.\n\n### 📎 Dependências e pendências\n\n#25, #29, #31 e #40. A busca #45 é ponto de entrada; as duas tarefas podem avançar com contrato de navegação combinado. O detalhe de um professor continua em #43, sem duplicar a comparação.\n\nOrdenação somente por recomendação decrescente; empate usa total decrescente e nome alfabético. Resultados com menos de três avaliações ficam no final, sem percentual artificial e sem valores de critérios. Regras aprovadas pelo PO.\n\n### 👤 Planejamento\n\nEpic #14. Release 1. Responsável, prioridade e sprint: a definir na planning.\n\n### Decisão de produto aprovada\n\nNicolas (PO) aprovou em 13/09/2026, nesta revisão, Material por maioria + moda, substituição sem duplicata, ordenação apenas por recomendação e mínimo de três avaliações. Também aprovou desempates, half-up e tratamento de dados insuficientes, conforme docs/requisitos.md e specs.md atualizados. Esta decisão não representa conclusão da implementação.",
-    "closed_by": null,
+    "body": "### 📚 Descrição e objetivo\n\nPermitir ao visitante comparar lado a lado professores que oferecem a mesma disciplina, com os cinco critérios agregados e ordenação pelo percentual de recomendação (RF12–RF13).\n\n### ✅ Critérios de aceite\n\n- [x] A partir de uma disciplina, interface exibe os professores que a oferecem, conforme os dados institucionais disponíveis.\n- [x] Exibe os cinco critérios agregados e a quantidade de avaliações de cada professor naquela disciplina (RF08–RF09).\n- [x] Comparação é acessível sem cadastro (RF04).\n- [x] Usuário consegue ordenar pelo percentual de recomendação, sem índice composto dos critérios.\n- [x] Ausência de avaliações é explícita e não apresentada como nota ou recomendação zero (RF10).\n- [x] Estado conflitante segue o resultado da agregação #40 (RF11).\n- [x] Dificuldade e Chamada mantêm apresentação neutra, sem codificação de bom/ruim.\n- [x] Há evidências da comparação com diferentes percentuais e de estados sem avaliações.\n\n### 📝 Tarefas\n\n- [x] Alinhar contrato de dados com #40 e dados institucionais #25.\n- [x] Implementar comparação usando estrutura #29 e padrão visual #31.\n- [x] Integrar a navegação proveniente da busca #45.\n- [x] Verificar comparação, ordenação, acesso público e estados de ausência de dados.\n\n### 📎 Dependências e pendências\n\n#25, #29, #31 e #40. A busca #45 é ponto de entrada; as duas tarefas podem avançar com contrato de navegação combinado. O detalhe de um professor continua em #43, sem duplicar a comparação.\n\nOrdenação somente por recomendação decrescente; empate usa total decrescente e nome alfabético. Resultados com menos de três avaliações ficam no final, sem percentual artificial e sem valores de critérios. Regras aprovadas pelo PO.\n\n### 👤 Planejamento\n\nEpic #14. Release 1. Responsável, prioridade e sprint: a definir na planning.\n\n### Decisão de produto aprovada\n\nNicolas (PO) aprovou em 13/09/2026, nesta revisão, Material por maioria + moda, substituição sem duplicata, ordenação apenas por recomendação e mínimo de três avaliações. Também aprovou desempates, half-up e tratamento de dados insuficientes, conforme docs/requisitos.md e specs.md atualizados. Esta decisão não representa conclusão da implementação.",
+    "closed_by": {
+      "login": "nicolaszanin06",
+      "id": 213249676,
+      "node_id": "U_kgDODLXujA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/213249676?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nicolaszanin06",
+      "html_url": "https://github.com/nicolaszanin06",
+      "followers_url": "https://api.github.com/users/nicolaszanin06/followers",
+      "following_url": "https://api.github.com/users/nicolaszanin06/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nicolaszanin06/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nicolaszanin06/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nicolaszanin06/subscriptions",
+      "organizations_url": "https://api.github.com/users/nicolaszanin06/orgs",
+      "repos_url": "https://api.github.com/users/nicolaszanin06/repos",
+      "events_url": "https://api.github.com/users/nicolaszanin06/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nicolaszanin06/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
     "reactions": {
       "url": "https://api.github.com/repos/unb-mds/2026-02-UnDb/issues/51/reactions",
       "total_count": 0,
@@ -821,7 +841,7 @@
     },
     "timeline_url": "https://api.github.com/repos/unb-mds/2026-02-UnDb/issues/51/timeline",
     "performed_via_github_app": null,
-    "state_reason": null,
+    "state_reason": "completed",
     "pinned_comment": null,
     "repo_name": "2026-02-UnDb"
   },
@@ -914,11 +934,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 11,
-      "closed_issues": 0,
+      "open_issues": 7,
+      "closed_issues": 4,
       "state": "open",
       "created_at": "2026-09-05T20:19:25Z",
-      "updated_at": "2026-09-14T02:04:21Z",
+      "updated_at": "2026-09-18T21:17:25Z",
       "due_on": "2026-09-25T00:00:00Z",
       "closed_at": null
     },
@@ -1074,11 +1094,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 11,
-      "closed_issues": 0,
+      "open_issues": 7,
+      "closed_issues": 4,
       "state": "open",
       "created_at": "2026-09-05T20:19:25Z",
-      "updated_at": "2026-09-14T02:04:21Z",
+      "updated_at": "2026-09-18T21:17:25Z",
       "due_on": "2026-09-25T00:00:00Z",
       "closed_at": null
     },
@@ -1254,11 +1274,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 11,
-      "closed_issues": 0,
+      "open_issues": 7,
+      "closed_issues": 4,
       "state": "open",
       "created_at": "2026-09-05T20:19:25Z",
-      "updated_at": "2026-09-14T02:04:21Z",
+      "updated_at": "2026-09-18T21:17:25Z",
       "due_on": "2026-09-25T00:00:00Z",
       "closed_at": null
     },
@@ -1601,7 +1621,7 @@
         "archived_by": null
       }
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignees": [
       {
@@ -1656,18 +1676,18 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 11,
-      "closed_issues": 0,
+      "open_issues": 7,
+      "closed_issues": 4,
       "state": "open",
       "created_at": "2026-09-05T20:19:25Z",
-      "updated_at": "2026-09-14T02:04:21Z",
+      "updated_at": "2026-09-18T21:17:25Z",
       "due_on": "2026-09-25T00:00:00Z",
       "closed_at": null
     },
-    "comments": 0,
+    "comments": 1,
     "created_at": "2026-09-05T02:57:57Z",
-    "updated_at": "2026-09-18T02:15:35Z",
-    "closed_at": null,
+    "updated_at": "2026-09-18T21:17:16Z",
+    "closed_at": "2026-09-18T21:17:16Z",
     "assignee": {
       "login": "warlleymedeiros",
       "id": 294646625,
@@ -1705,8 +1725,28 @@
       "blocking": 0,
       "total_blocking": 0
     },
-    "body": "## 📚 Descrição\nBusca de disciplina por nome ou por código, para o aluno que já sabe qual matéria\nquer cursar e precisa escolher entre os professores que a oferecem.\n\n## 🎯 Objetivo\nPermitir chegar à comparação de professores partindo da disciplina.\n\n## ✅ Requisitos (Critérios de Aceite)\n- [x] Busca aceita nome parcial e código\n- [ ] Resultado leva à comparação de professores daquela disciplina\n- [ ] Comportamento claro quando não há resultado\n\n## 📌 Prioridade\n- [ ] **Baixa:** Não impacta o fluxo principal.\n- [x] **Média:** Necessária para a continuidade do projeto.\n- [ ] **Alta:** Impacto direto na entrega da sprint.\n- [ ] **Urgente:** Bloqueia o time ou produção.\n\n## 📝 Checklist de Tarefas\n- [x] Endpoint de busca por disciplina\n- [ ] Campo de busca no frontend\n- [ ] Testar por nome e por código\n\n## 👤 Responsável\n\n\n## 📎 Anexo\n⚠️ Depende de: dados de disciplinas vindos da Epic SIGAA (#12)\n\n### Navegação para comparação\n\nA tela de comparação e ordenação é acompanhada na #51. Alinhar o contrato de navegação entre as tarefas; o endpoint de busca permanece nesta issue.",
-    "closed_by": null,
+    "body": "## 📚 Descrição\nBusca de disciplina por nome ou por código, para o aluno que já sabe qual matéria\nquer cursar e precisa escolher entre os professores que a oferecem.\n\n## 🎯 Objetivo\nPermitir chegar à comparação de professores partindo da disciplina.\n\n## ✅ Requisitos (Critérios de Aceite)\n- [x] Busca aceita nome parcial e código\n- [x] Resultado leva à comparação de professores daquela disciplina\n- [x] Comportamento claro quando não há resultado\n\n## 📌 Prioridade\n- [ ] **Baixa:** Não impacta o fluxo principal.\n- [x] **Média:** Necessária para a continuidade do projeto.\n- [ ] **Alta:** Impacto direto na entrega da sprint.\n- [ ] **Urgente:** Bloqueia o time ou produção.\n\n## 📝 Checklist de Tarefas\n- [x] Endpoint de busca por disciplina\n- [x] Campo de busca no frontend\n- [x] Testar por nome e por código\n\n## 👤 Responsável\n\n\n## 📎 Anexo\n⚠️ Depende de: dados de disciplinas vindos da Epic SIGAA (#12)\n\n### Navegação para comparação\n\nA tela de comparação e ordenação é acompanhada na #51. Alinhar o contrato de navegação entre as tarefas; o endpoint de busca permanece nesta issue.",
+    "closed_by": {
+      "login": "nicolaszanin06",
+      "id": 213249676,
+      "node_id": "U_kgDODLXujA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/213249676?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nicolaszanin06",
+      "html_url": "https://github.com/nicolaszanin06",
+      "followers_url": "https://api.github.com/users/nicolaszanin06/followers",
+      "following_url": "https://api.github.com/users/nicolaszanin06/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nicolaszanin06/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nicolaszanin06/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nicolaszanin06/subscriptions",
+      "organizations_url": "https://api.github.com/users/nicolaszanin06/orgs",
+      "repos_url": "https://api.github.com/users/nicolaszanin06/repos",
+      "events_url": "https://api.github.com/users/nicolaszanin06/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nicolaszanin06/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
     "reactions": {
       "url": "https://api.github.com/repos/unb-mds/2026-02-UnDb/issues/45/reactions",
       "total_count": 0,
@@ -1721,7 +1761,7 @@
     },
     "timeline_url": "https://api.github.com/repos/unb-mds/2026-02-UnDb/issues/45/timeline",
     "performed_via_github_app": null,
-    "state_reason": null,
+    "state_reason": "completed",
     "pinned_comment": null,
     "repo_name": "2026-02-UnDb"
   },
@@ -1792,7 +1832,7 @@
         "archived_by": null
       }
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignees": [
       {
@@ -1847,18 +1887,18 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 11,
-      "closed_issues": 0,
+      "open_issues": 7,
+      "closed_issues": 4,
       "state": "open",
       "created_at": "2026-09-05T20:19:25Z",
-      "updated_at": "2026-09-14T02:04:21Z",
+      "updated_at": "2026-09-18T21:17:25Z",
       "due_on": "2026-09-25T00:00:00Z",
       "closed_at": null
     },
-    "comments": 0,
+    "comments": 1,
     "created_at": "2026-09-05T02:57:42Z",
-    "updated_at": "2026-09-18T02:15:19Z",
-    "closed_at": null,
+    "updated_at": "2026-09-18T21:17:04Z",
+    "closed_at": "2026-09-18T21:17:04Z",
     "assignee": {
       "login": "warlleymedeiros",
       "id": 294646625,
@@ -1896,8 +1936,28 @@
       "blocking": 0,
       "total_blocking": 0
     },
-    "body": "## 📚 Descrição\nBusca de professor por nome, ponto de entrada mais comum do produto.\n\n## 🎯 Objetivo\nPermitir que o aluno chegue à página de um professor sem navegar por menus de curso.\n\n## ✅ Requisitos (Critérios de Aceite)\n- [x] Busca por nome parcial funciona\n- [ ] Resultado leva à tela de detalhe do professor\n- [ ] Comportamento claro quando não há resultado\n\n## 📌 Prioridade\n- [ ] **Baixa:** Não impacta o fluxo principal.\n- [ ] **Média:** Necessária para a continuidade do projeto.\n- [x] **Alta:** Impacto direto na entrega da sprint.\n- [ ] **Urgente:** Bloqueia o time ou produção.\n\n## 📝 Checklist de Tarefas\n- [x] Endpoint de busca\n- [ ] Campo de busca no frontend\n- [x] Testar com acentuação e nome parcial\n\n## 👤 Responsável\n\n\n## 📎 Anexo\n⚠️ Depende de: dados de professores vindos da Epic SIGAA (#12)",
-    "closed_by": null,
+    "body": "## 📚 Descrição\nBusca de professor por nome, ponto de entrada mais comum do produto.\n\n## 🎯 Objetivo\nPermitir que o aluno chegue à página de um professor sem navegar por menus de curso.\n\n## ✅ Requisitos (Critérios de Aceite)\n- [x] Busca por nome parcial funciona\n- [x] Resultado leva à tela de detalhe do professor\n- [x] Comportamento claro quando não há resultado\n\n## 📌 Prioridade\n- [ ] **Baixa:** Não impacta o fluxo principal.\n- [ ] **Média:** Necessária para a continuidade do projeto.\n- [x] **Alta:** Impacto direto na entrega da sprint.\n- [ ] **Urgente:** Bloqueia o time ou produção.\n\n## 📝 Checklist de Tarefas\n- [x] Endpoint de busca\n- [x] Campo de busca no frontend\n- [x] Testar com acentuação e nome parcial\n\n## 👤 Responsável\n\n\n## 📎 Anexo\n⚠️ Depende de: dados de professores vindos da Epic SIGAA (#12)",
+    "closed_by": {
+      "login": "nicolaszanin06",
+      "id": 213249676,
+      "node_id": "U_kgDODLXujA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/213249676?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nicolaszanin06",
+      "html_url": "https://github.com/nicolaszanin06",
+      "followers_url": "https://api.github.com/users/nicolaszanin06/followers",
+      "following_url": "https://api.github.com/users/nicolaszanin06/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nicolaszanin06/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nicolaszanin06/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nicolaszanin06/subscriptions",
+      "organizations_url": "https://api.github.com/users/nicolaszanin06/orgs",
+      "repos_url": "https://api.github.com/users/nicolaszanin06/repos",
+      "events_url": "https://api.github.com/users/nicolaszanin06/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nicolaszanin06/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
     "reactions": {
       "url": "https://api.github.com/repos/unb-mds/2026-02-UnDb/issues/44/reactions",
       "total_count": 0,
@@ -1912,7 +1972,7 @@
     },
     "timeline_url": "https://api.github.com/repos/unb-mds/2026-02-UnDb/issues/44/timeline",
     "performed_via_github_app": null,
-    "state_reason": null,
+    "state_reason": "completed",
     "pinned_comment": null,
     "repo_name": "2026-02-UnDb"
   },
@@ -1983,7 +2043,7 @@
         "archived_by": null
       }
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignees": [
       {
@@ -2038,18 +2098,18 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 11,
-      "closed_issues": 0,
+      "open_issues": 7,
+      "closed_issues": 4,
       "state": "open",
       "created_at": "2026-09-05T20:19:25Z",
-      "updated_at": "2026-09-14T02:04:21Z",
+      "updated_at": "2026-09-18T21:17:25Z",
       "due_on": "2026-09-25T00:00:00Z",
       "closed_at": null
     },
-    "comments": 0,
+    "comments": 1,
     "created_at": "2026-09-01T14:16:13Z",
-    "updated_at": "2026-09-17T20:15:59Z",
-    "closed_at": null,
+    "updated_at": "2026-09-18T21:16:54Z",
+    "closed_at": "2026-09-18T21:16:54Z",
     "assignee": {
       "login": "ViniGvdo",
       "id": 198657137,
@@ -2087,8 +2147,28 @@
       "blocking": 0,
       "total_blocking": 0
     },
-    "body": "## 📚 Descrição\nTela que mostra um professor em uma disciplina, com os cinco critérios agregados.\nA comparação entre professores é acompanhada na #51.\n\n## 🎯 Objetivo\nDar ao aluno a informação consolidada sobre um professor antes de se matricular.\n\n## ✅ Requisitos (Critérios de Aceite)\n- [ ] Exibe os critérios agregados a partir de três avaliações; abaixo disso mostra total e dados insuficientes, sem valores de critérios, consumindo o endpoint real\n- [ ] Exibe quantas avaliações sustentam o resultado\n- [ ] Dificuldade e Chamada NÃO usam codificação de valor (vermelho/verde, alerta, ranking)\n- [ ] Estado \"conflitante\" é exibido de forma compreensível\n\n## 📌 Prioridade\n- [ ] **Baixa:** Não impacta o fluxo principal.\n- [ ] **Média:** Necessária para a continuidade do projeto.\n- [x] **Alta:** Impacto direto na entrega da sprint.\n- [ ] **Urgente:** Bloqueia o time ou produção.\n\n## 📝 Checklist de Tarefas\n- [ ] Criar tela seguindo padrão visual da Epic Frontend (#31)\n- [ ] Consumir endpoint de consulta agregada\n- [ ] Testar exibição com poucos dados\n\n## 👤 Responsável\n\n\n## 📎 Anexo\n⚠️ Depende de: #40 e estrutura inicial do Frontend (#29)\n⚠️ Restrição de apresentação: Dificuldade e Chamada não têm direção boa/ruim.\n\"Difícil\" é sinal de matéria séria para muito aluno; chamada é desejada por uns\ne evitada por outros. Pintar de vermelho/verde distorce a informação.\n\n### Decisão de produto aprovada\n\nNicolas (PO) aprovou em 13/09/2026, nesta revisão, Material por maioria + moda, substituição sem duplicata, ordenação apenas por recomendação e mínimo de três avaliações. Também aprovou desempates, half-up e tratamento de dados insuficientes, conforme docs/requisitos.md e specs.md atualizados. Esta decisão não representa conclusão da implementação.",
-    "closed_by": null,
+    "body": "## 📚 Descrição\nTela que mostra um professor em uma disciplina, com os cinco critérios agregados.\nA comparação entre professores é acompanhada na #51.\n\n## 🎯 Objetivo\nDar ao aluno a informação consolidada sobre um professor antes de se matricular.\n\n## ✅ Requisitos (Critérios de Aceite)\n- [x] Exibe os critérios agregados a partir de três avaliações; abaixo disso mostra total e dados insuficientes, sem valores de critérios, consumindo o endpoint real\n- [x] Exibe quantas avaliações sustentam o resultado\n- [x] Dificuldade e Chamada NÃO usam codificação de valor (vermelho/verde, alerta, ranking)\n- [x] Estado \"conflitante\" é exibido de forma compreensível\n\n## 📌 Prioridade\n- [ ] **Baixa:** Não impacta o fluxo principal.\n- [ ] **Média:** Necessária para a continuidade do projeto.\n- [x] **Alta:** Impacto direto na entrega da sprint.\n- [ ] **Urgente:** Bloqueia o time ou produção.\n\n## 📝 Checklist de Tarefas\n- [x] Criar tela seguindo padrão visual da Epic Frontend (#31)\n- [x] Consumir endpoint de consulta agregada\n- [x] Testar exibição com poucos dados\n\n## 👤 Responsável\n\n\n## 📎 Anexo\n⚠️ Depende de: #40 e estrutura inicial do Frontend (#29)\n⚠️ Restrição de apresentação: Dificuldade e Chamada não têm direção boa/ruim.\n\"Difícil\" é sinal de matéria séria para muito aluno; chamada é desejada por uns\ne evitada por outros. Pintar de vermelho/verde distorce a informação.\n\n### Decisão de produto aprovada\n\nNicolas (PO) aprovou em 13/09/2026, nesta revisão, Material por maioria + moda, substituição sem duplicata, ordenação apenas por recomendação e mínimo de três avaliações. Também aprovou desempates, half-up e tratamento de dados insuficientes, conforme docs/requisitos.md e specs.md atualizados. Esta decisão não representa conclusão da implementação.",
+    "closed_by": {
+      "login": "nicolaszanin06",
+      "id": 213249676,
+      "node_id": "U_kgDODLXujA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/213249676?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nicolaszanin06",
+      "html_url": "https://github.com/nicolaszanin06",
+      "followers_url": "https://api.github.com/users/nicolaszanin06/followers",
+      "following_url": "https://api.github.com/users/nicolaszanin06/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nicolaszanin06/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nicolaszanin06/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nicolaszanin06/subscriptions",
+      "organizations_url": "https://api.github.com/users/nicolaszanin06/orgs",
+      "repos_url": "https://api.github.com/users/nicolaszanin06/repos",
+      "events_url": "https://api.github.com/users/nicolaszanin06/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nicolaszanin06/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
     "reactions": {
       "url": "https://api.github.com/repos/unb-mds/2026-02-UnDb/issues/43/reactions",
       "total_count": 0,
@@ -2103,7 +2183,7 @@
     },
     "timeline_url": "https://api.github.com/repos/unb-mds/2026-02-UnDb/issues/43/timeline",
     "performed_via_github_app": null,
-    "state_reason": null,
+    "state_reason": "completed",
     "pinned_comment": null,
     "repo_name": "2026-02-UnDb"
   },
@@ -2229,11 +2309,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 11,
-      "closed_issues": 0,
+      "open_issues": 7,
+      "closed_issues": 4,
       "state": "open",
       "created_at": "2026-09-05T20:19:25Z",
-      "updated_at": "2026-09-14T02:04:21Z",
+      "updated_at": "2026-09-18T21:17:25Z",
       "due_on": "2026-09-25T00:00:00Z",
       "closed_at": null
     },
@@ -2517,11 +2597,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 6,
-      "closed_issues": 3,
+      "open_issues": 3,
+      "closed_issues": 6,
       "state": "open",
       "created_at": "2026-09-05T20:18:14Z",
-      "updated_at": "2026-09-17T22:10:50Z",
+      "updated_at": "2026-09-19T01:21:43Z",
       "due_on": "2026-09-18T00:00:00Z",
       "closed_at": null
     },
@@ -2749,11 +2829,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 11,
-      "closed_issues": 0,
+      "open_issues": 7,
+      "closed_issues": 4,
       "state": "open",
       "created_at": "2026-09-05T20:19:25Z",
-      "updated_at": "2026-09-14T02:04:21Z",
+      "updated_at": "2026-09-18T21:17:25Z",
       "due_on": "2026-09-25T00:00:00Z",
       "closed_at": null
     },
@@ -2951,11 +3031,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 6,
-      "closed_issues": 3,
+      "open_issues": 3,
+      "closed_issues": 6,
       "state": "open",
       "created_at": "2026-09-05T20:18:14Z",
-      "updated_at": "2026-09-17T22:10:50Z",
+      "updated_at": "2026-09-19T01:21:43Z",
       "due_on": "2026-09-18T00:00:00Z",
       "closed_at": null
     },
@@ -3204,11 +3284,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 6,
-      "closed_issues": 3,
+      "open_issues": 3,
+      "closed_issues": 6,
       "state": "open",
       "created_at": "2026-09-05T20:18:14Z",
-      "updated_at": "2026-09-17T22:10:50Z",
+      "updated_at": "2026-09-19T01:21:43Z",
       "due_on": "2026-09-18T00:00:00Z",
       "closed_at": null
     },
@@ -3427,11 +3507,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 6,
-      "closed_issues": 3,
+      "open_issues": 3,
+      "closed_issues": 6,
       "state": "open",
       "created_at": "2026-09-05T20:18:14Z",
-      "updated_at": "2026-09-17T22:10:50Z",
+      "updated_at": "2026-09-19T01:21:43Z",
       "due_on": "2026-09-18T00:00:00Z",
       "closed_at": null
     },
@@ -3850,11 +3930,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 6,
-      "closed_issues": 3,
+      "open_issues": 3,
+      "closed_issues": 6,
       "state": "open",
       "created_at": "2026-09-05T20:18:14Z",
-      "updated_at": "2026-09-17T22:10:50Z",
+      "updated_at": "2026-09-19T01:21:43Z",
       "due_on": "2026-09-18T00:00:00Z",
       "closed_at": null
     },
@@ -4305,7 +4385,7 @@
         "archived_by": null
       }
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignees": [
       {
@@ -4360,18 +4440,18 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 6,
-      "closed_issues": 3,
+      "open_issues": 3,
+      "closed_issues": 6,
       "state": "open",
       "created_at": "2026-09-05T20:18:14Z",
-      "updated_at": "2026-09-17T22:10:50Z",
+      "updated_at": "2026-09-19T01:21:43Z",
       "due_on": "2026-09-18T00:00:00Z",
       "closed_at": null
     },
     "comments": 0,
     "created_at": "2026-09-01T13:32:21Z",
-    "updated_at": "2026-09-14T01:14:26Z",
-    "closed_at": null,
+    "updated_at": "2026-09-19T01:21:43Z",
+    "closed_at": "2026-09-19T01:21:43Z",
     "assignee": {
       "login": "ViniGvdo",
       "id": 198657137,
@@ -4409,8 +4489,28 @@
       "blocking": 0,
       "total_blocking": 0
     },
-    "body": "## 📚 Descrição\nDefinição de um padrão visual básico para o produto — paleta de cores, tipografia e layout geral — a ser seguido nas telas que forem construídas nas próximas Epics.\n\n## 🎯 Objetivo\nEvitar que cada membro do time crie telas com estilos visuais inconsistentes entre si.\n\n## ✅ Requisitos (Critérios de Aceite)\n- [ ] Paleta de cores definida\n- [ ] Tipografia definida\n- [ ] Layout base (header, espaçamentos, etc.) esboçado\n\n## 📌 Prioridade\n- [x] **Baixa**\n- [ ] **Média**\n- [ ] **Alta**\n- [ ] **Urgente**\n\n## 📝 Checklist de Tarefas\n- [ ] Pesquisar referências visuais simples (outros projetos MDS, ex: `SuaGradeUnB`)\n- [ ] Definir paleta e tipografia\n- [ ] Documentar padrão em `frontend/README.md` ou similar\n\n## 👤 Responsável\n\n\n## 📎 Anexo\n\n\n---\n> Template adaptado de (https://github.com/unb-mds/2026.1-ContraDito)",
-    "closed_by": null,
+    "body": "## 📚 Descrição\nDefinição de um padrão visual básico para o produto — paleta de cores, tipografia e layout geral — a ser seguido nas telas que forem construídas nas próximas Epics.\n\n## 🎯 Objetivo\nEvitar que cada membro do time crie telas com estilos visuais inconsistentes entre si.\n\n## ✅ Requisitos (Critérios de Aceite)\n- [x] Paleta de cores definida\n- [x] Tipografia definida\n- [x] Layout base (header, espaçamentos, etc.) esboçado\n\n## 📌 Prioridade\n- [x] **Baixa**\n- [ ] **Média**\n- [ ] **Alta**\n- [ ] **Urgente**\n\n## 📝 Checklist de Tarefas\n- [x] Pesquisar referências visuais simples (outros projetos MDS, ex: `SuaGradeUnB`)\n- [x] Definir paleta e tipografia\n- [x] Documentar padrão em `frontend/README.md` ou similar\n\n## 👤 Responsável\n\n\n## 📎 Anexo\n\n\n---\n> Template adaptado de (https://github.com/unb-mds/2026.1-ContraDito)",
+    "closed_by": {
+      "login": "nicolaszanin06",
+      "id": 213249676,
+      "node_id": "U_kgDODLXujA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/213249676?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nicolaszanin06",
+      "html_url": "https://github.com/nicolaszanin06",
+      "followers_url": "https://api.github.com/users/nicolaszanin06/followers",
+      "following_url": "https://api.github.com/users/nicolaszanin06/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nicolaszanin06/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nicolaszanin06/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nicolaszanin06/subscriptions",
+      "organizations_url": "https://api.github.com/users/nicolaszanin06/orgs",
+      "repos_url": "https://api.github.com/users/nicolaszanin06/repos",
+      "events_url": "https://api.github.com/users/nicolaszanin06/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nicolaszanin06/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
     "reactions": {
       "url": "https://api.github.com/repos/unb-mds/2026-02-UnDb/issues/31/reactions",
       "total_count": 0,
@@ -4425,7 +4525,7 @@
     },
     "timeline_url": "https://api.github.com/repos/unb-mds/2026-02-UnDb/issues/31/timeline",
     "performed_via_github_app": null,
-    "state_reason": null,
+    "state_reason": "completed",
     "pinned_comment": null,
     "repo_name": "2026-02-UnDb"
   },
@@ -4496,7 +4596,7 @@
         "archived_by": null
       }
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignees": [
       {
@@ -4551,18 +4651,18 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 6,
-      "closed_issues": 3,
+      "open_issues": 3,
+      "closed_issues": 6,
       "state": "open",
       "created_at": "2026-09-05T20:18:14Z",
-      "updated_at": "2026-09-17T22:10:50Z",
+      "updated_at": "2026-09-19T01:21:43Z",
       "due_on": "2026-09-18T00:00:00Z",
       "closed_at": null
     },
-    "comments": 0,
+    "comments": 1,
     "created_at": "2026-09-01T13:32:06Z",
-    "updated_at": "2026-09-14T01:14:22Z",
-    "closed_at": null,
+    "updated_at": "2026-09-18T21:16:24Z",
+    "closed_at": "2026-09-18T21:16:24Z",
     "assignee": {
       "login": "ViniGvdo",
       "id": 198657137,
@@ -4600,8 +4700,28 @@
       "blocking": 0,
       "total_blocking": 0
     },
-    "body": "## 📚 Descrição\nImplementação de uma tela simples que consome um endpoint real do backend FastAPI (ex: `/health` ou `/avaliacoes`), validando a integração ponta a ponta entre frontend e backend.\n\n## 🎯 Objetivo\nProvar que a separação frontend/backend funciona na prática antes de construir as telas definitivas de produto.\n\n## ✅ Requisitos (Critérios de Aceite)\n- [ ] Tela faz uma requisição real via `fetch()` (ou equivalente) a um endpoint do backend\n- [ ] Dados retornados são exibidos na tela\n- [ ] Erros de requisição são tratados de forma visível ao usuário\n\n## 📌 Prioridade\n- [ ] **Baixa**\n- [x] **Média**\n- [ ] **Alta**\n- [ ] **Urgente**\n\n## 📝 Checklist de Tarefas\n- [ ] Escolher endpoint de exemplo para consumir\n- [ ] Implementar chamada e renderização dos dados\n- [ ] Testar com backend rodando localmente\n\n## 👤 Responsável\n\n\n## 📎 Anexo\nDepende de: estrutura inicial do projeto (issue anterior)\n\n---\n> Template adaptado de (https://github.com/unb-mds/2026.1-ContraDito)",
-    "closed_by": null,
+    "body": "## 📚 Descrição\nImplementação de uma tela simples que consome um endpoint real do backend FastAPI (ex: `/health` ou `/avaliacoes`), validando a integração ponta a ponta entre frontend e backend.\n\n## 🎯 Objetivo\nProvar que a separação frontend/backend funciona na prática antes de construir as telas definitivas de produto.\n\n## ✅ Requisitos (Critérios de Aceite)\n- [x] Tela faz uma requisição real via `fetch()` (ou equivalente) a um endpoint do backend\n- [x] Dados retornados são exibidos na tela\n- [x] Erros de requisição são tratados de forma visível ao usuário\n\n## 📌 Prioridade\n- [ ] **Baixa**\n- [x] **Média**\n- [ ] **Alta**\n- [ ] **Urgente**\n\n## 📝 Checklist de Tarefas\n- [x] Escolher endpoint de exemplo para consumir\n- [x] Implementar chamada e renderização dos dados\n- [x] Testar com backend rodando localmente\n\n## 👤 Responsável\n\n\n## 📎 Anexo\nDepende de: estrutura inicial do projeto (issue anterior)\n\n---\n> Template adaptado de (https://github.com/unb-mds/2026.1-ContraDito)\n\n### Decisão de encerramento\n\nA prova de integração deixou de ser uma tela descartável: as telas reais entregues nas #44 e #45 consomem a API, exibem os dados e tratam estados de erro e ausência. A comparação integrada é acompanhada na #51.",
+    "closed_by": {
+      "login": "nicolaszanin06",
+      "id": 213249676,
+      "node_id": "U_kgDODLXujA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/213249676?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nicolaszanin06",
+      "html_url": "https://github.com/nicolaszanin06",
+      "followers_url": "https://api.github.com/users/nicolaszanin06/followers",
+      "following_url": "https://api.github.com/users/nicolaszanin06/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nicolaszanin06/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nicolaszanin06/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nicolaszanin06/subscriptions",
+      "organizations_url": "https://api.github.com/users/nicolaszanin06/orgs",
+      "repos_url": "https://api.github.com/users/nicolaszanin06/repos",
+      "events_url": "https://api.github.com/users/nicolaszanin06/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nicolaszanin06/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
     "reactions": {
       "url": "https://api.github.com/repos/unb-mds/2026-02-UnDb/issues/30/reactions",
       "total_count": 0,
@@ -4616,7 +4736,7 @@
     },
     "timeline_url": "https://api.github.com/repos/unb-mds/2026-02-UnDb/issues/30/timeline",
     "performed_via_github_app": null,
-    "state_reason": null,
+    "state_reason": "completed",
     "pinned_comment": null,
     "repo_name": "2026-02-UnDb"
   },
@@ -4687,7 +4807,7 @@
         "archived_by": null
       }
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignees": [
       {
@@ -4742,18 +4862,18 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 6,
-      "closed_issues": 3,
+      "open_issues": 3,
+      "closed_issues": 6,
       "state": "open",
       "created_at": "2026-09-05T20:18:14Z",
-      "updated_at": "2026-09-17T22:10:50Z",
+      "updated_at": "2026-09-19T01:21:43Z",
       "due_on": "2026-09-18T00:00:00Z",
       "closed_at": null
     },
-    "comments": 0,
+    "comments": 1,
     "created_at": "2026-09-01T13:31:49Z",
-    "updated_at": "2026-09-14T01:56:31Z",
-    "closed_at": null,
+    "updated_at": "2026-09-18T21:15:01Z",
+    "closed_at": "2026-09-18T21:08:54Z",
     "assignee": {
       "login": "ViniGvdo",
       "id": 198657137,
@@ -4791,8 +4911,28 @@
       "blocking": 0,
       "total_blocking": 0
     },
-    "body": "## 📚 Descrição\nCriação da estrutura inicial de pastas e arquivos do projeto frontend, seguindo a stack decidida, espelhando a separação visual `backend/` + `frontend/` já usada no repositório.\n\n## 🎯 Objetivo\nTer uma base mínima organizada para que qualquer membro do time consiga começar a criar telas sem precisar decidir onde cada arquivo vai.\n\n## ✅ Requisitos (Critérios de Aceite)\n- [ ] Pasta `frontend/` criada na raiz do repositório\n- [ ] Estrutura de arquivos inicial condizente com a stack escolhida\n- [ ] Instruções de como rodar localmente adicionadas ao `README.md`\n\n## 📌 Prioridade\n- [ ] **Baixa**\n- [ ] **Média**\n- [x] **Alta**\n- [ ] **Urgente**\n\n## 📝 Checklist de Tarefas\n- [ ] Criar pasta `frontend/` e arquivos base\n- [ ] Adicionar instruções de execução local no README\n- [ ] Validar que a estrutura roda sem erro (ex: abrir `index.html` ou servidor local)\n\n## 👤 Responsável\n\n\n## 📎 Anexo\nStack aprovada na #28: Next.js + Tailwind CSS. O scaffold local pode avançar; execução/deploy definitivo é tratado separadamente na #36.\n\n---\n> Template adaptado de (https://github.com/unb-mds/2026.1-ContraDito)[FRONTEND] Criar estrutura inicial do projeto",
-    "closed_by": null,
+    "body": "## 📚 Descrição\nCriação da estrutura inicial de pastas e arquivos do projeto frontend, seguindo a stack decidida, espelhando a separação visual `backend/` + `frontend/` já usada no repositório.\n\n## 🎯 Objetivo\nTer uma base mínima organizada para que qualquer membro do time consiga começar a criar telas sem precisar decidir onde cada arquivo vai.\n\n## ✅ Requisitos (Critérios de Aceite)\n- [x] Pasta `frontend/` criada na raiz do repositório\n- [x] Estrutura de arquivos inicial condizente com a stack escolhida\n- [x] Instruções de como rodar localmente adicionadas ao `README.md`\n\n## 📌 Prioridade\n- [ ] **Baixa**\n- [ ] **Média**\n- [x] **Alta**\n- [ ] **Urgente**\n\n## 📝 Checklist de Tarefas\n- [x] Criar pasta `frontend/` e arquivos base\n- [x] Adicionar instruções de execução local no README\n- [x] Validar que a estrutura roda sem erro (ex: abrir `index.html` ou servidor local)\n\n## 👤 Responsável\n\n\n## 📎 Anexo\nStack aprovada na #28: Next.js + Tailwind CSS. O scaffold local pode avançar; execução/deploy definitivo é tratado separadamente na #36.\n\n---\n> Template adaptado de (https://github.com/unb-mds/2026.1-ContraDito)[FRONTEND] Criar estrutura inicial do projeto",
+    "closed_by": {
+      "login": "nicolaszanin06",
+      "id": 213249676,
+      "node_id": "U_kgDODLXujA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/213249676?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nicolaszanin06",
+      "html_url": "https://github.com/nicolaszanin06",
+      "followers_url": "https://api.github.com/users/nicolaszanin06/followers",
+      "following_url": "https://api.github.com/users/nicolaszanin06/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nicolaszanin06/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nicolaszanin06/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nicolaszanin06/subscriptions",
+      "organizations_url": "https://api.github.com/users/nicolaszanin06/orgs",
+      "repos_url": "https://api.github.com/users/nicolaszanin06/repos",
+      "events_url": "https://api.github.com/users/nicolaszanin06/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nicolaszanin06/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
     "reactions": {
       "url": "https://api.github.com/repos/unb-mds/2026-02-UnDb/issues/29/reactions",
       "total_count": 0,
@@ -4807,7 +4947,7 @@
     },
     "timeline_url": "https://api.github.com/repos/unb-mds/2026-02-UnDb/issues/29/timeline",
     "performed_via_github_app": null,
-    "state_reason": null,
+    "state_reason": "completed",
     "pinned_comment": null,
     "repo_name": "2026-02-UnDb"
   },
@@ -5155,11 +5295,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 11,
-      "closed_issues": 0,
+      "open_issues": 7,
+      "closed_issues": 4,
       "state": "open",
       "created_at": "2026-09-05T20:19:25Z",
-      "updated_at": "2026-09-14T02:04:21Z",
+      "updated_at": "2026-09-18T21:17:25Z",
       "due_on": "2026-09-25T00:00:00Z",
       "closed_at": null
     },
@@ -5357,11 +5497,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 11,
-      "closed_issues": 0,
+      "open_issues": 7,
+      "closed_issues": 4,
       "state": "open",
       "created_at": "2026-09-05T20:19:25Z",
-      "updated_at": "2026-09-14T02:04:21Z",
+      "updated_at": "2026-09-18T21:17:25Z",
       "due_on": "2026-09-25T00:00:00Z",
       "closed_at": null
     },
@@ -5590,11 +5730,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 6,
-      "closed_issues": 3,
+      "open_issues": 3,
+      "closed_issues": 6,
       "state": "open",
       "created_at": "2026-09-05T20:18:14Z",
-      "updated_at": "2026-09-17T22:10:50Z",
+      "updated_at": "2026-09-19T01:21:43Z",
       "due_on": "2026-09-18T00:00:00Z",
       "closed_at": null
     },
@@ -7721,8 +7861,8 @@
     "active_lock_reason": null,
     "sub_issues_summary": {
       "total": 12,
-      "completed": 3,
-      "percent_completed": 25
+      "completed": 7,
+      "percent_completed": 58
     },
     "issue_dependencies_summary": {
       "blocked_by": 0,
@@ -7907,8 +8047,8 @@
     "active_lock_reason": null,
     "sub_issues_summary": {
       "total": 4,
-      "completed": 1,
-      "percent_completed": 25
+      "completed": 4,
+      "percent_completed": 100
     },
     "issue_dependencies_summary": {
       "blocked_by": 0,

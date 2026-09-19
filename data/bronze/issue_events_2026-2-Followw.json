@@ -1,9 +1,21 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-18T09:26:21.649716",
+      "extracted_at": "2026-09-19T09:09:43.960849",
       "file_path": "data/bronze/issue_events_2026-2-Followw.json",
-      "record_count": 104
+      "record_count": 105
+    }
+  },
+  {
+    "id": 31432028330,
+    "event": "convert_to_draft",
+    "created_at": "2026-09-19T03:42:36Z",
+    "repo_name": "2026-2-Followw",
+    "actor": {
+      "login": "eliabexp"
+    },
+    "issue": {
+      "number": 17
     }
   },
   {
