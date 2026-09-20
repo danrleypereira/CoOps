@@ -1,7 +1,7 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-19T10:05:04.340907",
+      "extracted_at": "2026-09-20T10:37:12.037008",
       "file_path": "data/gold/timeline_last_12_months.json",
       "record_count": 13
     }
@@ -9927,12 +9927,12 @@
   },
   {
     "date": "2026-09",
-    "total_events": 4192,
-    "issues_created": 291,
-    "issues_closed": 186,
-    "prs_created": 138,
-    "prs_closed": 148,
-    "commits": 660,
+    "total_events": 4365,
+    "issues_created": 299,
+    "issues_closed": 197,
+    "prs_created": 148,
+    "prs_closed": 161,
+    "commits": 690,
     "comments": 0,
     "unique_users": 40,
     "unique_repos": 19,
@@ -9963,7 +9963,7 @@
       },
       {
         "name": "github-actions[bot]",
-        "commits": 136,
+        "commits": 140,
         "issues_created": 1,
         "issues_closed": 0,
         "prs_created": 0,
@@ -10000,7 +10000,7 @@
       },
       {
         "name": "actions-user",
-        "commits": 19,
+        "commits": 20,
         "issues_created": 0,
         "issues_closed": 0,
         "prs_created": 0,
@@ -10042,9 +10042,9 @@
         "name": "nicolaszanin06",
         "commits": 63,
         "issues_created": 31,
-        "issues_closed": 21,
-        "prs_created": 14,
-        "prs_closed": 17,
+        "issues_closed": 22,
+        "prs_created": 15,
+        "prs_closed": 18,
         "comments": 0,
         "repositories": [
           "2026-02-UnDb"
@@ -10198,11 +10198,11 @@
       },
       {
         "name": "Vitor-Trancoso",
-        "commits": 27,
-        "issues_created": 5,
-        "issues_closed": 2,
-        "prs_created": 10,
-        "prs_closed": 9,
+        "commits": 35,
+        "issues_created": 8,
+        "issues_closed": 5,
+        "prs_created": 11,
+        "prs_closed": 13,
         "comments": 0,
         "repositories": [
           "2025-1-NoFluxoUnB"
@@ -10314,11 +10314,11 @@
       },
       {
         "name": "eliabexp",
-        "commits": 4,
-        "issues_created": 13,
-        "issues_closed": 6,
+        "commits": 6,
+        "issues_created": 15,
+        "issues_closed": 9,
         "prs_created": 2,
-        "prs_closed": 1,
+        "prs_closed": 2,
         "comments": 0,
         "repositories": [
           "2026-2-Followw"
@@ -10376,7 +10376,7 @@
         "name": "Gustavo-0611",
         "commits": 45,
         "issues_created": 16,
-        "issues_closed": 14,
+        "issues_closed": 15,
         "prs_created": 0,
         "prs_closed": 0,
         "comments": 0,
@@ -10386,9 +10386,9 @@
       },
       {
         "name": "DanielAlmeidaFrota",
-        "commits": 44,
+        "commits": 45,
         "issues_created": 89,
-        "issues_closed": 37,
+        "issues_closed": 38,
         "prs_created": 0,
         "prs_closed": 0,
         "comments": 0,
@@ -10501,8 +10501,8 @@
         "commits": 3,
         "issues_created": 0,
         "issues_closed": 0,
-        "prs_created": 2,
-        "prs_closed": 2,
+        "prs_created": 3,
+        "prs_closed": 3,
         "comments": 0,
         "repositories": [
           "2026-02-UnDb"
@@ -10678,11 +10678,11 @@
       },
       {
         "name": "Isac-sil-mar",
-        "commits": 2,
+        "commits": 4,
         "issues_created": 0,
         "issues_closed": 0,
-        "prs_created": 1,
-        "prs_closed": 1,
+        "prs_created": 2,
+        "prs_closed": 2,
         "comments": 0,
         "repositories": [
           "Fique-de-Olho"
@@ -10733,8 +10733,8 @@
         "commits": 1,
         "issues_created": 0,
         "issues_closed": 0,
-        "prs_created": 4,
-        "prs_closed": 4,
+        "prs_created": 9,
+        "prs_closed": 7,
         "comments": 0,
         "repositories": [
           "2026-02-UnDb"
@@ -10767,9 +10767,9 @@
       },
       {
         "name": "MariaMacedoToledo",
-        "commits": 2,
-        "issues_created": 1,
-        "issues_closed": 1,
+        "commits": 6,
+        "issues_created": 3,
+        "issues_closed": 3,
         "prs_created": 0,
         "prs_closed": 0,
         "comments": 0,
@@ -10805,7 +10805,7 @@
       {
         "name": "hisarxt",
         "commits": 3,
-        "issues_created": 0,
+        "issues_created": 1,
         "issues_closed": 0,
         "prs_created": 1,
         "prs_closed": 1,
@@ -10997,11 +10997,11 @@
       },
       {
         "name": "Mendezalv",
-        "commits": 0,
+        "commits": 1,
         "issues_created": 0,
         "issues_closed": 0,
         "prs_created": 1,
-        "prs_closed": 0,
+        "prs_closed": 1,
         "comments": 0,
         "repositories": [
           "2026-2-Followw"
@@ -11041,6 +11041,18 @@
         "comments": 0,
         "repositories": [
           "2026-2-AgendaUnB"
+        ]
+      },
+      {
+        "name": "marilluantunes",
+        "commits": 7,
+        "issues_created": 0,
+        "issues_closed": 0,
+        "prs_created": 1,
+        "prs_closed": 1,
+        "comments": 0,
+        "repositories": [
+          "2026-2-Bandejao"
         ]
       }
     ]
