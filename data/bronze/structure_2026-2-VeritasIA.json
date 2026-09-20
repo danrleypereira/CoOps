@@ -2,7 +2,7 @@
   "owner": "unb-mds",
   "repository": "2026-2-VeritasIA",
   "branch": "main",
-  "sha": "9b6298b1f547c2588bc47062f06934c924d09df5",
+  "sha": "6437f2ca8e49d8fd8dafd9528218a387283e1af1",
   "tree": [
     {
       "name": ".github",
@@ -1082,7 +1082,7 @@
       "name": "docs",
       "path": "docs",
       "type": "directory",
-      "sha": "7e071e3f5752b53427412fcdd85e9ad955ec3ca3",
+      "sha": "c06a14a92dbeb53ce4e7d64c06623462ca680827",
       "mode": "040000",
       "children": []
     },
@@ -1530,7 +1530,7 @@
       "name": "productivity",
       "path": "docs/productivity",
       "type": "directory",
-      "sha": "e219639fbc4d454ac14082c8d364bcdc2fb8db52",
+      "sha": "6411892a5602866e9339f12eeaac47b63d48a75f",
       "mode": "040000",
       "children": []
     },
@@ -1548,7 +1548,7 @@
       "name": "metrics.json",
       "path": "docs/productivity/metrics.json",
       "type": "file",
-      "sha": "d449e2cb9b7f5e5fcb1cc55740e42af5bb22ba98",
+      "sha": "1cc2c86cf9cfd561582d275cf72c08d556437fa1",
       "mode": "100644",
       "extension": ".json",
       "size": 9673,
@@ -1890,7 +1890,7 @@
       "name": "scrapers",
       "path": "scrapers",
       "type": "directory",
-      "sha": "2946ae2151cda5e0bd7bc91b5af4fd0178ca7cf2",
+      "sha": "cf6e4e537933afdda690801ece74a66f8a164d0a",
       "mode": "040000",
       "children": []
     },
@@ -1936,7 +1936,7 @@
       "name": "resultados",
       "path": "scrapers/resultados",
       "type": "directory",
-      "sha": "cbd8caca59a4fbf8d035854958bce10a9fe6bd15",
+      "sha": "b12e92ee0ff029b5436c628e8205f86666416368",
       "mode": "040000",
       "children": []
     },
@@ -1944,30 +1944,30 @@
       "name": "cnn.json",
       "path": "scrapers/resultados/cnn.json",
       "type": "file",
-      "sha": "ebf69126414fac44debbdee466efd14f5d319e18",
+      "sha": "ed302cf4ce1ffc6ee139fd47d2a78611a3be9038",
       "mode": "100644",
       "extension": ".json",
-      "size": 11351,
+      "size": 3165,
       "is_binary": false
     },
     {
       "name": "g1.json",
       "path": "scrapers/resultados/g1.json",
       "type": "file",
-      "sha": "f42063d4d9f6eec77c214b6b97397dc41f0e909a",
+      "sha": "90f1c51d7db0b4f7c177c0bfa9ef66755c1120c2",
       "mode": "100644",
       "extension": ".json",
-      "size": 103744,
+      "size": 82628,
       "is_binary": false
     },
     {
       "name": "metropoles.json",
       "path": "scrapers/resultados/metropoles.json",
       "type": "file",
-      "sha": "311f0ce01cb03dc42a38095c7532b2cb8cbb1e81",
+      "sha": "a7f1fd6f4a510a048c679fdaa72f30870cbd194e",
       "mode": "100644",
       "extension": ".json",
-      "size": 7533,
+      "size": 3760,
       "is_binary": false
     },
     {
@@ -1984,10 +1984,10 @@
       "name": "resultados.json",
       "path": "scrapers/resultados/resultados.json",
       "type": "file",
-      "sha": "7cde4fce088ddb5fdd3e8aa7f6e8dce90d168b7e",
+      "sha": "96785e6bde20e2068e48e42d2da13893873f2dbc",
       "mode": "100644",
       "extension": ".json",
-      "size": 126026,
+      "size": 92251,
       "is_binary": false
     },
     {
@@ -2108,7 +2108,7 @@
     }
   ],
   "truncated": false,
-  "extracted_at": "2026-09-19T10:02:50.158542",
+  "extracted_at": "2026-09-20T10:35:25.944979",
   "method": "rest",
   "total_items": 220,
   "repository_metadata": {
@@ -2116,9 +2116,9 @@
     "full_name": "unb-mds/2026-2-VeritasIA",
     "description": "Monitoramento de noticias sobre feminicídio utilizando IA",
     "created_at": "2026-03-18T18:25:01Z",
-    "updated_at": "2026-09-19T02:13:20Z",
+    "updated_at": "2026-09-20T02:19:51Z",
     "language": "Python",
-    "size": 5964,
+    "size": 5998,
     "stars": 4,
     "forks": 0,
     "open_issues": 0

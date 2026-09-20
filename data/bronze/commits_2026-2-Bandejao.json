@@ -1,10 +1,129 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-19T10:00:23.545114",
+      "extracted_at": "2026-09-20T10:32:29.925709",
       "file_path": "data/bronze/commits_2026-2-Bandejao.json",
-      "record_count": 55
+      "record_count": 62
     }
+  },
+  {
+    "sha": "845b947cd96e96f4fb380f03077fba3acf29e2e2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-20T00:29:49Z",
+        "login": "marilluantunes"
+      },
+      "message": "Merge pull request #18 from unb-mds/6-estudo-frontend"
+    },
+    "additions": 264,
+    "deletions": 0,
+    "total_changes": 264,
+    "repo_name": "2026-2-Bandejao"
+  },
+  {
+    "sha": "a872dcb2fc78c62b90a574404e5fc764c22a6231",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-20T00:22:07Z",
+        "login": "marilluantunes"
+      },
+      "message": "docs: adiciona conclusão e as referências do estudo de frontend (#6)"
+    },
+    "additions": 15,
+    "deletions": 0,
+    "total_changes": 15,
+    "repo_name": "2026-2-Bandejao"
+  },
+  {
+    "sha": "6c8167649926b8e4a33763047e988586b1495655",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-19T23:52:18Z",
+        "login": "marilluantunes"
+      },
+      "message": "docs: adiciona comparação entre frameworks (#6)"
+    },
+    "additions": 40,
+    "deletions": 1,
+    "total_changes": 41,
+    "repo_name": "2026-2-Bandejao"
+  },
+  {
+    "sha": "390487151ed8e6d84900751f27f4065a3d66c2c3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-19T23:46:23Z",
+        "login": "marilluantunes"
+      },
+      "message": "docs: adiciona conceito de renderização (#6)"
+    },
+    "additions": 130,
+    "deletions": 0,
+    "total_changes": 130,
+    "repo_name": "2026-2-Bandejao"
+  },
+  {
+    "sha": "9cf1749feea9cca1f7084e7a5ebf597bb12f3572",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-19T22:06:22Z",
+        "login": "marilluantunes"
+      },
+      "message": "docs: adiciona conceito de estado (#6)"
+    },
+    "additions": 25,
+    "deletions": 0,
+    "total_changes": 25,
+    "repo_name": "2026-2-Bandejao"
+  },
+  {
+    "sha": "05b72250ac2a426bfdd7fa44909dd762cab7af73",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-19T21:30:02Z",
+        "login": "marilluantunes"
+      },
+      "message": "docs: ajusta exemplos e conceitos de componentes"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-2-Bandejao"
+  },
+  {
+    "sha": "a992aef6e5200dc4c9abae96f0260b97983e61c2",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-19T21:16:39Z",
+        "login": "marilluantunes"
+      },
+      "message": "docs: adiciona conceito de componentes (#6)"
+    },
+    "additions": 55,
+    "deletions": 0,
+    "total_changes": 55,
+    "repo_name": "2026-2-Bandejao"
   },
   {
     "sha": "0c5b6e11f05cfec84a02ae4cbba6ebf18ea38da0",

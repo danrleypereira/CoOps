@@ -1,10 +1,44 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-19T10:00:08.452169",
+      "extracted_at": "2026-09-20T10:32:13.813766",
       "file_path": "data/bronze/commits_Fique-de-Olho.json",
-      "record_count": 19
+      "record_count": 21
     }
+  },
+  {
+    "sha": "31817cdcd500d1ca3638bc2b3d84fb28c667db3e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-20T00:11:06Z",
+        "login": "Isac-sil-mar"
+      },
+      "message": "Merge pull request #17 from unb-mds/docs/complemento-arquitetura"
+    },
+    "additions": 25,
+    "deletions": 10,
+    "total_changes": 35,
+    "repo_name": "Fique-de-Olho"
+  },
+  {
+    "sha": "0d649117e7ce1e4fc2cfd4c901741f449ae0fb5d",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-19T23:51:19Z",
+        "login": "Isac-sil-mar"
+      },
+      "message": "docs: complementa estudo de arquitetura de software com atributos de …"
+    },
+    "additions": 25,
+    "deletions": 10,
+    "total_changes": 35,
+    "repo_name": "Fique-de-Olho"
   },
   {
     "sha": "4efdaa3e1163166abbcf37d4b58cb5f7f94f845b",

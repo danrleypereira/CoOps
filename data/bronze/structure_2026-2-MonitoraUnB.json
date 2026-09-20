@@ -2,7 +2,7 @@
   "owner": "unb-mds",
   "repository": "2026-2-MonitoraUnB",
   "branch": "main",
-  "sha": "a9463b76eef3ba1b00a489851c30e166452fed60",
+  "sha": "2d018db79e14ec8e27716a58560fbd536dd2bd92",
   "tree": [
     {
       "name": "README.md",
@@ -18,7 +18,7 @@
       "name": "docs",
       "path": "docs",
       "type": "directory",
-      "sha": "a72fa1acee49bf883a713b6ff439df94c939ec27",
+      "sha": "c5ebe59ac51685d1bf6a094c4a596079ca40a5ed",
       "mode": "040000",
       "children": []
     },
@@ -26,7 +26,7 @@
       "name": "estudos",
       "path": "docs/estudos",
       "type": "directory",
-      "sha": "8a0a59bc2f68db847ad74400a49697952a166a3b",
+      "sha": "c815a5a3de731f1f82f4db654dc84fdc39066ecc",
       "mode": "040000",
       "children": []
     },
@@ -81,6 +81,16 @@
       "is_binary": false
     },
     {
+      "name": "RequisitosAgeis.md",
+      "path": "docs/estudos/RequisitosAgeis.md",
+      "type": "file",
+      "sha": "3e5f5ba4ae08b497f020e915646bcb658c940cb2",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 9909,
+      "is_binary": false
+    },
+    {
       "name": "Skills.md",
       "path": "docs/estudos/Skills.md",
       "type": "file",
@@ -124,7 +134,7 @@
       "name": "sprints",
       "path": "docs/sprints",
       "type": "directory",
-      "sha": "9230da77357944fdfbaf12a0f9916f778dffc0bd",
+      "sha": "54a81937679a408d4580a690e723fbb37843b746",
       "mode": "040000",
       "children": []
     },
@@ -139,6 +149,16 @@
       "is_binary": false
     },
     {
+      "name": "sprint1.md",
+      "path": "docs/sprints/sprint1.md",
+      "type": "file",
+      "sha": "7a753a228434263d1bc894adf70982cb81cb23f5",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3765,
+      "is_binary": false
+    },
+    {
       "name": "sprint_template.md",
       "path": "docs/sprints/sprint_template.md",
       "type": "file",
@@ -150,17 +170,17 @@
     }
   ],
   "truncated": false,
-  "extracted_at": "2026-09-19T10:03:01.097879",
+  "extracted_at": "2026-09-20T10:35:38.526673",
   "method": "rest",
-  "total_items": 15,
+  "total_items": 17,
   "repository_metadata": {
     "id": 1338352709,
     "full_name": "unb-mds/2026-2-MonitoraUnB",
     "description": "Grupo G11 - Metodos de Desenvolvimento de Software 2026/2",
     "created_at": "2026-08-18T11:59:00Z",
-    "updated_at": "2026-09-16T15:27:42Z",
+    "updated_at": "2026-09-19T10:48:30Z",
     "language": null,
-    "size": 74,
+    "size": 89,
     "stars": 3,
     "forks": 0,
     "open_issues": 0

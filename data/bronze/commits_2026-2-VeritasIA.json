@@ -1,10 +1,44 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-19T09:57:13.980490",
+      "extracted_at": "2026-09-20T10:29:13.515645",
       "file_path": "data/bronze/commits_2026-2-VeritasIA.json",
-      "record_count": 525
+      "record_count": 527
     }
+  },
+  {
+    "sha": "6437f2ca8e49d8fd8dafd9528218a387283e1af1",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-20T02:19:46Z",
+        "login": "github-actions[bot]"
+      },
+      "message": "[bot] Métricas atualizadas"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "2026-2-VeritasIA"
+  },
+  {
+    "sha": "1d11043c4c7ebe894eb2e1a37d45abef5bba0215",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-20T01:45:06Z",
+        "login": "github-actions[bot]"
+      },
+      "message": "[bot] Atualizando resultados"
+    },
+    "additions": 85,
+    "deletions": 197,
+    "total_changes": 282,
+    "repo_name": "2026-2-VeritasIA"
   },
   {
     "sha": "9b6298b1f547c2588bc47062f06934c924d09df5",

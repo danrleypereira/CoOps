@@ -2,13 +2,121 @@
   "owner": "unb-mds",
   "repository": "2026-2-Followw",
   "branch": "main",
-  "sha": "e42994057f09e54289a011285c6f561ab0b31fab",
+  "sha": "e36f8a8bc83904d8727c42bd1c7d05245fd29581",
   "tree": [
+    {
+      "name": ".agents",
+      "path": ".agents",
+      "type": "directory",
+      "sha": "0f7b8f3d0cca1f88c0f8b3a768f18130898ab7ca",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "skills",
+      "path": ".agents/skills",
+      "type": "directory",
+      "sha": "3a8957d3bc7a673e4f305d74992fab03c8b2445f",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "codebase-design",
+      "path": ".agents/skills/codebase-design",
+      "type": "directory",
+      "sha": "344e3efc88ee60663b2e989555c2efdb548fbd42",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "DEEPENING.md",
+      "path": ".agents/skills/codebase-design/DEEPENING.md",
+      "type": "file",
+      "sha": "cd94075cfd754d147555c5d747a16431ed4c7dd8",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2553,
+      "is_binary": false
+    },
+    {
+      "name": "DESIGN-IT-TWICE.md",
+      "path": ".agents/skills/codebase-design/DESIGN-IT-TWICE.md",
+      "type": "file",
+      "sha": "7edc861a31b1b219b933af18079f66b564c5de67",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2664,
+      "is_binary": false
+    },
+    {
+      "name": "SKILL.md",
+      "path": ".agents/skills/codebase-design/SKILL.md",
+      "type": "file",
+      "sha": "3f63c8146dd2604b419c929e9876b90c30d410e9",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6446,
+      "is_binary": false
+    },
+    {
+      "name": "agents",
+      "path": ".agents/skills/codebase-design/agents",
+      "type": "directory",
+      "sha": "f4eed2af42f99ada31a12e14b19189aea4dcc72f",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "openai.yaml",
+      "path": ".agents/skills/codebase-design/agents/openai.yaml",
+      "type": "file",
+      "sha": "3180715edb37f6e96bec42f92f00169faa8886ef",
+      "mode": "100644",
+      "extension": ".yaml",
+      "size": 102,
+      "is_binary": false
+    },
+    {
+      "name": "to-spec",
+      "path": ".agents/skills/to-spec",
+      "type": "directory",
+      "sha": "136b9651747cfccbfbb7c50a6b0dfb757e7547d2",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "SKILL.md",
+      "path": ".agents/skills/to-spec/SKILL.md",
+      "type": "file",
+      "sha": "3f52599ae2a4347aee5a07432c2707518e691a7f",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 3043,
+      "is_binary": false
+    },
+    {
+      "name": "agents",
+      "path": ".agents/skills/to-spec/agents",
+      "type": "directory",
+      "sha": "7d1b433d25c266f934f4ade97a6bbd8525392ff9",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "openai.yaml",
+      "path": ".agents/skills/to-spec/agents/openai.yaml",
+      "type": "file",
+      "sha": "549e6f76f020a1b9ba65f52ccda336566ee6222a",
+      "mode": "100644",
+      "extension": ".yaml",
+      "size": 135,
+      "is_binary": false
+    },
     {
       "name": ".claude",
       "path": ".claude",
       "type": "directory",
-      "sha": "32237a3943a1bd132ee2e54686381db74fd7f655",
+      "sha": "7eaf5ed7ac0b68f979e06b3d9cd5cba9df190cf1",
       "mode": "040000",
       "children": []
     },
@@ -23,10 +131,48 @@
       "is_binary": false
     },
     {
+      "name": "skills",
+      "path": ".claude/skills",
+      "type": "directory",
+      "sha": "8b86df1de00972f55125e5212c3f856fe4873aff",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "codebase-design",
+      "path": ".claude/skills/codebase-design",
+      "type": "file",
+      "sha": "08b466ebb0afda554fe528bbb12407fb68dde7e2",
+      "mode": "120000",
+      "extension": "",
+      "size": 36,
+      "is_binary": false
+    },
+    {
+      "name": "to-spec",
+      "path": ".claude/skills/to-spec",
+      "type": "file",
+      "sha": "1fa4ba2a796a18f305f203e0b5a027f12ef344ed",
+      "mode": "120000",
+      "extension": "",
+      "size": 28,
+      "is_binary": false
+    },
+    {
+      "name": ".env.example",
+      "path": ".env.example",
+      "type": "file",
+      "sha": "4a9a32e4d901aa975d9a77c08ca68486522fce0c",
+      "mode": "100644",
+      "extension": ".example",
+      "size": 114,
+      "is_binary": false
+    },
+    {
       "name": ".github",
       "path": ".github",
       "type": "directory",
-      "sha": "925a41bb134ead18982b8a2bb58e6cd49d40836f",
+      "sha": "e1a5fcd64b579af8d8ff32706d5176633f1243b6",
       "mode": "040000",
       "children": []
     },
@@ -72,10 +218,20 @@
       "name": "PULL_REQUEST_TEMPLATE.md",
       "path": ".github/PULL_REQUEST_TEMPLATE.md",
       "type": "file",
-      "sha": "88e18b7c1a949171f8674db6e890fd9df868b8d2",
+      "sha": "319d09db58d1cf6c62ecee33f9703ca9ef1d2d39",
       "mode": "100644",
       "extension": ".md",
-      "size": 123,
+      "size": 133,
+      "is_binary": false
+    },
+    {
+      "name": ".gitignore",
+      "path": ".gitignore",
+      "type": "file",
+      "sha": "667492e7dec9da33b771483ee16f8899440c1004",
+      "mode": "100644",
+      "extension": ".gitignore",
+      "size": 41,
       "is_binary": false
     },
     {
@@ -97,6 +253,26 @@
       "is_binary": false
     },
     {
+      "name": "AGENTS.md",
+      "path": "AGENTS.md",
+      "type": "file",
+      "sha": "299edfbb638cbefb6c52176451e80ade5152bb5c",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 2215,
+      "is_binary": false
+    },
+    {
+      "name": "CLAUDE.md",
+      "path": "CLAUDE.md",
+      "type": "file",
+      "sha": "af075b0a3185e9883b3de028659cfb9fa5a6363a",
+      "mode": "120000",
+      "extension": ".md",
+      "size": 37,
+      "is_binary": false
+    },
+    {
       "name": "LICENSE",
       "path": "LICENSE",
       "type": "file",
@@ -110,17 +286,17 @@
       "name": "README.md",
       "path": "README.md",
       "type": "file",
-      "sha": "b67800c6e9648c246574d76d13bc4b6bf88455aa",
+      "sha": "561a9db2dc7a301ff599c99a7b2cd54198e36a94",
       "mode": "100644",
       "extension": ".md",
-      "size": 1786,
+      "size": 2558,
       "is_binary": false
     },
     {
       "name": "apps",
       "path": "apps",
       "type": "directory",
-      "sha": "f1e1cb2f805c4b6f05fe59ca0cf49ca05aafe3bf",
+      "sha": "0fbe0444c73d3c21aaf8f755387f9e2bc79cdd7e",
       "mode": "040000",
       "children": []
     },
@@ -128,29 +304,9 @@
       "name": "api",
       "path": "apps/api",
       "type": "directory",
-      "sha": "9f405aa692d97f1423640f0c3039dc2333d004f1",
+      "sha": "a78a14397a38b44b4d3592ecf05e8758af8b435d",
       "mode": "040000",
       "children": []
-    },
-    {
-      "name": ".env.example",
-      "path": "apps/api/.env.example",
-      "type": "file",
-      "sha": "4a9a32e4d901aa975d9a77c08ca68486522fce0c",
-      "mode": "100644",
-      "extension": ".example",
-      "size": 114,
-      "is_binary": false
-    },
-    {
-      "name": ".gitignore",
-      "path": "apps/api/.gitignore",
-      "type": "file",
-      "sha": "b6cf5f03915e87f0609c2df330b54f34e9a99e1f",
-      "mode": "100644",
-      "extension": ".gitignore",
-      "size": 24,
-      "is_binary": false
     },
     {
       "name": ".python-version",
@@ -163,44 +319,44 @@
       "is_binary": false
     },
     {
-      "name": "pyproject.toml",
-      "path": "apps/api/pyproject.toml",
+      "name": "AGENTS.md",
+      "path": "apps/api/AGENTS.md",
       "type": "file",
-      "sha": "5cebf858f442d077f15f6cb392c37199529a54df",
+      "sha": "ab14546119bdb81f27adb9202146395ed7ca33ac",
       "mode": "100644",
-      "extension": ".toml",
-      "size": 696,
+      "extension": ".md",
+      "size": 3617,
       "is_binary": false
     },
     {
-      "name": "src",
-      "path": "apps/api/src",
+      "name": "api",
+      "path": "apps/api/api",
       "type": "directory",
-      "sha": "b75d887dc8090b0e6a30e322b3a61d6ef7b34a20",
+      "sha": "e821da1ad3b645fd17274d4e543560a7f8442be0",
       "mode": "040000",
       "children": []
     },
     {
       "name": "__init__.py",
-      "path": "apps/api/src/__init__.py",
+      "path": "apps/api/api/__init__.py",
       "type": "file",
-      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha": "27f1d2107f3f0aae9c0874c5c679a746473a6bc3",
       "mode": "100644",
       "extension": ".py",
-      "size": 0,
+      "size": 101,
       "is_binary": false
     },
     {
       "name": "core",
-      "path": "apps/api/src/core",
+      "path": "apps/api/api/core",
       "type": "directory",
-      "sha": "0561d098c057c9ae5c4fe43f0e10779537a2b8ee",
+      "sha": "f72833fe7cf42497d7d4df26427b0a0d8b934ded",
       "mode": "040000",
       "children": []
     },
     {
       "name": "config.py",
-      "path": "apps/api/src/core/config.py",
+      "path": "apps/api/api/core/config.py",
       "type": "file",
       "sha": "afe2b09b1ddc19fa650056744d01c2b7a327089b",
       "mode": "100644",
@@ -209,26 +365,16 @@
       "is_binary": false
     },
     {
-      "name": "dependencies.py",
-      "path": "apps/api/src/core/dependencies.py",
-      "type": "file",
-      "sha": "bfcbe9609371e238c8827360c6e1119fbc19c451",
-      "mode": "100644",
-      "extension": ".py",
-      "size": 870,
-      "is_binary": false
-    },
-    {
       "name": "db",
-      "path": "apps/api/src/db",
+      "path": "apps/api/api/db",
       "type": "directory",
-      "sha": "6bee5f8435726914329720727978ab68d6fd7d35",
+      "sha": "867ab8c50a92edd1144dd2f0ff47bc99a340dac2",
       "mode": "040000",
       "children": []
     },
     {
       "name": "__init__.py",
-      "path": "apps/api/src/db/__init__.py",
+      "path": "apps/api/api/db/__init__.py",
       "type": "file",
       "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
       "mode": "100644",
@@ -238,7 +384,7 @@
     },
     {
       "name": "base.py",
-      "path": "apps/api/src/db/base.py",
+      "path": "apps/api/api/db/base.py",
       "type": "file",
       "sha": "b0b0de3381bdc5046d2794294d8f6c2cc2315c34",
       "mode": "100644",
@@ -248,7 +394,7 @@
     },
     {
       "name": "enums.py",
-      "path": "apps/api/src/db/enums.py",
+      "path": "apps/api/api/db/enums.py",
       "type": "file",
       "sha": "6f22b082fde65f974ba7e23b72850460cb311e1b",
       "mode": "100644",
@@ -258,9 +404,9 @@
     },
     {
       "name": "main.py",
-      "path": "apps/api/src/db/main.py",
+      "path": "apps/api/api/db/main.py",
       "type": "file",
-      "sha": "2404ec91b6b7826ef72d68d24e88a206eae1ca27",
+      "sha": "f61bd78e6476614bc8d1a045371e51f8298f4702",
       "mode": "100644",
       "extension": ".py",
       "size": 643,
@@ -268,61 +414,89 @@
     },
     {
       "name": "models.py",
-      "path": "apps/api/src/db/models.py",
+      "path": "apps/api/api/db/models.py",
       "type": "file",
-      "sha": "cbceb6adf8386212020ffdeec409a015d92b75a1",
+      "sha": "caf291d6303117f31f1586bfcad10076b297ed66",
       "mode": "100644",
       "extension": ".py",
       "size": 2972,
       "is_binary": false
     },
     {
-      "name": "main.py",
-      "path": "apps/api/src/main.py",
+      "name": "dependencies",
+      "path": "apps/api/api/dependencies",
+      "type": "directory",
+      "sha": "b94c514752796bbd08ba786970e31accdf9ef42d",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "sigaa.py",
+      "path": "apps/api/api/dependencies/sigaa.py",
       "type": "file",
-      "sha": "517456d66181db30fe6d05aea11ee506bf582770",
+      "sha": "69711cdfb0c0c4f0fb95929901bc34ef9ce159dc",
       "mode": "100644",
       "extension": ".py",
-      "size": 363,
+      "size": 1595,
+      "is_binary": false
+    },
+    {
+      "name": "sigaa_public.py",
+      "path": "apps/api/api/dependencies/sigaa_public.py",
+      "type": "file",
+      "sha": "6642a8356ecb264b76ffad7919c2507bcb3060f8",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 602,
+      "is_binary": false
+    },
+    {
+      "name": "main.py",
+      "path": "apps/api/api/main.py",
+      "type": "file",
+      "sha": "39bdc79b329be3cfe84e44f2ed85b075208f0966",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 362,
       "is_binary": false
     },
     {
       "name": "modules",
-      "path": "apps/api/src/modules",
+      "path": "apps/api/api/modules",
       "type": "directory",
-      "sha": "aaf0d5a92d1e6b9832de929d47cec92c9e62669e",
+      "sha": "28bbeaab81043e7a1894f5dd245ba37eebb22073",
       "mode": "040000",
       "children": []
     },
     {
       "name": "auth",
-      "path": "apps/api/src/modules/auth",
+      "path": "apps/api/api/modules/auth",
       "type": "directory",
-      "sha": "44e89b041ccd97e8afc78efb91af0c47cd8b1eb3",
+      "sha": "7225ce360187d85a133c96e6908e1412e81a37b6",
       "mode": "040000",
       "children": []
     },
     {
       "name": "main.py",
-      "path": "apps/api/src/modules/auth/main.py",
+      "path": "apps/api/api/modules/auth/main.py",
       "type": "file",
-      "sha": "3fb95d6b491a72fa07221e1d965342e9f11b33a2",
+      "sha": "f8e460e1fded89b325d903d049e4a272878333c4",
       "mode": "100644",
       "extension": ".py",
-      "size": 1517,
+      "size": 1757,
       "is_binary": false
     },
     {
       "name": "utils",
-      "path": "apps/api/src/utils",
+      "path": "apps/api/api/utils",
       "type": "directory",
-      "sha": "53b3f31e53fa54d799f809df1555526737c59f2d",
+      "sha": "29cf725514fb450605b3eae6da1dc54e460a8050",
       "mode": "040000",
       "children": []
     },
     {
       "name": "__init__.py",
-      "path": "apps/api/src/utils/__init__.py",
+      "path": "apps/api/api/utils/__init__.py",
       "type": "file",
       "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
       "mode": "100644",
@@ -331,23 +505,71 @@
       "is_binary": false
     },
     {
-      "name": "security.py",
-      "path": "apps/api/src/utils/security.py",
+      "name": "session.py",
+      "path": "apps/api/api/utils/session.py",
       "type": "file",
-      "sha": "f0172be48bbab4fedfa469c8fa8e315d68e97a69",
+      "sha": "22e178262b0bf8b2c5dca901b6b9a2df2b7d364d",
       "mode": "100644",
       "extension": ".py",
-      "size": 830,
+      "size": 2369,
       "is_binary": false
     },
     {
-      "name": "uv.lock",
-      "path": "apps/api/uv.lock",
+      "name": "pyproject.toml",
+      "path": "apps/api/pyproject.toml",
       "type": "file",
-      "sha": "cfa3ef8d724397e55b1c0f227f71d5754c51084e",
+      "sha": "672c2f6e4213aa0109dde7fa544d313d077c9652",
       "mode": "100644",
-      "extension": ".lock",
-      "size": 172274,
+      "extension": ".toml",
+      "size": 823,
+      "is_binary": false
+    },
+    {
+      "name": "tests",
+      "path": "apps/api/tests",
+      "type": "directory",
+      "sha": "6b9f99872f4e5e65130372838780ac5907664884",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "conftest.py",
+      "path": "apps/api/tests/conftest.py",
+      "type": "file",
+      "sha": "50c5165e8c2a6cd271b81dc3c62bb72885d6ec9c",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 6053,
+      "is_binary": false
+    },
+    {
+      "name": "test_auth.py",
+      "path": "apps/api/tests/test_auth.py",
+      "type": "file",
+      "sha": "578397a1ccc0d8c6a8e331f91bfdefc72bb68f27",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3759,
+      "is_binary": false
+    },
+    {
+      "name": "test_dependencies_sigaa.py",
+      "path": "apps/api/tests/test_dependencies_sigaa.py",
+      "type": "file",
+      "sha": "c2d3168cf5838b949a98bac1277c0d757fca64ba",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4881,
+      "is_binary": false
+    },
+    {
+      "name": "test_session.py",
+      "path": "apps/api/tests/test_session.py",
+      "type": "file",
+      "sha": "9953d634eec5056827490e24f34530633127dbbe",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4139,
       "is_binary": false
     },
     {
@@ -364,13 +586,13 @@
       "name": "docs",
       "path": "docs",
       "type": "directory",
-      "sha": "c0a2e69141e32b068ef48de8ba3f29b752ca34dc",
+      "sha": "b00b6054216d7b54efd59323bce1106f34329028",
       "mode": "040000",
       "children": []
     },
     {
-      "name": "Requisitos.md",
-      "path": "docs/Requisitos.md",
+      "name": "requisitos.md",
+      "path": "docs/requisitos.md",
       "type": "file",
       "sha": "268dc92f05b58673e1734567bc2f35d9ccab8e54",
       "mode": "100644",
@@ -405,22 +627,318 @@
       "extension": ".md",
       "size": 1891,
       "is_binary": false
+    },
+    {
+      "name": "packages",
+      "path": "packages",
+      "type": "directory",
+      "sha": "f37149cf5d0cd85742a87ad8f3b0b055f9b3e90a",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "sigaa-client",
+      "path": "packages/sigaa-client",
+      "type": "directory",
+      "sha": "6b3a3849d2567fc306223cc7701fa63561771a50",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "AGENTS.md",
+      "path": "packages/sigaa-client/AGENTS.md",
+      "type": "file",
+      "sha": "594479420796198791b0cf1b1c68ecaa89f8126b",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 6569,
+      "is_binary": false
+    },
+    {
+      "name": "README.md",
+      "path": "packages/sigaa-client/README.md",
+      "type": "file",
+      "sha": "71ba1640bc23261f7652152dd18d53c8bfea982a",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 5362,
+      "is_binary": false
+    },
+    {
+      "name": "pyproject.toml",
+      "path": "packages/sigaa-client/pyproject.toml",
+      "type": "file",
+      "sha": "853649d8c48bd90c8c5907120e35424a5a229a2e",
+      "mode": "100644",
+      "extension": ".toml",
+      "size": 704,
+      "is_binary": false
+    },
+    {
+      "name": "sigaa_client",
+      "path": "packages/sigaa-client/sigaa_client",
+      "type": "directory",
+      "sha": "17eb10ab2fe3db328ce5214319cb1194033964a4",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "packages/sigaa-client/sigaa_client/__init__.py",
+      "type": "file",
+      "sha": "a83be48de32b10d7489708732b67ebe8964119df",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 806,
+      "is_binary": false
+    },
+    {
+      "name": "client.py",
+      "path": "packages/sigaa-client/sigaa_client/client.py",
+      "type": "file",
+      "sha": "d7b0edf748a1152f84a73d7c625f7326ddd87cbe",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 2475,
+      "is_binary": false
+    },
+    {
+      "name": "config.py",
+      "path": "packages/sigaa-client/sigaa_client/config.py",
+      "type": "file",
+      "sha": "22603f83a4742f3d3aa6a795cfa241a86ab5c438",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 736,
+      "is_binary": false
+    },
+    {
+      "name": "exceptions.py",
+      "path": "packages/sigaa-client/sigaa_client/exceptions.py",
+      "type": "file",
+      "sha": "88d816ba5a6dd4294e2a2056d210b4d5fbb22733",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 605,
+      "is_binary": false
+    },
+    {
+      "name": "models.py",
+      "path": "packages/sigaa-client/sigaa_client/models.py",
+      "type": "file",
+      "sha": "f071635e59797fdc90879d4adfcffa752c5d55b0",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3131,
+      "is_binary": false
+    },
+    {
+      "name": "private",
+      "path": "packages/sigaa-client/sigaa_client/private",
+      "type": "directory",
+      "sha": "058c843f8e1455fb52e11eb100012f32f548d001",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "packages/sigaa-client/sigaa_client/private/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "classrooms.py",
+      "path": "packages/sigaa-client/sigaa_client/private/classrooms.py",
+      "type": "file",
+      "sha": "3f18367e1cd1f9d559544e3416488ff134fe2648",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 12139,
+      "is_binary": false
+    },
+    {
+      "name": "profile.py",
+      "path": "packages/sigaa-client/sigaa_client/private/profile.py",
+      "type": "file",
+      "sha": "3942f4eea48fb5001ecbeb52695d7bcbd633fa0d",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3198,
+      "is_binary": false
+    },
+    {
+      "name": "session.py",
+      "path": "packages/sigaa-client/sigaa_client/private/session.py",
+      "type": "file",
+      "sha": "a1ee2c1f5aea0c2503d6cbf2acbb4da94e66b380",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 7027,
+      "is_binary": false
+    },
+    {
+      "name": "public",
+      "path": "packages/sigaa-client/sigaa_client/public",
+      "type": "directory",
+      "sha": "e823bf9b0cdd3c062996d9640b90954903ae5d81",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "packages/sigaa-client/sigaa_client/public/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "classrooms.py",
+      "path": "packages/sigaa-client/sigaa_client/public/classrooms.py",
+      "type": "file",
+      "sha": "fcd3a0e5c5cf5971100f91239906bfbdad6058f9",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 8387,
+      "is_binary": false
+    },
+    {
+      "name": "session.py",
+      "path": "packages/sigaa-client/sigaa_client/public/session.py",
+      "type": "file",
+      "sha": "5adb87fba5f7c3f2d332cb6f1bcaf9e7578193ed",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1833,
+      "is_binary": false
+    },
+    {
+      "name": "utils",
+      "path": "packages/sigaa-client/sigaa_client/utils",
+      "type": "directory",
+      "sha": "9a005cc294bda626f0c10c80dbc22014fb97f6f5",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "__init__.py",
+      "path": "packages/sigaa-client/sigaa_client/utils/__init__.py",
+      "type": "file",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 0,
+      "is_binary": false
+    },
+    {
+      "name": "jsf.py",
+      "path": "packages/sigaa-client/sigaa_client/utils/jsf.py",
+      "type": "file",
+      "sha": "b8e12794c79ee8826665c3675ec115fd3d550e45",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 3335,
+      "is_binary": false
+    },
+    {
+      "name": "parsing.py",
+      "path": "packages/sigaa-client/sigaa_client/utils/parsing.py",
+      "type": "file",
+      "sha": "0ffff128724cb660fbff1db59439568f00c1215e",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 1270,
+      "is_binary": false
+    },
+    {
+      "name": "tests",
+      "path": "packages/sigaa-client/tests",
+      "type": "directory",
+      "sha": "5e3b9d2e5263821ce2bb0a8f31d7a85b0fd350f0",
+      "mode": "040000",
+      "children": []
+    },
+    {
+      "name": "test_auth.py",
+      "path": "packages/sigaa-client/tests/test_auth.py",
+      "type": "file",
+      "sha": "557c584021aa88e796629fcead08c70570642dd5",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 6269,
+      "is_binary": false
+    },
+    {
+      "name": "test_classrooms.py",
+      "path": "packages/sigaa-client/tests/test_classrooms.py",
+      "type": "file",
+      "sha": "1f5a3665fb3cef1f6eda952c9c63bc2c1421ca11",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 4739,
+      "is_binary": false
+    },
+    {
+      "name": "test_public_classrooms.py",
+      "path": "packages/sigaa-client/tests/test_public_classrooms.py",
+      "type": "file",
+      "sha": "404cc4dee0edcc0871655ec58eaacd7181e843c7",
+      "mode": "100644",
+      "extension": ".py",
+      "size": 9174,
+      "is_binary": false
+    },
+    {
+      "name": "pyproject.toml",
+      "path": "pyproject.toml",
+      "type": "file",
+      "sha": "a8bdc4618831d0d17e5a58c0ffc7c58f49d314b1",
+      "mode": "100644",
+      "extension": ".toml",
+      "size": 610,
+      "is_binary": false
+    },
+    {
+      "name": "skills-lock.json",
+      "path": "skills-lock.json",
+      "type": "file",
+      "sha": "f0ca6de46df343c541028f15d01491492ba075ab",
+      "mode": "100644",
+      "extension": ".json",
+      "size": 529,
+      "is_binary": false
+    },
+    {
+      "name": "uv.lock",
+      "path": "uv.lock",
+      "type": "file",
+      "sha": "bb2a46b64b62843b9de0af009bb8c8bbbbd341e8",
+      "mode": "100644",
+      "extension": ".lock",
+      "size": 223980,
+      "is_binary": false
     }
   ],
   "truncated": false,
-  "extracted_at": "2026-09-19T10:02:58.393923",
+  "extracted_at": "2026-09-20T10:35:35.285665",
   "method": "rest",
-  "total_items": 43,
+  "total_items": 98,
   "repository_metadata": {
     "id": 1338350948,
     "full_name": "unb-mds/2026-2-Followw",
-    "description": "Grupo G5 - Metodos de Desenvolvimento de Software 2026/2",
+    "description": "O Followw é uma nova forma de usar o SIGAA UnB.",
     "created_at": "2026-08-18T11:57:01Z",
-    "updated_at": "2026-09-16T03:30:24Z",
+    "updated_at": "2026-09-20T02:57:30Z",
     "language": "Python",
-    "size": 364,
+    "size": 200,
     "stars": 5,
     "forks": 0,
-    "open_issues": 9
+    "open_issues": 6
   }
 }

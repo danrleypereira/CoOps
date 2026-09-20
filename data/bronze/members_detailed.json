@@ -1,15 +1,15 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-19T10:02:07.144317",
+      "extracted_at": "2026-09-20T10:34:36.090769",
       "file_path": "data/bronze/members_detailed.json",
-      "record_count": 485
+      "record_count": 487
     }
   },
   {
     "login": "github-actions[bot]",
     "type": "Bot",
-    "contributions_total": 2484,
+    "contributions_total": 2488,
     "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
     "html_url": "https://github.com/apps/github-actions",
     "data_source": "contributors_api",
@@ -63,7 +63,7 @@
   {
     "login": "actions-user",
     "type": "User",
-    "contributions_total": 377,
+    "contributions_total": 378,
     "avatar_url": "https://avatars.githubusercontent.com/u/65916846?v=4",
     "html_url": "https://github.com/actions-user",
     "data_source": "contributors_api",
@@ -74,7 +74,7 @@
     "created_at": "2020-05-25T17:35:50Z",
     "updated_at": "2021-02-19T05:23:11Z",
     "public_repos": 0,
-    "followers": 5772,
+    "followers": 5783,
     "following": 0,
     "profile_fetched": true
   },
@@ -99,7 +99,7 @@
   {
     "login": "Vitor-Trancoso",
     "type": "User",
-    "contributions_total": 331,
+    "contributions_total": 339,
     "avatar_url": "https://avatars.githubusercontent.com/u/179967365?v=4",
     "html_url": "https://github.com/Vitor-Trancoso",
     "data_source": "contributors_api",
@@ -380,7 +380,7 @@
     "created_at": "2024-09-18T13:42:27Z",
     "updated_at": "2026-09-09T02:08:10Z",
     "public_repos": 6,
-    "followers": 4,
+    "followers": 5,
     "following": 6,
     "profile_fetched": true
   },
@@ -594,7 +594,7 @@
     "id": 173557997,
     "name": "Tiago Bittencourt",
     "created_at": "2024-06-22T15:05:32Z",
-    "updated_at": "2026-08-30T14:13:47Z",
+    "updated_at": "2026-09-19T11:17:48Z",
     "public_repos": 19,
     "followers": 52,
     "following": 79,
@@ -812,7 +812,7 @@
     "created_at": "2024-09-11T17:24:54Z",
     "updated_at": "2026-09-13T00:12:51Z",
     "public_repos": 23,
-    "followers": 9,
+    "followers": 8,
     "following": 15,
     "profile_fetched": true
   },
@@ -864,7 +864,7 @@
     "id": 127162642,
     "name": "Gustavo Cintra",
     "created_at": "2023-03-07T01:00:12Z",
-    "updated_at": "2026-07-31T22:33:37Z",
+    "updated_at": "2026-09-19T11:55:45Z",
     "public_repos": 22,
     "followers": 7,
     "following": 10,
@@ -1423,8 +1423,8 @@
     "name": "Daniel Ferreira Nunes",
     "created_at": "2022-03-08T02:00:47Z",
     "updated_at": "2026-09-14T18:14:53Z",
-    "public_repos": 28,
-    "followers": 36,
+    "public_repos": 29,
+    "followers": 37,
     "following": 45,
     "profile_fetched": true
   },
@@ -1820,7 +1820,7 @@
     "created_at": "2025-01-31T20:35:45Z",
     "updated_at": "2026-09-16T05:35:00Z",
     "public_repos": 4,
-    "followers": 11,
+    "followers": 12,
     "following": 11,
     "profile_fetched": true
   },
@@ -1944,7 +1944,7 @@
     "id": 138021508,
     "name": "Ana Luiza Soares ",
     "created_at": "2023-06-28T13:27:52Z",
-    "updated_at": "2026-09-03T20:59:27Z",
+    "updated_at": "2026-09-20T01:15:33Z",
     "public_repos": 13,
     "followers": 22,
     "following": 33,
@@ -2325,7 +2325,7 @@
     "updated_at": "2026-09-10T11:05:00Z",
     "public_repos": 5,
     "followers": 5,
-    "following": 8,
+    "following": 12,
     "profile_fetched": true
   },
   {
@@ -2628,7 +2628,7 @@
     "id": 164571475,
     "name": "Rafael Oliveira Montagner Melatti",
     "created_at": "2024-03-22T21:39:54Z",
-    "updated_at": "2026-09-16T08:29:32Z",
+    "updated_at": "2026-09-20T00:39:35Z",
     "public_repos": 7,
     "followers": 1,
     "following": 2,
@@ -2828,7 +2828,7 @@
     "created_at": "2023-03-20T20:32:58Z",
     "updated_at": "2026-09-18T18:53:38Z",
     "public_repos": 8,
-    "followers": 7,
+    "followers": 10,
     "following": 7,
     "profile_fetched": true
   },
@@ -3229,6 +3229,24 @@
     "profile_fetched": true
   },
   {
+    "login": "DanielAlmeidaFrota",
+    "type": "User",
+    "contributions_total": 48,
+    "avatar_url": "https://avatars.githubusercontent.com/u/244839088?v=4",
+    "html_url": "https://github.com/DanielAlmeidaFrota",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "2026.2-UnB_Core",
+    "is_org_member": false,
+    "id": 244839088,
+    "name": "Daniel Almeida",
+    "created_at": "2025-11-18T23:10:26Z",
+    "updated_at": "2026-09-08T19:16:45Z",
+    "public_repos": 2,
+    "followers": 0,
+    "following": 0,
+    "profile_fetched": true
+  },
+  {
     "login": "LORliveira",
     "type": "User",
     "contributions_total": 48,
@@ -3316,24 +3334,6 @@
     "public_repos": 1,
     "followers": 4,
     "following": 6,
-    "profile_fetched": true
-  },
-  {
-    "login": "DanielAlmeidaFrota",
-    "type": "User",
-    "contributions_total": 47,
-    "avatar_url": "https://avatars.githubusercontent.com/u/244839088?v=4",
-    "html_url": "https://github.com/DanielAlmeidaFrota",
-    "data_source": "contributors_api",
-    "discovered_from_repo": "2026.2-UnB_Core",
-    "is_org_member": false,
-    "id": 244839088,
-    "name": "Daniel Almeida",
-    "created_at": "2025-11-18T23:10:26Z",
-    "updated_at": "2026-09-08T19:16:45Z",
-    "public_repos": 2,
-    "followers": 0,
-    "following": 0,
     "profile_fetched": true
   },
   {
@@ -3440,7 +3440,7 @@
     "created_at": "2025-05-13T15:22:50Z",
     "updated_at": "2026-09-14T18:36:07Z",
     "public_repos": 8,
-    "followers": 9,
+    "followers": 10,
     "following": 10,
     "profile_fetched": true
   },
@@ -3924,8 +3924,8 @@
     "id": 121322804,
     "name": "Artur Mendonça Arruda",
     "created_at": "2022-12-24T00:13:21Z",
-    "updated_at": "2026-09-18T18:05:42Z",
-    "public_repos": 17,
+    "updated_at": "2026-09-20T04:58:08Z",
+    "public_repos": 18,
     "followers": 4,
     "following": 5,
     "profile_fetched": true
@@ -4268,7 +4268,7 @@
     "created_at": "2024-02-24T20:20:47Z",
     "updated_at": "2026-08-27T10:34:53Z",
     "public_repos": 12,
-    "followers": 15,
+    "followers": 16,
     "following": 17,
     "profile_fetched": true
   },
@@ -5256,7 +5256,7 @@
     "id": 100495785,
     "name": "Victor",
     "created_at": "2022-02-26T23:14:12Z",
-    "updated_at": "2026-09-13T09:22:17Z",
+    "updated_at": "2026-09-19T22:07:46Z",
     "public_repos": 13,
     "followers": 7,
     "following": 6,
@@ -5997,7 +5997,7 @@
     "updated_at": "2026-08-24T11:45:54Z",
     "public_repos": 12,
     "followers": 9,
-    "following": 9,
+    "following": 11,
     "profile_fetched": true
   },
   {
@@ -6282,7 +6282,7 @@
     "id": 134213039,
     "name": "Henrique Carvalho Neves",
     "created_at": "2023-05-21T13:44:44Z",
-    "updated_at": "2026-09-16T20:04:42Z",
+    "updated_at": "2026-09-19T19:08:51Z",
     "public_repos": 3,
     "followers": 6,
     "following": 6,
@@ -7279,6 +7279,24 @@
     "profile_fetched": true
   },
   {
+    "login": "marilluantunes",
+    "type": "User",
+    "contributions_total": 7,
+    "avatar_url": "https://avatars.githubusercontent.com/u/229766626?v=4",
+    "html_url": "https://github.com/marilluantunes",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "2026-2-Bandejao",
+    "is_org_member": false,
+    "id": 229766626,
+    "name": "Maria Luiza ",
+    "created_at": "2025-09-01T12:51:04Z",
+    "updated_at": "2026-02-16T06:31:25Z",
+    "public_repos": 5,
+    "followers": 0,
+    "following": 1,
+    "profile_fetched": true
+  },
+  {
     "login": "MMcLovin",
     "type": "User",
     "contributions_total": 7,
@@ -7387,6 +7405,24 @@
     "profile_fetched": true
   },
   {
+    "login": "eliabexp",
+    "type": "User",
+    "contributions_total": 6,
+    "avatar_url": "https://avatars.githubusercontent.com/u/74092305?v=4",
+    "html_url": "https://github.com/eliabexp",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "2026-2-Followw",
+    "is_org_member": false,
+    "id": 74092305,
+    "name": "eliabe",
+    "created_at": "2020-11-07T08:01:09Z",
+    "updated_at": "2026-08-21T14:59:11Z",
+    "public_repos": 7,
+    "followers": 20,
+    "following": 23,
+    "profile_fetched": true
+  },
+  {
     "login": "italo-lm",
     "type": "User",
     "contributions_total": 6,
@@ -7402,6 +7438,24 @@
     "public_repos": 0,
     "followers": 2,
     "following": 3,
+    "profile_fetched": true
+  },
+  {
+    "login": "MariaMacedoToledo",
+    "type": "User",
+    "contributions_total": 6,
+    "avatar_url": "https://avatars.githubusercontent.com/u/326485214?v=4",
+    "html_url": "https://github.com/MariaMacedoToledo",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "2026-2-MonitoraUnB",
+    "is_org_member": false,
+    "id": 326485214,
+    "name": null,
+    "created_at": "2026-09-08T12:17:15Z",
+    "updated_at": "2026-09-11T21:14:47Z",
+    "public_repos": 0,
+    "followers": 0,
+    "following": 0,
     "profile_fetched": true
   },
   {
@@ -7524,6 +7578,24 @@
     "profile_fetched": true
   },
   {
+    "login": "Isac-sil-mar",
+    "type": "User",
+    "contributions_total": 5,
+    "avatar_url": "https://avatars.githubusercontent.com/u/170209600?v=4",
+    "html_url": "https://github.com/Isac-sil-mar",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "Fique-de-Olho",
+    "is_org_member": false,
+    "id": 170209600,
+    "name": "IsacMarques",
+    "created_at": "2024-05-18T22:17:14Z",
+    "updated_at": "2026-08-13T00:14:22Z",
+    "public_repos": 2,
+    "followers": 0,
+    "following": 0,
+    "profile_fetched": true
+  },
+  {
     "login": "julia-fortunato",
     "type": "User",
     "contributions_total": 5,
@@ -7589,7 +7661,7 @@
     "id": 269747096,
     "name": "Alana Cristyna ",
     "created_at": "2026-03-20T14:37:44Z",
-    "updated_at": "2026-08-18T11:57:59Z",
+    "updated_at": "2026-09-19T21:38:53Z",
     "public_repos": 3,
     "followers": 2,
     "following": 1,
@@ -7625,28 +7697,10 @@
     "id": 122310754,
     "name": "Bruno Cruz",
     "created_at": "2023-01-09T19:09:46Z",
-    "updated_at": "2026-09-05T20:20:16Z",
+    "updated_at": "2026-09-19T22:55:18Z",
     "public_repos": 5,
     "followers": 8,
     "following": 17,
-    "profile_fetched": true
-  },
-  {
-    "login": "eliabexp",
-    "type": "User",
-    "contributions_total": 4,
-    "avatar_url": "https://avatars.githubusercontent.com/u/74092305?v=4",
-    "html_url": "https://github.com/eliabexp",
-    "data_source": "contributors_api",
-    "discovered_from_repo": "2026-2-Followw",
-    "is_org_member": false,
-    "id": 74092305,
-    "name": "eliabe",
-    "created_at": "2020-11-07T08:01:09Z",
-    "updated_at": "2026-08-21T14:59:11Z",
-    "public_repos": 7,
-    "followers": 20,
-    "following": 23,
     "profile_fetched": true
   },
   {
@@ -7938,24 +7992,6 @@
     "profile_fetched": true
   },
   {
-    "login": "Isac-sil-mar",
-    "type": "User",
-    "contributions_total": 3,
-    "avatar_url": "https://avatars.githubusercontent.com/u/170209600?v=4",
-    "html_url": "https://github.com/Isac-sil-mar",
-    "data_source": "contributors_api",
-    "discovered_from_repo": "Fique-de-Olho",
-    "is_org_member": false,
-    "id": 170209600,
-    "name": "IsacMarques",
-    "created_at": "2024-05-18T22:17:14Z",
-    "updated_at": "2026-08-13T00:14:22Z",
-    "public_repos": 2,
-    "followers": 0,
-    "following": 0,
-    "profile_fetched": true
-  },
-  {
     "login": "IsaLL24",
     "type": "User",
     "contributions_total": 3,
@@ -8244,24 +8280,6 @@
     "profile_fetched": true
   },
   {
-    "login": "MariaMacedoToledo",
-    "type": "User",
-    "contributions_total": 2,
-    "avatar_url": "https://avatars.githubusercontent.com/u/326485214?v=4",
-    "html_url": "https://github.com/MariaMacedoToledo",
-    "data_source": "contributors_api",
-    "discovered_from_repo": "2026-2-MonitoraUnB",
-    "is_org_member": false,
-    "id": 326485214,
-    "name": null,
-    "created_at": "2026-09-08T12:17:15Z",
-    "updated_at": "2026-09-11T21:14:47Z",
-    "public_repos": 0,
-    "followers": 0,
-    "following": 0,
-    "profile_fetched": true
-  },
-  {
     "login": "mariav-07",
     "type": "User",
     "contributions_total": 2,
@@ -8346,7 +8364,7 @@
     "name": "Yasmin de Loiola Araujo",
     "created_at": "2025-08-08T14:39:00Z",
     "updated_at": "2026-09-11T00:38:04Z",
-    "public_repos": 0,
+    "public_repos": 1,
     "followers": 0,
     "following": 0,
     "profile_fetched": true
@@ -8601,6 +8619,24 @@
     "public_repos": 13,
     "followers": 11,
     "following": 6,
+    "profile_fetched": true
+  },
+  {
+    "login": "Mendezalv",
+    "type": "User",
+    "contributions_total": 1,
+    "avatar_url": "https://avatars.githubusercontent.com/u/198409500?v=4",
+    "html_url": "https://github.com/Mendezalv",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "2026-2-Followw",
+    "is_org_member": false,
+    "id": 198409500,
+    "name": "Kauã",
+    "created_at": "2025-02-09T01:41:00Z",
+    "updated_at": "2026-06-11T14:24:03Z",
+    "public_repos": 9,
+    "followers": 3,
+    "following": 3,
     "profile_fetched": true
   },
   {

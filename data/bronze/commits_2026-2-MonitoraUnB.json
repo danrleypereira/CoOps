@@ -1,10 +1,78 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-19T10:00:20.955821",
+      "extracted_at": "2026-09-20T10:32:27.006568",
       "file_path": "data/bronze/commits_2026-2-MonitoraUnB.json",
-      "record_count": 30
+      "record_count": 34
     }
+  },
+  {
+    "sha": "2d018db79e14ec8e27716a58560fbd536dd2bd92",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-19T10:48:26Z",
+        "login": "MariaMacedoToledo"
+      },
+      "message": "mode RequisitosAgeis.md para estudos"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-2-MonitoraUnB"
+  },
+  {
+    "sha": "f1791dd9dee4a7486f2c868a5767f38472226eda",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-19T10:38:32Z",
+        "login": "MariaMacedoToledo"
+      },
+      "message": "Add documentation for Agile Requirements Engineering"
+    },
+    "additions": 214,
+    "deletions": 0,
+    "total_changes": 214,
+    "repo_name": "2026-2-MonitoraUnB"
+  },
+  {
+    "sha": "b1e1e8e82b245ff2251f6de8b467a75c24de5f17",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-19T10:15:41Z",
+        "login": "MariaMacedoToledo"
+      },
+      "message": "Update and rename Sprint1.md to sprint1.md"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-2-MonitoraUnB"
+  },
+  {
+    "sha": "6546da87315dd314595ebae4749a5369a00395bf",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-19T10:14:31Z",
+        "login": "MariaMacedoToledo"
+      },
+      "message": "Add Sprint 01 documentation for Monitora UnB project"
+    },
+    "additions": 62,
+    "deletions": 0,
+    "total_changes": 62,
+    "repo_name": "2026-2-MonitoraUnB"
   },
   {
     "sha": "a9463b76eef3ba1b00a489851c30e166452fed60",

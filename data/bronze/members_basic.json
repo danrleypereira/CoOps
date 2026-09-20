@@ -1,15 +1,15 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-19T10:00:53.178020",
+      "extracted_at": "2026-09-20T10:33:02.588150",
       "file_path": "data/bronze/members_basic.json",
-      "record_count": 485
+      "record_count": 487
     }
   },
   {
     "login": "github-actions[bot]",
     "type": "Bot",
-    "contributions_total": 2484,
+    "contributions_total": 2488,
     "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
     "html_url": "https://github.com/apps/github-actions",
     "data_source": "contributors_api",
@@ -39,7 +39,7 @@
   {
     "login": "actions-user",
     "type": "User",
-    "contributions_total": 377,
+    "contributions_total": 378,
     "avatar_url": "https://avatars.githubusercontent.com/u/65916846?v=4",
     "html_url": "https://github.com/actions-user",
     "data_source": "contributors_api",
@@ -59,7 +59,7 @@
   {
     "login": "Vitor-Trancoso",
     "type": "User",
-    "contributions_total": 331,
+    "contributions_total": 339,
     "avatar_url": "https://avatars.githubusercontent.com/u/179967365?v=4",
     "html_url": "https://github.com/Vitor-Trancoso",
     "data_source": "contributors_api",
@@ -1797,6 +1797,16 @@
     "is_org_member": false
   },
   {
+    "login": "DanielAlmeidaFrota",
+    "type": "User",
+    "contributions_total": 48,
+    "avatar_url": "https://avatars.githubusercontent.com/u/244839088?v=4",
+    "html_url": "https://github.com/DanielAlmeidaFrota",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "2026.2-UnB_Core",
+    "is_org_member": false
+  },
+  {
     "login": "LORliveira",
     "type": "User",
     "contributions_total": 48,
@@ -1844,16 +1854,6 @@
     "html_url": "https://github.com/CristianoMoraiss",
     "data_source": "contributors_api",
     "discovered_from_repo": "Squad09-UnBHUB",
-    "is_org_member": false
-  },
-  {
-    "login": "DanielAlmeidaFrota",
-    "type": "User",
-    "contributions_total": 47,
-    "avatar_url": "https://avatars.githubusercontent.com/u/244839088?v=4",
-    "html_url": "https://github.com/DanielAlmeidaFrota",
-    "data_source": "contributors_api",
-    "discovered_from_repo": "2026.2-UnB_Core",
     "is_org_member": false
   },
   {
@@ -4047,6 +4047,16 @@
     "is_org_member": false
   },
   {
+    "login": "marilluantunes",
+    "type": "User",
+    "contributions_total": 7,
+    "avatar_url": "https://avatars.githubusercontent.com/u/229766626?v=4",
+    "html_url": "https://github.com/marilluantunes",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "2026-2-Bandejao",
+    "is_org_member": false
+  },
+  {
     "login": "MMcLovin",
     "type": "User",
     "contributions_total": 7,
@@ -4107,6 +4117,16 @@
     "is_org_member": false
   },
   {
+    "login": "eliabexp",
+    "type": "User",
+    "contributions_total": 6,
+    "avatar_url": "https://avatars.githubusercontent.com/u/74092305?v=4",
+    "html_url": "https://github.com/eliabexp",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "2026-2-Followw",
+    "is_org_member": false
+  },
+  {
     "login": "italo-lm",
     "type": "User",
     "contributions_total": 6,
@@ -4114,6 +4134,16 @@
     "html_url": "https://github.com/italo-lm",
     "data_source": "contributors_api",
     "discovered_from_repo": "2026-1-LegisKids",
+    "is_org_member": false
+  },
+  {
+    "login": "MariaMacedoToledo",
+    "type": "User",
+    "contributions_total": 6,
+    "avatar_url": "https://avatars.githubusercontent.com/u/326485214?v=4",
+    "html_url": "https://github.com/MariaMacedoToledo",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "2026-2-MonitoraUnB",
     "is_org_member": false
   },
   {
@@ -4187,6 +4217,16 @@
     "is_org_member": false
   },
   {
+    "login": "Isac-sil-mar",
+    "type": "User",
+    "contributions_total": 5,
+    "avatar_url": "https://avatars.githubusercontent.com/u/170209600?v=4",
+    "html_url": "https://github.com/Isac-sil-mar",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "Fique-de-Olho",
+    "is_org_member": false
+  },
+  {
     "login": "julia-fortunato",
     "type": "User",
     "contributions_total": 5,
@@ -4244,16 +4284,6 @@
     "html_url": "https://github.com/Brunocrzz",
     "data_source": "contributors_api",
     "discovered_from_repo": "2024-1-Squad08",
-    "is_org_member": false
-  },
-  {
-    "login": "eliabexp",
-    "type": "User",
-    "contributions_total": 4,
-    "avatar_url": "https://avatars.githubusercontent.com/u/74092305?v=4",
-    "html_url": "https://github.com/eliabexp",
-    "data_source": "contributors_api",
-    "discovered_from_repo": "2026-2-Followw",
     "is_org_member": false
   },
   {
@@ -4417,16 +4447,6 @@
     "is_org_member": false
   },
   {
-    "login": "Isac-sil-mar",
-    "type": "User",
-    "contributions_total": 3,
-    "avatar_url": "https://avatars.githubusercontent.com/u/170209600?v=4",
-    "html_url": "https://github.com/Isac-sil-mar",
-    "data_source": "contributors_api",
-    "discovered_from_repo": "Fique-de-Olho",
-    "is_org_member": false
-  },
-  {
     "login": "IsaLL24",
     "type": "User",
     "contributions_total": 3,
@@ -4584,16 +4604,6 @@
     "html_url": "https://github.com/heitormontt",
     "data_source": "contributors_api",
     "discovered_from_repo": "2026-2-AgendaUnB",
-    "is_org_member": false
-  },
-  {
-    "login": "MariaMacedoToledo",
-    "type": "User",
-    "contributions_total": 2,
-    "avatar_url": "https://avatars.githubusercontent.com/u/326485214?v=4",
-    "html_url": "https://github.com/MariaMacedoToledo",
-    "data_source": "contributors_api",
-    "discovered_from_repo": "2026-2-MonitoraUnB",
     "is_org_member": false
   },
   {
@@ -4784,6 +4794,16 @@
     "html_url": "https://github.com/Marcosatc147",
     "data_source": "contributors_api",
     "discovered_from_repo": "2023-2-SuaGradeUnB",
+    "is_org_member": false
+  },
+  {
+    "login": "Mendezalv",
+    "type": "User",
+    "contributions_total": 1,
+    "avatar_url": "https://avatars.githubusercontent.com/u/198409500?v=4",
+    "html_url": "https://github.com/Mendezalv",
+    "data_source": "contributors_api",
+    "discovered_from_repo": "2026-2-Followw",
     "is_org_member": false
   },
   {

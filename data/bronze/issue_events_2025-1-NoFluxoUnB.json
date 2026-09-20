@@ -1,9 +1,369 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-19T09:05:49.739155",
+      "extracted_at": "2026-09-20T09:34:32.573002",
       "file_path": "data/bronze/issue_events_2025-1-NoFluxoUnB.json",
-      "record_count": 1383
+      "record_count": 1413
+    }
+  },
+  {
+    "id": 31464154229,
+    "event": "issue_type_added",
+    "created_at": "2026-09-19T23:39:44Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "hisarxt"
+    },
+    "issue": {
+      "number": 187
+    }
+  },
+  {
+    "id": 31464154067,
+    "event": "labeled",
+    "created_at": "2026-09-19T23:39:44Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "hisarxt"
+    },
+    "issue": {
+      "number": 187
+    }
+  },
+  {
+    "id": 31464154024,
+    "event": "labeled",
+    "created_at": "2026-09-19T23:39:44Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "hisarxt"
+    },
+    "issue": {
+      "number": 187
+    }
+  },
+  {
+    "id": 31464153561,
+    "event": "assigned",
+    "created_at": "2026-09-19T23:39:42Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "hisarxt"
+    },
+    "issue": {
+      "number": 187
+    }
+  },
+  {
+    "id": 31456949019,
+    "event": "labeled",
+    "created_at": "2026-09-19T19:20:50Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "Vitor-Trancoso"
+    },
+    "issue": {
+      "number": 186
+    }
+  },
+  {
+    "id": 31456948803,
+    "event": "assigned",
+    "created_at": "2026-09-19T19:20:50Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "Vitor-Trancoso"
+    },
+    "issue": {
+      "number": 186
+    }
+  },
+  {
+    "id": 31456947444,
+    "event": "labeled",
+    "created_at": "2026-09-19T19:20:47Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "Vitor-Trancoso"
+    },
+    "issue": {
+      "number": 185
+    }
+  },
+  {
+    "id": 31456947366,
+    "event": "labeled",
+    "created_at": "2026-09-19T19:20:47Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "Vitor-Trancoso"
+    },
+    "issue": {
+      "number": 185
+    }
+  },
+  {
+    "id": 31456947331,
+    "event": "assigned",
+    "created_at": "2026-09-19T19:20:47Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "Vitor-Trancoso"
+    },
+    "issue": {
+      "number": 185
+    }
+  },
+  {
+    "id": 31456945671,
+    "event": "mentioned",
+    "created_at": "2026-09-19T19:20:43Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "typescript-eslint"
+    },
+    "issue": {
+      "number": 184
+    }
+  },
+  {
+    "id": 31456945540,
+    "event": "labeled",
+    "created_at": "2026-09-19T19:20:43Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "Vitor-Trancoso"
+    },
+    "issue": {
+      "number": 184
+    }
+  },
+  {
+    "id": 31456945500,
+    "event": "assigned",
+    "created_at": "2026-09-19T19:20:43Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "Vitor-Trancoso"
+    },
+    "issue": {
+      "number": 184
+    }
+  },
+  {
+    "id": 31450757229,
+    "event": "head_ref_deleted",
+    "created_at": "2026-09-19T16:12:35Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "Vitor-Trancoso"
+    },
+    "issue": {
+      "number": 182
+    }
+  },
+  {
+    "id": 31450755800,
+    "event": "closed",
+    "created_at": "2026-09-19T16:12:33Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "Vitor-Trancoso"
+    },
+    "issue": {
+      "number": 179
+    }
+  },
+  {
+    "id": 31450755178,
+    "event": "closed",
+    "created_at": "2026-09-19T16:12:32Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "Vitor-Trancoso"
+    },
+    "issue": {
+      "number": 182
+    }
+  },
+  {
+    "id": 31450755122,
+    "event": "merged",
+    "created_at": "2026-09-19T16:12:32Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "Vitor-Trancoso"
+    },
+    "issue": {
+      "number": 182
+    }
+  },
+  {
+    "id": 31450718934,
+    "event": "head_ref_deleted",
+    "created_at": "2026-09-19T16:11:29Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "Vitor-Trancoso"
+    },
+    "issue": {
+      "number": 183
+    }
+  },
+  {
+    "id": 31450718854,
+    "event": "head_ref_deleted",
+    "created_at": "2026-09-19T16:11:29Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "Vitor-Trancoso"
+    },
+    "issue": {
+      "number": 181
+    }
+  },
+  {
+    "id": 31450706673,
+    "event": "base_ref_changed",
+    "created_at": "2026-09-19T16:11:10Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "Vitor-Trancoso"
+    },
+    "issue": {
+      "number": 182
+    }
+  },
+  {
+    "id": 31450704275,
+    "event": "closed",
+    "created_at": "2026-09-19T16:11:05Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "Vitor-Trancoso"
+    },
+    "issue": {
+      "number": 178
+    }
+  },
+  {
+    "id": 31450703561,
+    "event": "closed",
+    "created_at": "2026-09-19T16:11:04Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "Vitor-Trancoso"
+    },
+    "issue": {
+      "number": 183
+    }
+  },
+  {
+    "id": 31450703414,
+    "event": "merged",
+    "created_at": "2026-09-19T16:11:04Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "Vitor-Trancoso"
+    },
+    "issue": {
+      "number": 183
+    }
+  },
+  {
+    "id": 31450640875,
+    "event": "labeled",
+    "created_at": "2026-09-19T16:09:20Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "Vitor-Trancoso"
+    },
+    "issue": {
+      "number": 183
+    }
+  },
+  {
+    "id": 31450639106,
+    "event": "assigned",
+    "created_at": "2026-09-19T16:09:18Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "Vitor-Trancoso"
+    },
+    "issue": {
+      "number": 183
+    }
+  },
+  {
+    "id": 31450592571,
+    "event": "head_ref_deleted",
+    "created_at": "2026-09-19T16:07:57Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "Vitor-Trancoso"
+    },
+    "issue": {
+      "number": 180
+    }
+  },
+  {
+    "id": 31450592351,
+    "event": "closed",
+    "created_at": "2026-09-19T16:07:57Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "Vitor-Trancoso"
+    },
+    "issue": {
+      "number": 181
+    }
+  },
+  {
+    "id": 31450592007,
+    "event": "base_ref_deleted",
+    "created_at": "2026-09-19T16:07:56Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "Vitor-Trancoso"
+    },
+    "issue": {
+      "number": 181
+    }
+  },
+  {
+    "id": 31450591093,
+    "event": "closed",
+    "created_at": "2026-09-19T16:07:55Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "Vitor-Trancoso"
+    },
+    "issue": {
+      "number": 177
+    }
+  },
+  {
+    "id": 31450590346,
+    "event": "closed",
+    "created_at": "2026-09-19T16:07:54Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "Vitor-Trancoso"
+    },
+    "issue": {
+      "number": 180
+    }
+  },
+  {
+    "id": 31450590316,
+    "event": "merged",
+    "created_at": "2026-09-19T16:07:54Z",
+    "repo_name": "2025-1-NoFluxoUnB",
+    "actor": {
+      "login": "Vitor-Trancoso"
+    },
+    "issue": {
+      "number": 180
     }
   },
   {

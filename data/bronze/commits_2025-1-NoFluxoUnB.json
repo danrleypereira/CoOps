@@ -1,10 +1,129 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-19T09:28:36.166379",
+      "extracted_at": "2026-09-20T09:59:56.142049",
       "file_path": "data/bronze/commits_2025-1-NoFluxoUnB.json",
-      "record_count": 1229
+      "record_count": 1237
     }
+  },
+  {
+    "sha": "c0e14f0f9f6c4449c952b03c7c17cba338bbec54",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-19T16:12:32Z",
+        "login": "Vitor-Trancoso"
+      },
+      "message": "Merge pull request #182 from unb-mds/chore/fase4-rename"
+    },
+    "additions": 317,
+    "deletions": 451,
+    "total_changes": 768,
+    "repo_name": "2025-1-NoFluxoUnB"
+  },
+  {
+    "sha": "d561b843a6e1d60e444eb7f94ee44e61a216f77f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-19T16:11:04Z",
+        "login": "Vitor-Trancoso"
+      },
+      "message": "Merge pull request #183 from unb-mds/chore/fase3-realocacoes"
+    },
+    "additions": 67,
+    "deletions": 15252,
+    "total_changes": 15319,
+    "repo_name": "2025-1-NoFluxoUnB"
+  },
+  {
+    "sha": "efc7f50ce188d4f10540adbac259b7b43564fa49",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-19T16:09:23Z",
+        "login": "Vitor-Trancoso"
+      },
+      "message": "chore(repo): add AGENTS.md for repository orientation and guidelines"
+    },
+    "additions": 71,
+    "deletions": 0,
+    "total_changes": 71,
+    "repo_name": "2025-1-NoFluxoUnB"
+  },
+  {
+    "sha": "7ed5dbe7ebea868f6bfc35201e73ee40ebf01454",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-19T16:07:54Z",
+        "login": "Vitor-Trancoso"
+      },
+      "message": "Merge pull request #180 from unb-mds/chore/fase2-breadcrumbs"
+    },
+    "additions": 329,
+    "deletions": 880,
+    "total_changes": 1209,
+    "repo_name": "2025-1-NoFluxoUnB"
+  },
+  {
+    "sha": "4d62a2232588f5d8959829616371101d6aafec97",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-18T20:25:04Z",
+        "login": "Vitor-Trancoso"
+      },
+      "message": "fix(repo): correções da verificação adversarial das fases 3–4"
+    },
+    "additions": 28,
+    "deletions": 40,
+    "total_changes": 68,
+    "repo_name": "2025-1-NoFluxoUnB"
+  },
+  {
+    "sha": "561483cd0fe27cf901c170460071fa363e83d548",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-18T20:15:05Z",
+        "login": "Vitor-Trancoso"
+      },
+      "message": "refactor(repo): fase 4 da reorganização — rename backend e frontend"
+    },
+    "additions": 224,
+    "deletions": 417,
+    "total_changes": 641,
+    "repo_name": "2025-1-NoFluxoUnB"
+  },
+  {
+    "sha": "867a50f0a1866534a9c9e93d5329dd577abcc7b3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-18T20:11:37Z",
+        "login": "Vitor-Trancoso"
+      },
+      "message": "refactor(repo): fase 3 da reorganização — realocações e aposentadorias"
+    },
+    "additions": 67,
+    "deletions": 15252,
+    "total_changes": 15319,
+    "repo_name": "2025-1-NoFluxoUnB"
   },
   {
     "sha": "3fa7fe60cd4bdae298634bcd715e57668837e8b9",
@@ -21,6 +140,23 @@
     "additions": 21,
     "deletions": 13787,
     "total_changes": 13808,
+    "repo_name": "2025-1-NoFluxoUnB"
+  },
+  {
+    "sha": "e90668a5a2aedd83dd83ff3136c26d186235f376",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-18T19:03:03Z",
+        "login": "Vitor-Trancoso"
+      },
+      "message": "docs(repo): fase 2 da reorganização — breadcrumbs e docs por área"
+    },
+    "additions": 329,
+    "deletions": 880,
+    "total_changes": 1209,
     "repo_name": "2025-1-NoFluxoUnB"
   },
   {

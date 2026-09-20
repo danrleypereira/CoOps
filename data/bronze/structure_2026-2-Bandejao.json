@@ -2,7 +2,7 @@
   "owner": "unb-mds",
   "repository": "2026-2-Bandejao",
   "branch": "main",
-  "sha": "0c5b6e11f05cfec84a02ae4cbba6ebf18ea38da0",
+  "sha": "845b947cd96e96f4fb380f03077fba3acf29e2e2",
   "tree": [
     {
       "name": ".gitignore",
@@ -516,7 +516,7 @@
       "name": "docs",
       "path": "docs",
       "type": "directory",
-      "sha": "a055edf937cc93bb6049aaae95a2ae6739140192",
+      "sha": "abd58b8bb8e1d76e25b84efb4e8307a7b7757e2b",
       "mode": "040000",
       "children": []
     },
@@ -554,7 +554,7 @@
       "name": "estudos",
       "path": "docs/estudos",
       "type": "directory",
-      "sha": "69141ed66f6a5fe9799eb536f81b2ca83528ad62",
+      "sha": "27f4d701fa20e9d3dbd413aef049c8aad5d2761e",
       "mode": "040000",
       "children": []
     },
@@ -616,6 +616,16 @@
       "mode": "100644",
       "extension": ".md",
       "size": 8685,
+      "is_binary": false
+    },
+    {
+      "name": "frontend.md",
+      "path": "docs/estudos/frontend.md",
+      "type": "file",
+      "sha": "887a2decbf7c91ffd66eb04873cfd6b72b342eda",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 9292,
       "is_binary": false
     },
     {
@@ -1016,19 +1026,19 @@
     }
   ],
   "truncated": false,
-  "extracted_at": "2026-09-19T10:03:01.552195",
+  "extracted_at": "2026-09-20T10:35:39.115548",
   "method": "rest",
-  "total_items": 106,
+  "total_items": 107,
   "repository_metadata": {
     "id": 1338353011,
     "full_name": "unb-mds/2026-2-Bandejao",
     "description": "Grupo G12 - Metodos de Desenvolvimento de Software 2026/2",
     "created_at": "2026-08-18T11:59:18Z",
-    "updated_at": "2026-09-17T13:33:10Z",
+    "updated_at": "2026-09-20T00:29:54Z",
     "language": "Python",
-    "size": 151,
-    "stars": 1,
+    "size": 139,
+    "stars": 2,
     "forks": 0,
-    "open_issues": 2
+    "open_issues": 1
   }
 }

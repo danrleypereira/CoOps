@@ -1,10 +1,61 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-19T10:00:09.054886",
+      "extracted_at": "2026-09-20T10:32:14.438264",
       "file_path": "data/bronze/commits_2026-2-Followw.json",
-      "record_count": 12
+      "record_count": 15
     }
+  },
+  {
+    "sha": "e36f8a8bc83904d8727c42bd1c7d05245fd29581",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-20T02:41:13Z",
+        "login": "eliabexp"
+      },
+      "message": "docs: adiciona docs para agentes"
+    },
+    "additions": 497,
+    "deletions": 25,
+    "total_changes": 522,
+    "repo_name": "2026-2-Followw"
+  },
+  {
+    "sha": "6a7c2c05a31c968d56d4acb75fe277c8031dccd0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-20T01:43:07Z",
+        "login": "Mendezalv"
+      },
+      "message": "feat: cria primeiros testes"
+    },
+    "additions": 1400,
+    "deletions": 113,
+    "total_changes": 1513,
+    "repo_name": "2026-2-Followw"
+  },
+  {
+    "sha": "cd0a8b644cce7a5ef1917e6ae1abbf4177725674",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-20T00:40:00Z",
+        "login": "eliabexp"
+      },
+      "message": "feat/cria sigaa client (#14)"
+    },
+    "additions": 2190,
+    "deletions": 143,
+    "total_changes": 2333,
+    "repo_name": "2026-2-Followw"
   },
   {
     "sha": "e42994057f09e54289a011285c6f561ab0b31fab",

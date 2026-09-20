@@ -2,7 +2,7 @@
   "owner": "unb-mds",
   "repository": "Fique-de-Olho",
   "branch": "main",
-  "sha": "4efdaa3e1163166abbcf37d4b58cb5f7f94f845b",
+  "sha": "31817cdcd500d1ca3638bc2b3d84fb28c667db3e",
   "tree": [
     {
       "name": ".github",
@@ -604,7 +604,7 @@
       "name": "docs",
       "path": "docs",
       "type": "directory",
-      "sha": "ce69a6ac7d04fd82def1548b495bd01c7ed38e7e",
+      "sha": "70fb7970ee1e542edc7e9faf732ceb806096f0be",
       "mode": "040000",
       "children": []
     },
@@ -612,7 +612,7 @@
       "name": "Estudos",
       "path": "docs/Estudos",
       "type": "directory",
-      "sha": "56feb3eb86f308faa6becdb7f2f5e5534c1694f4",
+      "sha": "2f573328c14c3c1b7e7ca12d0e33a2e39acab9cd",
       "mode": "040000",
       "children": []
     },
@@ -620,7 +620,7 @@
       "name": "sprint00",
       "path": "docs/Estudos/sprint00",
       "type": "directory",
-      "sha": "d1002189b032c1e2ebdce47998711a79fefe8776",
+      "sha": "6071135fbeeaab6d3ea94ebba11acec87cc97ecc",
       "mode": "040000",
       "children": []
     },
@@ -668,10 +668,10 @@
       "name": "arquitetura.md",
       "path": "docs/Estudos/sprint00/arquitetura.md",
       "type": "file",
-      "sha": "e4c92888674b3c47b49ddc7ca59dd99c3e2ae966",
+      "sha": "1698c4f9ca83fb5456ce29db970af8f689b8d95b",
       "mode": "100644",
       "extension": ".md",
-      "size": 2263,
+      "size": 3984,
       "is_binary": false
     },
     {
@@ -940,7 +940,7 @@
     }
   ],
   "truncated": false,
-  "extracted_at": "2026-09-19T10:02:57.967622",
+  "extracted_at": "2026-09-20T10:35:34.736694",
   "method": "rest",
   "total_items": 101,
   "repository_metadata": {
@@ -948,9 +948,9 @@
     "full_name": "unb-mds/Fique-de-Olho",
     "description": "Grupo G4 - Metodos de Desenvolvimento de Software 2026/2",
     "created_at": "2026-08-18T11:56:41Z",
-    "updated_at": "2026-09-17T21:16:40Z",
+    "updated_at": "2026-09-20T00:11:10Z",
     "language": null,
-    "size": 1059,
+    "size": 1063,
     "stars": 1,
     "forks": 0,
     "open_issues": 11

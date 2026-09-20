@@ -1,7 +1,7 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-19T09:09:53.759830",
+      "extracted_at": "2026-09-20T09:39:16.711782",
       "file_path": "data/bronze/issues_2026-2-Bandejao.json",
       "record_count": 16
     }
@@ -1046,11 +1046,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 2,
-      "closed_issues": 6,
+      "open_issues": 1,
+      "closed_issues": 7,
       "state": "open",
       "created_at": "2026-09-04T19:37:47Z",
-      "updated_at": "2026-09-14T00:24:19Z",
+      "updated_at": "2026-09-20T00:29:51Z",
       "due_on": null,
       "closed_at": null
     },
@@ -1192,11 +1192,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 2,
-      "closed_issues": 6,
+      "open_issues": 1,
+      "closed_issues": 7,
       "state": "open",
       "created_at": "2026-09-04T19:37:47Z",
-      "updated_at": "2026-09-14T00:24:19Z",
+      "updated_at": "2026-09-20T00:29:51Z",
       "due_on": null,
       "closed_at": null
     },
@@ -1338,11 +1338,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 2,
-      "closed_issues": 6,
+      "open_issues": 1,
+      "closed_issues": 7,
       "state": "open",
       "created_at": "2026-09-04T19:37:47Z",
-      "updated_at": "2026-09-14T00:24:19Z",
+      "updated_at": "2026-09-20T00:29:51Z",
       "due_on": null,
       "closed_at": null
     },
@@ -1431,9 +1431,31 @@
         "archived_by": null
       }
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
-    "assignees": [],
+    "assignees": [
+      {
+        "login": "marilluantunes",
+        "id": 229766626,
+        "node_id": "U_kgDODbH14g",
+        "avatar_url": "https://avatars.githubusercontent.com/u/229766626?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/marilluantunes",
+        "html_url": "https://github.com/marilluantunes",
+        "followers_url": "https://api.github.com/users/marilluantunes/followers",
+        "following_url": "https://api.github.com/users/marilluantunes/following{/other_user}",
+        "gists_url": "https://api.github.com/users/marilluantunes/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/marilluantunes/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/marilluantunes/subscriptions",
+        "organizations_url": "https://api.github.com/users/marilluantunes/orgs",
+        "repos_url": "https://api.github.com/users/marilluantunes/repos",
+        "events_url": "https://api.github.com/users/marilluantunes/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/marilluantunes/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      }
+    ],
     "milestone": {
       "url": "https://api.github.com/repos/unb-mds/2026-2-Bandejao/milestones/1",
       "html_url": "https://github.com/unb-mds/2026-2-Bandejao/milestone/1",
@@ -1464,19 +1486,39 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 2,
-      "closed_issues": 6,
+      "open_issues": 1,
+      "closed_issues": 7,
       "state": "open",
       "created_at": "2026-09-04T19:37:47Z",
-      "updated_at": "2026-09-14T00:24:19Z",
+      "updated_at": "2026-09-20T00:29:51Z",
       "due_on": null,
       "closed_at": null
     },
     "comments": 0,
     "created_at": "2026-09-04T19:54:22Z",
-    "updated_at": "2026-09-04T20:22:25Z",
-    "closed_at": null,
-    "assignee": null,
+    "updated_at": "2026-09-20T00:30:46Z",
+    "closed_at": "2026-09-20T00:29:51Z",
+    "assignee": {
+      "login": "marilluantunes",
+      "id": 229766626,
+      "node_id": "U_kgDODbH14g",
+      "avatar_url": "https://avatars.githubusercontent.com/u/229766626?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/marilluantunes",
+      "html_url": "https://github.com/marilluantunes",
+      "followers_url": "https://api.github.com/users/marilluantunes/followers",
+      "following_url": "https://api.github.com/users/marilluantunes/following{/other_user}",
+      "gists_url": "https://api.github.com/users/marilluantunes/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/marilluantunes/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/marilluantunes/subscriptions",
+      "organizations_url": "https://api.github.com/users/marilluantunes/orgs",
+      "repos_url": "https://api.github.com/users/marilluantunes/repos",
+      "events_url": "https://api.github.com/users/marilluantunes/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/marilluantunes/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
     "author_association": "COLLABORATOR",
     "issue_field_values": [],
     "type": null,
@@ -1492,8 +1534,28 @@
       "blocking": 0,
       "total_blocking": 0
     },
-    "body": "## Objetivo\nEntender os conceitos fundamentais de desenvolvimento frontend.\n\n## Critérios de aceite\n- [ ] Entender conceitos básicos de componentes, estado e renderização\n- [ ] Pesquisar frameworks de frontend comuns e suas diferenças\n- [ ] Documentar um resumo dos conceitos em `docs/estudos/frontend.md`",
-    "closed_by": null,
+    "body": "## Objetivo\nEntender os conceitos fundamentais de desenvolvimento frontend.\n\n## Critérios de aceite\n- [x] Entender conceitos básicos de componentes, estado e renderização\n- [x] Pesquisar frameworks de frontend comuns e suas diferenças\n- [x] Documentar um resumo dos conceitos em `docs/estudos/frontend.md`",
+    "closed_by": {
+      "login": "marilluantunes",
+      "id": 229766626,
+      "node_id": "U_kgDODbH14g",
+      "avatar_url": "https://avatars.githubusercontent.com/u/229766626?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/marilluantunes",
+      "html_url": "https://github.com/marilluantunes",
+      "followers_url": "https://api.github.com/users/marilluantunes/followers",
+      "following_url": "https://api.github.com/users/marilluantunes/following{/other_user}",
+      "gists_url": "https://api.github.com/users/marilluantunes/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/marilluantunes/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/marilluantunes/subscriptions",
+      "organizations_url": "https://api.github.com/users/marilluantunes/orgs",
+      "repos_url": "https://api.github.com/users/marilluantunes/repos",
+      "events_url": "https://api.github.com/users/marilluantunes/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/marilluantunes/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
     "reactions": {
       "url": "https://api.github.com/repos/unb-mds/2026-2-Bandejao/issues/6/reactions",
       "total_count": 0,
@@ -1508,7 +1570,7 @@
     },
     "timeline_url": "https://api.github.com/repos/unb-mds/2026-2-Bandejao/issues/6/timeline",
     "performed_via_github_app": null,
-    "state_reason": null,
+    "state_reason": "completed",
     "pinned_comment": null,
     "repo_name": "2026-2-Bandejao"
   },
@@ -1590,11 +1652,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 2,
-      "closed_issues": 6,
+      "open_issues": 1,
+      "closed_issues": 7,
       "state": "open",
       "created_at": "2026-09-04T19:37:47Z",
-      "updated_at": "2026-09-14T00:24:19Z",
+      "updated_at": "2026-09-20T00:29:51Z",
       "due_on": null,
       "closed_at": null
     },
@@ -1758,11 +1820,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 2,
-      "closed_issues": 6,
+      "open_issues": 1,
+      "closed_issues": 7,
       "state": "open",
       "created_at": "2026-09-04T19:37:47Z",
-      "updated_at": "2026-09-14T00:24:19Z",
+      "updated_at": "2026-09-20T00:29:51Z",
       "due_on": null,
       "closed_at": null
     },
@@ -1924,11 +1986,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 2,
-      "closed_issues": 6,
+      "open_issues": 1,
+      "closed_issues": 7,
       "state": "open",
       "created_at": "2026-09-04T19:37:47Z",
-      "updated_at": "2026-09-14T00:24:19Z",
+      "updated_at": "2026-09-20T00:29:51Z",
       "due_on": null,
       "closed_at": null
     },
@@ -2216,11 +2278,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 2,
-      "closed_issues": 6,
+      "open_issues": 1,
+      "closed_issues": 7,
       "state": "open",
       "created_at": "2026-09-04T19:37:47Z",
-      "updated_at": "2026-09-14T00:24:19Z",
+      "updated_at": "2026-09-20T00:29:51Z",
       "due_on": null,
       "closed_at": null
     },

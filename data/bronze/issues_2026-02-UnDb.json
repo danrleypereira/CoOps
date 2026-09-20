@@ -1,7 +1,7 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-19T09:09:45.689101",
+      "extracted_at": "2026-09-20T09:39:07.464871",
       "file_path": "data/bronze/issues_2026-02-UnDb.json",
       "record_count": 48
     }
@@ -2597,11 +2597,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 3,
-      "closed_issues": 6,
+      "open_issues": 2,
+      "closed_issues": 7,
       "state": "open",
       "created_at": "2026-09-05T20:18:14Z",
-      "updated_at": "2026-09-19T01:21:43Z",
+      "updated_at": "2026-09-19T14:33:17Z",
       "due_on": "2026-09-18T00:00:00Z",
       "closed_at": null
     },
@@ -3031,11 +3031,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 3,
-      "closed_issues": 6,
+      "open_issues": 2,
+      "closed_issues": 7,
       "state": "open",
       "created_at": "2026-09-05T20:18:14Z",
-      "updated_at": "2026-09-19T01:21:43Z",
+      "updated_at": "2026-09-19T14:33:17Z",
       "due_on": "2026-09-18T00:00:00Z",
       "closed_at": null
     },
@@ -3284,11 +3284,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 3,
-      "closed_issues": 6,
+      "open_issues": 2,
+      "closed_issues": 7,
       "state": "open",
       "created_at": "2026-09-05T20:18:14Z",
-      "updated_at": "2026-09-19T01:21:43Z",
+      "updated_at": "2026-09-19T14:33:17Z",
       "due_on": "2026-09-18T00:00:00Z",
       "closed_at": null
     },
@@ -3431,7 +3431,7 @@
         "archived_by": null
       }
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignees": [
       {
@@ -3507,18 +3507,18 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 3,
-      "closed_issues": 6,
+      "open_issues": 2,
+      "closed_issues": 7,
       "state": "open",
       "created_at": "2026-09-05T20:18:14Z",
-      "updated_at": "2026-09-19T01:21:43Z",
+      "updated_at": "2026-09-19T14:33:17Z",
       "due_on": "2026-09-18T00:00:00Z",
       "closed_at": null
     },
-    "comments": 0,
+    "comments": 1,
     "created_at": "2026-09-01T13:59:29Z",
-    "updated_at": "2026-09-14T01:56:44Z",
-    "closed_at": null,
+    "updated_at": "2026-09-19T14:33:17Z",
+    "closed_at": "2026-09-19T14:33:17Z",
     "assignee": {
       "login": "TiagoVieira-596",
       "id": 158865980,
@@ -3557,7 +3557,27 @@
       "total_blocking": 0
     },
     "body": "### 📚 Descrição e objetivo\n\nConcentrar o alinhamento de frontend e infraestrutura sobre a execução da stack aprovada em #28 e sua integração ao ambiente do projeto. Esta issue será a referência compartilhada dos épicos #11 e #13.\n\n### ✅ Critérios de aceite\n\n- [ ] Estratégia de execução do frontend está decidida e documentada após #28.\n- [ ] Next.js + Tailwind foram aprovados em #28; a decisão distingue execução com servidor e exportação estática, explicando consequências para o projeto.\n- [ ] Está definido se e como o frontend será containerizado nesta fase.\n- [ ] Configuração de container/Compose foi atualizada quando exigida pela decisão e sua execução foi verificada.\n- [ ] Instruções de execução estão atualizadas no README.\n- [ ] Ambos os épicos referenciam esta mesma tarefa; #32 não mantém trabalho paralelo duplicado.\n\n### 📝 Tarefas\n\n- [ ] Alinhar responsáveis de frontend e infraestrutura.\n- [ ] Registrar decisão e consequências em docs/arquitetura.md.\n- [ ] Implementar configuração aplicável após a decisão.\n- [ ] Atualizar instruções e verificar execução.\n\n### 📎 Dependências e pendências\n\n#28; implementação depende da estrutura #29 e de #34 quando houver integração ao Compose. Atualizar referências da skill de Docker se necessário, respeitando seu processo de revisão, sem promover seu estado automaticamente.\n\n### 📌 Prioridade e responsável\n\nPrioridade: Baixa. Responsável principal: a definir em Assignees, com participação das duas frentes.",
-    "closed_by": null,
+    "closed_by": {
+      "login": "ViniGvdo",
+      "id": 198657137,
+      "node_id": "U_kgDOC9dEcQ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/198657137?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ViniGvdo",
+      "html_url": "https://github.com/ViniGvdo",
+      "followers_url": "https://api.github.com/users/ViniGvdo/followers",
+      "following_url": "https://api.github.com/users/ViniGvdo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ViniGvdo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ViniGvdo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ViniGvdo/subscriptions",
+      "organizations_url": "https://api.github.com/users/ViniGvdo/orgs",
+      "repos_url": "https://api.github.com/users/ViniGvdo/repos",
+      "events_url": "https://api.github.com/users/ViniGvdo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ViniGvdo/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
     "reactions": {
       "url": "https://api.github.com/repos/unb-mds/2026-02-UnDb/issues/36/reactions",
       "total_count": 0,
@@ -3572,7 +3592,7 @@
     },
     "timeline_url": "https://api.github.com/repos/unb-mds/2026-02-UnDb/issues/36/timeline",
     "performed_via_github_app": null,
-    "state_reason": null,
+    "state_reason": "completed",
     "pinned_comment": null,
     "repo_name": "2026-02-UnDb"
   },
@@ -3898,6 +3918,27 @@
         "type": "User",
         "user_view_type": "public",
         "site_admin": false
+      },
+      {
+        "login": "ailoiol",
+        "id": 225410979,
+        "node_id": "U_kgDODW9_ow",
+        "avatar_url": "https://avatars.githubusercontent.com/u/225410979?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/ailoiol",
+        "html_url": "https://github.com/ailoiol",
+        "followers_url": "https://api.github.com/users/ailoiol/followers",
+        "following_url": "https://api.github.com/users/ailoiol/following{/other_user}",
+        "gists_url": "https://api.github.com/users/ailoiol/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/ailoiol/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/ailoiol/subscriptions",
+        "organizations_url": "https://api.github.com/users/ailoiol/orgs",
+        "repos_url": "https://api.github.com/users/ailoiol/repos",
+        "events_url": "https://api.github.com/users/ailoiol/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/ailoiol/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
       }
     ],
     "milestone": {
@@ -3930,35 +3971,35 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 3,
-      "closed_issues": 6,
+      "open_issues": 2,
+      "closed_issues": 7,
       "state": "open",
       "created_at": "2026-09-05T20:18:14Z",
-      "updated_at": "2026-09-19T01:21:43Z",
+      "updated_at": "2026-09-19T14:33:17Z",
       "due_on": "2026-09-18T00:00:00Z",
       "closed_at": null
     },
     "comments": 0,
     "created_at": "2026-09-01T13:58:50Z",
-    "updated_at": "2026-09-18T02:16:32Z",
+    "updated_at": "2026-09-19T18:00:39Z",
     "closed_at": null,
     "assignee": {
-      "login": "TiagoVieira-596",
-      "id": 158865980,
-      "node_id": "U_kgDOCXgaPA",
-      "avatar_url": "https://avatars.githubusercontent.com/u/158865980?v=4",
+      "login": "ailoiol",
+      "id": 225410979,
+      "node_id": "U_kgDODW9_ow",
+      "avatar_url": "https://avatars.githubusercontent.com/u/225410979?v=4",
       "gravatar_id": "",
-      "url": "https://api.github.com/users/TiagoVieira-596",
-      "html_url": "https://github.com/TiagoVieira-596",
-      "followers_url": "https://api.github.com/users/TiagoVieira-596/followers",
-      "following_url": "https://api.github.com/users/TiagoVieira-596/following{/other_user}",
-      "gists_url": "https://api.github.com/users/TiagoVieira-596/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/TiagoVieira-596/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/TiagoVieira-596/subscriptions",
-      "organizations_url": "https://api.github.com/users/TiagoVieira-596/orgs",
-      "repos_url": "https://api.github.com/users/TiagoVieira-596/repos",
-      "events_url": "https://api.github.com/users/TiagoVieira-596/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/TiagoVieira-596/received_events",
+      "url": "https://api.github.com/users/ailoiol",
+      "html_url": "https://github.com/ailoiol",
+      "followers_url": "https://api.github.com/users/ailoiol/followers",
+      "following_url": "https://api.github.com/users/ailoiol/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ailoiol/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ailoiol/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ailoiol/subscriptions",
+      "organizations_url": "https://api.github.com/users/ailoiol/orgs",
+      "repos_url": "https://api.github.com/users/ailoiol/repos",
+      "events_url": "https://api.github.com/users/ailoiol/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ailoiol/received_events",
       "type": "User",
       "user_view_type": "public",
       "site_admin": false
@@ -3979,7 +4020,7 @@
       "blocking": 0,
       "total_blocking": 0
     },
-    "body": "### 📚 Descrição e objetivo\n\nConfigurar a execução conjunta do backend e PostgreSQL com Docker Compose, conforme o escopo já previsto nesta issue.\n\n### ✅ Critérios de aceite\n\n- [x] Arquivo de Compose está na raiz e usa o Dockerfile do backend #33.\n- [x] docker compose up --build inicia backend e banco com a configuração de exemplo preenchida conforme README.\n- [x] Backend conecta ao banco pelo nome do serviço, sem usar localhost para conexão entre containers.\n- [ ] Volume do PostgreSQL está configurado e a persistência é verificada após reiniciar os serviços sem remover o volume.\n- [x] Variáveis necessárias e passos de execução estão documentados em conjunto com #35.\n\n### 📝 Tarefas\n\n- [x] Criar serviços de backend e banco.\n- [x] Configurar variáveis, rede e volume.\n- [x] Integrar conexão do backend conforme decisão de persistência.\n- [ ] Verificar inicialização, conexão e persistência básica; reservar a validação completa por dois membros para #37.\n\n### 📎 Dependências e pendências\n\n#33 e #35. A configuração inicial do Compose pode avançar, mas a conexão efetiva depende da implementação da camada de banco. SQLAlchemy síncrono + Alembic + PostgreSQL/psycopg2 foram aprovados no PR #55. Verificar a conexão real com DATABASE_URL preenchida.\n\nFrontend permanece em #36. Migrações Alembic são a decisão vigente de persistência. A imagem deve conter os arquivos de migração; definir e verificar sua execução na composição antes de declarar o ambiente pronto. RNFs não aprovados permanecem propostos.\n\n### 📌 Prioridade e responsável\n\nPrioridade: Alta. Responsável: a definir em Assignees.",
+    "body": "### 📚 Descrição e objetivo\n\nConfigurar a execução conjunta do backend e PostgreSQL com Docker Compose, conforme o escopo já previsto nesta issue.\n\n### ✅ Critérios de aceite\n\n- [x] Arquivo de Compose está na raiz e usa o Dockerfile do backend #33.\n- [x] docker compose up --build inicia backend e banco com a configuração de exemplo preenchida conforme README.\n- [x] Backend conecta ao banco pelo nome do serviço, sem usar localhost para conexão entre containers.\n- [x] Volume do PostgreSQL está configurado e a persistência é verificada após reiniciar os serviços sem remover o volume.\n- [x] Variáveis necessárias e passos de execução estão documentados em conjunto com #35.\n\n### 📝 Tarefas\n\n- [x] Criar serviços de backend e banco.\n- [x] Configurar variáveis, rede e volume.\n- [x] Integrar conexão do backend conforme decisão de persistência.\n- [ ] Verificar inicialização, conexão e persistência básica; reservar a validação completa por dois membros para #37.\n\n### 📎 Dependências e pendências\n\n#33 e #35. A configuração inicial do Compose pode avançar, mas a conexão efetiva depende da implementação da camada de banco. SQLAlchemy síncrono + Alembic + PostgreSQL/psycopg2 foram aprovados no PR #55. Verificar a conexão real com DATABASE_URL preenchida.\n\nFrontend permanece em #36. Migrações Alembic são a decisão vigente de persistência. A imagem deve conter os arquivos de migração; definir e verificar sua execução na composição antes de declarar o ambiente pronto. RNFs não aprovados permanecem propostos.\n\n### 📌 Prioridade e responsável\n\nPrioridade: Alta. Responsável: a definir em Assignees.",
     "closed_by": null,
     "reactions": {
       "url": "https://api.github.com/repos/unb-mds/2026-02-UnDb/issues/34/reactions",
@@ -4440,11 +4481,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 3,
-      "closed_issues": 6,
+      "open_issues": 2,
+      "closed_issues": 7,
       "state": "open",
       "created_at": "2026-09-05T20:18:14Z",
-      "updated_at": "2026-09-19T01:21:43Z",
+      "updated_at": "2026-09-19T14:33:17Z",
       "due_on": "2026-09-18T00:00:00Z",
       "closed_at": null
     },
@@ -4651,11 +4692,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 3,
-      "closed_issues": 6,
+      "open_issues": 2,
+      "closed_issues": 7,
       "state": "open",
       "created_at": "2026-09-05T20:18:14Z",
-      "updated_at": "2026-09-19T01:21:43Z",
+      "updated_at": "2026-09-19T14:33:17Z",
       "due_on": "2026-09-18T00:00:00Z",
       "closed_at": null
     },
@@ -4862,11 +4903,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 3,
-      "closed_issues": 6,
+      "open_issues": 2,
+      "closed_issues": 7,
       "state": "open",
       "created_at": "2026-09-05T20:18:14Z",
-      "updated_at": "2026-09-19T01:21:43Z",
+      "updated_at": "2026-09-19T14:33:17Z",
       "due_on": "2026-09-18T00:00:00Z",
       "closed_at": null
     },
@@ -5730,11 +5771,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 3,
-      "closed_issues": 6,
+      "open_issues": 2,
+      "closed_issues": 7,
       "state": "open",
       "created_at": "2026-09-05T20:18:14Z",
-      "updated_at": "2026-09-19T01:21:43Z",
+      "updated_at": "2026-09-19T14:33:17Z",
       "due_on": "2026-09-18T00:00:00Z",
       "closed_at": null
     },
@@ -8461,8 +8502,8 @@
     "active_lock_reason": null,
     "sub_issues_summary": {
       "total": 5,
-      "completed": 2,
-      "percent_completed": 40
+      "completed": 3,
+      "percent_completed": 60
     },
     "issue_dependencies_summary": {
       "blocked_by": 0,

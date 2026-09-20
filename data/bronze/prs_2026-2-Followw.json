@@ -1,7 +1,7 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-19T09:09:43.174740",
+      "extracted_at": "2026-09-20T09:39:04.347612",
       "file_path": "data/bronze/prs_2026-2-Followw.json",
       "record_count": 3
     }
@@ -39,7 +39,7 @@
       "site_admin": false
     },
     "labels": [],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignees": [
       {
@@ -67,8 +67,8 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2026-09-17T13:51:30Z",
-    "updated_at": "2026-09-19T03:42:36Z",
-    "closed_at": null,
+    "updated_at": "2026-09-20T01:43:12Z",
+    "closed_at": "2026-09-20T01:43:08Z",
     "assignee": {
       "login": "eliabexp",
       "id": 74092305,
@@ -94,16 +94,36 @@
     "issue_field_values": [],
     "type": null,
     "active_lock_reason": null,
-    "draft": true,
+    "draft": false,
     "pull_request": {
       "url": "https://api.github.com/repos/unb-mds/2026-2-Followw/pulls/17",
       "html_url": "https://github.com/unb-mds/2026-2-Followw/pull/17",
       "diff_url": "https://github.com/unb-mds/2026-2-Followw/pull/17.diff",
       "patch_url": "https://github.com/unb-mds/2026-2-Followw/pull/17.patch",
-      "merged_at": null
+      "merged_at": "2026-09-20T01:43:07Z"
     },
     "body": "## Descrição\r\n\r\nImplementação da suíte inicial de testes automatizados da API, focada em garantir a confiabilidade do módulo de autenticação e validação de sessão, em conformidade com o plano de testes técnico. \r\n\r\nA rota de login também foi atualizada para consumir o `SigaaClient` criado recentemente, substituindo a atribuição vazia que estava definida temporariamente.\r\n\r\n### Detalhes das mudanças\r\n\r\n- **Integração do Client**: O endpoint `POST /auth/sigaa` foi atualizado para ser assíncrono e realizar o login real utilizando o `SigaaClient`, com tratamento para `AuthenticationFailed` (401) e `SigaaError` (502).\r\n- **Testes Unitários (`tests/unit`)**: \r\n  - `test_security.py`: Valida a assinatura, conteúdo e expiração de `access_token` e `refresh_token`, além de garantir as exceções do `jwt` (assinaturas falsas, tokens corrompidos e expirados).\r\n  - `test_dependencies.py`: Garante que a dependência `get_current_user` barre requisições sem cookies ou com cookies inválidos, e libere o acesso com o payload correto.\r\n- **Testes de Integração (`tests/integration`)**:\r\n  - `test_auth.py`: Utiliza o `respx`/`AsyncMock` para simular as respostas do SIGAA e cobre cenários de payload inválido (422), credenciais incorretas (401) e sucesso no login (200 OK + recebimento dos cabeçalhos `Set-Cookie` restritos com `HttpOnly` e `SameSite`).\r\n- **Ambiente**: Configuração do `conftest.py` com as _fixtures_ necessárias e adição de `pytest`, `pytest-asyncio` e `respx` ao grupo de desenvolvimento no `pyproject.toml`. Refatoração global utilizando `ruff` (formatação e linting).\r\n\r\n## Issues relacionadas\r\n\r\n- Closes #11\r\n- Relacionado a #9 (Client do SIGAA) e #4 (Levantamento de ferramentas de Teste)\r\n\r\n## Como testar\r\n\r\n1. Faça o checkout desta branch localmente: `git checkout feat/11-primeiros-testes`\r\n2. Sincronize as novas dependências do projeto: `uv sync`\r\n3. Execute a suíte de testes: `uv run pytest -v` (Os 15 testes devem passar com sucesso).\r\n\r\n## Contexto adicional\r\n\r\nOs testes dispensam a necessidade de comunicação externa (sem gerar requisições falsas contra o ambiente da UnB) garantindo velocidade e independência do ambiente de CI/CD. Não foram incluídos testes de e2e, já que o front-end ainda não está sendo integrado nesta etapa.",
-    "closed_by": null,
+    "closed_by": {
+      "login": "eliabexp",
+      "id": 74092305,
+      "node_id": "MDQ6VXNlcjc0MDkyMzA1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74092305?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/eliabexp",
+      "html_url": "https://github.com/eliabexp",
+      "followers_url": "https://api.github.com/users/eliabexp/followers",
+      "following_url": "https://api.github.com/users/eliabexp/following{/other_user}",
+      "gists_url": "https://api.github.com/users/eliabexp/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/eliabexp/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/eliabexp/subscriptions",
+      "organizations_url": "https://api.github.com/users/eliabexp/orgs",
+      "repos_url": "https://api.github.com/users/eliabexp/repos",
+      "events_url": "https://api.github.com/users/eliabexp/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/eliabexp/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
     "reactions": {
       "url": "https://api.github.com/repos/unb-mds/2026-2-Followw/issues/17/reactions",
       "total_count": 0,
@@ -154,14 +174,14 @@
       "site_admin": false
     },
     "labels": [],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignees": [],
     "milestone": null,
     "comments": 0,
     "created_at": "2026-09-16T17:58:23Z",
-    "updated_at": "2026-09-18T01:54:24Z",
-    "closed_at": null,
+    "updated_at": "2026-09-20T01:43:22Z",
+    "closed_at": "2026-09-20T00:40:01Z",
     "assignee": null,
     "author_association": "COLLABORATOR",
     "issue_field_values": [],
@@ -173,10 +193,30 @@
       "html_url": "https://github.com/unb-mds/2026-2-Followw/pull/14",
       "diff_url": "https://github.com/unb-mds/2026-2-Followw/pull/14.diff",
       "patch_url": "https://github.com/unb-mds/2026-2-Followw/pull/14.patch",
-      "merged_at": null
+      "merged_at": "2026-09-20T00:40:01Z"
     },
     "body": "# Descrição\r\n\r\nCria o `sigaa-client`, biblioteca interna que abstrai a comunicação com o SIGAA da UnB (dados públicos e autenticados) e expõe modelos Pydantic prontos para a API consumir, sem que ela precise lidar com cookies, `ViewState` ou outras complexidades do Sigaa. Também promove o monorepo a workspace `uv`, movendo `.env.example`, `.gitignore` e `uv.lock` de `apps/api` para a raiz.\r\n\r\n## Detalhes da mudança\r\n\r\n- Adiciona `pyproject.toml` na raiz declarando o workspace (`apps/*`, `packages/*`) e o grupo de dev com `ruff`;\r\n- Cria `SigaaClient` (autenticado) e `SigaaPublicClient` (sem login) em `client.py`, cada um como context manager assíncrono dono de uma conexão `httpx.AsyncClient`;\r\n- Implementa `private/session.py`: login via CAS com `Credentials`, extração do cookie `JSESSIONID` como token de sessão, e relogin automático sob lock quando a sessão expira (`on_session_renewed` avisa o chamador do novo token);\r\n- Implementa `public/session.py`: sessão anônima com \"aquecimento\" obrigatório pela home pública antes de qualquer submit, já que o JSF descarta postbacks de sessões que não passaram por lá;\r\n- Implementa `private/profile.py` e `private/classrooms.py`: parsing do perfil do discente, listagem de turmas do semestre e do histórico (com merge dos dois, já que cada tela expõe campos diferentes) e listagem de participantes de uma turma (com postback de \"Acessar Turma Virtual\" para trocar o contexto da sessão);\r\n- Implementa `public/classrooms.py`: busca pública de turmas por unidade, nível de ensino, ano e período, com resolução de unidade por nome, id ou objeto `Unit`;\r\n- Adiciona `utils/jsf.py` (leitura de `ViewState`, montagem de payload de postback/submit) e `utils/parsing.py` (helpers de limpeza de texto e parsing de campos compostos como curso/unidade e local/sala), compartilhados entre os módulos público e privado;\r\n- Define exceções específicas em `exceptions.py` (`AuthenticationFailed`, `SessionExpired`, `SigaaParseError`, `SigaaSearchError`), todas derivando de `SigaaError`;\r\n- Atualiza `apps/api/pyproject.toml` para depender de `sigaa-client` via `tool.uv.sources` como membro do workspace;\r\n- Ajusta `.github/PULL_REQUEST_TEMPLATE.md` para o novo formato de seções.\r\n\r\n## Issue Relacionada\r\n\r\n- Closes #9\r\n\r\n## Como Testar\r\n\r\n- [ ] Rode `uv sync` na raiz do monorepo para validar a resolução do workspace;\r\n- [ ] Autentique com `SigaaClient(credentials)` usando uma matrícula válida e chame `client.profile.get_profile()` e `client.classrooms.list_classrooms()`;\r\n- [ ] Use `SigaaPublicClient` para buscar turmas de uma unidade (ex.: `client.classrooms.search(\"gama\", level=TeachingLevel.GRADUACAO)`) sem login.\r\n",
-    "closed_by": null,
+    "closed_by": {
+      "login": "diegolxxz",
+      "id": 53051266,
+      "node_id": "MDQ6VXNlcjUzMDUxMjY2",
+      "avatar_url": "https://avatars.githubusercontent.com/u/53051266?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/diegolxxz",
+      "html_url": "https://github.com/diegolxxz",
+      "followers_url": "https://api.github.com/users/diegolxxz/followers",
+      "following_url": "https://api.github.com/users/diegolxxz/following{/other_user}",
+      "gists_url": "https://api.github.com/users/diegolxxz/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/diegolxxz/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/diegolxxz/subscriptions",
+      "organizations_url": "https://api.github.com/users/diegolxxz/orgs",
+      "repos_url": "https://api.github.com/users/diegolxxz/repos",
+      "events_url": "https://api.github.com/users/diegolxxz/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/diegolxxz/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
     "reactions": {
       "url": "https://api.github.com/repos/unb-mds/2026-2-Followw/issues/14/reactions",
       "total_count": 0,
