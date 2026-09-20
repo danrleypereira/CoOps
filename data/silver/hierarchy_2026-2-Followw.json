@@ -2,11 +2,95 @@
   "repository": "2026-2-Followw",
   "owner": "unb-mds",
   "branch": "main",
-  "extracted_at": "2026-09-19T10:02:58.393923",
+  "extracted_at": "2026-09-20T10:35:35.285665",
   "hierarchy": {
     "name": "root",
     "type": "directory",
     "children": [
+      {
+        "name": ".agents",
+        "type": "directory",
+        "path": ".agents",
+        "children": []
+      },
+      {
+        "name": "skills",
+        "type": "directory",
+        "path": ".agents/skills",
+        "children": []
+      },
+      {
+        "name": "codebase-design",
+        "type": "directory",
+        "path": ".agents/skills/codebase-design",
+        "children": []
+      },
+      {
+        "name": "DEEPENING.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2553,
+        "extension": ".md",
+        "path": ".agents/skills/codebase-design/DEEPENING.md"
+      },
+      {
+        "name": "DESIGN-IT-TWICE.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2664,
+        "extension": ".md",
+        "path": ".agents/skills/codebase-design/DESIGN-IT-TWICE.md"
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6446,
+        "extension": ".md",
+        "path": ".agents/skills/codebase-design/SKILL.md"
+      },
+      {
+        "name": "agents",
+        "type": "directory",
+        "path": ".agents/skills/codebase-design/agents",
+        "children": []
+      },
+      {
+        "name": "openai.yaml",
+        "type": "file",
+        "language": "YAML",
+        "size": 102,
+        "extension": ".yaml",
+        "path": ".agents/skills/codebase-design/agents/openai.yaml"
+      },
+      {
+        "name": "to-spec",
+        "type": "directory",
+        "path": ".agents/skills/to-spec",
+        "children": []
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3043,
+        "extension": ".md",
+        "path": ".agents/skills/to-spec/SKILL.md"
+      },
+      {
+        "name": "agents",
+        "type": "directory",
+        "path": ".agents/skills/to-spec/agents",
+        "children": []
+      },
+      {
+        "name": "openai.yaml",
+        "type": "file",
+        "language": "YAML",
+        "size": 135,
+        "extension": ".yaml",
+        "path": ".agents/skills/to-spec/agents/openai.yaml"
+      },
       {
         "name": ".claude",
         "type": "directory",
@@ -20,6 +104,36 @@
         "size": 123,
         "extension": ".json",
         "path": ".claude/settings.json"
+      },
+      {
+        "name": "skills",
+        "type": "directory",
+        "path": ".claude/skills",
+        "children": []
+      },
+      {
+        "name": "codebase-design",
+        "type": "file",
+        "language": "No Extension",
+        "size": 36,
+        "extension": "",
+        "path": ".claude/skills/codebase-design"
+      },
+      {
+        "name": "to-spec",
+        "type": "file",
+        "language": "No Extension",
+        "size": 28,
+        "extension": "",
+        "path": ".claude/skills/to-spec"
+      },
+      {
+        "name": ".env.example",
+        "type": "file",
+        "language": "Unknown",
+        "size": 114,
+        "extension": ".example",
+        "path": ".env.example"
       },
       {
         "name": ".github",
@@ -61,9 +175,17 @@
         "name": "PULL_REQUEST_TEMPLATE.md",
         "type": "file",
         "language": "Markdown",
-        "size": 123,
+        "size": 133,
         "extension": ".md",
         "path": ".github/PULL_REQUEST_TEMPLATE.md"
+      },
+      {
+        "name": ".gitignore",
+        "type": "file",
+        "language": "Git Ignore",
+        "size": 41,
+        "extension": ".gitignore",
+        "path": ".gitignore"
       },
       {
         "name": ".vscode",
@@ -80,6 +202,22 @@
         "path": ".vscode/settings.json"
       },
       {
+        "name": "AGENTS.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 2215,
+        "extension": ".md",
+        "path": "AGENTS.md"
+      },
+      {
+        "name": "CLAUDE.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 37,
+        "extension": ".md",
+        "path": "CLAUDE.md"
+      },
+      {
         "name": "LICENSE",
         "type": "file",
         "language": "No Extension",
@@ -91,7 +229,7 @@
         "name": "README.md",
         "type": "file",
         "language": "Markdown",
-        "size": 1786,
+        "size": 2558,
         "extension": ".md",
         "path": "README.md"
       },
@@ -108,22 +246,6 @@
         "children": []
       },
       {
-        "name": ".env.example",
-        "type": "file",
-        "language": "Unknown",
-        "size": 114,
-        "extension": ".example",
-        "path": "apps/api/.env.example"
-      },
-      {
-        "name": ".gitignore",
-        "type": "file",
-        "language": "Git Ignore",
-        "size": 24,
-        "extension": ".gitignore",
-        "path": "apps/api/.gitignore"
-      },
-      {
         "name": ".python-version",
         "type": "file",
         "language": "Unknown",
@@ -132,31 +254,31 @@
         "path": "apps/api/.python-version"
       },
       {
-        "name": "pyproject.toml",
+        "name": "AGENTS.md",
         "type": "file",
-        "language": "TOML",
-        "size": 696,
-        "extension": ".toml",
-        "path": "apps/api/pyproject.toml"
+        "language": "Markdown",
+        "size": 3617,
+        "extension": ".md",
+        "path": "apps/api/AGENTS.md"
       },
       {
-        "name": "src",
+        "name": "api",
         "type": "directory",
-        "path": "apps/api/src",
+        "path": "apps/api/api",
         "children": []
       },
       {
         "name": "__init__.py",
         "type": "file",
         "language": "Python",
-        "size": 0,
+        "size": 101,
         "extension": ".py",
-        "path": "apps/api/src/__init__.py"
+        "path": "apps/api/api/__init__.py"
       },
       {
         "name": "core",
         "type": "directory",
-        "path": "apps/api/src/core",
+        "path": "apps/api/api/core",
         "children": []
       },
       {
@@ -165,20 +287,12 @@
         "language": "Python",
         "size": 415,
         "extension": ".py",
-        "path": "apps/api/src/core/config.py"
-      },
-      {
-        "name": "dependencies.py",
-        "type": "file",
-        "language": "Python",
-        "size": 870,
-        "extension": ".py",
-        "path": "apps/api/src/core/dependencies.py"
+        "path": "apps/api/api/core/config.py"
       },
       {
         "name": "db",
         "type": "directory",
-        "path": "apps/api/src/db",
+        "path": "apps/api/api/db",
         "children": []
       },
       {
@@ -187,7 +301,7 @@
         "language": "Python",
         "size": 0,
         "extension": ".py",
-        "path": "apps/api/src/db/__init__.py"
+        "path": "apps/api/api/db/__init__.py"
       },
       {
         "name": "base.py",
@@ -195,7 +309,7 @@
         "language": "Python",
         "size": 611,
         "extension": ".py",
-        "path": "apps/api/src/db/base.py"
+        "path": "apps/api/api/db/base.py"
       },
       {
         "name": "enums.py",
@@ -203,7 +317,7 @@
         "language": "Python",
         "size": 400,
         "extension": ".py",
-        "path": "apps/api/src/db/enums.py"
+        "path": "apps/api/api/db/enums.py"
       },
       {
         "name": "main.py",
@@ -211,7 +325,7 @@
         "language": "Python",
         "size": 643,
         "extension": ".py",
-        "path": "apps/api/src/db/main.py"
+        "path": "apps/api/api/db/main.py"
       },
       {
         "name": "models.py",
@@ -219,40 +333,62 @@
         "language": "Python",
         "size": 2972,
         "extension": ".py",
-        "path": "apps/api/src/db/models.py"
+        "path": "apps/api/api/db/models.py"
+      },
+      {
+        "name": "dependencies",
+        "type": "directory",
+        "path": "apps/api/api/dependencies",
+        "children": []
+      },
+      {
+        "name": "sigaa.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1595,
+        "extension": ".py",
+        "path": "apps/api/api/dependencies/sigaa.py"
+      },
+      {
+        "name": "sigaa_public.py",
+        "type": "file",
+        "language": "Python",
+        "size": 602,
+        "extension": ".py",
+        "path": "apps/api/api/dependencies/sigaa_public.py"
       },
       {
         "name": "main.py",
         "type": "file",
         "language": "Python",
-        "size": 363,
+        "size": 362,
         "extension": ".py",
-        "path": "apps/api/src/main.py"
+        "path": "apps/api/api/main.py"
       },
       {
         "name": "modules",
         "type": "directory",
-        "path": "apps/api/src/modules",
+        "path": "apps/api/api/modules",
         "children": []
       },
       {
         "name": "auth",
         "type": "directory",
-        "path": "apps/api/src/modules/auth",
+        "path": "apps/api/api/modules/auth",
         "children": []
       },
       {
         "name": "main.py",
         "type": "file",
         "language": "Python",
-        "size": 1517,
+        "size": 1757,
         "extension": ".py",
-        "path": "apps/api/src/modules/auth/main.py"
+        "path": "apps/api/api/modules/auth/main.py"
       },
       {
         "name": "utils",
         "type": "directory",
-        "path": "apps/api/src/utils",
+        "path": "apps/api/api/utils",
         "children": []
       },
       {
@@ -261,23 +397,61 @@
         "language": "Python",
         "size": 0,
         "extension": ".py",
-        "path": "apps/api/src/utils/__init__.py"
+        "path": "apps/api/api/utils/__init__.py"
       },
       {
-        "name": "security.py",
+        "name": "session.py",
         "type": "file",
         "language": "Python",
-        "size": 830,
+        "size": 2369,
         "extension": ".py",
-        "path": "apps/api/src/utils/security.py"
+        "path": "apps/api/api/utils/session.py"
       },
       {
-        "name": "uv.lock",
+        "name": "pyproject.toml",
         "type": "file",
-        "language": "Lock File",
-        "size": 172274,
-        "extension": ".lock",
-        "path": "apps/api/uv.lock"
+        "language": "TOML",
+        "size": 823,
+        "extension": ".toml",
+        "path": "apps/api/pyproject.toml"
+      },
+      {
+        "name": "tests",
+        "type": "directory",
+        "path": "apps/api/tests",
+        "children": []
+      },
+      {
+        "name": "conftest.py",
+        "type": "file",
+        "language": "Python",
+        "size": 6053,
+        "extension": ".py",
+        "path": "apps/api/tests/conftest.py"
+      },
+      {
+        "name": "test_auth.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3759,
+        "extension": ".py",
+        "path": "apps/api/tests/test_auth.py"
+      },
+      {
+        "name": "test_dependencies_sigaa.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4881,
+        "extension": ".py",
+        "path": "apps/api/tests/test_dependencies_sigaa.py"
+      },
+      {
+        "name": "test_session.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4139,
+        "extension": ".py",
+        "path": "apps/api/tests/test_session.py"
       },
       {
         "name": "compose.yml",
@@ -294,12 +468,12 @@
         "children": []
       },
       {
-        "name": "Requisitos.md",
+        "name": "requisitos.md",
         "type": "file",
         "language": "Markdown",
         "size": 16106,
         "extension": ".md",
-        "path": "docs/Requisitos.md"
+        "path": "docs/requisitos.md"
       },
       {
         "name": "sprints",
@@ -322,11 +496,245 @@
         "size": 1891,
         "extension": ".md",
         "path": "docs/sprints/template.md"
+      },
+      {
+        "name": "packages",
+        "type": "directory",
+        "path": "packages",
+        "children": []
+      },
+      {
+        "name": "sigaa-client",
+        "type": "directory",
+        "path": "packages/sigaa-client",
+        "children": []
+      },
+      {
+        "name": "AGENTS.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 6569,
+        "extension": ".md",
+        "path": "packages/sigaa-client/AGENTS.md"
+      },
+      {
+        "name": "README.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 5362,
+        "extension": ".md",
+        "path": "packages/sigaa-client/README.md"
+      },
+      {
+        "name": "pyproject.toml",
+        "type": "file",
+        "language": "TOML",
+        "size": 704,
+        "extension": ".toml",
+        "path": "packages/sigaa-client/pyproject.toml"
+      },
+      {
+        "name": "sigaa_client",
+        "type": "directory",
+        "path": "packages/sigaa-client/sigaa_client",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 806,
+        "extension": ".py",
+        "path": "packages/sigaa-client/sigaa_client/__init__.py"
+      },
+      {
+        "name": "client.py",
+        "type": "file",
+        "language": "Python",
+        "size": 2475,
+        "extension": ".py",
+        "path": "packages/sigaa-client/sigaa_client/client.py"
+      },
+      {
+        "name": "config.py",
+        "type": "file",
+        "language": "Python",
+        "size": 736,
+        "extension": ".py",
+        "path": "packages/sigaa-client/sigaa_client/config.py"
+      },
+      {
+        "name": "exceptions.py",
+        "type": "file",
+        "language": "Python",
+        "size": 605,
+        "extension": ".py",
+        "path": "packages/sigaa-client/sigaa_client/exceptions.py"
+      },
+      {
+        "name": "models.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3131,
+        "extension": ".py",
+        "path": "packages/sigaa-client/sigaa_client/models.py"
+      },
+      {
+        "name": "private",
+        "type": "directory",
+        "path": "packages/sigaa-client/sigaa_client/private",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "packages/sigaa-client/sigaa_client/private/__init__.py"
+      },
+      {
+        "name": "classrooms.py",
+        "type": "file",
+        "language": "Python",
+        "size": 12139,
+        "extension": ".py",
+        "path": "packages/sigaa-client/sigaa_client/private/classrooms.py"
+      },
+      {
+        "name": "profile.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3198,
+        "extension": ".py",
+        "path": "packages/sigaa-client/sigaa_client/private/profile.py"
+      },
+      {
+        "name": "session.py",
+        "type": "file",
+        "language": "Python",
+        "size": 7027,
+        "extension": ".py",
+        "path": "packages/sigaa-client/sigaa_client/private/session.py"
+      },
+      {
+        "name": "public",
+        "type": "directory",
+        "path": "packages/sigaa-client/sigaa_client/public",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "packages/sigaa-client/sigaa_client/public/__init__.py"
+      },
+      {
+        "name": "classrooms.py",
+        "type": "file",
+        "language": "Python",
+        "size": 8387,
+        "extension": ".py",
+        "path": "packages/sigaa-client/sigaa_client/public/classrooms.py"
+      },
+      {
+        "name": "session.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1833,
+        "extension": ".py",
+        "path": "packages/sigaa-client/sigaa_client/public/session.py"
+      },
+      {
+        "name": "utils",
+        "type": "directory",
+        "path": "packages/sigaa-client/sigaa_client/utils",
+        "children": []
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "language": "Python",
+        "size": 0,
+        "extension": ".py",
+        "path": "packages/sigaa-client/sigaa_client/utils/__init__.py"
+      },
+      {
+        "name": "jsf.py",
+        "type": "file",
+        "language": "Python",
+        "size": 3335,
+        "extension": ".py",
+        "path": "packages/sigaa-client/sigaa_client/utils/jsf.py"
+      },
+      {
+        "name": "parsing.py",
+        "type": "file",
+        "language": "Python",
+        "size": 1270,
+        "extension": ".py",
+        "path": "packages/sigaa-client/sigaa_client/utils/parsing.py"
+      },
+      {
+        "name": "tests",
+        "type": "directory",
+        "path": "packages/sigaa-client/tests",
+        "children": []
+      },
+      {
+        "name": "test_auth.py",
+        "type": "file",
+        "language": "Python",
+        "size": 6269,
+        "extension": ".py",
+        "path": "packages/sigaa-client/tests/test_auth.py"
+      },
+      {
+        "name": "test_classrooms.py",
+        "type": "file",
+        "language": "Python",
+        "size": 4739,
+        "extension": ".py",
+        "path": "packages/sigaa-client/tests/test_classrooms.py"
+      },
+      {
+        "name": "test_public_classrooms.py",
+        "type": "file",
+        "language": "Python",
+        "size": 9174,
+        "extension": ".py",
+        "path": "packages/sigaa-client/tests/test_public_classrooms.py"
+      },
+      {
+        "name": "pyproject.toml",
+        "type": "file",
+        "language": "TOML",
+        "size": 610,
+        "extension": ".toml",
+        "path": "pyproject.toml"
+      },
+      {
+        "name": "skills-lock.json",
+        "type": "file",
+        "language": "JSON",
+        "size": 529,
+        "extension": ".json",
+        "path": "skills-lock.json"
+      },
+      {
+        "name": "uv.lock",
+        "type": "file",
+        "language": "Lock File",
+        "size": 223980,
+        "extension": ".lock",
+        "path": "uv.lock"
       }
     ]
   },
   "_metadata": {
-    "extracted_at": "2026-09-19T10:03:51.935202",
+    "extracted_at": "2026-09-20T10:36:34.158277",
     "file_path": "data/silver/hierarchy_2026-2-Followw.json"
   }
 }

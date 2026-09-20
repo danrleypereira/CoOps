@@ -2,20 +2,26 @@
   "repository": "2026-2-Bandejao",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-19T10:03:01.552195",
+  "analyzed_at": "2026-09-20T10:35:39.115548",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
   },
-  "total_files": 81,
-  "total_bytes": 208163,
+  "total_files": 82,
+  "total_bytes": 217455,
   "languages": [
     {
       "language": "Markdown",
-      "file_count": 19,
-      "total_bytes": 74443,
-      "percentage": 35.76,
+      "file_count": 20,
+      "total_bytes": 83735,
+      "percentage": 38.51,
       "files": [
+        {
+          "path": "docs/estudos/frontend.md",
+          "name": "frontend.md",
+          "size": 9292,
+          "extension": ".md"
+        },
         {
           "path": "docs/estudos/arquitetura_software.md",
           "name": "arquitetura_software.md",
@@ -69,12 +75,6 @@
           "name": "Arquitetura.md",
           "size": 3504,
           "extension": ".md"
-        },
-        {
-          "path": "docs/estudos/ocr_imagem.md",
-          "name": "ocr_imagem.md",
-          "size": 3013,
-          "extension": ".md"
         }
       ]
     },
@@ -82,7 +82,7 @@
       "language": "JSON",
       "file_count": 3,
       "total_bytes": 41627,
-      "percentage": 20.0,
+      "percentage": 19.14,
       "files": [
         {
           "path": "frontend/package-lock.json",
@@ -108,7 +108,7 @@
       "language": "Python",
       "file_count": 35,
       "total_bytes": 35381,
-      "percentage": 17.0,
+      "percentage": 16.27,
       "files": [
         {
           "path": "backend/tests/test_cardapio_api.py",
@@ -176,7 +176,7 @@
       "language": "SVG Image",
       "file_count": 4,
       "total_bytes": 27388,
-      "percentage": 13.16,
+      "percentage": 12.59,
       "files": [
         {
           "path": "frontend/public/favicon.svg",
@@ -208,7 +208,7 @@
       "language": "PNG Image",
       "file_count": 1,
       "total_bytes": 13057,
-      "percentage": 6.27,
+      "percentage": 6.0,
       "files": [
         {
           "path": "frontend/src/assets/hero.png",
@@ -222,7 +222,7 @@
       "language": "CSS",
       "file_count": 2,
       "total_bytes": 5060,
-      "percentage": 2.43,
+      "percentage": 2.33,
       "files": [
         {
           "path": "frontend/src/App.css",
@@ -242,7 +242,7 @@
       "language": "JavaScript",
       "file_count": 3,
       "total_bytes": 4036,
-      "percentage": 1.94,
+      "percentage": 1.86,
       "files": [
         {
           "path": "frontend/src/App.jsx",
@@ -268,7 +268,7 @@
       "language": "INI",
       "file_count": 1,
       "total_bytes": 3819,
-      "percentage": 1.83,
+      "percentage": 1.76,
       "files": [
         {
           "path": "backend/alembic.ini",
@@ -282,7 +282,7 @@
       "language": "YAML",
       "file_count": 1,
       "total_bytes": 883,
-      "percentage": 0.42,
+      "percentage": 0.41,
       "files": [
         {
           "path": "docker-compose.yml",
@@ -296,7 +296,7 @@
       "language": "Unknown",
       "file_count": 2,
       "total_bytes": 704,
-      "percentage": 0.34,
+      "percentage": 0.32,
       "files": [
         {
           "path": "backend/alembic/script.py.mako",
@@ -316,7 +316,7 @@
       "language": "Git Ignore",
       "file_count": 2,
       "total_bytes": 448,
-      "percentage": 0.22,
+      "percentage": 0.21,
       "files": [
         {
           "path": "frontend/.gitignore",
@@ -336,7 +336,7 @@
       "language": "No Extension",
       "file_count": 3,
       "total_bytes": 378,
-      "percentage": 0.18,
+      "percentage": 0.17,
       "files": [
         {
           "path": "backend/Dockerfile",
@@ -414,7 +414,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-19T10:03:51.421166",
+    "extracted_at": "2026-09-20T10:36:33.598380",
     "file_path": "data/silver/language_analysis_2026-2-Bandejao.json"
   }
 }

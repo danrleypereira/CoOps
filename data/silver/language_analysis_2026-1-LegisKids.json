@@ -2,7 +2,7 @@
   "repository": "2026-1-LegisKids",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-19T10:02:52.310814",
+  "analyzed_at": "2026-09-20T10:35:28.381157",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -638,7 +638,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-19T10:03:52.627439",
+    "extracted_at": "2026-09-20T10:36:34.893458",
     "file_path": "data/silver/language_analysis_2026-1-LegisKids.json"
   }
 }

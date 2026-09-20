@@ -2,19 +2,19 @@
   "repository": "2026-2-MonitoraUnB",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-19T10:03:01.097879",
+  "analyzed_at": "2026-09-20T10:35:38.526673",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
   },
-  "total_files": 12,
-  "total_bytes": 38044,
+  "total_files": 14,
+  "total_bytes": 51718,
   "languages": [
     {
       "language": "Markdown",
-      "file_count": 8,
-      "total_bytes": 21752,
-      "percentage": 57.18,
+      "file_count": 10,
+      "total_bytes": 35426,
+      "percentage": 68.5,
       "files": [
         {
           "path": "docs/estudos/Metodologia Scrum.md",
@@ -23,9 +23,21 @@
           "extension": ".md"
         },
         {
+          "path": "docs/estudos/RequisitosAgeis.md",
+          "name": "RequisitosAgeis.md",
+          "size": 9909,
+          "extension": ".md"
+        },
+        {
           "path": "docs/estudos/Skills.md",
           "name": "Skills.md",
           "size": 4045,
+          "extension": ".md"
+        },
+        {
+          "path": "docs/sprints/sprint1.md",
+          "name": "sprint1.md",
+          "size": 3765,
           "extension": ".md"
         },
         {
@@ -70,7 +82,7 @@
       "language": "No Extension",
       "file_count": 2,
       "total_bytes": 12842,
-      "percentage": 33.76,
+      "percentage": 24.83,
       "files": [
         {
           "path": "docs/estudos/Metodologia Scrum",
@@ -90,7 +102,7 @@
       "language": "Text",
       "file_count": 2,
       "total_bytes": 3450,
-      "percentage": 9.07,
+      "percentage": 6.67,
       "files": [
         {
           "path": "docs/estudos/estudo fast api e django.txt",
@@ -108,7 +120,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-19T10:03:51.587143",
+    "extracted_at": "2026-09-20T10:36:33.770625",
     "file_path": "data/silver/language_analysis_2026-2-MonitoraUnB.json"
   }
 }

@@ -2,7 +2,7 @@
   "repository": "2023-2-Squad05-TesouroMineiro",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-19T10:02:13.895694",
+  "analyzed_at": "2026-09-20T10:34:43.417435",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -678,7 +678,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-19T10:03:52.427776",
+    "extracted_at": "2026-09-20T10:36:34.689840",
     "file_path": "data/silver/language_analysis_2023-2-Squad05-TesouroMineiro.json"
   }
 }

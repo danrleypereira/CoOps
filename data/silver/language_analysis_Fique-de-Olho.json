@@ -2,19 +2,19 @@
   "repository": "Fique-de-Olho",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-19T10:02:57.967622",
+  "analyzed_at": "2026-09-20T10:35:34.736694",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
   },
   "total_files": 63,
-  "total_bytes": 473419,
+  "total_bytes": 475140,
   "languages": [
     {
       "language": "PNG Image",
       "file_count": 3,
       "total_bytes": 256183,
-      "percentage": 54.11,
+      "percentage": 53.92,
       "files": [
         {
           "path": "docs/Requisitos/imagens/storymap_parte2.png",
@@ -39,8 +39,8 @@
     {
       "language": "Markdown",
       "file_count": 45,
-      "total_bytes": 157955,
-      "percentage": 33.36,
+      "total_bytes": 159676,
+      "percentage": 33.61,
       "files": [
         {
           "path": "docs/Requisitos/produto/backlog.md",
@@ -108,7 +108,7 @@
       "language": "WebP Image",
       "file_count": 1,
       "total_bytes": 46900,
-      "percentage": 9.91,
+      "percentage": 9.87,
       "files": [
         {
           "path": "docs/assets/img/pattern-swirls.webp",
@@ -122,7 +122,7 @@
       "language": "CSS",
       "file_count": 1,
       "total_bytes": 5105,
-      "percentage": 1.08,
+      "percentage": 1.07,
       "files": [
         {
           "path": "docs/stylesheets/extra.css",
@@ -216,7 +216,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-19T10:03:52.375399",
+    "extracted_at": "2026-09-20T10:36:34.634083",
     "file_path": "data/silver/language_analysis_Fique-de-Olho.json"
   }
 }

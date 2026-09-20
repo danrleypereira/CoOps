@@ -2,200 +2,228 @@
   "repository": "2026-2-Followw",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-19T10:02:58.393923",
+  "analyzed_at": "2026-09-20T10:35:35.285665",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
   },
-  "total_files": 29,
-  "total_bytes": 206097,
+  "total_files": 68,
+  "total_bytes": 380541,
   "languages": [
     {
       "language": "Lock File",
       "file_count": 1,
-      "total_bytes": 172274,
-      "percentage": 83.59,
+      "total_bytes": 223980,
+      "percentage": 58.86,
       "files": [
         {
-          "path": "apps/api/uv.lock",
+          "path": "uv.lock",
           "name": "uv.lock",
-          "size": 172274,
+          "size": 223980,
           "extension": ".lock"
         }
       ]
     },
     {
-      "language": "Markdown",
-      "file_count": 8,
-      "total_bytes": 22718,
-      "percentage": 11.02,
+      "language": "Python",
+      "file_count": 35,
+      "total_bytes": 95783,
+      "percentage": 25.17,
       "files": [
         {
-          "path": "docs/Requisitos.md",
-          "name": "Requisitos.md",
+          "path": "packages/sigaa-client/sigaa_client/private/classrooms.py",
+          "name": "classrooms.py",
+          "size": 12139,
+          "extension": ".py"
+        },
+        {
+          "path": "packages/sigaa-client/tests/test_public_classrooms.py",
+          "name": "test_public_classrooms.py",
+          "size": 9174,
+          "extension": ".py"
+        },
+        {
+          "path": "packages/sigaa-client/sigaa_client/public/classrooms.py",
+          "name": "classrooms.py",
+          "size": 8387,
+          "extension": ".py"
+        },
+        {
+          "path": "packages/sigaa-client/sigaa_client/private/session.py",
+          "name": "session.py",
+          "size": 7027,
+          "extension": ".py"
+        },
+        {
+          "path": "packages/sigaa-client/tests/test_auth.py",
+          "name": "test_auth.py",
+          "size": 6269,
+          "extension": ".py"
+        },
+        {
+          "path": "apps/api/tests/conftest.py",
+          "name": "conftest.py",
+          "size": 6053,
+          "extension": ".py"
+        },
+        {
+          "path": "apps/api/tests/test_dependencies_sigaa.py",
+          "name": "test_dependencies_sigaa.py",
+          "size": 4881,
+          "extension": ".py"
+        },
+        {
+          "path": "packages/sigaa-client/tests/test_classrooms.py",
+          "name": "test_classrooms.py",
+          "size": 4739,
+          "extension": ".py"
+        },
+        {
+          "path": "apps/api/tests/test_session.py",
+          "name": "test_session.py",
+          "size": 4139,
+          "extension": ".py"
+        },
+        {
+          "path": "apps/api/tests/test_auth.py",
+          "name": "test_auth.py",
+          "size": 3759,
+          "extension": ".py"
+        }
+      ]
+    },
+    {
+      "language": "Markdown",
+      "file_count": 17,
+      "total_bytes": 56006,
+      "percentage": 14.72,
+      "files": [
+        {
+          "path": "docs/requisitos.md",
+          "name": "requisitos.md",
           "size": 16106,
           "extension": ".md"
         },
         {
-          "path": "docs/sprints/sprint-01.md",
-          "name": "sprint-01.md",
-          "size": 2093,
+          "path": "packages/sigaa-client/AGENTS.md",
+          "name": "AGENTS.md",
+          "size": 6569,
           "extension": ".md"
         },
         {
-          "path": "docs/sprints/template.md",
-          "name": "template.md",
-          "size": 1891,
+          "path": ".agents/skills/codebase-design/SKILL.md",
+          "name": "SKILL.md",
+          "size": 6446,
+          "extension": ".md"
+        },
+        {
+          "path": "packages/sigaa-client/README.md",
+          "name": "README.md",
+          "size": 5362,
+          "extension": ".md"
+        },
+        {
+          "path": "apps/api/AGENTS.md",
+          "name": "AGENTS.md",
+          "size": 3617,
+          "extension": ".md"
+        },
+        {
+          "path": ".agents/skills/to-spec/SKILL.md",
+          "name": "SKILL.md",
+          "size": 3043,
+          "extension": ".md"
+        },
+        {
+          "path": ".agents/skills/codebase-design/DESIGN-IT-TWICE.md",
+          "name": "DESIGN-IT-TWICE.md",
+          "size": 2664,
           "extension": ".md"
         },
         {
           "path": "README.md",
           "name": "README.md",
-          "size": 1786,
+          "size": 2558,
           "extension": ".md"
         },
         {
-          "path": ".github/ISSUE_TEMPLATE/task.md",
-          "name": "task.md",
-          "size": 256,
+          "path": ".agents/skills/codebase-design/DEEPENING.md",
+          "name": "DEEPENING.md",
+          "size": 2553,
           "extension": ".md"
         },
         {
-          "path": ".github/ISSUE_TEMPLATE/fix.md",
-          "name": "fix.md",
-          "size": 235,
-          "extension": ".md"
-        },
-        {
-          "path": ".github/ISSUE_TEMPLATE/feature.md",
-          "name": "feature.md",
-          "size": 228,
-          "extension": ".md"
-        },
-        {
-          "path": ".github/PULL_REQUEST_TEMPLATE.md",
-          "name": "PULL_REQUEST_TEMPLATE.md",
-          "size": 123,
+          "path": "AGENTS.md",
+          "name": "AGENTS.md",
+          "size": 2215,
           "extension": ".md"
         }
       ]
     },
     {
-      "language": "Python",
-      "file_count": 12,
-      "total_bytes": 8621,
-      "percentage": 4.18,
+      "language": "TOML",
+      "file_count": 3,
+      "total_bytes": 2137,
+      "percentage": 0.56,
       "files": [
         {
-          "path": "apps/api/src/db/models.py",
-          "name": "models.py",
-          "size": 2972,
-          "extension": ".py"
+          "path": "apps/api/pyproject.toml",
+          "name": "pyproject.toml",
+          "size": 823,
+          "extension": ".toml"
         },
         {
-          "path": "apps/api/src/modules/auth/main.py",
-          "name": "main.py",
-          "size": 1517,
-          "extension": ".py"
+          "path": "packages/sigaa-client/pyproject.toml",
+          "name": "pyproject.toml",
+          "size": 704,
+          "extension": ".toml"
         },
         {
-          "path": "apps/api/src/core/dependencies.py",
-          "name": "dependencies.py",
-          "size": 870,
-          "extension": ".py"
-        },
-        {
-          "path": "apps/api/src/utils/security.py",
-          "name": "security.py",
-          "size": 830,
-          "extension": ".py"
-        },
-        {
-          "path": "apps/api/src/db/main.py",
-          "name": "main.py",
-          "size": 643,
-          "extension": ".py"
-        },
-        {
-          "path": "apps/api/src/db/base.py",
-          "name": "base.py",
-          "size": 611,
-          "extension": ".py"
-        },
-        {
-          "path": "apps/api/src/core/config.py",
-          "name": "config.py",
-          "size": 415,
-          "extension": ".py"
-        },
-        {
-          "path": "apps/api/src/db/enums.py",
-          "name": "enums.py",
-          "size": 400,
-          "extension": ".py"
-        },
-        {
-          "path": "apps/api/src/main.py",
-          "name": "main.py",
-          "size": 363,
-          "extension": ".py"
-        },
-        {
-          "path": "apps/api/src/__init__.py",
-          "name": "__init__.py",
-          "size": 0,
-          "extension": ".py"
+          "path": "pyproject.toml",
+          "name": "pyproject.toml",
+          "size": 610,
+          "extension": ".toml"
         }
       ]
     },
     {
       "language": "No Extension",
-      "file_count": 1,
-      "total_bytes": 1068,
-      "percentage": 0.52,
+      "file_count": 3,
+      "total_bytes": 1132,
+      "percentage": 0.3,
       "files": [
         {
           "path": "LICENSE",
           "name": "LICENSE",
           "size": 1068,
           "extension": ""
-        }
-      ]
-    },
-    {
-      "language": "TOML",
-      "file_count": 1,
-      "total_bytes": 696,
-      "percentage": 0.34,
-      "files": [
+        },
         {
-          "path": "apps/api/pyproject.toml",
-          "name": "pyproject.toml",
-          "size": 696,
-          "extension": ".toml"
-        }
-      ]
-    },
-    {
-      "language": "YAML",
-      "file_count": 1,
-      "total_bytes": 364,
-      "percentage": 0.18,
-      "files": [
+          "path": ".claude/skills/codebase-design",
+          "name": "codebase-design",
+          "size": 36,
+          "extension": ""
+        },
         {
-          "path": "compose.yml",
-          "name": "compose.yml",
-          "size": 364,
-          "extension": ".yml"
+          "path": ".claude/skills/to-spec",
+          "name": "to-spec",
+          "size": 28,
+          "extension": ""
         }
       ]
     },
     {
       "language": "JSON",
-      "file_count": 2,
-      "total_bytes": 213,
-      "percentage": 0.1,
+      "file_count": 3,
+      "total_bytes": 742,
+      "percentage": 0.19,
       "files": [
+        {
+          "path": "skills-lock.json",
+          "name": "skills-lock.json",
+          "size": 529,
+          "extension": ".json"
+        },
         {
           "path": ".claude/settings.json",
           "name": "settings.json",
@@ -211,13 +239,39 @@
       ]
     },
     {
+      "language": "YAML",
+      "file_count": 3,
+      "total_bytes": 601,
+      "percentage": 0.16,
+      "files": [
+        {
+          "path": "compose.yml",
+          "name": "compose.yml",
+          "size": 364,
+          "extension": ".yml"
+        },
+        {
+          "path": ".agents/skills/to-spec/agents/openai.yaml",
+          "name": "openai.yaml",
+          "size": 135,
+          "extension": ".yaml"
+        },
+        {
+          "path": ".agents/skills/codebase-design/agents/openai.yaml",
+          "name": "openai.yaml",
+          "size": 102,
+          "extension": ".yaml"
+        }
+      ]
+    },
+    {
       "language": "Unknown",
       "file_count": 2,
       "total_bytes": 119,
-      "percentage": 0.06,
+      "percentage": 0.03,
       "files": [
         {
-          "path": "apps/api/.env.example",
+          "path": ".env.example",
           "name": ".env.example",
           "size": 114,
           "extension": ".example"
@@ -233,20 +287,20 @@
     {
       "language": "Git Ignore",
       "file_count": 1,
-      "total_bytes": 24,
+      "total_bytes": 41,
       "percentage": 0.01,
       "files": [
         {
-          "path": "apps/api/.gitignore",
+          "path": ".gitignore",
           "name": ".gitignore",
-          "size": 24,
+          "size": 41,
           "extension": ".gitignore"
         }
       ]
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-19T10:03:51.934728",
+    "extracted_at": "2026-09-20T10:36:34.157464",
     "file_path": "data/silver/language_analysis_2026-2-Followw.json"
   }
 }

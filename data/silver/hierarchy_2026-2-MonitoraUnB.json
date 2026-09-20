@@ -2,7 +2,7 @@
   "repository": "2026-2-MonitoraUnB",
   "owner": "unb-mds",
   "branch": "main",
-  "extracted_at": "2026-09-19T10:03:01.097879",
+  "extracted_at": "2026-09-20T10:35:38.526673",
   "hierarchy": {
     "name": "root",
     "type": "directory",
@@ -68,6 +68,14 @@
         "path": "docs/estudos/Metodologia Scrum.md"
       },
       {
+        "name": "RequisitosAgeis.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 9909,
+        "extension": ".md",
+        "path": "docs/estudos/RequisitosAgeis.md"
+      },
+      {
         "name": "Skills.md",
         "type": "file",
         "language": "Markdown",
@@ -114,6 +122,14 @@
         "path": "docs/sprints/sprint0.md"
       },
       {
+        "name": "sprint1.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 3765,
+        "extension": ".md",
+        "path": "docs/sprints/sprint1.md"
+      },
+      {
         "name": "sprint_template.md",
         "type": "file",
         "language": "Markdown",
@@ -124,7 +140,7 @@
     ]
   },
   "_metadata": {
-    "extracted_at": "2026-09-19T10:03:51.587492",
+    "extracted_at": "2026-09-20T10:36:33.770970",
     "file_path": "data/silver/hierarchy_2026-2-MonitoraUnB.json"
   }
 }

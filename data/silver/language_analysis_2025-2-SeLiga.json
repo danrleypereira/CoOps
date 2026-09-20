@@ -2,7 +2,7 @@
   "repository": "2025-2-SeLiga",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-19T10:02:46.082997",
+  "analyzed_at": "2026-09-20T10:35:20.760985",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -586,7 +586,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-19T10:03:51.604037",
+    "extracted_at": "2026-09-20T10:36:33.788360",
     "file_path": "data/silver/language_analysis_2025-2-SeLiga.json"
   }
 }

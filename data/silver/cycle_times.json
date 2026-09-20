@@ -1,9 +1,9 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-19T10:03:48.389540",
+      "extracted_at": "2026-09-20T10:36:30.634194",
       "file_path": "data/silver/cycle_times.json",
-      "record_count": 8663
+      "record_count": 8687
     }
   },
   {
@@ -19165,6 +19165,30 @@
     "created_at": "2025-04-04T13:54:54",
     "closed_at": "2025-04-07T15:39:50",
     "cycle_time_days": 3.0728703703703704
+  },
+  {
+    "type": "issue",
+    "repo": "2025-1-NoFluxoUnB",
+    "number": 179,
+    "created_at": "2026-09-18T20:35:47",
+    "closed_at": "2026-09-19T16:12:33",
+    "cycle_time_days": 0.8171990740740741
+  },
+  {
+    "type": "issue",
+    "repo": "2025-1-NoFluxoUnB",
+    "number": 178,
+    "created_at": "2026-09-18T20:35:44",
+    "closed_at": "2026-09-19T16:11:05",
+    "cycle_time_days": 0.8162152777777778
+  },
+  {
+    "type": "issue",
+    "repo": "2025-1-NoFluxoUnB",
+    "number": 177,
+    "created_at": "2026-09-18T20:35:41",
+    "closed_at": "2026-09-19T16:07:55",
+    "cycle_time_days": 0.8140509259259259
   },
   {
     "type": "issue",
@@ -38481,6 +38505,14 @@
   {
     "type": "issue",
     "repo": "2026.2-UnB_Core",
+    "number": 34,
+    "created_at": "2026-09-10T23:24:38",
+    "closed_at": "2026-09-19T19:37:29",
+    "cycle_time_days": 8.842256944444445
+  },
+  {
+    "type": "issue",
+    "repo": "2026.2-UnB_Core",
     "number": 26,
     "created_at": "2026-09-10T23:10:18",
     "closed_at": "2026-09-14T23:50:41",
@@ -38937,6 +38969,22 @@
   {
     "type": "issue",
     "repo": "2026-2-Followw",
+    "number": 11,
+    "created_at": "2026-09-11T02:32:38",
+    "closed_at": "2026-09-20T01:43:08",
+    "cycle_time_days": 8.965625
+  },
+  {
+    "type": "issue",
+    "repo": "2026-2-Followw",
+    "number": 9,
+    "created_at": "2026-09-11T01:55:08",
+    "closed_at": "2026-09-20T00:40:02",
+    "cycle_time_days": 8.947847222222222
+  },
+  {
+    "type": "issue",
+    "repo": "2026-2-Followw",
     "number": 7,
     "created_at": "2026-09-10T00:53:44",
     "closed_at": "2026-09-10T22:23:40",
@@ -38973,6 +39021,14 @@
     "created_at": "2026-09-10T00:47:21",
     "closed_at": "2026-09-10T21:31:37",
     "cycle_time_days": 0.8640740740740741
+  },
+  {
+    "type": "issue",
+    "repo": "2026-2-Followw",
+    "number": 2,
+    "created_at": "2026-09-10T00:45:49",
+    "closed_at": "2026-09-20T02:56:03",
+    "cycle_time_days": 10.090439814814815
   },
   {
     "type": "issue",
@@ -39205,6 +39261,14 @@
     "created_at": "2026-09-01T14:14:40",
     "closed_at": "2026-09-17T20:07:32",
     "cycle_time_days": 16.245046296296298
+  },
+  {
+    "type": "issue",
+    "repo": "2026-02-UnDb",
+    "number": 36,
+    "created_at": "2026-09-01T13:59:29",
+    "closed_at": "2026-09-19T14:33:17",
+    "cycle_time_days": 18.02347222222222
   },
   {
     "type": "issue",
@@ -39489,6 +39553,22 @@
   {
     "type": "issue",
     "repo": "2026-2-MonitoraUnB",
+    "number": 14,
+    "created_at": "2026-09-20T00:18:53",
+    "closed_at": "2026-09-20T00:19:43",
+    "cycle_time_days": 0.0005787037037037037
+  },
+  {
+    "type": "issue",
+    "repo": "2026-2-MonitoraUnB",
+    "number": 13,
+    "created_at": "2026-09-19T10:50:49",
+    "closed_at": "2026-09-19T10:51:18",
+    "cycle_time_days": 0.0003356481481481481
+  },
+  {
+    "type": "issue",
+    "repo": "2026-2-MonitoraUnB",
     "number": 12,
     "created_at": "2026-09-18T00:42:34",
     "closed_at": "2026-09-18T00:42:54",
@@ -39613,6 +39693,14 @@
     "created_at": "2026-09-04T20:20:37",
     "closed_at": "2026-09-10T10:28:17",
     "cycle_time_days": 5.588657407407408
+  },
+  {
+    "type": "issue",
+    "repo": "2026-2-Bandejao",
+    "number": 6,
+    "created_at": "2026-09-04T19:54:22",
+    "closed_at": "2026-09-20T00:29:51",
+    "cycle_time_days": 15.19130787037037
   },
   {
     "type": "issue",
@@ -53789,6 +53877,38 @@
     "created_at": "2025-04-25T21:02:48",
     "closed_at": "2025-04-25T21:04:32",
     "cycle_time_days": 0.0012037037037037038
+  },
+  {
+    "type": "pr",
+    "repo": "2025-1-NoFluxoUnB",
+    "number": 183,
+    "created_at": "2026-09-19T16:09:16",
+    "closed_at": "2026-09-19T16:11:04",
+    "cycle_time_days": 0.00125
+  },
+  {
+    "type": "pr",
+    "repo": "2025-1-NoFluxoUnB",
+    "number": 182,
+    "created_at": "2026-09-18T20:36:23",
+    "closed_at": "2026-09-19T16:12:32",
+    "cycle_time_days": 0.8167708333333333
+  },
+  {
+    "type": "pr",
+    "repo": "2025-1-NoFluxoUnB",
+    "number": 181,
+    "created_at": "2026-09-18T20:36:18",
+    "closed_at": "2026-09-19T16:07:56",
+    "cycle_time_days": 0.8136342592592593
+  },
+  {
+    "type": "pr",
+    "repo": "2025-1-NoFluxoUnB",
+    "number": 180,
+    "created_at": "2026-09-18T20:36:14",
+    "closed_at": "2026-09-19T16:07:54",
+    "cycle_time_days": 0.8136574074074074
   },
   {
     "type": "pr",
@@ -68689,6 +68809,14 @@
   {
     "type": "pr",
     "repo": "Fique-de-Olho",
+    "number": 17,
+    "created_at": "2026-09-20T00:09:48",
+    "closed_at": "2026-09-20T00:11:07",
+    "cycle_time_days": 0.0009143518518518518
+  },
+  {
+    "type": "pr",
+    "repo": "Fique-de-Olho",
     "number": 4,
     "created_at": "2026-09-10T16:54:45",
     "closed_at": "2026-09-10T16:55:06",
@@ -68701,6 +68829,22 @@
     "created_at": "2026-09-09T16:35:57",
     "closed_at": "2026-09-09T16:36:29",
     "cycle_time_days": 0.00037037037037037035
+  },
+  {
+    "type": "pr",
+    "repo": "2026-2-Followw",
+    "number": 17,
+    "created_at": "2026-09-17T13:51:30",
+    "closed_at": "2026-09-20T01:43:08",
+    "cycle_time_days": 2.4941898148148147
+  },
+  {
+    "type": "pr",
+    "repo": "2026-2-Followw",
+    "number": 14,
+    "created_at": "2026-09-16T17:58:23",
+    "closed_at": "2026-09-20T00:40:01",
+    "cycle_time_days": 3.278912037037037
   },
   {
     "type": "pr",
@@ -68733,6 +68877,46 @@
     "created_at": "2026-09-13T19:05:56",
     "closed_at": "2026-09-14T01:55:26",
     "cycle_time_days": 0.284375
+  },
+  {
+    "type": "pr",
+    "repo": "2026-02-UnDb",
+    "number": 109,
+    "created_at": "2026-09-20T03:24:47",
+    "closed_at": "2026-09-20T03:47:30",
+    "cycle_time_days": 0.015775462962962963
+  },
+  {
+    "type": "pr",
+    "repo": "2026-02-UnDb",
+    "number": 108,
+    "created_at": "2026-09-20T00:46:02",
+    "closed_at": "2026-09-20T01:05:40",
+    "cycle_time_days": 0.01363425925925926
+  },
+  {
+    "type": "pr",
+    "repo": "2026-02-UnDb",
+    "number": 107,
+    "created_at": "2026-09-20T00:03:42",
+    "closed_at": "2026-09-20T01:32:06",
+    "cycle_time_days": 0.06138888888888889
+  },
+  {
+    "type": "pr",
+    "repo": "2026-02-UnDb",
+    "number": 106,
+    "created_at": "2026-09-19T19:08:52",
+    "closed_at": "2026-09-20T00:53:34",
+    "cycle_time_days": 0.239375
+  },
+  {
+    "type": "pr",
+    "repo": "2026-02-UnDb",
+    "number": 104,
+    "created_at": "2026-09-19T14:33:15",
+    "closed_at": "2026-09-19T16:10:36",
+    "cycle_time_days": 0.06760416666666667
   },
   {
     "type": "pr",
@@ -69301,6 +69485,14 @@
     "created_at": "2026-09-04T01:35:37",
     "closed_at": "2026-09-04T01:35:53",
     "cycle_time_days": 0.00018518518518518518
+  },
+  {
+    "type": "pr",
+    "repo": "2026-2-Bandejao",
+    "number": 18,
+    "created_at": "2026-09-20T00:23:36",
+    "closed_at": "2026-09-20T00:29:50",
+    "cycle_time_days": 0.0043287037037037035
   },
   {
     "type": "pr",

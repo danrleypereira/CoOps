@@ -1,9 +1,9 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-19T10:03:47.343068",
+      "extracted_at": "2026-09-20T10:36:29.627444",
       "file_path": "data/silver/temporal_events.json",
-      "record_count": 120508
+      "record_count": 120681
     }
   },
   {
@@ -195514,7 +195514,7 @@
     "total_changes": 14
   },
   {
-    "date": "2024-08-12T12:19:25",
+    "date": "2024-08-12T12:19:08",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
     "user": "thaleseuflauzino",
@@ -199378,7 +199378,7 @@
     "date": "2024-08-13T04:13:18",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -204127,7 +204127,7 @@
     "date": "2024-08-14T04:12:55",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
-    "user": "unknown",
+    "user": "actions",
     "additions": 0,
     "deletions": 0,
     "total_changes": 0
@@ -529124,9 +529124,9 @@
     "type": "commit",
     "repo": "2025-2-Squad-01",
     "user": "github-actions[bot]",
-    "additions": 3099458,
-    "deletions": 118833,
-    "total_changes": 3218291
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0
   },
   {
     "date": "2025-10-18T00:44:25",
@@ -531041,9 +531041,9 @@
     "type": "commit",
     "repo": "2025-2-Squad-01",
     "user": "guxvr",
-    "additions": 4835153,
-    "deletions": 29622,
-    "total_changes": 4864775
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0
   },
   {
     "date": "2025-10-20T00:29:27",
@@ -557804,9 +557804,9 @@
     "type": "commit",
     "repo": "2025-2-Squad-01",
     "user": "github-actions[bot]",
-    "additions": 404571,
-    "deletions": 2872470,
-    "total_changes": 3277041
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0
   },
   {
     "date": "2025-11-10T14:03:16",
@@ -806564,12 +806564,6 @@
   },
   {
     "date": "2026-09-18T14:51:51",
-    "type": "pr_closed",
-    "repo": "2026-02-UnDb",
-    "user": "warlleymedeiros"
-  },
-  {
-    "date": "2026-09-18T14:51:51",
     "type": "event_closed",
     "repo": "2026-02-UnDb",
     "user": "gabrielrdaraujo"
@@ -807034,6 +807028,15 @@
     "user": "Vitor-Trancoso"
   },
   {
+    "date": "2026-09-18T19:03:03",
+    "type": "commit",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso",
+    "additions": 329,
+    "deletions": 880,
+    "total_changes": 1209
+  },
+  {
     "date": "2026-09-18T19:15:00",
     "type": "event_referenced",
     "repo": "2026-02-UnDb",
@@ -807101,6 +807104,33 @@
     "type": "event_head_ref_deleted",
     "repo": "2025-1-NoFluxoUnB",
     "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-18T20:11:37",
+    "type": "commit",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso",
+    "additions": 67,
+    "deletions": 15252,
+    "total_changes": 15319
+  },
+  {
+    "date": "2026-09-18T20:15:05",
+    "type": "commit",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso",
+    "additions": 224,
+    "deletions": 417,
+    "total_changes": 641
+  },
+  {
+    "date": "2026-09-18T20:25:04",
+    "type": "commit",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso",
+    "additions": 28,
+    "deletions": 40,
+    "total_changes": 68
   },
   {
     "date": "2026-09-18T20:35:41",
@@ -807560,5 +807590,1103 @@
     "additions": 12,
     "deletions": 1,
     "total_changes": 13
+  },
+  {
+    "date": "2026-09-19T10:14:31",
+    "type": "commit",
+    "repo": "2026-2-MonitoraUnB",
+    "user": "MariaMacedoToledo",
+    "additions": 62,
+    "deletions": 0,
+    "total_changes": 62
+  },
+  {
+    "date": "2026-09-19T10:15:41",
+    "type": "commit",
+    "repo": "2026-2-MonitoraUnB",
+    "user": "MariaMacedoToledo",
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0
+  },
+  {
+    "date": "2026-09-19T10:38:32",
+    "type": "commit",
+    "repo": "2026-2-MonitoraUnB",
+    "user": "MariaMacedoToledo",
+    "additions": 214,
+    "deletions": 0,
+    "total_changes": 214
+  },
+  {
+    "date": "2026-09-19T10:48:26",
+    "type": "commit",
+    "repo": "2026-2-MonitoraUnB",
+    "user": "MariaMacedoToledo",
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0
+  },
+  {
+    "date": "2026-09-19T10:50:49",
+    "type": "issue_created",
+    "repo": "2026-2-MonitoraUnB",
+    "user": "MariaMacedoToledo"
+  },
+  {
+    "date": "2026-09-19T10:50:49",
+    "type": "event_milestoned",
+    "repo": "2026-2-MonitoraUnB",
+    "user": "MariaMacedoToledo"
+  },
+  {
+    "date": "2026-09-19T10:51:18",
+    "type": "event_closed",
+    "repo": "2026-2-MonitoraUnB",
+    "user": "MariaMacedoToledo"
+  },
+  {
+    "date": "2026-09-19T10:55:42",
+    "type": "issue_closed",
+    "repo": "2026-2-MonitoraUnB",
+    "user": "MariaMacedoToledo"
+  },
+  {
+    "date": "2026-09-19T14:33:15",
+    "type": "pr_created",
+    "repo": "2026-02-UnDb",
+    "user": "ViniGvdo"
+  },
+  {
+    "date": "2026-09-19T14:33:17",
+    "type": "issue_closed",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-19T14:33:17",
+    "type": "event_closed",
+    "repo": "2026-02-UnDb",
+    "user": "ViniGvdo"
+  },
+  {
+    "date": "2026-09-19T14:33:20",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "2026-02-UnDb",
+    "user": "github-project-automation[bot]"
+  },
+  {
+    "date": "2026-09-19T14:38:03",
+    "type": "event_review_requested",
+    "repo": "2026-02-UnDb",
+    "user": "ViniGvdo"
+  },
+  {
+    "date": "2026-09-19T16:07:54",
+    "type": "commit",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso",
+    "additions": 329,
+    "deletions": 880,
+    "total_changes": 1209
+  },
+  {
+    "date": "2026-09-19T16:07:54",
+    "type": "event_closed",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T16:07:54",
+    "type": "event_merged",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T16:07:55",
+    "type": "issue_closed",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T16:07:55",
+    "type": "event_closed",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T16:07:56",
+    "type": "event_base_ref_deleted",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T16:07:57",
+    "type": "pr_closed",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T16:07:57",
+    "type": "event_head_ref_deleted",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T16:07:57",
+    "type": "event_closed",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T16:09:16",
+    "type": "pr_created",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T16:09:18",
+    "type": "event_assigned",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T16:09:20",
+    "type": "event_labeled",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T16:09:23",
+    "type": "commit",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso",
+    "additions": 71,
+    "deletions": 0,
+    "total_changes": 71
+  },
+  {
+    "date": "2026-09-19T16:10:36",
+    "type": "event_closed",
+    "repo": "2026-02-UnDb",
+    "user": "ViniGvdo"
+  },
+  {
+    "date": "2026-09-19T16:10:36",
+    "type": "event_merged",
+    "repo": "2026-02-UnDb",
+    "user": "ViniGvdo"
+  },
+  {
+    "date": "2026-09-19T16:10:37",
+    "type": "event_referenced",
+    "repo": "2026-02-UnDb",
+    "user": "ViniGvdo"
+  },
+  {
+    "date": "2026-09-19T16:10:44",
+    "type": "pr_closed",
+    "repo": "2026-02-UnDb",
+    "user": "ViniGvdo"
+  },
+  {
+    "date": "2026-09-19T16:10:44",
+    "type": "event_head_ref_deleted",
+    "repo": "2026-02-UnDb",
+    "user": "ViniGvdo"
+  },
+  {
+    "date": "2026-09-19T16:11:04",
+    "type": "commit",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso",
+    "additions": 67,
+    "deletions": 15252,
+    "total_changes": 15319
+  },
+  {
+    "date": "2026-09-19T16:11:04",
+    "type": "event_closed",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T16:11:04",
+    "type": "event_merged",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T16:11:05",
+    "type": "issue_closed",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T16:11:05",
+    "type": "event_closed",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T16:11:10",
+    "type": "event_base_ref_changed",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T16:11:29",
+    "type": "pr_closed",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T16:11:29",
+    "type": "pr_closed",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T16:11:29",
+    "type": "event_head_ref_deleted",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T16:11:29",
+    "type": "event_head_ref_deleted",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T16:12:32",
+    "type": "commit",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso",
+    "additions": 317,
+    "deletions": 451,
+    "total_changes": 768
+  },
+  {
+    "date": "2026-09-19T16:12:32",
+    "type": "event_closed",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T16:12:32",
+    "type": "event_merged",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T16:12:33",
+    "type": "issue_closed",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T16:12:33",
+    "type": "event_closed",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T16:12:35",
+    "type": "pr_closed",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T16:12:35",
+    "type": "event_head_ref_deleted",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T16:29:41",
+    "type": "event_assigned",
+    "repo": "2026-2-Bandejao",
+    "user": "marilluantunes"
+  },
+  {
+    "date": "2026-09-19T16:32:29",
+    "type": "pr_closed",
+    "repo": "2026-02-UnDb",
+    "user": "warlleymedeiros"
+  },
+  {
+    "date": "2026-09-19T16:34:36",
+    "type": "event_assigned",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-19T17:59:32",
+    "type": "pr_created",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-19T17:59:35",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "2026-02-UnDb",
+    "user": "github-project-automation[bot]"
+  },
+  {
+    "date": "2026-09-19T18:01:05",
+    "type": "event_review_requested",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-19T19:08:52",
+    "type": "pr_created",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-19T19:13:37",
+    "type": "event_head_ref_force_pushed",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-19T19:20:42",
+    "type": "issue_created",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T19:20:43",
+    "type": "event_mentioned",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "typescript-eslint"
+  },
+  {
+    "date": "2026-09-19T19:20:43",
+    "type": "event_labeled",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T19:20:43",
+    "type": "event_assigned",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T19:20:46",
+    "type": "issue_created",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T19:20:47",
+    "type": "event_labeled",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T19:20:47",
+    "type": "event_labeled",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T19:20:47",
+    "type": "event_assigned",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T19:20:49",
+    "type": "issue_created",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T19:20:50",
+    "type": "event_labeled",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T19:20:50",
+    "type": "event_assigned",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "Vitor-Trancoso"
+  },
+  {
+    "date": "2026-09-19T19:28:32",
+    "type": "event_base_ref_changed",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-19T19:29:49",
+    "type": "event_review_requested",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-19T19:37:29",
+    "type": "event_closed",
+    "repo": "2026.2-UnB_Core",
+    "user": "Joao-vithor-1"
+  },
+  {
+    "date": "2026-09-19T19:37:41",
+    "type": "issue_closed",
+    "repo": "2026.2-UnB_Core",
+    "user": "DanielAlmeidaFrota"
+  },
+  {
+    "date": "2026-09-19T20:04:13",
+    "type": "event_ready_for_review",
+    "repo": "2026-2-Followw",
+    "user": "SamukaToned"
+  },
+  {
+    "date": "2026-09-19T21:16:39",
+    "type": "commit",
+    "repo": "2026-2-Bandejao",
+    "user": "marilluantunes",
+    "additions": 55,
+    "deletions": 0,
+    "total_changes": 55
+  },
+  {
+    "date": "2026-09-19T21:18:03",
+    "type": "event_referenced",
+    "repo": "2026-2-Bandejao",
+    "user": "marilluantunes"
+  },
+  {
+    "date": "2026-09-19T21:30:02",
+    "type": "commit",
+    "repo": "2026-2-Bandejao",
+    "user": "marilluantunes",
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4
+  },
+  {
+    "date": "2026-09-19T22:06:22",
+    "type": "commit",
+    "repo": "2026-2-Bandejao",
+    "user": "marilluantunes",
+    "additions": 25,
+    "deletions": 0,
+    "total_changes": 25
+  },
+  {
+    "date": "2026-09-19T22:06:33",
+    "type": "event_referenced",
+    "repo": "2026-2-Bandejao",
+    "user": "marilluantunes"
+  },
+  {
+    "date": "2026-09-19T22:23:48",
+    "type": "event_referenced",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-19T22:25:39",
+    "type": "event_referenced",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-19T23:32:51",
+    "type": "commit",
+    "repo": "2026.2-UnB_Core",
+    "user": "DanielAlmeidaFrota",
+    "additions": 65,
+    "deletions": 9,
+    "total_changes": 74
+  },
+  {
+    "date": "2026-09-19T23:39:42",
+    "type": "issue_created",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "hisarxt"
+  },
+  {
+    "date": "2026-09-19T23:39:42",
+    "type": "event_assigned",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "hisarxt"
+  },
+  {
+    "date": "2026-09-19T23:39:44",
+    "type": "event_issue_type_added",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "hisarxt"
+  },
+  {
+    "date": "2026-09-19T23:39:44",
+    "type": "event_labeled",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "hisarxt"
+  },
+  {
+    "date": "2026-09-19T23:39:44",
+    "type": "event_labeled",
+    "repo": "2025-1-NoFluxoUnB",
+    "user": "hisarxt"
+  },
+  {
+    "date": "2026-09-19T23:46:23",
+    "type": "commit",
+    "repo": "2026-2-Bandejao",
+    "user": "marilluantunes",
+    "additions": 130,
+    "deletions": 0,
+    "total_changes": 130
+  },
+  {
+    "date": "2026-09-19T23:46:30",
+    "type": "event_referenced",
+    "repo": "2026-2-Bandejao",
+    "user": "marilluantunes"
+  },
+  {
+    "date": "2026-09-19T23:51:19",
+    "type": "commit",
+    "repo": "Fique-de-Olho",
+    "user": "Isac-sil-mar",
+    "additions": 25,
+    "deletions": 10,
+    "total_changes": 35
+  },
+  {
+    "date": "2026-09-19T23:52:18",
+    "type": "commit",
+    "repo": "2026-2-Bandejao",
+    "user": "marilluantunes",
+    "additions": 40,
+    "deletions": 1,
+    "total_changes": 41
+  },
+  {
+    "date": "2026-09-19T23:52:24",
+    "type": "event_referenced",
+    "repo": "2026-2-Bandejao",
+    "user": "marilluantunes"
+  },
+  {
+    "date": "2026-09-20T00:03:42",
+    "type": "pr_created",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-20T00:04:25",
+    "type": "event_review_requested",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-20T00:04:33",
+    "type": "event_review_requested",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-20T00:09:48",
+    "type": "pr_created",
+    "repo": "Fique-de-Olho",
+    "user": "Isac-sil-mar"
+  },
+  {
+    "date": "2026-09-20T00:11:06",
+    "type": "commit",
+    "repo": "Fique-de-Olho",
+    "user": "Isac-sil-mar",
+    "additions": 25,
+    "deletions": 10,
+    "total_changes": 35
+  },
+  {
+    "date": "2026-09-20T00:11:06",
+    "type": "event_merged",
+    "repo": "Fique-de-Olho",
+    "user": "Isac-sil-mar"
+  },
+  {
+    "date": "2026-09-20T00:11:07",
+    "type": "pr_closed",
+    "repo": "Fique-de-Olho",
+    "user": "Isac-sil-mar"
+  },
+  {
+    "date": "2026-09-20T00:11:07",
+    "type": "event_closed",
+    "repo": "Fique-de-Olho",
+    "user": "Isac-sil-mar"
+  },
+  {
+    "date": "2026-09-20T00:18:53",
+    "type": "issue_created",
+    "repo": "2026-2-MonitoraUnB",
+    "user": "MariaMacedoToledo"
+  },
+  {
+    "date": "2026-09-20T00:19:20",
+    "type": "event_milestoned",
+    "repo": "2026-2-MonitoraUnB",
+    "user": "MariaMacedoToledo"
+  },
+  {
+    "date": "2026-09-20T00:19:43",
+    "type": "issue_closed",
+    "repo": "2026-2-MonitoraUnB",
+    "user": "MariaMacedoToledo"
+  },
+  {
+    "date": "2026-09-20T00:19:43",
+    "type": "event_closed",
+    "repo": "2026-2-MonitoraUnB",
+    "user": "MariaMacedoToledo"
+  },
+  {
+    "date": "2026-09-20T00:22:07",
+    "type": "commit",
+    "repo": "2026-2-Bandejao",
+    "user": "marilluantunes",
+    "additions": 15,
+    "deletions": 0,
+    "total_changes": 15
+  },
+  {
+    "date": "2026-09-20T00:22:13",
+    "type": "event_referenced",
+    "repo": "2026-2-Bandejao",
+    "user": "marilluantunes"
+  },
+  {
+    "date": "2026-09-20T00:23:36",
+    "type": "pr_created",
+    "repo": "2026-2-Bandejao",
+    "user": "marilluantunes"
+  },
+  {
+    "date": "2026-09-20T00:23:38",
+    "type": "event_connected",
+    "repo": "2026-2-Bandejao",
+    "user": "marilluantunes"
+  },
+  {
+    "date": "2026-09-20T00:23:38",
+    "type": "event_connected",
+    "repo": "2026-2-Bandejao",
+    "user": "marilluantunes"
+  },
+  {
+    "date": "2026-09-20T00:26:10",
+    "type": "event_referenced",
+    "repo": "2026-2-Followw",
+    "user": "diegolxxz"
+  },
+  {
+    "date": "2026-09-20T00:29:49",
+    "type": "commit",
+    "repo": "2026-2-Bandejao",
+    "user": "marilluantunes",
+    "additions": 264,
+    "deletions": 0,
+    "total_changes": 264
+  },
+  {
+    "date": "2026-09-20T00:29:50",
+    "type": "pr_closed",
+    "repo": "2026-2-Bandejao",
+    "user": "marilluantunes"
+  },
+  {
+    "date": "2026-09-20T00:29:50",
+    "type": "event_closed",
+    "repo": "2026-2-Bandejao",
+    "user": "marilluantunes"
+  },
+  {
+    "date": "2026-09-20T00:29:50",
+    "type": "event_merged",
+    "repo": "2026-2-Bandejao",
+    "user": "marilluantunes"
+  },
+  {
+    "date": "2026-09-20T00:29:51",
+    "type": "event_closed",
+    "repo": "2026-2-Bandejao",
+    "user": "marilluantunes"
+  },
+  {
+    "date": "2026-09-20T00:30:46",
+    "type": "issue_closed",
+    "repo": "2026-2-Bandejao",
+    "user": "Gustavo-0611"
+  },
+  {
+    "date": "2026-09-20T00:40:00",
+    "type": "commit",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp",
+    "additions": 2190,
+    "deletions": 143,
+    "total_changes": 2333
+  },
+  {
+    "date": "2026-09-20T00:40:01",
+    "type": "event_closed",
+    "repo": "2026-2-Followw",
+    "user": "diegolxxz"
+  },
+  {
+    "date": "2026-09-20T00:40:01",
+    "type": "event_merged",
+    "repo": "2026-2-Followw",
+    "user": "diegolxxz"
+  },
+  {
+    "date": "2026-09-20T00:40:02",
+    "type": "issue_closed",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp"
+  },
+  {
+    "date": "2026-09-20T00:40:02",
+    "type": "event_closed",
+    "repo": "2026-2-Followw",
+    "user": "diegolxxz"
+  },
+  {
+    "date": "2026-09-20T00:46:02",
+    "type": "pr_created",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-20T00:46:05",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "2026-02-UnDb",
+    "user": "github-project-automation[bot]"
+  },
+  {
+    "date": "2026-09-20T00:52:21",
+    "type": "event_head_ref_force_pushed",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp"
+  },
+  {
+    "date": "2026-09-20T00:53:34",
+    "type": "pr_closed",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-20T00:53:34",
+    "type": "event_head_ref_force_pushed",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-20T00:53:34",
+    "type": "event_closed",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-20T01:05:40",
+    "type": "pr_closed",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-20T01:05:40",
+    "type": "event_closed",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-20T01:32:06",
+    "type": "pr_closed",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-20T01:32:06",
+    "type": "event_closed",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-20T01:32:06",
+    "type": "event_merged",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-20T01:32:07",
+    "type": "event_referenced",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-20T01:43:07",
+    "type": "commit",
+    "repo": "2026-2-Followw",
+    "user": "Mendezalv",
+    "additions": 1400,
+    "deletions": 113,
+    "total_changes": 1513
+  },
+  {
+    "date": "2026-09-20T01:43:07",
+    "type": "event_merged",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp"
+  },
+  {
+    "date": "2026-09-20T01:43:08",
+    "type": "issue_closed",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp"
+  },
+  {
+    "date": "2026-09-20T01:43:08",
+    "type": "event_closed",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp"
+  },
+  {
+    "date": "2026-09-20T01:43:09",
+    "type": "event_closed",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp"
+  },
+  {
+    "date": "2026-09-20T01:43:12",
+    "type": "pr_closed",
+    "repo": "2026-2-Followw",
+    "user": "Mendezalv"
+  },
+  {
+    "date": "2026-09-20T01:43:12",
+    "type": "event_head_ref_deleted",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp"
+  },
+  {
+    "date": "2026-09-20T01:43:22",
+    "type": "pr_closed",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp"
+  },
+  {
+    "date": "2026-09-20T01:43:22",
+    "type": "event_head_ref_deleted",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp"
+  },
+  {
+    "date": "2026-09-20T01:45:06",
+    "type": "commit",
+    "repo": "2026-2-VeritasIA",
+    "user": "github-actions[bot]",
+    "additions": 85,
+    "deletions": 197,
+    "total_changes": 282
+  },
+  {
+    "date": "2026-09-20T02:19:46",
+    "type": "commit",
+    "repo": "2026-2-VeritasIA",
+    "user": "github-actions[bot]",
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2
+  },
+  {
+    "date": "2026-09-20T02:41:13",
+    "type": "commit",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp",
+    "additions": 497,
+    "deletions": 25,
+    "total_changes": 522
+  },
+  {
+    "date": "2026-09-20T02:56:03",
+    "type": "event_closed",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp"
+  },
+  {
+    "date": "2026-09-20T02:56:12",
+    "type": "issue_closed",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp"
+  },
+  {
+    "date": "2026-09-20T02:56:12",
+    "type": "event_milestoned",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp"
+  },
+  {
+    "date": "2026-09-20T02:56:12",
+    "type": "event_demilestoned",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp"
+  },
+  {
+    "date": "2026-09-20T02:56:24",
+    "type": "event_milestoned",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp"
+  },
+  {
+    "date": "2026-09-20T02:56:24",
+    "type": "event_demilestoned",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp"
+  },
+  {
+    "date": "2026-09-20T03:06:03",
+    "type": "issue_created",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp"
+  },
+  {
+    "date": "2026-09-20T03:06:03",
+    "type": "event_milestoned",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp"
+  },
+  {
+    "date": "2026-09-20T03:06:05",
+    "type": "event_labeled",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp"
+  },
+  {
+    "date": "2026-09-20T03:06:05",
+    "type": "event_issue_type_added",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp"
+  },
+  {
+    "date": "2026-09-20T03:20:07",
+    "type": "issue_created",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp"
+  },
+  {
+    "date": "2026-09-20T03:20:07",
+    "type": "event_milestoned",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp"
+  },
+  {
+    "date": "2026-09-20T03:20:09",
+    "type": "event_issue_type_added",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp"
+  },
+  {
+    "date": "2026-09-20T03:20:29",
+    "type": "event_parent_issue_added",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp"
+  },
+  {
+    "date": "2026-09-20T03:20:29",
+    "type": "event_sub_issue_added",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp"
+  },
+  {
+    "date": "2026-09-20T03:24:47",
+    "type": "pr_created",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-20T03:34:24",
+    "type": "event_base_ref_changed",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-20T03:40:23",
+    "type": "event_head_ref_deleted",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-20T03:40:23",
+    "type": "event_closed",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-20T03:42:38",
+    "type": "event_head_ref_restored",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-20T03:42:44",
+    "type": "event_reopened",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-20T03:47:30",
+    "type": "pr_closed",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-20T03:47:30",
+    "type": "event_closed",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-20T03:48:27",
+    "type": "pr_created",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-20T04:22:33",
+    "type": "commit",
+    "repo": "DFemObras-2025.1",
+    "user": "github-actions[bot]",
+    "additions": 311,
+    "deletions": 326,
+    "total_changes": 637
+  },
+  {
+    "date": "2026-09-20T04:37:56",
+    "type": "commit",
+    "repo": "2026-1-SafeStreets",
+    "user": "actions-user",
+    "additions": 7,
+    "deletions": 7,
+    "total_changes": 14
+  },
+  {
+    "date": "2026-09-20T08:00:30",
+    "type": "commit",
+    "repo": "2026-1-Mapa_L.I.L.A.S",
+    "user": "github-actions[bot]",
+    "additions": 52,
+    "deletions": 159,
+    "total_changes": 211
   }
 ]

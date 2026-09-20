@@ -2,7 +2,7 @@
   "repository": "2025-1-Eletta",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-19T10:02:38.921432",
+  "analyzed_at": "2026-09-20T10:35:12.094933",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -852,7 +852,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-19T10:03:51.848161",
+    "extracted_at": "2026-09-20T10:36:34.042043",
     "file_path": "data/silver/language_analysis_2025-1-Eletta.json"
   }
 }

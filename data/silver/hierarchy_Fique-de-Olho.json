@@ -2,7 +2,7 @@
   "repository": "Fique-de-Olho",
   "owner": "unb-mds",
   "branch": "main",
-  "extracted_at": "2026-09-19T10:02:57.967622",
+  "extracted_at": "2026-09-20T10:35:34.736694",
   "hierarchy": {
     "name": "root",
     "type": "directory",
@@ -527,7 +527,7 @@
         "name": "arquitetura.md",
         "type": "file",
         "language": "Markdown",
-        "size": 2263,
+        "size": 3984,
         "extension": ".md",
         "path": "docs/Estudos/sprint00/arquitetura.md"
       },
@@ -742,7 +742,7 @@
     ]
   },
   "_metadata": {
-    "extracted_at": "2026-09-19T10:03:52.376018",
+    "extracted_at": "2026-09-20T10:36:34.634765",
     "file_path": "data/silver/hierarchy_Fique-de-Olho.json"
   }
 }

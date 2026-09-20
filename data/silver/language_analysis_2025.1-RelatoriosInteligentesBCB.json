@@ -2,7 +2,7 @@
   "repository": "2025.1-RelatoriosInteligentesBCB",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-19T10:02:37.905069",
+  "analyzed_at": "2026-09-20T10:35:10.792255",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -216,7 +216,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-19T10:03:51.875183",
+    "extracted_at": "2026-09-20T10:36:34.070625",
     "file_path": "data/silver/language_analysis_2025.1-RelatoriosInteligentesBCB.json"
   }
 }

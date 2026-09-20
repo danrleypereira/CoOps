@@ -1,7 +1,7 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-19T10:03:43.540809",
+      "extracted_at": "2026-09-20T10:36:26.001556",
       "file_path": "data/silver/repository_metrics.json",
       "record_count": 97
     }
@@ -23,11 +23,11 @@
     "repo": "LicitaBSB-24.1"
   },
   {
-    "issues": 113,
-    "prs": 68,
-    "commits": 1229,
+    "issues": 117,
+    "prs": 69,
+    "commits": 1237,
     "comments": 0,
-    "total_activity": 1410,
+    "total_activity": 1423,
     "repo": "2025-1-NoFluxoUnB"
   },
   {
@@ -97,9 +97,9 @@
   {
     "issues": 91,
     "prs": 59,
-    "commits": 550,
+    "commits": 551,
     "comments": 0,
-    "total_activity": 700,
+    "total_activity": 701,
     "repo": "2026-1-SafeStreets"
   },
   {
@@ -169,17 +169,17 @@
   {
     "issues": 60,
     "prs": 14,
-    "commits": 525,
+    "commits": 527,
     "comments": 0,
-    "total_activity": 599,
+    "total_activity": 601,
     "repo": "2026-2-VeritasIA"
   },
   {
     "issues": 66,
     "prs": 11,
-    "commits": 518,
+    "commits": 519,
     "comments": 0,
-    "total_activity": 595,
+    "total_activity": 596,
     "repo": "DFemObras-2025.1"
   },
   {
@@ -249,9 +249,9 @@
   {
     "issues": 84,
     "prs": 38,
-    "commits": 361,
+    "commits": 362,
     "comments": 0,
-    "total_activity": 483,
+    "total_activity": 484,
     "repo": "2026-1-Mapa_L.I.L.A.S"
   },
   {
@@ -447,6 +447,14 @@
     "repo": "2024-2-SuaFinanca"
   },
   {
+    "issues": 48,
+    "prs": 62,
+    "commits": 141,
+    "comments": 0,
+    "total_activity": 251,
+    "repo": "2026-02-UnDb"
+  },
+  {
     "issues": 23,
     "prs": 5,
     "commits": 221,
@@ -469,14 +477,6 @@
     "comments": 0,
     "total_activity": 244,
     "repo": "2023-2-Squad10"
-  },
-  {
-    "issues": 48,
-    "prs": 55,
-    "commits": 141,
-    "comments": 0,
-    "total_activity": 244,
-    "repo": "2026-02-UnDb"
   },
   {
     "issues": 75,
@@ -545,9 +545,9 @@
   {
     "issues": 99,
     "prs": 6,
-    "commits": 66,
+    "commits": 67,
     "comments": 0,
-    "total_activity": 171,
+    "total_activity": 172,
     "repo": "2026.2-UnB_Core"
   },
   {
@@ -600,10 +600,10 @@
   },
   {
     "issues": 16,
-    "prs": 1,
-    "commits": 55,
+    "prs": 2,
+    "commits": 62,
     "comments": 0,
-    "total_activity": 72,
+    "total_activity": 80,
     "repo": "2026-2-Bandejao"
   },
   {
@@ -647,12 +647,20 @@
     "repo": "2026-2-AgendaUnB"
   },
   {
-    "issues": 7,
+    "issues": 9,
     "prs": 5,
-    "commits": 30,
+    "commits": 34,
     "comments": 0,
-    "total_activity": 42,
+    "total_activity": 48,
     "repo": "2026-2-MonitoraUnB"
+  },
+  {
+    "issues": 14,
+    "prs": 3,
+    "commits": 21,
+    "comments": 0,
+    "total_activity": 38,
+    "repo": "Fique-de-Olho"
   },
   {
     "issues": 0,
@@ -663,19 +671,11 @@
     "repo": "2024-1-Gastos-DF-Doc-Squad12"
   },
   {
-    "issues": 14,
-    "prs": 2,
-    "commits": 19,
-    "comments": 0,
-    "total_activity": 35,
-    "repo": "Fique-de-Olho"
-  },
-  {
-    "issues": 14,
+    "issues": 16,
     "prs": 3,
-    "commits": 12,
+    "commits": 15,
     "comments": 0,
-    "total_activity": 29,
+    "total_activity": 34,
     "repo": "2026-2-Followw"
   },
   {
