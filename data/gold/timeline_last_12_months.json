@@ -1,7 +1,7 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-20T10:37:12.037008",
+      "extracted_at": "2026-09-21T11:31:48.367018",
       "file_path": "data/gold/timeline_last_12_months.json",
       "record_count": 13
     }
@@ -9927,12 +9927,12 @@
   },
   {
     "date": "2026-09",
-    "total_events": 4365,
-    "issues_created": 299,
-    "issues_closed": 197,
-    "prs_created": 148,
-    "prs_closed": 161,
-    "commits": 690,
+    "total_events": 4546,
+    "issues_created": 332,
+    "issues_closed": 205,
+    "prs_created": 153,
+    "prs_closed": 164,
+    "commits": 702,
     "comments": 0,
     "unique_users": 40,
     "unique_repos": 19,
@@ -9963,7 +9963,7 @@
       },
       {
         "name": "github-actions[bot]",
-        "commits": 140,
+        "commits": 143,
         "issues_created": 1,
         "issues_closed": 0,
         "prs_created": 0,
@@ -9988,8 +9988,8 @@
       },
       {
         "name": "caiionog",
-        "commits": 10,
-        "issues_created": 0,
+        "commits": 12,
+        "issues_created": 21,
         "issues_closed": 5,
         "prs_created": 0,
         "prs_closed": 1,
@@ -10000,7 +10000,7 @@
       },
       {
         "name": "actions-user",
-        "commits": 20,
+        "commits": 21,
         "issues_created": 0,
         "issues_closed": 0,
         "prs_created": 0,
@@ -10042,7 +10042,7 @@
         "name": "nicolaszanin06",
         "commits": 63,
         "issues_created": 31,
-        "issues_closed": 22,
+        "issues_closed": 23,
         "prs_created": 15,
         "prs_closed": 18,
         "comments": 0,
@@ -10317,7 +10317,7 @@
         "commits": 6,
         "issues_created": 15,
         "issues_closed": 9,
-        "prs_created": 2,
+        "prs_created": 3,
         "prs_closed": 2,
         "comments": 0,
         "repositories": [
@@ -10474,8 +10474,8 @@
       },
       {
         "name": "smitalo",
-        "commits": 2,
-        "issues_created": 2,
+        "commits": 3,
+        "issues_created": 3,
         "issues_closed": 2,
         "prs_created": 0,
         "prs_closed": 0,
@@ -10488,8 +10488,8 @@
         "name": "MrD4ntas",
         "commits": 1,
         "issues_created": 1,
-        "issues_closed": 0,
-        "prs_created": 0,
+        "issues_closed": 1,
+        "prs_created": 1,
         "prs_closed": 0,
         "comments": 0,
         "repositories": [
@@ -10537,7 +10537,7 @@
         "commits": 15,
         "issues_created": 2,
         "issues_closed": 3,
-        "prs_created": 8,
+        "prs_created": 10,
         "prs_closed": 11,
         "comments": 0,
         "repositories": [
@@ -10547,8 +10547,8 @@
       {
         "name": "Thomas4ugust0",
         "commits": 14,
-        "issues_created": 0,
-        "issues_closed": 0,
+        "issues_created": 10,
+        "issues_closed": 3,
         "prs_created": 1,
         "prs_closed": 2,
         "comments": 0,
@@ -10733,8 +10733,8 @@
         "commits": 1,
         "issues_created": 0,
         "issues_closed": 0,
-        "prs_created": 9,
-        "prs_closed": 7,
+        "prs_created": 10,
+        "prs_closed": 9,
         "comments": 0,
         "repositories": [
           "2026-02-UnDb"
@@ -10767,9 +10767,9 @@
       },
       {
         "name": "MariaMacedoToledo",
-        "commits": 6,
-        "issues_created": 3,
-        "issues_closed": 3,
+        "commits": 11,
+        "issues_created": 4,
+        "issues_closed": 4,
         "prs_created": 0,
         "prs_closed": 0,
         "comments": 0,
@@ -10926,7 +10926,7 @@
         "name": "josegabriel-iw",
         "commits": 1,
         "issues_created": 1,
-        "issues_closed": 0,
+        "issues_closed": 1,
         "prs_created": 0,
         "prs_closed": 0,
         "comments": 0,
@@ -10950,7 +10950,7 @@
         "name": "Alexkurokawa",
         "commits": 0,
         "issues_created": 1,
-        "issues_closed": 0,
+        "issues_closed": 1,
         "prs_created": 0,
         "prs_closed": 0,
         "comments": 0,
@@ -11013,7 +11013,7 @@
         "issues_created": 0,
         "issues_closed": 0,
         "prs_created": 1,
-        "prs_closed": 0,
+        "prs_closed": 1,
         "comments": 0,
         "repositories": [
           "2026-2-Bandejao-UnB"
