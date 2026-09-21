@@ -2,7 +2,7 @@
   "repository": "2026-2-GlossarioUnB",
   "owner": "unb-mds",
   "branch": "main",
-  "extracted_at": "2026-09-20T10:35:37.985024",
+  "extracted_at": "2026-09-21T11:30:19.731705",
   "hierarchy": {
     "name": "root",
     "type": "directory",
@@ -205,7 +205,7 @@
         "name": "dailies.md",
         "type": "file",
         "language": "Markdown",
-        "size": 1229,
+        "size": 1591,
         "extension": ".md",
         "path": "docs/scrum/dailies.md"
       },
@@ -242,7 +242,7 @@
     ]
   },
   "_metadata": {
-    "extracted_at": "2026-09-20T10:36:34.068352",
+    "extracted_at": "2026-09-21T11:31:07.867346",
     "file_path": "data/silver/hierarchy_2026-2-GlossarioUnB.json"
   }
 }

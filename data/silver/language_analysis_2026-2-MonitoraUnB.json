@@ -2,19 +2,39 @@
   "repository": "2026-2-MonitoraUnB",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-20T10:35:38.526673",
+  "analyzed_at": "2026-09-21T11:30:20.443249",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
   },
-  "total_files": 14,
-  "total_bytes": 51718,
+  "total_files": 16,
+  "total_bytes": 237428,
   "languages": [
+    {
+      "language": "PDF",
+      "file_count": 2,
+      "total_bytes": 185760,
+      "percentage": 78.24,
+      "files": [
+        {
+          "path": "docs/estudos/HTML_parte1_.pdf",
+          "name": "HTML_parte1_.pdf",
+          "size": 103495,
+          "extension": ".pdf"
+        },
+        {
+          "path": "docs/estudos/HTML_parte2_.pdf",
+          "name": "HTML_parte2_.pdf",
+          "size": 82265,
+          "extension": ".pdf"
+        }
+      ]
+    },
     {
       "language": "Markdown",
       "file_count": 10,
-      "total_bytes": 35426,
-      "percentage": 68.5,
+      "total_bytes": 35376,
+      "percentage": 14.9,
       "files": [
         {
           "path": "docs/estudos/Metodologia Scrum.md",
@@ -37,7 +57,7 @@
         {
           "path": "docs/sprints/sprint1.md",
           "name": "sprint1.md",
-          "size": 3765,
+          "size": 3715,
           "extension": ".md"
         },
         {
@@ -82,7 +102,7 @@
       "language": "No Extension",
       "file_count": 2,
       "total_bytes": 12842,
-      "percentage": 24.83,
+      "percentage": 5.41,
       "files": [
         {
           "path": "docs/estudos/Metodologia Scrum",
@@ -102,7 +122,7 @@
       "language": "Text",
       "file_count": 2,
       "total_bytes": 3450,
-      "percentage": 6.67,
+      "percentage": 1.45,
       "files": [
         {
           "path": "docs/estudos/estudo fast api e django.txt",
@@ -120,7 +140,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-20T10:36:33.770625",
+    "extracted_at": "2026-09-21T11:31:07.660762",
     "file_path": "data/silver/language_analysis_2026-2-MonitoraUnB.json"
   }
 }

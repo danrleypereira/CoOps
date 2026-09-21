@@ -2,40 +2,16 @@
   "repository": "G2-2026-2",
   "owner": "unb-mds",
   "branch": "main",
-  "extracted_at": "2026-09-20T10:35:33.653261",
+  "extracted_at": "2026-09-21T11:30:13.626057",
   "hierarchy": {
     "name": "root",
     "type": "directory",
     "children": [
       {
-        "name": "DOCUMENTO_DE_VISAO.md",
-        "type": "file",
-        "language": "Markdown",
-        "size": 12487,
-        "extension": ".md",
-        "path": "DOCUMENTO_DE_VISAO.md"
-      },
-      {
-        "name": "Diagrama de Componentes da API.png",
-        "type": "file",
-        "language": "PNG Image",
-        "size": 44273,
-        "extension": ".png",
-        "path": "Diagrama de Componentes da API.png"
-      },
-      {
-        "name": "Diagrama de contexto.png",
-        "type": "file",
-        "language": "PNG Image",
-        "size": 39209,
-        "extension": ".png",
-        "path": "Diagrama de contexto.png"
-      },
-      {
         "name": "README.md",
         "type": "file",
         "language": "Markdown",
-        "size": 129,
+        "size": 9261,
         "extension": ".md",
         "path": "README.md"
       },
@@ -46,188 +22,28 @@
         "children": []
       },
       {
-        "name": "Captura de tela 2026-09-13 021345.png",
+        "name": "DOCUMENTO_DE_VISAO.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 12487,
+        "extension": ".md",
+        "path": "docs/DOCUMENTO_DE_VISAO.md"
+      },
+      {
+        "name": "Diagrama de Componentes da API.png",
         "type": "file",
         "language": "PNG Image",
-        "size": 197324,
+        "size": 44273,
         "extension": ".png",
-        "path": "docs/Captura de tela 2026-09-13 021345.png"
+        "path": "docs/Diagrama de Componentes da API.png"
       },
       {
-        "name": "Captura de tela 2026-09-13 021353.png",
+        "name": "Diagrama de contexto.png",
         "type": "file",
         "language": "PNG Image",
-        "size": 105230,
+        "size": 39209,
         "extension": ".png",
-        "path": "docs/Captura de tela 2026-09-13 021353.png"
-      },
-      {
-        "name": "Captura de tela 2026-09-13 190932.png",
-        "type": "file",
-        "language": "PNG Image",
-        "size": 73679,
-        "extension": ".png",
-        "path": "docs/Captura de tela 2026-09-13 190932.png"
-      },
-      {
-        "name": "Captura de tela 2026-09-13 191151.png",
-        "type": "file",
-        "language": "PNG Image",
-        "size": 38906,
-        "extension": ".png",
-        "path": "docs/Captura de tela 2026-09-13 191151.png"
-      },
-      {
-        "name": "Captura de tela 2026-09-13 191203.png",
-        "type": "file",
-        "language": "PNG Image",
-        "size": 24266,
-        "extension": ".png",
-        "path": "docs/Captura de tela 2026-09-13 191203.png"
-      },
-      {
-        "name": "Captura de tela 2026-09-13 191214.png",
-        "type": "file",
-        "language": "PNG Image",
-        "size": 47078,
-        "extension": ".png",
-        "path": "docs/Captura de tela 2026-09-13 191214.png"
-      },
-      {
-        "name": "Captura de tela 2026-09-13 191223.png",
-        "type": "file",
-        "language": "PNG Image",
-        "size": 27543,
-        "extension": ".png",
-        "path": "docs/Captura de tela 2026-09-13 191223.png"
-      },
-      {
-        "name": "Captura de tela 2026-09-13 192914.png",
-        "type": "file",
-        "language": "PNG Image",
-        "size": 66051,
-        "extension": ".png",
-        "path": "docs/Captura de tela 2026-09-13 192914.png"
-      },
-      {
-        "name": "Captura de tela 2026-09-13 192926.png",
-        "type": "file",
-        "language": "PNG Image",
-        "size": 59152,
-        "extension": ".png",
-        "path": "docs/Captura de tela 2026-09-13 192926.png"
-      },
-      {
-        "name": "Captura de tela 2026-09-13 192935.png",
-        "type": "file",
-        "language": "PNG Image",
-        "size": 19553,
-        "extension": ".png",
-        "path": "docs/Captura de tela 2026-09-13 192935.png"
-      },
-      {
-        "name": "Captura de tela 2026-09-14 002531.png",
-        "type": "file",
-        "language": "PNG Image",
-        "size": 104991,
-        "extension": ".png",
-        "path": "docs/Captura de tela 2026-09-14 002531.png"
-      },
-      {
-        "name": "Captura de tela 2026-09-14 002724.png",
-        "type": "file",
-        "language": "PNG Image",
-        "size": 128273,
-        "extension": ".png",
-        "path": "docs/Captura de tela 2026-09-14 002724.png"
-      },
-      {
-        "name": "Captura de tela 2026-09-14 002742.png",
-        "type": "file",
-        "language": "PNG Image",
-        "size": 60115,
-        "extension": ".png",
-        "path": "docs/Captura de tela 2026-09-14 002742.png"
-      },
-      {
-        "name": "Captura de tela 2026-09-14 002758.png",
-        "type": "file",
-        "language": "PNG Image",
-        "size": 75160,
-        "extension": ".png",
-        "path": "docs/Captura de tela 2026-09-14 002758.png"
-      },
-      {
-        "name": "Captura de tela 2026-09-14 013157.png",
-        "type": "file",
-        "language": "PNG Image",
-        "size": 32031,
-        "extension": ".png",
-        "path": "docs/Captura de tela 2026-09-14 013157.png"
-      },
-      {
-        "name": "Captura de tela 2026-09-14 151743.png",
-        "type": "file",
-        "language": "PNG Image",
-        "size": 88221,
-        "extension": ".png",
-        "path": "docs/Captura de tela 2026-09-14 151743.png"
-      },
-      {
-        "name": "Captura de tela 2026-09-14 154629.png",
-        "type": "file",
-        "language": "PNG Image",
-        "size": 167310,
-        "extension": ".png",
-        "path": "docs/Captura de tela 2026-09-14 154629.png"
-      },
-      {
-        "name": "Captura de tela 2026-09-14 154933.png",
-        "type": "file",
-        "language": "PNG Image",
-        "size": 111185,
-        "extension": ".png",
-        "path": "docs/Captura de tela 2026-09-14 154933.png"
-      },
-      {
-        "name": "Captura de tela 2026-09-14 192327.png",
-        "type": "file",
-        "language": "PNG Image",
-        "size": 255779,
-        "extension": ".png",
-        "path": "docs/Captura de tela 2026-09-14 192327.png"
-      },
-      {
-        "name": "Captura de tela 2026-09-14 192452.png",
-        "type": "file",
-        "language": "PNG Image",
-        "size": 305814,
-        "extension": ".png",
-        "path": "docs/Captura de tela 2026-09-14 192452.png"
-      },
-      {
-        "name": "escopo.jpeg",
-        "type": "file",
-        "language": "JPEG Image",
-        "size": 100830,
-        "extension": ".jpeg",
-        "path": "docs/escopo.jpeg"
-      },
-      {
-        "name": "estrategico.jpeg",
-        "type": "file",
-        "language": "JPEG Image",
-        "size": 66278,
-        "extension": ".jpeg",
-        "path": "docs/estrategico.jpeg"
-      },
-      {
-        "name": "estrutura.jpeg",
-        "type": "file",
-        "language": "JPEG Image",
-        "size": 98730,
-        "extension": ".jpeg",
-        "path": "docs/estrutura.jpeg"
+        "path": "docs/Diagrama de contexto.png"
       },
       {
         "name": "teck stack.png",
@@ -235,12 +51,12 @@
         "language": "PNG Image",
         "size": 20174,
         "extension": ".png",
-        "path": "teck stack.png"
+        "path": "docs/teck stack.png"
       }
     ]
   },
   "_metadata": {
-    "extracted_at": "2026-09-20T10:36:34.633223",
+    "extracted_at": "2026-09-21T11:31:08.174865",
     "file_path": "data/silver/hierarchy_G2-2026-2.json"
   }
 }

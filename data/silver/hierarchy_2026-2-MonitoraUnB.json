@@ -2,7 +2,7 @@
   "repository": "2026-2-MonitoraUnB",
   "owner": "unb-mds",
   "branch": "main",
-  "extracted_at": "2026-09-20T10:35:38.526673",
+  "extracted_at": "2026-09-21T11:30:20.443249",
   "hierarchy": {
     "name": "root",
     "type": "directory",
@@ -50,6 +50,22 @@
         "size": 3641,
         "extension": ".md",
         "path": "docs/estudos/Guia GitFlow.md"
+      },
+      {
+        "name": "HTML_parte1_.pdf",
+        "type": "file",
+        "language": "PDF",
+        "size": 103495,
+        "extension": ".pdf",
+        "path": "docs/estudos/HTML_parte1_.pdf"
+      },
+      {
+        "name": "HTML_parte2_.pdf",
+        "type": "file",
+        "language": "PDF",
+        "size": 82265,
+        "extension": ".pdf",
+        "path": "docs/estudos/HTML_parte2_.pdf"
       },
       {
         "name": "Metodologia Scrum",
@@ -125,7 +141,7 @@
         "name": "sprint1.md",
         "type": "file",
         "language": "Markdown",
-        "size": 3765,
+        "size": 3715,
         "extension": ".md",
         "path": "docs/sprints/sprint1.md"
       },
@@ -140,7 +156,7 @@
     ]
   },
   "_metadata": {
-    "extracted_at": "2026-09-20T10:36:33.770970",
+    "extracted_at": "2026-09-21T11:31:07.661053",
     "file_path": "data/silver/hierarchy_2026-2-MonitoraUnB.json"
   }
 }

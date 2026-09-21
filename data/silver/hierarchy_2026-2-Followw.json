@@ -2,7 +2,7 @@
   "repository": "2026-2-Followw",
   "owner": "unb-mds",
   "branch": "main",
-  "extracted_at": "2026-09-20T10:35:35.285665",
+  "extracted_at": "2026-09-21T11:30:15.902481",
   "hierarchy": {
     "name": "root",
     "type": "directory",
@@ -107,25 +107,11 @@
       },
       {
         "name": "skills",
-        "type": "directory",
-        "path": ".claude/skills",
-        "children": []
-      },
-      {
-        "name": "codebase-design",
         "type": "file",
         "language": "No Extension",
-        "size": 36,
+        "size": 17,
         "extension": "",
-        "path": ".claude/skills/codebase-design"
-      },
-      {
-        "name": "to-spec",
-        "type": "file",
-        "language": "No Extension",
-        "size": 28,
-        "extension": "",
-        "path": ".claude/skills/to-spec"
+        "path": ".claude/skills"
       },
       {
         "name": ".env.example",
@@ -213,7 +199,7 @@
         "name": "CLAUDE.md",
         "type": "file",
         "language": "Markdown",
-        "size": 37,
+        "size": 9,
         "extension": ".md",
         "path": "CLAUDE.md"
       },
@@ -260,6 +246,14 @@
         "size": 3617,
         "extension": ".md",
         "path": "apps/api/AGENTS.md"
+      },
+      {
+        "name": "CLAUDE.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 9,
+        "extension": ".md",
+        "path": "apps/api/CLAUDE.md"
       },
       {
         "name": "api",
@@ -518,6 +512,14 @@
         "path": "packages/sigaa-client/AGENTS.md"
       },
       {
+        "name": "CLAUDE.md",
+        "type": "file",
+        "language": "Markdown",
+        "size": 9,
+        "extension": ".md",
+        "path": "packages/sigaa-client/CLAUDE.md"
+      },
+      {
         "name": "README.md",
         "type": "file",
         "language": "Markdown",
@@ -734,7 +736,7 @@
     ]
   },
   "_metadata": {
-    "extracted_at": "2026-09-20T10:36:34.158277",
+    "extracted_at": "2026-09-21T11:31:07.903984",
     "file_path": "data/silver/hierarchy_2026-2-Followw.json"
   }
 }

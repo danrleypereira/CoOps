@@ -2,7 +2,7 @@
   "repository": "2023-2-SuaGradeUnB",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-20T10:34:48.082501",
+  "analyzed_at": "2026-09-21T11:29:12.670034",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -618,7 +618,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-20T10:36:33.766210",
+    "extracted_at": "2026-09-21T11:31:07.657558",
     "file_path": "data/silver/language_analysis_2023-2-SuaGradeUnB.json"
   }
 }

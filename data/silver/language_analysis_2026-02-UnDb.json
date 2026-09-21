@@ -2,7 +2,7 @@
   "repository": "2026-02-UnDb",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-20T10:35:36.378257",
+  "analyzed_at": "2026-09-21T11:30:17.431302",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -342,7 +342,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-20T10:36:34.669227",
+    "extracted_at": "2026-09-21T11:31:08.193416",
     "file_path": "data/silver/language_analysis_2026-02-UnDb.json"
   }
 }

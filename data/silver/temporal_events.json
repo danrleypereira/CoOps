@@ -1,9 +1,9 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-20T10:36:29.627444",
+      "extracted_at": "2026-09-21T11:31:04.976817",
       "file_path": "data/silver/temporal_events.json",
-      "record_count": 120681
+      "record_count": 120862
     }
   },
   {
@@ -195514,7 +195514,7 @@
     "total_changes": 14
   },
   {
-    "date": "2024-08-12T12:19:08",
+    "date": "2024-08-12T12:19:25",
     "type": "commit",
     "repo": "LicitaBSB-24.1",
     "user": "thaleseuflauzino",
@@ -529124,9 +529124,9 @@
     "type": "commit",
     "repo": "2025-2-Squad-01",
     "user": "github-actions[bot]",
-    "additions": 0,
-    "deletions": 0,
-    "total_changes": 0
+    "additions": 3099458,
+    "deletions": 118833,
+    "total_changes": 3218291
   },
   {
     "date": "2025-10-18T00:44:25",
@@ -641831,9 +641831,9 @@
     "type": "commit",
     "repo": "2025-2-Squad-01",
     "user": "github-actions[bot]",
-    "additions": 559041,
-    "deletions": 604494,
-    "total_changes": 1163535
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0
   },
   {
     "date": "2026-04-28T08:15:14",
@@ -808510,15 +808510,6 @@
     "total_changes": 2
   },
   {
-    "date": "2026-09-20T02:41:13",
-    "type": "commit",
-    "repo": "2026-2-Followw",
-    "user": "eliabexp",
-    "additions": 497,
-    "deletions": 25,
-    "total_changes": 522
-  },
-  {
     "date": "2026-09-20T02:56:03",
     "type": "event_closed",
     "repo": "2026-2-Followw",
@@ -808688,5 +808679,1136 @@
     "additions": 52,
     "deletions": 159,
     "total_changes": 211
+  },
+  {
+    "date": "2026-09-20T11:43:24",
+    "type": "commit",
+    "repo": "2026-2-MonitoraUnB",
+    "user": "MariaMacedoToledo",
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4
+  },
+  {
+    "date": "2026-09-20T13:08:52",
+    "type": "event_referenced",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-20T13:13:01",
+    "type": "event_closed",
+    "repo": "2026-2-Bandejao-UnB",
+    "user": "AlvaroBento12"
+  },
+  {
+    "date": "2026-09-20T13:13:01",
+    "type": "event_merged",
+    "repo": "2026-2-Bandejao-UnB",
+    "user": "AlvaroBento12"
+  },
+  {
+    "date": "2026-09-20T13:13:02",
+    "type": "event_referenced",
+    "repo": "2026-2-Bandejao-UnB",
+    "user": "AlvaroBento12"
+  },
+  {
+    "date": "2026-09-20T13:16:17",
+    "type": "pr_closed",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-20T13:16:17",
+    "type": "event_closed",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-20T13:16:17",
+    "type": "event_merged",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-20T13:16:18",
+    "type": "event_referenced",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-20T13:19:07",
+    "type": "issue_closed",
+    "repo": "2026-02-UnDb",
+    "user": "nicolaszanin06"
+  },
+  {
+    "date": "2026-09-20T13:19:07",
+    "type": "event_closed",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-20T13:19:09",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "2026-02-UnDb",
+    "user": "github-project-automation[bot]"
+  },
+  {
+    "date": "2026-09-20T13:47:48",
+    "type": "event_referenced",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-20T13:59:19",
+    "type": "event_base_ref_changed",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-20T14:03:54",
+    "type": "event_closed",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-20T14:03:54",
+    "type": "event_merged",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-20T14:04:08",
+    "type": "pr_closed",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-20T14:04:08",
+    "type": "event_head_ref_deleted",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-20T14:12:58",
+    "type": "pr_created",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-20T14:13:43",
+    "type": "event_review_requested",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-20T14:18:04",
+    "type": "event_review_requested",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-20T14:18:10",
+    "type": "event_review_requested",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-20T15:00:37",
+    "type": "commit",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp",
+    "additions": 498,
+    "deletions": 25,
+    "total_changes": 523
+  },
+  {
+    "date": "2026-09-20T15:27:57",
+    "type": "event_added_to_project_v2",
+    "repo": "2026-2-GlossarioUnB",
+    "user": "smitalo"
+  },
+  {
+    "date": "2026-09-20T15:27:57",
+    "type": "event_added_to_project_v2",
+    "repo": "2026-2-GlossarioUnB",
+    "user": "smitalo"
+  },
+  {
+    "date": "2026-09-20T15:27:57",
+    "type": "event_added_to_project_v2",
+    "repo": "2026-2-GlossarioUnB",
+    "user": "smitalo"
+  },
+  {
+    "date": "2026-09-20T15:27:57",
+    "type": "event_added_to_project_v2",
+    "repo": "2026-2-GlossarioUnB",
+    "user": "smitalo"
+  },
+  {
+    "date": "2026-09-20T15:27:57",
+    "type": "event_added_to_project_v2",
+    "repo": "2026-2-GlossarioUnB",
+    "user": "smitalo"
+  },
+  {
+    "date": "2026-09-20T15:27:57",
+    "type": "event_added_to_project_v2",
+    "repo": "2026-2-GlossarioUnB",
+    "user": "smitalo"
+  },
+  {
+    "date": "2026-09-20T15:27:58",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "2026-2-GlossarioUnB",
+    "user": "github-project-automation[bot]"
+  },
+  {
+    "date": "2026-09-20T15:27:58",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "2026-2-GlossarioUnB",
+    "user": "github-project-automation[bot]"
+  },
+  {
+    "date": "2026-09-20T15:27:58",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "2026-2-GlossarioUnB",
+    "user": "github-project-automation[bot]"
+  },
+  {
+    "date": "2026-09-20T15:58:10",
+    "type": "pr_created",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-20T16:01:35",
+    "type": "event_review_requested",
+    "repo": "2026-02-UnDb",
+    "user": "ailoiol"
+  },
+  {
+    "date": "2026-09-20T17:10:40",
+    "type": "issue_created",
+    "repo": "2026-2-MonitoraUnB",
+    "user": "MariaMacedoToledo"
+  },
+  {
+    "date": "2026-09-20T17:11:04",
+    "type": "event_milestoned",
+    "repo": "2026-2-MonitoraUnB",
+    "user": "MariaMacedoToledo"
+  },
+  {
+    "date": "2026-09-20T17:11:44",
+    "type": "issue_closed",
+    "repo": "2026-2-MonitoraUnB",
+    "user": "MariaMacedoToledo"
+  },
+  {
+    "date": "2026-09-20T17:11:45",
+    "type": "event_closed",
+    "repo": "2026-2-MonitoraUnB",
+    "user": "MariaMacedoToledo"
+  },
+  {
+    "date": "2026-09-20T18:23:46",
+    "type": "commit",
+    "repo": "2026-2-MonitoraUnB",
+    "user": "MariaMacedoToledo",
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0
+  },
+  {
+    "date": "2026-09-20T18:26:53",
+    "type": "commit",
+    "repo": "2026-2-MonitoraUnB",
+    "user": "MariaMacedoToledo",
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0
+  },
+  {
+    "date": "2026-09-20T18:31:55",
+    "type": "commit",
+    "repo": "2026-2-MonitoraUnB",
+    "user": "MariaMacedoToledo",
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0
+  },
+  {
+    "date": "2026-09-20T18:37:23",
+    "type": "commit",
+    "repo": "2026-2-MonitoraUnB",
+    "user": "MariaMacedoToledo",
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0
+  },
+  {
+    "date": "2026-09-20T18:43:31",
+    "type": "event_assigned",
+    "repo": "2026.2-UnB_Core",
+    "user": "Joao-vithor-1"
+  },
+  {
+    "date": "2026-09-20T18:47:16",
+    "type": "pr_created",
+    "repo": "2026-02-UnDb",
+    "user": "gabrielrdaraujo"
+  },
+  {
+    "date": "2026-09-20T20:58:33",
+    "type": "pr_created",
+    "repo": "2026-2-Followw",
+    "user": "eliabexp"
+  },
+  {
+    "date": "2026-09-20T21:08:27",
+    "type": "issue_closed",
+    "repo": "2026-2-GlossarioUnB",
+    "user": "MrD4ntas"
+  },
+  {
+    "date": "2026-09-20T21:08:27",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "2026-2-GlossarioUnB",
+    "user": "smitalo"
+  },
+  {
+    "date": "2026-09-20T21:08:27",
+    "type": "event_closed",
+    "repo": "2026-2-GlossarioUnB",
+    "user": "smitalo"
+  },
+  {
+    "date": "2026-09-20T21:08:31",
+    "type": "issue_closed",
+    "repo": "2026-2-GlossarioUnB",
+    "user": "Alexkurokawa"
+  },
+  {
+    "date": "2026-09-20T21:08:31",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "2026-2-GlossarioUnB",
+    "user": "smitalo"
+  },
+  {
+    "date": "2026-09-20T21:08:32",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "2026-2-GlossarioUnB",
+    "user": "smitalo"
+  },
+  {
+    "date": "2026-09-20T21:08:32",
+    "type": "event_closed",
+    "repo": "2026-2-GlossarioUnB",
+    "user": "smitalo"
+  },
+  {
+    "date": "2026-09-20T21:08:33",
+    "type": "issue_closed",
+    "repo": "2026-2-GlossarioUnB",
+    "user": "josegabriel-iw"
+  },
+  {
+    "date": "2026-09-20T21:08:33",
+    "type": "event_closed",
+    "repo": "2026-2-GlossarioUnB",
+    "user": "smitalo"
+  },
+  {
+    "date": "2026-09-20T21:33:05",
+    "type": "commit",
+    "repo": "G2-2026-2",
+    "user": "caiionog",
+    "additions": 273,
+    "deletions": 1,
+    "total_changes": 274
+  },
+  {
+    "date": "2026-09-20T21:33:31",
+    "type": "commit",
+    "repo": "G2-2026-2",
+    "user": "caiionog",
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0
+  },
+  {
+    "date": "2026-09-20T21:52:57",
+    "type": "issue_created",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T21:52:58",
+    "type": "event_milestoned",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T21:52:59",
+    "type": "event_issue_type_added",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T21:53:32",
+    "type": "issue_created",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T21:53:32",
+    "type": "event_milestoned",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T21:53:34",
+    "type": "event_issue_type_added",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T21:54:07",
+    "type": "issue_created",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T21:54:10",
+    "type": "event_issue_type_added",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T21:54:13",
+    "type": "event_milestoned",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T21:55:14",
+    "type": "issue_created",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T21:55:14",
+    "type": "event_milestoned",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T21:55:15",
+    "type": "event_issue_type_added",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T21:56:17",
+    "type": "issue_created",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T21:56:17",
+    "type": "event_milestoned",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T21:56:19",
+    "type": "event_issue_type_added",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:04:27",
+    "type": "issue_created",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:04:27",
+    "type": "event_milestoned",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:04:29",
+    "type": "event_issue_type_added",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:04:56",
+    "type": "issue_created",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:04:56",
+    "type": "event_milestoned",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:04:58",
+    "type": "event_issue_type_added",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:05:25",
+    "type": "issue_created",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:05:26",
+    "type": "event_milestoned",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:05:28",
+    "type": "event_issue_type_added",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:05:50",
+    "type": "issue_created",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:05:50",
+    "type": "event_milestoned",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:05:52",
+    "type": "event_issue_type_added",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:06:07",
+    "type": "issue_created",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:06:07",
+    "type": "event_milestoned",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:06:09",
+    "type": "event_issue_type_added",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:06:21",
+    "type": "issue_created",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:06:21",
+    "type": "event_milestoned",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:06:22",
+    "type": "event_issue_type_added",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:06:39",
+    "type": "issue_created",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:06:39",
+    "type": "event_milestoned",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:06:41",
+    "type": "event_issue_type_added",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:06:58",
+    "type": "issue_created",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:06:58",
+    "type": "event_milestoned",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:07:00",
+    "type": "event_issue_type_added",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:07:34",
+    "type": "issue_created",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:07:35",
+    "type": "event_milestoned",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:07:36",
+    "type": "event_issue_type_added",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:08:33",
+    "type": "issue_created",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:08:33",
+    "type": "event_milestoned",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:08:35",
+    "type": "event_issue_type_added",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:10:22",
+    "type": "issue_created",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:10:22",
+    "type": "event_milestoned",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:10:24",
+    "type": "event_issue_type_added",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:11:45",
+    "type": "issue_created",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:11:47",
+    "type": "event_issue_type_added",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:12:34",
+    "type": "issue_created",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:12:34",
+    "type": "event_milestoned",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:12:35",
+    "type": "event_labeled",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:12:36",
+    "type": "event_issue_type_added",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:12:52",
+    "type": "issue_created",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:12:53",
+    "type": "event_milestoned",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:12:54",
+    "type": "event_labeled",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:12:54",
+    "type": "event_issue_type_added",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:13:10",
+    "type": "issue_created",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:13:10",
+    "type": "event_milestoned",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:13:11",
+    "type": "event_labeled",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:13:11",
+    "type": "event_issue_type_added",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:13:35",
+    "type": "issue_created",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:13:35",
+    "type": "event_milestoned",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:13:37",
+    "type": "event_issue_type_added",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:13:37",
+    "type": "event_labeled",
+    "repo": "G2-2026-2",
+    "user": "caiionog"
+  },
+  {
+    "date": "2026-09-20T22:33:34",
+    "type": "issue_created",
+    "repo": "2026-2-GlossarioUnB",
+    "user": "smitalo"
+  },
+  {
+    "date": "2026-09-20T22:33:36",
+    "type": "event_added_to_project_v2",
+    "repo": "2026-2-GlossarioUnB",
+    "user": "github-project-automation[bot]"
+  },
+  {
+    "date": "2026-09-20T22:33:37",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "2026-2-GlossarioUnB",
+    "user": "github-project-automation[bot]"
+  },
+  {
+    "date": "2026-09-21T00:21:54",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "2026-2-GlossarioUnB",
+    "user": "smitalo"
+  },
+  {
+    "date": "2026-09-21T00:21:55",
+    "type": "event_project_v2_item_status_changed",
+    "repo": "2026-2-GlossarioUnB",
+    "user": "smitalo"
+  },
+  {
+    "date": "2026-09-21T00:45:04",
+    "type": "pr_created",
+    "repo": "2026-2-GlossarioUnB",
+    "user": "MrD4ntas"
+  },
+  {
+    "date": "2026-09-21T00:45:18",
+    "type": "event_convert_to_draft",
+    "repo": "2026-2-GlossarioUnB",
+    "user": "MrD4ntas"
+  },
+  {
+    "date": "2026-09-21T00:56:42",
+    "type": "issue_created",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T00:56:42",
+    "type": "event_milestoned",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T00:56:47",
+    "type": "issue_closed",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T00:56:47",
+    "type": "event_closed",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T01:01:01",
+    "type": "commit",
+    "repo": "2026-2-GlossarioUnB",
+    "user": "smitalo",
+    "additions": 10,
+    "deletions": 0,
+    "total_changes": 10
+  },
+  {
+    "date": "2026-09-21T01:04:42",
+    "type": "issue_created",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T01:04:42",
+    "type": "event_milestoned",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T01:04:46",
+    "type": "issue_closed",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T01:04:46",
+    "type": "event_closed",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T01:28:44",
+    "type": "issue_created",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T01:28:44",
+    "type": "event_milestoned",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T01:30:03",
+    "type": "issue_closed",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T01:30:04",
+    "type": "event_closed",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T01:35:52",
+    "type": "pr_closed",
+    "repo": "2026-2-Bandejao-UnB",
+    "user": "LuisFelipe311"
+  },
+  {
+    "date": "2026-09-21T01:45:53",
+    "type": "commit",
+    "repo": "2026-2-VeritasIA",
+    "user": "github-actions[bot]",
+    "additions": 27,
+    "deletions": 121,
+    "total_changes": 148
+  },
+  {
+    "date": "2026-09-21T01:52:43",
+    "type": "commit",
+    "repo": "2026-2-VeritasIA",
+    "user": "github-actions[bot]",
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2
+  },
+  {
+    "date": "2026-09-21T02:36:15",
+    "type": "issue_created",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T02:36:15",
+    "type": "event_milestoned",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T02:43:48",
+    "type": "issue_created",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T02:43:48",
+    "type": "event_milestoned",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T02:47:12",
+    "type": "event_labeled",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T02:47:39",
+    "type": "event_labeled",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T02:52:36",
+    "type": "issue_created",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T02:53:00",
+    "type": "event_labeled",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T03:01:28",
+    "type": "issue_created",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T03:01:43",
+    "type": "event_labeled",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T03:07:15",
+    "type": "issue_created",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T03:07:39",
+    "type": "event_labeled",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T03:12:55",
+    "type": "issue_created",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T03:13:11",
+    "type": "event_labeled",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T03:15:24",
+    "type": "event_milestoned",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T03:15:24",
+    "type": "event_milestoned",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T03:15:25",
+    "type": "event_milestoned",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T03:15:25",
+    "type": "event_milestoned",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T03:15:54",
+    "type": "event_labeled",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T03:15:55",
+    "type": "event_labeled",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T03:15:55",
+    "type": "event_labeled",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T03:16:11",
+    "type": "event_labeled",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T03:16:36",
+    "type": "event_labeled",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T03:16:49",
+    "type": "event_labeled",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T03:16:49",
+    "type": "event_labeled",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T03:17:08",
+    "type": "event_labeled",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T03:17:46",
+    "type": "event_labeled",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T03:23:46",
+    "type": "issue_created",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T03:23:46",
+    "type": "event_milestoned",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T03:24:20",
+    "type": "event_labeled",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T03:24:20",
+    "type": "event_labeled",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T03:50:39",
+    "type": "event_labeled",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T03:50:39",
+    "type": "event_unlabeled",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T03:51:02",
+    "type": "event_labeled",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T03:51:02",
+    "type": "event_unlabeled",
+    "repo": "2026-2-AgendaUnB",
+    "user": "Thomas4ugust0"
+  },
+  {
+    "date": "2026-09-21T04:20:07",
+    "type": "commit",
+    "repo": "DFemObras-2025.1",
+    "user": "github-actions[bot]",
+    "additions": 1,
+    "deletions": 700,
+    "total_changes": 701
+  },
+  {
+    "date": "2026-09-21T04:35:55",
+    "type": "commit",
+    "repo": "2026-1-SafeStreets",
+    "user": "actions-user",
+    "additions": 7,
+    "deletions": 7,
+    "total_changes": 14
   }
 ]

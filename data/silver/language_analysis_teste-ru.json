@@ -2,7 +2,7 @@
   "repository": "teste-ru",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-20T10:35:39.704068",
+  "analyzed_at": "2026-09-21T11:30:21.867931",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -218,7 +218,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-20T10:36:34.918272",
+    "extracted_at": "2026-09-21T11:31:08.339513",
     "file_path": "data/silver/language_analysis_teste-ru.json"
   }
 }

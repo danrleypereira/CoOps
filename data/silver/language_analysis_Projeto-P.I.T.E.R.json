@@ -2,7 +2,7 @@
   "repository": "Projeto-P.I.T.E.R",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-20T10:35:15.880461",
+  "analyzed_at": "2026-09-21T11:29:49.935725",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -482,7 +482,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-20T10:36:34.788780",
+    "extracted_at": "2026-09-21T11:31:08.263663",
     "file_path": "data/silver/language_analysis_Projeto-P.I.T.E.R.json"
   }
 }

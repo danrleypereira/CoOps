@@ -2,7 +2,7 @@
   "repository": "Avalia",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-20T10:35:24.190202",
+  "analyzed_at": "2026-09-21T11:30:00.956370",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
@@ -106,7 +106,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-20T10:36:34.662585",
+    "extracted_at": "2026-09-21T11:31:08.190072",
     "file_path": "data/silver/language_analysis_Avalia.json"
   }
 }

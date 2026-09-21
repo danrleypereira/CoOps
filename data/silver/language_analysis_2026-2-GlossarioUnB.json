@@ -2,19 +2,19 @@
   "repository": "2026-2-GlossarioUnB",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-20T10:35:37.985024",
+  "analyzed_at": "2026-09-21T11:30:19.731705",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
   },
   "total_files": 23,
-  "total_bytes": 59394,
+  "total_bytes": 59756,
   "languages": [
     {
       "language": "Markdown",
       "file_count": 17,
-      "total_bytes": 43344,
-      "percentage": 72.98,
+      "total_bytes": 43706,
+      "percentage": 73.14,
       "files": [
         {
           "path": "docs/scrum/sprint-planning.md",
@@ -67,7 +67,7 @@
         {
           "path": "docs/scrum/dailies.md",
           "name": "dailies.md",
-          "size": 1229,
+          "size": 1591,
           "extension": ".md"
         },
         {
@@ -82,7 +82,7 @@
       "language": "PDF",
       "file_count": 1,
       "total_bytes": 15333,
-      "percentage": 25.82,
+      "percentage": 25.66,
       "files": [
         {
           "path": "docs/estudos/estudo-banco-de-dados.pdf",
@@ -122,7 +122,7 @@
       "language": "YAML",
       "file_count": 1,
       "total_bytes": 277,
-      "percentage": 0.47,
+      "percentage": 0.46,
       "files": [
         {
           "path": ".github/ISSUE_TEMPLATE/config.yml",
@@ -148,7 +148,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-20T10:36:34.067973",
+    "extracted_at": "2026-09-21T11:31:07.867152",
     "file_path": "data/silver/language_analysis_2026-2-GlossarioUnB.json"
   }
 }

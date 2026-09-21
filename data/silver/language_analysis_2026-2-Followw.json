@@ -2,19 +2,19 @@
   "repository": "2026-2-Followw",
   "owner": "unb-mds",
   "branch": "main",
-  "analyzed_at": "2026-09-20T10:35:35.285665",
+  "analyzed_at": "2026-09-21T11:30:15.902481",
   "sample_config": {
     "max_files_per_language": 10,
     "strategy": "largest"
   },
-  "total_files": 68,
-  "total_bytes": 380541,
+  "total_files": 69,
+  "total_bytes": 380484,
   "languages": [
     {
       "language": "Lock File",
       "file_count": 1,
       "total_bytes": 223980,
-      "percentage": 58.86,
+      "percentage": 58.87,
       "files": [
         {
           "path": "uv.lock",
@@ -94,8 +94,8 @@
     },
     {
       "language": "Markdown",
-      "file_count": 17,
-      "total_bytes": 56006,
+      "file_count": 19,
+      "total_bytes": 55996,
       "percentage": 14.72,
       "files": [
         {
@@ -188,9 +188,9 @@
     },
     {
       "language": "No Extension",
-      "file_count": 3,
-      "total_bytes": 1132,
-      "percentage": 0.3,
+      "file_count": 2,
+      "total_bytes": 1085,
+      "percentage": 0.29,
       "files": [
         {
           "path": "LICENSE",
@@ -199,15 +199,9 @@
           "extension": ""
         },
         {
-          "path": ".claude/skills/codebase-design",
-          "name": "codebase-design",
-          "size": 36,
-          "extension": ""
-        },
-        {
-          "path": ".claude/skills/to-spec",
-          "name": "to-spec",
-          "size": 28,
+          "path": ".claude/skills",
+          "name": "skills",
+          "size": 17,
           "extension": ""
         }
       ]
@@ -216,7 +210,7 @@
       "language": "JSON",
       "file_count": 3,
       "total_bytes": 742,
-      "percentage": 0.19,
+      "percentage": 0.2,
       "files": [
         {
           "path": "skills-lock.json",
@@ -300,7 +294,7 @@
     }
   ],
   "_metadata": {
-    "extracted_at": "2026-09-20T10:36:34.157464",
+    "extracted_at": "2026-09-21T11:31:07.903575",
     "file_path": "data/silver/language_analysis_2026-2-Followw.json"
   }
 }
