@@ -1,10 +1,95 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-20T10:32:27.006568",
+      "extracted_at": "2026-09-21T11:25:45.186883",
       "file_path": "data/bronze/commits_2026-2-MonitoraUnB.json",
-      "record_count": 34
+      "record_count": 39
     }
+  },
+  {
+    "sha": "38763c9376b243c8689af798dc85036ed831b289",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-20T18:37:23Z",
+        "login": "MariaMacedoToledo"
+      },
+      "message": "Add HTML study material"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-2-MonitoraUnB"
+  },
+  {
+    "sha": "b38c8ae6c5fd71aa7601b8999c5aa6876877ce0e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-20T18:31:55Z",
+        "login": "MariaMacedoToledo"
+      },
+      "message": "Delete docs/estudos/HTML_parte1_dracula (2).pdf"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-2-MonitoraUnB"
+  },
+  {
+    "sha": "16c12dfc12073ba37b47d0314683cde96668b230",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-20T18:26:53Z",
+        "login": "MariaMacedoToledo"
+      },
+      "message": "Delete docs/estudos/HTML_parte2_dracula (1).pdf"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-2-MonitoraUnB"
+  },
+  {
+    "sha": "9cc6fb4d16186670de53fe2143e83fd6aed3c6ea",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-20T18:23:46Z",
+        "login": "MariaMacedoToledo"
+      },
+      "message": "Add HTML study material"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "2026-2-MonitoraUnB"
+  },
+  {
+    "sha": "e1de9a978e88bac9dc6a3081e183cc5c189b4135",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-20T11:43:24Z",
+        "login": "MariaMacedoToledo"
+      },
+      "message": "Update sprint objectives and decisions in sprint1.md"
+    },
+    "additions": 2,
+    "deletions": 2,
+    "total_changes": 4,
+    "repo_name": "2026-2-MonitoraUnB"
   },
   {
     "sha": "2d018db79e14ec8e27716a58560fbd536dd2bd92",

@@ -2,7 +2,7 @@
   "owner": "unb-mds",
   "repository": "2026-2-MonitoraUnB",
   "branch": "main",
-  "sha": "2d018db79e14ec8e27716a58560fbd536dd2bd92",
+  "sha": "38763c9376b243c8689af798dc85036ed831b289",
   "tree": [
     {
       "name": "README.md",
@@ -18,7 +18,7 @@
       "name": "docs",
       "path": "docs",
       "type": "directory",
-      "sha": "c5ebe59ac51685d1bf6a094c4a596079ca40a5ed",
+      "sha": "30b3ffa123ebe6b22df6d3eda9cf54e2c05fe476",
       "mode": "040000",
       "children": []
     },
@@ -26,7 +26,7 @@
       "name": "estudos",
       "path": "docs/estudos",
       "type": "directory",
-      "sha": "c815a5a3de731f1f82f4db654dc84fdc39066ecc",
+      "sha": "555c9dcf8dbde78c0b1687324db5e42ab176c4db",
       "mode": "040000",
       "children": []
     },
@@ -58,6 +58,26 @@
       "mode": "100644",
       "extension": ".md",
       "size": 3641,
+      "is_binary": false
+    },
+    {
+      "name": "HTML_parte1_.pdf",
+      "path": "docs/estudos/HTML_parte1_.pdf",
+      "type": "file",
+      "sha": "fc7df6b866bdadf75b77eaad648379ecda632884",
+      "mode": "100644",
+      "extension": ".pdf",
+      "size": 103495,
+      "is_binary": false
+    },
+    {
+      "name": "HTML_parte2_.pdf",
+      "path": "docs/estudos/HTML_parte2_.pdf",
+      "type": "file",
+      "sha": "fbebea38d211ebc5b37a4ae47d89c5883bb9acac",
+      "mode": "100644",
+      "extension": ".pdf",
+      "size": 82265,
       "is_binary": false
     },
     {
@@ -134,7 +154,7 @@
       "name": "sprints",
       "path": "docs/sprints",
       "type": "directory",
-      "sha": "54a81937679a408d4580a690e723fbb37843b746",
+      "sha": "8444192e69fbdec52cf7dd8c7418a3e08369de03",
       "mode": "040000",
       "children": []
     },
@@ -152,10 +172,10 @@
       "name": "sprint1.md",
       "path": "docs/sprints/sprint1.md",
       "type": "file",
-      "sha": "7a753a228434263d1bc894adf70982cb81cb23f5",
+      "sha": "be53f84a82d7d73319350ffa990f970a0e491e67",
       "mode": "100644",
       "extension": ".md",
-      "size": 3765,
+      "size": 3715,
       "is_binary": false
     },
     {
@@ -170,17 +190,17 @@
     }
   ],
   "truncated": false,
-  "extracted_at": "2026-09-20T10:35:38.526673",
+  "extracted_at": "2026-09-21T11:30:20.443249",
   "method": "rest",
-  "total_items": 17,
+  "total_items": 19,
   "repository_metadata": {
     "id": 1338352709,
     "full_name": "unb-mds/2026-2-MonitoraUnB",
     "description": "Grupo G11 - Metodos de Desenvolvimento de Software 2026/2",
     "created_at": "2026-08-18T11:59:00Z",
-    "updated_at": "2026-09-19T10:48:30Z",
+    "updated_at": "2026-09-20T18:37:27Z",
     "language": null,
-    "size": 89,
+    "size": 408,
     "stars": 3,
     "forks": 0,
     "open_issues": 0

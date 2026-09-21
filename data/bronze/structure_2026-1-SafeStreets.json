@@ -2,7 +2,7 @@
   "owner": "unb-mds",
   "repository": "2026-1-SafeStreets",
   "branch": "main",
-  "sha": "bc5fb059b80eef487a221fd680ad8c0d092d294b",
+  "sha": "a261603dbec3730cb10cf23dcb40daab5e16a48a",
   "tree": [
     {
       "name": ".claude",
@@ -1024,7 +1024,7 @@
       "name": "docs",
       "path": "docs",
       "type": "directory",
-      "sha": "5b41fc5eaf1472dbf647128f71e51b62d32f68df",
+      "sha": "1def3c13efcbeb5001647f356dab2dd0cb86a2a4",
       "mode": "040000",
       "children": []
     },
@@ -1986,7 +1986,7 @@
       "name": "productivity",
       "path": "docs/productivity",
       "type": "directory",
-      "sha": "533dccbf4fb25c36ef77098b1ea907c1dbe6c4e2",
+      "sha": "3975da13922d4a31809f2c511ce7863b11ce5a30",
       "mode": "040000",
       "children": []
     },
@@ -2014,7 +2014,7 @@
       "name": "metrics.json",
       "path": "docs/productivity/metrics.json",
       "type": "file",
-      "sha": "99e1775a0bce5f05686cca915af537d335be6caa",
+      "sha": "50ebc65a543ccf9abcc4c4c7675961004cb9de66",
       "mode": "100644",
       "extension": ".json",
       "size": 9893,
@@ -3490,7 +3490,7 @@
     }
   ],
   "truncated": false,
-  "extracted_at": "2026-09-20T10:35:24.843183",
+  "extracted_at": "2026-09-21T11:30:01.796595",
   "method": "rest",
   "total_items": 366,
   "repository_metadata": {
@@ -3498,7 +3498,7 @@
     "full_name": "unb-mds/2026-1-SafeStreets",
     "description": "O SafeStreets é uma aplicação voltada ao monitoramento inteligente de riscos urbanos a partir da análise de notícias e dados públicos de segurança. O projeto tem como objetivo fornecer uma visão clara e atualizada sobre ocorrências criminais em diferentes regiões, contribuindo para a conscientização e prevenção.",
     "created_at": "2026-03-18T18:23:07Z",
-    "updated_at": "2026-09-20T04:38:01Z",
+    "updated_at": "2026-09-21T04:36:00Z",
     "language": "Python",
     "size": 103001,
     "stars": 5,

@@ -2,11 +2,29 @@
   "owner": "unb-mds",
   "repository": "G2-2026-2",
   "branch": "main",
-  "sha": "563603c9f4c933ec4024dca1fa713101740cbba3",
+  "sha": "9bbeb9665ddcfabe5c9136865676bf74af5f1c4e",
   "tree": [
     {
+      "name": "README.md",
+      "path": "README.md",
+      "type": "file",
+      "sha": "81b9c7d9c7c5312dd8338700899860179d3f8d3c",
+      "mode": "100644",
+      "extension": ".md",
+      "size": 9261,
+      "is_binary": false
+    },
+    {
+      "name": "docs",
+      "path": "docs",
+      "type": "directory",
+      "sha": "7d4723c429bdd476b49ef60a1fde8ff3237a9f8e",
+      "mode": "040000",
+      "children": []
+    },
+    {
       "name": "DOCUMENTO_DE_VISAO.md",
-      "path": "DOCUMENTO_DE_VISAO.md",
+      "path": "docs/DOCUMENTO_DE_VISAO.md",
       "type": "file",
       "sha": "2496df6476b145911559aaa33a960bcb5a07b3aa",
       "mode": "100644",
@@ -16,7 +34,7 @@
     },
     {
       "name": "Diagrama de Componentes da API.png",
-      "path": "Diagrama de Componentes da API.png",
+      "path": "docs/Diagrama de Componentes da API.png",
       "type": "file",
       "sha": "b66ac47a9f5a849a51804eaaf2e13735db9b18cb",
       "mode": "100644",
@@ -26,7 +44,7 @@
     },
     {
       "name": "Diagrama de contexto.png",
-      "path": "Diagrama de contexto.png",
+      "path": "docs/Diagrama de contexto.png",
       "type": "file",
       "sha": "b663ccfef750c71bfe30d73f21d41b74f3936824",
       "mode": "100644",
@@ -35,256 +53,8 @@
       "is_binary": false
     },
     {
-      "name": "README.md",
-      "path": "README.md",
-      "type": "file",
-      "sha": "c5cc3037acf4143d2d2684d2ce3c4938a7376097",
-      "mode": "100644",
-      "extension": ".md",
-      "size": 129,
-      "is_binary": false
-    },
-    {
-      "name": "docs",
-      "path": "docs",
-      "type": "directory",
-      "sha": "c5450c5e60b65eb04fb87bf3931d13a56c929737",
-      "mode": "040000",
-      "children": []
-    },
-    {
-      "name": "Captura de tela 2026-09-13 021345.png",
-      "path": "docs/Captura de tela 2026-09-13 021345.png",
-      "type": "file",
-      "sha": "31d5ffaf521d0f6b0119adcbaee4fd3d850d09b0",
-      "mode": "100644",
-      "extension": ".png",
-      "size": 197324,
-      "is_binary": false
-    },
-    {
-      "name": "Captura de tela 2026-09-13 021353.png",
-      "path": "docs/Captura de tela 2026-09-13 021353.png",
-      "type": "file",
-      "sha": "4cc9c7406b5ef0eb1adfd40a98c26aeb539f9f8e",
-      "mode": "100644",
-      "extension": ".png",
-      "size": 105230,
-      "is_binary": false
-    },
-    {
-      "name": "Captura de tela 2026-09-13 190932.png",
-      "path": "docs/Captura de tela 2026-09-13 190932.png",
-      "type": "file",
-      "sha": "44bf669027bdb1e4cc1b18671155d0f0ab895782",
-      "mode": "100644",
-      "extension": ".png",
-      "size": 73679,
-      "is_binary": false
-    },
-    {
-      "name": "Captura de tela 2026-09-13 191151.png",
-      "path": "docs/Captura de tela 2026-09-13 191151.png",
-      "type": "file",
-      "sha": "50a295c05e063d4f63d3af0afa507233569c3ffc",
-      "mode": "100644",
-      "extension": ".png",
-      "size": 38906,
-      "is_binary": false
-    },
-    {
-      "name": "Captura de tela 2026-09-13 191203.png",
-      "path": "docs/Captura de tela 2026-09-13 191203.png",
-      "type": "file",
-      "sha": "ed3c57624e13f94cd5870c1a8046f4acdd10805a",
-      "mode": "100644",
-      "extension": ".png",
-      "size": 24266,
-      "is_binary": false
-    },
-    {
-      "name": "Captura de tela 2026-09-13 191214.png",
-      "path": "docs/Captura de tela 2026-09-13 191214.png",
-      "type": "file",
-      "sha": "5ba7250f3275ba2cfe08e060f450f28a98e57491",
-      "mode": "100644",
-      "extension": ".png",
-      "size": 47078,
-      "is_binary": false
-    },
-    {
-      "name": "Captura de tela 2026-09-13 191223.png",
-      "path": "docs/Captura de tela 2026-09-13 191223.png",
-      "type": "file",
-      "sha": "9edb73eb9bbb18ea98eca0d7d74e19ec2ab7fb04",
-      "mode": "100644",
-      "extension": ".png",
-      "size": 27543,
-      "is_binary": false
-    },
-    {
-      "name": "Captura de tela 2026-09-13 192914.png",
-      "path": "docs/Captura de tela 2026-09-13 192914.png",
-      "type": "file",
-      "sha": "ad2fe523aeba2a142e7717e09bb5937443a76291",
-      "mode": "100644",
-      "extension": ".png",
-      "size": 66051,
-      "is_binary": false
-    },
-    {
-      "name": "Captura de tela 2026-09-13 192926.png",
-      "path": "docs/Captura de tela 2026-09-13 192926.png",
-      "type": "file",
-      "sha": "6e309c669dac9757047f982721a3558b6bbfcec5",
-      "mode": "100644",
-      "extension": ".png",
-      "size": 59152,
-      "is_binary": false
-    },
-    {
-      "name": "Captura de tela 2026-09-13 192935.png",
-      "path": "docs/Captura de tela 2026-09-13 192935.png",
-      "type": "file",
-      "sha": "a4be24f8a61cfec5f269a8d290175e201b982f96",
-      "mode": "100644",
-      "extension": ".png",
-      "size": 19553,
-      "is_binary": false
-    },
-    {
-      "name": "Captura de tela 2026-09-14 002531.png",
-      "path": "docs/Captura de tela 2026-09-14 002531.png",
-      "type": "file",
-      "sha": "a2e79d856477a25393be23a88bfa2dcff5544d50",
-      "mode": "100644",
-      "extension": ".png",
-      "size": 104991,
-      "is_binary": false
-    },
-    {
-      "name": "Captura de tela 2026-09-14 002724.png",
-      "path": "docs/Captura de tela 2026-09-14 002724.png",
-      "type": "file",
-      "sha": "dc1dd2b3d1a833422933f071a225e91c45f30e21",
-      "mode": "100644",
-      "extension": ".png",
-      "size": 128273,
-      "is_binary": false
-    },
-    {
-      "name": "Captura de tela 2026-09-14 002742.png",
-      "path": "docs/Captura de tela 2026-09-14 002742.png",
-      "type": "file",
-      "sha": "3b676a09db46ff8ff265a8a24ee0990894deaf46",
-      "mode": "100644",
-      "extension": ".png",
-      "size": 60115,
-      "is_binary": false
-    },
-    {
-      "name": "Captura de tela 2026-09-14 002758.png",
-      "path": "docs/Captura de tela 2026-09-14 002758.png",
-      "type": "file",
-      "sha": "cb2ee7569327b180461c3631bd8657ee763a105b",
-      "mode": "100644",
-      "extension": ".png",
-      "size": 75160,
-      "is_binary": false
-    },
-    {
-      "name": "Captura de tela 2026-09-14 013157.png",
-      "path": "docs/Captura de tela 2026-09-14 013157.png",
-      "type": "file",
-      "sha": "2ff7ae6fd8fe80ea8ce7ab90268052ca007472d1",
-      "mode": "100644",
-      "extension": ".png",
-      "size": 32031,
-      "is_binary": false
-    },
-    {
-      "name": "Captura de tela 2026-09-14 151743.png",
-      "path": "docs/Captura de tela 2026-09-14 151743.png",
-      "type": "file",
-      "sha": "d3692feda3436b96ecdd6721da4b0bc20531164a",
-      "mode": "100644",
-      "extension": ".png",
-      "size": 88221,
-      "is_binary": false
-    },
-    {
-      "name": "Captura de tela 2026-09-14 154629.png",
-      "path": "docs/Captura de tela 2026-09-14 154629.png",
-      "type": "file",
-      "sha": "b87803f4c3bb5c123005eb55b4f8488e63c63fd6",
-      "mode": "100644",
-      "extension": ".png",
-      "size": 167310,
-      "is_binary": false
-    },
-    {
-      "name": "Captura de tela 2026-09-14 154933.png",
-      "path": "docs/Captura de tela 2026-09-14 154933.png",
-      "type": "file",
-      "sha": "b6ef241c3bafb33f83bead5a07a56dfad840dc30",
-      "mode": "100644",
-      "extension": ".png",
-      "size": 111185,
-      "is_binary": false
-    },
-    {
-      "name": "Captura de tela 2026-09-14 192327.png",
-      "path": "docs/Captura de tela 2026-09-14 192327.png",
-      "type": "file",
-      "sha": "cfe34f33138508627d2dea458ddc9d332033f96b",
-      "mode": "100644",
-      "extension": ".png",
-      "size": 255779,
-      "is_binary": false
-    },
-    {
-      "name": "Captura de tela 2026-09-14 192452.png",
-      "path": "docs/Captura de tela 2026-09-14 192452.png",
-      "type": "file",
-      "sha": "28ed7d8999df7ec260e3fc5bacc84e9dbb664d13",
-      "mode": "100644",
-      "extension": ".png",
-      "size": 305814,
-      "is_binary": false
-    },
-    {
-      "name": "escopo.jpeg",
-      "path": "docs/escopo.jpeg",
-      "type": "file",
-      "sha": "aff2c5fbc0720a9feda48eecc24991a2ec6e90c2",
-      "mode": "100644",
-      "extension": ".jpeg",
-      "size": 100830,
-      "is_binary": false
-    },
-    {
-      "name": "estrategico.jpeg",
-      "path": "docs/estrategico.jpeg",
-      "type": "file",
-      "sha": "15da4901163b5d03fe0aa30791a7673202653a7c",
-      "mode": "100644",
-      "extension": ".jpeg",
-      "size": 66278,
-      "is_binary": false
-    },
-    {
-      "name": "estrutura.jpeg",
-      "path": "docs/estrutura.jpeg",
-      "type": "file",
-      "sha": "5180c07f5486f18c5c45c67bd97f6a468c74e633",
-      "mode": "100644",
-      "extension": ".jpeg",
-      "size": 98730,
-      "is_binary": false
-    },
-    {
       "name": "teck stack.png",
-      "path": "teck stack.png",
+      "path": "docs/teck stack.png",
       "type": "file",
       "sha": "601ddb8963fd54119a4c511f3ff6af2792bd329d",
       "mode": "100644",
@@ -294,19 +64,19 @@
     }
   ],
   "truncated": false,
-  "extracted_at": "2026-09-20T10:35:33.653261",
+  "extracted_at": "2026-09-21T11:30:13.626057",
   "method": "rest",
-  "total_items": 29,
+  "total_items": 6,
   "repository_metadata": {
     "id": 1338350068,
     "full_name": "unb-mds/G2-2026-2",
     "description": "Grupo G2 - Metodos de Desenvolvimento de Software 2026/2",
     "created_at": "2026-08-18T11:56:00Z",
-    "updated_at": "2026-09-16T15:09:35Z",
+    "updated_at": "2026-09-20T21:36:34Z",
     "language": null,
-    "size": 2183,
+    "size": 2188,
     "stars": 3,
     "forks": 0,
-    "open_issues": 0
+    "open_issues": 21
   }
 }

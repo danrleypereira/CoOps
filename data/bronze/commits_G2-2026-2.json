@@ -1,10 +1,44 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-20T10:32:11.937789",
+      "extracted_at": "2026-09-21T11:25:26.688388",
       "file_path": "data/bronze/commits_G2-2026-2.json",
-      "record_count": 37
+      "record_count": 39
     }
+  },
+  {
+    "sha": "9bbeb9665ddcfabe5c9136865676bf74af5f1c4e",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-20T21:33:31Z",
+        "login": "caiionog"
+      },
+      "message": "Organização de pastas"
+    },
+    "additions": 0,
+    "deletions": 0,
+    "total_changes": 0,
+    "repo_name": "G2-2026-2"
+  },
+  {
+    "sha": "81123a7eae5a1b3e01072be47f169e4d248aba17",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2026-09-20T21:33:05Z",
+        "login": "caiionog"
+      },
+      "message": "Add files via upload"
+    },
+    "additions": 273,
+    "deletions": 1,
+    "total_changes": 274,
+    "repo_name": "G2-2026-2"
   },
   {
     "sha": "563603c9f4c933ec4024dca1fa713101740cbba3",

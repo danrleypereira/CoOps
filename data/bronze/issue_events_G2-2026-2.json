@@ -1,9 +1,549 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-20T09:38:57.388542",
+      "extracted_at": "2026-09-21T10:27:40.023249",
       "file_path": "data/bronze/issue_events_G2-2026-2.json",
-      "record_count": 183
+      "record_count": 228
+    }
+  },
+  {
+    "id": 31494384610,
+    "event": "issue_type_added",
+    "created_at": "2026-09-20T22:13:37Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 44
+    }
+  },
+  {
+    "id": 31494384294,
+    "event": "labeled",
+    "created_at": "2026-09-20T22:13:37Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 44
+    }
+  },
+  {
+    "id": 31494383755,
+    "event": "milestoned",
+    "created_at": "2026-09-20T22:13:35Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 44
+    }
+  },
+  {
+    "id": 31494374624,
+    "event": "labeled",
+    "created_at": "2026-09-20T22:13:11Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 43
+    }
+  },
+  {
+    "id": 31494374485,
+    "event": "issue_type_added",
+    "created_at": "2026-09-20T22:13:11Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 43
+    }
+  },
+  {
+    "id": 31494374006,
+    "event": "milestoned",
+    "created_at": "2026-09-20T22:13:10Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 43
+    }
+  },
+  {
+    "id": 31494367723,
+    "event": "labeled",
+    "created_at": "2026-09-20T22:12:54Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 42
+    }
+  },
+  {
+    "id": 31494367617,
+    "event": "issue_type_added",
+    "created_at": "2026-09-20T22:12:54Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 42
+    }
+  },
+  {
+    "id": 31494367023,
+    "event": "milestoned",
+    "created_at": "2026-09-20T22:12:53Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 42
+    }
+  },
+  {
+    "id": 31494360520,
+    "event": "issue_type_added",
+    "created_at": "2026-09-20T22:12:36Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 41
+    }
+  },
+  {
+    "id": 31494360349,
+    "event": "labeled",
+    "created_at": "2026-09-20T22:12:35Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 41
+    }
+  },
+  {
+    "id": 31494359973,
+    "event": "milestoned",
+    "created_at": "2026-09-20T22:12:34Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 41
+    }
+  },
+  {
+    "id": 31494342109,
+    "event": "issue_type_added",
+    "created_at": "2026-09-20T22:11:47Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 40
+    }
+  },
+  {
+    "id": 31494310951,
+    "event": "issue_type_added",
+    "created_at": "2026-09-20T22:10:24Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 39
+    }
+  },
+  {
+    "id": 31494310214,
+    "event": "milestoned",
+    "created_at": "2026-09-20T22:10:22Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 39
+    }
+  },
+  {
+    "id": 31494270438,
+    "event": "issue_type_added",
+    "created_at": "2026-09-20T22:08:35Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 38
+    }
+  },
+  {
+    "id": 31494269663,
+    "event": "milestoned",
+    "created_at": "2026-09-20T22:08:33Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 38
+    }
+  },
+  {
+    "id": 31494248092,
+    "event": "issue_type_added",
+    "created_at": "2026-09-20T22:07:36Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 37
+    }
+  },
+  {
+    "id": 31494247687,
+    "event": "milestoned",
+    "created_at": "2026-09-20T22:07:35Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 37
+    }
+  },
+  {
+    "id": 31494233356,
+    "event": "issue_type_added",
+    "created_at": "2026-09-20T22:07:00Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 36
+    }
+  },
+  {
+    "id": 31494232687,
+    "event": "milestoned",
+    "created_at": "2026-09-20T22:06:58Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 36
+    }
+  },
+  {
+    "id": 31494225613,
+    "event": "issue_type_added",
+    "created_at": "2026-09-20T22:06:41Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 35
+    }
+  },
+  {
+    "id": 31494224906,
+    "event": "milestoned",
+    "created_at": "2026-09-20T22:06:39Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 35
+    }
+  },
+  {
+    "id": 31494218208,
+    "event": "issue_type_added",
+    "created_at": "2026-09-20T22:06:22Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 34
+    }
+  },
+  {
+    "id": 31494217833,
+    "event": "milestoned",
+    "created_at": "2026-09-20T22:06:21Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 34
+    }
+  },
+  {
+    "id": 31494213273,
+    "event": "issue_type_added",
+    "created_at": "2026-09-20T22:06:09Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 33
+    }
+  },
+  {
+    "id": 31494212542,
+    "event": "milestoned",
+    "created_at": "2026-09-20T22:06:07Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 33
+    }
+  },
+  {
+    "id": 31494206662,
+    "event": "issue_type_added",
+    "created_at": "2026-09-20T22:05:52Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 32
+    }
+  },
+  {
+    "id": 31494206056,
+    "event": "milestoned",
+    "created_at": "2026-09-20T22:05:50Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 32
+    }
+  },
+  {
+    "id": 31494197587,
+    "event": "issue_type_added",
+    "created_at": "2026-09-20T22:05:28Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 31
+    }
+  },
+  {
+    "id": 31494196716,
+    "event": "milestoned",
+    "created_at": "2026-09-20T22:05:26Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 31
+    }
+  },
+  {
+    "id": 31494186139,
+    "event": "issue_type_added",
+    "created_at": "2026-09-20T22:04:58Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 30
+    }
+  },
+  {
+    "id": 31494185178,
+    "event": "milestoned",
+    "created_at": "2026-09-20T22:04:56Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 30
+    }
+  },
+  {
+    "id": 31494173841,
+    "event": "issue_type_added",
+    "created_at": "2026-09-20T22:04:29Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 29
+    }
+  },
+  {
+    "id": 31494173114,
+    "event": "milestoned",
+    "created_at": "2026-09-20T22:04:27Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 29
+    }
+  },
+  {
+    "id": 31494004108,
+    "event": "issue_type_added",
+    "created_at": "2026-09-20T21:56:19Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 28
+    }
+  },
+  {
+    "id": 31494003300,
+    "event": "milestoned",
+    "created_at": "2026-09-20T21:56:17Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 28
+    }
+  },
+  {
+    "id": 31493983209,
+    "event": "issue_type_added",
+    "created_at": "2026-09-20T21:55:15Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 27
+    }
+  },
+  {
+    "id": 31493983018,
+    "event": "milestoned",
+    "created_at": "2026-09-20T21:55:14Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 27
+    }
+  },
+  {
+    "id": 31493962412,
+    "event": "milestoned",
+    "created_at": "2026-09-20T21:54:13Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 26
+    }
+  },
+  {
+    "id": 31493961262,
+    "event": "issue_type_added",
+    "created_at": "2026-09-20T21:54:10Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 26
+    }
+  },
+  {
+    "id": 31493949461,
+    "event": "issue_type_added",
+    "created_at": "2026-09-20T21:53:34Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 25
+    }
+  },
+  {
+    "id": 31493948857,
+    "event": "milestoned",
+    "created_at": "2026-09-20T21:53:32Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 25
+    }
+  },
+  {
+    "id": 31493937066,
+    "event": "issue_type_added",
+    "created_at": "2026-09-20T21:52:59Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 24
+    }
+  },
+  {
+    "id": 31493936445,
+    "event": "milestoned",
+    "created_at": "2026-09-20T21:52:58Z",
+    "repo_name": "G2-2026-2",
+    "actor": {
+      "login": "caiionog"
+    },
+    "issue": {
+      "number": 24
     }
   },
   {

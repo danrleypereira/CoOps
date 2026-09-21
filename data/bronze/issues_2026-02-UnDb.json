@@ -1,7 +1,7 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-20T09:39:07.464871",
+      "extracted_at": "2026-09-21T10:27:52.991992",
       "file_path": "data/bronze/issues_2026-02-UnDb.json",
       "record_count": 48
     }
@@ -2597,11 +2597,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 2,
-      "closed_issues": 7,
+      "open_issues": 1,
+      "closed_issues": 8,
       "state": "open",
       "created_at": "2026-09-05T20:18:14Z",
-      "updated_at": "2026-09-19T14:33:17Z",
+      "updated_at": "2026-09-20T13:19:07Z",
       "due_on": "2026-09-18T00:00:00Z",
       "closed_at": null
     },
@@ -3031,11 +3031,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 2,
-      "closed_issues": 7,
+      "open_issues": 1,
+      "closed_issues": 8,
       "state": "open",
       "created_at": "2026-09-05T20:18:14Z",
-      "updated_at": "2026-09-19T14:33:17Z",
+      "updated_at": "2026-09-20T13:19:07Z",
       "due_on": "2026-09-18T00:00:00Z",
       "closed_at": null
     },
@@ -3284,17 +3284,17 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 2,
-      "closed_issues": 7,
+      "open_issues": 1,
+      "closed_issues": 8,
       "state": "open",
       "created_at": "2026-09-05T20:18:14Z",
-      "updated_at": "2026-09-19T14:33:17Z",
+      "updated_at": "2026-09-20T13:19:07Z",
       "due_on": "2026-09-18T00:00:00Z",
       "closed_at": null
     },
-    "comments": 0,
+    "comments": 1,
     "created_at": "2026-09-01T13:59:43Z",
-    "updated_at": "2026-09-14T01:14:39Z",
+    "updated_at": "2026-09-20T18:47:44Z",
     "closed_at": null,
     "assignee": {
       "login": "TiagoVieira-596",
@@ -3507,11 +3507,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 2,
-      "closed_issues": 7,
+      "open_issues": 1,
+      "closed_issues": 8,
       "state": "open",
       "created_at": "2026-09-05T20:18:14Z",
-      "updated_at": "2026-09-19T14:33:17Z",
+      "updated_at": "2026-09-20T13:19:07Z",
       "due_on": "2026-09-18T00:00:00Z",
       "closed_at": null
     },
@@ -3874,7 +3874,7 @@
         "archived_by": null
       }
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignees": [
       {
@@ -3971,18 +3971,18 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 2,
-      "closed_issues": 7,
+      "open_issues": 1,
+      "closed_issues": 8,
       "state": "open",
       "created_at": "2026-09-05T20:18:14Z",
-      "updated_at": "2026-09-19T14:33:17Z",
+      "updated_at": "2026-09-20T13:19:07Z",
       "due_on": "2026-09-18T00:00:00Z",
       "closed_at": null
     },
-    "comments": 0,
+    "comments": 1,
     "created_at": "2026-09-01T13:58:50Z",
-    "updated_at": "2026-09-19T18:00:39Z",
-    "closed_at": null,
+    "updated_at": "2026-09-20T13:19:07Z",
+    "closed_at": "2026-09-20T13:19:07Z",
     "assignee": {
       "login": "ailoiol",
       "id": 225410979,
@@ -4020,8 +4020,28 @@
       "blocking": 0,
       "total_blocking": 0
     },
-    "body": "### 📚 Descrição e objetivo\n\nConfigurar a execução conjunta do backend e PostgreSQL com Docker Compose, conforme o escopo já previsto nesta issue.\n\n### ✅ Critérios de aceite\n\n- [x] Arquivo de Compose está na raiz e usa o Dockerfile do backend #33.\n- [x] docker compose up --build inicia backend e banco com a configuração de exemplo preenchida conforme README.\n- [x] Backend conecta ao banco pelo nome do serviço, sem usar localhost para conexão entre containers.\n- [x] Volume do PostgreSQL está configurado e a persistência é verificada após reiniciar os serviços sem remover o volume.\n- [x] Variáveis necessárias e passos de execução estão documentados em conjunto com #35.\n\n### 📝 Tarefas\n\n- [x] Criar serviços de backend e banco.\n- [x] Configurar variáveis, rede e volume.\n- [x] Integrar conexão do backend conforme decisão de persistência.\n- [ ] Verificar inicialização, conexão e persistência básica; reservar a validação completa por dois membros para #37.\n\n### 📎 Dependências e pendências\n\n#33 e #35. A configuração inicial do Compose pode avançar, mas a conexão efetiva depende da implementação da camada de banco. SQLAlchemy síncrono + Alembic + PostgreSQL/psycopg2 foram aprovados no PR #55. Verificar a conexão real com DATABASE_URL preenchida.\n\nFrontend permanece em #36. Migrações Alembic são a decisão vigente de persistência. A imagem deve conter os arquivos de migração; definir e verificar sua execução na composição antes de declarar o ambiente pronto. RNFs não aprovados permanecem propostos.\n\n### 📌 Prioridade e responsável\n\nPrioridade: Alta. Responsável: a definir em Assignees.",
-    "closed_by": null,
+    "body": "### 📚 Descrição e objetivo\n\nConfigurar a execução conjunta do backend e PostgreSQL com Docker Compose, conforme o escopo já previsto nesta issue.\n\n### ✅ Critérios de aceite\n\n- [x] Arquivo de Compose está na raiz e usa o Dockerfile do backend #33.\n- [x] docker compose up --build inicia backend e banco com a configuração de exemplo preenchida conforme README.\n- [x] Backend conecta ao banco pelo nome do serviço, sem usar localhost para conexão entre containers.\n- [x] Volume do PostgreSQL está configurado e a persistência é verificada após reiniciar os serviços sem remover o volume.\n- [x] Variáveis necessárias e passos de execução estão documentados em conjunto com #35.\n\n### 📝 Tarefas\n\n- [x] Criar serviços de backend e banco.\n- [x] Configurar variáveis, rede e volume.\n- [x] Integrar conexão do backend conforme decisão de persistência.\n- [x] Verificar inicialização, conexão e persistência básica; reservar a validação completa por dois membros para #37.\n\n### 📎 Dependências e pendências\n\n#33 e #35. A configuração inicial do Compose pode avançar, mas a conexão efetiva depende da implementação da camada de banco. SQLAlchemy síncrono + Alembic + PostgreSQL/psycopg2 foram aprovados no PR #55. Verificar a conexão real com DATABASE_URL preenchida.\n\nFrontend permanece em #36. Migrações Alembic são a decisão vigente de persistência. A imagem deve conter os arquivos de migração; definir e verificar sua execução na composição antes de declarar o ambiente pronto. RNFs não aprovados permanecem propostos.\n\n### 📌 Prioridade e responsável\n\nPrioridade: Alta. Responsável: a definir em Assignees.",
+    "closed_by": {
+      "login": "gabrielrdaraujo",
+      "id": 202958432,
+      "node_id": "U_kgDODBjmYA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/202958432?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gabrielrdaraujo",
+      "html_url": "https://github.com/gabrielrdaraujo",
+      "followers_url": "https://api.github.com/users/gabrielrdaraujo/followers",
+      "following_url": "https://api.github.com/users/gabrielrdaraujo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gabrielrdaraujo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gabrielrdaraujo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gabrielrdaraujo/subscriptions",
+      "organizations_url": "https://api.github.com/users/gabrielrdaraujo/orgs",
+      "repos_url": "https://api.github.com/users/gabrielrdaraujo/repos",
+      "events_url": "https://api.github.com/users/gabrielrdaraujo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gabrielrdaraujo/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
     "reactions": {
       "url": "https://api.github.com/repos/unb-mds/2026-02-UnDb/issues/34/reactions",
       "total_count": 0,
@@ -4036,7 +4056,7 @@
     },
     "timeline_url": "https://api.github.com/repos/unb-mds/2026-02-UnDb/issues/34/timeline",
     "performed_via_github_app": null,
-    "state_reason": null,
+    "state_reason": "completed",
     "pinned_comment": null,
     "repo_name": "2026-02-UnDb"
   },
@@ -4481,11 +4501,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 2,
-      "closed_issues": 7,
+      "open_issues": 1,
+      "closed_issues": 8,
       "state": "open",
       "created_at": "2026-09-05T20:18:14Z",
-      "updated_at": "2026-09-19T14:33:17Z",
+      "updated_at": "2026-09-20T13:19:07Z",
       "due_on": "2026-09-18T00:00:00Z",
       "closed_at": null
     },
@@ -4692,11 +4712,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 2,
-      "closed_issues": 7,
+      "open_issues": 1,
+      "closed_issues": 8,
       "state": "open",
       "created_at": "2026-09-05T20:18:14Z",
-      "updated_at": "2026-09-19T14:33:17Z",
+      "updated_at": "2026-09-20T13:19:07Z",
       "due_on": "2026-09-18T00:00:00Z",
       "closed_at": null
     },
@@ -4903,11 +4923,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 2,
-      "closed_issues": 7,
+      "open_issues": 1,
+      "closed_issues": 8,
       "state": "open",
       "created_at": "2026-09-05T20:18:14Z",
-      "updated_at": "2026-09-19T14:33:17Z",
+      "updated_at": "2026-09-20T13:19:07Z",
       "due_on": "2026-09-18T00:00:00Z",
       "closed_at": null
     },
@@ -5548,7 +5568,7 @@
     },
     "comments": 0,
     "created_at": "2026-09-01T13:12:16Z",
-    "updated_at": "2026-09-17T20:14:38Z",
+    "updated_at": "2026-09-20T15:13:38Z",
     "closed_at": null,
     "assignee": {
       "login": "ailoiol",
@@ -5587,7 +5607,7 @@
       "blocking": 0,
       "total_blocking": 0
     },
-    "body": "### 📚 Descrição e objetivo\n\nDefinir e implementar a operação recorrente da importação e o registro do resultado de cada execução, cobrindo RF18–RF19.\n\n### ✅ Critérios de aceite\n\n- [ ] Periodicidade e mecanismo de execução estão definidos pelo time e documentados.\n- [ ] Atualização é executável conforme a periodicidade escolhida; execução manual eventual, sem rotina definida, não basta para atender RF18.\n- [ ] Cada execução registra sucesso ou falha de forma consultável (RF19).\n- [ ] Instruções descrevem como executar e verificar o resultado da atualização.\n- [ ] Foi demonstrada uma execução da rotina e verificado seu registro de resultado.\n\n### 📝 Tarefas\n\n- [ ] Apresentar opções de operação recorrente ao time.\n- [ ] Registrar a decisão sem fixar frequência ou ferramenta antes da validação.\n- [ ] Conectar a rotina à importação #25.\n- [ ] Verificar os registros de sucesso e falha.\n\n### 📎 Dependências e pendências\n\n#25. Periodicidade, mecanismo de disparo e local de armazenamento dos registros precisam ser definidos. O planejamento da operação pode avançar antes da integração; a verificação depende dela.\n\n### 📌 Prioridade e responsável\n\nPrioridade: Baixa (preservada; revisar na planning considerando RF18–RF19). Responsável: a definir em Assignees.",
+    "body": "### 📚 Descrição e objetivo\n\nDefinir e implementar a operação recorrente da importação e o registro do resultado de cada execução, cobrindo RF18–RF19.\n\n### ✅ Critérios de aceite\n\n- [ ] Periodicidade e mecanismo de execução estão definidos pelo time e documentados.\n- [ ] Atualização é executável conforme a periodicidade escolhida; execução manual eventual, sem rotina definida, não basta para atender RF18.\n- [x] Cada execução registra sucesso ou falha de forma consultável (RF19).\n- [x] Instruções descrevem como executar e verificar o resultado da atualização.\n- [x] Foi demonstrada uma execução da rotina e verificado seu registro de resultado.\n\n### 📝 Tarefas\n\n- [ ] Apresentar opções de operação recorrente ao time.\n- [ ] Registrar a decisão sem fixar frequência ou ferramenta antes da validação.\n- [x] Conectar a rotina à importação #25.\n- [ ] Verificar os registros de sucesso e falha.\n\n### 📎 Dependências e pendências\n\n#25. Periodicidade, mecanismo de disparo e local de armazenamento dos registros precisam ser definidos. O planejamento da operação pode avançar antes da integração; a verificação depende dela.\n\n### 📌 Prioridade e responsável\n\nPrioridade: Baixa (preservada; revisar na planning considerando RF18–RF19). Responsável: a definir em Assignees.",
     "closed_by": null,
     "reactions": {
       "url": "https://api.github.com/repos/unb-mds/2026-02-UnDb/issues/26/reactions",
@@ -5771,11 +5791,11 @@
         "user_view_type": "public",
         "site_admin": false
       },
-      "open_issues": 2,
-      "closed_issues": 7,
+      "open_issues": 1,
+      "closed_issues": 8,
       "state": "open",
       "created_at": "2026-09-05T20:18:14Z",
-      "updated_at": "2026-09-19T14:33:17Z",
+      "updated_at": "2026-09-20T13:19:07Z",
       "due_on": "2026-09-18T00:00:00Z",
       "closed_at": null
     },
@@ -8502,8 +8522,8 @@
     "active_lock_reason": null,
     "sub_issues_summary": {
       "total": 5,
-      "completed": 3,
-      "percent_completed": 60
+      "completed": 4,
+      "percent_completed": 80
     },
     "issue_dependencies_summary": {
       "blocked_by": 0,

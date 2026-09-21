@@ -1,61 +1,10 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-20T09:43:50.766793",
+      "extracted_at": "2026-09-21T10:33:29.571202",
       "file_path": "data/bronze/commits_squad03-r2.json",
       "record_count": 88
     }
-  },
-  {
-    "sha": "7a2cebc33bc943f512f65437287224dab07ac2c0",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2023-12-12T23:25:14Z",
-        "login": "Paxxaglia"
-      },
-      "message": "teste"
-    },
-    "additions": 1,
-    "deletions": 1,
-    "total_changes": 2,
-    "repo_name": "squad03-r2"
-  },
-  {
-    "sha": "d6ff37d1e5288bdc0849078657fa993e4101732b",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2023-12-12T23:13:34Z",
-        "login": "Paxxaglia"
-      },
-      "message": "deleting node modules"
-    },
-    "additions": 0,
-    "deletions": 1883968,
-    "total_changes": 1883968,
-    "repo_name": "squad03-r2"
-  },
-  {
-    "sha": "6e4e0c2b6f248eea624b62b450bf9af2e9ea7f04",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2023-12-12T23:12:46Z",
-        "login": "Paxxaglia"
-      },
-      "message": "att"
-    },
-    "additions": 175,
-    "deletions": 1320,
-    "total_changes": 1495,
-    "repo_name": "squad03-r2"
   },
   {
     "sha": "878096099a141c416a466e4ae78b664fb6f82d93",
@@ -72,6 +21,23 @@
     "additions": 0,
     "deletions": 18,
     "total_changes": 18,
+    "repo_name": "squad03-r2"
+  },
+  {
+    "sha": "7a2cebc33bc943f512f65437287224dab07ac2c0",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2023-12-12T23:25:14Z",
+        "login": "Paxxaglia"
+      },
+      "message": "teste"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
     "repo_name": "squad03-r2"
   },
   {
@@ -92,6 +58,23 @@
     "repo_name": "squad03-r2"
   },
   {
+    "sha": "6e4e0c2b6f248eea624b62b450bf9af2e9ea7f04",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2023-12-12T23:12:46Z",
+        "login": "Paxxaglia"
+      },
+      "message": "att"
+    },
+    "additions": 175,
+    "deletions": 1320,
+    "total_changes": 1495,
+    "repo_name": "squad03-r2"
+  },
+  {
     "sha": "1374f8df97c619c776b4fbc7a48cc92ec881f4e9",
     "html_url": null,
     "commit": {
@@ -106,23 +89,6 @@
     "additions": 17,
     "deletions": 0,
     "total_changes": 17,
-    "repo_name": "squad03-r2"
-  },
-  {
-    "sha": "cb05b979ec029c38c8496cdb5597ac5525cadce3",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2023-12-12T21:24:20Z",
-        "login": "Paxxaglia"
-      },
-      "message": "Adição de grafico de dispensas"
-    },
-    "additions": 6391,
-    "deletions": 6584,
-    "total_changes": 12975,
     "repo_name": "squad03-r2"
   },
   {
@@ -157,6 +123,40 @@
     "additions": 995,
     "deletions": 749,
     "total_changes": 1744,
+    "repo_name": "squad03-r2"
+  },
+  {
+    "sha": "cb05b979ec029c38c8496cdb5597ac5525cadce3",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2023-12-12T21:24:20Z",
+        "login": "Paxxaglia"
+      },
+      "message": "Adição de grafico de dispensas"
+    },
+    "additions": 6391,
+    "deletions": 6584,
+    "total_changes": 12975,
+    "repo_name": "squad03-r2"
+  },
+  {
+    "sha": "d6ff37d1e5288bdc0849078657fa993e4101732b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2023-12-12T23:13:34Z",
+        "login": "Paxxaglia"
+      },
+      "message": "deleting node modules"
+    },
+    "additions": 0,
+    "deletions": 1883968,
+    "total_changes": 1883968,
     "repo_name": "squad03-r2"
   },
   {
@@ -228,23 +228,6 @@
     "repo_name": "squad03-r2"
   },
   {
-    "sha": "b9ca2981ad3dc9d2d4ce528f790e293e1c56e8b4",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2023-12-12T03:07:29Z",
-        "login": "Paxxaglia"
-      },
-      "message": "Tentativa de correção - gitpages"
-    },
-    "additions": 85,
-    "deletions": 4,
-    "total_changes": 89,
-    "repo_name": "squad03-r2"
-  },
-  {
     "sha": "306e35f6049482e68ff46e494b83fc629ff25e7d",
     "html_url": null,
     "commit": {
@@ -262,20 +245,20 @@
     "repo_name": "squad03-r2"
   },
   {
-    "sha": "01ad7dca3499440e6f54f60c4ae5df921a13e450",
+    "sha": "b9ca2981ad3dc9d2d4ce528f790e293e1c56e8b4",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2023-12-12T02:24:05Z",
+        "date": "2023-12-12T03:07:29Z",
         "login": "Paxxaglia"
       },
-      "message": "teste"
+      "message": "Tentativa de correção - gitpages"
     },
-    "additions": 1,
-    "deletions": 1,
-    "total_changes": 2,
+    "additions": 85,
+    "deletions": 4,
+    "total_changes": 89,
     "repo_name": "squad03-r2"
   },
   {
@@ -296,20 +279,20 @@
     "repo_name": "squad03-r2"
   },
   {
-    "sha": "2703290a9140cce7a3cdd4efd883850f67bcc9a5",
+    "sha": "01ad7dca3499440e6f54f60c4ae5df921a13e450",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2023-12-12T01:58:24Z",
+        "date": "2023-12-12T02:24:05Z",
         "login": "Paxxaglia"
       },
-      "message": "falha"
+      "message": "teste"
     },
-    "additions": 2875029,
-    "deletions": 123,
-    "total_changes": 2875152,
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
     "repo_name": "squad03-r2"
   },
   {
@@ -347,54 +330,20 @@
     "repo_name": "squad03-r2"
   },
   {
-    "sha": "cb38582193bee0935bc42e91a3bc56fc09721b9b",
+    "sha": "2703290a9140cce7a3cdd4efd883850f67bcc9a5",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2023-12-11T03:00:00Z",
+        "date": "2023-12-12T01:58:24Z",
         "login": "Paxxaglia"
       },
-      "message": "Correção de dropdown - gastos/quantidade"
+      "message": "falha"
     },
-    "additions": 60,
-    "deletions": 3,
-    "total_changes": 63,
-    "repo_name": "squad03-r2"
-  },
-  {
-    "sha": "9fdc3f6d5a240d723cab5ffe90376fb35a866b9a",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2023-12-11T02:56:02Z",
-        "login": "Paxxaglia"
-      },
-      "message": "Correção de bug de quando escolhia o ano"
-    },
-    "additions": 75,
-    "deletions": 20,
-    "total_changes": 95,
-    "repo_name": "squad03-r2"
-  },
-  {
-    "sha": "1d47efb1292184d20c2712cf8b905a1d50ab77cd",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2023-12-11T02:55:46Z",
-        "login": "Paxxaglia"
-      },
-      "message": "correção de logo - Rodapé"
-    },
-    "additions": 1,
-    "deletions": 1,
-    "total_changes": 2,
+    "additions": 2875029,
+    "deletions": 123,
+    "total_changes": 2875152,
     "repo_name": "squad03-r2"
   },
   {
@@ -415,6 +364,23 @@
     "repo_name": "squad03-r2"
   },
   {
+    "sha": "cb38582193bee0935bc42e91a3bc56fc09721b9b",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2023-12-11T03:00:00Z",
+        "login": "Paxxaglia"
+      },
+      "message": "Correção de dropdown - gastos/quantidade"
+    },
+    "additions": 60,
+    "deletions": 3,
+    "total_changes": 63,
+    "repo_name": "squad03-r2"
+  },
+  {
     "sha": "835a882c2bf90f096d3b532aef448d64feac95e5",
     "html_url": null,
     "commit": {
@@ -429,6 +395,40 @@
     "additions": 4,
     "deletions": 3,
     "total_changes": 7,
+    "repo_name": "squad03-r2"
+  },
+  {
+    "sha": "1d47efb1292184d20c2712cf8b905a1d50ab77cd",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2023-12-11T02:55:46Z",
+        "login": "Paxxaglia"
+      },
+      "message": "correção de logo - Rodapé"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "squad03-r2"
+  },
+  {
+    "sha": "9fdc3f6d5a240d723cab5ffe90376fb35a866b9a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2023-12-11T02:56:02Z",
+        "login": "Paxxaglia"
+      },
+      "message": "Correção de bug de quando escolhia o ano"
+    },
+    "additions": 75,
+    "deletions": 20,
+    "total_changes": 95,
     "repo_name": "squad03-r2"
   },
   {
@@ -449,23 +449,6 @@
     "repo_name": "squad03-r2"
   },
   {
-    "sha": "8ad3258b60807f341c0cdd2bb59646236ee26613",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2023-12-11T01:33:32Z",
-        "login": "Paxxaglia"
-      },
-      "message": "Adicionando grafico separado para cada tipo de informação"
-    },
-    "additions": 18,
-    "deletions": 1,
-    "total_changes": 19,
-    "repo_name": "squad03-r2"
-  },
-  {
     "sha": "79e5b3a5b2eb3be6428956679fb5d4e9407fc02e",
     "html_url": null,
     "commit": {
@@ -480,6 +463,23 @@
     "additions": 1,
     "deletions": 1,
     "total_changes": 2,
+    "repo_name": "squad03-r2"
+  },
+  {
+    "sha": "8ad3258b60807f341c0cdd2bb59646236ee26613",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2023-12-11T01:33:32Z",
+        "login": "Paxxaglia"
+      },
+      "message": "Adicionando grafico separado para cada tipo de informação"
+    },
+    "additions": 18,
+    "deletions": 1,
+    "total_changes": 19,
     "repo_name": "squad03-r2"
   },
   {
@@ -534,23 +534,6 @@
     "repo_name": "squad03-r2"
   },
   {
-    "sha": "a9208d565d44e137e3c93d9c865110a50c27563f",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2023-12-05T22:49:01Z",
-        "login": "Paxxaglia"
-      },
-      "message": "Correção de responsividade - NavBar"
-    },
-    "additions": 1,
-    "deletions": 1,
-    "total_changes": 2,
-    "repo_name": "squad03-r2"
-  },
-  {
     "sha": "670f6eb5e8e167d6c50d9113a8da1dcf912a2605",
     "html_url": null,
     "commit": {
@@ -565,23 +548,6 @@
     "additions": 52,
     "deletions": 1,
     "total_changes": 53,
-    "repo_name": "squad03-r2"
-  },
-  {
-    "sha": "7e1a41029ed9c363644b6aaccc58df5a73cc9611",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2023-12-05T22:36:35Z",
-        "login": "Paxxaglia"
-      },
-      "message": "Testes de api e correções de responsividade"
-    },
-    "additions": 16,
-    "deletions": 156,
-    "total_changes": 172,
     "repo_name": "squad03-r2"
   },
   {
@@ -602,6 +568,40 @@
     "repo_name": "squad03-r2"
   },
   {
+    "sha": "7e1a41029ed9c363644b6aaccc58df5a73cc9611",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2023-12-05T22:36:35Z",
+        "login": "Paxxaglia"
+      },
+      "message": "Testes de api e correções de responsividade"
+    },
+    "additions": 16,
+    "deletions": 156,
+    "total_changes": 172,
+    "repo_name": "squad03-r2"
+  },
+  {
+    "sha": "a9208d565d44e137e3c93d9c865110a50c27563f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2023-12-05T22:49:01Z",
+        "login": "Paxxaglia"
+      },
+      "message": "Correção de responsividade - NavBar"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "squad03-r2"
+  },
+  {
     "sha": "9b41b1e734fbd7cc7d9e307737870b1a9f54099c",
     "html_url": null,
     "commit": {
@@ -616,6 +616,40 @@
     "additions": 38,
     "deletions": 0,
     "total_changes": 38,
+    "repo_name": "squad03-r2"
+  },
+  {
+    "sha": "677807b911eedda6202fbe53ad3ac426aacb662c",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2023-11-17T20:20:33Z",
+        "login": "Paxxaglia"
+      },
+      "message": "Alterando icone"
+    },
+    "additions": 1,
+    "deletions": 1,
+    "total_changes": 2,
+    "repo_name": "squad03-r2"
+  },
+  {
+    "sha": "4eaca15840d12621726b720457d9387d6fe9ae7f",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2023-11-23T02:01:36Z",
+        "login": "Paxxaglia"
+      },
+      "message": "Re-estilização da NavBar"
+    },
+    "additions": 52,
+    "deletions": 36,
+    "total_changes": 88,
     "repo_name": "squad03-r2"
   },
   {
@@ -653,54 +687,20 @@
     "repo_name": "squad03-r2"
   },
   {
-    "sha": "4eaca15840d12621726b720457d9387d6fe9ae7f",
+    "sha": "ad243f813f8da9d612cbb6d72ace39dd2a4fd919",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2023-11-23T02:01:36Z",
+        "date": "2023-11-17T19:52:51Z",
         "login": "Paxxaglia"
       },
-      "message": "Re-estilização da NavBar"
-    },
-    "additions": 52,
-    "deletions": 36,
-    "total_changes": 88,
-    "repo_name": "squad03-r2"
-  },
-  {
-    "sha": "677807b911eedda6202fbe53ad3ac426aacb662c",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2023-11-17T20:20:33Z",
-        "login": "Paxxaglia"
-      },
-      "message": "Alterando icone"
+      "message": "Removendo logo exoonero"
     },
     "additions": 1,
-    "deletions": 1,
-    "total_changes": 2,
-    "repo_name": "squad03-r2"
-  },
-  {
-    "sha": "835d33b4936f0d018ea9984f6c3335c50b5dd650",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2023-11-17T20:14:32Z",
-        "login": "Paxxaglia"
-      },
-      "message": "HAAHAHHAHAHAHAHHAHAHAHHA"
-    },
-    "additions": 1,
-    "deletions": 2,
-    "total_changes": 3,
+    "deletions": 4,
+    "total_changes": 5,
     "repo_name": "squad03-r2"
   },
   {
@@ -721,20 +721,20 @@
     "repo_name": "squad03-r2"
   },
   {
-    "sha": "ad243f813f8da9d612cbb6d72ace39dd2a4fd919",
+    "sha": "835d33b4936f0d018ea9984f6c3335c50b5dd650",
     "html_url": null,
     "commit": {
       "author": {
         "name": null,
         "email": null,
-        "date": "2023-11-17T19:52:51Z",
+        "date": "2023-11-17T20:14:32Z",
         "login": "Paxxaglia"
       },
-      "message": "Removendo logo exoonero"
+      "message": "HAAHAHHAHAHAHAHHAHAHAHHA"
     },
     "additions": 1,
-    "deletions": 4,
-    "total_changes": 5,
+    "deletions": 2,
+    "total_changes": 3,
     "repo_name": "squad03-r2"
   },
   {
@@ -752,23 +752,6 @@
     "additions": 7,
     "deletions": 0,
     "total_changes": 7,
-    "repo_name": "squad03-r2"
-  },
-  {
-    "sha": "dd49e0cc6fbee6ca3c6584c17030380deee3177a",
-    "html_url": null,
-    "commit": {
-      "author": {
-        "name": null,
-        "email": null,
-        "date": "2023-11-17T19:46:10Z",
-        "login": "Paxxaglia"
-      },
-      "message": "Correção de pastas"
-    },
-    "additions": 0,
-    "deletions": 53324,
-    "total_changes": 53324,
     "repo_name": "squad03-r2"
   },
   {
@@ -820,6 +803,23 @@
     "additions": 20,
     "deletions": 2,
     "total_changes": 22,
+    "repo_name": "squad03-r2"
+  },
+  {
+    "sha": "dd49e0cc6fbee6ca3c6584c17030380deee3177a",
+    "html_url": null,
+    "commit": {
+      "author": {
+        "name": null,
+        "email": null,
+        "date": "2023-11-17T19:46:10Z",
+        "login": "Paxxaglia"
+      },
+      "message": "Correção de pastas"
+    },
+    "additions": 0,
+    "deletions": 53324,
+    "total_changes": 53324,
     "repo_name": "squad03-r2"
   },
   {

@@ -2,7 +2,7 @@
   "owner": "unb-mds",
   "repository": "2026-2-GlossarioUnB",
   "branch": "main",
-  "sha": "63fd28dc85ad2cef1b5ad820a262aca4ced525e1",
+  "sha": "9892f0f8463d900eb3f41a2191ab6bae4b3dd943",
   "tree": [
     {
       "name": ".github",
@@ -142,7 +142,7 @@
       "name": "docs",
       "path": "docs",
       "type": "directory",
-      "sha": "bf631daeb74f1ff765c9fee888a8bdb49db79552",
+      "sha": "f23d9640f20e930f3ca6027f1bb166875d4245b8",
       "mode": "040000",
       "children": []
     },
@@ -246,7 +246,7 @@
       "name": "scrum",
       "path": "docs/scrum",
       "type": "directory",
-      "sha": "6f031adcdad6be0f921aad55bef30ad0c2885daa",
+      "sha": "72de4e67e32df2897f5ce08b9ec7057d83d76413",
       "mode": "040000",
       "children": []
     },
@@ -254,10 +254,10 @@
       "name": "dailies.md",
       "path": "docs/scrum/dailies.md",
       "type": "file",
-      "sha": "0b66bcf2edfd8197fabb67273fa999db648acc28",
+      "sha": "7200f262f0fc2665b4b2257c2c746efc605b52d1",
       "mode": "100644",
       "extension": ".md",
-      "size": 1229,
+      "size": 1591,
       "is_binary": false
     },
     {
@@ -300,7 +300,7 @@
     }
   ],
   "truncated": false,
-  "extracted_at": "2026-09-20T10:35:37.985024",
+  "extracted_at": "2026-09-21T11:30:19.731705",
   "method": "rest",
   "total_items": 31,
   "repository_metadata": {
@@ -308,11 +308,11 @@
     "full_name": "unb-mds/2026-2-GlossarioUnB",
     "description": "Grupo G10 - Metodos de Desenvolvimento de Software 2026/2",
     "created_at": "2026-08-18T11:58:42Z",
-    "updated_at": "2026-09-16T15:26:29Z",
+    "updated_at": "2026-09-21T01:01:04Z",
     "language": null,
-    "size": 50,
+    "size": 68,
     "stars": 0,
     "forks": 0,
-    "open_issues": 3
+    "open_issues": 2
   }
 }

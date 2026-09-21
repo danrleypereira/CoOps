@@ -2,7 +2,7 @@
   "owner": "unb-mds",
   "repository": "2026-2-Followw",
   "branch": "main",
-  "sha": "e36f8a8bc83904d8727c42bd1c7d05245fd29581",
+  "sha": "e30b3b170516ff431225048534e0ea8aaaa43a0e",
   "tree": [
     {
       "name": ".agents",
@@ -116,7 +116,7 @@
       "name": ".claude",
       "path": ".claude",
       "type": "directory",
-      "sha": "7eaf5ed7ac0b68f979e06b3d9cd5cba9df190cf1",
+      "sha": "3183caa039077eba6bb521f1aebd407606d1e4fd",
       "mode": "040000",
       "children": []
     },
@@ -133,29 +133,11 @@
     {
       "name": "skills",
       "path": ".claude/skills",
-      "type": "directory",
-      "sha": "8b86df1de00972f55125e5212c3f856fe4873aff",
-      "mode": "040000",
-      "children": []
-    },
-    {
-      "name": "codebase-design",
-      "path": ".claude/skills/codebase-design",
       "type": "file",
-      "sha": "08b466ebb0afda554fe528bbb12407fb68dde7e2",
+      "sha": "2b7a412b8fa0fb7e985b0793321bd4e698f2b6cd",
       "mode": "120000",
       "extension": "",
-      "size": 36,
-      "is_binary": false
-    },
-    {
-      "name": "to-spec",
-      "path": ".claude/skills/to-spec",
-      "type": "file",
-      "sha": "1fa4ba2a796a18f305f203e0b5a027f12ef344ed",
-      "mode": "120000",
-      "extension": "",
-      "size": 28,
+      "size": 17,
       "is_binary": false
     },
     {
@@ -266,10 +248,10 @@
       "name": "CLAUDE.md",
       "path": "CLAUDE.md",
       "type": "file",
-      "sha": "af075b0a3185e9883b3de028659cfb9fa5a6363a",
+      "sha": "47dc3e3d863cfb5727b87d785d09abf9743c0a72",
       "mode": "120000",
       "extension": ".md",
-      "size": 37,
+      "size": 9,
       "is_binary": false
     },
     {
@@ -296,7 +278,7 @@
       "name": "apps",
       "path": "apps",
       "type": "directory",
-      "sha": "0fbe0444c73d3c21aaf8f755387f9e2bc79cdd7e",
+      "sha": "6a67d67e9cc62e4a69b3154a69316bd5c0ec2c7d",
       "mode": "040000",
       "children": []
     },
@@ -304,7 +286,7 @@
       "name": "api",
       "path": "apps/api",
       "type": "directory",
-      "sha": "a78a14397a38b44b4d3592ecf05e8758af8b435d",
+      "sha": "54ecd8aec9cec72498d65225eb95b8ffedf9fb21",
       "mode": "040000",
       "children": []
     },
@@ -326,6 +308,16 @@
       "mode": "100644",
       "extension": ".md",
       "size": 3617,
+      "is_binary": false
+    },
+    {
+      "name": "CLAUDE.md",
+      "path": "apps/api/CLAUDE.md",
+      "type": "file",
+      "sha": "47dc3e3d863cfb5727b87d785d09abf9743c0a72",
+      "mode": "120000",
+      "extension": ".md",
+      "size": 9,
       "is_binary": false
     },
     {
@@ -632,7 +624,7 @@
       "name": "packages",
       "path": "packages",
       "type": "directory",
-      "sha": "f37149cf5d0cd85742a87ad8f3b0b055f9b3e90a",
+      "sha": "1a415af639f79434a282505e97cf2b6848eff846",
       "mode": "040000",
       "children": []
     },
@@ -640,7 +632,7 @@
       "name": "sigaa-client",
       "path": "packages/sigaa-client",
       "type": "directory",
-      "sha": "6b3a3849d2567fc306223cc7701fa63561771a50",
+      "sha": "8e32367747668645a27165ece15f515ed48b0c3e",
       "mode": "040000",
       "children": []
     },
@@ -652,6 +644,16 @@
       "mode": "100644",
       "extension": ".md",
       "size": 6569,
+      "is_binary": false
+    },
+    {
+      "name": "CLAUDE.md",
+      "path": "packages/sigaa-client/CLAUDE.md",
+      "type": "file",
+      "sha": "47dc3e3d863cfb5727b87d785d09abf9743c0a72",
+      "mode": "120000",
+      "extension": ".md",
+      "size": 9,
       "is_binary": false
     },
     {
@@ -926,7 +928,7 @@
     }
   ],
   "truncated": false,
-  "extracted_at": "2026-09-20T10:35:35.285665",
+  "extracted_at": "2026-09-21T11:30:15.902481",
   "method": "rest",
   "total_items": 98,
   "repository_metadata": {
@@ -934,11 +936,11 @@
     "full_name": "unb-mds/2026-2-Followw",
     "description": "O Followw é uma nova forma de usar o SIGAA UnB.",
     "created_at": "2026-08-18T11:57:01Z",
-    "updated_at": "2026-09-20T02:57:30Z",
+    "updated_at": "2026-09-20T15:02:20Z",
     "language": "Python",
-    "size": 200,
+    "size": 316,
     "stars": 5,
     "forks": 0,
-    "open_issues": 6
+    "open_issues": 7
   }
 }

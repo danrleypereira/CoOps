@@ -1,9 +1,249 @@
 [
   {
     "_metadata": {
-      "extracted_at": "2026-09-20T09:39:15.513446",
+      "extracted_at": "2026-09-21T10:28:04.249741",
       "file_path": "data/bronze/issue_events_2026-2-GlossarioUnB.json",
-      "record_count": 32
+      "record_count": 52
+    }
+  },
+  {
+    "id": 31497832572,
+    "event": "convert_to_draft",
+    "created_at": "2026-09-21T00:45:18Z",
+    "repo_name": "2026-2-GlossarioUnB",
+    "actor": {
+      "login": "MrD4ntas"
+    },
+    "issue": {
+      "number": 10
+    }
+  },
+  {
+    "id": 31497269374,
+    "event": "project_v2_item_status_changed",
+    "created_at": "2026-09-21T00:21:55Z",
+    "repo_name": "2026-2-GlossarioUnB",
+    "actor": {
+      "login": "smitalo"
+    },
+    "issue": {
+      "number": 9
+    }
+  },
+  {
+    "id": 31497269718,
+    "event": "project_v2_item_status_changed",
+    "created_at": "2026-09-21T00:21:54Z",
+    "repo_name": "2026-2-GlossarioUnB",
+    "actor": {
+      "login": "smitalo"
+    },
+    "issue": {
+      "number": 9
+    }
+  },
+  {
+    "id": 31494825804,
+    "event": "project_v2_item_status_changed",
+    "created_at": "2026-09-20T22:33:37Z",
+    "repo_name": "2026-2-GlossarioUnB",
+    "actor": {
+      "login": "github-project-automation[bot]"
+    },
+    "issue": {
+      "number": 9
+    }
+  },
+  {
+    "id": 31494826301,
+    "event": "added_to_project_v2",
+    "created_at": "2026-09-20T22:33:36Z",
+    "repo_name": "2026-2-GlossarioUnB",
+    "actor": {
+      "login": "github-project-automation[bot]"
+    },
+    "issue": {
+      "number": 9
+    }
+  },
+  {
+    "id": 31492941532,
+    "event": "closed",
+    "created_at": "2026-09-20T21:08:33Z",
+    "repo_name": "2026-2-GlossarioUnB",
+    "actor": {
+      "login": "smitalo"
+    },
+    "issue": {
+      "number": 6
+    }
+  },
+  {
+    "id": 31492941957,
+    "event": "project_v2_item_status_changed",
+    "created_at": "2026-09-20T21:08:32Z",
+    "repo_name": "2026-2-GlossarioUnB",
+    "actor": {
+      "login": "smitalo"
+    },
+    "issue": {
+      "number": 6
+    }
+  },
+  {
+    "id": 31492941118,
+    "event": "closed",
+    "created_at": "2026-09-20T21:08:32Z",
+    "repo_name": "2026-2-GlossarioUnB",
+    "actor": {
+      "login": "smitalo"
+    },
+    "issue": {
+      "number": 7
+    }
+  },
+  {
+    "id": 31492941328,
+    "event": "project_v2_item_status_changed",
+    "created_at": "2026-09-20T21:08:31Z",
+    "repo_name": "2026-2-GlossarioUnB",
+    "actor": {
+      "login": "smitalo"
+    },
+    "issue": {
+      "number": 7
+    }
+  },
+  {
+    "id": 31492939543,
+    "event": "project_v2_item_status_changed",
+    "created_at": "2026-09-20T21:08:27Z",
+    "repo_name": "2026-2-GlossarioUnB",
+    "actor": {
+      "login": "smitalo"
+    },
+    "issue": {
+      "number": 3
+    }
+  },
+  {
+    "id": 31492939507,
+    "event": "closed",
+    "created_at": "2026-09-20T21:08:27Z",
+    "repo_name": "2026-2-GlossarioUnB",
+    "actor": {
+      "login": "smitalo"
+    },
+    "issue": {
+      "number": 3
+    }
+  },
+  {
+    "id": 31484736634,
+    "event": "project_v2_item_status_changed",
+    "created_at": "2026-09-20T15:27:58Z",
+    "repo_name": "2026-2-GlossarioUnB",
+    "actor": {
+      "login": "github-project-automation[bot]"
+    },
+    "issue": {
+      "number": 7
+    }
+  },
+  {
+    "id": 31484736375,
+    "event": "project_v2_item_status_changed",
+    "created_at": "2026-09-20T15:27:58Z",
+    "repo_name": "2026-2-GlossarioUnB",
+    "actor": {
+      "login": "github-project-automation[bot]"
+    },
+    "issue": {
+      "number": 6
+    }
+  },
+  {
+    "id": 31484735637,
+    "event": "project_v2_item_status_changed",
+    "created_at": "2026-09-20T15:27:58Z",
+    "repo_name": "2026-2-GlossarioUnB",
+    "actor": {
+      "login": "github-project-automation[bot]"
+    },
+    "issue": {
+      "number": 3
+    }
+  },
+  {
+    "id": 31484736037,
+    "event": "added_to_project_v2",
+    "created_at": "2026-09-20T15:27:57Z",
+    "repo_name": "2026-2-GlossarioUnB",
+    "actor": {
+      "login": "smitalo"
+    },
+    "issue": {
+      "number": 7
+    }
+  },
+  {
+    "id": 31484736017,
+    "event": "added_to_project_v2",
+    "created_at": "2026-09-20T15:27:57Z",
+    "repo_name": "2026-2-GlossarioUnB",
+    "actor": {
+      "login": "smitalo"
+    },
+    "issue": {
+      "number": 6
+    }
+  },
+  {
+    "id": 31484735997,
+    "event": "added_to_project_v2",
+    "created_at": "2026-09-20T15:27:57Z",
+    "repo_name": "2026-2-GlossarioUnB",
+    "actor": {
+      "login": "smitalo"
+    },
+    "issue": {
+      "number": 3
+    }
+  },
+  {
+    "id": 31484735363,
+    "event": "added_to_project_v2",
+    "created_at": "2026-09-20T15:27:57Z",
+    "repo_name": "2026-2-GlossarioUnB",
+    "actor": {
+      "login": "smitalo"
+    },
+    "issue": {
+      "number": 7
+    }
+  },
+  {
+    "id": 31484735337,
+    "event": "added_to_project_v2",
+    "created_at": "2026-09-20T15:27:57Z",
+    "repo_name": "2026-2-GlossarioUnB",
+    "actor": {
+      "login": "smitalo"
+    },
+    "issue": {
+      "number": 6
+    }
+  },
+  {
+    "id": 31484735302,
+    "event": "added_to_project_v2",
+    "created_at": "2026-09-20T15:27:57Z",
+    "repo_name": "2026-2-GlossarioUnB",
+    "actor": {
+      "login": "smitalo"
+    },
+    "issue": {
+      "number": 3
     }
   },
   {
