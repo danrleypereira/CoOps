@@ -30,8 +30,14 @@ Work that is tied to today's file-committing internals is throwaway. Prefer desi
 2. **Name the boundary.** Which side owns the type, who depends on whom, what the port promises. A port that only one adapter could ever satisfy is not a port.
 3. **Fix the data shape** — fields, identity keys, what is optional and why. Identity is the expensive thing to get wrong: keys that merge two people, or split one, corrupt every metric downstream and are painful to fix after data exists.
 4. **Order the work** so each step ships on its own and leaves the system working. Additive first, then a switch, then removal. Name what must land before what, and what can run in parallel.
-5. **Say what it costs later** — migrations, refetches that can't be undone, anything that becomes irreversible once data is written or published.
-6. **Offer the alternative you rejected** and why, in one or two lines. A plan with no rejected alternative hasn't been thought about.
+5. **Name what will prove it.** You produce plans, not changes, so
+   `docs/definition-of-done.md` does not bind you directly — but every step you
+   order is a change someone else must get past it. Say which tests each step
+   needs, and which of them can only be written after an earlier step lands.
+   A plan that leaves verification to be discovered in review has deferred the
+   expensive part.
+6. **Say what it costs later** — migrations, refetches that can't be undone, anything that becomes irreversible once data is written or published.
+7. **Offer the alternative you rejected** and why, in one or two lines. A plan with no rejected alternative hasn't been thought about.
 
 ## Rules
 
