@@ -98,6 +98,20 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   emails — by design (#111); the Bronze scrub still runs on the raw-read path,
   so nothing personal reaches `data/bronze/` — issue
   [#113](https://github.com/danrleypereira/CoOps/issues/113).
+- Incremental Bronze extraction with per-repository watermarks
+  ([#110](https://github.com/danrleypereira/CoOps/issues/110)): a
+  `watermarks.json` record per repository (last run, head sha per branch, last
+  issue-event id, last issue/PR `updated_at`) lets a run fetch only what
+  changed. Commits use a per-repository `since` (bounded by the previous run's
+  start) and merge with the stored commits by sha; issues and PRs use the REST
+  `since` filter (with a one-second margin for GitHub's exclusive comparison)
+  and merge by number; issue events fetch only ids newer than the last seen and
+  append; the repository tree is re-fetched only when the branch head sha
+  moved; members and repositories are still re-fetched whole (they are cheap).
+  Issues, PRs and events are now stored sorted by number/id, so a full
+  extraction and an incremental one produce identical `data/`. Watermarks
+  compose with the ETag cache and the raw layer rather than bypassing them, and
+  everything written to `data/bronze/` still goes through the Bronze scrub.
 
 ### Changed
 - **Breaking:** `coops-bronze` reads the token and organization from

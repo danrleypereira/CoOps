@@ -428,3 +428,30 @@ class TestBronzeExtract:
         # Verifica que o processo foi concluído sem erro
         captured = capsys.readouterr()
         assert "Bronze extraction completed" in captured.out
+
+    def test_main_creates_passes_and_saves_watermark_store(self, monkeypatch):
+        """main loads a WatermarkStore, threads it into the extractors, and saves it."""
+        from coops.infrastructure.config import get_settings
+        monkeypatch.setenv("GITHUB_TOKEN", "test-token")
+        monkeypatch.setenv("GITHUB_ORG", "coops-org")
+        get_settings.cache_clear()
+        with patch('sys.argv', ['bronze_extract.py']):
+            with patch('coops.bronze.repositories.extract_repositories', return_value=[]):
+                with patch('coops.bronze.issues.extract_issues', return_value=[]) as mock_issues:
+                    with patch('coops.bronze.commits.extract_commits', return_value=[]) as mock_commits:
+                        with patch('coops.bronze.members.extract_members', return_value=[]):
+                            with patch('coops.bronze.repository_structure.extract_repository_structure', return_value=[]) as mock_structure:
+                                with patch('coops.etl.bronze_extract.update_data_registry'):
+                                    with patch('coops.etl.bronze_extract.GitHubAPIClient'):
+                                        with patch('coops.etl.bronze_extract.WatermarkStore') as mock_store_cls:
+                                            store = mock_store_cls.return_value
+                                            from coops.etl import bronze_extract
+
+                                            bronze_extract.main()
+
+        mock_store_cls.assert_called_once()
+        store.save.assert_called_once()
+        assert mock_issues.call_args[1]['watermarks'] is store
+        assert mock_commits.call_args[1]['watermarks'] is store
+        assert mock_structure.call_args[1]['watermarks'] is store
+        get_settings.cache_clear()

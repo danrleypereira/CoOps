@@ -11,6 +11,7 @@ from datetime import datetime
 from coops.infrastructure import get_settings
 from coops.domain.tenancy import TenantId
 from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, update_data_registry
+from coops.bronze.watermarks import WatermarkStore
 
 
 def _write_run_summary(client: GitHubAPIClient) -> None:
@@ -95,6 +96,11 @@ def main():
     )
     config = OrganizationConfig(cfg.github_org)
 
+    # Per-repository extraction watermarks (issue #110): loaded from disk at the
+    # start of the run and written back at the end, so the next run fetches only
+    # what changed. A missing/corrupt file simply yields a full extraction.
+    watermark_store = WatermarkStore()
+
     # Raw layer (MongoDB): when MONGO_URI is set, capture responses and read
     # them back instead of the API when they are fresh enough. Best-effort — a
     # missing/down MongoDB must not stop the extraction, so a failure to open
@@ -133,7 +139,7 @@ def main():
         print("\n" + "="*60)
         print("STEP 2: Extracting issues and pull requests")
         print("="*60)
-        issue_files = extract_issues(client, config, use_cache=args.cache, max_issues=args.max_issues, max_prs=args.max_prs)
+        issue_files = extract_issues(client, config, use_cache=args.cache, max_issues=args.max_issues, max_prs=args.max_prs, watermarks=watermark_store)
         print(f"Generated {len(issue_files)} issue files")
 
         # ========================================
@@ -154,6 +160,7 @@ def main():
             include_active_branches=args.include_active_branches,
             active_days=args.active_days,
             time_chunks=args.time_chunks,
+            watermarks=watermark_store,
         )
         print(f"Generated {len(commit_files)} commit files")
 
@@ -174,10 +181,15 @@ def main():
             print("\n" + "="*60)
             print("STEP 5: Extracting repository structures")
             print("="*60)
-            structure_files = extract_repository_structure(client, config, use_cache=args.cache)
+            structure_files = extract_repository_structure(client, config, use_cache=args.cache, watermarks=watermark_store)
             print(f"Generated {len(structure_files)} structure files")
         else:
             print("\nSkipping repository structure extraction (--skip-structure)")
+
+        # ========================================
+        # Persist Watermarks
+        # ========================================
+        watermark_store.save()
 
         # ========================================
         # Update Registry
