@@ -150,6 +150,12 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   unchanged.
 
 ### Fixed
+- Dashboard: the data source no longer falls back to a hardcoded
+  `DW-Corp` organization when `VITE_GITHUB_ORG` is unset. Without it the
+  dashboard now fails closed — no fetch is attempted and every page shows a
+  "configure VITE_GITHUB_ORG" state (`DataUnconfiguredError` /
+  `DataNotConfigured`, siblings of `DataNotFoundError` / `DataNotGenerated`)
+  instead of silently rendering a third party's data — #129.
 - `dashboard/package-lock.json` was missing most dev dependencies, so
   `npm ci` failed; `@testing-library/dom` (a required peer of
   `@testing-library/react`) is now declared.

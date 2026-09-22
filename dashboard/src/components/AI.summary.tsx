@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { fetchData, isDataNotFoundError } from '../services/dataSource';
-import DataNotGenerated from './DataNotGenerated';
+import { fetchData, isDataNotFoundError, isDataUnconfiguredError } from '../services/dataSource';
+import DataNotGenerated, { DataNotConfigured } from './DataNotGenerated';
 
 /**
  * Interface for a member's AI analysis
@@ -96,6 +96,8 @@ export function AISummary({
   const [error, setError] = useState<string | null>(null);
   // Set when the pipeline data file doesn't exist yet (404 from the data source)
   const [missingDataPath, setMissingDataPath] = useState<string | null>(null);
+  // Set when the data source is not configured (no VITE_GITHUB_ORG)
+  const [notConfigured, setNotConfigured] = useState(false);
   
   // State for filters
   const [searchName, setSearchName] = useState('');
@@ -119,6 +121,7 @@ export function AISummary({
       setIsLoading(true);
       setError(null);
       setMissingDataPath(null);
+      setNotConfigured(false);
 
       try {
           let data: Record<string, unknown>;
@@ -163,6 +166,9 @@ export function AISummary({
         if (isDataNotFoundError(err)) {
           setMissingDataPath(err.path);
           setError('FILE_NOT_FOUND');
+        } else if (isDataUnconfiguredError(err)) {
+          setNotConfigured(true);
+          setError(null);
         } else {
           console.error('Error loading AI analysis data:', err);
           const errorMessage = err instanceof Error ? err.message : 'Failed to load data';
@@ -607,6 +613,9 @@ export function AISummary({
       {missingDataPath && (
         <DataNotGenerated path={missingDataPath} className="mt-4" hint={AI_NOT_GENERATED_HINT} />
       )}
+
+      {/* Data source not configured: shown without opening the dropdown */}
+      {notConfigured && <DataNotConfigured className="mt-4" />}
 
       {/* Selected Members Analysis Display - Horizontal Layout */}
       {selectedMembers.length > 0 && (
