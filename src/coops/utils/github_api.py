@@ -17,14 +17,18 @@ from datetime import datetime
 from typing import Dict, List, Optional, Any, Tuple
 from urllib.parse import urlsplit, parse_qsl
 
+from coops.storage.raw import PROVIDER_GITHUB, is_fresh
+
 class GitHubAPIClient:
     def __init__(
         self,
         token: str,
         cache_dir: str = "cache",
         capture_dir: Optional[str] = None,
-        tenant_id: Optional[str] = None,
+        tenant_id: Optional[Any] = None,
         provider: str = "github",
+        raw_store: Optional[Any] = None,
+        raw_max_age_seconds: Optional[float] = None,
     ):
         self.token = token
         self.headers = {
@@ -48,6 +52,13 @@ class GitHubAPIClient:
                 raise ValueError("capture_dir requires a tenant_id")
             from coops.raw_capture.capture import RawCaptureWriter
             self._capture = RawCaptureWriter(capture_dir, tenant_id, provider)
+        # Raw layer (MongoDB): a read-through/write-through cache in front of
+        # the API. When configured, a fresh raw document short-circuits the
+        # network so re-processing is free, and a successful fetch is captured
+        # back into the raw layer. Both are best-effort: the raw layer is an
+        # optimisation, so a down MongoDB must not break the extraction.
+        self.raw_store = raw_store
+        self.raw_max_age_seconds = raw_max_age_seconds
         # Run-summary accounting: a "hit" is a request served from cache (a 304
         # or a short-circuited body) without consuming a rate-limit slot; a
         # "miss" is a billed network fetch (a 200) that populates the cache.
@@ -55,6 +66,54 @@ class GitHubAPIClient:
         self.cache_misses = 0
         # Most recent REST rate-limit window (remaining/limit/reset), if any.
         self.last_rate_limit: Optional[Dict[str, Any]] = None
+
+    # -- Raw layer (MongoDB) ---------------------------------------------
+    #
+    # The raw layer is a read-through/write-through cache keyed by
+    # (tenant, provider, endpoint, params_hash). Reads only short-circuit the
+    # network when a document is fresh enough; the tenant scope is enforced by
+    # the store, so the client just forwards the tenant it was given.
+
+    @staticmethod
+    def _split_url(url: str) -> Tuple[str, Dict[str, str]]:
+        """Split a URL into (endpoint without query, query params as a dict)."""
+        from urllib.parse import parse_qsl, urlsplit, urlunsplit
+
+        parts = urlsplit(url)
+        endpoint = urlunsplit((parts.scheme, parts.netloc, parts.path, "", ""))
+        params = dict(parse_qsl(parts.query, keep_blank_values=True))
+        return endpoint, params
+
+    def _raw_read(self, provider: str, endpoint: str, params: Dict[str, Any]) -> Optional[Any]:
+        """Return a fresh raw payload for the key, or None to fall through."""
+        if self.raw_store is None or self.tenant_id is None:
+            return None
+        try:
+            document = self.raw_store.get(self.tenant_id, provider, endpoint, params)
+        except Exception:
+            # The raw layer is best-effort; a failure here must not stop the run.
+            return None
+        if document is None:
+            return None
+        if not is_fresh(document.fetched_at, self.raw_max_age_seconds):
+            return None
+        return document.payload
+
+    def _raw_write(
+        self,
+        provider: str,
+        endpoint: str,
+        params: Dict[str, Any],
+        etag: Optional[str],
+        payload: Any,
+    ) -> None:
+        """Capture a fetched payload into the raw layer (best-effort)."""
+        if self.raw_store is None or self.tenant_id is None:
+            return
+        try:
+            self.raw_store.save(self.tenant_id, provider, endpoint, params, etag, payload)
+        except Exception:
+            pass
 
     def _get_cache_key(self, key: str) -> str:
         """Create a stable cache key from an arbitrary string."""
@@ -144,8 +203,14 @@ class GitHubAPIClient:
     # corpus-fixtures is done separately (coops.raw_capture.sanitize).
 
     @staticmethod
-    def _split_url(url: str) -> Tuple[str, Dict[str, str]]:
-        """Split a REST URL into its path (endpoint) and query params."""
+    def _split_url_path(url: str) -> Tuple[str, Dict[str, str]]:
+        """Split a REST URL into its path (endpoint) and query params.
+
+        Distinct from :meth:`_split_url`, which returns the full URL minus its
+        query. The raw-corpus capture (#109) indexes on the path so that the
+        same endpoint requested from different hosts collapses to one key,
+        while the Mongo raw layer (#113) keys on the full URL.
+        """
         parts = urlsplit(url)
         params = dict(parse_qsl(parts.query, keep_blank_values=True))
         return parts.path, params
@@ -153,7 +218,7 @@ class GitHubAPIClient:
     def _capture_rest(self, url: str, data: Any, etag: Optional[str]) -> None:
         if self._capture is None:
             return
-        endpoint, params = self._split_url(url)
+        endpoint, params = self._split_url_path(url)
         self._capture.write(endpoint, params, etag, data)
 
     def _capture_graphql(self, query: str, variables: Optional[Dict[str, Any]], data: Any) -> None:
@@ -176,6 +241,20 @@ class GitHubAPIClient:
         """
         cached = None
         etag = None
+
+        # Raw layer first: a fresh document short-circuits the API entirely, so
+        # re-processing is free. The payload returned here is the *unmodified*
+        # API body (it may carry personal data); the Bronze scrub runs later,
+        # on the projection that is written to the public branch.
+        if use_cache and self.raw_store is not None and self.tenant_id is not None:
+            endpoint, params = self._split_url(url)
+            raw_payload = self._raw_read(PROVIDER_GITHUB, endpoint, params)
+            if raw_payload is not None:
+                if not silent:
+                    print(f"Using raw layer for: {url}")
+                self._record_cache_hit()
+                return raw_payload if not return_headers else (raw_payload, None)
+
         if use_cache:
             cached = self._cache_get(url)
             if cached is not None:
@@ -206,15 +285,20 @@ class GitHubAPIClient:
                 if response.status_code == 200:
                     data = response.json()
                     self._capture_rest(url, data, response.headers.get("ETag"))
+                    new_etag = response.headers.get("ETag")
                     if use_cache:
                         self._cache_set(url, data)
-                        new_etag = response.headers.get("ETag")
                         if new_etag:
                             self._etag_set(url, new_etag)
                         else:
                             self._etag_delete(url)
                     self._record_cache_miss()
                     self._record_rate_limit(response)
+                    # Capture the unmodified body into the raw layer so the next
+                    # run can read it instead of fetching again.
+                    if use_cache and self.raw_store is not None and self.tenant_id is not None:
+                        endpoint, params = self._split_url(url)
+                        self._raw_write(PROVIDER_GITHUB, endpoint, params, new_etag, data)
                     if not return_headers and not silent:
                         self._log_rate_limit(response, prefix=log_prefix)
                     return data if not return_headers else (data, response.headers)
@@ -268,6 +352,15 @@ class GitHubAPIClient:
         """Execute a GraphQL query against GitHub's v4 API with simple timeout handling."""
         payload = {"query": query, "variables": variables or {}}
 
+        # Raw layer first: a fresh document short-circuits the API.
+        if use_cache and self.raw_store is not None and self.tenant_id is not None:
+            raw_params = {"query": query, "variables": variables or {}}
+            raw_payload = self._raw_read(PROVIDER_GITHUB, self.graphql_url, raw_params)
+            if raw_payload is not None:
+                print("[GRAPHQL] Using raw layer response")
+                self._record_cache_hit()
+                return raw_payload
+
         # Build a deterministic cache key based on query + variables
         cache_key = None
         if use_cache:
@@ -312,6 +405,15 @@ class GitHubAPIClient:
                 if use_cache and cache_key:
                     self._cache_set(cache_key, data)
                 self._capture_graphql(query, variables, data)
+                # Capture the unmodified body into the raw layer.
+                if use_cache and self.raw_store is not None and self.tenant_id is not None:
+                    self._raw_write(
+                        PROVIDER_GITHUB,
+                        self.graphql_url,
+                        {"query": query, "variables": variables or {}},
+                        None,
+                        data,
+                    )
                 # Don't log rate limit for GraphQL - already logged after processing commits
                 return data
             elif response.status_code == 403:

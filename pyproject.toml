@@ -17,6 +17,7 @@ dependencies = [
     "google-generativeai>=0.8.0",
     "pydantic>=2.13.5,<3",
     "pydantic-settings>=2.15.0,<3",
+    "pymongo>=4.6,<5",
 ]
 
 # Installed by default with `uv sync`; not published as a package extra.
