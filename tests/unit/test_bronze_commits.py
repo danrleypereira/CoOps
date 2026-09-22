@@ -728,6 +728,46 @@ class TestSanitizeCommit:
         assert out["commit"]["author"]["name"] == "Alice Smith"
         assert out["commit"]["committer"]["name"] == "Bob Jones"
 
+    def test_name_containing_address_left_untouched(self):
+        """The scrub blanks a name only when the name *is* an address; a name
+        that merely *contains* one survives, because blanking it would destroy
+        attribution for a real person.
+
+        This fixture is invented, and must stay invented. Across the 260,350
+        name slots in the fga corpus, 149 are entirely an address and zero
+        merely contain one, so the distinguishing case does not occur in real
+        data and cannot be defended with it (definition-of-done: when reality
+        never produced the boundary, write a synthetic fixture and say so). It
+        pins ``fullmatch`` over ``search``: under ``search`` this name is
+        blanked, and this test is the only thing that fails.
+        """
+        # Direction 1: a name that IS an address is blanked.
+        address_commit = {
+            "sha": "abc123",
+            "author": None,
+            "commit": {
+                "author": {"name": "alice@example.com", "email": "alice@example.com", "date": "2024-01-01"},
+                "message": "hi",
+            },
+        }
+        assert _EMAIL_RE.fullmatch(address_commit["commit"]["author"]["name"])
+        assert _sanitize_commit(address_commit)["commit"]["author"]["name"] is None
+
+        # Direction 2: a name that merely CONTAINS an address is left alone.
+        contains_commit = {
+            "sha": "abc123",
+            "author": {"login": "alice", "id": 1},
+            "commit": {
+                "author": {"name": "Alice <alice@example.com>", "email": "alice@example.com", "date": "2024-01-01"},
+                "message": "hi",
+            },
+        }
+        # Control: the address really is present inside the name, but the name
+        # as a whole is not an address — the boundary ``fullmatch`` draws.
+        assert not _EMAIL_RE.fullmatch(contains_commit["commit"]["author"]["name"])
+        assert _EMAIL_RE.search(contains_commit["commit"]["author"]["name"])
+        assert _sanitize_commit(contains_commit)["commit"]["author"]["name"] == "Alice <alice@example.com>"
+
 
 _EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 
