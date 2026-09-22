@@ -48,6 +48,9 @@ with `uv run --project <repo> ...`.
 
 - **Conventional Commits** (`feat:`, `fix:`, `docs:`, `ci:`, `test:`, …).
 - **No `Co-Authored-By` trailers for AI assistants.** Human co-authors stay.
+- Specialised agents live in `.opencode/agents/` (`reviewer`, `tester`,
+  `architect`) — `opencode run --agent reviewer`. Don't let a reviewer inherit
+  a cheap model: it writes confident summaries of work it didn't do.
 - Update `CHANGELOG.md` under `[Unreleased]` for user-visible changes.
 - GPL-3.0-or-later.
 - Open the PR as a draft, fill in `.github/PULL_REQUEST_TEMPLATE.md` (its
