@@ -163,6 +163,15 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   source and `uv sync` failed. The guard on the *Commit and push* steps is
   unchanged.
 
+- Silver resolves commit-author identity as `login` → `author_email_hash` →
+  `name` instead of `login` → `name`, so distinct unlinked contributors are no
+  longer bucketed by display name (a shared name merged people, one person
+  committing under two names split). `members_statistics` now separates
+  identity from display: unlinked authors render as
+  `Unknown contributor (a1b2c3d4)` (the first 8 hex chars of the hash) rather
+  than the shared `unknown` bucket, and the label stays unique per person and
+  never empty — #125.
+
 ### Fixed
 - Dashboard: the data source no longer falls back to a hardcoded
   `DW-Corp` organization when `VITE_GITHUB_ORG` is unset. Without it the
@@ -227,6 +236,12 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   Bronze layer (`coops/bronze/issues.py`); its output had no consumers.
 
 ### Security
+- Bronze blanks `commit.author.name` / `commit.committer.name` when the value
+  is itself an email address — a third free-text channel that carried real
+  addresses past the email-key scrub (contributors who set `git user.name` to
+  their address). The field is set to `None`, never a placeholder string, so a
+  truthy placeholder cannot become a person downstream; every other name is
+  left intact so attribution survives — #132.
 - `scripts/data-snapshot.sh` keeps snapshots private at rest: the snapshot
   directory is created mode 700 and the archive and its checksum mode 600,
   under a restrictive umask. The corpus contains raw API responses with user

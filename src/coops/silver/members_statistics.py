@@ -7,6 +7,22 @@ from typing import List, Dict, Any
 from coops.utils.github_api import save_json_data, load_json_data, parse_github_date
 from coops.utils.data_helpers import strip_metadata
 
+
+def display_name(identifier: str) -> str:
+    """Render a stable, unique, non-empty label for an identity key.
+
+    The dashboard uses ``members_statistics``'s ``name`` field both as the
+    rendered name and as a React list key, so this value must be unique per
+    identity and never empty — a constant fallback would collapse distinct
+    people into a single row. A login (or ordinary name) passes through
+    unchanged; an ``author_email_hash`` (a 64-char SHA-256 hex digest) is
+    rendered as ``Unknown contributor (a1b2c3d4)`` from its first 8 hex chars.
+    """
+    if len(identifier) == 64 and all(c in "0123456789abcdef" for c in identifier):
+        return f"Unknown contributor ({identifier[:8]})"
+    return identifier
+
+
 def process_members_statistics() -> List[str]:
     """
     Gera estatísticas individuais por membro, incluindo avg_weekly_activity.
@@ -51,12 +67,14 @@ def process_members_statistics() -> List[str]:
                 user_identifier = author_obj['login']
             elif commit.get('author', {}) and commit['author'].get('login'):
                 user_identifier = commit['author']['login']
+            elif author_obj.get('author_email_hash'):
+                user_identifier = author_obj['author_email_hash']
             elif author_obj.get('name'):
                 user_identifier = author_obj['name']
             
             if user_identifier != 'unknown' and 'bot]' not in user_identifier:
                 member = members_data[user_identifier]
-                member['name'] = user_identifier
+                member['name'] = display_name(user_identifier)
                 member['events'].append({
                     'date': commit_date,
                     'type': 'commit',
@@ -81,7 +99,7 @@ def process_members_statistics() -> List[str]:
             created_at = parse_github_date(issue.get('created_at'))
             if created_at:
                 member = members_data[user_identifier]
-                member['name'] = user_identifier
+                member['name'] = display_name(user_identifier)
                 member['events'].append({
                     'date': created_at,
                     'type': 'issue_created',
@@ -122,7 +140,7 @@ def process_members_statistics() -> List[str]:
             created_at = parse_github_date(pr.get('created_at'))
             if created_at:
                 member = members_data[user_identifier]
-                member['name'] = user_identifier
+                member['name'] = display_name(user_identifier)
                 member['events'].append({
                     'date': created_at,
                     'type': 'pr_created',
@@ -162,7 +180,7 @@ def process_members_statistics() -> List[str]:
             event_date = parse_github_date(event.get('created_at'))
             if event_date:
                 member = members_data[user_identifier]
-                member['name'] = user_identifier
+                member['name'] = display_name(user_identifier)
                 
                 event_type = event.get('event', 'unknown')
                 if 'comment' in event_type.lower():
@@ -208,7 +226,7 @@ def process_members_statistics() -> List[str]:
             avg_issues = (data['total_issues_created'] + data['total_issues_closed']) / activity_period_weeks
             
             member_stats = {
-                'name': username,
+                'name': display_name(username),
                 'total_events': total_events,
                 'total_commits': data['total_commits'],
                 'total_issues_created': data['total_issues_created'],

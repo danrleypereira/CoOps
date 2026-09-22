@@ -357,3 +357,68 @@ class TestMetadataStripping:
         stats = saved["data/silver/members_statistics.json"]
         assert len(stats) == 1
         assert stats[0]["name"] == "alice"
+
+
+# ---------------------------------------------------------------------------
+# Identity fallback: author_email_hash (issue #125)
+# ---------------------------------------------------------------------------
+
+class TestIdentityHash:
+    def test_unlinked_author_hash_resolves_to_unique_identity(self, monkeypatch):
+        """An unlinked commit author carrying author_email_hash resolves to a
+        stable, unique identity through Silver — it is not dropped as
+        'unknown'."""
+        h = "a1b2c3d4" + "0" * 56
+        saved = _make_helpers(monkeypatch, commits=[
+            {
+                "commit": {"author": {"date": "2024-01-01T00:00:00Z",
+                                      "author_email_hash": h}},
+                "repo_name": "r1",
+            }
+        ])
+        ms.process_members_statistics()
+        stats = saved["data/silver/members_statistics.json"]
+        assert len(stats) == 1
+        assert stats[0]["name"] != "unknown"
+        assert stats[0]["name"] == f"Unknown contributor ({h[:8]})"
+
+    def test_two_unlinked_authors_do_not_collapse(self, monkeypatch):
+        """Two distinct unlinked authors must not collapse to one display
+        value — the hash prefix keeps each row distinct."""
+        h1 = "a1b2c3d4" + "0" * 56
+        h2 = "e5f6a7b8" + "0" * 56
+        saved = _make_helpers(monkeypatch, commits=[
+            {"commit": {"author": {"date": "2024-01-01T00:00:00Z",
+                                   "author_email_hash": h1}}, "repo_name": "r1"},
+            {"commit": {"author": {"date": "2024-01-02T00:00:00Z",
+                                   "author_email_hash": h2}}, "repo_name": "r1"},
+        ])
+        ms.process_members_statistics()
+        stats = saved["data/silver/members_statistics.json"]
+        names = [s["name"] for s in stats]
+        assert len(stats) == 2
+        assert len(set(names)) == 2
+        assert set(names) == {
+            f"Unknown contributor ({h1[:8]})",
+            f"Unknown contributor ({h2[:8]})",
+        }
+
+
+# ---------------------------------------------------------------------------
+# display_name contract (issue #125)
+# ---------------------------------------------------------------------------
+
+class TestDisplayName:
+    def test_hash_renders_first_8_hex_chars(self):
+        h = "a1b2c3d4" + "0" * 56
+        assert ms.display_name(h) == "Unknown contributor (a1b2c3d4)"
+
+    def test_login_passes_through_unchanged(self):
+        assert ms.display_name("alice") == "alice"
+
+    def test_never_empty_and_unique(self):
+        h1 = "a1b2c3d4" + "0" * 56
+        h2 = "e5f6a7b8" + "0" * 56
+        assert ms.display_name(h1)
+        assert ms.display_name("alice")
+        assert ms.display_name(h1) != ms.display_name(h2)

@@ -94,3 +94,53 @@ def test_temporal_analysis_commit_user_identification(monkeypatch):
     assert "alice" in users            # veio de commit.commit.author.login
     assert "bob" in users              # veio de commit.author.login
     assert "NoLoginName" in users      # fallback pra commit.commit.author.name
+
+
+def test_temporal_analysis_unlinked_author_hash(monkeypatch):
+    """An unlinked author carrying author_email_hash resolves to that hash
+    (a stable, unique identity) rather than the shared 'unknown' bucket."""
+    h = "a1b2c3d4" + "0" * 56
+    issues_data: List[Dict[str, Any]] = []
+    prs_data: List[Dict[str, Any]] = []
+    commits_data: List[Dict[str, Any]] = [
+        {
+            "repo_name": "repoA",
+            "commit": {
+                "author": {
+                    "date": "2024-01-02T10:00:00Z",
+                    "author_email_hash": h,
+                }
+            },
+        },
+    ]
+    issue_events_data: List[Dict[str, Any]] = []
+
+    def fake_load_json_data(path: str):
+        if path.endswith("issues_all.json"):
+            return issues_data
+        if path.endswith("prs_all.json"):
+            return prs_data
+        if path.endswith("commits_all.json"):
+            return commits_data
+        if path.endswith("issue_events_all.json"):
+            return issue_events_data
+        return []
+
+    saved = {}
+
+    def fake_save_json_data(data, path, timestamp=True):
+        saved[path] = data
+        return path
+
+    monkeypatch.setattr(temporal, "load_json_data", fake_load_json_data)
+    monkeypatch.setattr(temporal, "save_json_data", fake_save_json_data)
+    monkeypatch.setattr(temporal, "parse_github_date", _iso)
+
+    temporal.process_temporal_analysis()
+
+    events = saved.get("data/silver/temporal_events.json")
+    assert isinstance(events, list)
+    commit_events = [e for e in events if e["type"] == "commit"]
+    users = {e["user"] for e in commit_events}
+    assert h in users
+    assert "unknown" not in users
