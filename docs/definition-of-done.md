@@ -24,6 +24,9 @@ Reviewers enforce this. A change that misses it is *merge after fixes*, not
 - **No new personal data reaches a published artifact.** Grep the *output*, not
   the code: a sweep for field names never finds an address sitting inside free
   text.
+- **A new field or output has a named consumer**, or an issue saying when it
+  gets one. A value nothing reads is untested by construction: its tests assert
+  that the writer ran, not that anything depends on the result.
 
 ## When the change crosses a boundary
 
@@ -34,6 +37,10 @@ Reviewers enforce this. A change that misses it is *merge after fixes*, not
 - **Run it against something real** when it touches extraction, storage or
   serving: the smallest slice that exercises the path, from a scratch directory,
   and report the numbers you saw with a command anyone can repeat.
+- **A workflow change is demonstrated, not reasoned about.** Run it (`gh act`,
+  see [local-actions.md](local-actions.md)) against a tree where the step
+  actually does its work. A shell step that stages nothing still exits 0, and
+  `|| echo` turns a failure into a green job.
 
 ## Added as the capability lands
 

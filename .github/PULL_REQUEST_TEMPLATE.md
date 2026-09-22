@@ -30,7 +30,7 @@ Closes #
 <!-- How did you verify this? Commands you ran, files you inspected, manual
 checks you performed. -->
 
-See [docs/definition-of-done.md](../docs/definition-of-done.md) — a reviewer will check against it.
+See [docs/definition-of-done.md](docs/definition-of-done.md) — a reviewer will check against it.
 
 - [ ] `pytest` passes locally — paste the counts (`N passed, M skipped`), not "passes"
 - [ ] `cd dashboard && npm run test:coverage` passes locally — counts too
