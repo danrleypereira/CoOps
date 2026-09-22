@@ -1,6 +1,10 @@
 # Arquivo de secrets para uso local
 .secrets
 .env
+
+# act (docs/local-actions.md): artifact server output and its var file
+.act/
+.vars
 **/__pycache__/
 dashboard/dist/
 dashboard/node_modules/

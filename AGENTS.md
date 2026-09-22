@@ -54,6 +54,7 @@ with `uv run --project <repo> ...`.
 - Update `CHANGELOG.md` under `[Unreleased]` for user-visible changes.
 - GPL-3.0-or-later.
 - Open the PR as a draft, fill in `.github/PULL_REQUEST_TEMPLATE.md` (its
-  **Organization validation** section is where the fork's run links go),
-  validate it in the fork, then mark it ready —
-  [docs/TESTING_PULL_REQUESTS.md](docs/TESTING_PULL_REQUESTS.md).
+  **Organization validation** section is where the validation output goes),
+  validate it locally with `gh act`, then mark it ready —
+  [docs/TESTING_PULL_REQUESTS.md](docs/TESTING_PULL_REQUESTS.md) and
+  [docs/local-actions.md](docs/local-actions.md).

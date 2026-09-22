@@ -55,8 +55,9 @@ jobs:
       bronze-completed: ${{ steps.extraction.outputs.completed }}
 
     steps:
+      # Not skipped under act: act implements actions/checkout as the copy that
+      # populates the workspace, so skipping it leaves the container empty.
       - name: Checkout repository
-        if: ${{ !env.ACT }}
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
