@@ -24,6 +24,12 @@ Run the pipeline from a scratch directory (`uv run --project <repo> …`), never
 
 The most valuable finding is the one nobody could get from the diff — a caller two layers away, an output file the change silently reshapes, a path only taken on a fallback.
 
+## The Definition of Done is yours to enforce
+
+Read `docs/definition-of-done.md` and check the change against it. A PR that misses it does not get "approve with a note" — it gets *merge after fixes*, naming what is missing.
+
+You enforce it by running, not reading: run the suite on the PR head and quote the counts; treat changed behaviour with no test as incomplete; and prove each new guard can fail before you credit it. An unrun suite is unmeasured, never passing — say so in the verdict if you could not run it.
+
 ## Where the bugs are here
 
 - **Several paths, one shape.** Extraction has a primary path and more than one fallback. Check they all produce the same record shape; a fix applied to one is the classic miss, and the paths that keep a raw provider response leak fields the trimmed path never had.

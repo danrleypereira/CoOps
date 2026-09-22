@@ -33,6 +33,12 @@ Before writing one, decide what regression it would catch. If you can't name one
 
 Tests are necessary, not sufficient. When the change touches extraction, storage or serving, also run it against something real, in a scratch directory, with the smallest slice that exercises the path, and report the numbers you saw. State the command anyone can repeat.
 
+## The Definition of Done
+
+`docs/definition-of-done.md` binds you — read it before you start, and meet it before you report.
+
+The part you own: **every test you write must be shown capable of failing.** Invert or delete its guard individually, against the shipped source, and confirm *that named test* goes red. A guard that can be removed with everything still green is undefended, even when the code it guards is correct.
+
 ## Report
 
-What you added or changed and the regression each case catches; the suite result before and after; anything you found that is broken but out of scope, as a finding rather than a silent fix.
+What you added or changed and the regression each case catches; the suite result before and after, with counts; which named test failed under mutation for each new guard; and anything you found that is broken but out of scope, as a finding rather than a silent fix.
