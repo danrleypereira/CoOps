@@ -24,10 +24,11 @@ Reviewers enforce this. A change that misses it is *merge after fixes*, not
 - **No new personal data reaches a published artifact.** Grep the *output*, not
   the code: a sweep for field names never finds an address sitting inside free
   text.
-- **Persisting a provider object: select the fields you consume.** Never spread
-  the response and subtract (`{**issue}` minus a denylist). A whitelist is
-  bounded by what we use; a denylist is bounded by what we have *noticed*, and
-  the difference is everything a provider might add or a user might type.
+- **A projection that crosses a publish boundary selects the fields it uses.**
+  Never spread a provider response and subtract (`{**issue}` minus a denylist):
+  a whitelist is bounded by what we use, a denylist by what we have *noticed*.
+  This applies to what gets published — **not** to the raw tier, which
+  deliberately keeps what the provider sent.
 - **A new field or output has a named consumer**, or an issue saying when it
   gets one. A value nothing reads is untested by construction: its tests assert
   that the writer ran, not that anything depends on the result.
@@ -57,6 +58,17 @@ Reviewers enforce this. A change that misses it is *merge after fixes*, not
   causes it rather than months later.
 
 ## Why a denylist is not a sanitizer
+
+**Scope first, because the two tiers want opposite things.** The raw tier keeps
+the provider's response intact — including the personal fields — because it is
+private, and because an address there is sometimes the only identifier a person
+has (measured: 5.8% of commit authors have no account link). Stripping at
+capture destroys attribution that cannot be recovered. That decision is #107 and
+this section does not touch it.
+
+What follows applies to a **projection that crosses a publish boundary**:
+`data/bronze/` in fork-and-forget mode, the serving API's responses, and
+published fixtures. Raw keeps; the projection selects.
 
 Measured on this project, not asserted:
 
