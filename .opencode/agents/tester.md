@@ -27,6 +27,7 @@ Before writing one, decide what regression it would catch. If you can't name one
 - **Real payloads beat invented ones.** When a captured corpus or a snapshot exists, build fixtures from it — trimmed and anonymised. Invented shapes agree with the code and disagree with the provider.
 - **Determinism.** Freeze time, seed randomness, and never let a test wait on a real timer. If a behaviour lasts N milliseconds, control the clock rather than sleeping.
 - **Both paths.** Where the code has a primary and a fallback, cover both. Where it has an empty case, cover it — the empty case is what runs on a fresh install.
+- **Never change production code to make a test pass.** You may edit it to fix a bug the test exposes, deliberately and said out loud in your report. Quietly adjusting the code until the assertion goes green destroys the only signal the test carried.
 
 ## Proving a change works
 

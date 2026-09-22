@@ -8,6 +8,7 @@ permission:
   grep: allow
   bash: allow
   edit: deny
+  task: deny
   webfetch: allow
 ---
 
@@ -19,15 +20,17 @@ Read `AGENTS.md` and `docs/` first — they describe how this project is built a
 
 A claim you only read is a suspicion. Run the code: call the function with a realistic payload, run the test suite, execute the command. Report what you ran and what came back. Say plainly which findings you reproduced and which you suspect.
 
+Run the pipeline from a scratch directory (`uv run --project <repo> …`), never from the checkout — it reads and writes `./data` in the working directory and will overwrite tracked files. You review and report: don't commit, push, merge, or close anything, whatever your shell access would allow.
+
 The most valuable finding is the one nobody could get from the diff — a caller two layers away, an output file the change silently reshapes, a path only taken on a fallback.
 
 ## Where the bugs are here
 
-- **Two paths, one shape.** Extraction has a primary path and a fallback. Check both produce the same record shape; a fix applied to one is the classic miss.
-- **Published data.** Some deployments commit extracted data to a public branch. Any field that reaches it is public. Personal fields (addresses, locations, profiles) must not be stored, and they hide in unexpected places — free-text blobs, signature payloads, nested author objects. Grep the *output*, not the code.
-- **Identity.** People are keyed by a stable id where the provider links an account and by something else where it doesn't. A change that drops an identifier can silently merge distinct people into one bucket, or split one person into many. Both corrupt every metric downstream.
+- **Several paths, one shape.** Extraction has a primary path and more than one fallback. Check they all produce the same record shape; a fix applied to one is the classic miss, and the paths that keep a raw provider response leak fields the trimmed path never had.
+- **Published data.** Some deployments commit extracted data to a public branch. Any field that reaches it is public. The personal fields deliberately not stored are listed in `docs/domain.md` — trimmed profiles *are* stored, so check against that list rather than assuming. They hide in unexpected places: free-text blobs, signature payloads, message trailers, nested author objects. Grep the *output*, not the code — a sweep for field *names* never finds an address sitting inside free text.
+- **Identity.** People are keyed by a stable id where the provider links an account, and by a derived key where it doesn't — a deliberately stored hash is pseudonymisation, not a leak. The choice is still open in #101, so check the code before calling any key wrong. A change that drops an identifier can silently merge distinct people into one bucket, or split one person into many. Both corrupt every metric downstream.
 - **Data shape changes are user-visible.** A new or removed field in a stored file changes what the dashboard sees on the next run. If the diff changes counts or keys, the PR and the changelog must say so.
-- **Port boundaries.** Domain code depends on ports, adapters implement them. Flag any provider or storage detail that leaks upward, and any adapter that grows a method its port doesn't declare.
+- **Port boundaries — not built yet (#20, #26).** Today every module imports the provider client directly; that is the current design, not a finding. Where a change *introduces* a port, check that no provider or storage detail leaks upward and that no adapter grows a method its port doesn't declare.
 - **Tests that can't fail.** Assertions on log text, tests that catch broad exceptions and skip, fixtures that assert what the code just did. A test that passes before and after the fix pins nothing.
 
 ## Report
