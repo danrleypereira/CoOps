@@ -75,19 +75,19 @@ class TestWatermarkStore:
         assert wm.last_updated_at == "2026-09-21T10:00:00Z"
         assert wm.last_event_id == 42
         assert wm.head_shas == {"main": "abc123"}
-        assert wm.last_run == now.isoformat()
+        assert wm.last_run == "2026-09-22T10:00:00Z"
 
     def test_update_sets_last_run(self, tmp_path):
         store, now = self._store(tmp_path)
         store.update("org/repo1")
-        assert store.get("org/repo1").last_run == now.isoformat()
+        assert store.get("org/repo1").last_run == "2026-09-22T10:00:00Z"
 
     def test_update_ignores_none_fields(self, tmp_path):
         store, now = self._store(tmp_path, last_event_id=5)
         store.update("org/repo1", last_event_id=None, last_updated_at=None)
         assert store.get("org/repo1").last_event_id == 5
         # last_run still advances even when every other field is None.
-        assert store.get("org/repo1").last_run == now.isoformat()
+        assert store.get("org/repo1").last_run == "2026-09-22T10:00:00Z"
 
     def test_unknown_repo_not_persisted_until_updated(self, tmp_path):
         store, _ = self._store(tmp_path)

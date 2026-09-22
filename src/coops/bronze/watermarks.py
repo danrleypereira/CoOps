@@ -134,7 +134,10 @@ class WatermarkStore:
         # `last_run` records the *start* of the current run, so the next run's
         # `since = last_run` over-fetches the tail of the previous run rather
         # than under-fetching anything committed while it was still running.
-        self._now_iso = (now or datetime.now(timezone.utc)).isoformat()
+        # Stored as a second-resolution UTC `Z` timestamp: the value is spliced
+        # into REST query strings, where a `+00:00` offset (and microseconds)
+        # would be mangled by URL parsing.
+        self._now_iso = (now or datetime.now(timezone.utc)).astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
         self._records: Dict[str, RepoWatermark] = {}
         self._load()
 
