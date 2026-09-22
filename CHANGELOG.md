@@ -31,6 +31,14 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   The Analytics page stays unrouted (#74): it is slow on real data and
   duplicates the routed pages.
 - Gold `organization_health.members_with_profile`: members with maturity data.
+- Conditional requests for the Bronze REST client: each cached response now
+  stores its `ETag` (in a `cache/<md5(url)>.etag` sidecar, leaving the JSON
+  body format untouched), and the next request sends `If-None-Match`. A `304`
+  serves the cached body without consuming a rate-limit slot; a `200` replaces
+  the cached body and ETag. The Bronze workflow restores and saves the cache
+  with `actions/cache` keyed per organization, and the run summary reports
+  cache hits/misses and the remaining REST rate limit — issue
+  [#108](https://github.com/danrleypereira/CoOps/issues/108).
 
 ### Changed
 - **Breaking:** `coops-bronze` reads the token and organization from

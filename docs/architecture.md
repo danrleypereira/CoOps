@@ -46,7 +46,10 @@ src/coops/
 
 `utils/github_api.py` is the only module that talks to GitHub. It owns caching
 (`cache/`, keyed by URL hash), retries, rate-limit handling and pagination
-(`get_paginated`). Phase 2 (#26) splits it into transport, queries and an
+(`get_paginated`). REST responses are cached as `<md5(url)>.json` with their
+`ETag` in a sibling `<md5(url)>.etag` sidecar; a warm entry is revalidated with
+`If-None-Match`, and a `304` serves the cached body without consuming a
+rate-limit slot. Phase 2 (#26) splits it into transport, queries and an
 adapter behind a port.
 
 ## Dashboard

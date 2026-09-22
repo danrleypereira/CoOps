@@ -5,10 +5,47 @@ Extracts raw data from GitHub API and saves to bronze layer.
 """
 
 import argparse
+import os
 import sys
 from datetime import datetime
 from coops.infrastructure import get_settings
 from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, update_data_registry
+
+
+def _write_run_summary(client: GitHubAPIClient) -> None:
+    """Report cache hits/misses and the remaining REST rate limit.
+
+    Written to stdout always, and appended to ``GITHUB_STEP_SUMMARY`` when the
+    workflow provides one, so the run summary in Actions shows how the cache
+    performed.
+    """
+    rl = client.last_rate_limit
+    remaining = f"{rl['remaining']}/{rl['limit']}" if rl else "n/a"
+    reset = ""
+    if rl and rl.get("reset"):
+        try:
+            reset = datetime.fromtimestamp(int(rl["reset"])).isoformat()
+        except (TypeError, ValueError):
+            reset = ""
+
+    rows = [
+        "| Metric | Value |",
+        "|---|---|",
+        f"| Cache hits | {client.cache_hits} |",
+        f"| Cache misses | {client.cache_misses} |",
+        f"| REST rate limit remaining | {remaining} |",
+    ]
+    if reset:
+        rows.append(f"| REST rate limit resets | {reset} |")
+
+    summary = "\n".join(["## Extraction cache & rate limit", ""] + rows) + "\n"
+    print("\n" + summary)
+
+    step_summary = os.environ.get("GITHUB_STEP_SUMMARY")
+    if step_summary:
+        with open(step_summary, "a", encoding="utf-8") as f:
+            f.write(summary)
+
 
 def positive_int(value: str) -> int:
     """argparse type for caps: a cap of 0 or less would fetch nothing."""
@@ -138,11 +175,17 @@ def main():
         print(f"   - Structures: {len(structure_files)}")
         print("="*60)
 
+        _write_run_summary(client)
+
     except Exception as e:
         print(f"\nERROR: Bronze extraction failed")
         print(f"   {str(e)}")
         import traceback
         traceback.print_exc()
+        try:
+            _write_run_summary(client)
+        except Exception:
+            pass
         sys.exit(1)
 
 if __name__ == "__main__":

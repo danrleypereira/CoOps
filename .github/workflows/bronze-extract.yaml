@@ -102,6 +102,17 @@ jobs:
           mkdir -p cache
           echo "[INFO] Created data layer directories"
 
+      - name: Restore API cache
+        uses: actions/cache@v4
+        with:
+          path: cache
+          # Keyed per organization so different orgs don't share responses.
+          # The unique run_id makes each save a fresh entry; restore-keys pulls
+          # the latest previous cache for this org, so a run starts warm.
+          key: coops-bronze-cache-${{ vars.COOPS_ORG || github.repository_owner }}-${{ github.run_id }}
+          restore-keys: |
+            coops-bronze-cache-${{ vars.COOPS_ORG || github.repository_owner }}-
+
       - name: Extract Bronze layer data
         id: extraction
         env:
@@ -153,6 +164,13 @@ jobs:
             echo "completed=false" >> $GITHUB_OUTPUT
             exit 1
           fi
+
+      - name: Save API cache
+        if: steps.extraction.outputs.completed == 'true'
+        uses: actions/cache@v4
+        with:
+          path: cache
+          key: coops-bronze-cache-${{ vars.COOPS_ORG || github.repository_owner }}-${{ github.run_id }}
 
       - name: Generate data registry
         if: steps.extraction.outputs.completed == 'true'
