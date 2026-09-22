@@ -19,6 +19,13 @@ covers `tests/unit` and `tests/integration`. Coverage omits `ai_analysis/` and
 Tests must not touch the network, and they must not write into the checkout —
 anything that runs a real processor does so in `tmp_path`.
 
+### MongoDB image
+
+`docker-compose.dev.yml` pins the development MongoDB to `mongo:7.0.14` (no
+floating tags). The testcontainers setup for the integration suite (#57) must
+reuse that same pinned image, so tests exercise the exact database a developer
+runs locally. Bump the two together.
+
 ## CI
 
 **Actions is disabled on `danrleypereira/CoOps`.** Pull requests there get no
