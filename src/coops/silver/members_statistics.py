@@ -92,7 +92,7 @@ def process_members_statistics() -> List[str]:
     # Processar issues
     for issue in issues_data:
         user = issue.get('user') or {}
-        user_identifier = user.get('login') or user.get('author_email_hash') or user.get('name') or 'unknown'
+        user_identifier = user.get('login') or user.get('name') or 'unknown'
         
         if user_identifier != 'unknown' and 'bot]' not in user_identifier:
             # Issue criada
@@ -133,7 +133,7 @@ def process_members_statistics() -> List[str]:
     # Processar PRs
     for pr in prs_data:
         user = pr.get('user') or {}
-        user_identifier = user.get('login') or user.get('author_email_hash') or user.get('name') or 'unknown'
+        user_identifier = user.get('login') or user.get('name') or 'unknown'
         
         if user_identifier != 'unknown' and 'bot]' not in user_identifier:
             # PR criada
@@ -174,7 +174,7 @@ def process_members_statistics() -> List[str]:
     # Processar eventos de issues (comments, etc)
     for event in issue_events_data:
         actor = event.get('actor') or {}
-        user_identifier = actor.get('login') or actor.get('author_email_hash') or actor.get('name') or 'unknown'
+        user_identifier = actor.get('login') or actor.get('name') or 'unknown'
         
         if user_identifier != 'unknown' and 'bot]' not in user_identifier:
             event_date = parse_github_date(event.get('created_at'))
