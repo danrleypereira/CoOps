@@ -130,6 +130,12 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   along with its tests and the `save-issues.yaml` workflow — superseded by the
   Bronze layer (`coops/bronze/issues.py`); its output had no consumers.
 
+### Security
+- `scripts/data-snapshot.sh` keeps snapshots private at rest: the snapshot
+  directory is created mode 700 and the archive and its checksum mode 600,
+  under a restrictive umask. The corpus contains raw API responses with user
+  email addresses, so a snapshot must not be published or shared.
+
 ## [1.0.0] - 2026-05-12
 
 First stable release; baseline for the Journal of Open Source Software

@@ -89,6 +89,11 @@ to overwrite a non-empty `cache/` or `data/` unless you pass `--force`. Neither
 `cache/` nor `data/` is committed to git — fetch once, `pack`, then `unpack`
 into each worktree instead of re-fetching.
 
+The corpus contains personal data — raw API responses include user email
+addresses — so a snapshot must not be published or shared. `pack` keeps it
+private at rest: the snapshot directory is mode 700 and the archive and its
+checksum are mode 600.
+
 ## Dashboard
 
 ```bash

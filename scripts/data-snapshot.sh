@@ -28,8 +28,16 @@
 #   ~/.local/share/coops/snapshots
 #
 # Nothing under the repository needs to be git-ignored for this location
-# because it is not inside the repository. `cache/` and `data/` themselves are
-# git-ignored in the repository's .gitignore.
+# because it is not inside the repository. `cache/` is git-ignored in the
+# repository's .gitignore.
+#
+# ---------------------------------------------------------------------------
+# Privacy
+# ---------------------------------------------------------------------------
+# The corpus contains personal data: raw GitHub API responses include user
+# email addresses. A snapshot MUST NOT be published or shared. `pack` therefore
+# keeps it private at rest — the snapshot directory is mode 700 and the
+# archive and its checksum are mode 600, all created under `umask 077`.
 #
 # ---------------------------------------------------------------------------
 # Subcommands
@@ -55,6 +63,12 @@
 # Requires GNU coreutils (sha256sum, tar, gzip, stat, find, du) and bash ≥ 4.
 
 set -euo pipefail
+
+# The corpus contains personal data (see the Privacy section above), so keep
+# everything this script creates private: new directories are 0700 and new
+# files are 0600. This is set BEFORE anything is created — there is never a
+# window in which the archive is world-readable, so we never need a later chmod.
+umask 077
 
 # --- Configuration -----------------------------------------------------------
 
@@ -174,6 +188,17 @@ cmd_pack() {
   done
 
   mkdir -p "$SNAPSHOT_DIR" || die "cannot create snapshot directory: $SNAPSHOT_DIR"
+
+  # A directory created just above is already 0700 thanks to `umask 077`, but
+  # one left over from an earlier run may be looser. Tighten it — and say so on
+  # stderr — before the archive is written into it. This chmod targets an
+  # existing directory, never a file this run just created.
+  local mode
+  mode="$(stat -c %a "$SNAPSHOT_DIR")"
+  if (( 8#$mode & 8#077 )); then
+    chmod 700 "$SNAPSHOT_DIR" || die "cannot tighten permissions on $SNAPSHOT_DIR"
+    warn "tightened $SNAPSHOT_DIR from mode $mode to 700 (it holds personal data)"
+  fi
 
   local stamp name final tmp
   stamp="$(date -u +%Y%m%dT%H%M%SZ)"
