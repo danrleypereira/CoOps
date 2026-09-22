@@ -14,6 +14,9 @@ dashboard/**.tsbuildinfo
 bin/
 
 cache/
+# Per-repository extraction watermarks (issue #110): machine state that lets a
+# Bronze run fetch only what changed. Not API data and not published output.
+watermarks.json
 # The managed raw corpus (corpus-raw/) is PRIVATE — it holds unmodified API
 # bodies with personal data and must never be committed. corpus-fixtures/ is
 # its sanitized, shareable twin; it is still generated output, so neither is

@@ -11,6 +11,7 @@ import re
 from unittest.mock import MagicMock, patch
 
 from coops.bronze.issues import (
+    _load_prior_records,
     extract_issues,
     ACTOR_FIELDS,
     ISSUE_FIELDS,
@@ -136,3 +137,50 @@ def test_pull_request_split_survives_the_projection():
 
     # And the discriminator itself is still dropped from what gets published.
     assert all("pull_request" not in r for r in issues + prs)
+
+
+def test_prior_records_are_reprojected_on_load():
+    """A stale record already on disk is re-projected when read back.
+
+    Without this, the whitelist is only a guarantee about *writes*: an
+    incremental run merges prior records verbatim, so a record the provider
+    never touches again keeps whatever shape it was first written with. A field
+    dropped from ISSUE_FIELDS would then vanish only from rows that happen to
+    change upstream, and persist forever in every dormant row.
+
+    The fixture is deliberately synthetic: no record in the corpus carries a
+    pre-whitelist shape today (all 20,053 are already projected), so no real
+    payload can exercise this path — see the tester agent's note on inventing a
+    fixture to pin a boundary the data does not happen to cross.
+    """
+    stale = [
+        {"_metadata": {"generated_at": "2026-01-01T00:00:00Z"}},
+        {
+            "number": 7,
+            "state": "open",
+            "title": "stale row",
+            "created_at": "2026-01-01T00:00:00Z",
+            "repo_name": "repoA",
+            # Fields a narrower whitelist must strip on the next read:
+            "body": "contact me at someone@example.com",
+            "user": {"login": "alice", "id": 1, "gravatar_id": "d41d8cd9"},
+        },
+    ]
+    with patch("coops.bronze.issues.load_json_data", return_value=stale):
+        out = _load_prior_records("data/bronze/issues_repoA.json", _project_issue)
+
+    assert len(out) == 1, "the _metadata sidecar must not survive as a record"
+    record = out[0]
+    assert "body" not in record, "a non-whitelisted field survived a read-back"
+    assert record["user"] == {"login": "alice", "id": 1}, (
+        "gravatar_id is historically md5(email) and must not survive the actor projection"
+    )
+    assert record["number"] == 7 and record["repo_name"] == "repoA"
+
+
+def test_prior_records_load_verbatim_without_a_projector():
+    """`project=None` keeps the old behaviour, so the parameter is what changes it."""
+    stale = [{"number": 7, "body": "kept", "repo_name": "repoA"}]
+    with patch("coops.bronze.issues.load_json_data", return_value=stale):
+        out = _load_prior_records("data/bronze/issues_repoA.json")
+    assert out[0]["body"] == "kept"

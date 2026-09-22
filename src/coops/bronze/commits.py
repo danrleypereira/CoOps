@@ -10,6 +10,8 @@ from typing import Any, Dict, List, Optional
 # leaking an address is not.
 _EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data, load_json_data
+from coops.utils.data_helpers import strip_metadata
+from coops.bronze.watermarks import WatermarkStore, max_iso
 
 
 def _hash_email(email: str) -> str:
@@ -114,6 +116,7 @@ def extract_commits(
     include_active_branches: bool = False,
     active_days: int = 30,
     time_chunks: int = 3,
+    watermarks: Optional[WatermarkStore] = None,
 ) -> List[str]:
 
     # Load filtered repositories
@@ -139,6 +142,15 @@ def extract_commits(
         full_name = repo.get('full_name', repo_name)
         owner = full_name.split('/')[0] if '/' in full_name else None
         name_only = full_name.split('/')[1] if '/' in full_name else full_name
+
+        # Incremental extraction (issue #110): a watermark with a `last_run`
+        # bounds the commit fetch to what was committed after the previous run.
+        # `effective_since` is the later of the caller's `since` and the
+        # watermark's `last_run`, so an explicit historical `--since` is never
+        # widened, only narrowed to what is still unknown.
+        wm = watermarks.get(full_name) if watermarks is not None else None
+        incremental = bool(wm and wm.last_run)
+        effective_since = max_iso(since, wm.last_run if wm else None)
 
         print(f"Processing commits for: {repo_name}")
 
@@ -167,11 +179,11 @@ def extract_commits(
                 owner=owner,
                 repo=name_only,
                 branches=branches_to_extract,
-                split_large_extractions=True,  # Enable time-based splitting
+                split_large_extractions=bool(since or until),  # chunk only explicit user ranges
                 time_chunks=3,  # Split into 3 time periods
                 page_size=page_size,
                 max_commits=max_commits_per_repo,
-                since=since,
+                since=effective_since,
                 until=until,
                 use_cache=use_cache,
             )
@@ -223,10 +235,10 @@ def extract_commits(
                 print(f"[WARN] GraphQL returned no commits for {repo_name}. Falling back to REST.")
                 # Fallback to REST list + details to avoid data gaps
                 commits_base = f"https://api.github.com/repos/{full_name}/commits"
-                if since or until:
+                if effective_since or until:
                     sep = '&' if ('?' in commits_base) else '?'
-                    if since:
-                        commits_base = f"{commits_base}{sep}since={since}"
+                    if effective_since:
+                        commits_base = f"{commits_base}{sep}since={effective_since}"
                         sep = '&'
                     if until:
                         commits_base = f"{commits_base}{sep}until={until}"
@@ -273,10 +285,10 @@ def extract_commits(
             # REST fallback (existing behavior): list commits, then fetch details per commit to get stats
             commits_base = f"https://api.github.com/repos/{full_name}/commits"
             # Apply since/until filters when available to reduce pages
-            if since or until:
+            if effective_since or until:
                 sep = '&' if ('?' in commits_base) else '?'
-                if since:
-                    commits_base = f"{commits_base}{sep}since={since}"
+                if effective_since:
+                    commits_base = f"{commits_base}{sep}since={effective_since}"
                     sep = '&'
                 if until:
                     commits_base = f"{commits_base}{sep}until={until}"
@@ -320,20 +332,48 @@ def extract_commits(
 
                 print(f"Found {len(commits)} commits in {repo_name} via REST")
 
-        if data_commits:
+        if data_commits or incremental:
             # Drop raw author/committer emails before persisting to the public
             # branch; keep a stable identity key (login + id, or email hash).
-            data_commits = [_sanitize_commit(c) for c in data_commits]
+            new_sanitized = [_sanitize_commit(c) for c in data_commits]
 
-            # Add to global list
-            all_commits.extend(data_commits)
+            if incremental:
+                # Commits are immutable, so merging is a prepend: anything newly
+                # fetched is newer than everything already stored (the previous
+                # run's file is newest-first). Dedup by sha guards against the
+                # `since` window over-fetching the tail of the previous run. The
+                # stored file was already capped by the previous run, so no cap
+                # is re-applied here — that would truncate it below what a full
+                # extraction of the same window keeps.
+                prior = strip_metadata(
+                    load_json_data(f"data/bronze/commits_{repo_name}.json") or []
+                )
+                seen = set()
+                merged = []
+                for commit in new_sanitized + prior:
+                    sha = commit.get('sha')
+                    if sha and sha not in seen:
+                        seen.add(sha)
+                        merged.append(commit)
+                data_commits = merged
+            else:
+                data_commits = new_sanitized
 
-            # Save per-repo commits
-            repo_commits_file = save_json_data(
-                data_commits,
-                f"data/bronze/commits_{repo_name}.json"
-            )
-            generated_files.append(repo_commits_file)
+            if data_commits:
+                # Add to global list
+                all_commits.extend(data_commits)
+
+                # Save per-repo commits
+                repo_commits_file = save_json_data(
+                    data_commits,
+                    f"data/bronze/commits_{repo_name}.json"
+                )
+                generated_files.append(repo_commits_file)
+
+        # Advance this repository's watermark (its `last_run` in particular), so
+        # the next run's `since` starts where this one left off.
+        if watermarks is not None:
+            watermarks.update(full_name)
 
     # Save all commits (always save, even if empty, to ensure files exist)
     all_commits_file = save_json_data(
