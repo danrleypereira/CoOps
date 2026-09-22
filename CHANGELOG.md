@@ -45,6 +45,13 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   [#113](https://github.com/danrleypereira/CoOps/issues/113). The run summary
   still reports cache hits/misses and the remaining REST rate limit — issue
   [#108](https://github.com/danrleypereira/CoOps/issues/108).
+- Commit extraction now keeps the fields that cannot be recovered later: the
+  GraphQL selection requests the full commit message body, the committer, and
+  the parent shas (previously only the headline, author and stats were
+  fetched, so the body, committer and parents were absent even from the raw
+  cache). The REST paths store the same record shape, and everything still
+  passes through the Bronze scrub, so no raw email reaches `data/bronze/` —
+  issue [#111](https://github.com/danrleypereira/CoOps/issues/111).
 
 ### Changed
 - **Breaking:** `coops-bronze` reads the token and organization from

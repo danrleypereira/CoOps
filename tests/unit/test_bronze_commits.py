@@ -664,3 +664,166 @@ class TestSanitizeCommit:
         assert "Co-authored-by: Pair Person" in message
         assert "Signed-off-by: Mona Octocat" in message
         assert "feat: add the thing" in message
+
+
+_EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
+
+_FULL_BODY = "feat: subject\n\nThis is the body.\nSecond paragraph."
+
+
+def _assert_recovered_fields(commit):
+    """The message body, committer and parent shas survive in the stored record,
+    in the same shape on both the GraphQL and REST paths."""
+    assert commit["commit"]["message"] == _FULL_BODY
+    assert commit["commit"]["committer"]["name"] == "Committer"
+    assert commit["commit"]["committer"]["date"] == "2024-01-01T00:00:01Z"
+    assert "email" not in commit["commit"]["committer"]
+    assert commit["parents"] == ["parent1", "parent2"]
+
+
+class TestRecoverableFields:
+    """The fields that can only be recovered by a full re-fetch (message body,
+    committer, parent shas) must reach the stored record on every path."""
+
+    def test_graphql_path_keeps_recoverable_fields(self):
+        mock_client = MagicMock()
+        mock_config = MagicMock()
+        mock_repos = [{"name": "repo1", "full_name": "test-org/repo1"}]
+
+        mock_graphql_nodes = [
+            {
+                "oid": "abc123",
+                "url": "https://github.com/test-org/repo1/commit/abc123",
+                "message": _FULL_BODY,
+                "messageHeadline": "feat: subject",
+                "committedDate": "2024-01-01T00:00:00Z",
+                "author": {
+                    "name": "Author",
+                    "email": "author@test.com",
+                    "date": "2024-01-01T00:00:00Z",
+                    "user": {"login": "author_login", "databaseId": 456},
+                },
+                "committer": {
+                    "name": "Committer",
+                    "email": "committer@test.com",
+                    "date": "2024-01-01T00:00:01Z",
+                    "user": {"login": "committer_login", "databaseId": 789},
+                },
+                "parents": {"nodes": [{"oid": "parent1"}, {"oid": "parent2"}]},
+                "additions": 15,
+                "deletions": 8,
+            }
+        ]
+
+        mock_client.graphql_commit_history.return_value = (mock_graphql_nodes, {})
+
+        saved_data = None
+
+        def capture_save(data, path):
+            nonlocal saved_data
+            saved_data = data
+            return "file.json"
+
+        with patch("coops.bronze.commits.load_json_data", return_value=mock_repos):
+            with patch("coops.bronze.commits.save_json_data", side_effect=capture_save):
+                extract_commits(mock_client, mock_config, method="graphql")
+
+        assert saved_data is not None and len(saved_data) == 1
+        _assert_recovered_fields(saved_data[0])
+
+    def test_rest_path_keeps_recoverable_fields(self):
+        mock_client = MagicMock()
+        mock_config = MagicMock()
+        mock_repos = [{"name": "repo1", "full_name": "test-org/repo1"}]
+
+        mock_commits = [
+            {
+                "sha": "abc123",
+                "author": {"login": "author_login", "id": 456},
+                "commit": {
+                    "author": {"name": "Author", "email": "author@test.com", "date": "2024-01-01T00:00:00Z"},
+                    "committer": {"name": "Committer", "email": "committer@test.com", "date": "2024-01-01T00:00:01Z"},
+                    "message": _FULL_BODY,
+                },
+                "parents": [
+                    {"sha": "parent1", "url": "https://api.github.com/x/parent1", "html_url": "https://github.com/x/parent1"},
+                    {"sha": "parent2", "url": "https://api.github.com/x/parent2", "html_url": "https://github.com/x/parent2"},
+                ],
+            }
+        ]
+
+        mock_client.get_paginated.return_value = mock_commits
+        mock_client.get_with_cache.return_value = {"stats": {"additions": 10, "deletions": 5, "total": 15}}
+
+        saved_data = None
+
+        def capture_save(data, path):
+            nonlocal saved_data
+            saved_data = data
+            return "file.json"
+
+        with patch("coops.bronze.commits.load_json_data", return_value=mock_repos):
+            with patch("coops.bronze.commits.save_json_data", side_effect=capture_save):
+                extract_commits(mock_client, mock_config, method="rest")
+
+        assert saved_data is not None and len(saved_data) == 1
+        _assert_recovered_fields(saved_data[0])
+
+    def test_no_email_reaches_bronze_from_message_trailers_or_committer(self):
+        """A commit whose message body carries Co-authored-by / Signed-off-by
+        trailers and whose committer has an email must leave no address in the
+        serialised Bronze projection. Asserted by regex on the output, not by
+        field names."""
+        mock_client = MagicMock()
+        mock_config = MagicMock()
+        mock_repos = [{"name": "repo1", "full_name": "test-org/repo1"}]
+
+        mock_graphql_nodes = [
+            {
+                "oid": "abc123",
+                "url": "https://github.com/test-org/repo1/commit/abc123",
+                "message": (
+                    "feat: subject\n\n"
+                    "Co-authored-by: Pair Person <pair@personal.example.net>\n"
+                    "Signed-off-by: Mona Octocat <mona@github.example.com>\n"
+                ),
+                "messageHeadline": "feat: subject",
+                "committedDate": "2024-01-01T00:00:00Z",
+                "author": {
+                    "name": "Author",
+                    "email": "author@test.com",
+                    "date": "2024-01-01T00:00:00Z",
+                    "user": {"login": "author_login", "databaseId": 456},
+                },
+                "committer": {
+                    "name": "Committer",
+                    "email": "committer@test.com",
+                    "date": "2024-01-01T00:00:01Z",
+                    "user": {"login": "committer_login", "databaseId": 789},
+                },
+                "parents": {"nodes": [{"oid": "parent1"}]},
+                "additions": 15,
+                "deletions": 8,
+            }
+        ]
+
+        mock_client.graphql_commit_history.return_value = (mock_graphql_nodes, {})
+
+        saved_data = None
+
+        def capture_save(data, path):
+            nonlocal saved_data
+            saved_data = data
+            return "file.json"
+
+        with patch("coops.bronze.commits.load_json_data", return_value=mock_repos):
+            with patch("coops.bronze.commits.save_json_data", side_effect=capture_save):
+                extract_commits(mock_client, mock_config, method="graphql")
+
+        assert saved_data is not None
+        serialized = json.dumps(saved_data)
+        # No raw address survives anywhere in the serialised record.
+        assert not _EMAIL_RE.search(serialized)
+        # Credit is preserved: the trailer and the human name stay.
+        assert "Co-authored-by: Pair Person" in serialized
+        assert "Signed-off-by: Mona Octocat" in serialized
