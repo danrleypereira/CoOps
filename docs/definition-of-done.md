@@ -155,6 +155,29 @@ So for any guard whose purpose is that something must not happen:
   guard deleted.
 - Then mutate: remove the guard and confirm **that named test** goes red.
 
+### Prove the mutation landed before you trust its result
+
+The mutation is an instrument, and it breaks the same way every other
+instrument here breaks — quietly, reporting success.
+
+Measured during #139's gate: a re-mutation of the `dataSource` guard reported
+**18 passed**, which reads as *the guard survived removal* — an alarming and
+completely false finding. The mutation had silently not applied: the pattern
+targeted a constant assignment that did not exist on that head, where the guard
+is a `throw`. A `sed` that matches nothing exits 0 and prints nothing. It was
+caught only because it contradicted an earlier run — that is luck, not process.
+
+So: **print the diff proving the edit landed, before running the suite.** A
+mutation that did not change the file is not a test of anything, and its green
+result means the guard is undefended when in fact the guard was never touched.
+This is the control discipline from above, pointed at the tool doing the
+checking rather than at the subject.
+
+Related, when re-verifying a rebased or reworked change: an **identical patch is
+not an identical result**. `git range-diff` showing `=` proves the diff replayed
+unchanged; it says nothing about how that diff behaves against a base that
+moved. Re-run the suite on the new head rather than inferring from the marker.
+
 ## Tests that do not count
 
 - Assertions on log text or printed output.
