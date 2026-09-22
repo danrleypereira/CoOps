@@ -167,11 +167,25 @@ targeted a constant assignment that did not exist on that head, where the guard
 is a `throw`. A `sed` that matches nothing exits 0 and prints nothing. It was
 caught only because it contradicted an earlier run — that is luck, not process.
 
-So: **print the diff proving the edit landed, before running the suite.** A
-mutation that did not change the file is not a test of anything, and its green
-result means the guard is undefended when in fact the guard was never touched.
-This is the control discipline from above, pointed at the tool doing the
-checking rather than at the subject.
+So: **make the mutation fail loudly when it does not apply**, before running
+the suite. A mutation that did not change the file is not a test of anything,
+and its green result means the guard is undefended when in fact the guard was
+never touched.
+
+```sh
+cp "$F" "$F.orig"
+sed -i 's/<guard>/<broken>/' "$F"
+cmp -s "$F.orig" "$F" && { echo "MUTATION DID NOT APPLY: $F"; exit 1; }
+```
+
+**Printing the diff is not enough.** The failure being guarded against is a
+person not noticing an absence — so a check whose output a tired reviewer
+scrolls past has the same failure mode as the bug. The check must `exit 1`.
+
+This document got that wrong on its first pass: it said *print the diff*, in the
+section about instruments that fail quietly, one paragraph after the rule that a
+control must be able to fail. The weak form is the easy one to write; that is
+why it needs naming.
 
 Related, when re-verifying a rebased or reworked change: an **identical patch is
 not an identical result**. `git range-diff` showing `=` proves the diff replayed
