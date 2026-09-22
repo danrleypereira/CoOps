@@ -2,6 +2,8 @@
 
 ## Suites
 
+Counts below were measured at `4a7154a`; treat them as a smell test, not a gate.
+
 ```bash
 uv run pytest                                   # 577 passing, 10 skipped
 uv run pytest tests/unit                        # unit only

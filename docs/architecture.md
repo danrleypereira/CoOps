@@ -20,8 +20,11 @@ GitHub API ──► Bronze (raw JSON)  ──► Silver (analytics)  ──► 
 | Registry | `coops-registry` | `data/master_registry.json`, `data/data_catalog.json` |
 
 Each layer reads the previous layer's files from `./data`; nothing is passed in
-memory between them. The AI step (`python -m coops.ai_analysis.generate_members_ai`)
-is optional and writes `data/silver/ai/members_ai.json`.
+memory between them. (The KPI step also reads
+`data/bronze/members_detailed.json`, so its member count includes members
+without a profile.) The AI step
+(`python -m coops.ai_analysis.generate_members_ai`) is optional and writes
+`data/silver/ai/members_ai.json`.
 
 ## Package layout
 
@@ -81,9 +84,11 @@ deploy-pages.yaml  ◄── workflow_run: "Bronze Layer - Data Extraction" | "G
   `workflow_dispatch` (with caps: `max_repos`, `max_issues`, `max_prs`,
   `max_commits_per_repo`, `since`, `skip_structure`). It has **no**
   `pull_request` trigger: every layer commits its JSON to the branch it runs on.
-- Silver, Gold and the KPI aggregation are reusable workflows (`workflow_call`),
-  so they emit no `workflow_run` events of their own — which is why the Pages
-  deploy listens for the Bronze chain instead.
+- Silver, Gold and the KPI aggregation are reusable workflows: when the chain
+  *calls* them they run inside the Bronze run and emit no `workflow_run` event of
+  their own, which is why the Pages deploy listens for the Bronze chain. They can
+  also be dispatched manually, and a dispatched KPI run does emit an event —
+  hence both names in the deploy's `workflow_run` filter.
 - `validate-pipeline.yaml` is the PR-safe path: same chain, capped, committing
   nothing. See [testing.md](testing.md).
 - `start.yaml` is deprecated.

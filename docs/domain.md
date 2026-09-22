@@ -28,9 +28,9 @@ contributed to the extracted repositories, one record per login:
 | `profile_fetched` | whether `/users/{login}` succeeded |
 
 `members_detailed.json` keeps only the profile fields Silver uses — login, id,
-name, type, avatar, html_url, created_at, updated_at, public_repos, followers,
-following. Personal fields (email, location, bio, company) are deliberately not
-stored: this data is committed to a public branch. Members with
+name, type, avatar_url, html_url, created_at, updated_at, public_repos,
+followers, following. Personal fields (email, location, bio, company) are
+deliberately not stored: this data is committed to a public branch. Members with
 `profile_fetched: false` are excluded from `members_analytics.json` (no maturity
 data) but still count in the Gold `total_members`; `members_with_profile`
 reports the rest.
@@ -40,15 +40,17 @@ window, so a large organization can't exhaust the token mid-run.
 
 ## Repositories, issues and events
 
-- `repositories_filtered.json` excludes forks and blacklisted repositories; the
-  filter runs **after** any `--max-repos` cap.
+- `repositories_filtered.json` excludes forks and blacklisted repositories. A
+  `--max-repos` cap bounds the pages fetched, and the cap is applied **after**
+  filtering, so the result can be smaller than the cap.
 - Issues and pull requests come from the same paginated endpoint, so a cap on
   one can truncate the other unless both are set (see
   [development.md](development.md)).
 - Issue events are stored with only the fields Silver needs, which is what keeps
   `issue_events_all.json` from growing without bound. Even so, Bronze files are
-  the large ones: on `unb-mds`, `issues_all.json` is ~49 MB and GitHub rejects
-  files over 100 MB — see #43, the planned move to a real storage adapter.
+  the large ones: on `unb-mds`, `issues_all.json` is ~50 MiB (`prs_all.json`
+  ~29 MiB) and GitHub rejects files over 100 MB — see #43, the planned move to
+  a real storage adapter.
 
 ## Metadata convention
 
@@ -60,9 +62,9 @@ key to a dict:
  {"login": "…"}]
 ```
 
-Use `coops.utils.data_helpers.strip_metadata` to drop it — it removes only a
-**leading** metadata-only entry. Don't filter records by "has a `_metadata`
-key": records saved individually and then consolidated (the per-repository
+Use `coops.utils.data_helpers.strip_metadata` to drop it — it removes the
+**first** entry when that entry has a `_metadata` key, and nothing else. Don't
+filter records by "has a `_metadata` key": records saved individually and then consolidated (the per-repository
 language analyses) used to carry one each, which silently emptied
 `language_analysis_all.json` for every consumer that filtered that way.
 
@@ -79,6 +81,11 @@ language analyses) used to carry one each, which silently emptied
 | Repository selectors | `silver/available_repos.json` (plain array of names) |
 | AI Analysis | `silver/ai/members_ai.json` (`{_metadata, members: {login: {...}}}`) |
 
-`validate-pipeline.yaml` enforces this list: adding a dataset to a page means
-adding it there too, or a missing file will only surface as an empty state in
-production.
+`validate-pipeline.yaml` checks a superset of this list (it also requires the
+Bronze files, `temporal_statistics`, `network_statistics`, `executive_dashboard`
+and both registries). Adding a dataset to a page means adding it there too, or a
+missing file will only surface as an empty state in production.
+
+`dashboard/src/pages/Analytics.tsx` is deliberately left out of the table: it
+loads five datasets — including `silver/repository_metrics.json`, its only
+consumer — but has no route in `App.tsx` (#74).

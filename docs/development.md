@@ -17,8 +17,9 @@ Python ≥ 3.10; uv downloads an interpreter if needed. Without uv:
 ## Configuration
 
 `coops.infrastructure.Settings` (pydantic-settings) reads, in this order of
-precedence: environment variables, then `.env`, then `.secrets` (copy
-`EXAMPLE.secrets`, both are git-ignored).
+precedence: environment variables, then `.secrets`, then `.env` — the later
+file in `env_file=(".env", ".secrets")` wins. Copy `EXAMPLE.secrets`; both
+files are git-ignored.
 
 | Setting | Names accepted | Notes |
 |---|---|---|
@@ -60,8 +61,9 @@ uv run --project "$REPO" coops-registry
 
 Cap flags must be positive integers. `--max-issues` and `--max-prs` cap what is
 kept per repository; pagination stops early only when **both** are set, so
-capping one never truncates the other. Because the fork/blacklist filter runs
-after `--max-repos`, a cap can yield fewer repositories than requested.
+capping one never truncates the other. `--max-repos` bounds how many pages of
+the repository list are fetched, and the fork/blacklist filter then runs before
+the cap is applied — so a cap can yield fewer repositories than requested.
 `--skip-structure` skips repository trees, which is the slow part.
 
 ## Dashboard

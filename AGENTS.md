@@ -50,5 +50,7 @@ with `uv run --project <repo> ...`.
 - **No `Co-Authored-By` trailers for AI assistants.** Human co-authors stay.
 - Update `CHANGELOG.md` under `[Unreleased]` for user-visible changes.
 - GPL-3.0-or-later.
-- Open the PR as a draft, validate it in the fork, then mark it ready —
+- Open the PR as a draft, fill in `.github/PULL_REQUEST_TEMPLATE.md` (its
+  **Organization validation** section is where the fork's run links go),
+  validate it in the fork, then mark it ready —
   [docs/TESTING_PULL_REQUESTS.md](docs/TESTING_PULL_REQUESTS.md).
