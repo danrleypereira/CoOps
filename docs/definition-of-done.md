@@ -178,6 +178,22 @@ sed -i 's/<guard>/<broken>/' "$F"
 cmp -s "$F.orig" "$F" && { echo "MUTATION DID NOT APPLY: $F"; exit 1; }
 ```
 
+**And a green result still proves nothing until something goes red.** The
+`cmp` check above confirms the mutation *applied*; it cannot tell you that you
+ran the tests that would *catch* it. Measured two hours after this rule landed:
+a mutation was applied correctly, `cmp` confirmed it, the run reported **8
+passed** — and the guard looked undefended. The tests had been run from
+`test_bronze_incremental.py` while the covering test lived in
+`test_bronze_issues_projection.py`. Right mutation, wrong scope, green either
+way.
+
+So after mutating, **at least one test must fail somewhere**. Zero failures
+across the run means the procedure is wrong before it means the guard is
+missing — you are looking in the wrong place. Run the mutation against the
+**whole suite** rather than a chosen file: it is the one scope that cannot be
+wrong, and it is the only way to distinguish *"nothing covers this"* from
+*"nothing I ran covers this"*. Then name the test that went red.
+
 **Printing the diff is not enough.** The failure being guarded against is a
 person not noticing an absence — so a check whose output a tired reviewer
 scrolls past has the same failure mode as the bug. The check must `exit 1`.
