@@ -99,7 +99,7 @@ This is the rule most often broken here, and the most expensive, because a test
 that cannot fail costs runtime and buys false confidence.
 
 - **Mutate per guard.** Delete or invert **each guard individually**, against the
-  shipped source — not a copy, not the whole suite at once. Removing everything
+  shipped source — not a copy, and not every guard at once. Mutating everything
   at once tells you the suite is not empty; it tells you nothing about any single
   guard.
 - **Record which named tests fail**, never how many.
@@ -190,8 +190,8 @@ way.
 So after mutating, **at least one test must fail somewhere**. Zero failures
 across the run means the procedure is wrong before it means the guard is
 missing — you are looking in the wrong place. Run the mutation against the
-**whole suite** rather than a chosen file: it is the one scope that cannot be
-wrong, and it is the only way to distinguish *"nothing covers this"* from
+**every test in the project** rather than a chosen file: it is the one scope
+that cannot be wrong, and it is the only way to distinguish *"nothing covers this"* from
 *"nothing I ran covers this"*. Then name the test that went red.
 
 **Printing the diff is not enough.** The failure being guarded against is a
