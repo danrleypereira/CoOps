@@ -64,6 +64,15 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   to pass secrets and variables safely, measured runtimes, and what cannot
   run locally (`deploy-pages.yaml`, which needs GitHub's OIDC endpoint).
 
+- Local MongoDB for development: `docker-compose.dev.yml` (pinned `mongo:7.0.14`
+  on a configurable non-27017 port bound to loopback only, persistent named
+  volume), a `.env.example`
+  template, and `make mongo-up` / `mongo-down` / `mongo-reset` / `mongo-load`
+  recipes that load the sanitized `data/` output without a GitHub token. The
+  private raw `cache/` corpus is only ever imported behind the explicit
+  `make mongo-load-raw` opt-in — issue
+  [#112](https://github.com/danrleypereira/CoOps/issues/112).
+
 ### Changed
 - **Breaking:** `coops-bronze` reads the token and organization from
   `GITHUB_TOKEN`/`GITHUB_ORG` (environment, `.env` or `.secrets`); the

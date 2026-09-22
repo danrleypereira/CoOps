@@ -27,6 +27,7 @@ files are git-ignored.
 | Organization | `COOPS_ORG`, `GITHUB_ORG` | the org to extract |
 | Gemini key | `GEMINI_API_KEY`, `GOOGLE_API_KEY` | optional; AI step is skipped without it |
 | Gemini model | `GEMINI_MODEL` | defaults to `gemini-3.5-flash-lite` |
+| MongoDB URI | `MONGO_URI` | local dev value `mongodb://localhost:27018` (see [Local MongoDB](#local-mongodb-development)) |
 
 Rules worth knowing:
 
@@ -93,6 +94,110 @@ The corpus contains personal data — raw API responses include user email
 addresses — so a snapshot must not be published or shared. `pack` keeps it
 private at rest: the snapshot directory is mode 700 and the archive and its
 checksum are mode 600.
+
+## Local MongoDB (development)
+
+`docker-compose.dev.yml` provides a local MongoDB for work against a real
+database. The pipeline doesn't read from it yet — Silver and Gold still read and
+write `./data` — but it gives the raw-capture storage work (#43, #107) a
+database to build against without anyone having to install or host MongoDB.
+
+```bash
+make mongo-up        # docker compose -f docker-compose.dev.yml up -d
+make mongo-down      # stop, keep data
+make mongo-reset     # stop and delete the data volume
+make mongo-logs      # follow logs
+make mongo-load      # load the sanitized data/ tree into MongoDB
+```
+
+The image is pinned to an exact version (`mongo:7.0.14`, no floating tags) so
+the integration suite can reuse the exact same image, and published on a
+non-default host port so it never collides with a MongoDB a developer already
+runs.
+
+**Port.** MongoDB binds to loopback only — `127.0.0.1:${MONGO_PORT:-27018}`
+(container port 27017) — so it listens on `localhost` and is **not** reachable
+from the local network. The default `27018` deliberately avoids the standard
+`27017`. Override it from `.env`:
+
+```bash
+cp .env.example .env        # then adjust MONGO_PORT if you need another port
+MONGO_PORT=27019 make mongo-up
+```
+
+**Connection string.** `MONGO_URI` is read through
+`coops.infrastructure.Settings` (the `mongo_uri` field; nothing consumes it yet
+— it is there for the storage work in #43/#107). For the local stack use
+`mongodb://localhost:27018` (change the port to match `MONGO_PORT`). It is
+already in `.env.example`, and can live in `.env` or `.secrets`.
+
+**Persistence and reset.** Data lives in a named volume, so it survives
+`docker compose down` / `make mongo-down`. To start from scratch, delete the
+volume with `make mongo-reset` (or `docker compose -f docker-compose.dev.yml down
+-v`).
+
+**Authentication.** The stack runs without authentication by default. That is
+safe only because the port binds to loopback (see **Port.** above); anyone who
+could reach the port already has a shell on the machine. To enable root auth,
+set `MONGO_INITDB_ROOT_USERNAME` and `MONGO_INITDB_ROOT_PASSWORD` in
+`.env` — which is git-ignored; `.env.example` is the committed template — and
+use the same credentials in `MONGO_URI`
+(`mongodb://<user>:<password>@localhost:27018`).
+
+### Loading data without a GitHub token
+
+Two different things live on disk, and they are **not** interchangeable:
+
+- **`data/` — sanitized derived output.** What the pipeline writes, with the
+  personal fields stripped (email, location, bio, company). Load and inspect
+  this by default; it is safe to share.
+- **`cache/` — the raw corpus.** Unmodified GitHub API response bodies that
+  still contain personal data: email addresses and full `/users` profiles with
+  location, bio and company. It is **private** and must never be republished,
+  committed, uploaded or shared; it is stored mode `700`/`600` and git-ignored.
+
+`make mongo-load` imports the sanitized `data/` tree into a `coops` database —
+one collection per file, named `<layer>_<basename>`
+(`data/bronze/members_basic.json` → `bronze_members_basic`). List files are
+imported with `--jsonArray`, so their leading `_metadata` record is imported
+too, mirroring the on-disk convention (see [domain.md](domain.md)). In a fresh
+clone it first restores the newest snapshot when `data/bronze/` is absent, so
+you get data in minutes with no `GITHUB_TOKEN`:
+
+```bash
+make mongo-load
+```
+
+Loading the raw corpus is an explicit, clearly-labelled opt-in, for offline
+development against the raw-capture path only:
+
+```bash
+make mongo-load-raw     # imports the PRIVATE cache/ into the `raw` collection
+```
+
+**Snapshots.** Packing and restoring the corpus (both `cache/` and `data/`) is
+done by `scripts/data-snapshot.sh`, which keeps archives private (`700`/`600`),
+checksummed, and in a shared location outside the worktree. Because a snapshot
+contains the raw corpus, it is private too and must not be published or shared:
+
+```bash
+make mongo-snapshot                     # scripts/data-snapshot.sh pack
+./scripts/data-snapshot.sh unpack       # restore the newest snapshot
+./scripts/data-snapshot.sh list         # what snapshots exist
+```
+
+**Producing the data yourself.** The pipeline writes `./data` and `./cache` in
+the current directory; run it from a scratch directory and point the loader at
+the result:
+
+```bash
+REPO=$PWD
+cd "$(mktemp -d)"
+uv run --project "$REPO" coops-bronze --max-repos 3 --skip-structure
+uv run --project "$REPO" coops-silver
+uv run --project "$REPO" coops-gold
+"$REPO"/scripts/load_mongo_snapshot.sh "$PWD/data"
+```
 
 ## Dashboard
 
