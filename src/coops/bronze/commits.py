@@ -341,9 +341,10 @@ def extract_commits(
                 # Commits are immutable, so merging is a prepend: anything newly
                 # fetched is newer than everything already stored (the previous
                 # run's file is newest-first). Dedup by sha guards against the
-                # `since` window over-fetching the tail of the previous run, and
-                # re-applying the cap keeps the result identical to a fresh full
-                # extraction of the same window.
+                # `since` window over-fetching the tail of the previous run. The
+                # stored file was already capped by the previous run, so no cap
+                # is re-applied here — that would truncate it below what a full
+                # extraction of the same window keeps.
                 prior = strip_metadata(
                     load_json_data(f"data/bronze/commits_{repo_name}.json") or []
                 )
@@ -354,8 +355,6 @@ def extract_commits(
                     if sha and sha not in seen:
                         seen.add(sha)
                         merged.append(commit)
-                if max_commits_per_repo is not None:
-                    merged = merged[:max_commits_per_repo]
                 data_commits = merged
             else:
                 data_commits = new_sanitized
