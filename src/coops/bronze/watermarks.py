@@ -165,11 +165,15 @@ class WatermarkStore:
 
         ``None`` values are ignored so a missing observation cannot erase an
         earlier one. ``head_shas`` is replaced as a whole (callers merge branch
-        shas before calling). ``last_run`` is always advanced to this run's
-        start: any repository updated during the run was extracted during it.
+        shas before calling).
+
+        ``last_run`` is deliberately *not* set here: it marks when the previous
+        run started, and extractors run in order, so a later extractor must
+        still see the previous run's ``last_run`` (not the one an earlier
+        extractor would stamp on the current run). It is applied to every
+        touched repository once, at :meth:`save`.
         """
         wm = self.get(repo)
-        wm.last_run = self._now_iso
         for key, value in fields.items():
             if value is None:
                 continue
@@ -178,15 +182,18 @@ class WatermarkStore:
         return wm
 
     def save(self) -> None:
-        """Write the current records to disk (best-effort, never raises)."""
-        payload = {
-            "version": VERSION,
-            "repos": {repo: wm.to_dict() for repo, wm in self._records.items()},
-        }
+        """Write the current records to disk, stamping ``last_run``.
+
+        ``last_run`` is set to this run's start for every touched repository,
+        which is what the next run reads as its ``since`` bound. Best-effort:
+        a failure to persist only means the next run re-fetches a little more.
+        """
+        payload = {"version": VERSION, "repos": {}}
+        for repo, wm in self._records.items():
+            wm.last_run = self._now_iso
+            payload["repos"][repo] = wm.to_dict()
         try:
             with open(self.path, "w", encoding="utf-8") as f:
                 json.dump(payload, f, indent=2, ensure_ascii=False)
         except OSError:
-            # The watermark is an optimisation; a failure to persist it only
-            # means the next run re-fetches a little more.
             pass

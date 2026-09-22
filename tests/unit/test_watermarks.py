@@ -77,17 +77,22 @@ class TestWatermarkStore:
         assert wm.head_shas == {"main": "abc123"}
         assert wm.last_run == "2026-09-22T10:00:00Z"
 
-    def test_update_sets_last_run(self, tmp_path):
+    def test_last_run_is_stamped_at_save_not_update(self, tmp_path):
+        # `last_run` marks the *previous* run; it must not be set by `update`,
+        # otherwise a later extractor in the same run would read this run's
+        # timestamp and wrongly treat the run as incremental (the #110 bug).
         store, now = self._store(tmp_path)
-        store.update("org/repo1")
-        assert store.get("org/repo1").last_run == "2026-09-22T10:00:00Z"
+        wm = store.update("org/repo1")
+        assert store.get("org/repo1").last_run is None
+        assert wm.last_run is None
+        store.save()
+        reloaded = WatermarkStore(str(tmp_path / "watermarks.json"), now=now)
+        assert reloaded.get("org/repo1").last_run == "2026-09-22T10:00:00Z"
 
     def test_update_ignores_none_fields(self, tmp_path):
-        store, now = self._store(tmp_path, last_event_id=5)
+        store, _ = self._store(tmp_path, last_event_id=5)
         store.update("org/repo1", last_event_id=None, last_updated_at=None)
         assert store.get("org/repo1").last_event_id == 5
-        # last_run still advances even when every other field is None.
-        assert store.get("org/repo1").last_run == "2026-09-22T10:00:00Z"
 
     def test_unknown_repo_not_persisted_until_updated(self, tmp_path):
         store, _ = self._store(tmp_path)
