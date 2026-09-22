@@ -22,8 +22,11 @@ anything that runs a real processor does so in `tmp_path`.
 ## CI
 
 **Actions is disabled on `danrleypereira/CoOps`.** Pull requests there get no
-checks at all. Everything runs in the organization fork `unb-mds/CoOps`, whose
-`main` also carries the pipeline's data commits.
+checks at all. The workflow files are instead run **locally** with
+[`act`](https://github.com/nektos/act) — see
+[local-actions.md](local-actions.md). An organization fork is used only for
+what GitHub alone can run (Pages, `workflow_run`, the commit-and-push steps),
+and its `main` carries the pipeline's data commits.
 
 | Workflow | Runs | Gate |
 |---|---|---|
@@ -41,11 +44,11 @@ uploaded as an artifact instead. It is the only pipeline workflow safe to run on
 a PR branch.
 
 ```bash
-BRANCH=$(git branch --show-current)
-gh workflow run validate-pipeline.yaml --repo unb-mds/CoOps --ref "$BRANCH" \
-  -f org=unb-mds -f max_repos=3 -f skip_structure=false -f run_ai=true
+gh act workflow_dispatch -W .github/workflows/validate-pipeline.yaml \
+  --secret COOPS_GITHUB_TOKEN="$(gh auth token)" --var COOPS_ORG=unb-mds \
+  --input max_repos=2 --input max_commits_per_repo=10
 for w in python-unit-tests.yaml python-integration-tests.yaml; do
-  gh workflow run "$w" --repo unb-mds/CoOps --ref "$BRANCH"
+  gh act workflow_dispatch -W ".github/workflows/$w"
 done
 ```
 
@@ -58,9 +61,9 @@ are downloadable by anyone signed in.
 The full author/maintainer flow — draft PR, local checks, validation runs,
 marking ready, merging, syncing the fork — is
 [TESTING_PULL_REQUESTS.md](TESTING_PULL_REQUESTS.md). Two rules from it worth
-repeating: a validation run must exist for the PR's **latest** commit, and the
-fork's `main` is synced by **merging** upstream, never by force, because a force
-sync would delete its data commits.
+repeating: a validation must exist for the PR's **latest** commit, and a fork's
+`main` is synced by **merging** upstream, never by force, because a force sync
+would delete its data commits.
 
 ## Known failures
 

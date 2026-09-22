@@ -66,6 +66,34 @@ the repository list are fetched, and the fork/blacklist filter then runs before
 the cap is applied — so a cap can yield fewer repositories than requested.
 `--skip-structure` skips repository trees, which is the slow part.
 
+## Reusing the corpus across worktrees
+
+A full extraction is ~1.4 GB of raw API responses in `cache/` plus ~200 MB of
+derived JSON in `data/`, and takes about an hour of rate-limited calls. Re-fetch
+in every new worktree is not worth it: snapshot the corpus once and restore it
+with `scripts/data-snapshot.sh`.
+
+```bash
+scripts/data-snapshot.sh pack          # from the worktree that has cache/ + data/
+scripts/data-snapshot.sh list          # what snapshots exist, with size and age
+scripts/data-snapshot.sh verify <snap> # check integrity without extracting
+scripts/data-snapshot.sh unpack        # restore the newest into the current worktree
+scripts/data-snapshot.sh unpack --into ../other-worktree
+```
+
+Snapshots are compressed tarballs kept in `$COOPS_SNAPSHOT_DIR` (default
+`~/.local/share/coops/snapshots`), outside any worktree, so every worktree on
+the machine shares one copy. `pack` writes a SHA-256 checksum next to each
+archive; `unpack` verifies it first and refuses a corrupt archive, and refuses
+to overwrite a non-empty `cache/` or `data/` unless you pass `--force`. Neither
+`cache/` nor `data/` is committed to git — fetch once, `pack`, then `unpack`
+into each worktree instead of re-fetching.
+
+The corpus contains personal data — raw API responses include user email
+addresses — so a snapshot must not be published or shared. `pack` keeps it
+private at rest: the snapshot directory is mode 700 and the archive and its
+checksum are mode 600.
+
 ## Dashboard
 
 ```bash
@@ -80,11 +108,15 @@ To develop against a local extraction, set `VITE_USE_LOCAL_DATA=true` in
 `dashboard/.env` and link the data: `mkdir -p dashboard/public && ln -s ../../data dashboard/public/data`.
 
 **Changing dependencies:** regenerate the lockfile with npm 11
-(`npx -y npm@11 install --package-lock-only`). npm 10 crashes on this dependency
-tree with `Cannot read properties of null (reading 'edgesOut')`. `npm ci` with
-npm 10, which CI uses, works fine.
+(`npx -y npm@11 install --package-lock-only`) — that is what produced the
+committed lockfile. npm 10.8.2 regenerates it byte-identically today (an
+earlier `Cannot read properties of null (reading 'edgesOut')` crash no longer
+reproduces), and `npm ci` works on both, but npm 11 is the supported path.
 
 ## Running workflows locally with act
+
+Full reference: [local-actions.md](local-actions.md). Defaults (runner images,
+artifact server) come from the repository's `.actrc`.
 
 ```bash
 gh act workflow_dispatch -W .github/workflows/bronze-extract.yaml \
@@ -96,7 +128,7 @@ gh act workflow_dispatch -W .github/workflows/bronze-extract.yaml \
 - `--secret-file` fills `secrets.*` only; the workflow reads the organization
   from the `COOPS_ORG` **variable**, so pass `--var COOPS_ORG=…` or it extracts
   the owner of your `origin` remote.
-- Silver and Gold need `--bind`: their "Pull latest data files" step runs
-  without the `if: ${{ !env.ACT }}` guard that Checkout has.
+- Silver and Gold need `--bind`: each job otherwise gets a fresh copy of the
+  checkout, so the previous layer's data never reaches them.
 - The container runs as root, and `uv sync` inside it rewrites `.venv` for the
   container's interpreter; `sudo rm -rf .venv` afterwards if `uv run` complains.

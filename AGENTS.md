@@ -11,6 +11,7 @@ change; the details live in [`docs/`](docs/).
 | Setup, commands, secrets, local runs | [docs/development.md](docs/development.md) |
 | Test suites, CI, how PRs are validated | [docs/testing.md](docs/testing.md) |
 | Vocabulary and data shapes | [docs/domain.md](docs/domain.md) |
+| What "done" means for a change | [docs/definition-of-done.md](docs/definition-of-done.md) |
 | Human-facing contribution rules | [CONTRIBUTING.md](CONTRIBUTING.md) (Portuguese) |
 
 ## Five things that are easy to get wrong
@@ -48,9 +49,16 @@ with `uv run --project <repo> ...`.
 
 - **Conventional Commits** (`feat:`, `fix:`, `docs:`, `ci:`, `test:`, …).
 - **No `Co-Authored-By` trailers for AI assistants.** Human co-authors stay.
+- Specialised agents live in `.opencode/agents/` (`reviewer`, `tester`,
+  `architect`) — `opencode run --agent reviewer`. Don't let a reviewer inherit
+  a cheap model: it writes confident summaries of work it didn't do.
+- **A change is done when it meets [docs/definition-of-done.md](docs/definition-of-done.md)** —
+  tests for the behaviour you changed, a suite you ran and quoted, lint/format/
+  type-check green, and every new guard shown capable of failing.
 - Update `CHANGELOG.md` under `[Unreleased]` for user-visible changes.
 - GPL-3.0-or-later.
 - Open the PR as a draft, fill in `.github/PULL_REQUEST_TEMPLATE.md` (its
-  **Organization validation** section is where the fork's run links go),
-  validate it in the fork, then mark it ready —
-  [docs/TESTING_PULL_REQUESTS.md](docs/TESTING_PULL_REQUESTS.md).
+  **Organization validation** section is where the validation output goes),
+  validate it locally with `gh act`, then mark it ready —
+  [docs/TESTING_PULL_REQUESTS.md](docs/TESTING_PULL_REQUESTS.md) and
+  [docs/local-actions.md](docs/local-actions.md).

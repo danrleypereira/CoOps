@@ -5,8 +5,16 @@ name: Validate Pipeline (manual)
 # run against a real organization. Nothing is committed or pushed: the generated
 # data/ is uploaded as an artifact, so it is safe to run on a PR branch.
 #
-#   gh workflow run validate-pipeline.yaml --repo unb-mds/CoOps --ref <branch> \
-#     -f org=unb-mds -f max_repos=3
+# Normally run locally, with act (see docs/local-actions.md):
+#
+#   gh act workflow_dispatch -W .github/workflows/validate-pipeline.yaml \
+#     --secret COOPS_GITHUB_TOKEN="$(gh auth token)" --var COOPS_ORG=<org> \
+#     --input max_repos=2 --input max_commits_per_repo=10
+#
+# On a fork, if one is available:
+#
+#   gh workflow run validate-pipeline.yaml --repo <org>/CoOps --ref <branch> \
+#     -f org=<org> -f max_repos=3
 #
 # See docs/TESTING_PULL_REQUESTS.md.
 
@@ -108,7 +116,15 @@ jobs:
           GH_TOKEN: ${{ secrets.COOPS_GITHUB_TOKEN || github.token }}
         run: |
           ORG="${INPUT_ORG:-${COOPS_ORG:-$OWNER}}"
-          if ! TYPE=$(gh api "users/$ORG" --jq .type); then
+          # curl, not `gh api`: GitHub-hosted runners ship the gh CLI, the act
+          # runner images used for local runs (docs/local-actions.md) do not.
+          BODY=$(mktemp)
+          STATUS=$(curl -sS -o "$BODY" -w '%{http_code}' \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/users/$ORG") || STATUS=000
+          if [ "$STATUS" != "200" ] || ! TYPE=$(jq -re .type "$BODY"); then
             echo "::error::Could not look up $ORG. If COOPS_GITHUB_TOKEN is set, it may have expired: renew it or delete the secret."
             exit 1
           fi
