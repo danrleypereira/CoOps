@@ -35,9 +35,15 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   stores its `ETag` (in a `cache/<md5(url)>.etag` sidecar, leaving the JSON
   body format untouched), and the next request sends `If-None-Match`. A `304`
   serves the cached body without consuming a rate-limit slot; a `200` replaces
-  the cached body and ETag. The Bronze workflow restores and saves the cache
-  with `actions/cache` keyed per organization, and the run summary reports
-  cache hits/misses and the remaining REST rate limit — issue
+  the cached body and ETag. The Bronze workflow deliberately does **not**
+  upload the cache to GitHub Actions storage: `cache/` holds unmodified API
+  bodies that contain personal data (emails, full `/users` profiles) and this
+  is a public repository, so `actions/cache` would expose the corpus to
+  pull-request authors through the base-branch scope. A durable cross-run
+  cache belongs on infrastructure we control — a self-hosted runner, or the
+  Mongo raw layer tracked in
+  [#113](https://github.com/danrleypereira/CoOps/issues/113). The run summary
+  still reports cache hits/misses and the remaining REST rate limit — issue
   [#108](https://github.com/danrleypereira/CoOps/issues/108).
 
 ### Changed
