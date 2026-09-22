@@ -33,6 +33,40 @@ interface DataNotGeneratedProps {
   hint?: ReactNode;
 }
 
+/**
+ * DataNotConfigured Component
+ *
+ * Sibling of `DataNotGenerated`, shown when the dashboard has no
+ * `VITE_GITHUB_ORG` configured (see `DataNotConfiguredError`). Unlike a missing
+ * data file, this is a misconfiguration, so it names the variable to set and
+ * never pretends the data belongs to the user.
+ */
+export function DataNotConfigured({ className = '' }: { className?: string }) {
+  return (
+    <div
+      role="status"
+      data-testid="data-not-configured"
+      className={`border rounded-lg p-6 text-center ${className}`}
+      style={{ backgroundColor: '#222222', borderColor: '#333333' }}
+    >
+      <h3 className="text-lg font-bold text-white mb-2">
+        VITE_GITHUB_ORG is not configured
+      </h3>
+      <p className="text-slate-300 text-sm mb-2">
+        The dashboard does not know which GitHub organization to load data from, so it
+        refused to fetch anything rather than show the wrong organization&apos;s data.
+      </p>
+      <p className="text-slate-400 text-sm">
+        Set{' '}
+        <code className="px-1 rounded bg-slate-800 text-slate-100">VITE_GITHUB_ORG</code>{' '}
+        to your organization name (for example in{' '}
+        <code className="px-1 rounded bg-slate-800 text-slate-100">.env</code> or the build
+        workflow), then rebuild the dashboard.
+      </p>
+    </div>
+  );
+}
+
 export default function DataNotGenerated({ path, className = '', hint }: DataNotGeneratedProps) {
   const file = `data/${path}`;
 

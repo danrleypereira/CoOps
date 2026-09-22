@@ -8,6 +8,13 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: './src/setupTests.ts',
+    // Tests exercise the *configured* data source by default; the "unconfigured"
+    // (fail-closed) behaviour is asserted explicitly by stubbing VITE_GITHUB_ORG
+    // to an empty value in the relevant tests.
+    env: {
+      VITE_GITHUB_ORG: 'test-org',
+      VITE_GITHUB_REPO: 'test-repo',
+    },
     css: true,
     coverage: {
       provider: 'v8',

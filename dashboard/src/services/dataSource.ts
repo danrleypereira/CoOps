@@ -7,24 +7,48 @@
 // Use local data in development if VITE_USE_LOCAL_DATA is true
 const USE_LOCAL_DATA = import.meta.env.VITE_USE_LOCAL_DATA === 'true';
 
-// GitHub organization and repository from environment variables
-const GITHUB_ORG = import.meta.env.VITE_GITHUB_ORG || 'DW-Corp';
+// GitHub organization and repository from environment variables.
+// VITE_GITHUB_ORG deliberately has no default: an unset organization must fail
+// closed (see #129) instead of silently fetching another organization's data.
+const GITHUB_ORG = import.meta.env.VITE_GITHUB_ORG;
 const GITHUB_REPO = import.meta.env.VITE_GITHUB_REPO || 'CoOps';
 
-// GitHub raw content URL for the data files
-// This fetches directly from the main branch of the repository
-const GITHUB_RAW_BASE_URL = `https://raw.githubusercontent.com/${GITHUB_ORG}/${GITHUB_REPO}/main/data`;
+/**
+ * Thrown when the data source has no `VITE_GITHUB_ORG` to fetch from.
+ *
+ * This is a misconfiguration, not a data problem: unlike a missing data file
+ * (see {@link DataNotFoundError}), there is nothing sensible to fetch, so
+ * `fetchData` refuses to make any request rather than rendering a plausible
+ * answer that belongs to someone else.
+ */
+export class DataNotConfiguredError extends Error {
+  constructor() {
+    super(
+      'VITE_GITHUB_ORG is not set. Configure it (in .env or the build workflow) ' +
+        "so the dashboard loads your organization's data."
+    );
+    this.name = 'DataNotConfiguredError';
+  }
+}
+
+export function isDataNotConfiguredError(error: unknown): error is DataNotConfiguredError {
+  return error instanceof DataNotConfiguredError;
+}
 
 /**
  * Get the base URL for data fetching
  * - Local mode: /data (expects data in public/data during development)
  * - Remote mode: Fetches from GitHub raw content URL
+ * @throws {DataNotConfiguredError} when remote mode is active but VITE_GITHUB_ORG is unset
  */
 export function getDataBasePath(): string {
   if (USE_LOCAL_DATA) {
     return '/data';
   }
-  return GITHUB_RAW_BASE_URL;
+  if (!GITHUB_ORG) {
+    throw new DataNotConfiguredError();
+  }
+  return `https://raw.githubusercontent.com/${GITHUB_ORG}/${GITHUB_REPO}/main/data`;
 }
 
 /**
@@ -54,6 +78,7 @@ export function isDataNotFoundError(error: unknown): error is DataNotFoundError 
 
 /**
  * Fetch JSON data from the configured source
+ * @throws {DataNotConfiguredError} when remote mode is active but VITE_GITHUB_ORG is unset (no request is made)
  * @throws {DataNotFoundError} when the file does not exist (HTTP 404)
  * @param path - Relative path to the JSON file (e.g., 'silver/members_analytics.json')
  */
