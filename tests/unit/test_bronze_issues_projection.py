@@ -8,8 +8,10 @@ assertion does not.
 """
 import json
 import re
+from unittest.mock import MagicMock, patch
 
 from coops.bronze.issues import (
+    extract_issues,
     ACTOR_FIELDS,
     ISSUE_FIELDS,
     _project_actor,
@@ -92,18 +94,45 @@ def test_unassigned_is_none_not_empty_dict():
     assert record["assignee"] is None
 
 
-def test_pull_request_split_reads_the_raw_object():
-    """`pull_request` is deliberately not whitelisted, so the issues/PRs split
-    must classify from the raw object before projecting.
+def test_pull_request_split_survives_the_projection():
+    """The issues/PRs split keys on `pull_request`, which the whitelist drops.
 
-    If a refactor ever projects first and classifies second, every pull request
-    files as an issue: no exception, no empty field, just two wrong datasets.
-    This pins the invariant that makes the current order correct.
+    That works only because the classification reads the RAW object before
+    projecting. If a refactor ever projects first and classifies second, every
+    pull request files as an issue: no exception, no empty field, two wrong
+    datasets.
+
+    This drives `extract_issues` end to end, so it fails under that reversal.
+    An earlier version of this test asserted only that the raw object carries
+    `pull_request` and the projected record does not — which pins the DROP and
+    passes happily under the very mutation it claimed to guard.
     """
-    raw_pr = {**RAW_ISSUE, "pull_request": {"url": "https://api.github.com/..."}}
+    raw = [
+        {"number": 1, "state": "open", "title": "an issue",
+         "user": {"login": "a"}, "created_at": "2026-01-01T00:00:00Z"},
+        {"number": 2, "state": "open", "title": "a pull request",
+         "user": {"login": "b"}, "created_at": "2026-01-02T00:00:00Z",
+         "pull_request": {"url": "https://api.github.com/..."}},
+    ]
 
-    # The raw object carries the discriminator...
-    assert raw_pr.get("pull_request")
+    client = MagicMock()
+    client.get_paginated.side_effect = [list(raw), []]  # issues, then events
+    saved = {}
 
-    # ...and the projected record deliberately does not.
-    assert "pull_request" not in _project_issue(raw_pr, "acme/widget")
+    def capture_save(data, path):
+        saved[path] = data
+        return path
+
+    with patch("coops.bronze.issues.load_json_data",
+               return_value=[{"name": "repo1", "full_name": "acme/repo1"}]):
+        with patch("coops.bronze.issues.save_json_data", side_effect=capture_save):
+            extract_issues(client, MagicMock())
+
+    issues = saved["data/bronze/issues_repo1.json"]
+    prs = saved["data/bronze/prs_repo1.json"]
+
+    assert [i["number"] for i in issues] == [1], "the issue must not be filed as a PR"
+    assert [p["number"] for p in prs] == [2], "the pull request must not be filed as an issue"
+
+    # And the discriminator itself is still dropped from what gets published.
+    assert all("pull_request" not in r for r in issues + prs)
