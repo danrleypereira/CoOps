@@ -90,3 +90,20 @@ def test_unassigned_is_none_not_empty_dict():
     # and what the consumers were written against.
     record = _project_issue({**RAW_ISSUE, "assignee": None}, "acme/widget")
     assert record["assignee"] is None
+
+
+def test_pull_request_split_reads_the_raw_object():
+    """`pull_request` is deliberately not whitelisted, so the issues/PRs split
+    must classify from the raw object before projecting.
+
+    If a refactor ever projects first and classifies second, every pull request
+    files as an issue: no exception, no empty field, just two wrong datasets.
+    This pins the invariant that makes the current order correct.
+    """
+    raw_pr = {**RAW_ISSUE, "pull_request": {"url": "https://api.github.com/..."}}
+
+    # The raw object carries the discriminator...
+    assert raw_pr.get("pull_request")
+
+    # ...and the projected record deliberately does not.
+    assert "pull_request" not in _project_issue(raw_pr, "acme/widget")
