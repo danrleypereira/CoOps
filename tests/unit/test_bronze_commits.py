@@ -4,6 +4,7 @@ Tests commit extraction with GraphQL and REST methods,
 including fallback logic, active branches, and time chunks.
 """
 import json
+import re
 import pytest
 from unittest.mock import MagicMock, patch, call
 from coops.bronze.commits import extract_commits, _hash_email, _sanitize_commit
@@ -639,3 +640,27 @@ class TestSanitizeCommit:
         assert "verification" not in out["commit"]
         assert "alice@example.com" not in json.dumps(out)
         assert "noreply@github.com" not in json.dumps(out)
+
+    def test_scrubs_addresses_from_commit_message_trailers(self):
+        """The REST paths keep the full message, and this repo's own history
+        carries Co-authored-by trailers with personal addresses."""
+        commit = {
+            "sha": "abc123",
+            "author": {"login": "alice", "id": 1},
+            "commit": {
+                "author": {"name": "A", "email": "alice@example.com", "date": "d"},
+                "message": (
+                    "feat: add the thing\n\n"
+                    "Co-authored-by: Pair Person <pair@personal.example.net>\n"
+                    "Signed-off-by: Mona Octocat <mona@github.example.com>\n"
+                ),
+            },
+        }
+        out = _sanitize_commit(commit)
+        message = out["commit"]["message"]
+        # No address survives anywhere in the record.
+        assert not re.search(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", json.dumps(out))
+        # Credit is preserved: the trailer and the human name stay.
+        assert "Co-authored-by: Pair Person" in message
+        assert "Signed-off-by: Mona Octocat" in message
+        assert "feat: add the thing" in message

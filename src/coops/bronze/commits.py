@@ -1,7 +1,14 @@
 import copy
 import hashlib
 import os
+import re
 from typing import Any, Dict, List, Optional
+
+# Free text headed for a public branch: commit messages carry `Co-authored-by:`
+# and `Signed-off-by:` trailers with real addresses, which a key-name sweep
+# cannot see. Matched loosely on purpose — over-scrubbing a message is harmless,
+# leaking an address is not.
+_EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data, load_json_data
 
 
@@ -65,6 +72,14 @@ def _sanitize_commit(commit: Dict[str, Any]) -> Dict[str, Any]:
         # cannot see because it is free text, not an `email` key. Nothing
         # downstream reads verification, so drop it.
         commit_obj.pop("verification", None)
+
+        # Same class of leak in the other free-text field: the REST paths keep
+        # the full message, whose `Co-authored-by:` / `Signed-off-by:` trailers
+        # carry addresses. The attributed name is left intact, so credit
+        # survives — only the address goes.
+        message = commit_obj.get("message")
+        if isinstance(message, str):
+            commit_obj["message"] = _EMAIL_RE.sub("[email removed]", message)
 
         raw_author = commit_obj.get("author")
         author_data = dict(raw_author) if isinstance(raw_author, dict) else {}
