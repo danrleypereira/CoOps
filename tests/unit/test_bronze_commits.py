@@ -3,6 +3,7 @@ Unit tests for coops/bronze/commits.py
 Tests commit extraction with GraphQL and REST methods, 
 including fallback logic, active branches, and time chunks.
 """
+import json
 import pytest
 from unittest.mock import MagicMock, patch, call
 from coops.bronze.commits import extract_commits, _hash_email, _sanitize_commit
@@ -612,3 +613,29 @@ class TestSanitizeCommit:
         }
         _sanitize_commit(commit)
         assert commit["commit"]["author"]["email"] == "a@test.com"
+
+    def test_drops_verification_payload_carrying_raw_address(self):
+        """The REST paths persist the raw API response, whose signed payload
+        embeds the address as free text where an email-key sweep can't see it."""
+        commit = {
+            "sha": "abc123",
+            "author": {"login": "alice", "id": 1},
+            "commit": {
+                "author": {"name": "A", "email": "alice@example.com", "date": "d"},
+                "message": "feat: thing",
+                "verification": {
+                    "verified": True,
+                    "reason": "valid",
+                    "signature": "-----BEGIN PGP SIGNATURE-----\n...",
+                    "payload": (
+                        "tree 6a0d5591\nparent 870f6f57\n"
+                        "author A <alice@example.com> 1700000000 +0000\n"
+                        "committer GitHub <noreply@github.com> 1700000000 +0000\n"
+                    ),
+                },
+            },
+        }
+        out = _sanitize_commit(commit)
+        assert "verification" not in out["commit"]
+        assert "alice@example.com" not in json.dumps(out)
+        assert "noreply@github.com" not in json.dumps(out)

@@ -112,7 +112,8 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   `commits_all.json` and the per-repo commit files (committed to a public
   branch). Linked authors keep `login` + numeric `id`; unlinked authors get an
   `author_email_hash` (SHA-256 of the trimmed, lower-cased email) instead of
-  the address — #89.
+  the address. The signed `commit.verification` object, whose payload embeds
+  the address as free text on the REST paths, is dropped as well — #89.
 
 ### Removed
 - `sys.path` manipulation hacks in `src/` modules and `tests/conftest.py`.

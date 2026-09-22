@@ -59,6 +59,13 @@ def _sanitize_commit(commit: Dict[str, Any]) -> Dict[str, Any]:
 
     commit_obj = commit.get("commit")
     if isinstance(commit_obj, dict):
+        # The REST paths persist the raw API response, whose `verification`
+        # object carries the signed payload — and that payload embeds the raw
+        # address as `author Name <a@example.com>`, which `_remove_email_keys`
+        # cannot see because it is free text, not an `email` key. Nothing
+        # downstream reads verification, so drop it.
+        commit_obj.pop("verification", None)
+
         raw_author = commit_obj.get("author")
         author_data = dict(raw_author) if isinstance(raw_author, dict) else {}
         author_data.pop("login", None)
