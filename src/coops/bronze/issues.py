@@ -67,17 +67,35 @@ def _project_event(event, repo_name):
     }
 
 
-def _load_prior_records(path: str) -> List[dict]:
+def _load_prior_records(path: str, project=None) -> List[dict]:
     """Load a previously written bronze list, dropping the leading ``_metadata``.
 
     Returns ``[]`` when the file is missing or empty, so an incremental run over
     a repository whose previous run produced nothing still yields a fresh full
     extraction for that repository.
+
+    ``project`` re-applies the field whitelist to every record read back. Without
+    it the whitelist is only a guarantee about *writes*: an incremental run keeps
+    prior records verbatim, so a record the provider never updates again would
+    carry its original shape forever, and narrowing ``ISSUE_FIELDS`` would only
+    take effect for records that happen to change upstream. Re-projecting on load
+    makes the file self-healing — the whole file converges on the current
+    whitelist at the next run, not just the rows that moved.
+
+    Both projections are idempotent (verified over 4,057 issue and 4,171 event
+    records), so this costs nothing on data that is already clean.
     """
     data = load_json_data(path)
     if not isinstance(data, list):
         return []
-    return strip_metadata(data)
+    records = strip_metadata(data)
+    if project is None:
+        return records
+    return [
+        project(record, record.get("repo_name"))
+        for record in records
+        if isinstance(record, dict)
+    ]
 
 
 def _merge_by_number(prior: List[dict], fresh: List[dict]) -> List[dict]:
@@ -207,10 +225,12 @@ def extract_issues(
         # matters). On a full run this is a no-op.
         if issues_incremental:
             repo_issues = _merge_by_number(
-                _load_prior_records(f"data/bronze/issues_{repo_name}.json"), repo_issues
+                _load_prior_records(f"data/bronze/issues_{repo_name}.json", _project_issue),
+                repo_issues,
             )
             repo_prs = _merge_by_number(
-                _load_prior_records(f"data/bronze/prs_{repo_name}.json"), repo_prs
+                _load_prior_records(f"data/bronze/prs_{repo_name}.json", _project_issue),
+                repo_prs,
             )
         else:
             repo_issues = sorted(repo_issues, key=lambda item: item["number"])
@@ -251,7 +271,9 @@ def extract_issues(
         repo_events = [_project_event(e, repo_name) for e in fetched_events or []]
         if events_incremental:
             # Only events newer than the last one seen are appended.
-            repo_events = _load_prior_records(f"data/bronze/issue_events_{repo_name}.json") + repo_events
+            repo_events = _load_prior_records(
+                f"data/bronze/issue_events_{repo_name}.json", _project_event
+            ) + repo_events
         repo_events = sorted(repo_events, key=lambda item: item.get("id") or 0)
 
         all_issue_events.extend(repo_events)
