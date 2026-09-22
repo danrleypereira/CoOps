@@ -34,6 +34,7 @@ coops-silver = "coops.etl.silver_process:main"
 coops-gold = "coops.etl.gold_process:main"
 coops-aggregate = "coops.etl.gold_aggregate:main"
 coops-registry = "coops.etl.registry_manager:main"
+coops-corpus = "coops.raw_capture.cli:main"
 
 # uv_build finds the package in src/coops from the project name.
 [build-system]

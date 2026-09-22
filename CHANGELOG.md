@@ -8,6 +8,20 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 ## [Unreleased]
 
 ### Added
+- Managed raw-corpus capture and the two-artifact split (issue
+  [#109](https://github.com/danrleypereira/CoOps/issues/109)): `coops-bronze
+  --capture-dir` now writes every REST and GraphQL response in the capture
+  shape `{tenant_id, provider, endpoint, params, etag, fetched_at, payload}`
+  (the shape #113 indexes on), tenant-scoped under mode `700`/`600`, with a
+  retention policy enforced by `coops-corpus prune`.
+  `scripts/data-snapshot.sh` gains `pack-raw` / `unpack-raw` (the private
+  `corpus-raw` artifact) and `pack-fixtures` / `unpack-fixtures` (the
+  sanitized, shareable `corpus-fixtures` artifact). `coops-corpus sanitize`
+  drops the personal keys (`email`, `location`, `bio`, `company`, `blog`,
+  `hireable`, `twitter_username`) and redacts email addresses found in free
+  text. **`corpus-fixtures` is safe to share; `corpus-raw` is not** and must
+  never be published, committed, uploaded, attached to an issue/PR, or stored
+  in an `actions/cache`.
 - `scripts/data-snapshot.sh`: pack, unpack, list and verify the raw GitHub
   corpus (`cache/` + `data/`) as a compressed, checksummed snapshot kept in a
   fixed directory outside the worktree, so a new git worktree can restore the

@@ -15,9 +15,17 @@ import threading
 import logging
 from datetime import datetime
 from typing import Dict, List, Optional, Any, Tuple
+from urllib.parse import urlsplit, parse_qsl
 
 class GitHubAPIClient:
-    def __init__(self, token: str, cache_dir: str = "cache"):
+    def __init__(
+        self,
+        token: str,
+        cache_dir: str = "cache",
+        capture_dir: Optional[str] = None,
+        tenant_id: Optional[str] = None,
+        provider: str = "github",
+    ):
         self.token = token
         self.headers = {
             "Authorization": f"Bearer {token}",
@@ -28,6 +36,18 @@ class GitHubAPIClient:
             os.makedirs(cache_dir)
         # GraphQL endpoint
         self.graphql_url = "https://api.github.com/graphql"
+        # Managed raw-corpus capture (issue #109). Off unless capture_dir is
+        # given; when it is, tenant_id is required because the capture shape
+        # is tenant-scoped. See coops.raw_capture.capture.
+        self.capture_dir = capture_dir
+        self.tenant_id = tenant_id
+        self.provider = provider
+        self._capture = None
+        if capture_dir is not None:
+            if not tenant_id:
+                raise ValueError("capture_dir requires a tenant_id")
+            from coops.raw_capture.capture import RawCaptureWriter
+            self._capture = RawCaptureWriter(capture_dir, tenant_id, provider)
         # Run-summary accounting: a "hit" is a request served from cache (a 304
         # or a short-circuited body) without consuming a rate-limit slot; a
         # "miss" is a billed network fetch (a 200) that populates the cache.
@@ -114,6 +134,36 @@ class GitHubAPIClient:
         except (TypeError, ValueError):
             pass
 
+    # -- Raw-corpus capture (issue #109) -----------------------------------
+    #
+    # When capture is enabled (capture_dir + tenant_id), every REST and
+    # GraphQL 200 is written as a {tenant_id, provider, endpoint, params,
+    # etag, fetched_at, payload} record. The payload is unmodified and
+    # contains personal data, so the writer keeps it mode 700/600 and the
+    # result must never be published. Sanitization into the shareable
+    # corpus-fixtures is done separately (coops.raw_capture.sanitize).
+
+    @staticmethod
+    def _split_url(url: str) -> Tuple[str, Dict[str, str]]:
+        """Split a REST URL into its path (endpoint) and query params."""
+        parts = urlsplit(url)
+        params = dict(parse_qsl(parts.query, keep_blank_values=True))
+        return parts.path, params
+
+    def _capture_rest(self, url: str, data: Any, etag: Optional[str]) -> None:
+        if self._capture is None:
+            return
+        endpoint, params = self._split_url(url)
+        self._capture.write(endpoint, params, etag, data)
+
+    def _capture_graphql(self, query: str, variables: Optional[Dict[str, Any]], data: Any) -> None:
+        if self._capture is None:
+            return
+        # GraphQL has no ETag; the query text and variables travel in params.
+        self._capture.write(
+            "graphql", {"query": query, "variables": variables or {}}, None, data
+        )
+
     def get_with_cache(self, url: str, use_cache: bool = True, retries: int = 3, backoff_base: float = 1.0, return_headers: bool = False, silent: bool = False, log_prefix: str = "REST") -> Any:
         """Get data from GitHub API with caching, ETag revalidation, retries, and backoff.
 
@@ -155,6 +205,7 @@ class GitHubAPIClient:
 
                 if response.status_code == 200:
                     data = response.json()
+                    self._capture_rest(url, data, response.headers.get("ETag"))
                     if use_cache:
                         self._cache_set(url, data)
                         new_etag = response.headers.get("ETag")
@@ -260,6 +311,7 @@ class GitHubAPIClient:
                 self._record_cache_miss()
                 if use_cache and cache_key:
                     self._cache_set(cache_key, data)
+                self._capture_graphql(query, variables, data)
                 # Don't log rate limit for GraphQL - already logged after processing commits
                 return data
             elif response.status_code == 403:

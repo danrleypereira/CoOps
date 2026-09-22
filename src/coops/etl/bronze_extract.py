@@ -9,6 +9,7 @@ import os
 import sys
 from datetime import datetime
 from coops.infrastructure import get_settings
+from coops.domain.tenancy import TenantId
 from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, update_data_registry
 
 
@@ -70,6 +71,7 @@ def main():
     parser.add_argument('--active-days', type=int, default=30, help='Consider branches active if updated in last N days (default: 30)')
     parser.add_argument('--time-chunks', type=int, default=3, help='Split large extractions into N time periods to avoid API overload (default: 3)')
     parser.add_argument('--skip-structure', action='store_true', help='Skip repository structure extraction')
+    parser.add_argument('--capture-dir', help='Capture every raw API response (REST and GraphQL) into this directory, tenant-scoped (corpus-raw, PRIVATE)')
 
     args = parser.parse_args()
 
@@ -86,7 +88,11 @@ def main():
     print(f"Started at: {datetime.now().isoformat()}")
 
     # Initialize API client
-    client = GitHubAPIClient(cfg.github_token)
+    client = GitHubAPIClient(
+        cfg.github_token,
+        capture_dir=args.capture_dir,
+        tenant_id=(TenantId(cfg.github_org).org_id if args.capture_dir else None),
+    )
     config = OrganizationConfig(cfg.github_org)
 
     try:
