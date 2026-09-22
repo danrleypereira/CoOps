@@ -95,6 +95,44 @@ addresses — so a snapshot must not be published or shared. `pack` keeps it
 private at rest: the snapshot directory is mode 700 and the archive and its
 checksum are mode 600.
 
+### Two corpus artifacts (raw vs fixtures)
+
+The managed corpus is captured in **two artifacts, never one** (issue #109):
+
+| Artifact | What it is | Safe to share? |
+|---|---|---|
+| `corpus-raw` | Full, unmodified API payloads in the capture shape `{tenant_id, provider, endpoint, params, etag, fetched_at, payload}`. | **No.** Private — local or Mongo only, never a release asset, CI cache, issue or PR attachment. |
+| `corpus-fixtures` | The same shape with personal data removed (email, location, bio, company, blog, hireable, twitter_username; email addresses in free text redacted). | **Yes.** This is the one to publish or copy into other repositories. |
+
+`corpus-fixtures` is **safe to share**; `corpus-raw` is **not**.
+
+Capture the raw corpus during extraction with `--capture-dir` (the directory
+is tenant-scoped and written mode `700`/`600`):
+
+```bash
+uv run coops-bronze --capture-dir corpus-raw --max-repos 3 --skip-structure
+```
+
+Then snapshot and restore each artifact:
+
+```bash
+scripts/data-snapshot.sh pack-raw        # corpus-raw/  -> corpus-raw-*.tar.gz (private)
+scripts/data-snapshot.sh unpack-raw      # restore the newest corpus-raw
+scripts/data-snapshot.sh pack-fixtures   # corpus-raw/ -> sanitize -> corpus-fixtures-*.tar.gz
+scripts/data-snapshot.sh unpack-fixtures # restore the newest corpus-fixtures
+```
+
+`pack-fixtures` runs `coops-corpus sanitize` (the same command, run directly:
+`coops-corpus sanitize --raw corpus-raw --out corpus-fixtures`), so it needs a
+synced project (`uv sync`).
+
+**Retention.** `corpus-raw` has a stated retention policy: records whose
+`fetched_at` is older than the policy are pruned. Enforce it with
+`coops-corpus prune --raw corpus-raw --max-age-days N`, or prune-before-pack
+with `scripts/data-snapshot.sh pack-raw --retention-days N`. There is no
+default — set the policy you want (30 days is the suggested floor for a corpus
+rebuilt on every run).
+
 ## Local MongoDB (development)
 
 `docker-compose.dev.yml` provides a local MongoDB for work against a real

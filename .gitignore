@@ -14,10 +14,14 @@ dashboard/**.tsbuildinfo
 bin/
 
 cache/
-# Corpus snapshots (scripts/data-snapshot.sh) live OUTSIDE the worktree in
-# $COOPS_SNAPSHOT_DIR (default: ~/.local/share/coops/snapshots), shared across
-# worktrees, so nothing under the repo needs ignoring for them. If you point
-# COOPS_SNAPSHOT_DIR into a checkout, ignore that path here.
+# The managed raw corpus (corpus-raw/) is PRIVATE — it holds unmodified API
+# bodies with personal data and must never be committed. corpus-fixtures/ is
+# its sanitized, shareable twin; it is still generated output, so neither is
+# tracked here. Snapshots (scripts/data-snapshot.sh) live OUTSIDE the worktree
+# in $COOPS_SNAPSHOT_DIR (default: ~/.local/share/coops/snapshots), shared
+# across worktrees, so nothing under the repo needs ignoring for them.
+corpus-raw/
+corpus-fixtures/
 # Ignorar arquivos de log
 
 *.log
