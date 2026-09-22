@@ -7,6 +7,12 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 
 ## [Unreleased]
 
+### Fixed
+- Bronze no longer persists commit author or committer email addresses in
+  `data/bronze/commits_*.json` — the pipeline commits those files to a public
+  branch. Silver attributes commits by `login`/`name`/`date` only, so no
+  downstream metric changes — #89.
+
 ### Added
 - Installable `coops` package (`src/coops/`) with a `pyproject.toml` declaring
   dependencies and metadata, plus `coops-bronze`, `coops-silver`, `coops-gold`,

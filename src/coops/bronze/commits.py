@@ -2,6 +2,34 @@ import os
 from typing import List, Dict, Any, Optional
 from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data, load_json_data
 
+
+# Author/committer fields kept in the bronze layer. The full set of
+# sub-fields the GitHub API returns is much larger (name, email, date, login,
+# id, ...), but personal fields like `email` (and the same key on `committer`)
+# must never reach the public bronze JSON: the data is committed to a public
+# branch. Silver attributes commits by `login` (falling back to `name`); it
+# does not need the raw email address, so dropping it here has no downstream
+# effect. The list is applied to both the GraphQL build and to the REST
+# payload (the latter already comes shaped by GitHub).
+_AUTHOR_PII_KEYS_TO_DROP = ("email",)
+
+
+def _strip_author_pii(commit_data: Dict[str, Any]) -> Dict[str, Any]:
+    """Remove PII fields from `commit.author` / `commit.committer` in-place and
+    return the same dict. The REST payload already carries these sub-dicts;
+    we never want them persisted (see `_AUTHOR_PII_KEYS_TO_DROP`).
+    """
+    commit = commit_data.get("commit")
+    if not isinstance(commit, dict):
+        return commit_data
+    for sub_key in ("author", "committer"):
+        sub = commit.get(sub_key)
+        if isinstance(sub, dict):
+            for key in _AUTHOR_PII_KEYS_TO_DROP:
+                sub.pop(key, None)
+    return commit_data
+
+
 def extract_commits(
     client: GitHubAPIClient,
     config: OrganizationConfig,
@@ -86,13 +114,16 @@ def extract_commits(
                 deletions = n.get('deletions')
                 total_changes = (additions or 0) + (deletions or 0) if (additions is not None and deletions is not None) else None
 
+                # Note: GraphQL `author.email` is intentionally not mapped:
+                # bronze data is committed to a public branch. See
+                # `_AUTHOR_PII_KEYS_TO_DROP`. The committer field is dropped
+                # altogether — nothing downstream reads it.
                 data_commits.append({
                     'sha': sha,
                     'html_url': n.get('url'),
                     'commit': {
                         'author': {
                             'name': author.get('name'),
-                            'email': author.get('email'),
                             'date': author.get('date') or committed_date,
                             'login': (author.get('user') or {}).get('login') if isinstance(author.get('user'), dict) else None,
                         },
@@ -137,6 +168,10 @@ def extract_commits(
                         if 'author' in commit_data and isinstance(commit_data['author'], dict) and 'login' in commit_data['author']:
                             commit_data['commit']['author']['login'] = commit_data['author']['login']
 
+                    # Drop author/committer PII before persisting to bronze:
+                    # the file is committed to a public branch.
+                    _strip_author_pii(commit_data)
+
                     data_commits.append({
                         **commit_data,
                         'repo_name': repo_name,
@@ -180,6 +215,10 @@ def extract_commits(
                         # If commit.author.login exists at root level, copy it to commit.commit.author.login
                         if 'author' in commit_data and isinstance(commit_data['author'], dict) and 'login' in commit_data['author']:
                             commit_data['commit']['author']['login'] = commit_data['author']['login']
+
+                    # Drop author/committer PII before persisting to bronze:
+                    # the file is committed to a public branch.
+                    _strip_author_pii(commit_data)
 
                     # Merge original commit with stats and repo context
                     data_commits.append({

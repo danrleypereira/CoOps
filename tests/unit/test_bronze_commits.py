@@ -5,7 +5,7 @@ including fallback logic, active branches, and time chunks.
 """
 import pytest
 from unittest.mock import MagicMock, patch, call
-from coops.bronze.commits import extract_commits
+from coops.bronze.commits import extract_commits, _strip_author_pii
 
 
 class TestExtractCommits:
@@ -316,9 +316,9 @@ class TestExtractCommits:
         """Testa que GraphQL mapeia campos para formato REST compatível"""
         mock_client = MagicMock()
         mock_config = MagicMock()
-        
+
         mock_repos = [{"name": "repo1", "full_name": "test-org/repo1"}]
-        
+
         mock_graphql_nodes = [
             {
                 "oid": "abc123",
@@ -335,19 +335,19 @@ class TestExtractCommits:
                 }
             }
         ]
-        
+
         mock_client.graphql_commit_history.return_value = (mock_graphql_nodes, {})
-        
+
         saved_data = None
         def capture_save(data, path):
             nonlocal saved_data
             saved_data = data
             return "file.json"
-        
+
         with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
             with patch('coops.bronze.commits.save_json_data', side_effect=capture_save):
                 extract_commits(mock_client, mock_config, method="graphql")
-                
+
                 # Verifica mapeamento de campos
                 assert saved_data is not None
                 first_commit = saved_data[0]
@@ -359,7 +359,11 @@ class TestExtractCommits:
                 assert first_commit['additions'] == 15
                 assert first_commit['deletions'] == 8
                 assert first_commit['total_changes'] == 23
-    
+                # The GraphQL response includes `email`, but the bronze layer
+                # must not persist it (the data is committed to a public
+                # branch). See #89.
+                assert 'email' not in first_commit['commit']['author']
+
     def test_extract_commits_graphql_handles_missing_user(self):
         """Testa que GraphQL lida com autor sem user object"""
         mock_client = MagicMock()
@@ -504,3 +508,129 @@ class TestExtractCommits:
                 # O código tem time_chunks=3 hardcoded, não usa o parâmetro
                 assert call_kwargs.get('time_chunks') == 3
                 assert call_kwargs.get('split_large_extractions') is True
+
+
+class TestCommitAuthorPII:
+    """Bronze data is committed to a public branch, so author/committer
+    PII (currently: ``email``) must never be persisted — #89."""
+
+    def test_strip_helper_removes_author_email(self):
+        commit = {
+            "sha": "abc",
+            "commit": {
+                "author": {"name": "Alice", "email": "alice@example.com", "date": "2024-01-01"},
+                "committer": {"name": "Alice", "email": "alice@example.com", "date": "2024-01-01"},
+                "message": "msg",
+            },
+        }
+        result = _strip_author_pii(commit)
+        assert result is commit  # in-place
+        assert "email" not in result["commit"]["author"]
+        assert "email" not in result["commit"]["committer"]
+        # Other author fields are kept.
+        assert result["commit"]["author"]["name"] == "Alice"
+        assert result["commit"]["author"]["date"] == "2024-01-01"
+
+    def test_strip_helper_is_safe_on_missing_or_malformed_subdict(self):
+        # No 'commit' key, no 'author', 'committer' is not a dict — none of
+        # these should raise.
+        assert _strip_author_pii({}) == {}
+        assert _strip_author_pii({"commit": None}) == {"commit": None}
+        assert _strip_author_pii({"commit": {"author": None}}) == {"commit": {"author": None}}
+        assert _strip_author_pii({"commit": {"committer": "oops"}}) == {"commit": {"committer": "oops"}}
+        # Already clean.
+        commit = {"commit": {"author": {"name": "A", "date": "2024-01-01"}}}
+        assert _strip_author_pii(commit) == commit
+
+    def test_rest_path_does_not_persist_author_email(self):
+        """End-to-end: the REST commit list comes shaped by GitHub with an
+        author email, but the bronze layer must drop it before writing the
+        JSON that the pipeline commits to the public branch."""
+        mock_client = MagicMock()
+        mock_config = MagicMock()
+        mock_config.org_name = "test-org"
+
+        mock_repos = [{"name": "repo1", "full_name": "test-org/repo1"}]
+
+        mock_commits = [
+            {
+                "sha": "abc123",
+                "author": {"login": "alice"},
+                "commit": {
+                    "author": {"name": "Alice", "email": "alice@example.com", "date": "2024-01-01"},
+                    "committer": {"name": "Alice", "email": "alice@example.com", "date": "2024-01-01"},
+                    "message": "msg",
+                },
+            }
+        ]
+
+        mock_client.get_paginated.return_value = mock_commits
+        mock_client.get_with_cache.return_value = {"stats": {"additions": 1, "deletions": 0, "total": 1}}
+
+        saved_payloads = []
+
+        def capture_save(data, path):
+            saved_payloads.append((path, data))
+            return path
+
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.commits.save_json_data', side_effect=capture_save):
+                extract_commits(mock_client, mock_config, method="rest")
+
+        # Every commit payload saved must have email stripped from both
+        # commit.author and commit.committer.
+        for path, payload in saved_payloads:
+            for record in payload:
+                if not isinstance(record, dict) or '_metadata' in record:
+                    continue
+                author = record.get('commit', {}).get('author')
+                committer = record.get('commit', {}).get('committer')
+                if isinstance(author, dict):
+                    assert 'email' not in author, f"email leaked into {path}"
+                if isinstance(committer, dict):
+                    assert 'email' not in committer, f"email leaked into {path}"
+                # Other fields are preserved.
+                if isinstance(author, dict):
+                    assert author.get('name') == 'Alice'
+                    assert author.get('login') == 'alice'
+
+    def test_graphql_fallback_path_does_not_persist_author_email(self):
+        """Same coverage as the REST test, but exercising the GraphQL
+        path that falls back to REST when GraphQL returns nothing."""
+        mock_client = MagicMock()
+        mock_config = MagicMock()
+        mock_config.org_name = "test-org"
+
+        mock_repos = [{"name": "repo1", "full_name": "test-org/repo1"}]
+
+        # GraphQL returns no nodes, REST fallback path runs.
+        mock_client.graphql_commit_history.return_value = ([], {})
+        mock_commits = [
+            {
+                "sha": "abc123",
+                "commit": {
+                    "author": {"name": "Alice", "email": "alice@example.com", "date": "2024-01-01"},
+                    "message": "msg",
+                },
+            }
+        ]
+        mock_client.get_paginated.return_value = mock_commits
+        mock_client.get_with_cache.return_value = {"stats": {"additions": 1, "deletions": 0, "total": 1}}
+
+        saved_payloads = []
+
+        def capture_save(data, path):
+            saved_payloads.append((path, data))
+            return path
+
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.commits.save_json_data', side_effect=capture_save):
+                extract_commits(mock_client, mock_config, method="graphql")
+
+        for path, payload in saved_payloads:
+            for record in payload:
+                if not isinstance(record, dict) or '_metadata' in record:
+                    continue
+                author = record.get('commit', {}).get('author')
+                if isinstance(author, dict):
+                    assert 'email' not in author, f"email leaked into {path}"
