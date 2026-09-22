@@ -80,11 +80,15 @@ To develop against a local extraction, set `VITE_USE_LOCAL_DATA=true` in
 `dashboard/.env` and link the data: `mkdir -p dashboard/public && ln -s ../../data dashboard/public/data`.
 
 **Changing dependencies:** regenerate the lockfile with npm 11
-(`npx -y npm@11 install --package-lock-only`). npm 10 crashes on this dependency
-tree with `Cannot read properties of null (reading 'edgesOut')`. `npm ci` with
-npm 10, which CI uses, works fine.
+(`npx -y npm@11 install --package-lock-only`) — that is what produced the
+committed lockfile. npm 10.8.2 regenerates it byte-identically today (an
+earlier `Cannot read properties of null (reading 'edgesOut')` crash no longer
+reproduces), and `npm ci` works on both, but npm 11 is the supported path.
 
 ## Running workflows locally with act
+
+Full reference: [local-actions.md](local-actions.md). Defaults (runner images,
+artifact server) come from the repository's `.actrc`.
 
 ```bash
 gh act workflow_dispatch -W .github/workflows/bronze-extract.yaml \
@@ -96,7 +100,7 @@ gh act workflow_dispatch -W .github/workflows/bronze-extract.yaml \
 - `--secret-file` fills `secrets.*` only; the workflow reads the organization
   from the `COOPS_ORG` **variable**, so pass `--var COOPS_ORG=…` or it extracts
   the owner of your `origin` remote.
-- Silver and Gold need `--bind`: their "Pull latest data files" step runs
-  without the `if: ${{ !env.ACT }}` guard that Checkout has.
+- Silver and Gold need `--bind`: each job otherwise gets a fresh copy of the
+  checkout, so the previous layer's data never reaches them.
 - The container runs as root, and `uv sync` inside it rewrites `.venv` for the
   container's interpreter; `sudo rm -rf .venv` afterwards if `uv run` complains.

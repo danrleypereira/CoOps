@@ -24,13 +24,19 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   and the matching `workflow_dispatch` inputs of `bronze-extract.yaml`.
 - **Validate Pipeline (manual)** workflow and
   `docs/TESTING_PULL_REQUESTS.md`: PRs are validated against a real
-  organization in `unb-mds/CoOps` before review.
+  organization before review.
 - Dashboard: **AI Analysis** page (`/ai`, linked from the sidebar) with the
   AI-generated member analyses (`silver/ai/members_ai.json`). When the file
   is missing the page says AI analysis requires the `GEMINI_API_KEY` secret.
   The Analytics page stays unrouted (#74): it is slow on real data and
   duplicates the routed pages.
 - Gold `organization_health.members_with_profile`: members with maturity data.
+- `.actrc` and `docs/local-actions.md`: the workflows run locally with
+  [`act`](https://github.com/nektos/act) (`gh extension install nektos/gh-act`).
+  `.actrc` pins the `catthehacker/ubuntu` runner images and the artifact
+  server path; the guide documents the exact command for each workflow, how
+  to pass secrets and variables safely, measured runtimes, and what cannot
+  run locally (`deploy-pages.yaml`, which needs GitHub's OIDC endpoint).
 
 ### Changed
 - **Breaking:** `coops-bronze` reads the token and organization from
@@ -67,6 +73,20 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 - The daily Bronze workflow reads GitHub with the `COOPS_GITHUB_TOKEN` secret
   when it is set. With it, concealed organization memberships are extracted
   and published with the data.
+- `docs/TESTING_PULL_REQUESTS.md`: a PR is now validated by running the
+  workflows locally with `act`, not by dispatching them in the `unb-mds/CoOps`
+  fork. Validating on a real fork is kept as an optional appendix, for the
+  things only GitHub can run (Pages, `workflow_run`, the commit-and-push
+  steps).
+- `validate-pipeline.yaml` resolves the target organization with `curl`
+  instead of `gh api`: the act runner images have no GitHub CLI. Same request,
+  same error messages, same exit codes.
+- The `Checkout repository` steps of `bronze-extract.yaml`,
+  `silver-process.yaml` and `gold-process.yaml` no longer carry
+  `if: ${{ !env.ACT }}`. `act` implements `actions/checkout` as the step that
+  populates the container workspace, so skipping it left the job with no
+  source and `uv sync` failed. The guard on the *Commit and push* steps is
+  unchanged.
 
 ### Fixed
 - `dashboard/package-lock.json` was missing most dev dependencies, so
