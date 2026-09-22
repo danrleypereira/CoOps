@@ -28,6 +28,13 @@ class GitHubAPIClient:
             os.makedirs(cache_dir)
         # GraphQL endpoint
         self.graphql_url = "https://api.github.com/graphql"
+        # Run-summary accounting: a "hit" is a request served from cache (a 304
+        # or a short-circuited body) without consuming a rate-limit slot; a
+        # "miss" is a billed network fetch (a 200) that populates the cache.
+        self.cache_hits = 0
+        self.cache_misses = 0
+        # Most recent REST rate-limit window (remaining/limit/reset), if any.
+        self.last_rate_limit: Optional[Dict[str, Any]] = None
 
     def _get_cache_key(self, key: str) -> str:
         """Create a stable cache key from an arbitrary string."""
@@ -47,29 +54,129 @@ class GitHubAPIClient:
         with open(cache_file, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
 
+    # -- ETag sidecar ------------------------------------------------------
+    #
+    # The response body keeps its original format in ``<md5(url)>.json``; the
+    # ``ETag`` header is stored verbatim in a sibling ``<md5(url)>.etag`` file.
+    # A sidecar (rather than an envelope around the body) keeps the on-disk body
+    # format untouched, so entries written before ETag support — and any other
+    # reader of the JSON — keep working. A body with no sidecar simply has no
+    # ETag, so the client falls back to serving it directly (the pre-ETag
+    # behaviour) instead of sending a conditional request. GraphQL responses
+    # have no ETag and never write a sidecar.
+
+    def _get_etag_path(self, cache_key: str) -> str:
+        """Path of the ETag sidecar file for a cache key."""
+        return os.path.join(
+            self.cache_dir,
+            hashlib.md5(cache_key.encode()).hexdigest() + ".etag",
+        )
+
+    def _etag_get(self, cache_key: str) -> Optional[str]:
+        """Read the stored ETag for a cache key, or None if there is none."""
+        etag_file = self._get_etag_path(cache_key)
+        if not os.path.exists(etag_file):
+            return None
+        with open(etag_file, 'r', encoding='utf-8') as f:
+            value = f.read().strip()
+        return value or None
+
+    def _etag_set(self, cache_key: str, etag: str) -> None:
+        """Store the ETag for a cache key."""
+        with open(self._get_etag_path(cache_key), 'w', encoding='utf-8') as f:
+            f.write(etag)
+
+    def _etag_delete(self, cache_key: str) -> None:
+        """Remove the ETag sidecar for a cache key (best effort)."""
+        etag_file = self._get_etag_path(cache_key)
+        if os.path.exists(etag_file):
+            os.remove(etag_file)
+
+    # -- Run-summary accounting -------------------------------------------
+
+    def _record_cache_hit(self) -> None:
+        self.cache_hits += 1
+
+    def _record_cache_miss(self) -> None:
+        self.cache_misses += 1
+
+    def _record_rate_limit(self, response: "requests.Response") -> None:
+        """Remember the most recent REST rate-limit window for the run summary."""
+        remaining = response.headers.get('X-RateLimit-Remaining')
+        if remaining is None:
+            return
+        try:
+            self.last_rate_limit = {
+                'remaining': int(remaining),
+                'limit': int(response.headers.get('X-RateLimit-Limit', '0') or 0),
+                'reset': response.headers.get('X-RateLimit-Reset'),
+            }
+        except (TypeError, ValueError):
+            pass
+
     def get_with_cache(self, url: str, use_cache: bool = True, retries: int = 3, backoff_base: float = 1.0, return_headers: bool = False, silent: bool = False, log_prefix: str = "REST") -> Any:
-        """Get data from GitHub API with caching, retries, and backoff."""
+        """Get data from GitHub API with caching, ETag revalidation, retries, and backoff.
+
+        When a cached body has a stored ETag, the request is sent with
+        ``If-None-Match``. A 304 then serves the cached body and does not
+        consume a rate-limit slot; a 200 replaces the cached body (and its
+        ETag). A cached body with no ETag (an entry written before ETag
+        support, or a response that carried no ``ETag`` header) is served
+        directly, without a conditional request.
+        """
+        cached = None
+        etag = None
         if use_cache:
             cached = self._cache_get(url)
             if cached is not None:
-                if not silent:
-                    print(f"Using cached data for: {url}")
-                return cached if not return_headers else (cached, None)
+                etag = self._etag_get(url)
+
+        # A warm body with no ETag cannot be revalidated: keep the pre-ETag
+        # behaviour of serving it directly, with no network round-trip.
+        if use_cache and cached is not None and etag is None:
+            if not silent:
+                print(f"Using cached data for: {url}")
+            self._record_cache_hit()
+            return cached if not return_headers else (cached, None)
+
+        headers = dict(self.headers)
+        if etag is not None:
+            headers["If-None-Match"] = etag
 
         if not silent:
-            print(f"Fetching from API: {url}")
+            if etag is not None:
+                print(f"Revalidating with ETag for: {url}")
+            else:
+                print(f"Fetching from API: {url}")
         attempt = 0
         while attempt < retries:
             try:
-                response = requests.get(url, headers=self.headers, timeout=35)
+                response = requests.get(url, headers=headers, timeout=35)
 
                 if response.status_code == 200:
                     data = response.json()
                     if use_cache:
                         self._cache_set(url, data)
+                        new_etag = response.headers.get("ETag")
+                        if new_etag:
+                            self._etag_set(url, new_etag)
+                        else:
+                            self._etag_delete(url)
+                    self._record_cache_miss()
+                    self._record_rate_limit(response)
                     if not return_headers and not silent:
                         self._log_rate_limit(response, prefix=log_prefix)
                     return data if not return_headers else (data, response.headers)
+                elif response.status_code == 304:
+                    # Not Modified: the cached body is still current, and a 304
+                    # does not count against the rate limit.
+                    if not silent:
+                        print(f"304 Not Modified - serving cached data for: {url}")
+                    self._record_cache_hit()
+                    self._record_rate_limit(response)
+                    if not return_headers and not silent:
+                        self._log_rate_limit(response, prefix=log_prefix)
+                    return cached if not return_headers else (cached, response.headers)
                 elif response.status_code == 403:
                     print(f"[ERROR] API request forbidden (403) - might be private or rate limited: {response.text}")
                     if "rate limit" in response.text.lower():
@@ -120,6 +227,7 @@ class GitHubAPIClient:
                 cached = self._cache_get(cache_key)
                 if cached is not None:
                     print("[GRAPHQL] Using cached response")
+                    self._record_cache_hit()
                     return cached
             except Exception:
                 # Fallback to no-cache if serialization fails
@@ -149,6 +257,7 @@ class GitHubAPIClient:
                         # Other critical errors
                         print(f"[GRAPHQL][ERROR] Returned errors: {data['errors']}")
                         return None
+                self._record_cache_miss()
                 if use_cache and cache_key:
                     self._cache_set(cache_key, data)
                 # Don't log rate limit for GraphQL - already logged after processing commits
