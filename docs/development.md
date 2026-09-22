@@ -115,9 +115,10 @@ the integration suite can reuse the exact same image, and published on a
 non-default host port so it never collides with a MongoDB a developer already
 runs.
 
-**Port.** MongoDB listens on `localhost:${MONGO_PORT:-27018}` (container port
-27017). The default `27018` deliberately avoids the standard `27017`. Override
-it from `.env`:
+**Port.** MongoDB binds to loopback only — `127.0.0.1:${MONGO_PORT:-27018}`
+(container port 27017) — so it listens on `localhost` and is **not** reachable
+from the local network. The default `27018` deliberately avoids the standard
+`27017`. Override it from `.env`:
 
 ```bash
 cp .env.example .env        # then adjust MONGO_PORT if you need another port
@@ -135,8 +136,10 @@ already in `.env.example`, and can live in `.env` or `.secrets`.
 volume with `make mongo-reset` (or `docker compose -f docker-compose.dev.yml down
 -v`).
 
-**Authentication.** The stack runs without authentication by default. To enable
-root auth, set `MONGO_INITDB_ROOT_USERNAME` and `MONGO_INITDB_ROOT_PASSWORD` in
+**Authentication.** The stack runs without authentication by default. That is
+safe only because the port binds to loopback (see **Port.** above); anyone who
+could reach the port already has a shell on the machine. To enable root auth,
+set `MONGO_INITDB_ROOT_USERNAME` and `MONGO_INITDB_ROOT_PASSWORD` in
 `.env` — which is git-ignored; `.env.example` is the committed template — and
 use the same credentials in `MONGO_URI`
 (`mongodb://<user>:<password>@localhost:27018`).
