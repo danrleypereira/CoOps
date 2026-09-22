@@ -86,6 +86,18 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   private raw `cache/` corpus is only ever imported behind the explicit
   `make mongo-load-raw` opt-in — issue
   [#112](https://github.com/danrleypereira/CoOps/issues/112).
+- Raw layer in MongoDB: a tenant-scoped `raw_capture` collection shaped
+  `{tenant_id, provider, endpoint, params_hash, etag, fetched_at, payload}`,
+  indexed on `(tenant_id, provider, endpoint, params_hash)`, behind a thin
+  `RawStore` adapter (`coops.storage.raw`) ready to sit behind the StoragePort
+  (#23). The tenant filter is enforced in the adapter, not by the callers, so
+  one tenant cannot read another's documents by omitting a filter. When
+  `MONGO_URI` is set, Bronze reads a fresh raw document instead of re-fetching
+  the API (making re-processing free) and captures each fetched response back
+  into the raw layer. The raw payload keeps personal data — author/committer
+  emails — by design (#111); the Bronze scrub still runs on the raw-read path,
+  so nothing personal reaches `data/bronze/` — issue
+  [#113](https://github.com/danrleypereira/CoOps/issues/113).
 
 ### Changed
 - **Breaking:** `coops-bronze` reads the token and organization from

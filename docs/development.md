@@ -27,7 +27,8 @@ files are git-ignored.
 | Organization | `COOPS_ORG`, `GITHUB_ORG` | the org to extract |
 | Gemini key | `GEMINI_API_KEY`, `GOOGLE_API_KEY` | optional; AI step is skipped without it |
 | Gemini model | `GEMINI_MODEL` | defaults to `gemini-3.5-flash-lite` |
-| MongoDB URI | `MONGO_URI` | local dev value `mongodb://localhost:27018` (see [Local MongoDB](#local-mongodb-development)) |
+| MongoDB URI | `MONGO_URI` | local dev value `mongodb://localhost:27018`; when set, Bronze reads/writes the raw layer (see [Local MongoDB](#local-mongodb-development)) |
+| Raw max age | `RAW_MAX_AGE_SECONDS` | how long a raw document stays "fresh" before Bronze re-fetches (seconds; default `3600`) |
 
 Rules worth knowing:
 
@@ -136,9 +137,11 @@ rebuilt on every run).
 ## Local MongoDB (development)
 
 `docker-compose.dev.yml` provides a local MongoDB for work against a real
-database. The pipeline doesn't read from it yet — Silver and Gold still read and
-write `./data` — but it gives the raw-capture storage work (#43, #107) a
-database to build against without anyone having to install or host MongoDB.
+database. Silver and Gold still read and write `./data` — only Bronze talks to
+MongoDB, capturing responses into a raw layer and reading them back instead of
+re-fetching the API when they are fresh (see the `MONGO_URI` note below) — but
+the stack gives the raw-capture storage work (#43, #107) a database to build
+against without anyone having to install or host MongoDB.
 
 ```bash
 make mongo-up        # docker compose -f docker-compose.dev.yml up -d
@@ -164,8 +167,10 @@ MONGO_PORT=27019 make mongo-up
 ```
 
 **Connection string.** `MONGO_URI` is read through
-`coops.infrastructure.Settings` (the `mongo_uri` field; nothing consumes it yet
-— it is there for the storage work in #43/#107). For the local stack use
+`coops.infrastructure.Settings` (the `mongo_uri` field). When it is set, Bronze
+captures every response it fetches into the raw layer and reads a fresh raw
+document back instead of re-fetching the API (a document is "fresh" for
+`RAW_MAX_AGE_SECONDS`, default 3600). For the local stack use
 `mongodb://localhost:27018` (change the port to match `MONGO_PORT`). It is
 already in `.env.example`, and can live in `.env` or `.secrets`.
 

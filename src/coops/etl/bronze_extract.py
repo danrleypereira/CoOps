@@ -95,6 +95,21 @@ def main():
     )
     config = OrganizationConfig(cfg.github_org)
 
+    # Raw layer (MongoDB): when MONGO_URI is set, capture responses and read
+    # them back instead of the API when they are fresh enough. Best-effort — a
+    # missing/down MongoDB must not stop the extraction, so a failure to open
+    # the store simply leaves the client on the API-only path.
+    if cfg.mongo_uri:
+        try:
+            from coops.domain import TenantId
+            from coops.storage import MongoRawStore
+
+            client.raw_store = MongoRawStore(cfg.mongo_uri)
+            client.tenant_id = TenantId(cfg.github_org)
+            client.raw_max_age_seconds = cfg.raw_max_age_seconds
+        except Exception as exc:  # pragma: no cover - defensive, env-dependent
+            print(f"[WARN] MongoDB raw layer unavailable ({exc}); using API only.")
+
     try:
         # Import and run individual extractors
         from coops.bronze.repositories import extract_repositories
