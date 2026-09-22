@@ -177,15 +177,20 @@ class TestRawReadPathScrub:
         list_params = {"per_page": "50", "page": "1"}
         detail_endpoint = "https://api.github.com/repos/test-org/repo1/commits/abc123"
 
-        # Unmodified REST commit list: raw author/committer emails and a message
-        # body whose trailers carry addresses.
+        # Unmodified REST commit list: raw author/committer emails, a message
+        # body whose trailers carry addresses, and the signed verification
+        # payload whose free text embeds the author as `Name <address>`.
+        #
+        # `commit.author.name` is deliberately NOT address-shaped: it is the
+        # known open leak #132, out of scope here, so this test measures the
+        # raw-read path rather than re-finding #132.
         raw_list = [
             {
                 "sha": "abc123",
                 "author": {"login": "linked_user", "id": 4242},
                 "commit": {
                     "author": {
-                        "name": "Linked",
+                        "name": "Linked Person",
                         "email": "linked@example.com",
                         "date": "2024-01-01T00:00:00Z",
                     },
@@ -195,6 +200,15 @@ class TestRawReadPathScrub:
                         "date": "2024-01-01T00:00:01Z",
                     },
                     "message": "feat: thing\n\nCo-authored-by: Pair Person <pair@personal.example.net>\n",
+                    "verification": {
+                        "verified": True,
+                        "reason": "valid",
+                        "payload": (
+                            "tree 0123456789abcdef\n"
+                            "parent fedcba9876543210\n"
+                            "author Linked Person <verified-author@example.net> 1700000000 +0000\n"
+                        ),
+                    },
                 },
             }
         ]
@@ -212,9 +226,18 @@ class TestRawReadPathScrub:
             raw_max_age_seconds=None,
         )
 
-        # CONTROL: the raw document the Bronze path will read still carries the
-        # address, so the probe below is proven able to find one.
-        assert _EMAIL_RE.search(json.dumps(raw_list))
+        # CONTROL: the raw document the Bronze path will read still carries every
+        # address, so the probe below is proven able to find them — a clean
+        # result afterwards means the scrub ran, not that the probe was dead.
+        raw_serialized = json.dumps(raw_list)
+        for address in (
+            "linked@example.com",
+            "committer@example.com",
+            "pair@personal.example.net",
+            "verified-author@example.net",
+        ):
+            assert address in raw_serialized
+            assert _EMAIL_RE.search(address)
 
         config = Mock()
         config.org_name = "test-org"
