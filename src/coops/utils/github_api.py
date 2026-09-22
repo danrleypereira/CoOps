@@ -540,14 +540,29 @@ class GitHubAPIClient:
 
                             print(f"[REST][Worker-{worker_num}] Fetched {sha[:8]}: +{additions}/-{deletions}")
 
+                            commit_payload = rest_commit.get('commit', {}) or {}
+                            raw_committer = commit_payload.get('committer') or {}
                             processed_commits.append({
                                 'oid': sha,
-                                'messageHeadline': rest_commit.get('commit', {}).get('message', '').split('\n')[0],
-                                'committedDate': rest_commit.get('commit', {}).get('author', {}).get('date'),
+                                'message': commit_payload.get('message', ''),
+                                'messageHeadline': commit_payload.get('message', '').split('\n')[0],
+                                'committedDate': commit_payload.get('author', {}).get('date'),
                                 'author': {
                                     'user': {
                                         'login': author_login
                                     }
+                                },
+                                'committer': {
+                                    'name': raw_committer.get('name'),
+                                    'email': raw_committer.get('email'),
+                                    'date': raw_committer.get('date'),
+                                },
+                                'parents': {
+                                    'nodes': [
+                                        {'oid': p.get('sha')}
+                                        for p in (rest_commit.get('parents') or [])
+                                        if isinstance(p, dict) and p.get('sha')
+                                    ]
                                 },
                                 'additions': additions,
                                 'deletions': deletions,
@@ -643,11 +658,14 @@ class GitHubAPIClient:
                                 pageInfo { hasNextPage endCursor }
                                 nodes {
                                   oid
+                                  message
                                   messageHeadline
                                   committedDate
                                   author { name email user { login databaseId } }
+                                  committer { name email date user { login databaseId } }
                                   additions
                                   deletions
+                                  parents(first: 100) { nodes { oid } }
                                 }
                               }
                             }
@@ -669,11 +687,14 @@ class GitHubAPIClient:
                                 pageInfo { hasNextPage endCursor }
                                 nodes {
                                   oid
+                                  message
                                   messageHeadline
                                   committedDate
                                   author { name email user { login databaseId } }
+                                  committer { name email date user { login databaseId } }
                                   additions
                                   deletions
+                                  parents(first: 100) { nodes { oid } }
                                 }
                               }
                             }

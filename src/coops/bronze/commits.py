@@ -181,11 +181,16 @@ def extract_commits(
                 sha = n.get('oid')
                 author = n.get('author') or {}
                 user = author.get('user') if isinstance(author.get('user'), dict) else {}
+                committer = n.get('committer') or {}
                 committed_date = n.get('committedDate')
-                message = n.get('messageHeadline')
+                # The full message (headline + body); older nodes — e.g. the
+                # REST-fallback shape — may only carry the headline.
+                message = n.get('message') or n.get('messageHeadline')
                 additions = n.get('additions')
                 deletions = n.get('deletions')
                 total_changes = (additions or 0) + (deletions or 0) if (additions is not None and deletions is not None) else None
+                parent_nodes = (n.get('parents') or {}).get('nodes') or []
+                parents = [p.get('oid') for p in parent_nodes if isinstance(p, dict) and p.get('oid')]
 
                 # `email` is carried only so `_sanitize_commit` can derive a stable
                 # identity key for unlinked authors; it is never persisted.
@@ -200,8 +205,14 @@ def extract_commits(
                             'login': user.get('login'),
                             'id': user.get('databaseId'),
                         },
+                        'committer': {
+                            'name': committer.get('name'),
+                            'email': committer.get('email'),
+                            'date': committer.get('date') or committed_date,
+                        },
                         'message': message,
                     },
+                    'parents': parents,
                     'additions': additions,
                     'deletions': deletions,
                     'total_changes': total_changes,
@@ -241,8 +252,15 @@ def extract_commits(
                         if 'author' in commit_data and isinstance(commit_data['author'], dict) and 'login' in commit_data['author']:
                             commit_data['commit']['author']['login'] = commit_data['author']['login']
 
+                    # The REST response nests parents as `[{sha, ...}]`; store
+                    # just the shas so this path agrees with the GraphQL one.
                     data_commits.append({
                         **commit_data,
+                        'parents': [
+                            p.get('sha')
+                            for p in (commit_data.get('parents') or [])
+                            if isinstance(p, dict) and p.get('sha')
+                        ],
                         'repo_name': repo_name,
                         'additions': additions,
                         'deletions': deletions,
@@ -285,9 +303,15 @@ def extract_commits(
                         if 'author' in commit_data and isinstance(commit_data['author'], dict) and 'login' in commit_data['author']:
                             commit_data['commit']['author']['login'] = commit_data['author']['login']
 
-                    # Merge original commit with stats and repo context
+                    # Merge original commit with stats and repo context. Parents
+                    # are reduced to their shas to match the GraphQL record shape.
                     data_commits.append({
                         **commit_data,
+                        'parents': [
+                            p.get('sha')
+                            for p in (commit_data.get('parents') or [])
+                            if isinstance(p, dict) and p.get('sha')
+                        ],
                         'repo_name': repo_name,
                         'additions': additions,
                         'deletions': deletions,

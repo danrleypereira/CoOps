@@ -6,6 +6,7 @@ Testes adicionais para aumentar cobertura do github_api.py
 import pytest
 import json
 import os
+import re
 from unittest.mock import Mock, patch, MagicMock, mock_open
 from coops.utils.github_api import GitHubAPIClient, save_json_data, load_json_data
 
@@ -342,6 +343,27 @@ class TestGraphQLCommitHistory:
             )
             
             assert result == []
+
+    def test_graphql_commit_history_selects_recoverable_fields(self, tmp_path):
+        """The GraphQL query must request the fields the raw tier cannot recover
+        later: the full message body, the committer, and the parent shas."""
+        client = GitHubAPIClient(token="test", cache_dir=str(tmp_path))
+        captured_queries = []
+
+        def mock_graphql(query, variables=None, use_cache=True, timeout=4):
+            captured_queries.append(query)
+            return {"data": {"repository": {"defaultBranchRef": None}}}
+
+        with patch.object(client, 'graphql', side_effect=mock_graphql):
+            client.graphql_commit_history("owner", "repo", page_size=10)
+
+        assert captured_queries
+        query = captured_queries[0]
+        # `\bmessage\b` so the full-body `message` field is selected, not only
+        # `messageHeadline` (which shares the prefix).
+        assert re.search(r"\bmessage\b", query)
+        assert "committer { name email date user { login databaseId } }" in query
+        assert "parents(first: 100) { nodes { oid } }" in query
 
 
 class TestLogRateLimit:
