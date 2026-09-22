@@ -126,6 +126,35 @@ finds nothing has not passed, it has told you nothing, until you have shown it
 can find the thing. Before trusting an empty result, run the check against
 something you know contains what you are looking for.
 
+## A guard is proven by what did *not* happen
+
+When a change makes something **fail closed**, the test must assert that the
+guarded action **never occurred** — not merely that an error was raised. These
+are different claims, and only the first one is the guarantee.
+
+Measured on #129/#139: the dashboard fell back to a hardcoded organization when
+`VITE_GITHUB_ORG` was unset, fetching one organization's data and presenting it
+as another's. The fix fails closed, and the test that proves it asserts **no
+request is issued**:
+
+> `fails closed without VITE_GITHUB_ORG: NO FETCH`
+
+A weaker test — "an error is surfaced" — would pass against an implementation
+that fetched the data *and then* reported an error. That implementation still
+transmits the request, still reaches the third party, still leaks whatever the
+request carries. It would be a privacy hole wearing a correct error message,
+and every assertion about it would be green.
+
+So for any guard whose purpose is that something must not happen:
+
+- Assert on the **absence of the effect** — the call not made, the file not
+  written, the record not stored — using a spy, a mock that raises, or a
+  transport that fails loudly if touched.
+- A mock that returns empty is not enough. Returning nothing is
+  indistinguishable from a legitimate empty result, so the test passes with the
+  guard deleted.
+- Then mutate: remove the guard and confirm **that named test** goes red.
+
 ## Tests that do not count
 
 - Assertions on log text or printed output.
