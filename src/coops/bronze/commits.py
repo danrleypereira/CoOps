@@ -1,6 +1,84 @@
+import copy
+import hashlib
 import os
-from typing import List, Dict, Any, Optional
+from typing import Any, Dict, List, Optional
 from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data, load_json_data
+
+
+def _hash_email(email: str) -> str:
+    """SHA-256 of a trimmed, lower-cased email address.
+
+    Pseudonymization, not anonymization: a known address can still be confirmed
+    by hashing it, but casual scraping/search exposure is removed from the
+    public branch.
+    """
+    return hashlib.sha256(email.strip().lower().encode("utf-8")).hexdigest()
+
+
+def _remove_email_keys(obj: Any) -> None:
+    """Recursively delete every 'email' key from a (possibly nested) structure."""
+    if isinstance(obj, dict):
+        for key in list(obj.keys()):
+            if key == "email":
+                del obj[key]
+            else:
+                _remove_email_keys(obj[key])
+    elif isinstance(obj, list):
+        for item in obj:
+            _remove_email_keys(item)
+
+
+def _sanitize_commit(commit: Dict[str, Any]) -> Dict[str, Any]:
+    """Drop raw author/committer emails, keeping a stable identity key.
+
+    Commit data is committed to a public branch, so raw email addresses must not
+    be persisted. Linked authors (with a GitHub account) keep ``login`` and the
+    numeric ``id``; unlinked authors keep ``author_email_hash`` (the SHA-256 of
+    the trimmed, lower-cased email) instead of the raw address.
+    """
+    commit = copy.deepcopy(commit)
+
+    top_author = commit.get("author")
+    commit_author = (commit.get("commit") or {}).get("author")
+
+    login = None
+    numeric_id = None
+    email = None
+
+    if isinstance(top_author, dict):
+        login = top_author.get("login")
+        numeric_id = top_author.get("id")
+    if isinstance(commit_author, dict):
+        login = login or commit_author.get("login")
+        if numeric_id is None:
+            numeric_id = commit_author.get("id")
+        email = commit_author.get("email")
+
+    # Remove every 'email' key (author/committer, top-level and nested).
+    _remove_email_keys(commit)
+
+    commit_obj = commit.get("commit")
+    if isinstance(commit_obj, dict):
+        raw_author = commit_obj.get("author")
+        author_data = dict(raw_author) if isinstance(raw_author, dict) else {}
+        author_data.pop("login", None)
+        author_data.pop("id", None)
+
+        if login:
+            author_data["login"] = login
+        if numeric_id is not None:
+            author_data["id"] = numeric_id
+        if not login and numeric_id is None:
+            # Unlinked author: the email is the only identifier. Store a stable
+            # hash instead of the raw address so distinct people aren't merged
+            # into "unknown" downstream.
+            if email:
+                author_data["author_email_hash"] = _hash_email(email)
+
+        commit_obj["author"] = author_data
+
+    return commit
+
 
 def extract_commits(
     client: GitHubAPIClient,
@@ -80,12 +158,15 @@ def extract_commits(
                 # Map GraphQL fields to a REST-like structure to preserve downstream compatibility
                 sha = n.get('oid')
                 author = n.get('author') or {}
+                user = author.get('user') if isinstance(author.get('user'), dict) else {}
                 committed_date = n.get('committedDate')
                 message = n.get('messageHeadline')
                 additions = n.get('additions')
                 deletions = n.get('deletions')
                 total_changes = (additions or 0) + (deletions or 0) if (additions is not None and deletions is not None) else None
 
+                # `email` is carried only so `_sanitize_commit` can derive a stable
+                # identity key for unlinked authors; it is never persisted.
                 data_commits.append({
                     'sha': sha,
                     'html_url': n.get('url'),
@@ -94,7 +175,8 @@ def extract_commits(
                             'name': author.get('name'),
                             'email': author.get('email'),
                             'date': author.get('date') or committed_date,
-                            'login': (author.get('user') or {}).get('login') if isinstance(author.get('user'), dict) else None,
+                            'login': user.get('login'),
+                            'id': user.get('databaseId'),
                         },
                         'message': message,
                     },
@@ -193,6 +275,10 @@ def extract_commits(
                 print(f"Found {len(commits)} commits in {repo_name} via REST")
 
         if data_commits:
+            # Drop raw author/committer emails before persisting to the public
+            # branch; keep a stable identity key (login + id, or email hash).
+            data_commits = [_sanitize_commit(c) for c in data_commits]
+
             # Add to global list
             all_commits.extend(data_commits)
 

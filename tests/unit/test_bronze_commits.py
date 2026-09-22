@@ -5,7 +5,7 @@ including fallback logic, active branches, and time chunks.
 """
 import pytest
 from unittest.mock import MagicMock, patch, call
-from coops.bronze.commits import extract_commits
+from coops.bronze.commits import extract_commits, _hash_email, _sanitize_commit
 
 
 class TestExtractCommits:
@@ -331,7 +331,7 @@ class TestExtractCommits:
                     "name": "Author Name",
                     "email": "author@test.com",
                     "date": "2024-01-01T00:00:00Z",
-                    "user": {"login": "author_user"}
+                    "user": {"login": "author_user", "databaseId": 456}
                 }
             }
         ]
@@ -356,6 +356,8 @@ class TestExtractCommits:
                 assert first_commit['commit']['message'] == 'Test commit'
                 assert first_commit['commit']['author']['name'] == 'Author Name'
                 assert first_commit['commit']['author']['login'] == 'author_user'
+                assert first_commit['commit']['author']['id'] == 456
+                assert 'email' not in first_commit['commit']['author']
                 assert first_commit['additions'] == 15
                 assert first_commit['deletions'] == 8
                 assert first_commit['total_changes'] == 23
@@ -396,9 +398,13 @@ class TestExtractCommits:
             with patch('coops.bronze.commits.save_json_data', side_effect=capture_save):
                 extract_commits(mock_client, mock_config, method="graphql")
                 
-                # Deve funcionar sem erros
+                # Deve funcionar sem erros: autor sem user vira hash de email
                 assert saved_data is not None
-                assert saved_data[0]['commit']['author']['login'] is None
+                author = saved_data[0]['commit']['author']
+                assert 'login' not in author
+                assert 'id' not in author
+                assert 'email' not in author
+                assert author['author_email_hash'] == _hash_email('a@test.com')
     
     def test_extract_commits_rest_copies_author_login(self):
         """Testa que REST copia author.login para commit.author.login"""
@@ -504,3 +510,105 @@ class TestExtractCommits:
                 # O código tem time_chunks=3 hardcoded, não usa o parâmetro
                 assert call_kwargs.get('time_chunks') == 3
                 assert call_kwargs.get('split_large_extractions') is True
+
+    def test_extract_commits_rest_redacts_author_emails(self):
+        """REST commits drop raw emails: linked authors keep login+id, unlinked get a hash."""
+        mock_client = MagicMock()
+        mock_config = MagicMock()
+
+        mock_repos = [{"name": "repo1", "full_name": "test-org/repo1"}]
+
+        mock_commits = [
+            {
+                "sha": "abc123",
+                "author": {"login": "linked_user", "id": 4242},
+                "commit": {
+                    "author": {"name": "Linked", "email": "linked@test.com", "date": "2024-01-01"},
+                    "committer": {"name": "Linked", "email": "committer@test.com", "date": "2024-01-01"},
+                },
+            },
+            {
+                "sha": "def456",
+                "author": None,
+                "commit": {
+                    "author": {"name": "Unlinked", "email": "Unlinked@Test.com", "date": "2024-01-02"},
+                },
+            },
+        ]
+
+        mock_client.get_paginated.return_value = mock_commits
+        mock_client.get_with_cache.return_value = {"stats": {"additions": 1, "deletions": 0, "total": 1}}
+
+        saved_data = None
+        def capture_save(data, path):
+            nonlocal saved_data
+            saved_data = data
+            return "file.json"
+
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
+            with patch('coops.bronze.commits.save_json_data', side_effect=capture_save):
+                extract_commits(mock_client, mock_config, method="rest")
+
+        assert saved_data is not None
+        assert len(saved_data) == 2
+
+        linked = saved_data[0]
+        assert "email" not in linked["commit"]["author"]
+        assert "email" not in linked["commit"]["committer"]
+        assert linked["commit"]["author"]["login"] == "linked_user"
+        assert linked["commit"]["author"]["id"] == 4242
+
+        unlinked = saved_data[1]
+        assert "email" not in unlinked["commit"]["author"]
+        assert unlinked["commit"]["author"]["author_email_hash"] == _hash_email("unlinked@test.com")
+        assert "login" not in unlinked["commit"]["author"]
+
+
+class TestHashEmail:
+    def test_hash_email_trims_and_lowercases(self):
+        assert _hash_email("  Dev@Example.com ") == _hash_email("dev@example.com")
+        assert len(_hash_email("dev@example.com")) == 64
+        assert _hash_email("dev@example.com") != _hash_email("other@example.com")
+
+
+class TestSanitizeCommit:
+    def test_linked_author_keeps_login_and_id_drops_email(self):
+        commit = {
+            "sha": "abc123",
+            "author": {"login": "alice", "id": 1001},
+            "commit": {
+                "author": {"name": "Alice", "email": "alice@example.com", "date": "2024-01-01"},
+                "committer": {"name": "Alice", "email": "alice@example.com", "date": "2024-01-01"},
+                "message": "hi",
+            },
+        }
+        out = _sanitize_commit(commit)
+        assert "email" not in out["commit"]["author"]
+        assert "email" not in out["commit"]["committer"]
+        assert out["commit"]["author"]["login"] == "alice"
+        assert out["commit"]["author"]["id"] == 1001
+        assert "author_email_hash" not in out["commit"]["author"]
+
+    def test_unlinked_author_gets_email_hash_drops_email(self):
+        commit = {
+            "sha": "abc123",
+            "author": None,
+            "commit": {
+                "author": {"name": "Unknown Dev", "email": " Dev@Example.com ", "date": "2024-01-01"},
+                "message": "hi",
+            },
+        }
+        out = _sanitize_commit(commit)
+        assert "email" not in out["commit"]["author"]
+        assert out["commit"]["author"]["author_email_hash"] == _hash_email("dev@example.com")
+        assert "login" not in out["commit"]["author"]
+        assert "id" not in out["commit"]["author"]
+
+    def test_does_not_mutate_input(self):
+        commit = {
+            "sha": "abc123",
+            "author": {"login": "alice", "id": 1},
+            "commit": {"author": {"name": "A", "email": "a@test.com", "date": "d"}},
+        }
+        _sanitize_commit(commit)
+        assert commit["commit"]["author"]["email"] == "a@test.com"

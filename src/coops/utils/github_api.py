@@ -536,7 +536,7 @@ class GitHubAPIClient:
                                   oid
                                   messageHeadline
                                   committedDate
-                                  author { user { login } }
+                                  author { name email user { login databaseId } }
                                   additions
                                   deletions
                                 }
@@ -562,7 +562,7 @@ class GitHubAPIClient:
                                   oid
                                   messageHeadline
                                   committedDate
-                                  author { user { login } }
+                                  author { name email user { login databaseId } }
                                   additions
                                   deletions
                                 }
