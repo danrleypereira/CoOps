@@ -66,6 +66,29 @@ the repository list are fetched, and the fork/blacklist filter then runs before
 the cap is applied — so a cap can yield fewer repositories than requested.
 `--skip-structure` skips repository trees, which is the slow part.
 
+## Reusing the corpus across worktrees
+
+A full extraction is ~1.4 GB of raw API responses in `cache/` plus ~200 MB of
+derived JSON in `data/`, and takes about an hour of rate-limited calls. Re-fetch
+in every new worktree is not worth it: snapshot the corpus once and restore it
+with `scripts/data-snapshot.sh`.
+
+```bash
+scripts/data-snapshot.sh pack          # from the worktree that has cache/ + data/
+scripts/data-snapshot.sh list          # what snapshots exist, with size and age
+scripts/data-snapshot.sh verify <snap> # check integrity without extracting
+scripts/data-snapshot.sh unpack        # restore the newest into the current worktree
+scripts/data-snapshot.sh unpack --into ../other-worktree
+```
+
+Snapshots are compressed tarballs kept in `$COOPS_SNAPSHOT_DIR` (default
+`~/.local/share/coops/snapshots`), outside any worktree, so every worktree on
+the machine shares one copy. `pack` writes a SHA-256 checksum next to each
+archive; `unpack` verifies it first and refuses a corrupt archive, and refuses
+to overwrite a non-empty `cache/` or `data/` unless you pass `--force`. Neither
+`cache/` nor `data/` is committed to git — fetch once, `pack`, then `unpack`
+into each worktree instead of re-fetching.
+
 ## Dashboard
 
 ```bash

@@ -8,6 +8,11 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 ## [Unreleased]
 
 ### Added
+- `scripts/data-snapshot.sh`: pack, unpack, list and verify the raw GitHub
+  corpus (`cache/` + `data/`) as a compressed, checksummed snapshot kept in a
+  fixed directory outside the worktree, so a new git worktree can restore the
+  corpus instead of re-fetching it (which takes about an hour of rate-limited
+  API calls).
 - Installable `coops` package (`src/coops/`) with a `pyproject.toml` declaring
   dependencies and metadata, plus `coops-bronze`, `coops-silver`, `coops-gold`,
   `coops-aggregate` and `coops-registry` console entry points —
