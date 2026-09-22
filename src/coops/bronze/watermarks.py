@@ -8,8 +8,9 @@ everything. One record per repository:
   the ``since`` bound for commit extraction on every branch).
 * ``head_shas``           — ``{branch: head_sha}``, so tree extraction can be
   skipped when a branch head has not moved.
-* ``last_event_id`` and ``last_event_created_at`` — the newest issue event seen,
-  so only newer events are fetched and appended.
+* ``last_event_id`` — the newest issue event id seen, so only newer events are
+  fetched (by paging from the newest event, since the endpoint has no ``since``
+  filter) and appended.
 * ``last_updated_at``     — the newest ``updated_at`` seen across issues and
   PRs, so the REST ``since`` filter returns only changed items, which are then
   merged by number.
@@ -101,7 +102,6 @@ class RepoWatermark:
     last_run: Optional[str] = None
     head_shas: Dict[str, str] = field(default_factory=dict)
     last_event_id: Optional[int] = None
-    last_event_created_at: Optional[str] = None
     last_updated_at: Optional[str] = None
 
     def to_dict(self) -> dict:
@@ -116,7 +116,6 @@ class RepoWatermark:
             last_run=data.get("last_run"),
             head_shas=dict(data.get("head_shas") or {}),
             last_event_id=data.get("last_event_id"),
-            last_event_created_at=data.get("last_event_created_at"),
             last_updated_at=data.get("last_updated_at"),
         )
 

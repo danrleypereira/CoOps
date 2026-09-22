@@ -81,16 +81,17 @@ class TestIncrementalIssues:
 
     def test_events_append_only_newer_ids(self):
         client = MagicMock()
-        fresh_events = [
+        client.get_paginated.return_value = []  # issues: none
+        # Events come back newest-first; the fetch stops once it reaches id 2.
+        client.get_with_cache.return_value = [
             {"id": 3, "event": "closed", "created_at": "2026-09-23T00:00:00Z", "actor": {"login": "u"}, "issue": {"number": 1}},
             {"id": 2, "event": "labeled", "created_at": "2026-09-22T12:00:00Z", "actor": {"login": "u"}, "issue": {"number": 1}},
         ]
-        client.get_paginated.side_effect = [[], fresh_events]
         prior_events = [
             {"id": 1, "event": "opened", "created_at": "2026-09-22T10:00:00Z", "repo_name": "repo1", "actor": {"login": "u"}, "issue": {"number": 1}},
             {"id": 2, "event": "labeled", "created_at": "2026-09-22T12:00:00Z", "repo_name": "repo1", "actor": {"login": "u"}, "issue": {"number": 1}},
         ]
-        wm = _store(last_event_id=2, last_event_created_at="2026-09-22T12:00:00Z")
+        wm = _store(last_event_id=2)
         files = {
             "data/bronze/repositories_filtered.json": REPOS,
             "data/bronze/issue_events_repo1.json": [{"_metadata": {}}] + prior_events,
@@ -100,19 +101,21 @@ class TestIncrementalIssues:
 
         events = saved["data/bronze/issue_events_repo1.json"]
         assert [e["id"] for e in events] == [1, 2, 3]
-        # The events endpoint was queried with a since bound.
-        events_url = client.get_paginated.call_args_list[1][0][0]
-        assert "since=2026-09-22T11:59:59Z" in events_url
+        # The events endpoint has no `since` filter: incrementality comes from
+        # paging from the newest event and stopping at the boundary id.
+        assert client.get_with_cache.call_count == 1
+        assert client.get_with_cache.call_args[0][0].endswith("issues/events?per_page=100&page=1")
 
     def test_watermark_advances_to_new_maxes(self):
         client = MagicMock()
         fresh = [{"number": 9, "title": "x", "updated_at": "2026-09-24T00:00:00Z"}]
-        fresh_events = [{"id": 99, "event": "closed", "created_at": "2026-09-24T00:00:00Z", "actor": {"login": "u"}, "issue": {"number": 9}}]
-        client.get_paginated.side_effect = [fresh, fresh_events]
+        client.get_paginated.return_value = fresh
+        client.get_with_cache.return_value = [
+            {"id": 99, "event": "closed", "created_at": "2026-09-24T00:00:00Z", "actor": {"login": "u"}, "issue": {"number": 9}}
+        ]
         wm = _store(
             last_updated_at="2026-09-22T00:00:00Z",
             last_event_id=2,
-            last_event_created_at="2026-09-22T12:00:00Z",
         )
         files = {
             "data/bronze/repositories_filtered.json": REPOS,
@@ -126,7 +129,6 @@ class TestIncrementalIssues:
         after = wm.get("org/repo1")
         assert after.last_updated_at == "2026-09-24T00:00:00Z"
         assert after.last_event_id == 99
-        assert after.last_event_created_at == "2026-09-24T00:00:00Z"
 
 
 def _run_commits(client, files, **kwargs):

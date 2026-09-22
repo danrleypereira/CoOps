@@ -66,7 +66,6 @@ class TestWatermarkStore:
             tmp_path,
             last_updated_at="2026-09-21T10:00:00Z",
             last_event_id=42,
-            last_event_created_at="2026-09-21T09:00:00Z",
             head_shas={"main": "abc123"},
         )
         store.save()
@@ -75,7 +74,6 @@ class TestWatermarkStore:
         wm = reloaded.get("org/repo1")
         assert wm.last_updated_at == "2026-09-21T10:00:00Z"
         assert wm.last_event_id == 42
-        assert wm.last_event_created_at == "2026-09-21T09:00:00Z"
         assert wm.head_shas == {"main": "abc123"}
         assert wm.last_run == now.isoformat()
 

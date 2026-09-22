@@ -89,6 +89,34 @@ def _merge_by_number(prior: List[dict], fresh: List[dict]) -> List[dict]:
     return sorted(merged.values(), key=lambda item: item["number"])
 
 
+def _fetch_events_after(client, full_name: str, last_event_id: int, use_cache: bool) -> List[dict]:
+    """Fetch issue events with ``id`` greater than ``last_event_id``.
+
+    The repository issue-events endpoint has no ``since`` filter (a ``since``
+    query is accepted but ignored), so incrementality must come from the id:
+    events are returned newest-first, so we page forward from the newest page
+    until we reach an event whose id is ``<= last_event_id``, then stop. A
+    repository with no new events costs exactly one page.
+    """
+    newer: List[dict] = []
+    page = 1
+    while True:
+        url = f"https://api.github.com/repos/{full_name}/issues/events?per_page=100&page={page}"
+        data = client.get_with_cache(url, use_cache)
+        if not isinstance(data, list) or not data:
+            break
+        for event in data:
+            eid = event.get("id")
+            if eid is None or eid > last_event_id:
+                newer.append(event)
+            else:
+                return newer  # reached the boundary; everything later is older
+        if len(data) < 100:
+            break
+        page += 1
+    return newer
+
+
 def extract_issues(
     client: GitHubAPIClient,
     config: OrganizationConfig,
@@ -212,15 +240,17 @@ def extract_issues(
             generated_files.append(repo_prs_file)
 
         # Get issue events (filter to keep only essential fields to reduce file size)
-        events_base = f"https://api.github.com/repos/{full_name}/issues/events"
         if events_incremental:
-            events_base += f"?since={query_since(wm.last_event_created_at)}"
-        events = client.get_paginated(events_base, use_cache=use_cache, per_page=100)
+            fetched_events = _fetch_events_after(client, full_name, wm.last_event_id, use_cache)
+        else:
+            fetched_events = client.get_paginated(
+                f"https://api.github.com/repos/{full_name}/issues/events",
+                use_cache=use_cache, per_page=100,
+            )
 
-        repo_events = [_project_event(e, repo_name) for e in events or []]
+        repo_events = [_project_event(e, repo_name) for e in fetched_events or []]
         if events_incremental:
             # Only events newer than the last one seen are appended.
-            repo_events = [e for e in repo_events if (e.get("id") or 0) > wm.last_event_id]
             repo_events = _load_prior_records(f"data/bronze/issue_events_{repo_name}.json") + repo_events
         repo_events = sorted(repo_events, key=lambda item: item.get("id") or 0)
 
@@ -241,21 +271,12 @@ def extract_issues(
             newest_event_id = max((e.get("id") or 0 for e in repo_events), default=None)
             prior_event_id = wm.last_event_id if wm else None
             new_event_id = newest_event_id if newest_event_id is not None else prior_event_id
-            newest_event_created_at = None
-            if repo_events:
-                newest_event_created_at = max(
-                    repo_events, key=lambda e: e.get("id") or 0
-                ).get("created_at")
             watermarks.update(
                 full_name,
                 last_updated_at=max_iso(
                     wm.last_updated_at if wm else None, newest_updated
                 ),
                 last_event_id=new_event_id,
-                last_event_created_at=(
-                    newest_event_created_at
-                    or (wm.last_event_created_at if wm else None)
-                ),
             )
 
     # Save aggregated files (always save, even if empty, to ensure files exist)
