@@ -30,7 +30,7 @@ def process_temporal_analysis() -> List[str]:
         if created_at:
             # Use login as primary identifier (unique on GitHub)
             user = issue.get('user') or {}
-            user_identifier = user.get('login') or user.get('name') or 'unknown'
+            user_identifier = user.get('login') or user.get('author_email_hash') or user.get('name') or 'unknown'
 
             all_events.append({
                 'date': created_at,
@@ -42,7 +42,7 @@ def process_temporal_analysis() -> List[str]:
         updated_at = parse_github_date(issue.get('updated_at'))
         if updated_at and issue.get('state') == 'closed':
             user = issue.get('user') or {}
-            user_identifier = user.get('login') or user.get('name') or 'unknown'
+            user_identifier = user.get('login') or user.get('author_email_hash') or user.get('name') or 'unknown'
 
             all_events.append({
                 'date': updated_at,
@@ -57,7 +57,7 @@ def process_temporal_analysis() -> List[str]:
         if created_at:
             # Use login as primary identifier (unique on GitHub)
             user = pr.get('user') or {}
-            user_identifier = user.get('login') or user.get('name') or 'unknown'
+            user_identifier = user.get('login') or user.get('author_email_hash') or user.get('name') or 'unknown'
 
             all_events.append({
                 'date': created_at,
@@ -69,7 +69,7 @@ def process_temporal_analysis() -> List[str]:
         updated_at = parse_github_date(pr.get('updated_at'))
         if updated_at and pr.get('state') == 'closed':
             user = pr.get('user') or {}
-            user_identifier = user.get('login') or user.get('name') or 'unknown'
+            user_identifier = user.get('login') or user.get('author_email_hash') or user.get('name') or 'unknown'
 
             all_events.append({
                 'date': updated_at,
@@ -97,7 +97,10 @@ def process_temporal_analysis() -> List[str]:
             # Second try: commit.author.login (from REST API root level)
             elif commit.get('author', {}) and commit['author'].get('login'):
                 user_identifier = commit['author']['login']
-            # Third try: commit.commit.author.name (fallback, less reliable)
+            # Third try: author_email_hash (stable identity for unlinked authors)
+            elif author_obj.get('author_email_hash'):
+                user_identifier = author_obj['author_email_hash']
+            # Fourth try: commit.commit.author.name (fallback, less reliable)
             elif author_obj.get('name'):
                 user_identifier = author_obj['name']
 
@@ -117,7 +120,7 @@ def process_temporal_analysis() -> List[str]:
         if event_date:
             # Use login as primary identifier (unique on GitHub)
             actor = event.get('actor') or {}
-            user_identifier = actor.get('login') or actor.get('name') or 'unknown'
+            user_identifier = actor.get('login') or actor.get('author_email_hash') or actor.get('name') or 'unknown'
 
             all_events.append({
                 'date': event_date,

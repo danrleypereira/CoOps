@@ -24,6 +24,18 @@ def _hash_email(email: str) -> str:
     return hashlib.sha256(email.strip().lower().encode("utf-8")).hexdigest()
 
 
+def _is_address(value: Any) -> bool:
+    """True when ``value`` is, whole and entire, an email address.
+
+    Some contributors set ``git user.name`` to their email address, so the
+    address arrives in a field the key-based scrub has no reason to suspect.
+    Only a name that is itself an address is matched here — a name that merely
+    *contains* an address (e.g. ``"Alice <alice@example.com>"``) is left alone,
+    because attribution matters.
+    """
+    return isinstance(value, str) and bool(_EMAIL_RE.fullmatch(value.strip()))
+
+
 def _remove_email_keys(obj: Any) -> None:
     """Recursively delete every 'email' key from a (possibly nested) structure."""
     if isinstance(obj, dict):
@@ -88,6 +100,14 @@ def _sanitize_commit(commit: Dict[str, Any]) -> Dict[str, Any]:
         author_data.pop("login", None)
         author_data.pop("id", None)
 
+        # Some contributors set git user.name to their email address, so the
+        # address arrives in a field the key-based scrub has no reason to
+        # suspect. Blank only a name that is itself an address — attribution
+        # matters and only these records are affected. ``None``, never a
+        # placeholder: a truthy placeholder would become a person downstream.
+        if _is_address(author_data.get("name")):
+            author_data["name"] = None
+
         if login:
             author_data["login"] = login
         if numeric_id is not None:
@@ -100,6 +120,15 @@ def _sanitize_commit(commit: Dict[str, Any]) -> Dict[str, Any]:
                 author_data["author_email_hash"] = _hash_email(email)
 
         commit_obj["author"] = author_data
+
+        # The committer's name is a second free-text channel for the same
+        # address (its surface doubled in #128). Blank it the same way.
+        raw_committer = commit_obj.get("committer")
+        if isinstance(raw_committer, dict):
+            committer_data = dict(raw_committer)
+            if _is_address(committer_data.get("name")):
+                committer_data["name"] = None
+            commit_obj["committer"] = committer_data
 
     return commit
 

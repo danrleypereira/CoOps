@@ -665,6 +665,69 @@ class TestSanitizeCommit:
         assert "Signed-off-by: Mona Octocat" in message
         assert "feat: add the thing" in message
 
+    def test_address_shaped_author_name_blanked(self):
+        """An author name that is itself an email address is replaced with
+        None. The address is asserted present *before* sanitization (control),
+        so a clean result afterwards proves the scrub ran rather than a broken
+        probe."""
+        commit = {
+            "sha": "abc123",
+            "author": None,
+            "commit": {
+                "author": {"name": "ingr.dcg@gmail.com", "email": "ingr.dcg@gmail.com", "date": "2024-01-01"},
+                "message": "hi",
+            },
+        }
+        # Control: the address is present in the name field before the scrub.
+        assert commit["commit"]["author"]["name"] == "ingr.dcg@gmail.com"
+        assert _EMAIL_RE.fullmatch(commit["commit"]["author"]["name"])
+
+        out = _sanitize_commit(commit)
+
+        assert out["commit"]["author"]["name"] is None
+        # The address is gone from the record; the unlinked author still has a
+        # stable identity key instead of a leaked address.
+        assert "email" not in out["commit"]["author"]
+        assert out["commit"]["author"]["author_email_hash"] == _hash_email("ingr.dcg@gmail.com")
+
+    def test_address_shaped_committer_name_blanked(self):
+        """The committer name is a second free-text channel for the same
+        address; it is blanked the same way, while the linked author's normal
+        name is left intact."""
+        commit = {
+            "sha": "abc123",
+            "author": {"login": "alice", "id": 1},
+            "commit": {
+                "author": {"name": "Alice", "email": "alice@example.com", "date": "d"},
+                "committer": {"name": "joaok8@gmail.com", "email": "joaok8@gmail.com", "date": "d"},
+                "message": "hi",
+            },
+        }
+        # Control: the address is present in the committer name before the scrub.
+        assert commit["commit"]["committer"]["name"] == "joaok8@gmail.com"
+        assert _EMAIL_RE.fullmatch(commit["commit"]["committer"]["name"])
+
+        out = _sanitize_commit(commit)
+
+        assert out["commit"]["committer"]["name"] is None
+        assert out["commit"]["author"]["name"] == "Alice"
+
+    def test_non_address_name_left_untouched(self):
+        """Attribution matters: a plain name is never blanked, only a name that
+        is itself an address."""
+        commit = {
+            "sha": "abc123",
+            "author": {"login": "alice", "id": 1},
+            "commit": {
+                "author": {"name": "Alice Smith", "email": "alice@example.com", "date": "d"},
+                "committer": {"name": "Bob Jones", "email": "bob@example.com", "date": "d"},
+                "message": "hi",
+            },
+        }
+        out = _sanitize_commit(commit)
+        assert out["commit"]["author"]["name"] == "Alice Smith"
+        assert out["commit"]["committer"]["name"] == "Bob Jones"
+
 
 _EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 
