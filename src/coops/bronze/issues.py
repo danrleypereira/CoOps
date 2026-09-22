@@ -3,6 +3,48 @@ import os
 from typing import List, Optional
 from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data, load_json_data
 
+# ---------------------------------------------------------------------------
+# What we keep from an issue or pull request.
+#
+# `data/bronze/` is a publish boundary: in fork-and-forget mode the pipeline
+# commits it to a public branch. So the stored record is BUILT from named
+# fields rather than copied from the provider and trimmed — a denylist only
+# removes what someone has already noticed, and issue bodies are free text
+# people paste addresses into.
+#
+# Every module that loads data/bronze/{issues,prs}_*.json, and what it reads:
+#   silver/temporal_analysis       number, state, created_at, updated_at, closed_at, user
+#   silver/members_statistics      state, created_at, updated_at, user
+#   silver/collaboration_networks  user, assignee
+#   silver/contribution_metrics    user, assignee
+#   ai_analysis/generate_members_ai  title, state, created_at, user
+#
+# Deliberately absent: `body` and `milestone`, which no consumer reads and
+# which carried every address found in the published data (see #133).
+# ---------------------------------------------------------------------------
+ISSUE_FIELDS = ("number", "state", "title", "created_at", "updated_at", "closed_at")
+
+# Actor objects are trimmed too. A provider user object carries more than the
+# login — `gravatar_id` is historically md5(email) — so stopping the whitelist
+# at the top level would leave the same problem one level down.
+ACTOR_FIELDS = ("login", "id", "name")
+
+
+def _project_actor(actor):
+    """Keep only the identity fields; preserve None so 'unassigned' stays distinct."""
+    if not isinstance(actor, dict):
+        return None
+    return {k: actor[k] for k in ACTOR_FIELDS if k in actor}
+
+
+def _project_issue(issue, repo_name):
+    """Build the stored record from named fields. Never spread the response."""
+    record = {k: issue[k] for k in ISSUE_FIELDS if k in issue}
+    record["user"] = _project_actor(issue.get("user"))
+    record["assignee"] = _project_actor(issue.get("assignee"))
+    record["repo_name"] = repo_name
+    return record
+
 def extract_issues(
     client: GitHubAPIClient,
     config: OrganizationConfig,
@@ -67,9 +109,9 @@ def extract_issues(
 
             for issue in issues:
                 if issue.get('pull_request'):
-                    repo_prs.append({**issue, 'repo_name': repo_name})
+                    repo_prs.append(_project_issue(issue, repo_name))
                 else:
-                    repo_issues.append({**issue, 'repo_name': repo_name})
+                    repo_issues.append(_project_issue(issue, repo_name))
 
             if max_issues is not None:
                 repo_issues = repo_issues[:max_issues]
