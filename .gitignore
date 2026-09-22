@@ -14,6 +14,10 @@ dashboard/**.tsbuildinfo
 bin/
 
 cache/
+# Corpus snapshots (scripts/data-snapshot.sh) live OUTSIDE the worktree in
+# $COOPS_SNAPSHOT_DIR (default: ~/.local/share/coops/snapshots), shared across
+# worktrees, so nothing under the repo needs ignoring for them. If you point
+# COOPS_SNAPSHOT_DIR into a checkout, ignore that path here.
 # Ignorar arquivos de log
 
 *.log

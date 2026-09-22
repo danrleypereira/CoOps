@@ -8,6 +8,11 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 ## [Unreleased]
 
 ### Added
+- `scripts/data-snapshot.sh`: pack, unpack, list and verify the raw GitHub
+  corpus (`cache/` + `data/`) as a compressed, checksummed snapshot kept in a
+  fixed directory outside the worktree, so a new git worktree can restore the
+  corpus instead of re-fetching it (which takes about an hour of rate-limited
+  API calls).
 - Installable `coops` package (`src/coops/`) with a `pyproject.toml` declaring
   dependencies and metadata, plus `coops-bronze`, `coops-silver`, `coops-gold`,
   `coops-aggregate` and `coops-registry` console entry points —
@@ -144,6 +149,12 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   headers, `GH_TOKEN`, no pagination/retry, wrote to `src/data/extractions/`)
   along with its tests and the `save-issues.yaml` workflow — superseded by the
   Bronze layer (`coops/bronze/issues.py`); its output had no consumers.
+
+### Security
+- `scripts/data-snapshot.sh` keeps snapshots private at rest: the snapshot
+  directory is created mode 700 and the archive and its checksum mode 600,
+  under a restrictive umask. The corpus contains raw API responses with user
+  email addresses, so a snapshot must not be published or shared.
 
 ## [1.0.0] - 2026-05-12
 
