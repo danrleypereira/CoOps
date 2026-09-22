@@ -10,8 +10,6 @@ dashboard/**.tsbuildinfo
 bin/
 
 cache/
-# Derived pipeline output; kept local now that the project is moving off
-# committing data to git (see scripts/data-snapshot.sh).
 # Corpus snapshots (scripts/data-snapshot.sh) live OUTSIDE the worktree in
 # $COOPS_SNAPSHOT_DIR (default: ~/.local/share/coops/snapshots), shared across
 # worktrees, so nothing under the repo needs ignoring for them. If you point
