@@ -342,8 +342,16 @@ the `docker cp` that populates the workspace:
 
 So a checkout step guarded with `if: ${{ !env.ACT }}` leaves the job with
 nothing to run against. The guard was removed from `bronze-extract.yaml`,
-`silver-process.yaml` and `gold-process.yaml` for this reason. (The guard on
-the *Commit and push* steps is correct and stays: those must not run locally.)
+`silver-process.yaml` and `gold-process.yaml` for this reason.
+
+The guard on the *Commit and push* steps is correct and stays: those must not
+run locally. Removing the checkout guard is what makes that matter — before it,
+an unguarded push step failed harmlessly in an empty container; afterwards the
+job has a real checkout and a real `origin`, so an unguarded push would reach
+the actual repository. `gold-process.yaml` had exactly that hole: two push
+steps, one guard. Both are guarded now. **If you add a step that writes to a
+remote, guard it** — and check with `grep -c 'git push'` against
+`grep -c 'env.ACT'` per workflow, which is how the missing one was found.
 
 ### A step fails with `fatal: not a git repository: (null)`
 
