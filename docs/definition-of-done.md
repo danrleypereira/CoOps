@@ -208,6 +208,83 @@ not an identical result**. `git range-diff` showing `=` proves the diff replayed
 unchanged; it says nothing about how that diff behaves against a base that
 moved. Re-run the suite on the new head rather than inferring from the marker.
 
+## Precedence needs two things present at once
+
+A property test that generates each input kind **in isolation** can never find a
+precedence bug, because precedence only exists when two kinds are present
+together.
+
+Measured on #146/#151. The identity fallback is `login -> author_email_hash ->
+name`. A property check ran 500 synthetic hashes and several logins, and
+confirmed exactly what it asked: every output unique, none empty, no shared
+constant. All true. It generated no identity carrying **both** a hash and a real
+name — the only shape where the ordering is observable. The chain shipped with
+the hash outranking the name, and **230 contributors with perfectly good names
+rendered as `Unknown contributor (a1b2c3d4)`** on the dashboard.
+
+Measuring that impact took two attempts, which is its own lesson. The first
+figure was 206, counted as the distinct name *strings* that disappeared. The
+real number is **per identity**: 38 people carry more than one spelling of their
+own name (`Druval Carvalho` / `Durval Carvalho`), so string-counting undercounts.
+Count the entities affected, not the values that changed.
+
+So when the code under test picks between alternatives, the fixture space has to
+include the **combinations**, not just the members:
+
+- For an `a or b or c` chain, test `a+b`, `b+c`, `a+c` and `a+b+c` — not only
+  `a`, `b`, `c` alone. Each pair asserts which one wins.
+- Say the winner out loud in the test name: `test_name_beats_hash_when_both_present`.
+- Mutate by **swapping adjacent branches**, not by deleting one. Deleting a
+  branch tests that the branch exists; swapping tests that the order is right,
+  and only the second is the claim the code is making.
+
+## A data migration needs two assertions, not one
+
+When a change rewrites stored data, *"nothing was lost"* and *"nothing changed
+that should not have"* are **different claims**, and a row count only makes the
+first.
+
+The regeneration behind #132 was gated on exactly that: addresses must reach
+zero, and record counts must not fall. Both passed — addresses went 149 -> 0 and
+`members_statistics.json` **grew** from 1,699 to 1,723 rows. Underneath, 230
+identities kept their place and lost their name. Every criterion was green.
+
+For a migration, assert on both axes:
+
+- **Removal**: the thing being removed reaches zero, with a control proving the
+  probe can still find it.
+- **Preservation**: the values that were *not* the target are unchanged. Diff the
+  old and new artifacts by key, and account for **every** difference — each one
+  is either intended and explainable, or a defect. A delta you cannot name is
+  not a rounding error.
+- **Counts are the weakest of the three.** They catch deletion and nothing else.
+  Here the count moved in the *reassuring* direction while the damage happened.
+
+**An unexplained row *gain* is a finding, exactly like an unexplained loss.** The
++24 above read as "24 contributors rescued from being dropped". Decomposed
+against the retained pre-migration file, it is two movements that happen to
+nearly cancel:
+
+```
++231  rows gained that carry a hash label
+-207  rows lost that carried a plain name
+----
+ +24  net
+```
+
+231 identities now occupy 231 rows where 207 rows held them before — **24 merges
+undone**. The old key was the name, and 16 name strings were each shared by
+several distinct people (`CI/CD Bot` was six of them, `root` five). Nobody asked
+where the extra rows came from, because rows appearing feels like a fix.
+Explaining them is what revealed that the obvious repair — putting the name back
+above the hash — would silently re-merge those people.
+
+Note the shape of that decomposition: a net of +24 concealing movements of 231
+and 207. **A small net delta is not evidence of a small change.** Two large
+opposite movements are the normal case, not the exotic one, so decompose before
+concluding anything from a total — and keep a copy of the pre-migration artifact,
+because without it none of this is checkable after the fact.
+
 ## Tests that do not count
 
 - Assertions on log text or printed output.
