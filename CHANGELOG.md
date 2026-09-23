@@ -7,6 +7,25 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 
 ## [Unreleased]
 
+### Changed
+- Tenancy model, first half of issue
+  [#92](https://github.com/danrleypereira/CoOps/issues/92): a tenant is no
+  longer a GitHub organization. `TenantId` is an opaque slug we assign
+  (`unb-mds`), trimmed but never re-cased — two spellings are two tenants, so
+  the id survives an organization rename. The case-insensitivity rule about
+  GitHub org names (trim + lower-case, from #68) moved to the new
+  `ProviderAccount(provider, org_id)`, whose equality and hash are the
+  `(provider, org_id)` pair: the same org name on two providers is two
+  accounts, never one merged identity and never a dict-key/set collision. The
+  new `Tenant(id, accounts)` holds them (non-empty, no duplicates), and
+  `resolve_tenant` implements `TENANT_MODE=single` — one tenant with one
+  GitHub account resolved from `COOPS_ORG`, with the slug bootstrapped from
+  the normalised login so raw-capture directories and raw-layer documents
+  keep their on-disk identity. `coops-bronze` resolves its tenant through it,
+  so the CLI is unchanged. `TENANT_MODE=multi` raises `NotImplementedError`
+  until the tenant registry lands. Entities carrying `ProviderAccount` plus
+  the provider's `external_id` (#21) follow in the second half.
+
 ### Added
 - `coops.bronze.files` (issue [#156](https://github.com/danrleypereira/CoOps/issues/156)):
   one place that knows how `data/bronze/` is named, so callers stop

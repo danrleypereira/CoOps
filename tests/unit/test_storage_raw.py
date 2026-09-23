@@ -119,11 +119,12 @@ class TestMongoRawStore:
         )
 
         assert len(collection._docs) == 1
-        # Tenant id is normalised to lower-case.
+        # The tenant's slug is stored verbatim: since #92 TenantId does no
+        # case folding, so the raw layer keys on exactly the assigned slug.
         assert (
             _key(
                 {
-                    "tenant_id": "unb-mds",
+                    "tenant_id": "UnB-Mds",
                     "provider": "github",
                     "endpoint": "https://api.github.com/repos/x/y/commits",
                     "params_hash": raw_params_hash({"since": "2024"}),
@@ -136,7 +137,7 @@ class TestMongoRawStore:
         assert doc["etag"] == '"etag-1"'
         assert doc["fetched_at"]
         # The replace filter is the full 4-tuple, tenant included.
-        assert collection.replace_filters[0]["tenant_id"] == "unb-mds"
+        assert collection.replace_filters[0]["tenant_id"] == "UnB-Mds"
 
     def test_get_always_injects_tenant_filter(self):
         collection = FakeCollection()

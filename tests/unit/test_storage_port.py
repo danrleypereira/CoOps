@@ -323,16 +323,18 @@ class StoragePortContract:
             "issues_zeta",
         ]
 
-    def test_tenant_id_spellings_collapse_to_one_tenant(self, store):
-        # GitHub org names are case-insensitive; both spellings present at
-        # once must address the same tenant, and the second save wins.
+    def test_tenant_id_spellings_stay_separate_tenants(self, store):
+        # Since #92 the slug is an assigned identifier compared exactly; the
+        # GitHub case-insensitivity rule lives in ProviderAccount. Different
+        # spellings address different tenants: no collapse, no overwrite.
         store.save(TenantId("ORG-A"), "bronze", "issues_d", [{"n": 1}])
         store.save(TenantId("org-a"), "bronze", "issues_d", [{"n": 2}])
 
-        loaded = store.load(TenantId("Org-A"), "bronze", "issues_d")
-        assert loaded is not None
-        assert loaded.data == [{"n": 2}]
-        assert store.list(TenantId("org-a"), "bronze") == ["issues_d"]
+        upper = store.load(TenantId("ORG-A"), "bronze", "issues_d")
+        lower = store.load(TenantId("org-a"), "bronze", "issues_d")
+        assert upper is not None and upper.data == [{"n": 1}]
+        assert lower is not None and lower.data == [{"n": 2}]
+        assert store.list(TenantId("Org-A"), "bronze") == []
 
     def test_entity_name_spellings_collapse_to_one_address(self, store):
         store.save(TenantId("org-a"), "bronze", " issues_d ", [{"n": 1}])
