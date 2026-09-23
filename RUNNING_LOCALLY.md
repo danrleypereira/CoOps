@@ -185,7 +185,7 @@ uv run coops-registry
 After a successful run, you'll have (all under `data/`, at the project root):
 
 **Bronze layer (raw data)** — `data/bronze/`:
-`repositories_filtered.json`, `members_detailed.json`, `issues_all.json`, `prs_all.json`, `commits_all.json`, `issue_events_all.json`
+`repositories_filtered.json`, `members_basic.json`, `members_detailed.json`, and one file per repository: `issues_<repo>.json`, `prs_<repo>.json`, `commits_<repo>.json`, `issue_events_<repo>.json`, `repo_<repo>.json`, `structure_<repo>.json`
 
 **Silver layer (processed analytics)** — `data/silver/`:
 `members_analytics.json`, `contribution_metrics.json`, `collaboration_edges.json`, `temporal_events.json`, `activity_heatmap.json`, `cycle_times.json`, `language_analysis_all.json`

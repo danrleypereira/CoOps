@@ -47,10 +47,12 @@ window, so a large organization can't exhaust the token mid-run.
   one can truncate the other unless both are set (see
   [development.md](development.md)).
 - Issue events are stored with only the fields Silver needs, which is what keeps
-  `issue_events_all.json` from growing without bound. Even so, Bronze files are
-  the large ones: on `unb-mds`, `issues_all.json` is ~50 MiB (`prs_all.json`
-  ~29 MiB) and GitHub rejects files over 100 MB — see #43, the planned move to
-  a real storage adapter.
+  them from growing without bound. The four `*_all.json` aggregates, which
+  duplicated every per-repository record, were removed in #170 — `commits_all.json`
+  had reached 80.6 MiB against GitHub's 100 MiB hard limit, and a push over that
+  limit stops the pipeline with no warning. Bronze is still the large layer
+  (~232 MiB on `fga-eps-mds` after the removal, from 392 MiB before), so #43's
+  move to a real storage adapter remains the answer rather than the file layout.
 
 ## Metadata convention
 
