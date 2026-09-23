@@ -157,27 +157,167 @@ class TestBotFiltering:
 
 
 # ---------------------------------------------------------------------------
-# Unknown user handling
+# Unattributed records (issues #154, #155)
 # ---------------------------------------------------------------------------
 
-class TestUnknownUser:
-    def test_unknown_commit_author_skipped(self, monkeypatch):
-        """Commits where no identifier can be resolved → 'unknown' → skipped."""
+class TestUnattributedRecords:
+    """A record no identity channel attributes to anyone is carried in an
+    explicit unattributed bucket — never a member named 'unknown'
+    (temporal_analysis's old phantom) and never a silent drop
+    (members_statistics' old `'unknown'` exclusion, which lost 3.7% of one
+    corpus's commits)."""
+
+    def test_commit_with_every_channel_null_is_carried_not_dropped(self, monkeypatch):
+        """The #154 shape: login, name, email and author_email_hash all
+        null — one marked bucket row, no member row, nothing lost."""
+        saved = _make_helpers(monkeypatch, commits=[
+            {
+                "commit": {"author": {"date": "2024-01-01T00:00:00Z",
+                                      "login": None, "name": None,
+                                      "author_email_hash": None}},
+                "repo_name": "r1",
+            },
+        ])
+        ms.process_members_statistics()
+        stats = saved["data/silver/members_statistics.json"]
+        assert len(stats) == 1
+        bucket = stats[0]
+        assert bucket["unattributed"] is True
+        assert bucket["id"] is None
+        assert bucket["name"] is None
+        assert bucket["total_commits"] == 1
+        assert bucket["total_events"] == 1
+
+    def test_commit_with_author_object_entirely_absent_is_carried(self, monkeypatch):
+        """The scrubbed-corpus shape (#154): no author object at all —
+        the measured 2,076 records carry every channel null."""
         saved = _make_helpers(monkeypatch, commits=[
             {
                 "commit": {"author": {"date": "2024-01-01T00:00:00Z"}},
                 "repo_name": "r1",
-            }
+            },
+        ])
+        ms.process_members_statistics()
+        stats = saved["data/silver/members_statistics.json"]
+        assert len(stats) == 1
+        assert stats[0]["unattributed"] is True
+        assert stats[0]["total_commits"] == 1
+
+    def test_null_actor_event_is_carried_not_dropped(self, monkeypatch):
+        """The #155 shape: `"actor": null` — GitHub's answer for a
+        deleted account. Carried in the bucket, no phantom member."""
+        saved = _make_helpers(monkeypatch, events=[
+            {
+                "actor": None,
+                "created_at": "2024-01-01T00:00:00Z",
+                "event": "assigned",
+                "repo_name": "r1",
+            },
+        ])
+        ms.process_members_statistics()
+        stats = saved["data/silver/members_statistics.json"]
+        assert len(stats) == 1
+        bucket = stats[0]
+        assert bucket["unattributed"] is True
+        assert bucket["id"] is None
+        assert bucket["total_events"] == 1
+        # The bucket row carries no member identity a consumer could
+        # mistake for a person — no login, no name, no averages.
+        assert bucket["name"] is None
+        assert "avg_weekly_activity" not in bucket
+        assert "activity_period" not in bucket
+
+    def test_issue_with_null_user_is_carried(self, monkeypatch):
+        saved = _make_helpers(monkeypatch, issues=[
+            {"user": None, "created_at": "2024-01-01T00:00:00Z", "repo_name": "r1"},
+        ])
+        ms.process_members_statistics()
+        stats = saved["data/silver/members_statistics.json"]
+        assert len(stats) == 1
+        assert stats[0]["unattributed"] is True
+
+    def test_no_bucket_row_when_nothing_is_unattributed(self, monkeypatch):
+        """A corpus without unattributed records keeps byte-identical
+        output: the bucket row appears only when there is something in
+        it, so existing consumers see no new shape."""
+        saved = _make_helpers(monkeypatch, commits=[
+            {"commit": {"author": {"date": "2024-01-01T00:00:00Z", "login": "alice"}},
+             "repo_name": "r1"},
+        ])
+        ms.process_members_statistics()
+        stats = saved["data/silver/members_statistics.json"]
+        assert len(stats) == 1
+        assert "unattributed" not in stats[0]
+        assert stats[0]["id"] == "alice"
+
+    def test_real_member_never_classified_as_unattributed(self, monkeypatch):
+        """The magic-name hazard the fix removes: a login literally
+        spelled 'unknown' is a real member — attributed, unmarked, never
+        bucketed. The marker is a field, not a name."""
+        saved = _make_helpers(monkeypatch, commits=[
+            {"commit": {"author": {"date": "2024-01-01T00:00:00Z",
+                                   "login": "unknown"}},
+             "repo_name": "r1"},
+        ])
+        ms.process_members_statistics()
+        stats = saved["data/silver/members_statistics.json"]
+        assert len(stats) == 1
+        assert stats[0]["id"] == "unknown"
+        assert "unattributed" not in stats[0]
+
+    def test_bucket_never_counted_as_a_member(self, monkeypatch):
+        """Member totals count only members: alice keeps her own commit,
+        the bucket keeps the unattributed one, and no member row absorbs
+        it."""
+        saved = _make_helpers(monkeypatch, commits=[
+            {"commit": {"author": {"date": "2024-01-01T00:00:00Z", "login": "alice"}},
+             "repo_name": "r1"},
+            {"commit": {"author": {"date": "2024-01-02T00:00:00Z"}},
+             "repo_name": "r1"},
+        ])
+        ms.process_members_statistics()
+        stats = saved["data/silver/members_statistics.json"]
+        members = [s for s in stats if not s.get("unattributed")]
+        buckets = [s for s in stats if s.get("unattributed")]
+        assert len(members) == 1
+        assert len(buckets) == 1
+        assert members[0]["id"] == "alice"
+        assert members[0]["total_commits"] == 1
+        assert buckets[0]["total_commits"] == 1
+
+    def test_a_dateless_record_is_neither_member_nor_bucket(self, monkeypatch):
+        """No parseable date, no identity channels: no event at all —
+        the date gate precedes the bucket in this module too, which is
+        what keeps Bronze `_metadata` entries out of the output."""
+        saved = _make_helpers(monkeypatch, commits=[
+            {"commit": {"author": {"login": None, "name": None,
+                                   "author_email_hash": None}},
+             "repo_name": "r1"},
+            {"_metadata": {"extracted_at": "2024-01-01T00:00:00Z"}},
         ])
         ms.process_members_statistics()
         assert saved["data/silver/members_statistics.json"] == []
 
-    def test_unknown_issue_user_skipped(self, monkeypatch):
-        saved = _make_helpers(monkeypatch, issues=[
-            {"user": {}, "created_at": "2024-01-01T00:00:00Z", "repo_name": "r1"}
+    def test_two_unattributed_records_do_not_become_a_member(self, monkeypatch):
+        """Two unattributed commits are not one contributor with two
+        commits: they are each nobody-we-can-name (#154). The only thing
+        counting them is the marked bucket, which carries no identity —
+        no unmarked row may hold their events."""
+        saved = _make_helpers(monkeypatch, commits=[
+            {"commit": {"author": {"date": "2024-01-01T00:00:00Z"}},
+             "repo_name": "r1"},
+            {"commit": {"author": {"date": "2024-02-01T00:00:00Z"}},
+             "repo_name": "r2"},
         ])
         ms.process_members_statistics()
-        assert saved["data/silver/members_statistics.json"] == []
+        stats = saved["data/silver/members_statistics.json"]
+        # No member rows at all — the two records belong to nobody.
+        assert [s for s in stats if not s.get("unattributed")] == []
+        buckets = [s for s in stats if s.get("unattributed")]
+        assert len(buckets) == 1
+        assert buckets[0]["total_commits"] == 2
+        assert buckets[0]["total_events"] == 2
+        assert buckets[0]["id"] is None
 
 
 # ---------------------------------------------------------------------------

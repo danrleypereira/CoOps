@@ -8,6 +8,42 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 ## [Unreleased]
 
 ### Changed
+- Silver carries unattributed records in one explicit bucket, in both
+  consumers (issues [#154](https://github.com/danrleypereira/CoOps/issues/154)
+  and [#155](https://github.com/danrleypereira/CoOps/issues/155) — one
+  defect, two symptoms). A commit whose identity channels are all null
+  (measured 2026-09-23: 1,038 of 28,244 commits in local-run, 3.68%;
+    0 of 130,186 in fga-eps-mds) and an issue event with
+  `"actor": null` (measured: 957 of 298,395 — GitHub's answer for a
+  deleted account) used to resolve to the string `'unknown'`, which the
+  two Silver modules then treated oppositely: `members_statistics`
+  excluded it (a silent drop — those records contributed to no member)
+  while `temporal_analysis` kept it (a phantom contributor literally
+  named `unknown`, credited with 1,081 events and rendered by three
+  dashboard pages). The root cause, `or {}` / `or 'unknown'`, conflated
+  "the key is missing" with "the provider told us there is nobody".
+  Both modules now resolve identity through one shared module,
+  `coops.silver.unattributed`, whose chains end in `None` — the same
+  answer the domain layer settled in `Actor`/`github/mapper.py` (#165,
+  #151): a person no channel identifies is absent, never an identity
+  carrying a blank field. Unattributed records are **carried**, not
+  dropped, and marked with a boolean `unattributed` field a reader and
+  the dashboard can test — a field, not a magic name, since `'unknown'`
+  collides with a login a real member may legitimately hold (a member
+  whose login is literally `unknown` keeps their records). Shape
+  changes on the next run: `temporal_events.json` records with no
+  attribution carry `"user": null` plus `"unattributed": true` instead
+  of `"user": "unknown"`; `daily_activity_summary.json` day rows gain
+  `unattributed_events` (counted in the day's totals, never in
+  `unique_users` or `authors`, so no aggregate presents them as one
+  person); `members_statistics.json` gains one marked row —
+  `"id": null, "name": null, "unattributed": true`, no averages —
+  appended after the members when any exist. Gold's timeline reads
+  unchanged (`if author and repo` already skips a null user). A corpus
+  with no unattributed records gains no rows or events anywhere — the
+  only output difference is the always-present
+  `unattributed_events: 0` key on `daily_activity_summary.json` day
+  rows (which Gold's day copies carry into the timelines).
 - Corrected two measured figures cited throughout the source, the tests and
   the docs (issue [#154](https://github.com/danrleypereira/CoOps/issues/154)).
   **2,076 commits with no identifier was wrong; it is 1,038** — the original
