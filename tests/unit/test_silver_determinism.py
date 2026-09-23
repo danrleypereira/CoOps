@@ -22,6 +22,7 @@ import json
 import os
 import subprocess
 import sys
+from collections import defaultdict
 
 import coops.silver.collaboration_networks as collab
 import coops.silver.members_statistics as ms
@@ -47,17 +48,14 @@ HASH_SEEDS = ("0", "1", "2", "3", "4")
 def _patch_module(monkeypatch, module, *, issues=None, prs=None, commits=None, events=None):
     """Wire fake load/save into a Silver module; return the saved artifacts."""
     data = {
-        "issues_all": issues or [],
-        "prs_all": prs or [],
-        "commits_all": commits or [],
-        "issue_events_all": events or [],
+        "issues": issues or [],
+        "prs": prs or [],
+        "commits": commits or [],
+        "issue_events": events or [],
     }
 
-    def fake_load(path):
-        for key, payload in data.items():
-            if key in path:
-                return payload
-        return []
+    def fake_load(family):
+        return data.get(family, [])
 
     saved = {}
 
@@ -65,7 +63,7 @@ def _patch_module(monkeypatch, module, *, issues=None, prs=None, commits=None, e
         saved[path] = payload
         return path
 
-    monkeypatch.setattr(module, "load_json_data", fake_load)
+    monkeypatch.setattr(module, "load_family", fake_load)
     monkeypatch.setattr(module, "save_json_data", fake_save)
     return saved
 
@@ -187,15 +185,23 @@ print(json.dumps(out, sort_keys=True))
 
 
 def _write_bronze(root, *, issues=(), prs=(), commits=(), events=()):
+    """Write Bronze the way Silver reads it since #170: one file per
+    repository, grouped out of the flat record sequences the tests build."""
     bronze = root / "data" / "bronze"
     bronze.mkdir(parents=True, exist_ok=True)
-    for name, payload in (
-        ("issues_all.json", issues),
-        ("prs_all.json", prs),
-        ("commits_all.json", commits),
-        ("issue_events_all.json", events),
+    for family, payload in (
+        ("issues", issues),
+        ("prs", prs),
+        ("commits", commits),
+        ("issue_events", events),
     ):
-        (bronze / name).write_text(json.dumps(list(payload)), encoding="utf-8")
+        by_repo = defaultdict(list)
+        for record in payload:
+            by_repo[record.get("repo_name", "unknown")].append(record)
+        for repo, records in by_repo.items():
+            (bronze / f"{family}_{repo}.json").write_text(
+                json.dumps(records), encoding="utf-8"
+            )
 
 
 def _assert_identical_under_all_hash_seeds(snippet, cwd, must_contain):

@@ -25,6 +25,20 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   so the CLI is unchanged. `TENANT_MODE=multi` raises `NotImplementedError`
   until the tenant registry lands. Entities carrying `ProviderAccount` plus
   the provider's `external_id` (#21) follow in the second half.
+- Silver reads Bronze per-repository files instead of the `_all` aggregates
+  (issue [#170](https://github.com/danrleypereira/CoOps/issues/170), step 1).
+  `members_statistics`, `contribution_metrics`, `collaboration_networks` and
+  `temporal_analysis` — the four processors that read only
+  `issues_all`/`prs_all`/`commits_all`/`issue_events_all` — now load through
+  one shared reader, `coops.silver.bronze_input.load_family`, built on
+  `coops.bronze.files.bronze_records` (#156), which excludes the aggregate
+  and the derived `_with_stats` copies at enumeration time. No output shape
+  changed and no field was added or removed; the aggregates are still
+  written (their removal is a later step of #170). Verified over the
+  `fga-eps-mds` corpus: per-repository files are an exact multiset match of
+  the aggregates (20,090 / 16,531 / 130,186 / 298,395 records), and the
+  full Silver + Gold output differs from the aggregate-based run only in
+  run timestamps and the order of equal-key records.
 
 ### Added
 - mypy in CI (issue [#91](https://github.com/danrleypereira/CoOps/issues/91)):

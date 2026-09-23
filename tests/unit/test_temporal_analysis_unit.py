@@ -57,14 +57,14 @@ def test_temporal_analysis_commit_user_identification(monkeypatch):
     ]
     issue_events_data: List[Dict[str, Any]] = []
 
-    def fake_load_json_data(path: str):
-        if path.endswith("issues_all.json"):
+    def fake_load_json_data(family: str):
+        if family == "issues":
             return issues_data
-        if path.endswith("prs_all.json"):
+        if family == "prs":
             return prs_data
-        if path.endswith("commits_all.json"):
+        if family == "commits":
             return commits_data
-        if path.endswith("issue_events_all.json"):
+        if family == "issue_events":
             return issue_events_data
         return []
 
@@ -75,7 +75,7 @@ def test_temporal_analysis_commit_user_identification(monkeypatch):
         return path
 
     # 3) Monkeypatch nas funções usadas dentro do módulo
-    monkeypatch.setattr(temporal, "load_json_data", fake_load_json_data)
+    monkeypatch.setattr(temporal, "load_family", fake_load_json_data)
     monkeypatch.setattr(temporal, "save_json_data", fake_save_json_data)
     monkeypatch.setattr(temporal, "parse_github_date", _iso)
 
@@ -115,14 +115,14 @@ def test_temporal_analysis_unlinked_author_hash(monkeypatch):
     ]
     issue_events_data: List[Dict[str, Any]] = []
 
-    def fake_load_json_data(path: str):
-        if path.endswith("issues_all.json"):
+    def fake_load_json_data(family: str):
+        if family == "issues":
             return issues_data
-        if path.endswith("prs_all.json"):
+        if family == "prs":
             return prs_data
-        if path.endswith("commits_all.json"):
+        if family == "commits":
             return commits_data
-        if path.endswith("issue_events_all.json"):
+        if family == "issue_events":
             return issue_events_data
         return []
 
@@ -132,7 +132,7 @@ def test_temporal_analysis_unlinked_author_hash(monkeypatch):
         saved[path] = data
         return path
 
-    monkeypatch.setattr(temporal, "load_json_data", fake_load_json_data)
+    monkeypatch.setattr(temporal, "load_family", fake_load_json_data)
     monkeypatch.setattr(temporal, "save_json_data", fake_save_json_data)
     monkeypatch.setattr(temporal, "parse_github_date", _iso)
 

@@ -10,14 +10,14 @@ def _make_helpers(monkeypatch, *, commits=None, issues=None, prs=None, events=No
     prs = prs or []
     events = events or []
 
-    def fake_load(path):
-        if "commits_all" in path:
+    def fake_load(family):
+        if family == "commits":
             return commits
-        if "issues_all" in path:
+        if family == "issues":
             return issues
-        if "prs_all" in path:
+        if family == "prs":
             return prs
-        if "issue_events_all" in path:
+        if family == "issue_events":
             return events
         return []
 
@@ -27,7 +27,7 @@ def _make_helpers(monkeypatch, *, commits=None, issues=None, prs=None, events=No
         saved[path] = data
         return path
 
-    monkeypatch.setattr(ms, "load_json_data", fake_load)
+    monkeypatch.setattr(ms, "load_family", fake_load)
     monkeypatch.setattr(ms, "save_json_data", fake_save)
     return saved
 

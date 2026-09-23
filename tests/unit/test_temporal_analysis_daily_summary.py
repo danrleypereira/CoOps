@@ -57,14 +57,14 @@ def test_temporal_analysis_commit_user_identification(monkeypatch):
     ]
     issue_events_data: List[Dict[str, Any]] = []
 
-    def fake_load_json_data(path: str):
-        if path.endswith("issues_all.json"):
+    def fake_load_json_data(family: str):
+        if family == "issues":
             return issues_data
-        if path.endswith("prs_all.json"):
+        if family == "prs":
             return prs_data
-        if path.endswith("commits_all.json"):
+        if family == "commits":
             return commits_data
-        if path.endswith("issue_events_all.json"):
+        if family == "issue_events":
             return issue_events_data
         return []
 
@@ -75,7 +75,7 @@ def test_temporal_analysis_commit_user_identification(monkeypatch):
         return path
 
     # 3) Monkeypatch nas funções usadas dentro do módulo
-    monkeypatch.setattr(temporal, "load_json_data", fake_load_json_data)
+    monkeypatch.setattr(temporal, "load_family", fake_load_json_data)
     monkeypatch.setattr(temporal, "save_json_data", fake_save_json_data)
     monkeypatch.setattr(temporal, "parse_github_date", _iso)
 
@@ -97,7 +97,7 @@ def test_temporal_analysis_commit_user_identification(monkeypatch):
 
 def test_temporal_analysis_empty_data(monkeypatch):
     """Testa processamento com dados vazios"""
-    def fake_load(path):
+    def fake_load(family):
         return []
     
     saved = {}
@@ -105,7 +105,7 @@ def test_temporal_analysis_empty_data(monkeypatch):
         saved[path] = data
         return path
     
-    monkeypatch.setattr(temporal, "load_json_data", fake_load)
+    monkeypatch.setattr(temporal, "load_family", fake_load)
     monkeypatch.setattr(temporal, "save_json_data", fake_save)
     monkeypatch.setattr(temporal, "parse_github_date", _iso)
     
@@ -142,8 +142,8 @@ def test_temporal_analysis_issues_processing(monkeypatch):
         },
     ]
     
-    def fake_load(path):
-        if path.endswith("issues_all.json"):
+    def fake_load(family):
+        if family == "issues":
             return issues_data
         return []
     
@@ -152,7 +152,7 @@ def test_temporal_analysis_issues_processing(monkeypatch):
         saved[path] = data
         return path
     
-    monkeypatch.setattr(temporal, "load_json_data", fake_load)
+    monkeypatch.setattr(temporal, "load_family", fake_load)
     monkeypatch.setattr(temporal, "save_json_data", fake_save)
     monkeypatch.setattr(temporal, "parse_github_date", _iso)
     
@@ -187,8 +187,8 @@ def test_temporal_analysis_prs_processing(monkeypatch):
         },
     ]
     
-    def fake_load(path):
-        if path.endswith("prs_all.json"):
+    def fake_load(family):
+        if family == "prs":
             return prs_data
         return []
     
@@ -197,7 +197,7 @@ def test_temporal_analysis_prs_processing(monkeypatch):
         saved[path] = data
         return path
     
-    monkeypatch.setattr(temporal, "load_json_data", fake_load)
+    monkeypatch.setattr(temporal, "load_family", fake_load)
     monkeypatch.setattr(temporal, "save_json_data", fake_save)
     monkeypatch.setattr(temporal, "parse_github_date", _iso)
     
@@ -227,8 +227,8 @@ def test_temporal_analysis_issue_events_processing(monkeypatch):
         },
     ]
     
-    def fake_load(path):
-        if path.endswith("issue_events_all.json"):
+    def fake_load(family):
+        if family == "issue_events":
             return issue_events_data
         return []
     
@@ -237,7 +237,7 @@ def test_temporal_analysis_issue_events_processing(monkeypatch):
         saved[path] = data
         return path
     
-    monkeypatch.setattr(temporal, "load_json_data", fake_load)
+    monkeypatch.setattr(temporal, "load_family", fake_load)
     monkeypatch.setattr(temporal, "save_json_data", fake_save)
     monkeypatch.setattr(temporal, "parse_github_date", _iso)
     
@@ -277,8 +277,8 @@ def test_temporal_analysis_daily_activity_summary(monkeypatch):
         },
     ]
     
-    def fake_load(path):
-        if path.endswith("commits_all.json"):
+    def fake_load(family):
+        if family == "commits":
             return commits_data
         return []
     
@@ -287,7 +287,7 @@ def test_temporal_analysis_daily_activity_summary(monkeypatch):
         saved[path] = data
         return path
     
-    monkeypatch.setattr(temporal, "load_json_data", fake_load)
+    monkeypatch.setattr(temporal, "load_family", fake_load)
     monkeypatch.setattr(temporal, "save_json_data", fake_save)
     monkeypatch.setattr(temporal, "parse_github_date", _iso)
     
@@ -330,8 +330,8 @@ def test_temporal_analysis_activity_heatmap(monkeypatch):
         },
     ]
     
-    def fake_load(path):
-        if path.endswith("commits_all.json"):
+    def fake_load(family):
+        if family == "commits":
             return commits_data
         return []
     
@@ -340,7 +340,7 @@ def test_temporal_analysis_activity_heatmap(monkeypatch):
         saved[path] = data
         return path
     
-    monkeypatch.setattr(temporal, "load_json_data", fake_load)
+    monkeypatch.setattr(temporal, "load_family", fake_load)
     monkeypatch.setattr(temporal, "save_json_data", fake_save)
     monkeypatch.setattr(temporal, "parse_github_date", _iso)
     
@@ -377,10 +377,10 @@ def test_temporal_analysis_cycle_times(monkeypatch):
         },
     ]
     
-    def fake_load(path):
-        if path.endswith("issues_all.json"):
+    def fake_load(family):
+        if family == "issues":
             return issues_data
-        if path.endswith("prs_all.json"):
+        if family == "prs":
             return prs_data
         return []
     
@@ -389,7 +389,7 @@ def test_temporal_analysis_cycle_times(monkeypatch):
         saved[path] = data
         return path
     
-    monkeypatch.setattr(temporal, "load_json_data", fake_load)
+    monkeypatch.setattr(temporal, "load_family", fake_load)
     monkeypatch.setattr(temporal, "save_json_data", fake_save)
     monkeypatch.setattr(temporal, "parse_github_date", _iso)
     
@@ -441,10 +441,10 @@ def test_temporal_analysis_temporal_statistics(monkeypatch):
         },
     ]
     
-    def fake_load(path):
-        if path.endswith("issues_all.json"):
+    def fake_load(family):
+        if family == "issues":
             return issues_data
-        if path.endswith("commits_all.json"):
+        if family == "commits":
             return commits_data
         return []
     
@@ -453,7 +453,7 @@ def test_temporal_analysis_temporal_statistics(monkeypatch):
         saved[path] = data
         return path
     
-    monkeypatch.setattr(temporal, "load_json_data", fake_load)
+    monkeypatch.setattr(temporal, "load_family", fake_load)
     monkeypatch.setattr(temporal, "save_json_data", fake_save)
     monkeypatch.setattr(temporal, "parse_github_date", _iso)
     
@@ -493,8 +493,8 @@ def test_temporal_analysis_metadata_removal(monkeypatch):
         },
     ]
     
-    def fake_load(path):
-        if path.endswith("issues_all.json"):
+    def fake_load(family):
+        if family == "issues":
             return issues_data
         return []
     
@@ -503,7 +503,7 @@ def test_temporal_analysis_metadata_removal(monkeypatch):
         saved[path] = data
         return path
     
-    monkeypatch.setattr(temporal, "load_json_data", fake_load)
+    monkeypatch.setattr(temporal, "load_family", fake_load)
     monkeypatch.setattr(temporal, "save_json_data", fake_save)
     monkeypatch.setattr(temporal, "parse_github_date", _iso)
     
@@ -527,8 +527,8 @@ def test_temporal_analysis_user_fallback_to_name(monkeypatch):
         },
     ]
     
-    def fake_load(path):
-        if path.endswith("issues_all.json"):
+    def fake_load(family):
+        if family == "issues":
             return issues_data
         return []
     
@@ -537,7 +537,7 @@ def test_temporal_analysis_user_fallback_to_name(monkeypatch):
         saved[path] = data
         return path
     
-    monkeypatch.setattr(temporal, "load_json_data", fake_load)
+    monkeypatch.setattr(temporal, "load_family", fake_load)
     monkeypatch.setattr(temporal, "save_json_data", fake_save)
     monkeypatch.setattr(temporal, "parse_github_date", _iso)
     
@@ -565,8 +565,8 @@ def test_temporal_analysis_commit_with_additions_deletions(monkeypatch):
         },
     ]
     
-    def fake_load(path):
-        if path.endswith("commits_all.json"):
+    def fake_load(family):
+        if family == "commits":
             return commits_data
         return []
     
@@ -575,7 +575,7 @@ def test_temporal_analysis_commit_with_additions_deletions(monkeypatch):
         saved[path] = data
         return path
     
-    monkeypatch.setattr(temporal, "load_json_data", fake_load)
+    monkeypatch.setattr(temporal, "load_family", fake_load)
     monkeypatch.setattr(temporal, "save_json_data", fake_save)
     monkeypatch.setattr(temporal, "parse_github_date", _iso)
     
@@ -614,8 +614,8 @@ def test_temporal_analysis_author_id_equals_chain(monkeypatch):
         },
     ]
 
-    def fake_load(path):
-        if path.endswith("commits_all.json"):
+    def fake_load(family):
+        if family == "commits":
             return commits_data
         return []
 
@@ -625,7 +625,7 @@ def test_temporal_analysis_author_id_equals_chain(monkeypatch):
         saved[path] = data
         return path
 
-    monkeypatch.setattr(temporal, "load_json_data", fake_load)
+    monkeypatch.setattr(temporal, "load_family", fake_load)
     monkeypatch.setattr(temporal, "save_json_data", fake_save)
     monkeypatch.setattr(temporal, "parse_github_date", _iso)
 
@@ -674,8 +674,8 @@ def test_temporal_analysis_shared_name_distinct_ids(monkeypatch):
         },
     ]
 
-    def fake_load(path):
-        if path.endswith("commits_all.json"):
+    def fake_load(family):
+        if family == "commits":
             return commits_data
         return []
 
@@ -685,7 +685,7 @@ def test_temporal_analysis_shared_name_distinct_ids(monkeypatch):
         saved[path] = data
         return path
 
-    monkeypatch.setattr(temporal, "load_json_data", fake_load)
+    monkeypatch.setattr(temporal, "load_family", fake_load)
     monkeypatch.setattr(temporal, "save_json_data", fake_save)
     monkeypatch.setattr(temporal, "parse_github_date", _iso)
 
@@ -710,9 +710,9 @@ def _run_temporal(monkeypatch, *, issues=None, prs=None, commits=None, events=No
         "issue_events_all.json": events or [],
     }
 
-    def fake_load(path):
+    def fake_load(family):
         for name, rows in bronze.items():
-            if path.endswith(name):
+            if name == f"{family}_all.json":
                 return rows
         return []
 
@@ -722,7 +722,7 @@ def _run_temporal(monkeypatch, *, issues=None, prs=None, commits=None, events=No
         saved[path] = data
         return path
 
-    monkeypatch.setattr(temporal, "load_json_data", fake_load)
+    monkeypatch.setattr(temporal, "load_family", fake_load)
     monkeypatch.setattr(temporal, "save_json_data", fake_save)
     monkeypatch.setattr(temporal, "parse_github_date", _iso)
     temporal.process_temporal_analysis()
