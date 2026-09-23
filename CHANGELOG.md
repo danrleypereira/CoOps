@@ -16,14 +16,20 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   display name are two fields, never one (the #151 defect): `identity`
   resolves `login → author_email_hash → name`, while `display_name` may be
   `None` (address-shaped names, #132); a null event actor stays an absent
-  actor, never a Member named "unknown".
+  actor, never a Member named "unknown", and so does a commit author no
+  channel identifies (`Commit.author: Actor | None`, the 2,076 commits of
+  [#154](https://github.com/danrleypereira/CoOps/issues/154)).
 - `coops.github.mapper` (issue [#25](https://github.com/danrleypereira/CoOps/issues/25)):
   GitHub REST and GraphQL payloads → the domain models, built from named
   fields only (never by spreading a provider response). Handles commits in
   both provider shapes — REST (`sha`, `commit.author`, top-level
   `author.{login,id}`) and GraphQL (`oid`, `author.user.login`,
   `committedDate`, `parents.nodes`) — including unlinked authors (no
-  account, identified by email hash) and address-shaped author names.
+  account, identified by email hash), address-shaped author names and
+  authors no channel identifies at all, who map to `author=None` instead
+  of aborting ([#154](https://github.com/danrleypereira/CoOps/issues/154):
+  2,076 real commits; `Actor.resolve` still refuses an empty identity —
+  the mapper decides absence, as it already did for null event actors).
   Members, issues, pull requests, activity events and file trees (REST and
   GraphQL) map the same way. Nothing consumes the models yet; no existing
   module changed behaviour.

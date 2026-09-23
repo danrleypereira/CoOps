@@ -33,7 +33,9 @@ An email address never reaches a model. As in
 :func:`coops.bronze.commits._sanitize_commit`, the address is reduced to its
 SHA-256 (``_hash_email`` below, twin of the Bronze helper) and only the hash
 travels, as ``Actor.email_hash``; the raw name survives only as
-``display_name``, blanked when it is itself an address (#132).
+``display_name``, blanked when it is itself an address (#132). An author no
+channel identifies at all is absent, ``Commit.author=None`` — the same
+treatment null event actors get, not an ``Actor`` with a blank field.
 """
 
 from __future__ import annotations
@@ -75,7 +77,7 @@ def _author_actor(
     account_id: int | None = None,
     name: str | None = None,
     email: str | None = None,
-) -> Actor:
+) -> Actor | None:
     """Resolve a commit author from the provider's three identity channels.
 
     The email is hashed here and only the hash is passed on, and — matching
@@ -84,13 +86,26 @@ def _author_actor(
     the corpus) by the hash of an email that is their only identifier.
     ``Actor.resolve`` applies the precedence (login -> email_hash -> name)
     and blanks an address-shaped name.
+
+    An author no channel identifies — no login, no account, no name, no
+    email (measured, 2,076 commits in the corpus, #154: a deleted account,
+    or author metadata that never resolved) — is **absent**: ``None``,
+    exactly how ``_conversation_actor`` treats a null event actor, never
+    an ``Actor`` carrying a blank field (a shared empty identity would
+    merge distinct people, #151). ``Actor.resolve`` itself keeps raising
+    on an empty identity; this caller decides absence *before* calling it,
+    reusing the domain's own ``identity_key`` so there is no second
+    notion of "identifies nobody".
     """
     unlinked = not login and account_id is None
+    email_hash = _hash_email(email) if email and unlinked else None
+    if identity_key(login, email_hash, display_name_of(name)) is None:
+        return None
     return Actor.resolve(
         login=login,
         account_id=account_id,
         name=name,
-        email_hash=_hash_email(email) if email and unlinked else None,
+        email_hash=email_hash,
     )
 
 

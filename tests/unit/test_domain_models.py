@@ -309,6 +309,27 @@ def test_commit_blank_committed_at_raises():
         )
 
 
+def test_commit_author_may_be_absent():
+    """#154 measured 2,076 commits whose author has no identifier at all —
+    no login, no account, no name, no email (a deleted account, or author
+    metadata that never resolved).
+
+    The model carries that as ``author=None``: an absent author, not an
+    ``Actor`` with a blank field — a shared empty identity would merge
+    distinct people, the #151 defect. The field stays required (no
+    default): every commit has an author *slot*, present or absent.
+    """
+    commit = Commit(
+        tenant=TENANT,
+        repo_name="coops",
+        sha="a" * 40,
+        author=None,
+        committed_at="2026-03-04T10:00:00Z",
+        message="x",
+    )
+    assert commit.author is None
+
+
 # --- Issue / PullRequest --------------------------------------------------------
 
 

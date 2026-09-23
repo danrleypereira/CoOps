@@ -1,8 +1,16 @@
 """A commit, provider-neutral, with its author resolved to an Actor.
 
 Commits arrive from GitHub in two shapes and this model is the one place
-they meet (the mapper in :mod:`coops.github.mapper` reads both). Two fields
-exist because the two shapes disagree:
+they meet (the mapper in :mod:`coops.github.mapper` reads both).
+
+``author`` is ``None`` when no channel identifies the author — no login,
+no account, no name, no email (measured, 2,076 commits in the corpus,
+#154: a deleted account, or author metadata that never resolved). An
+absent author is not an ``Actor`` carrying a blank field: a shared empty
+identity would merge distinct people, the defect #151 exists to prevent.
+The same treatment the null event actors get.
+
+Two fields exist because the two shapes disagree:
 
 - ``committed_at`` — when the commit entered the history it was fetched
   from. Always present: GraphQL's ``committedDate``, or the REST committer
@@ -32,7 +40,7 @@ class Commit:
     tenant: TenantId
     repo_name: str
     sha: str
-    author: Actor
+    author: Actor | None
     committed_at: str
     message: str
     authored_at: str | None = None

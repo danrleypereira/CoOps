@@ -168,6 +168,27 @@ def test_graphql_commit_address_shaped_name_is_blanked():
     assert author.identity == ADDRESS_HASH
 
 
+def test_graphql_commit_author_with_no_identifier_is_absent():
+    """Real corpus shape — not an edge case: #154 measured 2,076 commits
+    whose author has *no* identifier at all (no login, no account id, no
+    name, no email — a deleted account, or author metadata that never
+    resolved).
+
+    The call must not raise: the commit maps and its author is **absent**
+    (``None``), the same treatment the 957 null event actors get — never
+    an ``Actor`` carrying a blank field, which a shared empty identity
+    would merge distinct people into (#151). ``Actor.resolve`` keeps
+    raising on an empty identity; the mapper decides absence first.
+    """
+    node = graphql_history_node()
+    node["author"] = {"name": None, "email": None, "user": None}
+    commit = map_commit_graphql(node, TENANT, "coops")  # no exception
+    assert commit.author is None
+    # The commit itself still maps in full.
+    assert commit.sha == SHA
+    assert commit.committed_at == "2026-03-04T10:00:00Z"
+
+
 # --- commits: REST shape ------------------------------------------------------
 
 
@@ -207,6 +228,23 @@ def test_rest_commit_name_and_hash_identity_takes_hash_display_keeps_name():
     author = map_commit_rest(raw, TENANT, "coops").author
     assert author.identity == ADDRESS_HASH
     assert author.display_name == "Rosa Almeida"
+
+
+def test_rest_commit_author_with_no_identifier_is_absent():
+    """REST twin of the #154 shape (2,076 commits in the corpus): the
+    top-level ``author`` is null (no account link) and the git identity
+    carries no name and no email — all four identifiers absent.
+
+    The call must not raise: the commit maps with ``author=None``, exactly
+    as the GraphQL mapper does for the same author.
+    """
+    raw = rest_commit()
+    raw["author"] = None
+    raw["commit"]["author"] = {"name": None, "email": None, "date": None}
+    commit = map_commit_rest(raw, TENANT, "coops")  # no exception
+    assert commit.author is None
+    assert commit.authored_at is None  # the absent author left no date either
+    assert commit.committed_at == "2026-03-04T10:00:00Z"
 
 
 def test_rest_and_graphql_shapes_of_one_commit_agree():
