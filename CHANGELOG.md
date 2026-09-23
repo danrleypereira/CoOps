@@ -139,6 +139,21 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   everything written to `data/bronze/` still goes through the Bronze scrub.
 
 ### Changed
+- Silver renders contributor display names again (issue
+  [#151](https://github.com/danrleypereira/CoOps/issues/151), step 3 of 3):
+  `name` in `members_statistics.json` and in the `daily_activity_summary`
+  authors is now the label chain **login → real name → `Unknown contributor
+  (<first 8 hash chars>)`**, while `id` keeps the identity chain
+  (login → `author_email_hash` → name) unchanged. Unlinked commit authors
+  whose real name exists in Bronze had been rendering as
+  `Unknown contributor (a1b2c3d4)`; they now display that name, and labels
+  may repeat across records (distinct `id`s keep them apart). Where an
+  identity carries several spellings of its name, the label is picked by a
+  deterministic rule — prefer a spelling containing a space, then the
+  highest occurrence count, then lexicographic order — decided at
+  aggregation, after every event for that identity has been seen.
+  `temporal_events.json` still carries the raw identity in `user`, which is
+  the join key Gold uses.
 - The dashboard no longer treats a member's display `name` as their
   identity (issue [#151](https://github.com/danrleypereira/CoOps/issues/151),
   step 2 of 3): `AISummary` selection, deselection, highlight, removal and
