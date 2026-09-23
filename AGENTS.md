@@ -73,6 +73,13 @@ with `uv run --project <repo> ...`.
   tests for the behaviour you changed, a suite you ran and quoted, lint/format/
   type-check green, and every new guard shown capable of failing.
 - Update `CHANGELOG.md` under `[Unreleased]` for user-visible changes.
+- **Never write `Closes #N` in a PR that targets a phase branch.** Work here
+  merges issue PR → `phase/<epic>-<slug>` → `main`, and GitHub only honours the
+  keyword on a merge into the *default* branch. Merging into a phase branch
+  ignores it **and spends it**, so the issue never closes — not then, and not on
+  the eventual merge to `main` either. Write `Refs #N` and close the issue by
+  hand. This is how the tracker reached 84 open issues whose work was long since
+  delivered.
 - GPL-3.0-or-later.
 - Open the PR as a draft, fill in `.github/PULL_REQUEST_TEMPLATE.md` (its
   **Organization validation** section is where the validation output goes),
