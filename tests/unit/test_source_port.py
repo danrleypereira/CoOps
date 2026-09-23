@@ -36,6 +36,8 @@ from coops.domain import (
     FileTree,
     Issue,
     Member,
+    PROVIDER_GITHUB,
+    ProviderAccount,
     PullRequest,
     Repository,
     TenantId,
@@ -329,11 +331,15 @@ class SourcePortContract:
 
     TENANT_A = TenantId("org-a")
     TENANT_B = TenantId("org-b")
+    ACCOUNT_A = ProviderAccount(PROVIDER_GITHUB, "org-a")
+    ACCOUNT_B = ProviderAccount(PROVIDER_GITHUB, "org-b")
 
-    @staticmethod
-    def _commit(tenant: TenantId, repo_name: str, sha: str) -> Commit:
+    @classmethod
+    def _commit(cls, tenant: TenantId, repo_name: str, sha: str) -> Commit:
         return Commit(
-            tenant=tenant,
+            tenant_id=tenant,
+            account=cls._account_of(tenant),
+            external_id=sha,
             repo_name=repo_name,
             sha=sha,
             author=Actor.resolve(login="rosa-almeida", account_id=1001),
@@ -342,55 +348,75 @@ class SourcePortContract:
         )
 
     @classmethod
+    def _account_of(cls, tenant: TenantId) -> ProviderAccount:
+        return cls.ACCOUNT_A if tenant == cls.TENANT_A else cls.ACCOUNT_B
+
+    @classmethod
     def _seeded(cls, source: InMemorySource) -> InMemorySource:
         """Two tenants, colliding on one repository name on purpose."""
         a, b = cls.TENANT_A, cls.TENANT_B
         source.add_repository(
             a,
             Repository(
-                tenant=a, repo_id=101, name="demo-api", full_name="org-a/demo-api"
+                tenant_id=a,
+                account=cls.ACCOUNT_A,
+                external_id="101",
+                name="demo-api",
+                full_name="org-a/demo-api",
             ),
         )
         source.add_repository(
             a,
             Repository(
-                tenant=a, repo_id=102, name="demo-web", full_name="org-a/demo-web"
+                tenant_id=a,
+                account=cls.ACCOUNT_A,
+                external_id="102",
+                name="demo-web",
+                full_name="org-a/demo-web",
             ),
         )
         source.add_repository(
             b,
             Repository(
-                tenant=b, repo_id=201, name="demo-api", full_name="org-b/demo-api"
+                tenant_id=b,
+                account=cls.ACCOUNT_B,
+                external_id="201",
+                name="demo-api",
+                full_name="org-b/demo-api",
             ),
         )
         source.add_member(
             a,
             Member(
-                tenant=a,
+                tenant_id=a,
+                account=cls.ACCOUNT_A,
                 identity="rosa-almeida",
                 display_name=None,
                 login="rosa-almeida",
-                account_id=1001,
+                external_id="1001",
             ),
         )
         source.add_member(
             b,
             Member(
-                tenant=b,
+                tenant_id=b,
+                account=cls.ACCOUNT_B,
                 identity="joao-silva",
                 display_name=None,
                 login="joao-silva",
-                account_id=2001,
+                external_id="2001",
             ),
         )
         main_tree = FileTree(
-            tenant=a,
+            tenant_id=a,
+            account=cls.ACCOUNT_A,
             repo_name="demo-api",
             branch="main",
             entries=(FileEntry(path="README.md", kind="blob"),),
         )
         release_tree = FileTree(
-            tenant=a,
+            tenant_id=a,
+            account=cls.ACCOUNT_A,
             repo_name="demo-api",
             branch="release/2026.1",
             entries=(FileEntry(path="CHANGELOG.md", kind="blob"),),
@@ -405,7 +431,9 @@ class SourcePortContract:
             ),
             issues=(
                 Issue(
-                    tenant=a,
+                    tenant_id=a,
+                    account=cls.ACCOUNT_A,
+                    external_id="9001",
                     repo_name="demo-api",
                     number=1,
                     state="open",
@@ -414,7 +442,9 @@ class SourcePortContract:
             ),
             pull_requests=(
                 PullRequest(
-                    tenant=a,
+                    tenant_id=a,
+                    account=cls.ACCOUNT_A,
+                    external_id="9002",
                     repo_name="demo-api",
                     number=2,
                     state="closed",
@@ -431,7 +461,9 @@ class SourcePortContract:
             commits=(cls._commit(a, "demo-web", "c" * 40),),
             issues=(
                 Issue(
-                    tenant=a,
+                    tenant_id=a,
+                    account=cls.ACCOUNT_A,
+                    external_id="9101",
                     repo_name="demo-web",
                     number=1,
                     state="open",
@@ -440,7 +472,8 @@ class SourcePortContract:
             ),
             trees={
                 "main": FileTree(
-                    tenant=a,
+                    tenant_id=a,
+                    account=cls.ACCOUNT_A,
                     repo_name="demo-web",
                     branch="main",
                     entries=(FileEntry(path="demo-web.md", kind="blob"),),
@@ -454,7 +487,9 @@ class SourcePortContract:
             commits=(cls._commit(b, "demo-api", "d" * 40),),
             issues=(
                 Issue(
-                    tenant=b,
+                    tenant_id=b,
+                    account=cls.ACCOUNT_B,
+                    external_id="9201",
                     repo_name="demo-api",
                     number=1,
                     state="open",
@@ -463,7 +498,9 @@ class SourcePortContract:
             ),
             pull_requests=(
                 PullRequest(
-                    tenant=b,
+                    tenant_id=b,
+                    account=cls.ACCOUNT_B,
+                    external_id="9202",
                     repo_name="demo-api",
                     number=3,
                     state="open",
@@ -472,7 +509,8 @@ class SourcePortContract:
             ),
             trees={
                 "main": FileTree(
-                    tenant=b,
+                    tenant_id=b,
+                    account=cls.ACCOUNT_B,
                     repo_name="demo-api",
                     branch="main",
                     entries=(FileEntry(path="org-b.md", kind="blob"),),
@@ -490,7 +528,7 @@ class SourcePortContract:
     def test_fetch_repositories_returns_only_the_calling_tenants(self, source):
         repos = list(source.fetch_repositories(self.TENANT_A))
         assert sorted(r.name for r in repos) == ["demo-api", "demo-web"]
-        assert all(r.tenant == self.TENANT_A for r in repos)
+        assert all(r.tenant_id == self.TENANT_A for r in repos)
         assert [r.name for r in source.fetch_repositories(self.TENANT_B)] == [
             "demo-api"
         ]
@@ -506,7 +544,7 @@ class SourcePortContract:
         # record returned to tenant A must be tenant A's — never B's.
         records = fetch_records(source, kind, self.TENANT_A, "demo-api")
         assert records, f"{kind} should have records for the calling tenant"
-        assert all(record.tenant == self.TENANT_A for record in records)
+        assert all(record.tenant_id == self.TENANT_A for record in records)
 
     def test_same_repo_name_in_two_tenants_is_answered_per_tenant(self, source):
         # The combination, not the members: tenant and repository both

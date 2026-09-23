@@ -53,6 +53,7 @@ from collections.abc import Mapping
 from typing import Any
 
 from coops.domain import (
+    PROVIDER_GITHUB,
     ActivityEvent,
     Actor,
     Commit,
@@ -60,12 +61,29 @@ from coops.domain import (
     FileTree,
     Issue,
     Member,
+    ProviderAccount,
     PullRequest,
     Repository,
     TenantId,
     display_name_of,
     identity_key,
 )
+
+
+def _require_github(account: ProviderAccount) -> ProviderAccount:
+    """Reject an account from another provider before any mapping happens.
+
+    Mapping a payload this module fetched from GitHub under, say, the
+    GitLab account of the same tenant would label GitHub-shaped data with
+    the wrong provider — and two providers' records for one tenant are
+    exactly what #92 keeps apart. A wiring bug, so ``ValueError`` like
+    every address guard in the domain.
+    """
+    if account.provider != PROVIDER_GITHUB:
+        raise ValueError(
+            f"the GitHub mapper maps GitHub records, not {account.provider!r}"
+        )
+    return account
 
 
 def _hash_email(email: str) -> str:
@@ -140,11 +158,21 @@ def _conversation_actor(raw_user: Any) -> Actor | None:
     )
 
 
-def map_repository(raw: Mapping[str, Any], tenant: TenantId) -> Repository:
-    """Map a REST repository object (``/orgs/{org}/repos`` item)."""
+def map_repository(
+    raw: Mapping[str, Any],
+    tenant_id: TenantId,
+    account: ProviderAccount,
+) -> Repository:
+    """Map a REST repository object (``/orgs/{org}/repos`` item).
+
+    ``external_id`` is the provider's numeric repository id, stringified —
+    the shape :mod:`coops.domain.models` fixes for the storage key (#39).
+    """
+    _require_github(account)
     return Repository(
-        tenant=tenant,
-        repo_id=raw.get("id") or 0,
+        tenant_id=tenant_id,
+        account=account,
+        external_id=str(raw["id"]) if raw.get("id") else "",
         name=raw.get("name") or "",
         full_name=raw.get("full_name") or "",
         is_private=bool(raw.get("private")),
@@ -166,7 +194,8 @@ def map_repository(raw: Mapping[str, Any], tenant: TenantId) -> Repository:
 
 def map_member(
     raw: Mapping[str, Any],
-    tenant: TenantId,
+    tenant_id: TenantId,
+    account: ProviderAccount,
     *,
     is_org_member: bool = False,
 ) -> Member:
@@ -179,7 +208,12 @@ def map_member(
     list items yield ``display_name=None``, which is normal). Whether the
     person is an organization member is caller knowledge (which endpoint
     produced the payload), hence the keyword-only flag.
+
+    ``external_id`` is the provider's account id, stringified. ``person_id``
+    is deliberately **not** set: it is reserved for cross-provider linking
+    (#89's replacement) and the GitHub mapper must not invent a value.
     """
+    _require_github(account)
     login = raw.get("login") or None
     display_name = display_name_of(raw.get("name"))
     identity = identity_key(login, None, display_name)
@@ -189,11 +223,12 @@ def map_member(
             " nothing to key a Member on"
         )
     return Member(
-        tenant=tenant,
+        tenant_id=tenant_id,
+        account=account,
         identity=identity,
         display_name=display_name,
+        external_id=str(raw["id"]) if raw.get("id") else None,
         login=login,
-        account_id=raw.get("id"),
         is_org_member=is_org_member,
         contributions_total=raw.get("contributions") or 0,
     )
@@ -201,20 +236,27 @@ def map_member(
 
 def map_commit_graphql(
     node: Mapping[str, Any],
-    tenant: TenantId,
+    tenant_id: TenantId,
+    account: ProviderAccount,
     repo_name: str,
 ) -> Commit:
     """Map one GraphQL ``history`` node to a Commit.
 
     The node shape is what ``graphql_commit_history`` requests (see module
     docstring); ``additions``/``deletions`` are always requested but kept
-    optional so a degraded node still maps.
+    optional so a degraded node still maps. ``external_id`` is the ``oid``:
+    for a commit the provider's own id *is* the git object id, so it equals
+    ``sha`` by GitHub's nature, not by this mapper's choice (see
+    :class:`coops.domain.models.Commit`).
     """
+    _require_github(account)
     author = node.get("author") or {}
     user = author.get("user") or {}
     parent_nodes = (node.get("parents") or {}).get("nodes") or []
     return Commit(
-        tenant=tenant,
+        tenant_id=tenant_id,
+        account=account,
+        external_id=node.get("oid") or "",
         repo_name=repo_name,
         sha=node.get("oid") or "",
         author=_author_actor(
@@ -235,7 +277,8 @@ def map_commit_graphql(
 
 def map_commit_rest(
     raw: Mapping[str, Any],
-    tenant: TenantId,
+    tenant_id: TenantId,
+    account: ProviderAccount,
     repo_name: str,
 ) -> Commit:
     """Map one REST commit object (list item or detail) to a Commit.
@@ -258,7 +301,12 @@ def map_commit_rest(
     committed_date`` in :mod:`coops.bronze.commits`). The model keeps
     raising when neither date exists: a commit with no timestamp at all
     is unmappable, not mappable-with-empty.
+
+    ``external_id`` is the commit ``sha`` — for commits the provider's id
+    and the git object id are the same string (see
+    :class:`coops.domain.models.Commit`).
     """
+    _require_github(account)
     top_author = raw.get("author") or {}
     git_author = (raw.get("commit") or {}).get("author") or {}
     git_committer = (raw.get("commit") or {}).get("committer") or {}
@@ -268,7 +316,9 @@ def map_commit_rest(
     if account_id is None:
         account_id = git_author.get("id")
     return Commit(
-        tenant=tenant,
+        tenant_id=tenant_id,
+        account=account,
+        external_id=raw.get("sha") or "",
         repo_name=repo_name,
         sha=raw.get("sha") or "",
         author=_author_actor(
@@ -290,18 +340,28 @@ def map_commit_rest(
     )
 
 
-def map_issue(raw: Mapping[str, Any], tenant: TenantId, repo_name: str) -> Issue:
+def map_issue(
+    raw: Mapping[str, Any],
+    tenant_id: TenantId,
+    account: ProviderAccount,
+    repo_name: str,
+) -> Issue:
     """Map a REST issue payload (no ``pull_request`` object) to an Issue.
 
     Built from named fields only: ``body`` and ``milestone`` are never read,
     so they cannot reach the model whatever the provider sends.
+    ``external_id`` is the provider's own issue id (``id``, not ``number``:
+    numbers are per-repository sequences, ids are the provider's key).
     """
+    _require_github(account)
     if raw.get("pull_request"):
         raise ValueError(
             f"payload #{raw.get('number')} is a pull request; use map_pull_request"
         )
     return Issue(
-        tenant=tenant,
+        tenant_id=tenant_id,
+        account=account,
+        external_id=str(raw["id"]) if raw.get("id") else "",
         repo_name=repo_name,
         number=raw.get("number") or 0,
         state=raw.get("state") or "",
@@ -316,17 +376,21 @@ def map_issue(raw: Mapping[str, Any], tenant: TenantId, repo_name: str) -> Issue
 
 def map_pull_request(
     raw: Mapping[str, Any],
-    tenant: TenantId,
+    tenant_id: TenantId,
+    account: ProviderAccount,
     repo_name: str,
 ) -> PullRequest:
     """Map a REST issue payload that carries a ``pull_request`` object."""
+    _require_github(account)
     pr = raw.get("pull_request")
     if not pr:
         raise ValueError(
             f"payload #{raw.get('number')} has no pull_request object; use map_issue"
         )
     return PullRequest(
-        tenant=tenant,
+        tenant_id=tenant_id,
+        account=account,
+        external_id=str(raw["id"]) if raw.get("id") else "",
         repo_name=repo_name,
         number=raw.get("number") or 0,
         state=raw.get("state") or "",
@@ -343,15 +407,18 @@ def map_pull_request(
 
 def map_activity_event(
     raw: Mapping[str, Any],
-    tenant: TenantId,
+    tenant_id: TenantId,
+    account: ProviderAccount,
     repo_name: str,
 ) -> ActivityEvent:
     """Map a REST issue-event payload to an ActivityEvent."""
+    _require_github(account)
     issue = raw.get("issue")
     return ActivityEvent(
-        tenant=tenant,
+        tenant_id=tenant_id,
+        account=account,
+        external_id=str(raw["id"]) if raw.get("id") else "",
         repo_name=repo_name,
-        event_id=raw.get("id") or 0,
         event_type=raw.get("event") or "",
         created_at=raw.get("created_at") or "",
         actor=_conversation_actor(raw.get("actor")),
@@ -361,7 +428,8 @@ def map_activity_event(
 
 def map_file_tree_rest(
     raw: Mapping[str, Any],
-    tenant: TenantId,
+    tenant_id: TenantId,
+    account: ProviderAccount,
     repo_name: str,
     branch: str | None = None,
 ) -> FileTree:
@@ -369,8 +437,10 @@ def map_file_tree_rest(
 
     Refuses a response with ``truncated: true``: a partial tree mapped as a
     whole one is silent data loss, and the extraction layer falls back to
-    GraphQL precisely so that never reaches storage.
+    GraphQL precisely so that never reaches storage. ``external_id`` is the
+    response's ``sha`` — the tree's own id.
     """
+    _require_github(account)
     if raw.get("truncated"):
         raise ValueError("refusing to map a truncated REST tree; fall back to GraphQL")
     entries = tuple(
@@ -385,17 +455,20 @@ def map_file_tree_rest(
         if isinstance(item, Mapping)
     )
     return FileTree(
-        tenant=tenant,
+        tenant_id=tenant_id,
+        account=account,
         repo_name=repo_name,
         branch=branch,
         sha=raw.get("sha"),
+        external_id=raw.get("sha"),
         entries=entries,
     )
 
 
 def map_file_tree_graphql(
     entries: Any,
-    tenant: TenantId,
+    tenant_id: TenantId,
+    account: ProviderAccount,
     repo_name: str,
     branch: str | None = None,
 ) -> FileTree:
@@ -406,8 +479,10 @@ def map_file_tree_graphql(
     level maps independently and the caller composes them. Blob facts
     (``oid``, ``byteSize``, ``isBinary``) sit under ``object`` and exist for
     blobs only, so a directory entry maps with ``sha``/``size``/``is_binary``
-    all ``None``. There is no tree sha at this level.
+    all ``None``. There is no tree sha at this level, so ``external_id`` is
+    ``None`` too: the level has no id of its own.
     """
+    _require_github(account)
     mapped = []
     for entry in entries or []:
         if not isinstance(entry, Mapping):
@@ -424,7 +499,8 @@ def map_file_tree_graphql(
             )
         )
     return FileTree(
-        tenant=tenant,
+        tenant_id=tenant_id,
+        account=account,
         repo_name=repo_name,
         branch=branch,
         entries=tuple(mapped),

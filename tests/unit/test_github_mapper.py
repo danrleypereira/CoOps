@@ -22,7 +22,7 @@ from dataclasses import fields
 import pytest
 
 from coops.bronze.commits import _hash_email as bronze_hash_email
-from coops.domain import TenantId
+from coops.domain import PROVIDER_GITHUB, ProviderAccount, TenantId
 from coops.github.mapper import (
     _hash_email,
     map_activity_event,
@@ -37,6 +37,8 @@ from coops.github.mapper import (
 )
 
 TENANT = TenantId("test-org")
+# The GitHub account of the same organization: where the records come from.
+ACCOUNT = ProviderAccount(PROVIDER_GITHUB, "test-org")
 
 SHA = "a" * 40
 PARENT_SHA = "b" * 40
@@ -103,8 +105,10 @@ def rest_commit(**over):
 
 
 def test_graphql_commit_maps_provider_fields():
-    commit = map_commit_graphql(graphql_history_node(), TENANT, "coops")
-    assert commit.tenant == TENANT
+    commit = map_commit_graphql(graphql_history_node(), TENANT, ACCOUNT, "coops")
+    assert commit.tenant_id == TENANT
+    assert commit.account == ACCOUNT
+    assert commit.external_id == commit.sha
     assert commit.repo_name == "coops"
     assert commit.sha == SHA
     assert commit.message.startswith("Refactor the capture loop")
@@ -117,7 +121,7 @@ def test_graphql_commit_maps_provider_fields():
 
 
 def test_graphql_commit_linked_author():
-    commit = map_commit_graphql(graphql_history_node(), TENANT, "coops")
+    commit = map_commit_graphql(graphql_history_node(), TENANT, ACCOUNT, "coops")
     assert commit.author.login == "rosa-almeida"
     assert commit.author.account_id == 1001
     assert commit.author.identity == "rosa-almeida"
@@ -143,11 +147,11 @@ def test_the_same_address_hashes_alike_linked_or_not():
     1,311 linked people plus 231 unlinked hashes were counted as 1,542
     contributors with no way to reduce it.
     """
-    linked = map_commit_graphql(graphql_history_node(), TENANT, "coops")
+    linked = map_commit_graphql(graphql_history_node(), TENANT, ACCOUNT, "coops")
 
     unlinked_node = graphql_history_node()
     unlinked_node["author"] = {"name": "Rosa Almeida", "email": ADDRESS, "user": None}
-    unlinked = map_commit_graphql(unlinked_node, TENANT, "coops")
+    unlinked = map_commit_graphql(unlinked_node, TENANT, ACCOUNT, "coops")
 
     # different identities, because one has an account and one does not...
     assert linked.author.identity == "rosa-almeida"
@@ -163,7 +167,7 @@ def test_graphql_commit_unlinked_author_identity_is_email_hash():
     """
     node = graphql_history_node()
     node["author"] = {"name": "Rosa Almeida", "email": ADDRESS, "user": None}
-    commit = map_commit_graphql(node, TENANT, "coops")
+    commit = map_commit_graphql(node, TENANT, ACCOUNT, "coops")
     assert commit.author.login is None
     assert commit.author.identity == ADDRESS_HASH
     assert commit.author.email_hash == ADDRESS_HASH
@@ -180,7 +184,7 @@ def test_graphql_commit_name_and_hash_identity_takes_hash_display_keeps_name():
     """
     node = graphql_history_node()
     node["author"] = {"name": "Rosa Almeida", "email": ADDRESS, "user": None}
-    author = map_commit_graphql(node, TENANT, "coops").author
+    author = map_commit_graphql(node, TENANT, ACCOUNT, "coops").author
     assert author.identity == ADDRESS_HASH
     assert author.display_name == "Rosa Almeida"
 
@@ -193,7 +197,7 @@ def test_graphql_commit_address_shaped_name_is_blanked():
     """
     node = graphql_history_node()
     node["author"] = {"name": ADDRESS, "email": ADDRESS, "user": None}
-    author = map_commit_graphql(node, TENANT, "coops").author
+    author = map_commit_graphql(node, TENANT, ACCOUNT, "coops").author
     assert author.display_name is None
     assert author.identity == ADDRESS_HASH
 
@@ -212,7 +216,7 @@ def test_graphql_commit_author_with_no_identifier_is_absent():
     """
     node = graphql_history_node()
     node["author"] = {"name": None, "email": None, "user": None}
-    commit = map_commit_graphql(node, TENANT, "coops")  # no exception
+    commit = map_commit_graphql(node, TENANT, ACCOUNT, "coops")  # no exception
     assert commit.author is None
     # The commit itself still maps in full.
     assert commit.sha == SHA
@@ -223,7 +227,7 @@ def test_graphql_commit_author_with_no_identifier_is_absent():
 
 
 def test_rest_commit_maps_provider_fields():
-    commit = map_commit_rest(rest_commit(), TENANT, "coops")
+    commit = map_commit_rest(rest_commit(), TENANT, ACCOUNT, "coops")
     assert commit.sha == SHA
     assert commit.parents == (PARENT_SHA,)
     assert commit.additions == 12
@@ -236,7 +240,7 @@ def test_rest_commit_maps_provider_fields():
 def test_rest_commit_list_item_without_stats_maps_to_none():
     raw = rest_commit()
     del raw["stats"]
-    commit = map_commit_rest(raw, TENANT, "coops")
+    commit = map_commit_rest(raw, TENANT, ACCOUNT, "coops")
     assert commit.additions is None
     assert commit.deletions is None
 
@@ -245,7 +249,7 @@ def test_rest_commit_unlinked_author_identity_is_email_hash():
     """Real corpus shape: top-level ``author`` is null (no account link)."""
     raw = rest_commit()
     raw["author"] = None
-    author = map_commit_rest(raw, TENANT, "coops").author
+    author = map_commit_rest(raw, TENANT, ACCOUNT, "coops").author
     assert author.login is None
     assert author.identity == ADDRESS_HASH
     assert author.display_name == "Rosa Almeida"
@@ -255,7 +259,7 @@ def test_rest_commit_name_and_hash_identity_takes_hash_display_keeps_name():
     """The precedence pair, on the REST shape too (see the GraphQL twin)."""
     raw = rest_commit()
     raw["author"] = None
-    author = map_commit_rest(raw, TENANT, "coops").author
+    author = map_commit_rest(raw, TENANT, ACCOUNT, "coops").author
     assert author.identity == ADDRESS_HASH
     assert author.display_name == "Rosa Almeida"
 
@@ -271,7 +275,7 @@ def test_rest_commit_author_with_no_identifier_is_absent():
     raw = rest_commit()
     raw["author"] = None
     raw["commit"]["author"] = {"name": None, "email": None, "date": None}
-    commit = map_commit_rest(raw, TENANT, "coops")  # no exception
+    commit = map_commit_rest(raw, TENANT, ACCOUNT, "coops")  # no exception
     assert commit.author is None
     assert commit.authored_at is None  # the absent author left no date either
     assert commit.committed_at == "2026-03-04T10:00:00Z"
@@ -294,7 +298,7 @@ def test_rest_commit_login_falls_back_to_commit_author_when_top_level_absent():
         "login": "rosa-almeida",
         "id": 1001,
     }
-    author = map_commit_rest(raw, TENANT, "coops").author
+    author = map_commit_rest(raw, TENANT, ACCOUNT, "coops").author
     assert author.login == "rosa-almeida"
     assert author.account_id == 1001
     # The login outranks name and email hash: it is the account link.
@@ -316,7 +320,7 @@ def test_rest_commit_login_inside_commit_author_with_null_name_still_attributes(
         "date": "2026-03-03T09:00:00Z",
         "login": "rosa-almeida",
     }
-    author = map_commit_rest(raw, TENANT, "coops").author
+    author = map_commit_rest(raw, TENANT, ACCOUNT, "coops").author
     assert author.login == "rosa-almeida"
     assert author.identity == "rosa-almeida"
     assert author.display_name is None
@@ -339,7 +343,7 @@ def test_rest_commit_top_level_login_beats_commit_author_login_when_both_present
         "login": "not-the-account-login",
         "id": 9999,
     }
-    author = map_commit_rest(raw, TENANT, "coops").author
+    author = map_commit_rest(raw, TENANT, ACCOUNT, "coops").author
     assert author.login == "rosa-almeida"
     assert author.account_id == 1001
     assert author.identity == "rosa-almeida"
@@ -357,7 +361,7 @@ def test_rest_commit_author_date_falls_back_when_committer_absent():
     """
     raw = rest_commit()
     del raw["commit"]["committer"]
-    commit = map_commit_rest(raw, TENANT, "coops")
+    commit = map_commit_rest(raw, TENANT, ACCOUNT, "coops")
     assert commit.committed_at == "2026-03-03T09:00:00Z"
     assert commit.authored_at == "2026-03-03T09:00:00Z"
 
@@ -368,7 +372,7 @@ def test_rest_commit_committer_date_beats_author_date_when_both_present():
     alternatives present): when both dates exist the committer's wins —
     it is the timestamp of record for the history fetched.
     """
-    commit = map_commit_rest(rest_commit(), TENANT, "coops")
+    commit = map_commit_rest(rest_commit(), TENANT, ACCOUNT, "coops")
     assert commit.committed_at == "2026-03-04T10:00:00Z"
     assert commit.authored_at == "2026-03-03T09:00:00Z"
 
@@ -383,14 +387,14 @@ def test_rest_commit_raises_when_neither_date_exists():
     del raw["commit"]["committer"]
     raw["commit"]["author"] = {"name": "Rosa Almeida", "email": ADDRESS, "date": None}
     with pytest.raises(ValueError, match="non-empty committed_at"):
-        map_commit_rest(raw, TENANT, "coops")
+        map_commit_rest(raw, TENANT, ACCOUNT, "coops")
 
 
 def test_rest_and_graphql_shapes_of_one_commit_agree():
     """Both provider shapes, one model: the mapper is the seam that absorbs
     the difference."""
-    rest = map_commit_rest(rest_commit(), TENANT, "coops")
-    graphql = map_commit_graphql(graphql_history_node(), TENANT, "coops")
+    rest = map_commit_rest(rest_commit(), TENANT, ACCOUNT, "coops")
+    graphql = map_commit_graphql(graphql_history_node(), TENANT, ACCOUNT, "coops")
     assert rest.sha == graphql.sha
     assert rest.parents == graphql.parents
     assert rest.author == graphql.author
@@ -409,8 +413,8 @@ def test_two_authors_same_name_different_hashes_stay_two_people():
     second = graphql_history_node()
     second["author"] = {"name": "CI Bot", "email": OTHER_ADDRESS, "user": None}
     authors = {
-        map_commit_graphql(first, TENANT, "coops").author,
-        map_commit_graphql(second, TENANT, "coops").author,
+        map_commit_graphql(first, TENANT, ACCOUNT, "coops").author,
+        map_commit_graphql(second, TENANT, ACCOUNT, "coops").author,
     }
     assert len(authors) == 2
     assert {a.identity for a in authors} == {ADDRESS_HASH, OTHER_HASH}
@@ -443,11 +447,11 @@ def test_map_member_from_profile():
         "html_url": "https://example.com/rosa-almeida",
         "created_at": "2024-01-01T00:00:00Z",
     }
-    member = map_member(raw, TENANT, is_org_member=True)
+    member = map_member(raw, TENANT, ACCOUNT,is_org_member=True)
     assert member.identity == "rosa-almeida"
     assert member.display_name == "Rosa Almeida"
     assert member.login == "rosa-almeida"
-    assert member.account_id == 1001
+    assert member.external_id == "1001"
     assert member.is_org_member is True
     assert member.contributions_total == 0
 
@@ -455,7 +459,7 @@ def test_map_member_from_profile():
 def test_map_member_from_contributor_item_has_no_display_name():
     """List items carry no ``name``: display_name=None is normal, not broken."""
     raw = {"login": "bruno-teixeira", "id": 1002, "contributions": 34}
-    member = map_member(raw, TENANT)
+    member = map_member(raw, TENANT, ACCOUNT)
     assert member.display_name is None
     assert member.contributions_total == 34
     assert member.is_org_member is False
@@ -463,13 +467,14 @@ def test_map_member_from_contributor_item_has_no_display_name():
 
 def test_map_member_without_login_or_name_raises():
     with pytest.raises(ValueError, match="member payload"):
-        map_member({"id": 1001}, TENANT)
+        map_member({"id": 1001}, TENANT, ACCOUNT)
 
 
 # --- issues and pull requests ------------------------------------------------
 
 
 RAW_ISSUE = {
+    "id": 9002,
     "number": 42,
     "state": "open",
     "title": "Fix the thing",
@@ -489,9 +494,11 @@ RAW_ISSUE = {
 
 
 def test_map_issue_builds_from_named_fields_only():
-    issue = map_issue(RAW_ISSUE, TENANT, "coops")
+    issue = map_issue(RAW_ISSUE, TENANT, ACCOUNT, "coops")
     assert {f.name for f in fields(issue)} == {
-        "tenant",
+        "tenant_id",
+        "account",
+        "external_id",
         "repo_name",
         "number",
         "state",
@@ -507,7 +514,7 @@ def test_map_issue_builds_from_named_fields_only():
 
 
 def test_map_issue_maps_the_conversation():
-    issue = map_issue(RAW_ISSUE, TENANT, "coops")
+    issue = map_issue(RAW_ISSUE, TENANT, ACCOUNT, "coops")
     assert issue.repo_name == "coops"
     assert issue.number == 42
     assert issue.state == "open"
@@ -521,7 +528,7 @@ def test_map_issue_deleted_account_author_is_none():
     raw = dict(RAW_ISSUE)
     raw["user"] = None
     raw["assignee"] = None
-    issue = map_issue(raw, TENANT, "coops")
+    issue = map_issue(raw, TENANT, ACCOUNT, "coops")
     assert issue.author is None
     assert issue.assignee is None
 
@@ -530,7 +537,7 @@ def test_map_issue_refuses_a_pull_request_payload():
     raw = dict(RAW_ISSUE)
     raw["pull_request"] = {"merged_at": None, "url": "https://example.com/pull"}
     with pytest.raises(ValueError, match="map_pull_request"):
-        map_issue(raw, TENANT, "coops")
+        map_issue(raw, TENANT, ACCOUNT, "coops")
 
 
 RAW_PR = dict(
@@ -545,7 +552,7 @@ RAW_PR = dict(
 
 
 def test_map_pull_request_maps_merged_at_and_draft():
-    pr = map_pull_request(RAW_PR, TENANT, "coops")
+    pr = map_pull_request(RAW_PR, TENANT, ACCOUNT, "coops")
     assert pr.number == 43
     assert pr.merged_at == "2026-01-04T00:00:00Z"
     assert pr.draft is True
@@ -554,7 +561,7 @@ def test_map_pull_request_maps_merged_at_and_draft():
 
 def test_map_pull_request_refuses_an_issue_payload():
     with pytest.raises(ValueError, match="map_issue"):
-        map_pull_request(RAW_ISSUE, TENANT, "coops")
+        map_pull_request(RAW_ISSUE, TENANT, ACCOUNT, "coops")
 
 
 # --- activity events -----------------------------------------------------------
@@ -569,8 +576,8 @@ def test_map_activity_event_maps_fields():
         "issue": {"number": 42},
         "commit_id": SHA,
     }
-    event = map_activity_event(raw, TENANT, "coops")
-    assert event.event_id == 91
+    event = map_activity_event(raw, TENANT, ACCOUNT, "coops")
+    assert event.external_id == "91"
     assert event.event_type == "cross-referenced"
     assert event.actor.identity == "bruno-teixeira"
     assert event.issue_number == 42
@@ -586,7 +593,7 @@ def test_map_activity_event_null_actor_is_an_absent_actor():
         "actor": None,
         "issue": {"number": 42},
     }
-    assert map_activity_event(raw, TENANT, "coops").actor is None
+    assert map_activity_event(raw, TENANT, ACCOUNT, "coops").actor is None
 
 
 # --- repositories ------------------------------------------------------------------
@@ -616,8 +623,8 @@ RAW_REPO = {
 
 
 def test_map_repository_maps_named_fields():
-    repo = map_repository(RAW_REPO, TENANT)
-    assert repo.repo_id == 9001
+    repo = map_repository(RAW_REPO, TENANT, ACCOUNT)
+    assert repo.external_id == "9001"
     assert repo.name == "coops"
     assert repo.full_name == "test-org/coops"
     assert repo.default_branch == "main"
@@ -649,7 +656,7 @@ def test_map_file_tree_rest_maps_entries():
             {"path": "src", "type": "tree", "sha": "c" * 40, "mode": "040000"},
         ],
     }
-    tree = map_file_tree_rest(raw, TENANT, "coops", branch="main")
+    tree = map_file_tree_rest(raw, TENANT, ACCOUNT, "coops", branch="main")
     assert tree.sha == SHA
     assert tree.branch == "main"
     assert tree.entries[0].path == "README.md"
@@ -663,7 +670,7 @@ def test_map_file_tree_rest_maps_entries():
 def test_map_file_tree_rest_refuses_a_truncated_response():
     raw = {"sha": SHA, "truncated": True, "tree": [{"path": "a", "type": "blob"}]}
     with pytest.raises(ValueError, match="truncated"):
-        map_file_tree_rest(raw, TENANT, "coops")
+        map_file_tree_rest(raw, TENANT, ACCOUNT, "coops")
 
 
 def test_map_file_tree_graphql_maps_one_level():
@@ -685,11 +692,63 @@ def test_map_file_tree_graphql_maps_one_level():
             "object": None,
         },
     ]
-    tree = map_file_tree_graphql(entries, TENANT, "coops", branch="main")
+    tree = map_file_tree_graphql(entries, TENANT, ACCOUNT, "coops", branch="main")
     assert tree.sha is None  # no tree sha at this level
+    assert tree.external_id is None  # and therefore no external_id either
     readme, src = tree.entries
     assert readme.sha == PARENT_SHA
     assert readme.size == 120
     assert readme.is_binary is False
     assert src.sha is None
     assert src.size is None
+
+
+# --- tenancy wiring: account and external_id (#187) ----------------------------
+
+
+def test_map_repository_rejects_an_account_from_another_provider():
+    """The mapper is the GitHub adapter's own: mapping a payload fetched
+    from GitHub under the tenant's GitLab account would label GitHub data
+    with the wrong provider — the exact merge #92 exists to prevent.
+    """
+    gitlab_account = ProviderAccount("gitlab", "test-org")
+    with pytest.raises(ValueError, match="GitHub records, not 'gitlab'"):
+        map_repository(RAW_REPO, TENANT, gitlab_account)
+
+
+def test_map_issue_rejects_an_account_from_another_provider():
+    gitlab_account = ProviderAccount("gitlab", "test-org")
+    with pytest.raises(ValueError, match="GitHub records, not 'gitlab'"):
+        map_issue(RAW_ISSUE, TENANT, gitlab_account, "coops")
+
+
+def test_map_member_leaves_person_id_unlinked():
+    """person_id is reserved for #89's replacement; the GitHub mapper must
+    not invent a value — not the login, not the external_id.
+    """
+    raw = {"login": "rosa-almeida", "id": 1001, "name": "Rosa Almeida"}
+    member = map_member(raw, TENANT, ACCOUNT)
+    assert member.person_id is None
+
+
+def test_mapped_entities_carry_the_account_and_their_external_ids():
+    """One place that asserts the tenancy triple on every mapped entity:
+    tenant, provider account, and the provider's own id as a string."""
+    commit = map_commit_rest(rest_commit(), TENANT, ACCOUNT, "coops")
+    assert commit.tenant_id == TENANT
+    assert commit.account == ACCOUNT
+    assert commit.external_id == commit.sha
+
+    issue = map_issue(RAW_ISSUE, TENANT, ACCOUNT, "coops")
+    assert issue.account == ACCOUNT
+    assert issue.external_id == "9002"
+
+    event = map_activity_event(
+        {"id": 91, "event": "closed", "created_at": "2026-03-05T10:00:00Z",
+         "actor": None},
+        TENANT,
+        ACCOUNT,
+        "coops",
+    )
+    assert event.account == ACCOUNT
+    assert event.external_id == "91"

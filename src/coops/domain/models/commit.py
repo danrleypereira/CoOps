@@ -23,6 +23,14 @@ Two fields exist because the two shapes disagree:
 ``additions``/``deletions`` are ``None`` when the source carries no stats
 (a REST list item without the detail fetch). ``message`` may be empty: git
 permits empty commit messages, so there is no guard on it.
+
+``external_id`` is the provider's own id for the commit — for GitHub (and
+any git-shaped provider) the commit SHA, so it equals ``sha`` on every
+record this codebase maps today. The two fields exist separately because
+their contracts differ: ``sha`` is the git-graph key that ``parents``
+references, ``external_id`` is the storage key the Mongo adapter filters
+on within an account (#39). See :mod:`coops.domain.models` for the shape
+decision.
 """
 
 from __future__ import annotations
@@ -30,14 +38,16 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from coops.domain.models.actor import Actor
-from coops.domain.tenancy import TenantId
+from coops.domain.tenancy import ProviderAccount, TenantId
 
 
 @dataclass(frozen=True, slots=True)
 class Commit:
     """One commit on one repository's history."""
 
-    tenant: TenantId
+    tenant_id: TenantId
+    account: ProviderAccount
+    external_id: str
     repo_name: str
     sha: str
     author: Actor | None
@@ -49,6 +59,8 @@ class Commit:
     deletions: int | None = None
 
     def __post_init__(self) -> None:
+        if not (self.external_id or "").strip():
+            raise ValueError("Commit requires a non-empty external_id")
         if not (self.repo_name or "").strip():
             raise ValueError("Commit requires a non-empty repo_name")
         if not (self.sha or "").strip():

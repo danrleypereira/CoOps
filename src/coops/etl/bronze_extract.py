@@ -8,8 +8,7 @@ import argparse
 import os
 import sys
 from datetime import datetime
-from coops.infrastructure import get_settings
-from coops.domain.tenancy import resolve_tenant
+from coops.infrastructure import get_settings, resolve_tenant_from_settings
 from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, update_data_registry
 from coops.bronze.watermarks import WatermarkStore
 
@@ -89,10 +88,12 @@ def main():
     print(f"Started at: {datetime.now().isoformat()}")
 
     # Initialize API client
-    # One tenant per run, resolved from TENANT_MODE + COOPS_ORG (#92): the
+    # One tenant per run, resolved from the deployment settings (#92): the
     # capture tree is keyed by tenant (`<root>/<tenant_id>/`), not by provider
-    # account, so the writer gets the tenant's slug.
-    tenant = resolve_tenant(cfg.tenant_mode, cfg.github_org)
+    # account, so the writer gets the tenant's slug. The infrastructure
+    # resolver translates the domain's errors into the configuration
+    # vocabulary ("check TENANT_MODE"); the domain itself stays free of it.
+    tenant = resolve_tenant_from_settings(cfg)
     client = GitHubAPIClient(
         cfg.github_token,
         capture_dir=args.capture_dir,
