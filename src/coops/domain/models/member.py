@@ -20,7 +20,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from coops.domain.models.actor import identity_key
+from coops.domain.models.actor import identity_key, identity_mismatch_message
 from coops.domain.tenancy import TenantId
 
 
@@ -48,10 +48,13 @@ class Member:
             self.login, self.email_hash, self.display_name
         ):
             raise ValueError(
-                "Member.identity must be the resolved key (login ->"
-                f" email_hash -> name); got {self.identity!r} for"
-                f" login={self.login!r}, email_hash={self.email_hash!r},"
-                f" display_name={self.display_name!r}"
+                identity_mismatch_message(
+                    "Member",
+                    self.identity,
+                    self.login,
+                    self.email_hash,
+                    self.display_name,
+                )
             )
         if self.contributions_total < 0:
             raise ValueError(

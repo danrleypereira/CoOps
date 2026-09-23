@@ -21,7 +21,9 @@ Measured on the real corpus, which is why the fields look the way they do:
 ``identity`` resolves as ``login -> email_hash -> name`` and is *stored*, so
 an ``Actor`` is internally consistent by construction: ``__post_init__``
 re-derives the key from the components and rejects a mismatch rather than
-trusting the caller.
+trusting the caller. The rejection names the rule and the channels, never
+the values (#177): ``display_name`` can be an email address, and a
+traceback in a public CI log is a publish surface.
 """
 
 from __future__ import annotations
@@ -68,6 +70,58 @@ def display_name_of(name: str | None) -> str | None:
     return name
 
 
+def identity_mismatch_message(
+    model: str,
+    identity: str,
+    login: str | None,
+    email_hash: str | None,
+    display_name: str | None,
+) -> str:
+    """The value-free diagnosis for a stored identity that disagrees (#177).
+
+    An exception message is a publish surface: CI logs on a public
+    repository are public, and they are not covered by any of the controls
+    on ``data/bronze/``. ``display_name`` can be an email address (149
+    names in the corpus are), so a guard that echoes the rejected values
+    would republish the very address the label policy blanks. The message
+    therefore names the rule it enforced, which channel the precedence
+    resolves to, and which channel (if any) the supplied key matches —
+    never the contents of any of them. Same discipline as
+    :func:`coops.domain.ports.ai_port.validate_member`, which does not
+    echo the rejected value "so the guard cannot republish the address".
+
+    Public because ``Member`` reports its mismatch with the same rule —
+    the message is a property of the domain's precedence, not of either
+    class.
+    """
+    channels = (
+        ("login", login),
+        ("email_hash", email_hash),
+        ("display_name", display_name),
+    )
+    resolved = next((label for label, channel in channels if channel), None)
+    matched = [label for label, channel in channels if identity == channel]
+    report = ", ".join(
+        f"{label}: {'yes' if channel else 'no'}" for label, channel in channels
+    )
+    if resolved is None:
+        resolution = "no channel is present, so there is no resolved key"
+    else:
+        resolution = f"the resolved key is the {resolved} channel"
+    if matched:
+        supplied = "matches the " + " and ".join(matched)
+        supplied += " channel" if len(matched) == 1 else " channels"
+    else:
+        supplied = "matches none of the channels"
+    return (
+        f"{model}.identity must be the resolved key (login -> email_hash"
+        f" -> name); for this {model} ({report}), {resolution}, but the"
+        f" supplied identity {supplied}. The rejected values are"
+        " deliberately not echoed: display_name can be an email address,"
+        " and a traceback on a public repository is a publish surface"
+    )
+
+
 @dataclass(frozen=True, slots=True)
 class Actor:
     """One person as they appear behind a commit, issue or event.
@@ -96,10 +150,13 @@ class Actor:
             self.login, self.email_hash, self.display_name
         ):
             raise ValueError(
-                "Actor.identity must be the resolved key (login -> email_hash"
-                f" -> name); got {self.identity!r} for login={self.login!r},"
-                f" email_hash={self.email_hash!r},"
-                f" display_name={self.display_name!r}"
+                identity_mismatch_message(
+                    "Actor",
+                    self.identity,
+                    self.login,
+                    self.email_hash,
+                    self.display_name,
+                )
             )
 
     @classmethod

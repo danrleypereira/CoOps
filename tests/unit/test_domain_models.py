@@ -149,6 +149,61 @@ def test_actor_identity_must_match_resolved_key():
         Actor(identity=HASH_ONE, display_name=None, login="rosa-almeida")
 
 
+def test_actor_identity_mismatch_does_not_echo_the_values():
+    """#177: the mismatch guard diagnoses without quoting what it rejected.
+
+    ``display_name`` can be an email address (149 corpus names are) and a
+    traceback in a public CI log is a publish surface, so the message
+    names the rule, never the values. Asserts on the whole message: a
+    truncated check is how a leaked value hides in the unseen tail. The
+    address is synthetic and reserved (example.com), like every address
+    in this file.
+    """
+    with pytest.raises(ValueError) as excinfo:
+        Actor(identity="wrong-key", display_name="rosa.almeida@example.com")
+    message = str(excinfo.value)
+    assert "rosa.almeida@example.com" not in message
+    assert "wrong-key" not in message
+
+
+def test_actor_identity_mismatch_message_names_the_rule_and_the_winner():
+    """Still diagnosable without the values: the whole message names the
+    precedence rule, which channel wins it for the channels present, and
+    that the supplied key matched none of them.
+    """
+    with pytest.raises(ValueError) as excinfo:
+        Actor(
+            identity="wrong-key",
+            display_name="rosa.almeida@example.com",
+            login="rosa-almeida",
+        )
+    message = str(excinfo.value)
+    assert "login -> email_hash -> name" in message
+    assert "login: yes, email_hash: no, display_name: yes" in message
+    assert "the resolved key is the login channel" in message
+    assert "matches none of the channels" in message
+    assert "rosa-almeida" not in message
+    assert "rosa.almeida@example.com" not in message
+
+
+def test_actor_identity_mismatch_names_the_supplied_channel():
+    """When the supplied key *is* one of the channels, the message says
+    which one — naming the channel, never its contents (the whole point
+    of #177: this display_name is an address).
+    """
+    with pytest.raises(ValueError) as excinfo:
+        Actor(
+            identity="rosa.almeida@example.com",
+            display_name="rosa.almeida@example.com",
+            login="rosa-almeida",
+        )
+    message = str(excinfo.value)
+    assert "matches the display_name channel" in message
+    assert "the resolved key is the login channel" in message
+    assert "rosa.almeida@example.com" not in message
+    assert "rosa-almeida" not in message
+
+
 def test_actor_is_immutable():
     actor = Actor.resolve(login="rosa-almeida")
     with pytest.raises(FrozenInstanceError):
@@ -199,6 +254,27 @@ def test_member_identity_must_match_resolved_key():
             display_name=None,
             login="rosa-almeida",
         )
+
+
+def test_member_identity_mismatch_does_not_echo_the_values():
+    """#177, the Member twin of the Actor guard: same rule, same
+    value-free message — the address, the login and the supplied key are
+    all absent from the whole message, which still names the rule and the
+    winning channel.
+    """
+    with pytest.raises(ValueError) as excinfo:
+        Member(
+            tenant=TENANT,
+            identity="wrong-key",
+            display_name="rosa.almeida@example.com",
+            login="rosa-almeida",
+        )
+    message = str(excinfo.value)
+    assert "rosa.almeida@example.com" not in message
+    assert "rosa-almeida" not in message
+    assert "wrong-key" not in message
+    assert "login -> email_hash -> name" in message
+    assert "the resolved key is the login channel" in message
 
 
 def test_member_negative_contributions_raises():
