@@ -422,3 +422,83 @@ class TestDisplayName:
         assert ms.display_name(h1)
         assert ms.display_name("alice")
         assert ms.display_name(h1) != ms.display_name(h2)
+
+
+# ---------------------------------------------------------------------------
+# Identity key field (issue #151, step 1)
+# ---------------------------------------------------------------------------
+
+class TestIdentityId:
+    """`id` is the stable identity key, distinct from the display `name`.
+
+    Step 1 emits `id` alongside the existing `name` while leaving `name`
+    untouched, so every record carries a unique, stable key independent of
+    its (possibly legibility-improved-later) label.
+    """
+
+    def test_every_record_has_non_empty_id(self, monkeypatch):
+        saved = _make_helpers(monkeypatch, commits=[
+            {"commit": {"author": {"date": "2024-01-01T00:00:00Z", "login": "alice"}},
+             "repo_name": "r1"},
+            {"commit": {"author": {"date": "2024-01-02T00:00:00Z",
+                                   "author_email_hash": "a1b2c3d4" + "0" * 56}},
+             "repo_name": "r1"},
+            {"commit": {"author": {"date": "2024-01-03T00:00:00Z", "name": "Charlie"}},
+             "repo_name": "r1"},
+        ])
+        ms.process_members_statistics()
+        stats = saved["data/silver/members_statistics.json"]
+        assert len(stats) == 3
+        for record in stats:
+            assert record.get("id")
+
+    def test_id_equals_chain_when_login_present(self, monkeypatch):
+        saved = _make_helpers(monkeypatch, commits=[
+            {"commit": {"author": {"date": "2024-01-01T00:00:00Z", "login": "alice"}},
+             "repo_name": "r1"},
+        ])
+        ms.process_members_statistics()
+        stats = saved["data/silver/members_statistics.json"]
+        assert stats[0]["id"] == "alice"
+
+    def test_id_equals_chain_when_hash_present(self, monkeypatch):
+        h = "a1b2c3d4" + "0" * 56
+        saved = _make_helpers(monkeypatch, commits=[
+            {"commit": {"author": {"date": "2024-01-01T00:00:00Z",
+                                   "author_email_hash": h}},
+             "repo_name": "r1"},
+        ])
+        ms.process_members_statistics()
+        stats = saved["data/silver/members_statistics.json"]
+        assert stats[0]["id"] == h
+
+    def test_id_equals_chain_when_only_name_present(self, monkeypatch):
+        saved = _make_helpers(monkeypatch, commits=[
+            {"commit": {"author": {"date": "2024-01-01T00:00:00Z", "name": "Charlie"}},
+             "repo_name": "r1"},
+        ])
+        ms.process_members_statistics()
+        stats = saved["data/silver/members_statistics.json"]
+        assert stats[0]["id"] == "Charlie"
+
+    def test_shared_name_distinct_ids_do_not_collapse(self, monkeypatch):
+        """Two identities sharing one name string stay two records with distinct
+        ids — the hash keeps them apart even though the display name matches."""
+        h1 = "a1b2c3d4" + "0" * 56
+        h2 = "e5f6a7b8" + "0" * 56
+        saved = _make_helpers(monkeypatch, commits=[
+            {"commit": {"author": {"date": "2024-01-01T00:00:00Z",
+                                   "author_email_hash": h1,
+                                   "name": "CI/CD Bot"}},
+             "repo_name": "r1"},
+            {"commit": {"author": {"date": "2024-01-02T00:00:00Z",
+                                   "author_email_hash": h2,
+                                   "name": "CI/CD Bot"}},
+             "repo_name": "r1"},
+        ])
+        ms.process_members_statistics()
+        stats = saved["data/silver/members_statistics.json"]
+        ids = [s["id"] for s in stats]
+        assert len(stats) == 2
+        assert len(set(ids)) == 2
+        assert set(ids) == {h1, h2}

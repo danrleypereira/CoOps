@@ -58,6 +58,7 @@ def process_timeline_aggregation() -> List[str]:
                 for author in day_copy['authors']:
                     author_copy = author.copy()
                     author_name = author['name']
+                    author_copy['id'] = author.get('id')
                     author_copy['repositories'] = sorted(list(author_repos_map.get(author_name, [])))
                     authors_with_repos.append(author_copy)
                 day_copy['authors'] = authors_with_repos
@@ -98,7 +99,8 @@ def process_timeline_aggregation() -> List[str]:
             'issues_closed': 0,
             'prs_created': 0,
             'prs_closed': 0,
-            'comments': 0
+            'comments': 0,
+            'id': None
         })
     })
     
@@ -135,6 +137,7 @@ def process_timeline_aggregation() -> List[str]:
                 month_data['authors'][author_name]['prs_created'] += author.get('prs_created', 0)
                 month_data['authors'][author_name]['prs_closed'] += author.get('prs_closed', 0)
                 month_data['authors'][author_name]['comments'] += author.get('comments', 0)
+                month_data['authors'][author_name]['id'] = author.get('id')
     
     # Convert to list and prepare for JSON serialization
     last_12_months = []
@@ -148,6 +151,7 @@ def process_timeline_aggregation() -> List[str]:
         authors_list = []
         for author_name, stats in data['authors'].items():
             authors_list.append({
+                'id': stats.get('id'),
                 'name': author_name,
                 'commits': stats['commits'],
                 'issues_created': stats['issues_created'],

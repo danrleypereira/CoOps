@@ -311,3 +311,39 @@ def test_process_member_analytics_skips_members_without_profile(monkeypatch):
     assert [m["login"] for m in analytics] == ["with_profile", "legacy"]
     for field in ("email", "location", "bio", "company"):
         assert field not in analytics[0]
+
+
+@freeze_time("2025-01-01")
+def test_process_member_analytics_carries_id(monkeypatch):
+    """The `id` field from Bronze survives into Silver member analytics."""
+    fake_members = [
+        {
+            "login": "alice",
+            "id": 42,
+            "name": "Alice",
+            "public_repos": 10,
+            "followers": 5,
+            "following": 3,
+            "created_at": "2023-01-01T00:00:00Z",
+        },
+    ]
+
+    saved_data = {}
+
+    def fake_load(path):
+        return fake_members
+
+    def fake_save(data, path, timestamp=True):
+        saved_data[path] = data
+        return path
+
+    monkeypatch.setattr("coops.silver.member_analytics.load_json_data", fake_load)
+    monkeypatch.setattr("coops.silver.member_analytics.save_json_data", fake_save)
+
+    process_member_analytics()
+
+    analytics = saved_data["data/silver/members_analytics.json"]
+    assert len(analytics) == 1
+    assert analytics[0]["id"] == 42
+    assert analytics[0]["name"] == "Alice"
+
