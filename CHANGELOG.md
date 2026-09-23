@@ -7,6 +7,31 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 
 ## [Unreleased]
 
+### Added
+- `coops.domain.ports.ai_port` (issue [#24](https://github.com/danrleypereira/CoOps/issues/24)):
+  the tenant-scoped `AiSummaryPort` — one method, `summarize_members(tenant,
+  summaries)`, abstracting the member-analysis step behind
+  `data/silver/ai/members_ai.json`. Batching, throttling and provider wiring
+  stay out of the interface on purpose: they are properties of a particular
+  provider's quota and client, and a caller passing them is a caller that
+  knows the provider — the failure the port exists to prevent. Provider
+  condition crosses the boundary as data (`status="complete" | "partial" |
+  "unavailable"` on the `MemberAnalyses` outcome, the `RawStore`
+  down-storage-must-not-break-the-pipeline invariant, tested this time
+  because of #138), never as an exception and never as placeholder text: a
+  member without an analysis is absent from the result. `MemberSummary` is
+  the already-projected summary (`JSONValue` payload, as with
+  `StoragePort.save`); `MemberAnalysis` carries the three per-entity texts
+  the dashboard consumes. Guards: member keys are trimmed but never
+  case-folded (folding merges people, #151), address-shaped keys are
+  rejected without echoing the address (#132), duplicate members are
+  rejected on both request and result, and the outcome's status must be
+  consistent with the count it reports. A source sweep with a
+  can-find-a-leak control keeps provider tokens out of the module. Nothing
+  consumes the port yet — rewiring `generate_members_ai.py` is a separate
+  change; test fixtures are synthetic (no real people, `example.com`
+  addresses).
+
 ### Fixed
 - Silver artifacts are now deterministic across runs (issue [#172](https://github.com/danrleypereira/CoOps/issues/172)):
   `members_statistics.json`, `user_collaboration_metrics.json`,
