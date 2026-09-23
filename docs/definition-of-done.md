@@ -310,11 +310,19 @@ So, before comparing:
 
 ```python
 import hashlib, inspect
-a = hashlib.sha256(inspect.getsource(fn_a).encode()).hexdigest()[:12]
-b = hashlib.sha256(inspect.getsource(fn_b).encode()).hexdigest()[:12]
-assert a != b, f"both arms are the same source ({a})"
+a = hashlib.sha256(inspect.getsource(inspect.getmodule(fn_a)).encode()).hexdigest()[:12]
+b = hashlib.sha256(inspect.getsource(inspect.getmodule(fn_b)).encode()).hexdigest()[:12]
+assert a != b, f"both arms resolve to the same module ({a})"
 print(f"arm A {a}   arm B {b}")
 ```
+
+**Hash the module, not the function.** A behavioural difference often lives in a
+*callee*, which `inspect.getsource(fn)` does not capture — so a function-level
+digest can match while the arms genuinely differ, and the assert then blocks a
+valid comparison. In the case above, `_sanitize_commit` did differ between the
+two branches (66 lines against 83), but the helper it gained, `_is_address`, is
+**absent entirely** on one side: exactly the shape a caller-only hash would miss
+had the call site been unchanged.
 
 Print both digests, do not merely assert. And state the **provenance of the
 data**: an artifact rewritten by the code under test is not evidence about that
