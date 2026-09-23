@@ -151,6 +151,12 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   Bronze layer (`coops/bronze/issues.py`); its output had no consumers.
 
 ### Security
+- Bronze blanks `commit.author.name` / `commit.committer.name` when the value
+  is itself an email address — a third free-text channel that carried real
+  addresses past the email-key scrub (contributors who set `git user.name` to
+  their address). The field is set to `None`, never a placeholder string, so a
+  truthy placeholder cannot become a person downstream; every other name is
+  left intact so attribution survives — #132.
 - `scripts/data-snapshot.sh` keeps snapshots private at rest: the snapshot
   directory is created mode 700 and the archive and its checksum mode 600,
   under a restrictive umask. The corpus contains raw API responses with user
