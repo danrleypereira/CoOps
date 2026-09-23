@@ -8,6 +8,21 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 ## [Unreleased]
 
 ### Added
+- mypy in CI (issue [#91](https://github.com/danrleypereira/CoOps/issues/91)):
+  the compile-time half of the port contract. Phase 1's ports are
+  `typing.Protocol`s, which are checked statically — `isinstance` against a
+  `@runtime_checkable` Protocol only verifies that method *names* exist — so
+  an adapter drifting from a port (missing `tenant` parameter, wrong return
+  type) passed every test and failed only in production. `strict = true` in
+  `[tool.mypy]` (`pyproject.toml`), scoped to `src/coops/domain` and
+  `src/coops/github` (the issue's `providers/` is the `github/` adapter
+  package); the pre-ports layers are excluded because a strict run over them
+  starts at 348 errors — the follow-up widens as Phases 2 and 3 move code
+  behind ports. Runs in `python-unit-tests.yaml` as its own step. Both
+  scoped packages were already strict-clean (0 errors before, 0 after); the
+  guard was proven to fail by checking a deliberately non-conforming
+  scratch adapter: mypy reports the missing-`tenant` and wrong-return-type
+  drift that `isinstance` accepts.
 - `coops.bronze.files` (issue [#156](https://github.com/danrleypereira/CoOps/issues/156)):
   one place that knows how `data/bronze/` is named, so callers stop
   re-deriving it. `bronze_files` / `bronze_repos` / `bronze_records` enumerate a
