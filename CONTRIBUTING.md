@@ -155,9 +155,9 @@ git merge origin/main          # normalmente só docs; resolva antes de ramifica
 5. **Abrir Pull Request como draft** no GitHub
 
 6. **Validar localmente com `gh act`** e marcar o PR como *Ready for review*.
-   A validação por *dispatch* na organização foi aposentada junto com o fork
-   `unb-mds/CoOps`; os workflows rodam na máquina de quem desenvolve. Passo a
-   passo em [docs/local-actions.md](docs/local-actions.md) e
+   A validação por *dispatch* na organização foi aposentada: os workflows rodam
+   na máquina de quem desenvolve, sem precisar de acesso de escrita a nenhum
+   fork. Passo a passo em [docs/local-actions.md](docs/local-actions.md) e
    [docs/TESTING_PULL_REQUESTS.md](docs/TESTING_PULL_REQUESTS.md).
 
    > Use a extensão `gh act`, não o binário `/usr/local/bin/act`, que é uma
