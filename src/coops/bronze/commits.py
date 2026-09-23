@@ -54,8 +54,13 @@ def _sanitize_commit(commit: Dict[str, Any]) -> Dict[str, Any]:
 
     Commit data is committed to a public branch, so raw email addresses must not
     be persisted. Linked authors (with a GitHub account) keep ``login`` and the
-    numeric ``id``; unlinked authors keep ``author_email_hash`` (the SHA-256 of
-    the trimmed, lower-cased email) instead of the raw address.
+    numeric ``id``; **every** author with an email keeps ``author_email_hash``
+    (the SHA-256 of the trimmed, lower-cased email) in place of the raw address.
+
+    The hash is kept for linked authors too, not only for the unlinked ones that
+    need it as their sole identifier — otherwise the two identifier spaces never
+    co-occur and nothing downstream can tell that a hash and a login belong to
+    the same person (#101, #171).
     """
     commit = copy.deepcopy(commit)
 
@@ -112,12 +117,31 @@ def _sanitize_commit(commit: Dict[str, Any]) -> Dict[str, Any]:
             author_data["login"] = login
         if numeric_id is not None:
             author_data["id"] = numeric_id
-        if not login and numeric_id is None:
-            # Unlinked author: the email is the only identifier. Store a stable
-            # hash instead of the raw address so distinct people aren't merged
-            # into "unknown" downstream.
-            if email:
-                author_data["author_email_hash"] = _hash_email(email)
+        # Hash the email for EVERY author, linked or not (#101/#171).
+        #
+        # This was once gated on `not login and numeric_id is None` — the hash
+        # kept only when it was the sole identifier. That reading is correct
+        # about what the hash is *for* and wrong about what it *costs*, and the
+        # gate made the two identifier spaces disjoint. Measured over all
+        # 130,186 commits in the corpus:
+        #
+        #     linked (id + login), no hash   123,562   94.9%
+        #     unlinked, hash only              6,614    5.1%
+        #     BOTH keys on one record              0    0.0%
+        #
+        # With no record carrying both, nothing downstream can learn that a
+        # given hash and a given login are the same human. So the 1,311 linked
+        # people and 231 unlinked hashes are counted as 1,542 separate
+        # contributors, with no way to reduce it — one person who commits from
+        # a personal address on one repository and a linked account on another
+        # is simply two people, for good.
+        #
+        # Publishing the hash for linked authors adds no new *class* of data:
+        # it is already published for 6,614 records, and a SHA-256 of an
+        # address is what `data/bronze/` deliberately stores in place of the
+        # address. What it adds is the join.
+        if email:
+            author_data["author_email_hash"] = _hash_email(email)
 
         commit_obj["author"] = author_data
 
@@ -233,8 +257,9 @@ def extract_commits(
                 parent_nodes = (n.get('parents') or {}).get('nodes') or []
                 parents = [p.get('oid') for p in parent_nodes if isinstance(p, dict) and p.get('oid')]
 
-                # `email` is carried only so `_sanitize_commit` can derive a stable
-                # identity key for unlinked authors; it is never persisted.
+                # `email` is carried only so `_sanitize_commit` can derive the
+                # stable identity key — for every author since #101, not just
+                # unlinked ones; the address itself is never persisted.
                 data_commits.append({
                     'sha': sha,
                     'html_url': n.get('url'),

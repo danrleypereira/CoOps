@@ -589,7 +589,83 @@ class TestSanitizeCommit:
         assert "email" not in out["commit"]["committer"]
         assert out["commit"]["author"]["login"] == "alice"
         assert out["commit"]["author"]["id"] == 1001
-        assert "author_email_hash" not in out["commit"]["author"]
+        # #101/#171: a linked author now keeps the hash TOO. This assertion was
+        # `"author_email_hash" not in ...` and is deliberately inverted, not
+        # quietly relaxed — it encoded the gate that made the two identifier
+        # spaces disjoint, which is the defect being fixed. The raw address
+        # still never survives, which is what the first assertion above pins.
+        assert out["commit"]["author"]["author_email_hash"] == _hash_email(
+            "alice@example.com"
+        )
+
+    def test_linked_and_unlinked_authors_share_one_hash_space(self):
+        """The join #171 needs: the same address hashes identically whether or
+        not the author has an account.
+
+        Before #101 the hash was kept only when `not login and numeric_id is
+        None`, so no record ever carried both a login and a hash. Measured over
+        all 130,186 commits in the corpus: 123,562 had an id and no hash, 6,614
+        a hash and no id, and **zero had both** — so nothing downstream could
+        learn that a hash and a login were the same human, and 1,311 linked
+        people plus 231 unlinked hashes were counted as 1,542 contributors with
+        no way to reduce it.
+        """
+        shared = "same.person@example.com"
+        linked = _sanitize_commit(
+            {
+                "sha": "a",
+                "author": {"login": "sameperson", "id": 7},
+                "commit": {
+                    "author": {"name": "Same", "email": shared, "date": "2024-01-01"},
+                    "message": "x",
+                },
+            }
+        )
+        unlinked = _sanitize_commit(
+            {
+                "sha": "b",
+                "author": None,
+                "commit": {
+                    "author": {"name": "Same", "email": shared, "date": "2024-01-02"},
+                    "message": "y",
+                },
+            }
+        )
+
+        assert linked["commit"]["author"]["login"] == "sameperson"
+        assert "login" not in unlinked["commit"]["author"]
+        # the same person, now joinable across both records
+        assert (
+            linked["commit"]["author"]["author_email_hash"]
+            == unlinked["commit"]["author"]["author_email_hash"]
+            == _hash_email(shared)
+        )
+
+    def test_the_raw_address_never_survives_for_a_linked_author(self):
+        """The rule the hash exists to serve, re-pinned now that linked authors
+        carry one: publishing a hash must not become publishing an address."""
+        out = _sanitize_commit(
+            {
+                "sha": "a",
+                "author": {"login": "alice", "id": 1001},
+                "commit": {
+                    "author": {
+                        "name": "Alice",
+                        "email": "alice@example.com",
+                        "date": "2024-01-01",
+                    },
+                    "committer": {
+                        "name": "Alice",
+                        "email": "alice@example.com",
+                        "date": "2024-01-01",
+                    },
+                    "message": "hi",
+                },
+            }
+        )
+        # assert on the WHOLE serialised record, not a field we remembered to check
+        assert "alice@example.com" not in json.dumps(out)
+        assert "@" not in json.dumps(out)
 
     def test_unlinked_author_gets_email_hash_drops_email(self):
         commit = {
