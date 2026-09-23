@@ -238,6 +238,13 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   never empty — #125.
 
 ### Fixed
+- `coops.github.mapper.map_commit_rest` (issue [#168](https://github.com/danrleypereira/CoOps/issues/168)):
+  `committed_at` now falls back to `commit.author.date` when the record
+  carries no `commit.committer` at all — the pre-#128 Bronze shape, which
+  made the mapper fail on 100% of one corpus's records (28,244/28,244)
+  with `Commit requires a non-empty committed_at`. The fallback mirrors
+  what Bronze itself writes (`author.get('date') or committed_date`);
+  `Commit`'s guard still raises when neither date exists.
 - Dashboard: the data source no longer falls back to a hardcoded
   `DW-Corp` organization when `VITE_GITHUB_ORG` is unset. Without it the
   dashboard now fails closed — no fetch is attempted and every page shows a

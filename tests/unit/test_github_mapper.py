@@ -247,6 +247,47 @@ def test_rest_commit_author_with_no_identifier_is_absent():
     assert commit.committed_at == "2026-03-04T10:00:00Z"
 
 
+def test_rest_commit_author_date_falls_back_when_committer_absent():
+    """Real pre-#128 Bronze shape (#168): ``commit.{author, message}`` and
+    **no ``committer`` key at all** — measured, 100% of one corpus's
+    28,244 records, every one of which raised on the committer-only read.
+
+    The author's date stands in for ``committed_at``, exactly how Bronze
+    itself writes the pair (``author.get('date') or committed_date``).
+    With this fixture's *distinct* author/committer dates, the assert can
+    tell the fallback from a committer read: 2026-03-03 is the author's.
+    """
+    raw = rest_commit()
+    del raw["commit"]["committer"]
+    commit = map_commit_rest(raw, TENANT, "coops")
+    assert commit.committed_at == "2026-03-03T09:00:00Z"
+    assert commit.authored_at == "2026-03-03T09:00:00Z"
+
+
+def test_rest_commit_committer_date_beats_author_date_when_both_present():
+    """The other half of the ``committer.date or author.date`` pair
+    (docs/definition-of-done.md: a chain is only observable with both
+    alternatives present): when both dates exist the committer's wins —
+    it is the timestamp of record for the history fetched.
+    """
+    commit = map_commit_rest(rest_commit(), TENANT, "coops")
+    assert commit.committed_at == "2026-03-04T10:00:00Z"
+    assert commit.authored_at == "2026-03-03T09:00:00Z"
+
+
+def test_rest_commit_raises_when_neither_date_exists():
+    """No committer date and no author date: the mapper must hand the
+    model nothing, and ``Commit``'s guard must fire — the fix resolves a
+    date when one is available one key away, it does not invent one
+    (#168: keep the guard raising on a genuinely empty ``committed_at``).
+    """
+    raw = rest_commit()
+    del raw["commit"]["committer"]
+    raw["commit"]["author"] = {"name": "Rosa Almeida", "email": ADDRESS, "date": None}
+    with pytest.raises(ValueError, match="non-empty committed_at"):
+        map_commit_rest(raw, TENANT, "coops")
+
+
 def test_rest_and_graphql_shapes_of_one_commit_agree():
     """Both provider shapes, one model: the mapper is the seam that absorbs
     the difference."""

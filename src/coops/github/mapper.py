@@ -26,8 +26,11 @@ in one place:
 - REST commit objects (list items of ``/repos/{full_name}/commits`` or the
   commit detail)::
 
-      {sha, commit {author {name email date}, committer {date}, message},
+      {sha, commit {author {name email date}, committer {date}?, message},
        author {login id} | null, parents [{sha}], stats {additions deletions}}
+
+  where ``committer`` may be absent entirely (pre-#128 Bronze records,
+  #168) and the author's date stands in for ``committed_at``.
 
 An email address never reaches a model. As in
 :func:`coops.bronze.commits._sanitize_commit`, the address is reduced to its
@@ -228,6 +231,14 @@ def map_commit_rest(
     5.8% of authors with no GitHub account); the git identity lives in
     ``commit.author``. ``stats`` is only present on the detail payload, so
     additions/deletions are ``None`` for list items.
+
+    ``committed_at`` is the committer date, falling back to the author's
+    date when the record carries no ``commit.committer`` at all — the
+    pre-#128 Bronze shape (measured, #168: 100% of one corpus's records),
+    which Bronze itself writes the same way (``author.get('date') or
+    committed_date`` in :mod:`coops.bronze.commits`). The model keeps
+    raising when neither date exists: a commit with no timestamp at all
+    is unmappable, not mappable-with-empty.
     """
     top_author = raw.get("author") or {}
     git_author = (raw.get("commit") or {}).get("author") or {}
@@ -243,7 +254,7 @@ def map_commit_rest(
             name=git_author.get("name"),
             email=git_author.get("email"),
         ),
-        committed_at=git_committer.get("date") or "",
+        committed_at=git_committer.get("date") or git_author.get("date") or "",
         message=(raw.get("commit") or {}).get("message") or "",
         authored_at=git_author.get("date"),
         parents=tuple(
