@@ -219,8 +219,14 @@ name`. A property check ran 500 synthetic hashes and several logins, and
 confirmed exactly what it asked: every output unique, none empty, no shared
 constant. All true. It generated no identity carrying **both** a hash and a real
 name — the only shape where the ordering is observable. The chain shipped with
-the hash outranking the name, and **206 contributors with perfectly good names
+the hash outranking the name, and **230 contributors with perfectly good names
 rendered as `Unknown contributor (a1b2c3d4)`** on the dashboard.
+
+Measuring that impact took two attempts, which is its own lesson. The first
+figure was 206, counted as the distinct name *strings* that disappeared. The
+real number is **per identity**: 38 people carry more than one spelling of their
+own name (`Druval Carvalho` / `Durval Carvalho`), so string-counting undercounts.
+Count the entities affected, not the values that changed.
 
 So when the code under test picks between alternatives, the fixture space has to
 include the **combinations**, not just the members:
@@ -240,8 +246,8 @@ first.
 
 The regeneration behind #132 was gated on exactly that: addresses must reach
 zero, and record counts must not fall. Both passed — addresses went 149 -> 0 and
-`members_statistics.json` **grew** from 1,699 to 1,723 rows. Underneath, 206 rows
-kept their place and lost their identity. Every criterion was green.
+`members_statistics.json` **grew** from 1,699 to 1,723 rows. Underneath, 230
+identities kept their place and lost their name. Every criterion was green.
 
 For a migration, assert on both axes:
 
@@ -253,6 +259,14 @@ For a migration, assert on both axes:
   not a rounding error.
 - **Counts are the weakest of the three.** They catch deletion and nothing else.
   Here the count moved in the *reassuring* direction while the damage happened.
+
+**An unexplained row *gain* is a finding, exactly like an unexplained loss.** The
++24 above read as "24 contributors rescued from being dropped". They were
+**identity splits**: 16 name strings were each shared by several distinct people
+(`CI/CD Bot` was six of them, `root` five), and the old key merged them into one
+row. Nobody asked where the extra rows came from, because rows appearing feels
+like a fix. Explaining them is what revealed that the obvious repair — putting
+the name back above the hash — would have silently re-merged all 25.
 
 ## Tests that do not count
 
