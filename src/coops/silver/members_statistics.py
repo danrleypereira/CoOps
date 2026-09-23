@@ -74,6 +74,7 @@ def process_members_statistics() -> List[str]:
             
             if user_identifier != 'unknown' and 'bot]' not in user_identifier:
                 member = members_data[user_identifier]
+                member['id'] = user_identifier
                 member['name'] = display_name(user_identifier)
                 member['events'].append({
                     'date': commit_date,
@@ -99,6 +100,7 @@ def process_members_statistics() -> List[str]:
             created_at = parse_github_date(issue.get('created_at'))
             if created_at:
                 member = members_data[user_identifier]
+                member['id'] = user_identifier
                 member['name'] = display_name(user_identifier)
                 member['events'].append({
                     'date': created_at,
@@ -140,6 +142,7 @@ def process_members_statistics() -> List[str]:
             created_at = parse_github_date(pr.get('created_at'))
             if created_at:
                 member = members_data[user_identifier]
+                member['id'] = user_identifier
                 member['name'] = display_name(user_identifier)
                 member['events'].append({
                     'date': created_at,
@@ -180,6 +183,7 @@ def process_members_statistics() -> List[str]:
             event_date = parse_github_date(event.get('created_at'))
             if event_date:
                 member = members_data[user_identifier]
+                member['id'] = user_identifier
                 member['name'] = display_name(user_identifier)
                 
                 event_type = event.get('event', 'unknown')
@@ -226,6 +230,7 @@ def process_members_statistics() -> List[str]:
             avg_issues = (data['total_issues_created'] + data['total_issues_closed']) / activity_period_weeks
             
             member_stats = {
+                'id': username,
                 'name': display_name(username),
                 'total_events': total_events,
                 'total_commits': data['total_commits'],

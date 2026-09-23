@@ -587,3 +587,105 @@ def test_temporal_analysis_commit_with_additions_deletions(monkeypatch):
     assert events[0]["additions"] == 100
     assert events[0]["deletions"] == 50
     assert events[0]["total_changes"] == 150
+
+
+def test_temporal_analysis_author_id_equals_chain(monkeypatch):
+    """Daily-summary authors carry an `id` equal to the identity chain output
+    for each branch: login, then author_email_hash, then name."""
+    h = "a1b2c3d4" + "0" * 56
+    commits_data = [
+        {
+            "repo_name": "repo1",
+            "commit": {
+                "author": {"date": "2024-01-01T10:00:00Z", "login": "alice"}
+            },
+        },
+        {
+            "repo_name": "repo1",
+            "commit": {
+                "author": {"date": "2024-01-01T11:00:00Z", "author_email_hash": h}
+            },
+        },
+        {
+            "repo_name": "repo1",
+            "commit": {
+                "author": {"date": "2024-01-01T12:00:00Z", "name": "Charlie"}
+            },
+        },
+    ]
+
+    def fake_load(path):
+        if path.endswith("commits_all.json"):
+            return commits_data
+        return []
+
+    saved = {}
+
+    def fake_save(data, path, timestamp=True):
+        saved[path] = data
+        return path
+
+    monkeypatch.setattr(temporal, "load_json_data", fake_load)
+    monkeypatch.setattr(temporal, "save_json_data", fake_save)
+    monkeypatch.setattr(temporal, "parse_github_date", _iso)
+
+    temporal.process_temporal_analysis()
+
+    daily = saved["data/silver/daily_activity_summary.json"]
+    authors = daily[0]["authors"]
+    assert {a["id"] for a in authors} == {"alice", h, "Charlie"}
+    for a in authors:
+        assert a["id"]
+        # This layer applies no display transformation, so id == name.
+        assert a["id"] == a["name"]
+
+
+def test_temporal_analysis_shared_name_distinct_ids(monkeypatch):
+    """Two identities sharing one name string produce two authors with distinct
+    ids — the hash keeps them apart even though the name matches."""
+    h1 = "a1b2c3d4" + "0" * 56
+    h2 = "e5f6a7b8" + "0" * 56
+    commits_data = [
+        {
+            "repo_name": "repo1",
+            "commit": {
+                "author": {
+                    "date": "2024-01-01T10:00:00Z",
+                    "author_email_hash": h1,
+                    "name": "CI/CD Bot",
+                }
+            },
+        },
+        {
+            "repo_name": "repo1",
+            "commit": {
+                "author": {
+                    "date": "2024-01-01T11:00:00Z",
+                    "author_email_hash": h2,
+                    "name": "CI/CD Bot",
+                }
+            },
+        },
+    ]
+
+    def fake_load(path):
+        if path.endswith("commits_all.json"):
+            return commits_data
+        return []
+
+    saved = {}
+
+    def fake_save(data, path, timestamp=True):
+        saved[path] = data
+        return path
+
+    monkeypatch.setattr(temporal, "load_json_data", fake_load)
+    monkeypatch.setattr(temporal, "save_json_data", fake_save)
+    monkeypatch.setattr(temporal, "parse_github_date", _iso)
+
+    temporal.process_temporal_analysis()
+
+    daily = saved["data/silver/daily_activity_summary.json"]
+    authors = daily[0]["authors"]
+    assert len(authors) == 2
+    assert {a["id"] for a in authors} == {h1, h2}

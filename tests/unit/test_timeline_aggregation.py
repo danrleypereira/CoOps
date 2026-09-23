@@ -172,3 +172,48 @@ def test_timeline_author_without_repos(monkeypatch):
     files = timeline.process_timeline_aggregation()
     last7 = saved["data/gold/timeline_last_7_days.json"]
     assert last7[0]["authors"][0]["repositories"] == []
+
+
+def test_timeline_carries_author_id(monkeypatch):
+    """The author `id` from Silver flows through both Gold aggregations
+    untouched, alongside the existing name-based output."""
+    daily = [{
+        "date": "2024-06-05",
+        "total_events": 1, "issues_created": 0, "issues_closed": 0,
+        "prs_created": 0, "prs_closed": 0, "commits": 1, "comments": 0,
+        "unique_users": 1, "unique_repos": 1,
+        "authors": [{
+            "id": "user-42",
+            "name": "alice",
+            "commits": 1, "issues_created": 0, "issues_closed": 0,
+            "prs_created": 0, "prs_closed": 0, "comments": 0,
+        }],
+    }]
+    events = [{"user": "alice", "repo": "repoA"}]
+
+    def fake_load(path):
+        if path.endswith("daily_activity_summary.json"):
+            return daily
+        if path.endswith("temporal_events.json"):
+            return events
+        return []
+
+    saved = {}
+
+    def fake_save(data, path, timestamp=True):
+        saved[path] = data
+        return path
+
+    monkeypatch.setattr(timeline, "load_json_data", fake_load)
+    monkeypatch.setattr(timeline, "save_json_data", fake_save)
+
+    timeline.process_timeline_aggregation()
+
+    last7 = saved["data/gold/timeline_last_7_days.json"]
+    assert last7[0]["authors"][0]["id"] == "user-42"
+    assert last7[0]["authors"][0]["name"] == "alice"
+    assert last7[0]["authors"][0]["repositories"] == ["repoA"]
+
+    months = saved["data/gold/timeline_last_12_months.json"]
+    assert months[0]["authors"][0]["id"] == "user-42"
+    assert months[0]["authors"][0]["name"] == "alice"

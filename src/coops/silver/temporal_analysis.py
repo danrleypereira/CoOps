@@ -201,6 +201,7 @@ def process_temporal_analysis() -> List[str]:
         authors_list = []
         for author_name, stats in data['authors'].items():
             authors_list.append({
+                'id': author_name,
                 'name': author_name,
                 'commits': stats['commits'],
                 'issues_created': stats['issues_created'],
