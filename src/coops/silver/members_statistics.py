@@ -305,7 +305,7 @@ def process_members_statistics() -> List[str]:
                 'total_prs_created': data['total_prs_created'],
                 'total_prs_closed': data['total_prs_closed'],
                 'total_comments': data['total_comments'],
-                'repos': list(data['repos']),
+                'repos': sorted(data['repos']),
                 'repos_count': len(data['repos']),
                 'activity_period': {
                     'first_activity': data['first_activity'].isoformat(),

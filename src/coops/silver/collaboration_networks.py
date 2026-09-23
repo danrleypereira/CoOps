@@ -72,7 +72,7 @@ def process_collaboration_networks() -> List[str]:
     user_collaborations = defaultdict(set)
 
     for repo, contributors in repo_collaborators.items():
-        contributors_list = list(contributors)
+        contributors_list = sorted(contributors)
 
         # Create edges between all contributors in the same repo
         for i, user1 in enumerate(contributors_list):
@@ -114,7 +114,7 @@ def process_collaboration_networks() -> List[str]:
         user_metrics.append({
             'user': user,
             'collaborator_count': len(collaborators),
-            'collaborators': list(collaborators),
+            'collaborators': sorted(collaborators),
             'repositories_contributed': len([repo for repo, contributors in repo_collaborators.items() if user in contributors])
         })
 
@@ -129,7 +129,7 @@ def process_collaboration_networks() -> List[str]:
     # Create repository collaboration analysis
     repo_analysis = []
     for repo, contributors in repo_collaborators.items():
-        contributors_list = list(contributors)
+        contributors_list = sorted(contributors)
 
         # Calculate potential and actual collaborations
         potential_collaborations = len(contributors_list) * (len(contributors_list) - 1) // 2
