@@ -9,7 +9,7 @@ import os
 import sys
 from datetime import datetime
 from coops.infrastructure import get_settings
-from coops.domain.tenancy import TenantId
+from coops.domain.tenancy import resolve_tenant
 from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, update_data_registry
 from coops.bronze.watermarks import WatermarkStore
 
@@ -89,10 +89,14 @@ def main():
     print(f"Started at: {datetime.now().isoformat()}")
 
     # Initialize API client
+    # One tenant per run, resolved from TENANT_MODE + COOPS_ORG (#92): the
+    # capture tree is keyed by tenant (`<root>/<tenant_id>/`), not by provider
+    # account, so the writer gets the tenant's slug.
+    tenant = resolve_tenant(cfg.tenant_mode, cfg.github_org)
     client = GitHubAPIClient(
         cfg.github_token,
         capture_dir=args.capture_dir,
-        tenant_id=(TenantId(cfg.github_org).org_id if args.capture_dir else None),
+        tenant_id=(str(tenant.id) if args.capture_dir else None),
     )
     config = OrganizationConfig(cfg.github_org)
 
@@ -107,11 +111,10 @@ def main():
     # the store simply leaves the client on the API-only path.
     if cfg.mongo_uri:
         try:
-            from coops.domain import TenantId
             from coops.storage import MongoRawStore
 
             client.raw_store = MongoRawStore(cfg.mongo_uri)
-            client.tenant_id = TenantId(cfg.github_org)
+            client.tenant_id = tenant.id
             client.raw_max_age_seconds = cfg.raw_max_age_seconds
         except Exception as exc:  # pragma: no cover - defensive, env-dependent
             print(f"[WARN] MongoDB raw layer unavailable ({exc}); using API only.")

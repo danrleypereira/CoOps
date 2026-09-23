@@ -527,13 +527,14 @@ class SourcePortContract:
         with pytest.raises(SourceNotFoundError):
             list(source.fetch_commits(nobody, "demo-api"))
 
-    def test_tenant_spellings_collapse_to_one_tenant(self, source):
-        # Organization names are case-insensitive; both spellings present
-        # at once address the same tenant.
-        stored = list(source.fetch_commits(TenantId("ORG-A"), "demo-api"))
-        again = list(source.fetch_commits(TenantId("org-a"), "demo-api"))
+    def test_tenant_slug_spellings_stay_separate_tenants(self, source):
+        # Since #92 the slug is an assigned identifier compared exactly; the
+        # GitHub case-insensitivity rule lives in ProviderAccount. A second
+        # spelling is a different tenant and must not see the first's data.
+        stored = list(source.fetch_commits(TenantId("org-a"), "demo-api"))
         assert {c.sha for c in stored} == {"a" * 40, "b" * 40}
-        assert {c.sha for c in again} == {"a" * 40, "b" * 40}
+        with pytest.raises(SourceNotFoundError):
+            list(source.fetch_commits(TenantId("ORG-A"), "demo-api"))
 
     # -- repository scope -------------------------------------------------
 

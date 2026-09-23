@@ -8,6 +8,23 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 ## [Unreleased]
 
 ### Changed
+- Tenancy model, first half of issue
+  [#92](https://github.com/danrleypereira/CoOps/issues/92): a tenant is no
+  longer a GitHub organization. `TenantId` is an opaque slug we assign
+  (`unb-mds`), trimmed but never re-cased — two spellings are two tenants, so
+  the id survives an organization rename. The case-insensitivity rule about
+  GitHub org names (trim + lower-case, from #68) moved to the new
+  `ProviderAccount(provider, org_id)`, whose equality and hash are the
+  `(provider, org_id)` pair: the same org name on two providers is two
+  accounts, never one merged identity and never a dict-key/set collision. The
+  new `Tenant(id, accounts)` holds them (non-empty, no duplicates), and
+  `resolve_tenant` implements `TENANT_MODE=single` — one tenant with one
+  GitHub account resolved from `COOPS_ORG`, with the slug bootstrapped from
+  the normalised login so raw-capture directories and raw-layer documents
+  keep their on-disk identity. `coops-bronze` resolves its tenant through it,
+  so the CLI is unchanged. `TENANT_MODE=multi` raises `NotImplementedError`
+  until the tenant registry lands. Entities carrying `ProviderAccount` plus
+  the provider's `external_id` (#21) follow in the second half.
 - Silver reads Bronze per-repository files instead of the `_all` aggregates
   (issue [#170](https://github.com/danrleypereira/CoOps/issues/170), step 1).
   `members_statistics`, `contribution_metrics`, `collaboration_networks` and
@@ -24,6 +41,21 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   run timestamps and the order of equal-key records.
 
 ### Added
+- mypy in CI (issue [#91](https://github.com/danrleypereira/CoOps/issues/91)):
+  the compile-time half of the port contract. Phase 1's ports are
+  `typing.Protocol`s, which are checked statically — `isinstance` against a
+  `@runtime_checkable` Protocol only verifies that method *names* exist — so
+  an adapter drifting from a port (missing `tenant` parameter, wrong return
+  type) passed every test and failed only in production. `strict = true` in
+  `[tool.mypy]` (`pyproject.toml`), scoped to `src/coops/domain` and
+  `src/coops/github` (the issue's `providers/` is the `github/` adapter
+  package); the pre-ports layers are excluded because a strict run over them
+  starts at 348 errors — the follow-up widens as Phases 2 and 3 move code
+  behind ports. Runs in `python-unit-tests.yaml` as its own step. Both
+  scoped packages were already strict-clean (0 errors before, 0 after); the
+  guard was proven to fail by checking a deliberately non-conforming
+  scratch adapter: mypy reports the missing-`tenant` and wrong-return-type
+  drift that `isinstance` accepts.
 - `coops.bronze.files` (issue [#156](https://github.com/danrleypereira/CoOps/issues/156)):
   one place that knows how `data/bronze/` is named, so callers stop
   re-deriving it. `bronze_files` / `bronze_repos` / `bronze_records` enumerate a

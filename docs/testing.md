@@ -37,11 +37,15 @@ and its `main` carries the pipeline's data commits.
 
 | Workflow | Runs | Gate |
 |---|---|---|
-| `python-unit-tests.yaml` | Python 3.10, 3.11 · Node 20, 22 | backend coverage `--cov-fail-under=60` |
+| `python-unit-tests.yaml` | Python 3.10, 3.11 · Node 20, 22 | backend coverage `--cov-fail-under=60` · mypy `strict` over `src/coops/domain` + `src/coops/github` (3.11 leg only) |
 | `python-integration-tests.yaml` | Python 3.10, 3.11, 3.12 | none — the integration suite alone covers ~27%, so it reports coverage without a threshold |
 | `validate-pipeline.yaml` | manual | see below |
 
-Frontend lint is not in CI.
+Frontend lint is not in CI. mypy is, but only over the Phase 1 port/adapter
+boundary (`src/coops/domain`, `src/coops/github`); the pre-ports layers are
+excluded until they move behind ports, because a strict run over them starts
+at hundreds of errors (issue
+[#91](https://github.com/danrleypereira/CoOps/issues/91)).
 
 ## Validating a pull request
 
