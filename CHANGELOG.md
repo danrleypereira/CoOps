@@ -46,6 +46,34 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   under five `PYTHONHASHSEED` values and asserting byte-identical output.
 
 ### Added
+- `coops.domain.ports.source_port` (issue [#22](https://github.com/danrleypereira/CoOps/issues/22)):
+  the tenant-scoped `SourcePort` — `fetch_repositories` / `fetch_members` /
+  `fetch_commits` / `fetch_issues` / `fetch_pull_requests` / `fetch_tree` —
+  returning **domain models**, never provider payloads, so `application/`,
+  `silver/` and `gold/` need zero changes when the GitLab adapter (#49)
+  lands and #26 moves Bronze onto it. A `TenantId` is the first, required
+  parameter of every method and implementations scope every read to it;
+  there is no method that addresses records without one. Decisions the
+  issue left open, written into the module docstring: the streaming
+  methods return `Iterator` (measured: 130,186 commits in one real
+  organization — a `list` would force every adapter to materialise that);
+  **incrementality is adapter-internal** (no `since` parameter — #110's
+  watermarks are per-branch timestamps, a numeric event id, `updated_at`
+  bounds and head SHAs, which one neutral parameter cannot express and
+  GitHub-shaped cursors would leak); `fetch_tree` is addressed by
+  `(tenant, repository, branch=None→default)` and returns one complete
+  `FileTree`; provider conditions cross as `SourceError` subclasses
+  (`SourceUnavailableError` / `SourceAccessError` /
+  `SourceNotFoundError`), never the provider library's own exceptions,
+  while a malformed address stays a caller bug (`ValueError`);
+  repositories are addressed by bare name and `validate_repo_name`
+  rejects path separators, making the provider's `owner/repo` form
+  unrepresentable through the port. Verified read-only against the real
+  corpus via `scripts/source_port_corpus_check.py`: 486 repositories,
+  1,412 members, 130,186 commits, 20,090 issues, 16,531 pull requests and
+  486 trees mapped with **0 failures** (`*_all.json` aggregates excluded
+  by construction). Nothing consumes the port yet; no existing caller
+  changed.
 - `coops.domain.ports.storage_port` (issue [#23](https://github.com/danrleypereira/CoOps/issues/23)):
   the tenant-scoped `StoragePort` — `save`/`load`/`list` per `(layer,
   entity)`, generalising `RawStore` (#113) over a different key space

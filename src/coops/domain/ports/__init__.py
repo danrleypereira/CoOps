@@ -17,6 +17,15 @@ from .ai_port import (
     validate_member_summaries,
     validate_summary_status,
 )
+from .source_port import (
+    SourceAccessError,
+    SourceError,
+    SourceNotFoundError,
+    SourcePort,
+    SourceUnavailableError,
+    validate_branch,
+    validate_repo_name,
+)
 from .storage_port import (
     LAYERS,
     JSONValue,
@@ -36,12 +45,19 @@ __all__ = [
     "MemberAnalyses",
     "MemberAnalysis",
     "MemberSummary",
+    "SourceAccessError",
+    "SourceError",
+    "SourceNotFoundError",
+    "SourcePort",
+    "SourceUnavailableError",
     "StoragePort",
     "StoredDataset",
     "SummaryStatus",
+    "validate_branch",
     "validate_entity",
     "validate_layer",
     "validate_member",
     "validate_member_summaries",
+    "validate_repo_name",
     "validate_summary_status",
 ]
