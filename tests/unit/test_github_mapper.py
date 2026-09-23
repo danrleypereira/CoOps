@@ -126,8 +126,38 @@ def test_graphql_commit_linked_author():
     assert commit.author.account_id == 1001
     assert commit.author.identity == "rosa-almeida"
     assert commit.author.display_name == "Rosa Almeida"
-    # Linked authors are keyed by login; no hash is needed or stored.
-    assert commit.author.email_hash is None
+    # #101/#171: a linked author now carries the hash TOO. This assertion was
+    # `email_hash is None` and is deliberately inverted, not relaxed — it
+    # encoded the gate that kept the login space and the hash space disjoint,
+    # which is the defect being fixed.
+    #
+    # The identity assertion two lines up is the one that matters here: the
+    # hash is an ADDITIONAL channel, not a competing key. `identity_key`
+    # resolves login -> email_hash -> name, so a linked author still keys on
+    # its login and nothing downstream re-buckets.
+    assert commit.author.email_hash == ADDRESS_HASH
+
+
+def test_the_same_address_hashes_alike_linked_or_not():
+    """The join #171 needs, at the domain boundary.
+
+    Measured over all 130,186 commits before this change: 123,562 records had
+    a login and no hash, 6,614 a hash and no login, and **zero had both** — so
+    nothing could tell that a hash and a login belonged to one person, and
+    1,311 linked people plus 231 unlinked hashes were counted as 1,542
+    contributors with no way to reduce it.
+    """
+    linked = map_commit_graphql(graphql_history_node(), TENANT, ACCOUNT, "coops")
+
+    unlinked_node = graphql_history_node()
+    unlinked_node["author"] = {"name": "Rosa Almeida", "email": ADDRESS, "user": None}
+    unlinked = map_commit_graphql(unlinked_node, TENANT, ACCOUNT, "coops")
+
+    # different identities, because one has an account and one does not...
+    assert linked.author.identity == "rosa-almeida"
+    assert unlinked.author.identity == ADDRESS_HASH
+    # ...and now one shared channel that says they are the same human
+    assert linked.author.email_hash == unlinked.author.email_hash == ADDRESS_HASH
 
 
 def test_graphql_commit_unlinked_author_identity_is_email_hash():

@@ -8,6 +8,24 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 ## [Unreleased]
 
 ### Changed
+- Every commit author keeps `author_email_hash`, not only the unlinked ones
+  (issues [#101](https://github.com/danrleypereira/CoOps/issues/101) and
+  [#171](https://github.com/danrleypereira/CoOps/issues/171)). The hash was
+  gated on `not login and numeric_id is None` — kept only when it was the sole
+  identifier — which made the two identifier spaces disjoint. Measured over all
+  130,186 commits in the `fga-eps-mds` corpus: 123,562 records carried an id and
+  no hash, 6,614 a hash and no id, and **zero carried both**, so nothing
+  downstream could learn that a hash and a login belong to the same person. The
+  1,311 linked contributors and 231 unlinked hashes were therefore counted as
+  1,542 people, with no way to reduce it. Applied at both ends — Bronze's
+  `_sanitize_commit` and the domain mapper, which would otherwise discard the
+  hash Bronze now stores. **No identity changes**: `identity_key` resolves
+  `login -> email_hash -> name`, so a linked author still keys on its login and
+  the hash is an additional, non-deciding channel. Publishing it adds no new
+  *class* of data — it is already published for 6,614 records, and a SHA-256 is
+  what `data/bronze/` stores in place of an address. Existing Bronze files are
+  unaffected until re-projected from the cache; the code change does not
+  rewrite data already written.
 - Tenancy model, second half of issue
   [#92](https://github.com/danrleypereira/CoOps/issues/92) (issue
   [#187](https://github.com/danrleypereira/CoOps/issues/187)): every
