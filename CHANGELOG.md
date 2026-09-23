@@ -8,6 +8,21 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 ## [Unreleased]
 
 ### Added
+- `coops.domain.ports.storage_port` (issue [#23](https://github.com/danrleypereira/CoOps/issues/23)):
+  the tenant-scoped `StoragePort` — `save`/`load`/`list` per `(layer,
+  entity)`, generalising `RawStore` (#113) over a different key space
+  (Medallion datasets, not HTTP capture). A `TenantId` is the first,
+  required parameter of every method and implementations scope every query
+  to it; `load` returns the frozen `StoredDataset`, never a driver type,
+  and nothing under `domain/` imports a database library. Decisions the
+  issue left open: `layer` is `Literal["bronze", "silver", "gold"]`;
+  `entity` is the dataset name within the layer (the file stem on disk
+  today, e.g. `issues_2017.1-SIGS`); `list` returns sorted entity names,
+  not datasets. The `*_all.json` publish aggregates repeat every
+  per-repository record of their kind, so they are **not addressable**:
+  `validate_entity` rejects the `_all` suffix on both save and load.
+  Nothing consumes the port yet — #30 moves Bronze onto it, #39 is the
+  Mongo adapter.
 - `coops.domain.models` (issue [#21](https://github.com/danrleypereira/CoOps/issues/21)):
   provider-agnostic entities — `Repository`, `Member`, `Commit`, `Issue`,
   `PullRequest`, `ActivityEvent`, `FileTree`/`FileEntry`, plus the `Actor`
