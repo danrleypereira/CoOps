@@ -8,6 +8,30 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 ## [Unreleased]
 
 ### Added
+- `coops.bronze.files` (issue [#156](https://github.com/danrleypereira/CoOps/issues/156)):
+  one place that knows how `data/bronze/` is named, so callers stop
+  re-deriving it. `bronze_files` / `bronze_repos` / `bronze_records` enumerate a
+  family with its aggregate excluded at source, and an unknown family **raises**
+  naming the valid ones rather than returning empty — `bronze_records(path,
+  "commit")` must not glob `commit_*.json`, match nothing and report a confident
+  zero. Replaces four ad-hoc call sites: three spellings of the guard in
+  `generate_members_ai.py` and an unguarded `structure_*.json` glob in
+  `file_language_analysis.py`.
+
+  Measuring `fga-eps-mds` said two of those guards were dead. **Only one was.**
+  `"issue_events" in name` is unreachable by construction (`issues_*.json`
+  cannot match `issue_events_*.json`; the prefixes diverge at character six).
+  But `"_with_stats" in name` excluded nothing only because the current
+  extractor stopped writing those files — an earlier version produced them as
+  enriched copies sitting beside the originals, 142 of them still recorded in
+  `data/bronze/structure_2025-2-Squad-01.json` at 4507f9a, and dropping the
+  guard would double-count every repository that has one. It is kept, matched
+  as a suffix rather than a substring, since the substring form also deleted a
+  repository legitimately named `with_stats_repo`. Verified over the corpus:
+  all four aggregates hold *exactly* their per-repository totals (commits
+  130,186, issue_events 298,395, issues 20,090, prs 16,531), which is what
+  proves they are duplicates rather than supplements — the premise
+  [#170](https://github.com/danrleypereira/CoOps/issues/170) depends on.
 - `coops.domain.ports.ai_port` (issue [#24](https://github.com/danrleypereira/CoOps/issues/24)):
   the tenant-scoped `AiSummaryPort` — one method, `summarize_members(tenant,
   summaries)`, abstracting the member-analysis step behind
