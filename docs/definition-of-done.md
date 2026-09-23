@@ -358,13 +358,19 @@ display are the same operation.**
 Two near-misses on the same value, an hour apart, by two people who had both
 read the rule:
 
-- One printed an exception message truncated to 96 characters. The address sat
-  at ~130. A regex had matched the *full* message and reported `LEAKS`, while the
-  output underneath it showed a clean-looking string — the assertion was right
-  and the display argued against it.
-- The other printed `msg[:150]` and the output stopped mid-address at
-  `display_name=ada.lovelace@exa`. That one survived only because the cut
-  happened to land inside the address rather than before it.
+Both are the **same shape**, and that matters more than either individually. The
+message is 159 characters; the address occupies 134-158.
+
+- One printed `msg[:96]` — the cut lands **before** the address, so the display
+  showed a clean-looking string.
+- The other printed `msg[:150]` — the cut lands **inside** it, showing
+  `display_name='ada.lovelace@exa`.
+
+In **both** cases the assertion ran over the full message and was **correct**.
+Only the displays differed, and only in how much of the address they happened to
+reveal. Neither reviewer was lucky or careless; both were reading a window and
+one window happened to be wide enough to argue with. A finding that depends on
+where a cut lands is not a finding you can rely on.
 
 So:
 
