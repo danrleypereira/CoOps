@@ -285,6 +285,19 @@ class TestUnattributedRecords:
         assert members[0]["total_commits"] == 1
         assert buckets[0]["total_commits"] == 1
 
+    def test_a_dateless_record_is_neither_member_nor_bucket(self, monkeypatch):
+        """No parseable date, no identity channels: no event at all —
+        the date gate precedes the bucket in this module too, which is
+        what keeps Bronze `_metadata` entries out of the output."""
+        saved = _make_helpers(monkeypatch, commits=[
+            {"commit": {"author": {"login": None, "name": None,
+                                   "author_email_hash": None}},
+             "repo_name": "r1"},
+            {"_metadata": {"extracted_at": "2024-01-01T00:00:00Z"}},
+        ])
+        ms.process_members_statistics()
+        assert saved["data/silver/members_statistics.json"] == []
+
     def test_two_unattributed_records_do_not_become_a_member(self, monkeypatch):
         """Two unattributed commits are not one contributor with two
         commits: they are each nobody-we-can-name (#154). The only thing

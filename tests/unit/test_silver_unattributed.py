@@ -198,6 +198,26 @@ class TestTemporalCarriesUnattributed:
         assert events[0]["user"] == "unknown"
         assert is_unattributed(events[0]) is False
 
+    def test_a_dateless_record_is_not_carried_even_unattributed(self, monkeypatch):
+        """A record with no parseable date cannot be placed in time, so
+        it is no event at all — not a member's, and not the bucket's
+        either. The date gate precedes the bucket in both modules, so a
+        Bronze `_metadata` entry (dateless, identity-less) lands in no
+        output."""
+        saved = _run(temporal, monkeypatch, {"commits": [
+            {"repo_name": "r1", "commit": {"author": {
+                "login": None, "name": None, "author_email_hash": None}}},
+            {"_metadata": {"extracted_at": "2024-01-01T00:00:00Z"}},
+            {"repo_name": "r1", "commit": {"author": {
+                "date": "2024-01-01T00:00:00Z", "login": "albedo"}}},
+        ]})
+        events = saved["data/silver/temporal_events.json"]
+        assert len(events) == 1
+        assert events[0]["user"] == "albedo"
+        assert not is_unattributed(events[0])
+        daily = saved["data/silver/daily_activity_summary.json"]
+        assert sum(d["unattributed_events"] for d in daily) == 0
+
 
 class TestTemporalDailySummary:
     def test_day_totals_count_them_but_no_author_holds_them(self, monkeypatch):

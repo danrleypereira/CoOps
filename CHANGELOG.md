@@ -38,8 +38,11 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   person); `members_statistics.json` gains one marked row —
   `"id": null, "name": null, "unattributed": true`, no averages —
   appended after the members when any exist. Gold's timeline reads
-  unchanged (`if author and repo` already skips a null user); a corpus
-  with no unattributed records produces byte-identical output.
+  unchanged (`if author and repo` already skips a null user). A corpus
+  with no unattributed records gains no rows or events anywhere — the
+  only output difference is the always-present
+  `unattributed_events: 0` key on `daily_activity_summary.json` day
+  rows (which Gold's day copies carry into the timelines).
 - Tenancy model, first half of issue
   [#92](https://github.com/danrleypereira/CoOps/issues/92): a tenant is no
   longer a GitHub organization. `TenantId` is an opaque slug we assign
