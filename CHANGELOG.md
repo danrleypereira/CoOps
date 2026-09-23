@@ -276,6 +276,28 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   never empty — #125.
 
 ### Fixed
+- `coops.github.mapper.map_commit_rest` (issue [#168](https://github.com/danrleypereira/CoOps/issues/168)):
+  Bronze records no longer map to commits the analytics cannot attribute.
+  Two fallbacks, both mirroring what Bronze itself writes
+  (`coops.bronze.commits`):
+  - `committed_at` now falls back to `commit.author.date` when the record
+    carries no `commit.committer` at all — the pre-#128 Bronze shape, which
+    made the mapper fail on 100% of one corpus's records (28,244/28,244)
+    with `Commit requires a non-empty committed_at`. `Commit`'s guard still
+    raises when neither date exists.
+  - the author's `login` (and `id`, when present) now falls back to
+    `commit.author` when the top level carries no account link — the
+    post-sanitize Bronze shape, where `_sanitize_commit` moves the account
+    link inside `commit.author` and leaves no top-level `author` at all
+    (measured: 0 top-level logins in either corpus; 27,206 of 28,244
+    local-run and 123,562 of 130,186 fga records carry one inside). The
+    top level still wins when both are present. Before, every local-run
+    record mapped with `author=None` (its git names are null too) —
+    records surviving, not attributing; after, 27,206 of 28,244 local-run
+    records attribute (the remaining 1,038 carry no identifier on any
+    channel), and fga attribution rises from 130,114 (git names) to
+    130,168, with the 123,562 login-carrying records re-keyed from shared
+    git names to account logins.
 - Dashboard: the data source no longer falls back to a hardcoded
   `DW-Corp` organization when `VITE_GITHUB_ORG` is unset. Without it the
   dashboard now fails closed — no fetch is attempted and every page shows a
