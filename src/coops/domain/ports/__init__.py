@@ -6,6 +6,15 @@ Implementations live elsewhere — ``coops.storage`` today, adapters per #39 —
 and nothing under ``coops.domain`` imports a database library.
 """
 
+from .source_port import (
+    SourceAccessError,
+    SourceError,
+    SourceNotFoundError,
+    SourcePort,
+    SourceUnavailableError,
+    validate_branch,
+    validate_repo_name,
+)
 from .storage_port import (
     LAYERS,
     JSONValue,
@@ -20,8 +29,15 @@ __all__ = [
     "LAYERS",
     "JSONValue",
     "Layer",
+    "SourceAccessError",
+    "SourceError",
+    "SourceNotFoundError",
+    "SourcePort",
+    "SourceUnavailableError",
     "StoragePort",
     "StoredDataset",
+    "validate_branch",
     "validate_entity",
     "validate_layer",
+    "validate_repo_name",
 ]
