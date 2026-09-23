@@ -10,6 +10,12 @@ from typing import List, Dict, Any
 from coops.utils.github_api import save_json_data, parse_github_date
 from coops.silver.members_statistics import display_name, observe_spelling
 from coops.silver.bronze_input import load_family
+from coops.silver.unattributed import (
+    is_unattributed,
+    mark_unattributed,
+    commit_author_identity,
+    conversation_actor_identity,
+)
 
 def process_temporal_analysis() -> List[str]:
     """Process temporal data for time-based analytics"""
@@ -38,57 +44,58 @@ def process_temporal_analysis() -> List[str]:
     for issue in issues_data:
         created_at = parse_github_date(issue.get('created_at'))
         if created_at:
-            # Use login as primary identifier (unique on GitHub)
-            user = issue.get('user') or {}
-            user_identifier = user.get('login') or user.get('name') or 'unknown'
-            observe_spelling(name_counts[user_identifier], user.get('name'))
+            # Shared resolver (#155): `user: null` (a deleted account)
+            # resolves to None — carried below as an explicitly
+            # unattributed event, never a user named 'unknown'.
+            user_obj = issue.get('user')
+            user_identifier = conversation_actor_identity(user_obj)
+            if user_identifier is not None:
+                observe_spelling(name_counts[user_identifier], user_obj.get('name'))
 
-            all_events.append({
+            all_events.append(mark_unattributed({
                 'date': created_at,
                 'type': 'issue_created',
                 'repo': issue.get('repo_name', 'unknown'),
                 'user': user_identifier
-            })
+            }))
 
         updated_at = parse_github_date(issue.get('updated_at'))
         if updated_at and issue.get('state') == 'closed':
-            user = issue.get('user') or {}
-            user_identifier = user.get('login') or user.get('name') or 'unknown'
+            user_identifier = conversation_actor_identity(issue.get('user'))
 
-            all_events.append({
+            all_events.append(mark_unattributed({
                 'date': updated_at,
                 'type': 'issue_closed',
                 'repo': issue.get('repo_name', 'unknown'),
                 'user': user_identifier
-            })
+            }))
 
     # Process PRs - Squad improvement: more robust user identifier extraction
     for pr in prs_data:
         created_at = parse_github_date(pr.get('created_at'))
         if created_at:
-            # Use login as primary identifier (unique on GitHub)
-            user = pr.get('user') or {}
-            user_identifier = user.get('login') or user.get('name') or 'unknown'
-            observe_spelling(name_counts[user_identifier], user.get('name'))
+            user_obj = pr.get('user')
+            user_identifier = conversation_actor_identity(user_obj)
+            if user_identifier is not None:
+                observe_spelling(name_counts[user_identifier], user_obj.get('name'))
 
-            all_events.append({
+            all_events.append(mark_unattributed({
                 'date': created_at,
                 'type': 'pr_created',
                 'repo': pr.get('repo_name', 'unknown'),
                 'user': user_identifier
-            })
+            }))
 
         updated_at = parse_github_date(pr.get('updated_at'))
         if updated_at and pr.get('state') == 'closed':
-            user = pr.get('user') or {}
-            user_identifier = user.get('login') or user.get('name') or 'unknown'
+            user_identifier = conversation_actor_identity(pr.get('user'))
 
-            all_events.append({
+            all_events.append(mark_unattributed({
                 'date': updated_at,
                 'type': 'pr_closed',
                 'repo': pr.get('repo_name', 'unknown'),
                 'user': user_identifier
-            })
+            }))
 
     # Process commits - Squad improvement: multi-level author extraction with additions/deletions
     for commit in commits_data:
@@ -99,22 +106,11 @@ def process_temporal_analysis() -> List[str]:
             commit_date = parse_github_date(author_obj['date'])
 
         if commit_date:
-            # Try to get user identifier from multiple possible locations
-            # Priority: login (unique GitHub ID) > name (can vary per commit config)
-            user_identifier = 'unknown'
-
-            # First try: commit.commit.author.login (from GraphQL or enriched REST)
-            if author_obj.get('login'):
-                user_identifier = author_obj['login']
-            # Second try: commit.author.login (from REST API root level)
-            elif commit.get('author', {}) and commit['author'].get('login'):
-                user_identifier = commit['author']['login']
-            # Third try: author_email_hash (stable identity for unlinked authors)
-            elif author_obj.get('author_email_hash'):
-                user_identifier = author_obj['author_email_hash']
-            # Fourth try: commit.commit.author.name (fallback, less reliable)
-            elif author_obj.get('name'):
-                user_identifier = author_obj['name']
+            # Shared resolver (#154): the same chain
+            # members_statistics uses, ending in None when no channel
+            # identifies the author (measured: 3.7% of one corpus's
+            # commits carry login, name, email hash and name all null).
+            user_identifier = commit_author_identity(commit)
 
             # The chain above ranks the *identity* (`id`): a key must be
             # unique and stable, so the stable hash outranks the
@@ -122,9 +118,10 @@ def process_temporal_analysis() -> List[str]:
             # way around — login > real name > hash prefix — because a label
             # must be legible; it is applied at the daily summary via
             # display_name, never per event (issue #151, step 3).
-            observe_spelling(name_counts[user_identifier], author_obj.get('name'))
+            if user_identifier is not None:
+                observe_spelling(name_counts[user_identifier], author_obj.get('name'))
 
-            all_events.append({
+            all_events.append(mark_unattributed({
                 'date': commit_date,
                 'type': 'commit',
                 'repo': commit.get('repo_name', 'unknown'),
@@ -132,23 +129,27 @@ def process_temporal_analysis() -> List[str]:
                 'additions': commit.get('additions'),
                 'deletions': commit.get('deletions'),
                 'total_changes': commit.get('total_changes')
-            })
+            }))
 
     # Process issue events - Squad improvement: more robust actor extraction
     for event in issue_events_data:
         event_date = parse_github_date(event.get('created_at'))
         if event_date:
-            # Use login as primary identifier (unique on GitHub)
-            actor = event.get('actor') or {}
-            user_identifier = actor.get('login') or actor.get('name') or 'unknown'
-            observe_spelling(name_counts[user_identifier], actor.get('name'))
+            # `"actor": null` — a deleted account (#155), 957 records in
+            # one corpus — resolves to None through the shared resolver:
+            # carried as an unattributed event, never a phantom user
+            # 'unknown' credited with its events.
+            actor_obj = event.get('actor')
+            user_identifier = conversation_actor_identity(actor_obj)
+            if user_identifier is not None:
+                observe_spelling(name_counts[user_identifier], actor_obj.get('name'))
 
-            all_events.append({
+            all_events.append(mark_unattributed({
                 'date': event_date,
                 'type': f"event_{event.get('event', 'unknown')}",
                 'repo': event.get('repo_name', 'unknown'),
                 'user': user_identifier
-            })
+            }))
 
     # Sort events by date
     all_events.sort(key=lambda x: x['date'])
@@ -170,6 +171,9 @@ def process_temporal_analysis() -> List[str]:
         'prs_closed': 0,
         'commits': 0,
         'comments': 0,
+        # Real activity nobody can be attributed to (#154/#155): counted
+        # in the day's totals, never as a user or an author.
+        'unattributed_events': 0,
         'unique_users': set(),
         'unique_repos': set(),
         'authors': defaultdict(lambda: {
@@ -188,29 +192,46 @@ def process_temporal_analysis() -> List[str]:
 
         day_data['date'] = date_key
         day_data['total_events'] += 1
-        day_data['unique_users'].add(event['user'])
+
+        # An unattributed event is real activity — the day's totals and
+        # type counts below include it — but it belongs to nobody: never
+        # a unique_user, never an author, never merged under a person
+        # key. `unattributed_events` is what reconciles the day row:
+        # what the totals count and no author claims.
+        attributed = not is_unattributed(event)
+        if attributed:
+            day_data['unique_users'].add(event['user'])
+        else:
+            day_data['unattributed_events'] += 1
+
         day_data['unique_repos'].add(event['repo'])
 
         author_id = event['user']
 
         if event['type'] == 'issue_created':
             day_data['issues_created'] += 1
-            day_data['authors'][author_id]['issues_created'] += 1
+            if attributed:
+                day_data['authors'][author_id]['issues_created'] += 1
         elif event['type'] == 'issue_closed':
             day_data['issues_closed'] += 1
-            day_data['authors'][author_id]['issues_closed'] += 1
+            if attributed:
+                day_data['authors'][author_id]['issues_closed'] += 1
         elif event['type'] == 'pr_created':
             day_data['prs_created'] += 1
-            day_data['authors'][author_id]['prs_created'] += 1
+            if attributed:
+                day_data['authors'][author_id]['prs_created'] += 1
         elif event['type'] == 'pr_closed':
             day_data['prs_closed'] += 1
-            day_data['authors'][author_id]['prs_closed'] += 1
+            if attributed:
+                day_data['authors'][author_id]['prs_closed'] += 1
         elif event['type'] == 'commit':
             day_data['commits'] += 1
-            day_data['authors'][author_id]['commits'] += 1
+            if attributed:
+                day_data['authors'][author_id]['commits'] += 1
         elif 'comment' in event['type']:
             day_data['comments'] += 1
-            day_data['authors'][author_id]['comments'] += 1
+            if attributed:
+                day_data['authors'][author_id]['comments'] += 1
 
     # Convert sets to counts and prepare for JSON serialization
     daily_summary = []

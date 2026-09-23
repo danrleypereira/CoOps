@@ -6,6 +6,11 @@ from typing import List, Dict, Any, Mapping, Optional
 
 from coops.utils.github_api import save_json_data, parse_github_date
 from coops.silver.bronze_input import load_family
+from coops.silver.unattributed import (
+    UNATTRIBUTED_FIELD,
+    commit_author_identity,
+    conversation_actor_identity,
+)
 
 
 def is_email_hash(identifier: str) -> bool:
@@ -102,19 +107,34 @@ def process_members_statistics() -> List[str]:
     # Estrutura para agregar eventos por membro. `name_counts` acumula as
     # grafias do nome real observadas por identidade (issue #151, etapa 3);
     # o rótulo é decidido apenas na agregação, depois de ver todos os eventos.
-    members_data = defaultdict(lambda: {
-        'name_counts': defaultdict(int),
-        'events': [],
-        'total_commits': 0,
-        'total_issues_created': 0,
-        'total_issues_closed': 0,
-        'total_prs_created': 0,
-        'total_prs_closed': 0,
-        'total_comments': 0,
-        'repos': set(),
-        'first_activity': None,
-        'last_activity': None
-    })
+    def _new_entry() -> Dict[str, Any]:
+        return {
+            'name_counts': defaultdict(int),
+            'events': [],
+            'total_commits': 0,
+            'total_issues_created': 0,
+            'total_issues_closed': 0,
+            'total_prs_created': 0,
+            'total_prs_closed': 0,
+            'total_comments': 0,
+            'repos': set(),
+            'first_activity': None,
+            'last_activity': None
+        }
+
+    members_data = defaultdict(_new_entry)
+
+    # The unattributed bucket (#154, #155): records no identity channel
+    # attributes to anyone — a commit with login, name, email hash and
+    # name all null, an event whose `actor` is JSON null (a deleted
+    # account). It accumulates exactly like a member entry but is never
+    # rendered as one: no `id`, no `name`, no averages, one marked row
+    # appended after the sort. It is nobody — not a member named
+    # 'unknown' (which is how `temporal_analysis` once credited 1,081
+    # events to a contributor who does not exist) and not a silent drop
+    # (which is what the old `'unknown'` exclusion did to 3.7% of one
+    # corpus's commits).
+    unattributed_bucket = _new_entry()
     
     # Processar commits
     for commit in commits_data:
@@ -125,147 +145,161 @@ def process_members_statistics() -> List[str]:
             commit_date = parse_github_date(author_obj['date'])
         
         if commit_date:
-            # Obter identificador do usuário (prioridade: login > name)
-            user_identifier = 'unknown'
+            # One resolver for both Silver modules (#154): the chain
+            # login (inner) > login (top level) > author_email_hash >
+            # name, ending in None — no channel identifies the author,
+            # so the record is carried in the unattributed bucket,
+            # never a member named 'unknown' and never dropped.
+            user_identifier = commit_author_identity(commit)
             
-            if author_obj.get('login'):
-                user_identifier = author_obj['login']
-            elif commit.get('author', {}) and commit['author'].get('login'):
-                user_identifier = commit['author']['login']
-            elif author_obj.get('author_email_hash'):
-                user_identifier = author_obj['author_email_hash']
-            elif author_obj.get('name'):
-                user_identifier = author_obj['name']
-            
-            if user_identifier != 'unknown' and 'bot]' not in user_identifier:
-                member = members_data[user_identifier]
-                member['id'] = user_identifier
-                observe_spelling(member['name_counts'], author_obj.get('name'))
-                member['events'].append({
+            # A bot is attributed (to the bot) and simply not a member;
+            # only `None` is unattributed.
+            if user_identifier is None or 'bot]' not in user_identifier:
+                entry = (unattributed_bucket if user_identifier is None
+                         else members_data[user_identifier])
+                if user_identifier is not None:
+                    entry['id'] = user_identifier
+                    observe_spelling(entry['name_counts'], author_obj.get('name'))
+                entry['events'].append({
                     'date': commit_date,
                     'type': 'commit',
                     'repo': commit.get('repo_name', 'unknown')
                 })
-                member['total_commits'] += 1
-                member['repos'].add(commit.get('repo_name', 'unknown'))
+                entry['total_commits'] += 1
+                entry['repos'].add(commit.get('repo_name', 'unknown'))
                 
                 # Atualizar first/last activity
-                if member['first_activity'] is None or commit_date < member['first_activity']:
-                    member['first_activity'] = commit_date
-                if member['last_activity'] is None or commit_date > member['last_activity']:
-                    member['last_activity'] = commit_date
+                if entry['first_activity'] is None or commit_date < entry['first_activity']:
+                    entry['first_activity'] = commit_date
+                if entry['last_activity'] is None or commit_date > entry['last_activity']:
+                    entry['last_activity'] = commit_date
     
     # Processar issues
     for issue in issues_data:
-        user = issue.get('user') or {}
-        user_identifier = user.get('login') or user.get('name') or 'unknown'
+        # Shared resolver (#155): `user: null` (a deleted account) and a
+        # user object with neither login nor name both resolve to None —
+        # an unattributed record, carried in the bucket rather than
+        # dropped as 'unknown'.
+        user_obj = issue.get('user')
+        user_identifier = conversation_actor_identity(user_obj)
         
-        if user_identifier != 'unknown' and 'bot]' not in user_identifier:
+        if user_identifier is None or 'bot]' not in user_identifier:
             # Issue criada
             created_at = parse_github_date(issue.get('created_at'))
             if created_at:
-                member = members_data[user_identifier]
-                member['id'] = user_identifier
-                observe_spelling(member['name_counts'], user.get('name'))
-                member['events'].append({
+                entry = (unattributed_bucket if user_identifier is None
+                         else members_data[user_identifier])
+                if user_identifier is not None:
+                    entry['id'] = user_identifier
+                    observe_spelling(entry['name_counts'], user_obj.get('name'))
+                entry['events'].append({
                     'date': created_at,
                     'type': 'issue_created',
                     'repo': issue.get('repo_name', 'unknown')
                 })
-                member['total_issues_created'] += 1
-                member['repos'].add(issue.get('repo_name', 'unknown'))
+                entry['total_issues_created'] += 1
+                entry['repos'].add(issue.get('repo_name', 'unknown'))
                 
-                if member['first_activity'] is None or created_at < member['first_activity']:
-                    member['first_activity'] = created_at
-                if member['last_activity'] is None or created_at > member['last_activity']:
-                    member['last_activity'] = created_at
+                if entry['first_activity'] is None or created_at < entry['first_activity']:
+                    entry['first_activity'] = created_at
+                if entry['last_activity'] is None or created_at > entry['last_activity']:
+                    entry['last_activity'] = created_at
             
             # Issue fechada
             if issue.get('state') == 'closed':
                 closed_at = parse_github_date(issue.get('closed_at', issue.get('updated_at')))
                 if closed_at:
-                    member = members_data[user_identifier]
-                    member['events'].append({
+                    entry = (unattributed_bucket if user_identifier is None
+                             else members_data[user_identifier])
+                    entry['events'].append({
                         'date': closed_at,
                         'type': 'issue_closed',
                         'repo': issue.get('repo_name', 'unknown')
                     })
-                    member['total_issues_closed'] += 1
+                    entry['total_issues_closed'] += 1
                     
-                    if member['first_activity'] is None or closed_at < member['first_activity']:
-                        member['first_activity'] = closed_at
-                    if member['last_activity'] is None or closed_at > member['last_activity']:
-                        member['last_activity'] = closed_at
+                    if entry['first_activity'] is None or closed_at < entry['first_activity']:
+                        entry['first_activity'] = closed_at
+                    if entry['last_activity'] is None or closed_at > entry['last_activity']:
+                        entry['last_activity'] = closed_at
     
     # Processar PRs
     for pr in prs_data:
-        user = pr.get('user') or {}
-        user_identifier = user.get('login') or user.get('name') or 'unknown'
+        user_obj = pr.get('user')
+        user_identifier = conversation_actor_identity(user_obj)
         
-        if user_identifier != 'unknown' and 'bot]' not in user_identifier:
+        if user_identifier is None or 'bot]' not in user_identifier:
             # PR criada
             created_at = parse_github_date(pr.get('created_at'))
             if created_at:
-                member = members_data[user_identifier]
-                member['id'] = user_identifier
-                observe_spelling(member['name_counts'], user.get('name'))
-                member['events'].append({
+                entry = (unattributed_bucket if user_identifier is None
+                         else members_data[user_identifier])
+                if user_identifier is not None:
+                    entry['id'] = user_identifier
+                    observe_spelling(entry['name_counts'], user_obj.get('name'))
+                entry['events'].append({
                     'date': created_at,
                     'type': 'pr_created',
                     'repo': pr.get('repo_name', 'unknown')
                 })
-                member['total_prs_created'] += 1
-                member['repos'].add(pr.get('repo_name', 'unknown'))
+                entry['total_prs_created'] += 1
+                entry['repos'].add(pr.get('repo_name', 'unknown'))
                 
-                if member['first_activity'] is None or created_at < member['first_activity']:
-                    member['first_activity'] = created_at
-                if member['last_activity'] is None or created_at > member['last_activity']:
-                    member['last_activity'] = created_at
+                if entry['first_activity'] is None or created_at < entry['first_activity']:
+                    entry['first_activity'] = created_at
+                if entry['last_activity'] is None or created_at > entry['last_activity']:
+                    entry['last_activity'] = created_at
             
             # PR fechada
             if pr.get('state') == 'closed':
                 closed_at = parse_github_date(pr.get('closed_at', pr.get('updated_at')))
                 if closed_at:
-                    member = members_data[user_identifier]
-                    member['events'].append({
+                    entry = (unattributed_bucket if user_identifier is None
+                             else members_data[user_identifier])
+                    entry['events'].append({
                         'date': closed_at,
                         'type': 'pr_closed',
                         'repo': pr.get('repo_name', 'unknown')
                     })
-                    member['total_prs_closed'] += 1
+                    entry['total_prs_closed'] += 1
                     
-                    if member['first_activity'] is None or closed_at < member['first_activity']:
-                        member['first_activity'] = closed_at
-                    if member['last_activity'] is None or closed_at > member['last_activity']:
-                        member['last_activity'] = closed_at
+                    if entry['first_activity'] is None or closed_at < entry['first_activity']:
+                        entry['first_activity'] = closed_at
+                    if entry['last_activity'] is None or closed_at > entry['last_activity']:
+                        entry['last_activity'] = closed_at
     
     # Processar eventos de issues (comments, etc)
     for event in issue_events_data:
-        actor = event.get('actor') or {}
-        user_identifier = actor.get('login') or actor.get('name') or 'unknown'
+        # `"actor": null` — GitHub's answer for a deleted account (#155)
+        # — and an actor object with no legible channel both resolve to
+        # None through the shared resolver: an unattributed record.
+        actor_obj = event.get('actor')
+        user_identifier = conversation_actor_identity(actor_obj)
         
-        if user_identifier != 'unknown' and 'bot]' not in user_identifier:
+        if user_identifier is None or 'bot]' not in user_identifier:
             event_date = parse_github_date(event.get('created_at'))
             if event_date:
-                member = members_data[user_identifier]
-                member['id'] = user_identifier
-                observe_spelling(member['name_counts'], actor.get('name'))
+                entry = (unattributed_bucket if user_identifier is None
+                         else members_data[user_identifier])
+                if user_identifier is not None:
+                    entry['id'] = user_identifier
+                    observe_spelling(entry['name_counts'], actor_obj.get('name'))
                 
                 event_type = event.get('event', 'unknown')
                 if 'comment' in event_type.lower():
-                    member['total_comments'] += 1
+                    entry['total_comments'] += 1
                 
-                member['events'].append({
+                entry['events'].append({
                     'date': event_date,
                     'type': f"event_{event_type}",
                     'repo': event.get('repo_name', 'unknown')
                 })
-                member['repos'].add(event.get('repo_name', 'unknown'))
+                entry['repos'].add(event.get('repo_name', 'unknown'))
                 
-                if member['first_activity'] is None or event_date < member['first_activity']:
-                    member['first_activity'] = event_date
-                if member['last_activity'] is None or event_date > member['last_activity']:
-                    member['last_activity'] = event_date
+                if entry['first_activity'] is None or event_date < entry['first_activity']:
+                    entry['first_activity'] = event_date
+                if entry['last_activity'] is None or event_date > entry['last_activity']:
+                    entry['last_activity'] = event_date
     
     # Calcular estatísticas finais para cada membro
     members_statistics = []
@@ -326,6 +360,30 @@ def process_members_statistics() -> List[str]:
     # Ordenar por avg_weekly_activity (decrescente)
     members_statistics.sort(key=lambda x: x['avg_weekly_activity'], reverse=True)
     
+    # The unattributed bucket becomes one marked row, appended AFTER the
+    # sort so it never ranks among members. `id` and `name` are null —
+    # the bucket is nobody, not a person named 'unknown' — and there are
+    # no averages, because "nobody's commits per week" is not a
+    # statistic. Consumers exclude it from member lists and member
+    # counts by testing the marker; the module's own counts below
+    # already do. No unattributed records, no row: a corpus without them
+    # keeps byte-identical output.
+    if unattributed_bucket['events']:
+        members_statistics.append({
+            'id': None,
+            'name': None,
+            UNATTRIBUTED_FIELD: True,
+            'total_events': len(unattributed_bucket['events']),
+            'total_commits': unattributed_bucket['total_commits'],
+            'total_issues_created': unattributed_bucket['total_issues_created'],
+            'total_issues_closed': unattributed_bucket['total_issues_closed'],
+            'total_prs_created': unattributed_bucket['total_prs_created'],
+            'total_prs_closed': unattributed_bucket['total_prs_closed'],
+            'total_comments': unattributed_bucket['total_comments'],
+            'repos': sorted(unattributed_bucket['repos']),
+            'repos_count': len(unattributed_bucket['repos']),
+        })
+    
     # Salvar arquivo
     stats_file = save_json_data(
         members_statistics,
@@ -333,7 +391,8 @@ def process_members_statistics() -> List[str]:
     )
     generated_files.append(stats_file)
     
-    print(f"Processed member statistics: {len(members_statistics)} members")
+    print(f"Processed member statistics: {len(members_data)} members, "
+          f"{len(unattributed_bucket['events'])} unattributed records")
     
     return generated_files
 
