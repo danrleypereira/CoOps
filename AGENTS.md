@@ -14,8 +14,9 @@ change; the details live in [`docs/`](docs/).
 | Vocabulary and data shapes | [docs/domain.md](docs/domain.md) |
 | Test suites and how to run them | [docs/testing.md](docs/testing.md) |
 
-**Open only when the task is actually about them** — roughly 14k tokens
-combined, and a code change opens none of them:
+**Open only when the task is actually about them** — about 18k tokens combined
+(measured 2026-09-23), nearly three times the injected set, and a code change
+opens none of them:
 
 | Topic | File |
 |---|---|
