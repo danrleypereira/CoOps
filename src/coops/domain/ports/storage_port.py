@@ -36,7 +36,8 @@ Key-space decisions the issue text leaves open:
   "silver", "gold"]`` — matching what ``data/`` actually contains. The raw
   capture tier is deliberately *not* a layer here: it has its own port.
 - **``entity``** is the dataset's name within the layer: the file stem on
-  disk today, e.g. ``"issues_2017.1-SIGS"`` (per-repository),
+  disk today, e.g. ``"issues_<repository>"`` (per-repository, dots and
+  underscores included — ``"commits_2099.1-Demo.App"`` is a valid name),
   ``"members_detailed"`` (organisation-wide) or ``"executive_dashboard"``.
   A port that could not express the per-repository split could not express
   what is already on disk.
