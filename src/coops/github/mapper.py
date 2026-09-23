@@ -105,8 +105,16 @@ def _author_actor(
     reusing the domain's own ``identity_key`` so there is no second
     notion of "identifies nobody".
     """
-    unlinked = not login and account_id is None
-    email_hash = _hash_email(email) if email and unlinked else None
+    # Hash the email for every author, linked or not — the twin of the same
+    # change in ``_sanitize_commit`` (#101/#171). Gating it on ``unlinked``
+    # here would discard the hash Bronze now stores, so the join would exist
+    # on disk and not in the domain.
+    #
+    # This does not change any identity: ``identity_key`` resolves
+    # ``login -> email_hash -> name``, so a linked author still keys on its
+    # login. The hash becomes an additional, non-deciding channel — which is
+    # exactly what linking a hash to a login requires.
+    email_hash = _hash_email(email) if email else None
     if identity_key(login, email_hash, display_name_of(name)) is None:
         return None
     return Actor.resolve(
