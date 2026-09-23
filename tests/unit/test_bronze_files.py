@@ -28,6 +28,7 @@ from coops.bronze.files import (
     bronze_files,
     bronze_records,
     bronze_repos,
+    remove_aggregate,
     repo_of,
 )
 
@@ -350,3 +351,62 @@ def test_empty_directory_returns_empty_for_a_VALID_family(tmp_path):
     typo case above: a valid family with no files really is zero."""
     assert bronze_files(tmp_path, "commits") == []
     assert list(bronze_records(tmp_path, "commits")) == []
+
+
+# --------------------------------------------------------------------------
+# Retiring the aggregates (#170): the writer removes, it does not merely
+# stop writing. A regeneration runs over an existing data/bronze/, so the
+# file a previous run left would survive as a stale lookalike.
+# --------------------------------------------------------------------------
+
+
+def test_remove_aggregate_deletes_a_present_aggregate(tmp_path):
+    _write(tmp_path, "commits_all.json", [{"sha": "a"}])
+    _write(tmp_path, "commits_alpha.json", [{"sha": "b"}])
+
+    removed = remove_aggregate(tmp_path, "commits")
+
+    assert removed == tmp_path / "commits_all.json"
+    assert not (tmp_path / "commits_all.json").exists()
+    # Only the aggregate: the per-repository file beside it stays.
+    assert (tmp_path / "commits_alpha.json").exists()
+
+
+def test_remove_aggregate_on_a_fresh_tree_is_a_no_op(tmp_path):
+    """Writers call this unconditionally, including where no aggregate ever
+    existed — the removal must not raise on the fresh-regeneration path."""
+    assert remove_aggregate(tmp_path, "commits") is None
+
+
+def test_remove_aggregate_rejects_an_unknown_family(tmp_path):
+    with pytest.raises(ValueError, match="unknown bronze family"):
+        remove_aggregate(tmp_path, "commit")
+
+
+def test_remove_aggregate_spares_the_silver_artifact(tmp_path):
+    """The removal rule is scoped to Bronze's four aggregates — nothing wider.
+
+    ``data/silver/language_analysis_all.json`` shares the ``_all`` suffix and
+    nothing else: it is a Silver artifact the dashboard fetches. No corpus
+    exercises this distinction, so the fixture is invented here on purpose —
+    every family is swept, which is the strongest form of the rule a caller
+    could apply by mistake.
+    """
+    bronze = tmp_path / "data" / "bronze"
+    bronze.mkdir(parents=True)
+    for family in sorted(RECORD_FAMILIES):
+        _write(bronze, f"{family}_all.json", [{"stale": True}])
+
+    silver = tmp_path / "data" / "silver"
+    silver.mkdir(parents=True)
+    artifact = silver / "language_analysis_all.json"
+    payload = json.dumps([{"language": "Python", "bytes": 120}])
+    artifact.write_text(payload, encoding="utf-8")
+
+    for family in sorted(RECORD_FAMILIES):
+        remove_aggregate(bronze, family)
+
+    for family in sorted(RECORD_FAMILIES):
+        assert not (bronze / f"{family}_all.json").exists(), family
+    assert artifact.exists()
+    assert artifact.read_text(encoding="utf-8") == payload
