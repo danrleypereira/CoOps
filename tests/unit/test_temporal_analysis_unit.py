@@ -144,3 +144,99 @@ def test_temporal_analysis_unlinked_author_hash(monkeypatch):
     users = {e["user"] for e in commit_events}
     assert h in users
     assert "unknown" not in users
+
+
+def _run_temporal(monkeypatch, *, commits=None, issues=None, prs=None, events=None):
+    """Wire up fake load/save for temporal_analysis and return the saved dict."""
+    commits = commits or []
+    issues = issues or []
+    prs = prs or []
+    events = events or []
+
+    def fake_load_json_data(path: str):
+        if path.endswith("issues_all.json"):
+            return issues
+        if path.endswith("prs_all.json"):
+            return prs
+        if path.endswith("commits_all.json"):
+            return commits
+        if path.endswith("issue_events_all.json"):
+            return events
+        return []
+
+    saved = {}
+
+    def fake_save_json_data(data, path, timestamp=True):
+        saved[path] = data
+        return path
+
+    monkeypatch.setattr(temporal, "load_json_data", fake_load_json_data)
+    monkeypatch.setattr(temporal, "save_json_data", fake_save_json_data)
+    monkeypatch.setattr(temporal, "parse_github_date", _iso)
+
+    temporal.process_temporal_analysis()
+    return saved
+
+
+def test_temporal_analysis_name_beats_hash_when_both_present(monkeypatch):
+    """Issue #151: an author carrying both a real name and an
+    author_email_hash must resolve to the NAME — the hash must not outrank it."""
+    h = "a1b2c3d4" + "0" * 56
+    saved = _run_temporal(monkeypatch, commits=[
+        {
+            "repo_name": "repoA",
+            "commit": {
+                "author": {
+                    "date": "2024-01-02T10:00:00Z",
+                    "name": "Durval Carvalho",
+                    "author_email_hash": h,
+                }
+            },
+        },
+    ])
+
+    events = saved.get("data/silver/temporal_events.json")
+    commit_events = [e for e in events if e["type"] == "commit"]
+    users = {e["user"] for e in commit_events}
+    assert users == {"Durval Carvalho"}
+
+
+def test_temporal_analysis_hash_with_none_name_resolves_to_hash(monkeypatch):
+    """The #132 output: a name that was itself an address is blanked to None,
+    so the author must fall through to the hash — not to 'unknown'."""
+    h = "a1b2c3d4" + "0" * 56
+    saved = _run_temporal(monkeypatch, commits=[
+        {
+            "repo_name": "repoA",
+            "commit": {
+                "author": {
+                    "date": "2024-01-02T10:00:00Z",
+                    "name": None,
+                    "author_email_hash": h,
+                }
+            },
+        },
+    ])
+
+    events = saved.get("data/silver/temporal_events.json")
+    commit_events = [e for e in events if e["type"] == "commit"]
+    users = {e["user"] for e in commit_events}
+    assert users == {h}
+
+
+def test_temporal_analysis_two_unlinked_authors_do_not_collapse(monkeypatch):
+    """Two distinct unlinked authors must not collapse to the same user value —
+    the distinct hashes keep each event's user distinct."""
+    h1 = "a1b2c3d4" + "0" * 56
+    h2 = "e5f6a7b8" + "0" * 56
+    saved = _run_temporal(monkeypatch, commits=[
+        {"repo_name": "r1", "commit": {"author": {"date": "2024-01-01T00:00:00Z",
+                                                   "author_email_hash": h1}}},
+        {"repo_name": "r1", "commit": {"author": {"date": "2024-01-02T00:00:00Z",
+                                                   "author_email_hash": h2}}},
+    ])
+
+    events = saved.get("data/silver/temporal_events.json")
+    commit_events = [e for e in events if e["type"] == "commit"]
+    users = {e["user"] for e in commit_events}
+    assert users == {h1, h2}

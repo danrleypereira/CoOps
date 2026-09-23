@@ -173,6 +173,13 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   never empty — #125.
 
 ### Fixed
+- Silver identity fallback no longer lets `author_email_hash` outrank a real
+  human `name`: the commit-author chain in both `members_statistics.py` and
+  `temporal_analysis.py` is now `login -> name -> author_email_hash`, so the
+  206 contributors with a genuine display name render as that name instead of
+  `Unknown contributor (a1b2c3d4)`. The swap is safe because #132 already
+  blanks an address-shaped `name` to `None`, which still falls through to the
+  hash — #151.
 - Dashboard: the data source no longer falls back to a hardcoded
   `DW-Corp` organization when `VITE_GITHUB_ORG` is unset. Without it the
   dashboard now fails closed — no fetch is attempted and every page shows a

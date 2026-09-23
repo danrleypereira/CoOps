@@ -97,12 +97,12 @@ def process_temporal_analysis() -> List[str]:
             # Second try: commit.author.login (from REST API root level)
             elif commit.get('author', {}) and commit['author'].get('login'):
                 user_identifier = commit['author']['login']
-            # Third try: author_email_hash (stable identity for unlinked authors)
-            elif author_obj.get('author_email_hash'):
-                user_identifier = author_obj['author_email_hash']
-            # Fourth try: commit.commit.author.name (fallback, less reliable)
+            # Third try: commit.commit.author.name (a real human name wins over a hash)
             elif author_obj.get('name'):
                 user_identifier = author_obj['name']
+            # Fourth try: author_email_hash (stable identity for unlinked authors)
+            elif author_obj.get('author_email_hash'):
+                user_identifier = author_obj['author_email_hash']
 
             all_events.append({
                 'date': commit_date,

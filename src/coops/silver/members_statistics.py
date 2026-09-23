@@ -67,10 +67,10 @@ def process_members_statistics() -> List[str]:
                 user_identifier = author_obj['login']
             elif commit.get('author', {}) and commit['author'].get('login'):
                 user_identifier = commit['author']['login']
-            elif author_obj.get('author_email_hash'):
-                user_identifier = author_obj['author_email_hash']
             elif author_obj.get('name'):
                 user_identifier = author_obj['name']
+            elif author_obj.get('author_email_hash'):
+                user_identifier = author_obj['author_email_hash']
             
             if user_identifier != 'unknown' and 'bot]' not in user_identifier:
                 member = members_data[user_identifier]
