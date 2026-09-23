@@ -2,25 +2,87 @@
 
 from collections import defaultdict
 from datetime import datetime, timedelta
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Mapping, Optional
 
 from coops.utils.github_api import save_json_data, load_json_data, parse_github_date
 from coops.utils.data_helpers import strip_metadata
 
 
-def display_name(identifier: str) -> str:
-    """Render a stable, unique, non-empty label for an identity key.
+def is_email_hash(identifier: str) -> bool:
+    """True when ``identifier`` is an ``author_email_hash``.
 
-    The dashboard uses ``members_statistics``'s ``name`` field both as the
-    rendered name and as a React list key, so this value must be unique per
-    identity and never empty — a constant fallback would collapse distinct
-    people into a single row. A login (or ordinary name) passes through
-    unchanged; an ``author_email_hash`` (a 64-char SHA-256 hex digest) is
-    rendered as ``Unknown contributor (a1b2c3d4)`` from its first 8 hex chars.
+    Those hashes are the 64-char SHA-256 hex digests Bronze writes for
+    commit authors with no GitHub account link.
     """
-    if len(identifier) == 64 and all(c in "0123456789abcdef" for c in identifier):
-        return f"Unknown contributor ({identifier[:8]})"
-    return identifier
+    return len(identifier) == 64 and all(c in "0123456789abcdef" for c in identifier)
+
+
+def choose_display_spelling(name_counts: Mapping[str, int]) -> Optional[str]:
+    """Pick the one spelling of an identity's name that will be displayed.
+
+    Deterministic rule, measured against the corpus (issue #151):
+
+    1. prefer a spelling containing a space — ``First Last`` reads as a
+       person where ``FirstLast`` reads as a handle;
+    2. among the survivors, the highest occurrence count;
+    3. break remaining ties lexicographically.
+
+    Step 3 is load-bearing, not decoration: identities in the corpus reach
+    it tied, and without it their label flips between regenerations. When
+    no spelling contains a space, step 1 keeps every candidate and
+    frequency decides alone. This is a display heuristic only — it never
+    touches the identity key.
+    """
+    if not name_counts:
+        return None
+    return min(
+        name_counts,
+        key=lambda spelling: (
+            ' ' not in spelling,       # 1. a spelling with a space wins
+            -name_counts[spelling],    # 2. then the most frequent one
+            spelling,                  # 3. then lexicographic order
+        ),
+    )
+
+
+def display_name(identifier: str,
+                 name_counts: Optional[Mapping[str, int]] = None) -> str:
+    """Render the human-readable label for an identity key.
+
+    The label chain inverts the tail of the identity chain, because the two
+    want opposite things — ``id`` must be unique and stable, ``name`` must
+    be legible:
+
+    * identity (``id``, unchanged): login -> author_email_hash -> name
+    * label (``name``, this function): login -> real name ->
+      ``Unknown contributor (<first 8 hex>)``
+
+    A login or a plain-name identity passes through unchanged. A hash
+    identity renders the real name observed for it — chosen by
+    :func:`choose_display_spelling` among every spelling seen across all of
+    its events — and falls back to ``Unknown contributor (a1b2c3d4)`` when
+    no name was ever observed. The label may repeat across identities (two
+    people can share a name); the dashboard keeps them apart through ``id``.
+    """
+    if not is_email_hash(identifier):
+        return identifier
+    spelling = choose_display_spelling(name_counts or {})
+    if spelling is not None:
+        return spelling
+    return f"Unknown contributor ({identifier[:8]})"
+
+
+def observe_spelling(name_counts: Dict[str, int], name: Optional[str]) -> None:
+    """Accumulate one observed spelling of an identity's real name.
+
+    Call this at every event write site; the label is decided once, at
+    aggregation, from all spellings seen — deciding per event would let
+    whichever commit was read last choose the label (issue #151, step 3).
+    Empty and whitespace-only names are ignored: whitespace would otherwise
+    win the contains-a-space preference without being a name.
+    """
+    if name and name.strip():
+        name_counts[name] += 1
 
 
 def process_members_statistics() -> List[str]:
@@ -36,9 +98,11 @@ def process_members_statistics() -> List[str]:
     
     generated_files = []
     
-    # Estrutura para agregar eventos por membro
+    # Estrutura para agregar eventos por membro. `name_counts` acumula as
+    # grafias do nome real observadas por identidade (issue #151, etapa 3);
+    # o rótulo é decidido apenas na agregação, depois de ver todos os eventos.
     members_data = defaultdict(lambda: {
-        'name': None,
+        'name_counts': defaultdict(int),
         'events': [],
         'total_commits': 0,
         'total_issues_created': 0,
@@ -75,7 +139,7 @@ def process_members_statistics() -> List[str]:
             if user_identifier != 'unknown' and 'bot]' not in user_identifier:
                 member = members_data[user_identifier]
                 member['id'] = user_identifier
-                member['name'] = display_name(user_identifier)
+                observe_spelling(member['name_counts'], author_obj.get('name'))
                 member['events'].append({
                     'date': commit_date,
                     'type': 'commit',
@@ -101,7 +165,7 @@ def process_members_statistics() -> List[str]:
             if created_at:
                 member = members_data[user_identifier]
                 member['id'] = user_identifier
-                member['name'] = display_name(user_identifier)
+                observe_spelling(member['name_counts'], user.get('name'))
                 member['events'].append({
                     'date': created_at,
                     'type': 'issue_created',
@@ -143,7 +207,7 @@ def process_members_statistics() -> List[str]:
             if created_at:
                 member = members_data[user_identifier]
                 member['id'] = user_identifier
-                member['name'] = display_name(user_identifier)
+                observe_spelling(member['name_counts'], user.get('name'))
                 member['events'].append({
                     'date': created_at,
                     'type': 'pr_created',
@@ -184,7 +248,7 @@ def process_members_statistics() -> List[str]:
             if event_date:
                 member = members_data[user_identifier]
                 member['id'] = user_identifier
-                member['name'] = display_name(user_identifier)
+                observe_spelling(member['name_counts'], actor.get('name'))
                 
                 event_type = event.get('event', 'unknown')
                 if 'comment' in event_type.lower():
@@ -231,7 +295,9 @@ def process_members_statistics() -> List[str]:
             
             member_stats = {
                 'id': username,
-                'name': display_name(username),
+                # The label is decided here, at aggregation, from every
+                # spelling observed for this identity — never per event.
+                'name': display_name(username, data['name_counts']),
                 'total_events': total_events,
                 'total_commits': data['total_commits'],
                 'total_issues_created': data['total_issues_created'],

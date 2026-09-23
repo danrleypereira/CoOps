@@ -9,6 +9,7 @@ from datetime import datetime, timedelta
 from typing import List, Dict, Any
 from coops.utils.github_api import save_json_data, load_json_data, parse_github_date
 from coops.utils.data_helpers import strip_metadata
+from coops.silver.members_statistics import display_name, observe_spelling
 
 def process_temporal_analysis() -> List[str]:
     """Process temporal data for time-based analytics"""
@@ -21,6 +22,14 @@ def process_temporal_analysis() -> List[str]:
 
     generated_files = []
 
+    # Observed spellings of each identity's real name (issue #151, step 3).
+    # Events keep carrying the raw identity in `user` — that is the join key
+    # Gold uses — so the display label is derived here, once at aggregation,
+    # from everything observed, instead of being written per event. The
+    # accumulation mirrors `members_statistics` over the same bronze
+    # records, so both files render the same label for the same identity.
+    name_counts = defaultdict(lambda: defaultdict(int))
+
     # Collect all time-based events
     all_events = []
 
@@ -31,6 +40,7 @@ def process_temporal_analysis() -> List[str]:
             # Use login as primary identifier (unique on GitHub)
             user = issue.get('user') or {}
             user_identifier = user.get('login') or user.get('name') or 'unknown'
+            observe_spelling(name_counts[user_identifier], user.get('name'))
 
             all_events.append({
                 'date': created_at,
@@ -58,6 +68,7 @@ def process_temporal_analysis() -> List[str]:
             # Use login as primary identifier (unique on GitHub)
             user = pr.get('user') or {}
             user_identifier = user.get('login') or user.get('name') or 'unknown'
+            observe_spelling(name_counts[user_identifier], user.get('name'))
 
             all_events.append({
                 'date': created_at,
@@ -104,6 +115,14 @@ def process_temporal_analysis() -> List[str]:
             elif author_obj.get('name'):
                 user_identifier = author_obj['name']
 
+            # The chain above ranks the *identity* (`id`): a key must be
+            # unique and stable, so the stable hash outranks the
+            # self-reported name here. The *display label* ranks the other
+            # way around — login > real name > hash prefix — because a label
+            # must be legible; it is applied at the daily summary via
+            # display_name, never per event (issue #151, step 3).
+            observe_spelling(name_counts[user_identifier], author_obj.get('name'))
+
             all_events.append({
                 'date': commit_date,
                 'type': 'commit',
@@ -121,6 +140,7 @@ def process_temporal_analysis() -> List[str]:
             # Use login as primary identifier (unique on GitHub)
             actor = event.get('actor') or {}
             user_identifier = actor.get('login') or actor.get('name') or 'unknown'
+            observe_spelling(name_counts[user_identifier], actor.get('name'))
 
             all_events.append({
                 'date': event_date,
@@ -170,26 +190,26 @@ def process_temporal_analysis() -> List[str]:
         day_data['unique_users'].add(event['user'])
         day_data['unique_repos'].add(event['repo'])
 
-        author = event['user']
+        author_id = event['user']
 
         if event['type'] == 'issue_created':
             day_data['issues_created'] += 1
-            day_data['authors'][author]['issues_created'] += 1
+            day_data['authors'][author_id]['issues_created'] += 1
         elif event['type'] == 'issue_closed':
             day_data['issues_closed'] += 1
-            day_data['authors'][author]['issues_closed'] += 1
+            day_data['authors'][author_id]['issues_closed'] += 1
         elif event['type'] == 'pr_created':
             day_data['prs_created'] += 1
-            day_data['authors'][author]['prs_created'] += 1
+            day_data['authors'][author_id]['prs_created'] += 1
         elif event['type'] == 'pr_closed':
             day_data['prs_closed'] += 1
-            day_data['authors'][author]['prs_closed'] += 1
+            day_data['authors'][author_id]['prs_closed'] += 1
         elif event['type'] == 'commit':
             day_data['commits'] += 1
-            day_data['authors'][author]['commits'] += 1
+            day_data['authors'][author_id]['commits'] += 1
         elif 'comment' in event['type']:
             day_data['comments'] += 1
-            day_data['authors'][author]['comments'] += 1
+            day_data['authors'][author_id]['comments'] += 1
 
     # Convert sets to counts and prepare for JSON serialization
     daily_summary = []
@@ -197,12 +217,17 @@ def process_temporal_analysis() -> List[str]:
         data['unique_users'] = len(data['unique_users'])
         data['unique_repos'] = len(data['unique_repos'])
 
-        # Convert authors dict to list for JSON serialization
+        # Convert authors dict to list for JSON serialization. `id` keeps
+        # the raw identity; `name` is the same display label
+        # members_statistics renders (login -> real name ->
+        # "Unknown contributor (<hash8>)"), decided here at aggregation from
+        # every spelling observed — the two files are read side by side and
+        # must agree on the label for the same identity.
         authors_list = []
-        for author_name, stats in data['authors'].items():
+        for author_id, stats in data['authors'].items():
             authors_list.append({
-                'id': author_name,
-                'name': author_name,
+                'id': author_id,
+                'name': display_name(author_id, name_counts.get(author_id)),
                 'commits': stats['commits'],
                 'issues_created': stats['issues_created'],
                 'issues_closed': stats['issues_closed'],
