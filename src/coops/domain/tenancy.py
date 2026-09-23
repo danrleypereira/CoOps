@@ -112,11 +112,15 @@ class Tenant:
 
 
 def resolve_tenant(mode: str, github_org: str | None) -> Tenant:
-    """Resolve the tenant to run for, from deployment settings.
+    """Resolve the tenant to run for, from two deployment settings.
 
     Takes plain values rather than ``Settings`` so the domain stays free of
-    infrastructure: ``mode`` is ``TENANT_MODE`` and ``github_org`` is
-    ``COOPS_ORG``/``GITHUB_ORG`` as loaded by :mod:`coops.infrastructure`.
+    infrastructure; :func:`coops.infrastructure.tenancy.resolve_tenant_from_settings`
+    is the caller that knows which configuration keys produced them, and it
+    is where the domain's errors are translated into configuration
+    vocabulary ("check ``TENANT_MODE``"). The messages raised here describe
+    the domain only — naming environment variables from ``domain/`` would
+    let the config vocabulary cross the boundary it exists to guard (#187).
 
     ``single`` (the only mode today) resolves one tenant with one GitHub
     account, so the CLI keeps working unchanged. The slug is *bootstrapped*
@@ -128,25 +132,24 @@ def resolve_tenant(mode: str, github_org: str | None) -> Tenant:
     compared exactly, and once tenants are pinned in a registry (multi
     mode, #20) a renamed organization changes the account, not the tenant.
 
-    ``multi`` is not implemented yet; anything else is a configuration
-    error.
+    ``multi`` is not implemented yet; anything else is not a tenant mode.
     """
     if mode == "single":
         org = (github_org or "").strip()
         if not org:
             raise ValueError(
-                "TENANT_MODE=single requires COOPS_ORG (or GITHUB_ORG)"
+                "single-tenant mode resolves the tenant from the provider "
+                "account's organization login, and no organization login "
+                "was given"
             )
         account = ProviderAccount(PROVIDER_GITHUB, org)
         return Tenant(id=TenantId(account.org_id), accounts=(account,))
     if mode == "multi":
         raise NotImplementedError(
-            "TENANT_MODE=multi is not implemented yet: the tenant registry "
+            "multi-tenant mode is not implemented yet: the tenant registry "
             "arrives with #20; 'single' is the only mode today"
         )
-    raise ValueError(
-        f"unknown TENANT_MODE {mode!r}: expected 'single' or 'multi'"
-    )
+    raise ValueError(f"no tenant mode named {mode!r}: expected 'single' or 'multi'")
 
 
 @dataclass(frozen=True, slots=True)

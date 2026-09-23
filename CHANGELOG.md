@@ -8,6 +8,32 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 ## [Unreleased]
 
 ### Changed
+- Tenancy model, second half of issue
+  [#92](https://github.com/danrleypereira/CoOps/issues/92) (issue
+  [#187](https://github.com/danrleypereira/CoOps/issues/187)): every
+  provider-neutral entity now carries the full tenancy triple — `tenant_id`
+  (the opaque slug), `account` (the `ProviderAccount` the record was
+  extracted from) and `external_id`, the provider's own identifier for the
+  record as a plain string (GitHub's numeric ids stringified; for commits,
+  the SHA). The shape of `external_id` was decided with the Mongo adapter
+  (issue [#39](https://github.com/danrleypereira/CoOps/issues/39)) in view:
+  it indexes `{org_id, entity}` and filters every query by `org_id`, so
+  `external_id` is the record's key *within* an account — a whole provider
+  id, never a composite, unique per provider account rather than globally.
+  This changes the domain-model shape only: Silver output is byte-identical
+  before and after (corpus-diffed per file), because the entity layer is
+  not yet the Silver write path. `Member` gains a reserved, unpopulated
+  `person_id` for cross-provider linking later (issue
+  [#89](https://github.com/danrleypereira/CoOps/issues/89) removes
+  email matching). The GitHub mapper rejects an account from another
+  provider before mapping.
+- Tenancy error vocabulary, the config leak #187 names: `resolve_tenant`
+  in `coops.domain` now describes the domain ("no tenant mode named
+  'bogus'"; a missing organization login) and never names environment
+  variables. `coops.infrastructure.resolve_tenant_from_settings` is the
+  translator that adds "check `TENANT_MODE` (and `COOPS_ORG`/`GITHUB_ORG`
+  for `'single'`)", chaining the domain's diagnosis; `coops-bronze` uses
+  it, so the CLI's errors keep naming the settings to check.
 - Tenancy model, first half of issue
   [#92](https://github.com/danrleypereira/CoOps/issues/92): a tenant is no
   longer a GitHub organization. `TenantId` is an opaque slug we assign

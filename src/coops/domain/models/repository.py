@@ -6,21 +6,26 @@ the repository selectors), minus everything provider-shaped that no consumer
 reads. ``is_fork``/``is_archived``/``is_private`` are the classification the
 Bronze filter needs; ``pushed_at`` is the activity signal; the counts are the
 repository metrics Silver publishes.
+
+``external_id`` is the provider's own repository id (GitHub's numeric
+``databaseId``) — the storage key per #39, and the identity that survives
+a rename, unlike ``name``/``full_name``.
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 
-from coops.domain.tenancy import TenantId
+from coops.domain.tenancy import ProviderAccount, TenantId
 
 
 @dataclass(frozen=True, slots=True)
 class Repository:
     """One repository owned by the tenant's organization."""
 
-    tenant: TenantId
-    repo_id: int
+    tenant_id: TenantId
+    account: ProviderAccount
+    external_id: str
     name: str
     full_name: str
     is_private: bool = False
@@ -39,8 +44,8 @@ class Repository:
     pushed_at: str | None = None
 
     def __post_init__(self) -> None:
-        if self.repo_id < 1:
-            raise ValueError(f"Repository.repo_id must be >= 1, got {self.repo_id}")
+        if not (self.external_id or "").strip():
+            raise ValueError("Repository requires a non-empty external_id")
         if not (self.name or "").strip():
             raise ValueError("Repository requires a non-empty name")
         if not (self.full_name or "").strip():

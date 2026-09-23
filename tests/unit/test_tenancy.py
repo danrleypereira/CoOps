@@ -179,11 +179,35 @@ def test_single_mode_bootstraps_slug_from_normalised_login():
 
 @pytest.mark.parametrize("org", [None, "", "   "])
 def test_single_mode_requires_an_org(org):
-    """The resolver names the missing setting; ProviderAccount's blank-org
-    guard would raise a different, less actionable error for the same input
-    (that shadowing is why this asserts on the message)."""
-    with pytest.raises(ValueError, match="COOPS_ORG"):
+    """The domain message names the domain (an organization login is
+    missing), not the settings keys: the configuration vocabulary is
+    infrastructure's to add (#187). It still raises before
+    ProviderAccount's own blank-org guard, whose message would say the
+    same thing less actionably (that shadowing is why this asserts on the
+    message).
+    """
+    with pytest.raises(ValueError, match="organization login"):
         resolve_tenant("single", org)
+
+
+@pytest.mark.parametrize("mode,org", [("single", None), ("poly", "fga-eps-mds")])
+def test_domain_errors_name_no_environment_variables(mode, org):
+    """#187's leak: messages raised from ``domain/`` describe the domain.
+    ``TENANT_MODE``/``COOPS_ORG`` are configuration vocabulary, and the
+    place that translates them is
+    :func:`coops.infrastructure.tenancy.resolve_tenant_from_settings`.
+    """
+    with pytest.raises(ValueError) as excinfo:
+        resolve_tenant(mode, org)
+    message = str(excinfo.value)
+    assert "TENANT_MODE" not in message
+    assert "COOPS_ORG" not in message
+    assert "GITHUB_ORG" not in message
+
+
+def test_unknown_mode_message_names_the_mode():
+    with pytest.raises(ValueError, match="no tenant mode named 'poly'"):
+        resolve_tenant("poly", "fga-eps-mds")
 
 
 def test_multi_mode_is_not_implemented():

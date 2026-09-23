@@ -22,14 +22,16 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from coops.domain.models.actor import Actor
-from coops.domain.tenancy import TenantId
+from coops.domain.tenancy import ProviderAccount, TenantId
 
 
 @dataclass(frozen=True, slots=True)
 class _Conversation:
     """Field set shared by issues and pull requests (not exported)."""
 
-    tenant: TenantId
+    tenant_id: TenantId
+    account: ProviderAccount
+    external_id: str
     repo_name: str
     number: int
     state: str
@@ -42,6 +44,8 @@ class _Conversation:
 
     def __post_init__(self) -> None:
         kind = type(self).__name__
+        if not (self.external_id or "").strip():
+            raise ValueError(f"{kind} requires a non-empty external_id")
         if not (self.repo_name or "").strip():
             raise ValueError(f"{kind} requires a non-empty repo_name")
         if self.number < 1:
