@@ -285,6 +285,42 @@ opposite movements are the normal case, not the exotic one, so decompose before
 concluding anything from a total — and keep a copy of the pre-migration artifact,
 because without it none of this is checkable after the fact.
 
+## A two-arm comparison needs proof that the arms differ
+
+A scan needs a control proving the instrument can find the thing. A comparison
+needs the same thing one level up: **proof that A and B are not the same
+subject.** Identical arms produce a clean, confident, symmetric result, and
+report it as a finding.
+
+Measured 2026-09-23, on a question about whether `main` blanks an
+address-shaped `commit.author.name`. Two comparisons, two confident answers,
+opposite conclusions:
+
+- One imported the module from the **working tree** for both arms. `git
+  checkout` does not move an already-importable package, so it tested `main`
+  twice and reported the result as main-vs-phase.
+- The other's end-to-end evidence — *4,068 raw cache files carry an address,
+  zero Bronze files do* — was measured against a Bronze tree **regenerated
+  hours earlier by the fix under test.** Correct probe, wrong subject.
+
+So, before comparing:
+
+```python
+import hashlib, inspect
+a = hashlib.sha256(inspect.getsource(fn_a).encode()).hexdigest()[:12]
+b = hashlib.sha256(inspect.getsource(fn_b).encode()).hexdigest()[:12]
+assert a != b, f"both arms are the same source ({a})"
+print(f"arm A {a}   arm B {b}")
+```
+
+Print both digests, do not merely assert. And state the **provenance of the
+data**: an artifact rewritten by the code under test is not evidence about that
+code, however carefully it is then measured.
+
+**When a comparison is contested, drop to one record.** Three exchanges of
+disputed aggregates were ended by a single hand-built input, one call, and the
+before and after printed. A count invites a reconciliation; an artifact does not.
+
 ## Tests that do not count
 
 - Assertions on log text or printed output.
