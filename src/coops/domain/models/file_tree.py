@@ -20,7 +20,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from coops.domain.tenancy import TenantId
+from coops.domain.tenancy import ProviderAccount, TenantId
 
 #: The entry kinds both provider shapes use, in Git's vocabulary.
 ENTRY_KINDS = frozenset({"blob", "tree", "commit"})
@@ -52,16 +52,25 @@ class FileTree:
     """The paths of one repository branch, at one point in its history.
 
     ``sha`` is the tree's commit sha (REST response) and ``None`` for the
-    per-level entries the GraphQL walk produces. ``entries`` is a tuple so
-    the tree is immutable like every other domain model.
+    per-level entries the GraphQL walk produces; ``external_id`` carries
+    the same value under the storage contract (the record's key within the
+    account, #39 — see :mod:`coops.domain.models`), and is likewise
+    ``None`` when the level walked carries no tree sha. ``entries`` is a
+    tuple so the tree is immutable like every other domain model.
     """
 
-    tenant: TenantId
+    tenant_id: TenantId
+    account: ProviderAccount
     repo_name: str
     branch: str | None = None
     sha: str | None = None
+    external_id: str | None = None
     entries: tuple[FileEntry, ...] = ()
 
     def __post_init__(self) -> None:
         if not (self.repo_name or "").strip():
             raise ValueError("FileTree requires a non-empty repo_name")
+        if self.external_id is not None and not self.external_id.strip():
+            raise ValueError(
+                "FileTree.external_id must be None or non-blank, never a placeholder"
+            )

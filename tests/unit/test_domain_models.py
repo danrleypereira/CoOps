@@ -18,6 +18,7 @@ import pytest
 
 from coops.domain import (
     ENTRY_KINDS,
+    PROVIDER_GITHUB,
     ActivityEvent,
     Actor,
     Commit,
@@ -25,6 +26,7 @@ from coops.domain import (
     FileTree,
     Issue,
     Member,
+    ProviderAccount,
     PullRequest,
     Repository,
     TenantId,
@@ -32,6 +34,11 @@ from coops.domain import (
 )
 
 TENANT = TenantId("test-org")
+
+# The tenant's GitHub account, and the *other* provider's account for the
+# same organization login: the pair #92 keeps apart.
+ACCOUNT = ProviderAccount(PROVIDER_GITHUB, "test-org")
+GITLAB_ACCOUNT = ProviderAccount("gitlab", "test-org")
 
 # Deliberately synthetic hashes: 64 hex chars like the real SHA-256 email
 # pseudonyms, but derived from nothing.
@@ -233,13 +240,14 @@ def test_member_blank_identity_raises(identity):
     """As on Actor: the None param (with no components to disagree with) is
     the shape only this guard rejects."""
     with pytest.raises(ValueError):
-        Member(tenant=TENANT, identity=identity, display_name=None)
+        Member(tenant_id=TENANT, account=ACCOUNT, identity=identity, display_name=None)
 
 
 def test_member_blank_display_name_raises():
     with pytest.raises(ValueError):
         Member(
-            tenant=TENANT,
+            tenant_id=TENANT,
+            account=ACCOUNT,
             identity="rosa-almeida",
             display_name=" ",
             login="rosa-almeida",
@@ -249,7 +257,8 @@ def test_member_blank_display_name_raises():
 def test_member_identity_must_match_resolved_key():
     with pytest.raises(ValueError, match="resolved key"):
         Member(
-            tenant=TENANT,
+            tenant_id=TENANT,
+            account=ACCOUNT,
             identity=HASH_ONE,
             display_name=None,
             login="rosa-almeida",
@@ -264,7 +273,8 @@ def test_member_identity_mismatch_does_not_echo_the_values():
     """
     with pytest.raises(ValueError) as excinfo:
         Member(
-            tenant=TENANT,
+            tenant_id=TENANT,
+            account=ACCOUNT,
             identity="wrong-key",
             display_name="rosa.almeida@example.com",
             login="rosa-almeida",
@@ -280,7 +290,8 @@ def test_member_identity_mismatch_does_not_echo_the_values():
 def test_member_negative_contributions_raises():
     with pytest.raises(ValueError, match="contributions_total"):
         Member(
-            tenant=TENANT,
+            tenant_id=TENANT,
+            account=ACCOUNT,
             identity="rosa-almeida",
             display_name="Rosa Almeida",
             login="rosa-almeida",
@@ -290,7 +301,11 @@ def test_member_negative_contributions_raises():
 
 def test_member_display_name_none_is_a_normal_state():
     member = Member(
-        tenant=TENANT, identity="rosa-almeida", display_name=None, login="rosa-almeida"
+        tenant_id=TENANT,
+        account=ACCOUNT,
+        identity="rosa-almeida",
+        display_name=None,
+        login="rosa-almeida",
     )
     assert member.display_name is None
     assert member.is_org_member is False
@@ -305,10 +320,18 @@ def test_members_same_display_name_different_identity_stay_distinct():
     and a model or consumer that merged on display_name would collapse them.
     """
     first = Member(
-        tenant=TENANT, identity=HASH_ONE, display_name="CI Bot", email_hash=HASH_ONE
+        tenant_id=TENANT,
+        account=ACCOUNT,
+        identity=HASH_ONE,
+        display_name="CI Bot",
+        email_hash=HASH_ONE,
     )
     second = Member(
-        tenant=TENANT, identity=HASH_TWO, display_name="CI Bot", email_hash=HASH_TWO
+        tenant_id=TENANT,
+        account=ACCOUNT,
+        identity=HASH_TWO,
+        display_name="CI Bot",
+        email_hash=HASH_TWO,
     )
     assert first != second
     by_identity = {first.identity: first, second.identity: second}
@@ -318,28 +341,152 @@ def test_members_same_display_name_different_identity_stay_distinct():
 
 def test_member_is_immutable():
     member = Member(
-        tenant=TENANT, identity="rosa-almeida", display_name=None, login="rosa-almeida"
+        tenant_id=TENANT,
+        account=ACCOUNT,
+        identity="rosa-almeida",
+        display_name=None,
+        login="rosa-almeida",
     )
     with pytest.raises(FrozenInstanceError):
         member.contributions_total = 5
 
 
+def test_member_person_id_is_reserved_and_defaults_to_none():
+    """#187: person_id exists so the cross-provider link (#89's replacement)
+    lands as a data change, and the GitHub mapper must not invent a value.
+    """
+    member = Member(
+        tenant_id=TENANT,
+        account=ACCOUNT,
+        identity="rosa-almeida",
+        display_name=None,
+        login="rosa-almeida",
+    )
+    assert member.person_id is None
+
+
+def test_member_blank_person_id_raises():
+    """The reserved link key is None or a real key — a placeholder string
+    would become a person downstream, exactly the #132 defect.
+    """
+    with pytest.raises(ValueError, match="person_id"):
+        Member(
+            tenant_id=TENANT,
+            account=ACCOUNT,
+            identity="rosa-almeida",
+            display_name=None,
+            login="rosa-almeida",
+            person_id=" ",
+        )
+
+
+def test_member_blank_external_id_raises():
+    """A member the provider never identified has ``external_id=None``; a
+    blank *string* is a placeholder, not an absence.
+    """
+    with pytest.raises(ValueError, match="external_id"):
+        Member(
+            tenant_id=TENANT,
+            account=ACCOUNT,
+            identity="rosa-almeida",
+            display_name=None,
+            login="rosa-almeida",
+            external_id=" ",
+        )
+
+
+# --- one tenant, two providers: the #92 property ------------------------------
+
+
+def test_repositories_same_org_different_providers_stay_distinct():
+    """The property all of #92 exists for.
+
+    "test-org on GitHub" and "test-org on GitLab" are two provider accounts
+    of one tenant. Their records — even records that agree on every other
+    field, down to the same numeric id re-used by the two providers — must
+    stay two records: merged, the second account's data would silently
+    overwrite the first's (the storage adapter filters by the account's
+    ``org_id``, #39, so the pair is the scope).
+    """
+    github_repo = Repository(
+        tenant_id=TENANT,
+        account=ACCOUNT,
+        external_id="9001",
+        name="coops",
+        full_name="test-org/coops",
+    )
+    gitlab_repo = Repository(
+        tenant_id=TENANT,
+        account=GITLAB_ACCOUNT,
+        external_id="9001",
+        name="coops",
+        full_name="test-org/coops",
+    )
+    assert ACCOUNT.org_id == GITLAB_ACCOUNT.org_id
+    assert github_repo != gitlab_repo
+    # Keying a dict — how a store deduplicates — keeps both records.
+    assert len({github_repo, gitlab_repo}) == 2
+
+
+def test_members_same_org_different_providers_stay_distinct():
+    """Members are provider-scoped (#187): the same login on two providers
+    is two people as far as either provider can tell, and the link that
+    would merge them is the unpopulated ``person_id``, never a guess.
+    """
+    github_member = Member(
+        tenant_id=TENANT,
+        account=ACCOUNT,
+        identity="rosa-almeida",
+        display_name=None,
+        login="rosa-almeida",
+        external_id="1001",
+    )
+    gitlab_member = Member(
+        tenant_id=TENANT,
+        account=GITLAB_ACCOUNT,
+        identity="rosa-almeida",
+        display_name=None,
+        login="rosa-almeida",
+        external_id="1001",
+    )
+    assert github_member != gitlab_member
+    assert len({github_member, gitlab_member}) == 2
+
+
 # --- Repository ---------------------------------------------------------------
 
 
-def test_repository_zero_id_raises():
-    with pytest.raises(ValueError, match="repo_id"):
-        Repository(tenant=TENANT, repo_id=0, name="coops", full_name="test-org/coops")
+def test_repository_blank_external_id_raises():
+    with pytest.raises(ValueError, match="external_id"):
+        Repository(
+            tenant_id=TENANT,
+            account=ACCOUNT,
+            external_id=" ",
+            name="coops",
+            full_name="test-org/coops",
+        )
 
 
 def test_repository_blank_name_raises():
     with pytest.raises(ValueError, match="name"):
-        Repository(tenant=TENANT, repo_id=1, name=" ", full_name="test-org/coops")
+        Repository(
+            tenant_id=TENANT,
+            account=ACCOUNT,
+            external_id="9001",
+            name=" ",
+            full_name="test-org/coops",
+        )
 
 
 def test_repository_blank_full_name_raises():
     with pytest.raises(ValueError, match="full_name"):
-        Repository(tenant=TENANT, repo_id=1, name="coops", full_name="")
+        Repository(
+            tenant_id=TENANT,
+            account=ACCOUNT,
+            external_id="9001",
+            name="coops",
+            full_name="",
+        )
 
 
 # --- Commit -------------------------------------------------------------------
@@ -352,7 +499,9 @@ def _author() -> Actor:
 def test_commit_blank_repo_name_raises():
     with pytest.raises(ValueError, match="repo_name"):
         Commit(
-            tenant=TENANT,
+            tenant_id=TENANT,
+            account=ACCOUNT,
+            external_id="a" * 40,
             repo_name=" ",
             sha="a" * 40,
             author=_author(),
@@ -364,9 +513,25 @@ def test_commit_blank_repo_name_raises():
 def test_commit_blank_sha_raises():
     with pytest.raises(ValueError, match="sha"):
         Commit(
-            tenant=TENANT,
+            tenant_id=TENANT,
+            account=ACCOUNT,
+            external_id="a" * 40,
             repo_name="coops",
             sha="",
+            author=_author(),
+            committed_at="2026-03-04T10:00:00Z",
+            message="",
+        )
+
+
+def test_commit_blank_external_id_raises():
+    with pytest.raises(ValueError, match="external_id"):
+        Commit(
+            tenant_id=TENANT,
+            account=ACCOUNT,
+            external_id=" ",
+            repo_name="coops",
+            sha="a" * 40,
             author=_author(),
             committed_at="2026-03-04T10:00:00Z",
             message="",
@@ -376,7 +541,9 @@ def test_commit_blank_sha_raises():
 def test_commit_blank_committed_at_raises():
     with pytest.raises(ValueError, match="committed_at"):
         Commit(
-            tenant=TENANT,
+            tenant_id=TENANT,
+            account=ACCOUNT,
+            external_id="a" * 40,
             repo_name="coops",
             sha="a" * 40,
             author=_author(),
@@ -386,7 +553,7 @@ def test_commit_blank_committed_at_raises():
 
 
 def test_commit_author_may_be_absent():
-    """#154 measured 2,076 commits whose author has no identifier at all —
+    """#154 measured 1,038 commits whose author has no identifier at all —
     no login, no account, no name, no email (a deleted account, or author
     metadata that never resolved).
 
@@ -396,7 +563,9 @@ def test_commit_author_may_be_absent():
     default): every commit has an author *slot*, present or absent.
     """
     commit = Commit(
-        tenant=TENANT,
+        tenant_id=TENANT,
+        account=ACCOUNT,
+        external_id="a" * 40,
         repo_name="coops",
         sha="a" * 40,
         author=None,
@@ -411,7 +580,9 @@ def test_commit_author_may_be_absent():
 
 def _issue_kwargs(**over):
     kwargs = {
-        "tenant": TENANT,
+        "tenant_id": TENANT,
+        "account": ACCOUNT,
+        "external_id": "9002",
         "repo_name": "coops",
         "number": 42,
         "state": "open",
@@ -436,6 +607,11 @@ def test_issue_blank_state_raises():
         Issue(**_issue_kwargs(state=" "))
 
 
+def test_issue_blank_external_id_raises():
+    with pytest.raises(ValueError, match="external_id"):
+        Issue(**_issue_kwargs(external_id=" "))
+
+
 def test_pull_request_blank_repo_name_raises():
     with pytest.raises(ValueError, match="repo_name"):
         PullRequest(**_issue_kwargs(repo_name=" "))
@@ -451,14 +627,20 @@ def test_pull_request_blank_state_raises():
         PullRequest(**_issue_kwargs(state=" "))
 
 
+def test_pull_request_blank_external_id_raises():
+    with pytest.raises(ValueError, match="external_id"):
+        PullRequest(**_issue_kwargs(external_id=" "))
+
+
 # --- ActivityEvent --------------------------------------------------------------
 
 
 def _event_kwargs(**over):
     kwargs = {
-        "tenant": TENANT,
+        "tenant_id": TENANT,
+        "account": ACCOUNT,
+        "external_id": "91",
         "repo_name": "coops",
-        "event_id": 91,
         "event_type": "closed",
         "created_at": "2026-03-05T10:00:00Z",
     }
@@ -466,9 +648,9 @@ def _event_kwargs(**over):
     return kwargs
 
 
-def test_activity_event_zero_event_id_raises():
-    with pytest.raises(ValueError, match="event_id"):
-        ActivityEvent(**_event_kwargs(event_id=0))
+def test_activity_event_blank_external_id_raises():
+    with pytest.raises(ValueError, match="external_id"):
+        ActivityEvent(**_event_kwargs(external_id=" "))
 
 
 def test_activity_event_blank_event_type_raises():
@@ -512,4 +694,18 @@ def test_file_entry_accepts_every_documented_kind():
 
 def test_file_tree_blank_repo_name_raises():
     with pytest.raises(ValueError, match="repo_name"):
-        FileTree(tenant=TENANT, repo_name=" ")
+        FileTree(tenant_id=TENANT, account=ACCOUNT, repo_name=" ")
+
+
+def test_file_tree_blank_external_id_is_a_placeholder_and_raises():
+    """``external_id=None`` is normal for a GraphQL level with no tree sha;
+    a blank string is a placeholder, not an absence.
+    """
+    with pytest.raises(ValueError, match="external_id"):
+        FileTree(
+            tenant_id=TENANT,
+            account=ACCOUNT,
+            repo_name="coops",
+            sha="a" * 40,
+            external_id=" ",
+        )

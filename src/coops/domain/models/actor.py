@@ -7,7 +7,8 @@ be ``None``.
 
 Measured on the real corpus, which is why the fields look the way they do:
 
-- 5.8% of commit authors have no GitHub account link; their only identifier
+- 5.1% of commit authors have no GitHub account link (6,624 of 130,186 in
+  fga-eps-mds, measured 2026-09-23); their only identifier
   is the hash of the commit email (``login`` is ``None``, ``email_hash`` is
   set). A model that requires a login is wrong.
 - 149 commit author names are literally an email address, and those are

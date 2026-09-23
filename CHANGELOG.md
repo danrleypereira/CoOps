@@ -12,7 +12,8 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   consumers (issues [#154](https://github.com/danrleypereira/CoOps/issues/154)
   and [#155](https://github.com/danrleypereira/CoOps/issues/155) — one
   defect, two symptoms). A commit whose identity channels are all null
-  (measured: 2,076 of 56,488 commits, 3.7%) and an issue event with
+  (measured 2026-09-23: 1,038 of 28,244 commits in local-run, 3.68%;
+    0 of 130,186 in fga-eps-mds) and an issue event with
   `"actor": null` (measured: 957 of 298,395 — GitHub's answer for a
   deleted account) used to resolve to the string `'unknown'`, which the
   two Silver modules then treated oppositely: `members_statistics`
@@ -43,6 +44,61 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   only output difference is the always-present
   `unattributed_events: 0` key on `daily_activity_summary.json` day
   rows (which Gold's day copies carry into the timelines).
+- Corrected two measured figures cited throughout the source, the tests and
+  the docs (issue [#154](https://github.com/danrleypereira/CoOps/issues/154)).
+  **2,076 commits with no identifier was wrong; it is 1,038** — the original
+  count read the *top-level* `author` object, so records carrying a login at
+  `commit.author` were counted as identifier-less, roughly doubling it.
+  **5.8% of authors with no account link was wrong; it is 5.1%** on
+  `fga-eps-mds` (6,624 of 130,186). Both figures now name the corpus and the
+  measurement date, because "the corpus" was ambiguous between two with
+  different answers — `local-run` has 1,038 of 28,244 (3.68%) identifier-less
+  commits where `fga-eps-mds` has **0 of 130,186** — and that ambiguity is
+  what let a wrong number survive in seven places.
+- Every commit author keeps `author_email_hash`, not only the unlinked ones
+  (issues [#101](https://github.com/danrleypereira/CoOps/issues/101) and
+  [#171](https://github.com/danrleypereira/CoOps/issues/171)). The hash was
+  gated on `not login and numeric_id is None` — kept only when it was the sole
+  identifier — which made the two identifier spaces disjoint. Measured over all
+  130,186 commits in the `fga-eps-mds` corpus: 123,562 records carried an id and
+  no hash, 6,614 a hash and no id, and **zero carried both**, so nothing
+  downstream could learn that a hash and a login belong to the same person. The
+  1,311 linked contributors and 231 unlinked hashes were therefore counted as
+  1,542 people, with no way to reduce it. Applied at both ends — Bronze's
+  `_sanitize_commit` and the domain mapper, which would otherwise discard the
+  hash Bronze now stores. **No identity changes**: `identity_key` resolves
+  `login -> email_hash -> name`, so a linked author still keys on its login and
+  the hash is an additional, non-deciding channel. Publishing it adds no new
+  *class* of data — it is already published for 6,614 records, and a SHA-256 is
+  what `data/bronze/` stores in place of an address. Existing Bronze files are
+  unaffected until re-projected from the cache; the code change does not
+  rewrite data already written.
+- Tenancy model, second half of issue
+  [#92](https://github.com/danrleypereira/CoOps/issues/92) (issue
+  [#187](https://github.com/danrleypereira/CoOps/issues/187)): every
+  provider-neutral entity now carries the full tenancy triple — `tenant_id`
+  (the opaque slug), `account` (the `ProviderAccount` the record was
+  extracted from) and `external_id`, the provider's own identifier for the
+  record as a plain string (GitHub's numeric ids stringified; for commits,
+  the SHA). The shape of `external_id` was decided with the Mongo adapter
+  (issue [#39](https://github.com/danrleypereira/CoOps/issues/39)) in view:
+  it indexes `{org_id, entity}` and filters every query by `org_id`, so
+  `external_id` is the record's key *within* an account — a whole provider
+  id, never a composite, unique per provider account rather than globally.
+  This changes the domain-model shape only: Silver output is byte-identical
+  before and after (corpus-diffed per file), because the entity layer is
+  not yet the Silver write path. `Member` gains a reserved, unpopulated
+  `person_id` for cross-provider linking later (issue
+  [#89](https://github.com/danrleypereira/CoOps/issues/89) removes
+  email matching). The GitHub mapper rejects an account from another
+  provider before mapping.
+- Tenancy error vocabulary, the config leak #187 names: `resolve_tenant`
+  in `coops.domain` now describes the domain ("no tenant mode named
+  'bogus'"; a missing organization login) and never names environment
+  variables. `coops.infrastructure.resolve_tenant_from_settings` is the
+  translator that adds "check `TENANT_MODE` (and `COOPS_ORG`/`GITHUB_ORG`
+  for `'single'`)", chaining the domain's diagnosis; `coops-bronze` uses
+  it, so the CLI's errors keep naming the settings to check.
 - Tenancy model, first half of issue
   [#92](https://github.com/danrleypereira/CoOps/issues/92): a tenant is no
   longer a GitHub organization. `TenantId` is an opaque slug we assign
@@ -206,7 +262,7 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   resolves `login → author_email_hash → name`, while `display_name` may be
   `None` (address-shaped names, #132); a null event actor stays an absent
   actor, never a Member named "unknown", and so does a commit author no
-  channel identifies (`Commit.author: Actor | None`, the 2,076 commits of
+  channel identifies (`Commit.author: Actor | None`, the 1,038 commits of
   [#154](https://github.com/danrleypereira/CoOps/issues/154)).
 - `coops.github.mapper` (issue [#25](https://github.com/danrleypereira/CoOps/issues/25)):
   GitHub REST and GraphQL payloads → the domain models, built from named
@@ -217,7 +273,7 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   account, identified by email hash), address-shaped author names and
   authors no channel identifies at all, who map to `author=None` instead
   of aborting ([#154](https://github.com/danrleypereira/CoOps/issues/154):
-  2,076 real commits; `Actor.resolve` still refuses an empty identity —
+  1,038 real commits; `Actor.resolve` still refuses an empty identity —
   the mapper decides absence, as it already did for null event actors).
   Members, issues, pull requests, activity events and file trees (REST and
   GraphQL) map the same way. Nothing consumes the models yet; no existing
