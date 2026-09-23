@@ -348,6 +348,39 @@ rather than on remembering.
 disputed aggregates were ended by a single hand-built input, one call, and the
 before and after printed. A count invites a reconciliation; an artifact does not.
 
+## Assert on the whole artifact; truncate only what you show a human
+
+The first failure recorded in this document was `head -c 400 | grep` reporting a
+clean corpus while 35 contaminated entries sat past the truncation. The reason it
+keeps recurring is structural: **it happens whenever the assertion and the
+display are the same operation.**
+
+Two near-misses on the same value, an hour apart, by two people who had both
+read the rule:
+
+- One printed an exception message truncated to 96 characters. The address sat
+  at ~130. A regex had matched the *full* message and reported `LEAKS`, while the
+  output underneath it showed a clean-looking string — the assertion was right
+  and the display argued against it.
+- The other printed `msg[:150]` and the output stopped mid-address at
+  `display_name=ada.lovelace@exa`. That one survived only because the cut
+  happened to land inside the address rather than before it.
+
+So:
+
+- **The check runs over the entire value.** No `head`, no `[:n]`, no `...` in the
+  path between the artifact and the assertion.
+- **Truncate for legibility only, after the verdict**, and say that you did:
+  `LEAKS (showing first 96 of 412 chars)`. A reader who sees a length knows the
+  output is a window; a reader who sees a clean string believes it.
+- **When the verdict and the excerpt disagree, the verdict wins.** Investigate
+  the display, not the finding. Both near-misses here were a correct assertion
+  undermined by its own output.
+
+The general form: a truncation that reaches the assertion is a **defect**; a
+truncation that reaches only the reader is **formatting**. They look identical in
+the code and they are not the same thing.
+
 ## Tests that do not count
 
 - Assertions on log text or printed output.
