@@ -7,6 +7,19 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 
 ## [Unreleased]
 
+### Fixed
+- Silver artifacts are now deterministic across runs (issue [#172](https://github.com/danrleypereira/CoOps/issues/172)):
+  `members_statistics.json`, `user_collaboration_metrics.json`,
+  `repository_collaboration_analysis.json` and the emitted edge order of
+  `collaboration_edges.json` serialized Python sets with a bare `list()`, so
+  row order depended on `PYTHONHASHSEED` (random per process) and every
+  scheduled run over unchanged Bronze produced ~900 meaningless diffs in the
+  fork-and-forget commit. Every set-derived list is now `sorted()` before it
+  reaches an artifact (4 sites in `silver/members_statistics.py` and
+  `silver/collaboration_networks.py`). Values are unchanged — only the order
+  within lists. Proven in tests by running the serialization in subprocesses
+  under five `PYTHONHASHSEED` values and asserting byte-identical output.
+
 ### Added
 - `coops.domain.ports.storage_port` (issue [#23](https://github.com/danrleypereira/CoOps/issues/23)):
   the tenant-scoped `StoragePort` — `save`/`load`/`list` per `(layer,
