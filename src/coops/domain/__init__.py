@@ -12,10 +12,18 @@ from .models import (
     display_name_of,
     identity_key,
 )
-from .tenancy import CorrelationId, TenantId
+from .tenancy import (
+    PROVIDER_GITHUB,
+    CorrelationId,
+    ProviderAccount,
+    Tenant,
+    TenantId,
+    resolve_tenant,
+)
 
 __all__ = [
     "ENTRY_KINDS",
+    "PROVIDER_GITHUB",
     "ActivityEvent",
     "Actor",
     "Commit",
@@ -24,9 +32,12 @@ __all__ = [
     "FileTree",
     "Issue",
     "Member",
+    "ProviderAccount",
     "PullRequest",
     "Repository",
+    "Tenant",
     "TenantId",
     "display_name_of",
     "identity_key",
+    "resolve_tenant",
 ]

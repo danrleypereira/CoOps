@@ -30,9 +30,11 @@ from typing import Any, Protocol
 import pymongo
 
 from coops.domain import TenantId
+from coops.domain.tenancy import PROVIDER_GITHUB  # noqa: F401 — re-exported
 
 #: Provider discriminator for the raw documents captured from the GitHub API.
-PROVIDER_GITHUB = "github"
+#: Owned by the domain since #92; re-exported here because callers (and the
+#: raw document schema) import it from this module.
 
 #: Default database/collection, matching the local stack in
 #: ``docker-compose.dev.yml`` and ``scripts/load_mongo_snapshot.sh``. The
