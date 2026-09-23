@@ -348,6 +348,45 @@ rather than on remembering.
 disputed aggregates were ended by a single hand-built input, one call, and the
 before and after printed. A count invites a reconciliation; an artifact does not.
 
+## Assert on the whole artifact; truncate only what you show a human
+
+The first failure recorded in this document was `head -c 400 | grep` reporting a
+clean corpus while 35 contaminated entries sat past the truncation. The reason it
+keeps recurring is structural: **it happens whenever the assertion and the
+display are the same operation.**
+
+Two near-misses on the same value, an hour apart, by two people who had both
+read the rule:
+
+Both are the **same shape**, and that matters more than either individually. The
+message is 159 characters; the address occupies 134-158.
+
+- One printed `msg[:96]` — the cut lands **before** the address, so the display
+  showed a clean-looking string.
+- The other printed `msg[:150]` — the cut lands **inside** it, showing
+  `display_name='ada.lovelace@exa`.
+
+In **both** cases the assertion ran over the full message and was **correct**.
+Only the displays differed, and only in how much of the address they happened to
+reveal. Neither reviewer was lucky or careless; both were reading a window and
+one window happened to be wide enough to argue with. A finding that depends on
+where a cut lands is not a finding you can rely on.
+
+So:
+
+- **The check runs over the entire value.** No `head`, no `[:n]`, no `...` in the
+  path between the artifact and the assertion.
+- **Truncate for legibility only, after the verdict**, and say that you did:
+  `LEAKS (showing first 96 of 412 chars)`. A reader who sees a length knows the
+  output is a window; a reader who sees a clean string believes it.
+- **When the verdict and the excerpt disagree, the verdict wins.** Investigate
+  the display, not the finding. Both near-misses here were a correct assertion
+  undermined by its own output.
+
+The general form: a truncation that reaches the assertion is a **defect**; a
+truncation that reaches only the reader is **formatting**. They look identical in
+the code and they are not the same thing.
+
 ## Tests that do not count
 
 - Assertions on log text or printed output.
