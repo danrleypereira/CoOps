@@ -247,6 +247,74 @@ def test_rest_commit_author_with_no_identifier_is_absent():
     assert commit.committed_at == "2026-03-04T10:00:00Z"
 
 
+def test_rest_commit_login_falls_back_to_commit_author_when_top_level_absent():
+    """The Bronze corpus shape (#168): ``_sanitize_commit`` writes the
+    account link inside ``commit.author`` (``login``/``id`` next to the
+    git identity) and leaves no top-level ``author`` at all — measured,
+    0 of 28,244 local-run and 0 of 130,186 fga records carry a top-level
+    login, while 27,206 / 123,562 carry one inside. The top-level-only
+    read never saw it.
+    """
+    raw = rest_commit()
+    del raw["author"]
+    raw["commit"]["author"] = {
+        "name": "Rosa Almeida",
+        "email": ADDRESS,
+        "date": "2026-03-03T09:00:00Z",
+        "login": "rosa-almeida",
+        "id": 1001,
+    }
+    author = map_commit_rest(raw, TENANT, "coops").author
+    assert author.login == "rosa-almeida"
+    assert author.account_id == 1001
+    # The login outranks name and email hash: it is the account link.
+    assert author.identity == "rosa-almeida"
+
+
+def test_rest_commit_login_inside_commit_author_with_null_name_still_attributes():
+    """The local-run corpus shape exactly: ``name`` null, no ``id``, no
+    top-level ``author`` — only a login inside ``commit.author``. Before
+    the fallback this was the worst case: no channel resolved at all, so
+    every one of these records mapped with ``author=None`` (measured,
+    #168: 0 of 28,244 attributed) with a valid login one key away.
+    """
+    raw = rest_commit()
+    del raw["author"]
+    raw["commit"]["author"] = {
+        "name": None,
+        "email": None,
+        "date": "2026-03-03T09:00:00Z",
+        "login": "rosa-almeida",
+    }
+    author = map_commit_rest(raw, TENANT, "coops").author
+    assert author.login == "rosa-almeida"
+    assert author.identity == "rosa-almeida"
+    assert author.display_name is None
+    assert author.account_id is None
+
+
+def test_rest_commit_top_level_login_beats_commit_author_login_when_both_present():
+    """The other half of the fallback pair (docs/definition-of-done.md:
+    precedence only exists when two values are present at once): a live
+    REST response carries the account link at the top level **and** the
+    record carries a Bronze-style one inside ``commit.author`` — the top
+    level wins, for the login and for the account id, mirroring the
+    precedence ``_sanitize_commit`` itself applies when writing.
+    """
+    raw = rest_commit()
+    raw["commit"]["author"] = {
+        "name": "Rosa Almeida",
+        "email": ADDRESS,
+        "date": "2026-03-03T09:00:00Z",
+        "login": "not-the-account-login",
+        "id": 9999,
+    }
+    author = map_commit_rest(raw, TENANT, "coops").author
+    assert author.login == "rosa-almeida"
+    assert author.account_id == 1001
+    assert author.identity == "rosa-almeida"
+
+
 def test_rest_commit_author_date_falls_back_when_committer_absent():
     """Real pre-#128 Bronze shape (#168): ``commit.{author, message}`` and
     **no ``committer`` key at all** — measured, 100% of one corpus's

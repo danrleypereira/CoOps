@@ -30,7 +30,12 @@ in one place:
        author {login id} | null, parents [{sha}], stats {additions deletions}}
 
   where ``committer`` may be absent entirely (pre-#128 Bronze records,
-  #168) and the author's date stands in for ``committed_at``.
+  #168) and the author's date stands in for ``committed_at``. The account
+  link sits in the top-level ``author`` on the live response; in the
+  Bronze records ``_sanitize_commit`` writes it moves inside
+  ``commit.author`` (``login``/``id``), which this mapper reads as a
+  fallback when the top level carries none — the top level wins when both
+  are present.
 
 An email address never reaches a model. As in
 :func:`coops.bronze.commits._sanitize_commit`, the address is reduced to its
@@ -228,9 +233,15 @@ def map_commit_rest(
     """Map one REST commit object (list item or detail) to a Commit.
 
     The account link lives in the top-level ``author`` (``null`` for the
-    5.8% of authors with no GitHub account); the git identity lives in
-    ``commit.author``. ``stats`` is only present on the detail payload, so
-    additions/deletions are ``None`` for list items.
+    5.8% of authors with no GitHub account) — or, in the Bronze records
+    ``_sanitize_commit`` writes, inside ``commit.author`` next to the git
+    identity, with no top-level ``author`` at all (measured, #168: 0 of
+    28,244 local-run and 0 of 130,186 fga records carry a top-level
+    login; 27,206 and 123,562 carry one inside). The top level wins when
+    both are present — the same precedence ``_sanitize_commit`` itself
+    applies when writing (``login or commit_author.get('login')``).
+    ``stats`` is only present on the detail payload, so additions/deletions
+    are ``None`` for list items.
 
     ``committed_at`` is the committer date, falling back to the author's
     date when the record carries no ``commit.committer`` at all — the
@@ -244,13 +255,17 @@ def map_commit_rest(
     git_author = (raw.get("commit") or {}).get("author") or {}
     git_committer = (raw.get("commit") or {}).get("committer") or {}
     stats = raw.get("stats") or {}
+    login = top_author.get("login") or git_author.get("login")
+    account_id = top_author.get("id")
+    if account_id is None:
+        account_id = git_author.get("id")
     return Commit(
         tenant=tenant,
         repo_name=repo_name,
         sha=raw.get("sha") or "",
         author=_author_actor(
-            login=top_author.get("login"),
-            account_id=top_author.get("id"),
+            login=login,
+            account_id=account_id,
             name=git_author.get("name"),
             email=git_author.get("email"),
         ),
