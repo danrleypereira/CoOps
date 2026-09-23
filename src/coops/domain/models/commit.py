@@ -4,7 +4,8 @@ Commits arrive from GitHub in two shapes and this model is the one place
 they meet (the mapper in :mod:`coops.github.mapper` reads both).
 
 ``author`` is ``None`` when no channel identifies the author — no login,
-no account, no name, no email (measured, 2,076 commits in the corpus,
+no account, no name, no email (measured 2026-09-23: 1,038 of 28,244
+commits in the local-run corpus, 0 of 130,186 in fga-eps-mds,
 #154: a deleted account, or author metadata that never resolved). An
 absent author is not an ``Actor`` carrying a blank field: a shared empty
 identity would merge distinct people, the defect #151 exists to prevent.

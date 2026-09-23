@@ -108,13 +108,14 @@ def _author_actor(
 
     The email is hashed here and only the hash is passed on, and — matching
     ``_sanitize_commit`` — the hash is kept only when there is no account
-    link: a linked author is keyed by ``login``, an unlinked one (5.8% of
+    link: a linked author is keyed by ``login``, an unlinked one (5.1% of
     the corpus) by the hash of an email that is their only identifier.
     ``Actor.resolve`` applies the precedence (login -> email_hash -> name)
     and blanks an address-shaped name.
 
     An author no channel identifies — no login, no account, no name, no
-    email (measured, 2,076 commits in the corpus, #154: a deleted account,
+    email (measured 2026-09-23: 1,038 of 28,244 commits in local-run,
+    0 of 130,186 in fga-eps-mds, #154: a deleted account,
     or author metadata that never resolved) — is **absent**: ``None``,
     exactly how ``_conversation_actor`` treats a null event actor, never
     an ``Actor`` carrying a blank field (a shared empty identity would
@@ -284,7 +285,7 @@ def map_commit_rest(
     """Map one REST commit object (list item or detail) to a Commit.
 
     The account link lives in the top-level ``author`` (``null`` for the
-    5.8% of authors with no GitHub account) — or, in the Bronze records
+    5.1% of authors with no GitHub account) — or, in the Bronze records
     ``_sanitize_commit`` writes, inside ``commit.author`` next to the git
     identity, with no top-level ``author`` at all (measured, #168: 0 of
     28,244 local-run and 0 of 130,186 fga records carry a top-level

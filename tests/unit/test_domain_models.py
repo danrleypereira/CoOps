@@ -553,7 +553,7 @@ def test_commit_blank_committed_at_raises():
 
 
 def test_commit_author_may_be_absent():
-    """#154 measured 2,076 commits whose author has no identifier at all —
+    """#154 measured 1,038 commits whose author has no identifier at all —
     no login, no account, no name, no email (a deleted account, or author
     metadata that never resolved).
 

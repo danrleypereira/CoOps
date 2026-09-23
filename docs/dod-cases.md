@@ -22,7 +22,7 @@ path.
 **Scope first, because the two tiers want opposite things.** The raw tier keeps
 the provider's response intact — including the personal fields — because it is
 private, and because an address there is sometimes the only identifier a person
-has (measured: 5.8% of commit authors have no account link). Stripping at
+has (measured: 5.1% of commit authors have no account link). Stripping at
 capture destroys attribution that cannot be recovered. That decision is #107 and
 this section does not touch it.
 
