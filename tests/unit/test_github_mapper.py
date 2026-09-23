@@ -161,7 +161,7 @@ def test_the_same_address_hashes_alike_linked_or_not():
 
 
 def test_graphql_commit_unlinked_author_identity_is_email_hash():
-    """Real corpus shape (5.8% of authors): ``user`` is null, no account.
+    """Real corpus shape (5.1% of authors): ``user`` is null, no account.
 
     Only the email identifies them, and only its hash is carried.
     """
@@ -203,7 +203,7 @@ def test_graphql_commit_address_shaped_name_is_blanked():
 
 
 def test_graphql_commit_author_with_no_identifier_is_absent():
-    """Real corpus shape — not an edge case: #154 measured 2,076 commits
+    """Real corpus shape — not an edge case: #154 measured 1,038 commits
     whose author has *no* identifier at all (no login, no account id, no
     name, no email — a deleted account, or author metadata that never
     resolved).
@@ -265,7 +265,7 @@ def test_rest_commit_name_and_hash_identity_takes_hash_display_keeps_name():
 
 
 def test_rest_commit_author_with_no_identifier_is_absent():
-    """REST twin of the #154 shape (2,076 commits in the corpus): the
+    """REST twin of the #154 shape (1,038 commits in local-run): the
     top-level ``author`` is null (no account link) and the git identity
     carries no name and no email — all four identifiers absent.
 

@@ -8,6 +8,17 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 ## [Unreleased]
 
 ### Changed
+- Corrected two measured figures cited throughout the source, the tests and
+  the docs (issue [#154](https://github.com/danrleypereira/CoOps/issues/154)).
+  **2,076 commits with no identifier was wrong; it is 1,038** — the original
+  count read the *top-level* `author` object, so records carrying a login at
+  `commit.author` were counted as identifier-less, roughly doubling it.
+  **5.8% of authors with no account link was wrong; it is 5.1%** on
+  `fga-eps-mds` (6,624 of 130,186). Both figures now name the corpus and the
+  measurement date, because "the corpus" was ambiguous between two with
+  different answers — `local-run` has 1,038 of 28,244 (3.68%) identifier-less
+  commits where `fga-eps-mds` has **0 of 130,186** — and that ambiguity is
+  what let a wrong number survive in seven places.
 - Every commit author keeps `author_email_hash`, not only the unlinked ones
   (issues [#101](https://github.com/danrleypereira/CoOps/issues/101) and
   [#171](https://github.com/danrleypereira/CoOps/issues/171)). The hash was
@@ -215,7 +226,7 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   resolves `login → author_email_hash → name`, while `display_name` may be
   `None` (address-shaped names, #132); a null event actor stays an absent
   actor, never a Member named "unknown", and so does a commit author no
-  channel identifies (`Commit.author: Actor | None`, the 2,076 commits of
+  channel identifies (`Commit.author: Actor | None`, the 1,038 commits of
   [#154](https://github.com/danrleypereira/CoOps/issues/154)).
 - `coops.github.mapper` (issue [#25](https://github.com/danrleypereira/CoOps/issues/25)):
   GitHub REST and GraphQL payloads → the domain models, built from named
@@ -226,7 +237,7 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   account, identified by email hash), address-shaped author names and
   authors no channel identifies at all, who map to `author=None` instead
   of aborting ([#154](https://github.com/danrleypereira/CoOps/issues/154):
-  2,076 real commits; `Actor.resolve` still refuses an empty identity —
+  1,038 real commits; `Actor.resolve` still refuses an empty identity —
   the mapper decides absence, as it already did for null event actors).
   Members, issues, pull requests, activity events and file trees (REST and
   GraphQL) map the same way. Nothing consumes the models yet; no existing

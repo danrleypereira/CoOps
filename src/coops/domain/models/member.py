@@ -10,7 +10,7 @@ people), and a Member with ``display_name=None`` is normal, not broken.
 
 ``email_hash`` is ``None`` for every member that arrives through a REST
 member/profile/contributor payload — those always carry a ``login``. The
-field exists because 5.8% of commit authors have no account link at all and
+field exists because 5.1% of commit authors have no account link at all and
 their only identifier is the hash of their commit email: when the union with
 commit authors lands (Phase 1, #20), those people become Members keyed by
 ``email_hash``, and the model must already represent them.
