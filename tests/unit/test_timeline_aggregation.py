@@ -174,6 +174,73 @@ def test_timeline_author_without_repos(monkeypatch):
     assert last7[0]["authors"][0]["repositories"] == []
 
 
+def test_timeline_same_name_distinct_ids_stay_split(monkeypatch):
+    """Two authors sharing a display name but holding distinct ids aggregate
+    into two monthly entries, not one merged row (#151 step 2).
+
+    The monthly dict is keyed on `id`; `name` is carried as a display field.
+    Keying on `name` (the pre-fix behaviour) would merge both identities into
+    a single entry whose `id` is last-writer-wins.
+    """
+    author_a = {"id": "hash-aaa", "name": "Lucas Gomes", "commits": 1, "issues_created": 0,
+                "issues_closed": 0, "prs_created": 0, "prs_closed": 0, "comments": 0}
+    author_b = {"id": "hash-bbb", "name": "Lucas Gomes", "commits": 2, "issues_created": 0,
+                "issues_closed": 0, "prs_created": 0, "prs_closed": 0, "comments": 0}
+    daily = [
+        {
+            "date": "2024-06-01",
+            "total_events": 2, "issues_created": 0, "issues_closed": 0,
+            "prs_created": 0, "prs_closed": 0, "commits": 3, "comments": 0,
+            "unique_users": 2, "unique_repos": 2,
+            "authors": [dict(author_a), dict(author_b)],
+        },
+        {
+            "date": "2024-06-02",
+            "total_events": 1, "issues_created": 0, "issues_closed": 0,
+            "prs_created": 0, "prs_closed": 0, "commits": 1, "comments": 0,
+            "unique_users": 1, "unique_repos": 1,
+            "authors": [dict(author_a)],
+        },
+    ]
+    events = [
+        {"user": "hash-aaa", "repo": "repoA"},
+        {"user": "hash-bbb", "repo": "repoB"},
+    ]
+
+    def fake_load(path):
+        if path.endswith("daily_activity_summary.json"):
+            return daily
+        if path.endswith("temporal_events.json"):
+            return events
+        return []
+
+    saved = {}
+
+    def fake_save(data, path, timestamp=True):
+        saved[path] = data
+        return path
+
+    monkeypatch.setattr(timeline, "load_json_data", fake_load)
+    monkeypatch.setattr(timeline, "save_json_data", fake_save)
+
+    timeline.process_timeline_aggregation()
+
+    months = saved["data/gold/timeline_last_12_months.json"]
+    authors = months[0]["authors"]
+    # Two distinct identities, not one merged entry
+    assert len(authors) == 2
+    by_id = {a["id"]: a for a in authors}
+    assert set(by_id) == {"hash-aaa", "hash-bbb"}
+    # The shared display label survives inside each entry
+    assert all(a["name"] == "Lucas Gomes" for a in authors)
+    # Accumulation is per identity: a=1+1 commits, b=2
+    assert by_id["hash-aaa"]["commits"] == 2
+    assert by_id["hash-bbb"]["commits"] == 2
+    # Repositories follow the identity, not the shared label
+    assert by_id["hash-aaa"]["repositories"] == ["repoA"]
+    assert by_id["hash-bbb"]["repositories"] == ["repoB"]
+
+
 def test_timeline_carries_author_id(monkeypatch):
     """The author `id` from Silver flows through both Gold aggregations
     untouched, alongside the existing name-based output."""

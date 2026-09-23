@@ -25,6 +25,7 @@ const mockMembersResponse: Record<string, unknown> = {
   _metadata: { generatedAt: '2024-01-01', version: '1.0' },
   members: {
     alice: {
+      id: 'alice',
       name: 'Alice',
       repos: ['repo-alpha', 'repo-beta'],
       commits_analysis: 'Alice commits summary',
@@ -32,6 +33,7 @@ const mockMembersResponse: Record<string, unknown> = {
       issues_analysis: 'Alice issues summary',
     },
     bob: {
+      id: 'bob',
       name: 'Bob',
       repos: ['repo-beta'],
       commits_analysis: 'Bob commits summary',
@@ -39,6 +41,7 @@ const mockMembersResponse: Record<string, unknown> = {
       issues_analysis: 'Bob issues summary',
     },
     charlie: {
+      id: 'charlie',
       name: 'Charlie',
       repos: ['repo-alpha', 'Repo-Beta'],
       commits_analysis: 'Charlie commits summary',
@@ -55,6 +58,30 @@ const renderWithRouter = (
   return render(
     <MemoryRouter initialEntries={initialEntries}>{component}</MemoryRouter>
   );
+};
+
+// #151 step 2 — two distinct identities (distinct `id`s) sharing one display
+// label. Keying identity on `name` merges these two people into one.
+const sameNameMembersResponse: Record<string, unknown> = {
+  _metadata: { generatedAt: '2024-01-01', version: '1.0' },
+  members: {
+    'u-111': {
+      id: 'u-111',
+      name: 'Lucas Gomes',
+      repos: ['repo-one'],
+      commits_analysis: 'Lucas u-111 commits summary',
+      prs_analysis: 'Lucas u-111 PRs summary',
+      issues_analysis: 'Lucas u-111 issues summary',
+    },
+    'u-222': {
+      id: 'u-222',
+      name: 'Lucas Gomes',
+      repos: ['repo-two'],
+      commits_analysis: 'Lucas u-222 commits summary',
+      prs_analysis: 'Lucas u-222 PRs summary',
+      issues_analysis: 'Lucas u-222 issues summary',
+    },
+  },
 };
 
 describe('AISummary Component', () => {
@@ -182,6 +209,7 @@ describe('AISummary Component', () => {
       },
       members: {
         'member-a': {
+          id: 'member-a',
           name: 'member-a',
           repos: ['2026-2-Squad-X'],
           commits_analysis:
@@ -190,6 +218,7 @@ describe('AISummary Component', () => {
           issues_analysis: 'O membro não registrou nenhuma issue (Total de issues: 0).',
         },
         'member-b': {
+          id: 'member-b',
           name: 'member-b',
           repos: ['2026-2-Squad-X', '2025-1-Squad-Y'],
           commits_analysis: 'Commits de member-b',
@@ -668,6 +697,7 @@ describe('AISummary Component', () => {
     const singleMemberData: Record<string, unknown> = {
       members: {
         alice: {
+          id: 'alice',
           name: 'Alice',
           repos: ['only-repo'],
           commits_analysis: 'x',
@@ -721,6 +751,139 @@ describe('AISummary Component', () => {
 
     await waitFor(() => {
       expect(mockFetchData).toHaveBeenCalledWith('silver/ai/members_ai.json');
+    });
+  });
+
+  // #151 step 2 — identity lives on `id`; `name` is a display label only
+  test('two members sharing a name with distinct ids both render and select independently', async () => {
+    mockFetchData.mockResolvedValue(sameNameMembersResponse);
+
+    const { container } = renderWithRouter(<AISummary />);
+
+    const button = screen.getByText('AI Analysis').closest('button')!;
+    fireEvent.click(button);
+
+    // Both identities render under the same display label
+    expect(await screen.findByText('2 members found')).toBeInTheDocument();
+    expect(screen.getAllByText('Lucas Gomes').length).toBe(2);
+
+    // Select the first identity (targeted through its distinct repo line)
+    fireEvent.click(screen.getByText('repo-one', { selector: 'p' }).closest('button')!);
+    expect(screen.getByText('Selected Analyses (1)')).toBeInTheDocument();
+    expect(screen.getByText('1 selected')).toBeInTheDocument();
+
+    // Only the clicked identity carries the selected check mark
+    const checkPath = 'M5 13l4 4L19 7';
+    expect(container.querySelectorAll(`path[d="${checkPath}"]`).length).toBe(1);
+
+    // Selecting the second same-named member adds a second selection —
+    // with name-keyed identity this click would toggle the first one off
+    fireEvent.click(screen.getByText('repo-two', { selector: 'p' }).closest('button')!);
+    expect(screen.getByText('Selected Analyses (2)')).toBeInTheDocument();
+    expect(screen.getByText('2 selected')).toBeInTheDocument();
+    expect(container.querySelectorAll(`path[d="${checkPath}"]`).length).toBe(2);
+  });
+
+  test('removing one selected same-named member keeps the other selected', async () => {
+    mockFetchData.mockResolvedValue(sameNameMembersResponse);
+
+    renderWithRouter(<AISummary />);
+
+    fireEvent.click(screen.getByText('AI Analysis').closest('button')!);
+
+    expect(await screen.findByText('2 members found')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('repo-one', { selector: 'p' }).closest('button')!);
+    fireEvent.click(screen.getByText('repo-two', { selector: 'p' }).closest('button')!);
+    expect(screen.getByText('Selected Analyses (2)')).toBeInTheDocument();
+
+    // Remove the first card; the second same-named member must stay selected
+    fireEvent.click(screen.getAllByTitle('Remove')[0]);
+    expect(screen.getByText('Selected Analyses (1)')).toBeInTheDocument();
+  });
+
+  test('react keys stay unique when two members share a display name', async () => {
+    mockFetchData.mockResolvedValue(sameNameMembersResponse);
+
+    renderWithRouter(<AISummary />);
+
+    fireEvent.click(screen.getByText('AI Analysis').closest('button')!);
+
+    expect(await screen.findByText('2 members found')).toBeInTheDocument();
+
+    // Select both so the selected-cards list also renders the shared name
+    fireEvent.click(screen.getByText('repo-one', { selector: 'p' }).closest('button')!);
+    fireEvent.click(screen.getByText('repo-two', { selector: 'p' }).closest('button')!);
+    expect(screen.getByText('Selected Analyses (2)')).toBeInTheDocument();
+
+    // React reports sibling key collisions through console.error
+    const keyWarnings = consoleErrorSpy.mock.calls.filter(call =>
+      String(call[0]).includes('same key')
+    );
+    expect(keyWarnings).toEqual([]);
+  });
+
+  test('type guard rejects members without a non-empty id', async () => {
+    mockFetchData.mockResolvedValue({
+      _metadata: {},
+      members: {
+        'no-id': {
+          name: 'Missing Id',
+          repos: ['repo-a'],
+          commits_analysis: 'x',
+          prs_analysis: 'y',
+          issues_analysis: 'z',
+        },
+        'empty-id': {
+          id: '',
+          name: 'Empty Id',
+          repos: ['repo-a'],
+          commits_analysis: 'x',
+          prs_analysis: 'y',
+          issues_analysis: 'z',
+        },
+        valid: {
+          id: 'valid-1',
+          name: 'Valid Member',
+          repos: ['repo-a'],
+          commits_analysis: 'x',
+          prs_analysis: 'y',
+          issues_analysis: 'z',
+        },
+      },
+    });
+
+    renderWithRouter(<AISummary />);
+
+    fireEvent.click(screen.getByText('AI Analysis').closest('button')!);
+
+    expect(await screen.findByText('1 member found')).toBeInTheDocument();
+    expect(screen.getByText('Valid Member')).toBeInTheDocument();
+    expect(screen.queryByText('Missing Id')).not.toBeInTheDocument();
+    expect(screen.queryByText('Empty Id')).not.toBeInTheDocument();
+  });
+
+  test('search still matches on the display name', async () => {
+    mockFetchData.mockResolvedValue(sameNameMembersResponse);
+
+    renderWithRouter(<AISummary />);
+
+    fireEvent.click(screen.getByText('AI Analysis').closest('button')!);
+
+    expect(await screen.findByText('2 members found')).toBeInTheDocument();
+
+    // Case-insensitive match on the shared display label finds both identities
+    const searchInput = screen.getByPlaceholderText('Type a name...');
+    fireEvent.change(searchInput, { target: { value: 'gomes' } });
+
+    await waitFor(() => {
+      expect(screen.getByText('2 members found')).toBeInTheDocument();
+      expect(screen.getAllByText('Lucas Gomes').length).toBe(2);
+    });
+
+    fireEvent.change(searchInput, { target: { value: 'no such person' } });
+
+    await waitFor(() => {
+      expect(screen.getByText('No members found')).toBeInTheDocument();
     });
   });
 });

@@ -100,7 +100,7 @@ def process_timeline_aggregation() -> List[str]:
             'prs_created': 0,
             'prs_closed': 0,
             'comments': 0,
-            'id': None
+            'name': None
         })
     })
     
@@ -129,15 +129,18 @@ def process_timeline_aggregation() -> List[str]:
                 month_data['unique_repos'].add(day.get('unique_repos'))  # Track daily counts
             
             # Aggregate author activities
+            # Keyed by the stable identity (`id`) so distinct people who share
+            # a display name stay separate entries; `name` is carried inside
+            # each entry as the display label (#151).
             for author in day.get('authors', []):
-                author_name = author['name']
-                month_data['authors'][author_name]['commits'] += author.get('commits', 0)
-                month_data['authors'][author_name]['issues_created'] += author.get('issues_created', 0)
-                month_data['authors'][author_name]['issues_closed'] += author.get('issues_closed', 0)
-                month_data['authors'][author_name]['prs_created'] += author.get('prs_created', 0)
-                month_data['authors'][author_name]['prs_closed'] += author.get('prs_closed', 0)
-                month_data['authors'][author_name]['comments'] += author.get('comments', 0)
-                month_data['authors'][author_name]['id'] = author.get('id')
+                author_id = author.get('id')
+                month_data['authors'][author_id]['commits'] += author.get('commits', 0)
+                month_data['authors'][author_id]['issues_created'] += author.get('issues_created', 0)
+                month_data['authors'][author_id]['issues_closed'] += author.get('issues_closed', 0)
+                month_data['authors'][author_id]['prs_created'] += author.get('prs_created', 0)
+                month_data['authors'][author_id]['prs_closed'] += author.get('prs_closed', 0)
+                month_data['authors'][author_id]['comments'] += author.get('comments', 0)
+                month_data['authors'][author_id]['name'] = author.get('name')
     
     # Convert to list and prepare for JSON serialization
     last_12_months = []
@@ -149,17 +152,17 @@ def process_timeline_aggregation() -> List[str]:
         
         # Convert authors dict to list
         authors_list = []
-        for author_name, stats in data['authors'].items():
+        for author_id, stats in data['authors'].items():
             authors_list.append({
-                'id': stats.get('id'),
-                'name': author_name,
+                'id': author_id,
+                'name': stats.get('name'),
                 'commits': stats['commits'],
                 'issues_created': stats['issues_created'],
                 'issues_closed': stats['issues_closed'],
                 'prs_created': stats['prs_created'],
                 'prs_closed': stats['prs_closed'],
                 'comments': stats['comments'],
-                'repositories': sorted(list(author_repos_map.get(author_name, [])))
+                'repositories': sorted(list(author_repos_map.get(author_id, [])))
             })
         data['authors'] = authors_list
         
