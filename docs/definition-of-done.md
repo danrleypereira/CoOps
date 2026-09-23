@@ -287,10 +287,13 @@ because without it none of this is checkable after the fact.
 
 ## A two-arm comparison needs proof that the arms differ
 
-A scan needs a control proving the instrument can find the thing. A comparison
-needs the same thing one level up: **proof that A and B are not the same
-subject.** Identical arms produce a clean, confident, symmetric result, and
-report it as a finding.
+A control proves the instrument can **see**. An arms-differ assert proves the
+comparison can **discriminate**. Those are different properties, and only the
+first was written down here — which is why two broken comparisons got through
+on the same day.
+
+Identical arms produce a clean, confident, symmetric result, and report it as a
+finding.
 
 Measured 2026-09-23, on a question about whether `main` blanks an
 address-shaped `commit.author.name`. Two comparisons, two confident answers,
