@@ -27,6 +27,7 @@ dev = [
     "pytest-cov>=5.0.0",
     "pytest-mock>=3.14.0",
     "freezegun>=1.5.0",
+    "mypy>=2.3.1",
 ]
 
 [project.scripts]
@@ -64,6 +65,35 @@ omit = [
     "*cleanup_event_data.py",
     "src/coops/ai_analysis/*",
 ]
+
+# Static half of the port contract (issue #91): a Protocol is checked at
+# compile time, not at runtime — `isinstance` on a @runtime_checkable
+# Protocol only verifies that method *names* exist — so an adapter that
+# drifts from a port (missing `tenant` parameter, renamed argument, wrong
+# return type) needs a type checker to be caught. Contract tests (#55)
+# remain the runtime guarantee; this is the compile-time half.
+[tool.mypy]
+strict = true
+# requires-python floor: the CI matrix runs 3.10 and 3.11, so check against
+# the oldest semantics any supported interpreter may execute.
+python_version = "3.10"
+# Resolve `coops` imports against this source tree, not the installed dist
+# (which has no py.typed marker) — otherwise any file checked outside src/
+# (a scratch adapter, a future tests/ run) sees the ports as Any and the
+# protocol check silently does nothing.
+mypy_path = "src"
+# Scoped to the Phase 1 port/adapter boundary only: a strict run over the
+# pre-ports layers starts at 348 errors today and would drown the signal
+# (the follow-up widens these as Phases 2 and 3 move code behind ports).
+files = [
+    "src/coops/domain",
+    "src/coops/github",
+]
+# The same pre-ports packages, spelled out so an explicit `uv run mypy src/`
+# (or an IDE run over the tree) fails on nothing this issue does not migrate.
+# `files` above already keeps a bare `uv run mypy` scoped; this is the belt
+# to its braces.
+exclude = "src/coops/(bronze|silver|gold|utils|etl|ai_analysis|storage|infrastructure|raw_capture)/"
 
 [tool.coverage.report]
 exclude_lines = [
