@@ -31,10 +31,26 @@ Decided with that in view:
   (``"owner/repo"``, ``"repo#number"``) would re-embed addressing the
   account already carries and would break the day the provider re-shapes
   it; the provider's own id also survives renames, which names do not.
-- **Unique within a :class:`~coops.domain.ProviderAccount`, not globally.**
-  That is exactly the scope the adapter filters on, so a GitHub id and a
-  colliding GitLab id never meet: the query is scoped by ``org_id`` (and
-  the provider) before ``external_id`` is compared.
+- **Scoped by :class:`~coops.domain.ProviderAccount`, never global** — a
+  GitHub id and a colliding GitLab id never meet, because the query is
+  scoped by the provider and ``org_id`` before ``external_id`` is
+  compared.
+
+  **But the account is not by itself a uniqueness scope.** Measured on
+  ``fga-eps-mds``: of 123,645 distinct commit SHAs, **6,232 (5.0%) appear
+  in more than one repository of the same account** — one SHA in six
+  repositories at the extreme, where a cohort split a project
+  (``…-FishLog``, ``…-FishWiki``, ``…-User``) and the shared history went
+  with it. Forks and cherry-picks do the same.
+
+  So the key an adapter must index and upsert on is
+  ``(tenant_id, account, repo_name, external_id)``. Treating
+  ``(account, external_id)`` as unique would make those 6,232 commits
+  overwrite one another, leaving one repository's copy and silently
+  deleting the rest — a row count that still looks plausible.
+  ``(account, repo_name, external_id)`` is unique across the corpus, and
+  every entity here already carries ``repo_name``, so this costs nothing
+  but saying it. See #39.
 
 Where an entity already carries the same value under its own vocabulary
 (``Commit.sha``, ``FileTree.sha``) both fields exist on purpose: ``sha``
