@@ -208,6 +208,52 @@ not an identical result**. `git range-diff` showing `=` proves the diff replayed
 unchanged; it says nothing about how that diff behaves against a base that
 moved. Re-run the suite on the new head rather than inferring from the marker.
 
+## Precedence needs two things present at once
+
+A property test that generates each input kind **in isolation** can never find a
+precedence bug, because precedence only exists when two kinds are present
+together.
+
+Measured on #146/#151. The identity fallback is `login -> author_email_hash ->
+name`. A property check ran 500 synthetic hashes and several logins, and
+confirmed exactly what it asked: every output unique, none empty, no shared
+constant. All true. It generated no identity carrying **both** a hash and a real
+name — the only shape where the ordering is observable. The chain shipped with
+the hash outranking the name, and **206 contributors with perfectly good names
+rendered as `Unknown contributor (a1b2c3d4)`** on the dashboard.
+
+So when the code under test picks between alternatives, the fixture space has to
+include the **combinations**, not just the members:
+
+- For an `a or b or c` chain, test `a+b`, `b+c`, `a+c` and `a+b+c` — not only
+  `a`, `b`, `c` alone. Each pair asserts which one wins.
+- Say the winner out loud in the test name: `test_name_beats_hash_when_both_present`.
+- Mutate by **swapping adjacent branches**, not by deleting one. Deleting a
+  branch tests that the branch exists; swapping tests that the order is right,
+  and only the second is the claim the code is making.
+
+## A data migration needs two assertions, not one
+
+When a change rewrites stored data, *"nothing was lost"* and *"nothing changed
+that should not have"* are **different claims**, and a row count only makes the
+first.
+
+The regeneration behind #132 was gated on exactly that: addresses must reach
+zero, and record counts must not fall. Both passed — addresses went 149 -> 0 and
+`members_statistics.json` **grew** from 1,699 to 1,723 rows. Underneath, 206 rows
+kept their place and lost their identity. Every criterion was green.
+
+For a migration, assert on both axes:
+
+- **Removal**: the thing being removed reaches zero, with a control proving the
+  probe can still find it.
+- **Preservation**: the values that were *not* the target are unchanged. Diff the
+  old and new artifacts by key, and account for **every** difference — each one
+  is either intended and explainable, or a defect. A delta you cannot name is
+  not a rounding error.
+- **Counts are the weakest of the three.** They catch deletion and nothing else.
+  Here the count moved in the *reassuring* direction while the damage happened.
+
 ## Tests that do not count
 
 - Assertions on log text or printed output.
