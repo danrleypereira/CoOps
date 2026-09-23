@@ -328,6 +328,14 @@ Print both digests, do not merely assert. And state the **provenance of the
 data**: an artifact rewritten by the code under test is not evidence about that
 code, however carefully it is then measured.
 
+This failure recurred **three times in one session**, twice of them *while the
+rule against it was being written* — once producing the original wrong answer,
+once producing a review verdict on the very PR adding this section. Each time
+the working tree happened to sit on one of the two branches, so an import
+resolved to it and the other arm was read from a blob. Nobody was careless; the
+mistake is invisible by construction, which is the whole argument for spending
+two lines on the assert rather than remembering.
+
 **When a comparison is contested, drop to one record.** Three exchanges of
 disputed aggregates were ended by a single hand-built input, one call, and the
 before and after printed. A count invites a reconciliation; an artifact does not.
