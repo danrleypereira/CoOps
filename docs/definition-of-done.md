@@ -261,12 +261,29 @@ For a migration, assert on both axes:
   Here the count moved in the *reassuring* direction while the damage happened.
 
 **An unexplained row *gain* is a finding, exactly like an unexplained loss.** The
-+24 above read as "24 contributors rescued from being dropped". They were
-**identity splits**: 16 name strings were each shared by several distinct people
-(`CI/CD Bot` was six of them, `root` five), and the old key merged them into one
-row. Nobody asked where the extra rows came from, because rows appearing feels
-like a fix. Explaining them is what revealed that the obvious repair — putting
-the name back above the hash — would have silently re-merged all 25.
++24 above read as "24 contributors rescued from being dropped". Decomposed
+against the retained pre-migration file, it is two movements that happen to
+nearly cancel:
+
+```
++231  rows gained that carry a hash label
+-207  rows lost that carried a plain name
+----
+ +24  net
+```
+
+231 identities now occupy 231 rows where 207 rows held them before — **24 merges
+undone**. The old key was the name, and 16 name strings were each shared by
+several distinct people (`CI/CD Bot` was six of them, `root` five). Nobody asked
+where the extra rows came from, because rows appearing feels like a fix.
+Explaining them is what revealed that the obvious repair — putting the name back
+above the hash — would silently re-merge those people.
+
+Note the shape of that decomposition: a net of +24 concealing movements of 231
+and 207. **A small net delta is not evidence of a small change.** Two large
+opposite movements are the normal case, not the exotic one, so decompose before
+concluding anything from a total — and keep a copy of the pre-migration artifact,
+because without it none of this is checkable after the fact.
 
 ## Tests that do not count
 
