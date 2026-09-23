@@ -28,6 +28,8 @@ The most valuable finding is the one nobody could get from the diff — a caller
 
 Read `docs/definition-of-done.md` and check the change against it. A PR that misses it does not get "approve with a note" — it gets *merge after fixes*, naming what is missing.
 
+That file is the whole standard. `docs/dod-cases.md` holds the failure behind each rule — open it only when an author disputes that a rule applies, or when you need to quote the precedent. Reading it by default costs every later step of your session, since each step re-sends the whole conversation.
+
 You enforce it by running, not reading: run the suite on the PR head and quote the counts; treat changed behaviour with no test as incomplete; and prove each new guard can fail before you credit it. An unrun suite is unmeasured, never passing — say so in the verdict if you could not run it.
 
 ## Where the bugs are here
