@@ -4,8 +4,8 @@ from collections import defaultdict
 from datetime import datetime, timedelta
 from typing import List, Dict, Any, Mapping, Optional
 
-from coops.utils.github_api import save_json_data, load_json_data, parse_github_date
-from coops.utils.data_helpers import strip_metadata
+from coops.utils.github_api import save_json_data, parse_github_date
+from coops.silver.bronze_input import load_family
 
 
 def is_email_hash(identifier: str) -> bool:
@@ -90,12 +90,13 @@ def process_members_statistics() -> List[str]:
     Gera estatísticas individuais por membro, incluindo avg_weekly_activity.
     """
 
-    # Carregar dados bronze
-    issues_data = strip_metadata(load_json_data("data/bronze/issues_all.json") or [])
-    prs_data = strip_metadata(load_json_data("data/bronze/prs_all.json") or [])
-    commits_data = strip_metadata(load_json_data("data/bronze/commits_all.json") or [])
-    issue_events_data = strip_metadata(load_json_data("data/bronze/issue_events_all.json") or [])
-    
+    # Carregar dados bronze: per-repository files, not the _all aggregates
+    # (redundant concatenations of exactly these records — issue #170).
+    issues_data = load_family("issues")
+    prs_data = load_family("prs")
+    commits_data = load_family("commits")
+    issue_events_data = load_family("issue_events")
+
     generated_files = []
     
     # Estrutura para agregar eventos por membro. `name_counts` acumula as
