@@ -114,6 +114,15 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   everything written to `data/bronze/` still goes through the Bronze scrub.
 
 ### Changed
+- The dashboard no longer treats a member's display `name` as their
+  identity (issue [#151](https://github.com/danrleypereira/CoOps/issues/151),
+  step 2 of 3): `AISummary` selection, deselection, highlight, removal and
+  React keys all compare and key on the stable `id` added in step 1, and the
+  `MemberAnalysis` guard rejects records without a non-empty `id`. Searching
+  still matches on the display name. The Gold monthly timeline
+  (`timeline_last_12_months.json`) now aggregates authors keyed by `id`
+  instead of `name`, keeping `name` as a field of each entry, so two people
+  who share a display name keep separate counts instead of merging.
 - **Breaking:** `coops-bronze` reads the token and organization from
   `GITHUB_TOKEN`/`GITHUB_ORG` (environment, `.env` or `.secrets`); the
   `--token` and `--org` flags were removed, and `coops-silver`/`coops-gold`
