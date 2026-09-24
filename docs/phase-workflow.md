@@ -51,30 +51,78 @@ cd ~/.local/share/coops/snapshots
 sha256sum -c coops-raw-<stamp>.tar.gz.sha256      # never skip
 mkdir -p /var/tmp/coops-work
 tar -xzf coops-raw-<stamp>.tar.gz -C /var/tmp/coops-work
-cp -r  /var/tmp/coops-fga/data            /var/tmp/coops-work/data
+cp -r  /var/tmp/coops-clean/data          /var/tmp/coops-work/data
 cp     /var/tmp/coops-fga/watermarks.json /var/tmp/coops-work/    # NOT under data/
 ```
 
 Seeding matters: a from-scratch tree has no previous state, so "did the defect
 go away" has nothing to compare against.
 
-**`watermarks.json` sits at the tree root, not under `data/`**, so a seeding step
-that copies `data/` alone silently drops it — and that is not a tidiness point.
-Without watermarks the extractor asks for unconditional listing URLs instead of
-incremental ones, and those bodies are the oldest in the cache. 65% of cached
-bodies carry no `ETag`, and `get_with_cache` serves an ETag-less body directly,
-forever, with no revalidation. So the run reads month-old listings, writes
-records that are *older* than the ones it replaced, and then persists a watermark
-describing what it just read — moving the watermark **backwards**. This is the
-mechanism behind #199; it is invisible online, because the next networked run
-re-fetches and repairs itself.
+Seed from a corpus you have **not** damaged. `/var/tmp/coops-fga/data` is the
+obvious-looking choice and is the wrong one: an aborted run rewrote 69% of its
+bronze files. Seed and `--reference` must be the same corpus, or the comparison
+measures the difference between two baselines. `coops-clean/data` and
+`coops-fga/watermarks.json` *are* a matched pair despite the names — verified by
+mtime, both from the run ending 2026-09-23 16:42 local.
 
-Check it every time, before trusting a comparison:
+### The seeding choice is a trade, and neither side is safe yet
+
+**`watermarks.json` sits at the tree root, not under `data/`**, so a step that
+copies `data/` alone silently drops it. But restoring it is not simply a fix —
+it changes which failure you get:
+
+| seed | what the extractor asks for | result |
+|---|---|---|
+| **no watermarks** | unconditional listing URLs | **offline-ish, and wrong** — those bodies are the oldest in the cache |
+| **with watermarks** | `since=<watermark>` URLs | **correct, and networked** — measured: misses → network on commits, and the issues body carries an ETag so it revalidates |
+
+Without watermarks you get #199: 65% of cached bodies carry no `ETag`, and
+`get_with_cache` serves an ETag-less body directly, forever, with no
+revalidation. The run reads month-old listings, writes records *older* than the
+ones it replaced, then persists a watermark describing what it just read —
+moving the watermark **backwards** (measured: `2026-09-23T18:48:10Z` →
+`2026-09-22T00:47:11Z`). It is invisible online, because the next networked run
+repairs itself.
+
+With watermarks you get correct data by going to the network, which the frozen
+raw tier forbids during the refactor.
+
+**So there is currently no configuration that is both frozen and correct**, and
+the remaining 34% makes it worse: ETag'd bodies revalidate on every `--cache`
+read, so *no* `--cache` run is offline regardless of watermarks. This is why
+#195's offline mode is a blocker rather than a convenience. Until it lands, say
+in the PR which side of the trade you took and prove it by measurement, never by
+intent.
+
+### Verify the watermark did not regress — over all 486, not a sample
 
 ```bash
-python3 -c 'import json,sys;print(json.load(open(sys.argv[1]))["repos"]["<owner/repo>"]["last_updated_at"])' \
-  /var/tmp/coops-work/watermarks.json     # must not be older than the seed's
+python3 - /var/tmp/coops-fga/watermarks.json /var/tmp/coops-work/watermarks.json <<'PY'
+import json,sys
+a=json.load(open(sys.argv[1]))["repos"]; b=json.load(open(sys.argv[2]))["repos"]
+def ts(d,k): return (d[k].get("last_updated_at") or "")   # present but null for 46 of 486
+back=[k for k in a if k in b and ts(b,k) < ts(a,k)]
+print(f"{len(back)} of {len(b)} repositories moved backwards")
+for k in back[:10]: print("  ", k, ts(a,k), "->", ts(b,k))
+PY
 ```
+
+Check every repository. A hand-picked one samples the population it claims to
+describe, which is how several wrong conclusions here were reached. Run against
+the pair that produced #199 it reports:
+
+```
+5 of 486 repositories moved backwards
+   fga-eps-mds/MeasureSoftGram-Core              2026-09-22T11:51:14Z -> 2026-09-11T14:55:02Z
+   fga-eps-mds/2026.2-MeasureSoftGram-DOC        2026-09-23T19:13:59Z -> 2026-09-21T17:55:45Z
+   fga-eps-mds/2026.2-UNB-FCTE_UNIEURO_MED-DOCS  2026-09-23T17:32:35Z -> 2026-09-22T03:44:30Z
+   fga-eps-mds/2026.2-UNB-FCTE_UNIEURO_MED-APP   2026-09-23T18:48:10Z -> 2026-09-22T00:47:11Z
+   fga-eps-mds/2026-2-AnatoQuizUp-Doc            2026-09-23T18:46:05Z -> 2026-09-17T19:42:04Z
+```
+
+Note `last_updated_at` is **present but null** for 46 of the 486, so a naive
+`.get(key, "")` returns `None` and the comparison raises rather than reporting
+zero — which is the better failure of the two, but only because it is loud.
 
 (`watermarks.json` has two top-level keys, `version` and `repos`. Counting the
 top level reports **2**; the repositories are the 486 under `repos`. That
