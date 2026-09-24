@@ -3,7 +3,7 @@
 import logging
 from typing import List, Dict, Any, Optional
 
-from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data, load_json_data
+from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data, load_json_data, OfflineCacheMiss
 from coops.bronze.watermarks import WatermarkStore
 
 logging.basicConfig(level=logging.INFO)
@@ -163,6 +163,10 @@ def extract_repository_structure(
             logger.info(f"   ✅ Saved: {output_file}")
             logger.info(f"   📊 Files: {total_items} (method: {method})")
             
+        except OfflineCacheMiss:
+            # An offline replay miss must stop the run, not count this
+            # repository as "failed" and continue (#199).
+            raise
         except Exception as e:
             logger.error(f"   ❌ Error extracting {repo_name}: {str(e)}")
             failed += 1
