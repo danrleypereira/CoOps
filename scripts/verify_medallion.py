@@ -163,6 +163,64 @@ def check_every_author_hashed(bronze: Path, rep: Report) -> None:
 
 
 # --------------------------------------------------------------------------
+# staleness — the only check here that needs two corpora
+# --------------------------------------------------------------------------
+
+
+def check_no_record_reverted(bronze: Path, reference: Path, rep: Report) -> None:
+    """No record may come back as an OLDER version than the reference holds.
+
+    Found by curupira and confirmed by matinta on #199: 38 records (35 issues,
+    3 prs) survived a regeneration with their `updated_at` moved *backwards*.
+
+    This is invisible to every other check in this file, by construction. A
+    missing record trips a count; a reverted one keeps the count identical and
+    the content wrong. Counts cannot see it, invariants cannot see it, and the
+    totals agree while the data is stale.
+
+    It needs a reference corpus because "older" is only meaningful against a
+    previous state — which is why this check takes `--reference` and the others
+    do not.
+    """
+    reverted: list[tuple[str, str, str]] = []
+    compared = 0
+    for family in ("issues", "prs"):
+        def index(root: Path) -> dict[tuple[str, object], str]:
+            out: dict[tuple[str, object], str] = {}
+            for path in bronze_family_files(root, family):
+                repo = path.stem[len(family) + 1 :]
+                for rec in read_records(path):
+                    num, upd = rec.get("number"), rec.get("updated_at")
+                    if num is not None and isinstance(upd, str):
+                        out[(repo, num)] = upd
+            return out
+
+        new_ix, ref_ix = index(bronze), index(reference)
+        shared = set(new_ix) & set(ref_ix)
+        compared += len(shared)
+        for key in shared:
+            if new_ix[key] < ref_ix[key]:
+                reverted.append((f"{family}:{key[0]}#{key[1]}", ref_ix[key], new_ix[key]))
+
+    if compared == 0:
+        rep.add(
+            Result(
+                "no-record-reverted",
+                "bronze",
+                False,
+                "no records comparable between the two corpora",
+                control_fired=False,
+            )
+        )
+        return
+    detail = f"{compared:,} records compared, {len(reverted)} reverted"
+    if reverted:
+        k, was, now = reverted[0]
+        detail += f" (e.g. {k}: {was} -> {now})"
+    rep.add(Result("no-record-reverted", "bronze", not reverted, detail))
+
+
+# --------------------------------------------------------------------------
 # silver
 # --------------------------------------------------------------------------
 
@@ -173,12 +231,28 @@ def check_member_ids_distinct(silver: Path, rep: Report) -> None:
     if not path.exists():
         rep.add(Result("member-ids-distinct", "silver", False, "members_statistics.json absent", control_fired=False))
         return
-    ids = [r.get("id") for r in read_records(path) if r.get("id") is not None]
+    records = list(read_records(path))
+    ids = [r.get("id") for r in records if r.get("id") is not None]
     if not ids:
         rep.add(Result("member-ids-distinct", "silver", False, "no member carries an id", control_fired=False))
         return
     dupes = len(ids) - len(set(ids))
     rep.add(Result("member-ids-distinct", "silver", dupes == 0, f"{len(ids):,} members, {dupes} duplicate ids"))
+
+    # Filtering to records that HAVE an id made this check blind to the ones
+    # that do not. A member with no id cannot be joined to anything downstream,
+    # so it is a defect rather than a row to skip. Found because this check
+    # reported 1,723 members while the label check reported 1,724 on the same
+    # file in the same run — one record with no id, no name and no commits.
+    idless = len(records) - len(ids)
+    rep.add(
+        Result(
+            "every-member-identified",
+            "silver",
+            idless == 0,
+            f"{len(records):,} member records, {idless} with no id",
+        )
+    )
 
 
 def check_no_unknown_labels(silver: Path, rep: Report) -> None:
@@ -251,11 +325,28 @@ def run_controls(tmp: Path) -> list[Result]:
     out.append(Result("every-author-hashed", "control", not r.results[0].passed,
                       "rejects a logged-in commit with no hash" if not r.results[0].passed else "DID NOT FIRE"))
 
+    ref = tmp / "ref"
+    ref.mkdir(parents=True, exist_ok=True)
+    (ref / "issues_r.json").write_text(
+        json.dumps([{"number": 1, "updated_at": "2026-09-23T18:00:00Z"}]), encoding="utf-8")
+    (bronze / "issues_r.json").write_text(
+        json.dumps([{"number": 1, "updated_at": "2026-09-01T00:00:00Z"}]), encoding="utf-8")
+    r = Report()
+    check_no_record_reverted(bronze, ref, r)
+    out.append(Result("no-record-reverted", "control", not r.results[0].passed,
+                      "rejects a record that moved backwards" if not r.results[0].passed else "DID NOT FIRE"))
+
     silver = tmp / "silver"
     silver.mkdir(parents=True, exist_ok=True)
     (silver / "members_statistics.json").write_text(
         json.dumps([{"id": "a", "name": "Unknown contributor (x)"}, {"id": "a", "name": "Unknown contributor (y)"},
-                    {"id": "b", "name": "0" * 64}]), encoding="utf-8")
+                    {"id": "b", "name": "0" * 64}, {"name": "nobody"}]), encoding="utf-8")
+    r = Report()
+    check_member_ids_distinct(silver, r)
+    fired = any(not x.passed for x in r.results if x.name == "every-member-identified")
+    out.append(Result("every-member-identified", "control", fired,
+                      "rejects a member with no id" if fired else "DID NOT FIRE"))
+
     for fn, label in ((check_member_ids_distinct, "member-ids-distinct"),
                       (check_no_unknown_labels, "unknown-labels-not-growing"),
                       (check_hash_never_a_label, "hash-never-a-label")):
@@ -274,6 +365,9 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--root", type=Path, default=Path("/var/tmp/coops-work"),
                     help="corpus root holding data/bronze, data/silver, data/gold")
+    ap.add_argument("--reference", type=Path, default=None,
+                    help="a previous corpus root; enables the staleness check, which "
+                         "cannot run without one")
     ap.add_argument("--self-test", action="store_true",
                     help="run only the controls: prove every check can fail")
     args = ap.parse_args()
@@ -301,6 +395,8 @@ def main() -> int:
     if (data / "bronze").is_dir():
         check_no_aggregates(data / "bronze", rep)
         check_every_author_hashed(data / "bronze", rep)
+        if args.reference:
+            check_no_record_reverted(data / "bronze", args.reference / "data" / "bronze", rep)
     if (data / "silver").is_dir():
         check_member_ids_distinct(data / "silver", rep)
         check_no_unknown_labels(data / "silver", rep)
