@@ -183,6 +183,7 @@ def check_no_record_reverted(bronze: Path, reference: Path, rep: Report) -> None
     do not.
     """
     reverted: list[tuple[str, str, str]] = []
+    vanished: list[str] = []
     compared = 0
     for family in ("issues", "prs"):
         def index(root: Path) -> dict[tuple[str, object], str]:
@@ -201,6 +202,11 @@ def check_no_record_reverted(bronze: Path, reference: Path, rep: Report) -> None
         for key in shared:
             if new_ix[key] < ref_ix[key]:
                 reverted.append((f"{family}:{key[0]}#{key[1]}", ref_ix[key], new_ix[key]))
+        # Comparing only shared keys makes a VANISHED record invisible: it is
+        # absent from `new_ix`, so it is never examined. That is the larger half
+        # of #199 and this check could not see it (caught by curupira on #200).
+        for key in set(ref_ix) - set(new_ix):
+            vanished.append(f"{family}:{key[0]}#{key[1]}")
 
     if compared == 0:
         rep.add(
@@ -218,6 +224,15 @@ def check_no_record_reverted(bronze: Path, reference: Path, rep: Report) -> None
         k, was, now = reverted[0]
         detail += f" (e.g. {k}: {was} -> {now})"
     rep.add(Result("no-record-reverted", "bronze", not reverted, detail))
+    rep.add(
+        Result(
+            "no-record-vanished",
+            "bronze",
+            not vanished,
+            f"{len(vanished)} records present in the reference and absent now"
+            + (f" (e.g. {vanished[0]})" if vanished else ""),
+        )
+    )
 
 
 # --------------------------------------------------------------------------
@@ -392,6 +407,15 @@ def main() -> int:
         return 2
 
     rep = Report()
+    # A layer that is absent must not be skipped into a pass. Caught by curupira
+    # on #200: with data/bronze missing, every bronze check was skipped and the
+    # run printed "all checks passed". Absence of a layer is an instrument
+    # problem (rc 2), not a clean result.
+    for layer in ("bronze", "silver"):
+        if not (data / layer).is_dir():
+            rep.add(Result(f"{layer}-present", layer, False,
+                           f"data/{layer} is absent — its checks did not run",
+                           control_fired=False))
     if (data / "bronze").is_dir():
         check_no_aggregates(data / "bronze", rep)
         check_every_author_hashed(data / "bronze", rep)
