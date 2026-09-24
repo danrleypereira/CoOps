@@ -8,6 +8,33 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 ## [Unreleased]
 
 ### Added
+- `--offline` for `coops-bronze` (and `offline=` on `GitHubAPIClient`): an
+  offline replay mode that is a guarantee, not a preference. Every response
+  is served from the cache — including warm entries with an ETag, which
+  online would revalidate, so a blocked network can no longer turn them into
+  `None` and silently drop the newest part of the corpus — and a cache miss
+  raises `OfflineCacheMiss` naming the URL instead of producing a
+  plausible-looking partial answer. Covers REST and GraphQL. Nothing can be
+  written to the cache in offline mode (all write paths sit behind a
+  successful HTTP response, which cannot happen). For reproducing the #199
+  regeneration loss.
+- `--repo <owner/name>` (repeatable) for `coops-bronze`: restrict the run to
+  exactly the named repositories. Applied after the blacklist/fork filter —
+  naming an excluded repository fails the run naming it, rather than
+  resurrecting it or running on an empty set and reporting success.
+  `--max-repos` remains a count cap and cannot express "re-run this one
+  repository"; this can.
+- `--cache-dir` for `coops-bronze`: the API response cache directory
+  (default `./cache`, relative to the current directory). A run from a
+  scratch directory otherwise reads an empty cache and replays nothing while
+  looking like it worked.
+
+### Changed
+- `performance_tiers.json` now carries `generated_at`, in the same format
+  and from the same single clock reading as `executive_dashboard.json`, so
+  the two artifacts written by one `coops-aggregate` run cannot disagree
+  about freshness. Dashboard consumers that iterate the tier lists are
+  unaffected (the new key is a scalar beside them).
 - `FileStorageAdapter` (`coops.storage.file`): the local-filesystem
   `StoragePort` implementation (issue
   [#41](https://github.com/danrleypereira/CoOps/issues/41)), for development
