@@ -45,6 +45,12 @@ from pathlib import Path
 
 UNKNOWN_LABEL_BASELINE = 1
 
+# What identifies a record, per family. Without commits and issue_events here,
+# the vanished check saw only issues and prs — 44 of the 55 records actually
+# lost — and the 11 missing commits were invisible to the check written to find
+# them (curupira, #200).
+RECORD_KEY = {"commits": "sha", "issues": "number", "prs": "number", "issue_events": "id"}
+
 BRONZE_FAMILIES = ("commits", "prs", "issues", "issue_events", "structure", "repo")
 AGGREGATES = tuple(f"{f}_all.json" for f in ("commits", "prs", "issues", "issue_events"))
 
@@ -185,40 +191,40 @@ def check_no_record_reverted(bronze: Path, reference: Path, rep: Report) -> None
     reverted: list[tuple[str, str, str]] = []
     vanished: list[str] = []
     compared = 0
-    for family in ("issues", "prs"):
-        def index(root: Path) -> dict[tuple[str, object], str]:
-            out: dict[tuple[str, object], str] = {}
-            for path in bronze_family_files(root, family):
-                repo = path.stem[len(family) + 1 :]
-                for rec in read_records(path):
-                    num, upd = rec.get("number"), rec.get("updated_at")
-                    if num is not None and isinstance(upd, str):
-                        out[(repo, num)] = upd
-            return out
 
-        new_ix, ref_ix = index(bronze), index(reference)
+    def index(root: Path, family: str, key: str) -> dict[tuple[str, object], str | None]:
+        out: dict[tuple[str, object], str | None] = {}
+        for path in bronze_family_files(root, family):
+            repo = path.stem[len(family) + 1 :]
+            for rec in read_records(path):
+                ident = rec.get(key)
+                if ident is not None:
+                    upd = rec.get("updated_at")
+                    out[(repo, ident)] = upd if isinstance(upd, str) else None
+        return out
+
+    for family, key in RECORD_KEY.items():
+        new_ix, ref_ix = index(bronze, family, key), index(reference, family, key)
         shared = set(new_ix) & set(ref_ix)
         compared += len(shared)
-        for key in shared:
-            if new_ix[key] < ref_ix[key]:
-                reverted.append((f"{family}:{key[0]}#{key[1]}", ref_ix[key], new_ix[key]))
+        for k in shared:
+            a, b = new_ix[k], ref_ix[k]
+            if a is not None and b is not None and a < b:
+                reverted.append((f"{family}:{k[0]}#{k[1]}", b, a))
         # Comparing only shared keys makes a VANISHED record invisible: it is
-        # absent from `new_ix`, so it is never examined. That is the larger half
-        # of #199 and this check could not see it (caught by curupira on #200).
-        for key in set(ref_ix) - set(new_ix):
-            vanished.append(f"{family}:{key[0]}#{key[1]}")
+        # absent from new_ix, so it is never examined. That is the larger half
+        # of #199, and the check written to find it could not see it.
+        for k in set(ref_ix) - set(new_ix):
+            vanished.append(f"{family}:{k[0]}#{k[1]}")
 
+    # Nothing comparable means the probe could not see either corpus — a
+    # different answer from "nothing was wrong", and it must not read as a pass.
     if compared == 0:
-        rep.add(
-            Result(
-                "no-record-reverted",
-                "bronze",
-                False,
-                "no records comparable between the two corpora",
-                control_fired=False,
-            )
-        )
+        rep.add(Result("no-record-reverted", "bronze", False,
+                       "no records comparable between the two corpora",
+                       control_fired=False))
         return
+
     detail = f"{compared:,} records compared, {len(reverted)} reverted"
     if reverted:
         k, was, now = reverted[0]
@@ -350,6 +356,17 @@ def run_controls(tmp: Path) -> list[Result]:
     check_no_record_reverted(bronze, ref, r)
     out.append(Result("no-record-reverted", "control", not r.results[0].passed,
                       "rejects a record that moved backwards" if not r.results[0].passed else "DID NOT FIRE"))
+
+    # A vanished COMMIT, keyed by sha — the family the first version of this
+    # check did not index at all, so nothing proved it could fail.
+    (ref / "commits_r.json").write_text(
+        json.dumps([{"sha": "deadbeef", "commit": {"author": {"login": "x"}}}]), encoding="utf-8")
+    (bronze / "commits_r.json").write_text(json.dumps([]), encoding="utf-8")
+    r = Report()
+    check_no_record_reverted(bronze, ref, r)
+    vanish = next((x for x in r.results if x.name == "no-record-vanished"), None)
+    out.append(Result("no-record-vanished", "control", bool(vanish and not vanish.passed),
+                      "rejects a vanished commit" if vanish and not vanish.passed else "DID NOT FIRE"))
 
     silver = tmp / "silver"
     silver.mkdir(parents=True, exist_ok=True)
