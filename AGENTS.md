@@ -22,6 +22,7 @@ opens none of them:
 |---|---|
 | Setup, secrets, local pipeline runs | [docs/development.md](docs/development.md) |
 | Development data: frozen raw, disposable derived | [docs/development-data.md](docs/development-data.md) |
+| Running a phase: implement, verify, merge | [docs/phase-workflow.md](docs/phase-workflow.md) |
 | Validating a PR with `gh act` | [docs/local-actions.md](docs/local-actions.md), [docs/TESTING_PULL_REQUESTS.md](docs/TESTING_PULL_REQUESTS.md) |
 | The failure behind each DoD rule | [docs/dod-cases.md](docs/dod-cases.md) |
 | Human-facing contribution rules | [CONTRIBUTING.md](CONTRIBUTING.md) (Portuguese) |
