@@ -333,6 +333,61 @@ def check_hash_never_a_label(silver: Path, rep: Report) -> None:
 
 EXPECTED_LAYERS = ("bronze", "silver", "gold")
 
+# Gold is a fixed, small file set, so it can be named rather than counted.
+# curupira showed on #200 why counting is not enough: "non-empty" means "any
+# entry", so a gold directory holding ONE file containing [] passed, and so did
+# the real corpus with gold cut from five files to one. A pipeline that died
+# partway through writing Gold still certified.
+EXPECTED_GOLD = (
+    "executive_dashboard.json",
+    "performance_tiers.json",
+    "registry.json",
+    "timeline_last_12_months.json",
+    "timeline_last_7_days.json",
+)
+
+
+def check_gold_file_set(gold: Path, rep: Report) -> None:
+    """Every expected Gold artifact is present and carries at least one record.
+
+    Bronze and Silver are per-repository file sets whose membership legitimately
+    varies, so they are checked by presence and by their records. Gold is five
+    named files, which means the stronger assertion is available here and costs
+    nothing.
+
+    This does NOT establish that the artifacts are current — a seeded tree
+    carries the previous run's Gold, so a crashed Gold step leaves five valid
+    files in place and every check here passes. matinta's generalisation on
+    #201: a phase verifier running against a seeded tree is structurally unable
+    to tell a successful run from no run at all unless it knows when the run
+    began. That is tracked as X7 and needs a run-start timestamp this script is
+    not yet given.
+    """
+    missing = [n for n in EXPECTED_GOLD if not (gold / n).is_file()]
+    if missing:
+        rep.add(Result("gold-file-set", "gold", False,
+                       f"{len(missing)} of {len(EXPECTED_GOLD)} gold artifacts absent: {', '.join(missing)}",
+                       control_fired=False))
+        return
+
+    empty = []
+    for n in EXPECTED_GOLD:
+        try:
+            doc = json.loads((gold / n).read_text(encoding="utf-8"))
+        except (ValueError, OSError) as exc:
+            rep.add(Result("gold-file-set", "gold", False,
+                           f"{n} could not be read: {exc}", control_fired=False))
+            return
+        if not doc:                      # {} and [] alike
+            empty.append(n)
+    if empty:
+        rep.add(Result("gold-file-set", "gold", False,
+                       f"{len(empty)} gold artifact(s) hold no records: {', '.join(empty)}",
+                       control_fired=False))
+    else:
+        rep.add(Result("gold-file-set", "gold", True,
+                       f"all {len(EXPECTED_GOLD)} artifacts present and non-empty"))
+
 
 def check_layers_present(data: Path, rep: Report) -> None:
     """Every expected layer exists and holds something.
@@ -391,6 +446,24 @@ def run_controls(tmp: Path) -> list[Result]:
     gold = next((x for x in r.results if x.name == "gold-present"), None)
     out.append(Result("gold-not-empty", "control", bool(gold and not gold.passed),
                       "rejects an empty gold layer" if gold and not gold.passed else "DID NOT FIRE"))
+
+    # A gold layer holding the full file set, minus one — curupira's plant F,
+    # which passed when "non-empty" meant "any entry".
+    g = data / "gold"
+    for n in EXPECTED_GOLD:
+        (g / n).write_text(json.dumps({"x": 1}), encoding="utf-8")
+    (g / EXPECTED_GOLD[1]).unlink()
+    r = Report()
+    check_gold_file_set(g, r)
+    out.append(Result("gold-file-set", "control", not r.results[0].passed,
+                      f"rejects gold missing {EXPECTED_GOLD[1]}" if not r.results[0].passed else "DID NOT FIRE"))
+
+    # And the file that exists but holds nothing — plant E, the subtler half.
+    (g / EXPECTED_GOLD[1]).write_text("[]", encoding="utf-8")
+    r = Report()
+    check_gold_file_set(g, r)
+    out.append(Result("gold-artifact-non-empty", "control", not r.results[0].passed,
+                      "rejects a gold artifact holding no records" if not r.results[0].passed else "DID NOT FIRE"))
 
     bronze = tmp / "bronze"
     bronze.mkdir(parents=True, exist_ok=True)
@@ -504,6 +577,8 @@ def main() -> int:
                 rep.add(Result(name, "bronze", True,
                                "NOT RUN — needs --reference <previous corpus root>",
                                skipped=True))
+    if (data / "gold").is_dir():
+        check_gold_file_set(data / "gold", rep)
     if (data / "silver").is_dir():
         check_member_ids_distinct(data / "silver", rep)
         check_no_unknown_labels(data / "silver", rep)
@@ -534,9 +609,22 @@ def main() -> int:
         print("  A phase gate needs --reference: without it, records lost or")
         print("  reverted since the last run are invisible to this script.")
         return code   # 2 — not a pass
-    print({0: "  all checks passed",
-           1: "  a layer does not hold an invariant",
-           2: "  a check could not run — the instrument is broken, not the data"}[code])
+    # When the instrument is incomplete AND checks failed on the data, say BOTH.
+    # rc 2 dominates rc 1 (an incomplete instrument voids the run), but curupira
+    # caught the verdict text lying about it on #200: plant A printed "the
+    # instrument is broken, not the data" while 24 records really had vanished.
+    # Whoever then fixes the missing layer re-runs expecting green, and reads
+    # the pre-existing loss as newly introduced.
+    failed = [r for r in rep.results if not r.passed and not r.skipped and r.control_fired is not False]
+    if code == 2 and failed:
+        print(f"  the instrument is incomplete AND {len(failed)} check(s) failed on the data")
+        print(f"  ({', '.join(r.name for r in failed)})")
+        print("  Fix the instrument and re-run: these failures are already present,")
+        print("  so do not read them as introduced by the fix.")
+    else:
+        print({0: "  all checks passed",
+               1: "  a layer does not hold an invariant",
+               2: "  a check could not run — the instrument is broken, not the data"}[code])
     if code == 0:
         print("  (run --self-test to confirm these checks can fail at all)")
     return code
