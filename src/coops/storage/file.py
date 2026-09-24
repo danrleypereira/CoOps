@@ -108,8 +108,7 @@ class FileStorageAdapter:
         # rejects raises here, on every method, so a rejected save leaves
         # nothing behind and a rejected load reads nothing.
         return (
-            self._layer_dir(tenant, layer)
-            / f"{validate_entity(entity)}{_JSON_SUFFIX}"
+            self._layer_dir(tenant, layer) / f"{validate_entity(entity)}{_JSON_SUFFIX}"
         )
 
     def save(
