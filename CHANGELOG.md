@@ -7,6 +7,19 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 
 ## [Unreleased]
 
+### Added
+- `FileStorageAdapter` (`coops.storage.files_adapter`): the local-filesystem
+  driver for the `StoragePort`, storing one JSON file per dataset at
+  `<root>/<tenant>/<layer>/<entity>.json` (issue
+  [#41](https://github.com/danrleypereira/CoOps/issues/41)). The tenant
+  segment keeps two tenants' datasets on disjoint paths; writes build a
+  same-directory temp file and `os.replace` it onto the target, so a crash
+  mid-write cannot leave a half-written dataset; and `save`/`load`/`list`
+  validate the layer and entity before touching disk, so a path-traversal
+  entity such as `../../etc/passwd` raises instead of escaping the root.
+  Not yet exported from `coops.storage` or wired into the ETL — those land
+  with the sibling adapters (#39) and `COOPS_STORAGE` (#42).
+
 ### Removed
 - The Bronze `_all` aggregates are no longer written and are removed by the
   pipeline where the write used to be (issue
