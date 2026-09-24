@@ -59,6 +59,9 @@ def positive_int(value: str) -> int:
 def main():
     parser = argparse.ArgumentParser(description='Extract GitHub organization data to Bronze layer')
     parser.add_argument('--cache', action='store_true', help='Use cached data when available')
+    parser.add_argument('--offline', action='store_true', help='Serve every response from the cache and never touch the network. A cache miss aborts the run (offline replay), so the run sees exactly what the cache holds. Implies --cache.')
+    parser.add_argument('--cache-dir', default='cache', help='Directory for the API response cache (default: ./cache, relative to the current directory). Point it at the corpus when replaying, or a run from a scratch directory reads an empty cache while looking like it worked.')
+    parser.add_argument('--repo', action='append', metavar='OWNER/NAME', help='Restrict the run to exactly these repositories (repeatable). Applied after the blacklist/fork filter, so a name that is unknown, blacklisted or a fork fails the run instead of being silently skipped.')
     parser.add_argument('--max-repos', type=positive_int, help='Optional hard cap of repositories to fetch')
     parser.add_argument('--max-issues', type=positive_int, help='Optional hard cap of issues per repo to fetch')
     parser.add_argument('--max-prs', type=positive_int, help='Optional hard cap of pull requests per repo to fetch')
@@ -86,6 +89,8 @@ def main():
 
     print(f"Starting Bronze layer extraction for organization: {cfg.github_org}")
     print(f"Started at: {datetime.now().isoformat()}")
+    if args.offline:
+        print("Offline mode: every response is served from the cache; a cache miss aborts the run")
 
     # Initialize API client
     # One tenant per run, resolved from the deployment settings (#92): the
@@ -96,10 +101,17 @@ def main():
     tenant = resolve_tenant_from_settings(cfg)
     client = GitHubAPIClient(
         cfg.github_token,
+        cache_dir=args.cache_dir,
         capture_dir=args.capture_dir,
         tenant_id=(str(tenant.id) if args.capture_dir else None),
+        offline=args.offline,
     )
     config = OrganizationConfig(cfg.github_org)
+
+    # Offline implies cache use: the replay must read the cache even when
+    # --cache was not spelled out (the client enforces this too; keeping the
+    # flag in step makes the extractors' own cache reads explicit).
+    use_cache = args.cache or args.offline
 
     # Per-repository extraction watermarks (issue #110): loaded from disk at the
     # start of the run and written back at the end, so the next run fetches only
@@ -134,7 +146,7 @@ def main():
         print("\n" + "="*60)
         print("STEP 1: Extracting repositories")
         print("="*60)
-        repo_files = extract_repositories(client, config, use_cache=args.cache, max_repos=args.max_repos)
+        repo_files = extract_repositories(client, config, use_cache=use_cache, max_repos=args.max_repos, repo_filter=args.repo)
         print(f"Generated {len(repo_files)} repository files")
 
         # ========================================
@@ -143,7 +155,7 @@ def main():
         print("\n" + "="*60)
         print("STEP 2: Extracting issues and pull requests")
         print("="*60)
-        issue_files = extract_issues(client, config, use_cache=args.cache, max_issues=args.max_issues, max_prs=args.max_prs, watermarks=watermark_store)
+        issue_files = extract_issues(client, config, use_cache=use_cache, max_issues=args.max_issues, max_prs=args.max_prs, watermarks=watermark_store)
         print(f"Generated {len(issue_files)} issue files")
 
         # ========================================
@@ -155,7 +167,7 @@ def main():
         commit_files = extract_commits(
             client,
             config,
-            use_cache=args.cache,
+            use_cache=use_cache,
             method=args.commits_method,
             since=args.since,
             until=args.until,
@@ -174,7 +186,7 @@ def main():
         print("\n" + "="*60)
         print("STEP 4: Extracting organization members")
         print("="*60)
-        member_files = extract_members(client, config, use_cache=args.cache)
+        member_files = extract_members(client, config, use_cache=use_cache)
         print(f"Generated {len(member_files)} member files")
 
         # ========================================
@@ -185,7 +197,7 @@ def main():
             print("\n" + "="*60)
             print("STEP 5: Extracting repository structures")
             print("="*60)
-            structure_files = extract_repository_structure(client, config, use_cache=args.cache, watermarks=watermark_store)
+            structure_files = extract_repository_structure(client, config, use_cache=use_cache, watermarks=watermark_store)
             print(f"Generated {len(structure_files)} structure files")
         else:
             print("\nSkipping repository structure extraction (--skip-structure)")

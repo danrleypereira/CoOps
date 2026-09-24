@@ -455,3 +455,91 @@ class TestBronzeExtract:
         assert mock_commits.call_args[1]['watermarks'] is store
         assert mock_structure.call_args[1]['watermarks'] is store
         get_settings.cache_clear()
+
+    def test_main_with_repo_flag(self):
+        """--repo é repetível e chega ao extract_repositories como repo_filter"""
+        with patch('sys.argv', ['bronze_extract.py', '--repo', 'coops-org/one', '--repo', 'coops-org/two']):
+            with patch('coops.bronze.repositories.extract_repositories') as mock_repos:
+                with patch('coops.bronze.issues.extract_issues', return_value=[]):
+                    with patch('coops.bronze.commits.extract_commits', return_value=[]):
+                        with patch('coops.bronze.members.extract_members', return_value=[]):
+                            with patch('coops.bronze.repository_structure.extract_repository_structure', return_value=[]):
+                                with patch('coops.etl.bronze_extract.update_data_registry'):
+                                    with patch('coops.etl.bronze_extract.GitHubAPIClient'):
+                                        mock_repos.return_value = []
+
+                                        from coops.etl import bronze_extract
+
+                                        bronze_extract.main()
+
+                                        assert mock_repos.call_args[1]['repo_filter'] == ['coops-org/one', 'coops-org/two']
+
+    def test_main_without_repo_defaults_to_none(self):
+        """Sem --repo, repo_filter é None (sem seleção)"""
+        with patch('sys.argv', ['bronze_extract.py']):
+            with patch('coops.bronze.repositories.extract_repositories') as mock_repos:
+                with patch('coops.bronze.issues.extract_issues', return_value=[]):
+                    with patch('coops.bronze.commits.extract_commits', return_value=[]):
+                        with patch('coops.bronze.members.extract_members', return_value=[]):
+                            with patch('coops.bronze.repository_structure.extract_repository_structure', return_value=[]):
+                                with patch('coops.etl.bronze_extract.update_data_registry'):
+                                    with patch('coops.etl.bronze_extract.GitHubAPIClient'):
+                                        mock_repos.return_value = []
+
+                                        from coops.etl import bronze_extract
+
+                                        bronze_extract.main()
+
+                                        assert mock_repos.call_args[1]['repo_filter'] is None
+
+    def test_main_offline_flag(self):
+        """--offline chega ao cliente e implica uso do cache em todos os extratores"""
+        with patch('sys.argv', ['bronze_extract.py', '--offline']):
+            with patch('coops.bronze.repositories.extract_repositories') as mock_repos:
+                with patch('coops.bronze.issues.extract_issues', return_value=[]):
+                    with patch('coops.bronze.commits.extract_commits', return_value=[]):
+                        with patch('coops.bronze.members.extract_members', return_value=[]):
+                            with patch('coops.bronze.repository_structure.extract_repository_structure', return_value=[]):
+                                with patch('coops.etl.bronze_extract.update_data_registry'):
+                                    with patch('coops.etl.bronze_extract.GitHubAPIClient') as mock_client_cls:
+                                        mock_repos.return_value = []
+
+                                        from coops.etl import bronze_extract
+
+                                        bronze_extract.main()
+
+                                        assert mock_client_cls.call_args[1]['offline'] is True
+                                        # Offline implies reading the cache, even
+                                        # without an explicit --cache.
+                                        assert mock_repos.call_args[1]['use_cache'] is True
+
+    def test_main_cache_dir_flag(self):
+        """--cache-dir chega ao construtor do cliente (o padrão é relativo ao cwd)"""
+        with patch('sys.argv', ['bronze_extract.py', '--cache-dir', 'custom-cache']):
+            with patch('coops.bronze.repositories.extract_repositories', return_value=[]):
+                with patch('coops.bronze.issues.extract_issues', return_value=[]):
+                    with patch('coops.bronze.commits.extract_commits', return_value=[]):
+                        with patch('coops.bronze.members.extract_members', return_value=[]):
+                            with patch('coops.bronze.repository_structure.extract_repository_structure', return_value=[]):
+                                with patch('coops.etl.bronze_extract.update_data_registry'):
+                                    with patch('coops.etl.bronze_extract.GitHubAPIClient') as mock_client_cls:
+                                        from coops.etl import bronze_extract
+
+                                        bronze_extract.main()
+
+                                        assert mock_client_cls.call_args[1]['cache_dir'] == 'custom-cache'
+
+    def test_main_cache_dir_defaults_to_cache(self):
+        with patch('sys.argv', ['bronze_extract.py']):
+            with patch('coops.bronze.repositories.extract_repositories', return_value=[]):
+                with patch('coops.bronze.issues.extract_issues', return_value=[]):
+                    with patch('coops.bronze.commits.extract_commits', return_value=[]):
+                        with patch('coops.bronze.members.extract_members', return_value=[]):
+                            with patch('coops.bronze.repository_structure.extract_repository_structure', return_value=[]):
+                                with patch('coops.etl.bronze_extract.update_data_registry'):
+                                    with patch('coops.etl.bronze_extract.GitHubAPIClient') as mock_client_cls:
+                                        from coops.etl import bronze_extract
+
+                                        bronze_extract.main()
+
+                                        assert mock_client_cls.call_args[1]['cache_dir'] == 'cache'

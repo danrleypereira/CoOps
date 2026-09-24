@@ -19,6 +19,21 @@ from urllib.parse import urlsplit, parse_qsl
 
 from coops.storage.raw import PROVIDER_GITHUB, is_fresh
 
+class OfflineCacheMiss(RuntimeError):
+    """Offline mode was asked for a URL that has no cached body.
+
+    Offline mode exists to replay a run against a fixed cache (#199): every
+    response must come from that cache, or the run must stop. A miss must not
+    return ``None`` (the network-failure path) or fall through to an empty
+    result — either would silently drop part of the corpus and report a
+    plausible-looking partial answer. The message names the URL so the missing
+    cache entry can be identified and produced.
+    """
+
+    def __init__(self, url: str):
+        super().__init__(f"offline mode: no cached response for {url}")
+        self.url = url
+
 class GitHubAPIClient:
     def __init__(
         self,
@@ -29,6 +44,7 @@ class GitHubAPIClient:
         provider: str = "github",
         raw_store: Optional[Any] = None,
         raw_max_age_seconds: Optional[float] = None,
+        offline: bool = False,
     ):
         self.token = token
         self.headers = {
@@ -59,6 +75,13 @@ class GitHubAPIClient:
         # optimisation, so a down MongoDB must not break the extraction.
         self.raw_store = raw_store
         self.raw_max_age_seconds = raw_max_age_seconds
+        # Offline mode (the #199 replay): when set, the cache is the only
+        # source of responses. A cached body is served without revalidation
+        # regardless of its ETag (a blocked network must not turn a warm,
+        # revalidatable entry into `None`), and a cache miss raises
+        # OfflineCacheMiss instead of falling through to a request that
+        # cannot happen. Nothing is written: see get_with_cache.
+        self.offline = offline
         # Run-summary accounting: a "hit" is a request served from cache (a 304
         # or a short-circuited body) without consuming a rate-limit slot; a
         # "miss" is a billed network fetch (a 200) that populates the cache.
@@ -238,6 +261,15 @@ class GitHubAPIClient:
         ETag). A cached body with no ETag (an entry written before ETag
         support, or a response that carried no ``ETag`` header) is served
         directly, without a conditional request.
+
+        In offline mode (``offline=True``) the cache is the only source: a
+        cached body is served directly — even one with an ETag, which online
+        would revalidate — and a miss raises OfflineCacheMiss. ``use_cache``
+        is deliberately not honoured here: offline is the strongest form of
+        "use the cache", and the refresh ``use_cache=False`` asks for is
+        impossible without a network. Nothing is read from or written to the
+        network, so the cache-writing code below (reachable only after a
+        successful response) is unreachable.
         """
         cached = None
         etag = None
@@ -254,6 +286,20 @@ class GitHubAPIClient:
                     print(f"Using raw layer for: {url}")
                 self._record_cache_hit()
                 return raw_payload if not return_headers else (raw_payload, None)
+
+        # Offline mode: the cache is the only source (the raw layer above, or
+        # the file cache here). An ETag'd entry must NOT go to revalidation —
+        # with the network blocked, the RequestException path below returns
+        # None and the entry silently disappears from the replay (#199). A
+        # miss raises so the run stops rather than producing a partial answer.
+        if self.offline:
+            cached = self._cache_get(url)
+            if cached is None:
+                raise OfflineCacheMiss(url)
+            if not silent:
+                print(f"Using cached data (offline) for: {url}")
+            self._record_cache_hit()
+            return cached if not return_headers else (cached, None)
 
         if use_cache:
             cached = self._cache_get(url)
@@ -348,8 +394,25 @@ class GitHubAPIClient:
     # ----------------------
     # GraphQL support (API v4)
     # ----------------------
+    def _graphql_cache_key(self, payload: Dict[str, Any]) -> Optional[str]:
+        """Deterministic cache key for a GraphQL query + its variables."""
+        try:
+            return "graphql:" + hashlib.md5(
+                (payload["query"] + "::" + json.dumps(payload["variables"], sort_keys=True, ensure_ascii=False)).encode("utf-8")
+            ).hexdigest()
+        except Exception:
+            # Unserializable variables: no cache key, so no cache.
+            return None
+
     def graphql(self, query: str, variables: Optional[Dict[str, Any]] = None, use_cache: bool = True, timeout: int = 4) -> Any:
-        """Execute a GraphQL query against GitHub's v4 API with simple timeout handling."""
+        """Execute a GraphQL query against GitHub's v4 API with simple timeout handling.
+
+        In offline mode the cache is the only source, exactly as in
+        get_with_cache: a cached response is served with no POST, and a miss
+        raises OfflineCacheMiss naming the endpoint and the cache key. A mode
+        that covered REST but not GraphQL would read as covered while
+        silently dropping every commit-history page of a replay.
+        """
         payload = {"query": query, "variables": variables or {}}
 
         # Raw layer first: a fresh document short-circuits the API.
@@ -361,18 +424,29 @@ class GitHubAPIClient:
                 self._record_cache_hit()
                 return raw_payload
 
+        # Offline mode: same guarantee as the REST path. GraphQL bodies carry
+        # no ETag, so there is no revalidation to skip — what is skipped is
+        # the POST itself, and a miss raises instead of returning None.
+        if self.offline:
+            cache_key = self._graphql_cache_key(payload)
+            cached = self._cache_get(cache_key) if cache_key else None
+            if cached is None:
+                raise OfflineCacheMiss(f"{self.graphql_url} (cache key {cache_key})")
+            print("[GRAPHQL] Using cached response (offline)")
+            self._record_cache_hit()
+            return cached
+
         # Build a deterministic cache key based on query + variables
         cache_key = None
         if use_cache:
             try:
-                cache_key = "graphql:" + hashlib.md5(
-                    (query + "::" + json.dumps(payload["variables"], sort_keys=True, ensure_ascii=False)).encode("utf-8")
-                ).hexdigest()
-                cached = self._cache_get(cache_key)
-                if cached is not None:
-                    print("[GRAPHQL] Using cached response")
-                    self._record_cache_hit()
-                    return cached
+                cache_key = self._graphql_cache_key(payload)
+                if cache_key:
+                    cached = self._cache_get(cache_key)
+                    if cached is not None:
+                        print("[GRAPHQL] Using cached response")
+                        self._record_cache_hit()
+                        return cached
             except Exception:
                 # Fallback to no-cache if serialization fails
                 cache_key = None
@@ -721,6 +795,11 @@ class GitHubAPIClient:
                                 'additions': additions,
                                 'deletions': deletions,
                             })
+                    except OfflineCacheMiss:
+                        # An offline replay miss must stop the run; swallowing
+                        # it here would drop the commit and report a partial
+                        # answer (#199).
+                        raise
                     except Exception as e:
                         print(f"[REST][Worker-?][WARN] Failed {sha[:8] if sha else 'unknown'}: {e}")
 
@@ -1122,6 +1201,10 @@ class GitHubAPIClient:
                 'total_items': len(standardized_tree)
             }
 
+        except OfflineCacheMiss:
+            # Must not become an "empty tree" result: an offline replay miss
+            # stops the run (#199).
+            raise
         except Exception as e:
             logger.error(f"Error in get_repository_tree: {str(e)}")
             return self._empty_tree_response(owner, repo, branch, error=str(e))
@@ -1245,6 +1328,10 @@ class GitHubAPIClient:
                             }
                             parent_list.append(file_node)
 
+                except OfflineCacheMiss:
+                    # Must not be skipped as a "failed path": an offline
+                    # replay miss stops the run (#199).
+                    raise
                 except Exception as e:
                     logger.error(f"Error processing path {current_path}: {str(e)}")
                     continue
@@ -1265,6 +1352,10 @@ class GitHubAPIClient:
                 'method': 'graphql',
                 'total_items': len(tree)
             }
+        except OfflineCacheMiss:
+            # Must not become an "empty tree" error payload: an offline
+            # replay miss stops the run (#199).
+            raise
         except Exception as e:
             logger.error(f"Failed to build repository tree: {str(e)}")
             return {
