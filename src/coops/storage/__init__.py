@@ -15,9 +15,9 @@ from .raw import (
 )
 
 __all__ = [
+    "PROVIDER_GITHUB",
     "MongoRawStore",
     "MongoStorageAdapter",
-    "PROVIDER_GITHUB",
     "RawDocument",
     "RawStore",
     "is_fresh",
