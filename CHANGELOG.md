@@ -23,6 +23,25 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   wrote compact JSON (not the corpus's `indent=2` format) and joined the
   tenant slug into the path without checking it is a single directory name,
   so a slug containing `..` could address another tenant's tree.
+- `MongoStorageAdapter` (`coops.storage.datasets`), the MongoDB driver behind
+  the `StoragePort` protocol (issue
+  [#39](https://github.com/danrleypereira/CoOps/issues/39)). One document per
+  `(tenant, layer, entity)` address in the `datasets` collection; `save`
+  replaces outright (upsert on the full key, so a re-save cannot accumulate a
+  second copy), `load` returns a `StoredDataset` or `None`, and `list` returns
+  the tenant's entity names sorted. The compound index is
+  `(tenant_id, layer, entity)`, unique — not the `{org_id, entity}` of the
+  original issue text, which predates the port design: the port's key space is
+  `(layer, entity)` and the codebase's vocabulary is `tenant_id`, and an index
+  without `layer` would collide `bronze/members_detailed` with
+  `silver/members_detailed`. Tenancy follows the proven `MongoRawStore`
+  pattern: `tenant_id = str(tenant)` injected by the adapter on every write
+  and filtered on every read, with no method that addresses data without a
+  tenant. A static conformance anchor (`_conforms_to_storage_port`,
+  under `TYPE_CHECKING`) binds the adapter to the port: widening mypy to cover
+  `src/coops/storage` checks the module's own types but does not by itself
+  assert the adapter still implements `StoragePort` — renaming `list` left the
+  run green before the anchor and fails on it after.
 
 ### Removed
 - The Bronze `_all` aggregates are no longer written and are removed by the
