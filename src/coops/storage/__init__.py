@@ -1,9 +1,10 @@
 """Storage adapters.
 
-The raw layer lives here until the StoragePort lands (#23); it keeps a clean
-boundary so it can sit behind that port without rewriting callers.
+The raw layer keeps a clean boundary so it can sit behind its port without
+rewriting callers; the dataset adapter (#39) is the ``StoragePort`` driver.
 """
 
+from .datasets import MongoStorageAdapter
 from .raw import (
     PROVIDER_GITHUB,
     MongoRawStore,
@@ -14,8 +15,9 @@ from .raw import (
 )
 
 __all__ = [
-    "PROVIDER_GITHUB",
     "MongoRawStore",
+    "MongoStorageAdapter",
+    "PROVIDER_GITHUB",
     "RawDocument",
     "RawStore",
     "is_fresh",
