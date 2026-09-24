@@ -80,13 +80,20 @@ longer exist.
 
 ```bash
 uv run python scripts/verify_medallion.py --self-test          # controls first
-uv run python scripts/verify_medallion.py --root /var/tmp/coops-work
+uv run python scripts/verify_medallion.py \
+    --root /var/tmp/coops-work \
+    --reference /var/tmp/coops-previous     # REQUIRED for a gate
 ```
 
 **Run `--self-test` first, every time.** It plants a defect for each check and
 confirms the check rejects it. A check that has never failed proves nothing, and
 this script exists because the regeneration script spent three iterations
 enforcing a baseline and never checking the outcome.
+
+`--reference` is not optional for a phase gate. Without it the two staleness
+checks cannot run, and records that vanished or reverted since the last run are
+invisible — so the script exits **2**, not 0. Point it at the previous run's
+corpus, or a restored snapshot of it.
 
 Exit codes: `0` pass, `1` a layer fails an invariant, `2` a check could not run
 or a control did not fire. **`2` is not a weaker `1`** — it means the instrument

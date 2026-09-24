@@ -74,7 +74,11 @@ class Report:
 
     @property
     def exit_code(self) -> int:
-        if any(r.control_fired is False for r in self.results):
+        # A skipped check IS a check that could not run, which this script's own
+        # docstring defines as 2. Returning 0 made the message honest and the
+        # GATE wrong: a human reads the SKIP line, a CI reads the code (caught
+        # by curupira on #200, after the message-only fix).
+        if any(r.control_fired is False or r.skipped for r in self.results):
             return 2
         return 1 if any(not r.passed for r in self.results) else 0
 
@@ -472,12 +476,12 @@ def main() -> int:
     skipped = [r for r in rep.results if r.skipped]
     code = rep.exit_code
     print()
-    if skipped and code == 0:
+    if skipped and not any(not r.passed and not r.skipped for r in rep.results):
         print(f"  all checks that RAN passed — {len(skipped)} did not run "
               f"({', '.join(r.name for r in skipped)})")
         print("  A phase gate needs --reference: without it, records lost or")
         print("  reverted since the last run are invisible to this script.")
-        return code
+        return code   # 2 — not a pass
     print({0: "  all checks passed",
            1: "  a layer does not hold an invariant",
            2: "  a check could not run — the instrument is broken, not the data"}[code])
