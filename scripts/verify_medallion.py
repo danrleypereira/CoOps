@@ -331,9 +331,66 @@ def check_hash_never_a_label(silver: Path, rep: Report) -> None:
 # --------------------------------------------------------------------------
 
 
+EXPECTED_LAYERS = ("bronze", "silver", "gold")
+
+
+def check_layers_present(data: Path, rep: Report) -> None:
+    """Every expected layer exists and holds something.
+
+    The general form, named by matinta on #201: *a verifier must fail when the
+    thing it verifies is ABSENT, not only when it is wrong.* Absence is the one
+    state that skips every assertion and reads as success — a pipeline that
+    stopped after Silver leaves a correct Bronze and Silver behind, so every
+    other check here passes and the phase is certified on a corpus the
+    dashboard cannot serve. curupira demonstrated it: bronze + silver with no
+    ``data/gold`` at all printed "all checks passed", rc 0.
+
+    Gold is asserted although nothing downstream yet looks inside it. Presence
+    is cheap and need not wait on the Gold↔Silver reconciliation (#201); this
+    closes the hole now rather than certifying a truncated pipeline until then.
+
+    A missing layer is an *instrument* failure, not bad data, so it reports
+    ``control_fired=False`` and the run exits 2 rather than 1.
+    """
+    for layer in EXPECTED_LAYERS:
+        d = data / layer
+        if not d.is_dir():
+            rep.add(Result(f"{layer}-present", layer, False,
+                           f"data/{layer} is absent — nothing downstream can have checked it",
+                           control_fired=False))
+        elif not any(d.iterdir()):
+            rep.add(Result(f"{layer}-present", layer, False,
+                           f"data/{layer} exists but is empty",
+                           control_fired=False))
+        else:
+            rep.add(Result(f"{layer}-present", layer, True,
+                           f"{sum(1 for _ in d.iterdir())} entries"))
+
+
 def run_controls(tmp: Path) -> list[Result]:
     """Prove each check can fail. A check that has never failed protects nothing."""
     out: list[Result] = []
+
+    # Layer presence, including the Gold case that passed silently (#201).
+    data = tmp / "layers" / "data"
+    (data / "bronze").mkdir(parents=True, exist_ok=True)
+    (data / "silver").mkdir(parents=True, exist_ok=True)
+    (data / "bronze" / "x.json").write_text("[]", encoding="utf-8")
+    (data / "silver" / "x.json").write_text("[]", encoding="utf-8")
+    r = Report()
+    check_layers_present(data, r)
+    gold = next((x for x in r.results if x.name == "gold-present"), None)
+    out.append(Result("gold-present", "control", bool(gold and not gold.passed),
+                      "rejects a corpus with no gold layer" if gold and not gold.passed else "DID NOT FIRE"))
+
+    # An empty layer is a distinct state from a missing one, and reads as
+    # success just as easily — the directory exists, so is_dir() is satisfied.
+    (data / "gold").mkdir(parents=True, exist_ok=True)
+    r = Report()
+    check_layers_present(data, r)
+    gold = next((x for x in r.results if x.name == "gold-present"), None)
+    out.append(Result("gold-not-empty", "control", bool(gold and not gold.passed),
+                      "rejects an empty gold layer" if gold and not gold.passed else "DID NOT FIRE"))
 
     bronze = tmp / "bronze"
     bronze.mkdir(parents=True, exist_ok=True)
@@ -430,14 +487,9 @@ def main() -> int:
 
     rep = Report()
     # A layer that is absent must not be skipped into a pass. Caught by curupira
-    # on #200: with data/bronze missing, every bronze check was skipped and the
-    # run printed "all checks passed". Absence of a layer is an instrument
-    # problem (rc 2), not a clean result.
-    for layer in ("bronze", "silver"):
-        if not (data / layer).is_dir():
-            rep.add(Result(f"{layer}-present", layer, False,
-                           f"data/{layer} is absent — its checks did not run",
-                           control_fired=False))
+    # on #200 for bronze and again on #201 for gold; absence of a layer is an
+    # instrument problem (rc 2), not a clean result.
+    check_layers_present(data, rep)
     if (data / "bronze").is_dir():
         check_no_aggregates(data / "bronze", rep)
         check_every_author_hashed(data / "bronze", rep)
