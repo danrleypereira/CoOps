@@ -8,6 +8,28 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 ## [Unreleased]
 
 ### Changed
+- Silver member ages are now **ages at capture**, not ages "whenever the
+  Silver step ran" (issue [#188](https://github.com/danrleypereira/CoOps/issues/188)).
+  `account_age_days`, `maturity_score` and `status` in
+  `members_analytics.json` (and therefore `member_status_distribution.json`
+  and `maturity_bands.json`) were measured against `datetime.now()`, so
+  every member's values incremented once per day with **no change to any
+  input** — the file could never be byte-stable across days, every
+  scheduled run in fork-and-forget mode emitted a diff in `data/silver/`
+  whether or not anything happened, and a diff-by-key migration check
+  against it could never be satisfied (during #185's review, 8 users'
+  values differed between two regenerations and were wrongly attributed
+  to the code change under test). Ages are now measured against the
+  extraction timestamp already recorded in the Bronze sidecar
+  (`_metadata.extracted_at` in `members_detailed.json`), so the artifact
+  is stable for a given corpus. A corpus that carries members but no
+  usable `extracted_at` (missing, not a string, or unparseable) now
+  fails the Silver run with `ValueError` instead of guessing: a silent
+  `datetime.now()` fallback would reintroduce the defect for exactly the
+  corpora nobody tests, and a fixed age of 0 would publish every member
+  as "new". An empty members corpus is unchanged: it still writes the
+  empty artifacts and needs no capture time. Values shift once, on the
+  first run after this change, from "age today" to "age at capture".
 - Silver carries unattributed records in one explicit bucket, in both
   consumers (issues [#154](https://github.com/danrleypereira/CoOps/issues/154)
   and [#155](https://github.com/danrleypereira/CoOps/issues/155) — one
