@@ -21,6 +21,7 @@ opens none of them:
 | Topic | File |
 |---|---|
 | Setup, secrets, local pipeline runs | [docs/development.md](docs/development.md) |
+| **Where development data comes from** — the frozen raw snapshot, deriving a phase's layers, and why the raw tier must not be written to | [docs/development-data.md](docs/development-data.md) |
 | Validating a PR with `gh act` | [docs/local-actions.md](docs/local-actions.md), [docs/TESTING_PULL_REQUESTS.md](docs/TESTING_PULL_REQUESTS.md) |
 | The failure behind each DoD rule | [docs/dod-cases.md](docs/dod-cases.md) |
 | Human-facing contribution rules | [CONTRIBUTING.md](CONTRIBUTING.md) (Portuguese) |
