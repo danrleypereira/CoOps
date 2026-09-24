@@ -8,6 +8,21 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 ## [Unreleased]
 
 ### Added
+- `FileStorageAdapter` (`coops.storage.file`): the local-filesystem
+  `StoragePort` implementation (issue
+  [#41](https://github.com/danrleypereira/CoOps/issues/41)), for development
+  and the regression harness. Each tenant is one directory tree
+  (`<root>/<tenant>/<layer>/<entity>.json`), files are written with the same
+  `indent=2, ensure_ascii=False` JSON as the rest of the corpus, and reads
+  for a tenant that was never written return `None`/`[]` without creating
+  anything. Legacy `*_all.json` files left by pre-#170 runs are rejected on
+  load and never listed. Not yet exported from `coops.storage` or wired into
+  the ETL — exports land with the sibling adapters (#39) and
+  `COOPS_STORAGE` (#42). The strict mypy run now covers `src/coops/storage`.
+  Supersedes this branch's first `coops.storage.files_adapter`: that variant
+  wrote compact JSON (not the corpus's `indent=2` format) and joined the
+  tenant slug into the path without checking it is a single directory name,
+  so a slug containing `..` could address another tenant's tree.
 - `MongoStorageAdapter` (`coops.storage.datasets`), the MongoDB driver behind
   the `StoragePort` protocol (issue
   [#39](https://github.com/danrleypereira/CoOps/issues/39)). One document per

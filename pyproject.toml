@@ -88,12 +88,28 @@ mypy_path = "src"
 files = [
     "src/coops/domain",
     "src/coops/github",
+    "src/coops/storage",
 ]
 # The same pre-ports packages, spelled out so an explicit `uv run mypy src/`
 # (or an IDE run over the tree) fails on nothing this issue does not migrate.
 # `files` above already keeps a bare `uv run mypy` scoped; this is the belt
-# to its braces.
-exclude = "src/coops/(bronze|silver|gold|utils|etl|ai_analysis|storage|infrastructure|raw_capture)/"
+# to its braces. `storage` left out of the alternation since #41: the file
+# adapter is strict-clean, and an adapter drifting from `StoragePort` must
+# not pass unnoticed.
+exclude = "src/coops/(bronze|silver|gold|utils|etl|ai_analysis|infrastructure|raw_capture)/"
+
+# `raw.py`'s `import pymongo` follows into the standalone `bson` package,
+# whose `binary.py` imports numpy under TYPE_CHECKING — and numpy's bundled
+# stubs use `type` statements that cannot parse under the
+# `python_version = "3.10"` floor above (they need >= 3.12). That aborts the
+# whole run ("errors prevented further checking"), so `bson` — the one leaf
+# that pulls numpy in — is skipped. Nothing in the checked packages
+# (domain, github, storage) touches bson directly, and pymongo's own
+# annotations (collections, replace_one, find_one) stay fully typed; only
+# bson-typed spots degrade to Any. Revisit when the floor moves to 3.12.
+[[tool.mypy.overrides]]
+module = ["bson", "bson.*"]
+follow_imports = "skip"
 
 [tool.coverage.report]
 exclude_lines = [
