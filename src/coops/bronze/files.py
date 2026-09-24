@@ -1,7 +1,9 @@
 """Enumerating Bronze: one place that knows the on-disk naming scheme.
 
-``data/bronze/`` holds per-repository files *and* four aggregates that repeat
-every record those files already contain::
+``data/bronze/`` holds per-repository files. Four aggregates that repeated
+every record those files already contain were retired (#170): the writers no
+longer create them and remove a leftover from an earlier run where the write
+used to be — see :func:`remove_aggregate`. The naming scheme they occupied::
 
     commits_<repo>.json        487 files, one of which is commits_all.json
     prs_<repo>.json            428 files, one of which is prs_all.json
@@ -70,6 +72,7 @@ __all__ = [
     "bronze_files",
     "bronze_records",
     "bronze_repos",
+    "remove_aggregate",
     "repo_of",
 ]
 
@@ -129,6 +132,34 @@ def aggregate_name(family: str) -> str:
     """The aggregate filename for ``family`` — the file that must be excluded."""
     _check_family(family)
     return f"{family}_all.json"
+
+
+def remove_aggregate(bronze_dir: Path | str, family: str) -> Path | None:
+    """Remove ``family``'s retired aggregate from ``bronze_dir``, if present.
+
+    The Bronze writers call this where the aggregate used to be written
+    (#170). A regeneration runs the pipeline over an *existing*
+    ``data/bronze/``, so a writer that merely stopped writing would leave the
+    previous run's aggregate on disk — stale, no longer matching the
+    per-repository files beside it, still matched by anything that globs the
+    family, and indistinguishable from a current file. Removal belongs where
+    the write was, so no one has to remember a separate cleanup step.
+
+    Returns the path removed, or ``None`` when there was nothing to remove:
+    writers call this unconditionally, including on a fresh tree.
+
+    Exactly ``<bronze_dir>/<family>_all.json`` and nothing else. Silver's
+    ``language_analysis_all.json`` shares the ``_all`` suffix, is a different
+    layer's artifact and is fetched by the dashboard, so the rule must never
+    widen to ``*_all.json`` at large. It inherits the ``repo named all``
+    ambiguity documented above until the move onto ``StoragePort``.
+    """
+    _check_family(family)
+    aggregate = Path(bronze_dir) / aggregate_name(family)
+    if aggregate.exists():
+        aggregate.unlink()
+        return aggregate
+    return None
 
 
 def bronze_files(bronze_dir: Path | str, family: str) -> list[Path]:

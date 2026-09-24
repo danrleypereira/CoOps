@@ -4,6 +4,7 @@ from typing import List, Optional
 from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data, load_json_data
 from coops.utils.data_helpers import strip_metadata
 from coops.bronze.watermarks import WatermarkStore, max_iso, query_since
+from coops.bronze.files import remove_aggregate
 
 # ---------------------------------------------------------------------------
 # What we keep from an issue or pull request.
@@ -301,24 +302,14 @@ def extract_issues(
                 last_event_id=new_event_id,
             )
 
-    # Save aggregated files (always save, even if empty, to ensure files exist)
-    all_issues_file = save_json_data(
-        all_issues,
-        "data/bronze/issues_all.json"
-    )
-    generated_files.append(all_issues_file)
-
-    all_prs_file = save_json_data(
-        all_prs,
-        "data/bronze/prs_all.json"
-    )
-    generated_files.append(all_prs_file)
-
-    all_events_file = save_json_data(
-        all_issue_events,
-        "data/bronze/issue_events_all.json"
-    )
-    generated_files.append(all_events_file)
+    # The per-repository files above are the layer's record of truth; the
+    # ``_all`` aggregates written here only repeated them, and commits_all.json
+    # alone was 80.6 MiB against GitHub's 100 MB push limit (#170). Remove any
+    # left by an earlier run instead of writing them: a stale aggregate beside
+    # current per-repository files looks current and is still counted by
+    # anything that globs the family.
+    for family in ("issues", "prs", "issue_events"):
+        remove_aggregate("data/bronze", family)
 
     print(f"Extracted {len(all_issues)} issues, {len(all_prs)} PRs, {len(all_issue_events)} events")
 

@@ -49,9 +49,10 @@ class TestExtractCommits:
                 call_url = mock_client.get_paginated.call_args[0][0]
                 assert "test-org/repo1/commits" in call_url
                 
-                # Verifica que salvou arquivos
-                assert len(result) == 2  # commits_repo1.json + commits_all.json
-                assert mock_save.call_count == 2
+                # Verifica que salvou arquivos: só commits_repo1.json; o
+                # agregado commits_all.json não é mais escrito (#170)
+                assert len(result) == 1
+                assert mock_save.call_count == 1
     
     def test_extract_commits_graphql_method_success(self, capsys):
         """Testa extração de commits usando método GraphQL"""
@@ -252,29 +253,42 @@ class TestExtractCommits:
             with patch('coops.bronze.commits.save_json_data', return_value="file.json") as mock_save:
                 extract_commits(mock_client, mock_config, method="rest")
                 
-                # 2 repos + 1 arquivo all = 3 saves
-                assert mock_save.call_count == 3
+                # 2 arquivos por repo; o agregado commits_all.json não é mais
+                # escrito (#170)
+                assert mock_save.call_count == 2
                 
                 # Verifica que salvou commits_repo1.json e commits_repo2.json
                 calls = [call[0][1] for call in mock_save.call_args_list]
                 assert any("commits_repo1.json" in c for c in calls)
                 assert any("commits_repo2.json" in c for c in calls)
     
-    def test_extract_commits_saves_all_commits_file(self):
-        """Testa que sempre salva arquivo commits_all.json"""
+    def test_extract_commits_removes_stale_aggregate(self, tmp_path, monkeypatch):
+        """Uma execução sobre bronze existente remove o commits_all.json antigo.
+
+        Não basta parar de escrever (#170): a regeneração roda sobre um
+        ``data/bronze/`` existente, e o agregado velho — o maior arquivo da
+        árvore — continuaria contado por qualquer glob da família.
+        """
+        monkeypatch.chdir(tmp_path)
+        bronze = tmp_path / "data" / "bronze"
+        bronze.mkdir(parents=True)
+        stale = bronze / "commits_all.json"
+        stale.write_text('[{"stale": true}]', encoding="utf-8")
+
         mock_client = MagicMock()
         mock_config = MagicMock()
-        
-        mock_repos = [{"name": "repo1", "full_name": "test-org/repo1"}]
+        mock_config.org_name = "test-org"
         mock_client.get_paginated.return_value = []
-        
-        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
+        mock_client.get_with_cache.return_value = {}
+
+        with patch('coops.bronze.commits.load_json_data',
+                   return_value=[{"name": "repo1", "full_name": "test-org/repo1"}]):
             with patch('coops.bronze.commits.save_json_data', return_value="file.json") as mock_save:
-                result = extract_commits(mock_client, mock_config)
-                
-                # Verifica que salvou commits_all.json
-                calls = [call[0][1] for call in mock_save.call_args_list]
-                assert any("commits_all.json" in c for c in calls)
+                extract_commits(mock_client, mock_config, method="rest")
+
+                assert not stale.exists()
+                calls = [call_[0][1] for call_ in mock_save.call_args_list]
+                assert not any("_all.json" in c for c in calls)
     
     def test_extract_commits_uses_cache_flag(self):
         """Testa que respeita flag use_cache"""

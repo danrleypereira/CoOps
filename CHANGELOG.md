@@ -7,6 +7,19 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 
 ## [Unreleased]
 
+### Removed
+- The Bronze `_all` aggregates are no longer written and are removed by the
+  pipeline where the write used to be (issue
+  [#170](https://github.com/danrleypereira/CoOps/issues/170)):
+  `commits_all.json` (80.6 MiB — 80.6% of GitHub's 100 MB hard push limit),
+  `issue_events_all.json`, `issues_all.json` and `prs_all.json` repeated
+  every record the per-repository files already contain and were 41% of the
+  bronze tree. A run over an existing `data/bronze/` now deletes an aggregate
+  left by an earlier run rather than leaving it stale beside current
+  per-repository files. `data/silver/language_analysis_all.json` is a
+  different layer's artifact and is untouched, as is the content of the
+  per-repository files.
+
 ### Changed
 - Silver member ages are now **ages at capture**, not ages "whenever the
   Silver step ran" (issue [#188](https://github.com/danrleypereira/CoOps/issues/188)).

@@ -12,6 +12,7 @@ _EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data, load_json_data
 from coops.utils.data_helpers import strip_metadata
 from coops.bronze.watermarks import WatermarkStore, max_iso
+from coops.bronze.files import remove_aggregate
 
 
 def _hash_email(email: str) -> str:
@@ -429,12 +430,11 @@ def extract_commits(
         if watermarks is not None:
             watermarks.update(full_name)
 
-    # Save all commits (always save, even if empty, to ensure files exist)
-    all_commits_file = save_json_data(
-        all_commits,
-        "data/bronze/commits_all.json"
-    )
-    generated_files.append(all_commits_file)
+    # commits_all.json repeated every per-repository file and was the largest
+    # file in the tree (80.6 MiB against GitHub's 100 MB push limit), so it is
+    # no longer written (#170). Remove one left by an earlier run instead: a
+    # stale aggregate beside current per-repository files looks current.
+    remove_aggregate("data/bronze", "commits")
 
     print(f"Total commits extracted: {len(all_commits)}")
 

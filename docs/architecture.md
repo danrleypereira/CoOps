@@ -13,7 +13,7 @@ GitHub API ──► Bronze (raw JSON)  ──► Silver (analytics)  ──► 
 
 | Layer | Command | Writes |
 |---|---|---|
-| Bronze | `coops-bronze` | `repositories_filtered.json`, `issues_all.json`, `prs_all.json`, `commits_all.json`, `issue_events_all.json`, `members_basic.json`, `members_detailed.json`, per-repo files, `structure_<repo>.json` |
+| Bronze | `coops-bronze` | `repositories_filtered.json`, `members_basic.json`, `members_detailed.json`, per-repository `issues_<repo>.json` / `prs_<repo>.json` / `commits_<repo>.json` / `issue_events_<repo>.json` / `repo_<repo>.json` / `structure_<repo>.json` (the `*_all.json` aggregates were removed in #170) |
 | Silver | `coops-silver` | `members_analytics.json`, `contribution_metrics.json`, `collaboration_edges.json`, `temporal_events.json`, `activity_heatmap.json`, `repository_metrics.json`, `available_repos.json`, `language_analysis_all.json`, `hierarchy_<repo>.json`, … |
 | Gold | `coops-gold` | `timeline_last_7_days.json`, `timeline_last_12_months.json` |
 | Gold KPIs | `coops-aggregate` | `executive_dashboard.json`, `performance_tiers.json` |

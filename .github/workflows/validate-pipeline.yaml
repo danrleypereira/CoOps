@@ -189,11 +189,23 @@ jobs:
           uv run python - <<'EOF'
           import glob, json, os, sys
 
-          # Every file the dashboard reads (dashboard/src) must be produced.
+          # Every file the pipeline must produce. NOT "every file the dashboard
+          # reads" — that was the previous wording and it is false for 12 of the
+          # 23 entries here: measured against dashboard/src (54 production files,
+          # excluding the 49 test files), 11 of these are fetched by the
+          # dashboard and 12 are not. The unfetched ones are still required —
+          # they are pipeline outputs and this job is right to check they exist —
+          # but a reader who believed the old comment could delete them on the
+          # strength of it.
+          #
+          # The four bronze `_all` aggregates are gone from this list because
+          # #170 stops producing them: they duplicated the per-repository files
+          # byte for byte and commits_all.json had reached 80.6% of GitHub's
+          # 100 MiB hard push limit. That is the one case here where the list
+          # was wrong rather than merely mislabelled.
           required = [
-              "bronze/repositories_filtered.json", "bronze/issues_all.json",
-              "bronze/prs_all.json", "bronze/commits_all.json",
-              "bronze/issue_events_all.json", "bronze/members_basic.json",
+              "bronze/repositories_filtered.json",
+              "bronze/members_basic.json",
               "silver/contribution_metrics.json", "silver/collaboration_edges.json",
               "silver/temporal_events.json", "silver/temporal_statistics.json",
               "silver/network_statistics.json",
