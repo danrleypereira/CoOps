@@ -37,7 +37,11 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   `silver/members_detailed`. Tenancy follows the proven `MongoRawStore`
   pattern: `tenant_id = str(tenant)` injected by the adapter on every write
   and filtered on every read, with no method that addresses data without a
-  tenant.
+  tenant. A static conformance anchor (`_conforms_to_storage_port`,
+  under `TYPE_CHECKING`) binds the adapter to the port: widening mypy to cover
+  `src/coops/storage` checks the module's own types but does not by itself
+  assert the adapter still implements `StoragePort` — renaming `list` left the
+  run green before the anchor and fails on it after.
 
 ### Removed
 - The Bronze `_all` aggregates are no longer written and are removed by the

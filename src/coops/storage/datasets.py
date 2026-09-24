@@ -26,7 +26,7 @@ building and tenant scoping are exercised with no database and no network.
 
 from __future__ import annotations
 
-from typing import Any
+from typing import Any, TYPE_CHECKING
 
 import pymongo
 
@@ -34,6 +34,7 @@ from coops.domain import TenantId
 from coops.domain.ports.storage_port import (
     JSONValue,
     Layer,
+    StoragePort,
     StoredDataset,
     validate_entity,
     validate_layer,
@@ -168,3 +169,19 @@ class MongoStorageAdapter:
 
     def close(self) -> None:
         self._client.close()
+
+
+if TYPE_CHECKING:
+    #: Static conformance anchor, the twin of the one in ``file.py``. Widening
+    #: mypy to cover ``src/coops/storage`` checks this module's own types; it
+    #: does **not** by itself assert that the adapter satisfies the port.
+    #: Measured 2026-09-24: renaming ``list`` to ``list_entities`` here — an
+    #: adapter that no longer implements ``StoragePort`` — left mypy reporting
+    #: "Success: no issues found", while the same rename in ``file.py`` failed
+    #: on its anchor. This is what makes a drift a type error.
+    #:
+    #: A function rather than ``file.py``'s instance assignment: constructing
+    #: ``FileStorageAdapter(".")`` only stores a path, but ``MongoStorageAdapter``
+    #: requires a uri or a client, so an instance cannot be built for free here.
+    def _conforms_to_storage_port(adapter: "MongoStorageAdapter") -> StoragePort:
+        return adapter
