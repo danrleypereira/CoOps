@@ -30,7 +30,9 @@ from typing import Any, Protocol
 import pymongo
 
 from coops.domain import TenantId
-from coops.domain.tenancy import PROVIDER_GITHUB  # noqa: F401 — re-exported
+from coops.domain.tenancy import (
+    PROVIDER_GITHUB as PROVIDER_GITHUB,  # noqa: PLC0414 — explicit re-export
+)
 
 #: Provider discriminator for the raw documents captured from the GitHub API.
 #: Owned by the domain since #92; re-exported here because callers (and the
