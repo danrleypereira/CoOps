@@ -51,11 +51,34 @@ cd ~/.local/share/coops/snapshots
 sha256sum -c coops-raw-<stamp>.tar.gz.sha256      # never skip
 mkdir -p /var/tmp/coops-work
 tar -xzf coops-raw-<stamp>.tar.gz -C /var/tmp/coops-work
-cp -r /var/tmp/coops-fga/data /var/tmp/coops-work/data   # seed, so BEFORE means something
+cp -r  /var/tmp/coops-fga/data            /var/tmp/coops-work/data
+cp     /var/tmp/coops-fga/watermarks.json /var/tmp/coops-work/    # NOT under data/
 ```
 
 Seeding matters: a from-scratch tree has no previous state, so "did the defect
 go away" has nothing to compare against.
+
+**`watermarks.json` sits at the tree root, not under `data/`**, so a seeding step
+that copies `data/` alone silently drops it — and that is not a tidiness point.
+Without watermarks the extractor asks for unconditional listing URLs instead of
+incremental ones, and those bodies are the oldest in the cache. 65% of cached
+bodies carry no `ETag`, and `get_with_cache` serves an ETag-less body directly,
+forever, with no revalidation. So the run reads month-old listings, writes
+records that are *older* than the ones it replaced, and then persists a watermark
+describing what it just read — moving the watermark **backwards**. This is the
+mechanism behind #199; it is invisible online, because the next networked run
+re-fetches and repairs itself.
+
+Check it every time, before trusting a comparison:
+
+```bash
+python3 -c 'import json,sys;print(json.load(open(sys.argv[1]))["repos"]["<owner/repo>"]["last_updated_at"])' \
+  /var/tmp/coops-work/watermarks.json     # must not be older than the seed's
+```
+
+(`watermarks.json` has two top-level keys, `version` and `repos`. Counting the
+top level reports **2**; the repositories are the 486 under `repos`. That
+miscount has been made here twice.)
 
 ### 2. Run the layers
 
@@ -82,8 +105,14 @@ longer exist.
 uv run python scripts/verify_medallion.py --self-test          # controls first
 uv run python scripts/verify_medallion.py \
     --root /var/tmp/coops-work \
-    --reference /var/tmp/coops-previous     # REQUIRED for a gate
+    --reference /var/tmp/coops-clean        # REQUIRED for a gate
 ```
+
+Point `--reference` at a real, *uncontaminated* previous corpus. Today that is
+`/var/tmp/coops-clean`, restored from the 22:45 tarball. Do not invent a path:
+the reference is the only thing that makes "vanished" and "reverted" meaningful,
+and a reference that is itself the output of a bad run turns both checks into
+confirmations of that run.
 
 **Run `--self-test` first, every time.** It plants a defect for each check and
 confirms the check rejects it. A check that has never failed proves nothing, and
