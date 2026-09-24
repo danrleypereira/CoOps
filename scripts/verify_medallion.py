@@ -62,6 +62,7 @@ class Result:
     passed: bool
     detail: str
     control_fired: bool | None = None
+    skipped: bool = False
 
 
 @dataclass
@@ -438,6 +439,15 @@ def main() -> int:
         check_every_author_hashed(data / "bronze", rep)
         if args.reference:
             check_no_record_reverted(data / "bronze", args.reference / "data" / "bronze", rep)
+        else:
+            # Without a reference these cannot run — and saying nothing would
+            # let a corpus with records lost or reverted print "all checks
+            # passed". Raised twice by curupira on #200; the missing-layer case
+            # had the same shape and only half of it was fixed.
+            for name in ("no-record-reverted", "no-record-vanished"):
+                rep.add(Result(name, "bronze", True,
+                               "NOT RUN — needs --reference <previous corpus root>",
+                               skipped=True))
     if (data / "silver").is_dir():
         check_member_ids_distinct(data / "silver", rep)
         check_no_unknown_labels(data / "silver", rep)
@@ -449,7 +459,9 @@ def main() -> int:
 
     width = max(len(r.name) for r in rep.results)
     for r in rep.results:
-        if r.control_fired is False:
+        if r.skipped:
+            status = "SKIP  "
+        elif r.control_fired is False:
             status = "BROKEN"
         elif r.passed:
             status = "PASS  "
@@ -457,8 +469,15 @@ def main() -> int:
             status = "FAIL  "
         print(f"  {status}  {r.layer:<7} {r.name:<{width}}  {r.detail}")
 
+    skipped = [r for r in rep.results if r.skipped]
     code = rep.exit_code
     print()
+    if skipped and code == 0:
+        print(f"  all checks that RAN passed — {len(skipped)} did not run "
+              f"({', '.join(r.name for r in skipped)})")
+        print("  A phase gate needs --reference: without it, records lost or")
+        print("  reverted since the last run are invisible to this script.")
+        return code
     print({0: "  all checks passed",
            1: "  a layer does not hold an invariant",
            2: "  a check could not run — the instrument is broken, not the data"}[code])
