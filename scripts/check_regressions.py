@@ -272,10 +272,32 @@ def _relativize(path: str, arm: Path) -> str:
 
 
 def ruff_per_file(ruff_bin: str, arm: Path) -> Counter[str]:
+    """Findings per file, read with a rule set the measured tree cannot change.
+
+    ``--isolated`` ignores every configuration file, and it is not optional.
+    Without it ruff reads **each arm's own** ``[tool.ruff]``, so a change that
+    narrows ``select`` shrinks the head arm's findings — and a real regression
+    committed alongside that narrowing is hidden inside the shrink. The gate
+    then certifies that nothing got worse because it was told to stop looking.
+    Found by @curupira on #221 against the first version of this script.
+
+    This is the symmetric treatment to mypy's ``--config-file /dev/null``
+    below, for the same reason: **an instrument whose sensitivity is set by the
+    thing it measures is not an instrument.** The repo's ``[tool.ruff]`` is
+    still right for CI's own ``ruff check``; this is a different question,
+    asked with a fixed rule set so the two arms are comparable at all.
+
+    Consequence worth knowing: counts here are ruff's **defaults**, not the
+    repo's configured set, so they will not match ``ruff check`` run by hand.
+    That is intended — only the per-file delta between arms is meaningful.
+    """
     targets = [t for t in RUFF_TARGETS if (arm / t).exists()]
     if "src" not in targets:
         raise GateError(f"no src/ in the extracted tree at {arm} — ruff has nothing to check")
-    proc = _run([ruff_bin, "check", "--no-cache", "--output-format", "json", *targets], arm)
+    proc = _run(
+        [ruff_bin, "check", "--isolated", "--no-cache", "--output-format", "json", *targets],
+        arm,
+    )
     if proc.returncode not in (0, 1):
         raise GateError(
             f"ruff exited {proc.returncode} in {arm}: {(proc.stderr or proc.stdout).strip()[:300]}"
