@@ -116,6 +116,22 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   looking like it worked.
 
 ### Changed
+- `ruff check src tests` now exits 0 and is the Python lint gate
+  (`chore/ruff-green-baseline`): a finding on a phase PR is unambiguously
+  new, where the previous state — 831 findings under ruff 0.16's defaults,
+  with no `[tool.ruff]` at all — made "831 before, 840 after" a number
+  nobody acts on. The gate is pinned to an explicit rule selection
+  (`pyproject.toml`, `[tool.ruff]`) so a ruff upgrade cannot widen it on
+  its own; two of its rule families are this repo's own defect classes:
+  `DTZ` (naive datetimes, #143) and `BLE` (blind `except Exception`, #212).
+  Deliberate breadth — CLI boundaries, per-item resilience in the
+  extractors, best-effort raw layer — carries a targeted `# noqa` with the
+  reason on the line; the md5 cache keys are marked
+  `usedforsecurity=False` (content addressing, not security); the
+  integration tests that turned every exception into a skip (#212) were
+  rewritten to either fail or skip on a named precondition. Rules measured
+  and left out of the gate (with counts) are documented next to the
+  selection.
 - Every timestamp the pipeline **persists** is now timezone-aware UTC and
   carries its offset in the value (`2026-09-25T04:40:09+00:00`, #143):
   `generated_at` in the Gold dashboard and tiers, `created_at` and
@@ -131,6 +147,13 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   by its UTC offset in the wall-clock reading — that single jump is the
   fix, not drift. Console `Started at:` lines are untouched (human log,
   not data).
+- The #143 UTC sweep missed `file_inventory[].modified_at` in
+  `data/master_registry.json`: `create_master_registry` still wrote the
+  local wall clock there, so the registry's inventory disagreed with the
+  UTC `created_at`/`generated_at` written beside it by the same run. It is
+  now `fromtimestamp(..., tz=timezone.utc)`, the same convention as the
+  rest of the registry; the value shifts once, by the writing machine's
+  offset, on the first run after this change.
 - `performance_tiers.json` now carries `generated_at`, in the same format
   and from the same single clock reading as `executive_dashboard.json`, so
   the two artifacts written by one `coops-aggregate` run cannot disagree

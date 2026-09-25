@@ -4,8 +4,10 @@ Testes unitários para o módulo bronze.repositories.
 Testa a extração de repositórios da organização.
 """
 
+from unittest.mock import MagicMock, patch
+
 import pytest
-from unittest.mock import patch, MagicMock
+
 from coops.bronze.repositories import extract_repositories
 
 
@@ -35,10 +37,10 @@ class TestRepoFilter:
         with patch('coops.bronze.repositories.save_json_data', return_value="file.json") as mock_save:
             extract_repositories(mock_client, mock_config, repo_filter=["test-org/repo2"])
 
-        filtered_call = [
+        filtered_call = next(
             c for c in mock_save.call_args_list
             if "repositories_filtered.json" in str(c)
-        ][0]
+        )
         assert filtered_call[0][0] == [{"name": "repo2", "full_name": "test-org/repo2"}]
         # Detail fetch for the selected repo only.
         assert mock_client.get_with_cache.call_count == 1
@@ -50,9 +52,8 @@ class TestRepoFilter:
         repos = [{"name": "repo1", "full_name": "test-org/repo1"}]
         mock_client, mock_config = self._client_and_config(repos)
 
-        with patch('coops.bronze.repositories.save_json_data') as mock_save:
-            with pytest.raises(ValueError) as exc_info:
-                extract_repositories(mock_client, mock_config, repo_filter=["test-org/nope"])
+        with patch('coops.bronze.repositories.save_json_data') as mock_save, pytest.raises(ValueError) as exc_info:
+            extract_repositories(mock_client, mock_config, repo_filter=["test-org/nope"])
 
         assert "test-org/nope" in str(exc_info.value)
         # Nothing was written before the failure.
@@ -67,12 +68,11 @@ class TestRepoFilter:
         ]
         mock_client, mock_config = self._client_and_config(repos, skip={"bad"})
 
-        with patch('coops.bronze.repositories.save_json_data') as mock_save:
-            with pytest.raises(ValueError) as exc_info:
-                extract_repositories(
-                    mock_client, mock_config,
-                    repo_filter=["test-org/good", "test-org/bad"],
-                )
+        with patch('coops.bronze.repositories.save_json_data') as mock_save, pytest.raises(ValueError) as exc_info:
+            extract_repositories(
+                mock_client, mock_config,
+                repo_filter=["test-org/good", "test-org/bad"],
+            )
 
         assert "test-org/bad" in str(exc_info.value)
         mock_save.assert_not_called()
@@ -85,10 +85,10 @@ class TestRepoFilter:
         with patch('coops.bronze.repositories.save_json_data', return_value="file.json") as mock_save:
             extract_repositories(mock_client, mock_config, repo_filter=["test-org/repo1"])
 
-        filtered_call = [
+        filtered_call = next(
             c for c in mock_save.call_args_list
             if "repositories_filtered.json" in str(c)
-        ][0]
+        )
         assert filtered_call[0][0] == [{"name": "Repo1", "full_name": "test-org/Repo1"}]
 
 
@@ -110,7 +110,7 @@ class TestExtractRepositories:
         mock_client.get_paginated.return_value = mock_repos
         mock_client.get_with_cache.return_value = {"name": "repo1", "full_name": "test-org/repo1", "details": "extra"}
         
-        with patch('coops.bronze.repositories.save_json_data', return_value="file.json") as mock_save:
+        with patch('coops.bronze.repositories.save_json_data', return_value="file.json"):
             result = extract_repositories(mock_client, mock_config, use_cache=True)
             
             assert len(result) > 0
@@ -137,7 +137,7 @@ class TestExtractRepositories:
         mock_client.get_with_cache.return_value = {"name": "good-repo", "full_name": "test-org/good-repo"}
         
         with patch('coops.bronze.repositories.save_json_data', return_value="file.json"):
-            result = extract_repositories(mock_client, mock_config)
+            extract_repositories(mock_client, mock_config)
         
         captured = capsys.readouterr()
         assert "Skipping repository: blacklisted-repo" in captured.out
@@ -293,7 +293,7 @@ class TestExtractRepositories:
         mock_client.get_paginated.return_value = mock_repos
         mock_client.get_with_cache.return_value = None  # Detalhes não disponíveis
         
-        with patch('coops.bronze.repositories.save_json_data', return_value="file.json") as mock_save:
+        with patch('coops.bronze.repositories.save_json_data', return_value="file.json"):
             result = extract_repositories(mock_client, mock_config)
             
             # Deve continuar funcionando mesmo sem detalhes

@@ -40,7 +40,6 @@ import json
 import os
 from dataclasses import asdict, dataclass, field
 from datetime import datetime, timedelta, timezone
-from typing import Dict, Optional
 
 #: Default on-disk location, relative to the working directory (like ``data/``
 #: and ``cache/``). Deliberately outside ``data/`` so a watermark change never
@@ -52,7 +51,7 @@ DEFAULT_PATH = "watermarks.json"
 VERSION = 1
 
 
-def _parse_iso(value: Optional[str]) -> Optional[datetime]:
+def _parse_iso(value: str | None) -> datetime | None:
     """Parse a GitHub-style ISO timestamp to an aware UTC datetime, or None."""
     if not value:
         return None
@@ -65,7 +64,7 @@ def _parse_iso(value: Optional[str]) -> Optional[datetime]:
     return dt
 
 
-def max_iso(a: Optional[str], b: Optional[str]) -> Optional[str]:
+def max_iso(a: str | None, b: str | None) -> str | None:
     """Return the later of two ISO timestamps (the original string)."""
     da = _parse_iso(a)
     db = _parse_iso(b)
@@ -76,7 +75,7 @@ def max_iso(a: Optional[str], b: Optional[str]) -> Optional[str]:
     return a if da >= db else b
 
 
-def query_since(iso: Optional[str]) -> Optional[str]:
+def query_since(iso: str | None) -> str | None:
     """Return ``iso`` minus one second, for use as a REST ``since`` value.
 
     GitHub's ``since`` filters are exclusive (``updated_at``/``created_at``
@@ -99,10 +98,10 @@ class RepoWatermark:
     """Extraction watermark for one repository."""
 
     repo: str
-    last_run: Optional[str] = None
-    head_shas: Dict[str, str] = field(default_factory=dict)
-    last_event_id: Optional[int] = None
-    last_updated_at: Optional[str] = None
+    last_run: str | None = None
+    head_shas: dict[str, str] = field(default_factory=dict)
+    last_event_id: int | None = None
+    last_updated_at: str | None = None
 
     def to_dict(self) -> dict:
         data = asdict(self)
@@ -110,7 +109,7 @@ class RepoWatermark:
         return data
 
     @classmethod
-    def from_dict(cls, repo: str, data: dict) -> "RepoWatermark":
+    def from_dict(cls, repo: str, data: dict) -> RepoWatermark:
         return cls(
             repo=repo,
             last_run=data.get("last_run"),
@@ -129,7 +128,7 @@ class WatermarkStore:
     run that does not touch a repository does not write an empty record for it.
     """
 
-    def __init__(self, path: str = DEFAULT_PATH, now: Optional[datetime] = None) -> None:
+    def __init__(self, path: str = DEFAULT_PATH, now: datetime | None = None) -> None:
         self.path = path
         # `last_run` records the *start* of the current run, so the next run's
         # `since = last_run` over-fetches the tail of the previous run rather
@@ -138,14 +137,14 @@ class WatermarkStore:
         # into REST query strings, where a `+00:00` offset (and microseconds)
         # would be mangled by URL parsing.
         self._now_iso = (now or datetime.now(timezone.utc)).astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-        self._records: Dict[str, RepoWatermark] = {}
+        self._records: dict[str, RepoWatermark] = {}
         self._load()
 
     def _load(self) -> None:
         if not os.path.exists(self.path):
             return
         try:
-            with open(self.path, "r", encoding="utf-8") as f:
+            with open(self.path, encoding="utf-8") as f:
                 raw = json.load(f)
         except (json.JSONDecodeError, OSError):
             # A corrupt watermark file must not stop extraction; treat it as

@@ -206,7 +206,7 @@ def _write_bronze(root, *, issues=(), prs=(), commits=(), events=()):
 
 def _assert_identical_under_all_hash_seeds(snippet, cwd, must_contain):
     outs = {
-        subprocess.run(
+        subprocess.run(  # noqa: S603 — snippet is authored by this test file and run under the repo's own interpreter
             [sys.executable, "-c", snippet],
             cwd=cwd,
             env={**os.environ, "PYTHONHASHSEED": seed},

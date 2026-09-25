@@ -1,7 +1,9 @@
 """Tests for coops/bronze/repository_structure.py — extract_repository_structure."""
 
 from unittest.mock import MagicMock
+
 import pytest
+
 import coops.bronze.repository_structure as rs
 
 
@@ -32,12 +34,12 @@ def _setup(monkeypatch, *, filtered_repos=None):
 
 class TestNoRepos:
     def test_no_filtered_repos(self, monkeypatch):
-        client, config, saved = _setup(monkeypatch, filtered_repos=None)
+        client, config, _saved = _setup(monkeypatch, filtered_repos=None)
         result = rs.extract_repository_structure(client, config)
         assert result == []
 
     def test_empty_filtered_repos(self, monkeypatch):
-        client, config, saved = _setup(monkeypatch, filtered_repos=[])
+        client, config, _saved = _setup(monkeypatch, filtered_repos=[])
         result = rs.extract_repository_structure(client, config)
         assert result == []
 
@@ -52,7 +54,7 @@ class TestMetadataHandling:
             {"_metadata": {"ts": "2024-01-01"}},
             {"name": "r1", "full_name": "org/r1", "default_branch": "main"},
         ]
-        client, config, saved = _setup(monkeypatch, filtered_repos=repos)
+        client, config, _saved = _setup(monkeypatch, filtered_repos=repos)
         client.get_repository_tree.return_value = {
             "tree": [{"name": "a.py", "type": "file"}],
             "truncated": False,
@@ -72,7 +74,7 @@ class TestOfflineCacheMiss:
         would otherwise count the repository as failed, continue the run and
         report a plausible-looking partial replay (#199)."""
         repos = [{"name": "r1", "full_name": "org/r1", "default_branch": "main"}]
-        client, config, saved = _setup(monkeypatch, filtered_repos=repos)
+        client, config, _saved = _setup(monkeypatch, filtered_repos=repos)
         client.get_repository_tree.side_effect = rs.OfflineCacheMiss(
             "https://api.github.com/repos/org/r1/branches/main"
         )
@@ -88,7 +90,7 @@ class TestOfflineCacheMiss:
 class TestInvalidRepos:
     def test_none_entry_skipped(self, monkeypatch):
         repos = [None, {"name": "r1", "full_name": "org/r1", "default_branch": "main"}]
-        client, config, saved = _setup(monkeypatch, filtered_repos=repos)
+        client, config, _saved = _setup(monkeypatch, filtered_repos=repos)
         client.get_repository_tree.return_value = {
             "tree": [{"name": "a.py", "type": "file"}],
             "truncated": False,
@@ -98,14 +100,14 @@ class TestInvalidRepos:
 
     def test_non_dict_entry_skipped(self, monkeypatch):
         repos = ["not-a-dict"]
-        client, config, saved = _setup(monkeypatch, filtered_repos=repos)
+        client, config, _saved = _setup(monkeypatch, filtered_repos=repos)
         result = rs.extract_repository_structure(client, config)
         assert result == []
 
     def test_missing_full_name_slash(self, monkeypatch):
         """full_name without '/' is skipped."""
         repos = [{"name": "r1", "full_name": "noSlash", "default_branch": "main"}]
-        client, config, saved = _setup(monkeypatch, filtered_repos=repos)
+        client, config, _saved = _setup(monkeypatch, filtered_repos=repos)
         result = rs.extract_repository_structure(client, config)
         assert result == []
 
@@ -142,7 +144,7 @@ class TestRESTSuccess:
 class TestGraphQLFallback:
     def test_truncated_falls_back_to_graphql(self, monkeypatch):
         repos = [{"name": "big", "full_name": "org/big", "default_branch": "main"}]
-        client, config, saved = _setup(monkeypatch, filtered_repos=repos)
+        client, config, _saved = _setup(monkeypatch, filtered_repos=repos)
         client.get_repository_tree.return_value = {"tree": [], "truncated": True}
         client.graphql_repository_tree.return_value = {
             "tree": [{"name": "a.py", "type": "file"}],
@@ -161,21 +163,21 @@ class TestGraphQLFallback:
 class TestEmptyTree:
     def test_no_tree_key(self, monkeypatch):
         repos = [{"name": "empty", "full_name": "org/empty", "default_branch": "main"}]
-        client, config, saved = _setup(monkeypatch, filtered_repos=repos)
+        client, config, _saved = _setup(monkeypatch, filtered_repos=repos)
         client.get_repository_tree.return_value = {"truncated": False}
         result = rs.extract_repository_structure(client, config)
         assert result == []
 
     def test_empty_tree_list(self, monkeypatch):
         repos = [{"name": "empty", "full_name": "org/empty", "default_branch": "main"}]
-        client, config, saved = _setup(monkeypatch, filtered_repos=repos)
+        client, config, _saved = _setup(monkeypatch, filtered_repos=repos)
         client.get_repository_tree.return_value = {"tree": [], "truncated": False}
         result = rs.extract_repository_structure(client, config)
         assert result == []
 
     def test_none_structure(self, monkeypatch):
         repos = [{"name": "bad", "full_name": "org/bad", "default_branch": "main"}]
-        client, config, saved = _setup(monkeypatch, filtered_repos=repos)
+        client, config, _saved = _setup(monkeypatch, filtered_repos=repos)
         client.get_repository_tree.return_value = None
         result = rs.extract_repository_structure(client, config)
         assert result == []
@@ -191,7 +193,7 @@ class TestExceptionHandling:
             {"name": "fail", "full_name": "org/fail", "default_branch": "main"},
             {"name": "ok", "full_name": "org/ok", "default_branch": "main"},
         ]
-        client, config, saved = _setup(monkeypatch, filtered_repos=repos)
+        client, config, _saved = _setup(monkeypatch, filtered_repos=repos)
 
         call_count = [0]
         def side_effect(**kwargs):
@@ -218,7 +220,7 @@ class TestMultipleRepos:
             {"name": "r2", "full_name": "org/r2", "default_branch": "dev"},
             {"name": "r3", "full_name": "org/r3", "default_branch": "main"},
         ]
-        client, config, saved = _setup(monkeypatch, filtered_repos=repos)
+        client, config, _saved = _setup(monkeypatch, filtered_repos=repos)
 
         def tree_response(**kwargs):
             if kwargs.get("repo") == "r2":
@@ -235,7 +237,7 @@ class TestMultipleRepos:
 
     def test_default_branch_respected(self, monkeypatch):
         repos = [{"name": "r", "full_name": "org/r", "default_branch": "develop"}]
-        client, config, saved = _setup(monkeypatch, filtered_repos=repos)
+        client, config, _saved = _setup(monkeypatch, filtered_repos=repos)
         client.get_repository_tree.return_value = {
             "tree": [{"name": "a.py", "type": "file"}], "truncated": False,
         }

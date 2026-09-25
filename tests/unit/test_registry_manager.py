@@ -2,15 +2,14 @@
 Unit tests for src/registry_manager.py
 Tests registry creation, file scanning, and categorization.
 """
-import pytest
-import os
-from unittest.mock import MagicMock, patch, mock_open
+from unittest.mock import patch
+
 from coops.etl.registry_manager import (
-    scan_data_directory,
     categorize_bronze_files,
-    generate_data_catalog,
     create_data_lineage,
-    create_master_registry
+    create_master_registry,
+    generate_data_catalog,
+    scan_data_directory,
 )
 
 
@@ -19,16 +18,15 @@ class TestScanDataDirectory:
     
     def test_scan_finds_json_files(self):
         """Testa que encontra arquivos JSON no diretório"""
-        with patch('os.path.exists', return_value=True):
-            with patch('os.walk') as mock_walk:
-                mock_walk.return_value = [
-                    ('/data/bronze', [], ['file1.json', 'file2.json', 'readme.txt'])
-                ]
-                
-                result = scan_data_directory('/data/bronze')
-                
-                assert len(result) == 2
-                assert all(f.endswith('.json') for f in result)
+        with patch('os.path.exists', return_value=True), patch('os.walk') as mock_walk:
+            mock_walk.return_value = [
+                ('/data/bronze', [], ['file1.json', 'file2.json', 'readme.txt'])
+            ]
+
+            result = scan_data_directory('/data/bronze')
+
+            assert len(result) == 2
+            assert all(f.endswith('.json') for f in result)
     
     def test_scan_directory_not_exists(self):
         """Testa que retorna lista vazia quando diretório não existe"""
@@ -38,39 +36,36 @@ class TestScanDataDirectory:
     
     def test_scan_recursive_subdirectories(self):
         """Testa que escaneia recursivamente subdiretórios"""
-        with patch('os.path.exists', return_value=True):
-            with patch('os.walk') as mock_walk:
-                mock_walk.return_value = [
-                    ('/data/bronze', ['sub'], ['file1.json']),
-                    ('/data/bronze/sub', [], ['file2.json'])
-                ]
-                
-                result = scan_data_directory('/data/bronze')
-                
-                assert len(result) == 2
+        with patch('os.path.exists', return_value=True), patch('os.walk') as mock_walk:
+            mock_walk.return_value = [
+                ('/data/bronze', ['sub'], ['file1.json']),
+                ('/data/bronze/sub', [], ['file2.json'])
+            ]
+
+            result = scan_data_directory('/data/bronze')
+
+            assert len(result) == 2
     
     def test_scan_ignores_non_json_files(self):
         """Testa que ignora arquivos não-JSON"""
-        with patch('os.path.exists', return_value=True):
-            with patch('os.walk') as mock_walk:
-                mock_walk.return_value = [
-                    ('/data', [], ['data.json', 'readme.md', 'config.yaml', 'script.py'])
-                ]
-                
-                result = scan_data_directory('/data')
-                
-                assert len(result) == 1
-                assert result[0].endswith('data.json')
+        with patch('os.path.exists', return_value=True), patch('os.walk') as mock_walk:
+            mock_walk.return_value = [
+                ('/data', [], ['data.json', 'readme.md', 'config.yaml', 'script.py'])
+            ]
+
+            result = scan_data_directory('/data')
+
+            assert len(result) == 1
+            assert result[0].endswith('data.json')
     
     def test_scan_empty_directory(self):
         """Testa que retorna lista vazia para diretório vazio"""
-        with patch('os.path.exists', return_value=True):
-            with patch('os.walk') as mock_walk:
-                mock_walk.return_value = [('/data', [], [])]
-                
-                result = scan_data_directory('/data')
-                
-                assert result == []
+        with patch('os.path.exists', return_value=True), patch('os.walk') as mock_walk:
+            mock_walk.return_value = [('/data', [], [])]
+
+            result = scan_data_directory('/data')
+
+            assert result == []
 
 
 class TestCategorizeBronzeFiles:
@@ -198,7 +193,7 @@ class TestGenerateDataCatalog:
     def test_creates_catalog_with_timestamp(self):
         """Testa que cria catálogo com timestamp"""
         with patch('coops.etl.registry_manager.save_json_data', return_value='catalog.json') as mock_save:
-            result = generate_data_catalog()
+            generate_data_catalog()
             
             assert mock_save.called
             catalog_data = mock_save.call_args[0][0]
@@ -274,120 +269,99 @@ class TestCreateMasterRegistry:
     
     def test_creates_registry_with_timestamp(self):
         """Testa que cria registro com timestamp"""
-        with patch('coops.etl.registry_manager.scan_data_directory', return_value=[]):
-            with patch('coops.etl.registry_manager.save_json_data', return_value='registry.json') as mock_save:
-                create_master_registry()
-                
-                registry_data = mock_save.call_args[0][0]
-                assert 'created_at' in registry_data
+        with patch('coops.etl.registry_manager.scan_data_directory', return_value=[]), patch('coops.etl.registry_manager.save_json_data', return_value='registry.json') as mock_save:
+            create_master_registry()
+
+            registry_data = mock_save.call_args[0][0]
+            assert 'created_at' in registry_data
     
     def test_includes_bronze_layer(self):
         """Testa que inclui camada Bronze"""
-        with patch('coops.etl.registry_manager.scan_data_directory', return_value=[]):
-            with patch('coops.etl.registry_manager.save_json_data', return_value='registry.json') as mock_save:
-                create_master_registry()
-                
-                registry_data = mock_save.call_args[0][0]
-                assert 'layers' in registry_data
-                assert 'bronze' in registry_data['layers']
+        with patch('coops.etl.registry_manager.scan_data_directory', return_value=[]), patch('coops.etl.registry_manager.save_json_data', return_value='registry.json') as mock_save:
+            create_master_registry()
+
+            registry_data = mock_save.call_args[0][0]
+            assert 'layers' in registry_data
+            assert 'bronze' in registry_data['layers']
     
     def test_scans_bronze_directory(self):
         """Testa que escaneia diretório Bronze"""
-        with patch('coops.etl.registry_manager.scan_data_directory', return_value=[]) as mock_scan:
-            with patch('coops.etl.registry_manager.save_json_data', return_value='registry.json'):
-                create_master_registry()
-                
-                mock_scan.assert_any_call('data/bronze')
+        with patch('coops.etl.registry_manager.scan_data_directory', return_value=[]) as mock_scan, patch('coops.etl.registry_manager.save_json_data', return_value='registry.json'):
+            create_master_registry()
+
+            mock_scan.assert_any_call('data/bronze')
     
     def test_categorizes_bronze_files(self):
         """Testa que categoriza arquivos Bronze"""
         mock_files = ['data/bronze/repos.json', 'data/bronze/issues.json']
         
-        with patch('coops.etl.registry_manager.scan_data_directory', return_value=mock_files):
-            with patch('coops.etl.registry_manager.categorize_bronze_files') as mock_cat:
-                with patch('coops.etl.registry_manager.save_json_data', return_value='registry.json'):
-                    with patch('os.path.exists', return_value=True):
-                        with patch('os.path.getsize', return_value=1024):
-                            with patch('os.path.getmtime', return_value=1234567890):
-                                create_master_registry()
-                    
-                                mock_cat.assert_called_once_with(mock_files)
+        with patch('coops.etl.registry_manager.scan_data_directory', return_value=mock_files), patch('coops.etl.registry_manager.categorize_bronze_files') as mock_cat, patch('coops.etl.registry_manager.save_json_data', return_value='registry.json'), patch('os.path.exists', return_value=True), patch('os.path.getsize', return_value=1024), patch('os.path.getmtime', return_value=1234567890):
+            create_master_registry()
+
+            mock_cat.assert_called_once_with(mock_files)
     
     def test_creates_file_inventory(self):
         """Testa que cria inventário de arquivos"""
         mock_files = ['data/bronze/repos.json']
         
-        with patch('coops.etl.registry_manager.scan_data_directory', return_value=mock_files):
-            with patch('coops.etl.registry_manager.save_json_data', return_value='registry.json') as mock_save:
-                with patch('os.path.exists', return_value=True):
-                    with patch('os.path.getsize', return_value=1024):
-                        with patch('os.path.getmtime', return_value=1234567890):
-                            create_master_registry()
-                
-                            registry_data = mock_save.call_args[0][0]
-                            assert 'file_inventory' in registry_data
-                            assert len(registry_data['file_inventory']) >= 1
+        with patch('coops.etl.registry_manager.scan_data_directory', return_value=mock_files), patch('coops.etl.registry_manager.save_json_data', return_value='registry.json') as mock_save, patch('os.path.exists', return_value=True), patch('os.path.getsize', return_value=1024), patch('os.path.getmtime', return_value=1234567890):
+            create_master_registry()
+
+            registry_data = mock_save.call_args[0][0]
+            assert 'file_inventory' in registry_data
+            assert len(registry_data['file_inventory']) >= 1
     
     def test_file_inventory_includes_metadata(self):
         """Testa que inventário inclui metadados dos arquivos"""
         mock_files = ['data/bronze/repos.json']
         
-        with patch('coops.etl.registry_manager.scan_data_directory', return_value=mock_files):
-            with patch('coops.etl.registry_manager.save_json_data', return_value='registry.json') as mock_save:
-                with patch('os.path.exists', return_value=True):
-                    with patch('os.path.getsize', return_value=2048):
-                        with patch('os.path.getmtime', return_value=1234567890.5):
-                            create_master_registry()
-                
-                            registry_data = mock_save.call_args[0][0]
-                            file_entry = registry_data['file_inventory'][0]
-                            
-                            assert 'file_path' in file_entry
-                            assert 'layer' in file_entry
-                            assert 'size_bytes' in file_entry
-                            assert 'modified_at' in file_entry
-                            assert file_entry['size_bytes'] == 2048
+        with patch('coops.etl.registry_manager.scan_data_directory', return_value=mock_files), patch('coops.etl.registry_manager.save_json_data', return_value='registry.json') as mock_save, patch('os.path.exists', return_value=True), patch('os.path.getsize', return_value=2048), patch('os.path.getmtime', return_value=1234567890.5):
+            create_master_registry()
+
+            registry_data = mock_save.call_args[0][0]
+            file_entry = registry_data['file_inventory'][0]
+
+            assert 'file_path' in file_entry
+            assert 'layer' in file_entry
+            assert 'size_bytes' in file_entry
+            assert 'modified_at' in file_entry
+            assert file_entry['size_bytes'] == 2048
     
     def test_saves_to_correct_path(self):
         """Testa que salva no caminho correto"""
-        with patch('coops.etl.registry_manager.scan_data_directory', return_value=[]):
-            with patch('coops.etl.registry_manager.save_json_data', return_value='registry.json') as mock_save:
-                create_master_registry()
-                
-                call_args = mock_save.call_args[0]
-                assert 'master_registry.json' in call_args[1]
+        with patch('coops.etl.registry_manager.scan_data_directory', return_value=[]), patch('coops.etl.registry_manager.save_json_data', return_value='registry.json') as mock_save:
+            create_master_registry()
+
+            call_args = mock_save.call_args[0]
+            assert 'master_registry.json' in call_args[1]
     
     def test_saves_without_timestamp(self):
         """Testa que salva sem timestamp no nome"""
-        with patch('coops.etl.registry_manager.scan_data_directory', return_value=[]):
-            with patch('coops.etl.registry_manager.save_json_data', return_value='registry.json') as mock_save:
-                create_master_registry()
-                
-                call_kwargs = mock_save.call_args[1]
-                assert call_kwargs.get('timestamp') is False
+        with patch('coops.etl.registry_manager.scan_data_directory', return_value=[]), patch('coops.etl.registry_manager.save_json_data', return_value='registry.json') as mock_save:
+            create_master_registry()
+
+            call_kwargs = mock_save.call_args[1]
+            assert call_kwargs.get('timestamp') is False
     
     def test_returns_registry_file_path(self):
         """Testa que retorna caminho do arquivo de registro"""
-        with patch('coops.etl.registry_manager.scan_data_directory', return_value=[]):
-            with patch('coops.etl.registry_manager.save_json_data', return_value='/path/to/registry.json'):
-                result = create_master_registry()
-                
-                assert result == '/path/to/registry.json'
+        with patch('coops.etl.registry_manager.scan_data_directory', return_value=[]), patch('coops.etl.registry_manager.save_json_data', return_value='/path/to/registry.json'):
+            result = create_master_registry()
+
+            assert result == '/path/to/registry.json'
     
     def test_handles_nonexistent_files_in_inventory(self):
         """Testa que lida com arquivos que não existem ao criar inventário"""
         mock_files = ['data/bronze/missing.json']
         
-        with patch('coops.etl.registry_manager.scan_data_directory', return_value=mock_files):
-            with patch('coops.etl.registry_manager.save_json_data', return_value='registry.json') as mock_save:
-                with patch('os.path.exists', return_value=False):
-                    create_master_registry()
-                    
-                    registry_data = mock_save.call_args[0][0]
-                    file_entry = registry_data['file_inventory'][0]
-                    
-                    assert file_entry['size_bytes'] == 0
-                    assert file_entry['modified_at'] is None
+        with patch('coops.etl.registry_manager.scan_data_directory', return_value=mock_files), patch('coops.etl.registry_manager.save_json_data', return_value='registry.json') as mock_save, patch('os.path.exists', return_value=False):
+            create_master_registry()
+
+            registry_data = mock_save.call_args[0][0]
+            file_entry = registry_data['file_inventory'][0]
+
+            assert file_entry['size_bytes'] == 0
+            assert file_entry['modified_at'] is None
 
 
 class TestPersistedTimestampsAreUtc:
@@ -397,12 +371,11 @@ class TestPersistedTimestampsAreUtc:
 
     def test_master_registry_created_at_is_utc(self):
         """Testa que created_at do registro mestre carrega +00:00"""
-        with patch('coops.etl.registry_manager.scan_data_directory', return_value=[]):
-            with patch('coops.etl.registry_manager.save_json_data', return_value='registry.json') as mock_save:
-                create_master_registry()
+        with patch('coops.etl.registry_manager.scan_data_directory', return_value=[]), patch('coops.etl.registry_manager.save_json_data', return_value='registry.json') as mock_save:
+            create_master_registry()
 
-                created_at = mock_save.call_args[0][0]['created_at']
-                assert created_at.endswith('+00:00')
+            created_at = mock_save.call_args[0][0]['created_at']
+            assert created_at.endswith('+00:00')
 
     def test_catalog_generated_at_is_utc(self):
         """Testa que generated_at do catálogo carrega +00:00"""

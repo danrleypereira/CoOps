@@ -1,15 +1,15 @@
-#!/usr/bin/env python3
 """
 Integration tests for main process scripts.
 Tests the integration of bronze_extract, silver_process, and gold_process.
 """
 
+
 import pytest
-from datetime import datetime
-from coops.silver.member_analytics import process_member_analytics
-from coops.silver.contribution_metrics import process_contribution_metrics
-from coops.silver.temporal_analysis import process_temporal_analysis
+
 from coops.gold.timeline_aggregation import process_timeline_aggregation
+from coops.silver.contribution_metrics import process_contribution_metrics
+from coops.silver.member_analytics import process_member_analytics
+from coops.silver.temporal_analysis import process_temporal_analysis
 
 
 def _with_sidecar(members):
@@ -313,27 +313,23 @@ class TestProcessScriptErrorRecovery:
 
     def test_silver_process_continues_on_single_processor_failure(self, fake_io):
         """Test that silver process continues if one processor fails"""
-        # Setup data that might cause one processor to fail
+        # A members corpus without the capture sidecar is corrupt: the
+        # processor refuses it (#188) instead of guessing a capture
+        # instant, and that refusal is this test's "one processor fails".
         fake_io["data/bronze/members_detailed.json"] = [
-            {"login": "test_user", "id": 1}  # Minimal data
+            {"login": "test_user", "id": 1}  # No _metadata sidecar
         ]
         fake_io["data/bronze/commits_all.json"] = []
         fake_io["data/bronze/issues_all.json"] = []
         fake_io["data/bronze/prs_all.json"] = []
         fake_io["data/bronze/issue_events_all.json"] = []
-        
-        # Try to run all processors
-        try:
-            member_files = process_member_analytics()
-            assert isinstance(member_files, list)
-        except Exception:
-            pass
-        
-        try:
-            contrib_files = process_contribution_metrics()
-            assert isinstance(contrib_files, list)
-        except Exception:
-            pass
+
+        with pytest.raises(ValueError):
+            process_member_analytics()
+
+        # The remaining processors still run and report their files.
+        contrib_files = process_contribution_metrics()
+        assert isinstance(contrib_files, list)
 
     def test_process_scripts_preserve_existing_data_on_failure(self, fake_io):
         """Test that existing silver data is preserved if processing fails"""
@@ -347,11 +343,10 @@ class TestProcessScriptErrorRecovery:
             {"login": "new_user", "id": 4444}
         ]
         
-        # Try processing (might fail with minimal data)
-        try:
+        # The corrupt corpus (no sidecar) stops the processor (#188)
+        # before it writes anything; the existing silver data survives.
+        with pytest.raises(ValueError):
             process_member_analytics()
-        except Exception:
-            pass
         
         # Silver data should exist (either old or new)
         assert "data/silver/members_analytics.json" in fake_io

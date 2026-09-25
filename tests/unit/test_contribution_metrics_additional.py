@@ -1,8 +1,9 @@
 """
 Additional tests for silver/contribution_metrics.py to increase coverage
 """
+
 import pytest
-from unittest.mock import patch, MagicMock
+
 import coops.silver.contribution_metrics as contrib
 
 
@@ -72,7 +73,7 @@ def test_metadata_removal_from_all_data_types(monkeypatch):
     monkeypatch.setattr(contrib, "load_family", fake_load)
     monkeypatch.setattr(contrib, "save_json_data", fake_save)
     
-    files = contrib.process_contribution_metrics()
+    contrib.process_contribution_metrics()
     
     repos = saved["data/silver/repository_metrics.json"]
     r1 = next(r for r in repos if r["repo"] == "r1")
@@ -101,7 +102,7 @@ def test_repository_metrics_all_fields_present(monkeypatch):
     monkeypatch.setattr(contrib, "load_family", fake_load)
     monkeypatch.setattr(contrib, "save_json_data", fake_save)
     
-    files = contrib.process_contribution_metrics()
+    contrib.process_contribution_metrics()
     
     repos = saved["data/silver/repository_metrics.json"]
     repo = repos[0]
@@ -168,7 +169,7 @@ def test_multiple_event_types_for_comments(monkeypatch):
     monkeypatch.setattr(contrib, "load_family", fake_load)
     monkeypatch.setattr(contrib, "save_json_data", fake_save)
     
-    files = contrib.process_contribution_metrics()
+    contrib.process_contribution_metrics()
     
     repos = saved["data/silver/repository_metrics.json"]
     r1 = repos[0]
@@ -199,7 +200,7 @@ def test_repo_sorting_with_equal_activity(monkeypatch):
     monkeypatch.setattr(contrib, "load_family", fake_load)
     monkeypatch.setattr(contrib, "save_json_data", fake_save)
     
-    files = contrib.process_contribution_metrics()
+    contrib.process_contribution_metrics()
     
     repos = saved["data/silver/repository_metrics.json"]
     

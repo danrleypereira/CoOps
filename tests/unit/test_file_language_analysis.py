@@ -3,7 +3,6 @@
 
 import coops.silver.file_language_analysis as fla
 
-
 # ===================================================================
 # detect_language_by_extension
 # ===================================================================
@@ -184,7 +183,7 @@ class TestCalculateLanguageStats:
         tree = self._make_tree([("a.py", 300), ("b.js", 100)])
         result = fla.calculate_language_stats(tree)
         assert result["total_bytes"] == 400
-        langs = {l["language"]: l for l in result["languages"]}
+        langs = {lang["language"]: lang for lang in result["languages"]}
         assert langs["Python"]["percentage"] == 75.0
         assert langs["JavaScript"]["percentage"] == 25.0
 
@@ -364,7 +363,7 @@ class TestProcessFileLanguageAnalysis:
         monkeypatch.setattr(fla, "save_json_data", lambda d, p, **kw: (saved.update({p: d}), p)[1])
 
         files = fla.process_file_language_analysis()
-        # 2 repos × (analysis + hierarchy) + 1 consolidated = 5
+        # 2 repos x (analysis + hierarchy) + 1 consolidated = 5
         assert len(files) == 5
 
     def test_sample_config_in_output(self, monkeypatch):

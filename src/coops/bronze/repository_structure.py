@@ -1,10 +1,14 @@
-#!/usr/bin/env python3
 
 import logging
-from typing import List, Dict, Any, Optional
 
-from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data, load_json_data, OfflineCacheMiss
 from coops.bronze.watermarks import WatermarkStore
+from coops.utils.github_api import (
+    GitHubAPIClient,
+    OfflineCacheMiss,
+    OrganizationConfig,
+    load_json_data,
+    save_json_data,
+)
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -13,8 +17,8 @@ def extract_repository_structure(
     client: GitHubAPIClient, 
     config: OrganizationConfig, 
     use_cache: bool = True,
-    watermarks: Optional[WatermarkStore] = None,
-) -> List[str]:
+    watermarks: WatermarkStore | None = None,
+) -> list[str]:
     """
     Extrai estrutura de arquivos de todos os repositórios filtrados.
     
@@ -41,10 +45,14 @@ def extract_repository_structure(
         logger.warning("⚠️  No filtered repositories found. Run repository extraction first.")
         return []
     
-    # Remover metadata se existir
-    if isinstance(filtered_repos, list) and len(filtered_repos) > 0:
-        if isinstance(filtered_repos[0], dict) and '_metadata' in filtered_repos[0]:
-            filtered_repos = filtered_repos[1:]
+    # Remover metadata se existir (nested ifs merged; short-circuit order unchanged)
+    if (
+        isinstance(filtered_repos, list)
+        and len(filtered_repos) > 0
+        and isinstance(filtered_repos[0], dict)
+        and '_metadata' in filtered_repos[0]
+    ):
+        filtered_repos = filtered_repos[1:]
     
     generated_files = []
     successful = 0
@@ -96,7 +104,7 @@ def extract_repository_structure(
 
         try:
             # 🚀 TRY REST FIRST (100x faster)
-            logger.info(f"   Method: REST API (recursive=1)")
+            logger.info("   Method: REST API (recursive=1)")
             structure = client.get_repository_tree(
                 owner=owner,
                 repo=name_only,
@@ -106,7 +114,7 @@ def extract_repository_structure(
             
             # Check if truncated (fallback to GraphQL)
             if structure.get('truncated', False):
-                logger.warning(f"   ⚠️  REST tree truncated, falling back to GraphQL...")
+                logger.warning("   ⚠️  REST tree truncated, falling back to GraphQL...")
                 structure = client.graphql_repository_tree(
                     owner=owner,
                     repo=name_only,
@@ -167,8 +175,8 @@ def extract_repository_structure(
             # An offline replay miss must stop the run, not count this
             # repository as "failed" and continue (#199).
             raise
-        except Exception as e:
-            logger.error(f"   ❌ Error extracting {repo_name}: {str(e)}")
+        except Exception as e:  # noqa: BLE001 — per-repository loop: one failed repo is counted and the run continues
+            logger.error(f"   ❌ Error extracting {repo_name}: {e!s}")
             failed += 1
             continue
     

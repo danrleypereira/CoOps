@@ -4,9 +4,9 @@ Testes unitários para o módulo cleanup_event_data.
 Testa a funcionalidade de limpeza de arquivos de eventos de issues.
 """
 
-import pytest
 from pathlib import Path
-from unittest.mock import patch, MagicMock
+from unittest.mock import MagicMock, patch
+
 import coops.utils.cleanup_event_data as cleanup_module
 
 
@@ -84,9 +84,8 @@ class TestCleanupEventFiles:
         test_file = bronze_dir / "issue_events_test.json"
         test_file.write_text('{"test": "data"}')
         
-        with patch.object(cleanup_module, '__file__', str(src_dir / "cleanup_event_data.py")):
-            with patch('builtins.input', return_value='yes'):
-                cleanup_module.cleanup_event_files(confirm=False)
+        with patch.object(cleanup_module, '__file__', str(src_dir / "cleanup_event_data.py")), patch('builtins.input', return_value='yes'):
+            cleanup_module.cleanup_event_files(confirm=False)
         
         assert not test_file.exists()
         captured = capsys.readouterr()
@@ -102,9 +101,8 @@ class TestCleanupEventFiles:
         test_file = bronze_dir / "issue_events_test.json"
         test_file.write_text('{"test": "data"}')
         
-        with patch.object(cleanup_module, '__file__', str(src_dir / "cleanup_event_data.py")):
-            with patch('builtins.input', return_value='no'):
-                cleanup_module.cleanup_event_files(confirm=False)
+        with patch.object(cleanup_module, '__file__', str(src_dir / "cleanup_event_data.py")), patch('builtins.input', return_value='no'):
+            cleanup_module.cleanup_event_files(confirm=False)
         
         assert test_file.exists()
         captured = capsys.readouterr()
@@ -137,9 +135,8 @@ class TestCleanupEventFiles:
         test_file = bronze_dir / "issue_events_locked.json"
         test_file.write_text('{"test": "data"}')
         
-        with patch.object(cleanup_module, '__file__', str(src_dir / "cleanup_event_data.py")):
-            with patch.object(Path, 'unlink', side_effect=PermissionError("File is locked")):
-                cleanup_module.cleanup_event_files(confirm=True)
+        with patch.object(cleanup_module, '__file__', str(src_dir / "cleanup_event_data.py")), patch.object(Path, 'unlink', side_effect=PermissionError("File is locked")):
+            cleanup_module.cleanup_event_files(confirm=True)
         
         captured = capsys.readouterr()
         assert "Failed to delete" in captured.out
@@ -186,40 +183,35 @@ class TestMainFunction:
     
     def test_main_with_confirm_flag(self, capsys):
         """Testa main com --confirm"""
-        with patch('sys.argv', ['cleanup_event_data.py', '--confirm']):
-            with patch.object(cleanup_module, 'cleanup_event_files') as mock_cleanup:
-                cleanup_module.main()
-                mock_cleanup.assert_called_once_with(confirm=True, dry_run=False)
+        with patch('sys.argv', ['cleanup_event_data.py', '--confirm']), patch.object(cleanup_module, 'cleanup_event_files') as mock_cleanup:
+            cleanup_module.main()
+            mock_cleanup.assert_called_once_with(confirm=True, dry_run=False)
         
         captured = capsys.readouterr()
         assert "Issue Event Data Cleanup Utility" in captured.out
     
     def test_main_with_dry_run_flag(self, capsys):
         """Testa main com --dry-run"""
-        with patch('sys.argv', ['cleanup_event_data.py', '--dry-run']):
-            with patch.object(cleanup_module, 'cleanup_event_files') as mock_cleanup:
-                cleanup_module.main()
-                mock_cleanup.assert_called_once_with(confirm=False, dry_run=True)
+        with patch('sys.argv', ['cleanup_event_data.py', '--dry-run']), patch.object(cleanup_module, 'cleanup_event_files') as mock_cleanup:
+            cleanup_module.main()
+            mock_cleanup.assert_called_once_with(confirm=False, dry_run=True)
     
     def test_main_with_both_flags(self):
         """Testa main com ambas flags"""
-        with patch('sys.argv', ['cleanup_event_data.py', '--confirm', '--dry-run']):
-            with patch.object(cleanup_module, 'cleanup_event_files') as mock_cleanup:
-                cleanup_module.main()
-                mock_cleanup.assert_called_once_with(confirm=True, dry_run=True)
+        with patch('sys.argv', ['cleanup_event_data.py', '--confirm', '--dry-run']), patch.object(cleanup_module, 'cleanup_event_files') as mock_cleanup:
+            cleanup_module.main()
+            mock_cleanup.assert_called_once_with(confirm=True, dry_run=True)
     
     def test_main_without_flags(self):
         """Testa main sem flags"""
-        with patch('sys.argv', ['cleanup_event_data.py']):
-            with patch.object(cleanup_module, 'cleanup_event_files') as mock_cleanup:
-                cleanup_module.main()
-                mock_cleanup.assert_called_once_with(confirm=False, dry_run=False)
+        with patch('sys.argv', ['cleanup_event_data.py']), patch.object(cleanup_module, 'cleanup_event_files') as mock_cleanup:
+            cleanup_module.main()
+            mock_cleanup.assert_called_once_with(confirm=False, dry_run=False)
     
     def test_main_displays_introduction(self, capsys):
         """Testa que mensagem introdutória é exibida"""
-        with patch('sys.argv', ['cleanup_event_data.py']):
-            with patch.object(cleanup_module, 'cleanup_event_files'):
-                cleanup_module.main()
+        with patch('sys.argv', ['cleanup_event_data.py']), patch.object(cleanup_module, 'cleanup_event_files'):
+            cleanup_module.main()
         
         captured = capsys.readouterr()
         assert "=" * 70 in captured.out

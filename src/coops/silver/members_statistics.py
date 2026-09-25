@@ -1,16 +1,15 @@
-#!/usr/bin/env python3
 
 from collections import defaultdict
-from datetime import datetime, timedelta
-from typing import List, Dict, Any, Mapping, Optional
+from collections.abc import Mapping
+from typing import Any
 
-from coops.utils.github_api import save_json_data, parse_github_date
 from coops.silver.bronze_input import load_family
 from coops.silver.unattributed import (
     UNATTRIBUTED_FIELD,
     commit_author_identity,
     conversation_actor_identity,
 )
+from coops.utils.github_api import parse_github_date, save_json_data
 
 
 def is_email_hash(identifier: str) -> bool:
@@ -22,7 +21,7 @@ def is_email_hash(identifier: str) -> bool:
     return len(identifier) == 64 and all(c in "0123456789abcdef" for c in identifier)
 
 
-def choose_display_spelling(name_counts: Mapping[str, int]) -> Optional[str]:
+def choose_display_spelling(name_counts: Mapping[str, int]) -> str | None:
     """Pick the one spelling of an identity's name that will be displayed.
 
     Deterministic rule, measured against the corpus (issue #151):
@@ -51,7 +50,7 @@ def choose_display_spelling(name_counts: Mapping[str, int]) -> Optional[str]:
 
 
 def display_name(identifier: str,
-                 name_counts: Optional[Mapping[str, int]] = None) -> str:
+                 name_counts: Mapping[str, int] | None = None) -> str:
     """Render the human-readable label for an identity key.
 
     The label chain inverts the tail of the identity chain, because the two
@@ -77,7 +76,7 @@ def display_name(identifier: str,
     return f"Unknown contributor ({identifier[:8]})"
 
 
-def observe_spelling(name_counts: Dict[str, int], name: Optional[str]) -> None:
+def observe_spelling(name_counts: dict[str, int], name: str | None) -> None:
     """Accumulate one observed spelling of an identity's real name.
 
     Call this at every event write site; the label is decided once, at
@@ -90,7 +89,7 @@ def observe_spelling(name_counts: Dict[str, int], name: Optional[str]) -> None:
         name_counts[name] += 1
 
 
-def process_members_statistics() -> List[str]:
+def process_members_statistics() -> list[str]:
     """
     Gera estatísticas individuais por membro, incluindo avg_weekly_activity.
     """
@@ -107,7 +106,7 @@ def process_members_statistics() -> List[str]:
     # Estrutura para agregar eventos por membro. `name_counts` acumula as
     # grafias do nome real observadas por identidade (issue #151, etapa 3);
     # o rótulo é decidido apenas na agregação, depois de ver todos os eventos.
-    def _new_entry() -> Dict[str, Any]:
+    def _new_entry() -> dict[str, Any]:
         return {
             'name_counts': defaultdict(int),
             'events': [],

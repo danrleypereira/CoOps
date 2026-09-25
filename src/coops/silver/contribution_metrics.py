@@ -1,16 +1,15 @@
-#!/usr/bin/env python3
 """
 Contribution metrics processing for Silver layer
 Analyzes contribution patterns across issues, PRs, and commits
 """
 
 from collections import defaultdict
-from datetime import datetime
-from typing import List, Dict, Any
-from coops.utils.github_api import save_json_data
-from coops.silver.bronze_input import load_family
 
-def process_contribution_metrics() -> List[str]:
+from coops.silver.bronze_input import load_family
+from coops.utils.github_api import save_json_data
+
+
+def process_contribution_metrics() -> list[str]:
     """Process contribution data into metrics"""
 
     # Load bronze data: per-repository files, not the _all aggregates

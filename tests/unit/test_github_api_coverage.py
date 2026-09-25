@@ -2,11 +2,12 @@
 Additional tests for utils/github_api.py to increase coverage
 Focus on untested error paths and edge cases
 """
+from unittest.mock import Mock, patch
+
 import pytest
-from unittest.mock import Mock, patch, MagicMock
-from coops.utils.github_api import GitHubAPIClient
 import requests
-import json
+
+from coops.utils.github_api import GitHubAPIClient
 
 
 class TestGetWithCacheErrorPaths:
@@ -56,7 +57,7 @@ class TestGetWithCacheErrorPaths:
             mock_get.return_value = mock_response
             
             with patch('time.sleep') as mock_sleep:  # Don't actually sleep
-                result = client.get_with_cache("https://api.github.com/test", use_cache=False, retries=1, backoff_base=0.001)
+                client.get_with_cache("https://api.github.com/test", use_cache=False, retries=1, backoff_base=0.001)
             
             # Should retry after rate limit
             assert mock_get.call_count >= 1
@@ -343,7 +344,7 @@ class TestSplitTimeRangeEdgeCases:
         
         assert len(result) == 2
         # Should split from since to now
-        for chunk_start, chunk_end in result:
+        for chunk_start, _chunk_end in result:
             assert chunk_start is not None
     
     def test_split_time_range_only_until(self, tmp_path):
@@ -354,7 +355,7 @@ class TestSplitTimeRangeEdgeCases:
         
         assert len(result) == 2
         # Should split from default (1 year ago) to until
-        for chunk_start, chunk_end in result:
+        for _chunk_start, chunk_end in result:
             assert chunk_end is not None
     
     def test_split_time_range_invalid_date_format(self, tmp_path):

@@ -35,9 +35,8 @@ def _run_issues(client, files, watermarks):
         saved[path] = data
         return path
 
-    with patch("coops.bronze.issues.load_json_data", side_effect=loader):
-        with patch("coops.bronze.issues.save_json_data", side_effect=saver):
-            extract_issues(client, MagicMock(), watermarks=watermarks)
+    with patch("coops.bronze.issues.load_json_data", side_effect=loader), patch("coops.bronze.issues.save_json_data", side_effect=saver):
+        extract_issues(client, MagicMock(), watermarks=watermarks)
     return saved
 
 
@@ -67,7 +66,7 @@ class TestIncrementalIssues:
         wm = _store(last_updated_at="2026-09-22T00:00:00Z")
         files = {
             "data/bronze/repositories_filtered.json": REPOS,
-            "data/bronze/issues_repo1.json": [{"_metadata": {}}] + prior_issues,
+            "data/bronze/issues_repo1.json": [{"_metadata": {}}, *prior_issues],
         }
 
         saved = _run_issues(client, files, wm)
@@ -94,7 +93,7 @@ class TestIncrementalIssues:
         wm = _store(last_event_id=2)
         files = {
             "data/bronze/repositories_filtered.json": REPOS,
-            "data/bronze/issue_events_repo1.json": [{"_metadata": {}}] + prior_events,
+            "data/bronze/issue_events_repo1.json": [{"_metadata": {}}, *prior_events],
         }
 
         saved = _run_issues(client, files, wm)
@@ -141,9 +140,8 @@ def _run_commits(client, files, **kwargs):
         saved[path] = data
         return path
 
-    with patch("coops.bronze.commits.load_json_data", side_effect=loader):
-        with patch("coops.bronze.commits.save_json_data", side_effect=saver):
-            extract_commits(client, MagicMock(), **kwargs)
+    with patch("coops.bronze.commits.load_json_data", side_effect=loader), patch("coops.bronze.commits.save_json_data", side_effect=saver):
+        extract_commits(client, MagicMock(), **kwargs)
     return saved
 
 
@@ -188,7 +186,7 @@ class TestIncrementalCommits:
         wm = _store(last_run="2026-09-23T00:00:00Z")
         files = {
             "data/bronze/repositories_filtered.json": REPOS,
-            "data/bronze/commits_repo1.json": [{"_metadata": {}}] + prior,
+            "data/bronze/commits_repo1.json": [{"_metadata": {}}, *prior],
         }
 
         saved = _run_commits(client, files, method="rest", watermarks=wm)
@@ -207,9 +205,8 @@ class TestIncrementalStructure:
             "data/bronze/structure_repo1.json": {"tree": [{"name": "a.py"}]},
         }
 
-        with patch("coops.bronze.repository_structure.load_json_data", side_effect=files.get):
-            with patch("coops.bronze.repository_structure.save_json_data", return_value="f"):
-                result = extract_repository_structure(client, MagicMock(), watermarks=wm)
+        with patch("coops.bronze.repository_structure.load_json_data", side_effect=files.get), patch("coops.bronze.repository_structure.save_json_data", return_value="f"):
+            result = extract_repository_structure(client, MagicMock(), watermarks=wm)
 
         assert "data/bronze/structure_repo1.json" in result
         client.get_repository_tree.assert_not_called()
@@ -225,9 +222,8 @@ class TestIncrementalStructure:
         wm = _store(head_shas={"main": "oldsha"})
         files = {"data/bronze/repositories_filtered.json": REPOS}
 
-        with patch("coops.bronze.repository_structure.load_json_data", side_effect=files.get):
-            with patch("coops.bronze.repository_structure.save_json_data", return_value="f"):
-                extract_repository_structure(client, MagicMock(), watermarks=wm)
+        with patch("coops.bronze.repository_structure.load_json_data", side_effect=files.get), patch("coops.bronze.repository_structure.save_json_data", return_value="f"):
+            extract_repository_structure(client, MagicMock(), watermarks=wm)
 
         client.get_repository_tree.assert_called_once()
         assert wm.get("org/repo1").head_shas == {"main": "newsha"}

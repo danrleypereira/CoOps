@@ -1,22 +1,17 @@
 """
 Additional tests for github_api.py to improve coverage
 """
-import pytest
-from unittest.mock import Mock, patch, MagicMock
-import requests
-from datetime import datetime, timezone
-from coops.utils.github_api import (
-    GitHubAPIClient, 
-    save_json_data, 
-    load_json_data, 
-    update_data_registry,
-    OrganizationConfig,
-    parse_github_date
-)
 import os
-import json
 import tempfile
-import shutil
+
+from coops.utils.github_api import (
+    GitHubAPIClient,
+    OrganizationConfig,
+    load_json_data,
+    parse_github_date,
+    save_json_data,
+    update_data_registry,
+)
 
 
 class TestFetchRestCommitDetailsParallel:
@@ -114,7 +109,7 @@ class TestGraphQLCommitHistory:
         
         monkeypatch.setattr(client, "graphql", mock_graphql)
         
-        commits, meta = client.graphql_commit_history(
+        commits, _meta = client.graphql_commit_history(
             "owner", "repo", 50, branches=["feature1", "feature2"]
         )
         
@@ -129,7 +124,7 @@ class TestGraphQLCommitHistory:
         graphql_calls = [0]
         def mock_graphql(query, variables, use_cache, timeout):
             graphql_calls[0] += 1
-            return None  # Simulate GraphQL failure
+            return  # Simulate GraphQL failure
         
         rest_calls = [0]
         def mock_get_with_cache(url, use_cache, silent=False):
@@ -155,7 +150,7 @@ class TestGraphQLCommitHistory:
         monkeypatch.setattr(client, "get_with_cache", mock_get_with_cache)
         monkeypatch.setattr(client, "_fetch_rest_commit_details_parallel", mock_fetch_parallel)
         
-        commits, meta = client.graphql_commit_history("owner", "repo", 50, max_pages=1)
+        commits, _meta = client.graphql_commit_history("owner", "repo", 50, max_pages=1)
         
         # Should fall back to REST
         assert graphql_calls[0] > 0
@@ -188,7 +183,7 @@ class TestGraphQLCommitHistory:
         
         monkeypatch.setattr(client, "graphql", mock_graphql)
         
-        commits, meta = client.graphql_commit_history(
+        _commits, _meta = client.graphql_commit_history(
             "owner", "repo", 50,
             since="2024-01-01T00:00:00Z",
             until="2024-12-31T23:59:59Z",
@@ -213,7 +208,7 @@ class TestGraphQLCommitHistory:
         
         monkeypatch.setattr(client, "graphql", mock_graphql)
         
-        commits, meta = client.graphql_commit_history(
+        commits, _meta = client.graphql_commit_history(
             "owner", "repo", 50, branches=["nonexistent"]
         )
         

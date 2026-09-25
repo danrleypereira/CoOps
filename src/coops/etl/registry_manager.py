@@ -1,14 +1,13 @@
-#!/usr/bin/env python3
 """
 Data registry management for tracking all generated files and their relationships
 """
 
 import argparse
 import os
-import json
 from datetime import datetime, timezone
-from typing import Dict, List, Any
-from coops.utils.github_api import load_json_data, save_json_data
+from typing import Any
+
+from coops.utils.github_api import save_json_data
 
 #: The Bronze inputs the record-based Silver processors read: the
 #: per-repository files enumerated by ``coops.silver.bronze_input``. The
@@ -53,29 +52,31 @@ def create_master_registry() -> str:
         'file_path': f,
         'layer': 'bronze' if 'bronze' in f else 'silver' if 'silver' in f else 'gold',
         'size_bytes': os.path.getsize(f) if os.path.exists(f) else 0,
-        'modified_at': datetime.fromtimestamp(os.path.getmtime(f)).isoformat() if os.path.exists(f) else None
+        # #143's convention: persisted timestamps are UTC. A naive
+        # fromtimestamp() here wrote the local wall clock, so the registry
+        # disagreed with every other dataset's metadata.
+        'modified_at': datetime.fromtimestamp(os.path.getmtime(f), tz=timezone.utc).isoformat() if os.path.exists(f) else None
     } for f in all_files]
     
     # Save master registry
-    registry_file = save_json_data(
+    return save_json_data(
         master_registry,
         "data/master_registry.json",
         timestamp=False
     )
     
-    return registry_file
 
-def scan_data_directory(directory: str) -> List[str]:
+def scan_data_directory(directory: str) -> list[str]:
     """Scan directory for JSON files"""
     files = []
     if os.path.exists(directory):
-        for root, dirs, filenames in os.walk(directory):
+        for root, _dirs, filenames in os.walk(directory):
             for filename in filenames:
                 if filename.endswith('.json'):
                     files.append(os.path.join(root, filename))
     return files
 
-def categorize_bronze_files(files: List[str]) -> Dict[str, List[str]]:
+def categorize_bronze_files(files: list[str]) -> dict[str, list[str]]:
     """Categorize bronze layer files by data type"""
     categories = {
         'repositories': [],
@@ -107,7 +108,7 @@ def categorize_bronze_files(files: List[str]) -> Dict[str, List[str]]:
     
     return categories
 
-def categorize_silver_files(files: List[str]) -> Dict[str, List[str]]:
+def categorize_silver_files(files: list[str]) -> dict[str, list[str]]:
     """Categorize silver layer files by analysis type"""
     categories = {
         'member_analytics': [],
@@ -133,10 +134,10 @@ def categorize_silver_files(files: List[str]) -> Dict[str, List[str]]:
     
     return categories
 
-def create_data_lineage() -> Dict[str, Any]:
+def create_data_lineage() -> dict[str, Any]:
     """Create data lineage mapping showing dependencies"""
     
-    lineage = {
+    return {
         'bronze_to_silver': {
             'members_analytics': {
                 'inputs': ['data/bronze/members_detailed.json'],
@@ -195,7 +196,6 @@ def create_data_lineage() -> Dict[str, Any]:
         }
     }
     
-    return lineage
 
 def generate_data_catalog() -> str:
     """Generate comprehensive data catalog with descriptions"""
@@ -262,13 +262,12 @@ def generate_data_catalog() -> str:
         }
     }
     
-    catalog_file = save_json_data(
+    return save_json_data(
         catalog,
         "data/data_catalog.json",
         timestamp=False
     )
     
-    return catalog_file
 
 def main():
     """Create the master data registry and the data catalog."""

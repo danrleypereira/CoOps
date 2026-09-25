@@ -4,7 +4,7 @@ The store is plain JSON on disk, so these tests exercise the real file round
 trip (in ``tmp_path``) plus the comparison/query helpers the extractors rely on.
 """
 
-from datetime import datetime, timezone
+from datetime import datetime
 
 from coops.bronze.watermarks import WatermarkStore, max_iso, query_since
 

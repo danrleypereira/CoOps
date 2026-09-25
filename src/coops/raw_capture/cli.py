@@ -9,13 +9,13 @@ from __future__ import annotations
 
 import argparse
 import sys
-from typing import Optional, Sequence
+from collections.abc import Sequence
 
 from coops.raw_capture.capture import prune_directory
 from coops.raw_capture.sanitize import sanitize_directory
 
 
-def main(argv: Optional[Sequence[str]] = None) -> int:
+def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         prog="coops-corpus",
         description="Build and inspect the CoOps raw API corpus artifacts.",

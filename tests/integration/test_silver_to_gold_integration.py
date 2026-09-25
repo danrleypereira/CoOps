@@ -1,11 +1,12 @@
-#!/usr/bin/env python3
 """
 Integration tests for Silver -> Gold data transformation pipeline.
 Tests the complete flow from processed analytics to aggregated insights.
 """
 
-import pytest
 from datetime import datetime, timedelta
+
+import pytest
+
 from coops.gold.timeline_aggregation import process_timeline_aggregation
 
 
@@ -213,7 +214,7 @@ class TestSilverToGoldIntegration:
     ):
         """Test that timeline data is sorted chronologically"""
         # Execute transformation
-        generated_files = process_timeline_aggregation()
+        process_timeline_aggregation()
         
         # Verify last 7 days is sorted
         last_7_days = fake_io["data/gold/timeline_last_7_days.json"]
@@ -248,7 +249,7 @@ class TestSilverToGoldIntegration:
     ):
         """Test that aggregation preserves important metrics"""
         # Execute transformation
-        generated_files = process_timeline_aggregation()
+        process_timeline_aggregation()
         
         # Get aggregated data
         last_7_days = fake_io["data/gold/timeline_last_7_days.json"]
@@ -299,7 +300,7 @@ class TestSilverToGoldIntegration:
     ):
         """Test that authors are correctly mapped to their repositories"""
         # Execute transformation
-        generated_files = process_timeline_aggregation()
+        process_timeline_aggregation()
         
         # Get aggregated data
         last_7_days = fake_io["data/gold/timeline_last_7_days.json"]
@@ -320,7 +321,7 @@ class TestSilverToGoldIntegration:
     ):
         """Test that monthly aggregation correctly groups daily data"""
         # Execute transformation
-        generated_files = process_timeline_aggregation()
+        process_timeline_aggregation()
         
         # Get monthly data
         last_12_months = fake_io["data/gold/timeline_last_12_months.json"]

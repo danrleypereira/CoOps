@@ -1,5 +1,6 @@
 import coops.silver.contribution_metrics as contrib
 
+
 def test_process_contribution_metrics_empty(monkeypatch):
     """Testa processamento com dados vazios"""
     def fake_load(family: str):
@@ -83,7 +84,7 @@ def test_process_contribution_metrics_metadata_removal(monkeypatch):
     monkeypatch.setattr(contrib, "load_family", fake_load)
     monkeypatch.setattr(contrib, "save_json_data", fake_save)
 
-    files = contrib.process_contribution_metrics()
+    contrib.process_contribution_metrics()
     
     repos = saved["data/silver/repository_metrics.json"]
     r1 = next((r for r in repos if r["repo"] == "r1"), None)
@@ -113,7 +114,7 @@ def test_process_contribution_metrics_repository_sorting(monkeypatch):
     monkeypatch.setattr(contrib, "load_family", fake_load)
     monkeypatch.setattr(contrib, "save_json_data", fake_save)
 
-    files = contrib.process_contribution_metrics()
+    contrib.process_contribution_metrics()
     
     repos = saved["data/silver/repository_metrics.json"]
     
@@ -142,7 +143,7 @@ def test_process_contribution_metrics_unknown_repo(monkeypatch):
     monkeypatch.setattr(contrib, "load_family", fake_load)
     monkeypatch.setattr(contrib, "save_json_data", fake_save)
 
-    files = contrib.process_contribution_metrics()
+    contrib.process_contribution_metrics()
     
     repos = saved["data/silver/repository_metrics.json"]
     
@@ -172,7 +173,7 @@ def test_process_contribution_metrics_comment_events(monkeypatch):
     monkeypatch.setattr(contrib, "load_family", fake_load)
     monkeypatch.setattr(contrib, "save_json_data", fake_save)
 
-    files = contrib.process_contribution_metrics()
+    contrib.process_contribution_metrics()
     
     repos = saved["data/silver/repository_metrics.json"]
     r1 = next((r for r in repos if r["repo"] == "r1"), None)
@@ -203,7 +204,7 @@ def test_process_contribution_metrics_multiple_repos(monkeypatch):
     monkeypatch.setattr(contrib, "load_family", fake_load)
     monkeypatch.setattr(contrib, "save_json_data", fake_save)
 
-    files = contrib.process_contribution_metrics()
+    contrib.process_contribution_metrics()
     
     repos = saved["data/silver/repository_metrics.json"]
     
@@ -247,7 +248,7 @@ def test_process_contribution_metrics_total_activity_calculation(monkeypatch):
     monkeypatch.setattr(contrib, "load_family", fake_load)
     monkeypatch.setattr(contrib, "save_json_data", fake_save)
 
-    files = contrib.process_contribution_metrics()
+    contrib.process_contribution_metrics()
     
     repos = saved["data/silver/repository_metrics.json"]
     r1 = repos[0]
@@ -276,7 +277,7 @@ def test_process_contribution_metrics_with_issues_only(monkeypatch):
     monkeypatch.setattr(contrib, "load_family", fake_load)
     monkeypatch.setattr(contrib, "save_json_data", fake_save)
 
-    files = contrib.process_contribution_metrics()
+    contrib.process_contribution_metrics()
 
     metrics = saved["data/silver/contribution_metrics.json"]
 

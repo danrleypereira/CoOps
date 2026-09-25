@@ -11,12 +11,12 @@ import re
 from unittest.mock import MagicMock, patch
 
 from coops.bronze.issues import (
-    _load_prior_records,
-    extract_issues,
     ACTOR_FIELDS,
     ISSUE_FIELDS,
+    _load_prior_records,
     _project_actor,
     _project_issue,
+    extract_issues,
 )
 
 EMAIL = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
@@ -125,9 +125,8 @@ def test_pull_request_split_survives_the_projection():
         return path
 
     with patch("coops.bronze.issues.load_json_data",
-               return_value=[{"name": "repo1", "full_name": "acme/repo1"}]):
-        with patch("coops.bronze.issues.save_json_data", side_effect=capture_save):
-            extract_issues(client, MagicMock())
+               return_value=[{"name": "repo1", "full_name": "acme/repo1"}]), patch("coops.bronze.issues.save_json_data", side_effect=capture_save):
+        extract_issues(client, MagicMock())
 
     issues = saved["data/bronze/issues_repo1.json"]
     prs = saved["data/bronze/prs_repo1.json"]

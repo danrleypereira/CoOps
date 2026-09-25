@@ -1,9 +1,10 @@
 """
 Tests for error handling paths in github_api.py
 """
-import pytest
-from unittest.mock import Mock, patch, MagicMock
+from unittest.mock import Mock
+
 import requests
+
 from coops.utils.github_api import GitHubAPIClient
 
 

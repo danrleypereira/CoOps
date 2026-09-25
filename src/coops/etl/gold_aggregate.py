@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Gold layer aggregation: executive KPIs and member performance tiers."""
 import argparse
 import json
@@ -8,7 +7,7 @@ from datetime import datetime, timezone
 
 def load_json(filepath):
     if os.path.exists(filepath):
-        with open(filepath, 'r') as f:
+        with open(filepath) as f:
             return json.load(f)
     return None
 

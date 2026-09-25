@@ -76,7 +76,7 @@ LAYERS: frozenset[str] = frozenset({"bronze", "silver", "gold"})
 #: document adapter (BSON) can round-trip. The port exchanges only this:
 #: never a driver type, never a live object.
 JSONValue: TypeAlias = (
-    None | bool | int | float | str | Sequence["JSONValue"] | Mapping[str, "JSONValue"]
+    bool | int | float | str | Sequence["JSONValue"] | Mapping[str, "JSONValue"] | None
 )
 
 #: Suffix of the publish aggregates (``issues_all.json`` …). Rejected by
