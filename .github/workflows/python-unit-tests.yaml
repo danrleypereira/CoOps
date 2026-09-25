@@ -4,12 +4,14 @@ on:
   push:
     branches: [ main ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, "phase/**" ]
     paths:
       - "src/**/*.py"
       - "tests/**/*.py"
       - "pyproject.toml"
       - "uv.lock"
+      - "scripts/**/*.py"
+      - ".github/workflows/python-unit-tests.yaml"
       - "dashboard/src/**/*.{ts,tsx}"
       - "dashboard/src/**/*.test.{ts,tsx}"
       - "dashboard/package.json"
@@ -37,6 +39,19 @@ jobs:
 
       - name: Install dependencies
         run: uv sync --locked
+
+      # Issue #119. ruff ran nowhere in CI until now: the only mention of it
+      # in .github was a checkbox in the PR template, which is a check that
+      # passes because a human ticked it. main was brought to 0 findings in
+      # #220, so this step defends that rather than establishing it.
+      #
+      # Whole tree on purpose. `ruff check src tests` is also green, but
+      # scoping to it would be green-by-narrowing — the DoD forbids that, and
+      # the 10 findings this step's branch fixed were all in `scripts/`,
+      # exactly the code a narrower scope would have left unguarded.
+      - name: Lint (ruff, whole tree)
+        if: matrix.python-version == '3.11'
+        run: uv run ruff check .
 
       # Issue #91: the compile-time half of the port contract. A Protocol is
       # checked statically, not at runtime, so adapter drift (missing `tenant`
@@ -102,6 +117,18 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      # Issue #119: its own step, not a side effect of `npm run build`, so a
+      # type error is distinguishable from a build failure and surfaces before
+      # deploy rather than at it.
+      #
+      # `npm run lint` and `npm run format:check` are NOT here yet and that is
+      # deliberate: on this commit they exit 1 (314 eslint errors, 88 files
+      # unformatted). Adding them now would make main red rather than keep it
+      # green. Tracked separately; this step is the part of #119 that can be
+      # enforced honestly today.
+      - name: Type check (tsc -b)
+        run: npx tsc -b
 
       - name: Run unit tests with coverage
         run: npm run test:coverage
