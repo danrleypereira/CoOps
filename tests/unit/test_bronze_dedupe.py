@@ -639,3 +639,63 @@ def test_the_clean_corpus_report_is_written_and_says_zero(bronze: Path) -> None:
     header = "\n".join(report.format_lines())
     assert "0 duplicate id(s) deduped, 0 REFUSED" in header
     assert "0 unmapped file(s)" in header
+
+
+# --------------------------------------------------------------------------
+# #255: the third payload shape
+# --------------------------------------------------------------------------
+
+#: A ``structure_*.json`` as ``repository_structure.py`` actually writes it:
+#: ``save_json_data(structure, path, timestamp=False)``, so **no `_metadata`
+#: envelope is ever added** and ``extracted_at`` sits at the top level beside
+#: the tree. Built from the writer, not from the reader's assumption — a
+#: fixture shaped by the code under test cannot contradict it, which is how
+#: #255 survived #252's suite in the first place.
+def _structure_document(stamp: str, sha: str) -> dict[str, Any]:
+    return {
+        "owner": "unb-mds",
+        "repository": "2025-1-NoFluxoUnB",
+        "branch": "main",
+        "sha": sha,
+        "method": "graphql",
+        "total_items": 2,
+        "extracted_at": stamp,
+        "tree": [{"path": "README.md", "type": "blob"}, {"path": "src", "type": "tree"}],
+        "repository_metadata": {"id": 957040204, "full_name": "unb-mds/2025-1-NoFluxoUnB"},
+    }
+
+
+def test_the_structure_fixture_has_no_metadata_envelope() -> None:
+    """The control for the fixture itself.
+
+    If a future edit adds ``_metadata`` here, the test below would pass through
+    the envelope branch and stop exercising #255 at all — silently.
+    """
+    doc = _structure_document("2026-09-25T06:26:21.252803+00:00", "a" * 40)
+    assert "_metadata" not in doc
+    assert isinstance(doc.get("extracted_at"), str)
+
+
+def test_a_top_level_extracted_at_is_read_so_structure_dedupes(tmp_path: Path) -> None:
+    """#255: structure files never deduped because the stamp was unreachable.
+
+    Both files carry id 957040204 and are 7 days apart on disk, but the parser
+    looked only under ``_metadata`` and reported ``extracted_at=None``, so the
+    pair refused and both stayed counted.
+    """
+    bronze = tmp_path / "bronze"
+    bronze.mkdir()
+    (bronze / "repo_2025-1-NoFluxoUNB.json").write_text(
+        json.dumps({"id": 957040204, "name": "2025-1-NoFluxoUNB"}), encoding="utf-8")
+    (bronze / "repo_2025-1-NoFluxoUnB.json").write_text(
+        json.dumps({"id": 957040204, "name": "2025-1-NoFluxoUnB"}), encoding="utf-8")
+    (bronze / "structure_2025-1-NoFluxoUNB.json").write_text(
+        json.dumps(_structure_document("2026-09-18T10:26:49.763221", "b" * 40)), encoding="utf-8")
+    (bronze / "structure_2025-1-NoFluxoUnB.json").write_text(
+        json.dumps(_structure_document("2026-09-25T06:26:21.252803+00:00", "c" * 40)), encoding="utf-8")
+
+    kept = bronze_files(bronze, "structure")
+
+    assert [p.name for p in kept] == ["structure_2025-1-NoFluxoUnB.json"], (
+        "2 on disk must read as 1: the newer name wins a 7-day gap"
+    )
