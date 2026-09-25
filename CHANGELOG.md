@@ -28,6 +28,19 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   caller, #26). A `TYPE_CHECKING` conformance anchor — the twin of the
   storage adapters' — binds the adapter to `SourcePort` so signature
   drift is a mypy error under `strict = true`.
+- `select_storage` in `coops.storage.selection` (#42): the factory that
+  turns configuration into the dataset `StoragePort`. `COOPS_STORAGE=data`
+  (the `Settings` default, and what an empty value resolves to) selects
+  `FileStorageAdapter` over `./data`; `COOPS_STORAGE=mongo` selects
+  `MongoStorageAdapter` through `MONGO_URI`. An unknown value raises,
+  naming the value and the accepted set — it does **not** fall back to a
+  default: `COOPS_STORAGE=mongoo` must stop the run rather than quietly
+  write files nobody asked for (the #129 wrong-org dashboard and #212
+  evergreen skips are this defect class). `mongo` without `MONGO_URI`
+  raises naming the setting. `FileStorageAdapter` is now exported from
+  `coops.storage` alongside `MongoStorageAdapter`, as #41 promised. The
+  ETL does not call the selector yet — that wiring lands with the layers'
+  move onto the port (#30/#33/#34).
 
 ### Changed
 - **Lint, format and type-check must be green, not "no worse than the base"**
