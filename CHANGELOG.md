@@ -8,6 +8,27 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 ## [Unreleased]
 
 ### Added
+- The contract suite for `scripts/verify_medallion.py` (#209): the phase
+  gate was itself verified by nothing — `--self-test` proves its 14 checks
+  can fail, and nothing proved the *script's* behaviour. Every defect it
+  has shipped with (rc 0 while checks were skipped for want of
+  `--reference`, a verdict that denied record loss while rc 2 was set by
+  the instrument, a missing — then an empty — layer reading as success,
+  an early return that dropped `no-record-vanished` from the report)
+  lived in that second category, and each was caught by a human
+  re-running the script. `tests/unit/test_verify_medallion.py` now drives
+  `main()` end to end over synthetic corpora under `tmp_path` (never the
+  frozen corpus): an exit-code matrix whose every row runs its clean twin
+  in the same test (0 clean / 1 broken invariant / 2 skipped check,
+  silent control, absent or empty layer), the precedence row (a missing
+  layer AND real record loss → rc 2, with both findings named), check
+  registration under every layer-presence × `--reference` combination —
+  asserting the *set of names in the report*, the shape an absent row
+  hides in — `--self-test` returning 14 of 14 and exiting 2 when a
+  control stops firing (planted by stubbing one check), and row-format
+  parsing for the tooling that reads the output. The script is unchanged:
+  these tests assert its documented contract, and `--self-test` remains
+  the evidence the checks work.
 - `GitHubSourceAdapter` in `coops/github/adapter.py` (#29): the GitHub
   implementation of `SourcePort`, composing the existing
   `GitHubAPIClient` (transport), `coops.github.mapper` (every
