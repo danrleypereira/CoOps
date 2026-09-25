@@ -1,9 +1,8 @@
-import pytest
 import json
 import os
-from datetime import datetime
-from unittest.mock import Mock, patch
-from coops.utils.github_api import save_json_data, load_json_data, parse_github_date
+
+from coops.utils.github_api import load_json_data, parse_github_date, save_json_data
+
 
 def test_save_json_data_with_timestamp(tmp_path):
     """Testa save_json_data com timestamp"""
@@ -16,7 +15,7 @@ def test_save_json_data_with_timestamp(tmp_path):
     assert os.path.exists(filepath)
     
     # Verifica conteúdo
-    with open(filepath, 'r') as f:
+    with open(filepath) as f:
         saved = json.load(f)
     
     assert saved["test"] == "value"
@@ -30,7 +29,7 @@ def test_save_json_data_list_with_timestamp(tmp_path):
     
     save_json_data(data, filepath, timestamp=True)
     
-    with open(filepath, 'r') as f:
+    with open(filepath) as f:
         saved = json.load(f)
     
     assert isinstance(saved, list)
@@ -46,7 +45,7 @@ def test_save_json_data_without_timestamp(tmp_path):
     
     save_json_data(data, filepath, timestamp=False)
     
-    with open(filepath, 'r') as f:
+    with open(filepath) as f:
         saved = json.load(f)
     
     assert saved == data

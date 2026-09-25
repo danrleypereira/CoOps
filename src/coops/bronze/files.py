@@ -192,7 +192,7 @@ def _is_derived(name: str) -> bool:
     drop duplicates. Both spellings behave identically on every repository name
     that exists today, so only the precise one is safe to keep.
     """
-    stem = name[: -len(".json")] if name.endswith(".json") else name
+    stem = name.removesuffix(".json")
     return any(stem.endswith(suffix) for suffix in DERIVED_SUFFIXES)
 
 

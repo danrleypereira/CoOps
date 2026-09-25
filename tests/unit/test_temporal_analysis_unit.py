@@ -1,10 +1,8 @@
 from datetime import datetime
-from typing import Any, Dict, List
-
-import json
-import types
+from typing import Any
 
 import coops.silver.temporal_analysis as temporal
+
 
 def _iso(s: str) -> datetime:
     # parse_github_date equivalente simples para ISO-8601 com 'Z'
@@ -22,9 +20,9 @@ def test_temporal_analysis_commit_user_identification(monkeypatch):
     """
 
     # 1) Prepara dados controlados para load_json_data
-    issues_data: List[Dict[str, Any]] = []
-    prs_data: List[Dict[str, Any]] = []
-    commits_data: List[Dict[str, Any]] = [
+    issues_data: list[dict[str, Any]] = []
+    prs_data: list[dict[str, Any]] = []
+    commits_data: list[dict[str, Any]] = [
         {
             "repo_name": "repoA",
             "commit": {
@@ -55,7 +53,7 @@ def test_temporal_analysis_commit_user_identification(monkeypatch):
             },
         },
     ]
-    issue_events_data: List[Dict[str, Any]] = []
+    issue_events_data: list[dict[str, Any]] = []
 
     def fake_load_json_data(family: str):
         if family == "issues":
@@ -100,9 +98,9 @@ def test_temporal_analysis_unlinked_author_hash(monkeypatch):
     """An unlinked author carrying author_email_hash resolves to that hash
     (a stable, unique identity) rather than the shared 'unknown' bucket."""
     h = "a1b2c3d4" + "0" * 56
-    issues_data: List[Dict[str, Any]] = []
-    prs_data: List[Dict[str, Any]] = []
-    commits_data: List[Dict[str, Any]] = [
+    issues_data: list[dict[str, Any]] = []
+    prs_data: list[dict[str, Any]] = []
+    commits_data: list[dict[str, Any]] = [
         {
             "repo_name": "repoA",
             "commit": {
@@ -113,7 +111,7 @@ def test_temporal_analysis_unlinked_author_hash(monkeypatch):
             },
         },
     ]
-    issue_events_data: List[Dict[str, Any]] = []
+    issue_events_data: list[dict[str, Any]] = []
 
     def fake_load_json_data(family: str):
         if family == "issues":

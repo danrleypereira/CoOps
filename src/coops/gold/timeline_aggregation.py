@@ -1,11 +1,11 @@
-#!/usr/bin/env python3
 
 from collections import defaultdict
 from datetime import datetime, timedelta
-from typing import List, Dict, Any
-from coops.utils.github_api import save_json_data, load_json_data, parse_github_date
 
-def process_timeline_aggregation() -> List[str]:
+from coops.utils.github_api import load_json_data, save_json_data
+
+
+def process_timeline_aggregation() -> list[str]:
     """
     Generate timeline aggregations from daily_activity_summary:
     - Last 7 days activity
@@ -59,7 +59,7 @@ def process_timeline_aggregation() -> List[str]:
                     author_copy = author.copy()
                     author_name = author['name']
                     author_copy['id'] = author.get('id')
-                    author_copy['repositories'] = sorted(list(author_repos_map.get(author_name, [])))
+                    author_copy['repositories'] = sorted(author_repos_map.get(author_name, []))
                     authors_with_repos.append(author_copy)
                 day_copy['authors'] = authors_with_repos
             last_7_days.append(day_copy)
@@ -148,7 +148,7 @@ def process_timeline_aggregation() -> List[str]:
     
     # Convert to list and prepare for JSON serialization
     last_12_months = []
-    for month_key, data in sorted(monthly_activity.items()):
+    for _month_key, data in sorted(monthly_activity.items()):
         # For unique_users and unique_repos, we'll take the max daily count as approximation
         # (since we can't reconstruct the actual unique set from aggregated daily counts)
         data['unique_users'] = max(data['unique_users']) if data['unique_users'] else 0
@@ -169,7 +169,7 @@ def process_timeline_aggregation() -> List[str]:
                 'prs_created': stats['prs_created'],
                 'prs_closed': stats['prs_closed'],
                 'comments': stats['comments'],
-                'repositories': sorted(list(author_repos_map.get(author_id, [])))
+                'repositories': sorted(author_repos_map.get(author_id, []))
             })
         data['authors'] = authors_list
         

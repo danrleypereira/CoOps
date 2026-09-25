@@ -1,15 +1,16 @@
-#!/usr/bin/env python3
 """
 Integration tests for Bronze layer data extraction.
 Tests the integration between different bronze extractors.
 """
 
-import pytest
 from datetime import datetime
-from coops.bronze.repositories import extract_repositories
+
+import pytest
+
 from coops.bronze.commits import extract_commits
 from coops.bronze.issues import extract_issues
 from coops.bronze.members import extract_members
+from coops.bronze.repositories import extract_repositories
 
 
 class TestBronzeExtractorsIntegration:
@@ -86,24 +87,24 @@ class TestBronzeExtractorsIntegration:
 
     def test_repositories_extraction_basic(self, mock_github_client, mock_org_config, fake_io):
         """Test basic repository extraction"""
-        # Execute extraction
-        try:
-            repo_files = extract_repositories(
-                mock_github_client,
-                mock_org_config,
-                use_cache=False
-            )
-            
-            # Should generate files
-            assert isinstance(repo_files, list)
-            
-            # Check if data was saved
-            if "data/bronze/repositories.json" in fake_io:
-                repos = fake_io["data/bronze/repositories.json"]
-                assert isinstance(repos, list)
-        except Exception as e:
-            # Extraction may need actual API client
-            pytest.skip(f"Extraction requires full API client: {e}")
+        # extract_repositories pages the API; the fixture's client cannot
+        # serve that yet. The gap is named instead of caught blind (#212),
+        # so any other failure in this test fails the test.
+        if not hasattr(mock_github_client, "get_paginated"):
+            pytest.skip("MockGitHubClient does not implement get_paginated yet")
+        repo_files = extract_repositories(
+            mock_github_client,
+            mock_org_config,
+            use_cache=False
+        )
+        
+        # Should generate files
+        assert isinstance(repo_files, list)
+        
+        # Check if data was saved
+        if "data/bronze/repositories.json" in fake_io:
+            repos = fake_io["data/bronze/repositories.json"]
+            assert isinstance(repos, list)
 
     def test_commits_extraction_basic(self, mock_github_client, mock_org_config, fake_io):
         """Test basic commits extraction"""
@@ -112,16 +113,13 @@ class TestBronzeExtractorsIntegration:
             {"id": 1, "name": "repo1", "full_name": "test-org/repo1"}
         ]
         
-        try:
-            commit_files = extract_commits(
-                mock_github_client,
-                mock_org_config,
-                use_cache=False
-            )
-            
-            assert isinstance(commit_files, list)
-        except Exception as e:
-            pytest.skip(f"Extraction requires full implementation: {e}")
+        commit_files = extract_commits(
+            mock_github_client,
+            mock_org_config,
+            use_cache=False
+        )
+        
+        assert isinstance(commit_files, list)
 
     def test_issues_extraction_basic(self, mock_github_client, mock_org_config, fake_io):
         """Test basic issues extraction"""
@@ -130,52 +128,50 @@ class TestBronzeExtractorsIntegration:
             {"id": 1, "name": "repo1", "full_name": "test-org/repo1"}
         ]
         
-        try:
-            issue_files = extract_issues(
-                mock_github_client,
-                mock_org_config,
-                use_cache=False
-            )
-            
-            assert isinstance(issue_files, list)
-        except Exception as e:
-            pytest.skip(f"Extraction requires full implementation: {e}")
+        issue_files = extract_issues(
+            mock_github_client,
+            mock_org_config,
+            use_cache=False
+        )
+        
+        assert isinstance(issue_files, list)
 
     def test_members_extraction_basic(self, mock_github_client, mock_org_config, fake_io):
         """Test basic members extraction"""
-        try:
-            member_files = extract_members(
-                mock_github_client,
-                mock_org_config,
-                use_cache=False
-            )
-            
-            assert isinstance(member_files, list)
-        except Exception as e:
-            pytest.skip(f"Extraction requires full implementation: {e}")
+        # extract_members pages the API; the fixture's client cannot serve
+        # that yet. The gap is named instead of caught blind (#212), so any
+        # other failure in this test fails the test.
+        if not hasattr(mock_github_client, "get_paginated"):
+            pytest.skip("MockGitHubClient does not implement get_paginated yet")
+        member_files = extract_members(
+            mock_github_client,
+            mock_org_config,
+            use_cache=False
+        )
+        
+        assert isinstance(member_files, list)
 
     def test_extraction_order_matters(self, mock_github_client, mock_org_config, fake_io):
         """Test that extraction order is important (repos before commits/issues)"""
         # Repositories should be extracted first
-        try:
-            repo_files = extract_repositories(
-                mock_github_client,
-                mock_org_config,
-                use_cache=False
-            )
-            
-            # Then commits can use the repository data
-            commit_files = extract_commits(
-                mock_github_client,
-                mock_org_config,
-                use_cache=False
-            )
-            
-            # Verify both completed
-            assert isinstance(repo_files, list)
-            assert isinstance(commit_files, list)
-        except Exception as e:
-            pytest.skip(f"Full extraction flow requires complete implementation: {e}")
+        if not hasattr(mock_github_client, "get_paginated"):
+            pytest.skip("MockGitHubClient does not implement get_paginated yet")
+        repo_files = extract_repositories(
+            mock_github_client,
+            mock_org_config,
+            use_cache=False
+        )
+        
+        # Then commits can use the repository data
+        commit_files = extract_commits(
+            mock_github_client,
+            mock_org_config,
+            use_cache=False
+        )
+        
+        # Verify both completed
+        assert isinstance(repo_files, list)
+        assert isinstance(commit_files, list)
 
     def test_cache_usage_prevents_redundant_calls(self, mock_github_client, mock_org_config, fake_io):
         """Test that cache=True prevents redundant API calls"""
@@ -184,18 +180,17 @@ class TestBronzeExtractorsIntegration:
             {"id": 1, "name": "cached_repo"}
         ]
         
-        try:
-            # Extract with cache enabled
-            repo_files = extract_repositories(
-                mock_github_client,
-                mock_org_config,
-                use_cache=True
-            )
-            
-            # Should return cached data without API call
-            assert isinstance(repo_files, list)
-        except Exception as e:
-            pytest.skip(f"Cache behavior test requires full implementation: {e}")
+        if not hasattr(mock_github_client, "get_paginated"):
+            pytest.skip("MockGitHubClient does not implement get_paginated yet")
+        # Extract with cache enabled
+        repo_files = extract_repositories(
+            mock_github_client,
+            mock_org_config,
+            use_cache=True
+        )
+        
+        # Should return cached data without API call
+        assert isinstance(repo_files, list)
 
 
 class TestBronzeDataConsistency:
@@ -241,7 +236,7 @@ class TestBronzeDataConsistency:
         fake_io["data/bronze/commits_all.json"] = commits
         
         # Verify user consistency
-        member_logins = {m["login"] for m in members}
+        {m["login"] for m in members}
         commit_authors = {c["author"]["login"] for c in commits if "author" in c and "login" in c["author"]}
         
         # Commit authors should be subset of members (or may include external contributors)

@@ -1,9 +1,9 @@
 """Shared data processing helpers for the Silver layer."""
 
-from typing import List, Any
+from typing import Any
 
 
-def strip_metadata(data: List[Any]) -> List[Any]:
+def strip_metadata(data: list[Any]) -> list[Any]:
     """Remove the _metadata entry from the beginning of a bronze data list.
 
     Bronze layer JSON files start with a metadata dict containing '_metadata'.

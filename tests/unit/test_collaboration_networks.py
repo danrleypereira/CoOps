@@ -1,5 +1,6 @@
 import coops.silver.collaboration_networks as collab
 
+
 def test_process_collaboration_networks_basic(monkeypatch, fake_io):
     """Testa processamento básico de redes de colaboração"""
     # Dados sintéticos
@@ -96,7 +97,7 @@ def test_process_collaboration_networks_metadata_removal(monkeypatch, fake_io):
     monkeypatch.setattr(collab, "load_family", fake_load)
     monkeypatch.setattr(collab, "save_json_data", fake_save)
 
-    files = collab.process_collaboration_networks()
+    collab.process_collaboration_networks()
     
     user_metrics = fake_io["data/silver/user_collaboration_metrics.json"]
     assert len(user_metrics) == 0
@@ -121,7 +122,7 @@ def test_process_collaboration_networks_metadata_with_multiple_users(monkeypatch
     monkeypatch.setattr(collab, "load_family", fake_load)
     monkeypatch.setattr(collab, "save_json_data", fake_save)
 
-    files = collab.process_collaboration_networks()
+    collab.process_collaboration_networks()
     
     user_metrics = fake_io["data/silver/user_collaboration_metrics.json"]
     
@@ -153,7 +154,7 @@ def test_process_collaboration_networks_issue_assignee(monkeypatch, fake_io):
     monkeypatch.setattr(collab, "load_family", fake_load)
     monkeypatch.setattr(collab, "save_json_data", fake_save)
 
-    files = collab.process_collaboration_networks()
+    collab.process_collaboration_networks()
     
     edges = fake_io["data/silver/collaboration_edges.json"]
     
@@ -192,7 +193,7 @@ def test_process_collaboration_networks_commit_author_priority(monkeypatch, fake
     monkeypatch.setattr(collab, "load_family", fake_load)
     monkeypatch.setattr(collab, "save_json_data", fake_save)
 
-    files = collab.process_collaboration_networks()
+    collab.process_collaboration_networks()
     
     user_metrics = fake_io["data/silver/user_collaboration_metrics.json"]
     
@@ -228,7 +229,7 @@ def test_process_collaboration_networks_event_actor(monkeypatch, fake_io):
     monkeypatch.setattr(collab, "load_family", fake_load)
     monkeypatch.setattr(collab, "save_json_data", fake_save)
 
-    files = collab.process_collaboration_networks()
+    collab.process_collaboration_networks()
     
     user_metrics = fake_io["data/silver/user_collaboration_metrics.json"]
     
@@ -297,7 +298,7 @@ def test_process_collaboration_networks_user_metrics(monkeypatch, fake_io):
     monkeypatch.setattr(collab, "load_family", fake_load)
     monkeypatch.setattr(collab, "save_json_data", fake_save)
 
-    files = collab.process_collaboration_networks()
+    collab.process_collaboration_networks()
     
     user_metrics = fake_io["data/silver/user_collaboration_metrics.json"]
     
@@ -326,7 +327,7 @@ def test_process_collaboration_networks_repo_analysis(monkeypatch, fake_io):
     monkeypatch.setattr(collab, "load_family", fake_load)
     monkeypatch.setattr(collab, "save_json_data", fake_save)
 
-    files = collab.process_collaboration_networks()
+    collab.process_collaboration_networks()
     
     repo_analysis = fake_io["data/silver/repository_collaboration_analysis.json"]
     
@@ -359,7 +360,7 @@ def test_process_collaboration_networks_network_stats(monkeypatch, fake_io):
     monkeypatch.setattr(collab, "load_family", fake_load)
     monkeypatch.setattr(collab, "save_json_data", fake_save)
 
-    files = collab.process_collaboration_networks()
+    collab.process_collaboration_networks()
     
     stats = fake_io["data/silver/network_statistics.json"]
     
@@ -387,7 +388,7 @@ def test_process_collaboration_networks_edge_sorting(monkeypatch, fake_io):
     monkeypatch.setattr(collab, "load_family", fake_load)
     monkeypatch.setattr(collab, "save_json_data", fake_save)
 
-    files = collab.process_collaboration_networks()
+    collab.process_collaboration_networks()
     
     edges = fake_io["data/silver/collaboration_edges.json"]
     
@@ -415,7 +416,7 @@ def test_process_collaboration_networks_no_self_collaboration(monkeypatch, fake_
     monkeypatch.setattr(collab, "load_family", fake_load)
     monkeypatch.setattr(collab, "save_json_data", fake_save)
 
-    files = collab.process_collaboration_networks()
+    collab.process_collaboration_networks()
     
     edges = fake_io["data/silver/collaboration_edges.json"]
     
@@ -444,7 +445,7 @@ def test_process_collaboration_networks_cross_repo_sorting(monkeypatch, fake_io)
     monkeypatch.setattr(collab, "load_family", fake_load)
     monkeypatch.setattr(collab, "save_json_data", fake_save)
 
-    files = collab.process_collaboration_networks()
+    collab.process_collaboration_networks()
     
     cross_repo = fake_io["data/silver/cross_repository_hubs.json"]
     
@@ -475,7 +476,7 @@ def test_process_collaboration_networks_user_metrics_sorting(monkeypatch, fake_i
     monkeypatch.setattr(collab, "load_family", fake_load)
     monkeypatch.setattr(collab, "save_json_data", fake_save)
 
-    files = collab.process_collaboration_networks()
+    collab.process_collaboration_networks()
     
     user_metrics = fake_io["data/silver/user_collaboration_metrics.json"]
     
@@ -505,7 +506,7 @@ def test_process_collaboration_networks_repo_analysis_sorting(monkeypatch, fake_
     monkeypatch.setattr(collab, "load_family", fake_load)
     monkeypatch.setattr(collab, "save_json_data", fake_save)
 
-    files = collab.process_collaboration_networks()
+    collab.process_collaboration_networks()
     
     repo_analysis = fake_io["data/silver/repository_collaboration_analysis.json"]
     

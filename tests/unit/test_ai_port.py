@@ -448,7 +448,7 @@ class AiSummaryPortContract:
             "sigma-contrib",
         ]
         # Content, not shape: each analysis reflects the member's own data.
-        for analysis, summary in zip(result.analyses, summaries):
+        for analysis, summary in zip(result.analyses, summaries, strict=False):
             assert str(summary.data) in analysis.commits_analysis
             assert str(summary.data) in analysis.prs_analysis
             assert str(summary.data) in analysis.issues_analysis

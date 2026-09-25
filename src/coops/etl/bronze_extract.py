@@ -1,16 +1,21 @@
-#!/usr/bin/env python3
 """
 Main orchestrator for Bronze layer data extraction.
 Extracts raw data from GitHub API and saves to bronze layer.
 """
 
 import argparse
+import contextlib
 import os
 import sys
-from datetime import datetime
-from coops.infrastructure import get_settings, resolve_tenant_from_settings
-from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, update_data_registry
+from datetime import datetime, timezone
+
 from coops.bronze.watermarks import WatermarkStore
+from coops.infrastructure import get_settings, resolve_tenant_from_settings
+from coops.utils.github_api import (
+    GitHubAPIClient,
+    OrganizationConfig,
+    update_data_registry,
+)
 
 
 def _write_run_summary(client: GitHubAPIClient) -> None:
@@ -25,7 +30,8 @@ def _write_run_summary(client: GitHubAPIClient) -> None:
     reset = ""
     if rl and rl.get("reset"):
         try:
-            reset = datetime.fromtimestamp(int(rl["reset"])).isoformat()
+            # The reset epoch is UTC; render it as UTC, not local time.
+            reset = datetime.fromtimestamp(int(rl["reset"]), tz=timezone.utc).isoformat()
         except (TypeError, ValueError):
             reset = ""
 
@@ -39,7 +45,7 @@ def _write_run_summary(client: GitHubAPIClient) -> None:
     if reset:
         rows.append(f"| REST rate limit resets | {reset} |")
 
-    summary = "\n".join(["## Extraction cache & rate limit", ""] + rows) + "\n"
+    summary = "\n".join(["## Extraction cache & rate limit", "", *rows]) + "\n"
     print("\n" + summary)
 
     step_summary = os.environ.get("GITHUB_STEP_SUMMARY")
@@ -103,7 +109,7 @@ def main():
         sys.exit(1)
 
     print(f"Starting Bronze layer extraction for organization: {cfg.github_org}")
-    print(f"Started at: {datetime.now().isoformat()}")
+    print(f"Started at: {datetime.now().isoformat()}")  # noqa: DTZ005 — human log, not data: #143 deliberately left console timestamps in the operator's local wall clock
     if args.offline:
         print("Offline mode: every response is served from the cache; a cache miss aborts the run")
 
@@ -144,15 +150,15 @@ def main():
             client.raw_store = MongoRawStore(cfg.mongo_uri)
             client.tenant_id = tenant.id
             client.raw_max_age_seconds = cfg.raw_max_age_seconds
-        except Exception as exc:  # pragma: no cover - defensive, env-dependent
+        except Exception as exc:  # pragma: no cover - defensive, env-dependent  # noqa: BLE001 — optional Mongo raw layer: unavailability degrades to API-only, never fails the run
             print(f"[WARN] MongoDB raw layer unavailable ({exc}); using API only.")
 
     try:
         # Import and run individual extractors
-        from coops.bronze.repositories import extract_repositories
-        from coops.bronze.issues import extract_issues
         from coops.bronze.commits import extract_commits
+        from coops.bronze.issues import extract_issues
         from coops.bronze.members import extract_members
+        from coops.bronze.repositories import extract_repositories
         from coops.bronze.repository_structure import extract_repository_structure
 
         # ========================================
@@ -232,7 +238,7 @@ def main():
         update_data_registry('bronze', 'all_extractions', all_files)
 
         print("\n" + "="*60)
-        print(f"SUCCESS: Bronze extraction completed!")
+        print("SUCCESS: Bronze extraction completed!")
         print("="*60)
         print(f"Total files generated: {len(all_files)}")
         print(f"   - Repositories: {len(repo_files)}")
@@ -244,15 +250,15 @@ def main():
 
         _write_run_summary(client)
 
-    except Exception as e:
-        print(f"\nERROR: Bronze extraction failed")
-        print(f"   {str(e)}")
+    except Exception as e:  # noqa: BLE001 — CLI boundary: report the failure and exit non-zero
+        print("\nERROR: Bronze extraction failed")
+        print(f"   {e!s}")
         import traceback
         traceback.print_exc()
-        try:
+        # Already on the abort path: if writing the run summary fails too,
+        # there is nothing left to do but report the original failure.
+        with contextlib.suppress(Exception):
             _write_run_summary(client)
-        except Exception:
-            pass
         sys.exit(1)
 
 if __name__ == "__main__":

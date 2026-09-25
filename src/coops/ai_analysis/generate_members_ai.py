@@ -6,8 +6,9 @@ import json
 import logging
 import sys
 import time
-from typing import List, Dict, Any
 from pathlib import Path
+from typing import Any
+
 import google.generativeai as genai
 
 from coops.bronze.files import bronze_repos
@@ -30,7 +31,7 @@ def load_api_key() -> str:
     return api_key
 
 
-def load_bronze_data(bronze_dir: str = "data/bronze") -> Dict[str, Dict[str, Dict[str, List[Dict]]]]:
+def load_bronze_data(bronze_dir: str = "data/bronze") -> dict[str, dict[str, dict[str, list[dict]]]]:
     """
     Carrega dados bronze e agrupa por membro.
     Retorna: {member: {repo: {'commits': [], 'prs': [], 'issues': []}}}
@@ -43,7 +44,7 @@ def load_bronze_data(bronze_dir: str = "data/bronze") -> Dict[str, Dict[str, Dic
     # Carregar todos os arquivos de commits
     for repo_name, commits_file in bronze_repos(bronze_path, "commits"):
         try:
-            with open(commits_file, 'r', encoding='utf-8') as f:
+            with open(commits_file, encoding='utf-8') as f:
                 data = json.load(f)
                 commits = strip_metadata(data)
                 
@@ -66,13 +67,13 @@ def load_bronze_data(bronze_dir: str = "data/bronze") -> Dict[str, Dict[str, Dic
                     if repo_name not in members_data[author]:
                         members_data[author][repo_name] = {'commits': [], 'prs': [], 'issues': []}
                     members_data[author][repo_name]['commits'].append(commit)
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 — optional AI step: one unreadable bronze file is logged and skipped, not fatal
             log.warning(f"Erro ao carregar {commits_file}: {e}")
     
     # Carregar todos os arquivos de PRs
     for repo_name, prs_file in bronze_repos(bronze_path, "prs"):
         try:
-            with open(prs_file, 'r', encoding='utf-8') as f:
+            with open(prs_file, encoding='utf-8') as f:
                 data = json.load(f)
                 prs = strip_metadata(data)
                 
@@ -95,13 +96,13 @@ def load_bronze_data(bronze_dir: str = "data/bronze") -> Dict[str, Dict[str, Dic
                     if repo_name not in members_data[author]:
                         members_data[author][repo_name] = {'commits': [], 'prs': [], 'issues': []}
                     members_data[author][repo_name]['prs'].append(pr)
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 — optional AI step: one unreadable bronze file is logged and skipped, not fatal
             log.warning(f"Erro ao carregar {prs_file}: {e}")
     
     # Carregar todos os arquivos de Issues
     for repo_name, issues_file in bronze_repos(bronze_path, "issues"):
         try:
-            with open(issues_file, 'r', encoding='utf-8') as f:
+            with open(issues_file, encoding='utf-8') as f:
                 data = json.load(f)
                 issues = strip_metadata(data)
                 
@@ -124,14 +125,14 @@ def load_bronze_data(bronze_dir: str = "data/bronze") -> Dict[str, Dict[str, Dic
                     if repo_name not in members_data[author]:
                         members_data[author][repo_name] = {'commits': [], 'prs': [], 'issues': []}
                     members_data[author][repo_name]['issues'].append(issue)
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 — optional AI step: one unreadable bronze file is logged and skipped, not fatal
             log.warning(f"Erro ao carregar {issues_file}: {e}")
     
     log.info(f"Carregados dados de {len(members_data)} membros")
     return members_data
 
 
-def prepare_member_summary(member: str, repos_data: Dict[str, Dict]) -> Dict[str, Any]:
+def prepare_member_summary(member: str, repos_data: dict[str, dict]) -> dict[str, Any]:
     """Prepara um resumo dos dados de um membro para análise."""
     total_commits = 0
     total_prs = 0
@@ -233,7 +234,7 @@ def _sanitize_for_prompt(text: str) -> str:
     return text
 
 
-def create_analysis_prompt(members_batch: List[Dict[str, Any]]) -> str:
+def create_analysis_prompt(members_batch: list[dict[str, Any]]) -> str:
     """Cria o prompt para análise de um batch de membros."""
     
     prompt = """Você é um assistente técnico especializado em análise de métricas de desenvolvimento de software.
@@ -256,17 +257,17 @@ DADOS DOS MEMBROS:
         prompt += f"Média total de alterações por commit: {member_data['avg_changes']}\n"
 
         if member_data['commits_sample']:
-            prompt += f"\nTítulos dos commits (amostra):\n"
+            prompt += "\nTítulos dos commits (amostra):\n"
             for commit in member_data['commits_sample'][:5]:
                 prompt += f"  - {_sanitize_for_prompt(commit['message'][:80])}\n"
 
         if member_data['prs_sample']:
-            prompt += f"\nPRs (amostra):\n"
+            prompt += "\nPRs (amostra):\n"
             for pr in member_data['prs_sample'][:3]:
                 prompt += f"  - {_sanitize_for_prompt(pr['title'][:60])} ({pr['state']})\n"
 
         if member_data['issues_sample']:
-            prompt += f"\nIssues (amostra):\n"
+            prompt += "\nIssues (amostra):\n"
             for issue in member_data['issues_sample'][:3]:
                 prompt += f"  - {_sanitize_for_prompt(issue['title'][:60])} ({issue['state']})\n"
     
@@ -320,7 +321,7 @@ Comece agora:
     return prompt
 
 
-def parse_ai_response(response_text: str, members_in_batch: List[str]) -> Dict[str, Dict[str, str]]:
+def parse_ai_response(response_text: str, members_in_batch: list[str]) -> dict[str, dict[str, str]]:
     """Parseia a resposta da IA e organiza por membro."""
     results = {}
     
@@ -350,7 +351,7 @@ def parse_ai_response(response_text: str, members_in_batch: List[str]) -> Dict[s
                     if 'PRS_ANALYSIS:' in commits_part:
                         commits_part = commits_part.split('PRS_ANALYSIS:')[0]
                     commits_analysis = commits_part.strip()
-                except Exception as e:
+                except Exception as e:  # noqa: BLE001 — best-effort marker parsing: a malformed block keeps its analysis empty
                     log.warning(f"Erro ao extrair COMMITS_ANALYSIS para {member_name}: {e}")
             else:
                 log.warning(f"COMMITS_ANALYSIS não encontrado para {member_name}")
@@ -364,7 +365,7 @@ def parse_ai_response(response_text: str, members_in_batch: List[str]) -> Dict[s
                     if 'ISSUES_ANALYSIS:' in prs_part:
                         prs_part = prs_part.split('ISSUES_ANALYSIS:')[0]
                     prs_analysis = prs_part.strip()
-                except Exception as e:
+                except Exception as e:  # noqa: BLE001 — best-effort marker parsing: a malformed block keeps its analysis empty
                     log.warning(f"Erro ao extrair PRS_ANALYSIS para {member_name}: {e}")
             else:
                 log.warning(f"PRS_ANALYSIS não encontrado para {member_name}")
@@ -378,7 +379,7 @@ def parse_ai_response(response_text: str, members_in_batch: List[str]) -> Dict[s
                     if '---MEMBER_END' in issues_part:
                         issues_part = issues_part.split('---MEMBER_END')[0]
                     issues_analysis = issues_part.strip()
-                except Exception as e:
+                except Exception as e:  # noqa: BLE001 — best-effort marker parsing: a malformed block keeps its analysis empty
                     log.warning(f"Erro ao extrair ISSUES_ANALYSIS para {member_name}: {e}")
             else:
                 log.warning(f"ISSUES_ANALYSIS não encontrado para {member_name}")
@@ -394,7 +395,7 @@ def parse_ai_response(response_text: str, members_in_batch: List[str]) -> Dict[s
             else:
                 log.warning(f"Nenhuma análise encontrada para {member_name}")
                 
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 — best-effort marker parsing: a malformed block keeps its analysis empty
             log.error(f"Erro ao parsear bloco {block_idx}: {e}")
             continue
     
@@ -408,7 +409,7 @@ def parse_ai_response(response_text: str, members_in_batch: List[str]) -> Dict[s
     return results
 
 
-def analyze_members_with_gemini(members_data: Dict[str, Dict], max_requests: int = 10) -> Dict[str, Any]:
+def analyze_members_with_gemini(members_data: dict[str, dict], max_requests: int = 10) -> dict[str, Any]:
     """Analisa membros usando Gemini com mínimo de requisições."""
     
     # Configurar Gemini
@@ -506,7 +507,7 @@ def analyze_members_with_gemini(members_data: Dict[str, Dict], max_requests: int
                 log.info(f"Batch {batch_idx} processado com sucesso")
                 break  # Sucesso, sair do loop de retries
                 
-            except Exception as e:
+            except Exception as e:  # noqa: BLE001 — Gemini retry loop: any failure retries with backoff, then degrades the batch
                 error_msg = str(e)
                 log.error(f"Erro capturado: {error_msg}")
                 
@@ -515,23 +516,22 @@ def analyze_members_with_gemini(members_data: Dict[str, Dict], max_requests: int
                     time.sleep(retry_delay)
                     retry_delay = int(retry_delay * 1.5)  # Backoff mais suave: 30s → 45s → 67s → 100s...
                     continue
-                elif attempt < max_retries - 1:
+                if attempt < max_retries - 1:
                     log.warning(f"Erro no batch {batch_idx}, tentativa {attempt + 1}/{max_retries}: {str(e)[:150]}. Aguardando {retry_delay}s...")
                     time.sleep(retry_delay)
                     retry_delay = int(retry_delay * 1.5)
                     continue
-                else:
-                    log.error(f"Erro ao processar batch {batch_idx} após {max_retries} tentativas: {e}")
-                    # Adicionar entradas com erro
-                    for member_summary in batch:
-                        all_analyses[member_summary['member']] = {
-                            'name': member_summary['member'],
-                            'repos': member_summary['repos'],
-                            'commits_analysis': 'Sistema Google sobrecarregado - tente novamente mais tarde',
-                            'prs_analysis': 'Sistema Google sobrecarregado - tente novamente mais tarde',
-                            'issues_analysis': 'Sistema Google sobrecarregado - tente novamente mais tarde'
-                        }
-                    break
+                log.error(f"Erro ao processar batch {batch_idx} após {max_retries} tentativas: {e}")
+                # Adicionar entradas com erro
+                for member_summary in batch:
+                    all_analyses[member_summary['member']] = {
+                        'name': member_summary['member'],
+                        'repos': member_summary['repos'],
+                        'commits_analysis': 'Sistema Google sobrecarregado - tente novamente mais tarde',
+                        'prs_analysis': 'Sistema Google sobrecarregado - tente novamente mais tarde',
+                        'issues_analysis': 'Sistema Google sobrecarregado - tente novamente mais tarde'
+                    }
+                break
     
     return all_analyses
 

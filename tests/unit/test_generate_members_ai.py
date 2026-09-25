@@ -4,7 +4,7 @@ import json
 import sys
 import types
 from pathlib import Path
-from unittest.mock import patch, MagicMock, mock_open
+from unittest.mock import MagicMock, patch
 
 import pytest
 
@@ -18,8 +18,7 @@ _google_stub.generativeai = _genai_stub
 sys.modules.setdefault("google", _google_stub)
 sys.modules.setdefault("google.generativeai", _genai_stub)
 
-import coops.ai_analysis.generate_members_ai as gm
-
+import coops.ai_analysis.generate_members_ai as gm  # noqa: E402 — must follow the sys.modules stubs above: the module under test imports google.generativeai at import time, and the stub stands in for a package the test environment may not have installed.
 
 # ---------------------------------------------------------------------------
 # Helpers / fixtures
@@ -225,7 +224,7 @@ class TestPrepareMemberSummary:
         assert result["total_commits"] == 1
         assert result["avg_additions"] == 0
         assert result["avg_deletions"] == 0
-        assert result["commits_with_stats"] if "commits_with_stats" in result else True  # internal detail
+        assert result.get("commits_with_stats", True)  # internal detail
 
     def test_commit_message_extraction_nested(self):
         """Message nested inside commit.commit.message structure."""

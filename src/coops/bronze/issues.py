@@ -1,11 +1,15 @@
 import math
-from typing import List, Optional
 
-from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data, load_json_data
-from coops.utils.data_helpers import strip_metadata
-from coops.utils.cache_fold import client_fold
-from coops.bronze.watermarks import WatermarkStore, max_iso, query_since
 from coops.bronze.files import remove_aggregate
+from coops.bronze.watermarks import WatermarkStore, max_iso, query_since
+from coops.utils.cache_fold import client_fold
+from coops.utils.data_helpers import strip_metadata
+from coops.utils.github_api import (
+    GitHubAPIClient,
+    OrganizationConfig,
+    load_json_data,
+    save_json_data,
+)
 
 # ---------------------------------------------------------------------------
 # What we keep from an issue or pull request.
@@ -69,7 +73,7 @@ def _project_event(event, repo_name):
     }
 
 
-def _load_prior_records(path: str, project=None) -> List[dict]:
+def _load_prior_records(path: str, project=None) -> list[dict]:
     """Load a previously written bronze list, dropping the leading ``_metadata``.
 
     Returns ``[]`` when the file is missing or empty, so an incremental run over
@@ -100,7 +104,7 @@ def _load_prior_records(path: str, project=None) -> List[dict]:
     ]
 
 
-def _merge_by_number(prior: List[dict], fresh: List[dict]) -> List[dict]:
+def _merge_by_number(prior: list[dict], fresh: list[dict]) -> list[dict]:
     """Merge issue/PR records by ``number``; a fresh record replaces its prior twin."""
     merged = {item["number"]: item for item in prior if isinstance(item, dict) and "number" in item}
     for item in fresh:
@@ -109,7 +113,7 @@ def _merge_by_number(prior: List[dict], fresh: List[dict]) -> List[dict]:
     return sorted(merged.values(), key=lambda item: item["number"])
 
 
-def _fetch_events_after(client, full_name: str, last_event_id: int, use_cache: bool) -> List[dict]:
+def _fetch_events_after(client, full_name: str, last_event_id: int, use_cache: bool) -> list[dict]:
     """Fetch issue events with ``id`` greater than ``last_event_id``.
 
     The repository issue-events endpoint has no ``since`` filter (a ``since``
@@ -118,7 +122,7 @@ def _fetch_events_after(client, full_name: str, last_event_id: int, use_cache: b
     until we reach an event whose id is ``<= last_event_id``, then stop. A
     repository with no new events costs exactly one page.
     """
-    newer: List[dict] = []
+    newer: list[dict] = []
     page = 1
     while True:
         url = f"https://api.github.com/repos/{full_name}/issues/events?per_page=100&page={page}"
@@ -141,10 +145,10 @@ def extract_issues(
     client: GitHubAPIClient,
     config: OrganizationConfig,
     use_cache: bool = True,
-    max_issues: Optional[int] = None,
-    max_prs: Optional[int] = None,
-    watermarks: Optional[WatermarkStore] = None,
-) -> List[str]:
+    max_issues: int | None = None,
+    max_prs: int | None = None,
+    watermarks: WatermarkStore | None = None,
+) -> list[str]:
     """
     Extract issues, pull requests, and issue events from GitHub repositories.
 

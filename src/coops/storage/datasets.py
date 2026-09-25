@@ -26,7 +26,7 @@ building and tenant scoping are exercised with no database and no network.
 
 from __future__ import annotations
 
-from typing import Any, TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 
 import pymongo
 
@@ -183,5 +183,5 @@ if TYPE_CHECKING:
     #: A function rather than ``file.py``'s instance assignment: constructing
     #: ``FileStorageAdapter(".")`` only stores a path, but ``MongoStorageAdapter``
     #: requires a uri or a client, so an instance cannot be built for free here.
-    def _conforms_to_storage_port(adapter: "MongoStorageAdapter") -> StoragePort:
+    def _conforms_to_storage_port(adapter: MongoStorageAdapter) -> StoragePort:
         return adapter

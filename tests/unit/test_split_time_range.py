@@ -1,5 +1,6 @@
 from coops.utils.github_api import GitHubAPIClient
 
+
 def test_split_time_range_no_dates():
     client = GitHubAPIClient(token="x")
     ranges = client._split_time_range(None, None, chunks=3)

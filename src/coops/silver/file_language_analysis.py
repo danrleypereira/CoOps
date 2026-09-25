@@ -1,12 +1,10 @@
-#!/usr/bin/env python3
 ## este arquivo precisa ser alterado provavelmente
 from collections import defaultdict
-from typing import List, Dict, Any
-from pathlib import Path
+from typing import Any
+
 from coops.bronze.files import bronze_files, repo_of
-from coops.utils.github_api import save_json_data, load_json_data
-import os
-import json
+from coops.utils.github_api import load_json_data, save_json_data
+
 
 def detect_language_by_extension(extension: str) -> str:
     """
@@ -119,7 +117,7 @@ def detect_language_by_extension(extension: str) -> str:
     
     return extension_map.get(extension.lower(), 'Unknown')
 
-def convert_tree_to_hierarchy(tree: List[Dict[str, Any]]) -> Dict[str, Any]:
+def convert_tree_to_hierarchy(tree: list[dict[str, Any]]) -> dict[str, Any]:
     """
     Converte árvore flat do GraphQL em hierarquia para Circle Pack.
     Preserva estrutura de diretórios e arquivos.
@@ -130,7 +128,7 @@ def convert_tree_to_hierarchy(tree: List[Dict[str, Any]]) -> Dict[str, Any]:
     Returns:
         Dicionário com hierarquia aninhada pronta para d3.pack()
     """
-    def build_node(node: Dict[str, Any]) -> Dict[str, Any]:
+    def build_node(node: dict[str, Any]) -> dict[str, Any]:
         """Constrói um nó da hierarquia recursivamente."""
         node_type = node.get('type', '')
         
@@ -158,7 +156,7 @@ def convert_tree_to_hierarchy(tree: List[Dict[str, Any]]) -> Dict[str, Any]:
                 'extension': extension,
                 'path': node.get('path', '')
             }
-        elif node_type in ['directory', 'tree']:
+        if node_type in ['directory', 'tree']:
             # Diretório - nó pai
             children = node.get('children', [])
             if not children:
@@ -188,19 +186,18 @@ def convert_tree_to_hierarchy(tree: List[Dict[str, Any]]) -> Dict[str, Any]:
         if node_result:
             root_children.append(node_result)
     
-    hierarchy = {
+    return {
         'name': 'root',
         'type': 'directory',
         'children': root_children
     }
     
-    return hierarchy
 
 def calculate_language_stats(
-    tree: List[Dict[str, Any]], 
+    tree: list[dict[str, Any]], 
     max_sample_files: int = 10,
     sample_strategy: str = 'largest'
-) -> Dict[str, Any]:
+) -> dict[str, Any]:
     """
     Calcula estatísticas de linguagens recursivamente na árvore de arquivos.
     
@@ -216,7 +213,7 @@ def calculate_language_stats(
     # Estrutura otimizada: armazena todos temporariamente, mas limita na saída final
     language_stats = defaultdict(lambda: {'count': 0, 'total_size': 0, 'files': []})
     
-    def traverse_tree(nodes: List[Dict[str, Any]], parent_path: str = ""):
+    def traverse_tree(nodes: list[dict[str, Any]], parent_path: str = ""):
         for node in nodes:
             node_type = node.get('type', '')
 
@@ -295,7 +292,7 @@ def process_file_language_analysis(
     sample_strategy: str = 'largest',
     save_detailed: bool = False,
     save_hierarchy: bool = True
-) -> List[str]:
+) -> list[str]:
     """
     Processa todos os arquivos de estrutura do bronze e analisa linguagens.
     

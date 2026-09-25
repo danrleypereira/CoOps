@@ -1,5 +1,7 @@
-import coops.gold.timeline_aggregation as timeline
 from datetime import datetime, timedelta
+
+import coops.gold.timeline_aggregation as timeline
+
 
 def test_process_timeline_aggregation(monkeypatch):
     # daily_activity_summary com 10 dias
@@ -117,7 +119,7 @@ def test_timeline_no_valid_dates(monkeypatch):
 
 def test_timeline_12_month_aggregation(monkeypatch):
     """Monthly aggregation groups daily data by month."""
-    # Create 60 days spanning 3 calendar months (Jan–Mar 2024)
+    # Create 60 days spanning 3 calendar months (Jan-Mar 2024)
     daily = []
     for i in range(60):
         d = datetime(2024, 3, 1) - timedelta(days=i)
@@ -169,7 +171,7 @@ def test_timeline_author_without_repos(monkeypatch):
     monkeypatch.setattr(timeline, "load_json_data", fake_load)
     monkeypatch.setattr(timeline, "save_json_data", lambda d, p, **kw: (saved.update({p: d}), p)[1])
 
-    files = timeline.process_timeline_aggregation()
+    timeline.process_timeline_aggregation()
     last7 = saved["data/gold/timeline_last_7_days.json"]
     assert last7[0]["authors"][0]["repositories"] == []
 
