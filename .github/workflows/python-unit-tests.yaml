@@ -31,6 +31,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # The regression gate diffs the base against HEAD, so it needs both
+          # refs present; the default shallow clone has neither.
+          fetch-depth: 0
 
       - name: Set up uv and Python ${{ matrix.python-version }}
         uses: astral-sh/setup-uv@v10.1.0
@@ -63,6 +67,25 @@ jobs:
       - name: Static type check (mypy over domain/ and github/)
         if: matrix.python-version == '3.11'
         run: uv run mypy
+
+      # The step above is bounded by [tool.mypy] `files` — 21 of them. A PR
+      # adding type errors to bronze/ or silver/ is outside that scope and
+      # passes it. That is not hypothetical: Phase 1's real type regressions
+      # were +37 mypy errors in exactly such directories, invisible behind a
+      # run reporting "Success". check_regressions.py is what covers the rest,
+      # over the whole codebase with the project config neutralised, gating on
+      # the per-file delta rather than on totals.
+      #
+      # PR-only: it compares a base to a head, and a push to main has no base.
+      # On a pull_request, actions/checkout leaves HEAD at GitHub's merge
+      # commit, so base-tip vs HEAD is precisely the PR's own contribution.
+      - name: Regression gate (per-file ruff + mypy delta vs the base)
+        if: github.event_name == 'pull_request' && matrix.python-version == '3.11'
+        run: |
+          git fetch --no-tags origin \
+            "+refs/heads/$GITHUB_BASE_REF:refs/remotes/origin/$GITHUB_BASE_REF"
+          uv run python scripts/check_regressions.py \
+            --base "origin/$GITHUB_BASE_REF" --head HEAD
 
       - name: Run unit tests with coverage
         run: |
