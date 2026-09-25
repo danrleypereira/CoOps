@@ -16,8 +16,11 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   raises `OfflineCacheMiss` naming the URL instead of producing a
   plausible-looking partial answer. Covers REST and GraphQL. Nothing can be
   written to the cache in offline mode (all write paths sit behind a
-  successful HTTP response, which cannot happen). For reproducing the #199
-  regeneration loss.
+  successful HTTP response, which cannot happen). Nor does the run write
+  `watermarks.json`: a replay has no evidence for any watermark it computes
+  from cached reads — writing one is the mechanism that made the #199 loss
+  durable — so the run says so once in its output and skips the write
+  entirely. For reproducing the #199 regeneration loss.
 - `--repo <owner/name>` (repeatable) for `coops-bronze`: restrict the run to
   exactly the named repositories. Applied after the blacklist/fork filter —
   naming an excluded repository fails the run naming it, rather than
