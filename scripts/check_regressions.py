@@ -138,8 +138,15 @@ MYPY_TARGET = "src/coops"
 # friction: the gate's sensitivity is not the subject's to set.
 RUFF_SELECT = (
     "E4,E7,E9,F,"       # ruff's defaults
-    "I,UP,B,C4,RET,SIM,RUF,DTZ,BLE,S,EXE,FURB"  # the project's additions
+    "I,UP,B,C4,RET,SIM,RUF,DTZ,BLE,S,EXE,FURB,"  # the project's additions
+    "PLC0414"           # explicit re-export, selected by the project on #220
 )
+# PLC0414 is the mirror of the bug above, and the reason this list is synced by
+# hand rather than inferred. #220 selected it in [tool.ruff.lint] so that a
+# deliberate `X as X` re-export could carry a noqa. The gate did not select it,
+# so under the gate that same noqa read as RUF100 ("unused directive") — one
+# finding on an otherwise clean main. The project and the gate must agree about
+# a rule or a noqa is simultaneously required by one and forbidden by the other.
 
 # Exemptions the gate honours, fixed HERE for the same reason RUFF_SELECT is.
 #
