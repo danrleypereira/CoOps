@@ -88,7 +88,7 @@ class GitHubAPIClient:
         # Content index over the cache (see coops.utils.cache_fold), built
         # lazily and only for offline runs. Online runs revalidate; a live
         # full listing is authoritative and complete on its own.
-        self._cache_fold = None
+        self._cache_fold: CacheFold | None = None
         # Run-summary accounting: a "hit" is a request served from cache (a 304
         # or a short-circuited body) without consuming a rate-limit slot; a
         # "miss" is a billed network fetch (a 200) that populates the cache.
@@ -1623,13 +1623,16 @@ class OrganizationConfig:
         )
 
 
-def parse_github_date(date_str: str) -> datetime | None:
+def parse_github_date(date_str: str | None) -> datetime | None:
     """
     Parse GitHub API date strings in various formats.
     Handles both UTC (Z) and timezone offset formats.
 
     Args:
-        date_str: Date string from GitHub API
+        date_str: Date string from GitHub API, or None when the field is
+            absent — the first statement below has always answered that
+            with None, so the parameter is annotated with the type the
+            callers actually pass (JSON ``.get()`` results).
 
     Returns:
         datetime object or None if parsing fails
