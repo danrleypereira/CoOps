@@ -81,6 +81,23 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   vacuously.
 
 ### Changed
+- Extracted the GitHub endpoint knowledge out of `coops/utils/github_api.py`
+  into `coops/github/queries.py` (#28): the six REST URL templates
+  (`repository_url`, `compare_url`, `commit_url`, `commits_url`,
+  `branch_url`, `tree_url`) and the four GraphQL documents
+  (`ACTIVE_BRANCHES_QUERY`, `COMMIT_HISTORY_BRANCH_QUERY`,
+  `COMMIT_HISTORY_DEFAULT_BRANCH_QUERY`, `REPOSITORY_TREE_QUERY`) — every
+  template and document byte-identical to the inline original it replaced.
+  `queries.py` knows *what to ask GitHub* and nothing about *how to send
+  it* (`coops/github/client.py`, #27) or *what to do with the answer*
+  (that stays with the caller); the GraphQL documents keep their original
+  inner indentation because the transport hashes the whole query text
+  into its cache key, so a whitespace edit would orphan every existing
+  cache entry and stop an offline replay on its first miss. The response
+  shaping (`_standardize_tree_node`, `_empty_tree_response`, pagination,
+  the REST fallback's circuit breaker) deliberately stayed in
+  `github_api.py`. No behaviour change: 1406 passed, 24 skipped before
+  and after.
 - Extracted the reusable transport out of `coops/utils/github_api.py` into
   `coops/github/client.py` (#27): `GitHubTransport` now carries
   `OfflineCacheMiss`, construction, the URL-keyed cache and its ETag

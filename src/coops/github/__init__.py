@@ -1,8 +1,9 @@
 """The GitHub provider package: everything that knows GitHub's shapes.
 
-The mapper (#25), the source-port adapter (#29) and the transport (#27)
-live here; the raw capture (:mod:`coops.raw_capture`) and the Bronze
-extractors (:mod:`coops.bronze`) predate them and are untouched.
+The mapper (#25), the source-port adapter (#29), the transport (#27) and
+the queries (#28) live here; the raw capture (:mod:`coops.raw_capture`)
+and the Bronze extractors (:mod:`coops.bronze`) predate them and are
+untouched.
 """
 
 from typing import Any
