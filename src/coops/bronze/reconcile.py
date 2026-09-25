@@ -40,8 +40,14 @@ so every guard here REFUSES (deleting nothing) rather than guessing:
 3. **Nothing outside ``data/bronze`` is touched**, and inside it only
    direct children matching a family glob (``commits_*.json`` &c.), with
    the retired aggregates and ``_with_stats`` derived copies excluded by
-   :func:`coops.bronze.files.bronze_files` — the one enumeration that
-   already knows those rules.
+   :func:`coops.bronze.files.bronze_files_raw`.
+
+   **The raw enumeration, never :func:`bronze_files`.** Those two differ
+   and a deleter needs the difference: ``bronze_files`` is a deduplicating
+   *view* (#248) that hides the superseded copy of every matched pair, and a
+   deleter enumerating it can never see the duplicate it exists to remove.
+   That was #258 — 0 orphans found where 3 existed, no refusal, no warning,
+   a clean corpus reported. The reader hides; the deleter must see.
 4. **A listing not known to be COMPLETE refuses.** The guard lives in
    the FILE, not in the argv of this process, because the narrowed run
    and the reconciliation need not be the same one. Run A is a manual
