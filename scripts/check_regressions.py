@@ -39,10 +39,16 @@ large, that is the instrument reporting honestly, not a finding.
 
 How each tool is run
 --------------------
-* ruff: ``ruff check --no-cache --output-format json src tests`` — the same
-  check a developer runs, with the pinned dev-group version; the JSON flag
-  changes the output format, not one finding. ruff reads each arm's own
-  pyproject.toml, exactly as it would in that tree.
+* ruff: ``ruff check --isolated --select <RUFF_SELECT>
+  --per-file-ignores <RUFF_PER_FILE_IGNORES> --no-cache --output-format json
+  src tests``. NOT the check a developer runs: the rule set and the exemptions
+  are fixed in this file, because an instrument whose sensitivity is set by the
+  thing it measures is not an instrument. ``--isolated`` stops a tree narrowing
+  ``select``; the explicit select stops ruff's defaults being narrower than the
+  project's rules; the explicit per-file-ignores stops the project's own
+  reasoning ("assert is the point of a test") being discarded along with them.
+  Consequence to expect: these counts do not match ``ruff check`` run by hand,
+  and only the per-file delta between arms is meaningful.
 * mypy: ``mypy --config-file /dev/null src/coops`` — deliberately ignoring
   pyproject.toml's [tool.mypy] scope, because that scope is exactly what
   hid the Phase 1 regressions. The configured scope is still correct for
@@ -138,8 +144,59 @@ MYPY_TARGET = "src/coops"
 # friction: the gate's sensitivity is not the subject's to set.
 RUFF_SELECT = (
     "E4,E7,E9,F,"       # ruff's defaults
-    "I,UP,B,C4,RET,SIM,RUF,DTZ,BLE,S,EXE,FURB"  # the project's additions
+    "I,UP,B,C4,RET,SIM,RUF,DTZ,BLE,S,EXE,FURB,"  # the project's additions
+    "PLC0414"           # explicit re-export, selected by the project on #220
 )
+# PLC0414 is the mirror of the bug above, and the reason this list is synced by
+# hand rather than inferred. #220 selected it in [tool.ruff.lint] so that a
+# deliberate `X as X` re-export could carry a noqa. The gate did not select it,
+# so under the gate that same noqa read as RUF100 ("unused directive") — one
+# finding on an otherwise clean main. The project and the gate must agree about
+# a rule or a noqa is simultaneously required by one and forbidden by the other.
+
+# Exemptions the gate honours, fixed HERE for the same reason RUFF_SELECT is.
+#
+# `--isolated` stops the measured tree from NARROWING the rules, which is the
+# attack it exists to prevent. But it also discarded the project's
+# `per-file-ignores`, and those are not an attack — they are a statement that
+# `assert` is the point of a test. The gate therefore flagged every assert in
+# every test file:
+#
+#     tests/unit/test_member_analytics.py   66 findings under the gate
+#                                           "All checks passed" under the project
+#
+# The consequence, measured by @curupira on #224: **any PR that adds a test
+# file fails the gate**, because rule (b) flags a new file with any finding —
+# 24 findings there, all S101. That is not a regression in anyone's code; it is
+# the instrument refusing to read the exemption the project wrote down.
+#
+# So the exemptions live in the gate's own command line: the tree cannot widen
+# them (which would be the attack) and cannot lose them (which was the bug).
+# Kept in step with [tool.ruff.lint.per-file-ignores] by hand, deliberately.
+#
+# One entry per rule, and ONE `--per-file-ignores` flag each: on the command
+# line ruff splits this value on commas as *entries*, not as a rule list, so
+# `tests/**:S101,DTZ` is read as the entries `tests/**:S101` and `DTZ` — and
+# the second has no `<FilePattern>:<RuleCode>` shape, so ruff exits 2. The
+# gate then reports "COULD NOT RUN", which is the honest answer and not a pass,
+# but it is still a broken gate. Verified against a control: a test file with
+# one assert reports 1 finding with no ignores and 0 with the repeated flags.
+RUFF_PER_FILE_IGNORES = (
+    "tests/**:S101",
+    "tests/**:DTZ",
+    "tests/**:S105",
+    "tests/**:S106",
+    "tests/**:S603",
+    "tests/**:S607",
+)
+
+
+def _per_file_ignore_args() -> list[str]:
+    """Expand the exemptions into the repeated flags ruff's CLI requires."""
+    args: list[str] = []
+    for entry in RUFF_PER_FILE_IGNORES:
+        args += ["--per-file-ignores", entry]
+    return args
 
 # See "How each tool is run" above: the missing config is the point, not an
 # oversight. --no-error-summary only drops a line the parser ignores.
@@ -329,7 +386,8 @@ def ruff_per_file(ruff_bin: str, arm: Path) -> Counter[str]:
         [
             ruff_bin, "check",
             "--isolated",            # no file can change what this measures
-            "--select", RUFF_SELECT,  # ...and nothing the project checks is dropped
+            "--select", RUFF_SELECT,  # ...nothing the project checks is dropped
+            *_per_file_ignore_args(),  # ...and its exemptions survive
             "--no-cache", "--output-format", "json", *targets,
         ],
         arm,
