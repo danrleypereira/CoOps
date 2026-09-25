@@ -759,26 +759,41 @@ class GitHubAPIClient:
                             additions = stats.get('additions', 0)
                             deletions = stats.get('deletions', 0)
 
-                            # Extract author login
-                            author_login = None
-                            if rest_commit.get('author') and rest_commit['author'].get('login'):
-                                author_login = rest_commit['author']['login']
-                            elif rest_commit.get('commit', {}).get('author', {}).get('name'):
-                                author_login = rest_commit['commit']['author']['name']
+                            commit_payload = rest_commit.get('commit', {}) or {}
+                            raw_author = commit_payload.get('author') or {}
+                            raw_committer = commit_payload.get('committer') or {}
+
+                            # The GitHub account, present only when the commit
+                            # is linked to one: an unlinked commit has
+                            # `author: null`. The git `name` is not a login —
+                            # standing in for one fabricates an account that
+                            # never existed, and dropping `email` leaves the
+                            # commit unattributable (#203).
+                            account = rest_commit.get('author')
+                            if not isinstance(account, dict):
+                                account = {}
 
                             print(f"[REST][Worker-{worker_num}] Fetched {sha[:8]}: +{additions}/-{deletions}")
 
-                            commit_payload = rest_commit.get('commit', {}) or {}
-                            raw_committer = commit_payload.get('committer') or {}
                             processed_commits.append({
                                 'oid': sha,
                                 'message': commit_payload.get('message', ''),
                                 'messageHeadline': commit_payload.get('message', '').split('\n')[0],
-                                'committedDate': commit_payload.get('author', {}).get('date'),
+                                'committedDate': raw_author.get('date'),
+                                # The node shape the GraphQL query returns
+                                # (`author { name email user { login
+                                # databaseId } }`), so the GraphQL->REST
+                                # mapping in bronze/commits.py treats both
+                                # paths identically. REST's `author.id` is
+                                # GraphQL's `user.databaseId`.
                                 'author': {
+                                    'name': raw_author.get('name'),
+                                    'email': raw_author.get('email'),
+                                    'date': raw_author.get('date'),
                                     'user': {
-                                        'login': author_login
-                                    }
+                                        'login': account.get('login'),
+                                        'databaseId': account.get('id'),
+                                    },
                                 },
                                 'committer': {
                                     'name': raw_committer.get('name'),
