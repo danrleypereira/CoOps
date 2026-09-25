@@ -39,10 +39,16 @@ large, that is the instrument reporting honestly, not a finding.
 
 How each tool is run
 --------------------
-* ruff: ``ruff check --no-cache --output-format json src tests`` — the same
-  check a developer runs, with the pinned dev-group version; the JSON flag
-  changes the output format, not one finding. ruff reads each arm's own
-  pyproject.toml, exactly as it would in that tree.
+* ruff: ``ruff check --isolated --select <RUFF_SELECT>
+  --per-file-ignores <RUFF_PER_FILE_IGNORES> --no-cache --output-format json
+  src tests``. NOT the check a developer runs: the rule set and the exemptions
+  are fixed in this file, because an instrument whose sensitivity is set by the
+  thing it measures is not an instrument. ``--isolated`` stops a tree narrowing
+  ``select``; the explicit select stops ruff's defaults being narrower than the
+  project's rules; the explicit per-file-ignores stops the project's own
+  reasoning ("assert is the point of a test") being discarded along with them.
+  Consequence to expect: these counts do not match ``ruff check`` run by hand,
+  and only the per-file delta between arms is meaningful.
 * mypy: ``mypy --config-file /dev/null src/coops`` — deliberately ignoring
   pyproject.toml's [tool.mypy] scope, because that scope is exactly what
   hid the Phase 1 regressions. The configured scope is still correct for
