@@ -1,10 +1,11 @@
 """The GitHub provider package: everything that knows GitHub's shapes.
 
-Only the mapper lives here today; the raw capture
-(:mod:`coops.raw_capture`) and the Bronze extractors
-(:mod:`coops.bronze`) predate it and are untouched.
+The mapper (#25) and the source-port adapter (#29) live here; the raw
+capture (:mod:`coops.raw_capture`) and the Bronze extractors
+(:mod:`coops.bronze`) predate them and are untouched.
 """
 
+from coops.github.adapter import GitHubSourceAdapter
 from coops.github.mapper import (
     map_activity_event,
     map_commit_graphql,
@@ -18,6 +19,7 @@ from coops.github.mapper import (
 )
 
 __all__ = [
+    "GitHubSourceAdapter",
     "map_activity_event",
     "map_commit_graphql",
     "map_commit_rest",
