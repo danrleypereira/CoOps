@@ -31,7 +31,7 @@ import pymongo
 
 from coops.domain import TenantId
 from coops.domain.tenancy import (
-    PROVIDER_GITHUB as PROVIDER_GITHUB,
+    PROVIDER_GITHUB as PROVIDER_GITHUB,  # noqa: PLC0414 - explicit re-export
 )
 
 #: Provider discriminator for the raw documents captured from the GitHub API.

@@ -118,13 +118,6 @@ exclude = "src/coops/(bronze|silver|gold|utils|etl|ai_analysis|infrastructure|ra
 module = ["bson", "bson.*"]
 follow_imports = "skip"
 
-# Pins ruff *behaviour* to match the version pin in the dev group above.
-# Deliberately minimal: every setting here either restates what ruff already
-# infers from `requires-python` (target-version) or affects only rules that
-# `ruff check` does not enable by default (line-length → E501/formatter), so
-# adding this section changes no finding that the regression gate compares.
-# required-version makes a version/behaviour mismatch fail loudly instead of
-# silently re-baselining: ruff refuses to run under any other version.
 [tool.coverage.report]
 exclude_lines = [
     "pragma: no cover",
@@ -180,6 +173,13 @@ select = [
             # (assert) is ignored for tests/ below — asserts are the point.
     "EXE",  # shebang hygiene: a shebang on a non-executable file lies
     "FURB", # refurb: slice-to-remove-suffix, `x or y` simplifications
+    "PLC0414", # explicit re-export (`X as X`). Not a style preference: the
+            # gate in scripts/check_regressions.py measures with ruff's own
+            # default rules, which include this one, so a noqa for it is
+            # load-bearing THERE while reading as RUF100 (unused) here. Select
+            # it so the project and the gate agree about one rule instead of
+            # disagreeing silently — found when the gate flagged storage/raw.py
+            # 0 -> 1 after this branch removed that noqa as redundant.
 ]
 # Not selected, deliberately (all measured, not assumed):
 # - E1/E2/E5/W, E501 — formatter territory; adopting one is a separate change.
