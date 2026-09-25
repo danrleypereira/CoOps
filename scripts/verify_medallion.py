@@ -356,11 +356,17 @@ def check_member_ids_distinct(silver: Path, rep: Report) -> None:
     path = silver / "members_statistics.json"
     if not path.exists():
         rep.add(Result("member-ids-distinct", "silver", False, "members_statistics.json absent", control_fired=False))
+        # Both rows, not one. A check that is ABSENT from the report is
+        # invisible to any gate reading verdicts, because there is no verdict
+        # to read -- the #210 hole, where a disjoint --reference returned
+        # early and no-record-vanished simply did not appear (#233).
+        rep.add(Result("every-member-identified", "silver", False, "members_statistics.json absent", control_fired=False))
         return
     records = list(read_records(path))
     ids = [r.get("id") for r in records if r.get("id") is not None]
     if not ids:
         rep.add(Result("member-ids-distinct", "silver", False, "no member carries an id", control_fired=False))
+        rep.add(Result("every-member-identified", "silver", False, "no member carries an id", control_fired=False))
         return
     dupes = len(ids) - len(set(ids))
     rep.add(Result("member-ids-distinct", "silver", dupes == 0, f"{len(ids):,} members, {dupes} duplicate ids"))
@@ -389,11 +395,11 @@ def check_no_unknown_labels(silver: Path, rep: Report) -> None:
     """
     path = silver / "members_statistics.json"
     if not path.exists():
-        rep.add(Result("no-unknown-labels", "silver", False, "members_statistics.json absent", control_fired=False))
+        rep.add(Result("unknown-labels-not-growing", "silver", False, "members_statistics.json absent", control_fired=False))
         return
     records = list(read_records(path))
     if not records:
-        rep.add(Result("no-unknown-labels", "silver", False, "no member records", control_fired=False))
+        rep.add(Result("unknown-labels-not-growing", "silver", False, "no member records", control_fired=False))
         return
     bad = [r for r in records if isinstance(r.get("name"), str) and r["name"].startswith("Unknown contributor")]
     # #151 took these from 231 to 1. The residual is a contributor every one of
@@ -946,6 +952,32 @@ def run_controls(tmp: Path) -> list[Result]:
         out.append(Result(label, "control", not r.results[0].passed,
                           "rejects the planted defect" if not r.results[0].passed else "DID NOT FIRE"))
 
+    # The DEGENERATE branches had no control at all (#233). Both checks take an
+    # early return when members_statistics.json is absent, and until #233 one of
+    # them spelled its row differently there and the other did not emit a row.
+    # Neither is reachable by planting a bad RECORD, so neither was ever
+    # exercised: this plants an absent FILE instead.
+    #
+    # It asserts on the set of row NAMES, not on verdicts — the defect was a
+    # row that was absent or misnamed, and no assertion about a verdict can see
+    # a row that is not there.
+    empty = tmp / "silver-absent"
+    empty.mkdir(parents=True, exist_ok=True)
+    r = Report()
+    check_member_ids_distinct(empty, r)
+    check_no_unknown_labels(empty, r)
+    names = {x.name for x in r.results}
+    expected = {"member-ids-distinct", "every-member-identified", "unknown-labels-not-growing"}
+    missing = expected - names
+    unexpected = names - expected
+    degenerate_ok = not missing and not unexpected and all(not x.passed for x in r.results)
+    out.append(Result(
+        "silver-checks-register-when-absent", "control", degenerate_ok,
+        "all three rows present and failing with no members_statistics.json"
+        if degenerate_ok else
+        f"DID NOT FIRE: missing={sorted(missing)} unexpected={sorted(unexpected)}",
+    ))
+
     return out
 
 
@@ -1020,9 +1052,6 @@ def main() -> int:
         check_no_unknown_labels(data / "silver", rep)
         check_hash_never_a_label(data / "silver", rep)
 
-    if not rep.results:
-        print("  no layers found to check", file=sys.stderr)
-        return 2
 
     width = max(len(r.name) for r in rep.results)
     for r in rep.results:
