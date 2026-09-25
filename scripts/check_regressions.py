@@ -257,7 +257,9 @@ class GateError(Exception):
 
 def _run(cmd: list[str], cwd: Path) -> subprocess.CompletedProcess[str]:
     try:
-        return subprocess.run(cmd, cwd=cwd, capture_output=True, text=True, check=False)
+        # Suppressed deliberately: `cmd` is built by this module (ruff/mypy/git argv),
+        # never from user input, and is passed as a list so no shell parses it.
+        return subprocess.run(cmd, cwd=cwd, capture_output=True, text=True, check=False)  # noqa: S603
     except OSError as exc:
         raise GateError(f"could not execute {cmd[0]}: {exc}") from exc
 
@@ -319,13 +321,18 @@ def materialize(repo: Path, ref: str, dest: Path) -> str:
         try:
             tar.extractall(dest, filter="data")
         except TypeError:  # Python < 3.12 has no `filter`
-            tar.extractall(dest)
+            # Suppressed deliberately: the `filter="data"` call above is the real path;
+            # this fallback runs only on Python < 3.12, over a tarball this
+            # gate produced itself from the repository under test.
+            tar.extractall(dest)  # noqa: S202
     return resolved
 
 
 def _git_bytes(repo: Path, args: list[str]) -> bytes:
     try:
-        proc = subprocess.run(["git", *args], cwd=repo, capture_output=True, check=False)
+        # Suppressed deliberately: fixed argv, no shell; `git` is resolved from PATH on
+        # purpose so the gate uses the same toolchain as the caller.
+        proc = subprocess.run(["git", *args], cwd=repo, capture_output=True, check=False)  # noqa: S603, S607
     except OSError as exc:
         raise GateError(f"could not execute git: {exc}") from exc
     if proc.returncode != 0:
