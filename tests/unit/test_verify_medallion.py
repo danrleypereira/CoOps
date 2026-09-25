@@ -482,10 +482,10 @@ _PRESENCE_CHECKS = frozenset({"bronze-present", "silver-present", "gold-present"
 _BRONZE_CHECKS = frozenset({"aggregates-removed", "every-author-hashed",
                             "no-orphaned-bronze-files",
                             "no-record-reverted", "no-record-vanished"})
-# Measured, the unknown-labels check registers as unknown-labels-not-growing;
-# when members_statistics.json is absent or holds nothing, the script emits
-# the SAME check under the name no-unknown-labels instead (the instrument
-# branch of check_no_unknown_labels). Both spellings are pinned below.
+# The unknown-labels check registers as unknown-labels-not-growing on EVERY
+# branch. Until #233 its absent/empty branches emitted the same check under a
+# second name, no-unknown-labels, which --self-test had never heard of; this
+# file used to pin both spellings as observed behaviour.
 _SILVER_CHECKS = frozenset({"member-ids-distinct", "every-member-identified",
                             "unknown-labels-not-growing", "hash-never-a-label"})
 _GOLD_CHECKS = frozenset({"gold-file-set", "gold-regenerated"})
@@ -527,13 +527,11 @@ _REGISTRATION_MATRIX = [
                  id="empty-gold-usable-reference"),
     pytest.param(_L_ALL, frozenset({"bronze"}), "usable", _ALL_CHECKS,
                  id="empty-bronze-usable-reference"),
-    # empty silver: every-member-identified is not registered (its sibling
-    # member-ids-distinct already reports the instrument), and the unknown-
-    # labels check registers under its absent-file name, no-unknown-labels.
-    pytest.param(_L_ALL, frozenset({"silver"}), "usable",
-                 _ALL_CHECKS - {"every-member-identified",
-                                "unknown-labels-not-growing"}
-                 | {"no-unknown-labels"},
+    # empty silver: every check still registers. Before #233,
+    # every-member-identified was ABSENT here (its early return preceded the
+    # row) and unknown-labels-not-growing appeared under a second name — so
+    # this row used to subtract two names and add one.
+    pytest.param(_L_ALL, frozenset({"silver"}), "usable", _ALL_CHECKS,
                  id="empty-silver-usable-reference"),
 ]
 
@@ -586,7 +584,7 @@ def test_self_test_fires_all_controls_and_exits_0(
     """The count is part of the contract: 16 controls, all firing."""
     rc, out, _ = _run(monkeypatch, capsys, "--self-test")
     assert rc == 0
-    assert _controls_fired(out) == ("16", "16")
+    assert _controls_fired(out) == ("17", "17")
 
 
 def test_self_test_detects_a_control_that_stops_firing(
@@ -601,7 +599,7 @@ def test_self_test_detects_a_control_that_stops_firing(
     monkeypatch.setattr(verify_medallion, "check_no_aggregates", always_passes)
     rc, out, _ = _run(monkeypatch, capsys, "--self-test")
     assert rc == 2
-    assert _controls_fired(out) == ("15", "16")
+    assert _controls_fired(out) == ("16", "17")
 
 
 # --------------------------------------------------------------------------
@@ -956,7 +954,7 @@ def _corpus_with_silver(root: Path, members: list[dict[str, object]]) -> None:
         pytest.param(
             "no-member-records",
             [],
-            "no-unknown-labels",
+            "unknown-labels-not-growing",
             id="members file with zero records (L306)",
         ),
         pytest.param(
