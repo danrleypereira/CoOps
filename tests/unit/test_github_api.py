@@ -302,7 +302,7 @@ class TestGraphQLCommitHistory:
         client = GitHubAPIClient(token="test", cache_dir=str(tmp_path))
 
         with patch.object(client, 'graphql') as mock_graphql, \
-             patch.object(client, 'get_with_cache', return_value=None):
+             patch.object(client, 'get_with_cache', return_value=None) as mock_rest:
             mock_graphql.return_value = None  # Erro
 
             result, _rate_meta = client.graphql_commit_history(
@@ -310,6 +310,12 @@ class TestGraphQLCommitHistory:
             )
 
             assert result == []
+            # Assert the stubs were USED, not merely installed. Without this,
+            # deleting either patch leaves a live call that returns None and
+            # the test still passes as [] — the shape that hid two real
+            # network calls in this suite until #31 (#249).
+            assert mock_graphql.called, "GraphQL was not exercised"
+            assert mock_rest.called, "the REST fallback was not exercised"
 
 
 class TestGetActiveUnmergedBranches:
@@ -391,12 +397,17 @@ class TestGetActiveUnmergedBranches:
         client = GitHubAPIClient(token="test", cache_dir=str(tmp_path))
 
         with patch.object(client, 'get_with_cache') as mock_get, \
-             patch.object(client, 'graphql', return_value=None):
+             patch.object(client, 'graphql', return_value=None) as mock_graphql:
             mock_get.return_value = None  # Erro na API
 
             result = client.get_active_unmerged_branches("owner", "repo")
 
             assert result == []
+            # The method proceeds past the failed probe and calls GraphQL.
+            # Asserting the stub was used is what makes removing it fail:
+            # an unstubbed graphql POSTs to api.github.com and also yields
+            # [], so without this the repair is unenforced (#249).
+            assert mock_graphql.called, "GraphQL was not exercised — an unstubbed path would reach the network"
 
 
 class TestRestCommitDetails:
