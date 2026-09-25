@@ -978,6 +978,33 @@ def run_controls(tmp: Path) -> list[Result]:
         f"DID NOT FIRE: missing={sorted(missing)} unexpected={sorted(unexpected)}",
     ))
 
+    # The OTHER degenerate branch: the file is PRESENT and no record carries an
+    # id. The control above plants an absent file and so reaches only the first
+    # early return; this one reaches the second. Both rows are emitted there and
+    # neither was protected — dropping `every-member-identified` on that branch
+    # survived #232's mutation harness, which is #233's own defect one branch
+    # over (found by curupira gating #253, fixed here).
+    #
+    # Asserts on row NAMES for the same reason as its sibling: no assertion
+    # about a verdict can see a row that is not there.
+    idless = tmp / "silver-idless"
+    idless.mkdir(parents=True, exist_ok=True)
+    (idless / "members_statistics.json").write_text(
+        json.dumps([{"name": "nobody"}, {"name": "also nobody"}]), encoding="utf-8")
+    r = Report()
+    check_member_ids_distinct(idless, r)
+    names = {x.name for x in r.results}
+    expected = {"member-ids-distinct", "every-member-identified"}
+    missing = expected - names
+    unexpected = names - expected
+    idless_ok = not missing and not unexpected and all(not x.passed for x in r.results)
+    out.append(Result(
+        "silver-checks-register-when-idless", "control", idless_ok,
+        "both rows present and failing when no member carries an id"
+        if idless_ok else
+        f"DID NOT FIRE: missing={sorted(missing)} unexpected={sorted(unexpected)}",
+    ))
+
     return out
 
 
