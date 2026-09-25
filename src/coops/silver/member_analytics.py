@@ -72,7 +72,7 @@ def _account_age_days(member_data: dict, as_of: datetime) -> int:
             # GitHub created_at ("…Z") is read as naive UTC so the subtraction
             # below compares like with like against the capture time, which
             # _parse_capture_time returns naive too. (DTZ007 suppressed.)
-            created_date = datetime.strptime(member_data['created_at'], '%Y-%m-%dT%H:%M:%SZ')  # noqa: DTZ007
+            created_date = datetime.strptime(member_data['created_at'], '%Y-%m-%dT%H:%M:%SZ')  # noqa: DTZ007 - GitHub's "…Z" read as naive UTC to match the naive capture time subtracted below
             return (as_of - created_date).days
         except (ValueError, TypeError):
             return 0

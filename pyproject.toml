@@ -125,11 +125,6 @@ follow_imports = "skip"
 # adding this section changes no finding that the regression gate compares.
 # required-version makes a version/behaviour mismatch fail loudly instead of
 # silently re-baselining: ruff refuses to run under any other version.
-[tool.ruff]
-target-version = "py310"
-line-length = 100
-required-version = "0.16.9"
-
 [tool.coverage.report]
 exclude_lines = [
     "pragma: no cover",
@@ -150,6 +145,13 @@ exclude_lines = [
 target-version = "py310"
 # First-party resolution (import sorting, TID) — the package lives in src/.
 src = ["src", "tests"]
+line-length = 100
+# Pins ruff *behaviour* to the version pinned in the dev group (#221). Merged
+# here from #221's own [tool.ruff]: TOML rejects duplicate keys, so the two
+# blocks cannot coexist — a cherry-pick that reported "no conflicts" still
+# produced a file ruff refuses to parse ("duplicate key"), because git merged
+# them as text and text does not know what a table is.
+required-version = "0.16.9"
 
 [tool.ruff.lint]
 select = [
@@ -201,4 +203,9 @@ select = [
             # different model than the code under test runs on.
     "S105", # dummy credentials: fixtures pass fake tokens by design; there is
     "S106", # no real secret in a test, and the parameter name is the API's.
+    "S603", # subprocess with a non-literal argv: scripts/check_regressions.py
+    "S607", # is a CLI, so its tests must invoke it as one. The argv is built
+            # in the test from its own constants — there is no untrusted input
+            # to check for, which is what S603 exists to catch. Added when #221
+            # landed the gate and its tests after this baseline was measured.
 ]
