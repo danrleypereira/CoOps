@@ -17,6 +17,34 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   are not green — fix the base first on its own patch branch.
 
 ### Added
+- `scripts/check_regressions.py` (#119): a per-file regression gate comparing
+  BASE to HEAD under ruff and mypy. Phase 1 shipped to `main` with +69 ruff
+  findings in files that already existed at the base commit and +37 mypy
+  errors in pre-existing files — invisible because ruff was never pinned or
+  run, and because `pyproject.toml` scopes mypy to 21 of 62 files, so
+  `bronze/issues.py` went 0 → 10 with no configured run seeing it. An
+  aggregate total cannot catch this: Phase 1's net mypy count *fell*
+  236 → 139 while seven files got worse. The gate materializes each ref with
+  `git archive` (never a checkout; `data/` untouched), runs the pinned ruff
+  (`ruff check src tests`) and a deliberately config-free mypy
+  (`mypy --config-file /dev/null src/coops`) on both arms, and fails (rc 1,
+  naming every file with its base → head counts) when a pre-existing file
+  has more findings at head or a new file has any. Absolute counts are never
+  gated — only the per-file delta — so the pre-ports debt does not block
+  Phase 2. rc 2 means the gate could not run (tool missing, ref
+  unresolvable, tool crash) and is never a pass. `--self-test` proves the
+  gate can fail with four controls: a type error planted in the
+  scope-excluded `bronze/issues.py` (the exact Phase 1 blind spot — the
+  configured scope must not see it, the gate must fail on it), findings in a
+  new file, an unchanged tree passing, and a file that improves passing
+  without being named.
+- `ruff==0.16.9` pinned in the dev group (#119), with a matching
+  `[tool.ruff]` section (`target-version`, `line-length`,
+  `required-version`): every "lint passes" claim before this used whichever
+  ruff happened to be on PATH, or none. The section restates what ruff
+  already infers (`requires-python`) or affects only rules `ruff check` does
+  not enable by default, so pinning the version shifts no finding: 831 with
+  the section, 831 without, measured on the same tree.
 - `gold-regenerated` in `scripts/verify_medallion.py` (#201): with
   `--reference`, every Gold artifact's in-content `generated_at` must be
   strictly newer than the same artifact's in the reference corpus, or the
