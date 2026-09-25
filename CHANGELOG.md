@@ -8,6 +8,28 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 ## [Unreleased]
 
 ### Added
+- Offline replays now read the **newest cached version** of a record, not
+  whichever URL the run happens to ask for (#199). The cache is keyed
+  `md5(full URL)`, so one logical record lives in several entries — the
+  unconditional listing and the `?since=<watermark>` ones — and a no-watermark
+  replay read only the unconditional body, which can be months old: a
+  regeneration on such a cache lost 55 records and reverted 34 others. In
+  `--offline` mode, reading a repository's issues, PRs, commits or issue
+  events now unions every cached response holding that repository's records
+  and keeps the newest version of each (issues/PRs by `number` and the
+  greatest `updated_at`; commits by `sha` and events by `id`, immutable, never
+  compared; a record absent from every newer body survives — absence from a
+  `?since=` response means "not changed", never "deleted"). Cache entries are
+  attributed to repositories by content (GraphQL commit bodies carry no
+  repository name and attach by commit-graph continuation). Measured on the
+  #199 corpus: MED-APP issues 18 → 23 with `#5` at its newest cached
+  `updated_at` (`2026-09-24T00:07:06Z`, was `2026-09-11T20:06:09Z`);
+  2026.2-MeasureSoftGram-DOC commits 21 → 25. Online runs are unchanged.
+- `last_seen_at` on every bronze issue, PR, commit and issue-event record
+  written by an offline replay: when the cache last held a response containing
+  that record (the entry's mtime). Nothing downstream reads it yet; it is what
+  makes a staleness question answerable at all — today nothing records when a
+  record was last confirmed (#199's staleness tooling is the named consumer).
 - `--offline` for `coops-bronze` (and `offline=` on `GitHubAPIClient`): an
   offline replay mode that is a guarantee, not a preference. Every response
   is served from the cache — including warm entries with an ETag, which

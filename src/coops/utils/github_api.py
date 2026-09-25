@@ -18,6 +18,7 @@ from typing import Dict, List, Optional, Any, Tuple
 from urllib.parse import urlsplit, parse_qsl
 
 from coops.storage.raw import PROVIDER_GITHUB, is_fresh
+from coops.utils.cache_fold import CacheFold
 
 class OfflineCacheMiss(RuntimeError):
     """Offline mode was asked for a URL that has no cached body.
@@ -82,6 +83,10 @@ class GitHubAPIClient:
         # OfflineCacheMiss instead of falling through to a request that
         # cannot happen. Nothing is written: see get_with_cache.
         self.offline = offline
+        # Content index over the cache (see coops.utils.cache_fold), built
+        # lazily and only for offline runs. Online runs revalidate; a live
+        # full listing is authoritative and complete on its own.
+        self._cache_fold = None
         # Run-summary accounting: a "hit" is a request served from cache (a 304
         # or a short-circuited body) without consuming a rate-limit slot; a
         # "miss" is a billed network fetch (a 200) that populates the cache.
@@ -193,6 +198,61 @@ class GitHubAPIClient:
         etag_file = self._get_etag_path(cache_key)
         if os.path.exists(etag_file):
             os.remove(etag_file)
+
+    # -- Content-indexed cache fold (#199) -----------------------------------
+    #
+    # The URL-keyed cache holds the same logical record under several URLs
+    # (unconditional listings and ?since= watermarks), so reading one URL can
+    # serve a months-old body while newer versions sit under keys nothing asks
+    # for. In offline mode the extractors therefore also read the cache *by
+    # content*: every cached response holding records for the repository and
+    # family, unioned, newest version per record. See cache_fold.py.
+
+    def offline_fold(self) -> Optional[CacheFold]:
+        """The content index over the cache, or None outside offline mode.
+
+        Built once per client; the first family query scans the cache
+        directory. Callers gate on ``offline`` themselves — extractors go
+        through :func:`coops.utils.cache_fold.client_fold`, which is strict
+        about the flag so a mocked client cannot trip the fold by accident.
+        """
+        if not self.offline:
+            return None
+        if self._cache_fold is None:
+            self._cache_fold = CacheFold(self.cache_dir)
+        return self._cache_fold
+
+    def _offline_fold_commits(
+        self, full_name: str, commits_by_sha: Dict[str, Dict[str, Any]]
+    ) -> None:
+        """Fold every cached commit of ``full_name`` into the extraction.
+
+        Seeds the fold's commit-graph continuation with what this run read
+        (nodes and their parents), merges in commits found only under other
+        URLs' bodies — a ``since`` query's page, an unfetched branch — and
+        stamps every commit with ``last_seen_at``: when the cache last held a
+        response containing it. Commits already present keep the version this
+        run read (commits are immutable; a differing sha is a different
+        record) and only gain the stamp.
+        """
+        fold = self.offline_fold()
+        if fold is None:
+            return
+        seed = set()
+        for node in commits_by_sha.values():
+            if node.get("oid"):
+                seed.add(node["oid"])
+            for parent in (node.get("parents") or {}).get("nodes") or []:
+                if isinstance(parent, dict) and parent.get("oid"):
+                    seed.add(parent["oid"])
+        for sha, folded in fold.commits(full_name, seed).items():
+            existing = commits_by_sha.get(sha)
+            if existing is None:
+                node = dict(folded.record)
+                node["last_seen_at"] = folded.last_seen_at
+                commits_by_sha[sha] = node
+            else:
+                existing["last_seen_at"] = folded.last_seen_at
 
     # -- Run-summary accounting -------------------------------------------
 
@@ -1116,6 +1176,14 @@ class GitHubAPIClient:
 
                 if len(time_ranges) > 1 and period_commits > 0:
                     print(f"[GRAPHQL] Extracted {period_commits} total unique commits from this period")
+
+        # Offline replay: the pages above are the URLs this run would ask the
+        # provider for; the cache also holds the same repository's commits
+        # under URLs no run asks for (watermark `since` queries, other
+        # branches). Union them in (#199), keeping the pages' version of any
+        # commit both hold.
+        if self.offline and commits_by_sha:
+            self._offline_fold_commits(f"{owner}/{repo}", commits_by_sha)
 
         commits = list(commits_by_sha.values())
         if branches:
