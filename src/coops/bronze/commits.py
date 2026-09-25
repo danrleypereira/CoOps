@@ -11,6 +11,7 @@ from typing import Any, Dict, List, Optional
 _EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data, load_json_data
 from coops.utils.data_helpers import strip_metadata
+from coops.utils.cache_fold import client_fold
 from coops.bronze.watermarks import WatermarkStore, max_iso
 from coops.bronze.files import remove_aggregate
 
@@ -261,7 +262,7 @@ def extract_commits(
                 # `email` is carried only so `_sanitize_commit` can derive the
                 # stable identity key — for every author since #101, not just
                 # unlinked ones; the address itself is never persisted.
-                data_commits.append({
+                record = {
                     'sha': sha,
                     'html_url': n.get('url'),
                     'commit': {
@@ -284,7 +285,13 @@ def extract_commits(
                     'deletions': deletions,
                     'total_changes': total_changes,
                     'repo_name': repo_name,
-                })
+                }
+                # `last_seen_at` (stamped by the offline fold, #199) is set
+                # only when present, so an online run's record shape is
+                # unchanged.
+                if n.get('last_seen_at') is not None:
+                    record['last_seen_at'] = n['last_seen_at']
+                data_commits.append(record)
 
             if not nodes:
                 print(f"[WARN] GraphQL returned no commits for {repo_name}. Falling back to REST.")
@@ -298,6 +305,15 @@ def extract_commits(
                     if until:
                         commits_base = f"{commits_base}{sep}until={until}"
                 commits = client.get_paginated(commits_base, use_cache=use_cache, per_page=100)
+                # Offline replay (#199): same fold as the REST branch below.
+                rest_last_seen = {}
+                rest_fold = client_fold(client)
+                if rest_fold is not None:
+                    folded = rest_fold.commit_items(full_name)
+                    commits = [entry.record for entry in folded.values()]
+                    rest_last_seen = {
+                        sha: entry.last_seen_at for sha, entry in folded.items()
+                    }
                 for commit in commits or []:
                     sha = commit.get('sha')
                     additions = None
@@ -314,6 +330,10 @@ def extract_commits(
 
                     # Ensure commit.commit.author.login is populated from commit.author.login if available
                     commit_data = {**commit}
+                    if sha in rest_last_seen:
+                        # Stamped by the offline fold (#199); set only when
+                        # present so an online run's record shape is unchanged.
+                        commit_data['last_seen_at'] = rest_last_seen[sha]
                     if 'commit' in commit_data and 'author' in commit_data['commit']:
                         # If commit.author.login exists at root level, copy it to commit.commit.author.login
                         if 'author' in commit_data and isinstance(commit_data['author'], dict) and 'login' in commit_data['author']:
@@ -348,6 +368,21 @@ def extract_commits(
                 if until:
                     commits_base = f"{commits_base}{sep}until={until}"
             commits = client.get_paginated(commits_base, use_cache=use_cache, per_page=page_size)
+
+            # Offline replay (#199): the pages above can be months old while
+            # newer commits sit under ``since=`` keys nothing asks for. Replace
+            # the pages with the cache fold for this repository — every cached
+            # REST commit-list body, unioned by sha — which is a superset of
+            # the pages (the fold indexes those same bodies). Any page that
+            # was missing has already raised OfflineCacheMiss above.
+            rest_last_seen = {}
+            rest_fold = client_fold(client)
+            if rest_fold is not None:
+                folded = rest_fold.commit_items(full_name)
+                commits = [entry.record for entry in folded.values()]
+                rest_last_seen = {
+                    sha: entry.last_seen_at for sha, entry in folded.items()
+                }
             if commits:
                 for commit in commits:
                     sha = commit.get('sha')
@@ -365,6 +400,10 @@ def extract_commits(
 
                     # Ensure commit.commit.author.login is populated from commit.author.login if available
                     commit_data = {**commit}
+                    if sha in rest_last_seen:
+                        # Stamped by the offline fold (#199); set only when
+                        # present so an online run's record shape is unchanged.
+                        commit_data['last_seen_at'] = rest_last_seen[sha]
                     if 'commit' in commit_data and 'author' in commit_data['commit']:
                         # If commit.author.login exists at root level, copy it to commit.commit.author.login
                         if 'author' in commit_data and isinstance(commit_data['author'], dict) and 'login' in commit_data['author']:

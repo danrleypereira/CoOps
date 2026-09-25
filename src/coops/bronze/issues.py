@@ -3,6 +3,7 @@ from typing import List, Optional
 
 from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data, load_json_data
 from coops.utils.data_helpers import strip_metadata
+from coops.utils.cache_fold import client_fold
 from coops.bronze.watermarks import WatermarkStore, max_iso, query_since
 from coops.bronze.files import remove_aggregate
 
@@ -212,14 +213,39 @@ def extract_issues(
             max_pages = max(1, math.ceil(max(max_issues, max_prs) / 100))
         issues = client.get_paginated(issues_base, use_cache=use_cache, per_page=100, max_pages=max_pages)
 
+        # Offline replay (#199): the pages above are the URLs this run would
+        # ask the provider for, and their bodies can be months old — the newer
+        # versions sit under ``?since=`` keys no watermark-less run asks for.
+        # Replace the pages with the cache fold for this repository: the union
+        # of every cached response holding this repository's issues and PRs,
+        # newest version per number. It is a superset of the pages (the fold
+        # indexes those same bodies), and any page that was missing has
+        # already raised OfflineCacheMiss above.
+        fold = client_fold(client)
+        last_seen_by_number = {}
+        if fold is not None:
+            folded = fold.issues(full_name)
+            issues = [folded[number].record for number in sorted(folded)]
+            last_seen_by_number = {
+                number: entry.last_seen_at for number, entry in folded.items()
+            }
+
         # Separate issues from PRs and project them to the stored record shape.
         repo_issues = []
         repo_prs = []
         for issue in issues or []:
+            record = _project_issue(issue, repo_name)
+            # When the record came from the cache fold, stamp when the cache
+            # last confirmed it. Metadata about the extraction, not provider
+            # data, so it is added after the field whitelist rather than
+            # through it.
+            last_seen = last_seen_by_number.get(issue.get("number"))
+            if last_seen is not None:
+                record["last_seen_at"] = last_seen
             if issue.get('pull_request'):
-                repo_prs.append(_project_issue(issue, repo_name))
+                repo_prs.append(record)
             else:
-                repo_issues.append(_project_issue(issue, repo_name))
+                repo_issues.append(record)
 
         # On an incremental run, merge the changed records over the ones already
         # stored, keyed by number (issues and PRs DO change, so replacing
@@ -269,7 +295,24 @@ def extract_issues(
                 use_cache=use_cache, per_page=100,
             )
 
-        repo_events = [_project_event(e, repo_name) for e in fetched_events or []]
+        # Offline replay: same replacement as for issues above — the fold
+        # unions every cached events body of the repository (pages of the
+        # unconditional URL included), keyed by id, first version seen.
+        last_seen_by_event_id = {}
+        if fold is not None:
+            folded_events = fold.events(full_name)
+            fetched_events = [entry.record for entry in folded_events.values()]
+            last_seen_by_event_id = {
+                eid: entry.last_seen_at for eid, entry in folded_events.items()
+            }
+
+        repo_events = []
+        for event in fetched_events or []:
+            record = _project_event(event, repo_name)
+            last_seen = last_seen_by_event_id.get(event.get("id"))
+            if last_seen is not None:
+                record["last_seen_at"] = last_seen
+            repo_events.append(record)
         if events_incremental:
             # Only events newer than the last one seen are appended.
             repo_events = _load_prior_records(

@@ -18,6 +18,7 @@ from typing import Dict, List, Optional, Any, Tuple
 from urllib.parse import urlsplit, parse_qsl
 
 from coops.storage.raw import PROVIDER_GITHUB, is_fresh
+from coops.utils.cache_fold import CacheFold
 
 class OfflineCacheMiss(RuntimeError):
     """Offline mode was asked for a URL that has no cached body.
@@ -82,6 +83,10 @@ class GitHubAPIClient:
         # OfflineCacheMiss instead of falling through to a request that
         # cannot happen. Nothing is written: see get_with_cache.
         self.offline = offline
+        # Content index over the cache (see coops.utils.cache_fold), built
+        # lazily and only for offline runs. Online runs revalidate; a live
+        # full listing is authoritative and complete on its own.
+        self._cache_fold = None
         # Run-summary accounting: a "hit" is a request served from cache (a 304
         # or a short-circuited body) without consuming a rate-limit slot; a
         # "miss" is a billed network fetch (a 200) that populates the cache.
@@ -193,6 +198,29 @@ class GitHubAPIClient:
         etag_file = self._get_etag_path(cache_key)
         if os.path.exists(etag_file):
             os.remove(etag_file)
+
+    # -- Content-indexed cache fold (#199) -----------------------------------
+    #
+    # The URL-keyed cache holds the same logical record under several URLs
+    # (unconditional listings and ?since= watermarks), so reading one URL can
+    # serve a months-old body while newer versions sit under keys nothing asks
+    # for. In offline mode the extractors therefore also read the cache *by
+    # content*: every cached response holding records for the repository and
+    # family, unioned, newest version per record. See cache_fold.py.
+
+    def offline_fold(self) -> Optional[CacheFold]:
+        """The content index over the cache, or None outside offline mode.
+
+        Built once per client; the first family query scans the cache
+        directory. Callers gate on ``offline`` themselves — extractors go
+        through :func:`coops.utils.cache_fold.client_fold`, which is strict
+        about the flag so a mocked client cannot trip the fold by accident.
+        """
+        if not self.offline:
+            return None
+        if self._cache_fold is None:
+            self._cache_fold = CacheFold(self.cache_dir)
+        return self._cache_fold
 
     # -- Run-summary accounting -------------------------------------------
 
@@ -1132,6 +1160,13 @@ class GitHubAPIClient:
                 if len(time_ranges) > 1 and period_commits > 0:
                     print(f"[GRAPHQL] Extracted {period_commits} total unique commits from this period")
 
+        # The commit half of the #199 fold is NOT wired here. A GraphQL history
+        # body carries no repository name, so attributing one needs evidence
+        # from the commit graph — and continuing the graph across shared history
+        # folded a successor repository's commits into its predecessor
+        # (2021.1-PC-GO1-Frontend: 510 -> 818, all 308 of them its successor's).
+        # Attributing another repository's work is worse than the staleness it
+        # would have cured. The issue and event folds are unaffected.
         commits = list(commits_by_sha.values())
         if branches:
             print(f"  [GRAPHQL] Total unique commits across all branches: {len(commits)}")
