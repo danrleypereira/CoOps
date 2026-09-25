@@ -60,6 +60,25 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   vacuously.
 
 ### Changed
+- Extracted the reusable transport out of `coops/utils/github_api.py` into
+  `coops/github/client.py` (#27): `GitHubTransport` now carries
+  `OfflineCacheMiss`, construction, the URL-keyed cache and its ETag
+  sidecars, the MongoDB raw layer, the raw-corpus capture, offline replay,
+  run-summary accounting, `get_with_cache`, `graphql` and `get_paginated`,
+  every method moved byte-identically; `GitHubAPIClient` inherits it and
+  `OfflineCacheMiss` is re-exported, so all 43 importers of
+  `coops.utils.github_api` keep resolving unchanged (the GitHub *queries*
+  stay there for #28). Two consequences of the new
+  `utils → github` import edge, both without a behavioural change:
+  `coops/github/__init__.py` now serves `GitHubSourceAdapter` lazily (an
+  eager re-export is a cycle in which every import order dies on a
+  partially initialized module — `from coops.github import
+  GitHubSourceAdapter` still works), and `GitHubTransport` imports
+  `CacheFold` at first `offline_fold()` call instead of at module import
+  (`coops/utils/__init__.py` eagerly imports `github_api`, so any
+  module-level `coops.utils` import in `client.py` would make it
+  unimportable as an entry point). `github_api.requests` is kept (noqa'd)
+  as the attribute tests stub the HTTP boundary through.
 - **Lint, format and type-check must be green, not "no worse than the base"**
   (owner ruling, 2026-09-25). Documented in `docs/definition-of-done.md` and
   `docs/phase-workflow.md`, and tightened in the pull request template. A phase
