@@ -41,6 +41,23 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   `coops.storage` alongside `MongoStorageAdapter`, as #41 promised. The
   ETL does not call the selector yet — that wiring lands with the layers'
   move onto the port (#30/#33/#34).
+- The one `StoragePort` contract suite (#55):
+  `tests/unit/test_storage_contract_suite.py` parametrises every
+  behaviour the port promises over **every** adapter exported by
+  `coops.storage.__all__` — round-trip, the absent read (`None`, never
+  `[]`), sorted `list` plus empty for an unknown tenant,
+  replace-not-append, and tenant isolation on **both** read paths. Each
+  contract is written once and runs once per adapter: the per-adapter
+  suites prove each adapter does what its author thought, this one
+  proves they agree — the property the port exists to provide.
+  Anti-drift is structural: the parameter list is derived from the
+  exports rather than hand-written, a parametrised adapter with no
+  factory fails the run, and a keystone test re-scans the exports
+  against the collected parameters. `MongoStorageAdapter` skips without
+  a reachable `MONGO_URI` (the reason names the variable), the terminal
+  summary reports which adapters ran and which skipped, and a guard test
+  fails any run that exercised nothing — the suite cannot pass
+  vacuously.
 
 ### Changed
 - **Lint, format and type-check must be green, not "no worse than the base"**
