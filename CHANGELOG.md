@@ -8,6 +8,30 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 ## [Unreleased]
 
 ### Added
+- `gold-regenerated` in `scripts/verify_medallion.py` (#201): with
+  `--reference`, every Gold artifact's in-content `generated_at` must be
+  strictly newer than the same artifact's in the reference corpus, or the
+  gate fails (rc 1). A phase regeneration seeds `data/` from a previous
+  corpus, so a Gold step that crashed — or never ran — left the seed's five
+  valid artifacts in place and passed every presence, file-set and
+  non-emptiness check: the phase was certified on numbers from the previous
+  corpus. Unlike a backwards watermark — a reported diagnostic that must
+  never gate, because it is the repair mechanism — stale Gold never
+  self-corrects, so it gates. A stamp byte-identical to its reference
+  counterpart fails outright, settled as a string comparison before any
+  clock arithmetic: a copied seed sits at Δ0 — inside the tolerance band —
+  and a band-first comparison passed it as `inconclusive`, the exact no-run
+  the check exists to catch. Pre-#143 stamps are naive local time
+  (ambiguous by up to 3h, measured at `-03:00`), so any comparison touching
+  one is conclusive only outside a 3h band and reports `inconclusive` inside
+  it rather than failing, and a naive/aware pair never raises. An artifact
+  whose `generated_at` cannot be read — on either side — is the instrument,
+  not the data (rc 2, naming the artifact); that is today's honest verdict
+  for the two timelines (`_metadata.extracted_at`) and `registry.json`
+  (`updated_at`), which carry no `generated_at` at all, so the check
+  reports rc 2 naming them until the Gold writers stamp all five artifacts.
+  Without `--reference` the check is skipped and the run exits 2, like the
+  bronze staleness pair. `--self-test` grows from 12 to 14 controls.
 - Offline replays now read the **newest cached version** of a record, not
   whichever URL the run happens to ask for (#199). The cache is keyed
   `md5(full URL)`, so one logical record lives in several entries — the
