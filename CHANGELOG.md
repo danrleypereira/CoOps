@@ -8,6 +8,38 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 ## [Unreleased]
 
 ### Added
+- Bronze deduped by repository id at the reader (#248): a repository that
+  is renamed or recased leaves its old per-repository files on disk beside
+  the current ones (`repo_2025-1-NoFluxoUNB.json` and
+  `repo_2025-1-NoFluxoUnB.json` both carry repository id `957040204`), and
+  every reader globbed the family, so both spellings were read and the
+  repository was counted twice in published data (measured: commits
+  1,239 + 1,219, issues 117 + 109, prs 70 + 61, issue_events 1,414 +
+  1,336). `coops.bronze.files.bronze_files` now feeds its enumeration
+  through `coops.bronze.dedupe`, which keys every file by the `id` of its
+  `repo_<name>.json` sibling — no listing provenance is consulted (#216's
+  deletion needed it; "two files whose repository id is the same are the
+  same repository" needs nothing) and nothing is deleted: the duplicate
+  stays on disk, it is simply no longer read. The winner rule keeps the
+  copy with the latest `_metadata.extracted_at` when the stamps are more
+  than 48h apart (only the orphan mechanism explains a gap that size; the
+  live pair is 7 days apart, one stamp naive and one aware, compared on
+  UTC wall times so mixed awareness never raises). At most 48h apart — or
+  with a stamp that cannot be read — the pair REFUSES: no winner is
+  picked, both copies stay counted and the pair is reported, because an
+  orphan that young is indistinguishable from concurrent duplicate
+  generation, which is a different bug and must not be hidden by picking a
+  winner. A family file whose `repo_` sibling is missing or carries no
+  readable id is unmapped: counted, kept and reported, never dropped or
+  merged. The refusal reaches OUTPUT, not a log line alone: every
+  `coops-bronze` run prints the report (naming the repository id and the
+  totals each copy contributes) and publishes `data/bronze/dedupe.json`
+  beside the data — a new published artifact whose named consumer is the
+  operator reading the corpus (the issue assigns the dashboard no new
+  view); it is written on clean runs too, so absence is a choice, not a
+  check that never ran. Silver and the AI step dedupe automatically
+  through the shared reader; published totals for a deduped repository
+  drop to that repository's single current copy.
 - Bronze orchestration on the ports (#30): `coops.bronze.bronze_service.
   BronzeService` runs the Bronze layer's decisions — what to fetch, in
   what order, with what watermarks, and where each result is written —

@@ -4,6 +4,7 @@ Testes unitários para o módulo bronze_extract.
 Testa a orquestração da extração da camada Bronze.
 """
 
+import json
 from unittest.mock import patch
 
 import pytest
@@ -23,12 +24,18 @@ class TestBronzeExtract:
         monkeypatch.setenv("GITHUB_TOKEN", "test-token")
         monkeypatch.setenv("GITHUB_ORG", "coops-org")
         get_settings.cache_clear()
-        # The orphan reconciliation (#216) deletes files under ./data/bronze.
-        # It is patched out for every test in this class: in the fork's
-        # checkout data/bronze is the committed, published corpus, and a test
-        # run must never mutate it — the fence applies to the suite too.
-        with patch('coops.etl.bronze_extract.reconcile_orphans') as mock_reconcile:
+        # Two run-end steps touch ./data/bronze and are patched out for every
+        # test in this class: in the fork's checkout data/bronze is the
+        # committed, published corpus, and a test run must never mutate it —
+        # the fence applies to the suite too. The orphan reconciliation
+        # (#216) deletes files there; the dedupe report (#248) writes
+        # data/bronze/dedupe.json there. Both have their own wiring tests in
+        # TestBronzeDedupeWiring / the reconcile module's tests, which run
+        # them against tmp_path trees.
+        with patch('coops.etl.bronze_extract.reconcile_orphans') as mock_reconcile, \
+             patch('coops.etl.bronze_extract._report_bronze_dedupe') as mock_dedupe:
             mock_reconcile.return_value = None
+            mock_dedupe.return_value = None
             yield mock_reconcile
         get_settings.cache_clear()
 
@@ -504,3 +511,121 @@ class TestPersistWatermarks:
 
         reloaded = WatermarkStore(str(path))
         assert reloaded.get("org/repo1").last_updated_at == "2026-09-23T18:48:10Z"
+
+
+class TestBronzeDedupeWiring:
+    """#248: the run reports and PUBLISHES the by-id dedupe, every run.
+
+    Lives outside ``TestBronzeExtract`` on purpose: that class's autouse
+    fixture patches ``_report_bronze_dedupe`` out (it writes under
+    ``./data/bronze``, which in the fork's checkout is the committed
+    corpus), so the wiring is proven here instead, against a ``tmp_path``
+    tree the test builds and a working directory the test owns.
+    """
+
+    @pytest.fixture(autouse=True)
+    def _isolated_settings(self, monkeypatch, tmp_path):
+        from coops.infrastructure.config import get_settings
+        monkeypatch.delenv("COOPS_GITHUB_TOKEN", raising=False)
+        monkeypatch.delenv("COOPS_ORG", raising=False)
+        monkeypatch.setenv("GITHUB_TOKEN", "test-token")
+        monkeypatch.setenv("GITHUB_ORG", "coops-org")
+        # The extraction reads and writes ./data relative to the working
+        # directory; owning one under tmp_path is what lets the REAL
+        # _report_bronze_dedupe run here without touching the checkout.
+        monkeypatch.chdir(tmp_path)
+        get_settings.cache_clear()
+        yield
+        get_settings.cache_clear()
+
+    def _bronze(self, tmp_path):
+        """The live pair, minimal: one recased repository, 7 days apart."""
+        bronze = tmp_path / "data" / "bronze"
+        bronze.mkdir(parents=True)
+        repo = {
+            "id": 957040204,
+            "name": "x",
+            "full_name": "unb-mds/x",
+            "private": False,
+        }
+        for name, stamp in (("x", "2026-09-25T09:53:03+00:00"),
+                            ("X", "2026-09-18T09:15:46")):
+            document = {**repo, "name": name, "_metadata": {"extracted_at": stamp}}
+            (bronze / f"repo_{name}.json").write_text(json.dumps(document), encoding="utf-8")
+            payload = [{"_metadata": {"extracted_at": stamp}}, {"sha": "0" * 40}]
+            (bronze / f"commits_{name}.json").write_text(json.dumps(payload), encoding="utf-8")
+        return bronze
+
+    def test_main_reports_and_publishes_the_dedupe(self, tmp_path, capsys):
+        """main() prints the dedupe section and writes
+        data/bronze/dedupe.json naming the deduped id — the published
+        metadata half of #248's output requirement."""
+        from coops.etl import bronze_extract
+
+        self._bronze(tmp_path)
+
+        with patch('sys.argv', ['bronze_extract.py']), \
+             patch('coops.bronze.repositories.extract_repositories', return_value=[]), \
+             patch('coops.bronze.issues.extract_issues', return_value=[]), \
+             patch('coops.bronze.commits.extract_commits', return_value=[]), \
+             patch('coops.bronze.members.extract_members', return_value=[]), \
+             patch('coops.bronze.repository_structure.extract_repository_structure', return_value=[]), \
+             patch('coops.etl.bronze_extract.update_data_registry'), \
+             patch('coops.etl.bronze_extract.GitHubAPIClient'):
+            bronze_extract.main()
+
+        out = capsys.readouterr().out
+        assert "Bronze dedupe (by repository id, #248)" in out
+        assert "deduped: commits id 957040204" in out
+
+        published = json.loads((tmp_path / "data" / "bronze" / "dedupe.json").read_text(encoding="utf-8"))
+        assert published["deduped"]["count"] >= 1
+        families = {group["family"] for group in published["deduped"]["groups"]}
+        assert "commits" in families
+        (commits,) = [g for g in published["deduped"]["groups"] if g["family"] == "commits"]
+        assert commits["repository_id"] == 957040204
+        assert commits["kept"] == "commits_x.json"
+
+    def test_main_publishes_the_refusal_not_just_the_dedupe(self, tmp_path, capsys):
+        """The arms-differ half: a pair 1h apart must reach the SAME two
+        surfaces as a refusal — the run report and the published artifact —
+        or a double-counted total ships unlabelled."""
+        from coops.etl import bronze_extract
+
+        bronze = self._bronze(tmp_path)
+        # Make the pair young: rewrite the orphan's stamps to one hour
+        # before the current file's.
+        for filename in ("repo_X.json", "commits_X.json"):
+            payload = json.loads((bronze / filename).read_text(encoding="utf-8"))
+            if isinstance(payload, dict):
+                payload["_metadata"]["extracted_at"] = "2026-09-25T08:53:03+00:00"
+            else:
+                payload[0]["_metadata"]["extracted_at"] = "2026-09-25T08:53:03+00:00"
+            (bronze / filename).write_text(json.dumps(payload), encoding="utf-8")
+
+        with patch('sys.argv', ['bronze_extract.py']), \
+             patch('coops.bronze.repositories.extract_repositories', return_value=[]), \
+             patch('coops.bronze.issues.extract_issues', return_value=[]), \
+             patch('coops.bronze.commits.extract_commits', return_value=[]), \
+             patch('coops.bronze.members.extract_members', return_value=[]), \
+             patch('coops.bronze.repository_structure.extract_repository_structure', return_value=[]), \
+             patch('coops.etl.bronze_extract.update_data_registry'), \
+             patch('coops.etl.bronze_extract.GitHubAPIClient'):
+            bronze_extract.main()
+
+        out = capsys.readouterr().out
+        assert "REFUSED — BOTH KEPT AND DOUBLE-COUNTED" in out
+        assert "id 957040204" in out
+
+        published = json.loads((tmp_path / "data" / "bronze" / "dedupe.json").read_text(encoding="utf-8"))
+        assert published["refused_duplicates"]["count"] >= 1
+        (commits,) = [
+            g
+            for g in published["refused_duplicates"]["groups"]
+            if g["family"] == "commits"
+        ]
+        assert commits["repository_id"] == 957040204
+        assert sorted(f["file"] for f in commits["files"]) == [
+            "commits_X.json",
+            "commits_x.json",
+        ]
