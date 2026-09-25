@@ -378,11 +378,27 @@ def _map_to_id(bronze_dir: Path, family: str, path: Path) -> tuple[int | None, s
 
 
 def _stamp_and_records(payload: Any) -> tuple[str | None, int | None]:
-    """``_metadata.extracted_at`` and the record count a payload carries.
+    """The extraction stamp and record count a payload carries.
 
-    Mirrors the writer's two shapes: a record family is a JSON list whose
-    first element is the ``_metadata`` sidecar (an empty list got none), a
-    document family is one object with ``_metadata`` merged in.
+    Mirrors the writer's shapes, of which there are THREE, not two:
+
+    * a record family is a JSON list whose first element is the ``_metadata``
+      sidecar (an empty list got none);
+    * a document family written through ``save_json_data`` is one object with
+      ``_metadata`` merged in;
+    * ``structure_*.json`` is written by ``repository_structure.py``, which
+      carries ``extracted_at`` as a **top-level** key beside ``owner``,
+      ``repository``, ``branch``, ``sha``, ``tree`` and ``method``, and has no
+      ``_metadata`` at all (#255).
+
+    Missing the third shape did not corrupt anything — an unreadable stamp
+    refuses, which is the safe direction — but it meant the structure family
+    never deduped: both files of a recased pair stayed on the live corpus,
+    reporting ``extracted_at=None, gap=None``, which is the exact harm #216
+    exists to remove.
+
+    ``_metadata`` wins when both are present: it is the envelope the writer
+    added last.
     """
     if isinstance(payload, list):
         first = payload[0] if payload else None
@@ -394,6 +410,9 @@ def _stamp_and_records(payload: Any) -> tuple[str | None, int | None]:
     if isinstance(payload, dict):
         meta = payload.get("_metadata")
         stamp = meta.get("extracted_at") if isinstance(meta, dict) else None
+        if not isinstance(stamp, str):
+            # The third shape (#255): no envelope, stamp at the top level.
+            stamp = payload.get("extracted_at")
         return (stamp if isinstance(stamp, str) else None), 1
     return None, None
 
