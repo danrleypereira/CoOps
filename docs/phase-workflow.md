@@ -200,11 +200,43 @@ for opposite reasons:
 
 ## Merging the phase
 
+**The one thing a phase PR is for is proving no regression was added.** Owner
+ruling, 2026-09-25:
+
+> THE MAIN THING TO PAY ATTENTION INTO PHASES PRS IS REGRESSION NOT BEING ADDED.
+> THIS IS WHY WE NEED THE LINT, MYPY AND RUFF.
+
+A phase lands dozens of PRs as one squashed commit. Nobody reads that diff line
+by line, so the tools are the only thing standing between the phase and a
+regression nobody notices for months. That is their job here — not style.
+
+Which is why they have to be **green on the base**, not merely no worse. If
+`ruff` reports 637 findings on `main` and 831 on the phase branch, the +194 is
+buried in an argument about whether the rule set was ever agreed. If it reports
+0 on the base, one new finding is a regression and there is nothing to discuss.
+
+**Green by fixing, never green by narrowing**, and this applies hardest at phase
+scale. Excluding a path makes every tool green instantly and removes exactly the
+regression detection the phase PR is for. Phase 1's real type regressions were
+**+37 `mypy` errors in excluded directories** — invisible to a run reporting
+"Success: no issues found in 22 source files" while `src/` held 62. Quote the
+scope next to the exit code, always: an unqualified "clean" hides its own
+denominator.
+
+**Do not start a phase branch from a base where the tools are not green.** Fix
+the base first, on its own patch branch, and branch the phase from the green
+result. A phase that starts from a failing baseline can never prove the thing
+the phase PR exists to prove, and no amount of care during the phase recovers
+that.
+
 1. Regeneration passes, or its failures are understood and attributed.
 2. `verify_medallion.py` green, with `--self-test` green.
 3. Full suite and `mypy` green **on the merged result**, not on the branch — two
    branches can each be green and their merge red.
-4. Close by hand every issue whose `Closes` was spent on the phase branch. The
+4. `ruff`, `mypy`, `npm run lint`, `npm run format:check` and `tsc -b` green on
+   the merged result. Quote each command, its exit code **and the scope it
+   covered** — not the word "clean".
+5. Close by hand every issue whose `Closes` was spent on the phase branch. The
    running list lives as a comment on the phase epic. **Do not generate it from
    the commit log**: commits cite PR numbers, not issue numbers, so a
    `git log --grep` sweep misses work that shipped.

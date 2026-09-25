@@ -20,9 +20,38 @@ gate disputes whether it applies, not before.
   found the behaviour yet.
 - **The suite passes, and you quote the counts** — `N passed, M skipped` — not
   the word "passes". See *Verification* below.
-- **Lint, format and type-check pass.** `ruff` for Python; `npm run lint`,
-  `npm run format:check` and `tsc -b` for the dashboard. Run them locally; do
-  not discover it in CI.
+- **Lint, format and type-check pass — green, not "no worse".** `ruff` and
+  `mypy` for Python; `npm run lint`, `npm run format:check` and `tsc -b` for the
+  dashboard. Run them locally; do not discover it in CI.
+
+  **Green is the requirement, and the reason is regression.** These tools exist
+  on a change so that a new finding is unambiguously *new*. A baseline that is
+  already failing cannot do that: "831 before, 840 after" is a number to argue
+  about, not a signal anyone acts on, and the four extra get lost in the noise
+  every time. A tool that exits non-zero on the base is not a gate, it is
+  decoration.
+
+  **Green by fixing, never green by narrowing.** This is the rule that matters,
+  because the cheap way to make a tool pass is to stop it looking. Reach green
+  only by fixing the finding, or by a **per-line** suppression carrying a reason
+  on the line (`# noqa: BLE001 — breadth is deliberate here, see …`). Never by a
+  path exclude, a whole-file ignore, or a rule disabled without a written
+  justification.
+
+  We have already paid for this once. `mypy` reports *"Success: no issues found
+  in 22 source files"* while `src/` holds 62 — the config excludes `bronze`,
+  `silver`, `gold`, `utils`, `etl` and more. That exclusion was reasoned and is
+  defensible, but the **verdict** derived from it was not: gate after gate
+  quoted "mypy clean" as evidence for diffs the run never looked at, including
+  one whose entire defect sat in an excluded file.
+
+  So **state the scope beside the exit code** — "`mypy` clean, 22 of 62 files;
+  the changed files are outside that scope, checked by hand: 8 errors at base, 8
+  at head". A bare "clean" is not a result, it is a number without a
+  denominator.
+
+  If a tool has no configuration in this repository, configuring it is the work;
+  leaving it unconfigured and citing counts is not.
 - **`CHANGELOG.md` updated** under `[Unreleased]` for anything user-visible,
   including a changed data shape — a new or removed field changes what the
   dashboard sees on the next run.

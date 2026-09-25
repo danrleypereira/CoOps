@@ -34,7 +34,8 @@ See [docs/definition-of-done.md](docs/definition-of-done.md) — a reviewer will
 
 - [ ] `pytest` passes locally — paste the counts (`N passed, M skipped`), not "passes"
 - [ ] `cd dashboard && npm run test:coverage` passes locally — counts too
-- [ ] `ruff` / `npm run lint` / `npm run format:check` / `tsc -b` all clean
+- [ ] `ruff` / `mypy` / `npm run lint` / `npm run format:check` / `tsc -b` all **exit 0** — green, not "no worse than the base"
+- [ ] Green by *fixing*, not by narrowing scope — no new path excludes or whole-file ignores; say which scope each tool covered (e.g. "mypy clean, 22 of 62 files; changed files checked by hand")
 - [ ] Tests added for the behaviour this PR changes
 - [ ] Each new test was shown to fail without the fix — say which named test
 - [ ] Integration test added, or a reason it isn't possible here
