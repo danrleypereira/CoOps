@@ -757,3 +757,96 @@ def test_identical_corpora_both_staleness_checks_pass(tmp_path: Path) -> None:
     assert vanished, "no-record-vanished missing from the report"
     assert reverted[0].passed
     assert vanished[0].passed
+
+
+# --------------------------------------------------------------------------
+# degenerate branches: the file is PRESENT but useless
+#
+# Added after @curupira ran 67 AST mutants over this module: 52 killed, 11
+# equivalent, and 4 that survived. All four are the same shape — a check whose
+# row VANISHES on a branch where the file exists but carries nothing usable:
+#
+#   verify_medallion.py:273  members present, none carrying an id
+#   verify_medallion.py:306  members file with zero records
+#   verify_medallion.py:333  members file with zero records
+#   verify_medallion.py:399  a gold artifact present but not valid JSON
+#
+# test_check_registration covers the file-ABSENT branches only, so a mutation
+# deleting one of these rows changed nothing any test observed. A missing row
+# reads as success to anything inspecting verdicts, which is the defect this
+# whole module exists to catch — so it is asserted here by NAME, plus rc 2,
+# since each of these is control_fired=False and therefore an instrument
+# failure rather than a data one.
+# --------------------------------------------------------------------------
+
+
+def _corpus_with_silver(root: Path, members: list[dict[str, object]]) -> None:
+    """A complete corpus whose members_statistics.json is what the test says."""
+    _build_corpus(root)
+    _write_json(root / "data" / "silver" / "members_statistics.json", members)
+
+
+@pytest.mark.parametrize(
+    ("case", "members", "owed"),
+    [
+        pytest.param(
+            "members-without-ids",
+            [{"name": "someone"}, {"name": "another"}],
+            "member-ids-distinct",
+            id="members present but none carries an id (L273)",
+        ),
+        pytest.param(
+            "no-member-records",
+            [],
+            "no-unknown-labels",
+            id="members file with zero records (L306)",
+        ),
+        pytest.param(
+            "no-member-records",
+            [],
+            "hash-never-a-label",
+            id="members file with zero records (L333)",
+        ),
+    ],
+)
+def test_degenerate_silver_still_registers_its_row(
+    case: str, members: list[dict[str, object]], owed: str,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    """A silver file that exists but is useless still names its check."""
+    root = tmp_path / "root"
+    _corpus_with_silver(root, members)
+    ref = tmp_path / "ref"
+    _build_reference(ref)
+
+    rc, out, _ = _run(monkeypatch, capsys, "--root", str(root), "--reference", str(ref))
+
+    names = {m.group("name") for m in _parse_rows(out)}
+    assert owed in names, f"{case}: {owed} vanished from the report — {sorted(names)}"
+    assert rc == 2, f"{case}: an instrument that could not run must exit 2, got {rc}"
+
+
+def test_unreadable_gold_artifact_still_registers_its_row(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    """A gold artifact present but unparseable still names gold-file-set (L399).
+
+    The distinction that matters: 'absent' and 'present but not JSON' take
+    different branches, and only the first was covered. A mutation deleting
+    the second branch's row left every test green.
+    """
+    root = tmp_path / "root"
+    _build_corpus(root)
+    (root / "data" / "gold" / "registry.json").write_text("{not json", encoding="utf-8")
+    ref = tmp_path / "ref"
+    _build_reference(ref)
+
+    rc, out, _ = _run(monkeypatch, capsys, "--root", str(root), "--reference", str(ref))
+
+    names = {m.group("name") for m in _parse_rows(out)}
+    assert "gold-file-set" in names, f"gold-file-set vanished — {sorted(names)}"
+    assert rc == 2, f"an unreadable artifact is an instrument failure, got {rc}"
