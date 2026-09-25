@@ -141,6 +141,27 @@ RUFF_SELECT = (
     "I,UP,B,C4,RET,SIM,RUF,DTZ,BLE,S,EXE,FURB"  # the project's additions
 )
 
+# Exemptions the gate honours, fixed HERE for the same reason RUFF_SELECT is.
+#
+# `--isolated` stops the measured tree from NARROWING the rules, which is the
+# attack it exists to prevent. But it also discarded the project's
+# `per-file-ignores`, and those are not an attack — they are a statement that
+# `assert` is the point of a test. The gate therefore flagged every assert in
+# every test file:
+#
+#     tests/unit/test_member_analytics.py   66 findings under the gate
+#                                           "All checks passed" under the project
+#
+# The consequence, measured by @curupira on #224: **any PR that adds a test
+# file fails the gate**, because rule (b) flags a new file with any finding —
+# 24 findings there, all S101. That is not a regression in anyone's code; it is
+# the instrument refusing to read the exemption the project wrote down.
+#
+# So the exemptions live in the gate's own command line: the tree cannot widen
+# them (which would be the attack) and cannot lose them (which was the bug).
+# Kept in step with [tool.ruff.lint.per-file-ignores] by hand, deliberately.
+RUFF_PER_FILE_IGNORES = "tests/**:S101,DTZ,S105,S106,S603,S607"
+
 # See "How each tool is run" above: the missing config is the point, not an
 # oversight. --no-error-summary only drops a line the parser ignores.
 MYPY_ARGS = ("--config-file", "/dev/null", "--no-error-summary", MYPY_TARGET)
@@ -329,7 +350,8 @@ def ruff_per_file(ruff_bin: str, arm: Path) -> Counter[str]:
         [
             ruff_bin, "check",
             "--isolated",            # no file can change what this measures
-            "--select", RUFF_SELECT,  # ...and nothing the project checks is dropped
+            "--select", RUFF_SELECT,  # ...nothing the project checks is dropped
+            "--per-file-ignores", RUFF_PER_FILE_IGNORES,  # ...and its exemptions survive
             "--no-cache", "--output-format", "json", *targets,
         ],
         arm,
