@@ -28,6 +28,17 @@ The stub's tree response reuses the branch-head sha as its own ``sha``,
 because ``FileTree.sha`` (the tree response's sha) is not the value the
 legacy structure record carries (the branch-head commit sha). And the
 member payloads are minimal: members are not ported at all (see below).
+
+And ``REPO_RECORDS`` carries exactly the seventeen keys ``Repository``
+has, while real ``repo_*.json`` payloads carry 99 (10 of the fga corpus's
+486 carry 100, adding ``template_repository``) — so the model drops 82
+GitHub fields, and the two ``repo_*.json`` arms counted among the
+byte-identical families below **cannot fail**. That is the shaping that
+most inflates the headline count, so it is named here rather than left to
+be inferred: see #241, and the strict xfail in
+``tests/unit/test_repository_projection_gap.py``, which flips to an
+unexpected pass the day #241 lands.
+
 A corpus that carried the rich shapes would fail here for exactly the
 reasons the #30 report lists; this corpus mirrors what the port can
 express and the report says what it cannot.
