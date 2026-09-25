@@ -10,6 +10,10 @@ from typing import Any, Dict, List, Optional
 # leaking an address is not.
 _EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data, load_json_data
+from coops.utils.data_helpers import strip_metadata
+from coops.utils.cache_fold import client_fold
+from coops.bronze.watermarks import WatermarkStore, max_iso
+from coops.bronze.files import remove_aggregate
 
 
 def _hash_email(email: str) -> str:
@@ -20,6 +24,18 @@ def _hash_email(email: str) -> str:
     public branch.
     """
     return hashlib.sha256(email.strip().lower().encode("utf-8")).hexdigest()
+
+
+def _is_address(value: Any) -> bool:
+    """True when ``value`` is, whole and entire, an email address.
+
+    Some contributors set ``git user.name`` to their email address, so the
+    address arrives in a field the key-based scrub has no reason to suspect.
+    Only a name that is itself an address is matched here — a name that merely
+    *contains* an address (e.g. ``"Alice <alice@example.com>"``) is left alone,
+    because attribution matters.
+    """
+    return isinstance(value, str) and bool(_EMAIL_RE.fullmatch(value.strip()))
 
 
 def _remove_email_keys(obj: Any) -> None:
@@ -40,8 +56,13 @@ def _sanitize_commit(commit: Dict[str, Any]) -> Dict[str, Any]:
 
     Commit data is committed to a public branch, so raw email addresses must not
     be persisted. Linked authors (with a GitHub account) keep ``login`` and the
-    numeric ``id``; unlinked authors keep ``author_email_hash`` (the SHA-256 of
-    the trimmed, lower-cased email) instead of the raw address.
+    numeric ``id``; **every** author with an email keeps ``author_email_hash``
+    (the SHA-256 of the trimmed, lower-cased email) in place of the raw address.
+
+    The hash is kept for linked authors too, not only for the unlinked ones that
+    need it as their sole identifier — otherwise the two identifier spaces never
+    co-occur and nothing downstream can tell that a hash and a login belong to
+    the same person (#101, #171).
     """
     commit = copy.deepcopy(commit)
 
@@ -86,18 +107,54 @@ def _sanitize_commit(commit: Dict[str, Any]) -> Dict[str, Any]:
         author_data.pop("login", None)
         author_data.pop("id", None)
 
+        # Some contributors set git user.name to their email address, so the
+        # address arrives in a field the key-based scrub has no reason to
+        # suspect. Blank only a name that is itself an address — attribution
+        # matters and only these records are affected. ``None``, never a
+        # placeholder: a truthy placeholder would become a person downstream.
+        if _is_address(author_data.get("name")):
+            author_data["name"] = None
+
         if login:
             author_data["login"] = login
         if numeric_id is not None:
             author_data["id"] = numeric_id
-        if not login and numeric_id is None:
-            # Unlinked author: the email is the only identifier. Store a stable
-            # hash instead of the raw address so distinct people aren't merged
-            # into "unknown" downstream.
-            if email:
-                author_data["author_email_hash"] = _hash_email(email)
+        # Hash the email for EVERY author, linked or not (#101/#171).
+        #
+        # This was once gated on `not login and numeric_id is None` — the hash
+        # kept only when it was the sole identifier. That reading is correct
+        # about what the hash is *for* and wrong about what it *costs*, and the
+        # gate made the two identifier spaces disjoint. Measured over all
+        # 130,186 commits in the corpus:
+        #
+        #     linked (id + login), no hash   123,562   94.9%
+        #     unlinked, hash only              6,614    5.1%
+        #     BOTH keys on one record              0    0.0%
+        #
+        # With no record carrying both, nothing downstream can learn that a
+        # given hash and a given login are the same human. So the 1,311 linked
+        # people and 231 unlinked hashes are counted as 1,542 separate
+        # contributors, with no way to reduce it — one person who commits from
+        # a personal address on one repository and a linked account on another
+        # is simply two people, for good.
+        #
+        # Publishing the hash for linked authors adds no new *class* of data:
+        # it is already published for 6,614 records, and a SHA-256 of an
+        # address is what `data/bronze/` deliberately stores in place of the
+        # address. What it adds is the join.
+        if email:
+            author_data["author_email_hash"] = _hash_email(email)
 
         commit_obj["author"] = author_data
+
+        # The committer's name is a second free-text channel for the same
+        # address (its surface doubled in #128). Blank it the same way.
+        raw_committer = commit_obj.get("committer")
+        if isinstance(raw_committer, dict):
+            committer_data = dict(raw_committer)
+            if _is_address(committer_data.get("name")):
+                committer_data["name"] = None
+            commit_obj["committer"] = committer_data
 
     return commit
 
@@ -114,6 +171,7 @@ def extract_commits(
     include_active_branches: bool = False,
     active_days: int = 30,
     time_chunks: int = 3,
+    watermarks: Optional[WatermarkStore] = None,
 ) -> List[str]:
 
     # Load filtered repositories
@@ -139,6 +197,15 @@ def extract_commits(
         full_name = repo.get('full_name', repo_name)
         owner = full_name.split('/')[0] if '/' in full_name else None
         name_only = full_name.split('/')[1] if '/' in full_name else full_name
+
+        # Incremental extraction (issue #110): a watermark with a `last_run`
+        # bounds the commit fetch to what was committed after the previous run.
+        # `effective_since` is the later of the caller's `since` and the
+        # watermark's `last_run`, so an explicit historical `--since` is never
+        # widened, only narrowed to what is still unknown.
+        wm = watermarks.get(full_name) if watermarks is not None else None
+        incremental = bool(wm and wm.last_run)
+        effective_since = max_iso(since, wm.last_run if wm else None)
 
         print(f"Processing commits for: {repo_name}")
 
@@ -167,11 +234,11 @@ def extract_commits(
                 owner=owner,
                 repo=name_only,
                 branches=branches_to_extract,
-                split_large_extractions=True,  # Enable time-based splitting
+                split_large_extractions=bool(since or until),  # chunk only explicit user ranges
                 time_chunks=3,  # Split into 3 time periods
                 page_size=page_size,
                 max_commits=max_commits_per_repo,
-                since=since,
+                since=effective_since,
                 until=until,
                 use_cache=use_cache,
             )
@@ -181,15 +248,21 @@ def extract_commits(
                 sha = n.get('oid')
                 author = n.get('author') or {}
                 user = author.get('user') if isinstance(author.get('user'), dict) else {}
+                committer = n.get('committer') or {}
                 committed_date = n.get('committedDate')
-                message = n.get('messageHeadline')
+                # The full message (headline + body); older nodes — e.g. the
+                # REST-fallback shape — may only carry the headline.
+                message = n.get('message') or n.get('messageHeadline')
                 additions = n.get('additions')
                 deletions = n.get('deletions')
                 total_changes = (additions or 0) + (deletions or 0) if (additions is not None and deletions is not None) else None
+                parent_nodes = (n.get('parents') or {}).get('nodes') or []
+                parents = [p.get('oid') for p in parent_nodes if isinstance(p, dict) and p.get('oid')]
 
-                # `email` is carried only so `_sanitize_commit` can derive a stable
-                # identity key for unlinked authors; it is never persisted.
-                data_commits.append({
+                # `email` is carried only so `_sanitize_commit` can derive the
+                # stable identity key — for every author since #101, not just
+                # unlinked ones; the address itself is never persisted.
+                record = {
                     'sha': sha,
                     'html_url': n.get('url'),
                     'commit': {
@@ -200,26 +273,47 @@ def extract_commits(
                             'login': user.get('login'),
                             'id': user.get('databaseId'),
                         },
+                        'committer': {
+                            'name': committer.get('name'),
+                            'email': committer.get('email'),
+                            'date': committer.get('date') or committed_date,
+                        },
                         'message': message,
                     },
+                    'parents': parents,
                     'additions': additions,
                     'deletions': deletions,
                     'total_changes': total_changes,
                     'repo_name': repo_name,
-                })
+                }
+                # `last_seen_at` (stamped by the offline fold, #199) is set
+                # only when present, so an online run's record shape is
+                # unchanged.
+                if n.get('last_seen_at') is not None:
+                    record['last_seen_at'] = n['last_seen_at']
+                data_commits.append(record)
 
             if not nodes:
                 print(f"[WARN] GraphQL returned no commits for {repo_name}. Falling back to REST.")
                 # Fallback to REST list + details to avoid data gaps
                 commits_base = f"https://api.github.com/repos/{full_name}/commits"
-                if since or until:
+                if effective_since or until:
                     sep = '&' if ('?' in commits_base) else '?'
-                    if since:
-                        commits_base = f"{commits_base}{sep}since={since}"
+                    if effective_since:
+                        commits_base = f"{commits_base}{sep}since={effective_since}"
                         sep = '&'
                     if until:
                         commits_base = f"{commits_base}{sep}until={until}"
                 commits = client.get_paginated(commits_base, use_cache=use_cache, per_page=100)
+                # Offline replay (#199): same fold as the REST branch below.
+                rest_last_seen = {}
+                rest_fold = client_fold(client)
+                if rest_fold is not None:
+                    folded = rest_fold.commit_items(full_name)
+                    commits = [entry.record for entry in folded.values()]
+                    rest_last_seen = {
+                        sha: entry.last_seen_at for sha, entry in folded.items()
+                    }
                 for commit in commits or []:
                     sha = commit.get('sha')
                     additions = None
@@ -236,13 +330,24 @@ def extract_commits(
 
                     # Ensure commit.commit.author.login is populated from commit.author.login if available
                     commit_data = {**commit}
+                    if sha in rest_last_seen:
+                        # Stamped by the offline fold (#199); set only when
+                        # present so an online run's record shape is unchanged.
+                        commit_data['last_seen_at'] = rest_last_seen[sha]
                     if 'commit' in commit_data and 'author' in commit_data['commit']:
                         # If commit.author.login exists at root level, copy it to commit.commit.author.login
                         if 'author' in commit_data and isinstance(commit_data['author'], dict) and 'login' in commit_data['author']:
                             commit_data['commit']['author']['login'] = commit_data['author']['login']
 
+                    # The REST response nests parents as `[{sha, ...}]`; store
+                    # just the shas so this path agrees with the GraphQL one.
                     data_commits.append({
                         **commit_data,
+                        'parents': [
+                            p.get('sha')
+                            for p in (commit_data.get('parents') or [])
+                            if isinstance(p, dict) and p.get('sha')
+                        ],
                         'repo_name': repo_name,
                         'additions': additions,
                         'deletions': deletions,
@@ -255,14 +360,29 @@ def extract_commits(
             # REST fallback (existing behavior): list commits, then fetch details per commit to get stats
             commits_base = f"https://api.github.com/repos/{full_name}/commits"
             # Apply since/until filters when available to reduce pages
-            if since or until:
+            if effective_since or until:
                 sep = '&' if ('?' in commits_base) else '?'
-                if since:
-                    commits_base = f"{commits_base}{sep}since={since}"
+                if effective_since:
+                    commits_base = f"{commits_base}{sep}since={effective_since}"
                     sep = '&'
                 if until:
                     commits_base = f"{commits_base}{sep}until={until}"
             commits = client.get_paginated(commits_base, use_cache=use_cache, per_page=page_size)
+
+            # Offline replay (#199): the pages above can be months old while
+            # newer commits sit under ``since=`` keys nothing asks for. Replace
+            # the pages with the cache fold for this repository — every cached
+            # REST commit-list body, unioned by sha — which is a superset of
+            # the pages (the fold indexes those same bodies). Any page that
+            # was missing has already raised OfflineCacheMiss above.
+            rest_last_seen = {}
+            rest_fold = client_fold(client)
+            if rest_fold is not None:
+                folded = rest_fold.commit_items(full_name)
+                commits = [entry.record for entry in folded.values()]
+                rest_last_seen = {
+                    sha: entry.last_seen_at for sha, entry in folded.items()
+                }
             if commits:
                 for commit in commits:
                     sha = commit.get('sha')
@@ -280,14 +400,24 @@ def extract_commits(
 
                     # Ensure commit.commit.author.login is populated from commit.author.login if available
                     commit_data = {**commit}
+                    if sha in rest_last_seen:
+                        # Stamped by the offline fold (#199); set only when
+                        # present so an online run's record shape is unchanged.
+                        commit_data['last_seen_at'] = rest_last_seen[sha]
                     if 'commit' in commit_data and 'author' in commit_data['commit']:
                         # If commit.author.login exists at root level, copy it to commit.commit.author.login
                         if 'author' in commit_data and isinstance(commit_data['author'], dict) and 'login' in commit_data['author']:
                             commit_data['commit']['author']['login'] = commit_data['author']['login']
 
-                    # Merge original commit with stats and repo context
+                    # Merge original commit with stats and repo context. Parents
+                    # are reduced to their shas to match the GraphQL record shape.
                     data_commits.append({
                         **commit_data,
+                        'parents': [
+                            p.get('sha')
+                            for p in (commit_data.get('parents') or [])
+                            if isinstance(p, dict) and p.get('sha')
+                        ],
                         'repo_name': repo_name,
                         'additions': additions,
                         'deletions': deletions,
@@ -296,27 +426,54 @@ def extract_commits(
 
                 print(f"Found {len(commits)} commits in {repo_name} via REST")
 
-        if data_commits:
+        if data_commits or incremental:
             # Drop raw author/committer emails before persisting to the public
             # branch; keep a stable identity key (login + id, or email hash).
-            data_commits = [_sanitize_commit(c) for c in data_commits]
+            new_sanitized = [_sanitize_commit(c) for c in data_commits]
 
-            # Add to global list
-            all_commits.extend(data_commits)
+            if incremental:
+                # Commits are immutable, so merging is a prepend: anything newly
+                # fetched is newer than everything already stored (the previous
+                # run's file is newest-first). Dedup by sha guards against the
+                # `since` window over-fetching the tail of the previous run. The
+                # stored file was already capped by the previous run, so no cap
+                # is re-applied here — that would truncate it below what a full
+                # extraction of the same window keeps.
+                prior = strip_metadata(
+                    load_json_data(f"data/bronze/commits_{repo_name}.json") or []
+                )
+                seen = set()
+                merged = []
+                for commit in new_sanitized + prior:
+                    sha = commit.get('sha')
+                    if sha and sha not in seen:
+                        seen.add(sha)
+                        merged.append(commit)
+                data_commits = merged
+            else:
+                data_commits = new_sanitized
 
-            # Save per-repo commits
-            repo_commits_file = save_json_data(
-                data_commits,
-                f"data/bronze/commits_{repo_name}.json"
-            )
-            generated_files.append(repo_commits_file)
+            if data_commits:
+                # Add to global list
+                all_commits.extend(data_commits)
 
-    # Save all commits (always save, even if empty, to ensure files exist)
-    all_commits_file = save_json_data(
-        all_commits,
-        "data/bronze/commits_all.json"
-    )
-    generated_files.append(all_commits_file)
+                # Save per-repo commits
+                repo_commits_file = save_json_data(
+                    data_commits,
+                    f"data/bronze/commits_{repo_name}.json"
+                )
+                generated_files.append(repo_commits_file)
+
+        # Advance this repository's watermark (its `last_run` in particular), so
+        # the next run's `since` starts where this one left off.
+        if watermarks is not None:
+            watermarks.update(full_name)
+
+    # commits_all.json repeated every per-repository file and was the largest
+    # file in the tree (80.6 MiB against GitHub's 100 MB push limit), so it is
+    # no longer written (#170). Remove one left by an earlier run instead: a
+    # stale aggregate beside current per-repository files looks current.
+    remove_aggregate("data/bronze", "commits")
 
     print(f"Total commits extracted: {len(all_commits)}")
 

@@ -13,7 +13,7 @@ GitHub API ──► Bronze (raw JSON)  ──► Silver (analytics)  ──► 
 
 | Layer | Command | Writes |
 |---|---|---|
-| Bronze | `coops-bronze` | `repositories_filtered.json`, `issues_all.json`, `prs_all.json`, `commits_all.json`, `issue_events_all.json`, `members_basic.json`, `members_detailed.json`, per-repo files, `structure_<repo>.json` |
+| Bronze | `coops-bronze` | `repositories_filtered.json`, `members_basic.json`, `members_detailed.json`, per-repository `issues_<repo>.json` / `prs_<repo>.json` / `commits_<repo>.json` / `issue_events_<repo>.json` / `repo_<repo>.json` / `structure_<repo>.json` (the `*_all.json` aggregates were removed in #170) |
 | Silver | `coops-silver` | `members_analytics.json`, `contribution_metrics.json`, `collaboration_edges.json`, `temporal_events.json`, `activity_heatmap.json`, `repository_metrics.json`, `available_repos.json`, `language_analysis_all.json`, `hierarchy_<repo>.json`, … |
 | Gold | `coops-gold` | `timeline_last_7_days.json`, `timeline_last_12_months.json` |
 | Gold KPIs | `coops-aggregate` | `executive_dashboard.json`, `performance_tiers.json` |
@@ -46,7 +46,14 @@ src/coops/
 
 `utils/github_api.py` is the only module that talks to GitHub. It owns caching
 (`cache/`, keyed by URL hash), retries, rate-limit handling and pagination
-(`get_paginated`). Phase 2 (#26) splits it into transport, queries and an
+(`get_paginated`). REST responses are cached as `<md5(url)>.json` with their
+`ETag` in a sibling `<md5(url)>.etag` sidecar; a warm entry is revalidated with
+`If-None-Match`, and a `304` serves the cached body without consuming a
+rate-limit slot. The `cache/` corpus is deliberately **not** uploaded to GitHub
+Actions cache: it is the unmodified API representation and contains personal
+data, so it must never leave the machine (issue #107). A durable cross-run
+cache belongs on infrastructure we control — a self-hosted runner, or the Mongo
+raw layer (issue #113). Phase 2 (#26) splits it into transport, queries and an
 adapter behind a port.
 
 ## Dashboard

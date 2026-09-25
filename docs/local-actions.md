@@ -173,8 +173,8 @@ Verified green. The run prints the same summary table as on GitHub:
 | File | Status | Records |
 |---|---|---|
 | `bronze/repositories_filtered.json` | ok | 2 |
-| `bronze/issues_all.json` | ok | 18 |
-| `bronze/commits_all.json` | ok | 65 |
+| `bronze/issues_2024-example.json` | ok | 18 |
+| `bronze/commits_2024-example.json` | ok | 65 |
 …
 | `data_catalog.json` | ok | object |
 🏁  Job succeeded

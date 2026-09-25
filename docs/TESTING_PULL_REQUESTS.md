@@ -136,7 +136,7 @@ The **Check outputs** step prints the same table as on GitHub:
 | File | Status | Records |
 |---|---|---|
 | `bronze/repositories_filtered.json` | ok | 2 |
-| `bronze/issues_all.json` | ok | 18 |
+| `bronze/issues_2024-example.json` | ok | 18 |
 …
 🏁  Job succeeded
 ```

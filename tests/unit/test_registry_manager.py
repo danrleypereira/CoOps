@@ -9,6 +9,7 @@ from coops.etl.registry_manager import (
     scan_data_directory,
     categorize_bronze_files,
     generate_data_catalog,
+    create_data_lineage,
     create_master_registry
 )
 
@@ -221,8 +222,23 @@ class TestGenerateDataCatalog:
             entities = catalog_data['bronze_layer']['entities']
             
             assert 'repositories_raw.json' in entities
-            assert 'issues_all.json' in entities
-            assert 'commits_all.json' in entities
+            assert 'commits_<repo>.json' in entities
+            # Os agregados _all foram aposentados (#170): o catálogo não pode
+            # anunciar como publicados arquivos que o pipeline não escreve —
+            # e remove na regeneração.
+            assert not [name for name in entities if name.endswith('_all.json')]
+    
+    def test_lineage_reads_per_repository_files(self):
+        """Testa que a linhagem declara os arquivos por repositório, não os _all"""
+        lineage = create_data_lineage()
+        
+        for processor in ('contribution_metrics', 'collaboration_networks', 'temporal_analysis'):
+            inputs = lineage['bronze_to_silver'][processor]['inputs']
+            assert 'data/bronze/commits_<repo>.json' in inputs
+            assert 'data/bronze/issues_<repo>.json' in inputs
+            # A linhagem não pode apontar para os agregados aposentados (#170):
+            # seria um contrato com arquivos que não existem mais.
+            assert not [path for path in inputs if path.endswith('_all.json')]
     
     def test_includes_usage_patterns(self):
         """Testa que inclui padrões de uso"""
@@ -372,3 +388,26 @@ class TestCreateMasterRegistry:
                     
                     assert file_entry['size_bytes'] == 0
                     assert file_entry['modified_at'] is None
+
+
+class TestPersistedTimestampsAreUtc:
+    """Timestamps persistidos são UTC consciente de fuso, com o offset no
+    próprio valor (#143): uma execução no Actions (UTC) e uma local (-03:00)
+    precisam produzir instantes comparáveis."""
+
+    def test_master_registry_created_at_is_utc(self):
+        """Testa que created_at do registro mestre carrega +00:00"""
+        with patch('coops.etl.registry_manager.scan_data_directory', return_value=[]):
+            with patch('coops.etl.registry_manager.save_json_data', return_value='registry.json') as mock_save:
+                create_master_registry()
+
+                created_at = mock_save.call_args[0][0]['created_at']
+                assert created_at.endswith('+00:00')
+
+    def test_catalog_generated_at_is_utc(self):
+        """Testa que generated_at do catálogo carrega +00:00"""
+        with patch('coops.etl.registry_manager.save_json_data', return_value='catalog.json') as mock_save:
+            generate_data_catalog()
+
+            generated_at = mock_save.call_args[0][0]['generated_at']
+            assert generated_at.endswith('+00:00')

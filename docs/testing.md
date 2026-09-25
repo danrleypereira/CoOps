@@ -19,6 +19,13 @@ covers `tests/unit` and `tests/integration`. Coverage omits `ai_analysis/` and
 Tests must not touch the network, and they must not write into the checkout —
 anything that runs a real processor does so in `tmp_path`.
 
+### MongoDB image
+
+`docker-compose.dev.yml` pins the development MongoDB to `mongo:7.0.14` (no
+floating tags). The testcontainers setup for the integration suite (#57) must
+reuse that same pinned image, so tests exercise the exact database a developer
+runs locally. Bump the two together.
+
 ## CI
 
 **Actions is disabled on `danrleypereira/CoOps`.** Pull requests there get no
@@ -30,11 +37,15 @@ and its `main` carries the pipeline's data commits.
 
 | Workflow | Runs | Gate |
 |---|---|---|
-| `python-unit-tests.yaml` | Python 3.10, 3.11 · Node 20, 22 | backend coverage `--cov-fail-under=60` |
+| `python-unit-tests.yaml` | Python 3.10, 3.11 · Node 20, 22 | backend coverage `--cov-fail-under=60` · mypy `strict` over `src/coops/domain` + `src/coops/github` (3.11 leg only) |
 | `python-integration-tests.yaml` | Python 3.10, 3.11, 3.12 | none — the integration suite alone covers ~27%, so it reports coverage without a threshold |
 | `validate-pipeline.yaml` | manual | see below |
 
-Frontend lint is not in CI.
+Frontend lint is not in CI. mypy is, but only over the Phase 1 port/adapter
+boundary (`src/coops/domain`, `src/coops/github`); the pre-ports layers are
+excluded until they move behind ports, because a strict run over them starts
+at hundreds of errors (issue
+[#91](https://github.com/danrleypereira/CoOps/issues/91)).
 
 ## Validating a pull request
 

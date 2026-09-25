@@ -8,6 +8,7 @@ import re
 import pytest
 from unittest.mock import MagicMock, patch, call
 from coops.bronze.commits import extract_commits, _hash_email, _sanitize_commit
+from coops.utils.github_api import GitHubAPIClient
 
 
 class TestExtractCommits:
@@ -49,9 +50,10 @@ class TestExtractCommits:
                 call_url = mock_client.get_paginated.call_args[0][0]
                 assert "test-org/repo1/commits" in call_url
                 
-                # Verifica que salvou arquivos
-                assert len(result) == 2  # commits_repo1.json + commits_all.json
-                assert mock_save.call_count == 2
+                # Verifica que salvou arquivos: só commits_repo1.json; o
+                # agregado commits_all.json não é mais escrito (#170)
+                assert len(result) == 1
+                assert mock_save.call_count == 1
     
     def test_extract_commits_graphql_method_success(self, capsys):
         """Testa extração de commits usando método GraphQL"""
@@ -252,29 +254,42 @@ class TestExtractCommits:
             with patch('coops.bronze.commits.save_json_data', return_value="file.json") as mock_save:
                 extract_commits(mock_client, mock_config, method="rest")
                 
-                # 2 repos + 1 arquivo all = 3 saves
-                assert mock_save.call_count == 3
+                # 2 arquivos por repo; o agregado commits_all.json não é mais
+                # escrito (#170)
+                assert mock_save.call_count == 2
                 
                 # Verifica que salvou commits_repo1.json e commits_repo2.json
                 calls = [call[0][1] for call in mock_save.call_args_list]
                 assert any("commits_repo1.json" in c for c in calls)
                 assert any("commits_repo2.json" in c for c in calls)
     
-    def test_extract_commits_saves_all_commits_file(self):
-        """Testa que sempre salva arquivo commits_all.json"""
+    def test_extract_commits_removes_stale_aggregate(self, tmp_path, monkeypatch):
+        """Uma execução sobre bronze existente remove o commits_all.json antigo.
+
+        Não basta parar de escrever (#170): a regeneração roda sobre um
+        ``data/bronze/`` existente, e o agregado velho — o maior arquivo da
+        árvore — continuaria contado por qualquer glob da família.
+        """
+        monkeypatch.chdir(tmp_path)
+        bronze = tmp_path / "data" / "bronze"
+        bronze.mkdir(parents=True)
+        stale = bronze / "commits_all.json"
+        stale.write_text('[{"stale": true}]', encoding="utf-8")
+
         mock_client = MagicMock()
         mock_config = MagicMock()
-        
-        mock_repos = [{"name": "repo1", "full_name": "test-org/repo1"}]
+        mock_config.org_name = "test-org"
         mock_client.get_paginated.return_value = []
-        
-        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
+        mock_client.get_with_cache.return_value = {}
+
+        with patch('coops.bronze.commits.load_json_data',
+                   return_value=[{"name": "repo1", "full_name": "test-org/repo1"}]):
             with patch('coops.bronze.commits.save_json_data', return_value="file.json") as mock_save:
-                result = extract_commits(mock_client, mock_config)
-                
-                # Verifica que salvou commits_all.json
-                calls = [call[0][1] for call in mock_save.call_args_list]
-                assert any("commits_all.json" in c for c in calls)
+                extract_commits(mock_client, mock_config, method="rest")
+
+                assert not stale.exists()
+                calls = [call_[0][1] for call_ in mock_save.call_args_list]
+                assert not any("_all.json" in c for c in calls)
     
     def test_extract_commits_uses_cache_flag(self):
         """Testa que respeita flag use_cache"""
@@ -589,7 +604,83 @@ class TestSanitizeCommit:
         assert "email" not in out["commit"]["committer"]
         assert out["commit"]["author"]["login"] == "alice"
         assert out["commit"]["author"]["id"] == 1001
-        assert "author_email_hash" not in out["commit"]["author"]
+        # #101/#171: a linked author now keeps the hash TOO. This assertion was
+        # `"author_email_hash" not in ...` and is deliberately inverted, not
+        # quietly relaxed — it encoded the gate that made the two identifier
+        # spaces disjoint, which is the defect being fixed. The raw address
+        # still never survives, which is what the first assertion above pins.
+        assert out["commit"]["author"]["author_email_hash"] == _hash_email(
+            "alice@example.com"
+        )
+
+    def test_linked_and_unlinked_authors_share_one_hash_space(self):
+        """The join #171 needs: the same address hashes identically whether or
+        not the author has an account.
+
+        Before #101 the hash was kept only when `not login and numeric_id is
+        None`, so no record ever carried both a login and a hash. Measured over
+        all 130,186 commits in the corpus: 123,562 had an id and no hash, 6,614
+        a hash and no id, and **zero had both** — so nothing downstream could
+        learn that a hash and a login were the same human, and 1,311 linked
+        people plus 231 unlinked hashes were counted as 1,542 contributors with
+        no way to reduce it.
+        """
+        shared = "same.person@example.com"
+        linked = _sanitize_commit(
+            {
+                "sha": "a",
+                "author": {"login": "sameperson", "id": 7},
+                "commit": {
+                    "author": {"name": "Same", "email": shared, "date": "2024-01-01"},
+                    "message": "x",
+                },
+            }
+        )
+        unlinked = _sanitize_commit(
+            {
+                "sha": "b",
+                "author": None,
+                "commit": {
+                    "author": {"name": "Same", "email": shared, "date": "2024-01-02"},
+                    "message": "y",
+                },
+            }
+        )
+
+        assert linked["commit"]["author"]["login"] == "sameperson"
+        assert "login" not in unlinked["commit"]["author"]
+        # the same person, now joinable across both records
+        assert (
+            linked["commit"]["author"]["author_email_hash"]
+            == unlinked["commit"]["author"]["author_email_hash"]
+            == _hash_email(shared)
+        )
+
+    def test_the_raw_address_never_survives_for_a_linked_author(self):
+        """The rule the hash exists to serve, re-pinned now that linked authors
+        carry one: publishing a hash must not become publishing an address."""
+        out = _sanitize_commit(
+            {
+                "sha": "a",
+                "author": {"login": "alice", "id": 1001},
+                "commit": {
+                    "author": {
+                        "name": "Alice",
+                        "email": "alice@example.com",
+                        "date": "2024-01-01",
+                    },
+                    "committer": {
+                        "name": "Alice",
+                        "email": "alice@example.com",
+                        "date": "2024-01-01",
+                    },
+                    "message": "hi",
+                },
+            }
+        )
+        # assert on the WHOLE serialised record, not a field we remembered to check
+        assert "alice@example.com" not in json.dumps(out)
+        assert "@" not in json.dumps(out)
 
     def test_unlinked_author_gets_email_hash_drops_email(self):
         commit = {
@@ -664,3 +755,403 @@ class TestSanitizeCommit:
         assert "Co-authored-by: Pair Person" in message
         assert "Signed-off-by: Mona Octocat" in message
         assert "feat: add the thing" in message
+
+    def test_address_shaped_author_name_blanked(self):
+        """An author name that is itself an email address is replaced with
+        None. The address is asserted present *before* sanitization (control),
+        so a clean result afterwards proves the scrub ran rather than a broken
+        probe."""
+        commit = {
+            "sha": "abc123",
+            "author": None,
+            "commit": {
+                "author": {"name": "ingr.dcg@gmail.com", "email": "ingr.dcg@gmail.com", "date": "2024-01-01"},
+                "message": "hi",
+            },
+        }
+        # Control: the address is present in the name field before the scrub.
+        assert commit["commit"]["author"]["name"] == "ingr.dcg@gmail.com"
+        assert _EMAIL_RE.fullmatch(commit["commit"]["author"]["name"])
+
+        out = _sanitize_commit(commit)
+
+        assert out["commit"]["author"]["name"] is None
+        # The address is gone from the record; the unlinked author still has a
+        # stable identity key instead of a leaked address.
+        assert "email" not in out["commit"]["author"]
+        assert out["commit"]["author"]["author_email_hash"] == _hash_email("ingr.dcg@gmail.com")
+
+    def test_address_shaped_committer_name_blanked(self):
+        """The committer name is a second free-text channel for the same
+        address; it is blanked the same way, while the linked author's normal
+        name is left intact."""
+        commit = {
+            "sha": "abc123",
+            "author": {"login": "alice", "id": 1},
+            "commit": {
+                "author": {"name": "Alice", "email": "alice@example.com", "date": "d"},
+                "committer": {"name": "joaok8@gmail.com", "email": "joaok8@gmail.com", "date": "d"},
+                "message": "hi",
+            },
+        }
+        # Control: the address is present in the committer name before the scrub.
+        assert commit["commit"]["committer"]["name"] == "joaok8@gmail.com"
+        assert _EMAIL_RE.fullmatch(commit["commit"]["committer"]["name"])
+
+        out = _sanitize_commit(commit)
+
+        assert out["commit"]["committer"]["name"] is None
+        assert out["commit"]["author"]["name"] == "Alice"
+
+    def test_non_address_name_left_untouched(self):
+        """Attribution matters: a plain name is never blanked, only a name that
+        is itself an address."""
+        commit = {
+            "sha": "abc123",
+            "author": {"login": "alice", "id": 1},
+            "commit": {
+                "author": {"name": "Alice Smith", "email": "alice@example.com", "date": "d"},
+                "committer": {"name": "Bob Jones", "email": "bob@example.com", "date": "d"},
+                "message": "hi",
+            },
+        }
+        out = _sanitize_commit(commit)
+        assert out["commit"]["author"]["name"] == "Alice Smith"
+        assert out["commit"]["committer"]["name"] == "Bob Jones"
+
+    def test_name_containing_address_left_untouched(self):
+        """The scrub blanks a name only when the name *is* an address; a name
+        that merely *contains* one survives, because blanking it would destroy
+        attribution for a real person.
+
+        This fixture is invented, and must stay invented. Across the 260,350
+        name slots in the fga corpus, 149 are entirely an address and zero
+        merely contain one, so the distinguishing case does not occur in real
+        data and cannot be defended with it (definition-of-done: when reality
+        never produced the boundary, write a synthetic fixture and say so). It
+        pins ``fullmatch`` over ``search``: under ``search`` this name is
+        blanked, and this test is the only thing that fails.
+        """
+        # Direction 1: a name that IS an address is blanked.
+        address_commit = {
+            "sha": "abc123",
+            "author": None,
+            "commit": {
+                "author": {"name": "alice@example.com", "email": "alice@example.com", "date": "2024-01-01"},
+                "message": "hi",
+            },
+        }
+        assert _EMAIL_RE.fullmatch(address_commit["commit"]["author"]["name"])
+        assert _sanitize_commit(address_commit)["commit"]["author"]["name"] is None
+
+        # Direction 2: a name that merely CONTAINS an address is left alone.
+        contains_commit = {
+            "sha": "abc123",
+            "author": {"login": "alice", "id": 1},
+            "commit": {
+                "author": {"name": "Alice <alice@example.com>", "email": "alice@example.com", "date": "2024-01-01"},
+                "message": "hi",
+            },
+        }
+        # Control: the address really is present inside the name, but the name
+        # as a whole is not an address — the boundary ``fullmatch`` draws.
+        assert not _EMAIL_RE.fullmatch(contains_commit["commit"]["author"]["name"])
+        assert _EMAIL_RE.search(contains_commit["commit"]["author"]["name"])
+        assert _sanitize_commit(contains_commit)["commit"]["author"]["name"] == "Alice <alice@example.com>"
+
+
+_EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
+
+_FULL_BODY = "feat: subject\n\nThis is the body.\nSecond paragraph."
+
+
+def _assert_recovered_fields(commit):
+    """The message body, committer and parent shas survive in the stored record,
+    in the same shape on both the GraphQL and REST paths."""
+    assert commit["commit"]["message"] == _FULL_BODY
+    assert commit["commit"]["committer"]["name"] == "Committer"
+    assert commit["commit"]["committer"]["date"] == "2024-01-01T00:00:01Z"
+    assert "email" not in commit["commit"]["committer"]
+    assert commit["parents"] == ["parent1", "parent2"]
+
+
+class TestRecoverableFields:
+    """The fields that can only be recovered by a full re-fetch (message body,
+    committer, parent shas) must reach the stored record on every path."""
+
+    def test_graphql_path_keeps_recoverable_fields(self):
+        mock_client = MagicMock()
+        mock_config = MagicMock()
+        mock_repos = [{"name": "repo1", "full_name": "test-org/repo1"}]
+
+        mock_graphql_nodes = [
+            {
+                "oid": "abc123",
+                "url": "https://github.com/test-org/repo1/commit/abc123",
+                "message": _FULL_BODY,
+                "messageHeadline": "feat: subject",
+                "committedDate": "2024-01-01T00:00:00Z",
+                "author": {
+                    "name": "Author",
+                    "email": "author@test.com",
+                    "date": "2024-01-01T00:00:00Z",
+                    "user": {"login": "author_login", "databaseId": 456},
+                },
+                "committer": {
+                    "name": "Committer",
+                    "email": "committer@test.com",
+                    "date": "2024-01-01T00:00:01Z",
+                    "user": {"login": "committer_login", "databaseId": 789},
+                },
+                "parents": {"nodes": [{"oid": "parent1"}, {"oid": "parent2"}]},
+                "additions": 15,
+                "deletions": 8,
+            }
+        ]
+
+        mock_client.graphql_commit_history.return_value = (mock_graphql_nodes, {})
+
+        saved_data = None
+
+        def capture_save(data, path):
+            nonlocal saved_data
+            saved_data = data
+            return "file.json"
+
+        with patch("coops.bronze.commits.load_json_data", return_value=mock_repos):
+            with patch("coops.bronze.commits.save_json_data", side_effect=capture_save):
+                extract_commits(mock_client, mock_config, method="graphql")
+
+        assert saved_data is not None and len(saved_data) == 1
+        _assert_recovered_fields(saved_data[0])
+
+    def test_rest_path_keeps_recoverable_fields(self):
+        mock_client = MagicMock()
+        mock_config = MagicMock()
+        mock_repos = [{"name": "repo1", "full_name": "test-org/repo1"}]
+
+        mock_commits = [
+            {
+                "sha": "abc123",
+                "author": {"login": "author_login", "id": 456},
+                "commit": {
+                    "author": {"name": "Author", "email": "author@test.com", "date": "2024-01-01T00:00:00Z"},
+                    "committer": {"name": "Committer", "email": "committer@test.com", "date": "2024-01-01T00:00:01Z"},
+                    "message": _FULL_BODY,
+                },
+                "parents": [
+                    {"sha": "parent1", "url": "https://api.github.com/x/parent1", "html_url": "https://github.com/x/parent1"},
+                    {"sha": "parent2", "url": "https://api.github.com/x/parent2", "html_url": "https://github.com/x/parent2"},
+                ],
+            }
+        ]
+
+        mock_client.get_paginated.return_value = mock_commits
+        mock_client.get_with_cache.return_value = {"stats": {"additions": 10, "deletions": 5, "total": 15}}
+
+        saved_data = None
+
+        def capture_save(data, path):
+            nonlocal saved_data
+            saved_data = data
+            return "file.json"
+
+        with patch("coops.bronze.commits.load_json_data", return_value=mock_repos):
+            with patch("coops.bronze.commits.save_json_data", side_effect=capture_save):
+                extract_commits(mock_client, mock_config, method="rest")
+
+        assert saved_data is not None and len(saved_data) == 1
+        _assert_recovered_fields(saved_data[0])
+
+    def test_no_email_reaches_bronze_from_message_trailers_or_committer(self):
+        """A commit whose message body carries Co-authored-by / Signed-off-by
+        trailers and whose committer has an email must leave no address in the
+        serialised Bronze projection. Asserted by regex on the output, not by
+        field names."""
+        mock_client = MagicMock()
+        mock_config = MagicMock()
+        mock_repos = [{"name": "repo1", "full_name": "test-org/repo1"}]
+
+        mock_graphql_nodes = [
+            {
+                "oid": "abc123",
+                "url": "https://github.com/test-org/repo1/commit/abc123",
+                "message": (
+                    "feat: subject\n\n"
+                    "Co-authored-by: Pair Person <pair@personal.example.net>\n"
+                    "Signed-off-by: Mona Octocat <mona@github.example.com>\n"
+                ),
+                "messageHeadline": "feat: subject",
+                "committedDate": "2024-01-01T00:00:00Z",
+                "author": {
+                    "name": "Author",
+                    "email": "author@test.com",
+                    "date": "2024-01-01T00:00:00Z",
+                    "user": {"login": "author_login", "databaseId": 456},
+                },
+                "committer": {
+                    "name": "Committer",
+                    "email": "committer@test.com",
+                    "date": "2024-01-01T00:00:01Z",
+                    "user": {"login": "committer_login", "databaseId": 789},
+                },
+                "parents": {"nodes": [{"oid": "parent1"}]},
+                "additions": 15,
+                "deletions": 8,
+            }
+        ]
+
+        mock_client.graphql_commit_history.return_value = (mock_graphql_nodes, {})
+
+        saved_data = None
+
+        def capture_save(data, path):
+            nonlocal saved_data
+            saved_data = data
+            return "file.json"
+
+        with patch("coops.bronze.commits.load_json_data", return_value=mock_repos):
+            with patch("coops.bronze.commits.save_json_data", side_effect=capture_save):
+                extract_commits(mock_client, mock_config, method="graphql")
+
+        assert saved_data is not None
+        serialized = json.dumps(saved_data)
+        # No raw address survives anywhere in the serialised record.
+        assert not _EMAIL_RE.search(serialized)
+        # Credit is preserved: the trailer and the human name stay.
+        assert "Co-authored-by: Pair Person" in serialized
+        assert "Signed-off-by: Mona Octocat" in serialized
+
+
+class TestRestFallbackAuthorShape:
+    """The REST fallback behind the GraphQL circuit breaker must emit the same
+    author node the GraphQL query returns, so the GraphQL->REST mapping in
+    extract_commits and `_sanitize_commit` see identical input from both paths
+    (#203).
+
+    The old fallback kept only `author.user.login` — and let the git `name`
+    stand in as that login for unlinked commits. That dropped `email` (so no
+    `author_email_hash` could ever be derived: the commit became unattributable)
+    and fabricated logins that were never GitHub accounts.
+    """
+
+    SHA = "a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2"
+
+    def _rest_list_commit(self, author):
+        """A realistic REST list item: the fallback reads every author field
+        from the list entry and only the stats from the detail fetch, so the
+        fixture must carry the full `commit.author` block — a bare
+        `{'sha': ...}` would leave the author code unexercised."""
+        return {
+            "sha": self.SHA,
+            "html_url": f"https://github.com/test-org/repo1/commit/{self.SHA}",
+            "commit": {
+                "message": "feat: subject\n\nBody line.",
+                "author": {
+                    "name": "Dev",
+                    "email": "dev@example.com",
+                    "date": "2026-01-01T00:00:00Z",
+                },
+                "committer": {
+                    "name": "Dev",
+                    "email": "committer@example.com",
+                    "date": "2026-01-01T00:00:01Z",
+                },
+            },
+            "author": author,
+            "parents": [{"sha": "9" * 40}],
+        }
+
+    def _run_fallback(self, tmp_path, commits_list):
+        """Drive the real fallback with its one network-touching method
+        stubbed; commits come back as GraphQL-shaped nodes."""
+        client = GitHubAPIClient(token="test", cache_dir=str(tmp_path / "cache"))
+
+        def fake_fetch(owner, repo, sha, use_cache):
+            return {
+                "data": {"sha": sha, "stats": {"additions": 10, "deletions": 5}},
+                "thread_id": 1,
+                "headers": None,
+            }
+
+        with patch.object(client, "_fetch_with_thread_id", side_effect=fake_fetch):
+            return client._fetch_rest_commit_details_parallel(
+                commits_list, "test-org", "repo1", True, max_workers=1
+            )
+
+    def _sanitize_via_pipeline(self, nodes):
+        """Feed the fallback's nodes through the real GraphQL->REST mapping and
+        `_sanitize_commit` pass in extract_commits; return what would be
+        persisted. `remove_aggregate` is patched so the test cannot touch the
+        tracked `data/` tree whatever the working copy holds."""
+        mock_client = MagicMock()
+        mock_config = MagicMock()
+        mock_config.org_name = "test-org"
+        mock_client.graphql_commit_history.return_value = (nodes, {})
+
+        saved = {}
+
+        def capture_save(data, path):
+            saved.setdefault("records", data)
+            return "file.json"
+
+        with patch(
+            "coops.bronze.commits.load_json_data",
+            return_value=[{"name": "repo1", "full_name": "test-org/repo1"}],
+        ), patch(
+            "coops.bronze.commits.save_json_data", side_effect=capture_save
+        ), patch("coops.bronze.commits.remove_aggregate"):
+            extract_commits(mock_client, mock_config, method="graphql")
+
+        assert "records" in saved, "extract_commits persisted nothing"
+        return saved["records"]
+
+    def test_linked_author_yields_email_hash(self, tmp_path):
+        """Criterion 1: a linked author's email reaches `_sanitize_commit`,
+        which derives the stable `author_email_hash` from it."""
+        nodes = self._run_fallback(
+            tmp_path, [self._rest_list_commit({"login": "octocat", "id": 583231})]
+        )
+        (record,) = self._sanitize_via_pipeline(nodes)
+        author = record["commit"]["author"]
+        assert author.get("author_email_hash") == _hash_email("dev@example.com")
+
+    def test_unlinked_author_login_is_none(self, tmp_path):
+        """Criterion 2: `author: null` means no GitHub account — the git name
+        must not be fabricated into a login."""
+        nodes = self._run_fallback(tmp_path, [self._rest_list_commit(None)])
+        (record,) = self._sanitize_via_pipeline(nodes)
+        assert record["commit"]["author"].get("login") is None
+
+    def test_linked_author_account_id_survives(self, tmp_path):
+        """Criterion 3: the numeric account id (REST `author.id`, GraphQL
+        `user.databaseId`) survives sanitization."""
+        nodes = self._run_fallback(
+            tmp_path, [self._rest_list_commit({"login": "octocat", "id": 583231})]
+        )
+        (record,) = self._sanitize_via_pipeline(nodes)
+        assert record["commit"]["author"].get("id") == 583231
+
+    def test_unlinked_author_email_flows_in_and_never_out(self, tmp_path):
+        """Criterion 4: the address must be carried into the record (else no
+        hash could be derived) yet must not survive sanitization anywhere."""
+        nodes = self._run_fallback(tmp_path, [self._rest_list_commit(None)])
+        # Carried in: the fallback emits the email for the sanitizer to hash.
+        assert nodes[0]["author"].get("email") == "dev@example.com"
+        (record,) = self._sanitize_via_pipeline(nodes)
+        # ...but never out, under any key.
+        serialized = json.dumps(record)
+        assert "dev@example.com" not in serialized
+        assert not _EMAIL_RE.search(serialized)
+
+    def test_node_author_shape_matches_graphql(self, tmp_path):
+        """The fallback's author block is the GraphQL node shape, field for
+        field, so the two paths are indistinguishable downstream."""
+        nodes = self._run_fallback(
+            tmp_path, [self._rest_list_commit({"login": "octocat", "id": 583231})]
+        )
+        author = nodes[0]["author"]
+        assert author["name"] == "Dev"
+        assert author["email"] == "dev@example.com"
+        assert author["date"] == "2026-01-01T00:00:00Z"
+        assert author["user"] == {"login": "octocat", "databaseId": 583231}

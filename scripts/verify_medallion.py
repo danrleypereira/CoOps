@@ -1,0 +1,943 @@
+#!/usr/bin/env python3
+"""Verify a regenerated medallion: does each layer hold what it should?
+
+Run this after a phase regeneration, before merging the phase to main.
+
+    uv run python scripts/verify_medallion.py --root /var/tmp/coops-work
+
+Why this exists
+---------------
+The regeneration script enforces that a defect was *present* before a run. It
+did not check that the defect was *gone* afterwards. Three separate times its
+comments described a post-check that had never been written, so a run could
+print "ALL LAYERS CLEAN" on criteria — address counts, record totals — with
+nothing to do with the reason it was started.
+
+A check that has never failed proves nothing, so **every check here carries a
+control**: a synthetic input it must reject. `--self-test` runs the controls
+alone and is the only evidence that a green run means anything.
+
+Exit codes
+----------
+    0  every check passed, every control fired
+    1  a check failed — the layer does not hold an invariant
+    2  a check could not run, or a control did NOT fire (the instrument is broken)
+
+2 is not a weaker 1. "The probe found nothing" and "the probe cannot see" are
+different answers and only the first is a pass.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import re
+import sys
+from collections.abc import Iterator
+from dataclasses import dataclass, field
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+
+# NOTE: there is deliberately no address check here. The corpus is open data
+# held under university and Brazilian ethics-committee approval with participant
+# consent, and the owner has ruled that addresses in it are expected rather than
+# a defect. A verifier asserting otherwise would fail every phase gate on a
+# non-issue and keep dragging a settled question back open.
+
+UNKNOWN_LABEL_BASELINE = 1
+
+# What identifies a record, per family. Without commits and issue_events here,
+# the vanished check saw only issues and prs — 44 of the 55 records actually
+# lost — and the 11 missing commits were invisible to the check written to find
+# them (curupira, #200).
+RECORD_KEY = {"commits": "sha", "issues": "number", "prs": "number", "issue_events": "id"}
+
+BRONZE_FAMILIES = ("commits", "prs", "issues", "issue_events", "structure", "repo")
+AGGREGATES = tuple(f"{f}_all.json" for f in ("commits", "prs", "issues", "issue_events"))
+
+
+@dataclass
+class Result:
+    name: str
+    layer: str
+    passed: bool
+    detail: str
+    control_fired: bool | None = None
+    skipped: bool = False
+
+
+@dataclass
+class Report:
+    results: list[Result] = field(default_factory=list)
+
+    def add(self, r: Result) -> None:
+        self.results.append(r)
+
+    @property
+    def exit_code(self) -> int:
+        # A skipped check IS a check that could not run, which this script's own
+        # docstring defines as 2. Returning 0 made the message honest and the
+        # GATE wrong: a human reads the SKIP line, a CI reads the code (caught
+        # by curupira on #200, after the message-only fix).
+        if any(r.control_fired is False or r.skipped for r in self.results):
+            return 2
+        return 1 if any(not r.passed for r in self.results) else 0
+
+
+# --------------------------------------------------------------------------
+# helpers
+# --------------------------------------------------------------------------
+
+
+def read_records(path: Path) -> Iterator[dict]:
+    """Yield the dict records of one artifact, metadata sidecars excluded."""
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return
+    if isinstance(payload, dict):
+        yield payload
+        return
+    if isinstance(payload, list):
+        for rec in payload:
+            if isinstance(rec, dict) and "_metadata" not in rec:
+                yield rec
+
+
+def bronze_family_files(bronze: Path, family: str) -> list[Path]:
+    """Per-repository files of a family: aggregates and derived copies excluded.
+
+    Mirrors `coops.bronze.files.bronze_records` deliberately rather than
+    importing it — a verifier that shares its enumeration with the code under
+    test cannot catch an enumeration bug.
+    """
+    skip = f"{family}_all.json"
+    return sorted(
+        p
+        for p in bronze.glob(f"{family}_*.json")
+        if p.name != skip and not p.stem.endswith("_with_stats")
+    )
+
+
+# --------------------------------------------------------------------------
+# bronze
+# --------------------------------------------------------------------------
+
+
+def check_no_aggregates(bronze: Path, rep: Report) -> None:
+    found = [a for a in AGGREGATES if (bronze / a).exists()]
+    rep.add(
+        Result(
+            "aggregates-removed",
+            "bronze",
+            not found,
+            "none present" if not found else f"still on disk: {', '.join(found)}",
+        )
+    )
+
+
+def check_every_author_hashed(bronze: Path, rep: Report) -> None:
+    """#101/#189: a commit author with an email carries a hash, linked or not.
+
+    Before #189 the hash was kept only for unlinked authors, so the login space
+    and the hash space never co-occurred and nothing downstream could learn that
+    a hash and a login belonged to one person.
+    """
+    login_no_hash = total = with_login = 0
+    for path in bronze_family_files(bronze, "commits"):
+        for rec in read_records(path):
+            author = (rec.get("commit") or {}).get("author") or {}
+            total += 1
+            if author.get("login"):
+                with_login += 1
+                if not author.get("author_email_hash"):
+                    login_no_hash += 1
+    if total == 0 or with_login == 0:
+        rep.add(
+            Result(
+                "every-author-hashed",
+                "bronze",
+                False,
+                f"cannot see the corpus: {total} commits, {with_login} with a login",
+                control_fired=False,
+            )
+        )
+        return
+    rep.add(
+        Result(
+            "every-author-hashed",
+            "bronze",
+            login_no_hash == 0,
+            f"{login_no_hash:,} of {with_login:,} logged-in commits lack a hash",
+        )
+    )
+
+
+
+# --------------------------------------------------------------------------
+# staleness (bronze) — the checks that need a --reference corpus. Gold's
+# counterpart, gold-regenerated, lives with the other gold checks below.
+# --------------------------------------------------------------------------
+
+
+def check_no_record_reverted(bronze: Path, reference: Path, rep: Report) -> None:
+    """No record may come back as an OLDER version than the reference holds.
+
+    Found by curupira and confirmed by matinta on #199: 38 records (35 issues,
+    3 prs) survived a regeneration with their `updated_at` moved *backwards*.
+
+    This is invisible to every other check in this file, by construction. A
+    missing record trips a count; a reverted one keeps the count identical and
+    the content wrong. Counts cannot see it, invariants cannot see it, and the
+    totals agree while the data is stale.
+
+    It needs a reference corpus because "older" is only meaningful against a
+    previous state — which is why this check takes `--reference` and the others
+    do not.
+    """
+    reverted: list[tuple[str, str, str]] = []
+    vanished: list[str] = []
+    compared = 0
+
+    def index(root: Path, family: str, key: str) -> dict[tuple[str, object], str | None]:
+        out: dict[tuple[str, object], str | None] = {}
+        for path in bronze_family_files(root, family):
+            repo = path.stem[len(family) + 1 :]
+            for rec in read_records(path):
+                ident = rec.get(key)
+                if ident is not None:
+                    upd = rec.get("updated_at")
+                    out[(repo, ident)] = upd if isinstance(upd, str) else None
+        return out
+
+    for family, key in RECORD_KEY.items():
+        new_ix, ref_ix = index(bronze, family, key), index(reference, family, key)
+        shared = set(new_ix) & set(ref_ix)
+        compared += len(shared)
+        for k in shared:
+            a, b = new_ix[k], ref_ix[k]
+            if a is not None and b is not None and a < b:
+                reverted.append((f"{family}:{k[0]}#{k[1]}", b, a))
+        # Comparing only shared keys makes a VANISHED record invisible: it is
+        # absent from new_ix, so it is never examined. That is the larger half
+        # of #199, and the check written to find it could not see it.
+        for k in set(ref_ix) - set(new_ix):
+            vanished.append(f"{family}:{k[0]}#{k[1]}")
+
+    # Nothing comparable means the probe could not see either corpus — a
+    # different answer from "nothing was wrong", and it must not read as a pass.
+    # BOTH staleness results are emitted here: an early return after only
+    # no-record-reverted left no-record-vanished out of the report entirely,
+    # and a check that is never emitted cannot fail. Computing the real
+    # vanished list instead would be worse — against an empty reference the
+    # difference of the key sets is empty, so the check would vacuously pass.
+    if compared == 0:
+        rep.add(Result("no-record-reverted", "bronze", False,
+                       "no records comparable between the two corpora",
+                       control_fired=False))
+        rep.add(Result("no-record-vanished", "bronze", False,
+                       "no records comparable between the two corpora",
+                       control_fired=False))
+        return
+
+    detail = f"{compared:,} records compared, {len(reverted)} reverted"
+    if reverted:
+        k, was, now = reverted[0]
+        detail += f" (e.g. {k}: {was} -> {now})"
+    rep.add(Result("no-record-reverted", "bronze", not reverted, detail))
+    rep.add(
+        Result(
+            "no-record-vanished",
+            "bronze",
+            not vanished,
+            f"{len(vanished)} records present in the reference and absent now"
+            + (f" (e.g. {vanished[0]})" if vanished else ""),
+        )
+    )
+
+
+# --------------------------------------------------------------------------
+# silver
+# --------------------------------------------------------------------------
+
+
+def check_member_ids_distinct(silver: Path, rep: Report) -> None:
+    """Two members must never share an id: that is one person counted once."""
+    path = silver / "members_statistics.json"
+    if not path.exists():
+        rep.add(Result("member-ids-distinct", "silver", False, "members_statistics.json absent", control_fired=False))
+        return
+    records = list(read_records(path))
+    ids = [r.get("id") for r in records if r.get("id") is not None]
+    if not ids:
+        rep.add(Result("member-ids-distinct", "silver", False, "no member carries an id", control_fired=False))
+        return
+    dupes = len(ids) - len(set(ids))
+    rep.add(Result("member-ids-distinct", "silver", dupes == 0, f"{len(ids):,} members, {dupes} duplicate ids"))
+
+    # Filtering to records that HAVE an id made this check blind to the ones
+    # that do not. A member with no id cannot be joined to anything downstream,
+    # so it is a defect rather than a row to skip. Found because this check
+    # reported 1,723 members while the label check reported 1,724 on the same
+    # file in the same run — one record with no id, no name and no commits.
+    idless = len(records) - len(ids)
+    rep.add(
+        Result(
+            "every-member-identified",
+            "silver",
+            idless == 0,
+            f"{len(records):,} member records, {idless} with no id",
+        )
+    )
+
+
+def check_no_unknown_labels(silver: Path, rep: Report) -> None:
+    """#151: nobody is displayed as 'Unknown contributor'.
+
+    Showing that label cost 230 people their names and made the dashboard
+    useless for the thing it exists to do.
+    """
+    path = silver / "members_statistics.json"
+    if not path.exists():
+        rep.add(Result("no-unknown-labels", "silver", False, "members_statistics.json absent", control_fired=False))
+        return
+    records = list(read_records(path))
+    if not records:
+        rep.add(Result("no-unknown-labels", "silver", False, "no member records", control_fired=False))
+        return
+    bad = [r for r in records if isinstance(r.get("name"), str) and r["name"].startswith("Unknown contributor")]
+    # #151 took these from 231 to 1. The residual is a contributor every one of
+    # whose commit names was itself an address, so after blanking there is
+    # genuinely nothing to display. Asserting zero would fail forever and be
+    # ignored; the invariant that matters is that the count does not GROW.
+    rep.add(
+        Result(
+            "unknown-labels-not-growing",
+            "silver",
+            len(bad) <= UNKNOWN_LABEL_BASELINE,
+            f"{len(records):,} members, {len(bad)} unknown-labelled "
+            f"(baseline {UNKNOWN_LABEL_BASELINE}, set by #151)",
+        )
+    )
+
+
+def check_hash_never_a_label(silver: Path, rep: Report) -> None:
+    """A 64-hex identity may key a member; it must never be shown as their name."""
+    path = silver / "members_statistics.json"
+    if not path.exists():
+        rep.add(Result("hash-never-a-label", "silver", False, "members_statistics.json absent", control_fired=False))
+        return
+    hexish = re.compile(r"^[0-9a-f]{64}$")
+    records = list(read_records(path))
+    if not records:
+        rep.add(Result("hash-never-a-label", "silver", False, "no member records", control_fired=False))
+        return
+    bad = [r for r in records if isinstance(r.get("name"), str) and hexish.match(r["name"])]
+    rep.add(Result("hash-never-a-label", "silver", not bad, f"{len(bad)} members displayed as a hash"))
+
+
+# --------------------------------------------------------------------------
+# controls — each check must reject a synthetic input it should reject
+# --------------------------------------------------------------------------
+
+
+EXPECTED_LAYERS = ("bronze", "silver", "gold")
+
+# Gold is a fixed, small file set, so it can be named rather than counted.
+# curupira showed on #200 why counting is not enough: "non-empty" means "any
+# entry", so a gold directory holding ONE file containing [] passed, and so did
+# the real corpus with gold cut from five files to one. A pipeline that died
+# partway through writing Gold still certified.
+EXPECTED_GOLD = (
+    "executive_dashboard.json",
+    "performance_tiers.json",
+    "registry.json",
+    "timeline_last_12_months.json",
+    "timeline_last_7_days.json",
+)
+
+# Pre-#143 corpora persist generated_at as naive LOCAL time (measured: the
+# 2026-09-23 corpus stamps '2026-09-23T16:43:16.417673', no offset, from a
+# -03:00 run — a CI run wrote UTC, a local run wrote local time, and both
+# look identical on disk). Reading a naive stamp as UTC is therefore a choice
+# with up to 3h of bounded error, not a fact; comparisons touching one are
+# only conclusive outside that band. Equality never reaches the band at all:
+# it is settled on the raw strings first, in check_gold_regenerated, because
+# a copied seed sits at delta 0 — inside the band — and must not pass it.
+NAIVE_STAMP_SLACK = timedelta(hours=3)
+
+
+def check_gold_file_set(gold: Path, rep: Report) -> None:
+    """Every expected Gold artifact is present and carries at least one record.
+
+    Bronze and Silver are per-repository file sets whose membership legitimately
+    varies, so they are checked by presence and by their records. Gold is five
+    named files, which means the stronger assertion is available here and costs
+    nothing.
+
+    This does NOT establish that the artifacts are current — a seeded tree
+    carries the previous run's Gold, so a crashed Gold step leaves five valid
+    files in place and every check here passes. matinta's generalisation on
+    #201: a phase verifier running against a seeded tree is structurally unable
+    to tell a successful run from no run at all unless it knows when the run
+    began. X7 expected that to need a run-start timestamp;
+    check_gold_regenerated below closes it without one — the reference
+    corpus's own stamps already mark the previous run.
+    """
+    missing = [n for n in EXPECTED_GOLD if not (gold / n).is_file()]
+    if missing:
+        rep.add(Result("gold-file-set", "gold", False,
+                       f"{len(missing)} of {len(EXPECTED_GOLD)} gold artifacts absent: {', '.join(missing)}",
+                       control_fired=False))
+        return
+
+    empty = []
+    for n in EXPECTED_GOLD:
+        try:
+            doc = json.loads((gold / n).read_text(encoding="utf-8"))
+        except (ValueError, OSError) as exc:
+            rep.add(Result("gold-file-set", "gold", False,
+                           f"{n} could not be read: {exc}", control_fired=False))
+            return
+        if not doc:                      # {} and [] alike
+            empty.append(n)
+    if empty:
+        rep.add(Result("gold-file-set", "gold", False,
+                       f"{len(empty)} gold artifact(s) hold no records: {', '.join(empty)}",
+                       control_fired=False))
+    else:
+        rep.add(Result("gold-file-set", "gold", True,
+                       f"all {len(EXPECTED_GOLD)} artifacts present and non-empty"))
+
+
+def _stamp_text(path: Path) -> str | None:
+    """The artifact's raw timestamp string, or None when there is none.
+
+    Deliberately no parsing: equality is settled on these strings BEFORE any
+    clock exists (see check_gold_regenerated), because a copied seed is
+    byte-identical whatever format its stamps carry.
+
+    **Each Gold artifact keeps its clock in a different place**, and a reader
+    that only knows `doc["generated_at"]` sees 1 of 5 rather than 4. Corrected
+    after @curupira measured the real corpus on #215 — the first version of
+    this check reported the two timelines as structurally unstampable, and
+    that was the reader, not the data:
+
+        executive_dashboard.json      doc["generated_at"]
+        performance_tiers.json        doc["generated_at"]          (since #202)
+        registry.json                 doc["all_processed"]["updated_at"]
+        timeline_last_7_days.json     doc[0]["_metadata"]["extracted_at"]
+        timeline_last_12_months.json  doc[0]["_metadata"]["extracted_at"]
+
+    The timelines are JSON *arrays*, and `save_json_data` prepends a
+    `_metadata` element — so they carry a stamp with no shape change and no
+    consumer-visible edit.
+
+    Every way a stamp can be absent — missing file, bad JSON, an unexpected
+    shape, a missing key, a non-string value — returns None, which for this
+    check means the probe cannot see that artifact's clock: an instrument
+    state, not a verdict on the data.
+    """
+    try:
+        doc = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+
+    raw: object = None
+    if isinstance(doc, dict):
+        raw = doc.get("generated_at")
+        if not isinstance(raw, str):
+            nested = doc.get("all_processed")
+            raw = nested.get("updated_at") if isinstance(nested, dict) else None
+    elif isinstance(doc, list) and doc and isinstance(doc[0], dict):
+        meta = doc[0].get("_metadata")
+        raw = meta.get("extracted_at") if isinstance(meta, dict) else None
+
+    if not isinstance(raw, str):
+        return None
+    return raw.strip() or None
+
+
+def _parse_stamp(text: str | None) -> datetime | None:
+    """Parse a stamp string as written; None when it cannot be parsed.
+
+    Awareness is preserved — naive stays naive — so the caller knows which
+    comparisons carry the bounded error the band accounts for. The trailing
+    Z is normalised for fromisoformat, which only accepts it from 3.11.
+    """
+    if text is None:
+        return None
+    if text.endswith(("Z", "z")):  # fromisoformat rejects 'Z' before 3.11
+        text = text[:-1] + "+00:00"
+    try:
+        return datetime.fromisoformat(text)
+    except ValueError:
+        return None
+
+
+def _utc_wall(dt: datetime) -> datetime:
+    """dt as a naive UTC wall time, so any two stamps subtract without raising.
+
+    A naive minus an aware datetime raises TypeError, so both sides are
+    brought to the same footing first: aware stamps convert to their UTC wall
+    time, naive stamps are taken as already UTC — the bounded-error choice
+    that NAIVE_STAMP_SLACK exists to account for.
+    """
+    return dt.astimezone(timezone.utc).replace(tzinfo=None) if dt.tzinfo is not None else dt
+
+
+def check_gold_regenerated(gold: Path, reference: Path, rep: Report) -> None:
+    """Every gold artifact must be NEWER than its reference counterpart.
+
+    `check_gold_file_set` closes only half of #201's seeded-tree hole: a
+    regeneration seeds data/ from a previous corpus, so a Gold step that
+    crashed — or never ran — leaves the seed's five VALID artifacts in place,
+    and presence, file set and non-emptiness all pass on them. The pipeline
+    produced nothing and the phase is certified on numbers from the previous
+    corpus.
+
+    This GATES (rc 1), unlike the watermark-regression diagnostic, which must
+    never gate: a backwards watermark is the repair mechanism and the next
+    networked run fixes it, while a stale Gold artifact is never
+    self-correcting — the dashboard serves it until something regenerates it.
+
+    generated_at is not uniformly comparable across corpora. Since #143 it is
+    timezone-aware UTC; before it, naive LOCAL time, ambiguous by up to 3h.
+    Aware/aware compares exactly. Any comparison touching a naive stamp is
+    conclusive only outside the 3h band; inside it the row says INCONCLUSIVE
+    rather than failing — a check that fires on every pre-#143 reference is
+    worse than no check, because it gets switched off. (The band edges are
+    asymmetric: "stale" holds at exactly -3h under the worst-case error,
+    "fresh" needs to exceed +3h, so the check can never assert a freshness
+    the stamps cannot support.)
+
+    And the comparison is ORDERED, because the band has a hole in it: root
+    and reference stamps that are the SAME STRING fail outright, settled
+    before any parsing or clock arithmetic. A copied seed is byte-identical,
+    sits at delta 0 — comfortably inside "up to 3h older, or equal" — and a
+    comparison that consulted the band first passed it as inconclusive,
+    which is precisely the no-run this check exists to catch (curupira, on
+    the first version: the control planted an aware copy, which the exact
+    comparison happened to catch, while the naive copy every real corpus
+    actually carries sailed through). Only a strictly different stamp ever
+    reaches the band.
+
+    An artifact whose generated_at cannot be read — on either side — is
+    neither a pass nor a fail: the probe could not see it, which is the
+    instrument (`control_fired=False`, rc 2). That is not hypothetical: only
+    executive_dashboard.json, and performance_tiers.json since #202, carry a
+    top-level generated_at at all — the timelines carry
+    `_metadata.extracted_at` and registry.json `all_processed.updated_at` —
+    so against corpora that predate #202 this check reports rc 2 naming the
+    rest until the Gold writers stamp all five. An artifact absent from the
+    REFERENCE is newly added and cannot be stale; a reference holding none
+    of the five would otherwise vacuously pass, so it is an instrument
+    failure too.
+    """
+    stale: list[str] = []
+    copied: list[str] = []
+    inconclusive: list[str] = []
+    blind: list[str] = []
+    added = compared = 0
+
+    for name in EXPECTED_GOLD:
+        root_p, ref_p = gold / name, reference / name
+        if not root_p.is_file():
+            blind.append(f"{name} (absent from this run)")
+            continue
+        if not ref_p.is_file():
+            added += 1  # no prior counterpart: nothing to be stale against
+            continue
+        # Rule 1, and it comes before any clock exists: stamps that are the
+        # SAME STRING mean the artifact was copied, not regenerated, whatever
+        # format they carry. Settling equality first is what keeps a naive
+        # copied seed out of the band below — it sits at delta 0, inside "up
+        # to 3h older, or equal", and a band-first comparison passes it as
+        # inconclusive (curupira, #201).
+        root_raw, ref_raw = _stamp_text(root_p), _stamp_text(ref_p)
+        if root_raw is not None and root_raw == ref_raw:
+            copied.append(name)
+            continue
+        root_dt, ref_dt = _parse_stamp(root_raw), _parse_stamp(ref_raw)
+        if root_dt is None or ref_dt is None:
+            side = "this run" if root_dt is None else "the reference"
+            blind.append(f"{name} (no readable generated_at in {side})")
+            continue
+        compared += 1
+        d = _utc_wall(root_dt) - _utc_wall(ref_dt)
+        if root_dt.tzinfo is not None and ref_dt.tzinfo is not None:
+            verdict = "fresh" if d > timedelta(0) else "stale"  # exact comparison
+        elif d > NAIVE_STAMP_SLACK:
+            verdict = "fresh"  # newer even under the worst-case naive reading
+        elif d <= -NAIVE_STAMP_SLACK:
+            verdict = "stale"  # not newer even under the best-case naive reading
+        else:
+            verdict = "inconclusive"  # inside the 3h band: the stamps cannot say
+        if verdict == "stale":
+            stale.append(name)
+        elif verdict == "inconclusive":
+            inconclusive.append(name)
+
+    if compared == 0 and not blind and not copied:
+        rep.add(Result("gold-regenerated", "gold", False,
+                       "the reference holds none of the expected gold artifacts — "
+                       "nothing distinguishes a regeneration from no run",
+                       control_fired=False))
+        return
+
+    failed = len(copied) + len(stale)
+    detail = f"{compared} artifact(s) compared, {failed} not regenerated in this run"
+    if inconclusive:
+        detail += (f", {len(inconclusive)} inconclusive within the 3h naive-stamp band "
+                   f"(pre-#143 local time): {', '.join(inconclusive)}")
+    if added:
+        detail += f", {added} newly added (absent from the reference)"
+    if copied:
+        detail += (f" — byte-identical to the reference (copied, not regenerated): "
+                   f"{', '.join(copied)}")
+    if stale:
+        detail += f" — not newer than the reference: {', '.join(stale)}"
+
+    if blind:
+        # rc 2: the instrument could not see every artifact. Any copied or
+        # stale finding among the comparable ones stays named in the detail,
+        # so the run is never read as clean when it is both blind AND stale.
+        rep.add(Result("gold-regenerated", "gold", False,
+                       f"cannot read generated_at: {'; '.join(blind)}; {detail}",
+                       control_fired=False))
+    else:
+        rep.add(Result("gold-regenerated", "gold", not failed, detail))
+
+
+def check_layers_present(data: Path, rep: Report) -> None:
+    """Every expected layer exists and holds something.
+
+    The general form, named by matinta on #201: *a verifier must fail when the
+    thing it verifies is ABSENT, not only when it is wrong.* Absence is the one
+    state that skips every assertion and reads as success — a pipeline that
+    stopped after Silver leaves a correct Bronze and Silver behind, so every
+    other check here passes and the phase is certified on a corpus the
+    dashboard cannot serve. curupira demonstrated it: bronze + silver with no
+    ``data/gold`` at all printed "all checks passed", rc 0.
+
+    Gold is asserted although nothing downstream yet looks inside it. Presence
+    is cheap and need not wait on the Gold↔Silver reconciliation (#201); this
+    closes the hole now rather than certifying a truncated pipeline until then.
+
+    A missing layer is an *instrument* failure, not bad data, so it reports
+    ``control_fired=False`` and the run exits 2 rather than 1.
+    """
+    for layer in EXPECTED_LAYERS:
+        d = data / layer
+        if not d.is_dir():
+            rep.add(Result(f"{layer}-present", layer, False,
+                           f"data/{layer} is absent — nothing downstream can have checked it",
+                           control_fired=False))
+        elif not any(d.iterdir()):
+            rep.add(Result(f"{layer}-present", layer, False,
+                           f"data/{layer} exists but is empty",
+                           control_fired=False))
+        else:
+            rep.add(Result(f"{layer}-present", layer, True,
+                           f"{sum(1 for _ in d.iterdir())} entries"))
+
+
+def run_controls(tmp: Path) -> list[Result]:
+    """Prove each check can fail. A check that has never failed protects nothing."""
+    out: list[Result] = []
+
+    # Layer presence, including the Gold case that passed silently (#201).
+    data = tmp / "layers" / "data"
+    (data / "bronze").mkdir(parents=True, exist_ok=True)
+    (data / "silver").mkdir(parents=True, exist_ok=True)
+    (data / "bronze" / "x.json").write_text("[]", encoding="utf-8")
+    (data / "silver" / "x.json").write_text("[]", encoding="utf-8")
+    r = Report()
+    check_layers_present(data, r)
+    gold = next((x for x in r.results if x.name == "gold-present"), None)
+    out.append(Result("gold-present", "control", bool(gold and not gold.passed),
+                      "rejects a corpus with no gold layer" if gold and not gold.passed else "DID NOT FIRE"))
+
+    # An empty layer is a distinct state from a missing one, and reads as
+    # success just as easily — the directory exists, so is_dir() is satisfied.
+    (data / "gold").mkdir(parents=True, exist_ok=True)
+    r = Report()
+    check_layers_present(data, r)
+    gold = next((x for x in r.results if x.name == "gold-present"), None)
+    out.append(Result("gold-not-empty", "control", bool(gold and not gold.passed),
+                      "rejects an empty gold layer" if gold and not gold.passed else "DID NOT FIRE"))
+
+    # A gold layer holding the full file set, minus one — curupira's plant F,
+    # which passed when "non-empty" meant "any entry".
+    g = data / "gold"
+    for n in EXPECTED_GOLD:
+        (g / n).write_text(json.dumps({"x": 1}), encoding="utf-8")
+    (g / EXPECTED_GOLD[1]).unlink()
+    r = Report()
+    check_gold_file_set(g, r)
+    out.append(Result("gold-file-set", "control", not r.results[0].passed,
+                      f"rejects gold missing {EXPECTED_GOLD[1]}" if not r.results[0].passed else "DID NOT FIRE"))
+
+    # And the file that exists but holds nothing — plant E, the subtler half.
+    (g / EXPECTED_GOLD[1]).write_text("[]", encoding="utf-8")
+    r = Report()
+    check_gold_file_set(g, r)
+    out.append(Result("gold-artifact-non-empty", "control", not r.results[0].passed,
+                      "rejects a gold artifact holding no records" if not r.results[0].passed else "DID NOT FIRE"))
+
+    # gold-regenerated, plant: the seeded tree itself. A crashed Gold step
+    # leaves the seed's bytes in place, so a non-regenerated artifact is a
+    # byte-identical copy of its reference counterpart — the exact shape of
+    # the hole in #201. The NAIVE copy is the plant that matters: it sits at
+    # delta 0, INSIDE the 3h band, so a comparison that consulted the band
+    # before settling equality passed it as inconclusive (curupira) — the
+    # aware copy, which the exact comparison catches anyway, is planted only
+    # alongside it. registry is planted stale beyond the band, one timeline
+    # inside it, and the other genuinely newer: a check that failed on
+    # EVERYTHING would also "reject" the copied and stale ones.
+    gr_root = tmp / "gold-regen-root"
+    gr_ref = tmp / "gold-regen-ref"
+    for d in (gr_root, gr_ref):
+        d.mkdir(parents=True, exist_ok=True)
+
+    def seed_gold(gold_dir: Path, stamps: dict[str, str]) -> None:
+        for n in EXPECTED_GOLD:
+            (gold_dir / n).write_text(json.dumps({"x": 1, "generated_at": stamps[n]}),
+                                      encoding="utf-8")
+
+    old_stamp = "2026-09-24T00:00:00+00:00"
+    new_stamp = "2026-09-25T06:00:00+00:00"
+    naive_old = "2026-09-24T00:00:00"          # pre-#143 local, no offset
+    seed_gold(gr_ref, {"executive_dashboard.json": old_stamp,
+                       "timeline_last_12_months.json": old_stamp,
+                       "performance_tiers.json": naive_old,
+                       "registry.json": naive_old,
+                       "timeline_last_7_days.json": naive_old})
+    seed_gold(gr_root, {"executive_dashboard.json": old_stamp,          # copied, aware
+                       "performance_tiers.json": naive_old,             # copied, NAIVE
+                       "registry.json": "2026-09-23T16:00:00",          # -8h: beyond band
+                       "timeline_last_7_days.json": "2026-09-23T22:00:00",  # -2h: in band
+                       "timeline_last_12_months.json": new_stamp})      # genuinely newer
+    r = Report()
+    check_gold_regenerated(gr_root, gr_ref, r)
+    res = r.results[0]
+    fired = (not res.passed and r.exit_code == 1
+             and "3 not regenerated in this run" in res.detail
+             and all(n in res.detail for n in ("executive_dashboard.json",
+                                               "performance_tiers.json",
+                                               "registry.json"))
+             and ", 1 inconclusive" in res.detail
+             and "timeline_last_12_months.json" not in res.detail)
+    out.append(Result("gold-regenerated", "control", fired,
+                      "rejects a copied artifact (naive and aware) and a beyond-band "
+                      "stale one; in-band and genuinely newer are not flagged"
+                      if fired else "DID NOT FIRE"))
+
+    # The three ways a stamp comparison must NOT fail: the same naive seed
+    # shifted back 2h sits inside the band and passes, named inconclusive —
+    # exactly what the band tolerates; a naive/aware pair compares as
+    # instants instead of raising TypeError; and a missing generated_at is
+    # the instrument (rc 2), never rc 0 and never rc 1.
+    seed_gold(gr_ref, {n: naive_old for n in EXPECTED_GOLD})
+    seed_gold(gr_root, {n: "2026-09-23T22:00:00" for n in EXPECTED_GOLD})
+    r = Report()
+    check_gold_regenerated(gr_root, gr_ref, r)
+    res = r.results[0]
+    inband_ok = res.passed and r.exit_code == 0 and "inconclusive" in res.detail.lower()
+
+    seed_gold(gr_root, {n: "2026-09-24T00:30:00+00:00" for n in EXPECTED_GOLD})
+    r = Report()
+    check_gold_regenerated(gr_root, gr_ref, r)
+    res = r.results[0]
+    mixed_ok = res.passed and r.exit_code == 0 and "inconclusive" in res.detail.lower()
+
+    seed_gold(gr_ref, {n: old_stamp for n in EXPECTED_GOLD})
+    seed_gold(gr_root, {n: new_stamp for n in EXPECTED_GOLD})
+    (gr_root / "registry.json").write_text(json.dumps({"all_processed": {}}), encoding="utf-8")
+    r = Report()
+    check_gold_regenerated(gr_root, gr_ref, r)
+    res = r.results[0]
+    missing_ok = res.control_fired is False and not res.passed and r.exit_code == 2
+
+    out.append(Result("gold-regenerated-stamps", "control", inband_ok and mixed_ok and missing_ok,
+                      "2h-older naive seed passes as inconclusive; naive/aware does not "
+                      "raise; a missing generated_at is rc 2"
+                      if inband_ok and mixed_ok and missing_ok else "DID NOT FIRE"))
+
+    bronze = tmp / "bronze"
+    bronze.mkdir(parents=True, exist_ok=True)
+    (bronze / "commits_all.json").write_text("[]", encoding="utf-8")
+    r = Report()
+    check_no_aggregates(bronze, r)
+    out.append(Result("aggregates-removed", "control", not r.results[0].passed,
+                      "rejects an aggregate on disk" if not r.results[0].passed else "DID NOT FIRE"))
+    (bronze / "commits_all.json").unlink()
+
+    (bronze / "commits_x.json").write_text(
+        json.dumps([{"commit": {"author": {"login": "someone", "name": "S"}}}]), encoding="utf-8")
+    r = Report()
+    check_every_author_hashed(bronze, r)
+    out.append(Result("every-author-hashed", "control", not r.results[0].passed,
+                      "rejects a logged-in commit with no hash" if not r.results[0].passed else "DID NOT FIRE"))
+
+    ref = tmp / "ref"
+    ref.mkdir(parents=True, exist_ok=True)
+    (ref / "issues_r.json").write_text(
+        json.dumps([{"number": 1, "updated_at": "2026-09-23T18:00:00Z"}]), encoding="utf-8")
+    (bronze / "issues_r.json").write_text(
+        json.dumps([{"number": 1, "updated_at": "2026-09-01T00:00:00Z"}]), encoding="utf-8")
+    r = Report()
+    check_no_record_reverted(bronze, ref, r)
+    out.append(Result("no-record-reverted", "control", not r.results[0].passed,
+                      "rejects a record that moved backwards" if not r.results[0].passed else "DID NOT FIRE"))
+
+    # A vanished COMMIT, keyed by sha — the family the first version of this
+    # check did not index at all, so nothing proved it could fail.
+    (ref / "commits_r.json").write_text(
+        json.dumps([{"sha": "deadbeef", "commit": {"author": {"login": "x"}}}]), encoding="utf-8")
+    (bronze / "commits_r.json").write_text(json.dumps([]), encoding="utf-8")
+    r = Report()
+    check_no_record_reverted(bronze, ref, r)
+    vanish = next((x for x in r.results if x.name == "no-record-vanished"), None)
+    out.append(Result("no-record-vanished", "control", bool(vanish and not vanish.passed),
+                      "rejects a vanished commit" if vanish and not vanish.passed else "DID NOT FIRE"))
+
+    silver = tmp / "silver"
+    silver.mkdir(parents=True, exist_ok=True)
+    (silver / "members_statistics.json").write_text(
+        json.dumps([{"id": "a", "name": "Unknown contributor (x)"}, {"id": "a", "name": "Unknown contributor (y)"},
+                    {"id": "b", "name": "0" * 64}, {"name": "nobody"}]), encoding="utf-8")
+    r = Report()
+    check_member_ids_distinct(silver, r)
+    fired = any(not x.passed for x in r.results if x.name == "every-member-identified")
+    out.append(Result("every-member-identified", "control", fired,
+                      "rejects a member with no id" if fired else "DID NOT FIRE"))
+
+    for fn, label in ((check_member_ids_distinct, "member-ids-distinct"),
+                      (check_no_unknown_labels, "unknown-labels-not-growing"),
+                      (check_hash_never_a_label, "hash-never-a-label")):
+        r = Report()
+        fn(silver, r)
+        out.append(Result(label, "control", not r.results[0].passed,
+                          "rejects the planted defect" if not r.results[0].passed else "DID NOT FIRE"))
+
+    return out
+
+
+# --------------------------------------------------------------------------
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--root", type=Path, default=Path("/var/tmp/coops-work"),
+                    help="corpus root holding data/bronze, data/silver, data/gold")
+    ap.add_argument("--reference", type=Path, default=None,
+                    help="a previous corpus root; enables the staleness and "
+                         "gold-regeneration checks, which cannot run without one")
+    ap.add_argument("--self-test", action="store_true",
+                    help="run only the controls: prove every check can fail")
+    args = ap.parse_args()
+
+    if args.self_test:
+        import tempfile
+        with tempfile.TemporaryDirectory() as td:
+            results = run_controls(Path(td))
+        width = max(len(r.name) for r in results)
+        for r in results:
+            print(f"  {'FIRED ' if r.passed else 'SILENT'}  {r.name:<{width}}  {r.detail}")
+        silent = [r for r in results if not r.passed]
+        print(f"\n  {len(results) - len(silent)} of {len(results)} controls fired")
+        if silent:
+            print("  A control that does not fire means the check cannot detect its own defect.")
+            return 2
+        return 0
+
+    data = args.root / "data"
+    if not data.is_dir():
+        print(f"  no data/ under {args.root}", file=sys.stderr)
+        return 2
+
+    rep = Report()
+    # A layer that is absent must not be skipped into a pass. Caught by curupira
+    # on #200 for bronze and again on #201 for gold; absence of a layer is an
+    # instrument problem (rc 2), not a clean result.
+    check_layers_present(data, rep)
+    if (data / "bronze").is_dir():
+        check_no_aggregates(data / "bronze", rep)
+        check_every_author_hashed(data / "bronze", rep)
+        if args.reference:
+            check_no_record_reverted(data / "bronze", args.reference / "data" / "bronze", rep)
+        else:
+            # Without a reference these cannot run — and saying nothing would
+            # let a corpus with records lost or reverted print "all checks
+            # passed". Raised twice by curupira on #200; the missing-layer case
+            # had the same shape and only half of it was fixed.
+            for name in ("no-record-reverted", "no-record-vanished"):
+                rep.add(Result(name, "bronze", True,
+                               "NOT RUN — needs --reference <previous corpus root>",
+                               skipped=True))
+    if (data / "gold").is_dir():
+        check_gold_file_set(data / "gold", rep)
+        if args.reference:
+            check_gold_regenerated(data / "gold", args.reference / "data" / "gold", rep)
+        else:
+            # Same shape as the bronze staleness pair above: without a
+            # reference there is no "previous run" to be newer than, and
+            # staying silent would let a Gold step that never ran certify.
+            rep.add(Result("gold-regenerated", "gold", True,
+                           "NOT RUN — needs --reference <previous corpus root>",
+                           skipped=True))
+    if (data / "silver").is_dir():
+        check_member_ids_distinct(data / "silver", rep)
+        check_no_unknown_labels(data / "silver", rep)
+        check_hash_never_a_label(data / "silver", rep)
+
+    if not rep.results:
+        print("  no layers found to check", file=sys.stderr)
+        return 2
+
+    width = max(len(r.name) for r in rep.results)
+    for r in rep.results:
+        if r.skipped:
+            status = "SKIP  "
+        elif r.control_fired is False:
+            status = "BROKEN"
+        elif r.passed:
+            status = "PASS  "
+        else:
+            status = "FAIL  "
+        print(f"  {status}  {r.layer:<7} {r.name:<{width}}  {r.detail}")
+
+    skipped = [r for r in rep.results if r.skipped]
+    code = rep.exit_code
+    print()
+    if skipped and not any(not r.passed and not r.skipped for r in rep.results):
+        print(f"  all checks that RAN passed — {len(skipped)} did not run "
+              f"({', '.join(r.name for r in skipped)})")
+        print("  A phase gate needs --reference: without it, records lost or")
+        print("  reverted since the last run — and a Gold layer that never")
+        print("  regenerated — are invisible to this script.")
+        return code   # 2 — not a pass
+    # When the instrument is incomplete AND checks failed on the data, say BOTH.
+    # rc 2 dominates rc 1 (an incomplete instrument voids the run), but curupira
+    # caught the verdict text lying about it on #200: plant A printed "the
+    # instrument is broken, not the data" while 24 records really had vanished.
+    # Whoever then fixes the missing layer re-runs expecting green, and reads
+    # the pre-existing loss as newly introduced.
+    failed = [r for r in rep.results if not r.passed and not r.skipped and r.control_fired is not False]
+    if code == 2 and failed:
+        print(f"  the instrument is incomplete AND {len(failed)} check(s) failed on the data")
+        print(f"  ({', '.join(r.name for r in failed)})")
+        print("  Fix the instrument and re-run: these failures are already present,")
+        print("  so do not read them as introduced by the fix.")
+    else:
+        print({0: "  all checks passed",
+               1: "  a layer does not hold an invariant",
+               2: "  a check could not run — the instrument is broken, not the data"}[code])
+    if code == 0:
+        print("  (run --self-test to confirm these checks can fail at all)")
+    return code
+
+
+if __name__ == "__main__":
+    sys.exit(main())
