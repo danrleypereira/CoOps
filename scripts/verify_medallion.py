@@ -35,6 +35,7 @@ import re
 import sys
 from collections.abc import Iterator
 from dataclasses import dataclass, field
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 # NOTE: there is deliberately no address check here. The corpus is open data
@@ -174,7 +175,8 @@ def check_every_author_hashed(bronze: Path, rep: Report) -> None:
 
 
 # --------------------------------------------------------------------------
-# staleness — the only check here that needs two corpora
+# staleness (bronze) — the checks that need a --reference corpus. Gold's
+# counterpart, gold-regenerated, lives with the other gold checks below.
 # --------------------------------------------------------------------------
 
 
@@ -354,6 +356,14 @@ EXPECTED_GOLD = (
     "timeline_last_7_days.json",
 )
 
+# Pre-#143 corpora persist generated_at as naive LOCAL time (measured: the
+# 2026-09-23 corpus stamps '2026-09-23T16:43:16.417673', no offset, from a
+# -03:00 run — a CI run wrote UTC, a local run wrote local time, and both
+# look identical on disk). Reading a naive stamp as UTC is therefore a choice
+# with up to 3h of bounded error, not a fact; comparisons touching one are
+# only conclusive outside that band.
+NAIVE_STAMP_SLACK = timedelta(hours=3)
+
 
 def check_gold_file_set(gold: Path, rep: Report) -> None:
     """Every expected Gold artifact is present and carries at least one record.
@@ -368,8 +378,9 @@ def check_gold_file_set(gold: Path, rep: Report) -> None:
     files in place and every check here passes. matinta's generalisation on
     #201: a phase verifier running against a seeded tree is structurally unable
     to tell a successful run from no run at all unless it knows when the run
-    began. That is tracked as X7 and needs a run-start timestamp this script is
-    not yet given.
+    began. X7 expected that to need a run-start timestamp;
+    check_gold_regenerated below closes it without one — the reference
+    corpus's own stamps already mark the previous run.
     """
     missing = [n for n in EXPECTED_GOLD if not (gold / n).is_file()]
     if missing:
@@ -395,6 +406,140 @@ def check_gold_file_set(gold: Path, rep: Report) -> None:
     else:
         rep.add(Result("gold-file-set", "gold", True,
                        f"all {len(EXPECTED_GOLD)} artifacts present and non-empty"))
+
+
+def _generated_at(path: Path) -> datetime | None:
+    """Parse one artifact's generated_at, or None when it cannot be read.
+
+    Every way the stamp can be absent or unreadable — missing file, bad JSON,
+    a non-dict document (the timelines are lists), a missing key, a
+    non-string value, an unparseable one — returns None, because for THIS
+    check they all mean the same thing: the probe cannot see the artifact's
+    clock, which is an instrument state, not a verdict on the data.
+    """
+    try:
+        doc = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+    if not isinstance(doc, dict):
+        return None
+    raw = doc.get("generated_at")
+    if not isinstance(raw, str):
+        return None
+    text = raw.strip()
+    if text.endswith(("Z", "z")):  # fromisoformat rejects 'Z' before 3.11
+        text = text[:-1] + "+00:00"
+    try:
+        return datetime.fromisoformat(text)
+    except ValueError:
+        return None
+
+
+def _utc_wall(dt: datetime) -> datetime:
+    """dt as a naive UTC wall time, so any two stamps subtract without raising.
+
+    A naive minus an aware datetime raises TypeError, so both sides are
+    brought to the same footing first: aware stamps convert to their UTC wall
+    time, naive stamps are taken as already UTC — the bounded-error choice
+    that NAIVE_STAMP_SLACK exists to account for.
+    """
+    return dt.astimezone(timezone.utc).replace(tzinfo=None) if dt.tzinfo is not None else dt
+
+
+def check_gold_regenerated(gold: Path, reference: Path, rep: Report) -> None:
+    """Every gold artifact must be NEWER than its reference counterpart.
+
+    `check_gold_file_set` closes only half of #201's seeded-tree hole: a
+    regeneration seeds data/ from a previous corpus, so a Gold step that
+    crashed — or never ran — leaves the seed's five VALID artifacts in place,
+    and presence, file set and non-emptiness all pass on them. The pipeline
+    produced nothing and the phase is certified on numbers from the previous
+    corpus.
+
+    This GATES (rc 1), unlike the watermark-regression diagnostic, which must
+    never gate: a backwards watermark is the repair mechanism and the next
+    networked run fixes it, while a stale Gold artifact is never
+    self-correcting — the dashboard serves it until something regenerates it.
+
+    generated_at is not uniformly comparable across corpora. Since #143 it is
+    timezone-aware UTC; before it, naive LOCAL time, ambiguous by up to 3h.
+    Aware/aware compares exactly. Any comparison touching a naive stamp is
+    conclusive only outside the 3h band; inside it the row says INCONCLUSIVE
+    rather than failing — a check that fires on every pre-#143 reference is
+    worse than no check, because it gets switched off. (The band edges are
+    asymmetric: "stale" holds at exactly -3h under the worst-case error,
+    "fresh" needs to exceed +3h, so the check can never assert a freshness
+    the stamps cannot support.)
+
+    An artifact whose generated_at cannot be read — on either side — is
+    neither a pass nor a fail: the probe could not see it, which is the
+    instrument (`control_fired=False`, rc 2). That is not hypothetical: only
+    executive_dashboard.json, and performance_tiers.json since #143, carry a
+    top-level generated_at at all — the timelines carry
+    `_metadata.extracted_at` and registry.json `all_processed.updated_at` —
+    so against today's corpora this check reports rc 2 naming them until the
+    Gold writers stamp all five. An artifact absent from the REFERENCE is
+    newly added and cannot be stale; a reference holding none of the five
+    would otherwise vacuously pass, so it is an instrument failure too.
+    """
+    stale: list[str] = []
+    inconclusive: list[str] = []
+    blind: list[str] = []
+    added = compared = 0
+
+    for name in EXPECTED_GOLD:
+        root_p, ref_p = gold / name, reference / name
+        if not root_p.is_file():
+            blind.append(f"{name} (absent from this run)")
+            continue
+        if not ref_p.is_file():
+            added += 1  # no prior counterpart: nothing to be stale against
+            continue
+        root_dt, ref_dt = _generated_at(root_p), _generated_at(ref_p)
+        if root_dt is None or ref_dt is None:
+            side = "this run" if root_dt is None else "the reference"
+            blind.append(f"{name} (no readable generated_at in {side})")
+            continue
+        compared += 1
+        d = _utc_wall(root_dt) - _utc_wall(ref_dt)
+        if root_dt.tzinfo is not None and ref_dt.tzinfo is not None:
+            verdict = "fresh" if d > timedelta(0) else "stale"  # exact comparison
+        elif d > NAIVE_STAMP_SLACK:
+            verdict = "fresh"  # newer even under the worst-case naive reading
+        elif d <= -NAIVE_STAMP_SLACK:
+            verdict = "stale"  # not newer even under the best-case naive reading
+        else:
+            verdict = "inconclusive"  # inside the 3h band: the stamps cannot say
+        if verdict == "stale":
+            stale.append(name)
+        elif verdict == "inconclusive":
+            inconclusive.append(name)
+
+    if compared == 0 and not blind:
+        rep.add(Result("gold-regenerated", "gold", False,
+                       "the reference holds none of the expected gold artifacts — "
+                       "nothing distinguishes a regeneration from no run",
+                       control_fired=False))
+        return
+
+    detail = f"{compared} artifact(s) compared, {len(stale)} not newer than the reference"
+    if inconclusive:
+        detail += (f", {len(inconclusive)} inconclusive within the 3h naive-stamp band "
+                   f"(pre-#143 local time): {', '.join(inconclusive)}")
+    if added:
+        detail += f", {added} newly added (absent from the reference)"
+    if stale:
+        detail += f" — not regenerated in this run: {', '.join(stale)}"
+
+    if blind:
+        # rc 2: the instrument could not see every artifact. Any stale
+        # finding among the comparable ones stays named in the detail, so the
+        # run is never read as clean when it is both blind AND stale.
+        rep.add(Result("gold-regenerated", "gold", False,
+                       f"cannot read generated_at: {'; '.join(blind)}; {detail}",
+                       control_fired=False))
+    else:
+        rep.add(Result("gold-regenerated", "gold", not stale, detail))
 
 
 def check_layers_present(data: Path, rep: Report) -> None:
@@ -473,6 +618,62 @@ def run_controls(tmp: Path) -> list[Result]:
     out.append(Result("gold-artifact-non-empty", "control", not r.results[0].passed,
                       "rejects a gold artifact holding no records" if not r.results[0].passed else "DID NOT FIRE"))
 
+    # gold-regenerated, plant: the seeded tree itself. A crashed Gold step
+    # leaves the seed's bytes in place, so the stale artifact is a
+    # byte-identical copy of its reference counterpart — the exact shape of
+    # the hole in #201 — while the other four are genuinely newer. Both arms
+    # matter: a check that fails on EVERYTHING also "rejects" the stale one,
+    # so the control asserts the newer artifacts are not flagged.
+    gr_root = tmp / "gold-regen-root"
+    gr_ref = tmp / "gold-regen-ref"
+    for d in (gr_root, gr_ref):
+        d.mkdir(parents=True, exist_ok=True)
+
+    def seed_gold(gold_dir: Path, stamps: dict[str, str]) -> None:
+        for n in EXPECTED_GOLD:
+            (gold_dir / n).write_text(json.dumps({"x": 1, "generated_at": stamps[n]}),
+                                      encoding="utf-8")
+
+    old_stamp = "2026-09-24T00:00:00+00:00"
+    new_stamp = "2026-09-24T06:00:00+00:00"
+    seed_gold(gr_ref, {n: old_stamp for n in EXPECTED_GOLD})
+    seed_gold(gr_root, {n: new_stamp for n in EXPECTED_GOLD})
+    (gr_root / "executive_dashboard.json").write_text(
+        (gr_ref / "executive_dashboard.json").read_text(encoding="utf-8"), encoding="utf-8")
+    r = Report()
+    check_gold_regenerated(gr_root, gr_ref, r)
+    res = r.results[0]
+    fired = (not res.passed and r.exit_code == 1
+             and "executive_dashboard.json" in res.detail
+             and "performance_tiers.json" not in res.detail)
+    out.append(Result("gold-regenerated", "control", fired,
+                      "rejects a seed-copied gold artifact; genuinely newer ones pass"
+                      if fired else "DID NOT FIRE"))
+
+    # The two ways a stamp comparison must NOT fail: a naive pre-#143
+    # reference is ambiguous by up to 3h (inconclusive, and no TypeError from
+    # the naive/aware mix), and a missing generated_at is the instrument
+    # (rc 2), never rc 0 and never rc 1.
+    seed_gold(gr_root, {n: "2026-09-24T00:30:00+00:00" for n in EXPECTED_GOLD})
+    seed_gold(gr_ref, {n: "2026-09-24T00:00:00" for n in EXPECTED_GOLD})  # naive local
+    r = Report()
+    check_gold_regenerated(gr_root, gr_ref, r)
+    res = r.results[0]
+    mixed_ok = (res.passed and r.exit_code == 0 and "inconclusive" in res.detail.lower())
+
+    seed_gold(gr_ref, {n: old_stamp for n in EXPECTED_GOLD})
+    seed_gold(gr_root, {n: new_stamp for n in EXPECTED_GOLD})
+    (gr_root / "registry.json").write_text(json.dumps({"all_processed": {}}), encoding="utf-8")
+    r = Report()
+    check_gold_regenerated(gr_root, gr_ref, r)
+    res = r.results[0]
+    missing_ok = res.control_fired is False and not res.passed and r.exit_code == 2
+
+    out.append(Result("gold-regenerated-stamps", "control", mixed_ok and missing_ok,
+                      "naive/aware compares inconclusive (no raise); a missing "
+                      "generated_at is rc 2"
+                      if mixed_ok and missing_ok else "DID NOT FIRE"))
+
     bronze = tmp / "bronze"
     bronze.mkdir(parents=True, exist_ok=True)
     (bronze / "commits_all.json").write_text("[]", encoding="utf-8")
@@ -541,8 +742,8 @@ def main() -> int:
     ap.add_argument("--root", type=Path, default=Path("/var/tmp/coops-work"),
                     help="corpus root holding data/bronze, data/silver, data/gold")
     ap.add_argument("--reference", type=Path, default=None,
-                    help="a previous corpus root; enables the staleness check, which "
-                         "cannot run without one")
+                    help="a previous corpus root; enables the staleness and "
+                         "gold-regeneration checks, which cannot run without one")
     ap.add_argument("--self-test", action="store_true",
                     help="run only the controls: prove every check can fail")
     args = ap.parse_args()
@@ -587,6 +788,15 @@ def main() -> int:
                                skipped=True))
     if (data / "gold").is_dir():
         check_gold_file_set(data / "gold", rep)
+        if args.reference:
+            check_gold_regenerated(data / "gold", args.reference / "data" / "gold", rep)
+        else:
+            # Same shape as the bronze staleness pair above: without a
+            # reference there is no "previous run" to be newer than, and
+            # staying silent would let a Gold step that never ran certify.
+            rep.add(Result("gold-regenerated", "gold", True,
+                           "NOT RUN — needs --reference <previous corpus root>",
+                           skipped=True))
     if (data / "silver").is_dir():
         check_member_ids_distinct(data / "silver", rep)
         check_no_unknown_labels(data / "silver", rep)
@@ -615,7 +825,8 @@ def main() -> int:
         print(f"  all checks that RAN passed — {len(skipped)} did not run "
               f"({', '.join(r.name for r in skipped)})")
         print("  A phase gate needs --reference: without it, records lost or")
-        print("  reverted since the last run are invisible to this script.")
+        print("  reverted since the last run — and a Gold layer that never")
+        print("  regenerated — are invisible to this script.")
         return code   # 2 — not a pass
     # When the instrument is incomplete AND checks failed on the data, say BOTH.
     # rc 2 dominates rc 1 (an incomplete instrument voids the run), but curupira
