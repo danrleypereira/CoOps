@@ -15,6 +15,7 @@ from unittest.mock import MagicMock
 import pytest
 
 import coops.bronze.reconcile as reconcile_module
+from coops.bronze.files import bronze_files, bronze_files_raw
 from coops.bronze.reconcile import reconcile_orphans
 from coops.bronze.repositories import extract_repositories
 from coops.utils.github_api import save_json_data
@@ -365,13 +366,17 @@ def test_refuses_when_enumeration_reaches_outside_bronze(
     outside = bronze.parent / "commits_X.json"
     outside.write_text("[]", encoding="utf-8")
 
-    real_bronze_files = reconcile_module.bronze_files
+    # bronze_files_raw, not bronze_files: #258 repointed the reconciler at the
+    # raw enumeration, and patching the old name silently stopped stubbing
+    # anything — the guard then never saw an outside path and this test failed,
+    # which is the seam doing its job.
+    real_enumerate = reconcile_module.bronze_files_raw
 
     def stubbed(bronze_dir, family):
-        files = real_bronze_files(bronze_dir, family)
+        files = real_enumerate(bronze_dir, family)
         return sorted([*files, outside]) if family == "commits" else files
 
-    monkeypatch.setattr(reconcile_module, "bronze_files", stubbed)
+    monkeypatch.setattr(reconcile_module, "bronze_files_raw", stubbed)
 
     result = reconcile_orphans(bronze, apply=True)
 
@@ -379,3 +384,72 @@ def test_refuses_when_enumeration_reaches_outside_bronze(
     assert "outside" in result.refused
     assert result.deleted == []
     assert outside.is_file()
+
+
+# --------------------------------------------------------------------------
+# #258: the reader and the reconciler need different enumerations
+# --------------------------------------------------------------------------
+
+
+def _recased_pair_corpus(tmp_path: Path) -> Path:
+    """The live NoFluxo shape: a recased pair sharing one repository id.
+
+    This is the only shape in which the dedupe hides anything from the
+    reconciler, and nothing exercised it before #258 — each feature was tested
+    alone. The `repo_` siblings are what give both copies the same id.
+    """
+    bronze = tmp_path / "bronze"
+    bronze.mkdir()
+    old, new = "2026-09-18T09:15:46.896528", "2026-09-25T09:53:03.135878+00:00"
+
+    def write(name: str, payload: object) -> None:
+        (bronze / name).write_text(json.dumps(payload), encoding="utf-8")
+
+    write("repo_2025-1-NoFluxoUNB.json",
+          {"id": 957040204, "name": "2025-1-NoFluxoUNB", "_metadata": {"extracted_at": old}})
+    write("repo_2025-1-NoFluxoUnB.json",
+          {"id": 957040204, "name": "2025-1-NoFluxoUnB", "_metadata": {"extracted_at": new}})
+    for family in ("commits", "issues"):
+        write(f"{family}_2025-1-NoFluxoUNB.json", [{"_metadata": {"extracted_at": old}}, {"n": 1}])
+        write(f"{family}_2025-1-NoFluxoUnB.json", [{"_metadata": {"extracted_at": new}}, {"n": 1}])
+    write("repositories_filtered.json",
+          [{"_metadata": {"extracted_at": new, "complete": True}},
+           {"name": "2025-1-NoFluxoUnB", "full_name": "unb-mds/2025-1-NoFluxoUnB", "id": 957040204}])
+    return bronze
+
+
+def test_the_reader_dedupes_and_the_reconciler_still_sees_the_orphan(tmp_path: Path) -> None:
+    """#258: they must disagree, and that disagreement is the point.
+
+    Between #248 and #258 `reconcile_orphans` enumerated through the deduped
+    `bronze_files`, so the superseded copy it exists to delete was the very
+    thing the dedupe had hidden: three orphans on disk, zero found.
+    """
+    bronze = _recased_pair_corpus(tmp_path)
+
+    # the reader: one copy per family, the newer name
+    assert [p.name for p in bronze_files(bronze, "commits")] == ["commits_2025-1-NoFluxoUnB.json"]
+
+    # the reconciler: still sees all three superseded files on disk
+    report = reconcile_orphans(bronze, apply=False)
+    assert sorted(p.name for p in report.orphans) == [
+        "commits_2025-1-NoFluxoUNB.json",
+        "issues_2025-1-NoFluxoUNB.json",
+        "repo_2025-1-NoFluxoUNB.json",
+    ]
+    assert report.deleted == []
+
+
+def test_the_raw_enumeration_is_not_deduped(tmp_path: Path) -> None:
+    """The control for the distinction itself.
+
+    If `bronze_files_raw` ever starts deduping, the test above would pass for
+    the wrong reason — the reconciler would find nothing and the assertion
+    would be about an empty list. This pins the two apart.
+    """
+    bronze = _recased_pair_corpus(tmp_path)
+    raw = [p.name for p in bronze_files_raw(bronze, "commits")]
+    deduped = [p.name for p in bronze_files(bronze, "commits")]
+    assert raw == ["commits_2025-1-NoFluxoUNB.json", "commits_2025-1-NoFluxoUnB.json"]
+    assert deduped == ["commits_2025-1-NoFluxoUnB.json"]
+    assert len(raw) > len(deduped), "the raw enumeration must not be deduped"

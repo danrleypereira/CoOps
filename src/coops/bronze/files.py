@@ -87,6 +87,7 @@ __all__ = [
     "aggregate_name",
     "bronze_dedupe_report",
     "bronze_files",
+    "bronze_files_raw",
     "bronze_records",
     "bronze_repos",
     "remove_aggregate",
@@ -179,11 +180,22 @@ def remove_aggregate(bronze_dir: Path | str, family: str) -> Path | None:
     return None
 
 
-def _enumerate(bronze_dir: Path | str, family: str) -> list[Path]:
-    """The family's per-repository files on disk: glob, aggregate excluded,
-    derived copies excluded, sorted. Deduping is NOT applied here — this is
-    the raw enumeration :func:`bronze_files` and
-    :func:`bronze_dedupe_report` both feed through the dedupe.
+def bronze_files_raw(bronze_dir: Path | str, family: str) -> list[Path]:
+    """The family's per-repository files **on disk**: glob, aggregate excluded,
+    derived copies excluded, sorted. Deduping is NOT applied — this is the raw
+    enumeration :func:`bronze_files` and :func:`bronze_dedupe_report` both feed
+    through the dedupe.
+
+    Public because deletion and reading need *different* views and briefly
+    shared one (#259). A reader must see the deduped set, or a renamed
+    repository is counted twice; a reconciler must see what is actually on
+    disk, or the superseded copy it exists to delete is the very thing the
+    dedupe has hidden from it. Between #248 and #259 the reconciler enumerated
+    through :func:`bronze_files` and therefore found **zero** orphans on a
+    corpus holding three.
+
+    If you are deleting, listing or auditing files, use this. If you are
+    counting records, use :func:`bronze_files`.
     """
     _check_family(family)
     directory = Path(bronze_dir)
@@ -216,7 +228,7 @@ def bronze_files(bronze_dir: Path | str, family: str) -> list[Path]:
     Raises ``ValueError`` on an unknown family; never returns an empty list to
     report one.
     """
-    return dedupe_paths(bronze_dir, family, _enumerate(bronze_dir, family)).kept
+    return dedupe_paths(bronze_dir, family, bronze_files_raw(bronze_dir, family)).kept
 
 
 def bronze_dedupe_report(
@@ -233,7 +245,7 @@ def bronze_dedupe_report(
     directory = Path(bronze_dir)
     report = DedupeReport()
     for family in sorted(families):
-        result = dedupe_paths(directory, family, _enumerate(directory, family))
+        result = dedupe_paths(directory, family, bronze_files_raw(directory, family))
         report = report.merged(result.report)
     return report
 
