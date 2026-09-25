@@ -117,6 +117,30 @@ ARCHIVE_PATHS = ("src", "tests", "pyproject.toml")
 RUFF_TARGETS = ("src", "tests")
 MYPY_TARGET = "src/coops"
 
+# The rule set the gate measures with, fixed HERE and not in pyproject.toml.
+#
+# Two separate holes closed by this constant, both found by @curupira on #221:
+#
+# 1. Reading each arm's own [tool.ruff] let a change narrow `select` and shrink
+#    the head arm's findings, hiding a real regression inside the shrink.
+#    `--isolated` fixes that — but alone it leaves hole 2.
+# 2. `--isolated` runs ruff's ~413 DEFAULT rules (E4, E7, E9, F). The project
+#    selects 16 prefixes, of which 126 rules sit OUTSIDE the defaults — B904,
+#    B905, C416 and the rest. Under `--isolated` alone, a regression in any of
+#    those passes silently, which is the same blindness in a new place.
+#
+# So: `--isolated` (no file can change it) PLUS an explicit union of ruff's
+# defaults and the project's selection (nothing is dropped). One rule set, both
+# arms, not editable by the tree being measured.
+#
+# Kept deliberately in step with pyproject's [tool.ruff.lint] select. If that
+# list grows, this one must be widened by hand — that is the point, not
+# friction: the gate's sensitivity is not the subject's to set.
+RUFF_SELECT = (
+    "E4,E7,E9,F,"       # ruff's defaults
+    "I,UP,B,C4,RET,SIM,RUF,DTZ,BLE,S,EXE,FURB"  # the project's additions
+)
+
 # See "How each tool is run" above: the missing config is the point, not an
 # oversight. --no-error-summary only drops a line the parser ignores.
 MYPY_ARGS = ("--config-file", "/dev/null", "--no-error-summary", MYPY_TARGET)
@@ -135,7 +159,14 @@ CTL1_PLANT = """
 
 # --- check_regressions.py self-test, control 1: one type error in a file
 # the configured mypy scope excludes. Only the config-free run can see it.
-_selftest_secret: int = "phase one was believed clean"
+#
+# The name matters: this plant must trip mypy and NOTHING in ruff, so the
+# control isolates the scope blindness it is testing. An earlier version was
+# called `_selftest_secret` and tripped ruff's S105 ("possible hardcoded
+# password") on the word `secret` once the gate's rule set widened past ruff's
+# defaults — the control then passed for a reason it was not testing, and the
+# self-test caught it.
+_selftest_typed_value: int = "phase one was believed clean"
 """
 
 CTL2_FILE = "src/coops/bronze/selftest_planted_module.py"
@@ -295,7 +326,12 @@ def ruff_per_file(ruff_bin: str, arm: Path) -> Counter[str]:
     if "src" not in targets:
         raise GateError(f"no src/ in the extracted tree at {arm} — ruff has nothing to check")
     proc = _run(
-        [ruff_bin, "check", "--isolated", "--no-cache", "--output-format", "json", *targets],
+        [
+            ruff_bin, "check",
+            "--isolated",            # no file can change what this measures
+            "--select", RUFF_SELECT,  # ...and nothing the project checks is dropped
+            "--no-cache", "--output-format", "json", *targets,
+        ],
         arm,
     )
     if proc.returncode not in (0, 1):
