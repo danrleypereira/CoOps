@@ -159,7 +159,14 @@ CTL1_PLANT = """
 
 # --- check_regressions.py self-test, control 1: one type error in a file
 # the configured mypy scope excludes. Only the config-free run can see it.
-_selftest_secret: int = "phase one was believed clean"
+#
+# The name matters: this plant must trip mypy and NOTHING in ruff, so the
+# control isolates the scope blindness it is testing. An earlier version was
+# called `_selftest_secret` and tripped ruff's S105 ("possible hardcoded
+# password") on the word `secret` once the gate's rule set widened past ruff's
+# defaults — the control then passed for a reason it was not testing, and the
+# self-test caught it.
+_selftest_typed_value: int = "phase one was believed clean"
 """
 
 CTL2_FILE = "src/coops/bronze/selftest_planted_module.py"
