@@ -222,38 +222,6 @@ class GitHubAPIClient:
             self._cache_fold = CacheFold(self.cache_dir)
         return self._cache_fold
 
-    def _offline_fold_commits(
-        self, full_name: str, commits_by_sha: Dict[str, Dict[str, Any]]
-    ) -> None:
-        """Fold every cached commit of ``full_name`` into the extraction.
-
-        Seeds the fold's commit-graph continuation with what this run read
-        (nodes and their parents), merges in commits found only under other
-        URLs' bodies — a ``since`` query's page, an unfetched branch — and
-        stamps every commit with ``last_seen_at``: when the cache last held a
-        response containing it. Commits already present keep the version this
-        run read (commits are immutable; a differing sha is a different
-        record) and only gain the stamp.
-        """
-        fold = self.offline_fold()
-        if fold is None:
-            return
-        seed = set()
-        for node in commits_by_sha.values():
-            if node.get("oid"):
-                seed.add(node["oid"])
-            for parent in (node.get("parents") or {}).get("nodes") or []:
-                if isinstance(parent, dict) and parent.get("oid"):
-                    seed.add(parent["oid"])
-        for sha, folded in fold.commits(full_name, seed).items():
-            existing = commits_by_sha.get(sha)
-            if existing is None:
-                node = dict(folded.record)
-                node["last_seen_at"] = folded.last_seen_at
-                commits_by_sha[sha] = node
-            else:
-                existing["last_seen_at"] = folded.last_seen_at
-
     # -- Run-summary accounting -------------------------------------------
 
     def _record_cache_hit(self) -> None:
@@ -1177,14 +1145,13 @@ class GitHubAPIClient:
                 if len(time_ranges) > 1 and period_commits > 0:
                     print(f"[GRAPHQL] Extracted {period_commits} total unique commits from this period")
 
-        # Offline replay: the pages above are the URLs this run would ask the
-        # provider for; the cache also holds the same repository's commits
-        # under URLs no run asks for (watermark `since` queries, other
-        # branches). Union them in (#199), keeping the pages' version of any
-        # commit both hold.
-        if self.offline and commits_by_sha:
-            self._offline_fold_commits(f"{owner}/{repo}", commits_by_sha)
-
+        # The commit half of the #199 fold is NOT wired here. A GraphQL history
+        # body carries no repository name, so attributing one needs evidence
+        # from the commit graph — and continuing the graph across shared history
+        # folded a successor repository's commits into its predecessor
+        # (2021.1-PC-GO1-Frontend: 510 -> 818, all 308 of them its successor's).
+        # Attributing another repository's work is worse than the staleness it
+        # would have cured. The issue and event folds are unaffected.
         commits = list(commits_by_sha.values())
         if branches:
             print(f"  [GRAPHQL] Total unique commits across all branches: {len(commits)}")
