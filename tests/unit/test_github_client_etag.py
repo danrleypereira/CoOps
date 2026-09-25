@@ -1,4 +1,4 @@
-"""ETag conditional-request tests for GitHubAPIClient.get_with_cache.
+"""ETag conditional-request tests for the transport (#27, ``coops.github.client``).
 
 These fake the HTTP boundary only (``requests.get``); no internal cache or
 client methods are patched, so the on-disk cache format and the request path
