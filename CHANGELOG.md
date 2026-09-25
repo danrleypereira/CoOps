@@ -8,6 +8,27 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 ## [Unreleased]
 
 ### Added
+- Bronze orchestration on the ports (#30): `coops.bronze.bronze_service.
+  BronzeService` runs the Bronze layer's decisions — what to fetch, in
+  what order, with what watermarks, and where each result is written —
+  against `SourcePort` and `StoragePort` only, importing no concrete
+  GitHub client and none of the legacy JSON file helpers. A differential
+  acceptance (`tests/integration/test_bronze_service_differential.py`)
+  runs the legacy extractors and the service over one fixed corpus from
+  one stub client and asserts the two Bronze trees are byte-identical
+  modulo the generation timestamps, with an arms-differ control that
+  plants a dropped field and confirms the comparison fails and names it.
+  The service covers repositories (raw/filtered/detail), commits, issues,
+  PRs and structures, and writes the #216 listing provenance
+  (`complete: true`) exactly when the enumeration is unbounded. Members
+  and issue events are deliberately not ported — the source port has no
+  `fetch_issue_events` and the `Member` model cannot express the member
+  record — so `coops-bronze` keeps the legacy extractors until the port
+  grows those; the findings, and the other not-yet-expressible behaviours
+  (incremental fetch windows, the unchanged-tree skip, deletion, the
+  watermark store's location), are documented in the module docstring.
+  No published data changes in this step.
+
 - Bronze orphan reconciliation (#216): a repository that is renamed or
   recased (`unb-mds/2025-1-NoFluxoUNB` and `2025-1-NoFluxoUnB` are one
   repository, id 957040204) leaves its old per-repository Bronze files on
