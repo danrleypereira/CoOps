@@ -160,7 +160,30 @@ RUFF_SELECT = (
 # So the exemptions live in the gate's own command line: the tree cannot widen
 # them (which would be the attack) and cannot lose them (which was the bug).
 # Kept in step with [tool.ruff.lint.per-file-ignores] by hand, deliberately.
-RUFF_PER_FILE_IGNORES = "tests/**:S101,DTZ,S105,S106,S603,S607"
+#
+# One entry per rule, and ONE `--per-file-ignores` flag each: on the command
+# line ruff splits this value on commas as *entries*, not as a rule list, so
+# `tests/**:S101,DTZ` is read as the entries `tests/**:S101` and `DTZ` — and
+# the second has no `<FilePattern>:<RuleCode>` shape, so ruff exits 2. The
+# gate then reports "COULD NOT RUN", which is the honest answer and not a pass,
+# but it is still a broken gate. Verified against a control: a test file with
+# one assert reports 1 finding with no ignores and 0 with the repeated flags.
+RUFF_PER_FILE_IGNORES = (
+    "tests/**:S101",
+    "tests/**:DTZ",
+    "tests/**:S105",
+    "tests/**:S106",
+    "tests/**:S603",
+    "tests/**:S607",
+)
+
+
+def _per_file_ignore_args() -> list[str]:
+    """Expand the exemptions into the repeated flags ruff's CLI requires."""
+    args: list[str] = []
+    for entry in RUFF_PER_FILE_IGNORES:
+        args += ["--per-file-ignores", entry]
+    return args
 
 # See "How each tool is run" above: the missing config is the point, not an
 # oversight. --no-error-summary only drops a line the parser ignores.
@@ -351,7 +374,7 @@ def ruff_per_file(ruff_bin: str, arm: Path) -> Counter[str]:
             ruff_bin, "check",
             "--isolated",            # no file can change what this measures
             "--select", RUFF_SELECT,  # ...nothing the project checks is dropped
-            "--per-file-ignores", RUFF_PER_FILE_IGNORES,  # ...and its exemptions survive
+            *_per_file_ignore_args(),  # ...and its exemptions survive
             "--no-cache", "--output-format", "json", *targets,
         ],
         arm,
