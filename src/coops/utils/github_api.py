@@ -19,6 +19,7 @@ from typing import Any
 # monkeypatch.setattr(github_api.requests, "post", ...)).
 import requests  # noqa: F401
 
+from coops.github import queries
 from coops.github.client import (
     GitHubTransport,
 )
@@ -28,14 +29,17 @@ from coops.github.client import (
 
 
 class GitHubAPIClient(GitHubTransport):
-    """GitHub queries over the extracted transport (#27).
+    """GitHub queries over the extracted transport (#27, #28).
 
     The transport half of this class — HTTP/GraphQL, the URL-keyed cache
     and its ETag sidecars, retry/backoff, rate-limit accounting, the raw
     layer, the capture and the offline replay — moved verbatim to
-    :class:`coops.github.client.GitHubTransport`. What remains are the
-    GitHub *queries* (issue #28 moves those behind the transport) and, at
-    module level, the JSON/config helpers this module has always exported.
+    :class:`coops.github.client.GitHubTransport` (#27). The endpoint
+    knowledge — the REST URL templates and the GraphQL documents — moved
+    to :mod:`coops.github.queries` (#28); what remains here is the query
+    *orchestration* (pagination, the REST fallback and its circuit
+    breaker, response shaping) and, at module level, the JSON/config
+    helpers this module has always exported.
     """
 
     def _split_time_range(
@@ -116,7 +120,7 @@ class GitHubAPIClient(GitHubTransport):
 
         # Get default branch first
         repo_info = self.get_with_cache(
-            f"https://api.github.com/repos/{owner}/{repo}",
+            queries.repository_url(owner, repo),
             use_cache=use_cache
         )
         default_branch = repo_info.get("default_branch", "main") if repo_info else "main"
@@ -125,25 +129,7 @@ class GitHubAPIClient(GitHubTransport):
         cutoff_date.isoformat()
 
         # Single GraphQL query to get branches with commit info
-        query = """
-        query($owner: String!, $name: String!, $cursor: String) {
-          repository(owner: $owner, name: $name) {
-            refs(refPrefix: "refs/heads/", first: 100, after: $cursor, orderBy: {field: TAG_COMMIT_DATE, direction: DESC}) {
-              pageInfo { hasNextPage endCursor }
-              nodes {
-                name
-                target {
-                  ... on Commit {
-                    oid
-                    committedDate
-                  }
-                }
-              }
-            }
-          }
-          rateLimit { remaining resetAt limit cost }
-        }
-        """
+        query = queries.ACTIVE_BRANCHES_QUERY
 
         active_branches = []
         cursor = None
@@ -196,7 +182,7 @@ class GitHubAPIClient(GitHubTransport):
             batch = active_branches[i:i+batch_size]
             for branch in batch:
                 # Use REST API compare endpoint (more efficient than GraphQL for this)
-                compare_url = f"https://api.github.com/repos/{owner}/{repo}/compare/{default_branch}...{branch}"
+                compare_url = queries.compare_url(owner, repo, default_branch, branch)
                 compare_data = self.get_with_cache(compare_url, use_cache=use_cache)
 
                 if compare_data and isinstance(compare_data, dict):
@@ -215,7 +201,7 @@ class GitHubAPIClient(GitHubTransport):
         """Helper function to fetch commit details with thread identification."""
         thread_id = threading.get_ident() % 1000  # Use last 3 digits for readability
         data, headers = self.get_with_cache(
-            f"https://api.github.com/repos/{owner}/{repo}/commits/{sha}",
+            queries.commit_url(owner, repo, sha),
             use_cache,
             return_headers=True,
             silent=True  # Don't log individual requests
@@ -422,62 +408,9 @@ class GitHubAPIClient(GitHubTransport):
                     print(f"      Time period {time_idx + 1}/{len(time_ranges)}: {range_since} to {range_until}")
 
                 if branch:
-                    query = """
-                    query($owner: String!, $name: String!, $branch: String!, $pageSize: Int!, $cursor: String, $since: GitTimestamp, $until: GitTimestamp) {
-                      repository(owner: $owner, name: $name) {
-                        ref(qualifiedName: $branch) {
-                          target {
-                            ... on Commit {
-                              history(first: $pageSize, after: $cursor, since: $since, until: $until) {
-                                pageInfo { hasNextPage endCursor }
-                                nodes {
-                                  oid
-                                  message
-                                  messageHeadline
-                                  committedDate
-                                  author { name email user { login databaseId } }
-                                  committer { name email date user { login databaseId } }
-                                  additions
-                                  deletions
-                                  parents(first: 100) { nodes { oid } }
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                      rateLimit { remaining resetAt limit cost }
-                    }
-                    """
+                    query = queries.COMMIT_HISTORY_BRANCH_QUERY
                 else:
-                    query = """
-                    query($owner: String!, $name: String!, $pageSize: Int!, $cursor: String, $since: GitTimestamp, $until: GitTimestamp) {
-                      repository(owner: $owner, name: $name) {
-                        defaultBranchRef {
-                          name
-                          target {
-                            ... on Commit {
-                              history(first: $pageSize, after: $cursor, since: $since, until: $until) {
-                                pageInfo { hasNextPage endCursor }
-                                nodes {
-                                  oid
-                                  message
-                                  messageHeadline
-                                  committedDate
-                                  author { name email user { login databaseId } }
-                                  committer { name email date user { login databaseId } }
-                                  additions
-                                  deletions
-                                  parents(first: 100) { nodes { oid } }
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                      rateLimit { remaining resetAt limit cost }
-                    }
-                    """
+                    query = queries.COMMIT_HISTORY_DEFAULT_BRANCH_QUERY
 
                 cursor: str | None = None
                 pages = 0
@@ -502,7 +435,7 @@ class GitHubAPIClient(GitHubTransport):
                     # REST FALLBACK
                     if using_rest_fallback:
 
-                        rest_url = f"https://api.github.com/repos/{owner}/{repo}/commits"
+                        rest_url = queries.commits_url(owner, repo)
                         params = []
                         if branch:
                             params.append(f"sha={branch}")
@@ -698,7 +631,7 @@ class GitHubAPIClient(GitHubTransport):
 
         try:
             # Step 1: Get branch SHA via REST
-            branch_url = f"https://api.github.com/repos/{owner}/{repo}/branches/{branch}"
+            branch_url = queries.branch_url(owner, repo, branch)
             branch_data = self.get_with_cache(branch_url, use_cache=use_cache)
 
             if not branch_data:
@@ -709,7 +642,7 @@ class GitHubAPIClient(GitHubTransport):
             logger.info(f"Fetching tree for {owner}/{repo} (SHA: {tree_sha[:8]})")
 
             # Step 2: Get recursive tree with REST (1 request!)
-            tree_url = f"https://api.github.com/repos/{owner}/{repo}/git/trees/{tree_sha}"
+            tree_url = queries.tree_url(owner, repo, tree_sha)
             tree_data = self.get_with_cache(
                 f"{tree_url}?recursive=1",
                 use_cache=use_cache
@@ -797,30 +730,7 @@ class GitHubAPIClient(GitHubTransport):
 
                 expression = f"{branch}:{current_path}" if current_path else f"{branch}:"
 
-                query = """
-                query($owner: String!, $repo: String!, $expression: String!) {
-                  repository(owner: $owner, name: $repo) {
-                    object(expression: $expression) {
-                      ... on Tree {
-                        entries {
-                          name
-                          type
-                          mode
-                          path
-                          extension
-                          object {
-                            ... on Blob {
-                              byteSize
-                              isBinary
-                              oid
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-                """
+                query = queries.REPOSITORY_TREE_QUERY
 
                 variables = {
                     "owner": owner,
