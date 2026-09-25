@@ -521,8 +521,9 @@ _REGISTRATION_MATRIX = [
     pytest.param(_L_NO_GOLD, _E_NONE, "none", _ALL_CHECKS - _GOLD_CHECKS,
                  id="no-gold-no-reference"),
     # an EMPTY layer keeps its checks — the dir exists, so they run and
-    # report what they cannot see — except every-member-identified, which
-    # its sibling member-ids-distinct already covers with a BROKEN row.
+    # report what they cannot see. (Until #233 there was an exception here for
+    # every-member-identified; that row now registers on every branch, so the
+    # exception no longer holds and has been removed.)
     pytest.param(_L_ALL, frozenset({"gold"}), "usable", _ALL_CHECKS,
                  id="empty-gold-usable-reference"),
     pytest.param(_L_ALL, frozenset({"bronze"}), "usable", _ALL_CHECKS,
@@ -584,7 +585,7 @@ def test_self_test_fires_all_controls_and_exits_0(
     """The count is part of the contract: 16 controls, all firing."""
     rc, out, _ = _run(monkeypatch, capsys, "--self-test")
     assert rc == 0
-    assert _controls_fired(out) == ("17", "17")
+    assert _controls_fired(out) == ("18", "18")
 
 
 def test_self_test_detects_a_control_that_stops_firing(
@@ -599,7 +600,7 @@ def test_self_test_detects_a_control_that_stops_firing(
     monkeypatch.setattr(verify_medallion, "check_no_aggregates", always_passes)
     rc, out, _ = _run(monkeypatch, capsys, "--self-test")
     assert rc == 2
-    assert _controls_fired(out) == ("16", "17")
+    assert _controls_fired(out) == ("17", "18")
 
 
 # --------------------------------------------------------------------------
