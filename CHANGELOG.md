@@ -568,6 +568,17 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   never empty — #125.
 
 ### Fixed
+- The REST fallback inside `coops.utils.github_api`'s GraphQL extraction (issue
+  [#203](https://github.com/danrleypereira/CoOps/issues/203)): commits fetched
+  after the circuit breaker trips now carry the same author node the GraphQL
+  path produces — `name`, `email`, `date` from `commit.author`, and the
+  account link only from the REST `author` object (`login`, `id`). The old
+  fallback kept `user.login` alone and let the git `name` stand in as that
+  login when the commit had no linked account, so an address-bearing commit
+  reached `_sanitize_commit` with no email to hash (no `author_email_hash`,
+  hence unattributable — 2,818 commits in the measured corpus) and unlinked
+  commits got a fabricated `login` that was never a GitHub account. Bronze
+  records from the fallback are now indistinguishable from GraphQL ones.
 - `coops.github.mapper.map_commit_rest` (issue [#168](https://github.com/danrleypereira/CoOps/issues/168)):
   Bronze records no longer map to commits the analytics cannot attribute.
   Two fallbacks, both mirroring what Bronze itself writes
