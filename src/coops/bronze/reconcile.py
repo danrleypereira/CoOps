@@ -66,9 +66,10 @@ so every guard here REFUSES (deleting nothing) rather than guessing:
    the fetch, so after a capped run neither file holds the full list.
 
 Dry run is the default of this function (``apply=False``): a library that
-deletes only when the caller says so. The extraction command applies by
-default — a scheduled full run must actually clean — and prints which
-mode ran on every path.
+deletes only when the caller says so. The extraction command is opt-in the
+same way — a full run REPORTS the orphans and removes nothing until
+``--reconcile-apply`` is passed, because the mode you get by forgetting has
+to be the safe one. Every path prints which mode ran.
 """
 
 from __future__ import annotations

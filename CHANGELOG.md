@@ -18,8 +18,8 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   nothing could see it. Two halves. `coops.bronze.reconcile` removes
   per-repository files the current `repositories_filtered.json` does not
   name (`coops-bronze` runs it after every family is written, so a
-  rename leftover is deleted in the run that creates it;
-  `--reconcile-dry-run` reports without deleting), and
+  rename leftover is reported in the run that creates it;
+  `--reconcile-apply` opts in to deleting), and
   `scripts/verify_medallion.py` gains `no-orphaned-bronze-files` — an
   orphan is bad data (rc 1, the file named), a missing or unreadable
   listing is the instrument (rc 2) — taking `--self-test` to 16
@@ -174,9 +174,9 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   other repository is gone", and the capped debugging run is the one that
   would wipe). An old-case file that is the *only* copy for its repository
   is kept — deleting the only copy is the record loss every other guard
-  exists to prevent. Deletion is the default in a full run so the
-  scheduled cron actually cleans; `--reconcile-dry-run` reports without
-  deleting, and every run prints which mode ran. Second half:
+  exists to prevent. Reporting is the default and deletion is opt-in via
+  `--reconcile-apply`: a routine that removes files must not remove them
+  because nobody passed a flag. Every run prints which mode ran. Second half:
   `scripts/verify_medallion.py` gains `no-orphaned-bronze-files` — every
   per-repository Bronze file must correspond to the current filtered
   listing (rc 1, the file named; a missing or unreadable listing is the
