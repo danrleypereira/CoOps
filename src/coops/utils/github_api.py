@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Shared utilities for GitHub API interactions and data processing.
 
@@ -6,19 +5,22 @@ Includes REST and GraphQL support, caching, parallel commit fetching,
 repository tree extraction, and organization configuration.
 """
 
-import os
-import json
-import time
+import contextlib
 import hashlib
-import requests
-import threading
+import json
 import logging
+import os
+import threading
+import time
 from datetime import datetime, timezone
-from typing import Dict, List, Optional, Any, Tuple
-from urllib.parse import urlsplit, parse_qsl
+from typing import Any
+from urllib.parse import parse_qsl, urlsplit
+
+import requests
 
 from coops.storage.raw import PROVIDER_GITHUB, is_fresh
 from coops.utils.cache_fold import CacheFold
+
 
 class OfflineCacheMiss(RuntimeError):
     """Offline mode was asked for a URL that has no cached body.
@@ -40,11 +42,11 @@ class GitHubAPIClient:
         self,
         token: str,
         cache_dir: str = "cache",
-        capture_dir: Optional[str] = None,
-        tenant_id: Optional[Any] = None,
+        capture_dir: str | None = None,
+        tenant_id: Any | None = None,
         provider: str = "github",
-        raw_store: Optional[Any] = None,
-        raw_max_age_seconds: Optional[float] = None,
+        raw_store: Any | None = None,
+        raw_max_age_seconds: float | None = None,
         offline: bool = False,
     ):
         self.token = token
@@ -93,7 +95,7 @@ class GitHubAPIClient:
         self.cache_hits = 0
         self.cache_misses = 0
         # Most recent REST rate-limit window (remaining/limit/reset), if any.
-        self.last_rate_limit: Optional[Dict[str, Any]] = None
+        self.last_rate_limit: dict[str, Any] | None = None
 
     # -- Raw layer (MongoDB) ---------------------------------------------
     #
@@ -103,7 +105,7 @@ class GitHubAPIClient:
     # the store, so the client just forwards the tenant it was given.
 
     @staticmethod
-    def _split_url(url: str) -> Tuple[str, Dict[str, str]]:
+    def _split_url(url: str) -> tuple[str, dict[str, str]]:
         """Split a URL into (endpoint without query, query params as a dict)."""
         from urllib.parse import parse_qsl, urlsplit, urlunsplit
 
@@ -112,13 +114,13 @@ class GitHubAPIClient:
         params = dict(parse_qsl(parts.query, keep_blank_values=True))
         return endpoint, params
 
-    def _raw_read(self, provider: str, endpoint: str, params: Dict[str, Any]) -> Optional[Any]:
+    def _raw_read(self, provider: str, endpoint: str, params: dict[str, Any]) -> Any | None:
         """Return a fresh raw payload for the key, or None to fall through."""
         if self.raw_store is None or self.tenant_id is None:
             return None
         try:
             document = self.raw_store.get(self.tenant_id, provider, endpoint, params)
-        except Exception:
+        except Exception:  # noqa: BLE001 — best-effort raw layer: a store failure falls through to the API
             # The raw layer is best-effort; a failure here must not stop the run.
             return None
         if document is None:
@@ -131,27 +133,29 @@ class GitHubAPIClient:
         self,
         provider: str,
         endpoint: str,
-        params: Dict[str, Any],
-        etag: Optional[str],
+        params: dict[str, Any],
+        etag: str | None,
         payload: Any,
     ) -> None:
         """Capture a fetched payload into the raw layer (best-effort)."""
         if self.raw_store is None or self.tenant_id is None:
             return
-        try:
+        # The raw layer is a bonus, never the reason for the run: a store
+        # failure here must not fail the extraction that produced the payload.
+        with contextlib.suppress(Exception):
             self.raw_store.save(self.tenant_id, provider, endpoint, params, etag, payload)
-        except Exception:
-            pass
 
     def _get_cache_key(self, key: str) -> str:
         """Create a stable cache key from an arbitrary string."""
-        return hashlib.md5(key.encode()).hexdigest() + ".json"
+        # Content-addressed cache filename, not a security hash; the digest
+        # must stay md5 or every existing cache entry would miss.
+        return hashlib.md5(key.encode(), usedforsecurity=False).hexdigest() + ".json"
 
-    def _cache_get(self, cache_key: str) -> Optional[Any]:
+    def _cache_get(self, cache_key: str) -> Any | None:
         """Get response from cache if exists"""
         cache_file = os.path.join(self.cache_dir, self._get_cache_key(cache_key))
         if os.path.exists(cache_file):
-            with open(cache_file, 'r', encoding='utf-8') as f:
+            with open(cache_file, encoding='utf-8') as f:
                 return json.load(f)
         return None
 
@@ -176,15 +180,15 @@ class GitHubAPIClient:
         """Path of the ETag sidecar file for a cache key."""
         return os.path.join(
             self.cache_dir,
-            hashlib.md5(cache_key.encode()).hexdigest() + ".etag",
+            hashlib.md5(cache_key.encode(), usedforsecurity=False).hexdigest() + ".etag",
         )
 
-    def _etag_get(self, cache_key: str) -> Optional[str]:
+    def _etag_get(self, cache_key: str) -> str | None:
         """Read the stored ETag for a cache key, or None if there is none."""
         etag_file = self._get_etag_path(cache_key)
         if not os.path.exists(etag_file):
             return None
-        with open(etag_file, 'r', encoding='utf-8') as f:
+        with open(etag_file, encoding='utf-8') as f:
             value = f.read().strip()
         return value or None
 
@@ -208,7 +212,7 @@ class GitHubAPIClient:
     # content*: every cached response holding records for the repository and
     # family, unioned, newest version per record. See cache_fold.py.
 
-    def offline_fold(self) -> Optional[CacheFold]:
+    def offline_fold(self) -> CacheFold | None:
         """The content index over the cache, or None outside offline mode.
 
         Built once per client; the first family query scans the cache
@@ -235,14 +239,14 @@ class GitHubAPIClient:
         remaining = response.headers.get('X-RateLimit-Remaining')
         if remaining is None:
             return
-        try:
+        # A malformed header (proxy, enterprise appliance) must not break the
+        # fetch; the run summary then simply reports no rate-limit window.
+        with contextlib.suppress(TypeError, ValueError):
             self.last_rate_limit = {
                 'remaining': int(remaining),
                 'limit': int(response.headers.get('X-RateLimit-Limit', '0') or 0),
                 'reset': response.headers.get('X-RateLimit-Reset'),
             }
-        except (TypeError, ValueError):
-            pass
 
     # -- Raw-corpus capture (issue #109) -----------------------------------
     #
@@ -254,7 +258,7 @@ class GitHubAPIClient:
     # corpus-fixtures is done separately (coops.raw_capture.sanitize).
 
     @staticmethod
-    def _split_url_path(url: str) -> Tuple[str, Dict[str, str]]:
+    def _split_url_path(url: str) -> tuple[str, dict[str, str]]:
         """Split a REST URL into its path (endpoint) and query params.
 
         Distinct from :meth:`_split_url`, which returns the full URL minus its
@@ -266,13 +270,13 @@ class GitHubAPIClient:
         params = dict(parse_qsl(parts.query, keep_blank_values=True))
         return parts.path, params
 
-    def _capture_rest(self, url: str, data: Any, etag: Optional[str]) -> None:
+    def _capture_rest(self, url: str, data: Any, etag: str | None) -> None:
         if self._capture is None:
             return
         endpoint, params = self._split_url_path(url)
         self._capture.write(endpoint, params, etag, data)
 
-    def _capture_graphql(self, query: str, variables: Optional[Dict[str, Any]], data: Any) -> None:
+    def _capture_graphql(self, query: str, variables: dict[str, Any] | None, data: Any) -> None:
         if self._capture is None:
             return
         # GraphQL has no ETag; the query text and variables travel in params.
@@ -376,7 +380,7 @@ class GitHubAPIClient:
                     if not return_headers and not silent:
                         self._log_rate_limit(response, prefix=log_prefix)
                     return data if not return_headers else (data, response.headers)
-                elif response.status_code == 304:
+                if response.status_code == 304:
                     # Not Modified: the cached body is still current, and a 304
                     # does not count against the rate limit.
                     if not silent:
@@ -386,7 +390,7 @@ class GitHubAPIClient:
                     if not return_headers and not silent:
                         self._log_rate_limit(response, prefix=log_prefix)
                     return cached if not return_headers else (cached, response.headers)
-                elif response.status_code == 403:
+                if response.status_code == 403:
                     print(f"[ERROR] API request forbidden (403) - might be private or rate limited: {response.text}")
                     if "rate limit" in response.text.lower():
                         print("Rate limit exceeded. Waiting 60 seconds...")
@@ -414,7 +418,7 @@ class GitHubAPIClient:
                 time.sleep(wait)
                 continue
             except requests.exceptions.RequestException as e:
-                print(f"[ERROR] Request error for {url}: {str(e)}")
+                print(f"[ERROR] Request error for {url}: {e!s}")
                 return None
         print(f"[ERROR] Exhausted retries for: {url}")
         return None
@@ -422,17 +426,18 @@ class GitHubAPIClient:
     # ----------------------
     # GraphQL support (API v4)
     # ----------------------
-    def _graphql_cache_key(self, payload: Dict[str, Any]) -> Optional[str]:
+    def _graphql_cache_key(self, payload: dict[str, Any]) -> str | None:
         """Deterministic cache key for a GraphQL query + its variables."""
         try:
             return "graphql:" + hashlib.md5(
-                (payload["query"] + "::" + json.dumps(payload["variables"], sort_keys=True, ensure_ascii=False)).encode("utf-8")
+                (payload["query"] + "::" + json.dumps(payload["variables"], sort_keys=True, ensure_ascii=False)).encode("utf-8"),
+                usedforsecurity=False,  # cache key, not a security hash
             ).hexdigest()
-        except Exception:
+        except Exception:  # noqa: BLE001 — cache is optional: unserializable variables mean no cache, not an error
             # Unserializable variables: no cache key, so no cache.
             return None
 
-    def graphql(self, query: str, variables: Optional[Dict[str, Any]] = None, use_cache: bool = True, timeout: int = 4) -> Any:
+    def graphql(self, query: str, variables: dict[str, Any] | None = None, use_cache: bool = True, timeout: int = 4) -> Any:
         """Execute a GraphQL query against GitHub's v4 API with simple timeout handling.
 
         In offline mode the cache is the only source, exactly as in
@@ -475,7 +480,7 @@ class GitHubAPIClient:
                         print("[GRAPHQL] Using cached response")
                         self._record_cache_hit()
                         return cached
-            except Exception:
+            except Exception:  # noqa: BLE001 — cache is optional: a cache failure falls back to a live request
                 # Fallback to no-cache if serialization fails
                 cache_key = None
 
@@ -497,12 +502,11 @@ class GitHubAPIClient:
 
                     if has_stats_unavailable:
                         # Stats unavailable - treat as failure to trigger REST fallback
-                        print(f"[GRAPHQL][WARN] Commit stats unavailable (SERVICE_UNAVAILABLE)")
+                        print("[GRAPHQL][WARN] Commit stats unavailable (SERVICE_UNAVAILABLE)")
                         return None  # Trigger REST fallback
-                    else:
-                        # Other critical errors
-                        print(f"[GRAPHQL][ERROR] Returned errors: {data['errors']}")
-                        return None
+                    # Other critical errors
+                    print(f"[GRAPHQL][ERROR] Returned errors: {data['errors']}")
+                    return None
                 self._record_cache_miss()
                 if use_cache and cache_key:
                     self._cache_set(cache_key, data)
@@ -518,34 +522,33 @@ class GitHubAPIClient:
                     )
                 # Don't log rate limit for GraphQL - already logged after processing commits
                 return data
-            elif response.status_code == 403:
+            if response.status_code == 403:
                 if "rate limit" in response.text.lower():
-                    print(f"[GRAPHQL][WARN] Rate limit exceeded")
+                    print("[GRAPHQL][WARN] Rate limit exceeded")
                 else:
-                    print(f"[GRAPHQL][ERROR] Forbidden (403)")
+                    print("[GRAPHQL][ERROR] Forbidden (403)")
                 return None
-            elif response.status_code == 502:
-                print(f"[GRAPHQL][WARN] 502 (server overload)")
+            if response.status_code == 502:
+                print("[GRAPHQL][WARN] 502 (server overload)")
                 return None
-            elif response.status_code in [500, 503]:
+            if response.status_code in [500, 503]:
                 print(f"[GRAPHQL][WARN] {response.status_code}")
                 return None
-            else:
-                print(f"[GRAPHQL][ERROR] Request failed: {response.status_code}")
-                return None
+            print(f"[GRAPHQL][ERROR] Request failed: {response.status_code}")
+            return None
         except requests.exceptions.Timeout:
             print(f"[GRAPHQL][WARN] Timeout ({timeout}s)")
             return None
         except requests.exceptions.RequestException as e:
-            print(f"[GRAPHQL][ERROR] Request error: {str(e)}")
+            print(f"[GRAPHQL][ERROR] Request error: {e!s}")
             return None
 
     def _split_time_range(
         self,
-        since: Optional[str],
-        until: Optional[str],
+        since: str | None,
+        until: str | None,
         chunks: int = 3,
-    ) -> List[Tuple[Optional[str], Optional[str]]]:
+    ) -> list[tuple[str | None, str | None]]:
         """
         Split a time range into smaller chunks for efficient extraction.
 
@@ -603,7 +606,7 @@ class GitHubAPIClient:
         repo: str,
         days: int = 30,
         use_cache: bool = True,
-    ) -> List[str]:
+    ) -> list[str]:
         """
         Get branches that were updated recently and have unmerged commits.
         Uses a single efficient query combining branch listing and comparison.
@@ -624,7 +627,7 @@ class GitHubAPIClient:
         default_branch = repo_info.get("default_branch", "main") if repo_info else "main"
 
         cutoff_date = datetime.now(timezone.utc) - timedelta(days=days)
-        cutoff_iso = cutoff_date.isoformat()
+        cutoff_date.isoformat()
 
         # Single GraphQL query to get branches with commit info
         query = """
@@ -713,7 +716,7 @@ class GitHubAPIClient:
 
         return unmerged_branches
 
-    def _fetch_with_thread_id(self, owner: str, repo: str, sha: str, use_cache: bool) -> Dict[str, Any]:
+    def _fetch_with_thread_id(self, owner: str, repo: str, sha: str, use_cache: bool) -> dict[str, Any]:
         """Helper function to fetch commit details with thread identification."""
         thread_id = threading.get_ident() % 1000  # Use last 3 digits for readability
         data, headers = self.get_with_cache(
@@ -724,7 +727,7 @@ class GitHubAPIClient:
         )
         return {'data': data, 'thread_id': thread_id, 'headers': headers}
 
-    def _fetch_rest_commit_details_parallel(self, commits_list: List[Dict], owner: str, repo: str, use_cache: bool, max_workers: int = 5) -> List[Dict[str, Any]]:
+    def _fetch_rest_commit_details_parallel(self, commits_list: list[dict], owner: str, repo: str, use_cache: bool, max_workers: int = 5) -> list[dict[str, Any]]:
         """
         Fetch commit details in parallel with conservative settings.
 
@@ -843,7 +846,7 @@ class GitHubAPIClient:
                         # it here would drop the commit and report a partial
                         # answer (#199).
                         raise
-                    except Exception as e:
+                    except Exception as e:  # noqa: BLE001 — per-commit worker: one failed commit is logged and the batch continues
                         print(f"[REST][Worker-?][WARN] Failed {sha[:8] if sha else 'unknown'}: {e}")
 
                 # Show rate limit summary for this batch
@@ -853,7 +856,7 @@ class GitHubAPIClient:
                     limit = last_header.get('X-RateLimit-Limit', 'Unknown')
                     reset_time = last_header.get('X-RateLimit-Reset', 'Unknown')
                     if reset_time != 'Unknown':
-                        reset_datetime = datetime.fromtimestamp(int(reset_time))
+                        reset_datetime = datetime.fromtimestamp(int(reset_time), tz=timezone.utc)
                         print(f"[REST][Batch {batch_idx//batch_size + 1}] Rate limit: {remaining}/{limit}, resets at {reset_datetime}")
                     else:
                         print(f"[REST][Batch {batch_idx//batch_size + 1}] Rate limit: {remaining}/{limit}")
@@ -869,15 +872,15 @@ class GitHubAPIClient:
         owner: str,
         repo: str,
         page_size: int,
-        max_pages: Optional[int] = None,
-        max_commits: Optional[int] = None,
-        since: Optional[str] = None,
-        until: Optional[str] = None,
+        max_pages: int | None = None,
+        max_commits: int | None = None,
+        since: str | None = None,
+        until: str | None = None,
         use_cache: bool = True,
-        branches: Optional[List[str]] = None,
+        branches: list[str] | None = None,
         split_large_extractions: bool = True,
         time_chunks: int = 3,
-    ) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
+    ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
         """
         Fetch commit history with automatic REST fallback on GraphQL failures.
 
@@ -894,8 +897,8 @@ class GitHubAPIClient:
         Returns:
             Tuple of (commits list, rate limit metadata)
         """
-        commits_by_sha: Dict[str, Dict[str, Any]] = {}  # Deduplicate by SHA
-        rate_meta: Dict[str, Any] = {}
+        commits_by_sha: dict[str, dict[str, Any]] = {}  # Deduplicate by SHA
+        rate_meta: dict[str, Any] = {}
         graphql_failures = 0  # Track GraphQL failures
         using_rest_fallback = False
         rest_commit_count = 0
@@ -915,7 +918,7 @@ class GitHubAPIClient:
             print(f"  Splitting extraction into {len(time_ranges)} time periods to avoid API overload")
 
         for branch in branches_to_process:
-            branch_name = branch if branch else "default branch"
+            branch_name = branch or "default branch"
             print(f"    Extracting from: {branch_name}")
 
             # Process each time range for this branch
@@ -981,7 +984,7 @@ class GitHubAPIClient:
                     }
                     """
 
-                cursor: Optional[str] = None
+                cursor: str | None = None
                 pages = 0
                 period_commits = 0
                 rest_page = 1
@@ -995,8 +998,8 @@ class GitHubAPIClient:
 
                     # CIRCUIT BREAKER: Switch to REST after 1 GraphQL failure (30s timeout)
                     if graphql_failures >= 1 and not using_rest_fallback:
-                        print(f"[CIRCUIT BREAKER] GraphQL failed (30s timeout)")
-                        print(f"        Switching to REST API fallback...")
+                        print("[CIRCUIT BREAKER] GraphQL failed (30s timeout)")
+                        print("        Switching to REST API fallback...")
                         using_rest_fallback = True
                         rest_commit_count = 0
                         graphql_failures = 0
@@ -1012,7 +1015,7 @@ class GitHubAPIClient:
                             params.append(f"since={range_since}")
                         if range_until:
                             params.append(f"until={range_until}")
-                        params.append(f"per_page=50")
+                        params.append("per_page=50")
                         params.append(f"page={rest_page}")
 
                         rest_url = f"{rest_url}?{'&'.join(params)}"
@@ -1059,7 +1062,7 @@ class GitHubAPIClient:
                         if rest_commit_count >= rest_commits_before_retry:
                             if last_rest_commit_sha:
                                 print(f"[REST->GRAPHQL] Extracted {rest_commit_count} commits via REST (last: {last_rest_commit_sha[:8]}...)")
-                                print(f"[REST->GRAPHQL] GraphQL will continue from cursor position (deduplication prevents reprocessing)")
+                                print("[REST->GRAPHQL] GraphQL will continue from cursor position (deduplication prevents reprocessing)")
                             else:
                                 print(f"[REST->GRAPHQL] Extracted {rest_commit_count} commits via REST. Retrying GraphQL...")
                             using_rest_fallback = False
@@ -1070,7 +1073,7 @@ class GitHubAPIClient:
 
                         # If REST returned less than 100 commits, we're done
                         if len(rest_data) < 100:
-                            print(f"[REST] Reached end of commits")
+                            print("[REST] Reached end of commits")
                             break
 
                         time.sleep(1)  # Rate limit protection for REST
@@ -1182,7 +1185,7 @@ class GitHubAPIClient:
         repo: str,
         branch: str = "main",
         use_cache: bool = True
-    ) -> Dict[str, Any]:
+    ) -> dict[str, Any]:
         """
         Get file tree using REST API Git Trees as primary method.
         If the tree is truncated, automatically falls back to GraphQL.
@@ -1229,7 +1232,7 @@ class GitHubAPIClient:
 
             # If truncated, fallback to GraphQL
             if is_truncated:
-                logger.warning(f"  Tree truncated! Falling back to GraphQL...")
+                logger.warning("  Tree truncated! Falling back to GraphQL...")
                 return self.graphql_repository_tree(owner, repo, branch, use_cache)
 
             # Step 3: Standardize node format
@@ -1255,8 +1258,8 @@ class GitHubAPIClient:
             # Must not become an "empty tree" result: an offline replay miss
             # stops the run (#199).
             raise
-        except Exception as e:
-            logger.error(f"Error in get_repository_tree: {str(e)}")
+        except Exception as e:  # noqa: BLE001 — tree contract: any failure returns the documented empty/error tree
+            logger.error(f"Error in get_repository_tree: {e!s}")
             return self._empty_tree_response(owner, repo, branch, error=str(e))
 
     def graphql_repository_tree(
@@ -1266,7 +1269,7 @@ class GitHubAPIClient:
         branch: str = "main",
         use_cache: bool = True,
         max_depth: int = 100
-    ) -> Dict[str, Any]:
+    ) -> dict[str, Any]:
         """
         Extract full tree using GraphQL (used when REST truncates).
         Iterative implementation with stack to avoid deep recursion.
@@ -1283,7 +1286,7 @@ class GitHubAPIClient:
         """
         logger = logging.getLogger(__name__)
 
-        def build_tree_iterative(start_path: str = "") -> List[Dict[str, Any]]:
+        def build_tree_iterative(start_path: str = "") -> list[dict[str, Any]]:
             """Build tree using iterative stack."""
             root_tree = []
             stack = [(start_path, root_tree)]
@@ -1339,7 +1342,7 @@ class GitHubAPIClient:
 
                     repo_obj = result.get('data', {}).get('repository', {})
                     if not repo_obj:
-                        logger.warning(f"Repository not found")
+                        logger.warning("Repository not found")
                         continue
 
                     tree_obj = repo_obj.get('object', {})
@@ -1382,8 +1385,8 @@ class GitHubAPIClient:
                     # Must not be skipped as a "failed path": an offline
                     # replay miss stops the run (#199).
                     raise
-                except Exception as e:
-                    logger.error(f"Error processing path {current_path}: {str(e)}")
+                except Exception as e:  # noqa: BLE001 — per-path walk: one failed path is logged and the walk continues
+                    logger.error(f"Error processing path {current_path}: {e!s}")
                     continue
 
             return root_tree
@@ -1406,8 +1409,8 @@ class GitHubAPIClient:
             # Must not become an "empty tree" error payload: an offline
             # replay miss stops the run (#199).
             raise
-        except Exception as e:
-            logger.error(f"Failed to build repository tree: {str(e)}")
+        except Exception as e:  # noqa: BLE001 — tree contract: any failure returns the documented error payload
+            logger.error(f"Failed to build repository tree: {e!s}")
             return {
                 'owner': owner,
                 'repository': repo,
@@ -1418,7 +1421,7 @@ class GitHubAPIClient:
                 'method': 'graphql'
             }
 
-    def _standardize_tree_node(self, item: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+    def _standardize_tree_node(self, item: dict[str, Any]) -> dict[str, Any] | None:
         """
         Standardize the format of a tree node (REST or GraphQL).
 
@@ -1476,7 +1479,7 @@ class GitHubAPIClient:
         repo: str,
         branch: str,
         error: str = ""
-    ) -> Dict[str, Any]:
+    ) -> dict[str, Any]:
         """
         Return empty structure on error.
 
@@ -1508,13 +1511,13 @@ class GitHubAPIClient:
         use_cache: bool = True,
         per_page: int = 50,
         start_page: int = 1,
-        max_pages: Optional[int] = None,
-    ) -> List[Any]:
+        max_pages: int | None = None,
+    ) -> list[Any]:
         """
         Fetch all pages for list endpoints that support per_page & page params.
         Stops when a page returns fewer than per_page results or when max_pages is reached.
         """
-        results: List[Any] = []
+        results: list[Any] = []
         page = start_page
         while True:
             if max_pages is not None and page > max_pages:
@@ -1544,7 +1547,7 @@ class GitHubAPIClient:
         reset_time = response.headers.get('X-RateLimit-Reset', 'Unknown')
 
         if reset_time != 'Unknown':
-            reset_datetime = datetime.fromtimestamp(int(reset_time))
+            reset_datetime = datetime.fromtimestamp(int(reset_time), tz=timezone.utc)
             print(f"[{prefix}] Rate limit: {remaining}/{limit}, resets at {reset_datetime}")
         else:
             print(f"[{prefix}] Rate limit: {remaining}/{limit}")
@@ -1570,7 +1573,7 @@ def save_json_data(data: Any, filepath: str, timestamp: bool = True) -> str:
                     'record_count': len(data)
                 }
             }
-            data = [metadata] + data
+            data = [metadata, *data]
 
     with open(filepath, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
@@ -1583,10 +1586,10 @@ def load_json_data(filepath: str) -> Any:
     if not os.path.exists(filepath):
         return None
 
-    with open(filepath, 'r', encoding='utf-8') as f:
+    with open(filepath, encoding='utf-8') as f:
         return json.load(f)
 
-def update_data_registry(layer: str, entity: str, files: List[str]) -> None:
+def update_data_registry(layer: str, entity: str, files: list[str]) -> None:
     """Update the data registry with new files."""
     registry_path = f"data/{layer}/registry.json"
 
@@ -1607,12 +1610,12 @@ class OrganizationConfig:
     def __init__(self, org_name: str):
         self.org_name = org_name
         # CoOps-specific blacklist for repositories to skip
-        self.repo_blacklist: List[str] = [
+        self.repo_blacklist: list[str] = [
             "Hi.Events",
             "Qualifying-Software-Engineers-Undergraduates-in-DevOps"
         ]
 
-    def should_skip_repo(self, repo: Dict[str, Any]) -> bool:
+    def should_skip_repo(self, repo: dict[str, Any]) -> bool:
         """Check if repository should be skipped (blacklisted or fork)."""
         return (
             repo.get('name') in self.repo_blacklist or
@@ -1620,7 +1623,7 @@ class OrganizationConfig:
         )
 
 
-def parse_github_date(date_str: str) -> Optional[datetime]:
+def parse_github_date(date_str: str) -> datetime | None:
     """
     Parse GitHub API date strings in various formats.
     Handles both UTC (Z) and timezone offset formats.
@@ -1648,14 +1651,14 @@ def parse_github_date(date_str: str) -> Optional[datetime]:
             # Extract the base datetime part (YYYY-MM-DDTHH:MM:SS)
             # Remove timezone suffix like -03:00 or +05:30
             base_date_str = date_str[:19]  # First 19 chars: YYYY-MM-DDTHH:MM:SS
-            return datetime.strptime(base_date_str, '%Y-%m-%dT%H:%M:%S')
+            return datetime.strptime(base_date_str, '%Y-%m-%dT%H:%M:%S')  # noqa: DTZ007 — deliberate: GitHub timestamps are read as naive UTC, the pipeline-wide convention every consumer compares like-with-like; see #143
         except (ValueError, IndexError):
             pass
 
     # Try standard formats
     for fmt in formats:
         try:
-            return datetime.strptime(date_str, fmt)
+            return datetime.strptime(date_str, fmt)  # noqa: DTZ007 — deliberate: GitHub timestamps are read as naive UTC, the pipeline-wide convention every consumer compares like-with-like; see #143
         except ValueError:
             continue
 

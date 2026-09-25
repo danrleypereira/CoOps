@@ -22,8 +22,6 @@ import sys
 from pathlib import Path
 from types import ModuleType
 
-import pytest
-
 _SCRIPT = Path(__file__).resolve().parents[2] / "scripts" / "verify_medallion.py"
 _SPEC = importlib.util.spec_from_file_location("verify_medallion", _SCRIPT)
 assert _SPEC is not None and _SPEC.loader is not None
@@ -72,7 +70,7 @@ def test_copied_seed_with_naive_stamps_fails_the_gate(tmp_path: Path) -> None:
     the frozen corpora carry — and it is the one a band-first comparison
     passed: delta 0 lands inside "up to 3h older, or equal".
     """
-    all_naive = {n: _NAIVE_OLD for n in verify_medallion.EXPECTED_GOLD}
+    all_naive = dict.fromkeys(verify_medallion.EXPECTED_GOLD, _NAIVE_OLD)
     rep, results = _gold_report(tmp_path, dict(all_naive), dict(all_naive))
 
     assert not results[0].passed
@@ -88,8 +86,8 @@ def test_naive_seed_shifted_back_two_hours_is_inconclusive(tmp_path: Path) -> No
     stamp may reach the band, and inside it the row reports inconclusive
     rather than failing.
     """
-    all_naive = {n: _NAIVE_OLD for n in verify_medallion.EXPECTED_GOLD}
-    shifted = {n: "2026-09-23T22:00:00" for n in verify_medallion.EXPECTED_GOLD}
+    all_naive = dict.fromkeys(verify_medallion.EXPECTED_GOLD, _NAIVE_OLD)
+    shifted = dict.fromkeys(verify_medallion.EXPECTED_GOLD, "2026-09-23T22:00:00")
     rep, results = _gold_report(tmp_path, shifted, all_naive)
 
     assert results[0].passed
@@ -104,8 +102,8 @@ def test_unreadable_generated_at_is_the_instrument(tmp_path: Path) -> None:
     so this is the verdict a real run gets today until the writers stamp
     all five.
     """
-    ref = {n: "2026-09-24T00:00:00+00:00" for n in verify_medallion.EXPECTED_GOLD}
-    root = {n: "2026-09-25T06:00:00+00:00" for n in verify_medallion.EXPECTED_GOLD}
+    ref = dict.fromkeys(verify_medallion.EXPECTED_GOLD, "2026-09-24T00:00:00+00:00")
+    root = dict.fromkeys(verify_medallion.EXPECTED_GOLD, "2026-09-25T06:00:00+00:00")
     rep, results = _gold_report(tmp_path, root, ref, drop="registry.json")
 
     assert not results[0].passed

@@ -1,6 +1,7 @@
 import json
-import os
-from coops.utils.github_api import save_json_data, load_json_data
+
+from coops.utils.github_api import load_json_data, save_json_data
+
 
 def test_save_json_data_list_metadata(tmp_path):
     file = tmp_path / "data.json"

@@ -1,16 +1,15 @@
-#!/usr/bin/env python3
 """
 Integration tests for Registry Manager.
 Tests the data catalog and file inventory management system.
 """
 
-import pytest
-import os
 from datetime import datetime
+
+import pytest
+
 from coops.etl.registry_manager import (
+    categorize_bronze_files,
     create_master_registry,
-    scan_data_directory,
-    categorize_bronze_files
 )
 
 
@@ -53,7 +52,7 @@ class TestRegistryManagerIntegration:
         """Test that scan_data_directory finds all JSON files"""
         # In real scenario, would scan actual files
         # For test, we verify the fake_io has the expected files
-        bronze_files = [k for k in fake_io.keys() if k.startswith("data/bronze/")]
+        bronze_files = [k for k in fake_io if k.startswith("data/bronze/")]
         
         assert len(bronze_files) > 0
         assert "data/bronze/repositories.json" in bronze_files
@@ -61,7 +60,7 @@ class TestRegistryManagerIntegration:
 
     def test_categorize_bronze_files_groups_correctly(self, mock_data_structure, fake_io):
         """Test that bronze files are categorized by type"""
-        bronze_files = [k for k in fake_io.keys() if k.startswith("data/bronze/")]
+        bronze_files = [k for k in fake_io if k.startswith("data/bronze/")]
         
         categorized = categorize_bronze_files(bronze_files)
         
@@ -86,7 +85,7 @@ class TestRegistryManagerIntegration:
 
     def test_registry_tracks_file_metadata(self, mock_data_structure, fake_io):
         """Test that registry tracks file metadata correctly"""
-        registry_file = create_master_registry()
+        create_master_registry()
         registry = fake_io["data/master_registry.json"]
         
         # Verify file inventory has entries
@@ -110,7 +109,7 @@ class TestRegistryManagerIntegration:
     def test_registry_updates_incrementally(self, mock_data_structure, fake_io):
         """Test that registry can be updated with new files"""
         # Create initial registry
-        registry_file1 = create_master_registry()
+        create_master_registry()
         registry1 = fake_io["data/master_registry.json"]
         initial_count = len(registry1.get("file_inventory", []))
         
@@ -118,7 +117,7 @@ class TestRegistryManagerIntegration:
         fake_io["data/bronze/new_data.json"] = [{"id": 999}]
         
         # Recreate registry
-        registry_file2 = create_master_registry()
+        create_master_registry()
         registry2 = fake_io["data/master_registry.json"]
         updated_count = len(registry2.get("file_inventory", []))
         

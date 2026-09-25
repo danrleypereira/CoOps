@@ -1,14 +1,15 @@
-#!/usr/bin/env python3
 """
 Member analytics processing for Silver layer
 Transforms raw member data into analytics-ready metrics
 """
 
-import pandas as pd
-import numpy as np
 from datetime import datetime, timezone
-from typing import Any, List, Optional
-from coops.utils.github_api import save_json_data, load_json_data, parse_github_date
+from typing import Any
+
+import numpy as np
+
+from coops.utils.github_api import load_json_data, save_json_data
+
 
 def _parse_capture_time(metadata: Any) -> datetime:
     """Parse the Bronze sidecar's ``extracted_at`` into a naive datetime.
@@ -68,7 +69,10 @@ def _account_age_days(member_data: dict, as_of: datetime) -> int:
     """
     if member_data.get('created_at'):
         try:
-            created_date = datetime.strptime(member_data['created_at'], '%Y-%m-%dT%H:%M:%SZ')
+            # GitHub created_at ("…Z") is read as naive UTC so the subtraction
+            # below compares like with like against the capture time, which
+            # _parse_capture_time returns naive too. (DTZ007 suppressed.)
+            created_date = datetime.strptime(member_data['created_at'], '%Y-%m-%dT%H:%M:%SZ')  # noqa: DTZ007 - GitHub's "…Z" read as naive UTC to match the naive capture time subtracted below
             return (as_of - created_date).days
         except (ValueError, TypeError):
             return 0
@@ -106,10 +110,9 @@ def classify_member_status(member_data: dict, as_of: datetime) -> str:
     # Classification logic from notebook
     if account_age_days < 365 or (public_repos < 10 and followers < 10):
         return 'new'
-    else:
-        return 'established'
+    return 'established'
 
-def process_member_analytics() -> List[str]:
+def process_member_analytics() -> list[str]:
     """Process member data into analytics format
 
     Ages, and everything derived from them (``account_age_days``,
@@ -132,7 +135,7 @@ def process_member_analytics() -> List[str]:
 
     # Skip the metadata entry if present, keeping the capture instant it
     # records: it is the reference every account age is measured against.
-    capture_time: Optional[datetime] = None
+    capture_time: datetime | None = None
     if isinstance(members_data, list) and len(members_data) > 0 and '_metadata' in members_data[0]:
         capture_time = _parse_capture_time(members_data[0].get('_metadata'))
         members_data = members_data[1:]

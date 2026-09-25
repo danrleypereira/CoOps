@@ -30,13 +30,13 @@ from typing import get_type_hints
 import pytest
 
 from coops.domain import (
+    PROVIDER_GITHUB,
     Actor,
     Commit,
     FileEntry,
     FileTree,
     Issue,
     Member,
-    PROVIDER_GITHUB,
     ProviderAccount,
     PullRequest,
     Repository,

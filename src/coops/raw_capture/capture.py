@@ -42,9 +42,10 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+from collections.abc import Iterator
 from dataclasses import asdict, dataclass
 from datetime import datetime, timedelta, timezone
-from typing import Any, Dict, Iterator, Optional, Tuple
+from typing import Any
 
 DEFAULT_PROVIDER = "github"
 
@@ -63,17 +64,17 @@ class CaptureRecord:
     tenant_id: str
     provider: str
     endpoint: str
-    params: Dict[str, Any]
-    etag: Optional[str]
+    params: dict[str, Any]
+    etag: str | None
     fetched_at: str
     payload: Any
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         """The serialised capture shape, keys in index order."""
         return asdict(self)
 
     @classmethod
-    def from_dict(cls, data: Dict[str, Any]) -> "CaptureRecord":
+    def from_dict(cls, data: dict[str, Any]) -> CaptureRecord:
         return cls(
             tenant_id=data["tenant_id"],
             provider=data.get("provider") or DEFAULT_PROVIDER,
@@ -105,11 +106,13 @@ class RawCaptureWriter:
         self.tenant_dir = os.path.join(self.root_dir, tenant_id)
 
     @staticmethod
-    def record_key(provider: str, endpoint: str, params: Optional[Dict[str, Any]]) -> str:
+    def record_key(provider: str, endpoint: str, params: dict[str, Any] | None) -> str:
         """Deterministic filename key for a request (endpoint + params)."""
         canonical = json.dumps(params or {}, sort_keys=True, ensure_ascii=False)
+        # Content-addressed raw-store filename, not a security hash; the
+        # digest must stay md5 or every existing capture would miss.
         return hashlib.md5(
-            f"{provider}:{endpoint}:{canonical}".encode("utf-8")
+            f"{provider}:{endpoint}:{canonical}".encode(), usedforsecurity=False
         ).hexdigest()
 
     def _ensure_private_dirs(self) -> None:
@@ -122,10 +125,10 @@ class RawCaptureWriter:
     def write(
         self,
         endpoint: str,
-        params: Optional[Dict[str, Any]],
-        etag: Optional[str],
+        params: dict[str, Any] | None,
+        etag: str | None,
         payload: Any,
-        fetched_at: Optional[str] = None,
+        fetched_at: str | None = None,
     ) -> CaptureRecord:
         self._ensure_private_dirs()
         record = CaptureRecord(
@@ -156,7 +159,7 @@ class RawCaptureWriter:
             name for name in os.listdir(self.tenant_dir) if name.endswith(".json")
         )
 
-    def iter_records(self) -> Iterator[Tuple[str, CaptureRecord]]:
+    def iter_records(self) -> Iterator[tuple[str, CaptureRecord]]:
         for name in self.record_files():
             path = os.path.join(self.tenant_dir, name)
             with open(path, encoding="utf-8") as f:
@@ -174,7 +177,7 @@ class RawCaptureWriter:
         return removed
 
 
-def _parse_fetched_at(value: str) -> Optional[datetime]:
+def _parse_fetched_at(value: str) -> datetime | None:
     """Parse an ISO timestamp, tolerating the ``Z`` suffix (3.10 lacks it)."""
     if not value:
         return None

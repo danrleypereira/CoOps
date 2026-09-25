@@ -1,23 +1,22 @@
-#!/usr/bin/env python3
 """
 Temporal analysis processing for Silver layer
 Analyzes time-based patterns and trends
 """
 
 from collections import defaultdict
-from datetime import datetime, timedelta
-from typing import List, Dict, Any
-from coops.utils.github_api import save_json_data, parse_github_date
-from coops.silver.members_statistics import display_name, observe_spelling
+
 from coops.silver.bronze_input import load_family
+from coops.silver.members_statistics import display_name, observe_spelling
 from coops.silver.unattributed import (
-    is_unattributed,
-    mark_unattributed,
     commit_author_identity,
     conversation_actor_identity,
+    is_unattributed,
+    mark_unattributed,
 )
+from coops.utils.github_api import parse_github_date, save_json_data
 
-def process_temporal_analysis() -> List[str]:
+
+def process_temporal_analysis() -> list[str]:
     """Process temporal data for time-based analytics"""
 
     # Load bronze data: per-repository files, not the _all aggregates
@@ -235,7 +234,7 @@ def process_temporal_analysis() -> List[str]:
 
     # Convert sets to counts and prepare for JSON serialization
     daily_summary = []
-    for date_key, data in sorted(daily_activity.items()):
+    for _date_key, data in sorted(daily_activity.items()):
         data['unique_users'] = len(data['unique_users'])
         data['unique_repos'] = len(data['unique_repos'])
 

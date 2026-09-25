@@ -118,18 +118,6 @@ exclude = "src/coops/(bronze|silver|gold|utils|etl|ai_analysis|infrastructure|ra
 module = ["bson", "bson.*"]
 follow_imports = "skip"
 
-# Pins ruff *behaviour* to match the version pin in the dev group above.
-# Deliberately minimal: every setting here either restates what ruff already
-# infers from `requires-python` (target-version) or affects only rules that
-# `ruff check` does not enable by default (line-length → E501/formatter), so
-# adding this section changes no finding that the regression gate compares.
-# required-version makes a version/behaviour mismatch fail loudly instead of
-# silently re-baselining: ruff refuses to run under any other version.
-[tool.ruff]
-target-version = "py310"
-line-length = 100
-required-version = "0.16.9"
-
 [tool.coverage.report]
 exclude_lines = [
     "pragma: no cover",
@@ -139,4 +127,85 @@ exclude_lines = [
     "if __name__ == .__main__.:",
     "if TYPE_CHECKING:",
     "@abstractmethod",
+]
+
+# The lint gate. Pinned to an explicit select so a ruff upgrade cannot widen
+# the gate on its own: a new rule joins only when this list says so, and any
+# finding it then reports is unambiguously new (chore/ruff-green-baseline).
+[tool.ruff]
+# Same floor as [tool.mypy] python_version: the CI matrix runs 3.10–3.12, so
+# UP fixes must not emit syntax an oldest-supported interpreter rejects.
+target-version = "py310"
+# First-party resolution (import sorting, TID) — the package lives in src/.
+src = ["src", "tests"]
+line-length = 100
+# Pins ruff *behaviour* to the version pinned in the dev group (#221). Merged
+# here from #221's own [tool.ruff]: TOML rejects duplicate keys, so the two
+# blocks cannot coexist — a cherry-pick that reported "no conflicts" still
+# produced a file ruff refuses to parse ("duplicate key"), because git merged
+# them as text and text does not know what a table is.
+required-version = "0.16.9"
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle errors only. E1/E2/E5 and W (whitespace, line length) are
+    # the formatter's job; this repo has not adopted `ruff format` (a full
+    # reformat is its own change), so style rules would be ~2.2k findings of
+    # noise the gate cannot act on.
+    "E4",
+    "E7",
+    "E9",
+    "F",    # pyflakes: unused imports/locals, f-string without placeholders
+    "I",    # import order
+    "UP",   # typing modernisation at the py310 floor
+    "B",    # bugbear: loop-variable misuse, zip without strict=
+    "C4",   # comprehension hygiene: double cast, needless dict comprehension
+    "RET",  # return hygiene: dead branches, needless assignment-before-return
+    "SIM",  # simplify: nested with/if, `in d.keys()`
+    "RUF",  # ruff-specific: unsorted __all__, unused unpacked variables
+    "DTZ",  # naive datetimes — issue #143's defect class (persisted local
+            # wall-clock timestamps); kept whole so new naive writes cannot
+            # enter quietly. Deliberate naive reads carry a reasoned noqa.
+    "BLE",  # blind `except Exception` — issue #212's defect class (tests that
+            # cannot fail). Deliberate breadth (CLI boundary, per-item
+            # resilience) carries a reasoned noqa.
+    "S",    # flake8-bandit: try/except/pass, exec, insecure hashes. S101
+            # (assert) is ignored for tests/ below — asserts are the point.
+    "EXE",  # shebang hygiene: a shebang on a non-executable file lies
+    "FURB", # refurb: slice-to-remove-suffix, `x or y` simplifications
+    "PLC0414", # explicit re-export (`X as X`). Not a style preference: the
+            # gate in scripts/check_regressions.py measures with ruff's own
+            # default rules, which include this one, so a noqa for it is
+            # load-bearing THERE while reading as RUF100 (unused) here. Select
+            # it so the project and the gate agree about one rule instead of
+            # disagreeing silently — found when the gate flagged storage/raw.py
+            # 0 -> 1 after this branch removed that noqa as redundant.
+]
+# Not selected, deliberately (all measured, not assumed):
+# - E1/E2/E5/W, E501 — formatter territory; adopting one is a separate change.
+# - PL (455 findings today) — dominated by PLR2004 magic-value comparisons in
+#   tests and complexity thresholds (PLR09xx) this codebase was never tuned
+#   to; enabling it would drown the gate on day one.
+# - TRY (96) — opinionated raise-from/logging discipline; would force
+#   exception-handling rewrites across the API client in a lint pass.
+# - PTH (153) — os.path → pathlib migration; a real but structural change.
+# - PT (46) — pytest style (parametrize idioms); test churn without defects.
+# - T20 (194) — the ETL is a console program; printing is its interface.
+# - ANN/D — un-annotated and under-documented legacy layers; the mypy
+#   boundary (domain/github/storage) is where typing is enforced today.
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = [
+    "S101", # assert is the assertion mechanism of a test
+    "DTZ",  # fixtures and expected values are built in the pipeline's data
+            # model: naive UTC, the shape GitHub's own timestamps parse into
+            # (see parse_github_date). Making them aware would test a
+            # different model than the code under test runs on.
+    "S105", # dummy credentials: fixtures pass fake tokens by design; there is
+    "S106", # no real secret in a test, and the parameter name is the API's.
+    "S603", # subprocess with a non-literal argv: scripts/check_regressions.py
+    "S607", # is a CLI, so its tests must invoke it as one. The argv is built
+            # in the test from its own constants — there is no untrusted input
+            # to check for, which is what S603 exists to catch. Added when #221
+            # landed the gate and its tests after this baseline was measured.
 ]

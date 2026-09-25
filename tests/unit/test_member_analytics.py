@@ -266,7 +266,7 @@ def test_process_member_analytics_with_metadata(monkeypatch):
     monkeypatch.setattr("coops.silver.member_analytics.load_json_data", fake_load)
     monkeypatch.setattr("coops.silver.member_analytics.save_json_data", fake_save)
 
-    files = process_member_analytics()
+    process_member_analytics()
 
     # Verifica que apenas 1 membro foi processado (metadata ignorada)
     members_analytics = saved_data["data/silver/members_analytics.json"]
@@ -305,7 +305,7 @@ def test_process_member_analytics_member_without_created_at(monkeypatch):
     monkeypatch.setattr("coops.silver.member_analytics.load_json_data", fake_load)
     monkeypatch.setattr("coops.silver.member_analytics.save_json_data", fake_save)
 
-    files = process_member_analytics()
+    process_member_analytics()
 
     members_analytics = saved_data["data/silver/members_analytics.json"]
     assert len(members_analytics) == 1

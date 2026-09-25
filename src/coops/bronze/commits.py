@@ -1,19 +1,24 @@
 import copy
 import hashlib
-import os
 import re
-from typing import Any, Dict, List, Optional
+from typing import Any
+
+from coops.bronze.files import remove_aggregate
+from coops.bronze.watermarks import WatermarkStore, max_iso
+from coops.utils.cache_fold import client_fold
+from coops.utils.data_helpers import strip_metadata
+from coops.utils.github_api import (
+    GitHubAPIClient,
+    OrganizationConfig,
+    load_json_data,
+    save_json_data,
+)
 
 # Free text headed for a public branch: commit messages carry `Co-authored-by:`
 # and `Signed-off-by:` trailers with real addresses, which a key-name sweep
 # cannot see. Matched loosely on purpose — over-scrubbing a message is harmless,
 # leaking an address is not.
 _EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
-from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data, load_json_data
-from coops.utils.data_helpers import strip_metadata
-from coops.utils.cache_fold import client_fold
-from coops.bronze.watermarks import WatermarkStore, max_iso
-from coops.bronze.files import remove_aggregate
 
 
 def _hash_email(email: str) -> str:
@@ -51,7 +56,7 @@ def _remove_email_keys(obj: Any) -> None:
             _remove_email_keys(item)
 
 
-def _sanitize_commit(commit: Dict[str, Any]) -> Dict[str, Any]:
+def _sanitize_commit(commit: dict[str, Any]) -> dict[str, Any]:
     """Drop raw author/committer emails, keeping a stable identity key.
 
     Commit data is committed to a public branch, so raw email addresses must not
@@ -164,15 +169,15 @@ def extract_commits(
     config: OrganizationConfig,
     use_cache: bool = True,
     method: str = "rest",
-    since: Optional[str] = None,
-    until: Optional[str] = None,
-    max_commits_per_repo: Optional[int] = None,
+    since: str | None = None,
+    until: str | None = None,
+    max_commits_per_repo: int | None = None,
     page_size: int = 50,
     include_active_branches: bool = False,
     active_days: int = 30,
     time_chunks: int = 3,
-    watermarks: Optional[WatermarkStore] = None,
-) -> List[str]:
+    watermarks: WatermarkStore | None = None,
+) -> list[str]:
 
     # Load filtered repositories
     filtered_repos = load_json_data("data/bronze/repositories_filtered.json")
@@ -181,7 +186,7 @@ def extract_commits(
         return []
 
     generated_files = []
-    all_commits: List[Dict[str, Any]] = []
+    all_commits: list[dict[str, Any]] = []
 
     # Skip metadata if present
     if isinstance(filtered_repos, list) and len(filtered_repos) > 0 and isinstance(filtered_repos[0], dict) and '_metadata' in filtered_repos[0]:
@@ -222,15 +227,15 @@ def extract_commits(
             if branches_to_extract:
                 print(f"  Found {len(branches_to_extract)} unmerged branches to extract")
             else:
-                print(f"  No active unmerged branches found")
+                print("  No active unmerged branches found")
 
         # Choose extraction method
-        data_commits: List[Dict[str, Any]] = []
+        data_commits: list[dict[str, Any]] = []
         if method.lower() == "graphql":
             if not owner:
                 print(f"[WARN] Skipping {full_name}: cannot determine owner/name for GraphQL")
                 continue
-            nodes, meta = client.graphql_commit_history(
+            nodes, _meta = client.graphql_commit_history(
                 owner=owner,
                 repo=name_only,
                 branches=branches_to_extract,
@@ -334,10 +339,17 @@ def extract_commits(
                         # Stamped by the offline fold (#199); set only when
                         # present so an online run's record shape is unchanged.
                         commit_data['last_seen_at'] = rest_last_seen[sha]
-                    if 'commit' in commit_data and 'author' in commit_data['commit']:
-                        # If commit.author.login exists at root level, copy it to commit.commit.author.login
-                        if 'author' in commit_data and isinstance(commit_data['author'], dict) and 'login' in commit_data['author']:
-                            commit_data['commit']['author']['login'] = commit_data['author']['login']
+                    # If commit.author.login exists at root level, copy it to
+                    # commit.commit.author.login (outer and inner ifs merged;
+                    # short-circuit order unchanged).
+                    if (
+                        'commit' in commit_data
+                        and 'author' in commit_data['commit']
+                        and 'author' in commit_data
+                        and isinstance(commit_data['author'], dict)
+                        and 'login' in commit_data['author']
+                    ):
+                        commit_data['commit']['author']['login'] = commit_data['author']['login']
 
                     # The REST response nests parents as `[{sha, ...}]`; store
                     # just the shas so this path agrees with the GraphQL one.
@@ -404,10 +416,17 @@ def extract_commits(
                         # Stamped by the offline fold (#199); set only when
                         # present so an online run's record shape is unchanged.
                         commit_data['last_seen_at'] = rest_last_seen[sha]
-                    if 'commit' in commit_data and 'author' in commit_data['commit']:
-                        # If commit.author.login exists at root level, copy it to commit.commit.author.login
-                        if 'author' in commit_data and isinstance(commit_data['author'], dict) and 'login' in commit_data['author']:
-                            commit_data['commit']['author']['login'] = commit_data['author']['login']
+                    # If commit.author.login exists at root level, copy it to
+                    # commit.commit.author.login (outer and inner ifs merged;
+                    # short-circuit order unchanged).
+                    if (
+                        'commit' in commit_data
+                        and 'author' in commit_data['commit']
+                        and 'author' in commit_data
+                        and isinstance(commit_data['author'], dict)
+                        and 'login' in commit_data['author']
+                    ):
+                        commit_data['commit']['author']['login'] = commit_data['author']['login']
 
                     # Merge original commit with stats and repo context. Parents
                     # are reduced to their shas to match the GraphQL record shape.

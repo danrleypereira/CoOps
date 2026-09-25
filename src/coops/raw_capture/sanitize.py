@@ -22,7 +22,7 @@ from __future__ import annotations
 import json
 import os
 import re
-from typing import Any, Dict
+from typing import Any
 
 EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 REDACTED = "[email removed]"
@@ -53,7 +53,7 @@ def contains_email(value: str) -> bool:
 def sanitize_payload(payload: Any) -> Any:
     """Return ``payload`` with personal keys dropped and emails redacted."""
     if isinstance(payload, dict):
-        out: Dict[str, Any] = {}
+        out: dict[str, Any] = {}
         for key, value in payload.items():
             if isinstance(key, str) and key.lower() in PII_KEYS:
                 continue
@@ -66,7 +66,7 @@ def sanitize_payload(payload: Any) -> Any:
     return payload
 
 
-def sanitize_capture_record(record: Dict[str, Any]) -> Dict[str, Any]:
+def sanitize_capture_record(record: dict[str, Any]) -> dict[str, Any]:
     """Sanitize one capture envelope, preserving its request metadata."""
     sanitized = dict(record)
     sanitized["payload"] = sanitize_payload(record.get("payload"))

@@ -1,15 +1,15 @@
-#!/usr/bin/env python3
 """
 Collaboration networks processing for Silver layer
 Analyzes collaboration patterns and creates network metrics
 """
 
 from collections import defaultdict
-from typing import List, Dict, Any, Set
-from coops.utils.github_api import save_json_data
-from coops.silver.bronze_input import load_family
 
-def process_collaboration_networks() -> List[str]:
+from coops.silver.bronze_input import load_family
+from coops.utils.github_api import save_json_data
+
+
+def process_collaboration_networks() -> list[str]:
     """Process collaboration data into network metrics"""
 
     # Load bronze data: per-repository files, not the _all aggregates
@@ -155,7 +155,7 @@ def process_collaboration_networks() -> List[str]:
 
     # Identify cross-repository collaborators (hubs)
     cross_repo_contributors = {}
-    for user in user_collaborations.keys():
+    for user in user_collaborations:
         repos_contributed = [repo for repo, contributors in repo_collaborators.items() if user in contributors]
         if len(repos_contributed) > 1:
             cross_repo_contributors[user] = {

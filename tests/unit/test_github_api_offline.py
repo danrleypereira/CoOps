@@ -67,9 +67,8 @@ def test_offline_cache_miss_raises_naming_the_url(tmp_path):
     url = "https://api.github.com/orgs/test-org/repos?per_page=100&page=1"
 
     transport = _no_network()
-    with patch("requests.get", transport):
-        with pytest.raises(OfflineCacheMiss) as exc_info:
-            client.get_with_cache(url)
+    with patch("requests.get", transport), pytest.raises(OfflineCacheMiss) as exc_info:
+        client.get_with_cache(url)
 
     assert url in str(exc_info.value)
     assert exc_info.value.url == url
@@ -102,9 +101,8 @@ def test_offline_miss_with_use_cache_false_also_raises(tmp_path):
     produced offline, so the run stops."""
     client = GitHubAPIClient(token="test", cache_dir=str(tmp_path / "cache"), offline=True)
 
-    with patch("requests.get", _no_network()):
-        with pytest.raises(OfflineCacheMiss):
-            client.get_with_cache("https://api.github.com/repos/test-org/repo", use_cache=False)
+    with patch("requests.get", _no_network()), pytest.raises(OfflineCacheMiss):
+        client.get_with_cache("https://api.github.com/repos/test-org/repo", use_cache=False)
 
 
 def test_offline_graphql_serves_cache_without_network(tmp_path):
@@ -140,9 +138,8 @@ def test_offline_graphql_miss_raises_naming_the_endpoint(tmp_path):
     client = GitHubAPIClient(token="test", cache_dir=str(tmp_path / "cache"), offline=True)
 
     transport = _no_network()
-    with patch("requests.post", transport):
-        with pytest.raises(OfflineCacheMiss) as exc_info:
-            client.graphql("query { rateLimit { remaining } }")
+    with patch("requests.post", transport), pytest.raises(OfflineCacheMiss) as exc_info:
+        client.graphql("query { rateLimit { remaining } }")
 
     assert "https://api.github.com/graphql" in str(exc_info.value)
     assert transport.call_count == 0
@@ -154,9 +151,8 @@ def test_offline_miss_not_swallowed_by_repository_tree(tmp_path):
     reported as one failed repository (#199)."""
     client = GitHubAPIClient(token="test", cache_dir=str(tmp_path / "cache"), offline=True)
 
-    with patch("requests.get", _no_network()):
-        with pytest.raises(OfflineCacheMiss):
-            client.get_repository_tree("test-org", "repo")
+    with patch("requests.get", _no_network()), pytest.raises(OfflineCacheMiss):
+        client.get_repository_tree("test-org", "repo")
 
 
 def test_offline_miss_not_swallowed_by_parallel_commit_fetch(tmp_path):
@@ -165,8 +161,7 @@ def test_offline_miss_not_swallowed_by_parallel_commit_fetch(tmp_path):
     exists to prevent."""
     client = GitHubAPIClient(token="test", cache_dir=str(tmp_path / "cache"), offline=True)
 
-    with patch("requests.get", _no_network()):
-        with pytest.raises(OfflineCacheMiss):
-            client._fetch_rest_commit_details_parallel(
-                [{"sha": "abc123"}], "test-org", "repo", use_cache=True
-            )
+    with patch("requests.get", _no_network()), pytest.raises(OfflineCacheMiss):
+        client._fetch_rest_commit_details_parallel(
+            [{"sha": "abc123"}], "test-org", "repo", use_cache=True
+        )

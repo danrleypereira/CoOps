@@ -1,14 +1,14 @@
-#!/usr/bin/env python3
 """
 Integration tests for Bronze -> Silver data transformation pipeline.
 Tests the complete flow from raw GitHub API data to processed analytics.
 """
 
+
 import pytest
-from datetime import datetime
-from coops.silver.member_analytics import process_member_analytics
-from coops.silver.contribution_metrics import process_contribution_metrics
+
 from coops.silver.collaboration_networks import process_collaboration_networks
+from coops.silver.contribution_metrics import process_contribution_metrics
+from coops.silver.member_analytics import process_member_analytics
 from coops.silver.temporal_analysis import process_temporal_analysis
 
 
@@ -252,7 +252,7 @@ class TestBronzeToSilverIntegration:
         # Verify files were generated
         assert len(generated_files) > 0
         # Collaboration networks generates multiple files
-        assert any("collaboration" in f for f in fake_io.keys())
+        assert any("collaboration" in f for f in fake_io)
 
     def test_temporal_analysis_transformation(self, fake_io):
         """Test that temporal analysis correctly aggregates events by time"""
@@ -337,7 +337,7 @@ class TestBronzeToSilverIntegration:
         
         # Verify data integrity across layers
         members = fake_io["data/silver/members_analytics.json"]
-        metrics = fake_io["data/silver/contribution_metrics.json"]
+        fake_io["data/silver/contribution_metrics.json"]
         
         # Check that members data exists
         assert len(members) == len(bronze_members_data)
@@ -368,9 +368,7 @@ class TestBronzeToSilverIntegration:
             {"login": "incomplete_user"}  # Missing many fields
         ]
         
-        # Should handle gracefully without crashing
-        try:
-            generated_files = process_member_analytics()
-            assert isinstance(generated_files, list)
-        except Exception as e:
-            pytest.fail(f"Should handle malformed data gracefully: {e}")
+        # Should handle gracefully without crashing: an unhandled error
+        # surfaces as a test failure on its own, no wrapper needed.
+        generated_files = process_member_analytics()
+        assert isinstance(generated_files, list)

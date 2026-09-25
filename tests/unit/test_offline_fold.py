@@ -19,7 +19,6 @@ import json
 import os
 from datetime import datetime, timezone
 
-from coops.bronze.commits import extract_commits
 from coops.bronze.issues import extract_issues
 from coops.utils.github_api import GitHubAPIClient, OrganizationConfig
 
@@ -44,7 +43,7 @@ def key_sorting_after(anchor_key: str, label: str) -> str:
     key, so which body a test folds *first* must not be left to the hash: salt
     the fold-only body's key until its digest lands where the test needs it.
     """
-    return key_sorting_after_digest(hashlib.md5(anchor_key.encode()).hexdigest(), label)
+    return key_sorting_after_digest(hashlib.md5(anchor_key.encode(), usedforsecurity=False).hexdigest(), label)
 
 
 def key_sorting_after_digest(target_hex: str, label: str) -> str:
@@ -53,13 +52,13 @@ def key_sorting_after_digest(target_hex: str, label: str) -> str:
     index = 0
     while True:
         candidate = f"{label}#{index}"
-        if hashlib.md5(candidate.encode()).hexdigest() > target_hex:
+        if hashlib.md5(candidate.encode(), usedforsecurity=False).hexdigest() > target_hex:
             return candidate
         index += 1
 
 
 def cache_path(cache_dir: str, key: str) -> str:
-    return os.path.join(cache_dir, hashlib.md5(key.encode()).hexdigest() + ".json")
+    return os.path.join(cache_dir, hashlib.md5(key.encode(), usedforsecurity=False).hexdigest() + ".json")
 
 
 def write_body(cache_dir: str, key: str, body, mtime: float) -> str:

@@ -1,5 +1,6 @@
-from typing import Literal
 from functools import lru_cache
+from typing import Literal
+
 from pydantic import AliasChoices, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 

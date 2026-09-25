@@ -1,16 +1,17 @@
-#!/usr/bin/env python3
 """
 End-to-end integration tests for the complete ETL pipeline.
 Tests the full Bronze -> Silver -> Gold data flow.
 """
 
-import pytest
 from datetime import datetime, timedelta
-from coops.silver.member_analytics import process_member_analytics
-from coops.silver.contribution_metrics import process_contribution_metrics
-from coops.silver.collaboration_networks import process_collaboration_networks
-from coops.silver.temporal_analysis import process_temporal_analysis
+
+import pytest
+
 from coops.gold.timeline_aggregation import process_timeline_aggregation
+from coops.silver.collaboration_networks import process_collaboration_networks
+from coops.silver.contribution_metrics import process_contribution_metrics
+from coops.silver.member_analytics import process_member_analytics
+from coops.silver.temporal_analysis import process_temporal_analysis
 
 
 def _with_sidecar(members, extracted_at="2025-06-01T00:00:00"):
@@ -388,18 +389,7 @@ class TestCompleteETLPipeline:
         assert len(first_run) == 1
         
         # Add new member
-        updated_members = initial_members + [
-            {
-                "login": "user2",
-                "id": 2,
-                "name": "User Two",
-                "public_repos": 5,
-                "followers": 10,
-                "following": 8,
-                "created_at": "2023-01-01T00:00:00Z",
-                "updated_at": "2024-01-01T00:00:00Z"
-            }
-        ]
+        updated_members = [*initial_members, {"login": "user2", "id": 2, "name": "User Two", "public_repos": 5, "followers": 10, "following": 8, "created_at": "2023-01-01T00:00:00Z", "updated_at": "2024-01-01T00:00:00Z"}]
         
         fake_io["data/bronze/members_detailed.json"] = _with_sidecar(updated_members)
         

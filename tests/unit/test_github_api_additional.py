@@ -1,14 +1,15 @@
-#!/usr/bin/env python3
 """
 Testes adicionais para aumentar cobertura do github_api.py
 """
 
-import pytest
 import json
 import os
 import re
-from unittest.mock import Mock, patch, MagicMock, mock_open
-from coops.utils.github_api import GitHubAPIClient, save_json_data, load_json_data
+from unittest.mock import Mock, patch
+
+import pytest
+
+from coops.utils.github_api import GitHubAPIClient, load_json_data, save_json_data
 
 
 class TestGetActiveBranches:
@@ -212,7 +213,7 @@ class TestSaveLoadJsonData:
         assert os.path.exists(result)
         
         # Verify timestamp metadata was added
-        with open(result, 'r', encoding='utf-8') as f:
+        with open(result, encoding='utf-8') as f:
             loaded = json.load(f)
             assert '_metadata' in loaded
             assert 'extracted_at' in loaded['_metadata']
@@ -344,7 +345,7 @@ class TestGraphQLCommitHistory:
                 }
             ]
             
-            result, rate_meta = client.graphql_commit_history(
+            result, _rate_meta = client.graphql_commit_history(
                 "owner", "repo", page_size=10, max_pages=2
             )
             
@@ -365,7 +366,7 @@ class TestGraphQLCommitHistory:
                 }
             }
             
-            result, rate_meta = client.graphql_commit_history(
+            result, _rate_meta = client.graphql_commit_history(
                 "owner", "repo", page_size=10
             )
             
@@ -378,7 +379,7 @@ class TestGraphQLCommitHistory:
         with patch.object(client, 'graphql') as mock_graphql:
             mock_graphql.return_value = None  # Erro
             
-            result, rate_meta = client.graphql_commit_history(
+            result, _rate_meta = client.graphql_commit_history(
                 "owner", "repo", page_size=10
             )
             

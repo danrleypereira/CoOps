@@ -43,9 +43,10 @@ from __future__ import annotations
 
 import json
 import os
+from collections.abc import Iterable
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any, Dict, Iterable, List, Optional, Set, Tuple
+from typing import Any
 
 #: Bounds only the cheap first-bytes prefilter that decides whether a cache
 #: file is worth parsing at all; bodies are read whole after it.
@@ -55,7 +56,7 @@ _PREFILTER_BYTES = 4096
 #: mtime of the newest cached body the record was found in (float, because two
 #: bodies can be written within the same second and the fold still has to
 #: order them).
-_Entry = List[Any]  # [record: Dict, max_mtime: float]
+_Entry = list[Any]  # [record: Dict, max_mtime: float]
 
 
 def _mtime_iso(mtime: float) -> str:
@@ -67,7 +68,7 @@ def _mtime_iso(mtime: float) -> str:
     return datetime.fromtimestamp(mtime, tz=timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def _parse_iso(value: Optional[str]) -> Optional[datetime]:
+def _parse_iso(value: str | None) -> datetime | None:
     """Parse a GitHub-style ISO timestamp to an aware UTC datetime, or None."""
     if not value:
         return None
@@ -80,7 +81,7 @@ def _parse_iso(value: Optional[str]) -> Optional[datetime]:
     return dt
 
 
-def _repo_from_api_url(url: Optional[str]) -> Optional[str]:
+def _repo_from_api_url(url: str | None) -> str | None:
     """``https://api.github.com/repos/{owner}/{repo}/...`` → ``owner/repo``."""
     if not isinstance(url, str):
         return None
@@ -94,7 +95,7 @@ def _repo_from_api_url(url: Optional[str]) -> Optional[str]:
     return f"{parts[0]}/{parts[1]}"
 
 
-def client_fold(client: Any) -> Optional["CacheFold"]:
+def client_fold(client: Any) -> CacheFold | None:
     """The client's cache fold when it is genuinely in offline mode, else None.
 
     Strict about the flag (``is True``): the extractors are unit-tested with
@@ -124,7 +125,7 @@ class FoldedRecord:
     response means "not changed", never "deleted".
     """
 
-    record: Dict[str, Any]
+    record: dict[str, Any]
     last_seen_at: str
 
 
@@ -138,14 +139,10 @@ class CacheFold:
 
     def __init__(self, cache_dir: str) -> None:
         self.cache_dir = cache_dir
-        self._issues: Optional[Dict[str, Dict[Any, Any]]] = None
-        self._events: Optional[Dict[str, Dict[Any, Any]]] = None
-        self._commit_lists: Optional[
-            Dict[str, List[Tuple[float, List[Dict[str, Any]]]]]
-        ] = None
-        self._graphql_bodies: Optional[
-            List[Tuple[float, Set[str], List[Dict[str, Any]]]]
-        ] = None
+        self._issues: dict[str, dict[Any, Any]] | None = None
+        self._events: dict[str, dict[Any, Any]] | None = None
+        self._commit_lists: dict[str, list[tuple[float, list[dict[str, Any]]]]] | None = None
+        self._graphql_bodies: list[tuple[float, set[str], list[dict[str, Any]]]] | None = None
 
     # -- scanning -----------------------------------------------------------
 
@@ -160,12 +157,12 @@ class CacheFold:
 
     def _load(self, path: str) -> Any:
         try:
-            with open(path, "r", encoding="utf-8") as f:
+            with open(path, encoding="utf-8") as f:
                 return json.load(f)
         except (OSError, json.JSONDecodeError):
             return None
 
-    def _list_body(self, path: str) -> Optional[Tuple[float, List[Dict[str, Any]]]]:
+    def _list_body(self, path: str) -> tuple[float, list[dict[str, Any]]] | None:
         """Parse ``path`` as a list-of-objects body, or None.
 
         The prefilter reads only the first bytes: the corpus holds thousands of
@@ -187,12 +184,12 @@ class CacheFold:
 
     @staticmethod
     def _fold(
-        bucket: Dict[Any, Any],
+        bucket: dict[Any, Any],
         key: Any,
-        record: Dict[str, Any],
+        record: dict[str, Any],
         mtime: float,
         *,
-        newer: Optional[Any] = None,
+        newer: Any | None = None,
     ) -> None:
         """Fold one record occurrence into ``bucket``.
 
@@ -215,7 +212,7 @@ class CacheFold:
 
     # -- issues and pull requests --------------------------------------------
 
-    def issues(self, full_name: str) -> Dict[Any, FoldedRecord]:
+    def issues(self, full_name: str) -> dict[Any, FoldedRecord]:
         """Newest cached version of every issue *and* PR of one repository.
 
         Keyed by ``number`` (issues and PRs share an endpoint and a number
@@ -256,7 +253,7 @@ class CacheFold:
         }
 
     @staticmethod
-    def _issue_newer(candidate: Dict[str, Any], mtime: float, prior: List[Any]) -> bool:
+    def _issue_newer(candidate: dict[str, Any], mtime: float, prior: list[Any]) -> bool:
         """True when ``candidate`` is a newer version than the folded winner.
 
         Ties and missing timestamps fall back to the body mtime so the choice
@@ -273,7 +270,7 @@ class CacheFold:
 
     # -- issue events ---------------------------------------------------------
 
-    def events(self, full_name: str) -> Dict[Any, FoldedRecord]:
+    def events(self, full_name: str) -> dict[Any, FoldedRecord]:
         """Every cached issue event of one repository, keyed by ``id``.
 
         Events are immutable and id-monotone, so versions are never compared:
@@ -306,7 +303,7 @@ class CacheFold:
 
     # -- commits ---------------------------------------------------------------
 
-    def commits(self, full_name: str, seed_oids: Set[str]) -> Dict[str, FoldedRecord]:
+    def commits(self, full_name: str, seed_oids: set[str]) -> dict[str, FoldedRecord]:
         """Every cached commit of one repository, keyed by ``sha``.
 
         Commits are immutable — a commit that differs by ``sha`` is a different
@@ -323,8 +320,8 @@ class CacheFold:
           (plus the REST records above); attachment repeats to a fixpoint so a
           run's time-chunked pages chain onto one another.
         """
-        attached: List[Tuple[float, List[Dict[str, Any]]]] = []
-        known: Set[str] = set(seed_oids)
+        attached: list[tuple[float, list[dict[str, Any]]]] = []
+        known: set[str] = set(seed_oids)
 
         for mtime, body in self._commit_lists_by_repo().get(full_name, []):
             attached.append((mtime, body))
@@ -353,7 +350,7 @@ class CacheFold:
                 changed = True
 
         attached.sort(key=lambda entry: entry[0])  # first version seen = oldest body
-        bucket: Dict[str, Any] = {}
+        bucket: dict[str, Any] = {}
         for mtime, records in attached:
             for record in records:
                 sha = record.get("sha") or record.get("oid")
@@ -366,7 +363,7 @@ class CacheFold:
             for sha, entry in bucket.items()
         }
 
-    def commit_items(self, full_name: str) -> Dict[str, FoldedRecord]:
+    def commit_items(self, full_name: str) -> dict[str, FoldedRecord]:
         """Raw REST commit-list items of one repository, keyed by ``sha``.
 
         The REST branch of ``extract_commits`` builds its stored record from
@@ -378,7 +375,7 @@ class CacheFold:
         immutable records, first version seen, ``last_seen_at`` from the
         newest body containing the sha.
         """
-        bucket: Dict[str, Any] = {}
+        bucket: dict[str, Any] = {}
         for mtime, body in self._commit_lists_by_repo().get(full_name, []):
             for item in body:
                 if item.get("sha"):
@@ -390,10 +387,10 @@ class CacheFold:
 
     def _commit_lists_by_repo(
         self,
-    ) -> Dict[str, List[Tuple[float, List[Dict[str, Any]]]]]:
+    ) -> dict[str, list[tuple[float, list[dict[str, Any]]]]]:
         if self._commit_lists is not None:
             return self._commit_lists
-        by_repo: Dict[str, List[Tuple[float, List[Dict[str, Any]]]]] = {}
+        by_repo: dict[str, list[tuple[float, list[dict[str, Any]]]]] = {}
         for path in self._iter_files():
             parsed = self._list_body(path)
             if parsed is None:
@@ -413,7 +410,7 @@ class CacheFold:
 
     def _graphql_history_bodies(
         self,
-    ) -> List[Tuple[float, Set[str], List[Dict[str, Any]]]]:
+    ) -> list[tuple[float, set[str], list[dict[str, Any]]]]:
         """Every GraphQL commit-history body: ``(mtime, oids, nodes)``.
 
         Nodes keep the GraphQL shape the extractor already maps to the stored
@@ -422,7 +419,7 @@ class CacheFold:
         """
         if self._graphql_bodies is not None:
             return self._graphql_bodies
-        bodies: List[Tuple[float, Set[str], List[Dict[str, Any]]]] = []
+        bodies: list[tuple[float, set[str], list[dict[str, Any]]]] = []
         for path in self._iter_files():
             try:
                 with open(path, "rb") as f:
@@ -444,7 +441,7 @@ class CacheFold:
             nodes = (history or {}).get("nodes") if isinstance(history, dict) else None
             if not isinstance(nodes, list) or not nodes:
                 continue
-            oids: Set[str] = set()
+            oids: set[str] = set()
             for node in nodes:
                 if not isinstance(node, dict):
                     continue
@@ -459,7 +456,7 @@ class CacheFold:
         return bodies
 
 
-def _rest_item_to_node(item: Dict[str, Any]) -> Dict[str, Any]:
+def _rest_item_to_node(item: dict[str, Any]) -> dict[str, Any]:
     """Convert a REST commit-list item to the GraphQL node shape.
 
     The commits family has one consumer (``extract_commits``) and it maps

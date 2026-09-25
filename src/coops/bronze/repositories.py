@@ -1,21 +1,20 @@
-#!/usr/bin/env python3
 """
 Repository extraction for Bronze layer.
 Extracts raw repository data from GitHub API.
 """
 
 import math
-from typing import List, Optional
 
 from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data
+
 
 def extract_repositories(
     client: GitHubAPIClient,
     config: OrganizationConfig,
     use_cache: bool = True,
-    max_repos: Optional[int] = None,
-    repo_filter: Optional[List[str]] = None,
-) -> List[str]:
+    max_repos: int | None = None,
+    repo_filter: list[str] | None = None,
+) -> list[str]:
     """Extract organization repositories to bronze layer.
 
     max_repos caps the number of filtered repositories kept, and also bounds

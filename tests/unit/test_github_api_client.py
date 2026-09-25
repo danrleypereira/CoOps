@@ -1,8 +1,12 @@
-import pytest
-import json
 import os
-from unittest.mock import Mock, patch, MagicMock, call
-from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, update_data_registry
+from unittest.mock import Mock, patch
+
+from coops.utils.github_api import (
+    GitHubAPIClient,
+    OrganizationConfig,
+    update_data_registry,
+)
+
 
 def test_client_initialization(tmp_path):
     """Testa inicialização do cliente"""
@@ -177,18 +181,17 @@ def test_get_with_cache_exhausted_retries(tmp_path, capsys):
     cache_dir = str(tmp_path / "cache")
     client = GitHubAPIClient(token="test", cache_dir=cache_dir)
     
-    with patch('time.sleep'):
-        with patch('requests.get') as mock_get:
-            mock_response = Mock()
-            mock_response.status_code = 500
-            mock_get.return_value = mock_response
-            
-            result = client.get_with_cache("https://api.github.com/test", use_cache=False, retries=2)
-            
-            assert result is None
-            assert mock_get.call_count == 2
-            captured = capsys.readouterr()
-            assert "Exhausted retries" in captured.out
+    with patch('time.sleep'), patch('requests.get') as mock_get:
+        mock_response = Mock()
+        mock_response.status_code = 500
+        mock_get.return_value = mock_response
+
+        result = client.get_with_cache("https://api.github.com/test", use_cache=False, retries=2)
+
+        assert result is None
+        assert mock_get.call_count == 2
+        captured = capsys.readouterr()
+        assert "Exhausted retries" in captured.out
 
 def test_get_paginated(tmp_path):
     """Testa paginação de resultados"""
@@ -215,7 +218,7 @@ def test_get_paginated_max_pages(tmp_path):
     with patch.object(client, 'get_with_cache') as mock_get:
         mock_get.return_value = [{"id": i} for i in range(50)]
         
-        results = client.get_paginated("https://api.github.com/test", per_page=50, max_pages=2)
+        client.get_paginated("https://api.github.com/test", per_page=50, max_pages=2)
         
         assert mock_get.call_count == 2
 
@@ -267,39 +270,37 @@ def test_organization_config():
 
 def test_update_data_registry(tmp_path):
     """Testa atualização do registro de dados"""
-    with patch('coops.utils.github_api.load_json_data') as mock_load:
-        with patch('coops.utils.github_api.save_json_data') as mock_save:
-            mock_load.return_value = {}
-            
-            update_data_registry("bronze", "issues", ["file1.json", "file2.json"])
-            
-            mock_save.assert_called_once()
-            saved_data = mock_save.call_args[0][0]
-            
-            assert "issues" in saved_data
-            assert saved_data["issues"]["files"] == ["file1.json", "file2.json"]
-            assert "updated_at" in saved_data["issues"]
+    with patch('coops.utils.github_api.load_json_data') as mock_load, patch('coops.utils.github_api.save_json_data') as mock_save:
+        mock_load.return_value = {}
+
+        update_data_registry("bronze", "issues", ["file1.json", "file2.json"])
+
+        mock_save.assert_called_once()
+        saved_data = mock_save.call_args[0][0]
+
+        assert "issues" in saved_data
+        assert saved_data["issues"]["files"] == ["file1.json", "file2.json"]
+        assert "updated_at" in saved_data["issues"]
 
 def test_update_data_registry_existing(tmp_path):
     """Testa atualização de registro existente"""
-    with patch('coops.utils.github_api.load_json_data') as mock_load:
-        with patch('coops.utils.github_api.save_json_data') as mock_save:
-            # Registry já existe com dados
-            mock_load.return_value = {
-                "commits": {
-                    "files": ["old.json"],
-                    "updated_at": "2024-01-01"
-                }
+    with patch('coops.utils.github_api.load_json_data') as mock_load, patch('coops.utils.github_api.save_json_data') as mock_save:
+        # Registry já existe com dados
+        mock_load.return_value = {
+            "commits": {
+                "files": ["old.json"],
+                "updated_at": "2024-01-01"
             }
-            
-            update_data_registry("bronze", "issues", ["new.json"])
-            
-            saved_data = mock_save.call_args[0][0]
-            
-            # Deve ter ambos commits e issues
-            assert "commits" in saved_data
-            assert "issues" in saved_data
-            assert saved_data["issues"]["files"] == ["new.json"]
+        }
+
+        update_data_registry("bronze", "issues", ["new.json"])
+
+        saved_data = mock_save.call_args[0][0]
+
+        # Deve ter ambos commits e issues
+        assert "commits" in saved_data
+        assert "issues" in saved_data
+        assert saved_data["issues"]["files"] == ["new.json"]
 
 def test_graphql_with_cache(tmp_path):
     """Testa GraphQL com cache"""
@@ -412,7 +413,7 @@ def test_get_with_cache_rate_limit_display(tmp_path, capsys):
         }
         mock_get.return_value = mock_response
         
-        result = client.get_with_cache("https://api.github.com/test", use_cache=False)
+        client.get_with_cache("https://api.github.com/test", use_cache=False)
         
         captured = capsys.readouterr()
         assert "Rate limit" in captured.out

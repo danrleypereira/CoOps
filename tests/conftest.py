@@ -1,4 +1,5 @@
 import json
+
 import pytest
 
 
@@ -19,7 +20,7 @@ def fake_io(monkeypatch, tmp_path):
     
     def _fake_scan_directory(directory: str):
         """Mock scan_data_directory to return files from fake_io"""
-        return [k for k in storage.keys() if k.startswith(directory)]
+        return [k for k in storage if k.startswith(directory)]
     
     def _fake_path_exists(path: str):
         """Mock os.path.exists to check fake_io storage"""

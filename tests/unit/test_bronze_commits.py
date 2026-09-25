@@ -5,9 +5,9 @@ including fallback logic, active branches, and time chunks.
 """
 import json
 import re
-import pytest
-from unittest.mock import MagicMock, patch, call
-from coops.bronze.commits import extract_commits, _hash_email, _sanitize_commit
+from unittest.mock import MagicMock, patch
+
+from coops.bronze.commits import _hash_email, _sanitize_commit, extract_commits
 from coops.utils.github_api import GitHubAPIClient
 
 
@@ -41,19 +41,18 @@ class TestExtractCommits:
         mock_client.get_paginated.return_value = mock_commits
         mock_client.get_with_cache.return_value = mock_details
         
-        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('coops.bronze.commits.save_json_data', return_value="file.json") as mock_save:
-                result = extract_commits(mock_client, mock_config, method="rest")
-                
-                # Verifica que chamou get_paginated para commits
-                assert mock_client.get_paginated.called
-                call_url = mock_client.get_paginated.call_args[0][0]
-                assert "test-org/repo1/commits" in call_url
-                
-                # Verifica que salvou arquivos: só commits_repo1.json; o
-                # agregado commits_all.json não é mais escrito (#170)
-                assert len(result) == 1
-                assert mock_save.call_count == 1
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos), patch('coops.bronze.commits.save_json_data', return_value="file.json") as mock_save:
+            result = extract_commits(mock_client, mock_config, method="rest")
+
+            # Verifica que chamou get_paginated para commits
+            assert mock_client.get_paginated.called
+            call_url = mock_client.get_paginated.call_args[0][0]
+            assert "test-org/repo1/commits" in call_url
+
+            # Verifica que salvou arquivos: só commits_repo1.json; o
+            # agregado commits_all.json não é mais escrito (#170)
+            assert len(result) == 1
+            assert mock_save.call_count == 1
     
     def test_extract_commits_graphql_method_success(self, capsys):
         """Testa extração de commits usando método GraphQL"""
@@ -84,16 +83,15 @@ class TestExtractCommits:
         
         mock_client.graphql_commit_history.return_value = (mock_graphql_nodes, {})
         
-        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('coops.bronze.commits.save_json_data', return_value="file.json"):
-                result = extract_commits(mock_client, mock_config, method="graphql")
-                
-                # Verifica que chamou GraphQL
-                assert mock_client.graphql_commit_history.called
-                
-                captured = capsys.readouterr()
-                assert "via GraphQL" in captured.out
-                assert len(result) > 0
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos), patch('coops.bronze.commits.save_json_data', return_value="file.json"):
+            result = extract_commits(mock_client, mock_config, method="graphql")
+
+            # Verifica que chamou GraphQL
+            assert mock_client.graphql_commit_history.called
+
+            captured = capsys.readouterr()
+            assert "via GraphQL" in captured.out
+            assert len(result) > 0
     
     def test_extract_commits_graphql_falls_back_to_rest(self, capsys):
         """Testa que GraphQL faz fallback para REST quando retorna vazio"""
@@ -119,13 +117,12 @@ class TestExtractCommits:
         mock_client.get_paginated.return_value = mock_commits
         mock_client.get_with_cache.return_value = {"stats": {"additions": 10, "deletions": 5, "total": 15}}
         
-        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('coops.bronze.commits.save_json_data', return_value="file.json"):
-                result = extract_commits(mock_client, mock_config, method="graphql")
-                
-                captured = capsys.readouterr()
-                assert "Falling back to REST" in captured.out
-                assert "via REST fallback" in captured.out
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos), patch('coops.bronze.commits.save_json_data', return_value="file.json"):
+            extract_commits(mock_client, mock_config, method="graphql")
+
+            captured = capsys.readouterr()
+            assert "Falling back to REST" in captured.out
+            assert "via REST fallback" in captured.out
     
     def test_extract_commits_no_repositories(self, capsys):
         """Testa que retorna lista vazia quando não há repositórios"""
@@ -148,20 +145,19 @@ class TestExtractCommits:
         mock_repos = [{"name": "repo1", "full_name": "test-org/repo1"}]
         mock_client.get_paginated.return_value = []
         
-        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('coops.bronze.commits.save_json_data', return_value="file.json"):
-                extract_commits(
-                    mock_client, 
-                    mock_config, 
-                    method="rest",
-                    since="2024-01-01",
-                    until="2024-12-31"
-                )
-                
-                # Verifica que URL contém filtros
-                call_url = mock_client.get_paginated.call_args[0][0]
-                assert "since=2024-01-01" in call_url
-                assert "until=2024-12-31" in call_url
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos), patch('coops.bronze.commits.save_json_data', return_value="file.json"):
+            extract_commits(
+                mock_client, 
+                mock_config, 
+                method="rest",
+                since="2024-01-01",
+                until="2024-12-31"
+            )
+
+            # Verifica que URL contém filtros
+            call_url = mock_client.get_paginated.call_args[0][0]
+            assert "since=2024-01-01" in call_url
+            assert "until=2024-12-31" in call_url
     
     def test_extract_commits_with_active_branches(self, capsys):
         """Testa extração com branches ativas habilitadas"""
@@ -177,22 +173,21 @@ class TestExtractCommits:
         mock_client.graphql_commit_history.return_value = ([], {})
         mock_client.get_paginated.return_value = []
         
-        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('coops.bronze.commits.save_json_data', return_value="file.json"):
-                extract_commits(
-                    mock_client,
-                    mock_config,
-                    method="graphql",
-                    include_active_branches=True,
-                    active_days=30
-                )
-                
-                # Verifica que buscou branches ativas
-                assert mock_client.get_active_unmerged_branches.called
-                
-                captured = capsys.readouterr()
-                assert "Finding active unmerged branches" in captured.out
-                assert "2 unmerged branches" in captured.out
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos), patch('coops.bronze.commits.save_json_data', return_value="file.json"):
+            extract_commits(
+                mock_client,
+                mock_config,
+                method="graphql",
+                include_active_branches=True,
+                active_days=30
+            )
+
+            # Verifica que buscou branches ativas
+            assert mock_client.get_active_unmerged_branches.called
+
+            captured = capsys.readouterr()
+            assert "Finding active unmerged branches" in captured.out
+            assert "2 unmerged branches" in captured.out
     
     def test_extract_commits_skips_invalid_repos(self, capsys):
         """Testa que pula repositórios inválidos"""
@@ -207,12 +202,11 @@ class TestExtractCommits:
         
         mock_client.get_paginated.return_value = []
         
-        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('coops.bronze.commits.save_json_data', return_value="file.json"):
-                extract_commits(mock_client, mock_config, method="rest")
-                
-                captured = capsys.readouterr()
-                assert "Skipping invalid repo entry" in captured.out
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos), patch('coops.bronze.commits.save_json_data', return_value="file.json"):
+            extract_commits(mock_client, mock_config, method="rest")
+
+            captured = capsys.readouterr()
+            assert "Skipping invalid repo entry" in captured.out
     
     def test_extract_commits_skips_metadata_entry(self):
         """Testa que ignora entrada _metadata"""
@@ -226,12 +220,11 @@ class TestExtractCommits:
         
         mock_client.get_paginated.return_value = []
         
-        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('coops.bronze.commits.save_json_data', return_value="file.json"):
-                result = extract_commits(mock_client, mock_config, method="rest")
-                
-                # Deve processar apenas 1 repo (ignorando _metadata)
-                assert mock_client.get_paginated.call_count == 1
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos), patch('coops.bronze.commits.save_json_data', return_value="file.json"):
+            extract_commits(mock_client, mock_config, method="rest")
+
+            # Deve processar apenas 1 repo (ignorando _metadata)
+            assert mock_client.get_paginated.call_count == 1
     
     def test_extract_commits_saves_per_repo_files(self):
         """Testa que salva arquivo individual por repositório"""
@@ -250,18 +243,17 @@ class TestExtractCommits:
         mock_client.get_paginated.return_value = mock_commits
         mock_client.get_with_cache.return_value = {"stats": {"additions": 10, "deletions": 5, "total": 15}}
         
-        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('coops.bronze.commits.save_json_data', return_value="file.json") as mock_save:
-                extract_commits(mock_client, mock_config, method="rest")
-                
-                # 2 arquivos por repo; o agregado commits_all.json não é mais
-                # escrito (#170)
-                assert mock_save.call_count == 2
-                
-                # Verifica que salvou commits_repo1.json e commits_repo2.json
-                calls = [call[0][1] for call in mock_save.call_args_list]
-                assert any("commits_repo1.json" in c for c in calls)
-                assert any("commits_repo2.json" in c for c in calls)
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos), patch('coops.bronze.commits.save_json_data', return_value="file.json") as mock_save:
+            extract_commits(mock_client, mock_config, method="rest")
+
+            # 2 arquivos por repo; o agregado commits_all.json não é mais
+            # escrito (#170)
+            assert mock_save.call_count == 2
+
+            # Verifica que salvou commits_repo1.json e commits_repo2.json
+            calls = [call[0][1] for call in mock_save.call_args_list]
+            assert any("commits_repo1.json" in c for c in calls)
+            assert any("commits_repo2.json" in c for c in calls)
     
     def test_extract_commits_removes_stale_aggregate(self, tmp_path, monkeypatch):
         """Uma execução sobre bronze existente remove o commits_all.json antigo.
@@ -283,13 +275,12 @@ class TestExtractCommits:
         mock_client.get_with_cache.return_value = {}
 
         with patch('coops.bronze.commits.load_json_data',
-                   return_value=[{"name": "repo1", "full_name": "test-org/repo1"}]):
-            with patch('coops.bronze.commits.save_json_data', return_value="file.json") as mock_save:
-                extract_commits(mock_client, mock_config, method="rest")
+                   return_value=[{"name": "repo1", "full_name": "test-org/repo1"}]), patch('coops.bronze.commits.save_json_data', return_value="file.json") as mock_save:
+            extract_commits(mock_client, mock_config, method="rest")
 
-                assert not stale.exists()
-                calls = [call_[0][1] for call_ in mock_save.call_args_list]
-                assert not any("_all.json" in c for c in calls)
+            assert not stale.exists()
+            calls = [call_[0][1] for call_ in mock_save.call_args_list]
+            assert not any("_all.json" in c for c in calls)
     
     def test_extract_commits_uses_cache_flag(self):
         """Testa que respeita flag use_cache"""
@@ -299,13 +290,12 @@ class TestExtractCommits:
         mock_repos = [{"name": "repo1", "full_name": "test-org/repo1"}]
         mock_client.get_paginated.return_value = []
         
-        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('coops.bronze.commits.save_json_data', return_value="file.json"):
-                extract_commits(mock_client, mock_config, use_cache=False)
-                
-                # Verifica que use_cache foi passado
-                call_kwargs = mock_client.get_paginated.call_args[1]
-                assert call_kwargs.get('use_cache') is False
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos), patch('coops.bronze.commits.save_json_data', return_value="file.json"):
+            extract_commits(mock_client, mock_config, use_cache=False)
+
+            # Verifica que use_cache foi passado
+            call_kwargs = mock_client.get_paginated.call_args[1]
+            assert call_kwargs.get('use_cache') is False
     
     def test_extract_commits_rest_fetches_commit_details(self):
         """Testa que REST busca detalhes (stats) de cada commit"""
@@ -322,12 +312,11 @@ class TestExtractCommits:
         mock_client.get_paginated.return_value = mock_commits
         mock_client.get_with_cache.return_value = {"stats": {"additions": 10, "deletions": 5, "total": 15}}
         
-        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('coops.bronze.commits.save_json_data', return_value="file.json"):
-                extract_commits(mock_client, mock_config, method="rest")
-                
-                # Deve buscar detalhes para cada commit (2 commits)
-                assert mock_client.get_with_cache.call_count == 2
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos), patch('coops.bronze.commits.save_json_data', return_value="file.json"):
+            extract_commits(mock_client, mock_config, method="rest")
+
+            # Deve buscar detalhes para cada commit (2 commits)
+            assert mock_client.get_with_cache.call_count == 2
     
     def test_extract_commits_graphql_maps_fields_correctly(self):
         """Testa que GraphQL mapeia campos para formato REST compatível"""
@@ -361,23 +350,22 @@ class TestExtractCommits:
             saved_data = data
             return "file.json"
         
-        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('coops.bronze.commits.save_json_data', side_effect=capture_save):
-                extract_commits(mock_client, mock_config, method="graphql")
-                
-                # Verifica mapeamento de campos
-                assert saved_data is not None
-                first_commit = saved_data[0]
-                assert first_commit['sha'] == 'abc123'
-                assert first_commit['html_url'] == 'https://github.com/test-org/repo1/commit/abc123'
-                assert first_commit['commit']['message'] == 'Test commit'
-                assert first_commit['commit']['author']['name'] == 'Author Name'
-                assert first_commit['commit']['author']['login'] == 'author_user'
-                assert first_commit['commit']['author']['id'] == 456
-                assert 'email' not in first_commit['commit']['author']
-                assert first_commit['additions'] == 15
-                assert first_commit['deletions'] == 8
-                assert first_commit['total_changes'] == 23
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos), patch('coops.bronze.commits.save_json_data', side_effect=capture_save):
+            extract_commits(mock_client, mock_config, method="graphql")
+
+            # Verifica mapeamento de campos
+            assert saved_data is not None
+            first_commit = saved_data[0]
+            assert first_commit['sha'] == 'abc123'
+            assert first_commit['html_url'] == 'https://github.com/test-org/repo1/commit/abc123'
+            assert first_commit['commit']['message'] == 'Test commit'
+            assert first_commit['commit']['author']['name'] == 'Author Name'
+            assert first_commit['commit']['author']['login'] == 'author_user'
+            assert first_commit['commit']['author']['id'] == 456
+            assert 'email' not in first_commit['commit']['author']
+            assert first_commit['additions'] == 15
+            assert first_commit['deletions'] == 8
+            assert first_commit['total_changes'] == 23
     
     def test_extract_commits_graphql_handles_missing_user(self):
         """Testa que GraphQL lida com autor sem user object"""
@@ -411,17 +399,16 @@ class TestExtractCommits:
             saved_data = data
             return "file.json"
         
-        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('coops.bronze.commits.save_json_data', side_effect=capture_save):
-                extract_commits(mock_client, mock_config, method="graphql")
-                
-                # Deve funcionar sem erros: autor sem user vira hash de email
-                assert saved_data is not None
-                author = saved_data[0]['commit']['author']
-                assert 'login' not in author
-                assert 'id' not in author
-                assert 'email' not in author
-                assert author['author_email_hash'] == _hash_email('a@test.com')
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos), patch('coops.bronze.commits.save_json_data', side_effect=capture_save):
+            extract_commits(mock_client, mock_config, method="graphql")
+
+            # Deve funcionar sem erros: autor sem user vira hash de email
+            assert saved_data is not None
+            author = saved_data[0]['commit']['author']
+            assert 'login' not in author
+            assert 'id' not in author
+            assert 'email' not in author
+            assert author['author_email_hash'] == _hash_email('a@test.com')
     
     def test_extract_commits_rest_copies_author_login(self):
         """Testa que REST copia author.login para commit.author.login"""
@@ -449,14 +436,13 @@ class TestExtractCommits:
             saved_data = data
             return "file.json"
         
-        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('coops.bronze.commits.save_json_data', side_effect=capture_save):
-                extract_commits(mock_client, mock_config, method="rest")
-                
-                # Verifica que copiou login
-                assert saved_data is not None
-                first_commit = saved_data[0]
-                assert first_commit['commit']['author']['login'] == 'username123'
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos), patch('coops.bronze.commits.save_json_data', side_effect=capture_save):
+            extract_commits(mock_client, mock_config, method="rest")
+
+            # Verifica que copiou login
+            assert saved_data is not None
+            first_commit = saved_data[0]
+            assert first_commit['commit']['author']['login'] == 'username123'
     
     def test_extract_commits_graphql_skips_repo_without_owner(self, capsys):
         """Testa que GraphQL pula repos sem owner/name identificável"""
@@ -467,12 +453,11 @@ class TestExtractCommits:
             {"name": "invalid-repo", "full_name": "single-name"}  # Sem '/' para split
         ]
         
-        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('coops.bronze.commits.save_json_data', return_value="file.json"):
-                extract_commits(mock_client, mock_config, method="graphql")
-                
-                captured = capsys.readouterr()
-                assert "cannot determine owner/name for GraphQL" in captured.out
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos), patch('coops.bronze.commits.save_json_data', return_value="file.json"):
+            extract_commits(mock_client, mock_config, method="graphql")
+
+            captured = capsys.readouterr()
+            assert "cannot determine owner/name for GraphQL" in captured.out
     
     def test_extract_commits_prints_total_count(self, capsys):
         """Testa que exibe contagem total de commits"""
@@ -489,12 +474,11 @@ class TestExtractCommits:
         mock_client.get_paginated.return_value = mock_commits
         mock_client.get_with_cache.return_value = {"stats": {"additions": 10, "deletions": 5, "total": 15}}
         
-        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('coops.bronze.commits.save_json_data', return_value="file.json"):
-                extract_commits(mock_client, mock_config)
-                
-                captured = capsys.readouterr()
-                assert "Total commits extracted: 2" in captured.out
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos), patch('coops.bronze.commits.save_json_data', return_value="file.json"):
+            extract_commits(mock_client, mock_config)
+
+            captured = capsys.readouterr()
+            assert "Total commits extracted: 2" in captured.out
     
     def test_extract_commits_passes_graphql_parameters(self):
         """Testa que passa parâmetros corretos para graphql_commit_history"""
@@ -505,28 +489,27 @@ class TestExtractCommits:
         mock_client.graphql_commit_history.return_value = ([], {})
         mock_client.get_paginated.return_value = []
         
-        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('coops.bronze.commits.save_json_data', return_value="file.json"):
-                extract_commits(
-                    mock_client,
-                    mock_config,
-                    method="graphql",
-                    since="2024-01-01",
-                    until="2024-12-31",
-                    max_commits_per_repo=100,
-                    page_size=25,
-                    time_chunks=5  # Nota: Este parâmetro é ignorado pelo código que tem hardcoded time_chunks=3
-                )
-                
-                # Verifica parâmetros
-                call_kwargs = mock_client.graphql_commit_history.call_args[1]
-                assert call_kwargs.get('since') == "2024-01-01"
-                assert call_kwargs.get('until') == "2024-12-31"
-                assert call_kwargs.get('max_commits') == 100
-                assert call_kwargs.get('page_size') == 25
-                # O código tem time_chunks=3 hardcoded, não usa o parâmetro
-                assert call_kwargs.get('time_chunks') == 3
-                assert call_kwargs.get('split_large_extractions') is True
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos), patch('coops.bronze.commits.save_json_data', return_value="file.json"):
+            extract_commits(
+                mock_client,
+                mock_config,
+                method="graphql",
+                since="2024-01-01",
+                until="2024-12-31",
+                max_commits_per_repo=100,
+                page_size=25,
+                time_chunks=5  # Nota: Este parâmetro é ignorado pelo código que tem hardcoded time_chunks=3
+            )
+
+            # Verifica parâmetros
+            call_kwargs = mock_client.graphql_commit_history.call_args[1]
+            assert call_kwargs.get('since') == "2024-01-01"
+            assert call_kwargs.get('until') == "2024-12-31"
+            assert call_kwargs.get('max_commits') == 100
+            assert call_kwargs.get('page_size') == 25
+            # O código tem time_chunks=3 hardcoded, não usa o parâmetro
+            assert call_kwargs.get('time_chunks') == 3
+            assert call_kwargs.get('split_large_extractions') is True
 
     def test_extract_commits_rest_redacts_author_emails(self):
         """REST commits drop raw emails: linked authors keep login+id, unlinked get a hash."""
@@ -562,9 +545,8 @@ class TestExtractCommits:
             saved_data = data
             return "file.json"
 
-        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos):
-            with patch('coops.bronze.commits.save_json_data', side_effect=capture_save):
-                extract_commits(mock_client, mock_config, method="rest")
+        with patch('coops.bronze.commits.load_json_data', return_value=mock_repos), patch('coops.bronze.commits.save_json_data', side_effect=capture_save):
+            extract_commits(mock_client, mock_config, method="rest")
 
         assert saved_data is not None
         assert len(saved_data) == 2
@@ -918,9 +900,8 @@ class TestRecoverableFields:
             saved_data = data
             return "file.json"
 
-        with patch("coops.bronze.commits.load_json_data", return_value=mock_repos):
-            with patch("coops.bronze.commits.save_json_data", side_effect=capture_save):
-                extract_commits(mock_client, mock_config, method="graphql")
+        with patch("coops.bronze.commits.load_json_data", return_value=mock_repos), patch("coops.bronze.commits.save_json_data", side_effect=capture_save):
+            extract_commits(mock_client, mock_config, method="graphql")
 
         assert saved_data is not None and len(saved_data) == 1
         _assert_recovered_fields(saved_data[0])
@@ -956,9 +937,8 @@ class TestRecoverableFields:
             saved_data = data
             return "file.json"
 
-        with patch("coops.bronze.commits.load_json_data", return_value=mock_repos):
-            with patch("coops.bronze.commits.save_json_data", side_effect=capture_save):
-                extract_commits(mock_client, mock_config, method="rest")
+        with patch("coops.bronze.commits.load_json_data", return_value=mock_repos), patch("coops.bronze.commits.save_json_data", side_effect=capture_save):
+            extract_commits(mock_client, mock_config, method="rest")
 
         assert saved_data is not None and len(saved_data) == 1
         _assert_recovered_fields(saved_data[0])
@@ -1010,9 +990,8 @@ class TestRecoverableFields:
             saved_data = data
             return "file.json"
 
-        with patch("coops.bronze.commits.load_json_data", return_value=mock_repos):
-            with patch("coops.bronze.commits.save_json_data", side_effect=capture_save):
-                extract_commits(mock_client, mock_config, method="graphql")
+        with patch("coops.bronze.commits.load_json_data", return_value=mock_repos), patch("coops.bronze.commits.save_json_data", side_effect=capture_save):
+            extract_commits(mock_client, mock_config, method="graphql")
 
         assert saved_data is not None
         serialized = json.dumps(saved_data)

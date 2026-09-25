@@ -206,6 +206,11 @@ def _write_bronze(root, *, issues=(), prs=(), commits=(), events=()):
 
 def _assert_identical_under_all_hash_seeds(snippet, cwd, must_contain):
     outs = {
+        # S603 is exempt for tests/** in pyproject, with the reason there: the
+        # snippet is authored by this file and run under the repo's own
+        # interpreter, so there is no untrusted input for S603 to catch. The
+        # inline noqa that used to sit here became RUF100 once the per-file
+        # rule landed.
         subprocess.run(
             [sys.executable, "-c", snippet],
             cwd=cwd,

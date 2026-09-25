@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Organization members extraction for Bronze layer.
 
@@ -6,19 +5,25 @@ Organization members extraction for Bronze layer.
 token) and everyone who contributed to the extracted repositories.
 """
 
-from typing import Any, Dict, List, Optional
-from coops.utils.github_api import GitHubAPIClient, OrganizationConfig, save_json_data, load_json_data
+from typing import Any
+
 from coops.utils.data_helpers import strip_metadata
+from coops.utils.github_api import (
+    GitHubAPIClient,
+    OrganizationConfig,
+    load_json_data,
+    save_json_data,
+)
 
 
-def _discover_contributors(client: GitHubAPIClient, use_cache: bool) -> List[Dict[str, Any]]:
+def _discover_contributors(client: GitHubAPIClient, use_cache: bool) -> list[dict[str, Any]]:
     """Contributors of the extracted repositories, with their total contributions."""
     repos_data = load_json_data("data/bronze/repositories_filtered.json")
     if not repos_data or not isinstance(repos_data, list):
         print(" Contributors: no repository data available")
         return []
 
-    contributor_details: Dict[str, Dict[str, Any]] = {}
+    contributor_details: dict[str, dict[str, Any]] = {}
     for repo in strip_metadata(repos_data):
         if not (repo and isinstance(repo, dict) and repo.get('full_name')):
             continue
@@ -52,15 +57,15 @@ def _discover_contributors(client: GitHubAPIClient, use_cache: bool) -> List[Dic
 
 
 def _merge_members(
-    org_members: List[Dict[str, Any]], contributors: List[Dict[str, Any]]
-) -> List[Dict[str, Any]]:
+    org_members: list[dict[str, Any]], contributors: list[dict[str, Any]]
+) -> list[dict[str, Any]]:
     """Union of organization members and contributors, one record per login.
 
     `is_org_member` tells whether the login was returned by the organization
     members API; `contributions_total` is 0 for members who didn't contribute.
     Sorted by contributions (descending), then login.
     """
-    merged: Dict[str, Dict[str, Any]] = {}
+    merged: dict[str, dict[str, Any]] = {}
     for member in org_members:
         if not (isinstance(member, dict) and member.get('login')):
             continue
@@ -96,7 +101,7 @@ PROFILE_FIELDS = (
 RATE_LIMIT_RESERVE = 200
 
 
-def _remaining_requests(headers: Any) -> Optional[int]:
+def _remaining_requests(headers: Any) -> int | None:
     try:
         return int(headers.get('X-RateLimit-Remaining'))
     except (AttributeError, TypeError, ValueError):
@@ -104,8 +109,8 @@ def _remaining_requests(headers: Any) -> Optional[int]:
 
 
 def _fetch_member_details(
-    client: GitHubAPIClient, members: List[Dict[str, Any]], use_cache: bool
-) -> List[Dict[str, Any]]:
+    client: GitHubAPIClient, members: list[dict[str, Any]], use_cache: bool
+) -> list[dict[str, Any]]:
     """Add each member's profile (created_at, public_repos, followers, ...).
 
     Silver's member analytics needs these fields; the basic member list doesn't
@@ -144,7 +149,7 @@ def _fetch_member_details(
     return detailed
 
 
-def extract_members(client: GitHubAPIClient, config: OrganizationConfig, use_cache: bool = True) -> List[str]:
+def extract_members(client: GitHubAPIClient, config: OrganizationConfig, use_cache: bool = True) -> list[str]:
     """Extract organization members and repository contributors to the bronze layer."""
 
     members_url = f"https://api.github.com/orgs/{config.org_name}/members"

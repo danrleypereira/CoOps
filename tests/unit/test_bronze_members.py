@@ -6,8 +6,10 @@ contributors dos repositórios, e perfis detalhados (necessários para o member
 analytics do Silver).
 """
 
+from unittest.mock import MagicMock, patch
+
 import pytest
-from unittest.mock import patch, MagicMock
+
 from coops.bronze.members import extract_members
 
 

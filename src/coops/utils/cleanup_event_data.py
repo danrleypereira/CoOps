@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Cleanup script to remove old issue event files and force re-extraction with optimized data.
 
@@ -16,11 +15,9 @@ After running this script, re-run the bronze extraction workflow to generate
 optimized event files.
 """
 
-import os
-import sys
-import glob
 import argparse
 from pathlib import Path
+
 
 def cleanup_event_files(confirm: bool = False, dry_run: bool = False):
     """
@@ -79,7 +76,7 @@ def cleanup_event_files(confirm: bool = False, dry_run: bool = False):
             file_path.unlink()
             deleted_count += 1
             print(f"  ✓ Deleted: {file_path.name}")
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 — per-file sweep: a failed deletion is reported and the sweep continues
             print(f"  ✗ Failed to delete {file_path.name}: {e}")
     
     print(f"\n✓ Successfully deleted {deleted_count}/{len(files_to_delete)} file(s).")
