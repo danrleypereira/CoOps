@@ -28,6 +28,13 @@ dev = [
     "pytest-mock>=3.14.0",
     "freezegun>=1.5.0",
     "mypy>=2.3.1",
+    # Exact pin, not a range: `ruff check src tests` must mean the same thing
+    # on every machine and inside both arms of scripts/check_regressions.py,
+    # whose whole point is comparing two trees with ONE instrument. A
+    # floating ruff changes rule behaviour between runs and turns the
+    # per-file delta into noise (issue #119). Bump deliberately, both here
+    # and in [tool.ruff] required-version below.
+    "ruff==0.16.9",
 ]
 
 [project.scripts]
@@ -110,6 +117,18 @@ exclude = "src/coops/(bronze|silver|gold|utils|etl|ai_analysis|infrastructure|ra
 [[tool.mypy.overrides]]
 module = ["bson", "bson.*"]
 follow_imports = "skip"
+
+# Pins ruff *behaviour* to match the version pin in the dev group above.
+# Deliberately minimal: every setting here either restates what ruff already
+# infers from `requires-python` (target-version) or affects only rules that
+# `ruff check` does not enable by default (line-length → E501/formatter), so
+# adding this section changes no finding that the regression gate compares.
+# required-version makes a version/behaviour mismatch fail loudly instead of
+# silently re-baselining: ruff refuses to run under any other version.
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+required-version = "0.16.9"
 
 [tool.coverage.report]
 exclude_lines = [
