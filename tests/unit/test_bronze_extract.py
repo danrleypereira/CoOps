@@ -397,9 +397,12 @@ class TestBronzeExtract:
     # the CALL, never on printed output.
     # ---------------------------------------------------------------
 
-    def test_main_reconciles_with_apply_by_default(self, _isolated_settings):
-        """A full run reconciles for real — that is the fix: the scheduled
-        run must actually remove the orphans."""
+    def test_main_reports_without_deleting_by_default(self, _isolated_settings):
+        """A full run REPORTS the orphans; it does not remove them.
+
+        The scheduled run surfacing the orphans is the fix; deleting them
+        without anyone asking is a separate decision, and the flag is where
+        it gets made (#244 review)."""
         with patch('sys.argv', ['bronze_extract.py']), patch('coops.bronze.repositories.extract_repositories', return_value=[]), patch('coops.bronze.issues.extract_issues', return_value=[]), patch('coops.bronze.commits.extract_commits', return_value=[]), patch('coops.bronze.members.extract_members', return_value=[]), patch('coops.bronze.repository_structure.extract_repository_structure', return_value=[]), patch('coops.etl.bronze_extract.update_data_registry'), patch('coops.etl.bronze_extract.GitHubAPIClient') as mock_client_cls:
             mock_client_cls.return_value.offline = False
             from coops.etl import bronze_extract
@@ -407,7 +410,7 @@ class TestBronzeExtract:
             bronze_extract.main()
 
             _isolated_settings.assert_called_once_with(
-                "data/bronze", apply=True,
+                "data/bronze", apply=False,
             )
 
     @pytest.mark.parametrize("argv", [
@@ -429,20 +432,37 @@ class TestBronzeExtract:
             bronze_extract.main()
 
             _isolated_settings.assert_called_once_with(
-                "data/bronze", apply=True,
+                "data/bronze", apply=False,
             )
 
-    def test_main_reconcile_dry_run_flag(self, _isolated_settings):
-        """--reconcile-dry-run hands apply=False through: report, delete
-        nothing."""
-        with patch('sys.argv', ['bronze_extract.py', '--reconcile-dry-run']), patch('coops.bronze.repositories.extract_repositories', return_value=[]), patch('coops.bronze.issues.extract_issues', return_value=[]), patch('coops.bronze.commits.extract_commits', return_value=[]), patch('coops.bronze.members.extract_members', return_value=[]), patch('coops.bronze.repository_structure.extract_repository_structure', return_value=[]), patch('coops.etl.bronze_extract.update_data_registry'), patch('coops.etl.bronze_extract.GitHubAPIClient') as mock_client_cls:
+    def test_main_deletes_nothing_without_the_apply_flag(self, _isolated_settings):
+        """THE DEFAULT RUN DELETES NOTHING.
+
+        A routine that removes files must not remove them because nobody
+        passed a flag: the mode you get by forgetting has to be the safe
+        one. Reviewed onto #244 after the first implementation shipped
+        ``apply=not --reconcile-dry-run``, which deleted by default and
+        which every library-level test passed, because they called
+        ``reconcile_orphans`` directly and never went through ``main``.
+        """
+        with patch('sys.argv', ['bronze_extract.py']), patch('coops.bronze.repositories.extract_repositories', return_value=[]), patch('coops.bronze.issues.extract_issues', return_value=[]), patch('coops.bronze.commits.extract_commits', return_value=[]), patch('coops.bronze.members.extract_members', return_value=[]), patch('coops.bronze.repository_structure.extract_repository_structure', return_value=[]), patch('coops.etl.bronze_extract.update_data_registry'), patch('coops.etl.bronze_extract.GitHubAPIClient') as mock_client_cls:
+            mock_client_cls.return_value.offline = False
+            from coops.etl import bronze_extract
+
+            bronze_extract.main()
+
+            assert _isolated_settings.call_args[1]["apply"] is False
+
+    def test_main_reconcile_apply_flag_opts_in(self, _isolated_settings):
+        """--reconcile-apply is the only way deletion happens."""
+        with patch('sys.argv', ['bronze_extract.py', '--reconcile-apply']), patch('coops.bronze.repositories.extract_repositories', return_value=[]), patch('coops.bronze.issues.extract_issues', return_value=[]), patch('coops.bronze.commits.extract_commits', return_value=[]), patch('coops.bronze.members.extract_members', return_value=[]), patch('coops.bronze.repository_structure.extract_repository_structure', return_value=[]), patch('coops.etl.bronze_extract.update_data_registry'), patch('coops.etl.bronze_extract.GitHubAPIClient') as mock_client_cls:
             mock_client_cls.return_value.offline = False
             from coops.etl import bronze_extract
 
             bronze_extract.main()
 
             kwargs = _isolated_settings.call_args[1]
-            assert kwargs["apply"] is False
+            assert kwargs["apply"] is True
 
 
 class TestPersistWatermarks:

@@ -86,7 +86,7 @@ def extract_repositories(
     listing_complete = (
         max_repos is None
         and repo_filter is None
-        and not getattr(client, "offline", False)
+        and not client.offline
     )
 
     generated_files = []

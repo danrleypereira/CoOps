@@ -88,11 +88,12 @@ def _reconcile_bronze(args: argparse.Namespace) -> None:
     every other repository's files — the provenance is the only thing that
     stops it).
 
-    Deletion is the default so a scheduled run actually cleans; pass
-    ``--reconcile-dry-run`` to report what would be removed. Every run
-    prints which mode ran.
+    **Reporting is the default; deletion is opt-in** via
+    ``--reconcile-apply``. A routine that deletes files must not delete them
+    because nobody passed a flag: the safe mode is the one you get by
+    forgetting. Every run prints which mode ran.
     """
-    reconcile_orphans("data/bronze", apply=not args.reconcile_dry_run)
+    reconcile_orphans("data/bronze", apply=args.reconcile_apply)
 
 
 def positive_int(value: str) -> int:
@@ -121,7 +122,7 @@ def main():
     parser.add_argument('--active-days', type=int, default=30, help='Consider branches active if updated in last N days (default: 30)')
     parser.add_argument('--time-chunks', type=int, default=3, help='Split large extractions into N time periods to avoid API overload (default: 3)')
     parser.add_argument('--skip-structure', action='store_true', help='Skip repository structure extraction')
-    parser.add_argument('--reconcile-dry-run', action='store_true', help='Report the Bronze orphan reconciliation (#216: files left by a renamed or recased repository, counted twice downstream) without deleting anything. Deletion is the default in a full run; a listing that does not assert its own completeness in its _metadata (a --repo, --max-repos or --offline run, or one that predates #216) always refuses and deletes nothing.')
+    parser.add_argument('--reconcile-apply', action='store_true', help='Delete the Bronze orphans the reconciliation finds (#216: files left by a renamed or recased repository, counted twice downstream). Without this flag the reconciliation only REPORTS what it would remove. Deletion additionally refuses whenever the listing does not assert its own completeness in its _metadata (a --repo, --max-repos or --offline run, or one that predates #216).')
     parser.add_argument('--capture-dir', help='Capture every raw API response (REST and GraphQL) into this directory, tenant-scoped (corpus-raw, PRIVATE)')
 
     args = parser.parse_args()
