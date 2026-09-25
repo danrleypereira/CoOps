@@ -828,21 +828,21 @@ def run_controls(tmp: Path) -> list[Result]:
     # exactly what the band tolerates; a naive/aware pair compares as
     # instants instead of raising TypeError; and a missing generated_at is
     # the instrument (rc 2), never rc 0 and never rc 1.
-    seed_gold(gr_ref, {n: naive_old for n in EXPECTED_GOLD})
-    seed_gold(gr_root, {n: "2026-09-23T22:00:00" for n in EXPECTED_GOLD})
+    seed_gold(gr_ref, dict.fromkeys(EXPECTED_GOLD, naive_old))
+    seed_gold(gr_root, dict.fromkeys(EXPECTED_GOLD, "2026-09-23T22:00:00"))
     r = Report()
     check_gold_regenerated(gr_root, gr_ref, r)
     res = r.results[0]
     inband_ok = res.passed and r.exit_code == 0 and "inconclusive" in res.detail.lower()
 
-    seed_gold(gr_root, {n: "2026-09-24T00:30:00+00:00" for n in EXPECTED_GOLD})
+    seed_gold(gr_root, dict.fromkeys(EXPECTED_GOLD, "2026-09-24T00:30:00+00:00"))
     r = Report()
     check_gold_regenerated(gr_root, gr_ref, r)
     res = r.results[0]
     mixed_ok = res.passed and r.exit_code == 0 and "inconclusive" in res.detail.lower()
 
-    seed_gold(gr_ref, {n: old_stamp for n in EXPECTED_GOLD})
-    seed_gold(gr_root, {n: new_stamp for n in EXPECTED_GOLD})
+    seed_gold(gr_ref, dict.fromkeys(EXPECTED_GOLD, old_stamp))
+    seed_gold(gr_root, dict.fromkeys(EXPECTED_GOLD, new_stamp))
     (gr_root / "registry.json").write_text(json.dumps({"all_processed": {}}), encoding="utf-8")
     r = Report()
     check_gold_regenerated(gr_root, gr_ref, r)
@@ -954,7 +954,9 @@ def run_controls(tmp: Path) -> list[Result]:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--root", type=Path, default=Path("/var/tmp/coops-work"),
+    # Suppressed deliberately: a documented corpus root this project writes to, not a
+    # temp file created insecurely; overridable with --root.
+    ap.add_argument("--root", type=Path, default=Path("/var/tmp/coops-work"),  # noqa: S108
                     help="corpus root holding data/bronze, data/silver, data/gold")
     ap.add_argument("--reference", type=Path, default=None,
                     help="a previous corpus root; enables the staleness and "

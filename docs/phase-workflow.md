@@ -240,6 +240,33 @@ that.
    running list lives as a comment on the phase epic. **Do not generate it from
    the commit log**: commits cite PR numbers, not issue numbers, so a
    `git log --grep` sweep misses work that shipped.
+6. Then walk the epic's children and ask of each one, *independently of whether
+   any PR named it*: is this satisfied now? A `Closes`-driven list only finds
+   issues some PR claimed, and the ones that go stale are precisely the ones
+   nothing claimed — work that satisfies an issue **incidentally** leaves no
+   trace pointing back at it.
+
+   Worked example, 2026-09-25. #39 (Mongo adapter with an enforced tenant
+   filter) and #41 (`FileStorageAdapter`) were both fully delivered on
+   `phase/26` and both still open. No PR ever spent a `Closes` on either:
+   #41's own blocker was that its export "lands with the sibling adapters (#39)
+   and `COOPS_STORAGE` (#42)", #42 landed in PR #224 and closed, and nobody
+   went back. Step 5 could not have found them, because there was nothing to
+   find. Reading the issue against the code is the only thing that does.
+
+   Measured on `phase/26` the same day: its 9 commits cite 15 numbers, of
+   which **6 are issues** (#27, #28, #29, #42, #55, #209) and 9 are pull
+   requests. All 6 issues were closed. The 9 PRs were closed too, but by
+   being merged — counting those as evidence of closing discipline is
+   circular, and the first draft of this paragraph made exactly that mistake.
+   The three stale ones — #39 and #41 delivered outright, #143 delivered in
+   code with only a migration decision left — were cited by nothing, on any
+   branch. That is the point: a sweep over `Closes` keywords, or over the
+   commit log, searches the set that is already being handled correctly.
+
+   The cost of skipping this is not bookkeeping. The board reads as no progress
+   while the code moves, and that is what "the phases are not progressing"
+   looks like from outside.
 
 ## Predictions
 
