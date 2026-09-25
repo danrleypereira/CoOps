@@ -6,9 +6,9 @@ the seventeen keys :class:`coops.domain.models.Repository` carries, so the
 shaped by the thing under test. Two of the twelve "byte-identical" families
 are therefore green by construction.
 
-Real Bronze repository payloads carry **100 keys** (measured: all 486
-``repo_*.json`` in the fga corpus carry 99, and 10 carry 100 with
-``template_repository``). One of those is our own ``_metadata`` envelope, so
+Real Bronze repository payloads carry 99 or 100 keys (measured over all 486
+``repo_*.json`` in the fga corpus: **476 carry 99 and 10 carry 100**, the ten
+adding ``template_repository``). One key is our own ``_metadata`` envelope, so
 the model drops **82 real GitHub fields**.
 
 The list below is the GitHub schema — field *names* only, no organisation
