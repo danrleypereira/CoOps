@@ -224,8 +224,16 @@ def check_no_record_reverted(bronze: Path, reference: Path, rep: Report) -> None
 
     # Nothing comparable means the probe could not see either corpus — a
     # different answer from "nothing was wrong", and it must not read as a pass.
+    # BOTH staleness results are emitted here: an early return after only
+    # no-record-reverted left no-record-vanished out of the report entirely,
+    # and a check that is never emitted cannot fail. Computing the real
+    # vanished list instead would be worse — against an empty reference the
+    # difference of the key sets is empty, so the check would vacuously pass.
     if compared == 0:
         rep.add(Result("no-record-reverted", "bronze", False,
+                       "no records comparable between the two corpora",
+                       control_fired=False))
+        rep.add(Result("no-record-vanished", "bronze", False,
                        "no records comparable between the two corpora",
                        control_fired=False))
         return
