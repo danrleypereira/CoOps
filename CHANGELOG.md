@@ -7,6 +7,15 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 
 ## [Unreleased]
 
+### Changed
+- **Lint, format and type-check must be green, not "no worse than the base"**
+  (owner ruling, 2026-09-25). Documented in `docs/definition-of-done.md` and
+  `docs/phase-workflow.md`, and tightened in the pull request template. A phase
+  PR exists to prove no regression was added; a tool that already fails on the
+  base cannot prove that, because the new findings are lost in an argument about
+  the existing ones. A phase branch must not be started from a base where these
+  are not green — fix the base first on its own patch branch.
+
 ### Added
 - `gold-regenerated` in `scripts/verify_medallion.py` (#201): with
   `--reference`, every Gold artifact's in-content `generated_at` must be
