@@ -361,7 +361,9 @@ EXPECTED_GOLD = (
 # -03:00 run — a CI run wrote UTC, a local run wrote local time, and both
 # look identical on disk). Reading a naive stamp as UTC is therefore a choice
 # with up to 3h of bounded error, not a fact; comparisons touching one are
-# only conclusive outside that band.
+# only conclusive outside that band. Equality never reaches the band at all:
+# it is settled on the raw strings first, in check_gold_regenerated, because
+# a copied seed sits at delta 0 — inside the band — and must not pass it.
 NAIVE_STAMP_SLACK = timedelta(hours=3)
 
 
@@ -408,14 +410,16 @@ def check_gold_file_set(gold: Path, rep: Report) -> None:
                        f"all {len(EXPECTED_GOLD)} artifacts present and non-empty"))
 
 
-def _generated_at(path: Path) -> datetime | None:
-    """Parse one artifact's generated_at, or None when it cannot be read.
+def _stamp_text(path: Path) -> str | None:
+    """The artifact's raw generated_at string, or None when there is none.
 
-    Every way the stamp can be absent or unreadable — missing file, bad JSON,
-    a non-dict document (the timelines are lists), a missing key, a
-    non-string value, an unparseable one — returns None, because for THIS
-    check they all mean the same thing: the probe cannot see the artifact's
-    clock, which is an instrument state, not a verdict on the data.
+    Deliberately no parsing: equality is settled on these strings BEFORE any
+    clock exists (see check_gold_regenerated), because a copied seed is
+    byte-identical whatever format its stamps carry. Every way the stamp can
+    be absent — missing file, bad JSON, a non-dict document (the timelines
+    are lists), a missing key, a non-string value — returns None, which for
+    this check means the probe cannot see the artifact's clock: an
+    instrument state, not a verdict on the data.
     """
     try:
         doc = json.loads(path.read_text(encoding="utf-8"))
@@ -426,7 +430,18 @@ def _generated_at(path: Path) -> datetime | None:
     raw = doc.get("generated_at")
     if not isinstance(raw, str):
         return None
-    text = raw.strip()
+    return raw.strip() or None
+
+
+def _parse_stamp(text: str | None) -> datetime | None:
+    """Parse a stamp string as written; None when it cannot be parsed.
+
+    Awareness is preserved — naive stays naive — so the caller knows which
+    comparisons carry the bounded error the band accounts for. The trailing
+    Z is normalised for fromisoformat, which only accepts it from 3.11.
+    """
+    if text is None:
+        return None
     if text.endswith(("Z", "z")):  # fromisoformat rejects 'Z' before 3.11
         text = text[:-1] + "+00:00"
     try:
@@ -471,18 +486,31 @@ def check_gold_regenerated(gold: Path, reference: Path, rep: Report) -> None:
     "fresh" needs to exceed +3h, so the check can never assert a freshness
     the stamps cannot support.)
 
+    And the comparison is ORDERED, because the band has a hole in it: root
+    and reference stamps that are the SAME STRING fail outright, settled
+    before any parsing or clock arithmetic. A copied seed is byte-identical,
+    sits at delta 0 — comfortably inside "up to 3h older, or equal" — and a
+    comparison that consulted the band first passed it as inconclusive,
+    which is precisely the no-run this check exists to catch (curupira, on
+    the first version: the control planted an aware copy, which the exact
+    comparison happened to catch, while the naive copy every real corpus
+    actually carries sailed through). Only a strictly different stamp ever
+    reaches the band.
+
     An artifact whose generated_at cannot be read — on either side — is
     neither a pass nor a fail: the probe could not see it, which is the
     instrument (`control_fired=False`, rc 2). That is not hypothetical: only
-    executive_dashboard.json, and performance_tiers.json since #143, carry a
+    executive_dashboard.json, and performance_tiers.json since #202, carry a
     top-level generated_at at all — the timelines carry
     `_metadata.extracted_at` and registry.json `all_processed.updated_at` —
-    so against today's corpora this check reports rc 2 naming them until the
-    Gold writers stamp all five. An artifact absent from the REFERENCE is
-    newly added and cannot be stale; a reference holding none of the five
-    would otherwise vacuously pass, so it is an instrument failure too.
+    so against corpora that predate #202 this check reports rc 2 naming the
+    rest until the Gold writers stamp all five. An artifact absent from the
+    REFERENCE is newly added and cannot be stale; a reference holding none
+    of the five would otherwise vacuously pass, so it is an instrument
+    failure too.
     """
     stale: list[str] = []
+    copied: list[str] = []
     inconclusive: list[str] = []
     blind: list[str] = []
     added = compared = 0
@@ -495,7 +523,17 @@ def check_gold_regenerated(gold: Path, reference: Path, rep: Report) -> None:
         if not ref_p.is_file():
             added += 1  # no prior counterpart: nothing to be stale against
             continue
-        root_dt, ref_dt = _generated_at(root_p), _generated_at(ref_p)
+        # Rule 1, and it comes before any clock exists: stamps that are the
+        # SAME STRING mean the artifact was copied, not regenerated, whatever
+        # format they carry. Settling equality first is what keeps a naive
+        # copied seed out of the band below — it sits at delta 0, inside "up
+        # to 3h older, or equal", and a band-first comparison passes it as
+        # inconclusive (curupira, #201).
+        root_raw, ref_raw = _stamp_text(root_p), _stamp_text(ref_p)
+        if root_raw is not None and root_raw == ref_raw:
+            copied.append(name)
+            continue
+        root_dt, ref_dt = _parse_stamp(root_raw), _parse_stamp(ref_raw)
         if root_dt is None or ref_dt is None:
             side = "this run" if root_dt is None else "the reference"
             blind.append(f"{name} (no readable generated_at in {side})")
@@ -515,31 +553,35 @@ def check_gold_regenerated(gold: Path, reference: Path, rep: Report) -> None:
         elif verdict == "inconclusive":
             inconclusive.append(name)
 
-    if compared == 0 and not blind:
+    if compared == 0 and not blind and not copied:
         rep.add(Result("gold-regenerated", "gold", False,
                        "the reference holds none of the expected gold artifacts — "
                        "nothing distinguishes a regeneration from no run",
                        control_fired=False))
         return
 
-    detail = f"{compared} artifact(s) compared, {len(stale)} not newer than the reference"
+    failed = len(copied) + len(stale)
+    detail = f"{compared} artifact(s) compared, {failed} not regenerated in this run"
     if inconclusive:
         detail += (f", {len(inconclusive)} inconclusive within the 3h naive-stamp band "
                    f"(pre-#143 local time): {', '.join(inconclusive)}")
     if added:
         detail += f", {added} newly added (absent from the reference)"
+    if copied:
+        detail += (f" — byte-identical to the reference (copied, not regenerated): "
+                   f"{', '.join(copied)}")
     if stale:
-        detail += f" — not regenerated in this run: {', '.join(stale)}"
+        detail += f" — not newer than the reference: {', '.join(stale)}"
 
     if blind:
-        # rc 2: the instrument could not see every artifact. Any stale
-        # finding among the comparable ones stays named in the detail, so the
-        # run is never read as clean when it is both blind AND stale.
+        # rc 2: the instrument could not see every artifact. Any copied or
+        # stale finding among the comparable ones stays named in the detail,
+        # so the run is never read as clean when it is both blind AND stale.
         rep.add(Result("gold-regenerated", "gold", False,
                        f"cannot read generated_at: {'; '.join(blind)}; {detail}",
                        control_fired=False))
     else:
-        rep.add(Result("gold-regenerated", "gold", not stale, detail))
+        rep.add(Result("gold-regenerated", "gold", not failed, detail))
 
 
 def check_layers_present(data: Path, rep: Report) -> None:
@@ -619,11 +661,15 @@ def run_controls(tmp: Path) -> list[Result]:
                       "rejects a gold artifact holding no records" if not r.results[0].passed else "DID NOT FIRE"))
 
     # gold-regenerated, plant: the seeded tree itself. A crashed Gold step
-    # leaves the seed's bytes in place, so the stale artifact is a
+    # leaves the seed's bytes in place, so a non-regenerated artifact is a
     # byte-identical copy of its reference counterpart — the exact shape of
-    # the hole in #201 — while the other four are genuinely newer. Both arms
-    # matter: a check that fails on EVERYTHING also "rejects" the stale one,
-    # so the control asserts the newer artifacts are not flagged.
+    # the hole in #201. The NAIVE copy is the plant that matters: it sits at
+    # delta 0, INSIDE the 3h band, so a comparison that consulted the band
+    # before settling equality passed it as inconclusive (curupira) — the
+    # aware copy, which the exact comparison catches anyway, is planted only
+    # alongside it. registry is planted stale beyond the band, one timeline
+    # inside it, and the other genuinely newer: a check that failed on
+    # EVERYTHING would also "reject" the copied and stale ones.
     gr_root = tmp / "gold-regen-root"
     gr_ref = tmp / "gold-regen-ref"
     for d in (gr_root, gr_ref):
@@ -635,31 +681,50 @@ def run_controls(tmp: Path) -> list[Result]:
                                       encoding="utf-8")
 
     old_stamp = "2026-09-24T00:00:00+00:00"
-    new_stamp = "2026-09-24T06:00:00+00:00"
-    seed_gold(gr_ref, {n: old_stamp for n in EXPECTED_GOLD})
-    seed_gold(gr_root, {n: new_stamp for n in EXPECTED_GOLD})
-    (gr_root / "executive_dashboard.json").write_text(
-        (gr_ref / "executive_dashboard.json").read_text(encoding="utf-8"), encoding="utf-8")
+    new_stamp = "2026-09-25T06:00:00+00:00"
+    naive_old = "2026-09-24T00:00:00"          # pre-#143 local, no offset
+    seed_gold(gr_ref, {"executive_dashboard.json": old_stamp,
+                       "timeline_last_12_months.json": old_stamp,
+                       "performance_tiers.json": naive_old,
+                       "registry.json": naive_old,
+                       "timeline_last_7_days.json": naive_old})
+    seed_gold(gr_root, {"executive_dashboard.json": old_stamp,          # copied, aware
+                       "performance_tiers.json": naive_old,             # copied, NAIVE
+                       "registry.json": "2026-09-23T16:00:00",          # -8h: beyond band
+                       "timeline_last_7_days.json": "2026-09-23T22:00:00",  # -2h: in band
+                       "timeline_last_12_months.json": new_stamp})      # genuinely newer
     r = Report()
     check_gold_regenerated(gr_root, gr_ref, r)
     res = r.results[0]
     fired = (not res.passed and r.exit_code == 1
-             and "executive_dashboard.json" in res.detail
-             and "performance_tiers.json" not in res.detail)
+             and "3 not regenerated in this run" in res.detail
+             and all(n in res.detail for n in ("executive_dashboard.json",
+                                               "performance_tiers.json",
+                                               "registry.json"))
+             and ", 1 inconclusive" in res.detail
+             and "timeline_last_12_months.json" not in res.detail)
     out.append(Result("gold-regenerated", "control", fired,
-                      "rejects a seed-copied gold artifact; genuinely newer ones pass"
+                      "rejects a copied artifact (naive and aware) and a beyond-band "
+                      "stale one; in-band and genuinely newer are not flagged"
                       if fired else "DID NOT FIRE"))
 
-    # The two ways a stamp comparison must NOT fail: a naive pre-#143
-    # reference is ambiguous by up to 3h (inconclusive, and no TypeError from
-    # the naive/aware mix), and a missing generated_at is the instrument
-    # (rc 2), never rc 0 and never rc 1.
-    seed_gold(gr_root, {n: "2026-09-24T00:30:00+00:00" for n in EXPECTED_GOLD})
-    seed_gold(gr_ref, {n: "2026-09-24T00:00:00" for n in EXPECTED_GOLD})  # naive local
+    # The three ways a stamp comparison must NOT fail: the same naive seed
+    # shifted back 2h sits inside the band and passes, named inconclusive —
+    # exactly what the band tolerates; a naive/aware pair compares as
+    # instants instead of raising TypeError; and a missing generated_at is
+    # the instrument (rc 2), never rc 0 and never rc 1.
+    seed_gold(gr_ref, {n: naive_old for n in EXPECTED_GOLD})
+    seed_gold(gr_root, {n: "2026-09-23T22:00:00" for n in EXPECTED_GOLD})
     r = Report()
     check_gold_regenerated(gr_root, gr_ref, r)
     res = r.results[0]
-    mixed_ok = (res.passed and r.exit_code == 0 and "inconclusive" in res.detail.lower())
+    inband_ok = res.passed and r.exit_code == 0 and "inconclusive" in res.detail.lower()
+
+    seed_gold(gr_root, {n: "2026-09-24T00:30:00+00:00" for n in EXPECTED_GOLD})
+    r = Report()
+    check_gold_regenerated(gr_root, gr_ref, r)
+    res = r.results[0]
+    mixed_ok = res.passed and r.exit_code == 0 and "inconclusive" in res.detail.lower()
 
     seed_gold(gr_ref, {n: old_stamp for n in EXPECTED_GOLD})
     seed_gold(gr_root, {n: new_stamp for n in EXPECTED_GOLD})
@@ -669,10 +734,10 @@ def run_controls(tmp: Path) -> list[Result]:
     res = r.results[0]
     missing_ok = res.control_fired is False and not res.passed and r.exit_code == 2
 
-    out.append(Result("gold-regenerated-stamps", "control", mixed_ok and missing_ok,
-                      "naive/aware compares inconclusive (no raise); a missing "
-                      "generated_at is rc 2"
-                      if mixed_ok and missing_ok else "DID NOT FIRE"))
+    out.append(Result("gold-regenerated-stamps", "control", inband_ok and mixed_ok and missing_ok,
+                      "2h-older naive seed passes as inconclusive; naive/aware does not "
+                      "raise; a missing generated_at is rc 2"
+                      if inband_ok and mixed_ok and missing_ok else "DID NOT FIRE"))
 
     bronze = tmp / "bronze"
     bronze.mkdir(parents=True, exist_ok=True)

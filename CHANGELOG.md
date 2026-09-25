@@ -17,7 +17,11 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   non-emptiness check: the phase was certified on numbers from the previous
   corpus. Unlike a backwards watermark — a reported diagnostic that must
   never gate, because it is the repair mechanism — stale Gold never
-  self-corrects, so it gates. Pre-#143 stamps are naive local time
+  self-corrects, so it gates. A stamp byte-identical to its reference
+  counterpart fails outright, settled as a string comparison before any
+  clock arithmetic: a copied seed sits at Δ0 — inside the tolerance band —
+  and a band-first comparison passed it as `inconclusive`, the exact no-run
+  the check exists to catch. Pre-#143 stamps are naive local time
   (ambiguous by up to 3h, measured at `-03:00`), so any comparison touching
   one is conclusive only outside a 3h band and reports `inconclusive` inside
   it rather than failing, and a naive/aware pair never raises. An artifact
