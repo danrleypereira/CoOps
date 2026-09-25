@@ -8,6 +8,36 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 ## [Unreleased]
 
 ### Added
+- Bronze orphan reconciliation (#216): a repository that is renamed or
+  recased (`unb-mds/2025-1-NoFluxoUNB` and `2025-1-NoFluxoUnB` are one
+  repository, id 957040204) leaves its old per-repository Bronze files on
+  disk forever beside the new ones; Silver and Gold consume Bronze by
+  glob, so both are read and the repository is counted twice in published
+  data (measured: commits 1,239 current + 1,219 orphan = 2,458). Every
+  existing guard asserts records must not *fall* — the orphan *adds*, so
+  nothing could see it. Two halves. `coops.bronze.reconcile` removes
+  per-repository files the current `repositories_filtered.json` does not
+  name (`coops-bronze` runs it after every family is written, so a
+  rename leftover is reported in the run that creates it;
+  `--reconcile-apply` opts in to deleting), and
+  `scripts/verify_medallion.py` gains `no-orphaned-bronze-files` — an
+  orphan is bad data (rc 1, the file named), a missing or unreadable
+  listing is the instrument (rc 2) — taking `--self-test` to 16
+  controls, with the arms-differ control proving a clean corpus passes.
+  Deletion refuses — deleting nothing — unless the listing itself
+  asserts its own completeness: `save_json_data` can now write
+  `complete: true` into the `_metadata` element, and
+  `extract_repositories` sets it only when the run enumerated the
+  organisation unbounded (no `--max-repos`, no `--repo`, not an offline
+  replay). Absent means incomplete — fail closed, so every listing
+  already on disk refuses too — and the guard is in the FILE, never the
+  argv: a capped run that exits and a later clean-argv reconciliation
+  are the shape that wipes a corpus, and provenance, never
+  `record_count` (computed after truncation, indistinguishable from a
+  small organisation), is what stops it. An empty `[]` listing carries
+  no provenance at all and deletes nothing; a differently-cased file
+  that is the only copy for its repository is kept; nothing outside
+  `data/bronze` is touched.
 - The contract suite for `scripts/verify_medallion.py` (#209): the phase
   gate was itself verified by nothing — `--self-test` proves its 14 checks
   can fail, and nothing proved the *script's* behaviour. Every defect it
@@ -126,6 +156,33 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   are not green — fix the base first on its own patch branch.
 
 ### Fixed
+- A repository renamed or recased is no longer counted twice in published
+  data (#216). `unb-mds/2025-1-NoFluxoUNB` and `unb-mds/2025-1-NoFluxoUnB`
+  are one repository (id 957040204); the pipeline wrote the current-case
+  Bronze file, the old-case file was never written again and never
+  removed, and Silver and Gold glob both — measured, one recase published
+  2,458 commits for 1,239. No check could see it: every assertion in the
+  codebase is that records must not *fall*, and the orphan *adds* records.
+  Two halves. `coops.bronze.reconcile` removes per-repository Bronze files
+  whose repository is not in the current `repositories_filtered.json`
+  (keying files by repository id remains the durable fix and is out of
+  scope), run by `coops-bronze` after every family is written; a deletion
+  routine is one bug away from wiping a corpus, so it REFUSES — deleting
+  nothing — when the listing is missing, unreadable or empty, or when the
+  run was narrowed by `--repo`, `--max-repos` or `--offline` (guarded on
+  the flags, never on the size: a subset is indistinguishable from "every
+  other repository is gone", and the capped debugging run is the one that
+  would wipe). An old-case file that is the *only* copy for its repository
+  is kept — deleting the only copy is the record loss every other guard
+  exists to prevent. Reporting is the default and deletion is opt-in via
+  `--reconcile-apply`: a routine that removes files must not remove them
+  because nobody passed a flag. Every run prints which mode ran. Second half:
+  `scripts/verify_medallion.py` gains `no-orphaned-bronze-files` — every
+  per-repository Bronze file must correspond to the current filtered
+  listing (rc 1, the file named; a missing or unreadable listing is the
+  instrument, rc 2) — with two new controls, so `--self-test` goes from
+  14 to 16: the planted recase leftover is rejected, and the same corpus
+  without it passes.
 - The 37 mypy errors Phase 1 added to pre-existing files (per-file gate
   against `a48bec6`): `Optional` plumbing threaded into Bronze/Silver without
   narrowing. Watermark reads in `bronze/issues.py` now narrow once

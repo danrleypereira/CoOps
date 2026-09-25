@@ -98,6 +98,15 @@ def _write_bronze(bronze: Path, *, repos: tuple[str, ...] = ("r",)) -> None:
     for repo in repos:
         _write_json(bronze / f"commits_{repo}.json", _COMMITS)
         _write_json(bronze / f"issues_{repo}.json", _ISSUES)
+    # The listing every per-repository file must correspond to (#216). The
+    # _metadata first element mirrors what save_json_data writes; the check
+    # reads the repo names out of the records after it.
+    _write_json(
+        bronze / "repositories_filtered.json",
+        [{"_metadata": {"extracted_at": "2026-09-25T00:00:00Z"}},
+         *[{"name": repo, "full_name": f"org/{repo}", "id": i}
+           for i, repo in enumerate(repos, start=1)]],
+    )
 
 
 def _write_gold(gold: Path, stamp: str) -> None:
@@ -231,6 +240,25 @@ def _plant_stale_gold(root: Path, reference: Path) -> None:
     _write_gold(root / "data" / "gold", _STALE_STAMP)
 
 
+def _plant_orphaned_bronze_file(root: Path, reference: Path) -> None:
+    """#216's shape: the recase leftover beside the current-case file, rc 1.
+
+    Both spellings are globbed downstream, so the repository is counted
+    twice — a gain no falling-record check can see.
+    """
+    _write_json(root / "data" / "bronze" / "commits_R.json", _COMMITS)
+
+
+def _plant_empty_filtered_listing(root: Path, reference: Path) -> None:
+    """A listing that names no repositories makes every file an orphan.
+
+    Not rc 2: the listing is readable and its content genuinely disagrees
+    with the files beside it. The row must say so loudly either way.
+    """
+    _write_json(root / "data" / "bronze" / "repositories_filtered.json",
+                [{"_metadata": {"extracted_at": "2026-09-25T00:00:00Z"}}])
+
+
 def _plant_empty_gold_artifact(root: Path, reference: Path) -> None:
     """registry.json holds {} — gold-file-set cannot certify it, rc 2."""
     _write_json(root / "data" / "gold" / "registry.json", {})
@@ -269,6 +297,10 @@ _EXIT_MATRIX = [
                  id="invariant-broken-record-vanished"),
     pytest.param(_plant_stale_gold, 1,
                  id="invariant-broken-gold-not-regenerated"),
+    pytest.param(_plant_orphaned_bronze_file, 1,
+                 id="invariant-broken-orphaned-bronze-file"),
+    pytest.param(_plant_empty_filtered_listing, 1,
+                 id="invariant-broken-empty-filtered-listing"),
     # rc 2 — the instrument could not see (control_fired=False).
     pytest.param(_plant_empty_gold_artifact, 2,
                  id="control-silent-gold-artifact-holds-nothing"),
@@ -448,6 +480,7 @@ def test_disjoint_reference_is_the_instrument_not_a_pass(
 
 _PRESENCE_CHECKS = frozenset({"bronze-present", "silver-present", "gold-present"})
 _BRONZE_CHECKS = frozenset({"aggregates-removed", "every-author-hashed",
+                            "no-orphaned-bronze-files",
                             "no-record-reverted", "no-record-vanished"})
 # Measured, the unknown-labels check registers as unknown-labels-not-growing;
 # when members_statistics.json is absent or holds nothing, the script emits
@@ -544,23 +577,23 @@ def test_check_registration(layers: frozenset[str], empty: frozenset[str],
 
 
 # --------------------------------------------------------------------------
-# 4. --self-test — 14 of 14, and the harness notices a silent control
+# 4. --self-test — 16 of 16, and the harness notices a silent control
 # --------------------------------------------------------------------------
 
 def test_self_test_fires_all_controls_and_exits_0(
     monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str],
 ) -> None:
-    """The count is part of the contract: 14 controls, all firing."""
+    """The count is part of the contract: 16 controls, all firing."""
     rc, out, _ = _run(monkeypatch, capsys, "--self-test")
     assert rc == 0
-    assert _controls_fired(out) == ("14", "14")
+    assert _controls_fired(out) == ("16", "16")
 
 
 def test_self_test_detects_a_control_that_stops_firing(
     monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str],
 ) -> None:
     """The opposite arm: a check that cannot fail makes its control SILENT,
-    the count drops to 13 of 14, and the exit code is 2 — not 0."""
+    the count drops to 15 of 16, and the exit code is 2 — not 0."""
     def always_passes(bronze: Path, rep: verify_medallion.Report) -> None:
         rep.add(verify_medallion.Result("aggregates-removed", "bronze", True,
                                         "sabotaged: this check never fails"))
@@ -568,7 +601,7 @@ def test_self_test_detects_a_control_that_stops_firing(
     monkeypatch.setattr(verify_medallion, "check_no_aggregates", always_passes)
     rc, out, _ = _run(monkeypatch, capsys, "--self-test")
     assert rc == 2
-    assert _controls_fired(out) == ("13", "14")
+    assert _controls_fired(out) == ("15", "16")
 
 
 # --------------------------------------------------------------------------
@@ -757,6 +790,131 @@ def test_identical_corpora_both_staleness_checks_pass(tmp_path: Path) -> None:
     assert vanished, "no-record-vanished missing from the report"
     assert reverted[0].passed
     assert vanished[0].passed
+
+
+# --------------------------------------------------------------------------
+# no-orphaned-bronze-files (#216) — the gain-side check. Every other check
+# here asserts records must not FALL; the orphan ADDS records, so it was
+# invisible to all of them. The fixture mirrors the real case: one
+# repository, recased, listing only the current spelling.
+# --------------------------------------------------------------------------
+
+
+def _write_listing(bronze: Path, *repos: str) -> None:
+    _write_json(
+        bronze / "repositories_filtered.json",
+        [{"_metadata": {"extracted_at": "2026-09-25T00:00:00Z"}},
+         *[{"name": repo, "full_name": f"unb-mds/{repo}", "id": 957040204}
+           for repo in repos]],
+    )
+
+
+def test_recase_leftover_fails_the_gate_naming_the_file(tmp_path: Path) -> None:
+    """The #216 shape: commits_X.json beside commits_x.json, only x listed.
+
+    Both arms in one test — the same corpus with the orphan removed must
+    pass, because a check that fails on everything certifies nothing.
+    """
+    bronze = tmp_path / "bronze"
+    bronze.mkdir()
+    _write_listing(bronze, "x")
+    for name in ("commits_x.json", "commits_X.json"):
+        _write_json(bronze / name, _COMMITS)
+
+    rep = verify_medallion.Report()
+    verify_medallion.check_no_orphaned_files(bronze, rep)
+    orphaned = _by_name(rep, "no-orphaned-bronze-files")
+    assert orphaned, "no-orphaned-bronze-files missing from the report"
+    assert not orphaned[0].passed
+    assert orphaned[0].control_fired is None  # bad data gates as rc 1
+    assert "commits_X.json" in orphaned[0].detail  # the file is named
+    assert rep.exit_code == 1
+
+    (bronze / "commits_X.json").unlink()
+    rep = verify_medallion.Report()
+    verify_medallion.check_no_orphaned_files(bronze, rep)
+    clean = _by_name(rep, "no-orphaned-bronze-files")
+    assert clean[0].passed
+    assert rep.exit_code == 0
+
+
+def test_missing_filtered_listing_is_the_instrument_not_a_pass(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    """Without repositories_filtered.json the check cannot see, rc 2 —
+    it must not silently pass, and its row must still register."""
+    root, reference = tmp_path / "root", tmp_path / "reference"
+    _build_corpus(root)
+    _build_reference(reference)
+    (root / "data" / "bronze" / "repositories_filtered.json").unlink()
+
+    rc, out, _ = _run(monkeypatch, capsys, "--root", str(root),
+                      "--reference", str(reference))
+
+    names = {m["name"] for m in _parse_rows(out)}
+    assert "no-orphaned-bronze-files" in names, (
+        f"no-orphaned-bronze-files vanished — {sorted(names)}")
+    assert rc == 2, f"an unreadable listing is an instrument failure, got {rc}"
+
+
+def test_unreadable_filtered_listing_is_the_instrument(tmp_path: Path) -> None:
+    """Present but not JSON is the same blindness as absent: rc 2.
+
+    'Absent' and 'present but useless' take different branches, and only
+    the first is covered above — the degenerate-branch discipline.
+    """
+    bronze = tmp_path / "bronze"
+    bronze.mkdir()
+    _write_listing(bronze, "x")
+    _write_json(bronze / "commits_x.json", _COMMITS)
+    (bronze / "repositories_filtered.json").write_text("{not json", encoding="utf-8")
+
+    rep = verify_medallion.Report()
+    verify_medallion.check_no_orphaned_files(bronze, rep)
+    result = _by_name(rep, "no-orphaned-bronze-files")
+    assert result, "no-orphaned-bronze-files missing from the report"
+    assert not result[0].passed
+    assert result[0].control_fired is False
+    assert rep.exit_code == 2
+
+
+def test_only_copy_case_variant_is_not_an_orphan(tmp_path: Path) -> None:
+    """An old-case file with no current-case file beside it is the only
+    copy the corpus has (the run skipped or has not yet written that
+    family), and the reconciler keeps it — flagging it here would demand
+    deleting an only copy, which is the record loss every other check in
+    the script exists to prevent.
+    """
+    bronze = tmp_path / "bronze"
+    bronze.mkdir()
+    _write_listing(bronze, "x")
+    _write_json(bronze / "commits_X.json", _COMMITS)  # and only this one
+
+    rep = verify_medallion.Report()
+    verify_medallion.check_no_orphaned_files(bronze, rep)
+    result = _by_name(rep, "no-orphaned-bronze-files")
+    assert result, "no-orphaned-bronze-files missing from the report"
+    assert result[0].passed
+    assert rep.exit_code == 0
+
+
+def test_repository_absent_from_the_listing_is_an_orphan(tmp_path: Path) -> None:
+    """A file whose repository matches nothing — renamed away or deleted —
+    is stale whatever its case, and the row names it."""
+    bronze = tmp_path / "bronze"
+    bronze.mkdir()
+    _write_listing(bronze, "x")
+    _write_json(bronze / "commits_x.json", _COMMITS)
+    _write_json(bronze / "issues_gone.json", _ISSUES)
+
+    rep = verify_medallion.Report()
+    verify_medallion.check_no_orphaned_files(bronze, rep)
+    result = _by_name(rep, "no-orphaned-bronze-files")
+    assert result, "no-orphaned-bronze-files missing from the report"
+    assert not result[0].passed
+    assert "issues_gone.json" in result[0].detail
+    assert rep.exit_code == 1
 
 
 # --------------------------------------------------------------------------

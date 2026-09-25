@@ -23,7 +23,13 @@ class TestBronzeExtract:
         monkeypatch.setenv("GITHUB_TOKEN", "test-token")
         monkeypatch.setenv("GITHUB_ORG", "coops-org")
         get_settings.cache_clear()
-        yield
+        # The orphan reconciliation (#216) deletes files under ./data/bronze.
+        # It is patched out for every test in this class: in the fork's
+        # checkout data/bronze is the committed, published corpus, and a test
+        # run must never mutate it — the fence applies to the suite too.
+        with patch('coops.etl.bronze_extract.reconcile_orphans') as mock_reconcile:
+            mock_reconcile.return_value = None
+            yield mock_reconcile
         get_settings.cache_clear()
 
     def test_main_extracts_all_layers(self, capsys):
@@ -381,6 +387,82 @@ class TestBronzeExtract:
             bronze_extract.main()
 
             assert mock_client_cls.call_args[1]['cache_dir'] == 'cache'
+
+    # ---------------------------------------------------------------
+    # Reconciliation wiring (#216): main() passes the bronze directory
+    # and the mode — and NOTHING else. The narrowing decision is the
+    # FILE's (repositories_filtered.json carries its own completeness
+    # provenance), never argv's, because the narrowed run and the
+    # reconciliation need not be the same process. The assertions are on
+    # the CALL, never on printed output.
+    # ---------------------------------------------------------------
+
+    def test_main_reports_without_deleting_by_default(self, _isolated_settings):
+        """A full run REPORTS the orphans; it does not remove them.
+
+        The scheduled run surfacing the orphans is the fix; deleting them
+        without anyone asking is a separate decision, and the flag is where
+        it gets made (#244 review)."""
+        with patch('sys.argv', ['bronze_extract.py']), patch('coops.bronze.repositories.extract_repositories', return_value=[]), patch('coops.bronze.issues.extract_issues', return_value=[]), patch('coops.bronze.commits.extract_commits', return_value=[]), patch('coops.bronze.members.extract_members', return_value=[]), patch('coops.bronze.repository_structure.extract_repository_structure', return_value=[]), patch('coops.etl.bronze_extract.update_data_registry'), patch('coops.etl.bronze_extract.GitHubAPIClient') as mock_client_cls:
+            mock_client_cls.return_value.offline = False
+            from coops.etl import bronze_extract
+
+            bronze_extract.main()
+
+            _isolated_settings.assert_called_once_with(
+                "data/bronze", apply=False,
+            )
+
+    @pytest.mark.parametrize("argv", [
+        ['--max-repos', '1'],           # the debugging shape that would wipe a corpus
+        ['--repo', 'coops-org/one'],
+        ['--offline'],
+    ], ids=["max-repos", "repo", "offline"])
+    def test_main_passes_no_narrowing_to_the_reconciliation(self, _isolated_settings, argv):
+        """--repo, --max-repos and --offline narrow the listing, and none of
+        them reaches the reconciliation as an argument. An argv guard is a
+        guard that is not there when it matters: run A caps and exits; run
+        B reconciles with a clean argv and would delete every unlisted
+        repository's files. The refusal must come from the listing's own
+        provenance (tested in test_bronze_reconcile.py), so the call here
+        is byte-for-byte the full run's call."""
+        with patch('sys.argv', ['bronze_extract.py', *argv]), patch('coops.bronze.repositories.extract_repositories', return_value=[]), patch('coops.bronze.issues.extract_issues', return_value=[]), patch('coops.bronze.commits.extract_commits', return_value=[]), patch('coops.bronze.members.extract_members', return_value=[]), patch('coops.bronze.repository_structure.extract_repository_structure', return_value=[]), patch('coops.etl.bronze_extract.update_data_registry'), patch('coops.etl.bronze_extract.GitHubAPIClient'):
+            from coops.etl import bronze_extract
+
+            bronze_extract.main()
+
+            _isolated_settings.assert_called_once_with(
+                "data/bronze", apply=False,
+            )
+
+    def test_main_deletes_nothing_without_the_apply_flag(self, _isolated_settings):
+        """THE DEFAULT RUN DELETES NOTHING.
+
+        A routine that removes files must not remove them because nobody
+        passed a flag: the mode you get by forgetting has to be the safe
+        one. Reviewed onto #244 after the first implementation shipped
+        ``apply=not --reconcile-dry-run``, which deleted by default and
+        which every library-level test passed, because they called
+        ``reconcile_orphans`` directly and never went through ``main``.
+        """
+        with patch('sys.argv', ['bronze_extract.py']), patch('coops.bronze.repositories.extract_repositories', return_value=[]), patch('coops.bronze.issues.extract_issues', return_value=[]), patch('coops.bronze.commits.extract_commits', return_value=[]), patch('coops.bronze.members.extract_members', return_value=[]), patch('coops.bronze.repository_structure.extract_repository_structure', return_value=[]), patch('coops.etl.bronze_extract.update_data_registry'), patch('coops.etl.bronze_extract.GitHubAPIClient') as mock_client_cls:
+            mock_client_cls.return_value.offline = False
+            from coops.etl import bronze_extract
+
+            bronze_extract.main()
+
+            assert _isolated_settings.call_args[1]["apply"] is False
+
+    def test_main_reconcile_apply_flag_opts_in(self, _isolated_settings):
+        """--reconcile-apply is the only way deletion happens."""
+        with patch('sys.argv', ['bronze_extract.py', '--reconcile-apply']), patch('coops.bronze.repositories.extract_repositories', return_value=[]), patch('coops.bronze.issues.extract_issues', return_value=[]), patch('coops.bronze.commits.extract_commits', return_value=[]), patch('coops.bronze.members.extract_members', return_value=[]), patch('coops.bronze.repository_structure.extract_repository_structure', return_value=[]), patch('coops.etl.bronze_extract.update_data_registry'), patch('coops.etl.bronze_extract.GitHubAPIClient') as mock_client_cls:
+            mock_client_cls.return_value.offline = False
+            from coops.etl import bronze_extract
+
+            bronze_extract.main()
+
+            kwargs = _isolated_settings.call_args[1]
+            assert kwargs["apply"] is True
 
 
 class TestPersistWatermarks:

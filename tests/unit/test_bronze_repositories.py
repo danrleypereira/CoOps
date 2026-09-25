@@ -362,6 +362,90 @@ class TestExtractRepositories:
         with patch('coops.bronze.repositories.save_json_data', return_value="file.json"):
             # Não passa use_cache, deve usar padrão True
             extract_repositories(mock_client, mock_config)
-            
+
             call_kwargs = mock_client.get_paginated.call_args[1]
             assert call_kwargs['use_cache'] is True
+
+
+class TestListingCompleteness:
+    """#216: the filtered listing carries `complete: true` only when the
+    run enumerated the organisation unbounded. The guard on deletion lives
+    in the FILE, so what is written here decides whether a later
+    reconciliation may delete — in another process, with another argv."""
+
+    @staticmethod
+    def _client_and_config(repos, offline=False):
+        mock_client = MagicMock()
+        mock_client.offline = offline
+        mock_config = MagicMock()
+        mock_config.org_name = "test-org"
+        mock_config.should_skip_repo.return_value = False
+        mock_client.get_paginated.return_value = repos
+        mock_client.get_with_cache.return_value = repos[0] if repos else None
+        return mock_client, mock_config
+
+    @staticmethod
+    def _filtered_call(mock_save):
+        return next(
+            c for c in mock_save.call_args_list
+            if "repositories_filtered.json" in str(c)
+        )
+
+    def test_unbounded_run_marks_the_listing_complete(self):
+        """A positive assertion, not a denylist: no cap, no restriction, no
+        offline replay — the only shape allowed to claim completeness."""
+        repos = [{"name": "repo1", "full_name": "test-org/repo1"}]
+        mock_client, mock_config = self._client_and_config(repos)
+
+        with patch('coops.bronze.repositories.save_json_data', return_value="file.json") as mock_save:
+            extract_repositories(mock_client, mock_config)
+
+        assert self._filtered_call(mock_save).kwargs["complete"] is True
+
+    def test_max_repos_cap_leaves_the_listing_unmarked(self):
+        """The cap truncates before the write and also bounds the fetch, so
+        neither file holds the full list; the listing must not claim
+        completeness."""
+        repos = [{"name": "repo1", "full_name": "test-org/repo1"}]
+        mock_client, mock_config = self._client_and_config(repos)
+
+        with patch('coops.bronze.repositories.save_json_data', return_value="file.json") as mock_save:
+            extract_repositories(mock_client, mock_config, max_repos=1)
+
+        assert self._filtered_call(mock_save).kwargs["complete"] is False
+
+    def test_repo_filter_leaves_the_listing_unmarked(self):
+        repos = [{"name": "repo1", "full_name": "test-org/repo1"}]
+        mock_client, mock_config = self._client_and_config(repos)
+
+        with patch('coops.bronze.repositories.save_json_data', return_value="file.json") as mock_save:
+            extract_repositories(mock_client, mock_config, repo_filter=["test-org/repo1"])
+
+        assert self._filtered_call(mock_save).kwargs["complete"] is False
+
+    def test_offline_replay_leaves_the_listing_unmarked(self):
+        """An offline replay reads only what the cache holds, so its
+        listing is a claim about the provider the run has no evidence
+        for — the same rule that keeps it from persisting watermarks."""
+        repos = [{"name": "repo1", "full_name": "test-org/repo1"}]
+        mock_client, mock_config = self._client_and_config(repos, offline=True)
+
+        with patch('coops.bronze.repositories.save_json_data', return_value="file.json") as mock_save:
+            extract_repositories(mock_client, mock_config)
+
+        assert self._filtered_call(mock_save).kwargs["complete"] is False
+
+    def test_raw_listing_is_never_marked_complete(self):
+        """Only the filtered listing carries the provenance: the raw file
+        is not the reconciliation's input and must keep its shape."""
+        repos = [{"name": "repo1", "full_name": "test-org/repo1"}]
+        mock_client, mock_config = self._client_and_config(repos)
+
+        with patch('coops.bronze.repositories.save_json_data', return_value="file.json") as mock_save:
+            extract_repositories(mock_client, mock_config)
+
+        raw_call = next(
+            c for c in mock_save.call_args_list
+            if "repositories_raw.json" in str(c)
+        )
+        assert "complete" not in raw_call.kwargs
