@@ -9,6 +9,8 @@ import os
 import sys
 from datetime import datetime, timezone
 
+from coops.bronze.dedupe import write_report
+from coops.bronze.files import bronze_dedupe_report
 from coops.bronze.reconcile import reconcile_orphans
 from coops.bronze.watermarks import WatermarkStore
 from coops.infrastructure import get_settings, resolve_tenant_from_settings
@@ -94,6 +96,37 @@ def _reconcile_bronze(args: argparse.Namespace) -> None:
     forgetting. Every run prints which mode ran.
     """
     reconcile_orphans("data/bronze", apply=args.reconcile_apply)
+
+
+def _report_bronze_dedupe(bronze_dir: str = "data/bronze") -> None:
+    """Print the by-id dedupe report and publish it beside the data (#248).
+
+    Two halves of one requirement: the run report names every refused pair
+    (repository id, both files, the totals each contributes) so a human
+    reading the log sees the double count, and ``data/bronze/dedupe.json``
+    ships the same statement WITH the published totals, so a number that is
+    double-counted never travels without saying so. Written on every run —
+    the clean corpus too — because an artifact that appears only on failure
+    is indistinguishable from a check that never ran.
+
+    A refusal never halts the run (#248): both copies stay counted, visibly.
+    A failure to WRITE the artifact is printed loudly and also does not halt
+    the extraction — the data is already on disk and the report is a
+    statement about it, not a gate on it.
+    """
+    report = bronze_dedupe_report(bronze_dir)
+    print()
+    for line in report.format_lines():
+        print(line)
+    try:
+        published = write_report(bronze_dir, report)
+    except OSError as exc:
+        print(
+            f"ERROR: the dedupe report could not be published ({exc}); "
+            "any refusal above did NOT reach the published metadata"
+        )
+        return
+    print(f"Bronze dedupe report published: {published}")
 
 
 def positive_int(value: str) -> int:
@@ -266,6 +299,15 @@ def main():
         # deleted in the same run that creates it — and before the registry,
         # which scans the layers and would otherwise legitimise the orphan.
         _reconcile_bronze(args)
+
+        # ========================================
+        # Report and publish the by-id dedupe (#248)
+        # ========================================
+        # After the reconciliation (an applied reconcile removes orphans, so
+        # reporting first would name files that no longer exist) and still
+        # before the registry, which scans the layers: the report must be on
+        # disk with them.
+        _report_bronze_dedupe()
 
         # ========================================
         # Update Registry
