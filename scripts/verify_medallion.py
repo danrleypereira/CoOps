@@ -411,23 +411,48 @@ def check_gold_file_set(gold: Path, rep: Report) -> None:
 
 
 def _stamp_text(path: Path) -> str | None:
-    """The artifact's raw generated_at string, or None when there is none.
+    """The artifact's raw timestamp string, or None when there is none.
 
     Deliberately no parsing: equality is settled on these strings BEFORE any
     clock exists (see check_gold_regenerated), because a copied seed is
-    byte-identical whatever format its stamps carry. Every way the stamp can
-    be absent — missing file, bad JSON, a non-dict document (the timelines
-    are lists), a missing key, a non-string value — returns None, which for
-    this check means the probe cannot see the artifact's clock: an
-    instrument state, not a verdict on the data.
+    byte-identical whatever format its stamps carry.
+
+    **Each Gold artifact keeps its clock in a different place**, and a reader
+    that only knows `doc["generated_at"]` sees 1 of 5 rather than 4. Corrected
+    after @curupira measured the real corpus on #215 — the first version of
+    this check reported the two timelines as structurally unstampable, and
+    that was the reader, not the data:
+
+        executive_dashboard.json      doc["generated_at"]
+        performance_tiers.json        doc["generated_at"]          (since #202)
+        registry.json                 doc["all_processed"]["updated_at"]
+        timeline_last_7_days.json     doc[0]["_metadata"]["extracted_at"]
+        timeline_last_12_months.json  doc[0]["_metadata"]["extracted_at"]
+
+    The timelines are JSON *arrays*, and `save_json_data` prepends a
+    `_metadata` element — so they carry a stamp with no shape change and no
+    consumer-visible edit.
+
+    Every way a stamp can be absent — missing file, bad JSON, an unexpected
+    shape, a missing key, a non-string value — returns None, which for this
+    check means the probe cannot see that artifact's clock: an instrument
+    state, not a verdict on the data.
     """
     try:
         doc = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, ValueError):
         return None
-    if not isinstance(doc, dict):
-        return None
-    raw = doc.get("generated_at")
+
+    raw: object = None
+    if isinstance(doc, dict):
+        raw = doc.get("generated_at")
+        if not isinstance(raw, str):
+            nested = doc.get("all_processed")
+            raw = nested.get("updated_at") if isinstance(nested, dict) else None
+    elif isinstance(doc, list) and doc and isinstance(doc[0], dict):
+        meta = doc[0].get("_metadata")
+        raw = meta.get("extracted_at") if isinstance(meta, dict) else None
+
     if not isinstance(raw, str):
         return None
     return raw.strip() or None
