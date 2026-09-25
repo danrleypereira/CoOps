@@ -51,6 +51,23 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   the existing ones. A phase branch must not be started from a base where these
   are not green — fix the base first on its own patch branch.
 
+### Fixed
+- The 37 mypy errors Phase 1 added to pre-existing files (per-file gate
+  against `a48bec6`): `Optional` plumbing threaded into Bronze/Silver without
+  narrowing. Watermark reads in `bronze/issues.py` now narrow once
+  (`last_updated_at`/`last_event_id`) with the guard at the use site, instead
+  of dereferencing `wm` behind a bool computed eleven lines earlier;
+  `full_name` falls back with `or` so it is never `None` at the
+  watermark/fold call sites it was added to; `parse_github_date` is annotated
+  `str | None`, which its first statement has always answered with `None`;
+  and the Phase-1 locals (`name_counts`, `daily_activity`, the watermark
+  `payload`, `GitHubAPIClient._cache_fold`) carry annotations instead of
+  inferred unions. No `# type: ignore`, no `assert`, no behaviour change; the
+  pre-existing debt in these files is untouched except where it shares the
+  same inferred type as a regression (`daily_activity`'s day record,
+  `full_name` in `commits`/`repository_structure`), which the same one-line
+  fix clears incidentally.
+
 ### Added
 - `scripts/check_regressions.py` (#119): a per-file regression gate comparing
   BASE to HEAD under ruff and mypy. Phase 1 shipped to `main` with +69 ruff

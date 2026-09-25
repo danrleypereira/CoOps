@@ -4,6 +4,7 @@ Analyzes time-based patterns and trends
 """
 
 from collections import defaultdict
+from typing import Any
 
 from coops.silver.bronze_input import load_family
 from coops.silver.members_statistics import display_name, observe_spelling
@@ -34,7 +35,7 @@ def process_temporal_analysis() -> list[str]:
     # from everything observed, instead of being written per event. The
     # accumulation mirrors `members_statistics` over the same bronze
     # records, so both files render the same label for the same identity.
-    name_counts = defaultdict(lambda: defaultdict(int))
+    name_counts: defaultdict[str, defaultdict[str, int]] = defaultdict(lambda: defaultdict(int))
 
     # Collect all time-based events
     all_events = []
@@ -48,7 +49,7 @@ def process_temporal_analysis() -> list[str]:
             # unattributed event, never a user named 'unknown'.
             user_obj = issue.get('user')
             user_identifier = conversation_actor_identity(user_obj)
-            if user_identifier is not None:
+            if user_identifier is not None and user_obj is not None:
                 observe_spelling(name_counts[user_identifier], user_obj.get('name'))
 
             all_events.append(mark_unattributed({
@@ -75,7 +76,7 @@ def process_temporal_analysis() -> list[str]:
         if created_at:
             user_obj = pr.get('user')
             user_identifier = conversation_actor_identity(user_obj)
-            if user_identifier is not None:
+            if user_identifier is not None and user_obj is not None:
                 observe_spelling(name_counts[user_identifier], user_obj.get('name'))
 
             all_events.append(mark_unattributed({
@@ -140,7 +141,7 @@ def process_temporal_analysis() -> list[str]:
             # 'unknown' credited with its events.
             actor_obj = event.get('actor')
             user_identifier = conversation_actor_identity(actor_obj)
-            if user_identifier is not None:
+            if user_identifier is not None and actor_obj is not None:
                 observe_spelling(name_counts[user_identifier], actor_obj.get('name'))
 
             all_events.append(mark_unattributed({
@@ -161,7 +162,11 @@ def process_temporal_analysis() -> list[str]:
     generated_files.append(events_file)
 
     # Create daily activity summary - Squad improvement: per-author breakdown
-    daily_activity = defaultdict(lambda: {
+    # Annotated so the day record's fields are `Any` rather than the union of
+    # their literal defaults (None | int | set | defaultdict): every counter
+    # update below reads a field of this record, and on the inferred union
+    # each one is a fresh type error.
+    daily_activity: defaultdict[str, dict[str, Any]] = defaultdict(lambda: {
         'date': None,
         'total_events': 0,
         'issues_created': 0,

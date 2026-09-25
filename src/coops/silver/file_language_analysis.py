@@ -320,7 +320,7 @@ def process_file_language_analysis(
         repo_name = repo_of(structure_file, "structure")
         print(f"Analyzing languages for: {repo_name}")
         
-        structure_data = load_json_data(structure_file)
+        structure_data = load_json_data(str(structure_file))
         if not structure_data or 'tree' not in structure_data:
             print(f"  Skipping {repo_name}: invalid structure data")
             continue

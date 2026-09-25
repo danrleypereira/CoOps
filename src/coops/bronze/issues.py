@@ -180,8 +180,8 @@ def extract_issues(
         return []
 
     generated_files = []
-    all_issues = []
-    all_prs = []
+    all_issues: list[dict] = []
+    all_prs: list[dict] = []
     all_issue_events = []
 
     # Skip metadata if present
@@ -195,23 +195,25 @@ def extract_issues(
             continue
 
         repo_name = repo.get('name', 'unknown')
-        full_name = repo.get('full_name', repo_name)
+        full_name = repo.get('full_name') or repo_name
         wm = watermarks.get(full_name) if watermarks is not None else None
         # Issues/PRs and events advance on different watermarks: an issue is
         # incremental once we have seen its `updated_at`, an event once we have
-        # seen its id.
-        issues_incremental = bool(wm and wm.last_updated_at)
-        events_incremental = bool(wm and wm.last_event_id is not None)
+        # seen its id. Both are read once, here, and every guard below tests
+        # the value it acts on — narrowing `wm` into a bool eleven lines
+        # before the use is what made the dereferences uncheckable.
+        last_updated_at = wm.last_updated_at if wm else None
+        last_event_id = wm.last_event_id if wm else None
 
         print(f"Processing issues for: {repo_name}")
 
         # Get issues (includes PRs)
         issues_base = f"https://api.github.com/repos/{full_name}/issues?state=all"
-        if issues_incremental:
+        if last_updated_at:
             # Over-fetch the boundary second so an item updated exactly at
             # `last_updated_at` is not lost to GitHub's exclusive `since`; the
             # merge-by-number below de-duplicates it.
-            issues_base += f"&since={query_since(wm.last_updated_at)}"
+            issues_base += f"&since={query_since(last_updated_at)}"
         max_pages = None
         if max_issues is not None and max_prs is not None:
             max_pages = max(1, math.ceil(max(max_issues, max_prs) / 100))
@@ -254,7 +256,7 @@ def extract_issues(
         # On an incremental run, merge the changed records over the ones already
         # stored, keyed by number (issues and PRs DO change, so replacing
         # matters). On a full run this is a no-op.
-        if issues_incremental:
+        if last_updated_at:
             repo_issues = _merge_by_number(
                 _load_prior_records(f"data/bronze/issues_{repo_name}.json", _project_issue),
                 repo_issues,
@@ -291,8 +293,8 @@ def extract_issues(
             generated_files.append(repo_prs_file)
 
         # Get issue events (filter to keep only essential fields to reduce file size)
-        if events_incremental:
-            fetched_events = _fetch_events_after(client, full_name, wm.last_event_id, use_cache)
+        if last_event_id is not None:
+            fetched_events = _fetch_events_after(client, full_name, last_event_id, use_cache)
         else:
             fetched_events = client.get_paginated(
                 f"https://api.github.com/repos/{full_name}/issues/events",
@@ -317,7 +319,7 @@ def extract_issues(
             if last_seen is not None:
                 record["last_seen_at"] = last_seen
             repo_events.append(record)
-        if events_incremental:
+        if last_event_id is not None:
             # Only events newer than the last one seen are appended.
             repo_events = _load_prior_records(
                 f"data/bronze/issue_events_{repo_name}.json", _project_event

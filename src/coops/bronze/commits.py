@@ -199,7 +199,7 @@ def extract_commits(
             continue
 
         repo_name = repo.get('name', 'unknown')
-        full_name = repo.get('full_name', repo_name)
+        full_name = repo.get('full_name') or repo_name
         owner = full_name.split('/')[0] if '/' in full_name else None
         name_only = full_name.split('/')[1] if '/' in full_name else full_name
 
