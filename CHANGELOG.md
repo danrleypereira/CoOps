@@ -7,6 +7,28 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 
 ## [Unreleased]
 
+### Added
+- `GitHubSourceAdapter` in `coops/github/adapter.py` (#29): the GitHub
+  implementation of `SourcePort`, composing the existing
+  `GitHubAPIClient` (transport), `coops.github.mapper` (every
+  payload→model rule) and the domain's `Tenant` — glue with no mapping
+  or HTTP of its own. One adapter serves one tenant through one GitHub
+  account; a call naming another tenant reads nothing (empty
+  organization-wide, `SourceNotFoundError` on repository addresses),
+  mirroring the reference implementation in
+  `tests/unit/test_source_port.py`. Provider faults that escape the
+  client surface as `SourceUnavailableError`, never as the transport's
+  own exception; `OfflineCacheMiss` still passes through so an offline
+  replay (#199) stops the run. Provider policies the port leaves open:
+  commits are the default-branch history (`graphql_commit_history`,
+  REST fallback included), issues and PRs are read `state=all` from the
+  shared endpoint and split behind the port, a truncated REST tree is
+  finished by the GraphQL level walk, and repositories/members are
+  yielded unfiltered (fork/blacklist policy stays with the Bronze
+  caller, #26). A `TYPE_CHECKING` conformance anchor — the twin of the
+  storage adapters' — binds the adapter to `SourcePort` so signature
+  drift is a mypy error under `strict = true`.
+
 ### Changed
 - **Lint, format and type-check must be green, not "no worse than the base"**
   (owner ruling, 2026-09-25). Documented in `docs/definition-of-done.md` and
