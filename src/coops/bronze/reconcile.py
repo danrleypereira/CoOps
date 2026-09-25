@@ -79,7 +79,7 @@ from collections.abc import Iterable
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from coops.bronze.files import BRONZE_FAMILIES, bronze_files, repo_of
+from coops.bronze.files import BRONZE_FAMILIES, bronze_files_raw, repo_of
 from coops.utils.data_helpers import strip_metadata
 
 #: The listing that names the repositories the current run extracts. Every
@@ -218,7 +218,12 @@ def reconcile_orphans(
 
     result = Reconciliation(applied=apply)
     for family in sorted(families):
-        for path in bronze_files(directory, family):
+        # bronze_files_raw, NOT bronze_files: deletion must see what is on
+        # DISK. bronze_files is deduped (#248), and the superseded copy this
+        # loop exists to delete is precisely what the dedupe hides — between
+        # #248 and #259 this enumerated the deduped set and found zero orphans
+        # on a corpus holding three (#259).
+        for path in bronze_files_raw(directory, family):
             repo = repo_of(path, family)
             if repo in exact:
                 continue  # the live file, spelled as this run writes it
