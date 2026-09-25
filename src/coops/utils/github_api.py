@@ -13,7 +13,7 @@ import hashlib
 import requests
 import threading
 import logging
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Dict, List, Optional, Any, Tuple
 from urllib.parse import urlsplit, parse_qsl
 
@@ -1196,7 +1196,7 @@ class GitHubAPIClient:
                 'sha': tree_sha,
                 'tree': standardized_tree,
                 'truncated': is_truncated,
-                'extracted_at': datetime.now().isoformat(),
+                'extracted_at': datetime.now(timezone.utc).isoformat(),
                 'method': 'rest',
                 'total_items': len(standardized_tree)
             }
@@ -1348,7 +1348,7 @@ class GitHubAPIClient:
                 'repository': repo,
                 'branch': branch,
                 'tree': tree,
-                'extracted_at': datetime.now().isoformat(),
+                'extracted_at': datetime.now(timezone.utc).isoformat(),
                 'method': 'graphql',
                 'total_items': len(tree)
             }
@@ -1364,7 +1364,7 @@ class GitHubAPIClient:
                 'branch': branch,
                 'tree': [],
                 'error': str(e),
-                'extracted_at': datetime.now().isoformat(),
+                'extracted_at': datetime.now(timezone.utc).isoformat(),
                 'method': 'graphql'
             }
 
@@ -1446,7 +1446,7 @@ class GitHubAPIClient:
             'sha': '',
             'tree': [],
             'truncated': False,
-            'extracted_at': datetime.now().isoformat(),
+            'extracted_at': datetime.now(timezone.utc).isoformat(),
             'method': 'rest',
             'total_items': 0,
             'error': error
@@ -1504,7 +1504,7 @@ def save_json_data(data: Any, filepath: str, timestamp: bool = True) -> str:
     os.makedirs(os.path.dirname(filepath), exist_ok=True)
 
     if timestamp:
-        now = datetime.now().isoformat()
+        now = datetime.now(timezone.utc).isoformat()
         if isinstance(data, dict):
             # Copy: callers may reuse the dict (e.g. in a consolidated file).
             data = {**data, '_metadata': {
@@ -1546,7 +1546,7 @@ def update_data_registry(layer: str, entity: str, files: List[str]) -> None:
         registry[entity] = {}
 
     registry[entity]['files'] = files
-    registry[entity]['updated_at'] = datetime.now().isoformat()
+    registry[entity]['updated_at'] = datetime.now(timezone.utc).isoformat()
     registry[entity]['layer'] = layer
 
     save_json_data(registry, registry_path, timestamp=False)

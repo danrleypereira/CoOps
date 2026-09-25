@@ -33,6 +33,21 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   looking like it worked.
 
 ### Changed
+- Every timestamp the pipeline **persists** is now timezone-aware UTC and
+  carries its offset in the value (`2026-09-25T04:40:09+00:00`, #143):
+  `generated_at` in the Gold dashboard and tiers, `created_at` and
+  `generated_at` in the registry/catalog, and `extracted_at`/`updated_at`
+  in the `_metadata` sidecars and per-layer registries that
+  `save_json_data`/`update_data_registry`/the tree responses write. They
+  were naive local stamps — a GitHub Actions run wrote UTC while a local
+  run wrote `-03:00`, so two corpora were not comparable and nothing in
+  the value said which machine had written it. Readers are not broken:
+  the Silver capture-time parser accepts both shapes and treats the old
+  naive values as UTC. **Values shift once**: the first run after this
+  change writes UTC, so a timestamp produced by a previous local run moves
+  by its UTC offset in the wall-clock reading — that single jump is the
+  fix, not drift. Console `Started at:` lines are untouched (human log,
+  not data).
 - `performance_tiers.json` now carries `generated_at`, in the same format
   and from the same single clock reading as `executive_dashboard.json`, so
   the two artifacts written by one `coops-aggregate` run cannot disagree
