@@ -9,6 +9,7 @@ import os
 import sys
 from datetime import datetime, timezone
 
+from coops.bronze.reconcile import reconcile_orphans
 from coops.bronze.watermarks import WatermarkStore
 from coops.infrastructure import get_settings, resolve_tenant_from_settings
 from coops.utils.github_api import (
@@ -69,6 +70,31 @@ def persist_watermarks(store: WatermarkStore, client: GitHubAPIClient) -> None:
     store.save()
 
 
+def _reconcile_bronze(args: argparse.Namespace) -> None:
+    """Remove per-repository Bronze files the current listing does not name (#216).
+
+    A renamed or recased repository leaves its old-case files beside the new
+    ones, Silver and Gold glob both, and the repository is counted twice in
+    published data. The deletion guard lives in ``reconcile_orphans`` and
+    reads the FILE: ``repositories_filtered.json`` carries
+    ``_metadata.complete: true`` only when the run that wrote it enumerated
+    the organisation unbounded, and every other shape — a ``--max-repos``
+    cap, a ``--repo`` restriction, an offline replay, or any listing that
+    predates the provenance — refuses and deletes nothing, whatever this
+    process's argv says. That last clause is the point: the narrowed run and
+    the reconciliation need not be the same process, so an argv guard is a
+    guard that is not there when it matters (a capped run exits; a later
+    clean-argv reconciliation reads its 5-entry listing and would delete
+    every other repository's files — the provenance is the only thing that
+    stops it).
+
+    Deletion is the default so a scheduled run actually cleans; pass
+    ``--reconcile-dry-run`` to report what would be removed. Every run
+    prints which mode ran.
+    """
+    reconcile_orphans("data/bronze", apply=not args.reconcile_dry_run)
+
+
 def positive_int(value: str) -> int:
     """argparse type for caps: a cap of 0 or less would fetch nothing."""
     number = int(value)
@@ -95,6 +121,7 @@ def main():
     parser.add_argument('--active-days', type=int, default=30, help='Consider branches active if updated in last N days (default: 30)')
     parser.add_argument('--time-chunks', type=int, default=3, help='Split large extractions into N time periods to avoid API overload (default: 3)')
     parser.add_argument('--skip-structure', action='store_true', help='Skip repository structure extraction')
+    parser.add_argument('--reconcile-dry-run', action='store_true', help='Report the Bronze orphan reconciliation (#216: files left by a renamed or recased repository, counted twice downstream) without deleting anything. Deletion is the default in a full run; a listing that does not assert its own completeness in its _metadata (a --repo, --max-repos or --offline run, or one that predates #216) always refuses and deletes nothing.')
     parser.add_argument('--capture-dir', help='Capture every raw API response (REST and GraphQL) into this directory, tenant-scoped (corpus-raw, PRIVATE)')
 
     args = parser.parse_args()
@@ -230,6 +257,14 @@ def main():
         # watermark is what makes the replay request the same URL set as the
         # run it diagnoses, while persisting one would move it on no evidence.
         persist_watermarks(watermark_store, client)
+
+        # ========================================
+        # Reconcile Bronze with the current listing (#216)
+        # ========================================
+        # After every family has been written, so a rename leftover is
+        # deleted in the same run that creates it — and before the registry,
+        # which scans the layers and would otherwise legitimise the orphan.
+        _reconcile_bronze(args)
 
         # ========================================
         # Update Registry

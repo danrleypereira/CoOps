@@ -911,8 +911,19 @@ class GitHubAPIClient(GitHubTransport):
         }
 
 
-def save_json_data(data: Any, filepath: str, timestamp: bool = True) -> str:
-    """Save data to JSON file with optional timestamp metadata."""
+def save_json_data(
+    data: Any,
+    filepath: str,
+    timestamp: bool = True,
+    complete: bool = False,
+) -> str:
+    """Save data to JSON file with optional timestamp metadata.
+
+    ``complete`` is listing provenance (#216): the key is written into the
+    ``_metadata`` element only when the caller positively asserts the list
+    was enumerated unbounded. Every other caller keeps its current output
+    shape — the key is absent, and absent means incomplete.
+    """
     os.makedirs(os.path.dirname(filepath), exist_ok=True)
 
     if timestamp:
@@ -932,6 +943,8 @@ def save_json_data(data: Any, filepath: str, timestamp: bool = True) -> str:
                     'record_count': len(data)
                 }
             }
+            if complete:
+                metadata['_metadata']['complete'] = True
             data = [metadata, *data]
 
     with open(filepath, 'w', encoding='utf-8') as f:

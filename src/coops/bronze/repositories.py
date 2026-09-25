@@ -71,6 +71,24 @@ def extract_repositories(
 
     print(f"Found {len(filtered_repos)} repositories (filtered from {len(raw_repos)})")
 
+    # Listing provenance (#216): `complete: true` is a POSITIVE assertion
+    # that this run enumerated the organisation unbounded — no max_repos
+    # cap (which also bounds the fetch itself, so after a capped run
+    # neither the raw nor the filtered file holds the full list), no
+    # repo_filter restriction, and not an offline replay (which reads only
+    # what the cache holds, so completeness would be a claim about the
+    # provider the run has no evidence for — the same rule that keeps an
+    # offline run from persisting watermarks). Every narrowing path simply
+    # does not set it, and the Bronze reconciliation refuses to delete
+    # anything unless the file itself says the listing was complete: the
+    # guard travels with the data, not with the argv of whatever process
+    # reads it next.
+    listing_complete = (
+        max_repos is None
+        and repo_filter is None
+        and not getattr(client, "offline", False)
+    )
+
     generated_files = []
 
     repos_file = save_json_data(
@@ -82,7 +100,8 @@ def extract_repositories(
     # Filter repositories and save
     filtered_file = save_json_data(
         filtered_repos,
-        "data/bronze/repositories_filtered.json"
+        "data/bronze/repositories_filtered.json",
+        complete=listing_complete,
     )
     generated_files.append(filtered_file)
 
