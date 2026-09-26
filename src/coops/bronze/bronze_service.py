@@ -41,6 +41,17 @@ express their content, and faking them would change published data:
 
 Also not expressible, with the consequence named:
 
+- **The commit committer's name (#240).** The port yields domain models,
+  never payloads (its own contract), so the GraphQL node's ``committer.name``
+  — requested by the live history query and written by the legacy path on
+  260,218 of 260,372 corpus records (measured, fga snapshot, 487 files; the
+  other 154 are the deliberate ``_is_address`` blanks) — cannot cross it.
+  ``_commit_record`` writes ``None``; every key set is otherwise identical
+  at every level, so the defect is one value, not a shaping. Not fixable by
+  widening ``Commit``: the model exists for the domain, not to envelope
+  GitHub's schema. The fix is a payload-carrying seam on the port — a
+  contract change, not a projection change. Pinned by the strict xfail in
+  ``tests/unit/test_commit_projection_gap.py``.
 - **Incremental fetch windows.** The port has no ``since`` (its docstring
   assigns watermarks to adapters; the GitHub adapter does not read them), so
   this service always fetches a full history and merges with what is stored
@@ -176,9 +187,12 @@ def _commit_record(commit: Commit) -> dict[str, Any]:
     redacted with the very regex the legacy scrub uses (imported, not
     copied — a second copy could drift). ``html_url`` is ``None`` because
     the history query never requests a URL. The committer's *date* falls
-    back to the commit date exactly as the legacy builder does; the
-    committer's *name* is not expressible — the model has no committer,
-    so a node that carries one loses the name (see the #30 report).
+    back to the commit date exactly as the legacy builder does. The
+    committer's *name* is #240: the live query sends it, the model cannot
+    carry it, and no seam transports the payload here — so this projection
+    writes ``None`` where the legacy path writes a real name on 260,218 of
+    260,372 corpus records, with every key set otherwise identical (see the
+    module docstring and ``tests/unit/test_commit_projection_gap.py``).
     """
     author = commit.author
     author_data: dict[str, Any] = {"name": None, "date": commit.committed_at}
