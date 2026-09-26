@@ -10,14 +10,12 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from unittest.mock import MagicMock
 
 import pytest
 
 import coops.bronze.reconcile as reconcile_module
 from coops.bronze.files import bronze_files, bronze_files_raw
 from coops.bronze.reconcile import reconcile_orphans
-from coops.bronze.repositories import extract_repositories
 from coops.utils.github_api import save_json_data
 
 # The #216 fixture, exactly as the real corpus holds it: one repository,
@@ -54,15 +52,19 @@ def _family_file(bronze: Path, family: str, repo: str) -> Path:
     return path
 
 
-def _extraction_client(repos: list[dict], *, offline: bool = False) -> tuple[MagicMock, MagicMock]:
-    client = MagicMock()
-    client.offline = offline
-    config = MagicMock()
-    config.org_name = "unb-mds"
-    config.should_skip_repo.return_value = False
-    client.get_paginated.return_value = repos
-    client.get_with_cache.return_value = repos[0] if repos else None
-    return client, config
+def _capped_listing(repos: list[dict], **kwargs) -> None:
+    """Write the listing a narrowed run leaves on disk.
+
+    Before the #30 wiring this was produced by running the real
+    ``extract_repositories`` with ``max_repos``/``repo_filter``/``--offline``;
+    the producer is ``BronzeService`` now, and the provenance rules that make
+    these listings carry no ``complete`` assertion are pinned in
+    ``tests/unit/test_bronze_service.py``. What THIS module needs is the
+    on-disk state such a run leaves — envelope, subset, no provenance —
+    which ``save_json_data`` writes exactly (``complete`` defaults to not
+    asserted).
+    """
+    save_json_data(repos, "data/bronze/repositories_filtered.json", **kwargs)
 
 
 # --------------------------------------------------------------------------
@@ -201,8 +203,7 @@ def test_capped_run_does_not_reconcile_its_own_subset(
     a subset, and the subset carries no completeness provenance."""
     monkeypatch.chdir(tmp_path)
     repos = [{"name": f"repo{index}", "full_name": f"unb-mds/repo{index}"} for index in range(3)]
-    client, config = _extraction_client(repos)
-    extract_repositories(client, config, max_repos=1)
+    _capped_listing(repos[:1])  # what a --max-repos 1 run leaves
 
     bronze = tmp_path / "data" / "bronze"
     for index in (1, 2):  # files of the repositories the cap excluded
@@ -230,8 +231,7 @@ def test_capped_listing_refuses_a_later_clean_invocation(
     run_a.mkdir()
     monkeypatch.chdir(run_a)
     repos = [{"name": f"repo{index}", "full_name": f"unb-mds/repo{index}"} for index in range(3)]
-    client, config = _extraction_client(repos)
-    extract_repositories(client, config, max_repos=1)  # run A exits here
+    _capped_listing(repos[:1])  # run A exits here
     monkeypatch.chdir(tmp_path)  # run B starts with nothing carried over
 
     bronze = run_a / "data" / "bronze"
@@ -271,8 +271,7 @@ def test_repo_filter_run_leaves_listing_unprovenanced(
         {"name": "keep", "full_name": "unb-mds/keep"},
         {"name": "other", "full_name": "unb-mds/other"},
     ]
-    client, config = _extraction_client(repos)
-    extract_repositories(client, config, repo_filter=["unb-mds/keep"])
+    _capped_listing([repos[0]])  # what a --repo run leaves
 
     bronze = tmp_path / "data" / "bronze"
     listing = json.loads((bronze / "repositories_filtered.json").read_text())
@@ -291,8 +290,7 @@ def test_offline_replay_leaves_listing_unprovenanced(
     rule that keeps an offline run from persisting watermarks."""
     monkeypatch.chdir(tmp_path)
     repos = [{"name": "keep", "full_name": "unb-mds/keep"}]
-    client, config = _extraction_client(repos, offline=True)
-    extract_repositories(client, config)
+    _capped_listing(repos)  # what an offline replay leaves: full set, no provenance
 
     bronze = tmp_path / "data" / "bronze"
     listing = json.loads((bronze / "repositories_filtered.json").read_text())

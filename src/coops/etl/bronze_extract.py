@@ -1,6 +1,15 @@
 """
 Main orchestrator for Bronze layer data extraction.
 Extracts raw data from GitHub API and saves to bronze layer.
+
+Since #30 wired it in, the extraction itself is driven by
+:class:`coops.bronze.bronze_service.BronzeService` through the source and
+storage ports (:func:`run_extraction`); the two families the port cannot
+express — members (#238) and issue events (#239) — stay on the legacy
+extractors on the same path. This module remains the composition root: it
+owns the client, the tenant, the watermarks' persistence decision, the
+filesystem chores the port cannot express (the #216 reconciliation, the
+#170 aggregate sweep, the #248 dedupe report) and the registry update.
 """
 
 import argparse
@@ -8,12 +17,18 @@ import contextlib
 import os
 import sys
 from datetime import datetime, timezone
+from pathlib import Path
 
+from coops.bronze.bronze_service import BronzeService
 from coops.bronze.dedupe import write_report
-from coops.bronze.files import bronze_dedupe_report
+from coops.bronze.files import bronze_dedupe_report, remove_aggregate
 from coops.bronze.reconcile import reconcile_orphans
 from coops.bronze.watermarks import WatermarkStore
+from coops.domain import Tenant, TenantId
+from coops.domain.ports.storage_port import validate_layer
+from coops.github.adapter import GitHubSourceAdapter
 from coops.infrastructure import get_settings, resolve_tenant_from_settings
+from coops.storage.file import FileStorageAdapter
 from coops.utils.github_api import (
     GitHubAPIClient,
     OrganizationConfig,
@@ -137,6 +152,186 @@ def positive_int(value: str) -> int:
     return number
 
 
+class PublishedLayoutStorage(FileStorageAdapter):
+    """``StoragePort`` over the published layout: ``data/<layer>/<entity>.json``.
+
+    The port's own filesystem adapter (#41) gives every tenant its own tree
+    (``<root>/<tenant-slug>/<layer>/…``) — the layout a multi-tenant
+    deployment needs. The published tree Silver and Gold read today is flat
+    and single-tenant: one organisation per checkout, ``data/bronze/*.json``
+    with no tenant segment. Wiring ``BronzeService`` onto the live path (#30)
+    must not move the published files — every downstream reader globs
+    ``data/bronze`` — so the composition maps the port's addresses onto the
+    published layout here by dropping the tenant segment from the path,
+    which is the only change: atomic replace, address validation and the
+    never-written-tenant read all stay inherited.
+
+    The tenant is still named on every call and the port still validates the
+    address; this layout simply does not encode the tenant as a directory.
+    Moving the published tree onto the tenant-scoped one is a decision that
+    belongs with the Silver/Gold reimplementation (#264), which is when the
+    readers move.
+    """
+
+    def _layer_dir(self, tenant: TenantId, layer: str) -> Path:
+        return self._root / validate_layer(layer)
+
+
+def _retire_bronze_aggregates(bronze_dir: str = "data/bronze") -> None:
+    """Remove the retired ``*_all.json`` aggregates (#170).
+
+    The sweep lived inside the legacy issues/commits extractors, where the
+    aggregates used to be written. Those steps are ``BronzeService``'s now,
+    and ``StoragePort`` has no delete (the service's own docstring assigns
+    deletion to the caller that owns the filesystem), so the sweep runs here
+    — one place, after every family has been written, exactly the guarantee
+    the extractors used to give per-family.
+    """
+    for family in ("commits", "issues", "prs", "issue_events"):
+        remove_aggregate(bronze_dir, family)
+
+
+def run_extraction(
+    client: GitHubAPIClient,
+    tenant: Tenant,
+    config: OrganizationConfig,
+    *,
+    use_cache: bool = True,
+    offline: bool = False,
+    max_repos: int | None = None,
+    repo_filter: list[str] | None = None,
+    max_issues: int | None = None,
+    max_prs: int | None = None,
+    max_commits_per_repo: int | None = None,
+    skip_structure: bool = False,
+    watermarks: WatermarkStore | None = None,
+) -> list[str]:
+    """Drive one Bronze run — the live extraction path ``main()`` calls.
+
+    Every family the source port can express goes through
+    :class:`coops.bronze.bronze_service.BronzeService` (repositories,
+    issues, PRs, commits, structures). Two families the port cannot express
+    stay on the legacy extractors, on this path and not beside it:
+
+    - ``members_basic``/``members_detailed`` (#238): the ``Member`` model is
+      a projection (identity, login, totals) and today's member records
+      carry the provider payload (``avatar_url``, ``type``, profile fields,
+      ``profile_fetched``, ``data_source``, …), not reconstructible without
+      changing the model;
+    - ``issue_events_<repo>`` (#239): ``SourcePort`` has no
+      ``fetch_issue_events``.
+
+    Removing either from the run would starve the Silver/Gold modules that
+    read those files; that decision belongs to #238/#239, not to this
+    wiring. Everything returns as ``data/bronze/<entity>.json`` paths for
+    the registry.
+    """
+    if watermarks is None:
+        watermarks = WatermarkStore()
+
+    service = BronzeService(
+        GitHubSourceAdapter(client, tenant, use_cache=use_cache),
+        PublishedLayoutStorage("data"),
+        tenant.id,
+        watermarks=watermarks,
+        offline=offline,
+    )
+
+    # Imported at call time, like the extractors always were, so the modules
+    # (and their tests) stay patchable at the source.
+    from coops.bronze.issues import extract_issue_events
+    from coops.bronze.members import extract_members
+
+    all_files: list[str] = []
+
+    # ========================================
+    # STEP 1: Extract Repositories (Required First)
+    # ========================================
+    print("\n" + "=" * 60)
+    print("STEP 1: Extracting repositories")
+    print("=" * 60)
+    repo_entities = service.extract_repositories(
+        max_repos=max_repos, repo_filter=repo_filter
+    )
+    repo_files = [f"data/bronze/{entity}.json" for entity in repo_entities]
+    all_files.extend(repo_files)
+    print(f"Generated {len(repo_files)} repository files")
+
+    # ========================================
+    # STEP 2: Extract Issues and Pull Requests (+ events, #239)
+    # ========================================
+    print("\n" + "=" * 60)
+    print("STEP 2: Extracting issues and pull requests")
+    print("=" * 60)
+    conversation_entities = service.extract_issues(
+        max_issues=max_issues, max_prs=max_prs
+    )
+    # The events family cannot cross the port (#239), so it stays on the
+    # legacy extractor — same run, same step, reported as the gap it is.
+    event_files = extract_issue_events(
+        client, config, use_cache=use_cache, watermarks=watermarks
+    )
+    issue_files = [f"data/bronze/{entity}.json" for entity in conversation_entities]
+    all_files.extend(issue_files)
+    all_files.extend(event_files)
+    print(f"Generated {len(issue_files)} issue/PR files, {len(event_files)} event files")
+
+    # ========================================
+    # STEP 3: Extract Commits
+    # ========================================
+    print("\n" + "=" * 60)
+    print("STEP 3: Extracting commits")
+    print("=" * 60)
+    commit_entities = service.extract_commits(
+        max_commits_per_repo=max_commits_per_repo
+    )
+    commit_files = [f"data/bronze/{entity}.json" for entity in commit_entities]
+    all_files.extend(commit_files)
+    print(f"Generated {len(commit_files)} commit files")
+
+    # ========================================
+    # STEP 4: Extract Organization Members (#238: legacy path)
+    # ========================================
+    print("\n" + "=" * 60)
+    print("STEP 4: Extracting organization members")
+    print("=" * 60)
+    member_files = extract_members(client, config, use_cache=use_cache)
+    all_files.extend(member_files)
+    print(f"Generated {len(member_files)} member files")
+
+    # ========================================
+    # STEP 5: Extract Repository Structure
+    # ========================================
+    structure_files: list[str] = []
+    if not skip_structure:
+        print("\n" + "=" * 60)
+        print("STEP 5: Extracting repository structures")
+        print("=" * 60)
+        structure_entities = service.extract_structures()
+        structure_files = [f"data/bronze/{entity}.json" for entity in structure_entities]
+        all_files.extend(structure_files)
+        print(f"Generated {len(structure_files)} structure files")
+    else:
+        print("\nSkipping repository structure extraction (--skip-structure)")
+
+    # The retired ``*_all.json`` aggregates (#170): the service cannot
+    # delete through the port, so the sweep runs here, after every family
+    # has been written (see _retire_bronze_aggregates).
+    _retire_bronze_aggregates()
+
+    print("\n" + "=" * 60)
+    print(f"Total files generated: {len(all_files)}")
+    print(f"   - Repositories: {len(repo_files)}")
+    print(f"   - Issues/PRs: {len(issue_files)}")
+    print(f"   - Issue events: {len(event_files)}")
+    print(f"   - Commits: {len(commit_files)}")
+    print(f"   - Members: {len(member_files)}")
+    print(f"   - Structures: {len(structure_files)}")
+    print("=" * 60)
+
+    return all_files
+
+
 def main():
     parser = argparse.ArgumentParser(description='Extract GitHub organization data to Bronze layer')
     parser.add_argument('--cache', action='store_true', help='Use cached data when available')
@@ -146,14 +341,7 @@ def main():
     parser.add_argument('--max-repos', type=positive_int, help='Optional hard cap of repositories to fetch')
     parser.add_argument('--max-issues', type=positive_int, help='Optional hard cap of issues per repo to fetch')
     parser.add_argument('--max-prs', type=positive_int, help='Optional hard cap of pull requests per repo to fetch')
-    parser.add_argument('--commits-method', choices=['rest', 'graphql'], default='graphql', help='Extraction method for commits (REST v3 or GraphQL v4)')
-    parser.add_argument('--since', help='ISO-8601 timestamp (e.g., 2024-01-01T00:00:00Z) to limit commit extraction start')
-    parser.add_argument('--until', help='ISO-8601 timestamp (e.g., 2024-12-31T23:59:59Z) to limit commit extraction end')
-    parser.add_argument('--max-commits-per-repo', type=positive_int, help='Optional hard cap of commits per repo to fetch (GraphQL only)')
-    parser.add_argument('--commits-page-size', type=int, default=50, help='Commits page size for pagination (REST & GraphQL). Default: 50')
-    parser.add_argument('--include-active-branches', action='store_true', help='Include commits from recently active branches not merged to main (GraphQL only)')
-    parser.add_argument('--active-days', type=int, default=30, help='Consider branches active if updated in last N days (default: 30)')
-    parser.add_argument('--time-chunks', type=int, default=3, help='Split large extractions into N time periods to avoid API overload (default: 3)')
+    parser.add_argument('--max-commits-per-repo', type=positive_int, help='Optional hard cap of commits per repo to fetch (applied to the records written)')
     parser.add_argument('--skip-structure', action='store_true', help='Skip repository structure extraction')
     parser.add_argument('--reconcile-apply', action='store_true', help='Delete the Bronze orphans the reconciliation finds (#216: files left by a renamed or recased repository, counted twice downstream). Without this flag the reconciliation only REPORTS what it would remove. Deletion additionally refuses whenever the listing does not assert its own completeness in its _metadata (a --repo, --max-repos or --offline run, or one that predates #216).')
     parser.add_argument('--capture-dir', help='Capture every raw API response (REST and GraphQL) into this directory, tenant-scoped (corpus-raw, PRIVATE)')
@@ -215,74 +403,20 @@ def main():
             print(f"[WARN] MongoDB raw layer unavailable ({exc}); using API only.")
 
     try:
-        # Import and run individual extractors
-        from coops.bronze.commits import extract_commits
-        from coops.bronze.issues import extract_issues
-        from coops.bronze.members import extract_members
-        from coops.bronze.repositories import extract_repositories
-        from coops.bronze.repository_structure import extract_repository_structure
-
-        # ========================================
-        # STEP 1: Extract Repositories (Required First)
-        # ========================================
-        print("\n" + "="*60)
-        print("STEP 1: Extracting repositories")
-        print("="*60)
-        repo_files = extract_repositories(client, config, use_cache=use_cache, max_repos=args.max_repos, repo_filter=args.repo)
-        print(f"Generated {len(repo_files)} repository files")
-
-        # ========================================
-        # STEP 2: Extract Issues and Pull Requests
-        # ========================================
-        print("\n" + "="*60)
-        print("STEP 2: Extracting issues and pull requests")
-        print("="*60)
-        issue_files = extract_issues(client, config, use_cache=use_cache, max_issues=args.max_issues, max_prs=args.max_prs, watermarks=watermark_store)
-        print(f"Generated {len(issue_files)} issue files")
-
-        # ========================================
-        # STEP 3: Extract Commits (GraphQL/REST Hybrid)
-        # ========================================
-        print("\n" + "="*60)
-        print("STEP 3: Extracting commits")
-        print("="*60)
-        commit_files = extract_commits(
+        all_files = run_extraction(
             client,
+            tenant,
             config,
             use_cache=use_cache,
-            method=args.commits_method,
-            since=args.since,
-            until=args.until,
+            offline=args.offline,
+            max_repos=args.max_repos,
+            repo_filter=args.repo,
+            max_issues=args.max_issues,
+            max_prs=args.max_prs,
             max_commits_per_repo=args.max_commits_per_repo,
-            page_size=args.commits_page_size,
-            include_active_branches=args.include_active_branches,
-            active_days=args.active_days,
-            time_chunks=args.time_chunks,
+            skip_structure=args.skip_structure,
             watermarks=watermark_store,
         )
-        print(f"Generated {len(commit_files)} commit files")
-
-        # ========================================
-        # STEP 4: Extract Organization Members
-        # ========================================
-        print("\n" + "="*60)
-        print("STEP 4: Extracting organization members")
-        print("="*60)
-        member_files = extract_members(client, config, use_cache=use_cache)
-        print(f"Generated {len(member_files)} member files")
-
-        # ========================================
-        # STEP 5: Extract Repository Structure (GraphQL)
-        # ========================================
-        structure_files = []
-        if not args.skip_structure:
-            print("\n" + "="*60)
-            print("STEP 5: Extracting repository structures")
-            print("="*60)
-            structure_files = extract_repository_structure(client, config, use_cache=use_cache, watermarks=watermark_store)
-            print(f"Generated {len(structure_files)} structure files")
-        else:
-            print("\nSkipping repository structure extraction (--skip-structure)")
 
         # ========================================
         # Persist Watermarks
@@ -312,18 +446,12 @@ def main():
         # ========================================
         # Update Registry
         # ========================================
-        all_files = repo_files + issue_files + commit_files + member_files + structure_files
         update_data_registry('bronze', 'all_extractions', all_files)
 
         print("\n" + "="*60)
         print("SUCCESS: Bronze extraction completed!")
         print("="*60)
         print(f"Total files generated: {len(all_files)}")
-        print(f"   - Repositories: {len(repo_files)}")
-        print(f"   - Issues/PRs: {len(issue_files)}")
-        print(f"   - Commits: {len(commit_files)}")
-        print(f"   - Members: {len(member_files)}")
-        print(f"   - Structures: {len(structure_files)}")
         print("="*60)
 
         _write_run_summary(client)

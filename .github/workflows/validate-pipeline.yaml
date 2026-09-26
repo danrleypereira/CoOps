@@ -46,11 +46,6 @@ on:
         required: false
         type: string
         default: '50'
-      since:
-        description: 'Only extract commits since this ISO-8601 timestamp (blank = full history)'
-        required: false
-        type: string
-        default: ''
       skip_structure:
         description: 'Skip repository structure extraction (faster)'
         required: false
@@ -145,15 +140,13 @@ jobs:
           MAX_ISSUES: ${{ inputs.max_issues }}
           MAX_PRS: ${{ inputs.max_prs }}
           MAX_COMMITS_PER_REPO: ${{ inputs.max_commits_per_repo }}
-          SINCE: ${{ inputs.since }}
           SKIP_STRUCTURE: ${{ inputs.skip_structure }}
         run: |
-          ARGS=(--cache --commits-method graphql)
+          ARGS=(--cache)
           [ -n "$MAX_REPOS" ] && ARGS+=(--max-repos "$MAX_REPOS")
           [ -n "$MAX_ISSUES" ] && ARGS+=(--max-issues "$MAX_ISSUES")
           [ -n "$MAX_PRS" ] && ARGS+=(--max-prs "$MAX_PRS")
           [ -n "$MAX_COMMITS_PER_REPO" ] && ARGS+=(--max-commits-per-repo "$MAX_COMMITS_PER_REPO")
-          [ -n "$SINCE" ] && ARGS+=(--since "$SINCE")
           [ "$SKIP_STRUCTURE" = "true" ] && ARGS+=(--skip-structure)
           uv run coops-bronze "${ARGS[@]}"
 

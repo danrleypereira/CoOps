@@ -1,7 +1,29 @@
-import math
+"""Issue events for the Bronze layer — the one family of the old issues
+step the source port cannot express (#239).
 
-from coops.bronze.files import remove_aggregate
-from coops.bronze.watermarks import WatermarkStore, max_iso, query_since
+Issues and pull requests themselves are written by
+:class:`coops.bronze.bronze_service.BronzeService` since #30 wired it onto
+the live path, through ``SourcePort.fetch_issues`` /
+``fetch_pull_requests``. ``SourcePort`` has no ``fetch_issue_events``, and
+faking one would change published data, so the events step stays here on
+the legacy extraction path — on the run itself
+(``coops.etl.bronze_extract.run_extraction`` calls it in the same step),
+not beside it. Moving it is #239's to do, by growing the port method.
+
+The files this module writes are read, together with the member files, by
+``silver/collaboration_networks.py``, ``silver/contribution_metrics.py``,
+``silver/member_analytics.py``, ``silver/members_statistics.py``,
+``silver/temporal_analysis.py``, ``etl/gold_aggregate.py``, plus
+``etl/registry_manager.py`` and ``scripts/verify_medallion.py``; see the
+#30 wiring report. Removing this step would starve all of them.
+
+``data/bronze/`` is a publish boundary: in fork-and-forget mode the
+pipeline commits it to a public branch. So the stored record is BUILT from
+named fields (:func:`_project_event`) rather than copied from the provider
+and trimmed — a denylist only removes what someone has already noticed.
+"""
+
+from coops.bronze.watermarks import WatermarkStore
 from coops.utils.cache_fold import client_fold
 from coops.utils.data_helpers import strip_metadata
 from coops.utils.github_api import (
@@ -10,48 +32,6 @@ from coops.utils.github_api import (
     load_json_data,
     save_json_data,
 )
-
-# ---------------------------------------------------------------------------
-# What we keep from an issue or pull request.
-#
-# `data/bronze/` is a publish boundary: in fork-and-forget mode the pipeline
-# commits it to a public branch. So the stored record is BUILT from named
-# fields rather than copied from the provider and trimmed — a denylist only
-# removes what someone has already noticed, and issue bodies are free text
-# people paste addresses into.
-#
-# Every module that loads data/bronze/{issues,prs}_*.json, and what it reads:
-#   silver/temporal_analysis       number, state, created_at, updated_at, closed_at, user
-#   silver/members_statistics      state, created_at, updated_at, user
-#   silver/collaboration_networks  user, assignee
-#   silver/contribution_metrics    user, assignee
-#   ai_analysis/generate_members_ai  title, state, created_at, user
-#
-# Deliberately absent: `body` and `milestone`, which no consumer reads and
-# which carried every address found in the published data (see #133).
-# ---------------------------------------------------------------------------
-ISSUE_FIELDS = ("number", "state", "title", "created_at", "updated_at", "closed_at")
-
-# Actor objects are trimmed too. A provider user object carries more than the
-# login — `gravatar_id` is historically md5(email) — so stopping the whitelist
-# at the top level would leave the same problem one level down.
-ACTOR_FIELDS = ("login", "id", "name")
-
-
-def _project_actor(actor):
-    """Keep only the identity fields; preserve None so 'unassigned' stays distinct."""
-    if not isinstance(actor, dict):
-        return None
-    return {k: actor[k] for k in ACTOR_FIELDS if k in actor}
-
-
-def _project_issue(issue, repo_name):
-    """Build the stored record from named fields. Never spread the response."""
-    record = {k: issue[k] for k in ISSUE_FIELDS if k in issue}
-    record["user"] = _project_actor(issue.get("user"))
-    record["assignee"] = _project_actor(issue.get("assignee"))
-    record["repo_name"] = repo_name
-    return record
 
 
 def _project_event(event, repo_name):
@@ -83,13 +63,12 @@ def _load_prior_records(path: str, project=None) -> list[dict]:
     ``project`` re-applies the field whitelist to every record read back. Without
     it the whitelist is only a guarantee about *writes*: an incremental run keeps
     prior records verbatim, so a record the provider never updates again would
-    carry its original shape forever, and narrowing ``ISSUE_FIELDS`` would only
-    take effect for records that happen to change upstream. Re-projecting on load
-    makes the file self-healing — the whole file converges on the current
-    whitelist at the next run, not just the rows that moved.
+    carry its original shape forever. Re-projecting on load makes the file
+    self-healing — the whole file converges on the current whitelist at the next
+    run, not just the rows that moved.
 
-    Both projections are idempotent (verified over 4,057 issue and 4,171 event
-    records), so this costs nothing on data that is already clean.
+    The projection is idempotent (verified over 4,171 event records), so this
+    costs nothing on data that is already clean.
     """
     data = load_json_data(path)
     if not isinstance(data, list):
@@ -102,15 +81,6 @@ def _load_prior_records(path: str, project=None) -> list[dict]:
         for record in records
         if isinstance(record, dict)
     ]
-
-
-def _merge_by_number(prior: list[dict], fresh: list[dict]) -> list[dict]:
-    """Merge issue/PR records by ``number``; a fresh record replaces its prior twin."""
-    merged = {item["number"]: item for item in prior if isinstance(item, dict) and "number" in item}
-    for item in fresh:
-        if isinstance(item, dict) and "number" in item:
-            merged[item["number"]] = item
-    return sorted(merged.values(), key=lambda item: item["number"])
 
 
 def _fetch_events_after(client, full_name: str, last_event_id: int, use_cache: bool) -> list[dict]:
@@ -141,54 +111,41 @@ def _fetch_events_after(client, full_name: str, last_event_id: int, use_cache: b
     return newer
 
 
-def extract_issues(
+def extract_issue_events(
     client: GitHubAPIClient,
     config: OrganizationConfig,
     use_cache: bool = True,
-    max_issues: int | None = None,
-    max_prs: int | None = None,
     watermarks: WatermarkStore | None = None,
 ) -> list[str]:
+    """Extract issue events for the filtered repositories.
+
+    This is the events half of the extraction the legacy ``extract_issues``
+    performed, kept whole: issues and PRs are the service's now, and events
+    cannot cross the port (#239).
+
+    Events are filtered to the essential fields (id, event, created_at,
+    repo_name, actor.login, issue.number) to keep the files small. When
+    ``watermarks`` carries a ``last_event_id`` for a repository, extraction is
+    incremental for it: only newer events are fetched and appended, and
+    records are stored sorted by id so a full extraction and an incremental
+    one produce identical ``data/``.
+
+    An offline replay (#199) replaces the fetched pages with the cache fold
+    for the repository — the union of every cached events body, keyed by id,
+    first version seen — exactly as the legacy step did.
     """
-    Extract issues, pull requests, and issue events from GitHub repositories.
-
-    OPTIMIZATION NOTE: Issue events are filtered to include only essential fields
-    (id, event, created_at, repo_name, actor.login, issue.number) to significantly
-    reduce file size. This is important for organizations with many issues/events,
-    where the full event data can exceed hundreds of MB.
-
-    The Silver layer only uses these specific fields, so filtering at Bronze layer
-    prevents unnecessary data storage and processing overhead.
-
-    max_issues/max_prs cap the number of issues/PRs kept per repo; None means
-    no cap. GitHub's issues API returns issues and PRs interleaved on the same
-    paginated endpoint, so the number of pages fetched is bounded only when
-    both caps are set (by the larger one): capping just one of them must not
-    truncate the other.
-
-    When ``watermarks`` is given and a repository has a ``last_updated_at`` /
-    ``last_event_id``, extraction is incremental for that repository: the REST
-    ``since`` filter returns only items updated after the last run, which are
-    then merged by number (issues/PRs) or appended by id (events). Records are
-    stored sorted by number/id so a full extraction and an incremental one
-    produce identical ``data/``.
-    """
-    # Load filtered repositories
     filtered_repos = load_json_data("data/bronze/repositories_filtered.json")
     if not filtered_repos:
         print("No repositories found. Run repository extraction first.")
         return []
 
     generated_files = []
-    all_issues: list[dict] = []
-    all_prs: list[dict] = []
     all_issue_events = []
 
     # Skip metadata if present
     if isinstance(filtered_repos, list) and len(filtered_repos) > 0 and isinstance(filtered_repos[0], dict) and '_metadata' in filtered_repos[0]:
         filtered_repos = filtered_repos[1:]
 
-    # Extract issues from each repository
     for repo in filtered_repos:
         if not repo or not isinstance(repo, dict):
             print(f"Skipping invalid repo entry: {repo}")
@@ -197,102 +154,10 @@ def extract_issues(
         repo_name = repo.get('name', 'unknown')
         full_name = repo.get('full_name') or repo_name
         wm = watermarks.get(full_name) if watermarks is not None else None
-        # Issues/PRs and events advance on different watermarks: an issue is
-        # incremental once we have seen its `updated_at`, an event once we have
-        # seen its id. Both are read once, here, and every guard below tests
-        # the value it acts on — narrowing `wm` into a bool eleven lines
-        # before the use is what made the dereferences uncheckable.
-        last_updated_at = wm.last_updated_at if wm else None
         last_event_id = wm.last_event_id if wm else None
 
-        print(f"Processing issues for: {repo_name}")
+        print(f"Processing issue events for: {repo_name}")
 
-        # Get issues (includes PRs)
-        issues_base = f"https://api.github.com/repos/{full_name}/issues?state=all"
-        if last_updated_at:
-            # Over-fetch the boundary second so an item updated exactly at
-            # `last_updated_at` is not lost to GitHub's exclusive `since`; the
-            # merge-by-number below de-duplicates it.
-            issues_base += f"&since={query_since(last_updated_at)}"
-        max_pages = None
-        if max_issues is not None and max_prs is not None:
-            max_pages = max(1, math.ceil(max(max_issues, max_prs) / 100))
-        issues = client.get_paginated(issues_base, use_cache=use_cache, per_page=100, max_pages=max_pages)
-
-        # Offline replay (#199): the pages above are the URLs this run would
-        # ask the provider for, and their bodies can be months old — the newer
-        # versions sit under ``?since=`` keys no watermark-less run asks for.
-        # Replace the pages with the cache fold for this repository: the union
-        # of every cached response holding this repository's issues and PRs,
-        # newest version per number. It is a superset of the pages (the fold
-        # indexes those same bodies), and any page that was missing has
-        # already raised OfflineCacheMiss above.
-        fold = client_fold(client)
-        last_seen_by_number = {}
-        if fold is not None:
-            folded = fold.issues(full_name)
-            issues = [folded[number].record for number in sorted(folded)]
-            last_seen_by_number = {
-                number: entry.last_seen_at for number, entry in folded.items()
-            }
-
-        # Separate issues from PRs and project them to the stored record shape.
-        repo_issues = []
-        repo_prs = []
-        for issue in issues or []:
-            record = _project_issue(issue, repo_name)
-            # When the record came from the cache fold, stamp when the cache
-            # last confirmed it. Metadata about the extraction, not provider
-            # data, so it is added after the field whitelist rather than
-            # through it.
-            last_seen = last_seen_by_number.get(issue.get("number"))
-            if last_seen is not None:
-                record["last_seen_at"] = last_seen
-            if issue.get('pull_request'):
-                repo_prs.append(record)
-            else:
-                repo_issues.append(record)
-
-        # On an incremental run, merge the changed records over the ones already
-        # stored, keyed by number (issues and PRs DO change, so replacing
-        # matters). On a full run this is a no-op.
-        if last_updated_at:
-            repo_issues = _merge_by_number(
-                _load_prior_records(f"data/bronze/issues_{repo_name}.json", _project_issue),
-                repo_issues,
-            )
-            repo_prs = _merge_by_number(
-                _load_prior_records(f"data/bronze/prs_{repo_name}.json", _project_issue),
-                repo_prs,
-            )
-        else:
-            repo_issues = sorted(repo_issues, key=lambda item: item["number"])
-            repo_prs = sorted(repo_prs, key=lambda item: item["number"])
-
-        if max_issues is not None:
-            repo_issues = repo_issues[:max_issues]
-        if max_prs is not None:
-            repo_prs = repo_prs[:max_prs]
-
-        all_issues.extend(repo_issues)
-        all_prs.extend(repo_prs)
-
-        # Save per-repo files
-        if repo_issues:
-            repo_issues_file = save_json_data(
-                repo_issues,
-                f"data/bronze/issues_{repo_name}.json"
-            )
-            generated_files.append(repo_issues_file)
-
-        if repo_prs:
-            repo_prs_file = save_json_data(
-                repo_prs,
-                f"data/bronze/prs_{repo_name}.json"
-            )
-            generated_files.append(repo_prs_file)
-
-        # Get issue events (filter to keep only essential fields to reduce file size)
         if last_event_id is not None:
             fetched_events = _fetch_events_after(client, full_name, last_event_id, use_cache)
         else:
@@ -301,10 +166,11 @@ def extract_issues(
                 use_cache=use_cache, per_page=100,
             )
 
-        # Offline replay: same replacement as for issues above — the fold
-        # unions every cached events body of the repository (pages of the
-        # unconditional URL included), keyed by id, first version seen.
+        # Offline replay: the fold unions every cached events body of the
+        # repository (pages of the unconditional URL included), keyed by id,
+        # first version seen.
         last_seen_by_event_id = {}
+        fold = client_fold(client)
         if fold is not None:
             folded_events = fold.events(full_name)
             fetched_events = [entry.record for entry in folded_events.values()]
@@ -328,38 +194,24 @@ def extract_issues(
 
         all_issue_events.extend(repo_events)
 
-        # Save per-repo events
+        # Save per-repo events (unconditionally, as the legacy step did: a
+        # repository with no events still writes its empty file).
         events_file = save_json_data(
             repo_events,
             f"data/bronze/issue_events_{repo_name}.json"
         )
         generated_files.append(events_file)
 
-        # Advance the watermark for this repository.
+        # Advance the watermark for this repository. Only the event id is
+        # this step's to advance: the issues/PRs half of the old single
+        # update moved to the service, which sets ``last_updated_at``;
+        # ``WatermarkStore.update`` merges, so each side keeps the other's.
         if watermarks is not None:
-            newest_updated = None
-            for item in repo_issues + repo_prs:
-                newest_updated = max_iso(newest_updated, item.get("updated_at"))
             newest_event_id = max((e.get("id") or 0 for e in repo_events), default=None)
             prior_event_id = wm.last_event_id if wm else None
             new_event_id = newest_event_id if newest_event_id is not None else prior_event_id
-            watermarks.update(
-                full_name,
-                last_updated_at=max_iso(
-                    wm.last_updated_at if wm else None, newest_updated
-                ),
-                last_event_id=new_event_id,
-            )
+            watermarks.update(full_name, last_event_id=new_event_id)
 
-    # The per-repository files above are the layer's record of truth; the
-    # ``_all`` aggregates written here only repeated them, and commits_all.json
-    # alone was 80.6 MiB against GitHub's 100 MB push limit (#170). Remove any
-    # left by an earlier run instead of writing them: a stale aggregate beside
-    # current per-repository files looks current and is still counted by
-    # anything that globs the family.
-    for family in ("issues", "prs", "issue_events"):
-        remove_aggregate("data/bronze", family)
-
-    print(f"Extracted {len(all_issues)} issues, {len(all_prs)} PRs, {len(all_issue_events)} events")
+    print(f"Extracted {len(all_issue_events)} events")
 
     return generated_files

@@ -18,8 +18,6 @@ on:
         required: false
         type: boolean
         default: false
-      since:
-        description: 'Only extract commits since this ISO-8601 timestamp (blank = full history). E.g. 2026-01-01T00:00:00Z'
         required: false
         type: string
         default: ''
@@ -125,16 +123,16 @@ jobs:
           MAX_REPOS: ${{ github.event.inputs.max_repos }}
           MAX_COMMITS_PER_REPO: ${{ github.event.inputs.max_commits_per_repo }}
           SKIP_STRUCTURE: ${{ github.event.inputs.skip_structure }}
-          SINCE: ${{ github.event.inputs.since }}
           MAX_ISSUES: ${{ github.event.inputs.max_issues }}
           MAX_PRS: ${{ github.event.inputs.max_prs }}
         run: |
           echo "[INFO] Starting Bronze layer extraction..."
-          # Use GraphQL for commits to avoid per-commit REST stats calls
-          # Full history by default; max_repos/max_commits_per_repo/skip_structure/
-          # since/max_issues/max_prs inputs allow a fast, limited run when
-          # dispatched manually (e.g. via act).
-          ARGS=(--cache --commits-method graphql)
+          # Extraction runs through BronzeService on the source port (#30);
+          # the port has no fetch window, so there is no --since and no
+          # commits-method choice. max_repos/max_commits_per_repo/
+          # skip_structure/max_issues/max_prs inputs allow a fast, limited
+          # run when dispatched manually (e.g. via act).
+          ARGS=(--cache)
           if [ -n "$MAX_REPOS" ]; then
             ARGS+=(--max-repos "$MAX_REPOS")
           fi
@@ -149,9 +147,6 @@ jobs:
           fi
           if [ -n "$MAX_PRS" ]; then
             ARGS+=(--max-prs "$MAX_PRS")
-          fi
-          if [ -n "$SINCE" ]; then
-            ARGS+=(--since "$SINCE")
           fi
           uv run coops-bronze "${ARGS[@]}"
 

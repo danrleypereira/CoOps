@@ -7,6 +7,48 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 
 ## [Unreleased]
 
+### Changed
+- `BronzeService` is on the live extraction path (#30). `coops-bronze` now
+  drives the service through the source and storage ports
+  (`coops.etl.bronze_extract.run_extraction`) for every family the port can
+  express — repositories, issues, pull requests, commits and structures —
+  and keeps the legacy extractors for the two it cannot: members (#238,
+  the `Member` model cannot express today's member record) and issue
+  events (#239, the port has no `fetch_issue_events`), both still produced
+  by the same run, so the six Silver/Gold modules that read
+  `members_*.json` and `issue_events_*.json` are not starved. Byte-parity
+  is no longer the acceptance (#30 redefined: a diff report, not a gate —
+  the owner is reimplementing the layers, #264): the wiring's output
+  changes are the named port gaps — `commit.committer.name` and
+  `html_url` become `None` on commit records (#240: the model cannot
+  carry the committer's name across the port, and the history query
+  requests no URL), and `repositories_*`/`repo_*` records become the
+  `Repository` model's seventeen-key projection (#241: ~82 provider fields
+  the model never reads no longer reach `data/bronze/`). The published
+  location is unchanged: the composition stores through
+  `PublishedLayoutStorage`, which maps the port's addresses onto the flat
+  `data/bronze/` tree Silver and Gold glob (the port's own file adapter
+  writes a tenant-scoped tree; moving the published tree onto it belongs
+  with #264, when the readers move). The retired `*_all.json` aggregate
+  sweep (#170) moved from the extractors to the CLI, where the
+  filesystem chores the port cannot express live (deletion has no port
+  method). `extract_repositories`, `extract_issues` and
+  `extract_repository_structure` are removed;
+  `coops.bronze.issues.extract_issue_events` is the events half of the
+  old issues step, kept whole. `extract_commits` stays in the tree
+  unedited: `TestRawReadPathScrub` (#111) pins the raw-read scrub through
+  it and must pass unedited — `_sanitize_commit` and the scrub helpers it
+  lives beside are imported by the service, and removing the function is
+  entangled with rewriting that guard (a decision this change does not
+  make). CLI flags the port cannot express are removed rather than kept
+  as no-ops: `--commits-method`, `--since`, `--until`,
+  `--commits-page-size`, `--include-active-branches`, `--active-days`,
+  `--time-chunks` (there is no fetch window on the port and no transport
+  choice — the adapter owns the policy); the two workflows that passed
+  `--commits-method graphql` and `--since` were updated, and the
+  `since` dispatch input was removed outright so a dispatcher passing it
+  gets a loud unknown-input error instead of a silently ignored one.
+
 ### Added
 - Bronze deduped by repository id at the reader (#248): a repository that
   is renamed or recased leaves its old per-repository files on disk beside

@@ -296,6 +296,20 @@ def test_repo_filter_unknown_name_raises(tmp_path: Path) -> None:
         service.extract_repositories(repo_filter=["test-org/nope"])
 
 
+def test_repo_filter_matches_case_insensitively(tmp_path: Path) -> None:
+    """GitHub repository names are case-insensitive, and so is the filter —
+    the rule the legacy ``--repo`` tests pinned at the extractor, restated
+    here now that the filter is the service's."""
+    service, storage = _service(
+        StubSource(repositories=(_repo("repo1"), _repo("repo2"))), tmp_path
+    )
+
+    service.extract_repositories(repo_filter=["Test-Org/REPO1"])
+
+    kept = _stored(storage, "repositories_filtered")
+    assert [record["name"] for record in kept[1:]] == ["repo1"]
+
+
 def test_forks_and_blacklist_filtered_from_kept_set(tmp_path: Path) -> None:
     service, storage = _service(
         StubSource(

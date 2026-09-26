@@ -12,7 +12,7 @@ entry carries, so the optional fields are the union of the two:
 
 A provider response with ``truncated: true`` is never mapped: the extraction
 layer falls back to a complete GraphQL tree instead of keeping a partial
-one (see ``coops.bronze.repository_structure``), so a ``FileTree`` claims
+one (see the GitHub source adapter's REST-plus-GraphQL-fallback read), so a ``FileTree`` claims
 completeness by existing.
 """
 

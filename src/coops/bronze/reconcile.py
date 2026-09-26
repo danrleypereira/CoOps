@@ -58,7 +58,8 @@ so every guard here REFUSES (deleting nothing) rather than guessing:
    would delete the other ~481 repositories' per-repository files. An
    argv check passes every other guard here and still wipes the corpus,
    so there is none: the producer
-   (:func:`coops.bronze.repositories.extract_repositories`) writes
+   (:meth:`coops.bronze.bronze_service.BronzeService.extract_repositories`)
+  writes
    ``complete: true`` into the listing's ``_metadata`` only when it
    enumerated the organisation unbounded, every narrowing path simply
    does not set it, and **absent means incomplete** — fail closed, so
