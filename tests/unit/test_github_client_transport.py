@@ -785,3 +785,102 @@ class TestRateLimitLogging:
         captured = capsys.readouterr()
         # Should print Unknown/Unknown when headers are missing
         assert "Unknown/Unknown" in captured.out
+
+
+class TestGraphQLErrorClassification:
+    """`graphql()`'s status and error-type branches (#250 review).
+
+    @curupira's mutation run found 8 mutants surviving the head suite here
+    after #31's migration: the `SERVICE_UNAVAILABLE`-on-stats classification
+    (client.py 531-532, 5 mutants), the `[500, 503]` retry branch (567, 2), and
+    `get_paginated`'s `per_page` default (583, 1). Per-line coverage was
+    identical in both arms; protection was not.
+
+    Every case here asserts on the printed classification as well as the return
+    value, because `graphql()` returns `None` on *every* failure path — so a
+    return-value assertion alone cannot tell one branch from another, and that
+    is exactly how the mutants survived.
+    """
+
+    @staticmethod
+    def _client(tmp_path):
+        return GitHubAPIClient(token="t", cache_dir=str(tmp_path / "c"))
+
+    def test_service_unavailable_on_additions_triggers_rest_fallback(self, tmp_path, capsys):
+        """An error typed SERVICE_UNAVAILABLE whose path names `additions`."""
+        client = self._client(tmp_path)
+        body = {"errors": [{"type": "SERVICE_UNAVAILABLE", "path": ["repository", "additions"]}]}
+        with patch("requests.post") as mock_post:
+            mock_post.return_value = Mock(status_code=200, json=lambda: body)
+            assert client.graphql("q", use_cache=False) is None
+        out = capsys.readouterr().out
+        assert "Commit stats unavailable" in out, out
+
+    def test_service_unavailable_on_deletions_triggers_rest_fallback(self, tmp_path, capsys):
+        """The `deletions` half of the same `or` — the other disjunct."""
+        client = self._client(tmp_path)
+        body = {"errors": [{"type": "SERVICE_UNAVAILABLE", "path": ["repository", "deletions"]}]}
+        with patch("requests.post") as mock_post:
+            mock_post.return_value = Mock(status_code=200, json=lambda: body)
+            assert client.graphql("q", use_cache=False) is None
+        assert "Commit stats unavailable" in capsys.readouterr().out
+
+    def test_service_unavailable_elsewhere_is_NOT_a_stats_failure(self, tmp_path, capsys):
+        """ARMS DIFFER: same error type, a path naming neither field.
+
+        Without this the classification could match on the type alone and every
+        test above would still pass.
+        """
+        client = self._client(tmp_path)
+        body = {"errors": [{"type": "SERVICE_UNAVAILABLE", "path": ["repository", "issues"]}]}
+        with patch("requests.post") as mock_post:
+            mock_post.return_value = Mock(status_code=200, json=lambda: body)
+            assert client.graphql("q", use_cache=False) is None
+        out = capsys.readouterr().out
+        assert "Commit stats unavailable" not in out, out
+        assert "Returned errors" in out, out
+
+    def test_a_different_error_type_on_additions_is_NOT_a_stats_failure(self, tmp_path, capsys):
+        """ARMS DIFFER on the other conjunct: right path, wrong type."""
+        client = self._client(tmp_path)
+        body = {"errors": [{"type": "FORBIDDEN", "path": ["repository", "additions"]}]}
+        with patch("requests.post") as mock_post:
+            mock_post.return_value = Mock(status_code=200, json=lambda: body)
+            assert client.graphql("q", use_cache=False) is None
+        out = capsys.readouterr().out
+        assert "Commit stats unavailable" not in out, out
+        assert "Returned errors" in out, out
+
+    @pytest.mark.parametrize("status", [500, 503])
+    def test_500_and_503_are_classified_as_retryable(self, tmp_path, capsys, status):
+        """The `[500, 503]` membership branch, both members."""
+        client = self._client(tmp_path)
+        with patch("requests.post") as mock_post:
+            mock_post.return_value = Mock(status_code=status, text="Server Error")
+            assert client.graphql("q", use_cache=False) is None
+        out = capsys.readouterr().out
+        assert f"[GRAPHQL][WARN] {status}" in out, out
+        assert "Request failed" not in out, out
+
+    @pytest.mark.parametrize("status", [418, 504])
+    def test_other_statuses_fall_through_to_the_generic_message(self, tmp_path, capsys, status):
+        """ARMS DIFFER for the membership test: a status NOT in the list.
+
+        Kills widening the branch — with `in [500, 503]` mutated to something
+        broader, these would print the WARN line instead of the generic one.
+        """
+        client = self._client(tmp_path)
+        with patch("requests.post") as mock_post:
+            mock_post.return_value = Mock(status_code=status, text="nope")
+            assert client.graphql("q", use_cache=False) is None
+        out = capsys.readouterr().out
+        assert "Request failed" in out, out
+        assert f"[GRAPHQL][WARN] {status}" not in out, out
+
+    def test_get_paginated_defaults_to_50_per_page(self, tmp_path):
+        """`per_page` defaults to 50, asserted on the URL actually requested."""
+        client = self._client(tmp_path)
+        with patch.object(client, "get_with_cache", return_value=([], {})) as mock_get:
+            client.get_paginated("https://api.github.com/x", use_cache=False)
+        url = mock_get.call_args[0][0]
+        assert "per_page=50" in url, url

@@ -266,3 +266,124 @@ class TestRawReadPathScrub:
         assert not _EMAIL_RE.search(serialized)
         # Credit survives: the trailer and the human name stay.
         assert "Co-authored-by: Pair Person" in serialized
+
+
+class TestGraphQLRawLayerTenantGuard:
+    """The GraphQL raw-layer guards are TENANT guards (#250 review).
+
+    ``graphql()`` short-circuits to the raw store, and writes back to it, only
+    when ``use_cache and raw_store is not None and tenant_id is not None``
+    (client.py 484-491 and 548-552). Flipping that ``and`` to ``or`` reads from
+    or writes to the raw store **with no tenant**, and @curupira's mutation run
+    found 13 such mutants surviving the whole suite after #31's migration: the
+    deleted tests had killed them incidentally, and nothing that replaced them
+    stated the property.
+
+    So these assert the property directly rather than reviving the old tests.
+    """
+
+    @staticmethod
+    def _client(tmp_path, store, tenant):
+        return GitHubAPIClient(
+            "token",
+            cache_dir=str(tmp_path / "cache"),
+            raw_store=store,
+            tenant_id=tenant,
+            raw_max_age_seconds=None,
+        )
+
+    def test_a_stored_document_short_circuits_graphql(self, tmp_path):
+        """The positive arm: with BOTH a store and a tenant, no POST happens.
+
+        Without this the guard tests below could pass on a client that never
+        reads the raw layer at all.
+        """
+        store = InMemoryRawStore()
+        tenant = TenantId("org")
+        query = "query { viewer { login } }"
+        store.put(tenant, "github", "https://api.github.com/graphql",
+                  {"query": query, "variables": {}}, {"data": {"viewer": {}}})
+
+        client = self._client(tmp_path, store, tenant)
+        with patch("requests.post") as mock_post:
+            result = client.graphql(query, use_cache=True)
+
+        assert result == {"data": {"viewer": {}}}
+        mock_post.assert_not_called()
+
+    def test_no_tenant_never_reads_the_raw_layer(self, tmp_path):
+        """``tenant_id=None`` must reach the network even with a warm store.
+
+        Kills ``and → or`` on client.py:484: under that mutation a document
+        belonging to *some* tenant is served to a client that has none.
+        """
+        store = InMemoryRawStore()
+        tenant = TenantId("org")
+        query = "query { viewer { login } }"
+        store.put(tenant, "github", "https://api.github.com/graphql",
+                  {"query": query, "variables": {}}, {"data": {"leaked": True}})
+
+        client = self._client(tmp_path, store, tenant=None)
+        with patch("requests.post") as mock_post:
+            mock_post.return_value = _response(200, {"data": {"fresh": True}})
+            result = client.graphql(query, use_cache=True)
+
+        mock_post.assert_called_once()
+        assert result == {"data": {"fresh": True}}
+        # Assert the store was never CONSULTED, not merely that the payload
+        # differs. The guard is defended in depth — _raw_read will not match a
+        # None tenant either — so with `and → or` the *outcome* is identical
+        # and only the interaction changes. A result assertion cannot see it;
+        # this is why the mutant survived a first version of this test.
+        assert store.get_calls == [], (
+            f"consulted the raw store with no tenant: {store.get_calls}"
+        )
+
+    def test_no_tenant_never_writes_the_raw_layer(self, tmp_path):
+        """``tenant_id=None`` must not write a fetched body to the raw store.
+
+        Kills ``and → or`` on client.py:548: under that mutation a response is
+        stored under no tenant at all.
+        """
+        store = InMemoryRawStore()
+        client = self._client(tmp_path, store, tenant=None)
+
+        with patch("requests.post") as mock_post:
+            mock_post.return_value = _response(200, {"data": {"ok": True}})
+            client.graphql("query { viewer { login } }", use_cache=True)
+
+        assert store.saved == [], f"wrote to the raw layer with no tenant: {store.saved}"
+
+    def test_a_tenant_with_no_store_reaches_the_network(self, tmp_path):
+        """The other half of the same ``and``: a tenant but no store."""
+        client = GitHubAPIClient(
+            "token", cache_dir=str(tmp_path / "cache"),
+            raw_store=None, tenant_id=TenantId("org"),
+        )
+        with patch("requests.post") as mock_post:
+            mock_post.return_value = _response(200, {"data": {"ok": True}})
+            result = client.graphql("query { viewer { login } }", use_cache=True)
+
+        mock_post.assert_called_once()
+        assert result == {"data": {"ok": True}}
+
+    def test_use_cache_false_never_touches_the_raw_layer(self, tmp_path):
+        """The first conjunct: ``use_cache=False`` with both store and tenant.
+
+        Kills the ``or`` mutants from the other direction — under them a
+        no-cache call still consults and writes the raw store.
+        """
+        store = InMemoryRawStore()
+        tenant = TenantId("org")
+        query = "query { viewer { login } }"
+        store.put(tenant, "github", "https://api.github.com/graphql",
+                  {"query": query, "variables": {}}, {"data": {"stale": True}})
+
+        client = self._client(tmp_path, store, tenant)
+        with patch("requests.post") as mock_post:
+            mock_post.return_value = _response(200, {"data": {"fresh": True}})
+            result = client.graphql(query, use_cache=False)
+
+        assert result == {"data": {"fresh": True}}
+        assert store.get_calls == [], f"read the raw store with use_cache=False: {store.get_calls}"
+        assert store.saved == [], f"wrote the raw store with use_cache=False: {store.saved}"
