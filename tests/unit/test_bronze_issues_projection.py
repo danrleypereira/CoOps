@@ -1,29 +1,37 @@
-"""The stored issue/PR record is built from named fields, not copied.
+"""The stored issue/PR/event record is built from named fields, not copied.
 
 `data/bronze/` is a publish boundary — fork-and-forget commits it to a public
 branch — so these tests assert the SHAPE of the record (only whitelisted keys
 survive) rather than the absence of particular bad fields. A shape assertion
 still holds when the provider adds a field nobody has seen yet; an absence
 assertion does not.
+
+Since the #30 wiring, the issue/PR record is built in two whitelisted steps
+on the live path: the GitHub mapper (`map_issue`/`map_pull_request`, named
+fields only — `body` and `milestone` are never read) and
+`BronzeService._conversation_record`. The event record is still projected by
+`coops.bronze.issues._project_event`, the family the source port cannot
+express (#239). Both halves are pinned here, at the same boundary the old
+extractor-level tests pinned.
 """
 import json
 import re
-from unittest.mock import MagicMock, patch
+from unittest.mock import patch
 
-from coops.bronze.issues import (
-    ACTOR_FIELDS,
-    ISSUE_FIELDS,
-    _load_prior_records,
-    _project_actor,
-    _project_issue,
-    extract_issues,
-)
+from coops.bronze.bronze_service import _conversation_record
+from coops.bronze.issues import _load_prior_records, _project_event
+from coops.domain.tenancy import resolve_tenant
+from coops.github.mapper import map_issue, map_pull_request
 
 EMAIL = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
+
+_TENANT = resolve_tenant("single", "acme")
+_ACCOUNT = _TENANT.accounts[0]
 
 # Shaped like a real REST issue, including the fields that carried every
 # address found in published data.
 RAW_ISSUE = {
+    "id": 424242,
     "number": 42,
     "state": "closed",
     "title": "Fix the thing",
@@ -44,9 +52,21 @@ RAW_ISSUE = {
 }
 
 
+def _record(raw):
+    """The stored record for ``raw``, through the live two-step projection."""
+    if raw.get("pull_request"):
+        model = map_pull_request(raw, _TENANT.id, _ACCOUNT, "acme/widget")
+    else:
+        model = map_issue(raw, _TENANT.id, _ACCOUNT, "acme/widget")
+    return _conversation_record(model)
+
+
 def test_record_contains_only_whitelisted_keys():
-    record = _project_issue(RAW_ISSUE, "acme/widget")
-    assert set(record) <= set(ISSUE_FIELDS) | {"user", "assignee", "repo_name"}
+    record = _record(RAW_ISSUE)
+    assert set(record) == {
+        "number", "state", "title", "created_at", "updated_at", "closed_at",
+        "user", "assignee", "repo_name",
+    }
 
 
 def test_no_address_survives_projection():
@@ -54,12 +74,11 @@ def test_no_address_survives_projection():
     # result afterwards would prove nothing.
     assert len(EMAIL.findall(json.dumps(RAW_ISSUE))) == 2
 
-    record = _project_issue(RAW_ISSUE, "acme/widget")
-    assert EMAIL.findall(json.dumps(record)) == []
+    assert EMAIL.findall(json.dumps(_record(RAW_ISSUE))) == []
 
 
 def test_fields_every_consumer_reads_are_preserved():
-    record = _project_issue(RAW_ISSUE, "acme/widget")
+    record = _record(RAW_ISSUE)
     assert record["number"] == 42
     assert record["state"] == "closed"
     assert record["title"] == "Fix the thing"           # ai_analysis reads this
@@ -74,16 +93,16 @@ def test_fields_every_consumer_reads_are_preserved():
 def test_actor_is_trimmed_one_level_down():
     # gravatar_id is historically md5(email); a top-level-only whitelist would
     # leave the same class of problem nested inside the user object.
-    actor = _project_actor(RAW_ISSUE["user"])
-    assert set(actor) <= set(ACTOR_FIELDS)
+    actor = _record(RAW_ISSUE)["user"]
+    assert set(actor) <= {"login", "id", "name"}
     assert "gravatar_id" not in actor
 
 
 def test_missing_optional_fields_do_not_invent_values():
     # An open issue has closed_at absent, and an unassigned one has no
     # assignee. Neither may become a fabricated value.
-    record = _project_issue({"number": 7, "state": "open"}, "acme/widget")
-    assert "closed_at" not in record
+    record = _record({"id": 8, "number": 7, "state": "open"})
+    assert record["closed_at"] is None
     assert record["assignee"] is None
 
 
@@ -91,95 +110,76 @@ def test_unassigned_is_none_not_empty_dict():
     # collaboration_networks and contribution_metrics branch on assignee being
     # falsy; an empty dict is falsy too, but None is what the provider sends
     # and what the consumers were written against.
-    record = _project_issue({**RAW_ISSUE, "assignee": None}, "acme/widget")
+    record = _record({**RAW_ISSUE, "assignee": None})
     assert record["assignee"] is None
 
 
-def test_pull_request_split_survives_the_projection():
-    """The issues/PRs split keys on `pull_request`, which the whitelist drops.
-
-    That works only because the classification reads the RAW object before
-    projecting. If a refactor ever projects first and classifies second, every
-    pull request files as an issue: no exception, no empty field, two wrong
-    datasets.
-
-    This drives `extract_issues` end to end, so it fails under that reversal.
-    An earlier version of this test asserted only that the raw object carries
-    `pull_request` and the projected record does not — which pins the DROP and
-    passes happily under the very mutation it claimed to guard.
-    """
-    raw = [
-        {"number": 1, "state": "open", "title": "an issue",
-         "user": {"login": "a"}, "created_at": "2026-01-01T00:00:00Z"},
-        {"number": 2, "state": "open", "title": "a pull request",
-         "user": {"login": "b"}, "created_at": "2026-01-02T00:00:00Z",
-         "pull_request": {"url": "https://api.github.com/..."}},
-    ]
-
-    client = MagicMock()
-    client.get_paginated.side_effect = [list(raw), []]  # issues, then events
-    saved = {}
-
-    def capture_save(data, path):
-        saved[path] = data
-        return path
-
-    with patch("coops.bronze.issues.load_json_data",
-               return_value=[{"name": "repo1", "full_name": "acme/repo1"}]), patch("coops.bronze.issues.save_json_data", side_effect=capture_save):
-        extract_issues(client, MagicMock())
-
-    issues = saved["data/bronze/issues_repo1.json"]
-    prs = saved["data/bronze/prs_repo1.json"]
-
-    assert [i["number"] for i in issues] == [1], "the issue must not be filed as a PR"
-    assert [p["number"] for p in prs] == [2], "the pull request must not be filed as an issue"
-
-    # And the discriminator itself is still dropped from what gets published.
-    assert all("pull_request" not in r for r in issues + prs)
+def test_issue_and_pr_projections_carry_the_same_whitelist():
+    """The split lives behind the port; both halves must publish the same
+    shape, or a PR looks like a different kind of record to Silver."""
+    pr = _record({**RAW_ISSUE,
+                  "pull_request": {"url": "https://api.github.com/o/r/pulls/42",
+                                   "merged_at": None}})
+    issue = _record(RAW_ISSUE)
+    assert set(pr) == set(issue)
 
 
-def test_prior_records_are_reprojected_on_load():
+# ---------------------------------------------------------------------------
+# events — still projected by the legacy module (#239)
+# ---------------------------------------------------------------------------
+
+
+RAW_EVENT = {
+    "id": 5,
+    "event": "assigned",
+    "created_at": "2026-01-02T00:00:00Z",
+    "actor": {"login": "octocat", "id": 1, "gravatar_id": ""},
+    "issue": {"number": 42, "title": "Fix the thing"},
+    "url": "https://api.github.com/repos/acme/widget/issues/events/5",
+}
+
+
+def test_event_record_contains_only_whitelisted_keys():
+    record = _project_event(RAW_EVENT, "acme/widget")
+    assert set(record) == {"id", "event", "created_at", "repo_name", "actor", "issue"}
+    assert record["actor"] == {"login": "octocat"}
+    assert record["issue"] == {"number": 42}
+
+
+def test_prior_event_records_are_reprojected_on_load():
     """A stale record already on disk is re-projected when read back.
 
     Without this, the whitelist is only a guarantee about *writes*: an
-    incremental run merges prior records verbatim, so a record the provider
-    never touches again keeps whatever shape it was first written with. A field
-    dropped from ISSUE_FIELDS would then vanish only from rows that happen to
-    change upstream, and persist forever in every dormant row.
-
-    The fixture is deliberately synthetic: no record in the corpus carries a
-    pre-whitelist shape today (all 20,053 are already projected), so no real
-    payload can exercise this path — see the tester agent's note on inventing a
-    fixture to pin a boundary the data does not happen to cross.
+    incremental run appends prior records after re-projection today, but a
+    refactor that stops passing the projector would keep whatever shape a
+    record was first written with.
     """
     stale = [
         {"_metadata": {"generated_at": "2026-01-01T00:00:00Z"}},
         {
-            "number": 7,
-            "state": "open",
-            "title": "stale row",
+            "id": 7,
+            "event": "closed",
             "created_at": "2026-01-01T00:00:00Z",
             "repo_name": "repoA",
-            # Fields a narrower whitelist must strip on the next read:
-            "body": "contact me at someone@example.com",
-            "user": {"login": "alice", "id": 1, "gravatar_id": "d41d8cd9"},
+            # Fields the projection must strip on the next read:
+            "label": {"name": "bug"},
+            "actor": {"login": "alice", "gravatar_id": "d41d8cd9"},
+            "issue": {"number": 1, "title": "extra"},
         },
     ]
     with patch("coops.bronze.issues.load_json_data", return_value=stale):
-        out = _load_prior_records("data/bronze/issues_repoA.json", _project_issue)
+        out = _load_prior_records("data/bronze/issue_events_repoA.json", _project_event)
 
     assert len(out) == 1, "the _metadata sidecar must not survive as a record"
     record = out[0]
-    assert "body" not in record, "a non-whitelisted field survived a read-back"
-    assert record["user"] == {"login": "alice", "id": 1}, (
-        "gravatar_id is historically md5(email) and must not survive the actor projection"
-    )
-    assert record["number"] == 7 and record["repo_name"] == "repoA"
+    assert set(record) == {"id", "event", "created_at", "repo_name", "actor", "issue"}
+    assert record["actor"] == {"login": "alice"}
+    assert record["issue"] == {"number": 1}
 
 
 def test_prior_records_load_verbatim_without_a_projector():
     """`project=None` keeps the old behaviour, so the parameter is what changes it."""
-    stale = [{"number": 7, "body": "kept", "repo_name": "repoA"}]
+    stale = [{"id": 7, "label": "kept", "repo_name": "repoA"}]
     with patch("coops.bronze.issues.load_json_data", return_value=stale):
-        out = _load_prior_records("data/bronze/issues_repoA.json")
-    assert out[0]["body"] == "kept"
+        out = _load_prior_records("data/bronze/issue_events_repoA.json")
+    assert out[0]["label"] == "kept"

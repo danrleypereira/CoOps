@@ -6,28 +6,33 @@ expressed against :class:`~coops.domain.ports.SourcePort` and
 :class:`~coops.domain.ports.storage_port.StoragePort` only. It imports no
 concrete GitHub client and none of the legacy JSON file helpers; a second
 storage backend (or a second provider adapter) can be swapped in behind the
-ports without touching this module. The legacy extractors in
-:mod:`coops.bronze` remain the production writers until the cutover (see
-*Coverage* below); this service is verified against them by a differential
-run, not by trust.
+ports without touching this module. Since #30 wired the service onto the
+live path, ``coops.etl.bronze_extract.run_extraction`` drives it for every
+family the port can express; the byte-parity differential that verified the
+service against the legacy extractors was retired with the redefinition of
+#30 (a diff report, not a gate), and the wiring test in
+``tests/integration/test_bronze_service_differential.py`` now pins the
+wired path's tree and the known gap shapes.
 
 Record content is **preserved, not redesigned**: every dataset this service
-writes is byte-for-byte the JSON the legacy path writes over the same input
-(the acceptance for #30), modulo the generation-time timestamps
-(``_metadata.extracted_at`` and the structure document's ``extracted_at``),
-which differ between any two runs including two legacy runs. Where a record's
-shape is a provider-ism that survives the move (``method: "rest"`` in
-structure files, the ``data/bronze/<entity>.json`` string in
+writes is the JSON the legacy path wrote over the same input, modulo the
+generation-time timestamps (``_metadata.extracted_at`` and the structure
+document's ``extracted_at``), which differ between any two runs including
+two legacy runs, and modulo the port gaps the #30 wiring report names by
+field (#240 committer name, #241 provider fields on repository records).
+Where a record's shape is a provider-ism that survives the move (``method:
+"rest"`` in structure files, the ``data/bronze/<entity>.json`` string in
 ``_metadata.file_path``), this module reproduces it deliberately rather than
 cleaning it up — changing it is a different issue.
 
-Coverage — read before wiring the CLI
--------------------------------------
+Coverage — what the CLI wires where
+-----------------------------------
 
-The service owns the write families the ports can express byte-identically:
-repositories (raw/filtered/detail), commits, issues, PRs and structures. Two
-families are **deliberately absent**, because today's ``SourcePort`` cannot
-express their content, and faking them would change published data:
+The service owns the write families the ports can express: repositories
+(raw/filtered/detail), commits, issues, PRs and structures. Two families are
+**deliberately absent**, because today's ``SourcePort`` cannot express their
+content, and faking them would change published data; the CLI keeps the
+legacy extractors for them on the same run (#238, #239):
 
 1. ``issue_events_<repo>.json`` — the port has no
    ``fetch_issue_events`` method. The ``ActivityEvent`` model exists

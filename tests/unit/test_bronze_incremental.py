@@ -1,17 +1,26 @@
 """Incremental-extraction behaviour (issue #110) at the Bronze extractor boundary.
 
-These tests fake the HTTP client (the port) and the watermark store, and let the
-real ``extract_issues`` / ``extract_commits`` / ``extract_repository_structure``
-run, so the merge-by-number, append-by-id, ``since`` filtering and head-sha skip
-logic are exercised for real rather than asserted against call sequences.
+These tests fake the HTTP client (the port) and the watermark store, and let
+the real ``extract_commits`` run, so the watermark-bounded ``since`` fetch
+and the prepend-plus-dedup merge are exercised for real rather than asserted
+against call sequences.
+
+Scope note (#30 wiring): the issues and structure halves of this file were
+retired with their extractors. Issues and PRs are ``BronzeService``'s now —
+its merge-by-number is pinned in ``tests/unit/test_bronze_service.py`` and
+the port has no ``since`` window to test — and the structure extractor's
+unchanged-head skip is gone outright (no branch-head read on the port; the
+service re-fetches the tree, byte-identical modulo the timestamp — see the
+service module docstring). ``extract_commits`` itself stays in the tree as
+the function the #111 raw-read scrub guard
+(``tests/unit/test_github_client_raw_layer.py::TestRawReadPathScrub``)
+pins, so its incremental behaviour is still live to pin too.
 """
 
 from datetime import datetime, timezone
 from unittest.mock import MagicMock, patch
 
 from coops.bronze.commits import extract_commits
-from coops.bronze.issues import extract_issues
-from coops.bronze.repository_structure import extract_repository_structure
 from coops.bronze.watermarks import WatermarkStore
 
 REPOS = [{"name": "repo1", "full_name": "org/repo1", "default_branch": "main"}]
@@ -23,111 +32,6 @@ def _store(path="unused.json", **fields):
     if fields:
         store.update("org/repo1", **fields)
     return store
-
-
-def _run_issues(client, files, watermarks):
-    saved = {}
-
-    def loader(path):
-        return files.get(path)
-
-    def saver(data, path, **kwargs):
-        saved[path] = data
-        return path
-
-    with patch("coops.bronze.issues.load_json_data", side_effect=loader), patch("coops.bronze.issues.save_json_data", side_effect=saver):
-        extract_issues(client, MagicMock(), watermarks=watermarks)
-    return saved
-
-
-class TestIncrementalIssues:
-    def test_since_param_added_from_watermark(self):
-        client = MagicMock()
-        client.get_paginated.return_value = []
-        wm = _store(last_updated_at="2026-09-22T10:00:00Z")
-
-        _run_issues(client, {"data/bronze/repositories_filtered.json": REPOS}, wm)
-
-        issues_url = client.get_paginated.call_args_list[0][0][0]
-        # One-second margin for GitHub's exclusive `since`.
-        assert "since=2026-09-22T09:59:59Z" in issues_url
-
-    def test_merge_keeps_prior_and_replaces_changed(self):
-        client = MagicMock()
-        fresh = [
-            {"number": 1, "title": "changed", "updated_at": "2026-09-23T00:00:00Z"},
-            {"number": 3, "title": "new", "updated_at": "2026-09-23T00:00:00Z"},
-        ]
-        client.get_paginated.side_effect = [fresh, []]
-        prior_issues = [
-            {"number": 1, "title": "old", "updated_at": "2026-09-22T00:00:00Z", "repo_name": "repo1"},
-            {"number": 2, "title": "two", "updated_at": "2026-09-22T00:00:00Z", "repo_name": "repo1"},
-        ]
-        wm = _store(last_updated_at="2026-09-22T00:00:00Z")
-        files = {
-            "data/bronze/repositories_filtered.json": REPOS,
-            "data/bronze/issues_repo1.json": [{"_metadata": {}}, *prior_issues],
-        }
-
-        saved = _run_issues(client, files, wm)
-
-        merged = saved["data/bronze/issues_repo1.json"]
-        assert [i["number"] for i in merged] == [1, 2, 3]
-        by_number = {i["number"]: i for i in merged}
-        assert by_number[1]["title"] == "changed"  # fresh replaces prior
-        assert by_number[2]["title"] == "two"      # prior survives
-        assert by_number[3]["title"] == "new"      # fresh added
-
-    def test_events_append_only_newer_ids(self):
-        client = MagicMock()
-        client.get_paginated.return_value = []  # issues: none
-        # Events come back newest-first; the fetch stops once it reaches id 2.
-        client.get_with_cache.return_value = [
-            {"id": 3, "event": "closed", "created_at": "2026-09-23T00:00:00Z", "actor": {"login": "u"}, "issue": {"number": 1}},
-            {"id": 2, "event": "labeled", "created_at": "2026-09-22T12:00:00Z", "actor": {"login": "u"}, "issue": {"number": 1}},
-        ]
-        prior_events = [
-            {"id": 1, "event": "opened", "created_at": "2026-09-22T10:00:00Z", "repo_name": "repo1", "actor": {"login": "u"}, "issue": {"number": 1}},
-            {"id": 2, "event": "labeled", "created_at": "2026-09-22T12:00:00Z", "repo_name": "repo1", "actor": {"login": "u"}, "issue": {"number": 1}},
-        ]
-        wm = _store(last_event_id=2)
-        files = {
-            "data/bronze/repositories_filtered.json": REPOS,
-            "data/bronze/issue_events_repo1.json": [{"_metadata": {}}, *prior_events],
-        }
-
-        saved = _run_issues(client, files, wm)
-
-        events = saved["data/bronze/issue_events_repo1.json"]
-        assert [e["id"] for e in events] == [1, 2, 3]
-        # The events endpoint has no `since` filter: incrementality comes from
-        # paging from the newest event and stopping at the boundary id.
-        assert client.get_with_cache.call_count == 1
-        assert client.get_with_cache.call_args[0][0].endswith("issues/events?per_page=100&page=1")
-
-    def test_watermark_advances_to_new_maxes(self):
-        client = MagicMock()
-        fresh = [{"number": 9, "title": "x", "updated_at": "2026-09-24T00:00:00Z"}]
-        client.get_paginated.return_value = fresh
-        client.get_with_cache.return_value = [
-            {"id": 99, "event": "closed", "created_at": "2026-09-24T00:00:00Z", "actor": {"login": "u"}, "issue": {"number": 9}}
-        ]
-        wm = _store(
-            last_updated_at="2026-09-22T00:00:00Z",
-            last_event_id=2,
-        )
-        files = {
-            "data/bronze/repositories_filtered.json": REPOS,
-            "data/bronze/issues_repo1.json": [{"_metadata": {}}],
-            "data/bronze/prs_repo1.json": [{"_metadata": {}}],
-            "data/bronze/issue_events_repo1.json": [{"_metadata": {}}],
-        }
-
-        _run_issues(client, files, wm)
-
-        after = wm.get("org/repo1")
-        assert after.last_updated_at == "2026-09-24T00:00:00Z"
-        assert after.last_event_id == 99
 
 
 def _run_commits(client, files, **kwargs):
@@ -193,37 +97,3 @@ class TestIncrementalCommits:
 
         merged = saved["data/bronze/commits_repo1.json"]
         assert [c["sha"] for c in merged] == ["new1", "old1", "old2"]
-
-
-class TestIncrementalStructure:
-    def test_skips_unchanged_head(self):
-        client = MagicMock()
-        client.get_with_cache.return_value = {"commit": {"sha": "abc123"}}
-        wm = _store(head_shas={"main": "abc123"})
-        files = {
-            "data/bronze/repositories_filtered.json": REPOS,
-            "data/bronze/structure_repo1.json": {"tree": [{"name": "a.py"}]},
-        }
-
-        with patch("coops.bronze.repository_structure.load_json_data", side_effect=files.get), patch("coops.bronze.repository_structure.save_json_data", return_value="f"):
-            result = extract_repository_structure(client, MagicMock(), watermarks=wm)
-
-        assert "data/bronze/structure_repo1.json" in result
-        client.get_repository_tree.assert_not_called()
-
-    def test_fetches_and_records_when_head_changed(self):
-        client = MagicMock()
-        client.get_with_cache.return_value = {"commit": {"sha": "newsha"}}
-        client.get_repository_tree.return_value = {
-            "owner": "org", "repository": "repo1", "branch": "main",
-            "sha": "newsha", "tree": [{"name": "b.py"}], "truncated": False,
-            "method": "rest", "total_items": 1,
-        }
-        wm = _store(head_shas={"main": "oldsha"})
-        files = {"data/bronze/repositories_filtered.json": REPOS}
-
-        with patch("coops.bronze.repository_structure.load_json_data", side_effect=files.get), patch("coops.bronze.repository_structure.save_json_data", return_value="f"):
-            extract_repository_structure(client, MagicMock(), watermarks=wm)
-
-        client.get_repository_tree.assert_called_once()
-        assert wm.get("org/repo1").head_shas == {"main": "newsha"}

@@ -1,77 +1,44 @@
-"""Differential acceptance for the ported Bronze service (#30).
+"""The wired Bronze path, end to end (#30).
 
-The claim under test is byte-identity: over one fixed corpus served by one
-stub client, the legacy extractors and ``BronzeService`` (through
-``GitHubSourceAdapter`` + ``FileStorageAdapter``) must produce the same
-tree, file for file and byte for byte, modulo the generation timestamps.
+This file was the byte-parity differential: a legacy arm and a
+``BronzeService`` arm over one fixed corpus, compared file for file and
+byte for byte. #30 was redefined — *wire the service in, accept that the
+output changes, record what changed: a diff report, not a gate* — and the
+legacy arm's extractors were removed with the wiring, so the differential
+retired with the acceptance it measured. What this file pins now is what
+remains load-bearing about the live path:
 
-Arms
-----
-Both arms read the *same* stub client, so the corpus — not the adapter —
-is the only difference between them:
+* ``coops.etl.bronze_extract.run_extraction`` — the composition ``main()``
+  calls — writes **every family the pipeline has always produced**:
+  the service-owned families (repositories, issues, PRs, commits,
+  structures) *and* the two the source port cannot express, members
+  (#238) and issue events (#239), which stay on the legacy extractors the
+  composition keeps. Six Silver/Gold modules read those files; a wiring
+  that silently dropped them would starve them a layer away, as empty
+  analytics rather than as an error here. So the tree assertion requires
+  exactly the published set — nothing missing, nothing extra.
+* the known port-gap shapes, by name: the commit record's ``committer.name``
+  is ``None`` and its ``html_url`` is ``None`` (#240 — the model cannot
+  carry the committer's name, and the history query requests no URL), and
+  the repository record is the ``Repository`` model's seventeen-key
+  projection (#241 — real payloads carry ~99 provider fields the model
+  never sees; the strict xfail in
+  ``tests/unit/test_repository_projection_gap.py`` pins that gap).
+* the scrub, on the live path: the corpus's commit message carries a
+  ``Co-authored-by:`` trailer with a real address, and one author's git
+  ``user.name`` *is* an address (#132) — neither may reach ``data/bronze``
+  through the service arm. The control asserts the probe finds the
+  address in the corpus first (the arms-differ spirit of the old
+  differential: a clean result must not be able to mean a dead probe).
+* the envelopes still name the published location
+  (``_metadata.file_path == "data/bronze/<entity>.json"``), because the
+  composition stores through ``PublishedLayoutStorage`` — the flat
+  ``data/bronze`` tree Silver and Gold glob — rather than the port's own
+  tenant-scoped layout.
 
-* legacy arm: ``extract_repositories`` → ``extract_issues`` →
-  ``extract_commits`` (the CLI's default GraphQL method) →
-  ``extract_members`` → ``extract_repository_structure``, run with the
-  working directory inside ``tmp_path`` so the relative ``data/bronze``
-  paths land there;
-* service arm: the same step order through ``BronzeService``, writing
-  through ``FileStorageAdapter`` into a separate root.
-
-What the corpus deliberately does not carry (each is a reported finding,
-not a hidden exemption)
-----------------------------------------------------------------------
-The stub's GraphQL commit nodes carry no ``committer``, because the
-``Commit`` model has none: a node that had one would make the legacy arm
-write ``commit.committer`` with real values the service cannot reproduce.
-The stub's tree response reuses the branch-head sha as its own ``sha``,
-because ``FileTree.sha`` (the tree response's sha) is not the value the
-legacy structure record carries (the branch-head commit sha). And the
-member payloads are minimal: members are not ported at all (see below).
-
-``REPO_RECORDS`` carries the **99-key** shape a real ``repo_*.json`` payload
-has (476 of the fga corpus's 486 files at 99, 10 at 100 with
-``template_repository``), not the seventeen ``Repository`` reads. It used to
-carry only those seventeen, which made every repository arm here unable to
-fail — so the headline "byte-identical" count included families whose
-comparison was decided by the fixture rather than by the code. #241.
-
-With the real shape, **five** families cannot match, and that number was
-measured rather than predicted: not only the two ``repo_*.json`` files but
-all three ``repositories_*`` aggregates, which are built from the same
-listing records. They are listed in ``PARITY_GAP_FILES``, still compared and
-still reported, and pinned by the strict xfail
-``test_repository_families_would_be_byte_identical`` — which flips to an
-unexpected pass, loudly, the day #241 lands.
-
-So the honest accounting of the sixteen families this corpus exercises is:
-
-* **7** compared and byte-identical — the claim this file actually proves;
-* **5** compared and pinned as parity gaps (``PARITY_GAP_FILES``, #241);
-* **4** not written at all because the port cannot express them
-  (``PORT_GAP_FILES``: both ``members_*``, both ``issue_events_*``).
-
-``test_listing_fixture_carries_more_than_the_model_reads`` is the guard that
-keeps this true: a fixture whose key set equals the model's field set fails
-there, so the next family cannot be born vacuous.
-
-Families the service does not write (pinned, not skipped)
----------------------------------------------------------
-``members_basic.json``, ``members_detailed.json`` and
-``issue_events_<repo>.json`` are produced by the legacy arm only: the
-source port has no ``fetch_issue_events`` and the ``Member`` model cannot
-express the member record. The comparison ASSERTS those files — and only
-those files — are missing from the service arm, so any other file the
-service failed to write fails this test rather than disappearing.
-
-Timestamp normalisation (accounted, bounded)
---------------------------------------------
-Exactly two generation-time fields are normalised before comparing:
-``_metadata.extracted_at`` (list and document envelopes) and the structure
-document's own ``extracted_at``. Both are ``now()``-at-write in both arms
-and differ between any two runs, including two legacy runs. The count of
-normalised fields is asserted, so a third exemption cannot be added
-silently.
+The corpus is unchanged from the differential era (same
+``StubGitHubClient``, same records), so the shapes pinned here are the
+ones the #30 wiring report was measured against.
 """
 
 from __future__ import annotations
@@ -84,23 +51,17 @@ from typing import Any
 
 import pytest
 
-from coops.bronze.bronze_service import BronzeService
-from coops.bronze.commits import extract_commits
-from coops.bronze.issues import extract_issues
-from coops.bronze.members import extract_members
-from coops.bronze.repositories import extract_repositories
-from coops.bronze.repository_structure import extract_repository_structure
+from coops.bronze.watermarks import WatermarkStore
 from coops.domain.tenancy import resolve_tenant
-from coops.github.adapter import GitHubSourceAdapter
-from coops.storage.file import FileStorageAdapter
+from coops.etl import bronze_extract
 from coops.utils.github_api import GitHubAPIClient, OrganizationConfig
 
 ORG = "test-org"
 _API = "https://api.github.com"
 
 # The repository listing, in listing order: two kept repositories, one
-# fork and one blacklisted, so the filter runs in both arms. The key set
-# is exactly what map_repository reads — see the module docstring.
+# fork and one blacklisted, so the filter runs. The key set is exactly
+# what map_repository reads — see #241 and the module docstring.
 #: A real ``repo_*.json`` payload carries **99** keys (476 of the fga corpus's 486
 #: files; 100 on the other 10, adding ``template_repository``) where ``Repository``
 #: reads **17**. A fixture carrying only those 17 makes the ``repo_*`` arms of this
@@ -177,6 +138,15 @@ def _rich(record: dict[str, Any]) -> dict[str, Any]:
     """
     return {**_github_only_fields(record["full_name"]), **record}
 
+
+#: The payload keys ``map_repository`` reads. A fixture carrying only these makes
+#: every repository arm of this differential unable to fail; asserted against in
+#: ``test_listing_fixture_carries_more_than_the_model_reads``.
+MODEL_PAYLOAD_KEYS = frozenset({
+    "id", "name", "full_name", "private", "fork", "archived", "description",
+    "default_branch", "language", "html_url", "size", "stargazers_count",
+    "forks_count", "open_issues_count", "created_at", "updated_at", "pushed_at",
+})
 
 REPO_RECORDS: list[dict[str, Any]] = [
     _rich({
@@ -302,8 +272,8 @@ ISSUES_BY_REPO: dict[str, list[dict[str, Any]]] = {
             **_ISSUE_BASE,
         },
     ],
-    # No PRs here on purpose: the legacy step writes no prs_<repo>.json
-    # when there are none, and the service must agree.
+    # No PRs here on purpose: the run must write no prs_<repo>.json
+    # when there are none.
     "2026.1-App.Two": [
         {
             "id": 9101,
@@ -339,7 +309,8 @@ EVENTS_BY_REPO: dict[str, list[dict[str, Any]]] = {
 }
 
 # GraphQL history nodes, newest first, exactly the fields the history
-# query requests (no url, no committer — see the module docstring).
+# query requests (no url, no committer — see #240 and the module
+# docstring).
 COMMIT_NODES_BY_REPO: dict[str, list[dict[str, Any]]] = {
     "repo1": [
         {
@@ -365,7 +336,8 @@ COMMIT_NODES_BY_REPO: dict[str, list[dict[str, Any]]] = {
             "messageHeadline": "fix: handle empty input",
             "committedDate": "2025-03-01T00:00:00Z",
             # git user.name set to the address: the known case the label
-            # policy blanks (#132), exercised on both arms.
+            # policy blanks (#132), which must be blanked on the wired
+            # path too, not only by the legacy scrub.
             "author": {
                 "name": "unlinked@example.com",
                 "email": "unlinked@example.com",
@@ -451,7 +423,7 @@ TREES: dict[str, dict[str, Any]] = {
     },
 }
 
-# Members: the legacy arm only (the service does not extract members).
+# Members: the legacy path the composition keeps (#238).
 ORG_MEMBERS: list[dict[str, Any]] = [
     {"login": "linked_user", "id": 4242},
     {"login": "orgmate", "id": 4244},
@@ -518,9 +490,10 @@ class StubGitHubClient:
     """An in-memory ``GitHubAPIClient`` serving the fixed corpus.
 
     Routing is by exact URL (and ``(owner, repo)`` for GraphQL), the same
-    URLs both arms build. ``get_repository_tree`` reuses the real client's
-    own ``_standardize_tree_node`` so the legacy arm's structure records
-    are produced by production code, not by a test copy of it.
+    URLs the wired path builds — the adapter's branch probe and tree read,
+    the legacy members/events pages. ``get_repository_tree`` is unused
+    here (the adapter reads the branch and tree endpoints itself) but is
+    kept serving the corpus, as the differential's arms did.
     """
 
     offline = False
@@ -616,47 +589,30 @@ class StubGitHubClient:
         }
 
 
-def _run_legacy_arm(client: StubGitHubClient, workdir: Path) -> None:
-    config = OrganizationConfig(ORG)
-    extract_repositories(client, config)
-    extract_issues(client, config)
-    extract_commits(client, config, method="graphql")
-    extract_members(client, config)
-    extract_repository_structure(client, config)
+def _run_live_arm(workdir: Path) -> WatermarkStore:
+    """Run the composition ``main()`` calls, inside ``workdir``.
 
-
-def _run_service_arm(
-    client: StubGitHubClient, root: Path, storage: Any = None
-) -> None:
+    The legacy steps read and write relative ``data/bronze`` paths, so the
+    working directory owns the run's tree; the service writes through
+    ``PublishedLayoutStorage`` onto the same tree.
+    """
     tenant = resolve_tenant("single", ORG)
-    service = BronzeService(
-        GitHubSourceAdapter(client, tenant),
-        storage if storage is not None else FileStorageAdapter(root),
-        tenant.id,
+    store = WatermarkStore(str(workdir / "watermarks.json"))
+    bronze_extract.run_extraction(
+        StubGitHubClient(),
+        tenant,
+        OrganizationConfig(ORG),
+        watermarks=store,
     )
-    service.extract_repositories()
-    service.extract_issues()
-    service.extract_commits()
-    service.extract_structures()
+    return store
 
 
 def _bronze_files(directory: Path) -> dict[str, Path]:
     return {path.name: path for path in sorted(directory.glob("*.json"))}
 
 
-#: Families the source port cannot express, so the service does not write
-#: them (module docstring). Anything else missing from the service arm is
-#: a failure, not a finding.
-PORT_GAP_FILES = {
-    "members_basic.json",
-    "members_detailed.json",
-    "issue_events_repo1.json",
-    "issue_events_2026.1-App.Two.json",
-}
-
-#: The service-owned families this corpus exercises. Pinned: a smaller set
-#: would quietly shrink what the differential measures.
-EXPECTED_COMPARED = {
+#: The service-owned families this corpus exercises.
+SERVICE_FILES = {
     "repositories_raw.json",
     "repositories_filtered.json",
     "repositories_detailed.json",
@@ -671,239 +627,197 @@ EXPECTED_COMPARED = {
     "structure_2026.1-App.Two.json",
 }
 
-#: Families the service writes and this differential compares, but which
-#: **cannot** match: the listing payload carries 99 keys and ``Repository`` reads
-#: 17, so the projection drops 82 (#241). Named, not skipped — the comparison
-#: still runs over them and the strict xfail below pins the result, so the day
-#: #241 lands this file fails loudly instead of quietly starting to pass.
-#:
-#: Measured, not assumed: making ``REPO_RECORDS`` carry the real 99-key shape
-#: turned **five** families red, not the two ``repo_*`` files alone — the three
-#: ``repositories_*`` aggregates are built from the same listing records.
-PARITY_GAP_FILES = {
-    "repositories_raw.json",
-    "repositories_filtered.json",
-    "repositories_detailed.json",
-    "repo_repo1.json",
-    "repo_2026.1-App.Two.json",
+#: The families the source port cannot express (#238, #239), produced on
+#: the live run by the legacy extractors the composition keeps. Downstream
+#: starvation is what this half exists to make impossible.
+PORT_GAP_FILES = {
+    "members_basic.json",
+    "members_detailed.json",
+    "issue_events_repo1.json",
+    "issue_events_2026.1-App.Two.json",
 }
 
-#: The payload keys ``map_repository`` reads. A fixture carrying only these makes
-#: every repository arm of this differential unable to fail; asserted against in
-#: ``test_listing_fixture_carries_more_than_the_model_reads``.
-MODEL_PAYLOAD_KEYS = frozenset({
+#: Pinned: a smaller set would quietly shrink what the tree assertion
+#: measures. Exactly this tree and nothing else may come out of the run.
+EXPECTED_TREE = SERVICE_FILES | PORT_GAP_FILES
+
+#: The repository record's key set: exactly the ``Repository`` model's
+#: seventeen-key projection (#241). The corpus's listing records carry
+#: exactly these keys, so this asserts the projection did not invent or
+#: drop any of them; the ~82 provider fields a real payload carries beyond
+#: them are the gap, pinned by the strict xfail in
+#: ``tests/unit/test_repository_projection_gap.py``.
+REPOSITORY_RECORD_KEYS = {
     "id", "name", "full_name", "private", "fork", "archived", "description",
     "default_branch", "language", "html_url", "size", "stargazers_count",
-    "forks_count", "open_issues_count", "created_at", "updated_at", "pushed_at",
-})
+    "forks_count", "open_issues_count", "created_at", "updated_at",
+    "pushed_at",
+}
 
-#: One ``_metadata.extracted_at`` per envelope file (10) plus one record
-#: ``extracted_at`` per structure document (2): the normalisation budget.
-EXPECTED_NORMALISATIONS_PER_ARM = 12
-
-
-def _strip_generation_timestamps(payload: Any, name: str, removed: list[str]) -> Any:
-    """Remove exactly the two generation-time timestamps, accounting each."""
-    if (
-        isinstance(payload, list)
-        and payload
-        and isinstance(payload[0], dict)
-        and "_metadata" in payload[0]
-    ):
-        removed.append(f"{name}: _metadata.extracted_at")
-        payload[0]["_metadata"].pop("extracted_at", None)
-    elif isinstance(payload, dict):
-        if isinstance(payload.get("_metadata"), dict):
-            removed.append(f"{name}: _metadata.extracted_at")
-            payload["_metadata"].pop("extracted_at", None)
-        if "extracted_at" in payload:
-            removed.append(f"{name}: extracted_at")
-            payload.pop("extracted_at")
-    return payload
+_EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 
 
-def _diff_json(path: str, old: Any, new: Any, diffs: list[str]) -> None:
-    """Deep comparison that names the JSON path of every difference."""
-    if isinstance(old, dict) and isinstance(new, dict):
-        if list(old.keys()) != list(new.keys()):
-            diffs.append(
-                f"{path}: key order/set differs: "
-                f"{list(old.keys())} != {list(new.keys())}"
-            )
-        for key in old.keys() | new.keys():
-            if key not in new:
-                diffs.append(f"{path}.{key}: legacy only ({old[key]!r})")
-            elif key not in old:
-                diffs.append(f"{path}.{key}: service only ({new[key]!r})")
-            else:
-                _diff_json(f"{path}.{key}", old[key], new[key], diffs)
-        return
-    if isinstance(old, list) and isinstance(new, list):
-        if len(old) != len(new):
-            diffs.append(f"{path}: length {len(old)} != {len(new)}")
-        # strict=False on purpose: a length mismatch is already reported
-        # above, and the diff should still name the shared-prefix fields.
-        for index, (old_item, new_item) in enumerate(zip(old, new, strict=False)):
-            _diff_json(f"{path}[{index}]", old_item, new_item, diffs)
-        return
-    if old != new:
-        diffs.append(f"{path}: {old!r} != {new!r}")
+def _records(payload: Any) -> list[dict[str, Any]]:
+    """A bronze list file's records, without the leading ``_metadata``."""
+    assert isinstance(payload, list)
+    return [r for r in payload[1:] if isinstance(r, dict)]
 
 
-#: Masks timestamp values in the raw text so the two files can be compared
-#: literally — the byte-level half of the comparison.
-_TIMESTAMP_TEXT = re.compile(r'("extracted_at": ")[^"]*(")')
-
-
-def _compare_trees(old_root: Path, new_root: Path) -> tuple[list[str], list[str]]:
-    """Diff the two Bronze trees; return (differences, normalisations)."""
-    old_files = _bronze_files(old_root)
-    new_files = _bronze_files(new_root)
-    shared = sorted(set(old_files) & set(new_files))
-    old_only = set(old_files) - set(new_files)
-    new_only = set(new_files) - set(old_files)
-
-    diffs: list[str] = []
-    normalisations: list[str] = []
-
-    if new_only:
-        diffs.append(f"files only in the service arm: {sorted(new_only)}")
-    unexpected_missing = old_only - PORT_GAP_FILES
-    if unexpected_missing:
-        diffs.append(f"files only in the legacy arm: {sorted(unexpected_missing)}")
-
-    for name in shared:
-        old_payload = json.loads(old_files[name].read_text(encoding="utf-8"))
-        new_payload = json.loads(new_files[name].read_text(encoding="utf-8"))
-        old_payload = _strip_generation_timestamps(old_payload, name, normalisations)
-        new_payload = _strip_generation_timestamps(new_payload, name, normalisations)
-        _diff_json(name, old_payload, new_payload, diffs)
-
-        # Byte-level: same text once the timestamp values are masked.
-        old_text = _TIMESTAMP_TEXT.sub(r"\1<TS>\2", old_files[name].read_text(encoding="utf-8"))
-        new_text = _TIMESTAMP_TEXT.sub(r"\1<TS>\2", new_files[name].read_text(encoding="utf-8"))
-        if old_text != new_text:
-            diffs.append(f"{name}: bytes differ beyond the timestamp values")
-
-    diffs.append(f"compared {len(shared)} shared files: {shared}")
-    return diffs, normalisations
-
-
-class _FieldDroppingStorage:
-    """A StoragePort wrapper that plants one difference on the way down.
-
-    The arms-differ control: it drops a single field (``total_changes``)
-    from the first commit record of ``commits_repo1``, the kind of change
-    a comparison must catch and name.
-    """
-
-    def __init__(self, inner: Any) -> None:
-        self._inner = inner
-
-    def save(self, tenant: Any, layer: Any, entity: str, data: Any) -> None:
-        if entity == "commits_repo1" and isinstance(data, list) and len(data) > 1:
-            planted = [dict(item) if isinstance(item, dict) else item for item in data]
-            planted[1].pop("total_changes", None)
-            data = planted
-        self._inner.save(tenant, layer, entity, data)
-
-    def load(self, tenant: Any, layer: Any, entity: str) -> Any:
-        return self._inner.load(tenant, layer, entity)
-
-    def list(self, tenant: Any, layer: Any) -> Any:
-        return self._inner.list(tenant, layer)
-
-
-def _run_both_arms(tmp_path: Path, monkeypatch: pytest.MonkeyPatch, storage: Any = None):
-    legacy_root = tmp_path / "legacy"
-    legacy_root.mkdir()
-    ported_root = tmp_path / "ported"
-
+@pytest.fixture
+def run(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> dict[str, Any]:
+    """One wired run inside ``tmp_path``; returns its outputs for inspection."""
+    workdir = tmp_path / "run"
+    workdir.mkdir()
     with monkeypatch.context() as isolated:
-        isolated.chdir(legacy_root)
-        _run_legacy_arm(StubGitHubClient(), legacy_root)
+        isolated.chdir(workdir)
+        store = _run_live_arm(workdir)
+    files = _bronze_files(workdir / "data" / "bronze")
+    payloads = {
+        name: json.loads(path.read_text(encoding="utf-8"))
+        for name, path in files.items()
+    }
+    return {"workdir": workdir, "files": files, "payloads": payloads, "store": store}
 
-    _run_service_arm(StubGitHubClient(), ported_root, storage=storage)
 
-    old_bronze = legacy_root / "data" / "bronze"
-    new_bronze = ported_root / ORG / "bronze"
-    return _compare_trees(old_bronze, new_bronze)
+def test_the_wired_run_writes_exactly_the_published_tree(run) -> None:
+    """Every family the pipeline has always produced, and nothing else.
 
-
-def test_service_output_matches_legacy_output(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
-    """The differential: identical trees modulo the accounted timestamps."""
-    diffs, normalisations = _run_both_arms(tmp_path, monkeypatch)
-
-    compared = [line for line in diffs if line.startswith("compared ")]
-    failures = [line for line in diffs if not line.startswith("compared ")]
-
-    assert len(compared) == 1
-
-    # The parity gaps are compared, reported, and excluded from *this* assertion
-    # only — pinned by ``test_repository_families_would_be_byte_identical``.
-    gaps = [line for line in failures if any(name in line for name in PARITY_GAP_FILES)]
-    unexplained = [line for line in failures if line not in gaps]
-    assert unexplained == [], "differences:\n" + "\n".join(unexplained)
-
-    count = int(compared[0].split()[1])
-    assert count == len(EXPECTED_COMPARED), (
-        f"compared {count} files, expected {len(EXPECTED_COMPARED)}: "
-        "the corpus or the writers changed shape"
-    )
-    assert count > 0, "a comparison over zero files passes vacuously"
-
-    # The normalisation budget: exactly the two generation-time fields, in
-    # exactly the expected files. A third exemption fails here, loudly.
-    assert len(normalisations) == 2 * EXPECTED_NORMALISATIONS_PER_ARM, (
-        f"normalised {len(normalisations)} timestamps, expected "
-        f"{2 * EXPECTED_NORMALISATIONS_PER_ARM} (both arms): {normalisations}"
+    The port-gap half is the point: members and issue events are still
+    written *by the same run*, on the legacy path — a wiring that dropped
+    them would starve six Silver/Gold modules a layer away.
+    """
+    assert set(run["files"]) == EXPECTED_TREE, (
+        f"missing: {sorted(EXPECTED_TREE - set(run['files']))}; "
+        f"unexpected: {sorted(set(run['files']) - EXPECTED_TREE)}"
     )
 
 
-def test_arms_differ_control_fails_and_names_the_field(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
-) -> None:
-    """The control: a comparison that says "identical" must be able to see.
+def test_port_gap_families_carry_real_content(run) -> None:
+    """The kept families are not empty husks: members carry the merged
+    member/contributor population with profiles, events carry the
+    projected Silver-facing records."""
+    members_basic = _records(run["payloads"]["members_basic.json"])
+    members_detailed = _records(run["payloads"]["members_detailed.json"])
 
-    One field dropped from one record in the service arm must fail the
-    comparison *and* be named — file and field — or the green run above
-    measures nothing.
+    by_login = {member["login"]: member for member in members_basic}
+    # org member + contributor, and the outside contributor: the union.
+    assert set(by_login) == {"linked_user", "orgmate", "outsider"}
+    assert by_login["linked_user"]["contributions_total"] == 7
+    assert by_login["linked_user"]["is_org_member"] is True
+    assert by_login["outsider"]["is_org_member"] is False
+
+    detailed_by_login = {m["login"]: m for m in members_detailed}
+    assert detailed_by_login["linked_user"]["profile_fetched"] is True
+    assert detailed_by_login["linked_user"]["public_repos"] == 3
+
+    events = _records(run["payloads"]["issue_events_repo1.json"])
+    assert [event["id"] for event in events] == [501, 502]
+    assert set(events[0]) == {
+        "id", "event", "created_at", "repo_name", "actor", "issue",
+    }
+
+    # A repository with no events still writes its file — the family
+    # exists for every repository, as the published corpus does.
+    assert _records(run["payloads"]["issue_events_2026.1-App.Two.json"]) == []
+
+
+def test_commit_scrub_runs_on_the_wired_path(run) -> None:
+    """No address reaches data/bronze through the service arm (#111's
+    binding, restated for the path that is now live).
+
+    CONTROL: the probe must find the address in the corpus before the
+    run, or a clean result afterwards would prove nothing — the
+    arms-differ discipline the byte-parity differential enforced.
     """
-    storage = _FieldDroppingStorage(FileStorageAdapter(tmp_path / "ported"))
-    diffs, _ = _run_both_arms(tmp_path, monkeypatch, storage=storage)
+    corpus = json.dumps(COMMIT_NODES_BY_REPO["repo1"])
+    assert _EMAIL_RE.search(corpus), "the corpus no longer carries an address"
 
-    failures = [line for line in diffs if not line.startswith("compared ")]
-    assert failures, "the planted difference was not caught"
-    named = [line for line in failures if "total_changes" in line]
-    assert named, f"the difference was seen but not named: {failures}"
-    assert any("commits_repo1.json" in line for line in named), named
+    commits = _records(run["payloads"]["commits_repo1.json"])
+    serialized = json.dumps(commits)
+    assert not _EMAIL_RE.search(serialized)
+    # Credit survives: the trailer and the human names stay.
+    assert "Co-authored-by: Pair Person" in serialized
+    by_sha = {commit["sha"]: commit for commit in commits}
+    # git user.name set to the address: blanked (#132), not published.
+    assert by_sha["bbb2"]["commit"]["author"]["name"] is None
+    # The email survives only as its hash — for the linked author too.
+    assert by_sha["ccc3"]["commit"]["author"]["author_email_hash"]
 
 
-@pytest.mark.xfail(
-    strict=True,
-    reason=(
-        "#241: Repository is a 17-field projection of a 99-key payload, so the "
-        "five repository families cannot be byte-identical. Flips to an "
-        "unexpected pass the day the gap closes — at which point remove this "
-        "test and PARITY_GAP_FILES."
-    ),
-)
-def test_repository_families_would_be_byte_identical(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
-) -> None:
-    """The pin: what the differential would assert if #241 were fixed.
+def test_commit_gap_shapes_are_the_service_shapes(run) -> None:
+    """#240, named: the committer's name and the html_url are ``None``.
 
-    Kept separate from the main differential so that the other seven compared
-    families still gate on real byte-identity while this one records the gap.
+    The legacy GraphQL path wrote a real committer name on records whose
+    node carried one (and the live query requests it); the model cannot
+    carry it across the port, so ``None`` is the wired path's shape. The
+    day #240 lands a payload-carrying seam, this test changes
+    deliberately — that is why it exists.
     """
-    diffs, _ = _run_both_arms(tmp_path, monkeypatch)
-    gaps = [
-        line
-        for line in diffs
-        if not line.startswith("compared ")
-        and any(name in line for name in PARITY_GAP_FILES)
+    commits = _records(run["payloads"]["commits_repo1.json"])
+    for commit in commits:
+        assert commit["commit"]["committer"]["name"] is None
+        assert commit["html_url"] is None
+    # Everything else the legacy record carried is intact.
+    assert commits[0]["parents"] == ["bbb2"]
+    assert commits[0]["total_changes"] == 12
+
+
+def test_repository_record_is_the_model_projection(run) -> None:
+    """#241, named: the stored repository record is exactly the
+    ``Repository`` model's seventeen keys — the provider payload does not
+    survive the port."""
+    listing = _records(run["payloads"]["repositories_filtered.json"])
+    assert {record["name"] for record in listing} == {"repo1", "2026.1-App.Two"}
+    for record in listing:
+        assert set(record) == REPOSITORY_RECORD_KEYS
+
+    document = run["payloads"]["repo_repo1.json"]
+    assert set(document) - {"_metadata"} == REPOSITORY_RECORD_KEYS
+
+
+def test_envelopes_name_the_published_location(run) -> None:
+    """The service writes through the port, but the published contract —
+    ``_metadata.file_path`` naming ``data/bronze/<entity>.json`` — is what
+    the tree and its readers key on."""
+    listing = run["payloads"]["repositories_filtered.json"]
+    assert listing[0]["_metadata"]["file_path"] == (
+        "data/bronze/repositories_filtered.json"
+    )
+    # The #216 listing provenance: an unbounded, online run asserts it.
+    assert listing[0]["_metadata"]["complete"] is True
+    assert listing[0]["_metadata"]["record_count"] == 2
+
+    document = run["payloads"]["repo_repo1.json"]
+    assert document["_metadata"]["file_path"] == "data/bronze/repo_repo1.json"
+
+
+def test_structure_document_shape(run) -> None:
+    """The structure family keeps its document shape: no ``_metadata``
+    envelope, the standardised tree, and the repository metadata block
+    Silver's language analysis reads."""
+    structure = run["payloads"]["structure_repo1.json"]
+    assert "_metadata" not in structure
+    assert structure["method"] == "rest"
+    assert structure["total_items"] == 3
+    assert [entry["path"] for entry in structure["tree"]] == [
+        "README.md", "src", "src/main.py",
     ]
-    assert gaps == [], "repository parity gaps:\n" + "\n".join(gaps)
+    assert structure["repository_metadata"]["full_name"] == "test-org/repo1"
+    assert structure["repository_metadata"]["stars"] == 3
+
+
+def test_watermarks_recorded_across_both_paths(run) -> None:
+    """The service records head shas; the kept events extractor records
+    the event id; one store carries both (the composition threads it
+    through the two halves of what was one step)."""
+    store: WatermarkStore = run["store"]
+
+    wm = store.get("test-org/repo1")
+    assert wm.head_shas == {"main": "sha-head-1"}
+    assert wm.last_event_id == 502
+
+    wm_two = store.get("test-org/2026.1-App.Two")
+    assert wm_two.head_shas == {"master": "sha-head-2"}
 
 
 def test_listing_fixture_carries_more_than_the_model_reads() -> None:
