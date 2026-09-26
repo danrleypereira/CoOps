@@ -42,8 +42,14 @@ class Settings(BaseSettings):
     )
     # gemini-2.5-flash-lite is no longer available to new API keys.
     gemini_model: str = "gemini-3.5-flash-lite"
-    # Placeholders for later phases; not read by the pipeline yet.
+    # Placeholder for a later phase; not read by the pipeline yet.
     github_api_url: str = "https://api.github.com"
+    # Which StoragePort adapter a run uses (coops.storage.select_storage,
+    # #42): "data" — the filesystem adapter over ./data, the default — or
+    # "mongo" — the MongoDB adapter, which also needs MONGO_URI. Any other
+    # value raises instead of falling back to a default: COOPS_STORAGE=
+    # mongoo must stop the run, not quietly write files nobody asked for.
+    # An empty value counts as unset (env_ignore_empty) and runs as "data".
     coops_storage: str = "data"
     mongo_uri: str | None = None
     # How long a raw-layer document stays "fresh" before Bronze re-fetches the

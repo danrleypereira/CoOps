@@ -7,7 +7,219 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
 
 ## [Unreleased]
 
+### Added
+- Bronze deduped by repository id at the reader (#248): a repository that
+  is renamed or recased leaves its old per-repository files on disk beside
+  the current ones (`repo_2025-1-NoFluxoUNB.json` and
+  `repo_2025-1-NoFluxoUnB.json` both carry repository id `957040204`), and
+  every reader globbed the family, so both spellings were read and the
+  repository was counted twice in published data (measured: commits
+  1,239 + 1,219, issues 117 + 109, prs 70 + 61, issue_events 1,414 +
+  1,336). `coops.bronze.files.bronze_files` now feeds its enumeration
+  through `coops.bronze.dedupe`, which keys every file by the `id` of its
+  `repo_<name>.json` sibling — no listing provenance is consulted (#216's
+  deletion needed it; "two files whose repository id is the same are the
+  same repository" needs nothing) and nothing is deleted: the duplicate
+  stays on disk, it is simply no longer read. The winner rule keeps the
+  copy with the latest `_metadata.extracted_at` when the stamps are more
+  than 48h apart (only the orphan mechanism explains a gap that size; the
+  live pair is 7 days apart, one stamp naive and one aware, compared on
+  UTC wall times so mixed awareness never raises). At most 48h apart — or
+  with a stamp that cannot be read — the pair REFUSES: no winner is
+  picked, both copies stay counted and the pair is reported, because an
+  orphan that young is indistinguishable from concurrent duplicate
+  generation, which is a different bug and must not be hidden by picking a
+  winner. A family file whose `repo_` sibling is missing or carries no
+  readable id is unmapped: counted, kept and reported, never dropped or
+  merged. The refusal reaches OUTPUT, not a log line alone: every
+  `coops-bronze` run prints the report (naming the repository id and the
+  totals each copy contributes) and publishes `data/bronze/dedupe.json`
+  beside the data — a new published artifact whose named consumer is the
+  operator reading the corpus (the issue assigns the dashboard no new
+  view); it is written on clean runs too, so absence is a choice, not a
+  check that never ran. Silver and the AI step dedupe automatically
+  through the shared reader; published totals for a deduped repository
+  drop to that repository's single current copy.
+- Bronze orchestration on the ports (#30): `coops.bronze.bronze_service.
+  BronzeService` runs the Bronze layer's decisions — what to fetch, in
+  what order, with what watermarks, and where each result is written —
+  against `SourcePort` and `StoragePort` only, importing no concrete
+  GitHub client and none of the legacy JSON file helpers. A differential
+  acceptance (`tests/integration/test_bronze_service_differential.py`)
+  runs the legacy extractors and the service over one fixed corpus from
+  one stub client and asserts the two Bronze trees are byte-identical
+  modulo the generation timestamps, with an arms-differ control that
+  plants a dropped field and confirms the comparison fails and names it.
+  The service covers repositories (raw/filtered/detail), commits, issues,
+  PRs and structures, and writes the #216 listing provenance
+  (`complete: true`) exactly when the enumeration is unbounded. Members
+  and issue events are deliberately not ported — the source port has no
+  `fetch_issue_events` and the `Member` model cannot express the member
+  record — so `coops-bronze` keeps the legacy extractors until the port
+  grows those; the findings, and the other not-yet-expressible behaviours
+  (incremental fetch windows, the unchanged-tree skip, deletion, the
+  watermark store's location), are documented in the module docstring.
+  No published data changes in this step.
+
+- Bronze orphan reconciliation (#216): a repository that is renamed or
+  recased (`unb-mds/2025-1-NoFluxoUNB` and `2025-1-NoFluxoUnB` are one
+  repository, id 957040204) leaves its old per-repository Bronze files on
+  disk forever beside the new ones; Silver and Gold consume Bronze by
+  glob, so both are read and the repository is counted twice in published
+  data (measured: commits 1,239 current + 1,219 orphan = 2,458). Every
+  existing guard asserts records must not *fall* — the orphan *adds*, so
+  nothing could see it. Two halves. `coops.bronze.reconcile` removes
+  per-repository files the current `repositories_filtered.json` does not
+  name (`coops-bronze` runs it after every family is written, so a
+  rename leftover is reported in the run that creates it;
+  `--reconcile-apply` opts in to deleting), and
+  `scripts/verify_medallion.py` gains `no-orphaned-bronze-files` — an
+  orphan is bad data (rc 1, the file named), a missing or unreadable
+  listing is the instrument (rc 2) — taking `--self-test` to 16
+  controls, with the arms-differ control proving a clean corpus passes.
+  Deletion refuses — deleting nothing — unless the listing itself
+  asserts its own completeness: `save_json_data` can now write
+  `complete: true` into the `_metadata` element, and
+  `extract_repositories` sets it only when the run enumerated the
+  organisation unbounded (no `--max-repos`, no `--repo`, not an offline
+  replay). Absent means incomplete — fail closed, so every listing
+  already on disk refuses too — and the guard is in the FILE, never the
+  argv: a capped run that exits and a later clean-argv reconciliation
+  are the shape that wipes a corpus, and provenance, never
+  `record_count` (computed after truncation, indistinguishable from a
+  small organisation), is what stops it. An empty `[]` listing carries
+  no provenance at all and deletes nothing; a differently-cased file
+  that is the only copy for its repository is kept; nothing outside
+  `data/bronze` is touched.
+- The contract suite for `scripts/verify_medallion.py` (#209): the phase
+  gate was itself verified by nothing — `--self-test` proves its 14 checks
+  can fail, and nothing proved the *script's* behaviour. Every defect it
+  has shipped with (rc 0 while checks were skipped for want of
+  `--reference`, a verdict that denied record loss while rc 2 was set by
+  the instrument, a missing — then an empty — layer reading as success,
+  an early return that dropped `no-record-vanished` from the report)
+  lived in that second category, and each was caught by a human
+  re-running the script. `tests/unit/test_verify_medallion.py` now drives
+  `main()` end to end over synthetic corpora under `tmp_path` (never the
+  frozen corpus): an exit-code matrix whose every row runs its clean twin
+  in the same test (0 clean / 1 broken invariant / 2 skipped check,
+  silent control, absent or empty layer), the precedence row (a missing
+  layer AND real record loss → rc 2, with both findings named), check
+  registration under every layer-presence × `--reference` combination —
+  asserting the *set of names in the report*, the shape an absent row
+  hides in — `--self-test` returning 14 of 14 and exiting 2 when a
+  control stops firing (planted by stubbing one check), and row-format
+  parsing for the tooling that reads the output. The script is unchanged:
+  these tests assert its documented contract, and `--self-test` remains
+  the evidence the checks work.
+- `GitHubSourceAdapter` in `coops/github/adapter.py` (#29): the GitHub
+  implementation of `SourcePort`, composing the existing
+  `GitHubAPIClient` (transport), `coops.github.mapper` (every
+  payload→model rule) and the domain's `Tenant` — glue with no mapping
+  or HTTP of its own. One adapter serves one tenant through one GitHub
+  account; a call naming another tenant reads nothing (empty
+  organization-wide, `SourceNotFoundError` on repository addresses),
+  mirroring the reference implementation in
+  `tests/unit/test_source_port.py`. Provider faults that escape the
+  client surface as `SourceUnavailableError`, never as the transport's
+  own exception; `OfflineCacheMiss` still passes through so an offline
+  replay (#199) stops the run. Provider policies the port leaves open:
+  commits are the default-branch history (`graphql_commit_history`,
+  REST fallback included), issues and PRs are read `state=all` from the
+  shared endpoint and split behind the port, a truncated REST tree is
+  finished by the GraphQL level walk, and repositories/members are
+  yielded unfiltered (fork/blacklist policy stays with the Bronze
+  caller, #26). A `TYPE_CHECKING` conformance anchor — the twin of the
+  storage adapters' — binds the adapter to `SourcePort` so signature
+  drift is a mypy error under `strict = true`.
+- `select_storage` in `coops.storage.selection` (#42): the factory that
+  turns configuration into the dataset `StoragePort`. `COOPS_STORAGE=data`
+  (the `Settings` default, and what an empty value resolves to) selects
+  `FileStorageAdapter` over `./data`; `COOPS_STORAGE=mongo` selects
+  `MongoStorageAdapter` through `MONGO_URI`. An unknown value raises,
+  naming the value and the accepted set — it does **not** fall back to a
+  default: `COOPS_STORAGE=mongoo` must stop the run rather than quietly
+  write files nobody asked for (the #129 wrong-org dashboard and #212
+  evergreen skips are this defect class). `mongo` without `MONGO_URI`
+  raises naming the setting. `FileStorageAdapter` is now exported from
+  `coops.storage` alongside `MongoStorageAdapter`, as #41 promised. The
+  ETL does not call the selector yet — that wiring lands with the layers'
+  move onto the port (#30/#33/#34).
+- The one `StoragePort` contract suite (#55):
+  `tests/unit/test_storage_contract_suite.py` parametrises every
+  behaviour the port promises over **every** adapter exported by
+  `coops.storage.__all__` — round-trip, the absent read (`None`, never
+  `[]`), sorted `list` plus empty for an unknown tenant,
+  replace-not-append, and tenant isolation on **both** read paths. Each
+  contract is written once and runs once per adapter: the per-adapter
+  suites prove each adapter does what its author thought, this one
+  proves they agree — the property the port exists to provide.
+  Anti-drift is structural: the parameter list is derived from the
+  exports rather than hand-written, a parametrised adapter with no
+  factory fails the run, and a keystone test re-scans the exports
+  against the collected parameters. `MongoStorageAdapter` skips without
+  a reachable `MONGO_URI` (the reason names the variable), the terminal
+  summary reports which adapters ran and which skipped, and a guard test
+  fails any run that exercised nothing — the suite cannot pass
+  vacuously.
+
 ### Changed
+- Migrated the ten overlapping `tests/unit/test_github_api_*.py` files
+  (2,717 lines, 139 tests) onto the seams #27–#29 created (#31):
+  transport behaviour to `test_github_client_transport.py`, with the
+  feature-sized transports renamed to `test_github_client_{etag,capture,
+  offline,raw_layer}.py`; the GraphQL-document pin to
+  `test_github_queries.py`; the query orchestration that remains in
+  `coops/utils/github_api.py` to `test_github_api.py`; and the module
+  helpers into the dedicated files that already existed
+  (`test_save_json_data.py`, `test_parse_github_date.py`,
+  `test_split_time_range.py`) plus a slimmed `test_github_api_utils.py`.
+  45 duplicate tests were deleted, each paired with the named survivor
+  that covers its behaviour, and 7 near-duplicates were merged into 4;
+  per-file coverage of `src/coops/github/` and
+  `src/coops/utils/github_api.py` is unchanged, missing-line lists
+  included. Two migrated tests (`test_get_active_branches_error_handling`,
+  `test_graphql_commit_history_error`) reached the live GitHub API
+  through unmocked client calls; both are now hermetic.
+  `TestRawReadPathScrub::test_no_address_reaches_bronze_from_raw_read`
+  moved as part of a 100%-similarity rename and still fails in isolation
+  when `_sanitize_commit` is neutered.
+- Extracted the GitHub endpoint knowledge out of `coops/utils/github_api.py`
+  into `coops/github/queries.py` (#28): the six REST URL templates
+  (`repository_url`, `compare_url`, `commit_url`, `commits_url`,
+  `branch_url`, `tree_url`) and the four GraphQL documents
+  (`ACTIVE_BRANCHES_QUERY`, `COMMIT_HISTORY_BRANCH_QUERY`,
+  `COMMIT_HISTORY_DEFAULT_BRANCH_QUERY`, `REPOSITORY_TREE_QUERY`) — every
+  template and document byte-identical to the inline original it replaced.
+  `queries.py` knows *what to ask GitHub* and nothing about *how to send
+  it* (`coops/github/client.py`, #27) or *what to do with the answer*
+  (that stays with the caller); the GraphQL documents keep their original
+  inner indentation because the transport hashes the whole query text
+  into its cache key, so a whitespace edit would orphan every existing
+  cache entry and stop an offline replay on its first miss. The response
+  shaping (`_standardize_tree_node`, `_empty_tree_response`, pagination,
+  the REST fallback's circuit breaker) deliberately stayed in
+  `github_api.py`. No behaviour change: 1406 passed, 24 skipped before
+  and after.
+- Extracted the reusable transport out of `coops/utils/github_api.py` into
+  `coops/github/client.py` (#27): `GitHubTransport` now carries
+  `OfflineCacheMiss`, construction, the URL-keyed cache and its ETag
+  sidecars, the MongoDB raw layer, the raw-corpus capture, offline replay,
+  run-summary accounting, `get_with_cache`, `graphql` and `get_paginated`,
+  every method moved byte-identically; `GitHubAPIClient` inherits it and
+  `OfflineCacheMiss` is re-exported, so all 43 importers of
+  `coops.utils.github_api` keep resolving unchanged (the GitHub *queries*
+  stay there for #28). Two consequences of the new
+  `utils → github` import edge, both without a behavioural change:
+  `coops/github/__init__.py` now serves `GitHubSourceAdapter` lazily (an
+  eager re-export is a cycle in which every import order dies on a
+  partially initialized module — `from coops.github import
+  GitHubSourceAdapter` still works), and `GitHubTransport` imports
+  `CacheFold` at first `offline_fold()` call instead of at module import
+  (`coops/utils/__init__.py` eagerly imports `github_api`, so any
+  module-level `coops.utils` import in `client.py` would make it
+  unimportable as an entry point). `github_api.requests` is kept (noqa'd)
+  as the attribute tests stub the HTTP boundary through.
 - **Lint, format and type-check must be green, not "no worse than the base"**
   (owner ruling, 2026-09-25). Documented in `docs/definition-of-done.md` and
   `docs/phase-workflow.md`, and tightened in the pull request template. A phase
@@ -15,6 +227,50 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   base cannot prove that, because the new findings are lost in an argument about
   the existing ones. A phase branch must not be started from a base where these
   are not green — fix the base first on its own patch branch.
+
+### Fixed
+- A repository renamed or recased is no longer counted twice in published
+  data (#216). `unb-mds/2025-1-NoFluxoUNB` and `unb-mds/2025-1-NoFluxoUnB`
+  are one repository (id 957040204); the pipeline wrote the current-case
+  Bronze file, the old-case file was never written again and never
+  removed, and Silver and Gold glob both — measured, one recase published
+  2,458 commits for 1,239. No check could see it: every assertion in the
+  codebase is that records must not *fall*, and the orphan *adds* records.
+  Two halves. `coops.bronze.reconcile` removes per-repository Bronze files
+  whose repository is not in the current `repositories_filtered.json`
+  (keying files by repository id remains the durable fix and is out of
+  scope), run by `coops-bronze` after every family is written; a deletion
+  routine is one bug away from wiping a corpus, so it REFUSES — deleting
+  nothing — when the listing is missing, unreadable or empty, or when the
+  run was narrowed by `--repo`, `--max-repos` or `--offline` (guarded on
+  the flags, never on the size: a subset is indistinguishable from "every
+  other repository is gone", and the capped debugging run is the one that
+  would wipe). An old-case file that is the *only* copy for its repository
+  is kept — deleting the only copy is the record loss every other guard
+  exists to prevent. Reporting is the default and deletion is opt-in via
+  `--reconcile-apply`: a routine that removes files must not remove them
+  because nobody passed a flag. Every run prints which mode ran. Second half:
+  `scripts/verify_medallion.py` gains `no-orphaned-bronze-files` — every
+  per-repository Bronze file must correspond to the current filtered
+  listing (rc 1, the file named; a missing or unreadable listing is the
+  instrument, rc 2) — with two new controls, so `--self-test` goes from
+  14 to 16: the planted recase leftover is rejected, and the same corpus
+  without it passes.
+- The 37 mypy errors Phase 1 added to pre-existing files (per-file gate
+  against `a48bec6`): `Optional` plumbing threaded into Bronze/Silver without
+  narrowing. Watermark reads in `bronze/issues.py` now narrow once
+  (`last_updated_at`/`last_event_id`) with the guard at the use site, instead
+  of dereferencing `wm` behind a bool computed eleven lines earlier;
+  `full_name` falls back with `or` so it is never `None` at the
+  watermark/fold call sites it was added to; `parse_github_date` is annotated
+  `str | None`, which its first statement has always answered with `None`;
+  and the Phase-1 locals (`name_counts`, `daily_activity`, the watermark
+  `payload`, `GitHubAPIClient._cache_fold`) carry annotations instead of
+  inferred unions. No `# type: ignore`, no `assert`, no behaviour change; the
+  pre-existing debt in these files is untouched except where it shares the
+  same inferred type as a regression (`daily_activity`'s day record,
+  `full_name` in `commits`/`repository_structure`), which the same one-line
+  fix clears incidentally.
 
 ### Added
 - `scripts/check_regressions.py` (#119): a per-file regression gate comparing

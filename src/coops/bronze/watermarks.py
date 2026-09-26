@@ -40,6 +40,7 @@ import json
 import os
 from dataclasses import asdict, dataclass, field
 from datetime import datetime, timedelta, timezone
+from typing import Any
 
 #: Default on-disk location, relative to the working directory (like ``data/``
 #: and ``cache/``). Deliberately outside ``data/`` so a watermark change never
@@ -187,7 +188,7 @@ class WatermarkStore:
         which is what the next run reads as its ``since`` bound. Best-effort:
         a failure to persist only means the next run re-fetches a little more.
         """
-        payload = {"version": VERSION, "repos": {}}
+        payload: dict[str, Any] = {"version": VERSION, "repos": {}}
         for repo, wm in self._records.items():
             wm.last_run = self._now_iso
             payload["repos"][repo] = wm.to_dict()

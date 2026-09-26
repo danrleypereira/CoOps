@@ -45,6 +45,18 @@ match nothing, and report zero records — no error, no warning, a number that l
 like an answer. That silent-empty shape is the failure this module exists to
 prevent, so it must not be reachable through the module itself.
 
+**Deduped by repository id at the reader (#248).** Two files of one family whose
+repository id is the same are the same repository — a rename or recase leaves the
+old file beside the current one and both were read, counting the repository
+twice in published data. :func:`bronze_files` therefore feeds its enumeration
+through :func:`coops.bronze.dedupe.dedupe_paths`, which keys every file by the
+``id`` of its ``repo_<name>.json`` sibling, keeps the latest copy of a shared id
+when the stamps are more than 48h apart, refuses (keeping every copy counted and
+reporting the pair) when they are not, and keeps-and-reports files with no
+sibling. No listing provenance is consulted and nothing is deleted. The same
+duplicate can still be *on disk* — it is simply no longer *read*; the
+``#216`` reconciliation remains the thing that removes it.
+
 **A known ambiguity, deliberately not resolved here.** A repository literally
 named ``all`` would be written to ``commits_all.json`` and be indistinguishable
 from the aggregate. The filesystem layout simply cannot express the difference;
@@ -57,10 +69,14 @@ document at all — see ``coops.domain.ports.storage_port``, which rejects an
 from __future__ import annotations
 
 import json
-from collections.abc import Iterator
+from collections.abc import Iterable, Iterator
 from pathlib import Path
 from typing import Any
 
+from coops.bronze.dedupe import (
+    DedupeReport,
+    dedupe_paths,
+)
 from coops.utils.data_helpers import strip_metadata
 
 __all__ = [
@@ -69,7 +85,9 @@ __all__ = [
     "DOCUMENT_FAMILIES",
     "RECORD_FAMILIES",
     "aggregate_name",
+    "bronze_dedupe_report",
     "bronze_files",
+    "bronze_files_raw",
     "bronze_records",
     "bronze_repos",
     "remove_aggregate",
@@ -162,16 +180,22 @@ def remove_aggregate(bronze_dir: Path | str, family: str) -> Path | None:
     return None
 
 
-def bronze_files(bronze_dir: Path | str, family: str) -> list[Path]:
-    """Every per-repository file of ``family``, aggregate excluded, sorted.
+def bronze_files_raw(bronze_dir: Path | str, family: str) -> list[Path]:
+    """The family's per-repository files **on disk**: glob, aggregate excluded,
+    derived copies excluded, sorted. Deduping is NOT applied — this is the raw
+    enumeration :func:`bronze_files` and :func:`bronze_dedupe_report` both feed
+    through the dedupe.
 
-    Sorted so that two runs enumerate in the same order: ``Path.glob`` follows
-    directory order, which is not stable across filesystems, and an unstable
-    order produces artifacts that differ byte-for-byte between runs over
-    identical input (#172).
+    Public because deletion and reading need *different* views and briefly
+    shared one (#259). A reader must see the deduped set, or a renamed
+    repository is counted twice; a reconciler must see what is actually on
+    disk, or the superseded copy it exists to delete is the very thing the
+    dedupe has hidden from it. Between #248 and #259 the reconciler enumerated
+    through :func:`bronze_files` and therefore found **zero** orphans on a
+    corpus holding three.
 
-    Raises ``ValueError`` on an unknown family; never returns an empty list to
-    report one.
+    If you are deleting, listing or auditing files, use this. If you are
+    counting records, use :func:`bronze_files`.
     """
     _check_family(family)
     directory = Path(bronze_dir)
@@ -181,6 +205,49 @@ def bronze_files(bronze_dir: Path | str, family: str) -> list[Path]:
         for path in directory.glob(f"{family}_*.json")
         if path.name != skip and not _is_derived(path.name)
     )
+
+
+def bronze_files(bronze_dir: Path | str, family: str) -> list[Path]:
+    """Every per-repository file of ``family``, aggregate excluded, sorted,
+    **deduped by repository id** (#248).
+
+    Sorted so that two runs enumerate in the same order: ``Path.glob`` follows
+    directory order, which is not stable across filesystems, and an unstable
+    order produces artifacts that differ byte-for-byte between runs over
+    identical input (#172).
+
+    Two files whose repository id (the ``id`` of the ``repo_<name>.json``
+    sibling) is the same are the same repository: the latest copy is kept
+    when the ``_metadata.extracted_at`` stamps are more than 48h apart, and
+    otherwise every copy is kept and the pair is reported — see
+    :mod:`coops.bronze.dedupe` for the winner rule and its precondition. A
+    file with no ``repo_`` sibling is unmapped: kept, counted, reported.
+    The superseded copies are the only files absent from the result; the
+    report itself is :func:`bronze_dedupe_report`'s to publish.
+
+    Raises ``ValueError`` on an unknown family; never returns an empty list to
+    report one.
+    """
+    return dedupe_paths(bronze_dir, family, bronze_files_raw(bronze_dir, family)).kept
+
+
+def bronze_dedupe_report(
+    bronze_dir: Path | str,
+    families: Iterable[str] = tuple(sorted(BRONZE_FAMILIES)),
+) -> DedupeReport:
+    """The dedupe report across ``families``, for the run report and the
+    published ``data/bronze/dedupe.json``.
+
+    Enumerates each family exactly as :func:`bronze_files` does, so what the
+    report names and what the readers drop cannot drift apart. An unknown
+    family raises, for the same reason it raises in ``bronze_files``.
+    """
+    directory = Path(bronze_dir)
+    report = DedupeReport()
+    for family in sorted(families):
+        result = dedupe_paths(directory, family, bronze_files_raw(directory, family))
+        report = report.merged(result.report)
+    return report
 
 
 def _is_derived(name: str) -> bool:

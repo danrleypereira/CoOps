@@ -65,7 +65,7 @@ def extract_repository_structure(
             continue
         
         repo_name = repo.get('name', 'unknown')
-        full_name = repo.get('full_name', repo_name)
+        full_name = repo.get('full_name') or repo_name
         default_branch = repo.get('default_branch', 'main')
         
         # Extrair owner do full_name
