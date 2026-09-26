@@ -7,8 +7,12 @@ reproduce. The commits arms of that comparison were therefore green by
 construction, the same shaping #241's twin
 (``tests/unit/test_repository_projection_gap.py``) names for repositories.
 
-Measured against the real corpus (all 260,372 records in 487
-``commits_*.json`` files of the fga snapshot, both paths fed the same node):
+Measured against the real corpus (all 130,186 records in the 486 per-repository
+``commits_<name>.json`` files of the fga snapshot, both paths fed the same
+node). The retired ``commits_all.json`` aggregate is **excluded**: it repeats
+every per-repository record, so counting it doubles every figure exactly — the
+same reason ``bronze_files`` reads per-repository files and not the ``_all``
+aggregates (#170):
 
 * **key sets are identical at every level** — root 8 keys, ``commit`` 3,
   ``commit.committer`` 2, ``commit.author`` 3-4 in the same conditional
@@ -16,8 +20,8 @@ Measured against the real corpus (all 260,372 records in 487
   no commit twin: the legacy GraphQL path writes an 8-key intermediate, and
   the projection matches it.
 * the defect is **one value**: ``commit.committer.name`` is a real string on
-  260,218 of 260,372 legacy records (99.9%) and always ``None`` through the
-  port. The other 154 are the deliberate ``_is_address`` blanks
+  130,108 of 130,186 legacy records (99.9%) and always ``None`` through the
+  port. The other 78 are the deliberate ``_is_address`` blanks
   (``_sanitize_commit``), which survive untouched.
 
 No seam carries the payload here: ``SourcePort`` yields domain models by
