@@ -29,19 +29,31 @@ because ``FileTree.sha`` (the tree response's sha) is not the value the
 legacy structure record carries (the branch-head commit sha). And the
 member payloads are minimal: members are not ported at all (see below).
 
-And ``REPO_RECORDS`` carries exactly the seventeen keys ``Repository``
-has, while real ``repo_*.json`` payloads carry 99 (10 of the fga corpus's
-486 carry 100, adding ``template_repository``) — so the model drops 82
-GitHub fields, and the two ``repo_*.json`` arms counted among the
-byte-identical families below **cannot fail**. That is the shaping that
-most inflates the headline count, so it is named here rather than left to
-be inferred: see #241, and the strict xfail in
-``tests/unit/test_repository_projection_gap.py``, which flips to an
-unexpected pass the day #241 lands.
+``REPO_RECORDS`` carries the **99-key** shape a real ``repo_*.json`` payload
+has (476 of the fga corpus's 486 files at 99, 10 at 100 with
+``template_repository``), not the seventeen ``Repository`` reads. It used to
+carry only those seventeen, which made every repository arm here unable to
+fail — so the headline "byte-identical" count included families whose
+comparison was decided by the fixture rather than by the code. #241.
 
-A corpus that carried the rich shapes would fail here for exactly the
-reasons the #30 report lists; this corpus mirrors what the port can
-express and the report says what it cannot.
+With the real shape, **five** families cannot match, and that number was
+measured rather than predicted: not only the two ``repo_*.json`` files but
+all three ``repositories_*`` aggregates, which are built from the same
+listing records. They are listed in ``PARITY_GAP_FILES``, still compared and
+still reported, and pinned by the strict xfail
+``test_repository_families_would_be_byte_identical`` — which flips to an
+unexpected pass, loudly, the day #241 lands.
+
+So the honest accounting of the sixteen families this corpus exercises is:
+
+* **7** compared and byte-identical — the claim this file actually proves;
+* **5** compared and pinned as parity gaps (``PARITY_GAP_FILES``, #241);
+* **4** not written at all because the port cannot express them
+  (``PORT_GAP_FILES``: both ``members_*``, both ``issue_events_*``).
+
+``test_listing_fixture_carries_more_than_the_model_reads`` is the guard that
+keeps this true: a fixture whose key set equals the model's field set fails
+there, so the next family cannot be born vacuous.
 
 Families the service does not write (pinned, not skipped)
 ---------------------------------------------------------
@@ -89,8 +101,85 @@ _API = "https://api.github.com"
 # The repository listing, in listing order: two kept repositories, one
 # fork and one blacklisted, so the filter runs in both arms. The key set
 # is exactly what map_repository reads — see the module docstring.
+#: A real ``repo_*.json`` payload carries **99** keys (476 of the fga corpus's 486
+#: files; 100 on the other 10, adding ``template_repository``) where ``Repository``
+#: reads **17**. A fixture carrying only those 17 makes the ``repo_*`` arms of this
+#: differential unable to fail — the shaping #241 names. So the listing records
+#: below carry the full 99-key shape.
+#:
+#: The key *names* are GitHub's repository schema, taken from the corpus. The
+#: *values* are synthetic: what makes the comparison non-vacuous is that the
+#: payload carries fields the projection must drop, not what those fields hold.
+_PAYLOAD_FLAG_KEYS: tuple[str, ...] = (
+    "allow_auto_merge", "allow_forking", "allow_merge_commit",
+    "allow_rebase_merge", "allow_squash_merge", "allow_update_branch",
+    "delete_branch_on_merge", "disabled", "has_discussions",
+    "has_downloads", "has_issues", "has_pages",
+    "has_projects", "has_pull_requests", "has_wiki",
+    "is_template", "use_squash_pr_title_as_default", "web_commit_signoff_required",
+)
+
+_PAYLOAD_COUNT_KEYS: tuple[str, ...] = (
+    "forks", "network_count", "open_issues",
+    "subscribers_count", "watchers", "watchers_count",
+)
+
+_PAYLOAD_OBJECT_KEYS: tuple[str, ...] = (
+    "custom_properties", "license", "organization",
+    "owner", "permissions", "security_and_analysis",
+)
+
+_PAYLOAD_STRING_KEYS: tuple[str, ...] = (
+    "archive_url", "assignees_url",
+    "blobs_url", "branches_url",
+    "clone_url", "collaborators_url",
+    "comments_url", "commits_url",
+    "compare_url", "contents_url",
+    "contributors_url", "deployments_url",
+    "downloads_url", "events_url",
+    "forks_url", "git_commits_url",
+    "git_refs_url", "git_tags_url",
+    "git_url", "homepage",
+    "hooks_url", "issue_comment_url",
+    "issue_events_url", "issues_url",
+    "keys_url", "labels_url",
+    "languages_url", "merge_commit_message",
+    "merge_commit_title", "merges_url",
+    "milestones_url", "mirror_url",
+    "node_id", "notifications_url",
+    "pull_request_creation_policy", "pulls_url",
+    "releases_url", "squash_merge_commit_message",
+    "squash_merge_commit_title", "ssh_url",
+    "stargazers_url", "statuses_url",
+    "subscribers_url", "subscription_url",
+    "svn_url", "tags_url",
+    "teams_url", "temp_clone_token",
+    "topics", "trees_url",
+    "url", "visibility",
+)
+
+
+def _github_only_fields(full_name: str) -> dict[str, Any]:
+    """The 82 payload keys ``Repository`` cannot carry, with synthetic values."""
+    fields: dict[str, Any] = dict.fromkeys(_PAYLOAD_FLAG_KEYS, False)
+    fields.update(dict.fromkeys(_PAYLOAD_COUNT_KEYS, 0))
+    fields.update({key: {"schema": key} for key in _PAYLOAD_OBJECT_KEYS})
+    for key in _PAYLOAD_STRING_KEYS:
+        fields[key] = f"{_API}/repos/{full_name}/{key}"
+    fields["mirror_url"] = None
+    fields["topics"] = []
+    return fields
+
+
+def _rich(record: dict[str, Any]) -> dict[str, Any]:
+    """A listing record in the payload's real shape: the 17 keys the model reads
+    plus the 82 it drops, so a projection cannot compare equal by construction.
+    """
+    return {**_github_only_fields(record["full_name"]), **record}
+
+
 REPO_RECORDS: list[dict[str, Any]] = [
-    {
+    _rich({
         "id": 101,
         "name": "repo1",
         "full_name": "test-org/repo1",
@@ -108,8 +197,8 @@ REPO_RECORDS: list[dict[str, Any]] = [
         "created_at": "2025-01-01T00:00:00Z",
         "updated_at": "2025-06-01T00:00:00Z",
         "pushed_at": "2025-06-01T00:00:00Z",
-    },
-    {
+    }),
+    _rich({
         "id": 102,
         "name": "2026.1-App.Two",
         "full_name": "test-org/2026.1-App.Two",
@@ -127,8 +216,8 @@ REPO_RECORDS: list[dict[str, Any]] = [
         "created_at": "2025-02-01T00:00:00Z",
         "updated_at": "2025-05-01T00:00:00Z",
         "pushed_at": "2025-05-01T00:00:00Z",
-    },
-    {
+    }),
+    _rich({
         "id": 103,
         "name": "somefork",
         "full_name": "test-org/somefork",
@@ -146,8 +235,8 @@ REPO_RECORDS: list[dict[str, Any]] = [
         "created_at": "2025-03-01T00:00:00Z",
         "updated_at": "2025-03-01T00:00:00Z",
         "pushed_at": "2025-03-01T00:00:00Z",
-    },
-    {
+    }),
+    _rich({
         "id": 104,
         "name": "Hi.Events",
         "full_name": "test-org/Hi.Events",
@@ -165,7 +254,7 @@ REPO_RECORDS: list[dict[str, Any]] = [
         "created_at": "2025-04-01T00:00:00Z",
         "updated_at": "2025-04-01T00:00:00Z",
         "pushed_at": "2025-04-01T00:00:00Z",
-    },
+    }),
 ]
 
 _ISSUE_BASE = {
@@ -582,6 +671,32 @@ EXPECTED_COMPARED = {
     "structure_2026.1-App.Two.json",
 }
 
+#: Families the service writes and this differential compares, but which
+#: **cannot** match: the listing payload carries 99 keys and ``Repository`` reads
+#: 17, so the projection drops 82 (#241). Named, not skipped — the comparison
+#: still runs over them and the strict xfail below pins the result, so the day
+#: #241 lands this file fails loudly instead of quietly starting to pass.
+#:
+#: Measured, not assumed: making ``REPO_RECORDS`` carry the real 99-key shape
+#: turned **five** families red, not the two ``repo_*`` files alone — the three
+#: ``repositories_*`` aggregates are built from the same listing records.
+PARITY_GAP_FILES = {
+    "repositories_raw.json",
+    "repositories_filtered.json",
+    "repositories_detailed.json",
+    "repo_repo1.json",
+    "repo_2026.1-App.Two.json",
+}
+
+#: The payload keys ``map_repository`` reads. A fixture carrying only these makes
+#: every repository arm of this differential unable to fail; asserted against in
+#: ``test_listing_fixture_carries_more_than_the_model_reads``.
+MODEL_PAYLOAD_KEYS = frozenset({
+    "id", "name", "full_name", "private", "fork", "archived", "description",
+    "default_branch", "language", "html_url", "size", "stargazers_count",
+    "forks_count", "open_issues_count", "created_at", "updated_at", "pushed_at",
+})
+
 #: One ``_metadata.extracted_at`` per envelope file (10) plus one record
 #: ``extracted_at`` per structure document (2): the normalisation budget.
 EXPECTED_NORMALISATIONS_PER_ARM = 12
@@ -723,7 +838,12 @@ def test_service_output_matches_legacy_output(tmp_path: Path, monkeypatch: pytes
     failures = [line for line in diffs if not line.startswith("compared ")]
 
     assert len(compared) == 1
-    assert failures == [], "differences:\n" + "\n".join(failures)
+
+    # The parity gaps are compared, reported, and excluded from *this* assertion
+    # only — pinned by ``test_repository_families_would_be_byte_identical``.
+    gaps = [line for line in failures if any(name in line for name in PARITY_GAP_FILES)]
+    unexplained = [line for line in failures if line not in gaps]
+    assert unexplained == [], "differences:\n" + "\n".join(unexplained)
 
     count = int(compared[0].split()[1])
     assert count == len(EXPECTED_COMPARED), (
@@ -757,3 +877,57 @@ def test_arms_differ_control_fails_and_names_the_field(
     named = [line for line in failures if "total_changes" in line]
     assert named, f"the difference was seen but not named: {failures}"
     assert any("commits_repo1.json" in line for line in named), named
+
+
+@pytest.mark.xfail(
+    strict=True,
+    reason=(
+        "#241: Repository is a 17-field projection of a 99-key payload, so the "
+        "five repository families cannot be byte-identical. Flips to an "
+        "unexpected pass the day the gap closes — at which point remove this "
+        "test and PARITY_GAP_FILES."
+    ),
+)
+def test_repository_families_would_be_byte_identical(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """The pin: what the differential would assert if #241 were fixed.
+
+    Kept separate from the main differential so that the other seven compared
+    families still gate on real byte-identity while this one records the gap.
+    """
+    diffs, _ = _run_both_arms(tmp_path, monkeypatch)
+    gaps = [
+        line
+        for line in diffs
+        if not line.startswith("compared ")
+        and any(name in line for name in PARITY_GAP_FILES)
+    ]
+    assert gaps == [], "repository parity gaps:\n" + "\n".join(gaps)
+
+
+def test_listing_fixture_carries_more_than_the_model_reads() -> None:
+    """A fixture shaped by the model cannot detect what the model drops.
+
+    This is the guard that stops the next family being born vacuous: if someone
+    trims ``REPO_RECORDS`` back to the keys ``map_repository`` reads, the
+    repository arms silently become unable to fail, which is exactly the state
+    #241 was hiding in. Assert the shape, not the count alone.
+    """
+    assert REPO_RECORDS, "no listing records: every repository arm would be vacuous"
+    for record in REPO_RECORDS:
+        keys = set(record)
+        assert keys >= MODEL_PAYLOAD_KEYS, (
+            f"{record['name']}: fixture is missing keys the mapper reads: "
+            f"{sorted(MODEL_PAYLOAD_KEYS - keys)}"
+        )
+        assert keys != MODEL_PAYLOAD_KEYS, (
+            f"{record['name']}: fixture carries exactly the model's key set, so "
+            "the repository arms of the differential cannot fail (#241)"
+        )
+        payload_only = keys - MODEL_PAYLOAD_KEYS
+        assert len(payload_only) == 82, (
+            f"{record['name']}: expected the 82 payload-only keys a real "
+            f"repo_*.json carries, found {len(payload_only)}"
+        )
+        assert len(keys) == 99, f"{record['name']}: expected 99 keys, found {len(keys)}"
