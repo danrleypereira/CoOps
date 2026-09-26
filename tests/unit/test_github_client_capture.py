@@ -1,4 +1,4 @@
-"""Capture-mode tests for GitHubAPIClient (issue #109).
+"""Capture-mode tests for the transport (#27, ``coops.github.client``; issue #109).
 
 These fake the HTTP boundary only (``requests.get`` / ``requests.post``); the
 capture writer runs for real, so the on-disk shape and permissions are

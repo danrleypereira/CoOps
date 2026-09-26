@@ -164,6 +164,26 @@ the project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.
   vacuously.
 
 ### Changed
+- Migrated the ten overlapping `tests/unit/test_github_api_*.py` files
+  (2,717 lines, 139 tests) onto the seams #27–#29 created (#31):
+  transport behaviour to `test_github_client_transport.py`, with the
+  feature-sized transports renamed to `test_github_client_{etag,capture,
+  offline,raw_layer}.py`; the GraphQL-document pin to
+  `test_github_queries.py`; the query orchestration that remains in
+  `coops/utils/github_api.py` to `test_github_api.py`; and the module
+  helpers into the dedicated files that already existed
+  (`test_save_json_data.py`, `test_parse_github_date.py`,
+  `test_split_time_range.py`) plus a slimmed `test_github_api_utils.py`.
+  45 duplicate tests were deleted, each paired with the named survivor
+  that covers its behaviour, and 7 near-duplicates were merged into 4;
+  per-file coverage of `src/coops/github/` and
+  `src/coops/utils/github_api.py` is unchanged, missing-line lists
+  included. Two migrated tests (`test_get_active_branches_error_handling`,
+  `test_graphql_commit_history_error`) reached the live GitHub API
+  through unmocked client calls; both are now hermetic.
+  `TestRawReadPathScrub::test_no_address_reaches_bronze_from_raw_read`
+  moved as part of a 100%-similarity rename and still fails in isolation
+  when `_sanitize_commit` is neutered.
 - Extracted the GitHub endpoint knowledge out of `coops/utils/github_api.py`
   into `coops/github/queries.py` (#28): the six REST URL templates
   (`repository_url`, `compare_url`, `commit_url`, `commits_url`,

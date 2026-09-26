@@ -1,111 +1,126 @@
+"""Tests for the module-level helpers of ``coops.utils.github_api``.
+
+The helpers with dedicated files live there: ``save_json_data`` in
+``test_save_json_data.py``, ``parse_github_date`` in
+``test_parse_github_date.py`` and ``_split_time_range`` in
+``test_split_time_range.py``. What is left here is ``load_json_data``,
+``update_data_registry`` and ``OrganizationConfig`` — the JSON/config
+surface this module has always exported.
+
+Migrated from the retired ``test_github_api_utils.py`` and friends (#31);
+the registry and config tests are the real-filesystem versions from
+``test_github_api_comprehensive.py`` carrying the extra assertions of the
+mocked ``test_github_api_client.py`` versions they replace.
+"""
+
 import json
 import os
 
-from coops.utils.github_api import load_json_data, parse_github_date, save_json_data
+import pytest
+
+from coops.utils.github_api import (
+    OrganizationConfig,
+    load_json_data,
+    update_data_registry,
+)
 
 
-def test_save_json_data_with_timestamp(tmp_path):
-    """Testa save_json_data com timestamp"""
-    filepath = str(tmp_path / "test.json")
-    data = {"test": "value"}
-    
-    result = save_json_data(data, filepath, timestamp=True)
-    
-    assert result == filepath
-    assert os.path.exists(filepath)
-    
-    # Verifica conteúdo
-    with open(filepath) as f:
-        saved = json.load(f)
-    
-    assert saved["test"] == "value"
-    assert "_metadata" in saved
-    assert "extracted_at" in saved["_metadata"]
+class TestLoadJsonData:
+    def test_existing_file(self, tmp_path):
+        """Testa load_json_data com arquivo existente"""
+        filepath = str(tmp_path / "test.json")
+        data = {"test": "value"}
 
-def test_save_json_data_list_with_timestamp(tmp_path):
-    """Testa save_json_data com lista"""
-    filepath = str(tmp_path / "test.json")
-    data = [{"id": 1}, {"id": 2}]
-    
-    save_json_data(data, filepath, timestamp=True)
-    
-    with open(filepath) as f:
-        saved = json.load(f)
-    
-    assert isinstance(saved, list)
-    assert "_metadata" in saved[0]
-    assert saved[0]["_metadata"]["record_count"] == 2
-    assert saved[1]["id"] == 1
-    assert saved[2]["id"] == 2
+        with open(filepath, 'w') as f:
+            json.dump(data, f)
 
-def test_save_json_data_without_timestamp(tmp_path):
-    """Testa save_json_data sem timestamp"""
-    filepath = str(tmp_path / "test.json")
-    data = {"test": "value"}
-    
-    save_json_data(data, filepath, timestamp=False)
-    
-    with open(filepath) as f:
-        saved = json.load(f)
-    
-    assert saved == data
-    assert "_metadata" not in saved
+        loaded = load_json_data(filepath)
+        assert loaded == data
 
-def test_load_json_data_existing_file(tmp_path):
-    """Testa load_json_data com arquivo existente"""
-    filepath = str(tmp_path / "test.json")
-    data = {"test": "value"}
-    
-    with open(filepath, 'w') as f:
-        json.dump(data, f)
-    
-    loaded = load_json_data(filepath)
-    assert loaded == data
+    def test_missing_file(self):
+        """Testa load_json_data com arquivo inexistente"""
+        loaded = load_json_data("nonexistent.json")
+        assert loaded is None
 
-def test_load_json_data_missing_file():
-    """Testa load_json_data com arquivo inexistente"""
-    loaded = load_json_data("nonexistent.json")
-    assert loaded is None
+    def test_invalid_json(self, tmp_path):
+        """Testa carregar arquivo JSON inválido"""
+        test_file = str(tmp_path / "invalid.json")
 
-def test_parse_github_date_utc():
-    """Testa parse_github_date formato UTC"""
-    date_str = "2024-06-10T12:34:56Z"
-    result = parse_github_date(date_str)
-    
-    assert result is not None
-    assert result.year == 2024
-    assert result.month == 6
-    assert result.day == 10
-    assert result.hour == 12
+        with open(test_file, 'w') as f:
+            f.write("not valid json {")
 
-def test_parse_github_date_without_timezone():
-    """Testa parse_github_date sem timezone"""
-    date_str = "2024-06-10T12:34:56"
-    result = parse_github_date(date_str)
-    
-    assert result is not None
-    assert result.year == 2024
+        # Function should raise JSONDecodeError
+        with pytest.raises(json.JSONDecodeError):
+            load_json_data(test_file)
 
-def test_parse_github_date_with_offset():
-    """Testa parse_github_date com offset de timezone"""
-    date_str = "2024-06-10T12:34:56-03:00"
-    result = parse_github_date(date_str)
-    
-    assert result is not None
-    assert result.year == 2024
-    assert result.month == 6
 
-def test_parse_github_date_invalid():
-    """Testa parse_github_date com formato inválido"""
-    result = parse_github_date("invalid-date")
-    assert result is None
+class TestUpdateDataRegistry:
+    def test_creates_new_registry(self):
+        """Test creating a new registry entry (real filesystem, under a
+        temporary cwd — the registry path is relative by contract)."""
+        import tempfile
 
-def test_parse_github_date_none():
-    """Testa parse_github_date com None"""
-    result = parse_github_date(None)
-    assert result is None
+        with tempfile.TemporaryDirectory() as tmpdir:
+            # Temporarily change data directory
+            original_cwd = os.getcwd()
+            try:
+                os.chdir(tmpdir)
+                os.makedirs("data/bronze", exist_ok=True)
 
-def test_parse_github_date_empty():
-    """Testa parse_github_date com string vazia"""
-    result = parse_github_date("")
-    assert result is None
+                update_data_registry("bronze", "commits", ["file1.json", "file2.json"])
+
+                registry = load_json_data("data/bronze/registry.json")
+                assert "commits" in registry
+                assert registry["commits"]["files"] == ["file1.json", "file2.json"]
+                assert registry["commits"]["layer"] == "bronze"
+                assert "updated_at" in registry["commits"]
+            finally:
+                os.chdir(original_cwd)
+
+    def test_updates_existing_registry(self):
+        """A same-entity update replaces the file list; a new entity is
+        added beside the entries already there."""
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            original_cwd = os.getcwd()
+            try:
+                os.chdir(tmpdir)
+                os.makedirs("data/bronze", exist_ok=True)
+
+                # Create initial registry
+                update_data_registry("bronze", "commits", ["file1.json"])
+
+                # Update the same entity
+                update_data_registry("bronze", "commits", ["file1.json", "file2.json"])
+
+                # Add another entity
+                update_data_registry("bronze", "issues", ["new.json"])
+
+                registry = load_json_data("data/bronze/registry.json")
+                # Same entity: the file list was replaced, not appended to.
+                assert len(registry["commits"]["files"]) == 2
+                # Other entity: both survive side by side.
+                assert "commits" in registry
+                assert "issues" in registry
+                assert registry["issues"]["files"] == ["new.json"]
+            finally:
+                os.chdir(original_cwd)
+
+
+class TestOrganizationConfig:
+    def test_organization_config(self):
+        """Testa configuração de organização"""
+        config = OrganizationConfig("test-org")
+
+        assert config.org_name == "test-org"
+        assert isinstance(config.repo_blacklist, list)
+        # CoOps has a default blacklist; non-blacklisted repos should not be
+        # skipped — whatever their other flags.
+        assert config.should_skip_repo({"name": "some-normal-repo"}) is False
+
+        repo = {"name": "test-repo", "private": True}
+        assert config.should_skip_repo(repo) is False
+
+        repo2 = {"name": "another-repo", "archived": True}
+        assert config.should_skip_repo(repo2) is False

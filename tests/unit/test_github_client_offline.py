@@ -1,4 +1,4 @@
-"""Offline-mode tests for GitHubAPIClient.
+"""Offline-mode tests for the transport (#27, ``coops.github.client``).
 
 Offline mode is a guarantee about the *source* of every response: the cache,
 or the run stops. These fake the HTTP boundary only (``requests.get`` /
